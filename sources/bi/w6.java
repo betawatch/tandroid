@@ -33,7 +33,7 @@ import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.rm0;
 import org.telegram.ui.Components.sc;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public abstract class w6 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public v6 E;
@@ -114,17 +114,17 @@ public abstract class w6 extends FrameLayout implements NotificationCenter.Notif
         GradientDrawable.Orientation orientation = GradientDrawable.Orientation.TOP_BOTTOM;
         int i10 = org.telegram.ui.ActionBar.g6.h5;
         view.setBackground(new GradientDrawable(orientation, new int[]{org.telegram.ui.ActionBar.g6.w0(i10, bVar), 0}));
-        frameLayout.addView(view, w7.a6.a(8.0f, 0.0f, this.e - 8, 0.0f, 0.0f, -1, 0));
+        frameLayout.addView(view, w7.z5.a(8.0f, 0.0f, this.e - 8, 0.0f, 0.0f, -1, 0));
         View view2 = new View(getContext());
         this.b = view2;
         view2.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(i10, bVar));
-        frameLayout.addView(view2, w7.a6.a(10.0f, 0.0f, this.e - 17, 0.0f, 0.0f, -1, 0));
+        frameLayout.addView(view2, w7.z5.a(10.0f, 0.0f, this.e - 17, 0.0f, 0.0f, -1, 0));
         frameLayout.addView(k6Var);
         frameLayout.addView(textView);
         f6 f6Var = new f6(this, getContext(), bVar);
         this.L = f6Var;
         f6Var.setHint(LocaleController.getString(R.string.Search));
-        frameLayout.addView(f6Var, w7.a6.a(-1.0f, 0.0f, 36.0f, 0.0f, 0.0f, -1, 51));
+        frameLayout.addView(f6Var, w7.z5.a(-1.0f, 0.0f, 36.0f, 0.0f, 0.0f, -1, 51));
         addView(frameLayout);
     }
 

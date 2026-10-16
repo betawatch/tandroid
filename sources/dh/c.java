@@ -5,10 +5,10 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
 import java.util.Arrays;
-import w7.s;
+import w7.r;
 import zf.f0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class c {
     public int d;
@@ -110,7 +110,7 @@ public final class c {
         Rect rect = this.m;
         float f7 = rect.top;
         float[] fArr = this.b;
-        float a2 = s.a((fArr[0] * 2.0f) + f7, f7, rect.bottom);
+        float a2 = r.a((fArr[0] * 2.0f) + f7, f7, rect.bottom);
         canvas.save();
         Rect rect2 = this.a;
         canvas.clipRect(rect2.left, rect2.top, rect2.right, a2);

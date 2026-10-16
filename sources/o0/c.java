@@ -15,11 +15,11 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import ji.h5;
 import ji.w4;
+import m.l;
 import w7.d8;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final a0.j a = new a0.j(2);
@@ -95,13 +95,23 @@ public abstract class c {
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public static h[] c(Context context, d dVar, String str) {
+        w4 w4Var;
+        ArrayList arrayList;
+        Uri withAppendedId;
         d8.a("FontProvider.query");
         try {
-            ArrayList arrayList = new ArrayList();
+            ArrayList arrayList2 = new ArrayList();
             Uri build = new Uri.Builder().scheme("content").authority(str).build();
             Uri build2 = new Uri.Builder().scheme("content").authority(str).appendPath("file").build();
-            a w4Var = Build.VERSION.SDK_INT < 24 ? new w4(context, build) : new h5(context, build);
+            if (Build.VERSION.SDK_INT < 24) {
+                l lVar = new l();
+                lVar.a = context.getContentResolver().acquireUnstableContentProviderClient(build);
+                w4Var = lVar;
+            } else {
+                w4Var = new w4(context, build);
+            }
             Cursor cursor = null;
             try {
                 String[] strArr = {"_id", "file_id", "font_ttc_index", "font_variation_settings", "font_weight", "font_italic", "result_code"};
@@ -111,7 +121,7 @@ public abstract class c {
                     Trace.endSection();
                     if (cursor != null && cursor.getCount() > 0) {
                         int columnIndex = cursor.getColumnIndex("result_code");
-                        ArrayList arrayList2 = new ArrayList();
+                        ArrayList arrayList3 = new ArrayList();
                         int columnIndex2 = cursor.getColumnIndex("_id");
                         int columnIndex3 = cursor.getColumnIndex("file_id");
                         int columnIndex4 = cursor.getColumnIndex("font_ttc_index");
@@ -119,15 +129,26 @@ public abstract class c {
                         int columnIndex6 = cursor.getColumnIndex("font_italic");
                         while (cursor.moveToNext()) {
                             int i10 = columnIndex != -1 ? cursor.getInt(columnIndex) : 0;
-                            arrayList2.add(new h(columnIndex3 == -1 ? ContentUris.withAppendedId(build, cursor.getLong(columnIndex2)) : ContentUris.withAppendedId(build2, cursor.getLong(columnIndex3)), columnIndex4 != -1 ? cursor.getInt(columnIndex4) : 0, columnIndex5 != -1 ? cursor.getInt(columnIndex5) : 400, columnIndex6 != -1 && cursor.getInt(columnIndex6) == 1, i10));
+                            int i11 = columnIndex4 != -1 ? cursor.getInt(columnIndex4) : 0;
+                            if (columnIndex3 == -1) {
+                                arrayList = arrayList3;
+                                withAppendedId = ContentUris.withAppendedId(build, cursor.getLong(columnIndex2));
+                            } else {
+                                arrayList = arrayList3;
+                                withAppendedId = ContentUris.withAppendedId(build2, cursor.getLong(columnIndex3));
+                            }
+                            Uri uri = withAppendedId;
+                            ArrayList arrayList4 = arrayList;
+                            arrayList4.add(new h(uri, i11, columnIndex5 != -1 ? cursor.getInt(columnIndex5) : 400, columnIndex6 != -1 && cursor.getInt(columnIndex6) == 1, i10));
+                            arrayList3 = arrayList4;
                         }
-                        arrayList = arrayList2;
+                        arrayList2 = arrayList3;
                     }
                     if (cursor != null) {
                         cursor.close();
                     }
                     w4Var.close();
-                    return (h[]) arrayList.toArray(new h[0]);
+                    return (h[]) arrayList2.toArray(new h[0]);
                 } finally {
                 }
             } catch (Throwable th2) {

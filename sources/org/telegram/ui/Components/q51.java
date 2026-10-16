@@ -1,52 +1,77 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
 import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q51 implements ValueAnimator.AnimatorUpdateListener {
+public final class q51 extends s4.r0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+    public int b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ q51(int i10, View view) {
-        this.a = i10;
-        this.b = view;
+    public q51(u51 u51Var) {
+        this.a = 0;
+        this.c = u51Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // s4.r0
+    public void a(RecyclerView recyclerView, int i10) {
         switch (this.a) {
             case 0:
-                s51 s51Var = (s51) this.b;
-                s51Var.getClass();
-                s51Var.B0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                s51Var.invalidate();
-                break;
-            case 1:
-                i71 i71Var = (i71) this.b;
-                i71Var.getClass();
-                i71Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                i71Var.invalidate();
-                break;
-            case 2:
-                o71 o71Var = (o71) this.b;
-                o71Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                o71Var.b = floatValue;
-                o71Var.setTranslationY(floatValue);
-                break;
-            default:
-                j91 j91Var = (j91) this.b;
-                j91Var.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                j91Var.setAnimationIdicatorProgress(floatValue2);
-                i91 i91Var = j91Var.y;
-                if (i91Var != null) {
-                    ((l2.f) i91Var).j(floatValue2);
+                if (i10 == 0) {
+                    this.b = 0;
                     break;
                 }
                 break;
         }
+    }
+
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                u51 u51Var = (u51) this.c;
+                this.b += i11;
+                if (recyclerView.getScrollState() == 1 && Math.abs(this.b) > AndroidUtilities.dp(96.0f)) {
+                    View findFocus = u51Var.e.findFocus();
+                    if (findFocus == null) {
+                        findFocus = u51Var.e;
+                    }
+                    AndroidUtilities.hideKeyboard(findFocus);
+                }
+                if (i11 != 0) {
+                    u51.n(u51Var);
+                    break;
+                }
+                break;
+            case 1:
+                int i12 = this.b + i11;
+                this.b = i12;
+                ((org.telegram.ui.k31) this.c).H.setAlpha((i12 * 1.0f) / AndroidUtilities.dp(6.0f));
+                break;
+            default:
+                org.telegram.ui.Wallet.a5 a5Var = ((org.telegram.ui.Wallet.x3) this.c).a;
+                if (this.b != 0) {
+                    recyclerView.post(new org.telegram.ui.Wallet.g3(a5Var, 13));
+                    break;
+                } else {
+                    a5Var.q0();
+                    break;
+                }
+        }
+    }
+
+    public q51(org.telegram.ui.k31 k31Var) {
+        this.a = 1;
+        this.c = k31Var;
+        this.b = 0;
+    }
+
+    public q51(org.telegram.ui.Wallet.x3 x3Var, int i10) {
+        this.a = 2;
+        this.c = x3Var;
+        this.b = i10;
     }
 }

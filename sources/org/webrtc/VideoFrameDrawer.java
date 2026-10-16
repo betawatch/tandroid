@@ -8,7 +8,7 @@ import org.webrtc.GlGenericDrawer;
 import org.webrtc.RendererCommon;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public class VideoFrameDrawer {
     public static final String TAG = "VideoFrameDrawer";
@@ -22,7 +22,7 @@ public class VideoFrameDrawer {
     private final Matrix renderMatrix = new Matrix();
     private final Matrix renderRotateMatrix = new Matrix();
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static /* synthetic */ class 1 {
         static final /* synthetic */ int[] $SwitchMap$org$webrtc$VideoFrame$TextureBuffer$Type;
 
@@ -40,7 +40,7 @@ public class VideoFrameDrawer {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class YuvUploader {
         private ByteBuffer copyBuffer;
         private int[] yuvTextures;

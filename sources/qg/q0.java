@@ -23,7 +23,7 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.Vector;
 import java.util.zip.Inflater;
-import ji.h5;
+import ji.w4;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
@@ -31,10 +31,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.iw0;
 import org.telegram.ui.Components.la;
 import org.telegram.ui.Components.ra;
-import w7.r6;
-import w7.t6;
+import w7.q6;
+import w7.s6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class q0 {
     public final Bitmap A;
@@ -49,7 +49,7 @@ public final class q0 {
     public ValueAnimator K;
     public ValueAnimator L;
     public Paint M;
-    public h5 a;
+    public w4 a;
     public r0 b;
     public f1 c;
     public f1 d;
@@ -83,7 +83,7 @@ public final class q0 {
         this.A = bitmap;
         this.B = i10;
         this.u = ByteBuffer.allocateDirect(((int) iw0Var.a) * ((int) iw0Var.b) * 4);
-        this.x = r6.b(iw0Var.a, iw0Var.b);
+        this.x = q6.b(iw0Var.a, iw0Var.b);
         if (this.m == null) {
             ByteBuffer allocateDirect = ByteBuffer.allocateDirect(32);
             this.m = allocateDirect;
@@ -172,7 +172,7 @@ public final class q0 {
     public final void b() {
         GLES20.glBindFramebuffer(36160, i());
         GLES20.glFramebufferTexture2D(36160, 36064, 3553, g(), 0);
-        t6.a();
+        s6.a();
         if (GLES20.glCheckFramebufferStatus(36160) == 36053) {
             iw0 iw0Var = this.g;
             GLES20.glViewport(0, 0, (int) iw0Var.a, (int) iw0Var.b);
@@ -180,9 +180,9 @@ public final class q0 {
             GLES20.glClear(16384);
         }
         GLES20.glBindFramebuffer(36160, 0);
-        h5 h5Var = this.a;
-        if (h5Var != null) {
-            h5Var.Q0();
+        w4 w4Var = this.a;
+        if (w4Var != null) {
+            w4Var.Y0();
         }
         v0 v0Var = this.e;
         v0Var.h = 0;
@@ -200,7 +200,7 @@ public final class q0 {
         if (this.r == null || this.i == null) {
             return;
         }
-        this.f.f(new m4.l0(this, r0Var, i10, z10, zVar));
+        this.f.f(new m4.k0(this, r0Var, i10, z10, zVar));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:52:0x0197  */
@@ -210,7 +210,7 @@ public final class q0 {
     */
     public final a5.a d(r0 r0Var, int i10, RectF rectF) {
         a5.a m10;
-        h5 h5Var;
+        w4 w4Var;
         Object obj;
         boolean z10;
         m mVar = this.i;
@@ -228,7 +228,7 @@ public final class q0 {
                 a5.a aVar = new a5.a(byteBuffer, 0, rectF);
                 ByteBuffer byteBuffer2 = (ByteBuffer) h(rectF, true, true, false).c;
                 Object obj3 = this.a.b;
-                ((c1) this.a.b).b.b(UUID.randomUUID(), new h4(this, aVar, new a5.a(byteBuffer2, 1, rectF), z11, 29));
+                ((c1) this.a.b).b.b(UUID.randomUUID(), new h4(this, aVar, new a5.a(byteBuffer2, 1, rectF), z11, 28));
                 m10 = aVar;
             } else {
                 m10 = null;
@@ -302,8 +302,8 @@ public final class q0 {
             GLES20.glTexParameteri(3553, 10241, 9729);
         }
         GLES20.glBindFramebuffer(36160, 0);
-        if (this.s <= 0 && (h5Var = this.a) != null) {
-            h5Var.Q0();
+        if (this.s <= 0 && (w4Var = this.a) != null) {
+            w4Var.Y0();
         }
         this.s--;
         v0 v0Var = this.e;
@@ -371,9 +371,9 @@ public final class q0 {
         GLES20.glBindTexture(3553, j());
         GLES20.glTexParameteri(3553, 10241, 9729);
         GLES20.glBindFramebuffer(36160, 0);
-        h5 h5Var = this.a;
-        if (h5Var != null && this.s <= 0) {
-            h5Var.Q0();
+        w4 w4Var = this.a;
+        if (w4Var != null && this.s <= 0) {
+            w4Var.Y0();
         }
         this.s--;
         v0 v0Var = this.e;
@@ -404,9 +404,9 @@ public final class q0 {
         return this.p;
     }
 
-    public final m4.c h(RectF rectF, boolean z10, boolean z11, boolean z12) {
+    public final m2.t h(RectF rectF, boolean z10, boolean z11, boolean z12) {
         r1 r1Var;
-        m4.c cVar;
+        m2.t tVar;
         d1 d1Var;
         r1 r1Var2;
         int i10 = (int) rectF.left;
@@ -435,7 +435,7 @@ public final class q0 {
                 GLES20.glUseProgram(d1Var2.a);
                 Matrix matrix = new Matrix();
                 matrix.preTranslate(-i10, -i11);
-                float[] c10 = r6.c(this.x, r6.a(matrix));
+                float[] c10 = q6.c(this.x, q6.a(matrix));
                 GLES20.glUniformMatrix4fv(d1Var2.d("mvpMatrix"), 1, false, FloatBuffer.wrap(c10));
                 if (z10 || !this.G) {
                     GLES20.glUniform1i(d1Var2.d("texture"), 0);
@@ -486,11 +486,11 @@ public final class q0 {
                 this.u.limit(width * height * 4);
                 GLES20.glReadPixels(0, 0, width, height, 6408, 5121, this.u);
                 if (z10) {
-                    cVar = new m4.c(19, obj, this.u);
+                    tVar = new m2.t(19, obj, this.u);
                 } else {
                     Bitmap createBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
                     createBitmap.copyPixelsFromBuffer(this.u);
-                    cVar = new m4.c(19, createBitmap, obj);
+                    tVar = new m2.t(19, createBitmap, obj);
                 }
                 this.u.rewind();
                 int[] iArr = this.t;
@@ -499,7 +499,7 @@ public final class q0 {
                 int[] iArr2 = this.t;
                 iArr2[0] = i13;
                 GLES20.glDeleteTextures(1, iArr2, 0);
-                return cVar;
+                return tVar;
             }
         }
         return null;
@@ -510,7 +510,7 @@ public final class q0 {
             int[] iArr = new int[1];
             GLES20.glGenFramebuffers(1, iArr, 0);
             this.o = iArr[0];
-            t6.a();
+            s6.a();
         }
         return this.o;
     }
@@ -551,7 +551,7 @@ public final class q0 {
         }
         GLES20.glBindFramebuffer(36160, i());
         GLES20.glFramebufferTexture2D(36160, 36064, 3553, g(), 0);
-        t6.a();
+        s6.a();
         RectF rectF = null;
         if (GLES20.glCheckFramebufferStatus(36160) == 36053) {
             iw0 iw0Var = this.g;
@@ -828,9 +828,9 @@ public final class q0 {
             i11 = 36160;
         }
         GLES20.glBindFramebuffer(i11, i10);
-        h5 h5Var = this.a;
-        if (h5Var != null) {
-            h5Var.Q0();
+        w4 w4Var = this.a;
+        if (w4Var != null) {
+            w4Var.Y0();
         }
         RectF rectF3 = this.h;
         if (rectF3 != null) {
@@ -909,7 +909,7 @@ public final class q0 {
                 } else {
                     GLES20.glDrawArrays(5, 0, 4);
                 }
-                t6.a();
+                s6.a();
             }
             r1 r1Var = this.z;
             if (r1Var != null) {
@@ -924,7 +924,7 @@ public final class q0 {
         GLES20.glEnableVertexAttribArray(1);
         if (obj == null) {
         }
-        t6.a();
+        s6.a();
     }
 
     public final void o(int i10, int i11, f1 f1Var, float f7) {
@@ -971,13 +971,13 @@ public final class q0 {
         GLES20.glVertexAttribPointer(1, 2, 5126, false, 8, (Buffer) this.n);
         GLES20.glEnableVertexAttribArray(1);
         GLES20.glDrawArrays(5, 0, 4);
-        t6.a();
+        s6.a();
     }
 
     public final void p(a5.a aVar, boolean z10) {
         ByteBuffer byteBuffer;
         File file;
-        h5 h5Var;
+        w4 w4Var;
         r1 r1Var;
         if (aVar == null) {
             return;
@@ -1023,8 +1023,8 @@ public final class q0 {
         GLES20.glBindTexture(3553, j10);
         RectF rectF = (RectF) aVar.c;
         GLES20.glTexSubImage2D(3553, 0, (int) rectF.left, (int) rectF.top, (int) rectF.width(), (int) ((RectF) aVar.c).height(), 6408, 5121, byteBuffer);
-        if (this.s <= 0 && (h5Var = this.a) != null) {
-            h5Var.Q0();
+        if (this.s <= 0 && (w4Var = this.a) != null) {
+            w4Var.Y0();
         }
         if (!z10 || (file = (File) aVar.d) == null) {
             return;

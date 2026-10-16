@@ -5,7 +5,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class dt {
     public final int a;
@@ -33,7 +33,7 @@ public final class dt {
         if (!z10) {
             ct ctVar = new ct(this, 0);
             MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
-            messagesStorage.getStorageQueue().postRunnable(new n2.h(this, messagesStorage, ctVar, 23));
+            messagesStorage.getStorageQueue().postRunnable(new org.telegram.messenger.video.f(this, messagesStorage, ctVar, 20));
             return;
         }
         TL_bots.getPopularAppBots getpopularappbots = new TL_bots.getPopularAppBots();

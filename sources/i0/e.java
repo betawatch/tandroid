@@ -27,7 +27,7 @@ import java.util.concurrent.TimeoutException;
 import v7.y7;
 import w7.d8;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class e {
     public static final y7 a;
@@ -111,7 +111,7 @@ public abstract class e {
                 unmodifiableList = DesugarCollections.unmodifiableList(arrayList2);
             }
             o oVar = new o(handler, 4);
-            n6.o oVar2 = new n6.o(i16, iVar, oVar);
+            n3.b bVar = new n3.b(3, iVar, oVar);
             int i18 = 20;
             if (!z10) {
                 String a10 = o0.g.a(i12, unmodifiableList);
@@ -120,7 +120,7 @@ public abstract class e {
                     oVar.execute(new u(i18, iVar, typeface2));
                     a2 = typeface2;
                 } else {
-                    a0 a0Var = new a0(oVar2, i14);
+                    a0 a0Var = new a0(bVar, i14);
                     synchronized (o0.g.c) {
                         try {
                             l lVar = o0.g.d;
@@ -167,23 +167,25 @@ public abstract class e {
                     Objects.requireNonNull(obj4);
                     arrayList6.add(obj4);
                     o0.f b10 = o0.g.b(a11, context, DesugarCollections.unmodifiableList(arrayList6), i12);
-                    oVar2.G(b10);
+                    bVar.H(b10);
                     a2 = b10.a;
                 } else {
                     try {
                         try {
-                            o0.f fVar = (o0.f) o0.g.b.submit(new o0.e(a11, context, dVar3, i12, 0)).get(i15, TimeUnit.MILLISECONDS);
-                            oVar2.G(fVar);
-                            a2 = fVar.a;
+                            try {
+                                o0.f fVar = (o0.f) o0.g.b.submit(new o0.e(a11, context, dVar3, i12, 0)).get(i15, TimeUnit.MILLISECONDS);
+                                bVar.H(fVar);
+                                a2 = fVar.a;
+                            } catch (TimeoutException unused) {
+                                throw new InterruptedException("timeout");
+                            }
                         } catch (InterruptedException e) {
                             throw e;
                         } catch (ExecutionException e7) {
                             throw new RuntimeException(e7);
-                        } catch (TimeoutException unused) {
-                            throw new InterruptedException("timeout");
                         }
                     } catch (InterruptedException unused2) {
-                        ((o) oVar2.c).execute(new androidx.activity.i((a6.i) oVar2.b, -3));
+                        ((o) bVar.c).execute(new androidx.activity.i((a6.i) bVar.b, -3));
                     }
                 }
             }

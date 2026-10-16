@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ns0 extends yh.q2 {
     public final /* synthetic */ xv0 U;
@@ -19,7 +19,7 @@ public final class ns0 extends yh.q2 {
         xv0 xv0Var = this.U;
         TextView textView = xv0Var.q0;
         textView.setVisibility(0);
-        textView.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.4f).scaleY(z10 ? 1.0f : 0.4f).withEndAction(new sn0(2, this, z10)).start();
-        xv0Var.q1(true);
+        textView.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.4f).scaleY(z10 ? 1.0f : 0.4f).withEndAction(new zr0(1, this, z10)).start();
+        xv0Var.r1(true);
     }
 }

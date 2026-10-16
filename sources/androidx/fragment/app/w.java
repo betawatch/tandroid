@@ -17,7 +17,7 @@ import java.util.HashMap;
 import org.telegram.messenger.beta.R;
 import r0.l1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class w extends FrameLayout {
     public final ArrayList a;
@@ -145,13 +145,13 @@ public final class w extends FrameLayout {
             kotlin.jvm.internal.i.d(onApplyWindowInsets, "onApplyWindowInsetsListe…lyWindowInsets(v, insets)");
             g10 = l1.h(null, onApplyWindowInsets);
         } else {
-            g10 = r0.j0.g(this, h);
+            g10 = r0.i0.g(this, h);
         }
         kotlin.jvm.internal.i.d(g10, "if (applyWindowInsetsLis…, insetsCompat)\n        }");
         if (!g10.a.n()) {
             int childCount = getChildCount();
             for (int i10 = 0; i10 < childCount; i10++) {
-                r0.j0.b(getChildAt(i10), g10);
+                r0.i0.b(getChildAt(i10), g10);
             }
         }
         return insets;

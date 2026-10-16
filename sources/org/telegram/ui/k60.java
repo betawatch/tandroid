@@ -25,7 +25,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class k60 extends FrameLayout {
     public int E;
@@ -73,7 +73,7 @@ public final class k60 extends FrameLayout {
         bk0Var.setScaleType(ImageView.ScaleType.CENTER);
         bk0Var.setAnimation(yj0Var);
         bk0Var.setTag(this.r == 0.0d ? 1 : null);
-        addView(bk0Var, w7.a6.a(40.0f, 0.0f, 0.0f, 0.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 16));
+        addView(bk0Var, w7.z5.a(40.0f, 0.0f, 0.0f, 0.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 16));
         yj0Var.P(this.r == 0.0d ? 17 : 34);
         yj0Var.N(yj0Var.f - 1, false, true);
         TextView textView = new TextView(context);
@@ -88,7 +88,7 @@ public final class k60 extends FrameLayout {
         Locale locale = Locale.US;
         textView.setText(((int) (participantVolume > 0.0d ? Math.max(participantVolume, 1.0d) : 0.0d)) + "%");
         textView.setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.dp(43.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(43.0f) : 0, 0);
-        addView(textView, w7.a6.e(-2, -2, (LocaleController.isRTL ? 5 : 3) | 16));
+        addView(textView, w7.z5.e(-2, -2, (LocaleController.isRTL ? 5 : 3) | 16));
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(AndroidUtilities.dp(1.5f));
         paint.setStrokeCap(Paint.Cap.ROUND);

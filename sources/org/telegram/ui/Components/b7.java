@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b7 implements org.telegram.ui.ActionBar.h6 {
     public final /* synthetic */ int a;
@@ -66,21 +66,21 @@ public final /* synthetic */ class b7 implements org.telegram.ui.ActionBar.h6 {
                 }
                 break;
             case 2:
-                ul ulVar = (ul) this.b;
-                ulVar.r.setIconColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.ui, ulVar.a));
-                ulVar.r.B(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.G8, ulVar.a));
-                ulVar.r.G(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.F8, ulVar.a), true);
-                ulVar.r.G(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.E8, ulVar.a), false);
-                if (ulVar.H != null) {
-                    if (!org.telegram.ui.ActionBar.g6.I.q() && AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.d6, ulVar.a)) >= 0.721f) {
-                        if (ulVar.U) {
-                            ulVar.U = false;
-                            ulVar.H.setMapStyle(null);
+                tl tlVar = (tl) this.b;
+                tlVar.r.setIconColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.ui, tlVar.a));
+                tlVar.r.B(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.G8, tlVar.a));
+                tlVar.r.G(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.F8, tlVar.a), true);
+                tlVar.r.G(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.E8, tlVar.a), false);
+                if (tlVar.H != null) {
+                    if (!org.telegram.ui.ActionBar.g6.I.q() && AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.d6, tlVar.a)) >= 0.721f) {
+                        if (tlVar.U) {
+                            tlVar.U = false;
+                            tlVar.H.setMapStyle(null);
                             break;
                         }
-                    } else if (!ulVar.U) {
-                        ulVar.U = true;
-                        ulVar.H.setMapStyle(ApplicationLoader.getMapsProvider().loadRawResourceStyle(ApplicationLoader.applicationContext, R.raw.mapstyle_night));
+                    } else if (!tlVar.U) {
+                        tlVar.U = true;
+                        tlVar.H.setMapStyle(ApplicationLoader.getMapsProvider().loadRawResourceStyle(ApplicationLoader.applicationContext, R.raw.mapstyle_night));
                         break;
                     }
                 }
@@ -98,7 +98,7 @@ public final /* synthetic */ class b7 implements org.telegram.ui.ActionBar.h6 {
                 ((cb0) this.b).Z();
                 break;
             case 5:
-                ((ze0) this.b).s();
+                ((af0) this.b).s();
                 break;
             case 6:
                 ((qh0) this.b).T();
@@ -114,10 +114,10 @@ public final /* synthetic */ class b7 implements org.telegram.ui.ActionBar.h6 {
                 ((Runnable) this.b).run();
                 break;
             case 9:
-                ((ty0) this.b).A0(false);
+                ((uy0) this.b).A0(false);
                 break;
             default:
-                ((h61) this.b).d();
+                ((i61) this.b).d();
                 break;
         }
     }

@@ -36,7 +36,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.ad;
@@ -45,7 +45,7 @@ import org.telegram.ui.Components.m90;
 import org.telegram.ui.PhotoViewer;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class f2 extends FrameLayout implements DownloadController.FileDownloadProgressListener {
     public final int E;
@@ -1090,11 +1090,11 @@ public final class f2 extends FrameLayout implements DownloadController.FileDown
                                     StaticLayout staticLayout7 = this.y;
                                     i15 += staticLayout7.getLineBottom(staticLayout7.getLineCount() - r42);
                                 }
-                                setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.q.z(16.0f, Math.max(AndroidUtilities.dp(52.0f), i15), AndroidUtilities.dp(68.0f)) + (this.h ? 1 : 0));
+                                setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.y(16.0f, Math.max(AndroidUtilities.dp(52.0f), i15), AndroidUtilities.dp(68.0f)) + (this.h ? 1 : 0));
                                 int dp3 = AndroidUtilities.dp(52.0f);
                                 if (LocaleController.isRTL) {
                                     f11 = 8.0f;
-                                    dp = org.telegram.messenger.q.D(8.0f, View.MeasureSpec.getSize(i10), dp3);
+                                    dp = org.telegram.messenger.g0.B(8.0f, View.MeasureSpec.getSize(i10), dp3);
                                 } else {
                                     f11 = 8.0f;
                                     dp = AndroidUtilities.dp(8.0f);
@@ -1113,9 +1113,9 @@ public final class f2 extends FrameLayout implements DownloadController.FileDown
                                     size2 = AndroidUtilities.dp(f7);
                                 }
                                 setMeasuredDimension(size, size2);
-                                int B = yh.B(24.0f, size, 2);
-                                int B2 = yh.B(24.0f, size2, 2);
-                                radialProgress2.q(B, B2, AndroidUtilities.dp(24.0f) + B, AndroidUtilities.dp(24.0f) + B2);
+                                int A = sk.A(24.0f, size, 2);
+                                int A2 = sk.A(24.0f, size2, 2);
+                                radialProgress2.q(A, A2, AndroidUtilities.dp(24.0f) + A, AndroidUtilities.dp(24.0f) + A2);
                                 radialProgress2.setCircleRadius(AndroidUtilities.dp(12.0f));
                                 imageReceiver4.setImageCoords(0.0f, 0.0f, size, size2);
                             }
@@ -1442,7 +1442,7 @@ public final class f2 extends FrameLayout implements DownloadController.FileDown
             aqVar.b(-1, i11, org.telegram.ui.ActionBar.g6.k7);
             aqVar.setDrawUnchecked(false);
             aqVar.setDrawBackgroundAsArc(1);
-            addView(aqVar, w7.a6.a(24.0f, 0.0f, 1.0f, 1.0f, 0.0f, 24, 53));
+            addView(aqVar, w7.z5.a(24.0f, 0.0f, 1.0f, 1.0f, 0.0f, 24, 53));
         }
         setWillNotDraw(false);
     }

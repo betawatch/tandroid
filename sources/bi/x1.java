@@ -7,7 +7,7 @@ import android.view.WindowManager;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.hw0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class x1 extends GestureDetector.SimpleOnGestureListener {
     public float a;
@@ -53,7 +53,7 @@ public final class x1 extends GestureDetector.SimpleOnGestureListener {
         kVar2.a = f7;
         kVar2.b = b2Var.O;
         kVar2.c = true;
-        kVar2.u.i = w7.s.a((f10 / 10.0f) + r9, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - b2Var.K) - AndroidUtilities.dp(16.0f));
+        kVar2.u.i = w7.r.a((f10 / 10.0f) + r9, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - b2Var.K) - AndroidUtilities.dp(16.0f));
         b2Var.Q.h();
         return true;
     }

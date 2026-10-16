@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class p4 extends org.telegram.ui.Components.lm0 {
     public final Context c;
@@ -63,7 +63,7 @@ public final class p4 extends org.telegram.ui.Components.lm0 {
             }
             org.telegram.ui.Cells.ca caVar = (org.telegram.ui.Cells.ca) b1Var.a;
             caVar.setEnabled(z10);
-            caVar.c(LocaleController.getString(R.string.AudioRecorderNoiseSuppression), LocaleController.getString(((ri.j) si.e.c.a()) == ri.j.b ? R.string.AudioRecorderNoiseSuppressionRNNoise : R.string.AudioRecorderNoiseSuppressionOff), false, false);
+            caVar.c(LocaleController.getString(R.string.AudioRecorderNoiseSuppression), LocaleController.getString(((qi.j) si.e.c.a()) == qi.j.b ? R.string.AudioRecorderNoiseSuppressionRNNoise : R.string.AudioRecorderNoiseSuppressionOff), false, false);
         }
     }
 

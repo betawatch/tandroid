@@ -5,14 +5,14 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.ui.Components.b00;
 import org.telegram.ui.Components.fk;
-import org.telegram.ui.Components.ml;
+import org.telegram.ui.Components.ll;
 import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.ni;
 import org.telegram.ui.Components.oj;
-import org.telegram.ui.Components.ul;
+import org.telegram.ui.Components.tl;
 import org.telegram.ui.Components.vn;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class e0 extends b00 {
     public final /* synthetic */ int U;
@@ -62,9 +62,9 @@ public final class e0 extends b00 {
                 w0(fkVar);
                 break;
             case 3:
-                ml mlVar = new ml(this, recyclerView.getContext());
-                mlVar.a = i10;
-                w0(mlVar);
+                ll llVar = new ll(this, recyclerView.getContext());
+                llVar.a = i10;
+                w0(llVar);
                 break;
             default:
                 vn vnVar = new vn(this, recyclerView.getContext());
@@ -75,9 +75,9 @@ public final class e0 extends b00 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e0(ul ulVar, bi.o0 o0Var) {
+    public e0(tl tlVar, bi.o0 o0Var) {
         super(0, 0, o0Var);
         this.U = 3;
-        this.V = ulVar;
+        this.V = tlVar;
     }
 }

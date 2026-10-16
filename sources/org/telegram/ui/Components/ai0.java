@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class ai0 extends AccessibilityNodeProvider {
     public final /* synthetic */ int a = 1;
@@ -74,11 +74,11 @@ public class ai0 extends AccessibilityNodeProvider {
                 }
                 return null;
             default:
-                s0.c I = ((ji.w4) this.b).I(i10);
-                if (I == null) {
+                s0.c Z0 = ((ji.w4) this.b).Z0(i10);
+                if (Z0 == null) {
                     return null;
                 }
-                return I.a;
+                return Z0.a;
         }
     }
 
@@ -97,11 +97,11 @@ public class ai0 extends AccessibilityNodeProvider {
     public AccessibilityNodeInfo findFocus(int i10) {
         switch (this.a) {
             case 1:
-                s0.c P = ((ji.w4) this.b).P(i10);
-                if (P == null) {
+                s0.c c12 = ((ji.w4) this.b).c1(i10);
+                if (c12 == null) {
                     return null;
                 }
-                return P.a;
+                return c12.a;
             default:
                 return super.findFocus(i10);
         }
@@ -147,7 +147,7 @@ public class ai0 extends AccessibilityNodeProvider {
                 }
                 return false;
             default:
-                return ((ji.w4) this.b).U(i10, i11, bundle);
+                return ((ji.w4) this.b).k1(i10, i11, bundle);
         }
     }
 

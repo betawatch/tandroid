@@ -10,7 +10,7 @@ import v7.b8;
 import v7.f8;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class x {
     public static final char[] d = {'\r', '\n'};
@@ -92,7 +92,7 @@ public final class x {
         if (m10 >= 0) {
             return m10;
         }
-        throw new IllegalStateException(i2.d.i(m10, "Top bit not zero: "));
+        throw new IllegalStateException(i2.d.j(m10, "Top bit not zero: "));
     }
 
     public final int F() {
@@ -231,9 +231,9 @@ public final class x {
         if (!g.get() || a() >= i10) {
             return;
         }
-        StringBuilder k10 = i2.d.k(i10, "bytesNeeded= ", ", bytesLeft=");
-        k10.append(a());
-        throw new IndexOutOfBoundsException(k10.toString());
+        StringBuilder l4 = i2.d.l(i10, "bytesNeeded= ", ", bytesLeft=");
+        l4.append(a());
+        throw new IndexOutOfBoundsException(l4.toString());
     }
 
     public final char g(int i10, ByteOrder byteOrder) {
@@ -479,7 +479,7 @@ public final class x {
         if (o10 >= 0) {
             return o10;
         }
-        throw new IllegalStateException(i2.d.i(o10, "Top bit not zero: "));
+        throw new IllegalStateException(i2.d.j(o10, "Top bit not zero: "));
     }
 
     public final int t() {

@@ -19,11 +19,11 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import n6.l;
-import org.telegram.ui.Wallet.m5;
+import p4.s0;
 import u6.e;
 import u6.f;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class a {
     public static final long n = TimeUnit.DAYS.toMillis(366);
@@ -142,7 +142,7 @@ public final class a {
                     if (scheduledFuture != null) {
                         scheduledFuture.cancel(false);
                     }
-                    this.d = this.m.schedule(new m5(this, 2), max, TimeUnit.MILLISECONDS);
+                    this.d = this.m.schedule(new s0(this, 1), max, TimeUnit.MILLISECONDS);
                 }
             } catch (Throwable th2) {
                 throw th2;

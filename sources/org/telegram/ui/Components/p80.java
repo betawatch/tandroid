@@ -1,75 +1,56 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AccountInstance;
+import android.content.Context;
+import android.view.View;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p80 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+public final class p80 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ v80 b;
 
-    public /* synthetic */ p80(Object obj, Object obj2, Object obj3, long j10, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.e = obj3;
-        this.b = j10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p80(v80 v80Var, Context context) {
+        super(context);
+        this.b = v80Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.f((org.telegram.ui.ActionBar.a2) this.c, tLObject, this.b, (AccountInstance) this.d, (MessagesStorage.BooleanCallback) this.e, 5));
-                break;
-            case 1:
-                AndroidUtilities.runOnUIThread(new bi.q9((org.telegram.ui.ActionBar.m2) this.c, tLObject, (MessagesController.DialogFilter) this.d, tL_error, (Runnable) this.e, this.b, 3));
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.f((zh.p) this.d, (org.telegram.ui.ActionBar.a2) this.c, tLObject, this.b, (Utilities.Callback) this.e));
-                break;
-            case 3:
-                AndroidUtilities.runOnUIThread(new bi.q9((zh.r3) this.c, tLObject, (String) this.d, (TL_stars.InputSavedStarGift) this.e, tL_error, this.b, 4));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.f((zh.n5) this.c, tLObject, (MessageObject) this.d, this.b, (Runnable) this.e, 10));
-                break;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        v80 v80Var = this.b;
+        ArrayList arrayList = v80Var.h;
+        if (v80Var.s == 0) {
+            int size = View.MeasureSpec.getSize(i10);
+            int dp = AndroidUtilities.dp(95.0f) * arrayList.size();
+            LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) v80Var.d.getLayoutParams();
+            if (dp > size) {
+                layoutParams.width = -1;
+                layoutParams.gravity = 51;
+                if (!this.a) {
+                    TLRPC.Peer peer = v80Var.v;
+                    if (peer != null) {
+                        arrayList.remove(peer);
+                        arrayList.add(0, v80Var.v);
+                    }
+                    this.a = true;
+                }
+            } else {
+                layoutParams.width = -2;
+                layoutParams.gravity = 49;
+                if (!this.a) {
+                    if (v80Var.v != null) {
+                        int max = arrayList.size() % 2 == 0 ? Math.max(0, (arrayList.size() / 2) - 1) : arrayList.size() / 2;
+                        arrayList.remove(v80Var.v);
+                        arrayList.add(max, v80Var.v);
+                    }
+                    this.a = true;
+                }
+            }
         }
-    }
-
-    public /* synthetic */ p80(org.telegram.ui.ActionBar.a2 a2Var, long j10, AccountInstance accountInstance, MessagesStorage.BooleanCallback booleanCallback) {
-        this.a = 0;
-        this.c = a2Var;
-        this.b = j10;
-        this.d = accountInstance;
-        this.e = booleanCallback;
-    }
-
-    public /* synthetic */ p80(zh.p pVar, org.telegram.ui.ActionBar.a2 a2Var, long j10, Utilities.Callback callback) {
-        this.a = 2;
-        this.d = pVar;
-        this.c = a2Var;
-        this.b = j10;
-        this.e = callback;
-    }
-
-    public /* synthetic */ p80(zh.n5 n5Var, MessageObject messageObject, long j10, Runnable runnable) {
-        this.a = 4;
-        this.c = n5Var;
-        this.d = messageObject;
-        this.b = j10;
-        this.e = runnable;
+        super.onMeasure(i10, i11);
     }
 }

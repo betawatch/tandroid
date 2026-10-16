@@ -1,269 +1,284 @@
 package org.telegram.ui;
 
-import android.app.Dialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.graphics.drawable.Drawable;
-import android.text.style.ClickableSpan;
-import android.text.style.URLSpan;
-import android.widget.TextView;
+import android.os.Bundle;
+import android.text.TextUtils;
+import j$.util.Objects;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tg0 implements Utilities.Callback3 {
+public final /* synthetic */ class tg0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+    public final /* synthetic */ zg0 b;
 
-    public /* synthetic */ tg0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
+    public /* synthetic */ tg0(zg0 zg0Var, int i10) {
         this.a = i10;
-        this.b = notificationCenterDelegate;
+        this.b = zg0Var;
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(9:12|(9:14|15|16|17|(1:19)(2:27|(1:29)(2:(1:64)(6:35|(1:45)|46|(2:48|(1:50)(2:51|(1:53)))|54|(2:56|(1:58))(2:60|(1:63)))|59))|20|21|22|23)|67|17|(0)(0)|20|21|22|23) */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0074  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x007f  */
-    /* JADX WARN: Type inference failed for: r16v3 */
-    /* JADX WARN: Type inference failed for: r16v4 */
-    /* JADX WARN: Type inference failed for: r16v5 */
-    /* JADX WARN: Type inference failed for: r16v6 */
-    @Override // org.telegram.messenger.Utilities.Callback3
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run(Object obj, Object obj2, Object obj3) {
-        int i10;
-        int i11;
-        boolean z10;
-        final boolean z11;
-        final String str;
-        MessageObject messageObject;
-        MessageObject messageObject2;
-        boolean z12;
-        int i12 = this.a;
-        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.b;
-        switch (i12) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        switch (this.a) {
             case 0:
-                ah0 ah0Var = (ah0) notificationCenterDelegate;
-                Long l4 = (Long) obj;
-                TLRPC.auth_Authorization auth_authorization = (TLRPC.auth_Authorization) obj2;
-                String str2 = (String) obj3;
-                org.telegram.ui.Components.da0 da0Var = ah0Var.n;
-                bh0 bh0Var = ah0Var.V;
-                ah0Var.U = null;
-                ah0Var.T = false;
-                if (str2 == null || (!"EMPTY".equals(str2) && !"CANCELLED".equals(str2))) {
-                    if (l4.longValue() != 0 && (bh0Var.getParentActivity() instanceof LaunchActivity)) {
-                        for (int i13 = 0; i13 < 4; i13++) {
-                            UserConfig userConfig = UserConfig.getInstance(i13);
-                            if (userConfig.isClientActivated() && userConfig.getClientUserId() == l4.longValue() && ConnectionsManager.getInstance(i13).isTestBackend() == bh0Var.E) {
-                                if (UserConfig.selectedAccount != i13) {
-                                    ((LaunchActivity) bh0Var.getParentActivity()).K0(i13);
-                                }
-                                bh0Var.finishFragment();
-                                bh0Var.k1(false, true);
-                                break;
-                            }
-                        }
-                    }
-                    if (str2 == null || !str2.contains("SESSION_PASSWORD_NEEDED")) {
-                        if (str2 != null) {
-                            if (BuildVars.DEBUG_VERSION) {
-                                org.telegram.ui.Components.zc.a0(bh0Var).e0(str2, false);
-                                break;
-                            }
-                        }
-                    } else {
-                        TL_account.getPassword getpassword = new TL_account.getPassword();
-                        i10 = ((org.telegram.ui.ActionBar.m2) bh0Var).currentAccount;
-                        ConnectionsManager.getInstance(i10).sendRequest(getpassword, new ug0(ah0Var, 1), 10);
-                    }
-                    if (auth_authorization instanceof TLRPC.TL_auth_authorization) {
-                        bh0Var.o1((TLRPC.TL_auth_authorization) auth_authorization, false);
-                        break;
-                    }
-                } else if (da0Var != null && "CANCELLED".equals(str2)) {
-                    da0Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StartTextPasskey), new qg0(ah0Var, 3)), true));
-                    break;
-                }
-                break;
-            case 1:
-                final PhotoViewer photoViewer = (PhotoViewer) notificationCenterDelegate;
-                final ClickableSpan clickableSpan = (ClickableSpan) obj;
-                final TextView textView = (TextView) obj2;
-                Runnable runnable = (Runnable) obj3;
-                Drawable[] drawableArr = PhotoViewer.U8;
-                if (clickableSpan instanceof URLSpan) {
-                    String url = ((URLSpan) clickableSpan).getURL();
-                    org.telegram.ui.ActionBar.e3 e3Var = new org.telegram.ui.ActionBar.e3(1, (Context) photoViewer.y, photoViewer.v2, false);
-                    e3Var.setBackgroundColor(-14933463);
-                    e3Var.fixNavigationBar(-14933463);
-                    if (url.startsWith("video?")) {
-                        try {
-                            i11 = Integer.parseInt(url.substring(url.indexOf(63) + 1));
-                        } catch (Throwable unused) {
-                        }
-                        if (!url.startsWith("mailto:")) {
-                            z11 = false;
-                            str = url.substring(7);
-                            z12 = 1;
-                        } else if (url.startsWith("tel:")) {
-                            str = url.substring(4);
-                            z11 = true;
-                            z12 = 1;
-                        } else {
-                            if (i11 < 0 || (messageObject = photoViewer.T4) == null || messageObject.scheduled) {
-                                z10 = true;
-                            } else {
-                                if (!messageObject.isVideo() && !photoViewer.T4.isRoundVideo() && !photoViewer.T4.isVoice() && !photoViewer.T4.isMusic() && (messageObject2 = photoViewer.T4.replyMessageObject) != null) {
-                                    messageObject = messageObject2;
-                                }
-                                long dialogId = messageObject.getDialogId();
-                                int id2 = messageObject.getId();
-                                TLRPC.MessageFwdHeader messageFwdHeader = messageObject.messageOwner.fwd_from;
-                                if (messageFwdHeader != null) {
-                                    TLRPC.Peer peer = messageFwdHeader.saved_from_peer;
-                                    if (peer != null) {
-                                        dialogId = MessageObject.getPeerId(peer);
-                                        id2 = messageObject.messageOwner.fwd_from.saved_from_msg_id;
-                                    } else {
-                                        TLRPC.Peer peer2 = messageFwdHeader.from_id;
-                                        if (peer2 != null) {
-                                            dialogId = MessageObject.getPeerId(peer2);
-                                            id2 = messageObject.messageOwner.fwd_from.channel_post;
+                final int i10 = 0;
+                final zg0 zg0Var = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ug0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i11;
+                        au auVar;
+                        switch (i10) {
+                            case 0:
+                                zg0 zg0Var2 = zg0Var;
+                                fk0 fk0Var = zg0Var2.a;
+                                HashMap hashMap = zg0Var2.G;
+                                ArrayList arrayList = zg0Var2.E;
+                                HashMap hashMap2 = zg0Var2.F;
+                                if (tL_error == null) {
+                                    arrayList.clear();
+                                    hashMap2.clear();
+                                    hashMap.clear();
+                                    TLRPC.TL_help_countriesList tL_help_countriesList = (TLRPC.TL_help_countriesList) tLObject;
+                                    for (int i12 = 0; i12 < tL_help_countriesList.countries.size(); i12++) {
+                                        TLRPC.TL_help_country tL_help_country = tL_help_countriesList.countries.get(i12);
+                                        for (int i13 = 0; i13 < tL_help_country.country_codes.size(); i13++) {
+                                            TLRPC.TL_help_countryCode tL_help_countryCode = tL_help_country.country_codes.get(i13);
+                                            if (tL_help_countryCode != null) {
+                                                au auVar2 = new au();
+                                                String str = tL_help_country.name;
+                                                auVar2.a = str;
+                                                String str2 = tL_help_country.default_name;
+                                                auVar2.b = str2;
+                                                if (str == null && str2 != null) {
+                                                    auVar2.a = str2;
+                                                }
+                                                auVar2.c = tL_help_countryCode.country_code;
+                                                auVar2.d = tL_help_country.iso2;
+                                                arrayList.add(auVar2);
+                                                List list = (List) hashMap2.get(tL_help_countryCode.country_code);
+                                                if (list == null) {
+                                                    String str3 = tL_help_countryCode.country_code;
+                                                    ArrayList arrayList2 = new ArrayList();
+                                                    hashMap2.put(str3, arrayList2);
+                                                    list = arrayList2;
+                                                }
+                                                list.add(auVar2);
+                                                if (tL_help_countryCode.patterns.size() > 0) {
+                                                    hashMap.put(tL_help_countryCode.country_code, tL_help_countryCode.patterns);
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ah0 ah0Var = zg0Var2.V;
+                                    if (ah0Var.F == 2) {
+                                        i11 = ((org.telegram.ui.ActionBar.m2) ah0Var).currentAccount;
+                                        String d = jf.b.d(UserConfig.getInstance(i11).getClientPhone(), false);
+                                        if (!TextUtils.isEmpty(d)) {
+                                            if (d.length() > 4) {
+                                                for (int i14 = 4; i14 >= 1; i14--) {
+                                                    String substring = d.substring(0, i14);
+                                                    List list2 = (List) hashMap2.get(substring);
+                                                    au auVar3 = null;
+                                                    if (list2 != null) {
+                                                        if (list2.size() > 1) {
+                                                            String string = MessagesController.getGlobalMainSettings().getString("phone_code_last_matched_" + substring, null);
+                                                            if (string != null) {
+                                                                auVar = (au) t8.b.g(1, list2);
+                                                                int size = arrayList.size();
+                                                                int i15 = 0;
+                                                                while (true) {
+                                                                    if (i15 < size) {
+                                                                        Object obj = arrayList.get(i15);
+                                                                        i15++;
+                                                                        au auVar4 = (au) obj;
+                                                                        if (Objects.equals(auVar4.d, string)) {
+                                                                            auVar = auVar4;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            } else {
+                                                                auVar = (au) t8.b.g(1, list2);
+                                                            }
+                                                            auVar3 = auVar;
+                                                        } else {
+                                                            auVar3 = (au) list2.get(0);
+                                                        }
+                                                    }
+                                                    if (auVar3 != null) {
+                                                        fk0Var.setText(substring);
+                                                        break;
+                                                    }
+                                                }
+                                                fk0Var.setText(d.substring(0, 1));
+                                                break;
+                                            }
                                         }
                                     }
                                 }
-                                boolean z13 = true;
-                                if (DialogObject.isChatDialog(dialogId)) {
-                                    String publicUsername = ChatObject.getPublicUsername(MessagesController.getInstance(photoViewer.T).getChat(Long.valueOf(-dialogId)));
-                                    z10 = z13;
-                                    if (publicUsername != null) {
-                                        url = "https://t.me/" + publicUsername + "/" + id2 + "?t=" + AndroidUtilities.formatTimestamp(i11);
-                                        z10 = z13;
+                                break;
+                            default:
+                                zg0 zg0Var3 = zg0Var;
+                                zg0Var3.K = false;
+                                ah0 ah0Var2 = zg0Var3.V;
+                                ah0Var2.v1(false, true);
+                                TLRPC.TL_error tL_error2 = tL_error;
+                                if (tL_error2 == null) {
+                                    TL_account.Password password = (TL_account.Password) tLObject;
+                                    if (TwoStepVerificationActivity.i0(password, true)) {
+                                        Bundle bundle = new Bundle();
+                                        SerializedData serializedData = new SerializedData(password.getObjectSize());
+                                        password.serializeToStream(serializedData);
+                                        bundle.putString("password", Utilities.bytesToHex(serializedData.toByteArray()));
+                                        ah0Var2.u1(6, true, bundle, false);
+                                        break;
+                                    } else {
+                                        org.telegram.ui.Components.g5.w0(ah0Var2.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
+                                        break;
                                     }
                                 } else {
-                                    TLRPC.User user = MessagesController.getInstance(photoViewer.T).getUser(Long.valueOf(dialogId));
-                                    String publicUsername2 = UserObject.getPublicUsername(user);
-                                    z10 = z13;
-                                    z10 = z13;
-                                    if (user != null && publicUsername2 != null) {
-                                        url = "https://t.me/" + publicUsername2 + "/" + id2 + "?t=" + AndroidUtilities.formatTimestamp(i11);
-                                        z10 = z13;
-                                    }
+                                    ah0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error2.text);
+                                    break;
                                 }
-                            }
-                            z11 = false;
-                            str = url;
-                            z12 = z10;
                         }
-                        e3Var.title = str;
-                        e3Var.bigTitle = false;
-                        String string = LocaleController.getString(R.string.Open);
-                        String string2 = LocaleController.getString(R.string.CopyLink);
-                        CharSequence[] charSequenceArr = new CharSequence[2];
-                        charSequenceArr[0] = string;
-                        charSequenceArr[z12] = string2;
-                        DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.xr0
-                            @Override // android.content.DialogInterface.OnClickListener
-                            public final void onClick(DialogInterface dialogInterface, int i14) {
-                                Drawable[] drawableArr2 = PhotoViewer.U8;
-                                PhotoViewer photoViewer2 = PhotoViewer.this;
-                                if (i14 == 0) {
-                                    photoViewer2.X1(clickableSpan, textView);
-                                    return;
-                                }
-                                if (i14 == 1) {
-                                    String str3 = str;
-                                    AndroidUtilities.addToClipboard(str3);
-                                    String string3 = z11 ? LocaleController.getString("PhoneCopied", R.string.PhoneCopied) : str3.startsWith("#") ? LocaleController.getString("HashtagCopied", R.string.HashtagCopied) : str3.startsWith("@") ? LocaleController.getString("UsernameCopied", R.string.UsernameCopied) : LocaleController.getString("LinkCopied", R.string.LinkCopied);
-                                    if (AndroidUtilities.shouldShowClipboardToast()) {
-                                        new org.telegram.ui.Components.zc(photoViewer2.e0, photoViewer2.v2).Q(R.raw.voip_invite, 36, string3).j();
-                                    }
-                                }
-                            }
-                        };
-                        e3Var.items = charSequenceArr;
-                        e3Var.onClickListener = onClickListener;
-                        e3Var.setOnHideListener(new v5(runnable, 11));
-                        e3Var.scrollNavBar = z12;
-                        e3Var.show();
-                        photoViewer.e0.performHapticFeedback(0, 2);
-                        e3Var.setItemColor(0, -1, -1);
-                        e3Var.setItemColor(1, -1, -1);
-                        e3Var.setBackgroundColor(-14933463);
-                        e3Var.setTitleColor(-7697782);
-                        e3Var.setCalcMandatoryInsets(true);
-                        AndroidUtilities.setNavigationBarColor((Dialog) e3Var, -14933463, false);
-                        AndroidUtilities.setLightNavigationBar((Dialog) e3Var, false);
-                        e3Var.scrollNavBar = true;
-                        break;
                     }
-                    i11 = -1;
-                    if (!url.startsWith("mailto:")) {
-                    }
-                    e3Var.title = str;
-                    e3Var.bigTitle = false;
-                    String string3 = LocaleController.getString(R.string.Open);
-                    String string22 = LocaleController.getString(R.string.CopyLink);
-                    CharSequence[] charSequenceArr2 = new CharSequence[2];
-                    charSequenceArr2[0] = string3;
-                    charSequenceArr2[z12] = string22;
-                    DialogInterface.OnClickListener onClickListener2 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.xr0
-                        @Override // android.content.DialogInterface.OnClickListener
-                        public final void onClick(DialogInterface dialogInterface, int i14) {
-                            Drawable[] drawableArr2 = PhotoViewer.U8;
-                            PhotoViewer photoViewer2 = PhotoViewer.this;
-                            if (i14 == 0) {
-                                photoViewer2.X1(clickableSpan, textView);
-                                return;
-                            }
-                            if (i14 == 1) {
-                                String str3 = str;
-                                AndroidUtilities.addToClipboard(str3);
-                                String string32 = z11 ? LocaleController.getString("PhoneCopied", R.string.PhoneCopied) : str3.startsWith("#") ? LocaleController.getString("HashtagCopied", R.string.HashtagCopied) : str3.startsWith("@") ? LocaleController.getString("UsernameCopied", R.string.UsernameCopied) : LocaleController.getString("LinkCopied", R.string.LinkCopied);
-                                if (AndroidUtilities.shouldShowClipboardToast()) {
-                                    new org.telegram.ui.Components.zc(photoViewer2.e0, photoViewer2.v2).Q(R.raw.voip_invite, 36, string32).j();
-                                }
-                            }
-                        }
-                    };
-                    e3Var.items = charSequenceArr2;
-                    e3Var.onClickListener = onClickListener2;
-                    e3Var.setOnHideListener(new v5(runnable, 11));
-                    e3Var.scrollNavBar = z12;
-                    e3Var.show();
-                    photoViewer.e0.performHapticFeedback(0, 2);
-                    e3Var.setItemColor(0, -1, -1);
-                    e3Var.setItemColor(1, -1, -1);
-                    e3Var.setBackgroundColor(-14933463);
-                    e3Var.setTitleColor(-7697782);
-                    e3Var.setCalcMandatoryInsets(true);
-                    AndroidUtilities.setNavigationBarColor((Dialog) e3Var, -14933463, false);
-                    AndroidUtilities.setLightNavigationBar((Dialog) e3Var, false);
-                    e3Var.scrollNavBar = true;
-                } else if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
+                });
                 break;
             default:
-                ((SecretMediaViewer) notificationCenterDelegate).getClass();
+                final int i11 = 1;
+                final zg0 zg0Var2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ug0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i112;
+                        au auVar;
+                        switch (i11) {
+                            case 0:
+                                zg0 zg0Var22 = zg0Var2;
+                                fk0 fk0Var = zg0Var22.a;
+                                HashMap hashMap = zg0Var22.G;
+                                ArrayList arrayList = zg0Var22.E;
+                                HashMap hashMap2 = zg0Var22.F;
+                                if (tL_error == null) {
+                                    arrayList.clear();
+                                    hashMap2.clear();
+                                    hashMap.clear();
+                                    TLRPC.TL_help_countriesList tL_help_countriesList = (TLRPC.TL_help_countriesList) tLObject;
+                                    for (int i12 = 0; i12 < tL_help_countriesList.countries.size(); i12++) {
+                                        TLRPC.TL_help_country tL_help_country = tL_help_countriesList.countries.get(i12);
+                                        for (int i13 = 0; i13 < tL_help_country.country_codes.size(); i13++) {
+                                            TLRPC.TL_help_countryCode tL_help_countryCode = tL_help_country.country_codes.get(i13);
+                                            if (tL_help_countryCode != null) {
+                                                au auVar2 = new au();
+                                                String str = tL_help_country.name;
+                                                auVar2.a = str;
+                                                String str2 = tL_help_country.default_name;
+                                                auVar2.b = str2;
+                                                if (str == null && str2 != null) {
+                                                    auVar2.a = str2;
+                                                }
+                                                auVar2.c = tL_help_countryCode.country_code;
+                                                auVar2.d = tL_help_country.iso2;
+                                                arrayList.add(auVar2);
+                                                List list = (List) hashMap2.get(tL_help_countryCode.country_code);
+                                                if (list == null) {
+                                                    String str3 = tL_help_countryCode.country_code;
+                                                    ArrayList arrayList2 = new ArrayList();
+                                                    hashMap2.put(str3, arrayList2);
+                                                    list = arrayList2;
+                                                }
+                                                list.add(auVar2);
+                                                if (tL_help_countryCode.patterns.size() > 0) {
+                                                    hashMap.put(tL_help_countryCode.country_code, tL_help_countryCode.patterns);
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ah0 ah0Var = zg0Var22.V;
+                                    if (ah0Var.F == 2) {
+                                        i112 = ((org.telegram.ui.ActionBar.m2) ah0Var).currentAccount;
+                                        String d = jf.b.d(UserConfig.getInstance(i112).getClientPhone(), false);
+                                        if (!TextUtils.isEmpty(d)) {
+                                            if (d.length() > 4) {
+                                                for (int i14 = 4; i14 >= 1; i14--) {
+                                                    String substring = d.substring(0, i14);
+                                                    List list2 = (List) hashMap2.get(substring);
+                                                    au auVar3 = null;
+                                                    if (list2 != null) {
+                                                        if (list2.size() > 1) {
+                                                            String string = MessagesController.getGlobalMainSettings().getString("phone_code_last_matched_" + substring, null);
+                                                            if (string != null) {
+                                                                auVar = (au) t8.b.g(1, list2);
+                                                                int size = arrayList.size();
+                                                                int i15 = 0;
+                                                                while (true) {
+                                                                    if (i15 < size) {
+                                                                        Object obj = arrayList.get(i15);
+                                                                        i15++;
+                                                                        au auVar4 = (au) obj;
+                                                                        if (Objects.equals(auVar4.d, string)) {
+                                                                            auVar = auVar4;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            } else {
+                                                                auVar = (au) t8.b.g(1, list2);
+                                                            }
+                                                            auVar3 = auVar;
+                                                        } else {
+                                                            auVar3 = (au) list2.get(0);
+                                                        }
+                                                    }
+                                                    if (auVar3 != null) {
+                                                        fk0Var.setText(substring);
+                                                        break;
+                                                    }
+                                                }
+                                                fk0Var.setText(d.substring(0, 1));
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                                break;
+                            default:
+                                zg0 zg0Var3 = zg0Var2;
+                                zg0Var3.K = false;
+                                ah0 ah0Var2 = zg0Var3.V;
+                                ah0Var2.v1(false, true);
+                                TLRPC.TL_error tL_error2 = tL_error;
+                                if (tL_error2 == null) {
+                                    TL_account.Password password = (TL_account.Password) tLObject;
+                                    if (TwoStepVerificationActivity.i0(password, true)) {
+                                        Bundle bundle = new Bundle();
+                                        SerializedData serializedData = new SerializedData(password.getObjectSize());
+                                        password.serializeToStream(serializedData);
+                                        bundle.putString("password", Utilities.bytesToHex(serializedData.toByteArray()));
+                                        ah0Var2.u1(6, true, bundle, false);
+                                        break;
+                                    } else {
+                                        org.telegram.ui.Components.g5.w0(ah0Var2.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
+                                        break;
+                                    }
+                                } else {
+                                    ah0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error2.text);
+                                    break;
+                                }
+                        }
+                    }
+                });
                 break;
         }
     }

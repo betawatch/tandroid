@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -84,7 +84,7 @@ public final /* synthetic */ class x8 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new org.telegram.messenger.b6((ExternalActionActivity) obj6, (org.telegram.ui.ActionBar.a2) obj5, tLObject, this.b, (TL_account.authorizationForm) obj4, (TL_account.getAuthorizationForm) obj3, (String) obj2, (String) obj));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.ob((kg0) obj6, tLObject, tL_error, (c5.l) obj5, this.b, (c5.p) obj4, (TLRPC.TL_inputStorePaymentAuthCode) obj3, (String) obj2, (TLRPC.TL_payments_canPurchaseStore) obj));
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.ob((jg0) obj6, tLObject, tL_error, (c5.l) obj5, this.b, (c5.p) obj4, (TLRPC.TL_inputStorePaymentAuthCode) obj3, (String) obj2, (TLRPC.TL_payments_canPurchaseStore) obj));
                 break;
         }
     }

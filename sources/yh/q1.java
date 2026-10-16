@@ -1,9 +1,9 @@
 package yh;
 
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.r01;
+import org.telegram.ui.q01;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q1 implements Runnable {
     public final /* synthetic */ int a;
@@ -25,9 +25,9 @@ public final /* synthetic */ class q1 implements Runnable {
                 break;
             default:
                 ProfileActivity profileActivity = this.b;
-                r01 r01Var = profileActivity.O;
-                if (r01Var != null) {
-                    r01Var.Y0(14);
+                q01 q01Var = profileActivity.O;
+                if (q01Var != null) {
+                    q01Var.Z0(14);
                     profileActivity.G4(false);
                     break;
                 }

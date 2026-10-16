@@ -1,17 +1,17 @@
 package rg;
 
-import org.telegram.ui.hu0;
-import org.telegram.ui.or0;
+import org.telegram.ui.gu0;
+import org.telegram.ui.mr0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class e0 implements qg.b1 {
-    public final /* synthetic */ or0 a;
-    public final /* synthetic */ hu0 b;
+    public final /* synthetic */ mr0 a;
+    public final /* synthetic */ gu0 b;
 
-    public e0(hu0 hu0Var, or0 or0Var) {
-        this.b = hu0Var;
-        this.a = or0Var;
+    public e0(gu0 gu0Var, mr0 mr0Var) {
+        this.b = gu0Var;
+        this.a = mr0Var;
     }
 
     @Override // qg.b1
@@ -29,38 +29,38 @@ public final class e0 implements qg.b1 {
 
     @Override // qg.b1
     public final void c() {
-        hu0 hu0Var = this.b;
-        if (hu0Var.k1) {
-            hu0Var.k1 = false;
+        gu0 gu0Var = this.b;
+        if (gu0Var.k1) {
+            gu0Var.k1 = false;
         } else {
-            hu0Var.t1.b(1);
-            hu0Var.o((qg.m) qg.m.a.get(0));
+            gu0Var.t1.b(1);
+            gu0Var.o((qg.m) qg.m.a.get(0));
         }
     }
 
     @Override // qg.b1
     public final boolean d() {
-        hu0 hu0Var = this.b;
-        boolean z10 = hu0Var.S0 == null;
+        gu0 gu0Var = this.b;
+        boolean z10 = gu0Var.S0 == null;
         if (!z10) {
-            hu0Var.s0(null, true);
+            gu0Var.s0(null, true);
         }
         return z10;
     }
 
     @Override // qg.b1
     public final void e() {
-        hu0 hu0Var = this.b;
-        hu0Var.F0.a.f();
-        hu0Var.l1.setViewHidden(false);
+        gu0 gu0Var = this.b;
+        gu0Var.F0.a.e();
+        gu0Var.l1.setViewHidden(false);
     }
 
     @Override // qg.b1
     public final void f() {
-        hu0 hu0Var = this.b;
-        if (hu0Var.S0 != null) {
-            hu0Var.s0(null, true);
+        gu0 gu0Var = this.b;
+        if (gu0Var.S0 != null) {
+            gu0Var.s0(null, true);
         }
-        hu0Var.l1.setViewHidden(true);
+        gu0Var.l1.setViewHidden(true);
     }
 }

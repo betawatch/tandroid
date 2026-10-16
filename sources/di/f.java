@@ -2,7 +2,7 @@ package di;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class f extends eh.b {
     public final /* synthetic */ int n;
@@ -14,7 +14,7 @@ public final class f extends eh.b {
     }
 
     @Override // eh.b, eh.a
-    public int G() {
+    public int J() {
         switch (this.n) {
             case 2:
                 if (a()) {
@@ -22,7 +22,7 @@ public final class f extends eh.b {
                 }
                 return TLObject.FLAG_29;
             default:
-                return super.G();
+                return super.J();
         }
     }
 
@@ -39,17 +39,17 @@ public final class f extends eh.b {
     }
 
     @Override // eh.b, eh.a
-    public int h() {
+    public int k() {
         switch (this.n) {
             case 2:
                 return a() ? 117440511 : 285212672;
             default:
-                return super.h();
+                return super.k();
         }
     }
 
     @Override // eh.b, eh.a
-    public int q() {
+    public int w() {
         switch (this.n) {
             case 2:
                 if (a()) {
@@ -57,7 +57,7 @@ public final class f extends eh.b {
                 }
                 return TLObject.FLAG_29;
             default:
-                return super.q();
+                return super.w();
         }
     }
 

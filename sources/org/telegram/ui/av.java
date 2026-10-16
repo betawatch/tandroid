@@ -18,7 +18,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.StatsController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class av extends org.telegram.ui.Components.mm0 {
     public static final /* synthetic */ int n3 = 0;
@@ -202,7 +202,7 @@ public final class av extends org.telegram.ui.Components.mm0 {
                     format = String.format("%d%%", objArr2);
                 }
                 SpannableString spannableString = new SpannableString(format);
-                spannableString.setSpan(new org.telegram.ui.Components.i61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
+                spannableString.setSpan(new org.telegram.ui.Components.j61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
                 spannableString.setSpan(new RelativeSizeSpan(0.8f), 0, spannableString.length(), 33);
                 uu uuVar = new uu();
                 i12 = i13;

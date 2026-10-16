@@ -11,7 +11,7 @@ import android.widget.TextView;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class l6 extends LinearLayout {
     public final TextView a;
@@ -34,7 +34,7 @@ public final class l6 extends LinearLayout {
         setBackground(org.telegram.ui.ActionBar.g6.g0(org.telegram.ui.ActionBar.g6.w0(i10, c6Var), 2, -1));
         ah.v vVar = new ah.v(this, context);
         this.b = vVar;
-        addView(vVar, w7.a6.t(-2, -2, 19, 16, 0, 16, 0));
+        addView(vVar, w7.z5.t(-2, -2, 19, 16, 0, 16, 0));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
@@ -42,25 +42,25 @@ public final class l6 extends LinearLayout {
         ImageView imageView2 = this.c;
         int i11 = org.telegram.ui.ActionBar.g6.E8;
         imageView2.setColorFilter(org.telegram.ui.ActionBar.g6.w0(i11, c6Var));
-        vVar.addView(this.c, w7.a6.e(-2, -2, 17));
+        vVar.addView(this.c, w7.z5.e(-2, -2, 17));
         ImageView imageView3 = new ImageView(context);
         this.d = imageView3;
         imageView3.setScaleType(scaleType);
         this.d.setColorFilter(org.telegram.ui.ActionBar.g6.w0(i11, c6Var));
         this.d.setVisibility(8);
-        vVar.addView(this.d, w7.a6.e(-2, -2, 17));
+        vVar.addView(this.d, w7.z5.e(-2, -2, 17));
         TextView textView = new TextView(context);
         this.a = textView;
         textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(i11, c6Var));
         textView.setTextSize(1, 16.0f);
-        addView(textView, w7.a6.t(-2, -2, 19, 0, 0, 16, 0));
+        addView(textView, w7.z5.t(-2, -2, 19, 0, 0, 16, 0));
         ImageView imageView4 = new ImageView(context);
         this.n = imageView4;
         imageView4.setImageResource(R.drawable.msg_text_check);
         imageView4.setScaleType(scaleType);
         imageView4.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.h7, c6Var), PorterDuff.Mode.MULTIPLY));
         imageView4.setVisibility(8);
-        addView(imageView4, w7.a6.n(50, -1));
+        addView(imageView4, w7.z5.n(50, -1));
     }
 
     public final void a(int i10, boolean z10, boolean z11) {

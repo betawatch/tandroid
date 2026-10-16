@@ -5,19 +5,19 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.Components.f10;
-import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.l61;
 import org.telegram.ui.Components.mm0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes3.dex */
-public final class o extends k61 {
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
+public final class o extends l61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        k61.setup(new o());
+        l61.setup(new o());
     }
 
-    @Override // org.telegram.ui.Components.k61
+    @Override // org.telegram.ui.Components.l61
     public final View createView(Context context, mm0 mm0Var, int i10, int i11, c6 c6Var) {
         f10 f10Var = new f10(context, null);
         f10Var.setViewType(16);

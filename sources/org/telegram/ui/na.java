@@ -5,7 +5,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class na implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -59,28 +59,28 @@ public final /* synthetic */ class na implements TextView.OnEditorActionListener
             case 4:
                 return i10 == 6 && ((j70) this.b).o0();
             case 5:
-                ue0 ue0Var = (ue0) this.b;
+                te0 te0Var = (te0) this.b;
                 if (i10 == 5) {
-                    ue0Var.h(null);
+                    te0Var.h(null);
                     return true;
                 }
-                ue0Var.getClass();
+                te0Var.getClass();
                 return false;
             case 6:
-                cf0 cf0Var = (cf0) this.b;
+                bf0 bf0Var = (bf0) this.b;
                 if (i10 == 5) {
-                    cf0Var.h(null);
+                    bf0Var.h(null);
                     return true;
                 }
-                cf0Var.getClass();
+                bf0Var.getClass();
                 return false;
             case 7:
-                qf0 qf0Var = (qf0) this.b;
+                pf0 pf0Var = (pf0) this.b;
                 if (i10 == 5) {
-                    qf0Var.h(null);
+                    pf0Var.h(null);
                     return true;
                 }
-                qf0Var.getClass();
+                pf0Var.getClass();
                 return false;
             case 8:
                 PasscodeActivity passcodeActivity = (PasscodeActivity) this.b;
@@ -95,12 +95,12 @@ public final /* synthetic */ class na implements TextView.OnEditorActionListener
                 passcodeActivity.j0();
                 return true;
             case 9:
-                qn0 qn0Var = (qn0) this.b;
+                on0 on0Var = (on0) this.b;
                 if (i10 == 5) {
-                    qn0Var.h(null);
+                    on0Var.h(null);
                     return true;
                 }
-                qn0Var.getClass();
+                on0Var.getClass();
                 return false;
             case 10:
                 v21 v21Var = (v21) this.b;

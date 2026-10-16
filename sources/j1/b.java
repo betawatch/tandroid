@@ -12,10 +12,10 @@ import java.util.WeakHashMap;
 import ji.w4;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import r0.j0;
+import r0.i0;
 import s0.c;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class b extends r0.b {
     public static final Rect n = new Rect(ConnectionsManager.DEFAULT_DATACENTER_ID, ConnectionsManager.DEFAULT_DATACENTER_ID, TLObject.FLAG_31, TLObject.FLAG_31);
@@ -34,7 +34,7 @@ public abstract class b extends r0.b {
         this.i = view;
         this.h = (AccessibilityManager) view.getContext().getSystemService("accessibility");
         view.setFocusable(true);
-        WeakHashMap weakHashMap = j0.a;
+        WeakHashMap weakHashMap = i0.a;
         if (view.getImportantForAccessibility() == 0) {
             view.setImportantForAccessibility(1);
         }
@@ -130,7 +130,7 @@ public abstract class b extends r0.b {
         if (i10 == -1) {
             AccessibilityNodeInfo obtain = AccessibilityNodeInfo.obtain(view);
             c cVar = new c(obtain);
-            WeakHashMap weakHashMap = j0.a;
+            WeakHashMap weakHashMap = i0.a;
             view.onInitializeAccessibilityNodeInfo(obtain);
             ArrayList arrayList = new ArrayList();
             h(arrayList);

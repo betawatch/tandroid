@@ -1,0 +1,84 @@
+package org.telegram.ui;
+
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ij0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ pj0 b;
+
+    public /* synthetic */ ij0(pj0 pj0Var, int i10) {
+        this.a = i10;
+        this.b = pj0Var;
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final int i10 = 0;
+                final pj0 pj0Var = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.hj0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                pj0.U(pj0Var, tL_error, tLObject);
+                                break;
+                            case 1:
+                                pj0.W(pj0Var, tL_error, tLObject);
+                                break;
+                            default:
+                                pj0.V(pj0Var, tL_error, tLObject);
+                                break;
+                        }
+                    }
+                });
+                break;
+            case 1:
+                final int i11 = 1;
+                final pj0 pj0Var2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.hj0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                pj0.U(pj0Var2, tL_error, tLObject);
+                                break;
+                            case 1:
+                                pj0.W(pj0Var2, tL_error, tLObject);
+                                break;
+                            default:
+                                pj0.V(pj0Var2, tL_error, tLObject);
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final int i12 = 2;
+                final pj0 pj0Var3 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.hj0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i12) {
+                            case 0:
+                                pj0.U(pj0Var3, tL_error, tLObject);
+                                break;
+                            case 1:
+                                pj0.W(pj0Var3, tL_error, tLObject);
+                                break;
+                            default:
+                                pj0.V(pj0Var3, tL_error, tLObject);
+                                break;
+                        }
+                    }
+                });
+                break;
+        }
+    }
+}

@@ -4,9 +4,9 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import o6.a;
 import p7.m;
-import w7.g0;
+import w7.f0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class FaceParcel extends a {
     public static final Parcelable.Creator<FaceParcel> CREATOR = new m(23);
@@ -46,36 +46,36 @@ public class FaceParcel extends a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = g0.q(parcel, 20293);
-        g0.s(parcel, 1, 4);
+        int q6 = f0.q(parcel, 20293);
+        f0.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        g0.s(parcel, 2, 4);
+        f0.s(parcel, 2, 4);
         parcel.writeInt(this.b);
-        g0.s(parcel, 3, 4);
+        f0.s(parcel, 3, 4);
         parcel.writeFloat(this.c);
-        g0.s(parcel, 4, 4);
+        f0.s(parcel, 4, 4);
         parcel.writeFloat(this.d);
-        g0.s(parcel, 5, 4);
+        f0.s(parcel, 5, 4);
         parcel.writeFloat(this.e);
-        g0.s(parcel, 6, 4);
+        f0.s(parcel, 6, 4);
         parcel.writeFloat(this.f);
-        g0.s(parcel, 7, 4);
+        f0.s(parcel, 7, 4);
         parcel.writeFloat(this.h);
-        g0.s(parcel, 8, 4);
+        f0.s(parcel, 8, 4);
         parcel.writeFloat(this.n);
-        g0.o(parcel, 9, this.s, i10);
-        g0.s(parcel, 10, 4);
+        f0.o(parcel, 9, this.s, i10);
+        f0.s(parcel, 10, 4);
         parcel.writeFloat(this.v);
-        g0.s(parcel, 11, 4);
+        f0.s(parcel, 11, 4);
         parcel.writeFloat(this.w);
-        g0.s(parcel, 12, 4);
+        f0.s(parcel, 12, 4);
         parcel.writeFloat(this.x);
-        g0.o(parcel, 13, this.y, i10);
-        g0.s(parcel, 14, 4);
+        f0.o(parcel, 13, this.y, i10);
+        f0.s(parcel, 14, 4);
         parcel.writeFloat(this.r);
-        g0.s(parcel, 15, 4);
+        f0.s(parcel, 15, 4);
         parcel.writeFloat(this.E);
-        g0.r(parcel, q6);
+        f0.r(parcel, q6);
     }
 
     public FaceParcel(int i10, int i11, float f7, float f10, float f11, float f12, float f13, float f14, LandmarkParcel[] landmarkParcelArr, float f15, float f16, float f17) {

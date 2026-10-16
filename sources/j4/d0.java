@@ -14,7 +14,7 @@ import java.util.List;
 import v7.m8;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class d0 implements c3.o {
     public final int a;
@@ -90,7 +90,7 @@ public final class d0 implements c3.o {
                     break;
                 }
             }
-            lVar.g(i10, false);
+            lVar.i(i10, false);
             return true;
         }
         return false;
@@ -195,7 +195,7 @@ public final class d0 implements c3.o {
                     }
                     xVar2.K(min);
                     pVar.q();
-                    pVar.a(0, min, xVar2.a);
+                    pVar.b(0, min, xVar2.a);
                     int i16 = xVar2.b;
                     int i17 = xVar2.c;
                     while (true) {
@@ -224,7 +224,7 @@ public final class d0 implements c3.o {
                 }
                 xVar2.K(min2);
                 pVar.q();
-                pVar.a(0, min2, xVar2.a);
+                pVar.b(0, min2, xVar2.a);
                 int i18 = xVar2.b;
                 int i19 = xVar2.c;
                 int i20 = i19 - 188;

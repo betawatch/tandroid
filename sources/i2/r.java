@@ -56,20 +56,20 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PrivacyControlActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ah0;
-import org.telegram.ui.bh0;
-import org.telegram.ui.bn0;
+import org.telegram.ui.an0;
 import org.telegram.ui.fo;
-import org.telegram.ui.id0;
-import org.telegram.ui.rc0;
+import org.telegram.ui.gd0;
+import org.telegram.ui.qc0;
 import org.telegram.ui.s20;
 import org.telegram.ui.sj;
-import org.telegram.ui.un0;
-import org.telegram.ui.xj0;
+import org.telegram.ui.sn0;
+import org.telegram.ui.wj0;
+import org.telegram.ui.zg0;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class r implements e2.o, e2.j, MessagesStorage.BooleanCallback, qd0, ImageReceiver.ImageReceiverDelegate, f5, cm0, bm0, z1, id0, xl0, dm0 {
+public final /* synthetic */ class r implements e2.o, e2.j, MessagesStorage.BooleanCallback, qd0, ImageReceiver.ImageReceiverDelegate, f5, cm0, bm0, z1, gd0, xl0, dm0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -103,59 +103,59 @@ public final /* synthetic */ class r implements e2.o, e2.j, MessagesStorage.Bool
         if (fl0Var == null || !(view instanceof el0)) {
             return false;
         }
-        fl0Var.r(gl0Var, ((el0) view).e, true, false);
+        fl0Var.n(gl0Var, ((el0) view).e, true, false);
         return true;
     }
 
     @Override // e2.j
     public void accept(Object obj) {
-        m4.p pVar;
-        m4.p pVar2;
-        m4.w wVar = (m4.w) this.c;
+        m4.o oVar;
+        m4.o oVar2;
+        m4.v vVar = (m4.v) this.c;
         int i10 = this.b;
         try {
             try {
-                pVar2 = (m4.p) ((j9.y) obj).get();
-                u6.l(pVar2, "LibraryResult must not be null");
+                oVar2 = (m4.o) ((j9.y) obj).get();
+                u6.l(oVar2, "LibraryResult must not be null");
             } catch (InterruptedException e) {
                 e = e;
                 e2.a.m("MediaSessionStub", "Library operation failed", e);
-                String str = m4.p.d;
-                m4.r1 r1Var = new m4.r1("no error message provided", -1, Bundle.EMPTY);
-                pVar = new m4.p(r1Var.a, SystemClock.elapsedRealtime(), r1Var);
-                pVar2 = pVar;
-                m4.v vVar = wVar.d;
-                vVar.getClass();
-                vVar.a(i10, pVar2);
+                String str = m4.o.d;
+                m4.q1 q1Var = new m4.q1("no error message provided", -1, Bundle.EMPTY);
+                oVar = new m4.o(q1Var.a, SystemClock.elapsedRealtime(), q1Var);
+                oVar2 = oVar;
+                m4.u uVar = vVar.d;
+                uVar.getClass();
+                uVar.a(i10, oVar2);
             } catch (CancellationException e7) {
                 e2.a.m("MediaSessionStub", "Library operation cancelled", e7);
-                String str2 = m4.p.d;
-                m4.r1 r1Var2 = new m4.r1("no error message provided", 1, Bundle.EMPTY);
-                pVar = new m4.p(r1Var2.a, SystemClock.elapsedRealtime(), r1Var2);
-                pVar2 = pVar;
-                m4.v vVar2 = wVar.d;
-                vVar2.getClass();
-                vVar2.a(i10, pVar2);
+                String str2 = m4.o.d;
+                m4.q1 q1Var2 = new m4.q1("no error message provided", 1, Bundle.EMPTY);
+                oVar = new m4.o(q1Var2.a, SystemClock.elapsedRealtime(), q1Var2);
+                oVar2 = oVar;
+                m4.u uVar2 = vVar.d;
+                uVar2.getClass();
+                uVar2.a(i10, oVar2);
             } catch (ExecutionException e10) {
                 e = e10;
                 e2.a.m("MediaSessionStub", "Library operation failed", e);
-                String str3 = m4.p.d;
-                m4.r1 r1Var3 = new m4.r1("no error message provided", -1, Bundle.EMPTY);
-                pVar = new m4.p(r1Var3.a, SystemClock.elapsedRealtime(), r1Var3);
-                pVar2 = pVar;
-                m4.v vVar22 = wVar.d;
-                vVar22.getClass();
-                vVar22.a(i10, pVar2);
+                String str3 = m4.o.d;
+                m4.q1 q1Var3 = new m4.q1("no error message provided", -1, Bundle.EMPTY);
+                oVar = new m4.o(q1Var3.a, SystemClock.elapsedRealtime(), q1Var3);
+                oVar2 = oVar;
+                m4.u uVar22 = vVar.d;
+                uVar22.getClass();
+                uVar22.a(i10, oVar2);
             }
-            m4.v vVar222 = wVar.d;
-            vVar222.getClass();
-            vVar222.a(i10, pVar2);
+            m4.u uVar222 = vVar.d;
+            uVar222.getClass();
+            uVar222.a(i10, oVar2);
         } catch (RemoteException e11) {
-            e2.a.m("MediaSessionStub", "Failed to send result to browser " + wVar, e11);
+            e2.a.m("MediaSessionStub", "Failed to send result to browser " + vVar, e11);
         }
     }
 
-    @Override // org.telegram.ui.id0
+    @Override // org.telegram.ui.gd0
     public void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j10) {
         HashMap hashMap = (HashMap) this.c;
         Pattern pattern = LaunchActivity.B1;
@@ -180,7 +180,7 @@ public final /* synthetic */ class r implements e2.o, e2.j, MessagesStorage.Bool
                 ContactsActivity.U((ContactsActivity) this.c, this.b, view, i10);
                 break;
             default:
-                xj0.Q((xj0) this.c, this.b, view);
+                wj0.Q((wj0) this.c, this.b, view);
                 break;
         }
     }
@@ -239,7 +239,7 @@ public final /* synthetic */ class r implements e2.o, e2.j, MessagesStorage.Bool
             case 11:
                 ArrayList arrayList = ((LaunchActivity) this.c).d0;
                 if (!arrayList.isEmpty()) {
-                    MessagesController.getInstance(this.b).openByUserName("spambot", (m2) d.g(1, arrayList), 1);
+                    MessagesController.getInstance(this.b).openByUserName("spambot", (m2) d.h(1, arrayList), 1);
                     break;
                 }
                 break;
@@ -262,17 +262,17 @@ public final /* synthetic */ class r implements e2.o, e2.j, MessagesStorage.Bool
                 profileActivity.d.u(this.b);
                 break;
             case 14:
-                bh0 bh0Var = ((ah0) this.c).V;
+                ah0 ah0Var = ((zg0) this.c).V;
                 int i11 = UserConfig.selectedAccount;
                 int i12 = this.b;
                 if (i11 != i12) {
-                    ((LaunchActivity) bh0Var.getParentActivity()).K0(i12);
+                    ((LaunchActivity) ah0Var.getParentActivity()).K0(i12);
                 }
-                bh0Var.finishFragment();
+                ah0Var.finishFragment();
                 break;
             case 16:
-                un0 un0Var = ((bn0) this.c).a;
-                un0Var.y1(un0Var.Y[this.b]);
+                sn0 sn0Var = ((an0) this.c).a;
+                sn0Var.y1(sn0Var.Y[this.b]);
                 break;
             case 17:
                 PrivacyControlActivity privacyControlActivity = (PrivacyControlActivity) this.c;
@@ -312,7 +312,7 @@ public final /* synthetic */ class r implements e2.o, e2.j, MessagesStorage.Bool
 
     @Override // org.telegram.ui.Components.xl0
     public int run() {
-        s4.b0 b0Var = ((rc0) this.c).c;
+        s4.b0 b0Var = ((qc0) this.c).c;
         int dp = AndroidUtilities.dp(60.0f);
         int i10 = this.b;
         b0Var.h1(i10, dp);

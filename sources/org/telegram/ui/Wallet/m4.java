@@ -1,30 +1,88 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
 import android.view.View;
-import org.telegram.tgnet.TLObject;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class m4 extends h5 {
-    public final /* synthetic */ z4 a0;
+public final /* synthetic */ class m4 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ViewGroup b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m4(z4 z4Var, Context context, boolean z10) {
-        super(context, z10);
-        this.a0 = z4Var;
+    public /* synthetic */ m4(ViewGroup viewGroup, int i10) {
+        this.a = i10;
+        this.b = viewGroup;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
-        super.onMeasure(i10, makeMeasureSpec);
-        z4 z4Var = this.a0;
-        if (z4Var.n <= 0 || getMeasuredHeight() <= z4Var.n) {
-            return;
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        c71 c71Var;
+        switch (this.a) {
+            case 0:
+                ah.v vVar = (ah.v) this.b;
+                a5 a5Var = (a5) vVar.c;
+                if (a5Var.F || a5Var.G) {
+                    a5Var.B0();
+                }
+                if (a5Var.G) {
+                    vVar.invalidate();
+                    break;
+                }
+                break;
+            case 1:
+                o4 o4Var = (o4) this.b;
+                a5 a5Var2 = o4Var.e;
+                if (a5Var2.a0 != null && (c71Var = a5Var2.a) != null) {
+                    boolean z10 = a5Var2.m0 && !c71Var.canScrollVertically(1);
+                    if (a5Var2.c0 != z10) {
+                        a5Var2.c0 = z10;
+                        a5Var2.a0.animate().cancel();
+                        if (z10) {
+                            a5Var2.a0.setVisibility(0);
+                            a5Var2.a0.animate().alpha(1.0f).setDuration(180L).setInterpolator(es.g).start();
+                        } else {
+                            a5Var2.a0.setAlpha(0.0f);
+                            a5Var2.a0.setVisibility(4);
+                        }
+                    }
+                }
+                View m10 = a5Var2.a.V2.m(a5Var2.f);
+                float y3 = m10 != null ? m10.getY() : 0.0f;
+                int height = m10 != null ? m10.getHeight() : 0;
+                if (m10 != o4Var.a || y3 != o4Var.b || height != o4Var.c) {
+                    o4Var.a = m10;
+                    o4Var.b = y3;
+                    o4Var.c = height;
+                    a5Var2.C0();
+                    break;
+                }
+                break;
+            default:
+                j8 j8Var = (j8) ((di.v5) this.b).c;
+                di.v5 v5Var = j8Var.v;
+                if (v5Var != null && j8Var.W != null && v5Var.getHeight() > 0 && j8Var.W.getHeight() > 0) {
+                    float paddingTop = j8Var.fragmentView.getPaddingTop();
+                    if (j8Var.s.getVisibility() == 0) {
+                        paddingTop = Math.max(paddingTop, (j8Var.s.getScaleY() * (j8Var.s.getContentBottom() - j8Var.s.getPivotY())) + j8Var.s.getPivotY() + j8Var.s.getY());
+                    }
+                    float max = Math.max(0.0f, Math.min(j8Var.fragmentView.getHeight() - j8Var.fragmentView.getPaddingBottom(), j8Var.W.getY()) - paddingTop);
+                    float min = Math.min(1.0f, Math.max(0.0f, max - (Math.min(AndroidUtilities.dp(12.0f), max / 4.0f) * 2.0f)) / j8Var.v.getHeight());
+                    j8Var.v.setPivotX(r5.getWidth() / 2.0f);
+                    j8Var.v.setPivotY(r5.getHeight() / 2.0f);
+                    j8Var.v.setScaleX(min);
+                    j8Var.v.setScaleY(min);
+                    j8Var.v.setTranslationY((((max / 2.0f) + paddingTop) - r4.getTop()) - (j8Var.v.getHeight() / 2.0f));
+                }
+                if (j8Var.X != null || j8Var.Y < 1.0f) {
+                    j8Var.A0();
+                    break;
+                }
+                break;
         }
-        int paddingRight = getPaddingRight() + getPaddingLeft();
-        int paddingBottom = getPaddingBottom() + getPaddingTop();
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(paddingRight + ((int) ((getMeasuredWidth() - paddingRight) * (Math.max(0, z4Var.n - paddingBottom) / Math.max(1, getMeasuredHeight() - paddingBottom)))), TLObject.FLAG_30), makeMeasureSpec);
+        return true;
     }
 }

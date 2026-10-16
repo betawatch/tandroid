@@ -8,13 +8,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class v70 extends LinearLayout {
     public final org.telegram.ui.Components.nu a;
     public boolean b;
     public int c;
-    public o00 d;
+    public d20 d;
     public String e;
     public final u70 f;
     public final /* synthetic */ y70 h;
@@ -24,9 +24,9 @@ public final class v70 extends LinearLayout {
         super(context);
         this.h = y70Var;
         this.f = new u70(this);
-        TextView g10 = org.telegram.messenger.q.g(context, 1, 16.0f);
-        g10.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.j5, false));
-        g10.setText("t.me/addemoji/");
+        TextView f7 = org.telegram.messenger.g0.f(context, 1, 16.0f);
+        f7.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.j5, false));
+        f7.setText("t.me/addemoji/");
         org.telegram.ui.Components.nu nuVar = new org.telegram.ui.Components.nu(context, null);
         this.a = nuVar;
         nuVar.setLines(1);
@@ -43,8 +43,8 @@ public final class v70 extends LinearLayout {
         nuVar.setHandlesColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.vf, false));
         nuVar.setBackground(null);
         nuVar.setHint(LocaleController.getString(R.string.AddEmojiPackLinkHint));
-        addView(g10, w7.a6.t(-2, -2, 16, 20, 0, 0, 0));
-        addView(nuVar, w7.a6.t(-1, -2, 16, -4, 0, 0, 0));
+        addView(f7, w7.z5.t(-2, -2, 16, 20, 0, 0, 0));
+        addView(nuVar, w7.z5.t(-1, -2, 16, -4, 0, 0, 0));
         setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
         setPadding(0, AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f));
         setWillNotDraw(false);

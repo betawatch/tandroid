@@ -19,15 +19,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.k31;
+import org.telegram.ui.Components.n51;
 import org.telegram.ui.Components.nz;
-import org.telegram.ui.hu0;
-import org.telegram.ui.or0;
+import org.telegram.ui.gu0;
+import org.telegram.ui.mr0;
 import org.webrtc.GlGenericDrawer;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class m5 implements v5, c0.j, m4.e0, m4.h1, e2.j, m4.f1, d9.k, ne.d, r9.d, Vector.TLDeserializer, GlGenericDrawer.TextureCallback, org.telegram.ui.Components.voip.k1, org.telegram.ui.ActionBar.z1, qg.h0, t5.b, qg.s1 {
+public final /* synthetic */ class m5 implements v5, c0.j, m4.d0, m4.g1, e2.j, m4.e1, d9.k, ne.d, r9.d, Vector.TLDeserializer, GlGenericDrawer.TextureCallback, org.telegram.ui.Components.voip.k1, org.telegram.ui.ActionBar.z1, qg.h0, t5.b, qg.s1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -47,10 +47,10 @@ public final /* synthetic */ class m5 implements v5, c0.j, m4.e0, m4.h1, e2.j, m
     public void accept(Object obj) {
         switch (this.a) {
             case 5:
-                ((m4.n1) obj).f((b2.a1) this.b);
+                ((m4.m1) obj).f((b2.a1) this.b);
                 break;
             default:
-                ((n2.k) obj).a((oa.d) this.b);
+                ((n2.j) obj).a((oa.d) this.b);
                 break;
         }
     }
@@ -59,11 +59,11 @@ public final /* synthetic */ class m5 implements v5, c0.j, m4.e0, m4.h1, e2.j, m
     public Object apply(Object obj) {
         switch (this.a) {
             case 8:
-                n4.s sVar = (n4.s) this.b;
+                m2.t tVar = (m2.t) this.b;
                 Bitmap bitmap = (Bitmap) obj;
                 int height = bitmap.getHeight();
                 int width = bitmap.getWidth();
-                i9.a aVar = (i9.a) sVar.c;
+                i9.a aVar = (i9.a) tVar.c;
                 if (!aVar.a(Math.max(height, width))) {
                     return bitmap;
                 }
@@ -92,32 +92,32 @@ public final /* synthetic */ class m5 implements v5, c0.j, m4.e0, m4.h1, e2.j, m
 
     @Override // c0.j
     public Object b(c0.i iVar) {
-        m4.f0 f0Var = (m4.f0) this.b;
-        f0Var.o.post(new v2(16, f0Var, iVar));
+        m4.e0 e0Var = (m4.e0) this.b;
+        e0Var.o.post(new v2(13, e0Var, iVar));
         return "onPlayRequested";
     }
 
-    @Override // m4.h1
-    public Object c(m4.f0 f0Var, m4.w wVar, int i10) {
+    @Override // m4.g1
+    public Object c(m4.e0 e0Var, m4.v vVar, int i10) {
         int i11 = this.a;
         Object obj = this.b;
         switch (i11) {
             case 4:
-                return f0Var.l(wVar, (e9.n0) obj);
+                return e0Var.l(vVar, (e9.n0) obj);
             default:
-                m4.f1 f1Var = (m4.f1) obj;
-                j9.w wVar2 = j9.w.b;
-                if (!f0Var.j()) {
-                    f1Var.e(f0Var.t, wVar);
-                    m4.j1.P0(f0Var, wVar, i10, new m4.t1(0));
+                m4.e1 e1Var = (m4.e1) obj;
+                j9.w wVar = j9.w.b;
+                if (!e0Var.j()) {
+                    e1Var.h(e0Var.t, vVar);
+                    m4.i1.P0(e0Var, vVar, i10, new m4.s1(0));
                 }
                 return j9.w.b;
         }
     }
 
-    @Override // m4.e0
-    public void d(m4.v vVar, int i10) {
-        vVar.c(i10, (b2.c1) this.b);
+    @Override // m4.d0
+    public void d(m4.u uVar, int i10) {
+        uVar.c(i10, (b2.c1) this.b);
     }
 
     @Override // org.telegram.tgnet.Vector.TLDeserializer
@@ -134,17 +134,12 @@ public final /* synthetic */ class m5 implements v5, c0.j, m4.e0, m4.h1, e2.j, m
         }
     }
 
-    @Override // m4.f1
-    public void e(m4.n1 n1Var, m4.w wVar) {
-        ((e2.j) this.b).accept(n1Var);
-    }
-
     @Override // qg.s1
-    public void f() {
-        hu0 hu0Var = (hu0) this.b;
-        TextView textView = hu0Var.y1;
-        boolean a2 = hu0Var.F0.a();
-        ImageView imageView = hu0Var.w1;
+    public void e() {
+        gu0 gu0Var = (gu0) this.b;
+        TextView textView = gu0Var.y1;
+        boolean a2 = gu0Var.F0.a();
+        ImageView imageView = gu0Var.w1;
         imageView.animate().cancel();
         imageView.animate().alpha(a2 ? 1.0f : 0.6f).translationY(0.0f).setDuration(150L).start();
         imageView.setClickable(a2);
@@ -153,20 +148,8 @@ public final /* synthetic */ class m5 implements v5, c0.j, m4.e0, m4.h1, e2.j, m
         textView.setClickable(a2);
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        switch (this.a) {
-            case 19:
-                ((org.telegram.ui.web.a0) this.b).run();
-                break;
-            default:
-                ((or0) this.b).run();
-                break;
-        }
-    }
-
     @Override // t5.b
-    public Object h() {
+    public Object f() {
         SQLiteDatabase a2;
         int i10 = this.a;
         boolean z10 = false;
@@ -192,11 +175,11 @@ public final /* synthetic */ class m5 implements v5, c0.j, m4.e0, m4.h1, e2.j, m
                 }
             case 24:
                 s5.g gVar2 = (s5.g) ((s5.d) obj);
-                long d = gVar2.b.d() - gVar2.d.d;
+                long b10 = gVar2.b.b() - gVar2.d.d;
                 a2 = gVar2.a();
                 a2.beginTransaction();
                 try {
-                    String[] strArr = {String.valueOf(d)};
+                    String[] strArr = {String.valueOf(b10)};
                     Cursor rawQuery = a2.rawQuery("SELECT COUNT(*), transport_name FROM events WHERE timestamp_ms < ? GROUP BY transport_name", strArr);
                     while (rawQuery.moveToNext()) {
                         try {
@@ -219,26 +202,43 @@ public final /* synthetic */ class m5 implements v5, c0.j, m4.e0, m4.h1, e2.j, m
                 a2.beginTransaction();
                 try {
                     a2.compileStatement("DELETE FROM log_event_dropped").execute();
-                    a2.compileStatement("UPDATE global_log_event_state SET last_metrics_upload_ms=" + gVar3.b.d()).execute();
+                    a2.compileStatement("UPDATE global_log_event_state SET last_metrics_upload_ms=" + gVar3.b.b()).execute();
                     a2.setTransactionSuccessful();
                     return null;
                 } finally {
                 }
             default:
                 com.google.firebase.messaging.s sVar2 = (com.google.firebase.messaging.s) obj;
-                Iterator it = ((Iterable) ((s5.g) ((s5.d) sVar2.c)).c(new r0.h(22))).iterator();
+                Iterator it = ((Iterable) ((s5.g) ((s5.d) sVar2.c)).c(new r0.s0(22))).iterator();
                 while (it.hasNext()) {
-                    ((li.k) sVar2.d).U((l5.i) it.next(), 1, false);
+                    ((m.h3) sVar2.d).U((l5.i) it.next(), 1, false);
                 }
                 return null;
         }
     }
 
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+        switch (this.a) {
+            case 19:
+                ((org.telegram.ui.web.b0) this.b).run();
+                break;
+            default:
+                ((mr0) this.b).run();
+                break;
+        }
+    }
+
+    @Override // m4.e1
+    public void h(m4.m1 m1Var, m4.v vVar) {
+        ((e2.j) this.b).accept(m1Var);
+    }
+
     @Override // r9.d
-    public Object j2(com.google.android.gms.internal.cast.z5 z5Var) {
+    public Object n2(com.google.android.gms.internal.cast.z5 z5Var) {
         switch (this.a) {
             case 12:
-                return new oa.c((Context) z5Var.a(Context.class), ((l9.h) z5Var.a(l9.h.class)).d(), z5Var.v(oa.d.class), z5Var.b(ya.b.class), (Executor) z5Var.e((r9.r) this.b));
+                return new oa.c((Context) z5Var.a(Context.class), ((l9.h) z5Var.a(l9.h.class)).d(), z5Var.w(oa.d.class), z5Var.b(ya.b.class), (Executor) z5Var.d((r9.r) this.b));
             default:
                 return this.b;
         }
@@ -256,15 +256,15 @@ public final /* synthetic */ class m5 implements v5, c0.j, m4.e0, m4.h1, e2.j, m
             return;
         }
         Utilities.stackBlurBitmap(bitmap, Math.max(7, Math.max(bitmap.getWidth(), bitmap.getHeight()) / 180));
-        AndroidUtilities.runOnUIThread(new k31(13, tVar, bitmap));
+        AndroidUtilities.runOnUIThread(new n51(8, tVar, bitmap));
     }
 
-    public /* synthetic */ m5(p4.t0 t0Var, p4.s0 s0Var) {
+    public /* synthetic */ m5(p4.t0 t0Var, p4.r0 r0Var) {
         this.a = 20;
         this.b = t0Var;
     }
 
     @Override // ne.d
-    public /* synthetic */ void C(float f7, int i10) {
+    public /* synthetic */ void A(float f7, int i10) {
     }
 }

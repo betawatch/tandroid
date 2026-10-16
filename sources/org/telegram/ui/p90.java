@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p90 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -76,7 +76,7 @@ public final /* synthetic */ class p90 implements Runnable {
                             } else {
                                 Bundle bundle = new Bundle();
                                 bundle.putLong("chat_id", -j10);
-                                launchActivity.p0(lg1.F0(launchActivity, bundle));
+                                launchActivity.p0(kg1.F0(launchActivity, bundle));
                                 if (runnable != null) {
                                     runnable.run();
                                     break;

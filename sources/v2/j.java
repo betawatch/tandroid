@@ -4,12 +4,11 @@ import b2.w0;
 import b2.x;
 import c3.i0;
 import g2.b0;
-import n6.o;
 import u2.c1;
 import v7.k7;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class j extends a {
     public final int E;
@@ -27,17 +26,12 @@ public final class j extends a {
     }
 
     @Override // y2.i
-    public final void J() {
-        this.I = true;
-    }
-
-    @Override // y2.i
     public final void a() {
-        o oVar = this.x;
-        oVar.getClass();
+        n3.b bVar = this.x;
+        bVar.getClass();
         if (this.H == 0) {
             long j10 = this.F;
-            for (c1 c1Var : (c1[]) oVar.c) {
+            for (c1 c1Var : (c1[]) bVar.c) {
                 if (c1Var.H != j10) {
                     c1Var.H = j10;
                     c1Var.B = true;
@@ -47,7 +41,7 @@ public final class j extends a {
             long j11 = this.v;
             long j12 = j11 == -9223372036854775807L ? -9223372036854775807L : j11 - this.F;
             long j13 = this.w;
-            eVar.b(oVar, j12, j13 != -9223372036854775807L ? j13 - this.F : -9223372036854775807L);
+            eVar.b(bVar, j12, j13 != -9223372036854775807L ? j13 - this.F : -9223372036854775807L);
         }
         try {
             g2.m b10 = this.b.b(this.H);
@@ -69,12 +63,12 @@ public final class j extends a {
             int i10 = xVar.R;
             int i11 = xVar.S;
             if (w0.k(str) && ((i10 > 1 || i11 > 1) && i10 != -1 && i11 != -1)) {
-                i0 g02 = oVar.g0(4);
+                i0 j02 = bVar.j0(4);
                 int i12 = i10 * i11;
                 long j14 = (this.n - this.h) / i12;
                 for (int i13 = 1; i13 < i12; i13++) {
-                    g02.d(0, new e2.x());
-                    g02.c(i13 * j14, 0, 0, 0, null);
+                    j02.d(0, new e2.x());
+                    j02.c(i13 * j14, 0, 0, 0, null);
                 }
             }
             k7.a(this.r);
@@ -83,6 +77,11 @@ public final class j extends a {
             k7.a(this.r);
             throw th2;
         }
+    }
+
+    @Override // y2.i
+    public final void a0() {
+        this.I = true;
     }
 
     @Override // v2.l

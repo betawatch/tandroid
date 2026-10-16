@@ -11,9 +11,9 @@ import java.util.RandomAccess;
 import v7.u6;
 import z7.de;
 import z7.ed;
-import z7.lg;
+import z7.mg;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class d implements Iterator {
     public final /* synthetic */ int a;
@@ -119,10 +119,10 @@ public class d implements Iterator {
                 this.c = (Collection) entry5.getValue();
                 Object key2 = entry5.getKey();
                 Collection collection2 = (Collection) entry5.getValue();
-                lg lgVar = (lg) ((e) this.d).e;
-                lgVar.getClass();
+                mg mgVar = (mg) ((e) this.d).e;
+                mgVar.getClass();
                 List list2 = (List) collection2;
-                return new z7.f(key2, list2 instanceof RandomAccess ? new de(lgVar, key2, list2, null) : new m(lgVar, key2, list2, (m) null));
+                return new z7.f(key2, list2 instanceof RandomAccess ? new de(mgVar, key2, list2, null) : new m(mgVar, key2, list2, (m) null));
             case 7:
                 Map.Entry entry6 = (Map.Entry) this.b.next();
                 this.c = entry6;
@@ -190,7 +190,7 @@ public class d implements Iterator {
                     throw new IllegalStateException("no calls to next() since the last call to remove()");
                 }
                 this.b.remove();
-                ((lg) ((e) this.d).e).getClass();
+                ((mg) ((e) this.d).e).getClass();
                 ((Collection) this.c).size();
                 ((Collection) this.c).clear();
                 this.c = null;

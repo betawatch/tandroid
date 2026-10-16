@@ -5,60 +5,43 @@ import android.util.Log;
 import java.io.IOException;
 import java.io.InputStream;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class a {
-    public final /* synthetic */ int a;
+    public String a;
     public String b;
-    public String c;
 
-    public /* synthetic */ a() {
-        this.a = 1;
+    public /* synthetic */ a(String str, String str2, boolean z10) {
+        this.a = str;
+        this.b = str2;
     }
 
     public s a() {
-        if ("first_party".equals(this.c)) {
+        if ("first_party".equals(this.b)) {
             throw new IllegalArgumentException("Serialized doc id must be provided for first party products.");
         }
-        if (this.b == null) {
+        if (this.a == null) {
             throw new IllegalArgumentException("Product id must be provided.");
         }
-        if (this.c != null) {
+        if (this.b != null) {
             return new s(this);
         }
         throw new IllegalArgumentException("Product type must be provided.");
     }
 
-    public String toString() {
-        switch (this.a) {
-            case 2:
-                return this.b + ", " + this.c;
-            default:
-                return super.toString();
-        }
-    }
-
-    public /* synthetic */ a(int i10, String str, String str2) {
-        this.a = i10;
-        this.b = str;
-        this.c = str2;
-    }
-
     public a(String str, String str2) {
-        this.a = 3;
         n6.l.c(str.length() <= 23, "tag \"%s\" is longer than the %d character maximum", str, 23);
-        this.b = str;
-        this.c = (str2 == null || str2.length() <= 0) ? null : str2;
+        this.a = str;
+        this.b = (str2 == null || str2.length() <= 0) ? null : str2;
     }
 
-    public a(m4.c cVar) {
-        this.a = 5;
-        Context context = (Context) cVar.b;
+    public a(m2.t tVar) {
+        Context context = (Context) tVar.b;
         int e = x9.h.e(context, "com.google.firebase.crashlytics.unity_version", "string");
         if (e != 0) {
-            this.b = "Unity";
+            this.a = "Unity";
             String string = context.getResources().getString(e);
-            this.c = string;
+            this.b = string;
             String h = t8.b.h("Unity Editor version is: ", string);
             if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                 Log.v("FirebaseCrashlytics", h, null);
@@ -72,8 +55,8 @@ public final class a {
                 if (open != null) {
                     open.close();
                 }
-                this.b = "Flutter";
-                this.c = null;
+                this.a = "Flutter";
+                this.b = null;
                 if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                     Log.v("FirebaseCrashlytics", "Development platform is: Flutter", null);
                     return;
@@ -82,7 +65,7 @@ public final class a {
             } catch (IOException unused) {
             }
         }
+        this.a = null;
         this.b = null;
-        this.c = null;
     }
 }

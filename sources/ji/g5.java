@@ -8,11 +8,11 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.p11;
 import org.telegram.ui.Components.q11;
+import org.telegram.ui.Components.r11;
 import org.telegram.ui.Components.tj0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public abstract class g5 {
     public static Object a(Spanned spanned, int i10, int i11, Class cls) {
@@ -57,7 +57,7 @@ public abstract class g5 {
             i13++;
             boolean z11 = true;
             int i15 = i13 < size ? iArr[i13] - 1 : length;
-            mi.h hVar = spanned == null ? null : (mi.h) a(spanned, i14, i15, mi.h.class);
+            li.h hVar = spanned == null ? null : (li.h) a(spanned, i14, i15, li.h.class);
             tj0 tj0Var = (spanned == null || hVar != null) ? 0 : (tj0) a(spanned, i14, i15, tj0.class);
             if (hVar == null && tj0Var == 0) {
                 CharSequence subSequence = charSequence.subSequence(i14, i15);
@@ -65,7 +65,7 @@ public abstract class g5 {
                 pageblockparagraph2.text = k6.f(subSequence);
                 arrayList.add(pageblockparagraph2);
             } else {
-                mi.h hVar2 = hVar != null ? hVar : tj0Var;
+                li.h hVar2 = hVar != null ? hVar : tj0Var;
                 while (true) {
                     if (i13 >= size) {
                         i10 = length;
@@ -81,7 +81,7 @@ public abstract class g5 {
                     } else {
                         i10 = length;
                     }
-                    if ((hVar != null ? a(spanned, i16, length, mi.h.class) : a(spanned, i16, length, tj0.class)) != hVar2) {
+                    if ((hVar != null ? a(spanned, i16, length, li.h.class) : a(spanned, i16, length, tj0.class)) != hVar2) {
                         break;
                     }
                     i15 = length;
@@ -151,7 +151,7 @@ public abstract class g5 {
                 int i10 = 0;
                 if (pageBlock instanceof TL_iv.pageBlockPreformatted) {
                     SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(k6.r(pageBlock.text, pageBlock, true));
-                    spannableStringBuilder2.setSpan(new mi.h(true, ((TL_iv.pageBlockPreformatted) pageBlock).language, spannableStringBuilder2.toString()), 0, spannableStringBuilder2.length(), 33);
+                    spannableStringBuilder2.setSpan(new li.h(true, ((TL_iv.pageBlockPreformatted) pageBlock).language, spannableStringBuilder2.toString()), 0, spannableStringBuilder2.length(), 33);
                     spannableStringBuilder = spannableStringBuilder2;
                 } else {
                     boolean z10 = pageBlock instanceof TL_iv.pageBlockBlockquote;
@@ -397,7 +397,7 @@ public abstract class g5 {
             return r10;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(r10);
-        spannableStringBuilder.setSpan(new mi.h(true, ((TL_iv.pageBlockPreformatted) aVar.b).language, spannableStringBuilder.toString()), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new li.h(true, ((TL_iv.pageBlockPreformatted) aVar.b).language, spannableStringBuilder.toString()), 0, spannableStringBuilder.length(), 33);
         return spannableStringBuilder;
     }
 
@@ -458,9 +458,9 @@ public abstract class g5 {
             return spannableStringBuilder;
         }
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(spannableStringBuilder);
-        p11 p11Var = new p11();
-        p11Var.a = i10;
-        spannableStringBuilder2.setSpan(new q11(p11Var, 0), 0, spannableStringBuilder2.length(), 33);
+        q11 q11Var = new q11();
+        q11Var.a = i10;
+        spannableStringBuilder2.setSpan(new r11(q11Var, 0), 0, spannableStringBuilder2.length(), 33);
         return spannableStringBuilder2;
     }
 }

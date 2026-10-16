@@ -23,9 +23,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.h11;
+import org.telegram.ui.Components.i11;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class g3 extends er {
     public final float E;
@@ -44,8 +44,8 @@ public final class g3 extends er {
     public final org.telegram.ui.Components.q5 r;
     public RadialGradient s;
     public final Matrix v;
-    public final h11 w;
-    public final h11 x;
+    public final i11 w;
+    public final i11 x;
     public org.telegram.ui.Components.r6 y;
 
     public g3(View view, TL_stars.StarGift starGift, int i10, float f7) {
@@ -73,19 +73,19 @@ public final class g3 extends er {
             float f12 = i10;
             p7.a1(imageReceiver, starGift.sticker, (int) (0.75f * f12));
             String str = starGift.title;
-            h11 h11Var = new h11(str == null ? "Gift" : str, 16.0f, AndroidUtilities.bold());
-            this.w = h11Var;
-            h11Var.o(-1);
+            i11 i11Var = new i11(str == null ? "Gift" : str, 16.0f, AndroidUtilities.bold());
+            this.w = i11Var;
+            i11Var.o(-1);
             float f13 = i10 - 30;
-            h11Var.q(AndroidUtilities.dp(f13));
+            i11Var.q(AndroidUtilities.dp(f13));
             Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-            h11Var.a();
-            h11Var.n(1);
-            h11 h11Var2 = new h11(starGift.sold_out ? LocaleController.getString(R.string.Gift2SoldOutTitle) : LocaleController.formatPluralString("Gift2SoldAuctionPreviewGifts", starGift.availability_total, new Object[0]), 13.0f, null);
-            this.x = h11Var2;
-            h11Var2.q(AndroidUtilities.dp(f13));
-            h11Var2.a();
-            h11Var2.n(1);
+            i11Var.a();
+            i11Var.n(1);
+            i11 i11Var2 = new i11(starGift.sold_out ? LocaleController.getString(R.string.Gift2SoldOutTitle) : LocaleController.formatPluralString("Gift2SoldAuctionPreviewGifts", starGift.availability_total, new Object[0]), 13.0f, null);
+            this.x = i11Var2;
+            i11Var2.q(AndroidUtilities.dp(f13));
+            i11Var2.a();
+            i11Var2.n(1);
             b8 b8Var = new b8(1, 40);
             this.e = b8Var;
             float f14 = 0.45f * f12;
@@ -271,9 +271,9 @@ public final class g3 extends er {
     }
 
     public final void c(int i10) {
-        h11 h11Var = this.x;
-        if (h11Var != null) {
-            h11Var.o(i10 | (-16777216));
+        i11 i11Var = this.x;
+        if (i11Var != null) {
+            i11Var.o(i10 | (-16777216));
         }
     }
 
@@ -296,7 +296,7 @@ public final class g3 extends er {
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        h11 h11Var;
+        i11 i11Var;
         Paint paint = (Paint) this.b;
         Rect bounds = getBounds();
         RectF rectF = this.d;
@@ -323,9 +323,9 @@ public final class g3 extends er {
             b8Var.b(canvas, -1, 1.0f);
         }
         canvas.restore();
-        h11 h11Var2 = this.w;
+        i11 i11Var2 = this.w;
         ImageReceiver imageReceiver = this.n;
-        if (h11Var2 == null || (h11Var = this.x) == null) {
+        if (i11Var2 == null || (i11Var = this.x) == null) {
             float min = Math.min(rectF.width(), rectF.height()) * 0.75f;
             float f10 = min / 2.0f;
             imageReceiver.setImageCoords(rectF.centerX() - f10, rectF.centerY() - f10, min, min);
@@ -343,8 +343,8 @@ public final class g3 extends er {
             float min2 = Math.min(rectF.width(), rectF.height()) * 0.6f;
             imageReceiver.setImageCoords(rectF.centerX() - (min2 / 2.0f), (rectF.height() * 0.12f) + rectF.top, min2, min2);
             imageReceiver.draw(canvas);
-            h11Var2.e(canvas, rectF.centerX() - (h11Var2.l() / 2.0f), rectF.bottom - AndroidUtilities.dp(50.0f));
-            h11Var.e(canvas, rectF.centerX() - (h11Var.l() / 2.0f), rectF.bottom - AndroidUtilities.dp(30.0f));
+            i11Var2.e(canvas, rectF.centerX() - (i11Var2.l() / 2.0f), rectF.bottom - AndroidUtilities.dp(50.0f));
+            i11Var.e(canvas, rectF.centerX() - (i11Var.l() / 2.0f), rectF.bottom - AndroidUtilities.dp(30.0f));
         }
         canvas.restore();
     }
@@ -374,7 +374,7 @@ public final class g3 extends er {
     }
 
     public final void h() {
-        h11 h11Var;
+        i11 i11Var;
         int currentTime = ConnectionsManager.getInstance(UserConfig.selectedAccount).getCurrentTime();
         int i10 = this.G;
         if (currentTime > i10) {
@@ -387,9 +387,9 @@ public final class g3 extends er {
                 this.y.t(AndroidUtilities.formatDuration(i10 - currentTime, true), true, true);
             }
         }
-        if (currentTime <= this.G || (h11Var = this.x) == null) {
+        if (currentTime <= this.G || (i11Var = this.x) == null) {
             return;
         }
-        h11Var.r(LocaleController.getString(R.string.Gift2SoldOutTitle));
+        i11Var.r(LocaleController.getString(R.string.Gift2SoldOutTitle));
     }
 }

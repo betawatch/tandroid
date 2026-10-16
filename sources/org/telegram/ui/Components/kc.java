@@ -6,7 +6,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.Typeface;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class kc extends pb {
     public final ImageView a;
@@ -18,7 +18,7 @@ public class kc extends pb {
         ImageView imageView = new ImageView(context);
         this.a = imageView;
         imageView.setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
-        addView(imageView, w7.a6.i(24.0f, 24.0f, 8388627, 16.0f, 12.0f, 16.0f, 12.0f));
+        addView(imageView, w7.z5.i(24.0f, 24.0f, 8388627, 16.0f, 12.0f, 16.0f, 12.0f));
         da0 da0Var = new da0(context, null);
         this.b = da0Var;
         da0Var.setDisablePaddingsOffsetY(true);
@@ -26,7 +26,7 @@ public class kc extends pb {
         da0Var.setTextColor(themedColor);
         da0Var.setTypeface(Typeface.SANS_SERIF);
         da0Var.setTextSize(1, 15.0f);
-        addView(da0Var, w7.a6.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
+        addView(da0Var, w7.z5.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
     }
 
     @Override // org.telegram.ui.Components.wb

@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.Components.b6;
@@ -24,7 +24,7 @@ import org.telegram.ui.Components.gq;
 import org.telegram.ui.Components.j5;
 import org.telegram.ui.Components.r6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public abstract class w extends FrameLayout {
     public final Paint a;
@@ -272,7 +272,7 @@ public abstract class w extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     public void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), yh.D(109.0f, 1, TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), sk.C(109.0f, 1, TLObject.FLAG_30));
     }
 
     @Override // android.view.View

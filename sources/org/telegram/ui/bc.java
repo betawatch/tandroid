@@ -10,7 +10,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bc implements org.telegram.ui.Components.am0 {
     public final /* synthetic */ int a = 1;
@@ -20,8 +20,8 @@ public final /* synthetic */ class bc implements org.telegram.ui.Components.am0 
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ bc(ic icVar, Context context, long j10, org.telegram.ui.ActionBar.c6 c6Var, hb1 hb1Var) {
-        this.d = icVar;
+    public /* synthetic */ bc(hc hcVar, Context context, long j10, org.telegram.ui.ActionBar.c6 c6Var, hb1 hb1Var) {
+        this.d = hcVar;
         this.c = context;
         this.b = j10;
         this.e = c6Var;
@@ -32,7 +32,7 @@ public final /* synthetic */ class bc implements org.telegram.ui.Components.am0 
     public final void a(int i10, View view) {
         switch (this.a) {
             case 0:
-                ic icVar = (ic) this.d;
+                hc hcVar = (hc) this.d;
                 org.telegram.ui.ActionBar.c6 c6Var = (org.telegram.ui.ActionBar.c6) this.e;
                 hb1 hb1Var = (hb1) this.f;
                 boolean z10 = view instanceof zg.b;
@@ -47,7 +47,7 @@ public final /* synthetic */ class bc implements org.telegram.ui.Components.am0 
                             TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode = new TLRPC.TL_payments_checkedGiftCode();
                             tL_payments_checkedGiftCode.giveaway_msg_id = boost.giveaway_msg_id;
                             tL_payments_checkedGiftCode.to_id = boost.user_id;
-                            tL_payments_checkedGiftCode.from_id = MessagesController.getInstance(UserConfig.selectedAccount).getPeer(-icVar.J.id);
+                            tL_payments_checkedGiftCode.from_id = MessagesController.getInstance(UserConfig.selectedAccount).getPeer(-hcVar.J.id);
                             int i11 = boost.date;
                             tL_payments_checkedGiftCode.date = i11;
                             tL_payments_checkedGiftCode.via_giveaway = boost.giveaway;
@@ -72,7 +72,7 @@ public final /* synthetic */ class bc implements org.telegram.ui.Components.am0 
                             hb1Var.presentFragment(ProfileActivity.m4(bVar.getDialogId()));
                         }
                     } else {
-                        zh.p7.f1(this.c, icVar.b, j10, boost, c6Var);
+                        zh.p7.f1(this.c, hcVar.b, j10, boost, c6Var);
                     }
                 }
                 if (view instanceof org.telegram.ui.Cells.r8) {
@@ -81,19 +81,19 @@ public final /* synthetic */ class bc implements org.telegram.ui.Components.am0 
                 if (view instanceof zg.c) {
                     ug.n.n(hb1Var, c6Var, j10, ((zg.c) view).getPrepaidGiveaway());
                 }
-                if (((hc) icVar.x.get(i10)).a == 9) {
-                    icVar.c(Boolean.valueOf(icVar.y == 1));
+                if (((gc) hcVar.x.get(i10)).a == 9) {
+                    hcVar.c(Boolean.valueOf(hcVar.y == 1));
                     break;
                 }
                 break;
             default:
-                org.telegram.ui.Components.a80.N((org.telegram.ui.Components.a80) this.d, this.b, (org.telegram.ui.ActionBar.m2) this.e, (a0.h) this.f, this.c, i10);
+                org.telegram.ui.Components.z70.N((org.telegram.ui.Components.z70) this.d, this.b, (org.telegram.ui.ActionBar.m2) this.e, (a0.h) this.f, this.c, i10);
                 break;
         }
     }
 
-    public /* synthetic */ bc(org.telegram.ui.Components.a80 a80Var, long j10, org.telegram.ui.ActionBar.m2 m2Var, a0.h hVar, Context context) {
-        this.d = a80Var;
+    public /* synthetic */ bc(org.telegram.ui.Components.z70 z70Var, long j10, org.telegram.ui.ActionBar.m2 m2Var, a0.h hVar, Context context) {
+        this.d = z70Var;
         this.b = j10;
         this.e = m2Var;
         this.f = hVar;

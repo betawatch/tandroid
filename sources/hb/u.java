@@ -2,19 +2,19 @@ package hb;
 
 import java.lang.reflect.Field;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class u extends t {
-    public final gb.o b;
+    public final gb.p b;
 
-    public u(gb.o oVar, v vVar) {
+    public u(gb.p pVar, v vVar) {
         super(vVar);
-        this.b = oVar;
+        this.b = pVar;
     }
 
     @Override // hb.t
     public final Object a() {
-        return this.b.f2();
+        return this.b.i2();
     }
 
     @Override // hb.t

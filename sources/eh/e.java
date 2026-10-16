@@ -4,7 +4,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class e implements a {
     public final c6 a;
@@ -30,7 +30,7 @@ public final class e implements a {
     }
 
     @Override // eh.a
-    public final int G() {
+    public final int J() {
         return a(this.b);
     }
 
@@ -50,11 +50,6 @@ public final class e implements a {
         this.b = new c(i11, i10, 0);
     }
 
-    @Override // eh.a
-    public final int b0() {
-        return a(this.e);
-    }
-
     public final void c(int i10, int i11) {
         this.d = new c(i11, i10, 0);
     }
@@ -64,12 +59,17 @@ public final class e implements a {
     }
 
     @Override // eh.a
-    public final int h() {
+    public final int j0() {
+        return a(this.e);
+    }
+
+    @Override // eh.a
+    public final int k() {
         return a(this.c);
     }
 
     @Override // eh.a
-    public final int q() {
+    public final int w() {
         return a(this.d);
     }
 }

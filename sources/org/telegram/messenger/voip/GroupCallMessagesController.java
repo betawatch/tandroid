@@ -23,21 +23,21 @@ import org.telegram.tgnet.json.TLJsonParser;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class GroupCallMessagesController extends BaseController {
     private static volatile GroupCallMessagesController[] Instance = new GroupCallMessagesController[4];
     private final LongSparseArray<MessagesList> callMessagesList;
     private final LongSparseArray<List<CallMessageListener>> callMessagesListeners;
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public interface CallMessageListener {
         void onNewGroupCallMessage(long j10, GroupCallMessage groupCallMessage);
 
         void onPopGroupCallMessage();
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class MessagesList {
         private final List<GroupCallMessage> messages;
         private final Set<Long> randomIds;
@@ -273,7 +273,7 @@ public class GroupCallMessagesController extends BaseController {
         lambda$processUpdate$2(j11, groupCallMessage);
         g gVar = new g(groupCallMessage, 1);
         AndroidUtilities.runOnUIThread(gVar, 1000L);
-        getConnectionsManager().sendRequest(sendgroupcallmessage, new p(this, gVar, groupCallMessage, 1));
+        getConnectionsManager().sendRequest(sendgroupcallmessage, new o(this, gVar, groupCallMessage, 1));
         return true;
     }
 
@@ -304,6 +304,6 @@ public class GroupCallMessagesController extends BaseController {
         if (getUserConfig().clientUserId == peerDialogId) {
             return;
         }
-        Utilities.globalQueue.postRunnable(new a3.h0(this, j10, peerDialogId, bArr, 12));
+        Utilities.globalQueue.postRunnable(new a3.h0(this, j10, peerDialogId, bArr, 11));
     }
 }

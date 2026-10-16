@@ -19,14 +19,14 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.ds;
 import org.telegram.ui.Components.gq;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.z61;
-import w7.a6;
+import org.telegram.ui.Components.i71;
+import org.telegram.ui.Components.m61;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class c extends m2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -34,7 +34,7 @@ public final class c extends m2 implements NotificationCenter.NotificationCenter
     public int G;
     public ds a;
     public org.telegram.ui.ActionBar.u0 b;
-    public h71 c;
+    public i71 c;
     public a0 d;
     public boolean e;
     public boolean f;
@@ -47,64 +47,64 @@ public final class c extends m2 implements NotificationCenter.NotificationCenter
     public int x;
     public int y;
 
-    public static void U(c cVar, ArrayList arrayList, z61 z61Var) {
+    public static void U(c cVar, ArrayList arrayList, a71 a71Var) {
         String string = LocaleController.getString(R.string.BusinessAway);
         String string2 = LocaleController.getString(R.string.BusinessAwayInfo);
-        l61 l61Var = new l61(2);
-        l61Var.l = string;
-        l61Var.o = string2;
-        l61Var.m = "RestrictedEmoji";
-        l61Var.n = "💤";
-        arrayList.add(l61Var);
-        l61 i10 = l61.i(1, LocaleController.getString(R.string.BusinessAwaySend));
+        m61 m61Var = new m61(2);
+        m61Var.l = string;
+        m61Var.o = string2;
+        m61Var.m = "RestrictedEmoji";
+        m61Var.n = "💤";
+        arrayList.add(m61Var);
+        m61 i10 = m61.i(1, LocaleController.getString(R.string.BusinessAwaySend));
         i10.K(cVar.s);
         arrayList.add(i10);
-        arrayList.add(l61.B(null));
+        arrayList.add(m61.B(null));
         if (cVar.s) {
             a2 d = b2.f(cVar.currentAccount).d("away");
             if (d != null) {
-                l61 l61Var2 = new l61(17);
-                l61Var2.G = d;
-                arrayList.add(l61Var2);
+                m61 m61Var2 = new m61(17);
+                m61Var2.G = d;
+                arrayList.add(m61Var2);
             } else {
-                l61 c10 = l61.c(2, R.drawable.msg2_chats_add, LocaleController.getString(R.string.BusinessAwayCreate));
+                m61 c10 = m61.c(2, R.drawable.msg2_chats_add, LocaleController.getString(R.string.BusinessAwayCreate));
                 c10.q = true;
                 arrayList.add(c10);
             }
-            arrayList.add(l61.B(null));
-            i2.d.o(R.string.BusinessAwaySchedule, arrayList);
-            l61 w9 = l61.w(3, LocaleController.getString(R.string.BusinessAwayScheduleAlways));
+            arrayList.add(m61.B(null));
+            i2.d.p(R.string.BusinessAwaySchedule, arrayList);
+            m61 w9 = m61.w(3, LocaleController.getString(R.string.BusinessAwayScheduleAlways));
             w9.K(cVar.x == 0);
             arrayList.add(w9);
             if (cVar.e) {
-                l61 w10 = l61.w(4, LocaleController.getString(R.string.BusinessAwayScheduleOutsideHours));
+                m61 w10 = m61.w(4, LocaleController.getString(R.string.BusinessAwayScheduleOutsideHours));
                 w10.K(cVar.x == 1);
                 arrayList.add(w10);
             }
-            l61 w11 = l61.w(5, LocaleController.getString(R.string.BusinessAwayScheduleCustom));
+            m61 w11 = m61.w(5, LocaleController.getString(R.string.BusinessAwayScheduleCustom));
             w11.K(cVar.x == 2);
             arrayList.add(w11);
             if (cVar.x == 2) {
-                arrayList.add(l61.B(null));
-                i2.d.o(R.string.BusinessAwaySchedule, arrayList);
-                arrayList.add(l61.f(LocaleController.getString(R.string.BusinessAwayScheduleCustomStart), LocaleController.formatShortDateTime(cVar.F), 8));
-                arrayList.add(l61.f(LocaleController.getString(R.string.BusinessAwayScheduleCustomEnd), LocaleController.formatShortDateTime(cVar.G), 9));
+                arrayList.add(m61.B(null));
+                i2.d.p(R.string.BusinessAwaySchedule, arrayList);
+                arrayList.add(m61.f(LocaleController.getString(R.string.BusinessAwayScheduleCustomStart), LocaleController.formatShortDateTime(cVar.F), 8));
+                arrayList.add(m61.f(LocaleController.getString(R.string.BusinessAwayScheduleCustomEnd), LocaleController.formatShortDateTime(cVar.G), 9));
             }
-            arrayList.add(l61.B(null));
-            l61 i11 = l61.i(10, LocaleController.getString(R.string.BusinessAwayOnlyOffline));
+            arrayList.add(m61.B(null));
+            m61 i11 = m61.i(10, LocaleController.getString(R.string.BusinessAwayOnlyOffline));
             i11.K(cVar.w);
             arrayList.add(i11);
-            i2.d.y(R.string.BusinessAwayOnlyOfflineInfo, arrayList);
-            i2.d.o(R.string.BusinessRecipients, arrayList);
-            l61 w12 = l61.w(6, LocaleController.getString(R.string.BusinessChatsAllPrivateExcept2));
+            i2.d.B(R.string.BusinessAwayOnlyOfflineInfo, arrayList);
+            i2.d.p(R.string.BusinessRecipients, arrayList);
+            m61 w12 = m61.w(6, LocaleController.getString(R.string.BusinessChatsAllPrivateExcept2));
             w12.K(cVar.v);
             arrayList.add(w12);
-            l61 w13 = l61.w(7, LocaleController.getString(R.string.BusinessChatsOnlySelected2));
+            m61 w13 = m61.w(7, LocaleController.getString(R.string.BusinessChatsOnlySelected2));
             w13.K(!cVar.v);
             arrayList.add(w13);
-            arrayList.add(l61.B(null));
-            cVar.d.a(arrayList, z61Var, true);
-            arrayList.add(l61.B(null));
+            arrayList.add(m61.B(null));
+            cVar.d.a(arrayList, a71Var, true);
+            arrayList.add(m61.B(null));
         }
     }
 
@@ -159,8 +159,8 @@ public final class c extends m2 implements NotificationCenter.NotificationCenter
             int i10 = -this.h;
             this.h = i10;
             AndroidUtilities.shakeViewSpring(z12, i10);
-            h71 h71Var = this.c;
-            h71Var.x0(h71Var.y1(2));
+            i71 i71Var = this.c;
+            i71Var.x0(i71Var.y1(2));
             return;
         }
         if (!z10 || this.d.k(this.c)) {
@@ -204,8 +204,8 @@ public final class c extends m2 implements NotificationCenter.NotificationCenter
     }
 
     public final void Y() {
-        h71 h71Var;
-        z61 z61Var;
+        i71 i71Var;
+        a71 a71Var;
         if (this.f) {
             return;
         }
@@ -237,9 +237,9 @@ public final class c extends m2 implements NotificationCenter.NotificationCenter
                 int i11 = tL_businessAwayMessageScheduleCustom.end_date;
                 this.E = i11;
                 this.G = i11;
-                h71Var = this.c;
-                if (h71Var != null && (z61Var = h71Var.W2) != null) {
-                    z61Var.N(true);
+                i71Var = this.c;
+                if (i71Var != null && (a71Var = i71Var.W2) != null) {
+                    a71Var.N(true);
                 }
                 V(true);
                 this.f = true;
@@ -258,9 +258,9 @@ public final class c extends m2 implements NotificationCenter.NotificationCenter
             this.r = 1;
             this.x = 1;
         }
-        h71Var = this.c;
-        if (h71Var != null) {
-            z61Var.N(true);
+        i71Var = this.c;
+        if (i71Var != null) {
+            a71Var.N(true);
         }
         V(true);
         this.f = true;
@@ -285,13 +285,13 @@ public final class c extends m2 implements NotificationCenter.NotificationCenter
         a0Var.h = this.v;
         TL_account.TL_businessAwayMessage tL_businessAwayMessage = this.n;
         a0Var.j(tL_businessAwayMessage == null ? null : tL_businessAwayMessage.recipients);
-        h71 h71Var = new h71(this, new ci.u(this, 21), new a(this, 0), null);
-        this.c = h71Var;
-        h71Var.p1();
-        h71 h71Var2 = this.c;
-        h71Var2.W2.r = false;
-        frameLayout.addView(h71Var2, a6.d(-1.0f, -1));
-        this.actionBar.A(this.c, true);
+        i71 i71Var = new i71(this, new ci.u(this, 21), new a(this, 0), null);
+        this.c = i71Var;
+        i71Var.p1();
+        i71 i71Var2 = this.c;
+        i71Var2.W2.r = false;
+        frameLayout.addView(i71Var2, z5.d(-1.0f, -1));
+        this.actionBar.B(this.c, true);
         Y();
         this.fragmentView = frameLayout;
         return frameLayout;
@@ -299,15 +299,15 @@ public final class c extends m2 implements NotificationCenter.NotificationCenter
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        z61 z61Var;
+        a71 a71Var;
         if (i10 != NotificationCenter.quickRepliesUpdated) {
             if (i10 == NotificationCenter.userInfoDidLoad) {
                 Y();
             }
         } else {
-            h71 h71Var = this.c;
-            if (h71Var != null && (z61Var = h71Var.W2) != null) {
-                z61Var.N(true);
+            i71 i71Var = this.c;
+            if (i71Var != null && (a71Var = i71Var.W2) != null) {
+                a71Var.N(true);
             }
             V(true);
         }

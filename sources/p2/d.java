@@ -19,17 +19,17 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.ul0;
+import org.telegram.ui.ps0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class d implements y2.g {
-    public static final ul0 J = new ul0(18);
+    public static final ps0 J = new ps0(16);
     public n0 E;
     public Uri F;
     public m G;
     public boolean H;
-    public final l2.f a;
+    public final m.h a;
     public final t b;
     public final oa.d c;
     public a5.a f;
@@ -45,14 +45,65 @@ public final class d implements y2.g {
     public final HashMap d = new HashMap();
     public long I = -9223372036854775807L;
 
-    public d(l2.f fVar, oa.d dVar, t tVar) {
-        this.a = fVar;
+    public d(m.h hVar, oa.d dVar, t tVar) {
+        this.a = hVar;
         this.b = tVar;
         this.c = dVar;
     }
 
     @Override // y2.g
-    public final void B(y2.i iVar, long j10, long j11, boolean z10) {
+    public final void A(y2.i iVar, long j10, long j11) {
+        p pVar;
+        y2.o oVar = (y2.o) iVar;
+        q qVar = (q) oVar.f;
+        boolean z10 = qVar instanceof m;
+        if (z10) {
+            String str = qVar.a;
+            p pVar2 = p.n;
+            Uri parse = Uri.parse(str);
+            b2.w wVar = new b2.w();
+            wVar.a = "0";
+            wVar.q = w0.n("application/x-mpegURL");
+            List singletonList = Collections.singletonList(new o(parse, new x(wVar), null, null, null, null, null, null));
+            List list = Collections.EMPTY_LIST;
+            pVar = new p("", list, singletonList, list, list, list, list, null, null, false, Collections.EMPTY_MAP, list);
+        } else {
+            pVar = (p) qVar;
+        }
+        this.s = pVar;
+        try {
+            this.w = w.b(pVar.e);
+            this.x = w.a(pVar.f);
+            this.y = w.a(pVar.g);
+            this.E = w.a(pVar.h);
+            this.F = ((w) this.w.get(0)).c();
+            this.e.add(new a(this));
+            a(this.w);
+            a(this.x);
+            a(this.y);
+            a(this.E);
+            g2.m mVar = oVar.b;
+            b0 b0Var = oVar.d;
+            u2.u uVar = new u2.u(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
+            c cVar = (c) this.d.get(this.F);
+            cVar.getClass();
+            if (z10) {
+                Uri uri = oVar.d.c;
+                b bVar = (b) i2.d.i(cVar.b, uri, uri);
+                bVar.getClass();
+                bVar.d((m) qVar, uVar);
+            } else {
+                c.b(cVar, this.F, false);
+            }
+            this.c.getClass();
+            this.f.r(uVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        } catch (x0 e) {
+            this.v = e;
+        }
+    }
+
+    @Override // y2.g
+    public final void X0(y2.i iVar, long j10, long j11, boolean z10) {
         y2.o oVar = (y2.o) iVar;
         long j12 = oVar.a;
         g2.m mVar = oVar.b;
@@ -85,10 +136,10 @@ public final class d implements y2.g {
             c cVar2 = (c) hashMap.get(uri);
             cVar2.getClass();
             HashMap hashMap2 = cVar2.b;
-            b bVar = (b) i2.d.h(hashMap2, uri, uri);
+            b bVar = (b) i2.d.i(hashMap2, uri, uri);
             bVar.getClass();
             if (!bVar.w) {
-                b bVar2 = (b) i2.d.h(hashMap2, uri, uri);
+                b bVar2 = (b) i2.d.i(hashMap2, uri, uri);
                 bVar2.getClass();
                 bVar2.w = true;
                 m a10 = c.a(cVar2, uri);
@@ -150,7 +201,7 @@ public final class d implements y2.g {
         if (cVar == null) {
             return false;
         }
-        b bVar = (b) i2.d.h(cVar.b, uri, uri);
+        b bVar = (b) i2.d.i(cVar.b, uri, uri);
         bVar.getClass();
         if (bVar.e == null) {
             return false;
@@ -180,7 +231,7 @@ public final class d implements y2.g {
                         return;
                     } else {
                         Uri d = d(uri);
-                        b bVar = (b) i2.d.h(cVar.b, uri, uri);
+                        b bVar = (b) i2.d.i(cVar.b, uri, uri);
                         bVar.getClass();
                         bVar.c(d);
                         return;
@@ -194,9 +245,9 @@ public final class d implements y2.g {
     public final void h(Uri uri) {
         c cVar = (c) this.d.get(uri);
         if (cVar != null) {
-            b bVar = (b) i2.d.h(cVar.b, uri, uri);
+            b bVar = (b) i2.d.i(cVar.b, uri, uri);
             bVar.getClass();
-            bVar.c.d();
+            bVar.c.b();
             IOException iOException = bVar.v;
             if (iOException != null) {
                 throw iOException;
@@ -205,7 +256,7 @@ public final class d implements y2.g {
     }
 
     @Override // y2.g
-    public final k4.d j(y2.i iVar, long j10, long j11, IOException iOException, int i10) {
+    public final k4.d w(y2.i iVar, long j10, long j11, IOException iOException, int i10) {
         long min;
         y2.o oVar = (y2.o) iVar;
         long j12 = oVar.a;
@@ -232,7 +283,7 @@ public final class d implements y2.g {
     }
 
     @Override // y2.g
-    public final void k(y2.i iVar, long j10, long j11, int i10) {
+    public final void y(y2.i iVar, long j10, long j11, int i10) {
         u2.u uVar;
         y2.o oVar = (y2.o) iVar;
         if (i10 == 0) {
@@ -245,56 +296,5 @@ public final class d implements y2.g {
             uVar = new u2.u(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
         }
         this.f.v(uVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i10);
-    }
-
-    @Override // y2.g
-    public final void l(y2.i iVar, long j10, long j11) {
-        p pVar;
-        y2.o oVar = (y2.o) iVar;
-        q qVar = (q) oVar.f;
-        boolean z10 = qVar instanceof m;
-        if (z10) {
-            String str = qVar.a;
-            p pVar2 = p.n;
-            Uri parse = Uri.parse(str);
-            b2.w wVar = new b2.w();
-            wVar.a = "0";
-            wVar.q = w0.n("application/x-mpegURL");
-            List singletonList = Collections.singletonList(new o(parse, new x(wVar), null, null, null, null, null, null));
-            List list = Collections.EMPTY_LIST;
-            pVar = new p("", list, singletonList, list, list, list, list, null, null, false, Collections.EMPTY_MAP, list);
-        } else {
-            pVar = (p) qVar;
-        }
-        this.s = pVar;
-        try {
-            this.w = w.b(pVar.e);
-            this.x = w.a(pVar.f);
-            this.y = w.a(pVar.g);
-            this.E = w.a(pVar.h);
-            this.F = ((w) this.w.get(0)).c();
-            this.e.add(new a(this));
-            a(this.w);
-            a(this.x);
-            a(this.y);
-            a(this.E);
-            g2.m mVar = oVar.b;
-            b0 b0Var = oVar.d;
-            u2.u uVar = new u2.u(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
-            c cVar = (c) this.d.get(this.F);
-            cVar.getClass();
-            if (z10) {
-                Uri uri = oVar.d.c;
-                b bVar = (b) i2.d.h(cVar.b, uri, uri);
-                bVar.getClass();
-                bVar.d((m) qVar, uVar);
-            } else {
-                c.b(cVar, this.F, false);
-            }
-            this.c.getClass();
-            this.f.r(uVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
-        } catch (x0 e) {
-            this.v = e;
-        }
     }
 }

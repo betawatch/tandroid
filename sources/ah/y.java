@@ -15,7 +15,7 @@ import org.telegram.ui.Components.s5;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.r71;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class y extends r71 {
     public boolean d2;
@@ -63,7 +63,7 @@ public final class y extends r71 {
             b6 e = l1.e(document, l4, a0Var.n.getFontMetricsInt());
             e.cacheType = s5.g();
             e.setAdded();
-            arrayList.add(w7.s.b(editTextSelectionEnd, 0, arrayList.size()), l4);
+            arrayList.add(w7.r.b(editTextSelectionEnd, 0, arrayList.size()), l4);
             linkedHashMap.put(l4, e);
             spannableString.setSpan(e, 0, spannableString.length(), 33);
             a0Var.n.getText().insert(editTextSelectionEnd, spannableString);

@@ -1,12 +1,27 @@
 package w7;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.ui.nb0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class g6 {
-    public static void a(View view, float f7, float f10, float f11, float f12) {
-        view.setPadding(AndroidUtilities.dp(f7), AndroidUtilities.dp(f10), AndroidUtilities.dp(f11), AndroidUtilities.dp(f12));
+    public static boolean a(nb0 nb0Var) {
+        Context context = ApplicationLoader.applicationContext;
+        int componentEnabledSetting = context.getPackageManager().getComponentEnabledSetting(nb0Var.a(context));
+        return componentEnabledSetting == 1 || (componentEnabledSetting == 0 && nb0Var == nb0.h);
+    }
+
+    public static void b(nb0 nb0Var) {
+        Context context = ApplicationLoader.applicationContext;
+        PackageManager packageManager = context.getPackageManager();
+        nb0[] values = nb0.values();
+        int length = values.length;
+        for (int i10 = 0; i10 < length; i10++) {
+            nb0 nb0Var2 = values[i10];
+            packageManager.setComponentEnabledSetting(nb0Var2.a(context), nb0Var2 == nb0Var ? 1 : 2, 1);
+        }
     }
 }

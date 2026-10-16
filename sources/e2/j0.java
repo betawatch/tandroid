@@ -10,13 +10,13 @@ import java.lang.ref.WeakReference;
 import java.security.SecureRandom;
 import java.util.Arrays;
 import java.util.WeakHashMap;
-import m.v0;
-import m.w0;
+import m.x0;
+import m.y0;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class j0 {
     public final /* synthetic */ int a;
@@ -144,19 +144,19 @@ public class j0 {
     public void g(Typeface typeface) {
         int i10;
         if (Build.VERSION.SDK_INT >= 28 && (i10 = this.b) != -1) {
-            typeface = v0.a(typeface, i10, (this.c & 2) != 0);
+            typeface = x0.a(typeface, i10, (this.c & 2) != 0);
         }
-        w0 w0Var = (w0) this.e;
+        y0 y0Var = (y0) this.e;
         WeakReference weakReference = (WeakReference) this.d;
-        if (w0Var.m) {
-            w0Var.l = typeface;
+        if (y0Var.m) {
+            y0Var.l = typeface;
             TextView textView = (TextView) weakReference.get();
             if (textView != null) {
-                WeakHashMap weakHashMap = r0.j0.a;
+                WeakHashMap weakHashMap = r0.i0.a;
                 if (textView.isAttachedToWindow()) {
-                    textView.post(new androidx.activity.g(textView, typeface, w0Var.j, 4));
+                    textView.post(new androidx.activity.g(textView, typeface, y0Var.j, 4));
                 } else {
-                    textView.setTypeface(typeface, w0Var.j);
+                    textView.setTypeface(typeface, y0Var.j);
                 }
             }
         }
@@ -199,7 +199,7 @@ public class j0 {
                 int i14 = i10 - 1;
                 int i15 = 0;
                 while (i14 >= 0) {
-                    if (c0Var.n(i13 + i14)) {
+                    if (c0Var.i(i13 + i14)) {
                         i15 += i11;
                     }
                     i14--;
@@ -242,9 +242,9 @@ public class j0 {
         }
     }
 
-    public j0(w0 w0Var, int i10, int i11, WeakReference weakReference) {
+    public j0(y0 y0Var, int i10, int i11, WeakReference weakReference) {
         this.a = 1;
-        this.e = w0Var;
+        this.e = y0Var;
         this.b = i10;
         this.c = i11;
         this.d = weakReference;
@@ -252,7 +252,7 @@ public class j0 {
 
     public j0(int i10) {
         this.a = 4;
-        this.d = new w3.s[i10];
+        this.d = new w3.r[i10];
         this.c = 0;
     }
 }

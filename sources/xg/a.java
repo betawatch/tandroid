@@ -39,7 +39,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.g0;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
@@ -49,7 +49,7 @@ import org.telegram.ui.Components.ix0;
 import org.telegram.ui.Components.k9;
 import ug.s;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class a {
     public static final HashMap Y;
@@ -107,8 +107,8 @@ public final class a {
     static {
         HashMap hashMap = new HashMap();
         Y = hashMap;
-        d.p(1, hashMap, "1⃣", 3, "2⃣");
-        d.p(6, hashMap, "3⃣", 12, "4⃣");
+        d.q(1, hashMap, "1⃣", 3, "2⃣");
+        d.q(6, hashMap, "3⃣", 12, "4⃣");
         hashMap.put(24, "5⃣");
     }
 
@@ -259,7 +259,7 @@ public final class a {
         this.y.draw(canvas2);
         canvas2.restore();
         canvas2.translate(0.0f, AndroidUtilities.dp(6.0f) + this.q);
-        int c10 = yh.c(6.0f, this.q, dp5);
+        int C = g0.C(6.0f, this.q, dp5);
         int i16 = 0;
         int i17 = 0;
         while (true) {
@@ -312,7 +312,7 @@ public final class a {
                     this.N.set(0.0f, 0.0f, this.g[i20] + AndroidUtilities.dp(40.0f), AndroidUtilities.dp(24.0f));
                     canvas2.drawRoundRect(this.N, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), this.J);
                     float f18 = i22;
-                    this.i[i20].set(i22, c10, (int) (this.N.width() + f18), AndroidUtilities.dp(24.0f) + c10);
+                    this.i[i20].set(i22, C, (int) (this.N.width() + f18), AndroidUtilities.dp(24.0f) + C);
                     canvas2.translate(this.N.width() + AndroidUtilities.dp(f10), 0.0f);
                     i19 = (int) (this.N.width() + AndroidUtilities.dp(f10) + f18);
                     i20++;
@@ -325,7 +325,7 @@ public final class a {
                 }
                 canvas2.restore();
                 canvas2.translate(0.0f, AndroidUtilities.dp(30.0f));
-                c10 += AndroidUtilities.dp(30.0f);
+                C += AndroidUtilities.dp(30.0f);
                 i16 = i20;
                 i17 = i12;
                 i13 = 0;

@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import org.telegram.ui.Components.nz;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class g implements d, t5.c, c {
     public static final i5.c f = new i5.c("proto");
@@ -73,12 +73,12 @@ public final class g implements d, t5.c, c {
         i iVar = this.a;
         Objects.requireNonNull(iVar);
         u5.a aVar = this.c;
-        long d = aVar.d();
+        long b10 = aVar.b();
         while (true) {
             try {
                 return iVar.getWritableDatabase();
             } catch (SQLiteDatabaseLockedException e) {
-                if (aVar.d() >= this.d.c + d) {
+                if (aVar.b() >= this.d.c + b10) {
                     throw new t5.a("Timed out while trying to open db.", e);
                 }
                 SystemClock.sleep(50L);
@@ -120,19 +120,19 @@ public final class g implements d, t5.c, c {
     public final Object f(t5.b bVar) {
         SQLiteDatabase a2 = a();
         u5.a aVar = this.c;
-        long d = aVar.d();
+        long b10 = aVar.b();
         while (true) {
             try {
                 a2.beginTransaction();
                 try {
-                    Object h = bVar.h();
+                    Object f7 = bVar.f();
                     a2.setTransactionSuccessful();
-                    return h;
+                    return f7;
                 } finally {
                     a2.endTransaction();
                 }
             } catch (SQLiteDatabaseLockedException e) {
-                if (aVar.d() >= this.d.c + d) {
+                if (aVar.b() >= this.d.c + b10) {
                     throw new t5.a("Timed out while trying to acquire the lock.", e);
                 }
                 SystemClock.sleep(50L);

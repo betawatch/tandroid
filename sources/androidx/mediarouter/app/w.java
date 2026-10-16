@@ -8,25 +8,24 @@ import j$.util.DesugarCollections;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import ji.w4;
-import m.h3;
+import m.k3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.a80;
 import org.telegram.ui.Components.ip;
 import org.telegram.ui.Components.qp;
 import org.telegram.ui.Components.s6;
 import org.telegram.ui.Components.vi;
 import org.telegram.ui.Components.w90;
 import org.telegram.ui.Components.z30;
+import org.telegram.ui.Components.z70;
 import org.telegram.ui.Components.zp;
 import org.telegram.ui.fo;
 import s4.b1;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class w implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -70,22 +69,22 @@ public final class w implements View.OnClickListener {
                 return;
             case 2:
                 g0 g0Var = (g0) this.b;
-                p4.y yVar = g0Var.B.w.f;
-                p4.w wVar = g0Var.A;
-                yVar.getClass();
-                if (wVar == null) {
+                p4.x xVar = g0Var.B.w.f;
+                p4.v vVar = g0Var.A;
+                xVar.getClass();
+                if (vVar == null) {
                     throw new NullPointerException("route must not be null");
                 }
-                p4.y.b();
-                p4.e c10 = p4.y.c();
+                p4.x.b();
+                p4.e c10 = p4.x.c();
                 if (!(c10.e instanceof p4.p)) {
                     throw new IllegalStateException("There is no currently selected dynamic group route.");
                 }
-                w4 b10 = c10.d.b(wVar);
-                if (b10 == null || (oVar = (p4.o) b10.b) == null || !oVar.e) {
+                m.l b10 = c10.d.b(vVar);
+                if (b10 == null || (oVar = (p4.o) b10.a) == null || !oVar.e) {
                     Log.w("GlobalMediaRouter", "Ignoring attempt to transfer to a non-transferable route.");
                 } else {
-                    ((p4.p) c10.e).o(Collections.singletonList(wVar.b));
+                    ((p4.p) c10.e).o(Collections.singletonList(vVar.b));
                 }
                 g0Var.w.setVisibility(4);
                 g0Var.x.setVisibility(0);
@@ -97,50 +96,50 @@ public final class w implements View.OnClickListener {
                 boolean z11 = !v;
                 boolean e = k0Var.v.e();
                 if (v) {
-                    p4.y yVar2 = l0Var.w.f;
-                    p4.w wVar2 = k0Var.v;
-                    yVar2.getClass();
-                    if (wVar2 == null) {
+                    p4.x xVar2 = l0Var.w.f;
+                    p4.v vVar2 = k0Var.v;
+                    xVar2.getClass();
+                    if (vVar2 == null) {
                         throw new NullPointerException("route must not be null");
                     }
-                    p4.y.b();
-                    p4.e c11 = p4.y.c();
+                    p4.x.b();
+                    p4.e c11 = p4.x.c();
                     if (!(c11.e instanceof p4.p)) {
                         throw new IllegalStateException("There is no currently selected dynamic group route.");
                     }
-                    w4 b11 = c11.d.b(wVar2);
-                    if (!DesugarCollections.unmodifiableList(c11.d.v).contains(wVar2) || b11 == null || ((oVar2 = (p4.o) b11.b) != null && !oVar2.c)) {
-                        Log.w("GlobalMediaRouter", "Ignoring attempt to remove a non-unselectable member route : " + wVar2);
+                    m.l b11 = c11.d.b(vVar2);
+                    if (!DesugarCollections.unmodifiableList(c11.d.v).contains(vVar2) || b11 == null || ((oVar2 = (p4.o) b11.a) != null && !oVar2.c)) {
+                        Log.w("GlobalMediaRouter", "Ignoring attempt to remove a non-unselectable member route : " + vVar2);
                     } else if (DesugarCollections.unmodifiableList(c11.d.v).size() <= 1) {
                         Log.w("GlobalMediaRouter", "Ignoring attempt to remove the last member route.");
                     } else {
-                        ((p4.p) c11.e).n(wVar2.b);
+                        ((p4.p) c11.e).n(vVar2.b);
                     }
                 } else {
-                    p4.y yVar3 = l0Var.w.f;
-                    p4.w wVar3 = k0Var.v;
-                    yVar3.getClass();
-                    if (wVar3 == null) {
+                    p4.x xVar3 = l0Var.w.f;
+                    p4.v vVar3 = k0Var.v;
+                    xVar3.getClass();
+                    if (vVar3 == null) {
                         throw new NullPointerException("route must not be null");
                     }
-                    p4.y.b();
-                    p4.e c12 = p4.y.c();
+                    p4.x.b();
+                    p4.e c12 = p4.x.c();
                     if (!(c12.e instanceof p4.p)) {
                         throw new IllegalStateException("There is no currently selected dynamic group route.");
                     }
-                    w4 b12 = c12.d.b(wVar3);
-                    if (DesugarCollections.unmodifiableList(c12.d.v).contains(wVar3) || b12 == null || (oVar3 = (p4.o) b12.b) == null || !oVar3.d) {
-                        Log.w("GlobalMediaRouter", "Ignoring attempt to add a non-groupable route to dynamic group : " + wVar3);
+                    m.l b12 = c12.d.b(vVar3);
+                    if (DesugarCollections.unmodifiableList(c12.d.v).contains(vVar3) || b12 == null || (oVar3 = (p4.o) b12.a) == null || !oVar3.d) {
+                        Log.w("GlobalMediaRouter", "Ignoring attempt to add a non-groupable route to dynamic group : " + vVar3);
                     } else {
-                        ((p4.p) c12.e).m(wVar3.b);
+                        ((p4.p) c12.e).m(vVar3.b);
                     }
                 }
                 k0Var.w(z11, !e);
                 if (e) {
                     List unmodifiableList = DesugarCollections.unmodifiableList(l0Var.w.r.v);
-                    for (p4.w wVar4 : DesugarCollections.unmodifiableList(k0Var.v.v)) {
-                        if (unmodifiableList.contains(wVar4) != z11) {
-                            f0 f0Var2 = (f0) l0Var.w.L.get(wVar4.c);
+                    for (p4.v vVar4 : DesugarCollections.unmodifiableList(k0Var.v.v)) {
+                        if (unmodifiableList.contains(vVar4) != z11) {
+                            f0 f0Var2 = (f0) l0Var.w.L.get(vVar4.c);
                             if (f0Var2 instanceof k0) {
                                 ((k0) f0Var2).w(z11, true);
                             }
@@ -148,13 +147,13 @@ public final class w implements View.OnClickListener {
                     }
                 }
                 n0 n0Var2 = l0Var.w;
-                p4.w wVar5 = k0Var.v;
+                p4.v vVar5 = k0Var.v;
                 List unmodifiableList2 = DesugarCollections.unmodifiableList(n0Var2.r.v);
                 int max2 = Math.max(1, unmodifiableList2.size());
-                if (wVar5.e()) {
-                    Iterator it = DesugarCollections.unmodifiableList(wVar5.v).iterator();
+                if (vVar5.e()) {
+                    Iterator it = DesugarCollections.unmodifiableList(vVar5.v).iterator();
                     while (it.hasNext()) {
-                        if (unmodifiableList2.contains((p4.w) it.next()) != z11) {
+                        if (unmodifiableList2.contains((p4.v) it.next()) != z11) {
                             max2 += !v ? 1 : -1;
                         }
                     }
@@ -204,8 +203,8 @@ public final class w implements View.OnClickListener {
                 ((k.a) this.b).a();
                 return;
             case 7:
-                h3 h3Var = ((Toolbar) this.b).e0;
-                l.m mVar = h3Var == null ? null : h3Var.b;
+                k3 k3Var = ((Toolbar) this.b).e0;
+                l.m mVar = k3Var == null ? null : k3Var.b;
                 if (mVar != null) {
                     mVar.collapseActionView();
                     return;
@@ -233,31 +232,31 @@ public final class w implements View.OnClickListener {
                 s6 s6Var2 = zpVar.a0;
                 int i10 = g6.Oh;
                 s6Var2.setTextColor(zpVar.getThemedColor(i10));
-                zpVar.Z.addView(zpVar.a0, a6.e(-1, -2, 17));
-                ah.v vVar = zpVar.Z;
+                zpVar.Z.addView(zpVar.a0, z5.e(-1, -2, 17));
+                ah.v vVar6 = zpVar.Z;
                 int dp = AndroidUtilities.dp(0.0f);
                 int themedColor = zpVar.getThemedColor(g6.d6);
                 int k10 = i0.a.k(zpVar.getThemedColor(i10), 76);
-                vVar.setBackground(g6.j0(dp, dp, dp, dp, themedColor, k10, k10));
+                vVar6.setBackground(g6.j0(dp, dp, dp, dp, themedColor, k10, k10));
                 zpVar.Z.setOnClickListener(new ip(zpVar, 0));
-                zpVar.Y.u1.addView(zpVar.Z, a6.e(-1, -2, 80));
+                zpVar.Y.u1.addView(zpVar.Z, z5.e(-1, -2, 80));
                 return;
             case 9:
-                a80 a80Var = (a80) this.b;
+                z70 z70Var = (z70) this.b;
                 z30 z30Var = (z30) view;
                 if (z30Var.y) {
-                    a80Var.j0 = null;
-                    a80Var.f0.l(z30Var.getUid());
-                    a80Var.U.b(z30Var);
-                    a80Var.b0(true);
-                    AndroidUtilities.updateVisibleRows(a80Var.d);
+                    z70Var.j0 = null;
+                    z70Var.f0.l(z30Var.getUid());
+                    z70Var.U.b(z30Var);
+                    z70Var.b0(true);
+                    AndroidUtilities.updateVisibleRows(z70Var.d);
                     return;
                 }
-                z30 z30Var2 = a80Var.j0;
+                z30 z30Var2 = z70Var.j0;
                 if (z30Var2 != null) {
                     z30Var2.a();
                 }
-                a80Var.j0 = z30Var;
+                z70Var.j0 = z30Var;
                 z30Var.b();
                 return;
             default:

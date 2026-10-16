@@ -1,10 +1,22 @@
 package gb;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+import java.lang.reflect.Method;
+
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class s extends t {
-    @Override // gb.t
+public final class s extends u {
+    public final /* synthetic */ Method b;
+
+    public s(Method method) {
+        this.b = method;
+    }
+
+    @Override // gb.u
     public final Object a(Class cls) {
-        throw new UnsupportedOperationException("Cannot allocate " + cls + ". Usage of JDK sun.misc.Unsafe is enabled, but it could not be used. Make sure your runtime is configured correctly.");
+        String w9 = qf.b.w(cls);
+        if (w9 == null) {
+            return this.b.invoke(null, cls, Object.class);
+        }
+        throw new AssertionError("UnsafeAllocator is used for non-instantiable type: ".concat(w9));
     }
 }

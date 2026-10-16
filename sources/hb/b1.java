@@ -1,6 +1,6 @@
 package hb;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class b1 extends eb.u {
     @Override // eb.u
@@ -14,9 +14,9 @@ public class b1 extends eb.u {
             if (p5 <= 255 && p5 >= -128) {
                 return Byte.valueOf((byte) p5);
             }
-            StringBuilder k10 = i2.d.k(p5, "Lossy conversion from ", " to byte; at path ");
-            k10.append(aVar.j());
-            throw new eb.j(k10.toString());
+            StringBuilder l4 = i2.d.l(p5, "Lossy conversion from ", " to byte; at path ");
+            l4.append(aVar.j());
+            throw new eb.j(l4.toString());
         } catch (NumberFormatException e) {
             throw new eb.j(e);
         }

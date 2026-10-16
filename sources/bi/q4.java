@@ -22,11 +22,11 @@ import org.telegram.ui.Components.ga0;
 import org.telegram.ui.Components.io;
 import org.telegram.ui.Components.oy;
 import org.telegram.ui.Components.uy;
-import org.telegram.ui.Components.wy0;
+import org.telegram.ui.Components.xy0;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.fo;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -166,28 +166,28 @@ public final /* synthetic */ class q4 implements Utilities.Callback {
                 break;
             case 8:
                 org.telegram.ui.ActionBar.a2 a2Var = (org.telegram.ui.ActionBar.a2) obj3;
-                wy0 wy0Var = (wy0) obj2;
+                xy0 xy0Var = (xy0) obj2;
                 ((org.telegram.ui.ActionBar.a2) obj4).dismiss();
                 if (!((Boolean) obj).booleanValue()) {
-                    wy0Var.setErrorText(".");
-                    AndroidUtilities.shakeViewSpring(wy0Var, -6.0f);
+                    xy0Var.setErrorText(".");
+                    AndroidUtilities.shakeViewSpring(xy0Var, -6.0f);
                     BotWebViewVibrationEffect.APP_ERROR.vibrate();
-                    AndroidUtilities.showKeyboard(wy0Var);
+                    AndroidUtilities.showKeyboard(xy0Var);
                     break;
                 } else {
                     a2Var.dismiss();
                     break;
                 }
             case 9:
-                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) obj4;
+                org.telegram.ui.web.c1 c1Var = (org.telegram.ui.web.c1) obj4;
                 String str2 = (String) obj3;
                 n9 n9Var = (n9) obj2;
                 Boolean bool = (Boolean) obj;
-                b1Var.getClass();
+                c1Var.getClass();
                 try {
                     JSONObject jSONObject = new JSONObject();
                     jSONObject.put("status", bool.booleanValue() ? TextUtils.isEmpty(str2) ? "removed" : "updated" : "failed");
-                    b1Var.x(n9Var, "biometry_token_updated", jSONObject);
+                    c1Var.x(n9Var, "biometry_token_updated", jSONObject);
                     break;
                 } catch (Exception e) {
                     FileLog.e(e);

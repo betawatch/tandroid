@@ -8,7 +8,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public class r2 extends org.telegram.ui.ActionBar.e3 implements NotificationCenter.NotificationCenterDelegate {
     public static int G = 1;
@@ -46,7 +46,7 @@ public class r2 extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         this.f = h1Var;
         h1Var.b = z10 ? 0 : G;
         h1Var.setAdapter(new i1(this, z10, context));
-        this.containerView.addView(h1Var, w7.a6.e(-1, -1, 87));
+        this.containerView.addView(h1Var, w7.z5.e(-1, -1, 87));
         new h4(this.containerView, false, new d1(this, 0));
         if (!z10) {
             q2 q2Var = new q2(context);
@@ -54,7 +54,7 @@ public class r2 extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             q2Var.G = new d1(this, 1);
             q2Var.F = h1Var.b;
             q2Var.invalidate();
-            this.containerView.addView(q2Var, w7.a6.e(-1, -2, 87));
+            this.containerView.addView(q2Var, w7.z5.e(-1, -2, 87));
         }
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.stickersDidLoad);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.groupStickersDidLoad);

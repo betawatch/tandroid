@@ -7,10 +7,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class u71 implements TextWatcher {
-    public final uz0 a = new uz0(this, 17);
+    public final tz0 a = new tz0(this, 17);
     public final /* synthetic */ b81 b;
 
     public u71(b81 b81Var) {
@@ -50,22 +50,22 @@ public final class u71 implements TextWatcher {
             }
             a81Var.b();
         }
-        org.telegram.ui.Components.z61 z61Var = b81Var.i0;
-        if (z61Var != null) {
-            z61Var.N(true);
+        org.telegram.ui.Components.a71 a71Var = b81Var.i0;
+        if (a71Var != null) {
+            a71Var.N(true);
         }
     }
 
     @Override // android.text.TextWatcher
     public final void afterTextChanged(Editable editable) {
         int length = editable.length();
-        uz0 uz0Var = this.a;
+        tz0 tz0Var = this.a;
         if (length <= 0) {
-            AndroidUtilities.cancelRunOnUIThread(uz0Var);
+            AndroidUtilities.cancelRunOnUIThread(tz0Var);
             a();
         } else {
-            AndroidUtilities.cancelRunOnUIThread(uz0Var);
-            AndroidUtilities.runOnUIThread(uz0Var, 300L);
+            AndroidUtilities.cancelRunOnUIThread(tz0Var);
+            AndroidUtilities.runOnUIThread(tz0Var, 300L);
         }
     }
 

@@ -1,16 +1,16 @@
 package rg;
 
-import org.telegram.ui.hu0;
+import org.telegram.ui.gu0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ hu0 b;
+    public final /* synthetic */ gu0 b;
 
-    public /* synthetic */ m(hu0 hu0Var, int i10) {
+    public /* synthetic */ m(gu0 gu0Var, int i10) {
         this.a = i10;
-        this.b = hu0Var;
+        this.b = gu0Var;
     }
 
     @Override // q0.a

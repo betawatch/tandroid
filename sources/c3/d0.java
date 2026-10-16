@@ -7,7 +7,7 @@ import e9.x1;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class d0 implements o {
     public final int a;
@@ -37,13 +37,13 @@ public final class d0 implements o {
     @Override // c3.o
     public final void c(q qVar) {
         this.f = qVar;
-        i0 a02 = qVar.a0(1024, 4);
-        this.g = a02;
+        i0 W = qVar.W(1024, 4);
+        this.g = W;
         b2.w wVar = new b2.w();
         String str = this.c;
         wVar.q = w0.n(str);
         wVar.r = w0.n(str);
-        i2.d.s(wVar, a02);
+        i2.d.u(wVar, W);
         this.f.D();
         this.f.K(new e0());
         this.e = 1;

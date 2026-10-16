@@ -14,18 +14,17 @@ import android.widget.Button;
 import f.a;
 import l.b;
 import l.c;
-import l.j;
 import l.k;
 import l.m;
 import l.y;
-import m.i;
-import m.z0;
+import m.b1;
+import m.j;
 import org.telegram.tgnet.TLObject;
-import w7.r;
+import w7.q;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public class ActionMenuItemView extends z0 implements y, View.OnClickListener, i {
+public class ActionMenuItemView extends b1 implements y, View.OnClickListener, j {
     public boolean E;
     public final int F;
     public int G;
@@ -33,7 +32,7 @@ public class ActionMenuItemView extends z0 implements y, View.OnClickListener, i
     public m n;
     public CharSequence r;
     public Drawable s;
-    public j v;
+    public l.j v;
     public b w;
     public c x;
     public boolean y;
@@ -42,7 +41,7 @@ public class ActionMenuItemView extends z0 implements y, View.OnClickListener, i
         this(context, null);
     }
 
-    @Override // m.i
+    @Override // m.j
     public final boolean a() {
         return !TextUtils.isEmpty(getText());
     }
@@ -60,7 +59,7 @@ public class ActionMenuItemView extends z0 implements y, View.OnClickListener, i
         }
     }
 
-    @Override // m.i
+    @Override // m.j
     public final boolean c() {
         return !TextUtils.isEmpty(getText()) && this.n.getIcon() == null;
     }
@@ -91,9 +90,9 @@ public class ActionMenuItemView extends z0 implements y, View.OnClickListener, i
         }
         CharSequence charSequence2 = this.n.r;
         if (TextUtils.isEmpty(charSequence2)) {
-            r.a(this, z12 ? null : this.n.e);
+            q.a(this, z12 ? null : this.n.e);
         } else {
-            r.a(this, charSequence2);
+            q.a(this, charSequence2);
         }
     }
 
@@ -109,7 +108,7 @@ public class ActionMenuItemView extends z0 implements y, View.OnClickListener, i
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        j jVar = this.v;
+        l.j jVar = this.v;
         if (jVar != null) {
             jVar.a(this.n);
         }
@@ -122,7 +121,7 @@ public class ActionMenuItemView extends z0 implements y, View.OnClickListener, i
         g();
     }
 
-    @Override // m.z0, android.widget.TextView, android.view.View
+    @Override // m.b1, android.widget.TextView, android.view.View
     public final void onMeasure(int i10, int i11) {
         int i12;
         boolean isEmpty = TextUtils.isEmpty(getText());
@@ -191,7 +190,7 @@ public class ActionMenuItemView extends z0 implements y, View.OnClickListener, i
         g();
     }
 
-    public void setItemInvoker(j jVar) {
+    public void setItemInvoker(l.j jVar) {
         this.v = jVar;
     }
 

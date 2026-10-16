@@ -6,11 +6,11 @@ import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import n6.l;
 import o6.a;
-import w7.g0;
+import w7.f0;
 import x8.f;
 import y8.c;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class DataItemAssetParcelable extends a implements f, ReflectedParcelable {
     public static final Parcelable.Creator<DataItemAssetParcelable> CREATOR = new c(7);
@@ -48,10 +48,10 @@ public class DataItemAssetParcelable extends a implements f, ReflectedParcelable
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = g0.q(parcel, 20293);
-        g0.l(parcel, 2, this.a);
-        g0.l(parcel, 3, this.b);
-        g0.r(parcel, q6);
+        int q6 = f0.q(parcel, 20293);
+        f0.l(parcel, 2, this.a);
+        f0.l(parcel, 3, this.b);
+        f0.r(parcel, q6);
     }
 
     public DataItemAssetParcelable(f fVar) {

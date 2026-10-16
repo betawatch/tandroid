@@ -5,9 +5,9 @@ import android.graphics.RectF;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class w40 extends wv0 {
+public final class w40 extends vv0 {
     public final /* synthetic */ n60 T;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -16,7 +16,7 @@ public final class w40 extends wv0 {
         this.T = n60Var;
     }
 
-    @Override // org.telegram.ui.wv0
+    @Override // org.telegram.ui.vv0
     public final void c(Canvas canvas, float f7, float f10, float f11, float f12, float f13) {
         ViewGroup viewGroup;
         ViewGroup viewGroup2;
@@ -39,7 +39,7 @@ public final class w40 extends wv0 {
         }
     }
 
-    @Override // org.telegram.ui.wv0
+    @Override // org.telegram.ui.vv0
     public final void e() {
         g40 g40Var = this.T.b;
         super.e();

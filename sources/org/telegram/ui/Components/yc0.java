@@ -11,7 +11,7 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yc0 implements Runnable {
     public final /* synthetic */ int a;
@@ -50,34 +50,34 @@ public final /* synthetic */ class yc0 implements Runnable {
                     return;
                 }
             case 6:
-                ((ze0) this.b).f.start();
+                ((af0) this.b).f.start();
                 break;
             case 7:
-                h00 h00Var = ((dg0) this.b).c.l0;
+                h00 h00Var = ((eg0) this.b).c.l0;
                 if (h00Var != null) {
                     h00Var.d(false, true, false);
                     break;
                 }
                 break;
             case 8:
-                gg0 gg0Var = (gg0) this.b;
-                gg0Var.r = false;
-                gg0Var.invalidate();
+                hg0 hg0Var = (hg0) this.b;
+                hg0Var.r = false;
+                hg0Var.invalidate();
                 break;
             case 9:
-                ((jg0) this.b).h = null;
+                ((kg0) this.b).h = null;
                 break;
             case 10:
-                jg0 jg0Var = (jg0) ((m4.c) this.b).c;
-                jg0Var.d.L(jg0Var.e, false);
+                kg0 kg0Var = (kg0) ((m2.t) this.b).c;
+                kg0Var.d.L(kg0Var.e, false);
                 break;
             case 11:
-                org.telegram.ui.pu0 pu0Var = (org.telegram.ui.pu0) this.b;
-                if (pu0Var.x) {
-                    pu0Var.h("pollPosition();");
+                org.telegram.ui.ou0 ou0Var = (org.telegram.ui.ou0) this.b;
+                if (ou0Var.x) {
+                    ou0Var.h("pollPosition();");
                 }
-                if (pu0Var.G) {
-                    AndroidUtilities.runOnUIThread(pu0Var.L, 500L);
+                if (ou0Var.G) {
+                    AndroidUtilities.runOnUIThread(ou0Var.L, 500L);
                     break;
                 }
                 break;
@@ -122,9 +122,9 @@ public final /* synthetic */ class yc0 implements Runnable {
                 break;
             case 19:
                 hl0 hl0Var = (hl0) this.b;
-                h81 h81Var = hl0Var.n;
-                if (h81Var != null) {
-                    boolean y3 = h81Var.y();
+                i81 i81Var = hl0Var.n;
+                if (i81Var != null) {
+                    boolean y3 = i81Var.y();
                     float n10 = hl0Var.n.n() / hl0Var.n.p();
                     float f7 = hl0Var.s;
                     if (n10 < f7) {
@@ -157,12 +157,12 @@ public final /* synthetic */ class yc0 implements Runnable {
                 }
                 break;
             case 21:
-                yn0 yn0Var = (yn0) this.b;
+                xn0 xn0Var = (xn0) this.b;
                 ArrayList<MessageObject> arrayList = new ArrayList<>();
                 ArrayList<MessageObject> arrayList2 = new ArrayList<>();
                 ArrayList arrayList3 = new ArrayList();
                 ArrayList arrayList4 = new ArrayList();
-                int i10 = yn0Var.d;
+                int i10 = xn0Var.d;
                 FileLoader.getInstance(i10).getCurrentLoadingFiles(arrayList);
                 FileLoader.getInstance(i10).getRecentLoadingFiles(arrayList2);
                 for (int i11 = 0; i11 < arrayList.size(); i11++) {
@@ -175,10 +175,10 @@ public final /* synthetic */ class yc0 implements Runnable {
                         arrayList4.add(arrayList2.get(i12));
                     }
                 }
-                AndroidUtilities.runOnUIThread(new v70(yn0Var, arrayList3, arrayList4, 6));
+                AndroidUtilities.runOnUIThread(new ze0(xn0Var, arrayList3, arrayList4, 3));
                 break;
             case 22:
-                ((ao0) this.b).invalidateSelf();
+                ((zn0) this.b).invalidateSelf();
                 break;
             case 23:
                 ((ko0) this.b).f.setVisibility(8);
@@ -187,7 +187,7 @@ public final /* synthetic */ class yc0 implements Runnable {
                 ((org.telegram.ui.iy) this.b).s();
                 break;
             case 25:
-                ((m80) this.b).s();
+                ((l80) this.b).s();
                 break;
             case 26:
                 ((gp0) this.b).getClass();
@@ -205,7 +205,7 @@ public final /* synthetic */ class yc0 implements Runnable {
                 lp0Var.b.run();
                 break;
             default:
-                ((jr0) ((di.h2) this.b).b).b1(1);
+                ((ir0) ((di.h2) this.b).b).b1(1);
                 break;
         }
     }

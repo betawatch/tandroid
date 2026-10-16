@@ -9,7 +9,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class k implements Callable {
     public final /* synthetic */ long a;
@@ -64,6 +64,6 @@ public final class k implements Callable {
             return Tasks.forResult(null);
         }
         Executor executor = (Executor) nVar.e.b;
-        return ((TaskCompletionSource) ((AtomicReference) bVar.i).get()).getTask().onSuccessTask(executor, new n6.o(this, executor, e));
+        return ((TaskCompletionSource) ((AtomicReference) bVar.i).get()).getTask().onSuccessTask(executor, new n3.b(this, executor, e));
     }
 }

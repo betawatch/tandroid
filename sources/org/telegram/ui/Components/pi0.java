@@ -24,7 +24,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class pi0 extends jq implements NotificationCenter.NotificationCenterDelegate {
     public boolean A0;
@@ -44,7 +44,7 @@ public class pi0 extends jq implements NotificationCenter.NotificationCenterDele
     public final float[] O0;
     public ImageLocation P0;
     public ImageLocation Q0;
-    public s71 R0;
+    public t71 R0;
     public MessagesController.DialogPhotos S0;
     public final ArrayList T0;
     public final ArrayList U0;
@@ -60,7 +60,7 @@ public class pi0 extends jq implements NotificationCenter.NotificationCenterDele
     public boolean e1;
     public boolean f1;
     public boolean g1;
-    public org.telegram.ui.wv0 h1;
+    public org.telegram.ui.vv0 h1;
     public boolean i1;
     public int j1;
     public int k1;
@@ -239,7 +239,7 @@ public class pi0 extends jq implements NotificationCenter.NotificationCenterDele
         return (ImageLocation) arrayList.get(i10);
     }
 
-    public final boolean H(s71 s71Var, ImageLocation imageLocation, ImageLocation imageLocation2, boolean z10) {
+    public final boolean H(t71 t71Var, ImageLocation imageLocation, ImageLocation imageLocation2, boolean z10) {
         MessagesController.DialogPhotos dialogPhotos;
         MessagesController.DialogPhotos dialogPhotos2;
         if (imageLocation != null && imageLocation2 != null && this.c1 == 0) {
@@ -264,12 +264,12 @@ public class pi0 extends jq implements NotificationCenter.NotificationCenterDele
             if (arrayList.isEmpty()) {
                 this.P0 = imageLocation;
                 this.Q0 = imageLocation2;
-                this.R0 = s71Var;
+                this.R0 = t71Var;
                 this.U0.add(null);
                 this.T0.add(null);
                 arrayList.add(imageLocation);
                 this.Y0.add(imageLocation2);
-                this.Z0.add(s71Var);
+                this.Z0.add(t71Var);
                 this.W0.add(null);
                 this.V0.add(null);
                 this.a1.add(-1);
@@ -681,7 +681,7 @@ public class pi0 extends jq implements NotificationCenter.NotificationCenterDele
                                         TLRPC.VideoSize vectorMarkupVideoSize = FileLoader.getVectorMarkupVideoSize(photo2);
                                         if (vectorMarkupVideoSize != null) {
                                             user3 = user;
-                                            arrayList11.add(new s71(vectorMarkupVideoSize, user != null && user3.premium, 2));
+                                            arrayList11.add(new t71(vectorMarkupVideoSize, user != null && user3.premium, 2));
                                             obj = null;
                                             arrayList9.add(null);
                                             arrayList6.add(null);
@@ -713,7 +713,7 @@ public class pi0 extends jq implements NotificationCenter.NotificationCenterDele
                                     TLRPC.VideoSize vectorMarkupVideoSize2 = FileLoader.getVectorMarkupVideoSize(photo2);
                                     if (vectorMarkupVideoSize2 != null) {
                                         user = user2;
-                                        arrayList11.add(new s71(vectorMarkupVideoSize2, user2 != null && user2.premium, 2));
+                                        arrayList11.add(new t71(vectorMarkupVideoSize2, user2 != null && user2.premium, 2));
                                         z12 = false;
                                         arrayList9.add(null);
                                         arrayList6.add(null);
@@ -870,13 +870,13 @@ public class pi0 extends jq implements NotificationCenter.NotificationCenterDele
                 return false;
             }
             int action = motionEvent.getAction();
-            org.telegram.ui.wv0 wv0Var = this.h1;
+            org.telegram.ui.vv0 vv0Var = this.h1;
             ki0 ki0Var = this.G0;
-            if (wv0Var != null && getCurrentItemView() != null) {
+            if (vv0Var != null && getCurrentItemView() != null) {
                 if (action != 0 && this.I0) {
-                    org.telegram.ui.wv0 wv0Var2 = this.h1;
-                    if (!wv0Var2.n) {
-                        wv0Var2.a(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0), this, getCurrentItemView().getImageReceiver(), null, 0);
+                    org.telegram.ui.vv0 vv0Var2 = this.h1;
+                    if (!vv0Var2.n) {
+                        vv0Var2.a(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0), this, getCurrentItemView().getImageReceiver(), null, 0);
                     }
                 }
                 if (this.h1.a(motionEvent, this, getCurrentItemView().getImageReceiver(), null, 0)) {
@@ -1060,8 +1060,8 @@ public class pi0 extends jq implements NotificationCenter.NotificationCenterDele
         }
     }
 
-    public void setPinchToZoomHelper(org.telegram.ui.wv0 wv0Var) {
-        this.h1 = wv0Var;
+    public void setPinchToZoomHelper(org.telegram.ui.vv0 vv0Var) {
+        this.h1 = vv0Var;
     }
 
     @Override // android.view.View
@@ -1076,7 +1076,7 @@ public class pi0 extends jq implements NotificationCenter.NotificationCenterDele
     public void setCustomAvatarProgress(float f7) {
     }
 
-    public pi0(Context context, long j10, org.telegram.ui.ActionBar.k kVar, mm0 mm0Var, org.telegram.ui.s01 s01Var, ki0 ki0Var, gi0 gi0Var) {
+    public pi0(Context context, long j10, org.telegram.ui.ActionBar.k kVar, mm0 mm0Var, org.telegram.ui.r01 r01Var, ki0 ki0Var, gi0 gi0Var) {
         super(context);
         this.x0 = new PointF();
         this.A0 = true;
@@ -1111,12 +1111,12 @@ public class pi0 extends jq implements NotificationCenter.NotificationCenterDele
         this.E0 = j10;
         this.C0 = mm0Var;
         this.z0 = kVar;
-        oi0 oi0Var = new oi0(this, getContext(), s01Var);
+        oi0 oi0Var = new oi0(this, getContext(), r01Var);
         this.D0 = oi0Var;
         setAdapter((iq) oi0Var);
         this.y0 = ViewConfiguration.get(context).getScaledTouchSlop();
         this.G0 = ki0Var;
-        b(new ii0((org.telegram.ui.wz0) this));
+        b(new ii0((org.telegram.ui.vz0) this));
         NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.dialogPhotosLoaded);
         NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileLoaded);
         NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileLoadProgressChanged);

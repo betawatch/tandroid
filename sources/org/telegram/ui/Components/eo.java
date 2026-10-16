@@ -15,7 +15,7 @@ import org.telegram.messenger.Emoji;
 import org.telegram.ui.PasscodeActivity;
 import org.telegram.ui.kc1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class eo implements TextWatcher {
     public final /* synthetic */ int a;
@@ -109,80 +109,80 @@ public final class eo implements TextWatcher {
                 }
                 break;
             case 4:
-                org.telegram.ui.gw0 gw0Var = ((org.telegram.ui.ew0) obj).d;
-                org.telegram.ui.bw0 bw0Var = (org.telegram.ui.bw0) this.c;
-                if (bw0Var.getTag() == null) {
-                    s4.b1 K2 = gw0Var.c.K(gw0Var.i0);
-                    if (K2 != null && gw0Var.Q != null) {
+                org.telegram.ui.fw0 fw0Var = ((org.telegram.ui.dw0) obj).d;
+                org.telegram.ui.aw0 aw0Var = (org.telegram.ui.aw0) this.c;
+                if (aw0Var.getTag() == null) {
+                    s4.b1 K2 = fw0Var.c.K(fw0Var.i0);
+                    if (K2 != null && fw0Var.Q != null) {
                         for (ImageSpan imageSpan3 : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
                             editable.removeSpan(imageSpan3);
                         }
-                        Emoji.replaceEmoji(editable, bw0Var.getEditField().getPaint().getFontMetricsInt(), false);
-                        gw0Var.Q.setDirection(1);
-                        gw0Var.Q.setDelegate(bw0Var);
-                        gw0Var.Q.setTranslationY(K2.a.getY());
-                        gw0Var.Q.e();
+                        Emoji.replaceEmoji(editable, aw0Var.getEditField().getPaint().getFontMetricsInt(), false);
+                        fw0Var.Q.setDirection(1);
+                        fw0Var.Q.setDelegate(aw0Var);
+                        fw0Var.Q.setTranslationY(K2.a.getY());
+                        fw0Var.Q.e();
                     }
-                    gw0Var.E = editable;
+                    fw0Var.E = editable;
                     if (K2 != null) {
-                        org.telegram.ui.gw0.c0(gw0Var, K2.a, gw0Var.i0);
+                        org.telegram.ui.fw0.c0(fw0Var, K2.a, fw0Var.i0);
                     }
-                    gw0Var.i0();
+                    fw0Var.i0();
                     break;
                 }
                 break;
             case 5:
-                org.telegram.ui.gw0 gw0Var2 = ((org.telegram.ui.ew0) obj).d;
-                org.telegram.ui.cw0 cw0Var = (org.telegram.ui.cw0) this.c;
-                if (cw0Var.getTag() == null) {
-                    s4.b1 K3 = gw0Var2.c.K(gw0Var2.i0);
-                    if (K3 != null && gw0Var2.Q != null) {
+                org.telegram.ui.fw0 fw0Var2 = ((org.telegram.ui.dw0) obj).d;
+                org.telegram.ui.bw0 bw0Var = (org.telegram.ui.bw0) this.c;
+                if (bw0Var.getTag() == null) {
+                    s4.b1 K3 = fw0Var2.c.K(fw0Var2.i0);
+                    if (K3 != null && fw0Var2.Q != null) {
                         for (ImageSpan imageSpan4 : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
                             editable.removeSpan(imageSpan4);
                         }
-                        Emoji.replaceEmoji(editable, cw0Var.getEditField().getPaint().getFontMetricsInt(), false);
-                        gw0Var2.Q.setDirection(1);
-                        gw0Var2.Q.setDelegate(cw0Var);
-                        gw0Var2.Q.setTranslationY(K3.a.getY());
-                        gw0Var2.Q.e();
+                        Emoji.replaceEmoji(editable, bw0Var.getEditField().getPaint().getFontMetricsInt(), false);
+                        fw0Var2.Q.setDirection(1);
+                        fw0Var2.Q.setDelegate(bw0Var);
+                        fw0Var2.Q.setTranslationY(K3.a.getY());
+                        fw0Var2.Q.e();
                     }
-                    gw0Var2.F = editable;
+                    fw0Var2.F = editable;
                     if (K3 != null) {
-                        org.telegram.ui.gw0.c0(gw0Var2, K3.a, gw0Var2.j0);
+                        org.telegram.ui.fw0.c0(fw0Var2, K3.a, fw0Var2.j0);
                     }
-                    gw0Var2.i0();
+                    fw0Var2.i0();
                     break;
                 }
                 break;
             case 6:
-                org.telegram.ui.gw0 gw0Var3 = ((org.telegram.ui.ew0) obj).d;
-                kc1 kc1Var2 = gw0Var3.c;
-                org.telegram.ui.dw0 dw0Var = (org.telegram.ui.dw0) this.c;
-                View F2 = kc1Var2.F(dw0Var);
+                org.telegram.ui.fw0 fw0Var3 = ((org.telegram.ui.dw0) obj).d;
+                kc1 kc1Var2 = fw0Var3.c;
+                org.telegram.ui.cw0 cw0Var = (org.telegram.ui.cw0) this.c;
+                View F2 = kc1Var2.F(cw0Var);
                 T = F2 != null ? kc1Var2.T(F2) : null;
                 if (T != null) {
                     View view2 = T.a;
-                    int b11 = T.b() - gw0Var3.n0;
-                    if (b11 >= 0 && b11 < gw0Var3.v.length) {
-                        if (gw0Var3.Q != null) {
+                    int b11 = T.b() - fw0Var3.n0;
+                    if (b11 >= 0 && b11 < fw0Var3.v.length) {
+                        if (fw0Var3.Q != null) {
                             for (ImageSpan imageSpan5 : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
                                 editable.removeSpan(imageSpan5);
                             }
-                            Emoji.replaceEmoji(editable, dw0Var.getEditField().getPaint().getFontMetricsInt(), false);
+                            Emoji.replaceEmoji(editable, cw0Var.getEditField().getPaint().getFontMetricsInt(), false);
                             float y10 = (view2.getY() - AndroidUtilities.dp(166.0f)) + view2.getMeasuredHeight();
                             if (y10 > 0.0f) {
-                                gw0Var3.Q.setDirection(0);
-                                gw0Var3.Q.setTranslationY(y10);
+                                fw0Var3.Q.setDirection(0);
+                                fw0Var3.Q.setTranslationY(y10);
                             } else {
-                                gw0Var3.Q.setDirection(1);
-                                gw0Var3.Q.setTranslationY(view2.getY());
+                                fw0Var3.Q.setDirection(1);
+                                fw0Var3.Q.setTranslationY(view2.getY());
                             }
-                            gw0Var3.Q.setDelegate(dw0Var);
-                            gw0Var3.Q.e();
+                            fw0Var3.Q.setDelegate(cw0Var);
+                            fw0Var3.Q.e();
                         }
-                        gw0Var3.v[b11] = editable;
-                        org.telegram.ui.gw0.c0(gw0Var3, dw0Var, b11);
-                        gw0Var3.i0();
+                        fw0Var3.v[b11] = editable;
+                        org.telegram.ui.fw0.c0(fw0Var3, cw0Var, b11);
+                        fw0Var3.i0();
                         break;
                     }
                 }
@@ -191,7 +191,7 @@ public final class eo implements TextWatcher {
                 qg.v vVar = (qg.v) obj;
                 qg.x xVar = vVar.f;
                 if (!vVar.e && ((String) this.c) != null && editable != null && !TextUtils.isEmpty(editable) && !Objects.equals(((String) this.c).toString(), editable.toString())) {
-                    int b12 = w7.s.b(Integer.parseInt(editable.toString()), 0, 255);
+                    int b12 = w7.r.b(Integer.parseInt(editable.toString()), 0, 255);
                     int i12 = vVar.d;
                     int argb = i12 != 1 ? i12 != 2 ? Color.argb(Color.alpha(xVar.f), b12, Color.green(xVar.f), Color.blue(xVar.f)) : Color.argb(Color.alpha(xVar.f), Color.red(xVar.f), Color.green(xVar.f), b12) : Color.argb(Color.alpha(xVar.f), Color.red(xVar.f), b12, Color.blue(xVar.f));
                     int i13 = qg.x.s;

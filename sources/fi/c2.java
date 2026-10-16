@@ -15,7 +15,7 @@ import org.telegram.ui.Components.gw0;
 import org.telegram.ui.Components.hw0;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c2 implements fw0, gw0, GenericProvider, d9.k, r9.d, e2.o, org.telegram.ui.ActionBar.z1, hh.b {
     public final /* synthetic */ int a;
@@ -218,7 +218,7 @@ public final /* synthetic */ class c2 implements fw0, gw0, GenericProvider, d9.k
     }
 
     @Override // r9.d
-    public Object j2(z5 z5Var) {
+    public Object n2(z5 z5Var) {
         i5.f lambda$getComponents$0;
         lambda$getComponents$0 = TransportRegistrar.lambda$getComponents$0(z5Var);
         return lambda$getComponents$0;

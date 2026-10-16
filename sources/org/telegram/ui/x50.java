@@ -11,7 +11,7 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class x50 extends View {
     public final /* synthetic */ int a;
@@ -123,39 +123,39 @@ public final class x50 extends View {
         org.telegram.ui.ActionBar.c6 c6Var;
         switch (this.a) {
             case 1:
-                canvas.drawColor(((xj0) this.b).getThemedColor(org.telegram.ui.ActionBar.g6.e7));
+                canvas.drawColor(((wj0) this.b).getThemedColor(org.telegram.ui.ActionBar.g6.e7));
                 break;
             case 2:
-                qq0 qq0Var = (qq0) this.b;
-                String format = String.format("%d", Integer.valueOf(Math.max(1, qq0Var.c.size())));
-                int max = Math.max(AndroidUtilities.dp(16.0f) + ((int) Math.ceil(qq0Var.S.measureText(format))), AndroidUtilities.dp(24.0f));
+                oq0 oq0Var = (oq0) this.b;
+                String format = String.format("%d", Integer.valueOf(Math.max(1, oq0Var.c.size())));
+                int max = Math.max(AndroidUtilities.dp(16.0f) + ((int) Math.ceil(oq0Var.S.measureText(format))), AndroidUtilities.dp(24.0f));
                 int measuredWidth = getMeasuredWidth() / 2;
                 getMeasuredHeight();
-                qq0Var.S.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.C5, false));
-                qq0Var.U.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.h5, false));
+                oq0Var.S.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.C5, false));
+                oq0Var.U.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.h5, false));
                 int i10 = max / 2;
-                qq0Var.T.set(measuredWidth - i10, 0.0f, i10 + measuredWidth, getMeasuredHeight());
-                canvas.drawRoundRect(qq0Var.T, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), qq0Var.U);
-                qq0Var.U.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.B5, false));
-                qq0Var.T.set(AndroidUtilities.dp(2.0f) + r12, AndroidUtilities.dp(2.0f), r8 - AndroidUtilities.dp(2.0f), getMeasuredHeight() - AndroidUtilities.dp(2.0f));
-                canvas.drawRoundRect(qq0Var.T, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), qq0Var.U);
-                canvas.drawText(format, measuredWidth - (r4 / 2), AndroidUtilities.dp(16.2f), qq0Var.S);
+                oq0Var.T.set(measuredWidth - i10, 0.0f, i10 + measuredWidth, getMeasuredHeight());
+                canvas.drawRoundRect(oq0Var.T, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), oq0Var.U);
+                oq0Var.U.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.B5, false));
+                oq0Var.T.set(AndroidUtilities.dp(2.0f) + r12, AndroidUtilities.dp(2.0f), r8 - AndroidUtilities.dp(2.0f), getMeasuredHeight() - AndroidUtilities.dp(2.0f));
+                canvas.drawRoundRect(oq0Var.T, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), oq0Var.U);
+                canvas.drawText(format, measuredWidth - (r4 / 2), AndroidUtilities.dp(16.2f), oq0Var.S);
                 break;
             case 3:
-                hr0 hr0Var = (hr0) this.b;
-                String format2 = String.format("%d", Integer.valueOf(Math.max(1, hr0Var.c.size())));
-                int max2 = Math.max(AndroidUtilities.dp(16.0f) + ((int) Math.ceil(hr0Var.h0.measureText(format2))), AndroidUtilities.dp(24.0f));
+                fr0 fr0Var = (fr0) this.b;
+                String format2 = String.format("%d", Integer.valueOf(Math.max(1, fr0Var.c.size())));
+                int max2 = Math.max(AndroidUtilities.dp(16.0f) + ((int) Math.ceil(fr0Var.h0.measureText(format2))), AndroidUtilities.dp(24.0f));
                 int measuredWidth2 = getMeasuredWidth() / 2;
                 getMeasuredHeight();
-                hr0Var.h0.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.C5, false));
-                hr0Var.j0.setColor(org.telegram.ui.ActionBar.g6.x0(null, hr0Var.u0, false));
+                fr0Var.h0.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.C5, false));
+                fr0Var.j0.setColor(org.telegram.ui.ActionBar.g6.x0(null, fr0Var.u0, false));
                 int i11 = max2 / 2;
-                hr0Var.i0.set(measuredWidth2 - i11, 0.0f, i11 + measuredWidth2, getMeasuredHeight());
-                canvas.drawRoundRect(hr0Var.i0, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), hr0Var.j0);
-                hr0Var.j0.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.B5, false));
-                hr0Var.i0.set(AndroidUtilities.dp(2.0f) + r15, AndroidUtilities.dp(2.0f), r8 - AndroidUtilities.dp(2.0f), getMeasuredHeight() - AndroidUtilities.dp(2.0f));
-                canvas.drawRoundRect(hr0Var.i0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), hr0Var.j0);
-                canvas.drawText(format2, measuredWidth2 - (r12 / 2), AndroidUtilities.dp(16.2f), hr0Var.h0);
+                fr0Var.i0.set(measuredWidth2 - i11, 0.0f, i11 + measuredWidth2, getMeasuredHeight());
+                canvas.drawRoundRect(fr0Var.i0, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), fr0Var.j0);
+                fr0Var.j0.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.B5, false));
+                fr0Var.i0.set(AndroidUtilities.dp(2.0f) + r15, AndroidUtilities.dp(2.0f), r8 - AndroidUtilities.dp(2.0f), getMeasuredHeight() - AndroidUtilities.dp(2.0f));
+                canvas.drawRoundRect(fr0Var.i0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), fr0Var.j0);
+                canvas.drawText(format2, measuredWidth2 - (r12 / 2), AndroidUtilities.dp(16.2f), fr0Var.h0);
                 break;
             case 4:
                 ((PhotoViewer) this.b).q3.a(canvas, this);
@@ -276,7 +276,7 @@ public final class x50 extends View {
                 break;
             case 10:
                 super.setAlpha(f7);
-                View view2 = ((lg1) this.b).fragmentView;
+                View view2 = ((kg1) this.b).fragmentView;
                 if (view2 != null) {
                     view2.invalidate();
                     break;

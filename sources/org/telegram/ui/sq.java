@@ -13,7 +13,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class sq extends org.telegram.ui.Components.lm0 {
     public final Context c;
@@ -1439,12 +1439,12 @@ public final class sq extends org.telegram.ui.Components.lm0 {
                 }
                 break;
             case 5:
-                org.telegram.ui.Cells.b7 b7Var = (org.telegram.ui.Cells.b7) view;
+                org.telegram.ui.Cells.a7 a7Var = (org.telegram.ui.Cells.a7) view;
                 if (i48 != 2 || (i10 != tqVar.o0 && i10 != tqVar.w0)) {
-                    b7Var.setAlpha(1.0f);
+                    a7Var.setAlpha(1.0f);
                     break;
                 } else {
-                    b7Var.setAlpha(tqVar.J);
+                    a7Var.setAlpha(tqVar.J);
                     break;
                 }
                 break;
@@ -1563,7 +1563,7 @@ public final class sq extends org.telegram.ui.Components.lm0 {
                 }
                 break;
             case 11:
-                ((org.telegram.ui.Components.z01) view).a(tqVar.v, tqVar.S, i48 == 0, false, new v3(this, 3));
+                ((org.telegram.ui.Components.a11) view).a(tqVar.v, tqVar.S, i48 == 0, false, new v3(this, 3));
                 break;
         }
     }
@@ -1604,7 +1604,7 @@ public final class sq extends org.telegram.ui.Components.lm0 {
                 view2 = v8Var;
                 break;
             case 5:
-                view2 = new org.telegram.ui.Cells.b7(context, (org.telegram.ui.Cells.d0) null);
+                view2 = new org.telegram.ui.Cells.a7(context, (org.telegram.ui.Cells.c1) null);
                 break;
             case 6:
                 View c9Var = new org.telegram.ui.Cells.c9(context, null, false);
@@ -1631,19 +1631,19 @@ public final class sq extends org.telegram.ui.Components.lm0 {
                 tqVar.f.setGravity(17);
                 org.telegram.ui.Components.s6 s6Var2 = tqVar.f;
                 StringBuilder sb2 = new StringBuilder();
-                org.telegram.ui.Cells.d0.n(R.string.AddBotButton, " ", sb2);
+                org.telegram.ui.Cells.c1.l(R.string.AddBotButton, " ", sb2);
                 sb2.append(LocaleController.getString(tqVar.K ? R.string.AddBotButtonAsAdmin : R.string.AddBotButtonAsMember));
                 s6Var2.setText(sb2.toString());
-                tqVar.e.addView(tqVar.f, w7.a6.e(-2, -2, 17));
+                tqVar.e.addView(tqVar.f, w7.z5.e(-2, -2, 17));
                 tqVar.e.setBackground(org.telegram.ui.ActionBar.w5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.g6.Oh));
                 tqVar.e.setOnClickListener(new a(this, 14));
-                tqVar.d.addView(tqVar.e, w7.a6.a(48.0f, 14.0f, 28.0f, 14.0f, 14.0f, -1, 119));
+                tqVar.d.addView(tqVar.e, w7.z5.a(48.0f, 14.0f, 28.0f, 14.0f, 14.0f, -1, 119));
                 tqVar.d.setLayoutParams(new s4.o0(-1, -2));
                 View view3 = new View(context);
                 view3.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, i12, false));
                 tqVar.d.setClipChildren(false);
                 tqVar.d.setClipToPadding(false);
-                tqVar.d.addView(view3, w7.a6.a(800.0f, 0.0f, 0.0f, 0.0f, -800.0f, -1, 87));
+                tqVar.d.addView(view3, w7.z5.a(800.0f, 0.0f, 0.0f, 0.0f, -800.0f, -1, 87));
                 view2 = tqVar.d;
                 break;
             case 10:
@@ -1660,7 +1660,7 @@ public final class sq extends org.telegram.ui.Components.lm0 {
                 i11 = ((org.telegram.ui.ActionBar.m2) tqVar).currentAccount;
                 long j10 = -tqVar.s;
                 c6Var = ((org.telegram.ui.ActionBar.m2) tqVar).resourceProvider;
-                view2 = new org.telegram.ui.Components.z01(i11, j10, this.c, c6Var);
+                view2 = new org.telegram.ui.Components.a11(i11, j10, this.c, c6Var);
                 break;
         }
         return new org.telegram.ui.Components.wl0(view2);

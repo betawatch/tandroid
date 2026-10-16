@@ -14,28 +14,27 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.db;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.lm0;
 import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.z61;
 import org.telegram.ui.Components.za;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.b6;
 import org.telegram.ui.fo;
 import org.telegram.ui.sk;
 import s4.k;
-import w7.a6;
+import w7.z5;
 import zh.n5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class h extends db implements NotificationCenter.NotificationCenterDelegate {
     public final ag.a X;
     public final v0 Y;
     public final FrameLayout Z;
     public Runnable a0;
-    public z61 b0;
+    public a71 b0;
 
     public h(Context context, c6 c6Var, ag.a aVar, boolean z10, Runnable runnable) {
         super(context, null, false, false, c6Var);
@@ -62,11 +61,11 @@ public final class h extends db implements NotificationCenter.NotificationCenter
         TextView textView = (TextView) v0Var.d;
         textView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.FragmentAddFunds)));
         textView.setMaxWidth(d4.a(textView.getText(), textView.getPaint()));
-        this.e.setTitle(A());
+        this.e.setTitle(B());
         FrameLayout frameLayout = new FrameLayout(context);
         this.Z = frameLayout;
         di.d dVar = new di.d(getContext(), getResourcesProvider(), true);
-        frameLayout.addView(dVar, a6.t(-1, 48, 17, 20, 10, 20, 20));
+        frameLayout.addView(dVar, z5.t(-1, 48, 17, 20, 10, 20, 20));
         if (z10 || i.C0()) {
             dVar.g(LocaleController.getString(R.string.TopUpViaFragment), false, true);
             dVar.setOnClickListener(new View.OnClickListener(this) { // from class: ei.g
@@ -80,7 +79,7 @@ public final class h extends db implements NotificationCenter.NotificationCenter
                 public final void onClick(View view) {
                     switch (i11) {
                         case 0:
-                            pf.d.u(this.b.getContext(), LocaleController.getString(R.string.TopUpViaFragmentLink));
+                            pf.d.t(this.b.getContext(), LocaleController.getString(R.string.TopUpViaFragmentLink));
                             break;
                         default:
                             this.b.dismiss();
@@ -101,7 +100,7 @@ public final class h extends db implements NotificationCenter.NotificationCenter
                 public final void onClick(View view) {
                     switch (i12) {
                         case 0:
-                            pf.d.u(this.b.getContext(), LocaleController.getString(R.string.TopUpViaFragmentLink));
+                            pf.d.t(this.b.getContext(), LocaleController.getString(R.string.TopUpViaFragmentLink));
                             break;
                         default:
                             this.b.dismiss();
@@ -110,14 +109,14 @@ public final class h extends db implements NotificationCenter.NotificationCenter
                 }
             });
         }
-        z61 z61Var = this.b0;
-        if (z61Var != null) {
-            z61Var.N(false);
+        a71 a71Var = this.b0;
+        if (a71Var != null) {
+            a71Var.N(false);
         }
     }
 
     @Override // org.telegram.ui.Components.db
-    public final CharSequence A() {
+    public final CharSequence B() {
         v0 v0Var = this.Y;
         if (v0Var == null) {
             return null;
@@ -129,9 +128,9 @@ public final class h extends db implements NotificationCenter.NotificationCenter
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         Runnable runnable;
         if (i10 == NotificationCenter.starOptionsLoaded || i10 == NotificationCenter.starBalanceUpdated) {
-            z61 z61Var = this.b0;
-            if (z61Var != null) {
-                z61Var.N(true);
+            a71 a71Var = this.b0;
+            if (a71Var != null) {
+                a71Var.N(true);
             }
             ag.a s10 = n5.y(this.currentAccount, true).s();
             TextView textView = (TextView) this.Y.c;
@@ -140,7 +139,7 @@ public final class h extends db implements NotificationCenter.NotificationCenter
             textView.setText(LocaleController.formatString(i12, ag.a.i(aVar.b - s10.b, ag.b.b).d()));
             za zaVar = this.e;
             if (zaVar != null) {
-                zaVar.setTitle(A());
+                zaVar.setTitle(B());
             }
             if (s10.b < aVar.b || (runnable = this.a0) == null) {
                 return;
@@ -156,7 +155,7 @@ public final class h extends db implements NotificationCenter.NotificationCenter
         super.dismiss();
         v0 v0Var = this.Y;
         if (v0Var != null) {
-            ((b6) v0Var.b).setPaused(true);
+            ((org.telegram.ui.Wallet.c6) v0Var.b).setPaused(true);
         }
     }
 
@@ -193,8 +192,8 @@ public final class h extends db implements NotificationCenter.NotificationCenter
 
     @Override // org.telegram.ui.Components.db
     public final lm0 x(mm0 mm0Var) {
-        z61 z61Var = new z61(this.d, getContext(), this.currentAccount, 0, true, new u(this, 11), this.resourcesProvider);
-        this.b0 = z61Var;
-        return z61Var;
+        a71 a71Var = new a71(this.d, getContext(), this.currentAccount, 0, true, new u(this, 11), this.resourcesProvider);
+        this.b0 = a71Var;
+        return a71Var;
     }
 }

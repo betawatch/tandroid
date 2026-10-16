@@ -15,9 +15,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.j61;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class r2 {
     public final s2 a;
@@ -59,7 +59,7 @@ public final class r2 {
                     return;
                 }
                 ArrayList arrayList = new ArrayList(topics);
-                Collections.sort(arrayList, Comparator$-CC.comparingInt(new bi.s6(5)));
+                Collections.sort(arrayList, Comparator$-CC.comparingInt(new bi.s6(6)));
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 if (messageObject == null || ChatObject.isMonoForum(chat)) {
                     j10 = 0;
@@ -126,11 +126,11 @@ public final class r2 {
                 if (i11 > 0) {
                     Typeface bold = AndroidUtilities.bold();
                     int i15 = org.telegram.ui.ActionBar.g6.X8;
-                    i61 i61Var = new i61();
-                    i61Var.a = bold;
-                    i61Var.c = i15;
-                    i61Var.b = org.telegram.ui.ActionBar.g6.x0(null, i15, false);
-                    spannableStringBuilder.setSpan(i61Var, 0, Math.min(spannableStringBuilder.length(), i11 + 2), 0);
+                    j61 j61Var = new j61();
+                    j61Var.a = bold;
+                    j61Var.c = i15;
+                    j61Var.b = org.telegram.ui.ActionBar.g6.x0(null, i15, false);
+                    spannableStringBuilder.setSpan(j61Var, 0, Math.min(spannableStringBuilder.length(), i11 + 2), 0);
                 }
                 r2Var.g = spannableStringBuilder;
             }

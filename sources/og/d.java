@@ -37,9 +37,9 @@ import org.telegram.ui.Components.m90;
 import org.telegram.ui.Components.s5;
 import org.telegram.ui.Components.z9;
 import org.telegram.ui.fo;
-import org.telegram.ui.lg1;
+import org.telegram.ui.kg1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class d {
     public static final /* synthetic */ int a = 0;
@@ -329,26 +329,26 @@ public abstract class d {
                 if (((ActionBarLayout) foVar.getParentLayout()).j()) {
                     AndroidUtilities.runOnUIThread(new b(foVar, 0), 500L);
                 } else {
-                    lg1.I0(foVar);
+                    kg1.I0(foVar);
                 }
             }
         }
-        if (lastFragment instanceof lg1) {
-            lg1 lg1Var = (lg1) lastFragment;
-            long j11 = lg1Var.a;
-            if ((-(-j11)) != j10 || lg1Var.getMessagesController().getChat(Long.valueOf(j10)).forum) {
+        if (lastFragment instanceof kg1) {
+            kg1 kg1Var = (kg1) lastFragment;
+            long j11 = kg1Var.a;
+            if ((-(-j11)) != j10 || kg1Var.getMessagesController().getChat(Long.valueOf(j10)).forum) {
                 return;
             }
-            if (lg1Var.getParentLayout() != null && ((ActionBarLayout) lg1Var.getParentLayout()).j()) {
-                AndroidUtilities.runOnUIThread(new t0(lg1Var, 22), 500L);
+            if (kg1Var.getParentLayout() != null && ((ActionBarLayout) kg1Var.getParentLayout()).j()) {
+                AndroidUtilities.runOnUIThread(new t0(kg1Var, 21), 500L);
                 return;
             }
-            lg1Var.H = true;
+            kg1Var.H = true;
             Bundle bundle = new Bundle();
             bundle.putLong("chat_id", j11);
             fo foVar2 = new fo(bundle);
             foVar2.ja = true;
-            lg1Var.presentFragment(foVar2);
+            kg1Var.presentFragment(foVar2);
         }
     }
 }

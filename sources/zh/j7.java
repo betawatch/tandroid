@@ -13,7 +13,7 @@ import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.br;
 import org.telegram.ui.Components.cr;
@@ -21,7 +21,7 @@ import org.telegram.ui.Components.da0;
 import org.telegram.ui.Components.k9;
 import org.telegram.ui.Components.z9;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class j7 extends LinearLayout {
     public static HashMap E;
@@ -46,29 +46,29 @@ public final class j7 extends LinearLayout {
         this.a = i10;
         setOrientation(0);
         bi.i7 i7Var = new bi.i7(this, context, c6Var);
-        addView(i7Var, w7.a6.o(72, -1, 0.0f, 115));
+        addView(i7Var, w7.z5.o(72, -1, 0.0f, 115));
         z9 z9Var = new z9(context);
         this.d = z9Var;
         z9Var.setRoundRadius(AndroidUtilities.dp(46.0f));
-        i7Var.addView(z9Var, w7.a6.a(46.0f, 13.0f, 0.0f, 13.0f, 0.0f, 46, 16));
+        i7Var.addView(z9Var, w7.z5.a(46.0f, 13.0f, 0.0f, 13.0f, 0.0f, 46, 16));
         this.b = new k9((org.telegram.ui.ActionBar.c6) null);
         z9 z9Var2 = new z9(context);
         this.c = z9Var2;
         z9Var2.setRoundRadius(AndroidUtilities.dp(46.0f));
-        i7Var.addView(z9Var2, w7.a6.a(46.0f, 13.0f, 0.0f, 13.0f, 0.0f, 46, 16));
+        i7Var.addView(z9Var2, w7.z5.a(46.0f, 13.0f, 0.0f, 13.0f, 0.0f, 46, 16));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setGravity(19);
-        addView(linearLayout, w7.a6.o(-2, -1, 1.0f, 119));
+        addView(linearLayout, w7.z5.o(-2, -1, 1.0f, 119));
         TextView textView = new TextView(context);
         this.f = textView;
         textView.setTypeface(AndroidUtilities.bold());
         int i11 = org.telegram.ui.ActionBar.g6.G6;
-        yh.n(i11, c6Var, textView, 1, 16.0f);
+        sk.o(i11, c6Var, textView, 1, 16.0f);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
         textView.setSingleLine(true);
-        LinearLayout.LayoutParams k10 = w7.a6.k(0.0f, 0.0f, 0.0f, 4.33f, -1, -2);
+        LinearLayout.LayoutParams k10 = w7.z5.k(0.0f, 0.0f, 0.0f, 4.33f, -1, -2);
         this.h = k10;
         linearLayout.addView(textView, k10);
         da0 da0Var = new da0(context, null);
@@ -77,18 +77,18 @@ public final class j7 extends LinearLayout {
         da0Var.setTextSize(1, 13.0f);
         da0Var.setEllipsize(truncateAt);
         da0Var.setSingleLine(true);
-        linearLayout.addView(da0Var, w7.a6.k(0.0f, 0.0f, 0.0f, 0.33f, -1, -2));
+        linearLayout.addView(da0Var, w7.z5.k(0.0f, 0.0f, 0.0f, 0.33f, -1, -2));
         TextView textView2 = new TextView(context);
         this.r = textView2;
-        yh.n(org.telegram.ui.ActionBar.g6.z6, c6Var, textView2, 1, 14.0f);
+        sk.o(org.telegram.ui.ActionBar.g6.z6, c6Var, textView2, 1, 14.0f);
         textView2.setEllipsize(truncateAt);
         textView2.setSingleLine(true);
-        TextView i12 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView2, w7.a6.n(-1, -2), context);
+        TextView i12 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView2, w7.z5.n(-1, -2), context);
         this.s = i12;
         i12.setTypeface(AndroidUtilities.bold());
         i12.setTextSize(1, 15.3f);
         i12.setGravity(5);
-        addView(i12, w7.a6.p(-2, -2, 0.0f, 21, 8, 0, 20, 0));
+        addView(i12, w7.z5.p(-2, -2, 0.0f, 21, 8, 0, 20, 0));
         SpannableString spannableString = new SpannableString("⭐️");
         this.v = spannableString;
         Drawable mutate = context.getResources().getDrawable(R.drawable.star_small_inner).mutate();
@@ -105,7 +105,7 @@ public final class j7 extends LinearLayout {
 
     public static cr a(int i10, String str) {
         if (i10 != 44) {
-            return org.telegram.ui.Cells.v6.a(i10, str);
+            return org.telegram.ui.Cells.u6.a(i10, str);
         }
         if (E == null) {
             E = new HashMap();
@@ -115,7 +115,7 @@ public final class j7 extends LinearLayout {
             return crVar;
         }
         HashMap hashMap = E;
-        cr a2 = org.telegram.ui.Cells.v6.a(44, str);
+        cr a2 = org.telegram.ui.Cells.u6.a(44, str);
         hashMap.put(str, a2);
         return a2;
     }

@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class my0 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public org.telegram.ui.Components.mm0 a;
@@ -38,10 +38,10 @@ public final class my0 extends org.telegram.ui.ActionBar.m2 implements Notificat
         if (getParentActivity() == null) {
             return;
         }
-        org.telegram.ui.Components.m80 H = org.telegram.ui.Components.m80.H(this, view);
+        org.telegram.ui.Components.l80 H = org.telegram.ui.Components.l80.H(this, view);
         H.W(new ColorDrawable(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false)));
         int i10 = this.y;
-        H.l(0, LocaleController.getString(R.string.Unblock), new on0(23, this, l4), i10 == 1);
+        H.l(0, LocaleController.getString(R.string.Unblock), new rr0(18, this, l4), i10 == 1);
         H.m(i10 != 1, i10 == 0 ? R.drawable.msg_user_remove : 0, LocaleController.getString(R.string.Remove), true, new ky0(this, l4));
         H.S = 190;
         H.Z();
@@ -121,7 +121,7 @@ public final class my0 extends org.telegram.ui.ActionBar.m2 implements Notificat
         } else {
             yzVar.setText(LocaleController.getString(R.string.NoContacts));
         }
-        frameLayout.addView(this.d, w7.a6.d(-1.0f, -1));
+        frameLayout.addView(this.d, w7.z5.d(-1.0f, -1));
         org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(context, null);
         this.a = mm0Var;
         mm0Var.p1();
@@ -138,7 +138,7 @@ public final class my0 extends org.telegram.ui.ActionBar.m2 implements Notificat
         this.c = ly0Var;
         mm0Var3.setAdapter(ly0Var);
         this.a.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
-        frameLayout.addView(this.a, w7.a6.d(-1.0f, -1));
+        frameLayout.addView(this.a, w7.z5.d(-1.0f, -1));
         this.a.setOnItemClickListener(new i(this, 28));
         this.a.setOnItemLongClickListener(new jy0(this));
         if (i10 == 1) {
@@ -190,7 +190,7 @@ public final class my0 extends org.telegram.ui.ActionBar.m2 implements Notificat
         arrayList.add(new org.telegram.ui.ActionBar.i6(this.a, 4096, null, null, null, null, org.telegram.ui.ActionBar.g6.i6));
         arrayList.add(new org.telegram.ui.ActionBar.i6(this.d, 4, null, null, null, null, org.telegram.ui.ActionBar.g6.c7));
         arrayList.add(new org.telegram.ui.ActionBar.i6(this.d, 2048, null, null, null, null, org.telegram.ui.ActionBar.g6.h6));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(this.a, 32, new Class[]{org.telegram.ui.Cells.b7.class}, null, null, null, org.telegram.ui.ActionBar.g6.b7));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.a, 32, new Class[]{org.telegram.ui.Cells.a7.class}, null, null, null, org.telegram.ui.ActionBar.g6.b7));
         int i10 = org.telegram.ui.ActionBar.g6.G6;
         arrayList.add(new org.telegram.ui.ActionBar.i6(this.a, 0, new Class[]{org.telegram.ui.Cells.b5.class}, new String[]{"nameTextView"}, null, null, -1, null, i10));
         arrayList.add(new org.telegram.ui.ActionBar.i6(this.a, 0, new Class[]{org.telegram.ui.Cells.b5.class}, new String[]{"statusColor"}, null, null, -1, eVar, org.telegram.ui.ActionBar.g6.y6));

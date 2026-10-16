@@ -9,12 +9,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.iy0;
-import org.telegram.ui.ei0;
+import org.telegram.ui.Components.jy0;
+import org.telegram.ui.di0;
 import org.telegram.ui.n60;
-import org.telegram.ui.rh0;
+import org.telegram.ui.qh0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -65,19 +65,19 @@ public final /* synthetic */ class u1 implements RequestDelegate {
                 }
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new t1(this.d, (Object) tL_error, tLObject, this.b, this.c, 14));
+                AndroidUtilities.runOnUIThread(new t1(this.d, (Object) tL_error, tLObject, this.b, this.c, 13));
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new bi.h4((iy0) this.d, tLObject, this.c, (org.telegram.ui.ActionBar.a2) this.b, 19));
+                AndroidUtilities.runOnUIThread(new bi.h4((jy0) this.d, tLObject, this.c, (org.telegram.ui.ActionBar.a2) this.b, 18));
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new t1(this.d, (Object) tL_error, tLObject, this.b, this.c, 20));
+                AndroidUtilities.runOnUIThread(new t1(this.d, (Object) tL_error, tLObject, this.b, this.c, 19));
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new bi.h4((n60) this.d, tLObject, (TLRPC.ChatFull) this.b, this.c, 21));
+                AndroidUtilities.runOnUIThread(new bi.h4((n60) this.d, tLObject, (TLRPC.ChatFull) this.b, this.c, 20));
                 break;
             case 6:
-                ei0 ei0Var = (ei0) this.d;
+                di0 di0Var = (di0) this.d;
                 TLRPC.TL_chatInviteExported tL_chatInviteExported2 = (TLRPC.TL_chatInviteExported) this.b;
                 if (tL_error == null) {
                     TLRPC.TL_messages_exportedChatInvites tL_messages_exportedChatInvites = (TLRPC.TL_messages_exportedChatInvites) tLObject;
@@ -85,16 +85,16 @@ public final /* synthetic */ class u1 implements RequestDelegate {
                         for (int i12 = 0; i12 < tL_messages_exportedChatInvites.invites.size(); i12++) {
                             if (((TLRPC.TL_chatInviteExported) tL_messages_exportedChatInvites.invites.get(i12)).link.equals(tL_chatInviteExported2.link)) {
                                 tL_chatInviteExported = (TLRPC.TL_chatInviteExported) tL_messages_exportedChatInvites.invites.remove(i12);
-                                AndroidUtilities.runOnUIThread(new rh0(ei0Var, tL_chatInviteExported, tL_error, tLObject, this.c, 0));
+                                AndroidUtilities.runOnUIThread(new qh0(di0Var, tL_chatInviteExported, tL_error, tLObject, this.c, 0));
                                 break;
                             }
                         }
                     }
                 }
                 tL_chatInviteExported = null;
-                AndroidUtilities.runOnUIThread(new rh0(ei0Var, tL_chatInviteExported, tL_error, tLObject, this.c, 0));
+                AndroidUtilities.runOnUIThread(new qh0(di0Var, tL_chatInviteExported, tL_error, tLObject, this.c, 0));
             case 7:
-                AndroidUtilities.runOnUIThread(new t1((NotificationCenter.NotificationCenterDelegate) this.d, (TLObject) tL_error, this.c, tLObject, this.b, 22));
+                AndroidUtilities.runOnUIThread(new t1((NotificationCenter.NotificationCenterDelegate) this.d, (TLObject) tL_error, this.c, tLObject, this.b, 21));
                 break;
             default:
                 AndroidUtilities.runOnUIThread(new ug.c((zh.f5) this.d, (int[]) this.b, tLObject, this.c));

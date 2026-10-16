@@ -18,14 +18,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.sk;
 import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.messenger.yh;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.br;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -73,7 +73,7 @@ public final /* synthetic */ class t2 implements View.OnClickListener {
                             d4Var.l0 = new r2(q5Var, 9);
                             q5Var.F0 = d4Var;
                             d4Var.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
-                            o4Var.addView(q5Var.F0, w7.a6.a(60.0f, 0.0f, 52.0f, 0.0f, 0.0f, -1, 55));
+                            o4Var.addView(q5Var.F0, w7.z5.a(60.0f, 0.0f, 52.0f, 0.0f, 0.0f, -1, 55));
                         }
                         TLRPC.User user = MessagesController.getInstance(q5Var.C2).getUser(Long.valueOf(q5Var.B1));
                         if (user != null) {
@@ -125,10 +125,10 @@ public final /* synthetic */ class t2 implements View.OnClickListener {
             case 3:
                 if (!ApplicationLoader.isStandaloneBuild()) {
                     if (!BuildVars.isHuaweiStoreApp()) {
-                        pf.d.s(q5Var.getContext(), BuildVars.PLAYSTORE_APP_URL);
+                        pf.d.r(q5Var.getContext(), BuildVars.PLAYSTORE_APP_URL);
                         break;
                     } else {
-                        pf.d.s(q5Var.getContext(), BuildVars.HUAWEI_STORE_URL);
+                        pf.d.r(q5Var.getContext(), BuildVars.HUAWEI_STORE_URL);
                         break;
                     }
                 } else {
@@ -202,18 +202,18 @@ public final /* synthetic */ class t2 implements View.OnClickListener {
                 org.telegram.ui.Components.z9 z9Var = new org.telegram.ui.Components.z9(q5Var.getContext());
                 z9Var.getImageReceiver().setAutoRepeat(1);
                 MediaDataController.getInstance(q5Var.C2).setPlaceholderImage(z9Var, AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME_2, "😎", "150_150");
-                linearLayout.addView(z9Var, w7.a6.t(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 1, 0, 16, 0, 16));
+                linearLayout.addView(z9Var, w7.z5.t(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 1, 0, 16, 0, 16));
                 TextView textView = new TextView(q5Var.getContext());
                 textView.setTypeface(AndroidUtilities.bold());
                 textView.setGravity(17);
-                yh.n(org.telegram.ui.ActionBar.g6.j5, c6Var, textView, 1, 20.0f);
+                sk.o(org.telegram.ui.ActionBar.g6.j5, c6Var, textView, 1, 20.0f);
                 textView.setText(LocaleController.getString(R.string.StoryQualityPremium));
-                linearLayout.addView(textView, w7.a6.t(-1, -2, 1, 12, 0, 12, 0));
+                linearLayout.addView(textView, w7.z5.t(-1, -2, 1, 12, 0, 12, 0));
                 TextView textView2 = new TextView(q5Var.getContext());
                 textView2.setGravity(17);
-                yh.n(org.telegram.ui.ActionBar.g6.r5, c6Var, textView2, 1, 14.0f);
-                org.telegram.messenger.q.o(R.string.StoryQualityPremiumText, textView2);
-                linearLayout.addView(textView2, w7.a6.t(-1, -2, 1, 32, 9, 32, 19));
+                sk.o(org.telegram.ui.ActionBar.g6.r5, c6Var, textView2, 1, 14.0f);
+                org.telegram.messenger.g0.n(R.string.StoryQualityPremiumText, textView2);
+                linearLayout.addView(textView2, w7.z5.t(-1, -2, 1, 32, 9, 32, 19));
                 di.d dVar = new di.d(q5Var.getContext(), c6Var, true);
                 dVar.g(LocaleController.getString(R.string.StoryQualityIncrease), false, true);
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("l");
@@ -221,7 +221,7 @@ public final /* synthetic */ class t2 implements View.OnClickListener {
                 brVar.setTopOffset(1);
                 spannableStringBuilder.setSpan(brVar, 0, 1, 33);
                 dVar.f(new SpannableStringBuilder().append((CharSequence) spannableStringBuilder).append((CharSequence) LocaleController.getString(R.string.OptionPremiumRequiredTitle)), false);
-                linearLayout.addView(dVar, w7.a6.q(-1, 48, 1));
+                linearLayout.addView(dVar, w7.z5.q(-1, 48, 1));
                 dVar.setOnClickListener(new u1(2, q5Var, e3Var));
                 e3Var.setCustomView(linearLayout);
                 ((jb) q5Var.Q1).h(e3Var);

@@ -14,10 +14,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.ha0;
 import org.telegram.ui.Components.x90;
-import org.telegram.ui.bh0;
+import org.telegram.ui.ah0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
 public class l2 extends TextView {
     public final /* synthetic */ int a = 0;
     public final Object b;
@@ -25,9 +25,9 @@ public class l2 extends TextView {
     public final /* synthetic */ Object d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l2(o2 o2Var, Activity activity, o1 o1Var) {
+    public l2(n2 n2Var, Activity activity, o1 o1Var) {
         super(activity);
-        this.d = o2Var;
+        this.d = n2Var;
         this.c = o1Var;
         this.b = new RectF();
         o1Var.a(this);
@@ -61,7 +61,7 @@ public class l2 extends TextView {
         ((org.telegram.ui.Cells.z) this.b).setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
         ha0Var.y = x90Var;
         ha0Var.k(4.0f);
-        int themedColor = ((bh0) this.d).getThemedColor(g6.Ld);
+        int themedColor = ((ah0) this.d).getThemedColor(g6.Ld);
         ha0Var.g(g6.m1(0.85f, themedColor), g6.m1(2.0f, themedColor), g6.m1(3.5f, themedColor), g6.m1(6.0f, themedColor));
         ha0Var.l();
     }
@@ -74,9 +74,9 @@ public class l2 extends TextView {
                 RectF rectF = (RectF) this.b;
                 rectF.set(0.0f, 0.0f, getWidth(), getHeight());
                 float x10 = ((View) getParent()).getX() + getX();
-                o2 o2Var = (o2) this.d;
-                float x11 = ((View) o2Var.getParent()).getX() + o2Var.getX() + x10;
-                float y3 = ((View) o2Var.getParent()).getY() + o2Var.getY() + ((View) getParent()).getY() + getY();
+                n2 n2Var = (n2) this.d;
+                float x11 = ((View) n2Var.getParent()).getX() + n2Var.getX() + x10;
+                float y3 = ((View) n2Var.getParent()).getY() + n2Var.getY() + ((View) getParent()).getY() + getY();
                 o1 o1Var = (o1) this.c;
                 o1Var.d(x11, y3);
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), o1Var.b());
@@ -159,9 +159,9 @@ public class l2 extends TextView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l2(bh0 bh0Var, Context context) {
+    public l2(ah0 ah0Var, Context context) {
         super(context);
-        this.d = bh0Var;
+        this.d = ah0Var;
         org.telegram.ui.Cells.z g02 = g6.g0(g6.m1(0.1f, g6.x0(null, g6.I6, false)), 7, -1);
         this.b = g02;
         ha0 ha0Var = new ha0();

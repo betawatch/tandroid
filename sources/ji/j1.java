@@ -8,12 +8,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.wz;
 import org.telegram.ui.Components.zg;
-import org.telegram.ui.hj0;
+import org.telegram.ui.gj0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -70,14 +70,14 @@ public final /* synthetic */ class j1 implements View.OnClickListener {
                         if (indexOfChild < 0) {
                             indexOfChild = d2Var2.O.getChildCount();
                         }
-                        FrameLayout.LayoutParams e = w7.a6.e(-1, d2Var2.j0(), 87);
+                        FrameLayout.LayoutParams e = w7.z5.e(-1, d2Var2.j0(), 87);
                         e.bottomMargin = d2Var2.T0;
                         d2Var2.O.addView(d2Var2.A0, indexOfChild, e);
                     }
                     int j02 = d2Var2.j0();
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) d2Var2.A0.getLayoutParams();
                     if (layoutParams == null) {
-                        layoutParams = w7.a6.e(-1, j02, 87);
+                        layoutParams = w7.z5.e(-1, j02, 87);
                     } else {
                         layoutParams.height = j02;
                     }
@@ -105,12 +105,12 @@ public final /* synthetic */ class j1 implements View.OnClickListener {
                 break;
             case 6:
                 final d2 d2Var3 = this.b;
-                m80 m80Var = d2Var3.x0;
-                if (m80Var != null) {
-                    m80Var.u();
+                l80 l80Var = d2Var3.x0;
+                if (l80Var != null) {
+                    l80Var.u();
                     d2Var3.x0 = null;
                 }
-                final m80 H = m80.H(d2Var3, view);
+                final l80 H = l80.H(d2Var3, view);
                 H.Q = true;
                 a R2 = d2Var3.P.R2();
                 H.j(R2 == null || !R2.b(), R.drawable.field_carret_empty, null, LocaleController.getString(R.string.ArticleNone), new m1(d2Var3, R2, 5));
@@ -170,10 +170,10 @@ public final /* synthetic */ class j1 implements View.OnClickListener {
                 break;
             case 7:
                 d2 d2Var4 = this.b;
-                m80 m80Var2 = d2Var4.x0;
+                l80 l80Var2 = d2Var4.x0;
                 TL_iv.pageTableCell pagetablecell = null;
-                if (m80Var2 != null) {
-                    m80Var2.u();
+                if (l80Var2 != null) {
+                    l80Var2.u();
                     d2Var4.x0 = null;
                 }
                 x3 x3Var2 = d2Var4.P;
@@ -202,10 +202,10 @@ public final /* synthetic */ class j1 implements View.OnClickListener {
                 break;
             case 8:
                 d2 d2Var5 = this.b;
-                m80 m80Var3 = d2Var5.x0;
+                l80 l80Var3 = d2Var5.x0;
                 TL_iv.pageBlockMath pageblockmath = null;
-                if (m80Var3 != null) {
-                    m80Var3.u();
+                if (l80Var3 != null) {
+                    l80Var3.u();
                     d2Var5.x0 = null;
                 }
                 a R22 = d2Var5.P.R2();
@@ -225,9 +225,9 @@ public final /* synthetic */ class j1 implements View.OnClickListener {
             case 10:
                 d2 d2Var7 = this.b;
                 d2Var7.r0();
-                hj0 hj0Var = d2Var7.O0;
-                if (hj0Var != null) {
-                    hj0Var.h(true);
+                gj0 gj0Var = d2Var7.O0;
+                if (gj0Var != null) {
+                    gj0Var.h(true);
                     d2Var7.O0 = null;
                     break;
                 }

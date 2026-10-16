@@ -1,29 +1,20 @@
 package z7;
 
-import android.os.IBinder;
-import android.os.IInterface;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class eg extends a9.a implements gg {
-    public final dg V0(x6.b bVar, jg jgVar) {
-        dg dgVar;
+public final class eg extends a9.a {
+    public final jg V0(x6.b bVar, bg bgVar) {
         Parcel obtain = Parcel.obtain();
         obtain.writeInterfaceToken(this.c);
         int i10 = t.a;
         obtain.writeStrongBinder(bVar);
         obtain.writeInt(1);
-        jgVar.writeToParcel(obtain, 0);
-        Parcel P0 = P0(obtain, 1);
-        IBinder readStrongBinder = P0.readStrongBinder();
-        if (readStrongBinder == null) {
-            dgVar = null;
-        } else {
-            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.mlkit.vision.segmentation.subject.aidls.ISubjectSegmenter");
-            dgVar = queryLocalInterface instanceof dg ? (dg) queryLocalInterface : new dg(readStrongBinder, "com.google.mlkit.vision.segmentation.subject.aidls.ISubjectSegmenter", 11);
-        }
+        bgVar.writeToParcel(obtain, 0);
+        Parcel P0 = P0(obtain, 3);
+        jg createFromParcel = P0.readInt() == 0 ? null : jg.CREATOR.createFromParcel(P0);
         P0.recycle();
-        return dgVar;
+        return createFromParcel;
     }
 }

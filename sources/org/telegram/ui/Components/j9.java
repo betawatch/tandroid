@@ -14,7 +14,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class j9 extends FrameLayout {
     public s5 a;
@@ -39,13 +39,13 @@ public abstract class j9 extends FrameLayout {
         this.s = 0;
         this.v = 0;
         this.w = 1.0f;
-        this.y = new i9((um) this);
+        this.y = new i9((tm) this);
         TLRPC.TL_emojiList a2 = a(i10);
         this.n = a2;
         this.c = new z9(context);
         this.d = new z9(context);
-        addView(this.c, w7.a6.e(50, 50, 1));
-        addView(this.d, w7.a6.e(50, 50, 1));
+        addView(this.c, w7.z5.e(50, 50, 1));
+        addView(this.d, w7.z5.e(50, 50, 1));
         if (!a2.document_id.isEmpty()) {
             s5 s5Var = new s5(4, i10, a2.document_id.get(0).longValue());
             this.a = s5Var;
@@ -67,7 +67,7 @@ public abstract class j9 extends FrameLayout {
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);
         textView.setText(LocaleController.getString(R.string.UseEmoji));
-        addView(textView, w7.a6.a(28.0f, 10.0f, 10.0f, 10.0f, 10.0f, -1, 80));
+        addView(textView, w7.z5.a(28.0f, 10.0f, 10.0f, 10.0f, 10.0f, -1, 80));
     }
 
     public static TLRPC.TL_emojiList a(int i10) {

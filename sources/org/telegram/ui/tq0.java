@@ -1,90 +1,34 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Point;
-import android.graphics.drawable.BitmapDrawable;
-import android.net.Uri;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class tq0 extends org.telegram.ui.ActionBar.m2 {
-    public Bitmap a;
-    public BitmapDrawable b;
-    public sq0 c;
-    public rq0 d;
-    public boolean e;
-    public boolean f;
+public final class tq0 extends s4.r0 {
+    public final /* synthetic */ fr0 a;
 
-    @Override // org.telegram.ui.ActionBar.m2
-    public final View createView(Context context) {
-        this.actionBar.setBackgroundColor(-13421773);
-        this.actionBar.B(-12763843, false);
-        this.actionBar.setTitleColor(-1);
-        this.actionBar.D(-1, false);
-        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString(R.string.CropImage));
-        this.actionBar.setActionBarMenuOnItemClick(new q70(this, 16));
-        this.actionBar.n().h(1, R.drawable.ic_ab_done, LocaleController.getString(R.string.Done), AndroidUtilities.dp(56.0f));
-        rq0 rq0Var = new rq0(this, context);
-        this.d = rq0Var;
-        this.fragmentView = rq0Var;
-        rq0Var.G = getArguments().getBoolean("freeform", false);
-        this.fragmentView.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
-        return this.fragmentView;
+    public tq0(fr0 fr0Var) {
+        this.a = fr0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.m2
-    public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.m2
-    public final boolean onFragmentCreate() {
-        int max;
-        if (this.a == null) {
-            String string = getArguments().getString("photoPath");
-            Uri uri = (Uri) getArguments().getParcelable("photoUri");
-            if (string == null && uri == null) {
-                return false;
-            }
-            if (string != null && !t8.b.t(string)) {
-                return false;
-            }
-            if (AndroidUtilities.isTablet()) {
-                max = AndroidUtilities.dp(520.0f);
-            } else {
-                Point point = AndroidUtilities.displaySize;
-                max = Math.max(point.x, point.y);
-            }
-            float f7 = max;
-            Bitmap loadBitmap = ImageLoader.loadBitmap(string, uri, f7, f7, true);
-            this.a = loadBitmap;
-            if (loadBitmap == null) {
-                return false;
-            }
+    @Override // s4.r0
+    public final void a(RecyclerView recyclerView, int i10) {
+        if (i10 == 1) {
+            AndroidUtilities.hideKeyboard(this.a.getParentActivity().getCurrentFocus());
         }
-        this.b = new BitmapDrawable(this.a);
-        super.onFragmentCreate();
-        return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.m2
-    public final void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        Bitmap bitmap = this.a;
-        if (bitmap != null && !this.e) {
-            bitmap.recycle();
-            this.a = null;
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        fr0 fr0Var = this.a;
+        if (fr0Var.J == null) {
+            int L0 = fr0Var.M.L0();
+            int abs = L0 == -1 ? 0 : Math.abs(fr0Var.M.N0() - L0) + 1;
+            if (abs <= 0 || L0 + abs <= fr0Var.M.B() - 2 || fr0Var.r || fr0Var.s) {
+                return;
+            }
+            fr0Var.d0(fr0Var.v, fr0Var.w, fr0Var.a == 1, true);
         }
-        this.b = null;
     }
 }

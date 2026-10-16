@@ -1,9 +1,10 @@
 package h9;
 
+import a4.l;
 import d9.b;
 import d9.e;
+import d9.h;
 import d9.i;
-import d9.l;
 import e9.d0;
 import e9.h0;
 import e9.k0;
@@ -25,18 +26,17 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import k6.h;
 import org.webrtc.MediaStreamTrack;
 import v7.s6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class a {
     public static final o0 f;
     public static final d9.a g;
     public static final HashMap h;
     public static final a i;
-    public static final h j;
+    public static final l j;
     public final String a;
     public final String b;
     public final o0 c;
@@ -77,7 +77,7 @@ public final class a {
         b bVar = b.d;
         b bVar2 = b.e;
         bVar2.getClass();
-        d9.h hVar = new d9.h(bVar2);
+        h hVar = new h(bVar2);
         bVar.getClass();
         g = new d9.a(new d9.a(new d9.a(bVar, hVar), new e(' ', 1)), i.b("()<>@,;:\\\"/[]?=").d());
         i.b("\"\\\r").d().getClass();
@@ -199,7 +199,7 @@ public final class a {
         a("font", "ttf");
         a("font", "woff");
         a("font", "woff2");
-        j = new h(new l("; "), 17);
+        j = new l(new d9.l("; "), 16);
     }
 
     public a(String str, String str2, o0 o0Var) {
@@ -221,7 +221,7 @@ public final class a {
     }
 
     public final m1 c() {
-        return new m1(this.c.b(), new h(new c2(13), 20));
+        return new m1(this.c.b(), new l(new c2(13), 19));
     }
 
     public final boolean equals(Object obj) {
@@ -257,11 +257,11 @@ public final class a {
         o0 o0Var = this.c;
         if (o0Var.f != 0) {
             sb2.append("; ");
-            Collection a2 = new q1(o0Var, new h(new c2(12), 20)).a();
-            h hVar = j;
-            hVar.getClass();
+            Collection a2 = new q1(o0Var, new l(new c2(12), 19)).a();
+            l lVar = j;
+            lVar.getClass();
             try {
-                hVar.g(sb2, a2.iterator());
+                lVar.K(sb2, a2.iterator());
             } catch (IOException e) {
                 throw new AssertionError(e);
             }

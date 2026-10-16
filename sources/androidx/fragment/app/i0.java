@@ -23,10 +23,11 @@ import java.util.ListIterator;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
+import m.h3;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class i0 {
     public final b0 A;
@@ -1295,11 +1296,11 @@ public abstract class i0 {
                 }
                 aVar.c(1);
                 if (K(2)) {
-                    StringBuilder k10 = i2.d.k(i15, "restoreAllState: back stack #", " (index ");
-                    k10.append(aVar.s);
-                    k10.append("): ");
-                    k10.append(aVar);
-                    Log.v("FragmentManager", k10.toString());
+                    StringBuilder l4 = i2.d.l(i15, "restoreAllState: back stack #", " (index ");
+                    l4.append(aVar.s);
+                    l4.append("): ");
+                    l4.append(aVar);
+                    Log.v("FragmentManager", l4.toString());
                     PrintWriter printWriter = new PrintWriter(new r0());
                     aVar.g("  ", printWriter, false);
                     printWriter.close();
@@ -1425,9 +1426,9 @@ public abstract class i0 {
                 for (i10 = 0; i10 < size2; i10++) {
                     bVarArr[i10] = new b((a) this.d.get(i10));
                     if (K(2)) {
-                        StringBuilder k10 = i2.d.k(i10, "saveAllState: adding back stack #", ": ");
-                        k10.append(this.d.get(i10));
-                        Log.v("FragmentManager", k10.toString());
+                        StringBuilder l4 = i2.d.l(i10, "saveAllState: adding back stack #", ": ");
+                        l4.append(this.d.get(i10));
+                        Log.v("FragmentManager", l4.toString());
                     }
                 }
             } else {
@@ -1541,7 +1542,7 @@ public abstract class i0 {
             }
             this.O = l0Var2;
         } else if (tVar != null) {
-            this.O = (l0) new androidx.biometric.e(tVar.e.f(), l0.j).m(l0.class);
+            this.O = (l0) new androidx.biometric.e(tVar.e.f(), l0.j).k(l0.class);
         } else {
             this.O = new l0(false);
         }
@@ -1549,7 +1550,7 @@ public abstract class i0 {
         this.c.e = this.O;
         t tVar2 = this.w;
         if (tVar2 != null && rVar == 0) {
-            m.p g10 = tVar2.g();
+            m.r g10 = tVar2.g();
             g10.f("android:support:fragments", new androidx.activity.e(this, 2));
             Bundle c10 = g10.c("android:support:fragments");
             if (c10 != null) {
@@ -1561,7 +1562,7 @@ public abstract class i0 {
             androidx.activity.h hVar = tVar3.e.w;
             String h = t8.b.h("FragmentManager:", rVar != 0 ? a1.g.s(new StringBuilder(), rVar.e, ":") : "");
             this.C = hVar.d(t8.b.u(h, "StartActivityForResult"), new d0(2), new a6.i(this, 5));
-            this.D = hVar.d(t8.b.u(h, "StartIntentSenderForResult"), new d0(0), new k6.h(this, 7));
+            this.D = hVar.d(t8.b.u(h, "StartIntentSenderForResult"), new d0(0), new a4.l(this, 6));
             this.E = hVar.d(t8.b.u(h, "RequestPermissions"), new d0(1), new ya.c(this, 5));
         }
         t tVar4 = this.w;
@@ -1584,9 +1585,9 @@ public abstract class i0 {
         if (tVar8 == null || rVar != 0) {
             return;
         }
-        li.k kVar = tVar8.e.c;
-        ((CopyOnWriteArrayList) kVar.c).add(this.u);
-        ((Runnable) kVar.b).run();
+        h3 h3Var = tVar8.e.c;
+        ((CopyOnWriteArrayList) h3Var.c).add(this.u);
+        ((Runnable) h3Var.b).run();
     }
 
     public final void b0(r rVar, androidx.lifecycle.n nVar) {
@@ -1923,14 +1924,14 @@ public abstract class i0 {
         }
         t tVar6 = this.w;
         if ((tVar6 != null) && this.y == null) {
-            li.k kVar = tVar6.e.c;
-            CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) kVar.c;
+            h3 h3Var = tVar6.e.c;
+            CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) h3Var.c;
             a0 a0Var = this.u;
             copyOnWriteArrayList.remove(a0Var);
-            if (((HashMap) kVar.d).remove(a0Var) != null) {
+            if (((HashMap) h3Var.d).remove(a0Var) != null) {
                 throw new ClassCastException();
             }
-            ((Runnable) kVar.b).run();
+            ((Runnable) h3Var.b).run();
         }
         this.w = null;
         this.x = null;

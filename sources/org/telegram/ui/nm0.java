@@ -1,180 +1,59 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.text.StaticLayout;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Editable;
+import android.text.TextWatcher;
 import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.R;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class nm0 extends FrameLayout {
-    public final /* synthetic */ int a;
-    public Object b;
-    public float c;
-    public final /* synthetic */ KeyEvent.Callback d;
+public final class nm0 implements TextWatcher {
+    public boolean a;
+    public final /* synthetic */ EditTextBoldCursor b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ sn0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ nm0(Context context, EditTextBoldCursor editTextBoldCursor, int i10) {
-        super(context);
-        this.a = i10;
-        this.d = editTextBoldCursor;
+    public nm0(sn0 sn0Var, EditTextBoldCursor editTextBoldCursor, String str) {
+        this.d = sn0Var;
+        this.b = editTextBoldCursor;
+        this.c = str;
     }
 
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                if (((StaticLayout) this.b) != null) {
-                    canvas.save();
-                    canvas.translate(AndroidUtilities.dp(21.0f) + this.c, ((EditTextBoldCursor) this.d).getLineY() + AndroidUtilities.dp(3.0f));
-                    ((StaticLayout) this.b).draw(canvas);
-                    canvas.restore();
-                    break;
-                }
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        if (this.a) {
+            return;
+        }
+        boolean z10 = true;
+        this.a = true;
+        int i10 = 0;
+        while (true) {
+            if (i10 >= editable.length()) {
+                z10 = false;
                 break;
-            case 1:
-                if (((StaticLayout) this.b) != null) {
-                    canvas.save();
-                    canvas.translate(AndroidUtilities.dp(21.0f) + this.c, ((EditTextBoldCursor) this.d).getLineY() + AndroidUtilities.dp(3.0f));
-                    ((StaticLayout) this.b).draw(canvas);
-                    canvas.restore();
-                    break;
-                }
+            }
+            char charAt = editable.charAt(i10);
+            if ((charAt < 'a' || charAt > 'z') && ((charAt < 'A' || charAt > 'Z') && !((charAt >= '0' && charAt <= '9') || charAt == '-' || charAt == ' '))) {
                 break;
-            case 2:
-                if (((StaticLayout) this.b) != null) {
-                    canvas.save();
-                    canvas.translate(AndroidUtilities.dp(21.0f) + this.c, ((EditTextBoldCursor) this.d).getLineY() + AndroidUtilities.dp(3.0f));
-                    ((StaticLayout) this.b).draw(canvas);
-                    canvas.restore();
-                    break;
-                }
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
+            } else {
+                i10++;
+            }
+        }
+        this.a = false;
+        EditTextBoldCursor editTextBoldCursor = this.b;
+        if (z10) {
+            editTextBoldCursor.setErrorText(LocaleController.getString(R.string.PassportUseLatinOnly));
+        } else {
+            sn0.I0(this.d, editTextBoldCursor, this.c, editable, false);
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                int size = View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(34.0f);
-                StaticLayout errorLayout = ((EditTextBoldCursor) this.d).getErrorLayout(size);
-                this.b = errorLayout;
-                if (errorLayout != null) {
-                    int lineCount = errorLayout.getLineCount();
-                    int i12 = 0;
-                    if (lineCount > 1) {
-                        i11 = View.MeasureSpec.makeMeasureSpec((((StaticLayout) this.b).getLineBottom(lineCount - 1) - ((StaticLayout) this.b).getLineBottom(0)) + AndroidUtilities.dp(64.0f), TLObject.FLAG_30);
-                    }
-                    if (LocaleController.isRTL) {
-                        float f7 = 0.0f;
-                        while (true) {
-                            if (i12 < lineCount) {
-                                if (((StaticLayout) this.b).getLineLeft(i12) != 0.0f) {
-                                    this.c = 0.0f;
-                                } else {
-                                    f7 = Math.max(f7, ((StaticLayout) this.b).getLineWidth(i12));
-                                    if (i12 == lineCount - 1) {
-                                        this.c = size - f7;
-                                    }
-                                    i12++;
-                                }
-                            }
-                        }
-                    }
-                }
-                super.onMeasure(i10, i11);
-                break;
-            case 1:
-                int size2 = View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(34.0f);
-                StaticLayout errorLayout2 = ((EditTextBoldCursor) this.d).getErrorLayout(size2);
-                this.b = errorLayout2;
-                if (errorLayout2 != null) {
-                    int lineCount2 = errorLayout2.getLineCount();
-                    int i13 = 0;
-                    if (lineCount2 > 1) {
-                        i11 = View.MeasureSpec.makeMeasureSpec((((StaticLayout) this.b).getLineBottom(lineCount2 - 1) - ((StaticLayout) this.b).getLineBottom(0)) + AndroidUtilities.dp(64.0f), TLObject.FLAG_30);
-                    }
-                    if (LocaleController.isRTL) {
-                        float f10 = 0.0f;
-                        while (true) {
-                            if (i13 < lineCount2) {
-                                if (((StaticLayout) this.b).getLineLeft(i13) != 0.0f) {
-                                    this.c = 0.0f;
-                                } else {
-                                    f10 = Math.max(f10, ((StaticLayout) this.b).getLineWidth(i13));
-                                    if (i13 == lineCount2 - 1) {
-                                        this.c = size2 - f10;
-                                    }
-                                    i13++;
-                                }
-                            }
-                        }
-                    }
-                }
-                super.onMeasure(i10, i11);
-                break;
-            case 2:
-                int size3 = View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(34.0f);
-                StaticLayout errorLayout3 = ((EditTextBoldCursor) this.d).getErrorLayout(size3);
-                this.b = errorLayout3;
-                if (errorLayout3 != null) {
-                    int lineCount3 = errorLayout3.getLineCount();
-                    int i14 = 0;
-                    if (lineCount3 > 1) {
-                        i11 = View.MeasureSpec.makeMeasureSpec((((StaticLayout) this.b).getLineBottom(lineCount3 - 1) - ((StaticLayout) this.b).getLineBottom(0)) + AndroidUtilities.dp(64.0f), TLObject.FLAG_30);
-                    }
-                    if (LocaleController.isRTL) {
-                        float f11 = 0.0f;
-                        while (true) {
-                            if (i14 < lineCount3) {
-                                if (((StaticLayout) this.b).getLineLeft(i14) != 0.0f) {
-                                    this.c = 0.0f;
-                                } else {
-                                    f11 = Math.max(f11, ((StaticLayout) this.b).getLineWidth(i14));
-                                    if (i14 == lineCount3 - 1) {
-                                        this.c = size3 - f11;
-                                    }
-                                    i14++;
-                                }
-                            }
-                        }
-                    }
-                }
-                super.onMeasure(i10, i11);
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                org.telegram.ui.Components.bk0 bk0Var = ((org.telegram.ui.Components.kj0) this.d).h;
-                float measuredHeight = (r0.f / 768.0f) * ((ig.k) this.b).getMeasuredHeight();
-                if (this.c != measuredHeight) {
-                    this.c = measuredHeight;
-                    ViewGroup.LayoutParams layoutParams = bk0Var.getLayoutParams();
-                    int i15 = (int) measuredHeight;
-                    bk0Var.getLayoutParams().width = i15;
-                    layoutParams.height = i15;
-                    super.onMeasure(i10, i11);
-                    break;
-                }
-                break;
-        }
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nm0(org.telegram.ui.Components.kj0 kj0Var, Context context, ig.k kVar) {
-        super(context);
-        this.a = 3;
-        this.d = kj0Var;
-        this.b = kVar;
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

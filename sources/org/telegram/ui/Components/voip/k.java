@@ -9,11 +9,11 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.k31;
-import w7.a6;
+import org.telegram.ui.Components.n51;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
 public final class k extends FrameLayout {
     public final j a;
     public final TransitionSet b;
@@ -25,7 +25,7 @@ public final class k extends FrameLayout {
         setWillNotDraw(false);
         j jVar = new j(activity);
         this.a = jVar;
-        addView(jVar, a6.e(52, 52, 5));
+        addView(jVar, z5.e(52, 52, 5));
         TransitionSet transitionSet = new TransitionSet();
         this.b = transitionSet;
         transitionSet.setOrdering(0);
@@ -50,7 +50,7 @@ public final class k extends FrameLayout {
         ViewGroup.LayoutParams layoutParams = jVar.getLayoutParams();
         layoutParams.width = -1;
         jVar.setLayoutParams(layoutParams);
-        AndroidUtilities.runOnUIThread(new k31(12, this, onClickListener), 500L);
+        AndroidUtilities.runOnUIThread(new n51(7, this, onClickListener), 500L);
     }
 
     public j getEndCloseView() {

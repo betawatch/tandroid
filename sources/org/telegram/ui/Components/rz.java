@@ -20,7 +20,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class rz extends lm0 {
     public int L;
@@ -59,7 +59,7 @@ public final class rz extends lm0 {
         qzVar.W2.r = false;
         qzVar.setNestedScrollingEnabled(false);
         qzVar.setDrawSelection(false);
-        qzVar.setOnTouchListener(new m.c2(this, 3));
+        qzVar.setOnTouchListener(new m.e2(this, 3));
     }
 
     @Override // org.telegram.ui.Components.lm0
@@ -333,8 +333,8 @@ public final class rz extends lm0 {
                 l3Var.setHeight(AndroidUtilities.dp(8.0f));
                 return;
             } else {
-                int C = org.telegram.messenger.yh.C(82.0f, (int) Math.ceil(num.intValue() / wzVar.y0.d), wzVar.h.getHeight());
-                l3Var.setHeight(C > 0 ? C : 1);
+                int B = org.telegram.messenger.sk.B(82.0f, (int) Math.ceil(num.intValue() / wzVar.y0.d), wzVar.h.getHeight());
+                l3Var.setHeight(B > 0 ? B : 1);
                 return;
             }
         }
@@ -429,13 +429,13 @@ public final class rz extends lm0 {
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
                 imageView.setImageResource(R.drawable.stickers_empty);
                 int i11 = org.telegram.ui.ActionBar.g6.Le;
-                imageView.setColorFilter(new PorterDuffColorFilter(wzVar.A(i11), PorterDuff.Mode.MULTIPLY));
+                imageView.setColorFilter(new PorterDuffColorFilter(wzVar.B(i11), PorterDuff.Mode.MULTIPLY));
                 imageView.setTranslationY(-AndroidUtilities.dp(24.0f));
-                xVar.addView(imageView, w7.a6.a(-2.0f, 0.0f, 42.0f, 0.0f, 28.0f, -2, 17));
+                xVar.addView(imageView, w7.z5.a(-2.0f, 0.0f, 42.0f, 0.0f, 28.0f, -2, 17));
                 TextView textView = new TextView(context);
-                org.telegram.messenger.yh.j(16.0f, R.string.NoStickersFound, 1, textView);
-                textView.setTextColor(wzVar.A(i11));
-                xVar.addView(textView, w7.a6.a(-2.0f, 0.0f, 42.0f, 0.0f, 9.0f, -2, 17));
+                org.telegram.messenger.sk.j(16.0f, R.string.NoStickersFound, 1, textView);
+                textView.setTextColor(wzVar.B(i11));
+                xVar.addView(textView, w7.z5.a(-2.0f, 0.0f, 42.0f, 0.0f, 9.0f, -2, 17));
                 xVar.setLayoutParams(new s4.o0(-1, -2));
                 d2Var = xVar;
                 break;

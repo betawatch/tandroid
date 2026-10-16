@@ -9,20 +9,20 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.h11;
+import org.telegram.ui.Components.i11;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class u0 extends Drawable {
     public final float a = 0.75f;
     public final Drawable b;
-    public final h11 c;
+    public final i11 c;
 
     public u0(Context context, int i10) {
         this.b = context.getResources().getDrawable(R.drawable.filled_stream_crown).mutate();
-        h11 h11Var = new h11(i2.d.i(i10, ""), 8.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
-        this.c = h11Var;
-        h11Var.a.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        i11 i11Var = new i11(i2.d.j(i10, ""), 8.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+        this.c = i11Var;
+        i11Var.a.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
     }
 
     @Override // android.graphics.drawable.Drawable

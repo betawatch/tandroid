@@ -31,7 +31,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class m30 implements NotificationCenter.NotificationCenterDelegate {
     public static m30 d0 = null;
@@ -83,7 +83,7 @@ public final class m30 implements NotificationCenter.NotificationCenterDelegate 
         k30Var.setAlpha(0.7f);
         s30 s30Var = new s30(i10, context, false);
         this.U = s30Var;
-        k30Var.addView(s30Var, w7.a6.e(-1, -1, 17));
+        k30Var.addView(s30Var, w7.z5.e(-1, -1, 17));
         n9 n9Var = new n9(context, true);
         this.s = n9Var;
         n9Var.setStyle(5);
@@ -91,7 +91,7 @@ public final class m30 implements NotificationCenter.NotificationCenterDelegate 
         n9Var.setVisibility(8);
         n9Var.setDelegate(new kq(this, 19));
         g(false);
-        k30Var.addView(n9Var, w7.a6.e(108, 36, 49));
+        k30Var.addView(n9Var, w7.z5.e(108, 36, 49));
         ah.x xVar = new ah.x(this, context, 16);
         this.b = xVar;
         di.p6 p6Var = new di.p6(this, context);
@@ -107,7 +107,7 @@ public final class m30 implements NotificationCenter.NotificationCenterDelegate 
         yj0Var.h = true;
         bk0Var.setAnimation(yj0Var);
         bk0Var.setColorFilter(-1);
-        frameLayout.addView(bk0Var, w7.a6.a(40.0f, 0.0f, 0.0f, 0.0f, 25.0f, 40, 17));
+        frameLayout.addView(bk0Var, w7.z5.a(40.0f, 0.0f, 0.0f, 0.0f, 25.0f, 40, 17));
         org.telegram.ui.y7 y7Var = new org.telegram.ui.y7(this, context, 2);
         this.e = y7Var;
         y7Var.setOnClickListener(new f0(this, 20));
@@ -125,7 +125,7 @@ public final class m30 implements NotificationCenter.NotificationCenterDelegate 
         z9 z9Var = new z9(context);
         q30Var.e = z9Var;
         z9Var.setRoundRadius(AndroidUtilities.dp(22.0f));
-        p30Var.addView(z9Var, w7.a6.d(44.0f, 44));
+        p30Var.addView(z9Var, w7.z5.d(44.0f, 44));
         int dp = AndroidUtilities.dp(6.0f);
         int k10 = i0.a.k(-1, 76);
         p30Var.setBackground(org.telegram.ui.ActionBar.g6.j0(dp, dp, dp, dp, 0, k10, k10));
@@ -139,13 +139,13 @@ public final class m30 implements NotificationCenter.NotificationCenterDelegate 
         textView.setMaxLines(2);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setTypeface(AndroidUtilities.bold());
-        TextView i11 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, w7.a6.n(-1, -2), context);
+        TextView i11 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, w7.z5.n(-1, -2), context);
         q30Var.b = i11;
         i11.setTextSize(12.0f);
         i11.setTextColor(i0.a.k(-1, 153));
-        linearLayout.addView(i11, w7.a6.n(-1, -2));
-        p30Var.addView(linearLayout, w7.a6.a(-2.0f, 55.0f, 0.0f, 0.0f, 0.0f, -1, 16));
-        q30Var.addView(p30Var, w7.a6.t(-1, -2, 0, 10, 10, 10, 10));
+        linearLayout.addView(i11, w7.z5.n(-1, -2));
+        p30Var.addView(linearLayout, w7.z5.a(-2.0f, 55.0f, 0.0f, 0.0f, 0.0f, -1, 16));
+        q30Var.addView(p30Var, w7.z5.t(-1, -2, 0, 10, 10, 10, 10));
         org.telegram.ui.Components.voip.u2 u2Var = new org.telegram.ui.Components.voip.u2(context, 44.0f);
         q30Var.c = u2Var;
         u2Var.setTextSize(12);
@@ -298,13 +298,13 @@ public final class m30 implements NotificationCenter.NotificationCenterDelegate 
         org.telegram.ui.Components.voip.p1 p1Var = new org.telegram.ui.Components.voip.p1(context);
         p1Var.setChildSize(68);
         p1Var.setUseStartPadding(false);
-        p1Var.addView(u2Var, w7.a6.d(63.0f, 68));
-        p1Var.addView(u2Var2, w7.a6.d(63.0f, 68));
-        p1Var.addView(u2Var3, w7.a6.d(63.0f, 68));
+        p1Var.addView(u2Var, w7.z5.d(63.0f, 68));
+        p1Var.addView(u2Var2, w7.z5.d(63.0f, 68));
+        p1Var.addView(u2Var3, w7.z5.d(63.0f, 68));
         q30Var.setWillNotDraw(false);
-        q30Var.addView(p1Var, w7.a6.t(-1, -2, 0, 6, 0, 6, 0));
+        q30Var.addView(p1Var, w7.z5.t(-1, -2, 0, 6, 0, 6, 0));
         this.f = q30Var;
-        y7Var.addView(q30Var, w7.a6.d(-2.0f, -2));
+        y7Var.addView(q30Var, w7.z5.d(-2.0f, -2));
     }
 
     public static WindowManager.LayoutParams b(Context context) {

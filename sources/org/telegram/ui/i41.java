@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class i41 extends org.telegram.ui.ActionBar.e3 {
     public static final /* synthetic */ int v = 0;
@@ -182,7 +182,7 @@ public final class i41 extends org.telegram.ui.ActionBar.e3 {
             View view = viewPages[0];
             if (view instanceof h41) {
                 ((h41) view).a(0);
-                i41Var.containerView.post(new hz0(12, viewPages, tL_reportResultAddComment));
+                i41Var.containerView.post(new i11(7, viewPages, tL_reportResultAddComment));
             }
             View view2 = viewPages[1];
             if (view2 instanceof h41) {
@@ -256,27 +256,27 @@ public final class i41 extends org.telegram.ui.ActionBar.e3 {
         h1Var.D(h1Var.b + 1);
         h41 h41Var = (h41) h1Var.getViewPages()[1];
         if (h41Var != null) {
-            org.telegram.ui.Components.h71 h71Var = h41Var.f;
+            org.telegram.ui.Components.i71 i71Var = h41Var.f;
             if (tLObject instanceof TLRPC.TL_reportResultChooseOption) {
                 h41Var.b = null;
                 h41Var.c = (TLRPC.TL_reportResultChooseOption) tLObject;
                 h41Var.d = null;
-                h71Var.W2.N(false);
+                i71Var.W2.N(false);
             } else if (tLObject instanceof TLRPC.TL_reportResultAddComment) {
                 h41Var.b((TLRPC.TL_reportResultAddComment) tLObject);
             } else if (z10) {
                 h41Var.b = (TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject;
                 h41Var.c = null;
                 h41Var.d = null;
-                h71Var.W2.N(false);
+                i71Var.W2.N(false);
             }
             if (charSequence != null) {
                 x5 x5Var = h41Var.h;
                 ((TextView) x5Var.d).setText(charSequence);
                 ((TextView) x5Var.d).getText();
                 x5Var.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(120.0f), TLObject.FLAG_31));
-                if (h71Var != null) {
-                    h71Var.W2.N(true);
+                if (i71Var != null) {
+                    i71Var.W2.N(true);
                 }
             }
         }
@@ -287,7 +287,7 @@ public final class i41 extends org.telegram.ui.ActionBar.e3 {
         View view = viewPages[0];
         if (view instanceof h41) {
             ((h41) view).a(0);
-            this.containerView.post(new hz0(11, viewPages, tL_channels_sponsoredMessageReportResultChooseOption));
+            this.containerView.post(new i11(6, viewPages, tL_channels_sponsoredMessageReportResultChooseOption));
         }
         View view2 = viewPages[1];
         if (view2 instanceof h41) {
@@ -300,7 +300,7 @@ public final class i41 extends org.telegram.ui.ActionBar.e3 {
         View view = viewPages[0];
         if (view instanceof h41) {
             ((h41) view).a(0);
-            this.containerView.post(new hz0(13, viewPages, tL_reportResultChooseOption));
+            this.containerView.post(new i11(8, viewPages, tL_reportResultChooseOption));
         }
         View view2 = viewPages[1];
         if (view2 instanceof h41) {
@@ -350,8 +350,8 @@ public final class i41 extends org.telegram.ui.ActionBar.e3 {
         this.b = h1Var;
         int i11 = this.backgroundPaddingLeft;
         h1Var.setPadding(i11, 0, i11, 0);
-        this.containerView.addView(h1Var, w7.a6.e(-1, -1, 119));
-        h1Var.setAdapter(new ow0(this, context, 1));
+        this.containerView.addView(h1Var, w7.z5.e(-1, -1, 119));
+        h1Var.setAdapter(new nw0(this, context, 1));
         if (arrayList == null && bArr == null) {
             if (z10) {
                 P(null);

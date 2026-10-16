@@ -8,7 +8,7 @@ import i2.o0;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class k implements i {
     public static final double[] r = {23.976023976023978d, 24.0d, 25.0d, 29.97002997002997d, 30.0d, 50.0d, 59.94005994005994d, 60.0d};
@@ -301,7 +301,7 @@ public final class k implements i {
         f0Var.c();
         this.a = (String) f0Var.e;
         f0Var.c();
-        this.b = qVar.a0(f0Var.c, 2);
+        this.b = qVar.W(f0Var.c, 2);
         c0 c0Var = this.c;
         if (c0Var != null) {
             c0Var.b(qVar, f0Var);

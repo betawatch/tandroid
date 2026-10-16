@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class se implements Runnable {
     public final /* synthetic */ int a;
@@ -98,7 +98,7 @@ public final /* synthetic */ class se implements Runnable {
                 foVar.w7();
                 break;
             case 6:
-                hf1 a02 = hf1.a0(-foVar.T5, 0L);
+                gf1 a02 = gf1.a0(-foVar.T5, 0L);
                 a02.y = foVar;
                 foVar.presentFragment(a02);
                 break;
@@ -201,7 +201,7 @@ public final /* synthetic */ class se implements Runnable {
                                 i10 = 1;
                                 org.telegram.ui.Components.dq dqVar2 = new org.telegram.ui.Components.dq(foVar.getParentActivity(), foVar.ea);
                                 foVar.v2 = dqVar2;
-                                xmVar.addView(dqVar2, indexOfChild + 1, w7.a6.a(-2.0f, 10.0f, 0.0f, 10.0f, 0.0f, -2, 51));
+                                xmVar.addView(dqVar2, indexOfChild + 1, w7.z5.a(-2.0f, 10.0f, 0.0f, 10.0f, 0.0f, -2, 51));
                                 foVar.v2.setAlpha(0.0f);
                                 foVar.v2.setVisibility(4);
                             }
@@ -227,10 +227,10 @@ public final /* synthetic */ class se implements Runnable {
                                 View view = (View) u1Var.getParent();
                                 dqVar3.measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31));
                                 if (i17 > AndroidUtilities.dp(10.0f) + dqVar3.getMeasuredHeight()) {
-                                    int c10 = org.telegram.messenger.yh.c(6.0f, u1Var.getChecksY(), i17);
+                                    int C = org.telegram.messenger.g0.C(6.0f, u1Var.getChecksY(), i17);
                                     int dp = AndroidUtilities.dp(5.0f) + u1Var.getChecksX();
                                     int measuredWidth = view.getMeasuredWidth();
-                                    float measuredHeight = c10 - dqVar3.getMeasuredHeight();
+                                    float measuredHeight = C - dqVar3.getMeasuredHeight();
                                     dqVar3.f = measuredHeight;
                                     dqVar3.setTranslationY(measuredHeight);
                                     int left = u1Var.getLeft() + dp;

@@ -9,13 +9,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.dl;
+import org.telegram.ui.Components.cl;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.j5;
 import org.telegram.ui.Components.r6;
-import org.telegram.ui.Wallet.i8;
+import org.telegram.ui.Wallet.j8;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class b1 extends EditTextBoldCursor {
     public final /* synthetic */ int b = 0;
@@ -50,7 +50,7 @@ public final class b1 extends EditTextBoldCursor {
                 break;
             case 1:
                 super.dispatchDraw(canvas);
-                int a10 = this.d.a(g6.w0(this.c <= 0 ? g6.p7 : g6.P5, ((dl) this.f).a), false);
+                int a10 = this.d.a(g6.w0(this.c <= 0 ? g6.p7 : g6.P5, ((cl) this.f).a), false);
                 r6 r6Var2 = this.e;
                 r6Var2.u(a10);
                 int dp = AndroidUtilities.dp(48.0f) + ((getWidth() + getScrollX()) - getPaddingRight());
@@ -60,7 +60,7 @@ public final class b1 extends EditTextBoldCursor {
                 break;
             default:
                 super.dispatchDraw(canvas);
-                int a11 = this.d.a(g6.w0(this.c <= 0 ? g6.p7 : g6.P5, ((i8) this.f).getResourceProvider()), false);
+                int a11 = this.d.a(g6.w0(this.c <= 0 ? g6.p7 : g6.P5, ((j8) this.f).getResourceProvider()), false);
                 r6 r6Var3 = this.e;
                 r6Var3.u(a11);
                 int dp2 = AndroidUtilities.dp(48.0f) + ((getWidth() + getScrollX()) - getPaddingRight());
@@ -135,9 +135,9 @@ public final class b1 extends EditTextBoldCursor {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b1(dl dlVar, Context context) {
+    public b1(cl clVar, Context context) {
         super(context);
-        this.f = dlVar;
+        this.f = clVar;
         this.c = 960;
         this.d = new j5(this);
         r6 r6Var = new r6(false, true, true);
@@ -149,9 +149,9 @@ public final class b1 extends EditTextBoldCursor {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b1(i8 i8Var, Activity activity) {
+    public b1(j8 j8Var, Activity activity) {
         super(activity);
-        this.f = i8Var;
+        this.f = j8Var;
         this.c = 960;
         this.d = new j5(this);
         r6 r6Var = new r6(false, true, true);

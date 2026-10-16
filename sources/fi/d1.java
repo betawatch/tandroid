@@ -15,7 +15,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -28,11 +28,11 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.dr;
 import org.telegram.ui.fo;
 import org.telegram.ui.ia0;
-import org.telegram.ui.vj1;
+import org.telegram.ui.uj1;
 import org.telegram.ui.web.HttpGetFileTask;
 import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d1 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -138,9 +138,9 @@ public final /* synthetic */ class d1 implements Runnable {
                         LaunchActivity.C0(launchActivity, launchActivity.O, tL_attachMenuBot, str3, false);
                         break;
                     } else {
-                        org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) i2.d.g(1, arrayList2);
+                        org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) i2.d.h(1, arrayList2);
                         if (AndroidUtilities.isTablet() && !(m2Var instanceof fo) && !arrayList.isEmpty()) {
-                            m2Var = (org.telegram.ui.ActionBar.m2) i2.d.g(1, arrayList);
+                            m2Var = (org.telegram.ui.ActionBar.m2) i2.d.h(1, arrayList);
                         }
                         ArrayList arrayList4 = new ArrayList();
                         if (!TextUtils.isEmpty(str4)) {
@@ -170,7 +170,7 @@ public final /* synthetic */ class d1 implements Runnable {
                             z6Var.setColor(g6.x0(null, g6.ia, false));
                             z6Var.setBackgroundColor(g6.x0(null, g6.L5, false));
                             z6Var.setAttachBot(tL_attachMenuBot);
-                            vj1.a(launchActivity, new dr(launchActivity, i12, this.d, yyVar, m2Var, user, str5), null);
+                            uj1.a(launchActivity, new dr(launchActivity, i12, this.d, yyVar, m2Var, user, str5), null);
                             break;
                         } else if (yyVar != null) {
                             if (m2Var != null) {
@@ -199,10 +199,10 @@ public final /* synthetic */ class d1 implements Runnable {
                         }
                     }
                 } else {
-                    a02 = zc.a0((org.telegram.ui.ActionBar.m2) i2.d.g(1, arrayList2));
+                    a02 = zc.a0((org.telegram.ui.ActionBar.m2) i2.d.h(1, arrayList2));
                     i10 = R.string.BotCantAddToAttachMenu;
                 }
-                yh.p(i10, a02, null);
+                sk.q(i10, a02, null);
                 break;
         }
     }

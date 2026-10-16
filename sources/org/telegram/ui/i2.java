@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class i2 extends FrameLayout implements org.telegram.ui.Cells.n9, g3 {
     public final z70 a;
@@ -30,7 +30,7 @@ public final class i2 extends FrameLayout implements org.telegram.ui.Cells.n9, g
         ji.b4 b4Var = new ji.b4(context, z70Var);
         this.d = b4Var;
         b4Var.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-        addView(b4Var, w7.a6.d(-2.0f, -1));
+        addView(b4Var, w7.z5.d(-2.0f, -1));
         h2 h2Var = new h2(this, context, z70Var, i4Var);
         this.e = h2Var;
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-2, -1);
@@ -94,7 +94,7 @@ public final class i2 extends FrameLayout implements org.telegram.ui.Cells.n9, g
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.yh.a(this);
+        return org.telegram.messenger.sk.a(this);
     }
 
     @Override // android.view.View, org.telegram.ui.Cells.w9

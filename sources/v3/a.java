@@ -2,7 +2,7 @@ package v3;
 
 import c3.k;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class a extends k implements h {
     public final long i;
@@ -22,13 +22,13 @@ public final class a extends k implements h {
     }
 
     @Override // v3.h
-    public final long a() {
-        return this.m;
+    public final long a(long j10) {
+        return (Math.max(0L, j10 - this.b) * 8000000) / this.e;
     }
 
     @Override // v3.h
-    public final long b(long j10) {
-        return (Math.max(0L, j10 - this.b) * 8000000) / this.e;
+    public final long b() {
+        return this.m;
     }
 
     @Override // v3.h

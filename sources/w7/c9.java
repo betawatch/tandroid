@@ -1,6 +1,6 @@
 package w7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class c9 {
     /* JADX WARN: Code restructure failed: missing block: B:12:0x002a, code lost:
@@ -56,7 +56,7 @@ public abstract class c9 {
 
     public static Object c(int i10) {
         if (i10 < 2 || i10 > 1073741824 || Integer.highestOneBit(i10) != i10) {
-            throw new IllegalArgumentException(i2.d.i(i10, "must be power of 2 between 2^1 and 2^30: "));
+            throw new IllegalArgumentException(i2.d.j(i10, "must be power of 2 between 2^1 and 2^30: "));
         }
         return i10 <= 256 ? new byte[i10] : i10 <= 65536 ? new short[i10] : new int[i10];
     }

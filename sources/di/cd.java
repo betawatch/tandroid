@@ -18,21 +18,21 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.fm;
+import org.telegram.ui.Components.em;
 import org.telegram.ui.Components.pz;
 import org.telegram.ui.Components.rz;
 import org.telegram.ui.Components.ux0;
 import org.telegram.ui.Components.ve;
-import org.telegram.ui.Components.w11;
 import org.telegram.ui.Components.x11;
 import org.telegram.ui.Components.y11;
+import org.telegram.ui.Components.z11;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.a61;
-import org.telegram.ui.or0;
-import org.telegram.ui.uf0;
-import org.telegram.ui.zr0;
+import org.telegram.ui.mr0;
+import org.telegram.ui.tf0;
+import org.telegram.ui.yr0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class cd implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -75,11 +75,11 @@ public final /* synthetic */ class cd implements Utilities.Callback {
                 callback.run(idVar);
                 break;
             case 1:
-                fm fmVar = (fm) this.c;
+                em emVar = (em) this.c;
                 File file = (File) this.d;
                 boolean z11 = this.b;
                 Integer num = (Integer) obj;
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = fmVar.e;
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = emVar.e;
                 chatAttachAlertPhotoLayout.s0 = false;
                 if (file != null && !chatAttachAlertPhotoLayout.b.V) {
                     ChatAttachAlertPhotoLayout.q1 = false;
@@ -148,7 +148,7 @@ public final /* synthetic */ class cd implements Utilities.Callback {
                     photoViewer.t5.setCutOutState(true);
                     photoViewer.X2(false, true);
                 } else {
-                    y11 thanosEffect = photoViewer.p5.getThanosEffect();
+                    z11 thanosEffect = photoViewer.p5.getThanosEffect();
                     rg.p2 p2Var2 = photoViewer.p5;
                     p2Var2.L = true;
                     p2Var2.E = m2Var;
@@ -158,7 +158,7 @@ public final /* synthetic */ class cd implements Utilities.Callback {
                     Bitmap b10 = m2Var2 == null ? p2Var2.I : (!z13 || bitmap3 == null) ? m2Var2.b() : p2Var2.e(bitmap3);
                     MediaController.PhotoEntry photoEntry3 = (MediaController.PhotoEntry) photoViewer.g7.get(photoViewer.P4);
                     if (thanosEffect == null) {
-                        Utilities.themeQueue.postRunnable(new zr0(photoViewer, b10, 0));
+                        Utilities.themeQueue.postRunnable(new yr0(photoViewer, b10, 0));
                         photoViewer.p5.f();
                         photoViewer.e0.invalidate();
                         break;
@@ -227,7 +227,7 @@ public final /* synthetic */ class cd implements Utilities.Callback {
                             bitmap2 = bitmap;
                         }
                         if (bitmap2 == null) {
-                            Utilities.themeQueue.postRunnable(new zr0(photoViewer, b10, 1));
+                            Utilities.themeQueue.postRunnable(new yr0(photoViewer, b10, 1));
                             photoViewer.p5.f();
                             photoViewer.e0.invalidate();
                             break;
@@ -237,7 +237,7 @@ public final /* synthetic */ class cd implements Utilities.Callback {
                                 bitmap2 = PhotoViewer.I0(bitmap2, cropState, new int[]{photoViewer.C4.getOrientation(), photoViewer.C4.getInvert()}, true);
                             }
                             if (bitmap2 == null) {
-                                Utilities.themeQueue.postRunnable(new zr0(photoViewer, b10, 2));
+                                Utilities.themeQueue.postRunnable(new yr0(photoViewer, b10, 2));
                                 photoViewer.p5.f();
                                 photoViewer.e0.invalidate();
                                 break;
@@ -285,18 +285,18 @@ public final /* synthetic */ class cd implements Utilities.Callback {
                                 matrix3.postScale(f23, f23, f10 / f7, f11 / f7);
                                 matrix3.postTranslate(photoViewer.X5 + f13 + Math.max(0, (int) ((photoViewer.k1(photoViewer.u4) - f16) / f7)), photoViewer.Y5 + f12 + Math.max(0, (int) ((photoViewer.i1() - f17) / f7)));
                                 photoViewer.p5.V = true;
-                                Utilities.themeQueue.postRunnable(new zr0(photoViewer, b10, 3));
-                                or0 or0Var = new or0(photoViewer, 13);
-                                uf0 uf0Var = new uf0(photoViewer, b10, or0Var, 18);
+                                Utilities.themeQueue.postRunnable(new yr0(photoViewer, b10, 3));
+                                mr0 mr0Var = new mr0(photoViewer, 13);
+                                tf0 tf0Var = new tf0(photoViewer, b10, mr0Var, 18);
                                 ve veVar = new ve(29);
-                                w11 w11Var = thanosEffect.a;
-                                if (w11Var != null) {
-                                    w11Var.c(matrix3, bitmap2, uf0Var, veVar);
+                                x11 x11Var = thanosEffect.a;
+                                if (x11Var != null) {
+                                    x11Var.c(matrix3, bitmap2, tf0Var, veVar);
                                     Choreographer.getInstance().postFrameCallback(thanosEffect.b);
                                 } else {
-                                    thanosEffect.c.add(new x11(matrix3, bitmap2, uf0Var, veVar));
+                                    thanosEffect.c.add(new y11(matrix3, bitmap2, tf0Var, veVar));
                                 }
-                                AndroidUtilities.runOnUIThread(or0Var, 1200L);
+                                AndroidUtilities.runOnUIThread(mr0Var, 1200L);
                             }
                         }
                     }
@@ -319,9 +319,9 @@ public final /* synthetic */ class cd implements Utilities.Callback {
         }
     }
 
-    public /* synthetic */ cd(fm fmVar, File file, boolean z10) {
+    public /* synthetic */ cd(em emVar, File file, boolean z10) {
         this.a = 1;
-        this.c = fmVar;
+        this.c = emVar;
         this.d = file;
         this.b = z10;
     }

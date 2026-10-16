@@ -1,8 +1,8 @@
 package r0;
 
-import w7.v6;
+import w7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class b1 {
     public final l1 a;
@@ -25,15 +25,15 @@ public abstract class b1 {
                 bVar = l1Var.a.f(1);
             }
             g(i0.b.a(bVar, bVar2));
-            i0.b bVar3 = this.b[v6.a(16)];
+            i0.b bVar3 = this.b[u6.a(16)];
             if (bVar3 != null) {
                 f(bVar3);
             }
-            i0.b bVar4 = this.b[v6.a(32)];
+            i0.b bVar4 = this.b[u6.a(32)];
             if (bVar4 != null) {
                 d(bVar4);
             }
-            i0.b bVar5 = this.b[v6.a(64)];
+            i0.b bVar5 = this.b[u6.a(64)];
             if (bVar5 != null) {
                 h(bVar5);
             }
@@ -48,7 +48,7 @@ public abstract class b1 {
         }
         for (int i11 = 1; i11 <= 512; i11 <<= 1) {
             if ((i10 & i11) != 0) {
-                this.b[v6.a(i11)] = bVar;
+                this.b[u6.a(i11)] = bVar;
             }
         }
     }

@@ -8,9 +8,9 @@ import org.telegram.messenger.FileLog;
 import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.ow0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class f extends ow0 implements r0.n {
+public final class f extends ow0 implements r0.m {
     public final b2.v0 w0;
     public final /* synthetic */ g x0;
 
@@ -21,7 +21,7 @@ public final class f extends ow0 implements r0.n {
         this.w0 = new b2.v0();
     }
 
-    @Override // r0.m
+    @Override // r0.l
     public final void E(ViewGroup viewGroup, int i10, int i11, int[] iArr, int i12) {
         org.telegram.ui.ActionBar.k kVar;
         int i13;
@@ -83,7 +83,7 @@ public final class f extends ow0 implements r0.n {
         }
     }
 
-    @Override // r0.n
+    @Override // r0.m
     public final void i(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14, int[] iArr) {
         org.telegram.ui.ActionBar.k kVar;
         g gVar = this.x0;
@@ -104,7 +104,7 @@ public final class f extends ow0 implements r0.n {
         }
     }
 
-    @Override // r0.m
+    @Override // r0.l
     public final void n(int i10, View view) {
         this.w0.a = 0;
     }
@@ -114,12 +114,12 @@ public final class f extends ow0 implements r0.n {
         super.onMeasure(i10, i11);
     }
 
-    @Override // r0.m
+    @Override // r0.l
     public final boolean p(View view, View view2, int i10, int i11) {
         return i10 == 2;
     }
 
-    @Override // r0.m
+    @Override // r0.l
     public final void s(View view, View view2, int i10, int i11) {
         this.w0.a = i10;
     }
@@ -128,7 +128,7 @@ public final class f extends ow0 implements r0.n {
     public final void onStopNestedScroll(View view) {
     }
 
-    @Override // r0.m
+    @Override // r0.l
     public final void b(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14) {
     }
 }

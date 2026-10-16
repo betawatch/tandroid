@@ -5,9 +5,9 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 import android.os.Parcelable;
-import w7.g0;
+import w7.f0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class o extends o6.a {
     public static final Parcelable.Creator<o> CREATOR = new m(2);
@@ -52,18 +52,18 @@ public final class o extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = g0.q(parcel, 20293);
-        g0.s(parcel, 1, 4);
+        int q6 = f0.q(parcel, 20293);
+        f0.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        g0.k(parcel, 2, this.b, i10);
+        f0.k(parcel, 2, this.b, i10);
         g8.q qVar = this.c;
-        g0.f(parcel, 3, qVar == null ? null : qVar.asBinder());
-        g0.k(parcel, 4, this.e, i10);
+        f0.f(parcel, 3, qVar == null ? null : qVar.asBinder());
+        f0.k(parcel, 4, this.e, i10);
         g8.n nVar = this.d;
-        g0.f(parcel, 5, nVar == null ? null : nVar.asBinder());
+        f0.f(parcel, 5, nVar == null ? null : nVar.asBinder());
         y yVar = this.f;
-        g0.f(parcel, 6, yVar != null ? yVar.asBinder() : null);
-        g0.l(parcel, 8, this.h);
-        g0.r(parcel, q6);
+        f0.f(parcel, 6, yVar != null ? yVar.asBinder() : null);
+        f0.l(parcel, 8, this.h);
+        f0.r(parcel, q6);
     }
 }

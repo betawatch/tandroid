@@ -8,7 +8,7 @@ import java.util.Map;
 import v7.k7;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class t0 implements y2.i {
     public final Uri a;
@@ -34,11 +34,6 @@ public final class t0 implements y2.i {
         this.e = iVar;
         u.g.getAndIncrement();
         this.s = b(0L, null);
-    }
-
-    @Override // y2.i
-    public final void J() {
-        this.h = true;
     }
 
     @Override // y2.i
@@ -76,9 +71,9 @@ public final class t0 implements y2.i {
                     hVar = b0Var;
                 } else {
                     hVar = new t(b0Var, i10, this);
-                    c3.i0 z10 = this.x.z(new v0(0, true));
-                    this.v = z10;
-                    z10.b(w0.j0);
+                    c3.i0 x10 = this.x.x(new v0(0, true));
+                    this.v = x10;
+                    x10.b(w0.j0);
                 }
                 this.c.c(hVar, this.a, this.b.a.getResponseHeaders(), j10, j11, this.d);
                 if (this.x.J != null && (oVar = (c3.o) this.c.c) != null) {
@@ -136,6 +131,11 @@ public final class t0 implements y2.i {
                 throw th2;
             }
         }
+    }
+
+    @Override // y2.i
+    public final void a0() {
+        this.h = true;
     }
 
     public final g2.m b(long j10, String str) {

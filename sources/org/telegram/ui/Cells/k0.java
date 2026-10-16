@@ -1,57 +1,71 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.ui.Components.gp0;
-import org.telegram.ui.cd1;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.os.Bundle;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class k0 extends gp0 {
-    public final /* synthetic */ int l0;
+public abstract class k0 extends FrameLayout {
+    public final int a;
+    public final ImageView b;
+    public final ImageView c;
+    public final j0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ k0(int i10, Context context, org.telegram.ui.ActionBar.c6 c6Var, boolean z10) {
-        super(context, c6Var, z10);
-        this.l0 = i10;
-    }
-
-    @Override // org.telegram.ui.Components.gp0, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.l0) {
-            case 0:
-                if (motionEvent.getAction() == 0) {
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                break;
-            case 1:
-                if (motionEvent.getAction() == 0) {
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                break;
-            case 2:
-                if (motionEvent.getAction() == 0) {
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                break;
-            default:
-                if (motionEvent.getAction() == 0) {
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                break;
-        }
-        return d(motionEvent);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ k0(Context context) {
+    public k0(Context context) {
         super(context);
-        this.l0 = 1;
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        addView(imageView, w7.z5.a(24.0f, 17.0f, 12.0f, 0.0f, 0.0f, 24, 51));
+        j0 j0Var = new j0(0, context, null, true);
+        this.d = j0Var;
+        j0Var.setReportChanges(true);
+        j0Var.setDelegate(new m.h(this, 5));
+        j0Var.setImportantForAccessibility(2);
+        addView(j0Var, w7.z5.a(38.0f, 54.0f, 5.0f, 54.0f, 0.0f, -1, 51));
+        ImageView imageView2 = new ImageView(context);
+        this.c = imageView2;
+        addView(imageView2, w7.z5.a(24.0f, 0.0f, 12.0f, 17.0f, 0.0f, 24, 53));
+        imageView.setImageResource(R.drawable.msg_brightness_low);
+        imageView2.setImageResource(R.drawable.msg_brightness_high);
+        this.a = 48;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k0(Context context, cd1 cd1Var) {
-        super(context, cd1Var, false);
-        this.l0 = 3;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        int i10 = org.telegram.ui.ActionBar.g6.m6;
+        int x02 = org.telegram.ui.ActionBar.g6.x0(null, i10, false);
+        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+        this.b.setColorFilter(new PorterDuffColorFilter(x02, mode));
+        this.c.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.x0(null, i10, false), mode));
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        this.d.getSeekBarAccessibilityDelegate().e(this, accessibilityNodeInfo);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.a), TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public final boolean performAccessibilityAction(int i10, Bundle bundle) {
+        return super.performAccessibilityAction(i10, bundle) || this.d.getSeekBarAccessibilityDelegate().g(this, i10, bundle);
+    }
+
+    public void setProgress(float f7) {
+        this.d.setProgress(f7);
     }
 }

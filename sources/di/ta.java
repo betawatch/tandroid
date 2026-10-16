@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ta implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -80,7 +80,7 @@ public final /* synthetic */ class ta implements Runnable {
                             org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
                             a2Var.R = string;
                             a2Var.T = LocaleController.getString(R.string.LiveStoryAlreadyStreaming);
-                            org.telegram.messenger.q.A(R.string.OK, alertDialog$Builder, null);
+                            org.telegram.messenger.g0.p(R.string.OK, alertDialog$Builder, null);
                             break;
                         }
                     }

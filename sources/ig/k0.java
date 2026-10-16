@@ -22,19 +22,19 @@ import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.h5;
 import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.db;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.k9;
 import org.telegram.ui.Components.lm0;
 import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.o8;
-import org.telegram.ui.Components.z61;
 import org.telegram.ui.Components.z9;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class k0 extends db {
     public static final int g0 = -1;
@@ -45,7 +45,7 @@ public final class k0 extends db {
     public final LinearLayout a0;
     public final di.d b0;
     public final di.d c0;
-    public z61 d0;
+    public a71 d0;
     public boolean e0;
     public Boolean f0;
 
@@ -69,21 +69,21 @@ public final class k0 extends db {
         z9Var.setRoundRadius(AndroidUtilities.dp(40.0f));
         k9Var.r(user);
         z9Var.e(user, k9Var);
-        linearLayout.addView(z9Var, a6.t(80, 80, 1, 0, 0, 0, 0));
+        linearLayout.addView(z9Var, z5.t(80, 80, 1, 0, 0, 0, 0));
         TextView textView = new TextView(activity);
         textView.setTextSize(1, 20.0f);
         textView.setTextColor(getThemedColor(g6.G6));
         textView.setGravity(17);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setText(UserObject.getUserName(user));
-        linearLayout.addView(textView, a6.r(-1, -2, 1, 32.0f, 15.66f, 32.0f, 3.66f));
+        linearLayout.addView(textView, z5.r(-1, -2, 1, 32.0f, 15.66f, 32.0f, 3.66f));
         this.e.setTitle(UserObject.getUserName(user));
         TextView textView2 = new TextView(activity);
         textView2.setTextSize(1, 14.0f);
         textView2.setTextColor(getThemedColor(g6.y6));
         textView2.setGravity(17);
         textView2.setText(LocaleController.getString(R.string.SessionBot));
-        linearLayout.addView(textView2, a6.r(-1, -2, 1, 32.0f, 0.0f, 32.0f, 3.66f));
+        linearLayout.addView(textView2, z5.r(-1, -2, 1, 32.0f, 0.0f, 32.0f, 3.66f));
         String publicUsername = UserObject.getPublicUsername(user);
         if (!TextUtils.isEmpty(publicUsername)) {
             TextView textView3 = new TextView(activity);
@@ -91,7 +91,7 @@ public final class k0 extends db {
             textView3.setTextColor(getThemedColor(g6.gc));
             textView3.setText("@" + publicUsername);
             textView3.setGravity(17);
-            linearLayout.addView(textView3, a6.t(-1, -2, 1, 32, 0, 32, 18));
+            linearLayout.addView(textView3, z5.t(-1, -2, 1, 32, 0, 32, 18));
         }
         int i10 = g6.a7;
         setBackgroundColor(getThemedColor(i10));
@@ -110,15 +110,15 @@ public final class k0 extends db {
         dVar.setColor(getThemedColor(g6.wj));
         dVar.setText(LocaleController.getString(R.string.TerminateSession));
         dVar.setOnClickListener(new bi.x(this, tL_connectedBot, o8Var, 8));
-        frameLayout.addView(dVar, a6.a(48.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 87));
+        frameLayout.addView(dVar, z5.a(48.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 87));
         di.d dVar2 = new di.d(activity, c6Var, true);
         dVar2.setRoundRadius(24);
         this.c0 = dVar2;
         dVar2.setText(LocaleController.getString(R.string.BusinessBotUpdate));
         dVar2.setOnClickListener(new bi.u1(11, this, tL_connectedBot));
-        frameLayout.addView(dVar2, a6.a(48.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 87));
+        frameLayout.addView(dVar2, z5.a(48.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 87));
         U(false);
-        FrameLayout.LayoutParams e = a6.e(-1, -2, 80);
+        FrameLayout.LayoutParams e = z5.e(-1, -2, 80);
         int i12 = e.leftMargin;
         int i13 = this.backgroundPaddingLeft;
         e.leftMargin = i12 + i13;
@@ -130,9 +130,9 @@ public final class k0 extends db {
         kVar.o(es.h);
         kVar.n(350L);
         this.d.setItemAnimator(kVar);
-        z61 z61Var = this.d0;
-        if (z61Var != null) {
-            z61Var.N(false);
+        a71 a71Var = this.d0;
+        if (a71Var != null) {
+            a71Var.N(false);
         }
     }
 
@@ -142,7 +142,7 @@ public final class k0 extends db {
         tL_connectedBot.recipients = tL_businessBotRecipients;
         m2 U = LaunchActivity.U();
         if (U != null) {
-            i2.d.q(R.string.BusinessBotUpdated, new Object[]{UserObject.getUserName(k0Var.Y)}, zc.a0(U), R.raw.contact_check, 36);
+            i2.d.s(R.string.BusinessBotUpdated, new Object[]{UserObject.getUserName(k0Var.Y)}, zc.a0(U), R.raw.contact_check, 36);
         }
     }
 
@@ -179,7 +179,7 @@ public final class k0 extends db {
     }
 
     @Override // org.telegram.ui.Components.db
-    public final CharSequence A() {
+    public final CharSequence B() {
         return null;
     }
 
@@ -307,9 +307,9 @@ public final class k0 extends db {
 
     @Override // org.telegram.ui.Components.db
     public final lm0 x(mm0 mm0Var) {
-        z61 z61Var = new z61(mm0Var, getContext(), this.currentAccount, 0, true, new ci.u(this, 23), this.resourcesProvider);
-        this.d0 = z61Var;
-        z61Var.r = false;
-        return z61Var;
+        a71 a71Var = new a71(mm0Var, getContext(), this.currentAccount, 0, true, new ci.u(this, 23), this.resourcesProvider);
+        this.d0 = a71Var;
+        a71Var.r = false;
+        return a71Var;
     }
 }

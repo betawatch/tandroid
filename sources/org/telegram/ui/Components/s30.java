@@ -22,7 +22,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class s30 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, VoIPService.StateListener {
     public final int E;
@@ -251,7 +251,7 @@ public final class s30 extends FrameLayout implements NotificationCenter.Notific
                     long currentTimeMillis = System.currentTimeMillis();
                     if (currentTimeMillis - this.H > 1000) {
                         this.H = currentTimeMillis;
-                        float B = a1.g.B(org.telegram.ui.Cells.d0.e(this.J, 100), 0.5f, 100.0f, 0.5f);
+                        float B = a1.g.B(org.telegram.ui.Cells.c1.d(this.J, 100), 0.5f, 100.0f, 0.5f);
                         this.e = B;
                         this.f = (B - this.d) / 595.0f;
                     }
@@ -631,11 +631,11 @@ public final class s30 extends FrameLayout implements NotificationCenter.Notific
             VoIPService sharedInstance = VoIPService.getSharedInstance();
             String string = (sharedInstance == null || !ChatObject.isChannelOrGiga(sharedInstance.getChat())) ? LocaleController.getString(R.string.VoipGroupVoiceChat) : LocaleController.getString(R.string.VoipChannelVoiceChat);
             if (i10 == 0) {
-                string = org.telegram.messenger.q.h(R.string.VoipTapToMute, t8.b.i(string, ", "));
+                string = org.telegram.messenger.g0.g(R.string.VoipTapToMute, t8.b.i(string, ", "));
             } else if (i10 == 2) {
-                string = org.telegram.messenger.q.h(R.string.Connecting, t8.b.i(string, ", "));
+                string = org.telegram.messenger.g0.g(R.string.Connecting, t8.b.i(string, ", "));
             } else if (i10 == 3) {
-                string = org.telegram.messenger.q.h(R.string.VoipMutedByAdmin, t8.b.i(string, ", "));
+                string = org.telegram.messenger.g0.g(R.string.VoipMutedByAdmin, t8.b.i(string, ", "));
             }
             setContentDescription(string);
             invalidate();

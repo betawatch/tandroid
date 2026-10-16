@@ -16,23 +16,23 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.db;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.lm0;
 import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.z61;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class x extends db {
     public final int X;
     public final Utilities.Callback Y;
-    public z61 Z;
+    public a71 Z;
     public final FrameLayout a0;
     public final FrameLayout b0;
     public final RichMessageLayout.PreviewView c0;
@@ -59,13 +59,13 @@ public final class x extends db {
         int i12 = org.telegram.ui.ActionBar.g6.G6;
         textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(i12, c6Var));
         textView.setGravity(19);
-        frameLayout.addView(textView, w7.a6.a(56.0f, 22.0f, 6.0f, 56.0f, 0.0f, -1, 51));
+        frameLayout.addView(textView, w7.z5.a(56.0f, 22.0f, 6.0f, 56.0f, 0.0f, -1, 51));
         this.I = AndroidUtilities.dp(-8.0f);
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.ic_close_white);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(i12, c6Var), PorterDuff.Mode.SRC_IN));
-        w7.c6.a(imageView);
+        w7.b6.a(imageView);
         final int i13 = 0;
         imageView.setOnClickListener(new View.OnClickListener(this) { // from class: ji.v
             public final /* synthetic */ x b;
@@ -111,7 +111,7 @@ public final class x extends db {
                 }
             }
         });
-        frameLayout.addView(imageView, w7.a6.a(48.0f, 0.0f, 10.0f, 12.0f, 0.0f, 48, 53));
+        frameLayout.addView(imageView, w7.z5.a(48.0f, 0.0f, 10.0f, 12.0f, 0.0f, 48, 53));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.b0 = frameLayout2;
         RichMessageLayout.PreviewView previewView = new RichMessageLayout.PreviewView(context, i10, c6Var);
@@ -120,7 +120,7 @@ public final class x extends db {
         int dp = AndroidUtilities.dp(12.0f);
         int i14 = org.telegram.ui.ActionBar.g6.d6;
         previewView.setBackground(org.telegram.ui.ActionBar.g6.c0(dp, org.telegram.ui.ActionBar.g6.w0(i14, c6Var)));
-        frameLayout2.addView(previewView, w7.a6.d(-2.0f, -1));
+        frameLayout2.addView(previewView, w7.z5.d(-2.0f, -1));
         frameLayout2.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), 0);
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.d0 = frameLayout3;
@@ -131,9 +131,9 @@ public final class x extends db {
         h3Var.setMaxLines(5);
         j3Var.setBackground(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(20.0f), org.telegram.ui.ActionBar.g6.w0(i14, c6Var)));
         h3Var.addTextChangedListener(new w(this));
-        frameLayout3.addView(j3Var, w7.a6.d(-2.0f, -1));
+        frameLayout3.addView(j3Var, w7.z5.d(-2.0f, -1));
         frameLayout3.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
-        di.d f7 = yh.f(24, context, c6Var, true);
+        di.d f7 = sk.f(24, context, c6Var, true);
         this.f0 = f7;
         f7.g(LocaleController.getString(R.string.ArticleAIGenerate), false, true);
         final int i15 = 1;
@@ -181,7 +181,7 @@ public final class x extends db {
                 }
             }
         });
-        this.containerView.addView(f7, w7.a6.a(48.0f, 12.0f, 12.0f, 12.0f, 12.0f, -1, 87));
+        this.containerView.addView(f7, w7.z5.a(48.0f, 12.0f, 12.0f, 12.0f, 12.0f, -1, 87));
         ((ViewGroup.MarginLayoutParams) f7.getLayoutParams()).leftMargin += this.backgroundPaddingLeft;
         ((ViewGroup.MarginLayoutParams) f7.getLayoutParams()).rightMargin += this.backgroundPaddingLeft;
         s4.k kVar = new s4.k();
@@ -199,7 +199,7 @@ public final class x extends db {
     }
 
     @Override // org.telegram.ui.Components.db
-    public final CharSequence A() {
+    public final CharSequence B() {
         return LocaleController.getString(R.string.ArticleAICreate);
     }
 
@@ -231,8 +231,8 @@ public final class x extends db {
 
     @Override // org.telegram.ui.Components.db
     public final lm0 x(mm0 mm0Var) {
-        z61 z61Var = new z61(mm0Var, getContext(), this.X, 0, true, new ii.a(this, 3), this.resourcesProvider);
-        this.Z = z61Var;
-        return z61Var;
+        a71 a71Var = new a71(mm0Var, getContext(), this.X, 0, true, new ii.a(this, 3), this.resourcesProvider);
+        this.Z = a71Var;
+        return a71Var;
     }
 }

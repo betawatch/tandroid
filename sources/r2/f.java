@@ -6,9 +6,8 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import i2.l0;
 import java.util.ArrayDeque;
-import ji.w4;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class f extends MediaCodec.Callback {
     public final HandlerThread b;
@@ -20,7 +19,7 @@ public final class f extends MediaCodec.Callback {
     public long l;
     public boolean m;
     public IllegalStateException n;
-    public w4 o;
+    public m.l o;
     public final Object a = new Object();
     public final e2.f d = new e2.f();
     public final e2.f e = new e2.f();
@@ -88,8 +87,8 @@ public final class f extends MediaCodec.Callback {
         l0 l0Var;
         synchronized (this.a) {
             this.d.a(i10);
-            w4 w4Var = this.o;
-            if (w4Var != null && (l0Var = ((r) w4Var.b).Y) != null) {
+            m.l lVar = this.o;
+            if (lVar != null && (l0Var = ((r) lVar.a).Y) != null) {
                 l0Var.a();
             }
         }
@@ -108,8 +107,8 @@ public final class f extends MediaCodec.Callback {
                 }
                 this.e.a(i10);
                 this.f.add(bufferInfo);
-                w4 w4Var = this.o;
-                if (w4Var != null && (l0Var = ((r) w4Var.b).Y) != null) {
+                m.l lVar = this.o;
+                if (lVar != null && (l0Var = ((r) lVar.a).Y) != null) {
                     l0Var.a();
                 }
             } catch (Throwable th2) {

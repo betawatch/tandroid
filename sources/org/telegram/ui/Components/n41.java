@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class n41 extends Thread {
     public final /* synthetic */ String a;
@@ -99,11 +99,11 @@ public final class n41 extends Thread {
                         z10 = true;
                     }
                 } catch (Exception unused2) {
-                    AndroidUtilities.runOnUIThread(new lr0(callback2, 22));
+                    AndroidUtilities.runOnUIThread(new kr0(callback2, 22));
                     return;
                 }
             }
-            AndroidUtilities.runOnUIThread(new sn0(6, callback2, z10));
+            AndroidUtilities.runOnUIThread(new zr0(5, callback2, z10));
         }
     }
 }

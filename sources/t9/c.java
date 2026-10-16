@@ -9,11 +9,11 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.firebase.messaging.s;
 import com.google.firebase.messaging.u;
 import java.util.concurrent.atomic.AtomicMarkableReference;
-import m.q3;
+import m.t3;
 import x9.n;
 import x9.p;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class c {
     public final p a;
@@ -79,17 +79,17 @@ public final class c {
     }
 
     public final void d(String str) {
-        q3 q3Var = this.a.f.d;
-        q3Var.getClass();
+        t3 t3Var = this.a.f.d;
+        t3Var.getClass();
         String b10 = y9.d.b(1024, str);
-        synchronized (((AtomicMarkableReference) q3Var.h)) {
+        synchronized (((AtomicMarkableReference) t3Var.h)) {
             try {
-                String str2 = (String) ((AtomicMarkableReference) q3Var.h).getReference();
+                String str2 = (String) ((AtomicMarkableReference) t3Var.h).getReference();
                 if (b10 == null ? str2 == null : b10.equals(str2)) {
                     return;
                 }
-                ((AtomicMarkableReference) q3Var.h).set(b10, true);
-                ((s) q3Var.b).v(new g(q3Var, 1));
+                ((AtomicMarkableReference) t3Var.h).set(b10, true);
+                ((s) t3Var.b).v(new g(t3Var, 1));
             } finally {
             }
         }

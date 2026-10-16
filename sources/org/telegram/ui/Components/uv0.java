@@ -12,7 +12,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class uv0 extends rv0 {
     public boolean E;
@@ -48,7 +48,7 @@ public class uv0 extends rv0 {
 
     @Override // org.telegram.ui.Components.rv0, org.telegram.ui.Components.ul0
     public final void I() {
-        this.F.c1(this.h ? 9 : 8, true);
+        this.F.d1(this.h ? 9 : 8, true);
     }
 
     public final boolean M(int i10) {
@@ -85,18 +85,18 @@ public class uv0 extends rv0 {
         boolean z10 = xv0Var.l1;
         qu0[] qu0VarArr = xv0Var.k0;
         int[] iArr = xv0Var.m1;
-        if ((!z10 || (xv0Var.k1 && o8Var.g() > 1)) && this.s.g() > 0 && !xv0Var.v0()) {
+        if ((!z10 || (xv0Var.k1 && o8Var.g() > 1)) && this.s.g() > 0 && !xv0Var.w0()) {
             if (this.s.g() < 5) {
                 iArr[1] = this.s.g();
                 if (qu0VarArr != null && (qu0Var3 = qu0VarArr[0]) != null && (qu0Var4 = qu0VarArr[1]) != null && qu0Var3.h != null && qu0Var4.h != null) {
-                    xv0Var.m1(false);
+                    xv0Var.n1(false);
                 }
                 xv0Var.k1 = iArr[1] == 1;
             } else if (xv0Var.k1) {
                 xv0Var.k1 = false;
                 iArr[1] = Math.max(2, SharedConfig.storiesColumnsCount);
                 if (qu0VarArr != null && (qu0Var = qu0VarArr[0]) != null && (qu0Var2 = qu0VarArr[1]) != null && qu0Var.h != null && qu0Var2.h != null) {
-                    xv0Var.m1(false);
+                    xv0Var.n1(false);
                 }
             }
             xv0Var.l1 = true;
@@ -192,7 +192,7 @@ public class uv0 extends rv0 {
                 t7Var.f0 = messageObject != null && this.s.m(messageObject.getId());
                 xv0 xv0Var = this.F;
                 t7Var.setReorder(xv0Var.r0() || t7Var.f0);
-                t7Var.h = xv0Var.t0();
+                t7Var.h = xv0Var.u0();
                 t7Var.k(messageObject, O(), false);
                 if (!xv0Var.C1 || messageObject == null) {
                     t7Var.i(false, false);
@@ -237,7 +237,7 @@ public class uv0 extends rv0 {
                 xv0Var.T1 = new bi.g8(currentAccount, xv0Var.getStoriesArea());
             }
             this.s = xv0Var.T1;
-        } else if ((!z10 || xv0Var.v0()) && (z10 || !xv0Var.q0())) {
+        } else if ((!z10 || xv0Var.w0()) && (z10 || !xv0Var.q0())) {
             int i12 = 1;
             boolean z11 = j10 > 0 && (user = MessagesController.getInstance(currentAccount).getUser(Long.valueOf(j10))) != null && user.bot;
             if (i10 > 0) {

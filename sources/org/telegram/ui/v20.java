@@ -20,7 +20,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class v20 extends org.telegram.ui.ActionBar.m2 {
     public int E;
@@ -95,7 +95,7 @@ public abstract class v20 extends org.telegram.ui.ActionBar.m2 {
         }
         s4.g0 n02 = n0();
         this.c.setAdapter(n02);
-        if (n02 instanceof org.telegram.ui.Components.z61) {
+        if (n02 instanceof org.telegram.ui.Components.a71) {
             org.telegram.ui.Components.mm0 mm0Var = this.c;
             q20 q20Var = new q20(this, 0);
             int dp = AndroidUtilities.dp(12.0f);
@@ -112,9 +112,9 @@ public abstract class v20 extends org.telegram.ui.ActionBar.m2 {
         u20 u20Var = this.s;
         sg.x1 p02 = p0();
         this.e = p02;
-        u20Var.addView(p02, w7.a6.d(-2.0f, -1));
-        this.s.addView(this.y, w7.a6.d(-2.0f, -1));
-        this.s.addView(this.c, w7.a6.d(-1.0f, -1));
+        u20Var.addView(p02, w7.z5.d(-2.0f, -1));
+        this.s.addView(this.y, w7.z5.d(-2.0f, -1));
+        this.s.addView(this.c, w7.z5.d(-1.0f, -1));
         this.s.addView(this.actionBar);
         this.fragmentView = this.s;
         this.actionBar.setBackground(null);
@@ -128,7 +128,7 @@ public abstract class v20 extends org.telegram.ui.ActionBar.m2 {
 
     @Override // org.telegram.ui.ActionBar.m2
     public final ArrayList getThemeDescriptions() {
-        return w7.d6.a(new e(this, 15), org.telegram.ui.ActionBar.g6.Lj, org.telegram.ui.ActionBar.g6.Mj, org.telegram.ui.ActionBar.g6.Nj, org.telegram.ui.ActionBar.g6.Oj, org.telegram.ui.ActionBar.g6.Pj, org.telegram.ui.ActionBar.g6.Qj, org.telegram.ui.ActionBar.g6.Rj, org.telegram.ui.ActionBar.g6.Sj, org.telegram.ui.ActionBar.g6.Tj, org.telegram.ui.ActionBar.g6.Vj, org.telegram.ui.ActionBar.g6.Wj, org.telegram.ui.ActionBar.g6.Uj, org.telegram.ui.ActionBar.g6.Zj);
+        return w7.c6.a(new e(this, 15), org.telegram.ui.ActionBar.g6.Lj, org.telegram.ui.ActionBar.g6.Mj, org.telegram.ui.ActionBar.g6.Nj, org.telegram.ui.ActionBar.g6.Oj, org.telegram.ui.ActionBar.g6.Pj, org.telegram.ui.ActionBar.g6.Qj, org.telegram.ui.ActionBar.g6.Rj, org.telegram.ui.ActionBar.g6.Sj, org.telegram.ui.ActionBar.g6.Tj, org.telegram.ui.ActionBar.g6.Vj, org.telegram.ui.ActionBar.g6.Wj, org.telegram.ui.ActionBar.g6.Uj, org.telegram.ui.ActionBar.g6.Zj);
     }
 
     @Override // org.telegram.ui.ActionBar.m2
@@ -172,14 +172,14 @@ public abstract class v20 extends org.telegram.ui.ActionBar.m2 {
         da0Var.setMaxWidth(di.d4.a(da0Var.getText(), da0Var.getPaint()));
         if (frameLayout != null) {
             frameLayout3.removeAllViews();
-            frameLayout3.addView(frameLayout, w7.a6.e(-1, -2, 1));
+            frameLayout3.addView(frameLayout, w7.z5.e(-1, -2, 1));
             frameLayout3.setClickable(frameLayout.isClickable());
         } else {
             frameLayout3.setClickable(false);
         }
         if (w5Var != null) {
             frameLayout2.removeAllViews();
-            frameLayout2.addView(w5Var, w7.a6.e(-1, -2, 1));
+            frameLayout2.addView(w5Var, w7.z5.e(-1, -2, 1));
             frameLayout2.setClickable(w5Var.isClickable());
         } else {
             frameLayout2.setClickable(false);
@@ -300,7 +300,7 @@ public abstract class v20 extends org.telegram.ui.ActionBar.m2 {
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
         int i10 = org.telegram.ui.ActionBar.g6.Tj;
         kVar.D(org.telegram.ui.ActionBar.g6.x0(null, i10, false), false);
-        this.actionBar.B(i0.a.k(org.telegram.ui.ActionBar.g6.x0(null, i10, false), 60), false);
+        this.actionBar.C(i0.a.k(org.telegram.ui.ActionBar.g6.x0(null, i10, false), 60), false);
         this.e.a.g();
         s20 s20Var = this.y;
         if (s20Var != null) {

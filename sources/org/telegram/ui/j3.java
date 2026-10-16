@@ -10,7 +10,7 @@ import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j3 implements q0.a {
     public final /* synthetic */ int a;
@@ -75,12 +75,12 @@ public final /* synthetic */ class j3 implements q0.a {
             case 3:
                 v3 v3Var = (v3) this.b;
                 int i10 = ((c5.i) obj).a;
-                AndroidUtilities.runOnUIThread(new wc0(13, v3Var, i10 == 0 ? null : BillingController.getResponseCodeString(i10)));
+                AndroidUtilities.runOnUIThread(new se0(8, v3Var, i10 == 0 ? null : BillingController.getResponseCodeString(i10)));
                 break;
             case 4:
-                wi0 wi0Var = (wi0) this.b;
+                vi0 vi0Var = (vi0) this.b;
                 if (((c5.i) obj).a == 0) {
-                    AndroidUtilities.runOnUIThread(wi0Var);
+                    AndroidUtilities.runOnUIThread(vi0Var);
                     break;
                 }
                 break;

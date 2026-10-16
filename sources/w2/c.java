@@ -10,14 +10,14 @@ import e9.x1;
 import java.util.ArrayList;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class c implements a {
     public static final c0 b = new c0(new r(new t0.a(19), s1.b), new r(new t0.a(20), s1.c));
     public final ArrayList a = new ArrayList();
 
     @Override // w2.a
-    public final long a(long j10) {
+    public final long b(long j10) {
         int i10 = 0;
         long j11 = -9223372036854775807L;
         while (true) {
@@ -43,7 +43,12 @@ public final class c implements a {
     }
 
     @Override // w2.a
-    public final n0 b(long j10) {
+    public final void clear() {
+        this.a.clear();
+    }
+
+    @Override // w2.a
+    public final n0 d(long j10) {
         ArrayList arrayList = this.a;
         if (!arrayList.isEmpty()) {
             if (j10 >= ((z3.b) arrayList.get(0)).b) {
@@ -70,7 +75,7 @@ public final class c implements a {
     }
 
     @Override // w2.a
-    public final boolean c(z3.b bVar, long j10) {
+    public final boolean j(z3.b bVar, long j10) {
         long j11 = bVar.b;
         u6.g(j11 != -9223372036854775807L);
         u6.g(bVar.c != -9223372036854775807L);
@@ -87,12 +92,7 @@ public final class c implements a {
     }
 
     @Override // w2.a
-    public final void clear() {
-        this.a.clear();
-    }
-
-    @Override // w2.a
-    public final long d(long j10) {
+    public final long p(long j10) {
         ArrayList arrayList = this.a;
         if (arrayList.isEmpty()) {
             return -9223372036854775807L;
@@ -117,7 +117,7 @@ public final class c implements a {
     }
 
     @Override // w2.a
-    public final void e(long j10) {
+    public final void q(long j10) {
         int i10 = 0;
         while (true) {
             ArrayList arrayList = this.a;

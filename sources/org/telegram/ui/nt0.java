@@ -1,47 +1,33 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
+import android.animation.ValueAnimator;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class nt0 extends org.telegram.ui.Components.jr0 {
-    public final /* synthetic */ FrameLayout b1;
-    public final /* synthetic */ boolean c1;
-    public final /* synthetic */ PhotoViewer d1;
+public final class nt0 extends ViewOutlineProvider {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nt0(PhotoViewer photoViewer, Context context, fo foVar, ArrayList arrayList, String str, Integer num, FrameLayout frameLayout, boolean z10) {
-        super(context, foVar, arrayList, null, null, false, str, null, false, true, false, num, null);
-        this.d1 = photoViewer;
-        this.b1 = frameLayout;
-        this.c1 = z10;
+    public /* synthetic */ nt0(Object obj, float f7, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = f7;
     }
 
-    @Override // org.telegram.ui.Components.jr0
-    public final void S0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.m21(this, this.b1, hVar, i10, 10), 250L);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.jr0, org.telegram.ui.ActionBar.e3
-    public final void dismissInternal() {
-        super.dismissInternal();
-        if (this.c1) {
-            AndroidUtilities.runOnUIThread(new yk0(this, 17), 50L);
-        }
-        PhotoViewer photoViewer = this.d1;
-        photoViewer.d0.softInputMode = 272;
-        try {
-            ((WindowManager) photoViewer.y.getSystemService("window")).updateViewLayout(photoViewer.g0, photoViewer.d0);
-        } catch (Exception e) {
-            FileLog.e(e);
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        switch (this.a) {
+            case 0:
+                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), (1.0f / this.b) * ((Float) ((ValueAnimator) this.c).getAnimatedValue()).floatValue() * AndroidUtilities.dp(10.0f));
+                break;
+            default:
+                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), (1.0f / this.b) * (1.0f - ((PhotoViewer) this.c).W) * AndroidUtilities.dp(10.0f));
+                break;
         }
     }
 }

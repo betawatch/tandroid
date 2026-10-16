@@ -6,7 +6,7 @@ import android.media.RingtoneManager;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class NotificationsSettingsFacade {
     public static final String PROPERTY_CONTENT_PREVIEW = "content_preview_";
@@ -40,9 +40,9 @@ public class NotificationsSettingsFacade {
         ConnectionsManager connectionsManager = ConnectionsManager.getInstance(this.currentAccount);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
         NotificationsController notificationsController = NotificationsController.getInstance(this.currentAccount);
-        int d = q.d(PROPERTY_NOTIFY, sharedPrefKey, getPreferences(), -1);
+        int c10 = g0.c(PROPERTY_NOTIFY, sharedPrefKey, getPreferences(), -1);
         boolean z11 = true;
-        int d10 = q.d(PROPERTY_NOTIFY_UNTIL, sharedPrefKey, getPreferences(), 0);
+        int c11 = g0.c(PROPERTY_NOTIFY_UNTIL, sharedPrefKey, getPreferences(), 0);
         SharedPreferences.Editor edit = getPreferences().edit();
         if ((peerNotifySettings.flags & 2) != 0) {
             edit.putBoolean(t8.b.h(PROPERTY_SILENT, sharedPrefKey), peerNotifySettings.silent);
@@ -60,7 +60,7 @@ public class NotificationsSettingsFacade {
         }
         if ((peerNotifySettings.flags & 4) == 0) {
             boolean z12 = true;
-            if (d != -1) {
+            if (c10 != -1) {
                 if (dialog != null) {
                     dialog.notify_settings.mute_until = 0;
                 }
@@ -74,7 +74,7 @@ public class NotificationsSettingsFacade {
             z11 = z12;
         } else if (peerNotifySettings.mute_until > connectionsManager.getCurrentTime()) {
             if (peerNotifySettings.mute_until <= connectionsManager.getCurrentTime() + 31536000) {
-                if (d == 3 && d10 == peerNotifySettings.mute_until) {
+                if (c10 == 3 && c11 == peerNotifySettings.mute_until) {
                     z11 = false;
                 } else {
                     edit.putInt(PROPERTY_NOTIFY + sharedPrefKey, 3);
@@ -84,7 +84,7 @@ public class NotificationsSettingsFacade {
                     }
                 }
                 i11 = peerNotifySettings.mute_until;
-            } else if (d != 2) {
+            } else if (c10 != 2) {
                 edit.putInt(PROPERTY_NOTIFY + sharedPrefKey, 2);
                 if (dialog != null) {
                     dialog.notify_settings.mute_until = ConnectionsManager.DEFAULT_DATACENTER_ID;
@@ -99,7 +99,7 @@ public class NotificationsSettingsFacade {
                 notificationsController.removeNotificationsForDialog(j10);
             }
         } else {
-            if (d == 0 || d == 1) {
+            if (c10 == 0 || c10 == 1) {
                 z10 = false;
             } else {
                 if (dialog != null) {
@@ -128,7 +128,7 @@ public class NotificationsSettingsFacade {
         if (peerNotifySettings == null) {
             return;
         }
-        Utilities.globalQueue.postRunnable(new a3.h0(this, j10, j11, peerNotifySettings, 10));
+        Utilities.globalQueue.postRunnable(new a3.h0(this, j10, j11, peerNotifySettings, 9));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:15:0x00f7  */

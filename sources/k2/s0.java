@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class s0 implements z {
     public static final AtomicInteger c0 = new AtomicInteger();
@@ -229,7 +229,7 @@ public final class s0 implements z {
                         case 18:
                             break;
                         default:
-                            throw new IllegalStateException(i2.d.i(i10, "Unexpected audio encoding: "));
+                            throw new IllegalStateException(i2.d.j(i10, "Unexpected audio encoding: "));
                     }
             }
             if (((byteBuffer.get(byteBuffer.position() + 5) & 248) >> 3) > 10) {
@@ -480,7 +480,7 @@ public final class s0 implements z {
             if (xVar == null) {
                 throw wVar;
             }
-            xVar.t(wVar);
+            xVar.x(wVar);
             throw wVar;
         }
     }
@@ -609,7 +609,7 @@ public final class s0 implements z {
                     this.Y = false;
                 }
                 if (this.O && (xVar2 = this.n) != null && !g10 && !this.Y) {
-                    xVar2.e();
+                    xVar2.i();
                 }
             }
             if (p0.a(this.p)) {
@@ -635,7 +635,7 @@ public final class s0 implements z {
                 y yVar = new y(e.a, (b2.x) this.p.c, r4);
                 xVar = this.n;
                 if (xVar != null) {
-                    xVar.t(yVar);
+                    xVar.x(yVar);
                 }
                 if (!z10) {
                     throw yVar;
@@ -964,7 +964,7 @@ public final class s0 implements z {
                     if (xVar2 != null) {
                         StringBuilder t10 = a1.g.t(Y, "Unexpected audio track timestamp discontinuity: expected ", ", got ");
                         t10.append(j10);
-                        xVar2.t(new com.google.firebase.messaging.r(t10.toString()));
+                        xVar2.x(new com.google.firebase.messaging.r(t10.toString()));
                     }
                     this.E = true;
                 }
@@ -976,7 +976,7 @@ public final class s0 implements z {
                         a(j10);
                         x xVar3 = this.n;
                         if (xVar3 != null && j15 != j12) {
-                            xVar3.A();
+                            xVar3.B();
                         }
                     }
                     return false;
@@ -1095,7 +1095,7 @@ public final class s0 implements z {
         x xVar2 = this.n;
         if (xVar2 != null) {
             int i15 = ((o) this.p.e).a;
-            xVar2.B(new t0());
+            xVar2.D(new t0());
             if (z10) {
                 this.R = true;
                 p0 p0Var4 = this.p;

@@ -10,9 +10,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.ui.Components.gd;
-import rh.j;
+import ri.h0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b {
     public final /* synthetic */ int a;
@@ -75,7 +75,7 @@ public final /* synthetic */ class b {
                                 e eVar3 = eVar;
                                 if (eVar3.a == 1) {
                                     Log.i("PIP_DEBUG", "[HANDLER] attach");
-                                    eVar3.h.z();
+                                    eVar3.h.B();
                                     eVar3.j.g.a(new p(ApplicationLoader.applicationHandler, new b(eVar3, 2), 400L));
                                     eVar3.a = 2;
                                     if (!eVar3.n) {
@@ -154,7 +154,7 @@ public final /* synthetic */ class b {
                                 e eVar3 = eVar2;
                                 if (eVar3.a == 1) {
                                     Log.i("PIP_DEBUG", "[HANDLER] attach");
-                                    eVar3.h.z();
+                                    eVar3.h.B();
                                     eVar3.j.g.a(new p(ApplicationLoader.applicationHandler, new b(eVar3, 2), 400L));
                                     eVar3.a = 2;
                                     if (!eVar3.n) {
@@ -200,7 +200,7 @@ public final /* synthetic */ class b {
                 Log.i("PIP_DEBUG", "[HANDLER] on old source render first frame " + z10);
                 z5 z5Var2 = this.b.h;
                 Objects.requireNonNull(z5Var2);
-                AndroidUtilities.runOnUIThread(new j(z5Var2, 8));
+                AndroidUtilities.runOnUIThread(new h0(z5Var2, 8));
                 break;
             default:
                 final int i12 = 0;
@@ -251,7 +251,7 @@ public final /* synthetic */ class b {
                                 e eVar32 = eVar3;
                                 if (eVar32.a == 1) {
                                     Log.i("PIP_DEBUG", "[HANDLER] attach");
-                                    eVar32.h.z();
+                                    eVar32.h.B();
                                     eVar32.j.g.a(new p(ApplicationLoader.applicationHandler, new b(eVar32, 2), 400L));
                                     eVar32.a = 2;
                                     if (!eVar32.n) {

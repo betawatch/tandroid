@@ -11,7 +11,7 @@ import java.io.Closeable;
 import java.io.IOException;
 import k6.h;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final char[] a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
@@ -51,12 +51,12 @@ public abstract class b {
         if (g(context, "com.google.android.gms", i10)) {
             try {
                 PackageInfo packageInfo = context.getPackageManager().getPackageInfo("com.google.android.gms", 64);
-                h p5 = h.p(context);
-                p5.getClass();
+                h a2 = h.a(context);
+                a2.getClass();
                 if (packageInfo != null) {
-                    if (!h.t(packageInfo, false)) {
-                        if (h.t(packageInfo, true)) {
-                            if (!k6.g.a((Context) p5.b)) {
+                    if (!h.c(packageInfo, false)) {
+                        if (h.c(packageInfo, true)) {
+                            if (!k6.g.a(a2.a)) {
                                 Log.w("GoogleSignatureVerifier", "Test-keys aren't accepted on this build.");
                             }
                         }

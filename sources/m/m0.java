@@ -1,114 +1,35 @@
 package m;
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.util.AttributeSet;
-import android.view.ViewTreeObserver;
-import android.widget.ListAdapter;
-import org.telegram.messenger.beta.R;
+import android.view.View;
+import android.widget.AdapterView;
+import androidx.appcompat.widget.SearchView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class m0 extends d2 implements o0 {
-    public CharSequence S;
-    public j0 T;
-    public final Rect U;
-    public int V;
-    public final /* synthetic */ p0 W;
+public final class m0 implements AdapterView.OnItemClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m0(p0 p0Var, Context context, AttributeSet attributeSet) {
-        super(context, attributeSet, R.attr.spinnerStyle);
-        this.W = p0Var;
-        this.U = new Rect();
-        this.E = p0Var;
-        this.N = true;
-        this.O.setFocusable(true);
-        this.F = new k0(this, 0);
+    public /* synthetic */ m0(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // m.o0
-    public final CharSequence e() {
-        return this.S;
-    }
-
-    @Override // m.o0
-    public final void i(CharSequence charSequence) {
-        this.S = charSequence;
-    }
-
-    @Override // m.o0
-    public final void l(int i10) {
-        this.V = i10;
-    }
-
-    @Override // m.o0
-    public final void m(int i10, int i11) {
-        ViewTreeObserver viewTreeObserver;
-        x xVar = this.O;
-        boolean isShowing = xVar.isShowing();
-        r();
-        xVar.setInputMethodMode(2);
-        g();
-        r1 r1Var = this.c;
-        r1Var.setChoiceMode(1);
-        g0.d(r1Var, i10);
-        g0.c(r1Var, i11);
-        p0 p0Var = this.W;
-        int selectedItemPosition = p0Var.getSelectedItemPosition();
-        r1 r1Var2 = this.c;
-        if (xVar.isShowing() && r1Var2 != null) {
-            r1Var2.setListSelectionHidden(false);
-            r1Var2.setSelection(selectedItemPosition);
-            if (r1Var2.getChoiceMode() != 0) {
-                r1Var2.setItemChecked(selectedItemPosition, true);
-            }
+    @Override // android.widget.AdapterView.OnItemClickListener
+    public final void onItemClick(AdapterView adapterView, View view, int i10, long j10) {
+        switch (this.a) {
+            case 0:
+                o0 o0Var = (o0) this.b;
+                r0 r0Var = o0Var.W;
+                r0Var.setSelection(i10);
+                if (r0Var.getOnItemClickListener() != null) {
+                    r0Var.performItemClick(view, i10, o0Var.T.getItemId(i10));
+                }
+                o0Var.dismiss();
+                break;
+            default:
+                ((SearchView) this.b).m(i10);
+                break;
         }
-        if (isShowing || (viewTreeObserver = p0Var.getViewTreeObserver()) == null) {
-            return;
-        }
-        androidx.mediarouter.app.i iVar = new androidx.mediarouter.app.i(this, 4);
-        viewTreeObserver.addOnGlobalLayoutListener(iVar);
-        xVar.setOnDismissListener(new l0(this, iVar));
-    }
-
-    @Override // m.d2, m.o0
-    public final void o(ListAdapter listAdapter) {
-        super.o(listAdapter);
-        this.T = (j0) listAdapter;
-    }
-
-    public final void r() {
-        int i10;
-        p0 p0Var = this.W;
-        Rect rect = p0Var.n;
-        x xVar = this.O;
-        Drawable background = xVar.getBackground();
-        if (background != null) {
-            background.getPadding(rect);
-            i10 = t3.a(p0Var) ? rect.right : -rect.left;
-        } else {
-            i10 = 0;
-            rect.right = 0;
-            rect.left = 0;
-        }
-        int paddingLeft = p0Var.getPaddingLeft();
-        int paddingRight = p0Var.getPaddingRight();
-        int width = p0Var.getWidth();
-        int i11 = p0Var.h;
-        if (i11 == -2) {
-            int a2 = p0Var.a(this.T, xVar.getBackground());
-            int i12 = (p0Var.getContext().getResources().getDisplayMetrics().widthPixels - rect.left) - rect.right;
-            if (a2 > i12) {
-                a2 = i12;
-            }
-            q(Math.max(a2, (width - paddingLeft) - paddingRight));
-        } else if (i11 == -1) {
-            q((width - paddingLeft) - paddingRight);
-        } else {
-            q(i11);
-        }
-        this.f = t3.a(p0Var) ? (((width - paddingRight) - this.e) - this.V) + i10 : paddingLeft + this.V + i10;
     }
 }

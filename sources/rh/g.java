@@ -20,7 +20,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
@@ -29,11 +29,11 @@ import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.bp0;
 import org.telegram.ui.Components.cp0;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.h11;
+import org.telegram.ui.Components.i11;
 import org.telegram.ui.Components.rq;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
 public final class g extends Drawable implements DownloadController.FileDownloadProgressListener, bp0 {
     public String E;
     public String F;
@@ -69,10 +69,10 @@ public final class g extends Drawable implements DownloadController.FileDownload
     public int f0;
     public int g0;
     public String h;
-    public h11 n;
-    public h11 r;
-    public h11 s;
-    public h11 v;
+    public i11 n;
+    public i11 r;
+    public i11 s;
+    public i11 v;
     public final RadialProgress2 x;
     public final boolean y;
     public final Paint w = new Paint(1);
@@ -118,14 +118,14 @@ public final class g extends Drawable implements DownloadController.FileDownload
     }
 
     public final void d(boolean z10) {
-        h11 h11Var = this.n;
-        if (h11Var != null) {
-            h11Var.o(g6.x0(null, z10 ? g6.Fb : g6.Dd, false));
+        i11 i11Var = this.n;
+        if (i11Var != null) {
+            i11Var.o(g6.x0(null, z10 ? g6.Fb : g6.Dd, false));
         }
         this.w.setColor(1711276032);
-        h11 h11Var2 = this.v;
-        if (h11Var2 != null) {
-            h11Var2.o(-1);
+        i11 i11Var2 = this.v;
+        if (i11Var2 != null) {
+            i11Var2.o(-1);
         }
         SvgHelper.SvgDrawable svgDrawable = this.N;
         if (svgDrawable != null) {
@@ -170,9 +170,9 @@ public final class g extends Drawable implements DownloadController.FileDownload
             int dp = i11 + (z11 ? 0 : AndroidUtilities.dp(8.0f));
             int dp2 = bounds.top + (z11 ? 0 : AndroidUtilities.dp(3.0f));
             int dp3 = this.X ? 0 : AndroidUtilities.dp(3.0f);
-            h11 h11Var = this.n;
-            if (h11Var != null) {
-                h11Var.e(canvas, AndroidUtilities.dp(56.0f) + dp, AndroidUtilities.dp(15.0f) + dp2 + dp3);
+            i11 i11Var = this.n;
+            if (i11Var != null) {
+                i11Var.e(canvas, AndroidUtilities.dp(56.0f) + dp, AndroidUtilities.dp(15.0f) + dp2 + dp3);
             }
             if (this.X) {
                 float f7 = this.a.e;
@@ -188,7 +188,7 @@ public final class g extends Drawable implements DownloadController.FileDownload
                 if (f7 > 0.0f) {
                     cp0 cp0Var = this.K;
                     cp0Var.t = f7;
-                    cp0Var.j(yh.A(56.0f, dp, bounds.right), AndroidUtilities.dp(30.0f));
+                    cp0Var.j(sk.z(56.0f, dp, bounds.right), AndroidUtilities.dp(30.0f));
                     canvas.save();
                     float dp4 = AndroidUtilities.dp(45.0f) + dp;
                     this.L = dp4;
@@ -199,9 +199,9 @@ public final class g extends Drawable implements DownloadController.FileDownload
                     canvas.restore();
                 }
             }
-            h11 h11Var2 = this.s;
-            if (h11Var2 != null) {
-                h11Var2.e(canvas, AndroidUtilities.dp(56.0f) + dp, AndroidUtilities.dp((this.X ? 20 : 2) + 34) + dp3 + dp2);
+            i11 i11Var2 = this.s;
+            if (i11Var2 != null) {
+                i11Var2.e(canvas, AndroidUtilities.dp(56.0f) + dp, AndroidUtilities.dp((this.X ? 20 : 2) + 34) + dp3 + dp2);
             }
             int dp6 = AndroidUtilities.dp(2.0f) + dp;
             this.a0 = dp6;
@@ -277,29 +277,29 @@ public final class g extends Drawable implements DownloadController.FileDownload
             String str = this.e;
             if (str != null) {
                 if (this.n == null) {
-                    this.n = new h11(str, 15.0f, AndroidUtilities.bold());
+                    this.n = new i11(str, 15.0f, AndroidUtilities.bold());
                 }
-                h11 h11Var = this.n;
-                h11Var.r(TextUtils.ellipsize(this.e, h11Var.a, width, TextUtils.TruncateAt.MIDDLE));
+                i11 i11Var = this.n;
+                i11Var.r(TextUtils.ellipsize(this.e, i11Var.a, width, TextUtils.TruncateAt.MIDDLE));
             }
             String str2 = this.f;
             if (str2 != null) {
                 if (this.r == null) {
-                    this.r = new h11(str2, 14.0f, null);
+                    this.r = new i11(str2, 14.0f, null);
                 }
-                h11 h11Var2 = this.r;
-                h11Var2.r(TextUtils.ellipsize(this.f, h11Var2.a, width, TextUtils.TruncateAt.END));
+                i11 i11Var2 = this.r;
+                i11Var2.r(TextUtils.ellipsize(this.f, i11Var2.a, width, TextUtils.TruncateAt.END));
             }
             String str3 = this.h;
             if (str3 != null) {
                 if (this.s == null) {
-                    this.s = new h11(str3, 12.0f, null);
+                    this.s = new i11(str3, 12.0f, null);
                 }
-                h11 h11Var3 = this.s;
-                h11Var3.r(TextUtils.ellipsize(this.h, h11Var3.a, width, TextUtils.TruncateAt.END));
+                i11 i11Var3 = this.s;
+                i11Var3.r(TextUtils.ellipsize(this.h, i11Var3.a, width, TextUtils.TruncateAt.END));
             }
             if (this.G && this.v == null) {
-                this.v = new h11(AndroidUtilities.formatLongDuration(this.J), 12.0f, null);
+                this.v = new i11(AndroidUtilities.formatLongDuration(this.J), 12.0f, null);
             }
         }
     }

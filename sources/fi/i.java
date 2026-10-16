@@ -11,13 +11,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class i extends FrameLayout {
     public final ImageView a;
@@ -35,28 +35,28 @@ public final class i extends FrameLayout {
         imageView.setColorFilter(new PorterDuffColorFilter(-1, mode));
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
-        FrameLayout.LayoutParams a2 = a6.a(28.0f, 17.0f, 14.33f, 0.0f, 0.0f, 28, 51);
+        FrameLayout.LayoutParams a2 = z5.a(28.0f, 17.0f, 14.33f, 0.0f, 0.0f, 28, 51);
         this.b = a2;
         addView(imageView, a2);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        FrameLayout.LayoutParams a10 = a6.a(-2.0f, 62.0f, 10.0f, 40.0f, 8.66f, -1, 55);
+        FrameLayout.LayoutParams a10 = z5.a(-2.0f, 62.0f, 10.0f, 40.0f, 8.66f, -1, 55);
         this.c = a10;
         addView(linearLayout, a10);
         TextView textView = new TextView(context);
         this.d = textView;
-        yh.k(15.0f, 1, textView);
+        sk.k(15.0f, 1, textView);
         textView.setTextColor(g6.w0(g6.G6, c6Var));
-        TextView i10 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, a6.t(-1, -2, 55, 0, 0, 0, 0), context);
+        TextView i10 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, z5.t(-1, -2, 55, 0, 0, 0, 0), context);
         this.e = i10;
         i10.setTextSize(1, 14.0f);
         i10.setTextColor(g6.w0(g6.z6, c6Var));
-        linearLayout.addView(i10, a6.t(-1, -2, 55, 0, 3, 0, 0));
+        linearLayout.addView(i10, z5.t(-1, -2, 55, 0, 3, 0, 0));
         ImageView imageView2 = new ImageView(context);
         imageView2.setColorFilter(new PorterDuffColorFilter(g6.w0(g6.M6, c6Var), mode));
         imageView2.setImageResource(R.drawable.msg_arrowright);
         imageView2.setScaleType(scaleType);
-        addView(imageView2, a6.a(24.0f, 0.0f, 0.0f, 10.0f, 0.0f, 24, 21));
+        addView(imageView2, z5.a(24.0f, 0.0f, 0.0f, 10.0f, 0.0f, 24, 21));
         TextView textView2 = new TextView(context);
         this.f = textView2;
         textView2.setTextColor(-1);
@@ -66,7 +66,7 @@ public final class i extends FrameLayout {
         textView2.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(4.0f), 0);
         textView2.setGravity(17);
         textView2.setVisibility(8);
-        addView(textView2, a6.a(18.0f, 0.0f, 0.0f, 35.33f, 0.0f, -2, 21));
+        addView(textView2, z5.a(18.0f, 0.0f, 0.0f, 35.33f, 0.0f, -2, 21));
     }
 
     public final void a(int i10, int i11, CharSequence charSequence, CharSequence charSequence2) {

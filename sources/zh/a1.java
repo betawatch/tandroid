@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.d10;
@@ -16,7 +16,7 @@ import org.telegram.ui.Components.z9;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a1 implements Runnable {
     public final /* synthetic */ int a;
@@ -87,7 +87,7 @@ public final /* synthetic */ class a1 implements Runnable {
                 org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
                 TL_stars.TL_starGiftUnique L1 = r3Var.L1();
                 if (U != null && L1 != null) {
-                    yy yyVar = new yy(yh.d(4, "onlySelect", "dialogsType", true));
+                    yy yyVar = new yy(sk.d(4, "onlySelect", "dialogsType", true));
                     yyVar.C2 = new nz(r3Var, L1, yyVar, 13);
                     U.presentFragment(yyVar);
                     break;
@@ -114,7 +114,7 @@ public final /* synthetic */ class a1 implements Runnable {
                     StringBuilder sb2 = new StringBuilder();
                     sb2.append(r3Var.C1().title);
                     sb2.append(" #");
-                    str = org.telegram.messenger.q.i(r3Var.C1().num, ',', sb2);
+                    str = org.telegram.messenger.g0.h(r3Var.C1().num, ',', sb2);
                 } else {
                     str = "";
                 }

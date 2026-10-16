@@ -73,8 +73,8 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.q;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -95,10 +95,9 @@ import org.telegram.ui.Components.zc;
 import org.telegram.ui.ProfileActivity;
 import sg.y0;
 import v0.i;
-import v0.o;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -133,7 +132,7 @@ public final /* synthetic */ class f implements Runnable {
                 i2.c cVar = (i2.c) this.c;
                 m0 m0Var = (m0) sVar.c;
                 String str2 = e2.m0.a;
-                s.e(((b0) m0Var).a.G, cVar);
+                s.h(((b0) m0Var).a.G, cVar);
                 return;
             case 4:
                 s sVar2 = (s) this.b;
@@ -255,7 +254,7 @@ public final /* synthetic */ class f implements Runnable {
                 ((i) this.b).onError(this.c);
                 return;
             case 15:
-                ((i) this.b).onResult((o) this.c);
+                ((i) this.b).onResult((v0.p) this.c);
                 return;
             case 16:
                 ((sb) this.b).H(ProfileActivity.m4(((e1) this.c).c));
@@ -286,15 +285,15 @@ public final /* synthetic */ class f implements Runnable {
                     bi.t0 t0Var2 = new bi.t0();
                     e3 e3Var = new e3(1, context, (c6) t0Var2, false);
                     e3Var.fixNavigationBar();
-                    LinearLayout e = yh.e(context, 1);
-                    TextView g10 = q.g(context, 1, 20.0f);
-                    g10.setTextColor(t0Var2.F0(g6.j5));
-                    g10.setTypeface(AndroidUtilities.bold());
-                    g10.setText(LocaleController.getString(R.string.DeleteSingleMessagesTitle));
-                    e.addView(g10, a6.k(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
+                    LinearLayout e = sk.e(context, 1);
+                    TextView f7 = g0.f(context, 1, 20.0f);
+                    f7.setTextColor(t0Var2.E0(g6.j5));
+                    f7.setTypeface(AndroidUtilities.bold());
+                    f7.setText(LocaleController.getString(R.string.DeleteSingleMessagesTitle));
+                    e.addView(f7, z5.k(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
                     m4 m4Var = new m4(context, t0Var2);
                     m4Var.setText(LocaleController.getString(R.string.DeleteAdditionalActions));
-                    e.addView(m4Var, a6.k(0.0f, 0.0f, 0.0f, 4.0f, -1, -2));
+                    e.addView(m4Var, z5.k(0.0f, 0.0f, 0.0f, 4.0f, -1, -2));
                     final a2 a2Var = new a2(4, 21, context, t0Var2, true);
                     aq checkBoxRound = a2Var.getCheckBoxRound();
                     int i14 = g6.V6;
@@ -319,8 +318,8 @@ public final /* synthetic */ class f implements Runnable {
                         }
                     });
                     int i17 = g6.i6;
-                    a2Var.setBackground(g6.g0(t0Var2.F0(i17), 2, -1));
-                    e.addView(a2Var, a6.n(-1, -2));
+                    a2Var.setBackground(g6.g0(t0Var2.E0(i17), 2, -1));
+                    e.addView(a2Var, z5.n(-1, -2));
                     final a2 a2Var2 = new a2(4, 21, context, t0Var2, true);
                     a2Var2.getCheckBoxRound().b(i14, i15, i16);
                     final int i18 = 1;
@@ -341,8 +340,8 @@ public final /* synthetic */ class f implements Runnable {
                             }
                         }
                     });
-                    a2Var2.setBackground(g6.g0(t0Var2.F0(i17), 2, -1));
-                    e.addView(a2Var2, a6.n(-1, -2));
+                    a2Var2.setBackground(g6.g0(t0Var2.E0(i17), 2, -1));
+                    e.addView(a2Var2, z5.n(-1, -2));
                     final a2 a2Var3 = new a2(4, 21, context, t0Var2, true);
                     a2Var3.getCheckBoxRound().b(i14, i15, i16);
                     a2Var3.e(LocaleController.formatString(R.string.DeleteBan, DialogObject.getName(j11)), null, false, false, false);
@@ -363,18 +362,18 @@ public final /* synthetic */ class f implements Runnable {
                             }
                         }
                     });
-                    a2Var3.setBackground(g6.g0(t0Var2.F0(i17), 2, -1));
-                    e.addView(a2Var3, a6.n(-1, -2));
+                    a2Var3.setBackground(g6.g0(t0Var2.E0(i17), 2, -1));
+                    e.addView(a2Var3, z5.n(-1, -2));
                     e9 e9Var = new e9(context, t0Var2);
                     e9Var.setBackgroundColor(-16777216);
                     e9Var.setFixedSize(12);
-                    e.addView(e9Var, a6.n(-1, -2));
+                    e.addView(e9Var, z5.n(-1, -2));
                     FrameLayout frameLayout = new FrameLayout(context);
                     di.d dVar = new di.d(context, t0Var2, true);
                     dVar.g(LocaleController.getString(R.string.DeleteProceedBtn), false, true);
                     dVar.setOnClickListener(new l0(a2Var, a2Var2, a2Var3, j0Var, e3Var, 0));
-                    frameLayout.addView(dVar, a6.a(48.0f, 16.0f, 16.0f, 16.0f, 16.0f, -1, 119));
-                    e.addView(frameLayout, a6.n(-1, -2));
+                    frameLayout.addView(dVar, z5.a(48.0f, 16.0f, 16.0f, 16.0f, 16.0f, -1, 119));
+                    e.addView(frameLayout, z5.n(-1, -2));
                     e3Var.setCustomView(e);
                     e3Var.show();
                     return;

@@ -17,7 +17,7 @@ import org.webrtc.VideoDecoder;
 import org.webrtc.VideoFrame;
 import ru.noties.jlatexmath.android.BuildConfig;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 class AndroidVideoDecoder implements VideoDecoder, VideoSink {
     private static final int DEQUEUE_INPUT_TIMEOUT_US = 500000;
@@ -49,7 +49,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
     private final Object dimensionLock = new Object();
     private final Object renderedTextureMetadataLock = new Object();
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class DecodedTextureMetadata {
         final Integer decodeTimeMs;
         final long presentationTimestampUs;
@@ -60,7 +60,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class FrameInfo {
         final long decodeStartTimeMs;
         final int rotation;
@@ -73,7 +73,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
 
     public AndroidVideoDecoder(MediaCodecWrapperFactory mediaCodecWrapperFactory, String str, VideoCodecMimeType videoCodecMimeType, int i10, EglBase.Context context) {
         if (!isSupportedColorFormat(i10)) {
-            throw new IllegalArgumentException(i2.d.i(i10, "Unsupported color format: "));
+            throw new IllegalArgumentException(i2.d.j(i10, "Unsupported color format: "));
         }
         Logging.d(TAG, "ctor name: " + str + " type: " + videoCodecMimeType + " color format: " + i10 + " context: " + context);
         this.mediaCodecWrapperFactory = mediaCodecWrapperFactory;
@@ -86,7 +86,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
 
     private VideoFrame.Buffer copyI420Buffer(ByteBuffer byteBuffer, int i10, int i11, int i12, int i13) {
         if (i10 % 2 != 0) {
-            throw new AssertionError(i2.d.i(i10, "Stride is not divisible by two: "));
+            throw new AssertionError(i2.d.j(i10, "Stride is not divisible by two: "));
         }
         int i14 = (i12 + 1) / 2;
         int i15 = i11 % 2 == 0 ? (i13 + 1) / 2 : i13 / 2;
@@ -405,7 +405,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
 
     @Override // org.webrtc.VideoDecoder
     public final /* synthetic */ long createNative(long j10) {
-        return v.a(this, j10);
+        return u.a(this, j10);
     }
 
     public SurfaceTextureHelper createSurfaceTextureHelper() {
@@ -576,6 +576,6 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
 
     @Override // org.webrtc.VideoSink
     public final /* synthetic */ void setParentSink(VideoSink videoSink) {
-        f0.a(this, videoSink);
+        e0.a(this, videoSink);
     }
 }

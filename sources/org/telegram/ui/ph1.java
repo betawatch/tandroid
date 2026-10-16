@@ -8,7 +8,7 @@ import android.widget.TextView;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ph1 extends FrameLayout {
     public final sg.q0 a;
@@ -16,14 +16,14 @@ public final class ph1 extends FrameLayout {
     public ph1(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
         super(context);
         LinearLayout linearLayout = new LinearLayout(context);
-        addView(linearLayout, w7.a6.e(-1, -2, 80));
+        addView(linearLayout, w7.z5.e(-1, -2, 80));
         linearLayout.setOrientation(1);
         TextView textView = new TextView(context);
         textView.setTextColor(i0.a.k(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.G6, c6Var), 100));
         textView.setTextSize(1, 13.0f);
         textView.setGravity(17);
         textView.setText(LocaleController.getString(R.string.UnlockPremiumStickersDescription));
-        linearLayout.addView(textView, w7.a6.t(-1, -2, 0, 16, 17, 17, 16));
+        linearLayout.addView(textView, w7.z5.t(-1, -2, 0, 16, 17, 17, 16));
         sg.q0 q0Var = new sg.q0(context, c6Var, false);
         this.a = q0Var;
         String string = LocaleController.getString(R.string.UnlockPremiumStickers);
@@ -31,6 +31,6 @@ public final class ph1 extends FrameLayout {
         spannableStringBuilder.append((CharSequence) "d ").setSpan(new org.telegram.ui.Components.br(0, context.getDrawable(R.drawable.msg_premium_normal)), 0, 1, 0);
         spannableStringBuilder.append((CharSequence) string);
         q0Var.d.setText(spannableStringBuilder);
-        linearLayout.addView(q0Var, w7.a6.t(-1, 48, 0, 16, 0, 16, 16));
+        linearLayout.addView(q0Var, w7.z5.t(-1, 48, 0, 16, 0, 16, 16));
     }
 }

@@ -26,15 +26,15 @@ import ji.p1;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.g0;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Cells.t8;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.ac;
 import rg.b0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
 public final class h extends Drawable implements Animator.AnimatorListener {
     public static final RectF b0 = new RectF();
     public static final Rect c0 = new Rect();
@@ -464,8 +464,8 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                         float f30 = dVar2.o * f22;
                         i13 = i12;
                         i14 = 2;
-                        float y3 = yh.y(8, 2, dVar2.h.getWidth());
-                        dVar2.i = d.b(d.b(f10, y3, f26, f27), y3, dp5, measuredWidth) - (y3 / 2.0f);
+                        float D = g0.D(8, 2, dVar2.h.getWidth());
+                        dVar2.i = d.b(d.b(f10, D, f26, f27), D, dp5, measuredWidth) - (D / 2.0f);
                         dVar2.j = centerY2 - AndroidUtilities.dp(58.0f);
                         if (dVar2.f == null) {
                             h hVar2 = dVar2.a;
@@ -535,14 +535,14 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                                     }
                                 });
                                 dVar2.f = bVar4;
-                                bVar4.a((int) y3, AndroidUtilities.dp(21.0f), 3.0f, AndroidUtilities.dp(4));
+                                bVar4.a((int) D, AndroidUtilities.dp(21.0f), 3.0f, AndroidUtilities.dp(4));
                             }
                         }
                         b bVar5 = dVar2.f;
                         if (bVar5 != null) {
                             float f31 = dVar2.i;
                             float f32 = dVar2.j;
-                            bVar5.setBounds((int) f31, (int) f32, (int) (f31 + y3), (int) (f32 + AndroidUtilities.dp(21.0f)));
+                            bVar5.setBounds((int) f31, (int) f32, (int) (f31 + D), (int) (f32 + AndroidUtilities.dp(21.0f)));
                             b bVar6 = dVar2.f;
                             bVar6.i = (int) (f30 * 255.0f);
                             bVar6.draw(canvas2);

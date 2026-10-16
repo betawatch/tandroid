@@ -12,7 +12,7 @@ import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.sc;
 import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class j5 {
     public final org.telegram.ui.ActionBar.m2 a;
@@ -110,7 +110,7 @@ public final class j5 {
                 }
             }
         };
-        qcVar.addView(lcVar, w7.a6.a(20.0f, 0.0f, 0.0f, 12.0f, 0.0f, 20, 21));
+        qcVar.addView(lcVar, w7.z5.a(20.0f, 0.0f, 0.0f, 12.0f, 0.0f, 20, 21));
         qcVar.d.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(30.0f), AndroidUtilities.dp(8.0f));
         mcVar.setButton(qcVar);
         sc b10 = zc.a0(m2Var).b(mcVar, -1);

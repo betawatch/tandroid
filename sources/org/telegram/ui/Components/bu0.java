@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class bu0 implements View.OnClickListener {
     public final /* synthetic */ long a;
@@ -32,7 +32,7 @@ public final class bu0 implements View.OnClickListener {
         this.c = context;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:119:0x03a5  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x03a4  */
     @Override // android.view.View.OnClickListener
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -49,7 +49,7 @@ public final class bu0 implements View.OnClickListener {
         boolean z12;
         org.telegram.ui.ActionBar.e1 e1Var2;
         org.telegram.ui.ActionBar.e1 e1Var3;
-        wv0 j12;
+        wv0 k12;
         final xv0 xv0Var = this.d;
         mv0[] mv0VarArr = xv0Var.t1;
         ns0 ns0Var = xv0Var.V;
@@ -64,9 +64,9 @@ public final class bu0 implements View.OnClickListener {
         storiesController = xv0Var.getStoriesController();
         boolean i10 = storiesController.i(j10);
         int i11 = 13;
-        if (xv0.w0(closestTab) && i10 && (j12 = xv0Var.j1(closestTab)) != null) {
-            final int i12 = j12.b;
-            final m80 H = m80.H(m2Var, imageView);
+        if (xv0.x0(closestTab) && i10 && (k12 = xv0Var.k1(closestTab)) != null) {
+            final int i12 = k12.b;
+            final l80 H = l80.H(m2Var, imageView);
             int i13 = R.drawable.menu_add_stories;
             String string = LocaleController.getString(R.string.StoriesAlbumMenuAddStories);
             final int i14 = 0;
@@ -76,11 +76,11 @@ public final class bu0 implements View.OnClickListener {
                 public final void run() {
                     switch (i14) {
                         case 0:
-                            xv0Var.O0(m2Var, j11, i12);
+                            xv0Var.P0(m2Var, j11, i12);
                             H.u();
                             break;
                         default:
-                            xv0Var.P0(m2Var, j11, i12);
+                            xv0Var.Q0(m2Var, j11, i12);
                             H.u();
                             break;
                     }
@@ -94,11 +94,11 @@ public final class bu0 implements View.OnClickListener {
                 public final void run() {
                     switch (i15) {
                         case 0:
-                            xv0Var.O0(m2Var, j11, i12);
+                            xv0Var.P0(m2Var, j11, i12);
                             H.u();
                             break;
                         default:
-                            xv0Var.P0(m2Var, j11, i12);
+                            xv0Var.Q0(m2Var, j11, i12);
                             H.u();
                             break;
                     }
@@ -120,10 +120,10 @@ public final class bu0 implements View.OnClickListener {
             if (f5Var == null) {
                 return;
             }
-            long j13 = ns0Var.c;
+            long j12 = ns0Var.c;
             int i18 = ns0Var.b;
-            boolean canUserDoAction = j13 == UserConfig.getInstance(i18).getClientUserId() ? true : j13 >= 0 ? false : ChatObject.canUserDoAction(MessagesController.getInstance(i18).getChat(Long.valueOf(-j13)), 5);
-            final m80 H2 = m80.H(m2Var, imageView);
+            boolean canUserDoAction = j12 == UserConfig.getInstance(i18).getClientUserId() ? true : j12 >= 0 ? false : ChatObject.canUserDoAction(MessagesController.getInstance(i18).getChat(Long.valueOf(-j12)), 5);
+            final l80 H2 = l80.H(m2Var, imageView);
             if (f5Var.c) {
                 e1Var = null;
                 z12 = false;
@@ -259,7 +259,7 @@ public final class bu0 implements View.OnClickListener {
             return;
         }
         if (closestTab == 13 && user != null && user.bot && user.bot_has_main_app && user.bot_can_edit && ms0Var != null) {
-            m80 H3 = m80.H(m2Var, imageView);
+            l80 H3 = l80.H(m2Var, imageView);
             final int i21 = 0;
             H3.l(R.drawable.msg_addbot, LocaleController.getString(R.string.ProfileBotAddPreview), new Runnable(this) { // from class: org.telegram.ui.Components.xt0
                 public final /* synthetic */ bu0 b;
@@ -275,12 +275,12 @@ public final class bu0 implements View.OnClickListener {
                             xv0 xv0Var2 = this.b.d;
                             org.telegram.ui.ActionBar.m2 m2Var2 = xv0Var2.v1;
                             di.kc D = di.kc.D(m2Var2.getParentActivity(), m2Var2.getCurrentAccount());
-                            long j14 = xv0Var2.j1;
+                            long j13 = xv0Var2.j1;
                             String currentLang = xv0Var2.U.getCurrentLang();
-                            D.v0 = j14;
+                            D.v0 = j13;
                             D.w0 = currentLang;
                             D.Q(null);
-                            D.v0 = j14;
+                            D.v0 = j13;
                             D.w0 = currentLang;
                             break;
                         case 1:
@@ -320,7 +320,7 @@ public final class bu0 implements View.OnClickListener {
                             bu0 bu0Var = this.b;
                             org.telegram.ui.ActionBar.m2 m2Var4 = bu0Var.d.v1;
                             TLRPC.User currentUser = m2Var4.getUserConfig().getCurrentUser();
-                            g5.r(m2Var4, false, null, currentUser, false, true, false, true, new t2(19, bu0Var, currentUser));
+                            g5.r(m2Var4, false, null, currentUser, false, true, false, true, new u2(18, bu0Var, currentUser));
                             break;
                     }
                 }
@@ -340,12 +340,12 @@ public final class bu0 implements View.OnClickListener {
                             xv0 xv0Var2 = this.b.d;
                             org.telegram.ui.ActionBar.m2 m2Var2 = xv0Var2.v1;
                             di.kc D = di.kc.D(m2Var2.getParentActivity(), m2Var2.getCurrentAccount());
-                            long j14 = xv0Var2.j1;
+                            long j13 = xv0Var2.j1;
                             String currentLang = xv0Var2.U.getCurrentLang();
-                            D.v0 = j14;
+                            D.v0 = j13;
                             D.w0 = currentLang;
                             D.Q(null);
-                            D.v0 = j14;
+                            D.v0 = j13;
                             D.w0 = currentLang;
                             break;
                         case 1:
@@ -385,7 +385,7 @@ public final class bu0 implements View.OnClickListener {
                             bu0 bu0Var = this.b;
                             org.telegram.ui.ActionBar.m2 m2Var4 = bu0Var.d.v1;
                             TLRPC.User currentUser = m2Var4.getUserConfig().getCurrentUser();
-                            g5.r(m2Var4, false, null, currentUser, false, true, false, true, new t2(19, bu0Var, currentUser));
+                            g5.r(m2Var4, false, null, currentUser, false, true, false, true, new u2(18, bu0Var, currentUser));
                             break;
                     }
                 }
@@ -405,12 +405,12 @@ public final class bu0 implements View.OnClickListener {
                             xv0 xv0Var2 = this.b.d;
                             org.telegram.ui.ActionBar.m2 m2Var2 = xv0Var2.v1;
                             di.kc D = di.kc.D(m2Var2.getParentActivity(), m2Var2.getCurrentAccount());
-                            long j14 = xv0Var2.j1;
+                            long j13 = xv0Var2.j1;
                             String currentLang = xv0Var2.U.getCurrentLang();
-                            D.v0 = j14;
+                            D.v0 = j13;
                             D.w0 = currentLang;
                             D.Q(null);
-                            D.v0 = j14;
+                            D.v0 = j13;
                             D.w0 = currentLang;
                             break;
                         case 1:
@@ -450,7 +450,7 @@ public final class bu0 implements View.OnClickListener {
                             bu0 bu0Var = this.b;
                             org.telegram.ui.ActionBar.m2 m2Var4 = bu0Var.d.v1;
                             TLRPC.User currentUser = m2Var4.getUserConfig().getCurrentUser();
-                            g5.r(m2Var4, false, null, currentUser, false, true, false, true, new t2(19, bu0Var, currentUser));
+                            g5.r(m2Var4, false, null, currentUser, false, true, false, true, new u2(18, bu0Var, currentUser));
                             break;
                     }
                 }
@@ -470,12 +470,12 @@ public final class bu0 implements View.OnClickListener {
                             xv0 xv0Var2 = this.b.d;
                             org.telegram.ui.ActionBar.m2 m2Var2 = xv0Var2.v1;
                             di.kc D = di.kc.D(m2Var2.getParentActivity(), m2Var2.getCurrentAccount());
-                            long j14 = xv0Var2.j1;
+                            long j13 = xv0Var2.j1;
                             String currentLang = xv0Var2.U.getCurrentLang();
-                            D.v0 = j14;
+                            D.v0 = j13;
                             D.w0 = currentLang;
                             D.Q(null);
-                            D.v0 = j14;
+                            D.v0 = j13;
                             D.w0 = currentLang;
                             break;
                         case 1:
@@ -515,7 +515,7 @@ public final class bu0 implements View.OnClickListener {
                             bu0 bu0Var = this.b;
                             org.telegram.ui.ActionBar.m2 m2Var4 = bu0Var.d.v1;
                             TLRPC.User currentUser = m2Var4.getUserConfig().getCurrentUser();
-                            g5.r(m2Var4, false, null, currentUser, false, true, false, true, new t2(19, bu0Var, currentUser));
+                            g5.r(m2Var4, false, null, currentUser, false, true, false, true, new u2(18, bu0Var, currentUser));
                             break;
                     }
                 }
@@ -526,7 +526,7 @@ public final class bu0 implements View.OnClickListener {
             return;
         }
         if (xv0Var.getSelectedTab() == 11) {
-            m80 H4 = m80.H(m2Var, imageView);
+            l80 H4 = l80.H(m2Var, imageView);
             final int i25 = 4;
             H4.c(R.drawable.msg_discussion, LocaleController.getString(R.string.SavedViewAsMessages), new Runnable(this) { // from class: org.telegram.ui.Components.xt0
                 public final /* synthetic */ bu0 b;
@@ -542,12 +542,12 @@ public final class bu0 implements View.OnClickListener {
                             xv0 xv0Var2 = this.b.d;
                             org.telegram.ui.ActionBar.m2 m2Var2 = xv0Var2.v1;
                             di.kc D = di.kc.D(m2Var2.getParentActivity(), m2Var2.getCurrentAccount());
-                            long j14 = xv0Var2.j1;
+                            long j13 = xv0Var2.j1;
                             String currentLang = xv0Var2.U.getCurrentLang();
-                            D.v0 = j14;
+                            D.v0 = j13;
                             D.w0 = currentLang;
                             D.Q(null);
-                            D.v0 = j14;
+                            D.v0 = j13;
                             D.w0 = currentLang;
                             break;
                         case 1:
@@ -587,7 +587,7 @@ public final class bu0 implements View.OnClickListener {
                             bu0 bu0Var = this.b;
                             org.telegram.ui.ActionBar.m2 m2Var4 = bu0Var.d.v1;
                             TLRPC.User currentUser = m2Var4.getUserConfig().getCurrentUser();
-                            g5.r(m2Var4, false, null, currentUser, false, true, false, true, new t2(19, bu0Var, currentUser));
+                            g5.r(m2Var4, false, null, currentUser, false, true, false, true, new u2(18, bu0Var, currentUser));
                             break;
                     }
                 }
@@ -607,12 +607,12 @@ public final class bu0 implements View.OnClickListener {
                             xv0 xv0Var2 = this.b.d;
                             org.telegram.ui.ActionBar.m2 m2Var2 = xv0Var2.v1;
                             di.kc D = di.kc.D(m2Var2.getParentActivity(), m2Var2.getCurrentAccount());
-                            long j14 = xv0Var2.j1;
+                            long j13 = xv0Var2.j1;
                             String currentLang = xv0Var2.U.getCurrentLang();
-                            D.v0 = j14;
+                            D.v0 = j13;
                             D.w0 = currentLang;
                             D.Q(null);
-                            D.v0 = j14;
+                            D.v0 = j13;
                             D.w0 = currentLang;
                             break;
                         case 1:
@@ -652,7 +652,7 @@ public final class bu0 implements View.OnClickListener {
                             bu0 bu0Var = this.b;
                             org.telegram.ui.ActionBar.m2 m2Var4 = bu0Var.d.v1;
                             TLRPC.User currentUser = m2Var4.getUserConfig().getCurrentUser();
-                            g5.r(m2Var4, false, null, currentUser, false, true, false, true, new t2(19, bu0Var, currentUser));
+                            g5.r(m2Var4, false, null, currentUser, false, true, false, true, new u2(18, bu0Var, currentUser));
                             break;
                     }
                 }
@@ -672,12 +672,12 @@ public final class bu0 implements View.OnClickListener {
                             xv0 xv0Var2 = this.b.d;
                             org.telegram.ui.ActionBar.m2 m2Var2 = xv0Var2.v1;
                             di.kc D = di.kc.D(m2Var2.getParentActivity(), m2Var2.getCurrentAccount());
-                            long j14 = xv0Var2.j1;
+                            long j13 = xv0Var2.j1;
                             String currentLang = xv0Var2.U.getCurrentLang();
-                            D.v0 = j14;
+                            D.v0 = j13;
                             D.w0 = currentLang;
                             D.Q(null);
-                            D.v0 = j14;
+                            D.v0 = j13;
                             D.w0 = currentLang;
                             break;
                         case 1:
@@ -717,7 +717,7 @@ public final class bu0 implements View.OnClickListener {
                             bu0 bu0Var = this.b;
                             org.telegram.ui.ActionBar.m2 m2Var4 = bu0Var.d.v1;
                             TLRPC.User currentUser = m2Var4.getUserConfig().getCurrentUser();
-                            g5.r(m2Var4, false, null, currentUser, false, true, false, true, new t2(19, bu0Var, currentUser));
+                            g5.r(m2Var4, false, null, currentUser, false, true, false, true, new u2(18, bu0Var, currentUser));
                             break;
                     }
                 }
@@ -727,10 +727,10 @@ public final class bu0 implements View.OnClickListener {
             H4.Z();
             return;
         }
-        final m80 H5 = m80.H(m2Var, imageView);
-        if ((closestTab == 8 || xv0.w0(closestTab)) && i10) {
+        final l80 H5 = l80.H(m2Var, imageView);
+        if ((closestTab == 8 || xv0.x0(closestTab)) && i10) {
             c10 = 0;
-            H5.c(R.drawable.menu_album_add, LocaleController.getString(R.string.StoriesAlbumAddAlbum), new v70(this, this.b, H5, 10), false);
+            H5.c(R.drawable.menu_album_add, LocaleController.getString(R.string.StoriesAlbumAddAlbum), new ze0(this, this.b, H5, 7), false);
             H5.k();
         } else {
             c10 = 0;
@@ -744,7 +744,7 @@ public final class bu0 implements View.OnClickListener {
                     z10 = false;
                     if (!DialogObject.isEncryptedDialog(j10) && (user == null || !user.bot)) {
                         H5.c(R.drawable.msg_calendar2, LocaleController.getString(R.string.Calendar), new org.telegram.ui.gm(this, closestTab, H5, 15), false);
-                        if (xv0Var.d1 != null && !xv0Var.v0() && (chat = MessagesController.getInstance(m2Var.getCurrentAccount()).getChat(Long.valueOf(xv0Var.d1.id))) != null && (tL_chatAdminRights = chat.admin_rights) != null && tL_chatAdminRights.edit_stories) {
+                        if (xv0Var.d1 != null && !xv0Var.w0() && (chat = MessagesController.getInstance(m2Var.getCurrentAccount()).getChat(Long.valueOf(xv0Var.d1.id))) != null && (tL_chatAdminRights = chat.admin_rights) != null && tL_chatAdminRights.edit_stories) {
                             final int i27 = 1;
                             H5.c(R.drawable.msg_archive, LocaleController.getString(R.string.OpenChannelArchiveStories), new Runnable(this) { // from class: org.telegram.ui.Components.wt0
                                 public final /* synthetic */ bu0 b;
@@ -804,10 +804,10 @@ public final class bu0 implements View.OnClickListener {
                                 H5.s = 0;
                                 H5.Z();
                             }
-                            final uv0 k12 = xv0Var.k1(closestTab);
-                            if (k12 != null && (o8Var = k12.s) != null) {
+                            final uv0 l1 = xv0Var.l1(closestTab);
+                            if (l1 != null && (o8Var = l1.s) != null) {
                                 e1Var8.setChecked(o8Var.n);
-                                e1Var9.setChecked(k12.s.o);
+                                e1Var9.setChecked(l1.s.o);
                             }
                             final int i31 = 0;
                             e1Var8.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.yt0
@@ -833,7 +833,7 @@ public final class bu0 implements View.OnClickListener {
                                                     break;
                                                 } else {
                                                     e1Var11.getCheckView().a(!e1Var11.getCheckView().a.q, true);
-                                                    bi.o8 o8Var2 = k12.s;
+                                                    bi.o8 o8Var2 = l1.s;
                                                     if (o8Var2 != null) {
                                                         boolean z14 = e1Var11.getCheckView().a.q;
                                                         boolean z15 = e1Var10.getCheckView().a.q;
@@ -858,7 +858,7 @@ public final class bu0 implements View.OnClickListener {
                                                     break;
                                                 } else {
                                                     e1Var13.getCheckView().a(!e1Var13.getCheckView().a.q, true);
-                                                    bi.o8 o8Var3 = k12.s;
+                                                    bi.o8 o8Var3 = l1.s;
                                                     if (o8Var3 != null) {
                                                         boolean z17 = e1Var12.getCheckView().a.q;
                                                         boolean z18 = e1Var13.getCheckView().a.q;
@@ -897,7 +897,7 @@ public final class bu0 implements View.OnClickListener {
                                                     break;
                                                 } else {
                                                     e1Var11.getCheckView().a(!e1Var11.getCheckView().a.q, true);
-                                                    bi.o8 o8Var2 = k12.s;
+                                                    bi.o8 o8Var2 = l1.s;
                                                     if (o8Var2 != null) {
                                                         boolean z14 = e1Var11.getCheckView().a.q;
                                                         boolean z15 = e1Var10.getCheckView().a.q;
@@ -922,7 +922,7 @@ public final class bu0 implements View.OnClickListener {
                                                     break;
                                                 } else {
                                                     e1Var13.getCheckView().a(!e1Var13.getCheckView().a.q, true);
-                                                    bi.o8 o8Var3 = k12.s;
+                                                    bi.o8 o8Var3 = l1.s;
                                                     if (o8Var3 != null) {
                                                         boolean z17 = e1Var12.getCheckView().a.q;
                                                         boolean z18 = e1Var13.getCheckView().a.q;

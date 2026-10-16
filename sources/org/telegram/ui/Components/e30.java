@@ -21,7 +21,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class e30 extends FrameLayout implements org.telegram.ui.Components.voip.n0 {
     public final TextPaint E;
@@ -69,7 +69,7 @@ public final class e30 extends FrameLayout implements org.telegram.ui.Components
         z9 z9Var = new z9(context);
         this.d = z9Var;
         z9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-        addView(z9Var, w7.a6.a(40.0f, 0.0f, 9.0f, 0.0f, 9.0f, 40, 1));
+        addView(z9Var, w7.z5.a(40.0f, 0.0f, 9.0f, 0.0f, 9.0f, 40, 1));
         setWillNotDraw(false);
         paint.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.tg, false));
         paint2.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.qg, false));
@@ -79,7 +79,7 @@ public final class e30 extends FrameLayout implements org.telegram.ui.Components
         org.telegram.ui.pd pdVar = new org.telegram.ui.pd(this, context, 1);
         this.F = pdVar;
         pdVar.setScaleType(ImageView.ScaleType.CENTER);
-        addView(pdVar, w7.a6.d(24.0f, 24));
+        addView(pdVar, w7.z5.d(24.0f, 24));
     }
 
     private void setSelectedProgress(float f7) {
@@ -117,14 +117,14 @@ public final class e30 extends FrameLayout implements org.telegram.ui.Components
     public final void c(Canvas canvas) {
         if (this.w != null) {
             canvas.save();
-            int B = org.telegram.messenger.yh.B(24.0f, getMeasuredWidth() - this.y, 2);
+            int A = org.telegram.messenger.sk.A(24.0f, getMeasuredWidth() - this.y, 2);
             int alpha = (int) (getAlpha() * this.s * 255.0f);
             TextPaint textPaint = this.E;
             textPaint.setAlpha(alpha);
-            canvas.drawText(this.w, AndroidUtilities.dp(22.0f) + B, AndroidUtilities.dp(69.0f), textPaint);
+            canvas.drawText(this.w, AndroidUtilities.dp(22.0f) + A, AndroidUtilities.dp(69.0f), textPaint);
             canvas.restore();
             canvas.save();
-            canvas.translate(B, AndroidUtilities.dp(53.0f));
+            canvas.translate(A, AndroidUtilities.dp(53.0f));
             org.telegram.ui.pd pdVar = this.F;
             if (pdVar.getDrawable() != null) {
                 pdVar.getDrawable().setAlpha((int) (getAlpha() * this.s * 255.0f));
@@ -370,7 +370,7 @@ public final class e30 extends FrameLayout implements org.telegram.ui.Components
         }
         this.K = true;
         if (n60Var.t2.size() > 0) {
-            this.I = (org.telegram.ui.Components.voip.o0) i2.d.x(1, n60Var.t2);
+            this.I = (org.telegram.ui.Components.voip.o0) i2.d.A(1, n60Var.t2);
         } else {
             this.I = new org.telegram.ui.Components.voip.o0();
         }

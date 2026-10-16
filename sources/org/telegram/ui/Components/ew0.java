@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ew0 extends View {
     public final ImageReceiver a;
@@ -45,7 +45,7 @@ public final class ew0 extends View {
         }
         ValueAnimator duration = ValueAnimator.ofFloat(this.d, z10 ? 1.0f : 0.0f).setDuration(200L);
         duration.setInterpolator(es.f);
-        duration.addUpdateListener(new g80(this, 22));
+        duration.addUpdateListener(new f80(this, 22));
         duration.addListener(new k90(this, 19));
         duration.start();
         this.f = duration;

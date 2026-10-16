@@ -17,7 +17,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class or implements Runnable {
     public final /* synthetic */ Utilities.Callback E;
@@ -171,13 +171,13 @@ public final /* synthetic */ class or implements Runnable {
                         int i14 = R.raw.error;
                         String string = LocaleController.getString(R.string.CreateManagedBotLimitTitle);
                         SpannableStringBuilder replaceSingleLink = AndroidUtilities.replaceSingleLink(isPremium ? LocaleController.formatString(R.string.CreateManagedBotLimitText, Integer.valueOf(messagesController2.config.botsCreateLimitPremium.get())) : LocaleController.formatString(R.string.CreateManagedBotLimitTextPremium, Integer.valueOf(messagesController2.config.botsCreateLimitPremium.get()), Integer.valueOf(messagesController2.config.botsCreateLimitDefault.get())), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Gi, c6Var2), new kq(e3Var2, 2));
-                        sk skVar = new sk(9, e3Var2, context);
+                        vm vmVar = new vm(4, e3Var2, context);
                         if (replaceSingleLink == null) {
                             replaceSingleLink = new SpannableStringBuilder(replaceSingleLink);
                         }
                         int charSequenceIndexOf = AndroidUtilities.charSequenceIndexOf(replaceSingleLink, "@BotFather");
                         if (charSequenceIndexOf >= 0) {
-                            replaceSingleLink.setSpan(new org.telegram.ui.Cells.i(c6Var2, skVar, 6), charSequenceIndexOf, charSequenceIndexOf + 10, 33);
+                            replaceSingleLink.setSpan(new org.telegram.ui.Cells.i(c6Var2, vmVar, 6), charSequenceIndexOf, charSequenceIndexOf + 10, 33);
                         }
                         sc M = zcVar.M(string, replaceSingleLink, i14);
                         M.j = 8000;
@@ -195,7 +195,7 @@ public final /* synthetic */ class or implements Runnable {
                             }
                             new zc(e3Var2.topBulletinContainer, c6Var2).Q(R.raw.error, 36, AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.CreateManagedBotUnsupported, userName), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Gi, c6Var2))).j();
                         } else {
-                            org.telegram.ui.Cells.d0.r(e3Var2.topBulletinContainer, c6Var2, tL_error, false);
+                            org.telegram.ui.Cells.c1.p(e3Var2.topBulletinContainer, c6Var2, tL_error, false);
                         }
                     }
                     AndroidUtilities.hideKeyboard(e3Var2.getCurrentFocus());

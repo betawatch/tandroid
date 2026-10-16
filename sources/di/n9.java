@@ -9,7 +9,7 @@ import org.telegram.messenger.TopicsController;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.fo;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n9 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class n9 implements Runnable {
                 t0Var.a();
                 gi.s0 s0Var = t0Var.h;
                 if (s0Var != null) {
-                    s0Var.b();
+                    s0Var.p();
                 }
                 MessagesController.getInstance(t0Var.d).resolveCommunityJoinPendingRequest(t0Var.e, j11, !this.c, new gi.r0(t0Var, 2));
                 break;

@@ -16,16 +16,16 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.g6;
 import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.iw0;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class z1 extends j {
     public final Bitmap A0;
@@ -63,7 +63,7 @@ public final class z1 extends j {
         this.v0 = iw0Var;
         ah.x xVar = new ah.x(this, context);
         this.z0 = xVar;
-        addView(xVar, a6.d(-1.0f, -1));
+        addView(xVar, z5.d(-1.0f, -1));
         es esVar = es.h;
         this.u0 = new g6(xVar, 0L, 500L, esVar);
         this.y0 = new g6(xVar, 0L, 350L, esVar);
@@ -132,8 +132,8 @@ public final class z1 extends j {
         getMeasuredHeight();
         getScale();
         AndroidUtilities.dp(64.0f);
-        float x10 = yh.x(dp, 2.0f, getPositionX(), scaleX);
-        return new il0(x10, yh.x(dp2, 2.0f, getPositionY(), scaleX), ((dp3 * scaleX) + x10) - x10, dp2 * scaleX);
+        float y3 = sk.y(dp, 2.0f, getPositionX(), scaleX);
+        return new il0(y3, sk.y(dp2, 2.0f, getPositionY(), scaleX), ((dp3 * scaleX) + y3) - y3, dp2 * scaleX);
     }
 
     @Override // rg.j
@@ -205,7 +205,7 @@ public final class z1 extends j {
         dVar.a = true;
         zzd a2 = v7.f0.a(new bc.e(dVar));
         this.B0 = true;
-        a2.g(wb.a.a(bitmap, this.w0)).addOnSuccessListener(new b0(this, 2)).addOnFailureListener(new org.telegram.ui.web.c0(6, this, bitmap));
+        a2.g(wb.a.a(bitmap, this.w0)).addOnSuccessListener(new b0(this, 2)).addOnFailureListener(new org.telegram.ui.web.o0(5, this, bitmap));
     }
 
     public final void t(boolean z10) {
@@ -237,7 +237,7 @@ public final class z1 extends j {
         this.v0 = iw0Var;
         ah.x xVar = new ah.x(this, context);
         this.z0 = xVar;
-        addView(xVar, a6.d(-1.0f, -1));
+        addView(xVar, z5.d(-1.0f, -1));
         es esVar = es.h;
         this.u0 = new g6(xVar, 0L, 500L, esVar);
         this.y0 = new g6(xVar, 0L, 350L, esVar);

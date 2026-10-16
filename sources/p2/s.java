@@ -27,10 +27,11 @@ import java.util.TreeMap;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import m.h3;
 import v7.u6;
 import v7.v6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class s implements y2.n {
     public final p a;
@@ -157,7 +158,7 @@ public final class s implements y2.n {
         String j11 = j(str, pattern, hashMap, dVar);
         byte[] decode = Base64.decode(j11.substring(j11.indexOf(44)), 0);
         UUID uuid2 = b2.n.f;
-        return new b2.s(uuid2, null, "video/mp4", w3.q.a(uuid2, null, decode));
+        return new b2.s(uuid2, null, "video/mp4", w3.p.a(uuid2, null, decode));
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -184,7 +185,7 @@ public final class s implements y2.n {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static m d(p pVar, m mVar, li.k kVar, Uri uri, o2.d dVar) {
+    public static m d(p pVar, m mVar, h3 h3Var, Uri uri, o2.d dVar) {
         HashMap hashMap;
         Iterator it;
         g gVar;
@@ -290,7 +291,7 @@ public final class s implements y2.n {
             int i24 = i19;
             String str19 = "POINT";
             l lVar2 = lVar;
-            if (!kVar.M()) {
+            if (!h3Var.M()) {
                 ArrayList arrayList16 = arrayList12;
                 ArrayList arrayList17 = arrayList13;
                 ArrayList arrayList18 = arrayList14;
@@ -367,7 +368,7 @@ public final class s implements y2.n {
                 }
                 return new m(i22, uri.toString(), arrayList19, j16, z14, j20, z13, i20, j18, i23, j17, j15, z12, z15, j20 != 0, tVar6, arrayList16, arrayList17, lVar2, hashMap6, arrayList21, jVar2);
             }
-            String O2 = kVar.O();
+            String O2 = h3Var.O();
             HashMap hashMap7 = hashMap4;
             if (O2.startsWith("#EXT")) {
                 arrayList15.add(O2);
@@ -1708,7 +1709,7 @@ public final class s implements y2.n {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static p e(li.k kVar, Uri uri, o2.d dVar) {
+    public static p e(h3 h3Var, Uri uri, o2.d dVar) {
         int i10;
         char c10;
         ArrayList arrayList;
@@ -1761,7 +1762,7 @@ public final class s implements y2.n {
         boolean z11 = false;
         boolean z12 = false;
         while (true) {
-            boolean M2 = kVar.M();
+            boolean M2 = h3Var.M();
             Pattern pattern = l0;
             ArrayList arrayList17 = arrayList13;
             boolean z13 = z11;
@@ -2037,7 +2038,7 @@ public final class s implements y2.n {
                 }
                 return new p(uri.toString(), arrayList19, arrayList25, arrayList20, arrayList21, arrayList22, arrayList17, xVar2, z13 ? Collections.EMPTY_LIST : arrayList27, z14, hashMap5, arrayList23);
             }
-            String O2 = kVar.O();
+            String O2 = h3Var.O();
             ArrayList arrayList34 = arrayList12;
             if (O2.startsWith("#EXT")) {
                 arrayList16.add(O2);
@@ -2197,10 +2198,10 @@ public final class s implements y2.n {
                         if (startsWith) {
                             g10 = e2.e.g(uri2, j(O2, pattern, hashMap5, dVar));
                         } else {
-                            if (!kVar.M()) {
+                            if (!h3Var.M()) {
                                 throw x0.b("#EXT-X-STREAM-INF must be followed by another line", null);
                             }
-                            g10 = e2.e.g(uri2, k(kVar.O(), hashMap5, dVar));
+                            g10 = e2.e.g(uri2, k(h3Var.O(), hashMap5, dVar));
                         }
                         Uri uri4 = g10;
                         b2.w wVar2 = new b2.w();
@@ -2464,7 +2465,7 @@ public final class s implements y2.n {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object d2(Uri uri, g2.k kVar) {
+    public final Object g2(Uri uri, g2.k kVar) {
         String trim;
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(kVar));
         ArrayDeque arrayDeque = new ArrayDeque();
@@ -2497,7 +2498,7 @@ public final class s implements y2.n {
                             arrayDeque.add(trim);
                         } else {
                             arrayDeque.add(trim);
-                            p e7 = e(new li.k(arrayDeque, bufferedReader), uri, dVar);
+                            p e7 = e(new h3(arrayDeque, bufferedReader), uri, dVar);
                             try {
                                 bufferedReader.close();
                             } catch (IOException unused2) {
@@ -2507,7 +2508,7 @@ public final class s implements y2.n {
                     }
                 }
                 arrayDeque.add(trim);
-                m d10 = d(this.a, this.b, new li.k(arrayDeque, bufferedReader), uri, dVar);
+                m d10 = d(this.a, this.b, new h3(arrayDeque, bufferedReader), uri, dVar);
                 try {
                     bufferedReader.close();
                 } catch (IOException unused3) {

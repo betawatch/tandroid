@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class pe0 extends FrameLayout {
     public final ImageView a;
@@ -22,21 +22,21 @@ public final class pe0 extends FrameLayout {
         this.a = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setImageResource(R.drawable.fingerprint);
-        addView(imageView, w7.a6.e(-1, -1, 119));
+        addView(imageView, w7.z5.e(-1, -1, 119));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextColor(-1);
         textView.setTextSize(1, 26.0f);
         textView.setGravity(17);
-        addView(textView, w7.a6.a(-2.0f, 0.0f, -5.33f, 0.0f, 0.0f, -1, 17));
+        addView(textView, w7.z5.a(-2.0f, 0.0f, -5.33f, 0.0f, 0.0f, -1, 17));
         TextView textView2 = new TextView(context);
         this.c = textView2;
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setTextSize(1, 10.0f);
         textView2.setTextColor(ConnectionsManager.DEFAULT_DATACENTER_ID);
         textView2.setGravity(17);
-        addView(textView2, w7.a6.a(-2.0f, 0.0f, 14.0f, 0.0f, 0.0f, -1, 17));
+        addView(textView2, w7.z5.a(-2.0f, 0.0f, 14.0f, 0.0f, 0.0f, -1, 17));
     }
 
     @Override // android.view.View

@@ -3,16 +3,15 @@ package a6;
 import android.os.Parcel;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.m;
 import com.google.android.gms.common.api.q;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class g extends com.google.android.gms.common.api.internal.e {
     public final /* synthetic */ int q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(m mVar, int i10) {
+    public g(com.google.android.gms.common.api.m mVar, int i10) {
         super(w5.a.a, mVar);
         this.q = i10;
     }

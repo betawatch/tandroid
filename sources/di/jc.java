@@ -19,7 +19,7 @@ import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.ow0;
 import org.telegram.ui.Components.wz;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class jc extends ow0 {
     public boolean A0;
@@ -27,7 +27,7 @@ public final class jc extends ow0 {
     public float C0;
     public float D0;
     public final /* synthetic */ kc E0;
-    public final ji.h5 w0;
+    public final ji.w4 w0;
     public final ScaleGestureDetector x0;
     public boolean y0;
     public boolean z0;
@@ -37,7 +37,7 @@ public final class jc extends ow0 {
         super(activity, null);
         this.E0 = kcVar;
         this.A0 = false;
-        this.w0 = new ji.h5(activity, new hc(this));
+        this.w0 = new ji.w4(activity, new hc(this));
         this.x0 = new ScaleGestureDetector(activity, new ic(this));
     }
 
@@ -194,12 +194,12 @@ public final class jc extends ow0 {
                                         kcVar.F.e.draw(canvas);
                                         kcVar.F.e.setRoundRadius(i11);
                                     } else {
-                                        org.telegram.ui.Cells.f7 f7Var = fcVar.d;
-                                        if (f7Var != null) {
-                                            f7Var.setBounds((int) rectF3.left, (int) rectF3.top, (int) rectF3.right, (int) rectF3.bottom);
-                                            org.telegram.ui.Cells.f7 f7Var2 = kcVar.F.d;
-                                            f7Var2.d = (int) com.google.android.gms.internal.play_billing.k3.C(clamp, 255.0f, clamp, clamp);
-                                            f7Var2.draw(canvas);
+                                        org.telegram.ui.Cells.e7 e7Var = fcVar.d;
+                                        if (e7Var != null) {
+                                            e7Var.setBounds((int) rectF3.left, (int) rectF3.top, (int) rectF3.right, (int) rectF3.bottom);
+                                            org.telegram.ui.Cells.e7 e7Var2 = kcVar.F.d;
+                                            e7Var2.d = (int) com.google.android.gms.internal.play_billing.k3.C(clamp, 255.0f, clamp, clamp);
+                                            e7Var2.draw(canvas);
                                         }
                                     }
                                     kcVar.F.getClass();
@@ -274,7 +274,7 @@ public final class jc extends ow0 {
             this.z0 = false;
         }
         this.x0.onTouchEvent(motionEvent);
-        this.w0.Y0(motionEvent);
+        this.w0.j1(motionEvent);
         if (motionEvent.getAction() == 1 && !this.y0) {
             if (kcVar.r.getTranslationY() <= 0.0f) {
                 jb jbVar = kcVar.M0;
@@ -328,7 +328,7 @@ public final class jc extends ow0 {
             i15 = 0;
         }
         int i16 = kcVar.S;
-        int b10 = w7.s.b((measuredWidth - i16) / 2, kcVar.Y, (measuredWidth - kcVar.a0) - i16);
+        int b10 = w7.r.b((measuredWidth - i16) / 2, kcVar.Y, (measuredWidth - kcVar.a0) - i16);
         int i17 = kcVar.S + b10;
         if (kcVar.V) {
             i14 = kcVar.T;

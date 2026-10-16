@@ -8,23 +8,21 @@ import bi.u3;
 import java.util.ArrayList;
 import java.util.HashMap;
 import ji.h2;
-import ji.h5;
-import m.q3;
+import ji.w4;
+import m.t3;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.voip.GroupCallMessage;
 import org.telegram.tgnet.TLParseException;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Cells.h3;
 import org.telegram.ui.Cells.j3;
-import org.telegram.ui.Components.o60;
-import org.telegram.ui.Components.voip.o2;
+import org.telegram.ui.Components.voip.n2;
 import org.telegram.ui.fo;
-import org.telegram.ui.lg1;
-import w7.a6;
+import org.telegram.ui.kg1;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t0 implements Runnable {
     public final /* synthetic */ int a;
@@ -37,7 +35,6 @@ public final /* synthetic */ class t0 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        long cameraFlipElapsedMs;
         int i10 = this.a;
         Object obj = this.b;
         switch (i10) {
@@ -80,12 +77,12 @@ public final /* synthetic */ class t0 implements Runnable {
                 ((ji.d0) obj).invalidate();
                 break;
             case 9:
-                q3 q3Var = (q3) obj;
-                q3Var.c = null;
-                q3Var.d = null;
-                q3Var.e = null;
-                q3Var.f = null;
-                q3Var.e(null);
+                t3 t3Var = (t3) obj;
+                t3Var.c = null;
+                t3Var.d = null;
+                t3Var.e = null;
+                t3Var.f = null;
+                t3Var.e(null);
                 break;
             case 10:
                 ((ji.a2) obj).invalidateSelf();
@@ -107,7 +104,7 @@ public final /* synthetic */ class t0 implements Runnable {
             case 14:
                 k2.s0 s0Var = (k2.s0) obj;
                 if (s0Var.a0 >= 300000) {
-                    s0Var.n.d();
+                    s0Var.n.g();
                     s0Var.a0 = 0L;
                     break;
                 }
@@ -116,16 +113,6 @@ public final /* synthetic */ class t0 implements Runnable {
                 ((lh.b) obj).invalidate();
                 break;
             case 16:
-                o60 o60Var = (o60) ((l2.f) obj).b;
-                o60Var.p0 = true;
-                StringBuilder sb2 = new StringBuilder("RoundVideo camera flip first frame: elapsedMs=");
-                cameraFlipElapsedMs = o60Var.getCameraFlipElapsedMs();
-                sb2.append(cameraFlipElapsedMs);
-                FileLog.d(sb2.toString());
-                o60Var.t(true);
-                o60.l(o60Var);
-                break;
-            case 17:
                 mh.c cVar = (mh.c) obj;
                 GroupCallMessage groupCallMessage = cVar.H;
                 if (groupCallMessage != null) {
@@ -134,7 +121,7 @@ public final /* synthetic */ class t0 implements Runnable {
                     break;
                 }
                 break;
-            case 18:
+            case 17:
                 n2.d dVar = (n2.d) obj;
                 if (!dVar.c) {
                     n2.g gVar = dVar.b;
@@ -146,42 +133,42 @@ public final /* synthetic */ class t0 implements Runnable {
                     break;
                 }
                 break;
-            case 19:
+            case 18:
                 ((n2.b) obj).a(null);
                 break;
-            case 20:
+            case 19:
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, (f6) obj, Boolean.TRUE, null, -1);
                 break;
-            case 21:
-                ((h5) obj).U0();
+            case 20:
+                ((w4) obj).d1();
                 break;
-            case 22:
-                lg1 lg1Var = (lg1) obj;
-                if (lg1Var.getParentLayout() != null) {
-                    lg1Var.H = true;
+            case 21:
+                kg1 kg1Var = (kg1) obj;
+                if (kg1Var.getParentLayout() != null) {
+                    kg1Var.H = true;
                     Bundle bundle = new Bundle();
-                    bundle.putLong("chat_id", lg1Var.a);
+                    bundle.putLong("chat_id", kg1Var.a);
                     fo foVar = new fo(bundle);
                     foVar.ja = true;
-                    lg1Var.presentFragment(foVar);
+                    kg1Var.presentFragment(foVar);
                     break;
                 }
                 break;
-            case 23:
+            case 22:
                 TLParseException.lambda$doThrowOrLog$0((TLParseException) obj);
                 break;
-            case 24:
+            case 23:
                 org.telegram.ui.Components.voip.l0 l0Var = (org.telegram.ui.Components.voip.l0) obj;
                 l0Var.P0 = null;
                 l0Var.setVisibleParticipant(true);
                 break;
-            case 25:
+            case 24:
                 org.telegram.ui.Components.voip.h1 h1Var = (org.telegram.ui.Components.voip.h1) obj;
                 h1Var.K = false;
                 h1Var.o(false);
                 h1Var.W = false;
                 break;
-            case 26:
+            case 25:
                 org.telegram.ui.Components.voip.h1 h1Var2 = (org.telegram.ui.Components.voip.h1) ((mg.b) obj).b;
                 h1Var2.e.invalidate();
                 if (!h1Var2.e.isInLayout()) {
@@ -191,10 +178,10 @@ public final /* synthetic */ class t0 implements Runnable {
                     break;
                 }
                 break;
-            case 27:
+            case 26:
                 ((org.telegram.ui.Components.voip.g1) obj).a.i(false);
                 break;
-            case 28:
+            case 27:
                 org.telegram.ui.Components.voip.f2 f2Var = (org.telegram.ui.Components.voip.f2) obj;
                 f2Var.e = false;
                 HashMap hashMap = f2Var.a;
@@ -223,7 +210,7 @@ public final /* synthetic */ class t0 implements Runnable {
                         i11++;
                     }
                     for (int i13 = 0; i13 < arrayList2.size(); i13++) {
-                        f2Var.addView((View) arrayList2.get(i13), a6.t(-2, -2, 1, 4, 0, 0, 4));
+                        f2Var.addView((View) arrayList2.get(i13), z5.t(-2, -2, 1, 4, 0, 0, 4));
                     }
                     for (int i14 = 0; i14 < arrayList.size(); i14++) {
                         f2Var.removeView((View) arrayList.get(i14));
@@ -236,7 +223,7 @@ public final /* synthetic */ class t0 implements Runnable {
                     arrayList2.clear();
                     arrayList.clear();
                     f2Var.e = true;
-                    AndroidUtilities.runOnUIThread(new t0(f2Var, 28), 700L);
+                    AndroidUtilities.runOnUIThread(new t0(f2Var, 27), 700L);
                     Runnable runnable = f2Var.h;
                     if (runnable != null) {
                         runnable.run();
@@ -244,11 +231,17 @@ public final /* synthetic */ class t0 implements Runnable {
                     }
                 }
                 break;
-            default:
-                TextView[] textViewArr = ((o2) obj).a;
+            case 28:
+                TextView[] textViewArr = ((n2) obj).a;
                 TextView textView = textViewArr[0];
                 textViewArr[0] = textViewArr[1];
                 textViewArr[1] = textView;
+                break;
+            default:
+                TextView[] textViewArr2 = ((n2) ((hg.j0) obj).e).a;
+                TextView textView2 = textViewArr2[0];
+                textViewArr2[0] = textViewArr2[1];
+                textViewArr2[1] = textView2;
                 break;
         }
     }

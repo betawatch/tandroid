@@ -16,7 +16,7 @@ import java.util.Arrays;
 import org.telegram.messenger.MediaController;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class p {
     public static final byte[] a = {0, 0, 0, 1};
@@ -291,7 +291,7 @@ public abstract class p {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static l k(byte[] bArr, int i10, int i11, qi.e eVar) {
+    public static l k(byte[] bArr, int i10, int i11, pi.e eVar) {
         int i12;
         int i13;
         int i14;
@@ -677,7 +677,7 @@ public abstract class p {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static qi.e l(int i10, int i11, byte[] bArr) {
+    public static pi.e l(int i10, int i11, byte[] bArr) {
         int[] iArr;
         int[] iArr2;
         j jVar;
@@ -729,7 +729,7 @@ public abstract class p {
         int i29 = e10 + 1;
         boolean z16 = i29 >= i24;
         if (!z14 || !z15 || !z16) {
-            return new qi.e(null, jVar2, null, null);
+            return new pi.e(null, jVar2, null, null);
         }
         Class cls = Integer.TYPE;
         int[][] iArr5 = (int[][]) Array.newInstance((Class<?>) cls, f7, i29);
@@ -835,7 +835,7 @@ public abstract class p {
         int[][] iArr10 = iArr5;
         int[] iArr11 = iArr7;
         if (!tVar.d()) {
-            return new qi.e(null, jVar2, null, null);
+            return new pi.e(null, jVar2, null, null);
         }
         int i38 = tVar.d;
         if (i38 > 0) {
@@ -853,7 +853,7 @@ public abstract class p {
             }
         }
         if (i40 == 0 || !zArr3[1]) {
-            return new qi.e(null, jVar2, null, null);
+            return new pi.e(null, jVar2, null, null);
         }
         int[] iArr12 = new int[i40];
         for (int i42 = 0; i42 < i40 - (d17 ? 1 : 0); i42++) {
@@ -946,7 +946,7 @@ public abstract class p {
         int[] iArr19 = iArr17;
         int e11 = tVar.e(4);
         if (i49 < 2 || e11 == 0) {
-            return new qi.e(null, jVar2, null, null);
+            return new pi.e(null, jVar2, null, null);
         }
         int[] iArr20 = new int[i49];
         for (int i55 = 0; i55 < i49; i55++) {
@@ -976,7 +976,7 @@ public abstract class p {
         int[] iArr25 = iArr16;
         x1 f11 = t10.f();
         if (((h) f11.get(0)).b == -1) {
-            return new qi.e(null, jVar2, null, null);
+            return new pi.e(null, jVar2, null, null);
         }
         int i59 = 1;
         while (true) {
@@ -990,7 +990,7 @@ public abstract class p {
             i59++;
         }
         if (i59 == -1) {
-            return new qi.e(null, jVar2, null, null);
+            return new pi.e(null, jVar2, null, null);
         }
         Class cls2 = Boolean.TYPE;
         boolean[][] zArr4 = (boolean[][]) Array.newInstance((Class<?>) cls2, i24, i24);
@@ -1044,7 +1044,7 @@ public abstract class p {
             }
         }
         if (i68 > 1) {
-            return new qi.e(null, jVar2, null, null);
+            return new pi.e(null, jVar2, null, null);
         }
         int[] iArr27 = new int[i24];
         int[] iArr28 = new int[f7];
@@ -1107,7 +1107,7 @@ public abstract class p {
         x1 f13 = t11.f();
         int f14 = tVar.f() + f7;
         if (f14 > f7) {
-            return new qi.e(null, jVar2, null, null);
+            return new pi.e(null, jVar2, null, null);
         }
         int e12 = tVar.e(2);
         boolean[][] zArr13 = (boolean[][]) Array.newInstance((Class<?>) cls2, f14, i29);
@@ -1238,7 +1238,7 @@ public abstract class p {
         x1 x1Var3 = f13;
         boolean[][] zArr17 = zArr15;
         if (i86 == 0) {
-            return new qi.e(null, jVar2, null, null);
+            return new pi.e(null, jVar2, null, null);
         }
         int f15 = tVar.f();
         int i94 = f15 + 1;
@@ -1398,7 +1398,7 @@ public abstract class p {
         } else {
             jVar = null;
         }
-        return new qi.e(f11, new j(x1Var3, iArr36, 0), bVar, jVar);
+        return new pi.e(f11, new j(x1Var3, iArr36, 0), bVar, jVar);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:101:0x0261  */

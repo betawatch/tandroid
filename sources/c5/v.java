@@ -15,7 +15,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v implements Callable {
     public final /* synthetic */ int a;
@@ -44,15 +44,15 @@ public final /* synthetic */ class v implements Callable {
         int i11;
         int i12;
         c cVar2 = (c) this.b;
-        org.telegram.messenger.e0 e0Var = (org.telegram.messenger.e0) this.c;
-        qb.c cVar3 = (qb.c) this.d;
+        org.telegram.messenger.d0 d0Var = (org.telegram.messenger.d0) this.c;
+        a6.m mVar = (a6.m) this.d;
         Exception exc = null;
         if (!cVar2.n()) {
             i iVar = h0.h;
             cVar2.y(2, 7, iVar);
             com.google.android.gms.internal.play_billing.p pVar = com.google.android.gms.internal.play_billing.r.b;
             com.google.android.gms.internal.play_billing.v vVar = com.google.android.gms.internal.play_billing.v.e;
-            e0Var.a(iVar, new t(vVar, vVar));
+            d0Var.a(iVar, new t(vVar, vVar));
             return null;
         }
         if (!cVar2.r) {
@@ -61,14 +61,14 @@ public final /* synthetic */ class v implements Callable {
             cVar2.y(20, 7, iVar2);
             com.google.android.gms.internal.play_billing.p pVar2 = com.google.android.gms.internal.play_billing.r.b;
             com.google.android.gms.internal.play_billing.v vVar2 = com.google.android.gms.internal.play_billing.v.e;
-            e0Var.a(iVar2, new t(vVar2, vVar2));
+            d0Var.a(iVar2, new t(vVar2, vVar2));
             return null;
         }
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         int i13 = 0;
-        String str = ((s) ((com.google.android.gms.internal.play_billing.r) cVar3.b).get(0)).b;
-        com.google.android.gms.internal.play_billing.r rVar = (com.google.android.gms.internal.play_billing.r) cVar3.b;
+        String str = ((s) ((com.google.android.gms.internal.play_billing.r) mVar.b).get(0)).b;
+        com.google.android.gms.internal.play_billing.r rVar = (com.google.android.gms.internal.play_billing.r) mVar.b;
         int size = rVar.size();
         int i14 = 0;
         while (true) {
@@ -198,17 +198,17 @@ public final /* synthetic */ class v implements Callable {
                     } else {
                         int a2 = com.google.android.gms.internal.play_billing.u.a("BillingClient", b12);
                         String f7 = com.google.android.gms.internal.play_billing.u.f("BillingClient", b12);
-                        lVar = a2 != 0 ? cVar2.s(h0.a(a2, f7), 23, i2.d.i(a2, "getSkuDetails() failed for queryProductDetailsAsync. Response code: "), null) : cVar2.s(h0.a(6, f7), 45, "getSkuDetails() returned a bundle with neither an error nor a product detail list for queryProductDetailsAsync.", null);
+                        lVar = a2 != 0 ? cVar2.s(h0.a(a2, f7), 23, i2.d.j(a2, "getSkuDetails() failed for queryProductDetailsAsync. Response code: "), null) : cVar2.s(h0.a(6, f7), 45, "getSkuDetails() returned a bundle with neither an error nor a product detail list for queryProductDetailsAsync.", null);
                     }
                 } catch (DeadObjectException e10) {
                     e = e10;
                     lVar = cVar2.s(h0.h, i10, "queryProductDetailsAsync got a remote exception (try to reconnect).", e);
-                    e0Var.a(h0.a(lVar.a, (String) lVar.d), new t((ArrayList) lVar.b, (ArrayList) lVar.c));
+                    d0Var.a(h0.a(lVar.a, (String) lVar.d), new t((ArrayList) lVar.b, (ArrayList) lVar.c));
                     return null;
                 } catch (Exception e11) {
                     e = e11;
                     lVar = cVar2.s(h0.f, i10, "queryProductDetailsAsync got a remote exception (try to reconnect).", e);
-                    e0Var.a(h0.a(lVar.a, (String) lVar.d), new t((ArrayList) lVar.b, (ArrayList) lVar.c));
+                    d0Var.a(h0.a(lVar.a, (String) lVar.d), new t((ArrayList) lVar.b, (ArrayList) lVar.c));
                     return null;
                 }
             } catch (DeadObjectException e12) {
@@ -219,7 +219,7 @@ public final /* synthetic */ class v implements Callable {
                 i10 = 43;
             }
         }
-        e0Var.a(h0.a(lVar.a, (String) lVar.d), new t((ArrayList) lVar.b, (ArrayList) lVar.c));
+        d0Var.a(h0.a(lVar.a, (String) lVar.d), new t((ArrayList) lVar.b, (ArrayList) lVar.c));
         return null;
     }
 

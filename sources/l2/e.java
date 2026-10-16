@@ -9,7 +9,7 @@ import e2.m0;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class e extends p1 {
     public final long e;
@@ -76,7 +76,7 @@ public final class e extends p1 {
         long j11;
         boolean z11;
         long j12;
-        i d;
+        h d;
         u6.j(i10, 1);
         m2.c cVar = this.l;
         boolean z12 = cVar.d;
@@ -122,7 +122,7 @@ public final class e extends p1 {
                 j14 = j12;
             }
             if (i12 != -1 && (d = ((m2.m) ((m2.a) b10.c.get(i12)).c.get(0)).d()) != null && d.w(d10) != j12) {
-                j13 = (d.b(d.o(j15, d10)) + j13) - j15;
+                j13 = (d.a(d.n(j15, d10)) + j13) - j15;
             }
         } else {
             z10 = true;

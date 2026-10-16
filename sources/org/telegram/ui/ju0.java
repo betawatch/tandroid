@@ -1,66 +1,62 @@
 package org.telegram.ui;
 
 import android.animation.Animator;
-import android.animation.ObjectAnimator;
-import android.transition.Fade;
-import android.transition.TransitionValues;
-import android.view.View;
+import android.animation.AnimatorListenerAdapter;
 import android.view.ViewGroup;
+import java.lang.reflect.Method;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class ju0 extends Fade {
+public final class ju0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ PhotoViewer d;
+    public final /* synthetic */ org.telegram.ui.Components.gn0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ju0(PhotoViewer photoViewer, boolean z10, boolean z11, int i10) {
-        super(1);
+    public /* synthetic */ ju0(org.telegram.ui.Components.gn0 gn0Var, int i10) {
         this.a = i10;
-        switch (i10) {
-            case 1:
-                this.d = photoViewer;
-                this.b = z10;
-                this.c = z11;
-                super(2);
-                break;
-            default:
-                this.d = photoViewer;
-                this.b = z10;
-                this.c = z11;
-                break;
-        }
+        this.b = gn0Var;
     }
 
-    @Override // android.transition.Fade, android.transition.Visibility
-    public Animator onAppear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                Animator onAppear = super.onAppear(viewGroup, view, transitionValues, transitionValues2);
-                if (this.b && !this.c && view == this.d.Q1) {
-                    onAppear.addListener(new lj0(this, 9));
-                    ((ObjectAnimator) onAppear).addUpdateListener(new e3(this, 20));
+                PhotoViewer photoViewer = (PhotoViewer) this.b.b;
+                photoViewer.Q1.getNextView().setText((CharSequence) null);
+                hu0 hu0Var = photoViewer.T1;
+                hu0Var.l0 = false;
+                if (hu0Var.m0 >= 0) {
+                    ((ViewGroup.MarginLayoutParams) hu0Var.o0.getLayoutParams()).topMargin = hu0Var.m0;
+                    hu0Var.m0 = -1;
+                    hu0Var.requestLayout();
+                    break;
                 }
-                return onAppear;
+                break;
             default:
-                return super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+                ((PhotoViewer) this.b.b).Q1.setTranslationY(0.0f);
+                break;
         }
     }
 
-    @Override // android.transition.Fade, android.transition.Visibility
-    public Animator onDisappear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
         switch (this.a) {
-            case 1:
-                Animator onDisappear = super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
-                if (!this.b && this.c && view == this.d.Q1) {
-                    onDisappear.addListener(new lj0(this, 10));
-                    ((ObjectAnimator) onDisappear).addUpdateListener(new e3(this, 21));
+            case 0:
+                hu0 hu0Var = ((PhotoViewer) this.b.b).T1;
+                Method method = hu0Var.f0;
+                if (method != null) {
+                    try {
+                        method.invoke(hu0Var, null);
+                        break;
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                        return;
+                    }
                 }
-                return onDisappear;
+                break;
             default:
-                return super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
+                super.onAnimationStart(animator);
+                break;
         }
     }
 }

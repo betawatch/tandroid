@@ -6,7 +6,7 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import org.telegram.ui.Components.lw0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class a0 extends ViewGroup implements lw0 {
     public boolean a;
@@ -97,7 +97,7 @@ public abstract class a0 extends ViewGroup implements lw0 {
         }
         this.a = true;
         if (this.d == null) {
-            this.d = new androidx.activity.i(this, 28);
+            this.d = new androidx.activity.i(this, 27);
         }
         postDelayed(this.d, ViewConfiguration.getTapTimeout());
     }

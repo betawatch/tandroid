@@ -12,7 +12,7 @@ import android.os.Build;
 import android.view.Surface;
 import org.webrtc.EglBase14;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 class EglBase14Impl implements EglBase14 {
     private static final int CURRENT_SDK_VERSION = Build.VERSION.SDK_INT;
@@ -24,7 +24,7 @@ class EglBase14Impl implements EglBase14 {
     private EGLSurface eglSurface;
     private EGLSurface eglSurfaceBackground;
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class Context implements EglBase14.Context {
         private final EGLContext egl14Context;
 
@@ -165,9 +165,9 @@ class EglBase14Impl implements EglBase14 {
         if (eglCreatePbufferSurface != EGL14.EGL_NO_SURFACE) {
             return;
         }
-        StringBuilder l4 = i2.d.l("Failed to create pixel buffer surface with size ", i10, "x", i11, ": 0x");
-        l4.append(Integer.toHexString(EGL14.eglGetError()));
-        throw new RuntimeException(l4.toString());
+        StringBuilder m10 = i2.d.m("Failed to create pixel buffer surface with size ", i10, "x", i11, ": 0x");
+        m10.append(Integer.toHexString(EGL14.eglGetError()));
+        throw new RuntimeException(m10.toString());
     }
 
     @Override // org.webrtc.EglBase

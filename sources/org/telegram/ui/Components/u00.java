@@ -21,7 +21,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class u00 extends View {
     public float E;
@@ -435,7 +435,7 @@ public final class u00 extends View {
                 f26 = (f26 * f28) + ((f14 - f28) * f27);
             }
             float dp3 = (z15 && this.R == null) ? (f13 - this.a0) + f15 + f26 + AndroidUtilities.dp(5.0f) : f13 + f26 + AndroidUtilities.dp(5.0f);
-            int B = org.telegram.messenger.yh.B(17.333f, getMeasuredHeight(), 2);
+            int A = org.telegram.messenger.sk.A(17.333f, getMeasuredHeight(), 2);
             if (z10 || ((!w00Var.n && w00Var.w == f7) || str2 != null)) {
                 paint2.setAlpha(255);
             } else {
@@ -453,8 +453,8 @@ public final class u00 extends View {
                         float f33 = this.x;
                         f11 = (f11 * f33) + ((f14 - f33) * f32);
                     }
-                    float f34 = B;
-                    float dp4 = AndroidUtilities.dp(17.333f) + B;
+                    float f34 = A;
+                    float dp4 = AndroidUtilities.dp(17.333f) + A;
                     rectF = this.f;
                     rectF.set(dp3, f34, f16 + dp3, dp4);
                     if (!z12 || z13) {
@@ -519,7 +519,7 @@ public final class u00 extends View {
                         if (!z10) {
                             textPaint5.setAlpha((int) ((f14 - w00Var.w) * 255.0f));
                         }
-                        canvas2.drawText(str2, ((rectF.width() - f11) / 2.0f) + rectF.left, AndroidUtilities.dp(12.5f) + B, textPaint5);
+                        canvas2.drawText(str2, ((rectF.width() - f11) / 2.0f) + rectF.left, AndroidUtilities.dp(12.5f) + A, textPaint5);
                     }
                     if (!z12 || z13) {
                         canvas2.restore();
@@ -540,8 +540,8 @@ public final class u00 extends View {
             f16 = i22;
             if (z14) {
             }
-            float f342 = B;
-            float dp42 = AndroidUtilities.dp(17.333f) + B;
+            float f342 = A;
+            float dp42 = AndroidUtilities.dp(17.333f) + A;
             rectF = this.f;
             rectF.set(dp3, f342, f16 + dp3, dp42);
             if (!z12) {

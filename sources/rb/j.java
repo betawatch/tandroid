@@ -14,7 +14,7 @@ import ji.h5;
 import t7.u;
 import w7.p7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class j {
     public static final k6.c[] a = new k6.c[0];
@@ -79,7 +79,7 @@ public abstract class j {
 
     public static boolean a(Context context, k6.c[] cVarArr) {
         try {
-            return ((r6.a) Tasks.await(new s6.g(context, s6.g.k, com.google.android.gms.common.api.b.p, com.google.android.gms.common.api.i.c).f(new r(cVarArr, 1)).addOnFailureListener(new u(21)))).a;
+            return ((r6.a) Tasks.await(new s6.g(context, s6.g.k, com.google.android.gms.common.api.b.p, com.google.android.gms.common.api.i.c).f(new r(cVarArr, 1)).addOnFailureListener(new oa.d(22)))).a;
         } catch (InterruptedException | ExecutionException e) {
             Log.e("OptionalModuleUtils", "Failed to complete the task of features availability check", e);
             return false;
@@ -128,6 +128,6 @@ public abstract class j {
             b11.c = new h5(gVar, b10);
             e = gVar.e(0, b11.a());
         }
-        e.addOnFailureListener(new sb.a(21));
+        e.addOnFailureListener(new u(21));
     }
 }

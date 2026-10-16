@@ -6,26 +6,26 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public abstract class fc {
     public float b;
-    public org.telegram.ui.Cells.f7 d;
+    public org.telegram.ui.Cells.e7 d;
     public ImageReceiver e;
     public bi.o4 f;
     public int a = 0;
     public final RectF c = new RectF();
 
-    public static dc b(org.telegram.ui.Cells.g7 g7Var) {
-        if (g7Var == null) {
+    public static dc b(org.telegram.ui.Cells.f7 f7Var) {
+        if (f7Var == null) {
             return null;
         }
-        org.telegram.ui.Components.z9 imageView = g7Var.getImageView();
+        org.telegram.ui.Components.z9 imageView = f7Var.getImageView();
         dc dcVar = new dc(imageView, 2);
         int[] iArr = new int[2];
         imageView.getLocationOnScreen(iArr);
         dcVar.c.set(iArr[0], iArr[1], imageView.getWidth() + r5, imageView.getHeight() + iArr[1]);
-        dcVar.d = new org.telegram.ui.Cells.f7(imageView.getContext(), null, false, g7Var.y);
+        dcVar.d = new org.telegram.ui.Cells.e7(imageView.getContext(), null, false, f7Var.y);
         dcVar.b = Math.max(dcVar.c.width(), dcVar.c.height()) / 2.0f;
         return dcVar;
     }

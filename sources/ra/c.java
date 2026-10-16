@@ -17,19 +17,18 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Pattern;
 import n6.l;
-import n6.o;
 import org.json.JSONException;
 import org.json.JSONObject;
 import r9.n;
 import s9.k;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class c implements d {
     public static final Object m = new Object();
     public final l9.h a;
     public final ta.c b;
-    public final o c;
+    public final n3.b c;
     public final j d;
     public final n e;
     public final h f;
@@ -47,7 +46,7 @@ public final class c implements d {
     public c(l9.h hVar, qa.b bVar, ExecutorService executorService, k kVar) {
         hVar.a();
         ta.c cVar = new ta.c(hVar.a, bVar);
-        o oVar = new o(hVar);
+        n3.b bVar2 = new n3.b(hVar);
         if (sb.a.b == null) {
             sb.a.b = new sb.a(24);
         }
@@ -63,7 +62,7 @@ public final class c implements d {
         this.l = new ArrayList();
         this.a = hVar;
         this.b = cVar;
-        this.c = oVar;
+        this.c = bVar2;
         this.d = jVar;
         this.e = nVar;
         this.f = hVar2;
@@ -85,7 +84,7 @@ public final class c implements d {
         r2.c = r3;
         r2.b = 3;
         r2 = r2.a();
-        r4.D(r2);
+        r4.F(r2);
      */
     /* JADX WARN: Finally extract failed */
     /*
@@ -97,7 +96,7 @@ public final class c implements d {
             try {
                 l9.h hVar = this.a;
                 hVar.a();
-                o a2 = o.a(hVar.a);
+                n3.b a2 = n3.b.a(hVar.a);
                 try {
                     K = this.c.K();
                     int i10 = K.b;
@@ -238,9 +237,9 @@ public final class c implements d {
             try {
                 l9.h hVar = this.a;
                 hVar.a();
-                o a2 = o.a(hVar.a);
+                n3.b a2 = n3.b.a(hVar.a);
                 try {
-                    this.c.D(aVar);
+                    this.c.F(aVar);
                     if (a2 != null) {
                         a2.W();
                     }

@@ -2,7 +2,7 @@ package i2;
 
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class r1 {
     public final b a;
@@ -50,7 +50,7 @@ public final class r1 {
             }
             b(bVar);
             u6.p(bVar.n == 1);
-            bVar.c.y();
+            bVar.c.x();
             bVar.n = 0;
             bVar.r = null;
             bVar.s = null;
@@ -140,7 +140,7 @@ public final class r1 {
             if (this.e) {
                 b bVar = this.a;
                 u6.p(bVar.n == 0);
-                bVar.c.y();
+                bVar.c.x();
                 bVar.r();
                 this.e = false;
                 return;
@@ -151,7 +151,7 @@ public final class r1 {
             b bVar2 = this.c;
             bVar2.getClass();
             u6.p(bVar2.n == 0);
-            bVar2.c.y();
+            bVar2.c.x();
             bVar2.r();
             this.f = false;
         }

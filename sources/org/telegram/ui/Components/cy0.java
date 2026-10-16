@@ -12,15 +12,15 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cy0 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ty0 b;
+    public final /* synthetic */ uy0 b;
 
-    public /* synthetic */ cy0(ty0 ty0Var, int i10) {
+    public /* synthetic */ cy0(uy0 uy0Var, int i10) {
         this.a = i10;
-        this.b = ty0Var;
+        this.b = uy0Var;
     }
 
     @Override // android.view.View.OnClickListener
@@ -28,40 +28,40 @@ public final /* synthetic */ class cy0 implements View.OnClickListener {
         org.telegram.ui.ActionBar.k kVar;
         switch (this.a) {
             case 0:
-                ty0 ty0Var = this.b;
-                org.telegram.ui.ActionBar.m2 m2Var = ty0Var.L;
+                uy0 uy0Var = this.b;
+                org.telegram.ui.ActionBar.m2 m2Var = uy0Var.L;
                 if (m2Var != null) {
                     new sg.y0(m2Var, 11, false).show();
                     break;
-                } else if (ty0Var.getContext() instanceof LaunchActivity) {
-                    ((LaunchActivity) ty0Var.getContext()).p0(new PremiumPreviewFragment(0, null));
+                } else if (uy0Var.getContext() instanceof LaunchActivity) {
+                    ((LaunchActivity) uy0Var.getContext()).p0(new PremiumPreviewFragment(0, null));
                     break;
                 }
                 break;
             case 1:
-                ty0.I(this.b);
+                uy0.I(this.b);
                 break;
             case 2:
                 this.b.r0();
                 break;
             case 3:
-                ty0 ty0Var2 = this.b;
-                if (ty0Var2.Y != null) {
-                    ty0Var2.v0(ty0Var2.U);
-                    ty0Var2.r0();
-                    ty0Var2.U = null;
+                uy0 uy0Var2 = this.b;
+                if (uy0Var2.Y != null) {
+                    uy0Var2.v0(uy0Var2.U);
+                    uy0Var2.r0();
+                    uy0Var2.U = null;
                     break;
                 } else {
-                    ty0Var2.b0.a(ty0Var2.T, null, ty0Var2.S, null, ty0Var2.i0, true, 0, 0);
-                    ty0Var2.dismiss();
+                    uy0Var2.b0.a(uy0Var2.T, null, uy0Var2.S, null, uy0Var2.i0, true, 0, 0);
+                    uy0Var2.dismiss();
                     break;
                 }
             case 4:
                 this.b.n.getPopupLayout().getSwipeBack().b(true);
                 break;
             case 5:
-                ty0 ty0Var3 = this.b;
-                org.telegram.ui.t70 t70Var = ty0Var3.d0;
+                uy0 uy0Var3 = this.b;
+                org.telegram.ui.t70 t70Var = uy0Var3.d0;
                 org.telegram.ui.y70 y70Var = t70Var.c;
                 s4.b0 b0Var = y70Var.h;
                 boolean z10 = y70Var.N;
@@ -111,94 +111,94 @@ public final /* synthetic */ class cy0 implements View.OnClickListener {
                     kVar = ((org.telegram.ui.ActionBar.m2) y70Var).actionBar;
                     kVar.h(true);
                 }
-                ty0Var3.dismiss();
+                uy0Var3.dismiss();
                 break;
             case 6:
-                ty0.t(this.b);
+                uy0.t(this.b);
                 break;
             case 7:
-                ty0.o(this.b);
+                uy0.o(this.b);
                 break;
             case 8:
-                ty0 ty0Var4 = this.b;
-                ty0Var4.n.n();
-                ty0Var4.dismiss();
-                AndroidUtilities.runOnUIThread(new ey0(ty0Var4, 3), 200L);
+                uy0 uy0Var4 = this.b;
+                uy0Var4.n.n();
+                uy0Var4.dismiss();
+                AndroidUtilities.runOnUIThread(new fy0(uy0Var4, 3), 200L);
                 break;
             case 9:
-                ty0.D(this.b);
+                uy0.D(this.b);
                 break;
             case 10:
-                ty0 ty0Var5 = this.b;
-                if (ty0Var5.R) {
-                    ty0Var5.o0();
+                uy0 uy0Var5 = this.b;
+                if (uy0Var5.R) {
+                    uy0Var5.o0();
                     break;
                 } else {
-                    ty0Var5.q0();
+                    uy0Var5.q0();
                     break;
                 }
             case 11:
-                ty0.B(this.b);
+                uy0.C(this.b);
                 break;
             case 12:
-                ty0.s(this.b);
+                uy0.s(this.b);
                 break;
             case 13:
-                ty0 ty0Var6 = this.b;
-                Context context = ty0Var6.getContext();
+                uy0 uy0Var6 = this.b;
+                Context context = uy0Var6.getContext();
                 int[] iArr = {0};
                 FrameLayout frameLayout = new FrameLayout(context);
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.ImportStickersEnterName);
-                alertDialog$Builder.k(LocaleController.getString(R.string.Next), new zg0(10));
+                alertDialog$Builder.k(LocaleController.getString(R.string.Next), new co0(8));
                 LinearLayout linearLayout = new LinearLayout(context);
                 linearLayout.setOrientation(1);
                 alertDialog$Builder.n(linearLayout);
-                linearLayout.addView(frameLayout, w7.a6.t(-1, 36, 51, 24, 6, 24, 0));
+                linearLayout.addView(frameLayout, w7.z5.t(-1, 36, 51, 24, 6, 24, 0));
                 TextView textView = new TextView(context);
-                TextView g10 = org.telegram.messenger.q.g(context, 1, 16.0f);
-                g10.setTextColor(ty0Var6.getThemedColor(org.telegram.ui.ActionBar.g6.t5));
-                g10.setMaxLines(1);
-                g10.setLines(1);
-                g10.setText("t.me/addstickers/");
-                g10.setInputType(16385);
-                g10.setGravity(51);
-                g10.setSingleLine(true);
-                g10.setVisibility(4);
-                g10.setImeOptions(6);
-                g10.setPadding(0, AndroidUtilities.dp(4.0f), 0, 0);
-                frameLayout.addView(g10, w7.a6.e(-2, 36, 51));
+                TextView f7 = org.telegram.messenger.g0.f(context, 1, 16.0f);
+                f7.setTextColor(uy0Var6.getThemedColor(org.telegram.ui.ActionBar.g6.t5));
+                f7.setMaxLines(1);
+                f7.setLines(1);
+                f7.setText("t.me/addstickers/");
+                f7.setInputType(16385);
+                f7.setGravity(51);
+                f7.setSingleLine(true);
+                f7.setVisibility(4);
+                f7.setImeOptions(6);
+                f7.setPadding(0, AndroidUtilities.dp(4.0f), 0, 0);
+                frameLayout.addView(f7, w7.z5.e(-2, 36, 51));
                 EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
                 editTextBoldCursor.setBackground(null);
                 editTextBoldCursor.setLineColors(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.u5, false), org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.v5, false), org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.q7, false));
                 editTextBoldCursor.setTextSize(1, 16.0f);
-                editTextBoldCursor.setTextColor(ty0Var6.getThemedColor(org.telegram.ui.ActionBar.g6.j5));
+                editTextBoldCursor.setTextColor(uy0Var6.getThemedColor(org.telegram.ui.ActionBar.g6.j5));
                 editTextBoldCursor.setMaxLines(1);
                 editTextBoldCursor.setLines(1);
                 editTextBoldCursor.setInputType(16385);
                 editTextBoldCursor.setGravity(51);
                 editTextBoldCursor.setSingleLine(true);
                 editTextBoldCursor.setImeOptions(5);
-                editTextBoldCursor.setCursorColor(ty0Var6.getThemedColor(org.telegram.ui.ActionBar.g6.G6));
+                editTextBoldCursor.setCursorColor(uy0Var6.getThemedColor(org.telegram.ui.ActionBar.g6.G6));
                 editTextBoldCursor.setCursorSize(AndroidUtilities.dp(20.0f));
                 editTextBoldCursor.setCursorWidth(1.5f);
                 editTextBoldCursor.setPadding(0, AndroidUtilities.dp(4.0f), 0, 0);
-                editTextBoldCursor.addTextChangedListener(new hy0(ty0Var6, iArr, textView, editTextBoldCursor));
-                frameLayout.addView(editTextBoldCursor, w7.a6.e(-1, 36, 51));
+                editTextBoldCursor.addTextChangedListener(new iy0(uy0Var6, iArr, textView, editTextBoldCursor));
+                frameLayout.addView(editTextBoldCursor, w7.z5.e(-1, 36, 51));
                 editTextBoldCursor.setOnEditorActionListener(new e1(alertDialog$Builder, 8));
                 editTextBoldCursor.setSelection(editTextBoldCursor.length());
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new xv(editTextBoldCursor, 23));
                 textView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ImportStickersEnterNameInfo)));
                 textView.setTextSize(1, 14.0f);
                 textView.setPadding(AndroidUtilities.dp(23.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(23.0f), AndroidUtilities.dp(6.0f));
-                textView.setTextColor(ty0Var6.getThemedColor(org.telegram.ui.ActionBar.g6.q5));
-                linearLayout.addView(textView, w7.a6.n(-1, -2));
+                textView.setTextColor(uy0Var6.getThemedColor(org.telegram.ui.ActionBar.g6.q5));
+                linearLayout.addView(textView, w7.z5.n(-1, -2));
                 f1 f1Var = new f1(3, editTextBoldCursor);
                 org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
                 a2Var.setOnShowListener(f1Var);
                 a2Var.show();
                 editTextBoldCursor.requestFocus();
-                a2Var.d(-1).setOnClickListener(new m0(ty0Var6, iArr, editTextBoldCursor, textView, g10, alertDialog$Builder, 3));
+                a2Var.d(-1).setOnClickListener(new m0(uy0Var6, iArr, editTextBoldCursor, textView, f7, alertDialog$Builder, 3));
                 break;
             default:
                 this.b.dismiss();

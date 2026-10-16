@@ -20,22 +20,22 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.da0;
-import org.telegram.ui.Components.gq0;
-import org.telegram.ui.Components.ty0;
+import org.telegram.ui.Components.ey0;
+import org.telegram.ui.Components.uy0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.ah0;
 import org.telegram.ui.b81;
 import org.telegram.ui.ff;
+import org.telegram.ui.fg0;
 import org.telegram.ui.fo;
-import org.telegram.ui.gg0;
+import org.telegram.ui.jg0;
 import org.telegram.ui.kf;
-import org.telegram.ui.kg0;
 import org.telegram.ui.qn;
-import org.telegram.ui.uf0;
+import org.telegram.ui.tf0;
+import org.telegram.ui.zg0;
 import org.telegram.ui.zz;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class fd implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -82,21 +82,21 @@ public final /* synthetic */ class fd implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new bi.k8(tL_error, (Context) obj5, (org.telegram.ui.ActionBar.c6) obj4, (d) obj3, (org.telegram.ui.ActionBar.e3) obj2, (Runnable) obj, 7));
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new bi.k8((ty0) obj4, tLObject, (EditTextBoldCursor) obj3, (TextView) obj2, (TextView) obj, (int[]) obj5, 8));
+                AndroidUtilities.runOnUIThread(new bi.k8((uy0) obj4, tLObject, (EditTextBoldCursor) obj3, (TextView) obj2, (TextView) obj, (int[]) obj5, 8));
                 break;
             case 7:
                 Pattern pattern = LaunchActivity.B1;
                 AndroidUtilities.runOnUIThread(new ff(obj5, obj4, (Object) tL_error, (String) obj3, obj2, (Object) tLObject, obj, 3));
                 break;
             case 8:
-                kg0 kg0Var = (kg0) obj5;
+                jg0 jg0Var = (jg0) obj5;
                 TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = (TLRPC.TL_inputStorePaymentAuthCode) obj4;
                 Purchase purchase = (Purchase) obj3;
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = (TLRPC.TL_payments_canPurchaseStore) obj2;
-                gq0 gq0Var = (gq0) obj;
+                ey0 ey0Var = (ey0) obj;
                 if (!(tLObject instanceof TLRPC.Updates)) {
                     if (tL_error != null) {
-                        AndroidUtilities.runOnUIThread(new zz(gq0Var, 26));
+                        AndroidUtilities.runOnUIThread(new zz(ey0Var, 26));
                         break;
                     }
                 } else {
@@ -107,20 +107,20 @@ public final /* synthetic */ class fd implements RequestDelegate {
                     while (true) {
                         int i12 = 3;
                         if (i11 >= size) {
-                            kg0Var.v.getMessagesController().lambda$processUpdates$377(updates, false);
+                            jg0Var.v.getMessagesController().lambda$processUpdates$377(updates, false);
                             BillingController.getInstance().consumeGiftPurchase(purchase, tL_payments_canPurchaseStore.purpose, null);
-                            AndroidUtilities.runOnUIThread(new gg0(kg0Var, i12));
+                            AndroidUtilities.runOnUIThread(new fg0(jg0Var, i12));
                             break;
                         } else {
                             Object obj6 = findUpdatesAndRemove.get(i11);
                             i11++;
-                            AndroidUtilities.runOnUIThread(new uf0((Object) kg0Var, (Object) tL_inputStorePaymentAuthCode, obj6, i12));
+                            AndroidUtilities.runOnUIThread(new tf0((Object) jg0Var, (Object) tL_inputStorePaymentAuthCode, obj6, i12));
                         }
                     }
                 }
                 break;
             case 9:
-                AndroidUtilities.runOnUIThread(new ff((ah0) obj5, tL_error, tLObject, (Bundle) obj4, (String) obj3, (li.k) obj2, (TLObject) obj, 5));
+                AndroidUtilities.runOnUIThread(new ff((zg0) obj5, tL_error, tLObject, (Bundle) obj4, (String) obj3, (m.h3) obj2, (TLObject) obj, 5));
                 break;
             case 10:
                 AndroidUtilities.runOnUIThread(new ff(obj5, (Object) tLObject, (String) obj4, (TLObject) obj3, obj2, (Object) tL_error, obj, 6));
@@ -140,9 +140,9 @@ public final /* synthetic */ class fd implements RequestDelegate {
         }
     }
 
-    public /* synthetic */ fd(ty0 ty0Var, EditTextBoldCursor editTextBoldCursor, TextView textView, TextView textView2, int[] iArr) {
+    public /* synthetic */ fd(uy0 uy0Var, EditTextBoldCursor editTextBoldCursor, TextView textView, TextView textView2, int[] iArr) {
         this.a = 6;
-        this.c = ty0Var;
+        this.c = uy0Var;
         this.d = editTextBoldCursor;
         this.e = textView;
         this.f = textView2;

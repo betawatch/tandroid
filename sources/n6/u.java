@@ -1,42 +1,35 @@
 package n6;
 
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.internal.BasePendingResult;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import java.util.concurrent.TimeUnit;
-import v7.g5;
+import android.accounts.Account;
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class u implements com.google.android.gms.common.api.o {
-    public final /* synthetic */ g5 a;
-    public final /* synthetic */ TaskCompletionSource b;
-    public final /* synthetic */ k c;
+public final class u extends o6.a {
+    public static final Parcelable.Creator<u> CREATOR = new m8.h(13);
+    public final int a;
+    public final Account b;
+    public final int c;
+    public final GoogleSignInAccount d;
 
-    public u(g5 g5Var, TaskCompletionSource taskCompletionSource, k kVar) {
-        this.a = g5Var;
-        this.b = taskCompletionSource;
-        this.c = kVar;
+    public u(int i10, Account account, int i11, GoogleSignInAccount googleSignInAccount) {
+        this.a = i10;
+        this.b = account;
+        this.c = i11;
+        this.d = googleSignInAccount;
     }
 
-    @Override // com.google.android.gms.common.api.o
-    public final void a(Status status) {
-        if (!status.b()) {
-            this.b.setException(l.m(status));
-            return;
-        }
-        g5 g5Var = this.a;
-        TimeUnit timeUnit = TimeUnit.MILLISECONDS;
-        BasePendingResult basePendingResult = (BasePendingResult) g5Var;
-        l.j("Result has already been consumed.", !basePendingResult.j);
-        try {
-            if (!basePendingResult.d.await(0L, timeUnit)) {
-                basePendingResult.e(Status.n);
-            }
-        } catch (InterruptedException unused) {
-            basePendingResult.e(Status.f);
-        }
-        l.j("Result is not ready.", basePendingResult.g());
-        this.b.setResult(this.c.b(basePendingResult.j()));
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = w7.f0.q(parcel, 20293);
+        w7.f0.s(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        w7.f0.k(parcel, 2, this.b, i10);
+        w7.f0.s(parcel, 3, 4);
+        parcel.writeInt(this.c);
+        w7.f0.k(parcel, 4, this.d, i10);
+        w7.f0.r(parcel, q6);
     }
 }

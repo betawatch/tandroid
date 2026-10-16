@@ -18,7 +18,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -26,18 +26,18 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Cells.j5;
 import org.telegram.ui.Cells.r8;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.ds;
 import org.telegram.ui.Components.gq;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.z61;
+import org.telegram.ui.Components.i71;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.zc;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class g1 extends m2 implements NotificationCenter.NotificationCenterDelegate {
-    public h71 a;
+    public i71 a;
     public ds b;
     public org.telegram.ui.ActionBar.u0 c;
     public boolean d;
@@ -70,33 +70,33 @@ public final class g1 extends m2 implements NotificationCenter.NotificationCente
             return;
         }
         g1Var.b.a(0.0f);
-        yh.p(R.string.UnknownError, zc.a0(g1Var), null);
+        sk.q(R.string.UnknownError, zc.a0(g1Var), null);
     }
 
     public static void V(g1 g1Var, ArrayList arrayList) {
         String string = LocaleController.getString(R.string.BusinessHours);
         String string2 = LocaleController.getString(R.string.BusinessHoursInfo);
         int i10 = R.raw.biz_clock;
-        l61 l61Var = new l61(2);
-        l61Var.l = string;
-        l61Var.o = string2;
-        l61Var.k = i10;
-        arrayList.add(l61Var);
-        l61 i11 = l61.i(-1, LocaleController.getString(R.string.BusinessHoursShow));
+        m61 m61Var = new m61(2);
+        m61Var.l = string;
+        m61Var.o = string2;
+        m61Var.k = i10;
+        arrayList.add(m61Var);
+        m61 i11 = m61.i(-1, LocaleController.getString(R.string.BusinessHoursShow));
         i11.K(g1Var.e);
         arrayList.add(i11);
-        arrayList.add(l61.A(-100, null));
+        arrayList.add(m61.A(-100, null));
         if (!g1Var.e) {
             return;
         }
-        i2.d.o(R.string.BusinessHours, arrayList);
+        i2.d.p(R.string.BusinessHours, arrayList);
         int i12 = 0;
         while (true) {
             ArrayList[] arrayListArr = g1Var.h;
             if (i12 >= arrayListArr.length) {
-                arrayList.add(l61.A(-101, null));
-                arrayList.add(l61.f(LocaleController.getString(R.string.BusinessHoursTimezone), f2.b(g1Var.currentAccount).d(g1Var.r, false), -2));
-                arrayList.add(l61.A(-102, null));
+                arrayList.add(m61.A(-101, null));
+                arrayList.add(m61.f(LocaleController.getString(R.string.BusinessHoursTimezone), f2.b(g1Var.currentAccount).d(g1Var.r, false), -2));
+                arrayList.add(m61.A(-102, null));
                 return;
             }
             if (arrayListArr[i12] == null) {
@@ -105,12 +105,12 @@ public final class g1 extends m2 implements NotificationCenter.NotificationCente
             String displayName = DayOfWeek.values()[i12].getDisplayName(TextStyle.FULL, LocaleController.getInstance().getCurrentLocale());
             String str = displayName.substring(0, 1).toUpperCase() + displayName.substring(1);
             String a02 = a0(g1Var.h[i12]);
-            l61 l61Var2 = new l61(5);
-            l61Var2.d = i12;
-            l61Var2.l = str;
-            l61Var2.m = a02;
-            l61Var2.K(!g1Var.h[i12].isEmpty());
-            arrayList.add(l61Var2);
+            m61 m61Var2 = new m61(5);
+            m61Var2.d = i12;
+            m61Var2.l = str;
+            m61Var2.m = a02;
+            m61Var2.K(!g1Var.h[i12].isEmpty());
+            arrayList.add(m61Var2);
             i12++;
         }
     }
@@ -148,8 +148,8 @@ public final class g1 extends m2 implements NotificationCenter.NotificationCente
             }
             if (i19 >= i18) {
                 int i21 = (i15 + 6) % 7;
-                if (!arrayListArr[i21].isEmpty() && ((f1) i2.d.g(1, arrayListArr[i21])).b >= 1440) {
-                    ((f1) i2.d.g(1, arrayListArr[i21])).b = 1439;
+                if (!arrayListArr[i21].isEmpty() && ((f1) i2.d.h(1, arrayListArr[i21])).b >= 1440) {
+                    ((f1) i2.d.h(1, arrayListArr[i21])).b = 1439;
                 }
                 int min = Math.min((i19 - i16) - 1, 2879);
                 ArrayList arrayList2 = arrayListArr[(i15 + 8) % 7];
@@ -161,7 +161,7 @@ public final class g1 extends m2 implements NotificationCenter.NotificationCente
             } else {
                 int i22 = i17 % 7;
                 if (!arrayListArr[i15].isEmpty() && !arrayListArr[i22].isEmpty()) {
-                    f1 f1Var = (f1) i2.d.g(1, arrayListArr[i15]);
+                    f1 f1Var = (f1) i2.d.h(1, arrayListArr[i15]);
                     f1 f1Var2 = (f1) arrayListArr[i22].get(0);
                     int i23 = f1Var.b;
                     if (i23 > 1440 && i23 - 1439 == f1Var2.a) {
@@ -254,11 +254,11 @@ public final class g1 extends m2 implements NotificationCenter.NotificationCente
     }
 
     public final void X(int i10) {
-        if ((this.h[i10].isEmpty() ? null : (f1) i2.d.g(1, this.h[i10])) == null) {
+        if ((this.h[i10].isEmpty() ? null : (f1) i2.d.h(1, this.h[i10])) == null) {
             return;
         }
         int i11 = (i10 + 6) % 7;
-        f1 f1Var = this.h[i11].isEmpty() ? null : (f1) i2.d.g(1, this.h[i11]);
+        f1 f1Var = this.h[i11].isEmpty() ? null : (f1) i2.d.h(1, this.h[i11]);
         if (f1Var == null || f1Var.b <= 1439) {
             return;
         }
@@ -340,13 +340,13 @@ public final class g1 extends m2 implements NotificationCenter.NotificationCente
         Y(false);
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setBackgroundColor(g6.x0(null, g6.a7, false));
-        h71 h71Var = new h71(this, new ci.u(this, 27), new f1.a(this, 11), null);
-        this.a = h71Var;
-        h71Var.p1();
-        h71 h71Var2 = this.a;
-        h71Var2.W2.r = false;
-        frameLayout.addView(h71Var2, a6.d(-1.0f, -1));
-        this.actionBar.A(this.a, true);
+        i71 i71Var = new i71(this, new ci.u(this, 27), new f1.a(this, 11), null);
+        this.a = i71Var;
+        i71Var.p1();
+        i71 i71Var2 = this.a;
+        i71Var2.W2.r = false;
+        frameLayout.addView(i71Var2, z5.d(-1.0f, -1));
+        this.actionBar.B(this.a, true);
         e0();
         this.fragmentView = frameLayout;
         return frameLayout;
@@ -399,7 +399,7 @@ public final class g1 extends m2 implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        z61 z61Var;
+        a71 a71Var;
         if (i10 == NotificationCenter.userInfoDidLoad) {
             e0();
             return;
@@ -408,16 +408,16 @@ public final class g1 extends m2 implements NotificationCenter.NotificationCente
             if (this.f == null) {
                 this.r = f2.b(this.currentAccount).c();
             }
-            h71 h71Var = this.a;
-            if (h71Var == null || (z61Var = h71Var.W2) == null) {
+            i71 i71Var = this.a;
+            if (i71Var == null || (a71Var = i71Var.W2) == null) {
                 return;
             }
-            z61Var.N(true);
+            a71Var.N(true);
         }
     }
 
     public final void e0() {
-        z61 z61Var;
+        a71 a71Var;
         if (this.d) {
             return;
         }
@@ -454,9 +454,9 @@ public final class g1 extends m2 implements NotificationCenter.NotificationCente
             this.f = Z(tL_businessWorkHours.weekly_open);
             this.h = Z(userFull.business_work_hours.weekly_open);
         }
-        h71 h71Var = this.a;
-        if (h71Var != null && (z61Var = h71Var.W2) != null) {
-            z61Var.N(true);
+        i71 i71Var = this.a;
+        if (i71Var != null && (a71Var = i71Var.W2) != null) {
+            a71Var.N(true);
         }
         Y(false);
         this.d = true;

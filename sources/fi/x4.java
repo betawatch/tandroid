@@ -15,13 +15,12 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.yh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.o9;
 import org.telegram.ui.fo;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x4 implements Runnable {
     public final /* synthetic */ int a;
@@ -145,7 +144,7 @@ public final /* synthetic */ class x4 implements Runnable {
                                         i11 = i28;
                                         for (int i29 = i19; i29 < 3; i29++) {
                                             String str3 = strArr2[i29];
-                                            if (str3 != null && (str3.startsWith(str2) || yh.v(" ", str2, str3))) {
+                                            if (str3 != null && (str3.startsWith(str2) || org.telegram.messenger.g0.w(" ", str2, str3))) {
                                                 i27 = i24;
                                                 String publicUsername = UserObject.getPublicUsername(user2);
                                                 i13 = (i27 == 0 || publicUsername == null || !publicUsername.startsWith(str2)) ? i27 : 2;
@@ -231,10 +230,10 @@ public final /* synthetic */ class x4 implements Runnable {
                 }
                 break;
             case 4:
-                ji.d4 d4Var = (ji.d4) this.d;
+                a4.l lVar = (a4.l) this.d;
                 ji.h1 h1Var3 = (ji.h1) this.e;
                 o9 o9Var3 = (o9) this.f;
-                u5 u5Var = (u5) d4Var.b;
+                u5 u5Var = (u5) lVar.b;
                 int length4 = h1Var3.length();
                 int i32 = this.b;
                 if (length4 >= i32 && h1Var3.getSelectionStart() != h1Var3.getSelectionEnd() && o9Var3.j0(u5Var, 0, this.c, i32)) {

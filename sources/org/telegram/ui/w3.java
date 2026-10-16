@@ -10,7 +10,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class w3 extends org.telegram.ui.Components.ow0 implements org.telegram.ui.ActionBar.j2, org.telegram.ui.ActionBar.t3 {
     public final org.telegram.ui.Components.g6 A0;
@@ -119,7 +119,7 @@ public final class w3 extends org.telegram.ui.Components.ow0 implements org.tele
             canvas.save();
             float lerp2 = AndroidUtilities.lerp(AndroidUtilities.dp(20.0f) + l4 + 1, i10, e);
             canvas.translate(0.0f, lerp2);
-            k4Var.h0.a(canvas, org.telegram.messenger.yh.c(20.0f, l4, 1) - lerp2, e, true);
+            k4Var.h0.a(canvas, org.telegram.messenger.g0.C(20.0f, l4, 1) - lerp2, e, true);
             canvas.restore();
         }
         canvas.translate(0.0f, -max);

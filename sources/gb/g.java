@@ -1,59 +1,48 @@
 package gb;
 
-import eb.u;
-import eb.v;
-import java.lang.reflect.Modifier;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import v7.r8;
-
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class g implements v, Cloneable {
-    public static final g c = new g();
-    public List a;
-    public final List b;
+public final class g extends eb.u {
+    public volatile eb.u a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ eb.g d;
+    public final /* synthetic */ lb.a e;
+    public final /* synthetic */ h f;
 
-    public g() {
-        List list = Collections.EMPTY_LIST;
-        this.a = list;
-        this.b = list;
+    public g(h hVar, boolean z10, boolean z11, eb.g gVar, lb.a aVar) {
+        this.f = hVar;
+        this.b = z10;
+        this.c = z11;
+        this.d = gVar;
+        this.e = aVar;
     }
 
-    /* renamed from: a, reason: merged with bridge method [inline-methods] */
-    public final g clone() {
-        try {
-            return (g) super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new AssertionError(e);
+    @Override // eb.u
+    public final Object read(mb.a aVar) {
+        if (this.b) {
+            aVar.C();
+            return null;
         }
+        eb.u uVar = this.a;
+        if (uVar == null) {
+            uVar = this.d.c(this.f, this.e);
+            this.a = uVar;
+        }
+        return uVar.read(aVar);
     }
 
-    public final boolean b(Class cls, boolean z10) {
-        if (!z10 && !Enum.class.isAssignableFrom(cls)) {
-            r8 r8Var = jb.c.a;
-            if (!Modifier.isStatic(cls.getModifiers()) && (cls.isAnonymousClass() || cls.isLocalClass())) {
-                return true;
-            }
+    @Override // eb.u
+    public final void write(mb.b bVar, Object obj) {
+        if (this.c) {
+            bVar.i();
+            return;
         }
-        Iterator it = (z10 ? this.a : this.b).iterator();
-        while (it.hasNext()) {
-            if (((eb.a) it.next()).shouldSkipClass(cls)) {
-                return true;
-            }
+        eb.u uVar = this.a;
+        if (uVar == null) {
+            uVar = this.d.c(this.f, this.e);
+            this.a = uVar;
         }
-        return false;
-    }
-
-    @Override // eb.v
-    public final u create(eb.g gVar, lb.a aVar) {
-        Class cls = aVar.a;
-        boolean b10 = b(cls, true);
-        boolean b11 = b(cls, false);
-        if (b10 || b11) {
-            return new f(this, b11, b10, gVar, aVar);
-        }
-        return null;
+        uVar.write(bVar, obj);
     }
 }

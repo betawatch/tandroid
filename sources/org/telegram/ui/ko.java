@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ko implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -93,35 +93,35 @@ public final /* synthetic */ class ko implements View.OnClickListener {
                 osVar2.run(-this.b);
                 break;
             case 3:
-                org.telegram.ui.Components.a80.O((org.telegram.ui.Components.a80) this.c, (Context) this.d, this.b);
+                org.telegram.ui.Components.z70.O((org.telegram.ui.Components.z70) this.c, (Context) this.d, this.b);
                 break;
             case 4:
                 yy yyVar = (yy) this.c;
                 boolean hasUnread = ((org.telegram.ui.Cells.s2) this.d).getHasUnread();
                 long j11 = this.b;
                 if (hasUnread) {
-                    yyVar.g4(j11);
+                    yyVar.h4(j11);
                 } else {
                     yyVar.getMessagesController().markDialogAsUnread(j11, null, 0L);
                 }
                 yyVar.finishPreviewFragment();
                 break;
             case 5:
-                cp0 cp0Var = (cp0) this.c;
+                ap0 ap0Var = (ap0) this.c;
                 TextView textView = (TextView) this.d;
-                cp0Var.getClass();
+                ap0Var.getClass();
                 long longValue = ((Long) textView.getTag()).longValue();
-                Long l4 = cp0Var.H0;
+                Long l4 = ap0Var.H0;
                 if (l4 == null || longValue != l4.longValue()) {
-                    cp0Var.f[0].setText(LocaleController.getInstance().formatCurrencyString(this.b, false, true, true, cp0Var.C0.invoice.currency));
+                    ap0Var.f[0].setText(LocaleController.getInstance().formatCurrencyString(this.b, false, true, true, ap0Var.C0.invoice.currency));
                 } else {
-                    cp0Var.m0 = true;
-                    cp0Var.f[0].setText("");
-                    cp0Var.m0 = false;
-                    cp0Var.H0 = 0L;
-                    cp0Var.L0();
+                    ap0Var.m0 = true;
+                    ap0Var.f[0].setText("");
+                    ap0Var.m0 = false;
+                    ap0Var.H0 = 0L;
+                    ap0Var.L0();
                 }
-                EditTextBoldCursor editTextBoldCursor = cp0Var.f[0];
+                EditTextBoldCursor editTextBoldCursor = ap0Var.f[0];
                 editTextBoldCursor.setSelection(editTextBoldCursor.length());
                 break;
             default:

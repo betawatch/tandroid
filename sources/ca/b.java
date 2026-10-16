@@ -21,7 +21,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import x9.j;
 import z9.a2;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class b {
     public static final Charset e = Charset.forName("UTF-8");
@@ -108,7 +108,7 @@ public final class b {
         int i10 = this.c.d().a.a;
         g.getClass();
         try {
-            f(cVar.b(str, g.p("event", String.format(Locale.US, "%010d", Integer.valueOf(this.a.getAndIncrement())), z10 ? "_" : "")), aa.b.a.N(a2Var));
+            f(cVar.b(str, g.p("event", String.format(Locale.US, "%010d", Integer.valueOf(this.a.getAndIncrement())), z10 ? "_" : "")), aa.b.a.b1(a2Var));
         } catch (IOException e7) {
             Log.w("FirebaseCrashlytics", "Could not persist event for session " + str, e7);
         }

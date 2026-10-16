@@ -17,32 +17,32 @@ import org.telegram.messenger.WebFile;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.i71;
 import org.telegram.ui.Components.k9;
 import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.z61;
 import org.telegram.ui.Components.z9;
 import org.telegram.ui.b80;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class g7 extends k61 {
+public final class g7 extends l61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        k61.setup(new g7());
+        l61.setup(new g7());
     }
 
-    @Override // org.telegram.ui.Components.k61
-    public final void bindView(View view, l61 l61Var, boolean z10, z61 z61Var, h71 h71Var) {
+    @Override // org.telegram.ui.Components.l61
+    public final void bindView(View view, m61 m61Var, boolean z10, a71 a71Var, i71 i71Var) {
         String userName;
         boolean z11;
         boolean z12;
         org.telegram.ui.ActionBar.h5 h5Var;
         h7 h7Var = (h7) view;
-        TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) l61Var.G;
+        TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) m61Var.G;
         org.telegram.ui.ActionBar.h5 h5Var2 = h7Var.d;
         z9 z9Var = h7Var.c;
         org.telegram.ui.ActionBar.c6 c6Var = h7Var.b;
@@ -126,22 +126,22 @@ public final class g7 extends k61 {
         h7Var.setWillNotDraw(!z10);
     }
 
-    @Override // org.telegram.ui.Components.k61
+    @Override // org.telegram.ui.Components.l61
     public final View createView(Context context, mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
         h7 h7Var = (h7) getCached();
         return h7Var != null ? h7Var : new h7(context, i10, c6Var);
     }
 
-    @Override // org.telegram.ui.Components.k61
-    public final boolean equals(l61 l61Var, l61 l61Var2) {
-        if (l61Var2 == null) {
+    @Override // org.telegram.ui.Components.l61
+    public final boolean equals(m61 m61Var, m61 m61Var2) {
+        if (m61Var2 == null) {
             return false;
         }
-        Object obj = l61Var.G;
+        Object obj = m61Var.G;
         if (!(obj instanceof TL_stars.StarsSubscription)) {
             return false;
         }
-        Object obj2 = l61Var2.G;
+        Object obj2 = m61Var2.G;
         if (obj2 instanceof TL_stars.StarsSubscription) {
             return TextUtils.equals(((TL_stars.StarsSubscription) obj).id, ((TL_stars.StarsSubscription) obj2).id);
         }

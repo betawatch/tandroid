@@ -22,7 +22,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t1 implements Runnable {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class t1 implements Runnable {
         this.c = obj3;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:203:0x0515 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x0514 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -70,17 +70,17 @@ public final /* synthetic */ class t1 implements Runnable {
                 PaymentFormActivity$TelegramWebviewProxy paymentFormActivity$TelegramWebviewProxy = (PaymentFormActivity$TelegramWebviewProxy) this.d;
                 String str5 = (String) this.b;
                 String str6 = (String) this.c;
-                cp0 cp0Var = paymentFormActivity$TelegramWebviewProxy.a;
-                if (cp0Var.getParentActivity() != null && str5.equals("payment_form_submit")) {
+                ap0 ap0Var = paymentFormActivity$TelegramWebviewProxy.a;
+                if (ap0Var.getParentActivity() != null && str5.equals("payment_form_submit")) {
                     try {
                         JSONObject jSONObject = new JSONObject(str6);
-                        cp0Var.w0 = jSONObject.getJSONObject("credentials").toString();
-                        cp0Var.x0 = jSONObject.getString("title");
+                        ap0Var.w0 = jSONObject.getJSONObject("credentials").toString();
+                        ap0Var.x0 = jSONObject.getString("title");
                     } catch (Throwable th2) {
-                        cp0Var.w0 = str6;
+                        ap0Var.w0 = str6;
                         FileLog.e(th2);
                     }
-                    cp0Var.t0();
+                    ap0Var.t0();
                     return;
                 }
                 return;
@@ -101,7 +101,7 @@ public final /* synthetic */ class t1 implements Runnable {
                 for (int i12 = 0; i12 < arrayList2.size(); i12++) {
                     ((ai.b) arrayList2.get(i12)).a.delete();
                 }
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.j(21, d7Var, a2Var));
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.p0(16, d7Var, a2Var));
                 return;
             case 4:
                 w7 w7Var = (w7) this.d;
@@ -122,31 +122,31 @@ public final /* synthetic */ class t1 implements Runnable {
                     try {
                         mediaMetadataRetriever.setDataSource(w7Var.getContext(), Uri.fromFile(bVar.a));
                         str2 = mediaMetadataRetriever.extractMetadata(7);
-                    } catch (Exception e7) {
-                        e = e7;
-                        mediaMetadataRetriever2 = mediaMetadataRetriever;
-                        str = "";
-                        FileLog.e(e);
-                        if (mediaMetadataRetriever2 != null) {
+                        try {
+                            str7 = mediaMetadataRetriever.extractMetadata(2);
                             try {
-                                mediaMetadataRetriever2.release();
+                                mediaMetadataRetriever.release();
                             } catch (Throwable unused2) {
                             }
-                        }
-                        str2 = str;
-                        AndroidUtilities.runOnUIThread(new bi.c3(w7Var, bVar, tL_documentAttributeAudio, str2, str7, 12));
-                        return;
-                    }
-                    try {
-                        str7 = mediaMetadataRetriever.extractMetadata(2);
-                        try {
-                            mediaMetadataRetriever.release();
-                        } catch (Throwable unused3) {
+                        } catch (Exception e7) {
+                            e = e7;
+                            str = str2;
+                            mediaMetadataRetriever2 = mediaMetadataRetriever;
+                            FileLog.e(e);
+                            if (mediaMetadataRetriever2 != null) {
+                                try {
+                                    mediaMetadataRetriever2.release();
+                                } catch (Throwable unused3) {
+                                }
+                            }
+                            str2 = str;
+                            AndroidUtilities.runOnUIThread(new bi.c3(w7Var, bVar, tL_documentAttributeAudio, str2, str7, 12));
+                            return;
                         }
                     } catch (Exception e10) {
                         e = e10;
-                        str = str2;
                         mediaMetadataRetriever2 = mediaMetadataRetriever;
+                        str = "";
                         FileLog.e(e);
                         if (mediaMetadataRetriever2 != null) {
                         }
@@ -182,7 +182,7 @@ public final /* synthetic */ class t1 implements Runnable {
                 org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) this.b;
                 org.telegram.ui.ActionBar.c6 c6Var = (org.telegram.ui.ActionBar.c6) this.c;
                 AndroidUtilities.addToClipboard(strArr[0]);
-                org.telegram.messenger.yh.o(R.string.LinkCopied, new org.telegram.ui.Components.zc(e3Var.topBulletinContainer, c6Var));
+                org.telegram.messenger.sk.p(R.string.LinkCopied, new org.telegram.ui.Components.zc(e3Var.topBulletinContainer, c6Var));
                 return;
             case 8:
                 va.X((va) this.d, (org.telegram.ui.ActionBar.a2) this.b, (TLRPC.User) this.c);
@@ -191,10 +191,10 @@ public final /* synthetic */ class t1 implements Runnable {
                 ac.Z((ac) this.d, (TLRPC.TL_error) this.b, (TLObject) this.c);
                 return;
             case 10:
-                fd fdVar = (fd) this.d;
+                ed edVar = (ed) this.d;
                 TLObject tLObject2 = (TLObject) this.b;
                 org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.c;
-                HashMap hashMap = fdVar.w;
+                HashMap hashMap = edVar.w;
                 if (!(tLObject2 instanceof TLRPC.TL_wallPaper)) {
                     f6Var.f = true;
                     return;
@@ -225,7 +225,7 @@ public final /* synthetic */ class t1 implements Runnable {
                 TLObject tLObject4 = (TLObject) this.b;
                 Context context = (Context) this.c;
                 if (tLObject4 instanceof TLRPC.TL_payments_starsRevenueAdsAccountUrl) {
-                    pf.d.s(context, ((TLRPC.TL_payments_starsRevenueAdsAccountUrl) tLObject4).url);
+                    pf.d.r(context, ((TLRPC.TL_payments_starsRevenueAdsAccountUrl) tLObject4).url);
                 }
                 AndroidUtilities.runOnUIThread(new ud(qeVar, 5), 1000L);
                 return;
@@ -240,7 +240,7 @@ public final /* synthetic */ class t1 implements Runnable {
                 countDownLatch.countDown();
                 return;
             case 15:
-                AndroidUtilities.runOnUIThread(new fc(12, (xa) this.c, ((fo) this.d).getMessagesStorage().getUser(((TLRPC.TL_contact) this.b).user_id)));
+                AndroidUtilities.runOnUIThread(new jd(7, (xa) this.c, ((fo) this.d).getMessagesStorage().getUser(((TLRPC.TL_contact) this.b).user_id)));
                 return;
             case 16:
                 fo.t1((fo) this.d, (TLRPC.User) this.b, (TLRPC.EmojiStatus) this.c);
@@ -255,12 +255,12 @@ public final /* synthetic */ class t1 implements Runnable {
                 return;
             case 18:
                 fo foVar4 = (fo) this.d;
-                org.telegram.ui.Components.m80 m80Var = (org.telegram.ui.Components.m80) this.c;
+                org.telegram.ui.Components.l80 l80Var = (org.telegram.ui.Components.l80) this.c;
                 String str8 = (String) this.b;
-                m80Var.u();
-                ik0 ik0Var = new ik0(foVar4.getParentActivity(), foVar4);
-                ik0Var.x(str8, false);
-                ik0Var.show();
+                l80Var.u();
+                hk0 hk0Var = new hk0(foVar4.getParentActivity(), foVar4);
+                hk0Var.x(str8, false);
+                hk0Var.show();
                 return;
             case 19:
                 fo foVar5 = (fo) this.d;
@@ -391,7 +391,7 @@ public final /* synthetic */ class t1 implements Runnable {
                     while (true) {
                         if (i17 < i15) {
                             String str11 = strArr2[i17];
-                            if (lowerCase2.startsWith(str11) || org.telegram.messenger.yh.v(" ", str11, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str11) || org.telegram.messenger.yh.v(" ", str11, translitString2)))) {
+                            if (lowerCase2.startsWith(str11) || org.telegram.messenger.g0.w(" ", str11, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str11) || org.telegram.messenger.g0.w(" ", str11, translitString2)))) {
                                 arrayList = arrayList4;
                                 i11 = 1;
                             } else {
@@ -451,10 +451,10 @@ public final /* synthetic */ class t1 implements Runnable {
         }
     }
 
-    public /* synthetic */ t1(fo foVar, org.telegram.ui.Components.m80 m80Var, String str) {
+    public /* synthetic */ t1(fo foVar, org.telegram.ui.Components.l80 l80Var, String str) {
         this.a = 18;
         this.d = foVar;
-        this.c = m80Var;
+        this.c = l80Var;
         this.b = str;
     }
 }

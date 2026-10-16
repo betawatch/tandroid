@@ -8,7 +8,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ep implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class ep implements View.OnClickListener {
                     a2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("RevokeLinkAlert", R.string.RevokeLinkAlert, npVar.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(currentChannel), currentChannel.title));
                 }
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new m4.z0(19, npVar, currentChannel));
+                alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new m4.y0(18, npVar, currentChannel));
                 npVar.showDialog(a2Var);
                 break;
             case 1:
@@ -59,9 +59,9 @@ public final /* synthetic */ class ep implements View.OnClickListener {
                 }
                 break;
             case 3:
-                ei0 ei0Var = new ei0(npVar.Z, 0L, 0);
-                ei0Var.g0(npVar.Y, npVar.l0);
-                npVar.presentFragment(ei0Var);
+                di0 di0Var = new di0(npVar.Z, 0L, 0);
+                di0Var.g0(npVar.Y, npVar.l0);
+                npVar.presentFragment(di0Var);
                 break;
             default:
                 boolean z10 = !npVar.b0;

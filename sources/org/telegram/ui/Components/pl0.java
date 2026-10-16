@@ -10,7 +10,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class pl0 {
     public final /* synthetic */ int a;
@@ -74,10 +74,10 @@ public class pl0 {
 
     public void b() {
         c0.l lVar;
-        p4.w wVar = (p4.w) this.f;
+        p4.v vVar = (p4.v) this.f;
         int i10 = this.b;
         WeakReference weakReference = (WeakReference) this.j;
-        p4.y.b();
+        p4.x.b();
         if (this.c || this.d) {
             return;
         }
@@ -91,8 +91,8 @@ public class pl0 {
         p4.e eVar2 = (p4.e) weakReference.get();
         if (eVar2 != null) {
             HashMap hashMap = eVar2.b;
-            if (eVar2.d == wVar) {
-                Message obtainMessage = eVar2.a.obtainMessage(263, wVar);
+            if (eVar2.d == vVar) {
+                Message obtainMessage = eVar2.a.obtainMessage(263, vVar);
                 obtainMessage.arg1 = i10;
                 obtainMessage.sendToTarget();
                 p4.q qVar = eVar2.e;
@@ -115,16 +115,16 @@ public class pl0 {
             return;
         }
         p4.b bVar = eVar3.a;
-        p4.w wVar2 = (p4.w) this.g;
-        eVar3.d = wVar2;
+        p4.v vVar2 = (p4.v) this.g;
+        eVar3.d = vVar2;
         eVar3.e = (p4.q) this.e;
-        p4.w wVar3 = (p4.w) this.h;
-        if (wVar3 == null) {
-            Message obtainMessage2 = bVar.obtainMessage(262, new q0.b(wVar, wVar2));
+        p4.v vVar3 = (p4.v) this.h;
+        if (vVar3 == null) {
+            Message obtainMessage2 = bVar.obtainMessage(262, new q0.b(vVar, vVar2));
             obtainMessage2.arg1 = i10;
             obtainMessage2.sendToTarget();
         } else {
-            Message obtainMessage3 = bVar.obtainMessage(264, new q0.b(wVar3, wVar2));
+            Message obtainMessage3 = bVar.obtainMessage(264, new q0.b(vVar3, vVar2));
             obtainMessage3.arg1 = i10;
             obtainMessage3.sendToTarget();
         }
@@ -137,8 +137,12 @@ public class pl0 {
         }
     }
 
+    public void c(int i10, int i11, boolean z10) {
+        d(i10, i11, z10, false);
+    }
+
     /* JADX WARN: Multi-variable type inference failed */
-    public void c(int i10, int i11, boolean z10, boolean z11) {
+    public void d(int i10, int i11, boolean z10, boolean z11) {
         s4.g0 g0Var;
         long j10;
         HashMap hashMap = (HashMap) this.k;
@@ -156,7 +160,7 @@ public class pl0 {
                 if (k10) {
                     itemAnimator.b.add(kl0Var);
                 } else {
-                    c(i10, i11, z10, false);
+                    d(i10, i11, z10, false);
                 }
                 if (k10) {
                     return;
@@ -231,9 +235,9 @@ public class pl0 {
         }
         mm0Var.B0();
         mm0Var.setVerticalScrollBarEnabled(false);
-        w7.b6 b6Var = (w7.b6) this.i;
-        if (b6Var != null) {
-            b6Var.c();
+        w7.a6 a6Var = (w7.a6) this.i;
+        if (a6Var != null) {
+            a6Var.c();
         }
         mm0Var.V1 = true;
         if (nl0Var != null) {
@@ -245,22 +249,22 @@ public class pl0 {
         mm0Var.addOnLayoutChangeListener(new ml0(this, g0Var2, arrayList, z12, nl0Var));
     }
 
-    public void d(w7.b6 b6Var) {
-        this.i = b6Var;
+    public void e(w7.a6 a6Var) {
+        this.i = a6Var;
     }
 
-    public pl0(p4.e eVar, p4.w wVar, p4.q qVar, int i10, p4.w wVar2, Collection collection) {
+    public pl0(p4.e eVar, p4.v vVar, p4.q qVar, int i10, p4.v vVar2, Collection collection) {
         this.a = 1;
         this.k = null;
         this.c = false;
         this.d = false;
         this.j = new WeakReference(eVar);
-        this.g = wVar;
+        this.g = vVar;
         this.e = qVar;
         this.b = i10;
         this.f = eVar.d;
-        this.h = wVar2;
+        this.h = vVar2;
         this.i = collection != null ? new ArrayList(collection) : null;
-        eVar.a.postDelayed(new org.telegram.ui.Components.voip.m2(this, 14), 15000L);
+        eVar.a.postDelayed(new org.telegram.ui.Components.voip.r2(this, 13), 15000L);
     }
 }

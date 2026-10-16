@@ -13,9 +13,9 @@ import org.telegram.messenger.EmojiData;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qw implements ni.c, cm0, in0, ne.d {
+public final /* synthetic */ class qw implements mi.c, cm0, in0, ne.d {
     public final /* synthetic */ int a;
     public final /* synthetic */ wz b;
 
@@ -118,7 +118,7 @@ public final /* synthetic */ class qw implements ni.c, cm0, in0, ne.d {
                         i11 = AndroidUtilities.dp((r3 * 4) - (AndroidUtilities.isTablet() ? 5 : 1)) + (ivVar2.n[0] * i12);
                     }
                     if (iArr[0] - i11 < AndroidUtilities.dp(5.0f)) {
-                        i11 = org.telegram.ui.Cells.d0.b(5.0f, iArr[0] - i11, i11);
+                        i11 = org.telegram.messenger.sk.D(5.0f, iArr[0] - i11, i11);
                     } else if ((iArr[0] - i11) + dp > AndroidUtilities.displaySize.x - AndroidUtilities.dp(5.0f)) {
                         i11 += ((iArr[0] - i11) + dp) - (AndroidUtilities.displaySize.x - AndroidUtilities.dp(5.0f));
                     }
@@ -240,7 +240,7 @@ public final /* synthetic */ class qw implements ni.c, cm0, in0, ne.d {
                             break;
                         }
                     } else {
-                        wzVar2.t1.o(new h61(wzVar2.getContext(), new qx(wzVar2), wzVar2.x1, wzVar2.y1, wzVar2.z1, null, wzVar2.Z1));
+                        wzVar2.t1.o(new i61(wzVar2.getContext(), new qx(wzVar2), wzVar2.x1, wzVar2.y1, wzVar2.z1, null, wzVar2.Z1));
                         break;
                     }
                 }
@@ -248,7 +248,7 @@ public final /* synthetic */ class qw implements ni.c, cm0, in0, ne.d {
         }
     }
 
-    @Override // ni.c
+    @Override // mi.c
     public void d(int i10) {
         wz wzVar = this.b;
         bh.f fVar = wzVar.j2;
@@ -270,6 +270,6 @@ public final /* synthetic */ class qw implements ni.c, cm0, in0, ne.d {
     }
 
     @Override // ne.d
-    public /* synthetic */ void C(float f7, int i10) {
+    public /* synthetic */ void A(float f7, int i10) {
     }
 }

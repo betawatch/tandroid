@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.p20;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class j3 extends FrameLayout {
     public final w0 a;
@@ -32,9 +32,9 @@ public final class j3 extends FrameLayout {
         this.c = i3Var2;
         i3 i3Var3 = new i3(context, c6Var);
         this.d = i3Var3;
-        addView(i3Var, w7.a6.a(-2.0f, 12.66f, 5.33f, 12.66f, 5.33f, -2, 51));
-        addView(i3Var2, w7.a6.a(-2.0f, 12.66f, 5.33f, 12.66f, 5.33f, -2, 51));
-        addView(i3Var3, w7.a6.a(-2.0f, 12.66f, 5.33f, 12.66f, 5.33f, -2, 51));
+        addView(i3Var, w7.z5.a(-2.0f, 12.66f, 5.33f, 12.66f, 5.33f, -2, 51));
+        addView(i3Var2, w7.z5.a(-2.0f, 12.66f, 5.33f, 12.66f, 5.33f, -2, 51));
+        addView(i3Var3, w7.z5.a(-2.0f, 12.66f, 5.33f, 12.66f, 5.33f, -2, 51));
     }
 
     public final void a(z2 z2Var, float f7, boolean z10, z2 z2Var2, float f10, boolean z11, z2 z2Var3, float f11, boolean z12) {

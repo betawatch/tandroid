@@ -6,7 +6,7 @@ import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class z70 {
     public String F;
@@ -33,7 +33,7 @@ public abstract class z70 {
 
     public abstract int b();
 
-    public abstract void c(i4 i4Var, org.telegram.ui.Components.l11 l11Var);
+    public abstract void c(i4 i4Var, org.telegram.ui.Components.m11 m11Var);
 
     public abstract boolean d(TL_iv.PageBlock pageBlock, i4 i4Var);
 }

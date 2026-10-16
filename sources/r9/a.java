@@ -7,9 +7,9 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 import ji.m5;
-import w7.f7;
+import w7.c7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
@@ -46,7 +46,7 @@ public final class a {
         n0Var.g = new HashSet();
         hashSet.add(rVar);
         for (r rVar2 : rVarArr) {
-            f7.a(rVar2, "Null interface");
+            c7.a(rVar2, "Null interface");
         }
         Collections.addAll((HashSet) n0Var.c, rVarArr);
         return n0Var;
@@ -58,7 +58,7 @@ public final class a {
         HashSet hashSet3 = new HashSet();
         hashSet.add(r.a(cls));
         for (Class cls2 : clsArr) {
-            f7.a(cls2, "Null interface");
+            c7.a(cls2, "Null interface");
             hashSet.add(r.a(cls2));
         }
         return new a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new m5(obj, 27), hashSet3);

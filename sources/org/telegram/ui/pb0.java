@@ -1,36 +1,66 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pb0 implements Runnable {
+public final /* synthetic */ class pb0 implements org.telegram.ui.Components.f5, org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.rw0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ac0 b;
+    public final /* synthetic */ zb0 b;
 
-    public /* synthetic */ pb0(ac0 ac0Var, int i10) {
+    public /* synthetic */ pb0(zb0 zb0Var, int i10) {
         this.a = i10;
-        this.b = ac0Var;
+        this.b = zb0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.ui.Components.f5
+    public void J(int i10, int i11, boolean z10) {
+        this.b.V(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+        zb0 zb0Var = this.b;
+        zb0Var.T.a(zb0Var.e);
+        zb0Var.finishFragment();
+    }
+
+    @Override // org.telegram.ui.Components.rw0
+    public void h(int i10) {
         switch (this.a) {
-            case 0:
-                ac0 ac0Var = this.b;
-                ac0Var.r.b.requestFocus();
-                AndroidUtilities.showKeyboard(ac0Var.r.b);
-                break;
-            case 1:
-                ac0 ac0Var2 = this.b;
-                ac0Var2.r.b.clearFocus();
-                AndroidUtilities.hideKeyboard(ac0Var2.r.b);
-                break;
+            case 2:
+                zb0 zb0Var = this.b;
+                if (i10 >= zb0Var.P.size()) {
+                    zb0Var.w.setText("");
+                    break;
+                } else {
+                    zb0Var.w.setText(LocaleController.formatDateAudio(zb0Var.getConnectionsManager().getCurrentTime() + ((Integer) r1.get(i10)).intValue(), false));
+                    break;
+                }
             default:
-                pf.d.s(this.b.getParentActivity(), LocaleController.getString(R.string.RequireMonthlyFeeInfoLink));
+                zb0 zb0Var2 = this.b;
+                zb0Var2.F.clearFocus();
+                zb0Var2.O = true;
+                ArrayList arrayList = zb0Var2.R;
+                if (i10 < arrayList.size()) {
+                    zb0Var2.F.setText(((Integer) arrayList.get(i10)).toString());
+                } else {
+                    zb0Var2.F.setText("");
+                }
+                zb0Var2.O = false;
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.Components.rw0
+    public /* synthetic */ void m() {
+        int i10 = this.a;
+    }
+
+    private final /* synthetic */ void a() {
+    }
+
+    private final /* synthetic */ void b() {
     }
 }

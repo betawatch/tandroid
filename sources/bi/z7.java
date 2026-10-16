@@ -18,9 +18,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.es0;
+import org.telegram.ui.ds0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z7 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -33,12 +33,12 @@ public final /* synthetic */ class z7 implements RequestDelegate {
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        final Comparator es0Var;
-        final Comparator es0Var2;
+        final Comparator ds0Var;
+        final Comparator ds0Var2;
         int i10 = this.a;
         int i11 = 9;
-        int i12 = 5;
-        int i13 = 12;
+        int i12 = 7;
+        int i13 = 5;
         int i14 = 20;
         int i15 = 13;
         int i16 = 14;
@@ -60,13 +60,13 @@ public final /* synthetic */ class z7 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new u8(26, (di.v1) obj, tLObject));
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new di.x6(7, (di.c8) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new di.y6(i12, (di.c8) obj, tLObject));
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new di.x6(i17, (di.k8) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new di.y6(i17, (di.k8) obj, tLObject));
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new di.x6(i11, (di.t8) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new di.y6(i11, (di.t8) obj, tLObject));
                 break;
             case 7:
                 AndroidUtilities.runOnUIThread(new fi.q3(i19, (fi.q4) obj, tL_error));
@@ -108,7 +108,7 @@ public final /* synthetic */ class z7 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new ji.v2(2, (ji.e5) obj, tLObject));
                 break;
             case 18:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.t8(i13, (org.telegram.ui.web.f2) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.v(i12, (org.telegram.ui.web.g2) obj, tLObject));
                 break;
             case 19:
                 ug.x0 x0Var = (ug.x0) obj;
@@ -136,11 +136,11 @@ public final /* synthetic */ class z7 implements RequestDelegate {
                     if (Build.VERSION.SDK_INT >= 24) {
                         Collator collator = Collator.getInstance(LocaleController.getInstance().getCurrentLocale() != null ? LocaleController.getInstance().getCurrentLocale() : Locale.getDefault());
                         Objects.requireNonNull(collator);
-                        es0Var = new q7(collator, i12);
+                        ds0Var = new q7(collator, i13);
                     } else {
-                        es0Var = new es0(13);
+                        ds0Var = new ds0(13);
                     }
-                    Collections.sort(arrayList, es0Var);
+                    Collections.sort(arrayList, ds0Var);
                     Iterator it = hashMap.values().iterator();
                     while (it.hasNext()) {
                         Collections.sort((List) it.next(), new Comparator() { // from class: ug.q
@@ -150,14 +150,14 @@ public final /* synthetic */ class z7 implements RequestDelegate {
                                 TLRPC.TL_help_country tL_help_country3 = (TLRPC.TL_help_country) obj3;
                                 switch (i18) {
                                     case 0:
-                                        return es0Var.compare(tL_help_country2.default_name, tL_help_country3.default_name);
+                                        return ds0Var.compare(tL_help_country2.default_name, tL_help_country3.default_name);
                                     default:
-                                        return es0Var.compare(tL_help_country2.default_name, tL_help_country3.default_name);
+                                        return ds0Var.compare(tL_help_country2.default_name, tL_help_country3.default_name);
                                 }
                             }
                         });
                     }
-                    AndroidUtilities.runOnUIThread(new org.webrtc.i(x0Var, hashMap, arrayList, i17));
+                    AndroidUtilities.runOnUIThread(new pi.g(x0Var, hashMap, arrayList, i17));
                     break;
                 }
                 break;
@@ -193,11 +193,11 @@ public final /* synthetic */ class z7 implements RequestDelegate {
                     if (Build.VERSION.SDK_INT >= 24) {
                         Collator collator2 = Collator.getInstance(LocaleController.getInstance().getCurrentLocale() != null ? LocaleController.getInstance().getCurrentLocale() : Locale.getDefault());
                         Objects.requireNonNull(collator2);
-                        es0Var2 = new q7(collator2, i12);
+                        ds0Var2 = new q7(collator2, i13);
                     } else {
-                        es0Var2 = new es0(13);
+                        ds0Var2 = new ds0(13);
                     }
-                    Collections.sort(arrayList2, es0Var2);
+                    Collections.sort(arrayList2, ds0Var2);
                     Iterator it2 = hashMap2.values().iterator();
                     while (it2.hasNext()) {
                         Collections.sort((List) it2.next(), new Comparator() { // from class: ug.q
@@ -207,14 +207,14 @@ public final /* synthetic */ class z7 implements RequestDelegate {
                                 TLRPC.TL_help_country tL_help_country3 = (TLRPC.TL_help_country) obj3;
                                 switch (i19) {
                                     case 0:
-                                        return es0Var2.compare(tL_help_country22.default_name, tL_help_country3.default_name);
+                                        return ds0Var2.compare(tL_help_country22.default_name, tL_help_country3.default_name);
                                     default:
-                                        return es0Var2.compare(tL_help_country22.default_name, tL_help_country3.default_name);
+                                        return ds0Var2.compare(tL_help_country22.default_name, tL_help_country3.default_name);
                                 }
                             }
                         });
                     }
-                    AndroidUtilities.runOnUIThread(new org.webrtc.i(p1Var, hashMap2, arrayList2, 11));
+                    AndroidUtilities.runOnUIThread(new pi.g(p1Var, hashMap2, arrayList2, 11));
                     break;
                 }
                 break;
@@ -225,10 +225,10 @@ public final /* synthetic */ class z7 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new s9.b(18, (wf.c) obj, tLObject));
                 break;
             case 23:
-                AndroidUtilities.runOnUIThread(new org.webrtc.i((wf.d) obj, tLObject, tL_error, i13));
+                AndroidUtilities.runOnUIThread(new pi.g((wf.d) obj, tLObject, tL_error, 12));
                 break;
             case 24:
-                AndroidUtilities.runOnUIThread(new org.webrtc.i((zh.g) obj, tLObject, tL_error, i14));
+                AndroidUtilities.runOnUIThread(new pi.g((zh.g) obj, tLObject, tL_error, i14));
                 break;
             case 25:
                 AndroidUtilities.runOnUIThread(new s9.b(29, (zh.l) obj, tLObject));

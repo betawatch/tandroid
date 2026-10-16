@@ -8,7 +8,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 import di.xa;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class e {
     public final int a;
@@ -38,7 +38,7 @@ public final class e {
         int i10 = this.a;
         d dVar = this.b;
         if (f10 == f7) {
-            dVar.C(f10, i10);
+            dVar.A(f10, i10);
             return;
         }
         int i11 = 1;
@@ -53,7 +53,7 @@ public final class e {
             if (this.g) {
                 this.g = false;
             }
-            dVar.C(f7, i10);
+            dVar.A(f7, i10);
             return;
         }
         this.f = f7;
@@ -94,7 +94,7 @@ public final class e {
     public final void c(float f7) {
         boolean b10 = b();
         if (d(f7, 1.0f) || b10) {
-            this.b.C(f7, this.a);
+            this.b.A(f7, this.a);
         }
     }
 

@@ -14,7 +14,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class l21 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ Context a;
@@ -44,7 +44,7 @@ public final class l21 extends org.telegram.ui.ActionBar.j {
             alertDialog$Builder.a.T = LocaleController.getString(arrayList.size() > 1 ? R.string.DeleteProxyMultiConfirm : R.string.DeleteProxyConfirm);
             alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
             alertDialog$Builder.a.R = LocaleController.getString(R.string.DeleteProxyTitle);
-            alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new nq0(this, 13));
+            alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new lq0(this, 13));
             org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
             proxyListActivity.showDialog(a2Var);
             TextView textView = (TextView) a2Var.d(-1);
@@ -67,7 +67,7 @@ public final class l21 extends org.telegram.ui.ActionBar.j {
             if (sb2.length() > 0) {
                 sb2.append("\n\n");
             }
-            qi.a aVar = proxyInfo.settings;
+            pi.a aVar = proxyInfo.settings;
             String str = aVar.e;
             String str2 = aVar.d;
             String str3 = aVar.b;
@@ -92,7 +92,7 @@ public final class l21 extends org.telegram.ui.ActionBar.j {
                 }
                 if (!TextUtils.isEmpty(str4)) {
                     if (i13 == 3) {
-                        if ((str3 != null && str3.indexOf(47) >= 0) && qi.a.g(str4)) {
+                        if ((str3 != null && str3.indexOf(47) >= 0) && pi.a.g(str4)) {
                             int length = str4.length() / 2;
                             byte[] bArr = new byte[length];
                             for (int i14 = 0; i14 < length; i14++) {

@@ -14,7 +14,7 @@ import org.telegram.messenger.MessagePreviewParams;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class vc0 extends FrameLayout {
     public final ArrayList E;
@@ -33,11 +33,11 @@ public abstract class vc0 extends FrameLayout {
     public boolean v;
     public final int w;
     public boolean x;
-    public final org.telegram.ui.Cells.t6 y;
+    public final org.telegram.ui.Cells.l7 y;
 
     public vc0(Context context, org.telegram.ui.fo foVar, bh.b bVar, MessagePreviewParams messagePreviewParams, TLRPC.User user, TLRPC.Chat chat, int i10, rc0 rc0Var, int i11, final boolean z10) {
         super(context);
-        this.y = new org.telegram.ui.Cells.t6(this, 16);
+        this.y = new org.telegram.ui.Cells.l7(this, 15);
         this.E = new ArrayList(10);
         this.b = z10;
         this.c = foVar;
@@ -74,8 +74,8 @@ public abstract class vc0 extends FrameLayout {
         this.f.setAdapter(new xb0(this, context));
         this.f.setPosition(i12);
         this.e.setSelectedTab(i12);
-        addView(this.e, w7.a6.e(-1, 66, 87));
-        addView(this.f, w7.a6.a(-1.0f, 0.0f, 0.0f, 0.0f, 66.0f, -1, 119));
+        addView(this.e, w7.z5.e(-1, 66, 87));
+        addView(this.f, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 66.0f, -1, 119));
         this.e.setOnTabClick(new a3(this, 7));
         setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.vb0
             @Override // android.view.View.OnTouchListener

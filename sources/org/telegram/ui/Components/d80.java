@@ -1,33 +1,82 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BotWebViewVibrationEffect;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d80 implements View.OnLayoutChangeListener {
+public final /* synthetic */ class d80 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ l80 b;
+    public final /* synthetic */ Runnable c;
 
-    public /* synthetic */ d80(Object obj, int i10) {
+    public /* synthetic */ d80(l80 l80Var, Runnable runnable, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = l80Var;
+        this.c = runnable;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                m80 m80Var = (m80) this.b;
-                if (m80Var.D()) {
-                    m80Var.O();
+                this.b.u();
+                Runnable runnable = this.c;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            case 1:
+                this.c.run();
+                l80 l80Var = this.b;
+                if (l80Var.J) {
+                    l80Var.u();
+                    break;
+                }
+                break;
+            case 2:
+                l80 l80Var2 = this.b;
+                Runnable runnable2 = this.c;
+                if (runnable2 == null) {
+                    l80Var2.getClass();
+                    break;
+                } else {
+                    int i10 = -l80Var2.K;
+                    l80Var2.K = i10;
+                    AndroidUtilities.shakeViewSpring(view, i10);
+                    BotWebViewVibrationEffect.APP_ERROR.vibrate();
+                    runnable2.run();
+                    break;
+                }
+            case 3:
+                Runnable runnable3 = this.c;
+                if (runnable3 != null) {
+                    runnable3.run();
+                }
+                l80 l80Var3 = this.b;
+                if (l80Var3.J) {
+                    l80Var3.u();
+                    break;
+                }
+                break;
+            case 4:
+                this.c.run();
+                l80 l80Var4 = this.b;
+                if (l80Var4.J) {
+                    l80Var4.u();
                     break;
                 }
                 break;
             default:
-                by0 by0Var = (by0) this.b;
-                bi.f4 f4Var = by0Var.h;
-                if (f4Var != null && f4Var.getLayout() != null) {
-                    by0Var.F = f4Var.getLayout().getLineWidth(0);
+                Runnable runnable4 = this.c;
+                if (runnable4 != null) {
+                    runnable4.run();
+                }
+                l80 l80Var5 = this.b;
+                if (l80Var5.J) {
+                    l80Var5.u();
                     break;
                 }
                 break;

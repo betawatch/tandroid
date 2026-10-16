@@ -1,10 +1,11 @@
 package ea;
 
 import a1.g;
+import a4.l;
+import a6.m;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-import com.google.firebase.messaging.m;
 import di.p9;
 import di.w6;
 import j$.util.Objects;
@@ -19,24 +20,24 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 import ji.m5;
+import k5.k;
 import k5.t;
 import k5.w;
-import k6.h;
+import l5.h;
 import l5.i;
-import l5.l;
 import l5.n;
-import li.k;
-import m.q3;
+import m.h3;
+import m.t3;
 import m1.j;
 import m5.e;
 import org.json.JSONObject;
-import org.telegram.ui.web.c0;
+import org.telegram.ui.web.o0;
 import t7.u;
-import w7.l6;
+import w7.k6;
 import z9.b0;
 import z9.k0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class b {
     public Object a;
@@ -120,21 +121,21 @@ public final class b {
         a aVar = null;
         try {
             if (!j.b(2, i10)) {
-                JSONObject d02 = ((qb.c) this.e).d0();
-                if (d02 != null) {
-                    a q6 = ((h) this.c).q(d02);
-                    f("Loaded cached settings: ", d02);
+                JSONObject V = ((m) this.e).V();
+                if (V != null) {
+                    a O = ((l) this.c).O(V);
+                    f("Loaded cached settings: ", V);
                     ((u) this.d).getClass();
                     long currentTimeMillis = System.currentTimeMillis();
-                    if (j.b(3, i10) || q6.c >= currentTimeMillis) {
+                    if (j.b(3, i10) || O.c >= currentTimeMillis) {
                         try {
                             if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                                 Log.v("FirebaseCrashlytics", "Returning cached settings.", null);
                             }
-                            return q6;
+                            return O;
                         } catch (Exception e) {
                             e = e;
-                            aVar = q6;
+                            aVar = O;
                             Log.e("FirebaseCrashlytics", "Failed to get cached settings", e);
                             return aVar;
                         }
@@ -157,7 +158,7 @@ public final class b {
         return (a) ((AtomicReference) this.h).get();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0410  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0412  */
     /* JADX WARN: Removed duplicated region for block: B:38:0x03f5 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -172,15 +173,16 @@ public final class b {
         String str2;
         Integer num;
         Iterator it;
-        q3 q3Var;
+        t3 t3Var;
         ArrayList arrayList;
         int i12;
+        long j11;
         final b bVar = this;
         final i iVar2 = iVar;
         byte[] bArr2 = iVar2.b;
         t5.c cVar = (t5.c) bVar.f;
         e a2 = ((m5.d) bVar.b).a(iVar2.a);
-        long j11 = 0;
+        long j12 = 0;
         while (true) {
             final int i13 = 0;
             s5.g gVar = (s5.g) cVar;
@@ -192,7 +194,7 @@ public final class b {
                 }
 
                 @Override // t5.b
-                public final Object h() {
+                public final Object f() {
                     Boolean bool;
                     switch (i13) {
                         case 0:
@@ -223,11 +225,11 @@ public final class b {
                         default:
                             s5.g gVar3 = (s5.g) ((s5.d) this.b.c);
                             gVar3.getClass();
-                            return (Iterable) gVar3.c(new c0(7, gVar3, iVar2));
+                            return (Iterable) gVar3.c(new o0(7, gVar3, iVar2));
                     }
                 }
             })).booleanValue()) {
-                gVar.f(new p9(bVar, iVar2, j11, 7));
+                gVar.f(new p9(bVar, iVar2, j12, 7));
                 return;
             }
             final int i14 = 1;
@@ -239,7 +241,7 @@ public final class b {
                 }
 
                 @Override // t5.b
-                public final Object h() {
+                public final Object f() {
                     Boolean bool;
                     switch (i14) {
                         case 0:
@@ -270,7 +272,7 @@ public final class b {
                         default:
                             s5.g gVar3 = (s5.g) ((s5.d) this.b.c);
                             gVar3.getClass();
-                            return (Iterable) gVar3.c(new c0(7, gVar3, iVar2));
+                            return (Iterable) gVar3.c(new o0(7, gVar3, iVar2));
                     }
                 }
             });
@@ -278,10 +280,10 @@ public final class b {
                 return;
             }
             if (a2 == null) {
-                l6.a(iVar2, "Uploader", "Unknown backend for %s, deleting event batch for it...");
+                k6.a(iVar2, "Uploader", "Unknown backend for %s, deleting event batch for it...");
                 aVar = new m5.a(3, -1L);
                 bArr = bArr2;
-                j10 = j11;
+                j10 = j12;
             } else {
                 ArrayList arrayList2 = new ArrayList();
                 Iterator it2 = iterable.iterator();
@@ -292,21 +294,21 @@ public final class b {
                     s5.c cVar2 = (s5.c) bVar.i;
                     Objects.requireNonNull(cVar2);
                     o5.a aVar2 = (o5.a) gVar.f(new m5(cVar2, 23));
-                    m mVar = new m();
+                    com.google.firebase.messaging.m mVar = new com.google.firebase.messaging.m();
                     mVar.f = new HashMap();
-                    mVar.d = Long.valueOf(((u5.a) bVar.g).d());
-                    mVar.e = Long.valueOf(((u5.a) bVar.h).d());
+                    mVar.d = Long.valueOf(((u5.a) bVar.g).b());
+                    mVar.e = Long.valueOf(((u5.a) bVar.h).b());
                     mVar.a = "GDT_CLIENT_METRICS";
                     i5.c cVar3 = new i5.c("proto");
                     aVar2.getClass();
-                    k kVar = n.a;
-                    kVar.getClass();
+                    h3 h3Var = n.a;
+                    h3Var.getClass();
                     ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                     try {
-                        kVar.x(aVar2, byteArrayOutputStream);
+                        h3Var.x(aVar2, byteArrayOutputStream);
                     } catch (IOException unused) {
                     }
-                    mVar.c = new l(cVar3, byteArrayOutputStream.toByteArray());
+                    mVar.c = new l5.l(cVar3, byteArrayOutputStream.toByteArray());
                     arrayList2.add(((j5.c) a2).a(mVar.g()));
                 }
                 j5.c cVar4 = (j5.c) a2;
@@ -316,7 +318,7 @@ public final class b {
                 while (i15 < size) {
                     Object obj = arrayList2.get(i15);
                     i15++;
-                    l5.h hVar = (l5.h) obj;
+                    h hVar = (h) obj;
                     String str3 = hVar.a;
                     if (hashMap.containsKey(str3)) {
                         arrayList = arrayList2;
@@ -333,10 +335,10 @@ public final class b {
                 Iterator it3 = hashMap.entrySet().iterator();
                 while (it3.hasNext()) {
                     Map.Entry entry = (Map.Entry) it3.next();
-                    l5.h hVar2 = (l5.h) ((List) entry.getValue()).get(0);
+                    h hVar2 = (h) ((List) entry.getValue()).get(0);
                     w wVar = w.a;
-                    long d = cVar4.f.d();
-                    long d10 = cVar4.e.d();
+                    long b11 = cVar4.f.b();
+                    long b12 = cVar4.e.b();
                     k5.j jVar = new k5.j(new k5.h(Integer.valueOf(hVar2.b("sdk-version")), hVar2.a("model"), hVar2.a("hardware"), hVar2.a("device"), hVar2.a("product"), hVar2.a("os-uild"), hVar2.a("manufacturer"), hVar2.a("fingerprint"), hVar2.a("locale"), hVar2.a("country"), hVar2.a("mcc_mnc"), hVar2.a("application_build")));
                     try {
                         num = Integer.valueOf(Integer.parseInt((String) entry.getKey()));
@@ -346,61 +348,61 @@ public final class b {
                         num = null;
                     }
                     ArrayList arrayList5 = new ArrayList();
-                    for (l5.h hVar3 : (List) entry.getValue()) {
+                    for (h hVar3 : (List) entry.getValue()) {
                         byte[] bArr3 = bArr2;
-                        l lVar = hVar3.c;
-                        long j12 = j11;
+                        l5.l lVar = hVar3.c;
+                        long j13 = j12;
                         i5.c cVar5 = lVar.a;
                         byte[] bArr4 = lVar.b;
                         if (cVar5.equals(new i5.c("proto"))) {
-                            q3Var = new q3();
-                            q3Var.d = bArr4;
+                            t3Var = new t3();
+                            t3Var.d = bArr4;
                             it = it3;
                         } else {
                             it = it3;
                             if (cVar5.equals(new i5.c("json"))) {
                                 String str4 = new String(bArr4, Charset.forName("UTF-8"));
-                                q3 q3Var2 = new q3();
-                                q3Var2.e = str4;
-                                q3Var = q3Var2;
+                                t3 t3Var2 = new t3();
+                                t3Var2.e = str4;
+                                t3Var = t3Var2;
                             } else {
-                                String c10 = l6.c("CctTransportBackend");
+                                String c10 = k6.c("CctTransportBackend");
                                 if (Log.isLoggable(c10, 5)) {
                                     Log.w(c10, "Received event of unsupported encoding " + cVar5 + ". Skipping...");
                                 }
                                 bArr2 = bArr3;
-                                j11 = j12;
+                                j12 = j13;
                                 it3 = it;
                             }
                         }
-                        q3Var.a = Long.valueOf(hVar3.d);
-                        q3Var.c = Long.valueOf(hVar3.e);
+                        t3Var.a = Long.valueOf(hVar3.d);
+                        t3Var.c = Long.valueOf(hVar3.e);
                         String str5 = (String) hVar3.f.get("tz-offset");
-                        q3Var.f = Long.valueOf(str5 == null ? 0L : Long.valueOf(str5).longValue());
-                        q3Var.h = new k5.n((k5.u) k5.u.a.get(hVar3.b("net-type")), (t) t.a.get(hVar3.b("mobile-subtype")));
+                        t3Var.f = Long.valueOf(str5 == null ? 0L : Long.valueOf(str5).longValue());
+                        t3Var.h = new k5.n((k5.u) k5.u.a.get(hVar3.b("net-type")), (t) t.a.get(hVar3.b("mobile-subtype")));
                         Integer num2 = hVar3.b;
                         if (num2 != null) {
-                            q3Var.b = num2;
+                            t3Var.b = num2;
                         }
-                        String str6 = ((Long) q3Var.a) == null ? " eventTimeMs" : "";
-                        if (((Long) q3Var.c) == null) {
+                        String str6 = ((Long) t3Var.a) == null ? " eventTimeMs" : "";
+                        if (((Long) t3Var.c) == null) {
                             str6 = str6.concat(" eventUptimeMs");
                         }
-                        if (((Long) q3Var.f) == null) {
+                        if (((Long) t3Var.f) == null) {
                             str6 = t8.b.u(str6, " timezoneOffsetSeconds");
                         }
                         if (!str6.isEmpty()) {
                             throw new IllegalStateException("Missing required properties:".concat(str6));
                         }
-                        arrayList5.add(new k5.k(((Long) q3Var.a).longValue(), (Integer) q3Var.b, ((Long) q3Var.c).longValue(), (byte[]) q3Var.d, (String) q3Var.e, ((Long) q3Var.f).longValue(), (k5.n) q3Var.h));
+                        arrayList5.add(new k(((Long) t3Var.a).longValue(), (Integer) t3Var.b, ((Long) t3Var.c).longValue(), (byte[]) t3Var.d, (String) t3Var.e, ((Long) t3Var.f).longValue(), (k5.n) t3Var.h));
                         bArr2 = bArr3;
-                        j11 = j12;
+                        j12 = j13;
                         it3 = it;
                     }
-                    arrayList4.add(new k5.l(d, d10, jVar, num, str2, arrayList5));
+                    arrayList4.add(new k5.l(b11, b12, jVar, num, str2, arrayList5));
                 }
                 bArr = bArr2;
-                j10 = j11;
+                j10 = j12;
                 k5.i iVar3 = new k5.i(arrayList4);
                 URL url = cVar4.d;
                 if (bArr != null) {
@@ -429,7 +431,7 @@ public final class b {
                         b10 = aVar3.b(eVar);
                         URL url2 = (URL) b10.c;
                         if (url2 != null) {
-                            l6.a(url2, "CctTransportBackend", "Following redirect to: %s");
+                            k6.a(url2, "CctTransportBackend", "Following redirect to: %s");
                             eVar = new androidx.biometric.e(url2, (k5.i) eVar.c, (String) eVar.d, i16);
                         } else {
                             eVar = null;
@@ -450,7 +452,7 @@ public final class b {
                             aVar = new m5.a(4, -1L);
                         } catch (IOException e) {
                             e = e;
-                            l6.b("CctTransportBackend", "Could not make request to the backend", e);
+                            k6.b("CctTransportBackend", "Could not make request to the backend", e);
                             i11 = 2;
                             aVar = new m5.a(2, -1L);
                             i12 = aVar.a;
@@ -468,16 +470,15 @@ public final class b {
             i12 = aVar.a;
             if (i12 != i11) {
                 gVar.f(new w6(this, iterable, iVar, j10, 4));
-                ((k) this.d).U(iVar, i10 + 1, true);
+                ((h3) this.d).U(iVar, i10 + 1, true);
                 return;
             }
-            bVar = this;
-            long j13 = j10;
-            gVar.f(new c0(3, bVar, iterable));
+            long j14 = j10;
+            gVar.f(new o0(i11, this, iterable));
             if (i12 == 1) {
-                j11 = Math.max(j13, aVar.b);
+                j11 = Math.max(j14, aVar.b);
                 if (bArr != null) {
-                    gVar.f(new m5(bVar, 25));
+                    gVar.f(new m5(this, 25));
                 }
             } else {
                 if (i12 == 4) {
@@ -491,11 +492,13 @@ public final class b {
                             hashMap2.put(str8, 1);
                         }
                     }
-                    gVar.f(new c0(4, bVar, hashMap2));
+                    gVar.f(new o0(3, this, hashMap2));
                 }
-                j11 = j13;
+                j11 = j14;
             }
             iVar2 = iVar;
+            j12 = j11;
+            bVar = this;
             bArr2 = bArr;
         }
     }

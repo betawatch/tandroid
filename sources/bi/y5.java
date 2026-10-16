@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.br;
 import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public abstract class y5 extends View {
     public ArrayList E;
@@ -214,20 +214,20 @@ public abstract class y5 extends View {
                 float f21 = this.r;
                 float f22 = f7 * f21;
                 f11 = measuredWidth;
-                float y3 = org.telegram.messenger.q.y(f20, f19, 2.0f, D);
-                float y10 = org.telegram.messenger.q.y(f22, f21, 2.0f, this.x);
+                float x10 = org.telegram.messenger.g0.x(f20, f19, 2.0f, D);
+                float x11 = org.telegram.messenger.g0.x(f22, f21, 2.0f, this.x);
                 if (this.y == 0.0f || i15 == (i12 = this.K)) {
                     arrayList2 = arrayList3;
                     arrayList = arrayList4;
                     f12 = f15;
                     i11 = i14;
-                    x5Var.a.setImageCoords(y3, y10, f20, f22);
+                    x5Var.a.setImageCoords(x10, x11, f20, f22);
                 } else {
                     f12 = f15;
                     i11 = i14;
                     arrayList = arrayList4;
                     arrayList2 = arrayList3;
-                    x5Var.a.setImageCoords(AndroidUtilities.lerp(getMeasuredWidth() * (i15 - i12), y3, this.y), AndroidUtilities.lerp(this.a, y10, this.y), AndroidUtilities.lerp(this.b, f20, this.y), AndroidUtilities.lerp(this.c, f22, this.y));
+                    x5Var.a.setImageCoords(AndroidUtilities.lerp(getMeasuredWidth() * (i15 - i12), x10, this.y), AndroidUtilities.lerp(this.a, x11, this.y), AndroidUtilities.lerp(this.b, f20, this.y), AndroidUtilities.lerp(this.c, f22, this.y));
                 }
                 if (this.y == 1.0f || i15 != this.K) {
                     ImageReceiver imageReceiver = x5Var.a;

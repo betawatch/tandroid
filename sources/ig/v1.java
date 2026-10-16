@@ -11,15 +11,15 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.aq;
 import org.telegram.ui.Components.k9;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class v1 extends FrameLayout {
     public final k9 a;
@@ -51,20 +51,20 @@ public final class v1 extends FrameLayout {
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 16.0f);
         boolean z10 = LocaleController.isRTL;
-        addView(textView, a6.a(-2.0f, z10 ? 40.0f : 78.0f, 10.33f, z10 ? 78.0f : 40.0f, 0.0f, -1, 7));
+        addView(textView, z5.a(-2.0f, z10 ? 40.0f : 78.0f, 10.33f, z10 ? 78.0f : 40.0f, 0.0f, -1, 7));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setLines(2);
         textView2.setEllipsize(truncateAt);
-        yh.n(g6.z6, c6Var, textView2, 1, 15.0f);
+        sk.o(g6.z6, c6Var, textView2, 1, 15.0f);
         boolean z11 = LocaleController.isRTL;
-        addView(textView2, a6.a(-2.0f, z11 ? 40.0f : 78.0f, 32.0f, z11 ? 78.0f : 40.0f, 0.0f, -1, 7));
+        addView(textView2, z5.a(-2.0f, z11 ? 40.0f : 78.0f, 32.0f, z11 ? 78.0f : 40.0f, 0.0f, -1, 7));
         aq aqVar = new aq(getContext(), 21, c6Var);
         this.e = aqVar;
         aqVar.b(-1, g6.d6, g6.k7);
         aqVar.setDrawUnchecked(false);
         aqVar.setDrawBackgroundAsArc(3);
-        addView(aqVar, a6.i(24.0f, 24.0f, 8388659, 33.0f, 25.0f, 0.0f, 0.0f));
+        addView(aqVar, z5.i(24.0f, 24.0f, 8388659, 33.0f, 25.0f, 0.0f, 0.0f));
     }
 
     @Override // android.view.View

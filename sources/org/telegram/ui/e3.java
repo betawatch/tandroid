@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e3 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -119,10 +119,10 @@ public final /* synthetic */ class e3 implements ValueAnimator.AnimatorUpdateLis
                 h00Var.n.invalidateSelf();
                 break;
             case 13:
-                e10 e10Var = (e10) this.b;
-                e10Var.getClass();
-                e10Var.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                e10Var.invalidate();
+                d10 d10Var = (d10) this.b;
+                d10Var.getClass();
+                d10Var.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                d10Var.invalidate();
                 break;
             case 14:
                 e20 e20Var = (e20) this.b;
@@ -163,10 +163,10 @@ public final /* synthetic */ class e3 implements ValueAnimator.AnimatorUpdateLis
                 n60.K0(n60Var2);
                 break;
             case 18:
-                kk0 kk0Var = (kk0) this.b;
-                kk0Var.getClass();
-                kk0Var.f = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                kk0Var.invalidate();
+                jk0 jk0Var = (jk0) this.b;
+                jk0Var.getClass();
+                jk0Var.f = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                jk0Var.invalidate();
                 break;
             case 19:
                 PasscodeActivity passcodeActivity = (PasscodeActivity) this.b;
@@ -177,12 +177,12 @@ public final /* synthetic */ class e3 implements ValueAnimator.AnimatorUpdateLis
                 passcodeActivity.fragmentView.requestLayout();
                 break;
             case 20:
-                PhotoViewer photoViewer = ((ju0) this.b).d;
+                PhotoViewer photoViewer = ((iu0) this.b).d;
                 photoViewer.T1.k0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 photoViewer.T1.invalidate();
                 break;
             case 21:
-                PhotoViewer photoViewer2 = ((ju0) this.b).d;
+                PhotoViewer photoViewer2 = ((iu0) this.b).d;
                 photoViewer2.T1.k0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 photoViewer2.T1.invalidate();
                 break;
@@ -190,38 +190,38 @@ public final /* synthetic */ class e3 implements ValueAnimator.AnimatorUpdateLis
                 ((PhotoViewer) ((org.telegram.ui.Components.gn0) this.b).b).T1.scrollTo(0, ((Integer) valueAnimator.getAnimatedValue()).intValue());
                 break;
             case 23:
-                PhotoViewer photoViewer3 = ((mu0) this.b).r;
+                PhotoViewer photoViewer3 = ((lu0) this.b).r;
                 photoViewer3.m6 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 photoViewer3.G1();
                 break;
             case 24:
-                bv0 bv0Var = (bv0) this.b;
-                bv0Var.getClass();
-                bv0Var.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                av0 av0Var = (av0) this.b;
+                av0Var.getClass();
+                av0Var.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 25:
-                wv0 wv0Var = (wv0) this.b;
-                wv0Var.getClass();
-                wv0Var.A = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wv0Var.e();
+                vv0 vv0Var = (vv0) this.b;
+                vv0Var.getClass();
+                vv0Var.A = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                vv0Var.e();
                 break;
             case 26:
-                ((mz0) this.b).G.a.invalidate();
+                ((lz0) this.b).G.a.invalidate();
                 break;
             case 27:
-                ((r01) this.b).g2.U4();
+                ((q01) this.b).g2.U4();
                 break;
             case 28:
-                g11 g11Var = (g11) this.b;
-                float[] fArr = g11Var.n;
+                f11 f11Var = (f11) this.b;
+                float[] fArr = f11Var.n;
                 float animatedFraction = valueAnimator.getAnimatedFraction();
-                g11Var.F = animatedFraction;
-                g11Var.e(AndroidUtilities.lerp(fArr, animatedFraction), true);
+                f11Var.F = animatedFraction;
+                f11Var.e(AndroidUtilities.lerp(fArr, animatedFraction), true);
                 break;
             default:
-                i11 i11Var = (i11) this.b;
-                float lerp2 = AndroidUtilities.lerp(i11Var.e, valueAnimator.getAnimatedFraction());
-                ProfileActivity profileActivity = i11Var.n;
+                h11 h11Var = (h11) this.b;
+                float lerp2 = AndroidUtilities.lerp(h11Var.e, valueAnimator.getAnimatedFraction());
+                ProfileActivity profileActivity = h11Var.n;
                 org.telegram.ui.ActionBar.u0 u0Var = profileActivity.U0;
                 if (u0Var != null && !profileActivity.p2) {
                     float f12 = 1.0f - lerp2;
@@ -247,9 +247,9 @@ public final /* synthetic */ class e3 implements ValueAnimator.AnimatorUpdateLis
                     profileActivity.R0.setScaleY(f15);
                     profileActivity.R0.setAlpha(f15);
                 }
-                i11Var.setScaleX(lerp2);
-                i11Var.setScaleY(lerp2);
-                i11Var.setAlpha(lerp2);
+                h11Var.setScaleX(lerp2);
+                h11Var.setScaleY(lerp2);
+                h11Var.setAlpha(lerp2);
                 break;
         }
     }

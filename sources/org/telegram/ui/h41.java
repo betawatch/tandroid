@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class h41 extends FrameLayout {
     public int a;
@@ -16,7 +16,7 @@ public final class h41 extends FrameLayout {
     public TLRPC.TL_reportResultChooseOption c;
     public TLRPC.TL_reportResultAddComment d;
     public final FrameLayout e;
-    public final org.telegram.ui.Components.h71 f;
+    public final org.telegram.ui.Components.i71 f;
     public final x5 h;
     public g41 n;
     public FrameLayout r;
@@ -36,7 +36,7 @@ public final class h41 extends FrameLayout {
         this.e = frameLayout;
         frameLayout.setPadding(0, AndroidUtilities.statusBarHeight, 0, 0);
         frameLayout.setClipToPadding(true);
-        addView(frameLayout, w7.a6.e(-1, -1, 119));
+        addView(frameLayout, w7.z5.e(-1, -1, 119));
         c6Var = ((org.telegram.ui.ActionBar.e3) i41Var).resourcesProvider;
         x5 x5Var = new x5(context, c6Var);
         TextView textView = (TextView) x5Var.d;
@@ -56,25 +56,25 @@ public final class h41 extends FrameLayout {
         int i12 = org.telegram.ui.ActionBar.g6.h5;
         c6Var3 = ((org.telegram.ui.ActionBar.e3) i41Var).resourcesProvider;
         x5Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(i12, c6Var3));
-        addView(x5Var, w7.a6.e(-1, -2, 55));
+        addView(x5Var, w7.z5.e(-1, -2, 55));
         i10 = ((org.telegram.ui.ActionBar.e3) i41Var).currentAccount;
         f5 f5Var = new f5(this, 19);
-        nq0 nq0Var = new nq0(this, 14);
+        lq0 lq0Var = new lq0(this, 14);
         c6Var4 = ((org.telegram.ui.ActionBar.e3) i41Var).resourcesProvider;
-        org.telegram.ui.Components.h71 h71Var = new org.telegram.ui.Components.h71(context, i10, 0, true, f5Var, nq0Var, null, c6Var4);
-        this.f = h71Var;
-        h71Var.setClipToPadding(false);
-        h71Var.V2.k1(true);
-        h71Var.setOnScrollListener(new k3(this, 26));
-        frameLayout.addView(h71Var, w7.a6.d(-1.0f, -1));
+        org.telegram.ui.Components.i71 i71Var = new org.telegram.ui.Components.i71(context, i10, 0, true, f5Var, lq0Var, null, c6Var4);
+        this.f = i71Var;
+        i71Var.setClipToPadding(false);
+        i71Var.V2.k1(true);
+        i71Var.setOnScrollListener(new k3(this, 26));
+        frameLayout.addView(i71Var, w7.z5.d(-1.0f, -1));
     }
 
     public final void a(int i10) {
         this.a = i10;
         this.h.b(i10 != 0);
-        org.telegram.ui.Components.h71 h71Var = this.f;
-        if (h71Var != null) {
-            h71Var.W2.N(true);
+        org.telegram.ui.Components.i71 i71Var = this.f;
+        if (i71Var != null) {
+            i71Var.W2.N(true);
         }
     }
 

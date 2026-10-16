@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class dn extends ViewGroup {
     public cn E;
@@ -36,11 +36,11 @@ public final class dn extends ViewGroup {
     public float J;
     public final PointF K;
     public boolean L;
-    public final org.telegram.ui.Cells.t6 M;
+    public final org.telegram.ui.Cells.l7 M;
     public final zm N;
     public int O;
     public final /* synthetic */ en P;
-    public final org.telegram.ui.Cells.x0 a;
+    public final org.telegram.ui.Cells.w0 a;
     public final ArrayList b;
     public final HashMap c;
     public HashMap d;
@@ -71,15 +71,15 @@ public final class dn extends ViewGroup {
         this.G = 0.0f;
         this.K = new PointF();
         this.L = false;
-        this.M = new org.telegram.ui.Cells.t6(this, 7);
+        this.M = new org.telegram.ui.Cells.l7(this, 6);
         this.N = new zm(this);
         this.O = 0;
         new HashMap();
         setWillNotDraw(false);
-        org.telegram.ui.Cells.x0 x0Var = new org.telegram.ui.Cells.x0(context, enVar.n, true);
-        this.a = x0Var;
-        x0Var.setCustomText(LocaleController.getString(R.string.AttachMediaDragHint));
-        addView(x0Var);
+        org.telegram.ui.Cells.w0 w0Var = new org.telegram.ui.Cells.w0(context, enVar.n, true);
+        this.a = w0Var;
+        w0Var.setCustomText(LocaleController.getString(R.string.AttachMediaDragHint));
+        addView(w0Var);
     }
 
     public final void a() {
@@ -227,11 +227,11 @@ public final class dn extends ViewGroup {
         for (int i11 = 0; i11 < size; i11++) {
             i10 = (int) (((cn) arrayList.get(i11)).b() + i10);
         }
-        org.telegram.ui.Cells.x0 x0Var = this.a;
-        if (x0Var.getMeasuredHeight() <= 0) {
-            x0Var.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(9999, TLObject.FLAG_31));
+        org.telegram.ui.Cells.w0 w0Var = this.a;
+        if (w0Var.getMeasuredHeight() <= 0) {
+            w0Var.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(9999, TLObject.FLAG_31));
         }
-        return x0Var.getMeasuredHeight() + i10;
+        return w0Var.getMeasuredHeight() + i10;
     }
 
     public final void f(cn cnVar, MediaController.PhotoEntry photoEntry, int i10) {
@@ -301,9 +301,9 @@ public final class dn extends ViewGroup {
         a();
         HashMap hashMap = this.f;
         ArrayList arrayList = this.h;
-        vm vmVar = chatAttachAlertPhotoLayout.G;
+        um umVar = chatAttachAlertPhotoLayout.G;
         vi viVar = chatAttachAlertPhotoLayout.b;
-        hm hmVar = chatAttachAlertPhotoLayout.E;
+        gm gmVar = chatAttachAlertPhotoLayout.E;
         HashMap hashMap2 = ChatAttachAlertPhotoLayout.s1;
         hashMap2.clear();
         hashMap2.putAll(hashMap);
@@ -314,14 +314,14 @@ public final class dn extends ViewGroup {
             boolean z12 = false;
             chatAttachAlertPhotoLayout.y0(false);
             chatAttachAlertPhotoLayout.w0();
-            int childCount = hmVar.getChildCount();
+            int childCount = gmVar.getChildCount();
             int i10 = 0;
             while (i10 < childCount) {
-                View childAt = hmVar.getChildAt(i10);
+                View childAt = gmVar.getChildAt(i10);
                 if (childAt instanceof org.telegram.ui.Cells.t5) {
                     int R = RecyclerView.R(childAt);
-                    boolean z13 = vmVar.f;
-                    boolean z14 = vmVar.d;
+                    boolean z13 = umVar.f;
+                    boolean z14 = umVar.d;
                     if (z13 && R > chatAttachAlertPhotoLayout.M0) {
                         R--;
                     }
@@ -334,7 +334,7 @@ public final class dn extends ViewGroup {
                     }
                     MediaController.PhotoEntry b02 = chatAttachAlertPhotoLayout.b0(R);
                     if (b02 != null) {
-                        t5Var.d(b02, hashMap2.size() > 1, z14 && chatAttachAlertPhotoLayout.T0 == chatAttachAlertPhotoLayout.U0, R == vmVar.h() - 1, viVar.i0);
+                        t5Var.d(b02, hashMap2.size() > 1, z14 && chatAttachAlertPhotoLayout.T0 == chatAttachAlertPhotoLayout.U0, R == umVar.h() - 1, viVar.i0);
                         if ((viVar.f0 instanceof org.telegram.ui.fo) && viVar.W1) {
                             z11 = false;
                             t5Var.b(arrayList2.indexOf(Integer.valueOf(b02.imageId)), hashMap2.containsKey(Integer.valueOf(b02.imageId)), false);
@@ -359,9 +359,9 @@ public final class dn extends ViewGroup {
 
     @Override // android.view.View
     public final void invalidate() {
-        int c10 = org.telegram.messenger.q.c(45.0f, AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), e());
-        if (this.s != c10) {
-            this.s = c10;
+        int b10 = org.telegram.messenger.g0.b(45.0f, AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), e());
+        if (this.s != b10) {
+            this.s = b10;
             requestLayout();
         }
         super.invalidate();
@@ -484,7 +484,7 @@ public final class dn extends ViewGroup {
             } else {
                 if (cnVar.u == null || cnVar.v != j10) {
                     cnVar.v = j10;
-                    cnVar.u = new h11(zh.p7.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) j10), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                    cnVar.u = new i11(zh.p7.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) j10), 0.7f, null), 14.0f, AndroidUtilities.bold());
                 }
                 float dp = AndroidUtilities.dp(28.0f) + cnVar.u.c;
                 float dp2 = AndroidUtilities.dp(32.0f);
@@ -497,15 +497,15 @@ public final class dn extends ViewGroup {
                 i11 = i13;
                 float f20 = cnVar.s;
                 i12 = i14;
-                rectF.set(z12, com.google.android.gms.internal.play_billing.k3.z(f20, dp2, f18, f19), org.telegram.messenger.q.b(f17, dp, f18, f16), org.telegram.messenger.q.b(f20, dp2, f18, f19));
+                rectF.set(z12, com.google.android.gms.internal.play_billing.k3.z(f20, dp2, f18, f19), org.telegram.messenger.g0.a(f17, dp, f18, f16), org.telegram.messenger.g0.a(f20, dp2, f18, f19));
                 paint.setColor(1610612736);
                 float f21 = dp2 / f18;
                 canvas.drawRoundRect(rectF, f21, f21, paint);
-                h11 h11Var = cnVar.u;
+                i11 i11Var = cnVar.u;
                 float dp3 = AndroidUtilities.dp(14.0f) + (((cnVar.r / f18) + cnVar.n) - (dp / f18));
                 float f22 = cnVar.p + (cnVar.s / f18);
                 f7 = b10;
-                h11Var.c(dp3, f22, 1.0f, -1, canvas);
+                i11Var.c(dp3, f22, 1.0f, -1, canvas);
             }
             if (z11) {
                 invalidate();
@@ -517,13 +517,13 @@ public final class dn extends ViewGroup {
             size = i10;
             arrayList2 = arrayList;
         }
-        org.telegram.ui.Cells.x0 x0Var = this.a;
-        x0Var.a0(f12, x0Var.getMeasuredHeight());
-        if (x0Var.K()) {
-            x0Var.A(canvas, true);
-            x0Var.D(canvas, true);
+        org.telegram.ui.Cells.w0 w0Var = this.a;
+        w0Var.a0(f12, w0Var.getMeasuredHeight());
+        if (w0Var.K()) {
+            w0Var.B(canvas, true);
+            w0Var.D(canvas, true);
         }
-        x0Var.draw(canvas);
+        w0Var.draw(canvas);
         canvas.restore();
         if (enVar.J != null) {
             canvas.save();
@@ -539,15 +539,15 @@ public final class dn extends ViewGroup {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        org.telegram.ui.Cells.x0 x0Var = this.a;
-        x0Var.layout(0, 0, x0Var.getMeasuredWidth(), x0Var.getMeasuredHeight());
+        org.telegram.ui.Cells.w0 w0Var = this.a;
+        w0Var.layout(0, 0, w0Var.getMeasuredWidth(), w0Var.getMeasuredHeight());
     }
 
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
         this.a.measure(i10, View.MeasureSpec.makeMeasureSpec(9999, TLObject.FLAG_31));
         if (this.s <= 0) {
-            this.s = org.telegram.messenger.q.c(45.0f, AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), e());
+            this.s = org.telegram.messenger.g0.b(45.0f, AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), e());
         }
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i11), this.s), TLObject.FLAG_30));
     }
@@ -702,7 +702,7 @@ public final class dn extends ViewGroup {
                     size3 = i12;
                 }
                 action = motionEvent.getAction();
-                org.telegram.ui.Cells.t6 t6Var = this.M;
+                org.telegram.ui.Cells.l7 l7Var = this.M;
                 if (action == 0 || enVar.J != null || enVar.r.I1 || (((valueAnimator = enVar.L) != null && valueAnimator.isRunning()) || cnVar == null || bnVar == null || (xmVar2 = cnVar.k) == null || !xmVar2.g.contains(bnVar.b))) {
                     i10 = 1;
                     if (action == 2 || enVar.J == null || enVar.K) {
@@ -715,7 +715,7 @@ public final class dn extends ViewGroup {
                                     return z11;
                                 }
                                 this.y = 0L;
-                                removeCallbacks(t6Var);
+                                removeCallbacks(l7Var);
                                 this.L = false;
                                 if (z11 == 0) {
                                     return z11;
@@ -730,7 +730,7 @@ public final class dn extends ViewGroup {
                                 bnVar3.n = y10;
                                 RectF d10 = bnVar3.d();
                                 bnVar3.o = (float) Math.sqrt(Math.pow(d10.height(), 2.0d) + Math.pow(d10.width(), 2.0d));
-                                ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration((long) w7.s.a(bnVar3.o * 0.3f, 250.0f, 550.0f));
+                                ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration((long) w7.r.a(bnVar3.o * 0.3f, 250.0f, 550.0f));
                                 duration.setInterpolator(es.j);
                                 duration.addUpdateListener(new n6(bnVar3, 12));
                                 duration.addListener(new an(bnVar3));
@@ -762,7 +762,7 @@ public final class dn extends ViewGroup {
                                         if (m2Var == null) {
                                             m2Var = LaunchActivity.R();
                                         }
-                                        if (!viVar.c2.x()) {
+                                        if (!viVar.c2.w()) {
                                             AndroidUtilities.hideKeyboard(m2Var.getFragmentView().findFocus());
                                             AndroidUtilities.hideKeyboard(viVar.getContainer().findFocus());
                                         }
@@ -795,7 +795,7 @@ public final class dn extends ViewGroup {
                                     foVar = null;
                                     if (m2Var == null) {
                                     }
-                                    if (!viVar.c2.x()) {
+                                    if (!viVar.c2.w()) {
                                     }
                                     PhotoViewer.t1().K2(null, m2Var, enVar.a);
                                     PhotoViewer.t1().L2(viVar);
@@ -940,7 +940,7 @@ public final class dn extends ViewGroup {
                         if (action == i10) {
                         }
                         this.y = 0L;
-                        removeCallbacks(t6Var);
+                        removeCallbacks(l7Var);
                         this.L = false;
                         if (z11 == 0) {
                         }
@@ -949,7 +949,7 @@ public final class dn extends ViewGroup {
                         enVar.E = y3;
                         if (!this.L) {
                             this.L = true;
-                            postDelayed(t6Var, 16L);
+                            postDelayed(l7Var, 16L);
                         }
                         invalidate();
                     }
@@ -969,7 +969,7 @@ public final class dn extends ViewGroup {
                 if (action == i10) {
                 }
                 this.y = 0L;
-                removeCallbacks(t6Var);
+                removeCallbacks(l7Var);
                 this.L = false;
                 if (z11 == 0) {
                 }
@@ -980,7 +980,7 @@ public final class dn extends ViewGroup {
         }
         bnVar2 = null;
         action = motionEvent.getAction();
-        org.telegram.ui.Cells.t6 t6Var2 = this.M;
+        org.telegram.ui.Cells.l7 l7Var2 = this.M;
         if (action == 0) {
         }
         i10 = 1;
@@ -996,7 +996,7 @@ public final class dn extends ViewGroup {
         if (action == i10) {
         }
         this.y = 0L;
-        removeCallbacks(t6Var2);
+        removeCallbacks(l7Var2);
         this.L = false;
         if (z11 == 0) {
         }

@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class cy extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -23,13 +23,13 @@ public final class cy extends AnimatorListenerAdapter {
             case 0:
                 super.onAnimationEnd(animator);
                 yy yyVar = this.c;
-                yyVar.u3 = null;
+                yyVar.v3 = null;
                 int i10 = 0;
                 yyVar.O = false;
                 yyVar.Q = true;
                 yyVar.R = true;
                 yyVar.fragmentView.invalidate();
-                yyVar.x3 = -(AndroidUtilities.dp((yyVar.K ? 81 : 0) + 48) - this.b);
+                yyVar.y3 = -(AndroidUtilities.dp((yyVar.K ? 81 : 0) + 48) - this.b);
                 yyVar.e0[0].setTranslationY(0.0f);
                 while (true) {
                     xy[] xyVarArr = yyVar.e0;
@@ -53,10 +53,10 @@ public final class cy extends AnimatorListenerAdapter {
             default:
                 super.onAnimationEnd(animator);
                 yy yyVar2 = this.c;
-                yyVar2.u3 = null;
+                yyVar2.v3 = null;
                 yyVar2.P = 0;
                 yyVar2.O = true;
-                yyVar2.x3 = AndroidUtilities.dp((yyVar2.K ? 81 : 0) + 48) - this.b;
+                yyVar2.y3 = AndroidUtilities.dp((yyVar2.K ? 81 : 0) + 48) - this.b;
                 yyVar2.e0[0].setTranslationY(0.0f);
                 int i11 = 0;
                 while (true) {

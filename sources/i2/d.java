@@ -16,15 +16,29 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.voip.VoIPService;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.Components.l61;
+import org.telegram.ui.ActionBar.z1;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.zc;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class d {
-    public static void A(n2.g gVar, n2.g gVar2) {
+    public static Object A(int i10, ArrayList arrayList) {
+        return arrayList.remove(arrayList.size() - i10);
+    }
+
+    public static void B(int i10, ArrayList arrayList) {
+        arrayList.add(m61.B(LocaleController.getString(i10)));
+    }
+
+    public static int C(int i10, int i11, int i12, int i13) {
+        return ((i10 - i11) / i12) + i13;
+    }
+
+    public static void D(n2.g gVar, n2.g gVar2) {
         if (gVar == gVar2) {
             return;
         }
@@ -36,38 +50,7 @@ public abstract /* synthetic */ class d {
         }
     }
 
-    public static /* synthetic */ String B(int i10) {
-        return i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? BuildConfig.BETA_URL : "ERROR" : "CANCELLED" : "AUDIO_REMOVED" : "TRIMMED";
-    }
-
-    public static /* synthetic */ String C(int i10) {
-        switch (i10) {
-            case 1:
-                return "IDLE";
-            case 2:
-                return "STARTING";
-            case 3:
-                return "RECORDING";
-            case 4:
-                return "PAUSING";
-            case 5:
-                return "PREVIEWING";
-            case 6:
-                return "RESUMING";
-            case 7:
-                return "FINISHING";
-            case 8:
-                return "COMPLETED";
-            case 9:
-                return "ERROR";
-            case 10:
-                return "RELEASED";
-            default:
-                return BuildConfig.BETA_URL;
-        }
-    }
-
-    public static /* synthetic */ String D(int i10) {
+    public static /* synthetic */ String E(int i10) {
         switch (i10) {
             case 1:
                 return "BEGIN_ARRAY";
@@ -411,35 +394,39 @@ public abstract /* synthetic */ class d {
         return true;
     }
 
-    public static int f(int i10, int i11, int i12, int i13) {
+    public static double f(double d, double d10, double d11) {
+        return (Math.cos(d) * d10) + d11;
+    }
+
+    public static int g(int i10, int i11, int i12, int i13) {
         return Math.max(i13, Math.min(Math.max(i10, i11), i12));
     }
 
-    public static Object g(int i10, ArrayList arrayList) {
+    public static Object h(int i10, ArrayList arrayList) {
         return arrayList.get(arrayList.size() - i10);
     }
 
-    public static Object h(HashMap hashMap, Uri uri, Uri uri2) {
+    public static Object i(HashMap hashMap, Uri uri, Uri uri2) {
         u6.p(hashMap.containsKey(uri));
         return hashMap.get(uri2);
     }
 
-    public static String i(int i10, String str) {
+    public static String j(int i10, String str) {
         return str + i10;
     }
 
-    public static String j(int i10, String str, String str2) {
+    public static String k(int i10, String str, String str2) {
         return str + i10 + str2;
     }
 
-    public static StringBuilder k(int i10, String str, String str2) {
+    public static StringBuilder l(int i10, String str, String str2) {
         StringBuilder sb2 = new StringBuilder(str);
         sb2.append(i10);
         sb2.append(str2);
         return sb2;
     }
 
-    public static StringBuilder l(String str, int i10, String str2, int i11, String str3) {
+    public static StringBuilder m(String str, int i10, String str2, int i11, String str3) {
         StringBuilder sb2 = new StringBuilder(str);
         sb2.append(i10);
         sb2.append(str2);
@@ -448,30 +435,35 @@ public abstract /* synthetic */ class d {
         return sb2;
     }
 
-    public static HashMap m(Class cls, ma.a aVar) {
+    public static HashMap n(Class cls, ma.a aVar) {
         HashMap hashMap = new HashMap();
         hashMap.put(cls, aVar);
         return hashMap;
     }
 
-    public static Map n(HashMap hashMap) {
+    public static Map o(HashMap hashMap) {
         return DesugarCollections.unmodifiableMap(new HashMap(hashMap));
     }
 
-    public static void o(int i10, ArrayList arrayList) {
-        arrayList.add(l61.t(LocaleController.getString(i10)));
+    public static void p(int i10, ArrayList arrayList) {
+        arrayList.add(m61.t(LocaleController.getString(i10)));
     }
 
-    public static void p(int i10, HashMap hashMap, String str, int i11, String str2) {
+    public static void q(int i10, HashMap hashMap, String str, int i11, String str2) {
         hashMap.put(Integer.valueOf(i10), str);
         hashMap.put(Integer.valueOf(i11), str2);
     }
 
-    public static void q(int i10, Object[] objArr, zc zcVar, int i11, int i12) {
+    public static void r(int i10, AlertDialog$Builder alertDialog$Builder, z1 z1Var) {
+        alertDialog$Builder.h(LocaleController.getString(i10), z1Var);
+        alertDialog$Builder.o();
+    }
+
+    public static void s(int i10, Object[] objArr, zc zcVar, int i11, int i12) {
         zcVar.Q(i11, i12, LocaleController.formatString(i10, objArr)).j();
     }
 
-    public static /* synthetic */ void r(MediaMetadataRetriever mediaMetadataRetriever) {
+    public static /* synthetic */ void t(MediaMetadataRetriever mediaMetadataRetriever) {
         if (mediaMetadataRetriever instanceof AutoCloseable) {
             mediaMetadataRetriever.close();
         } else if (mediaMetadataRetriever instanceof ExecutorService) {
@@ -484,39 +476,32 @@ public abstract /* synthetic */ class d {
         }
     }
 
-    public static void s(b2.w wVar, c3.i0 i0Var) {
+    public static void u(b2.w wVar, c3.i0 i0Var) {
         i0Var.b(new b2.x(wVar));
     }
 
-    public static void t(String str, StringBuilder sb2) {
+    public static void v(String str, StringBuilder sb2) {
         sb2.append(str);
         FileLog.d(sb2.toString());
     }
 
-    public static void u(StringBuilder sb2, int i10, String str, int i11, String str2) {
+    public static void w(StringBuilder sb2, int i10, String str, int i11, String str2) {
         sb2.append(i10);
         sb2.append(str);
         sb2.append(i11);
         sb2.append(str2);
     }
 
-    public static void v(boolean z10, org.telegram.ui.ActionBar.k kVar) {
+    public static void x(StringBuilder sb2, long j10) {
+        sb2.append(j10);
+        FileLog.d(sb2.toString());
+    }
+
+    public static void y(boolean z10, org.telegram.ui.ActionBar.k kVar) {
         kVar.setBackButtonDrawable(new f2(z10));
     }
 
-    public static int w(int i10, int i11, int i12, int i13) {
-        return Math.max(i13, Math.min(Math.min(i10, i11), i12));
-    }
-
-    public static Object x(int i10, ArrayList arrayList) {
-        return arrayList.remove(arrayList.size() - i10);
-    }
-
-    public static void y(int i10, ArrayList arrayList) {
-        arrayList.add(l61.B(LocaleController.getString(i10)));
-    }
-
     public static int z(int i10, int i11, int i12, int i13) {
-        return ((i10 - i11) / i12) + i13;
+        return Math.max(i13, Math.min(Math.min(i10, i11), i12));
     }
 }

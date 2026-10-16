@@ -26,7 +26,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class a implements o {
     public static final int[] s = {13, 14, 16, 18, 20, 21, 27, 32, 6, 7, 6, 6, 1, 1, 1, 1};
@@ -74,9 +74,9 @@ public final class a implements o {
     @Override // c3.o
     public final void c(q qVar) {
         this.l = qVar;
-        i0 a02 = qVar.a0(0, 1);
-        this.m = a02;
-        this.n = a02;
+        i0 W = qVar.W(0, 1);
+        this.m = W;
+        this.n = W;
         qVar.D();
     }
 
@@ -98,9 +98,9 @@ public final class a implements o {
         }
         y yVar = (y) b0Var;
         c0 c0Var = yVar.b;
-        long m10 = c0Var.b == 0 ? -9223372036854775807L : c0Var.m(m0.c(yVar.a, j10));
-        this.k = m10;
-        if (Math.abs(this.q - m10) < 20000) {
+        long h = c0Var.b == 0 ? -9223372036854775807L : c0Var.h(m0.c(yVar.a, j10));
+        this.k = h;
+        if (Math.abs(this.q - h) < 20000) {
             return;
         }
         this.p = true;
@@ -141,7 +141,7 @@ public final class a implements o {
             wVar.s = i12;
             wVar.J = 1;
             wVar.K = i11;
-            d.s(wVar, i0Var);
+            d.u(wVar, i0Var);
         }
         int i13 = 0;
         if (this.g == 0) {
@@ -163,15 +163,15 @@ public final class a implements o {
                     long position = pVar.getPosition() + this.f;
                     c0 c0Var = yVar.b;
                     int i14 = c0Var.b;
-                    if (i14 == 0 || j10 - c0Var.m(i14 - 1) >= 100000) {
+                    if (i14 == 0 || j10 - c0Var.h(i14 - 1) >= 100000) {
                         c0 c0Var2 = yVar.a;
                         c0 c0Var3 = yVar.b;
                         if (c0Var3.b == 0 && j10 > 0) {
-                            c0Var2.c(0L);
-                            c0Var3.c(0L);
+                            c0Var2.b(0L);
+                            c0Var3.b(0L);
                         }
-                        c0Var2.c(position);
-                        c0Var3.c(j10);
+                        c0Var2.b(position);
+                        c0Var3.b(j10);
                     }
                     if (this.p && Math.abs(this.q - j10) < 20000) {
                         this.p = false;
@@ -229,7 +229,7 @@ public final class a implements o {
         boolean z10;
         pVar.q();
         byte[] bArr = this.a;
-        pVar.a(0, 1, bArr);
+        pVar.b(0, 1, bArr);
         byte b10 = bArr[0];
         if ((b10 & 131) > 0) {
             throw x0.a(null, "Invalid padding bits for frame header " + ((int) b10));
@@ -249,7 +249,7 @@ public final class a implements o {
         pVar.q();
         byte[] bArr = u;
         byte[] bArr2 = new byte[bArr.length];
-        pVar.a(0, bArr.length, bArr2);
+        pVar.b(0, bArr.length, bArr2);
         if (Arrays.equals(bArr2, bArr)) {
             this.d = false;
             pVar.r(bArr.length);
@@ -258,7 +258,7 @@ public final class a implements o {
         pVar.q();
         byte[] bArr3 = v;
         byte[] bArr4 = new byte[bArr3.length];
-        pVar.a(0, bArr3.length, bArr4);
+        pVar.b(0, bArr3.length, bArr4);
         if (!Arrays.equals(bArr4, bArr3)) {
             return false;
         }

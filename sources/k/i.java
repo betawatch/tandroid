@@ -1,13 +1,13 @@
 package k;
 
 import java.util.ArrayList;
-import m.m3;
+import m.p3;
+import r0.m0;
 import r0.n0;
-import r0.o0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class i extends o0 {
+public final class i extends n0 {
     public final /* synthetic */ int a;
     public boolean b;
     public int c;
@@ -20,7 +20,7 @@ public final class i extends o0 {
         this.c = 0;
     }
 
-    @Override // r0.o0, r0.n0
+    @Override // r0.n0, r0.m0
     public void a() {
         switch (this.a) {
             case 1:
@@ -29,26 +29,26 @@ public final class i extends o0 {
         }
     }
 
-    @Override // r0.o0, r0.n0
+    @Override // r0.n0, r0.m0
     public final void b() {
         switch (this.a) {
             case 0:
                 if (!this.b) {
                     this.b = true;
-                    n0 n0Var = (n0) ((cc.d) this.d).e;
-                    if (n0Var != null) {
-                        n0Var.b();
+                    m0 m0Var = (m0) ((cc.d) this.d).e;
+                    if (m0Var != null) {
+                        m0Var.b();
                         break;
                     }
                 }
                 break;
             default:
-                ((m3) this.d).a.setVisibility(0);
+                ((p3) this.d).a.setVisibility(0);
                 break;
         }
     }
 
-    @Override // r0.n0
+    @Override // r0.m0
     public final void c() {
         switch (this.a) {
             case 0:
@@ -56,9 +56,9 @@ public final class i extends o0 {
                 this.c = i10;
                 cc.d dVar = (cc.d) this.d;
                 if (i10 == ((ArrayList) dVar.c).size()) {
-                    n0 n0Var = (n0) dVar.e;
-                    if (n0Var != null) {
-                        n0Var.c();
+                    m0 m0Var = (m0) dVar.e;
+                    if (m0Var != null) {
+                        m0Var.c();
                     }
                     this.c = 0;
                     this.b = false;
@@ -68,16 +68,16 @@ public final class i extends o0 {
                 break;
             default:
                 if (!this.b) {
-                    ((m3) this.d).a.setVisibility(this.c);
+                    ((p3) this.d).a.setVisibility(this.c);
                     break;
                 }
                 break;
         }
     }
 
-    public i(m3 m3Var, int i10) {
+    public i(p3 p3Var, int i10) {
         this.a = 1;
-        this.d = m3Var;
+        this.d = p3Var;
         this.c = i10;
         this.b = false;
     }

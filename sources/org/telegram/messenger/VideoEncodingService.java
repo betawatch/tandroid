@@ -7,7 +7,7 @@ import e0.r;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class VideoEncodingService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private static VideoEncodingService instance;
@@ -125,7 +125,7 @@ public class VideoEncodingService extends Service implements NotificationCenter.
             if (i10 == NotificationCenter.fileUploaded || i10 == NotificationCenter.fileUploadFailed) {
                 String str3 = (String) objArr[0];
                 if (i11 == this.currentAccount && (str = this.currentPath) != null && str.equals(str3)) {
-                    AndroidUtilities.runOnUIThread(new xl(this, 0));
+                    AndroidUtilities.runOnUIThread(new yl(this, 0));
                     return;
                 }
                 return;
@@ -191,7 +191,7 @@ public class VideoEncodingService extends Service implements NotificationCenter.
         } catch (Throwable th2) {
             FileLog.e(th2);
         }
-        AndroidUtilities.runOnUIThread(new xl(this, 1));
+        AndroidUtilities.runOnUIThread(new yl(this, 1));
         return 2;
     }
 }

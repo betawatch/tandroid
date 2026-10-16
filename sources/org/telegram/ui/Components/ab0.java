@@ -6,7 +6,7 @@ import android.animation.AnimatorSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ab0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final class ab0 extends AnimatorListenerAdapter {
     public void onAnimationCancel(Animator animator) {
         switch (this.a) {
             case 1:
-                AnimatorSet[] animatorSetArr = ((ty0) this.d).I;
+                AnimatorSet[] animatorSetArr = ((uy0) this.d).I;
                 int i10 = this.b;
                 AnimatorSet animatorSet = animatorSetArr[i10];
                 if (animatorSet != null && animatorSet.equals(animator)) {
@@ -61,13 +61,13 @@ public final class ab0 extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                ty0 ty0Var = (ty0) this.d;
-                AnimatorSet[] animatorSetArr = ty0Var.I;
+                uy0 uy0Var = (uy0) this.d;
+                AnimatorSet[] animatorSetArr = uy0Var.I;
                 int i11 = this.b;
                 AnimatorSet animatorSet = animatorSetArr[i11];
                 if (animatorSet != null && animatorSet.equals(animator)) {
                     if (!this.c) {
-                        ty0Var.J[i11].setVisibility(4);
+                        uy0Var.J[i11].setVisibility(4);
                     }
                     animatorSetArr[i11] = null;
                     break;

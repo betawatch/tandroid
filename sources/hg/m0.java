@@ -12,7 +12,7 @@ import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.c6;
@@ -28,14 +28,14 @@ import org.telegram.ui.Components.va;
 import org.telegram.ui.Components.wa;
 import org.telegram.ui.Components.wl0;
 import org.telegram.ui.WallpapersListActivity;
+import org.telegram.ui.ji0;
 import org.telegram.ui.ki0;
-import org.telegram.ui.li0;
-import org.telegram.ui.oj1;
-import org.telegram.ui.sj1;
-import w7.a6;
+import org.telegram.ui.nj1;
+import org.telegram.ui.rj1;
+import w7.z5;
 import zh.r3;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class m0 extends lm0 {
     public final /* synthetic */ int c;
@@ -75,7 +75,7 @@ public final class m0 extends lm0 {
             case 2:
                 return ((ko0) obj).r.size();
             case 3:
-                return ((li0) obj).c.size();
+                return ((ki0) obj).c.size();
             case 4:
                 int[][] iArr = WallpapersListActivity.k0;
                 return 12;
@@ -170,12 +170,12 @@ public final class m0 extends lm0 {
                 }
                 break;
             case 3:
-                ki0 ki0Var = (ki0) b1Var.a;
-                li0 li0Var = (li0) this.d;
-                ki0Var.a((TLObject) li0Var.c.get(i10), false, ((Integer) li0Var.b.get(i10)).intValue());
+                ji0 ji0Var = (ji0) b1Var.a;
+                ki0 ki0Var = (ki0) this.d;
+                ji0Var.a((TLObject) ki0Var.c.get(i10), false, ((Integer) ki0Var.b.get(i10)).intValue());
                 break;
             case 4:
-                ((oj1) b1Var.a).a = WallpapersListActivity.m0[i10];
+                ((nj1) b1Var.a).a = WallpapersListActivity.m0[i10];
                 break;
             case 5:
                 sg.j jVar = (sg.j) this.d;
@@ -217,12 +217,12 @@ public final class m0 extends lm0 {
                 ko0 ko0Var = (ko0) this.d;
                 return new wl0(new jo0(ko0Var, ko0Var.getContext()));
             case 3:
-                ki0 ki0Var = new ki0(viewGroup.getContext());
-                ki0Var.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(50.0f)));
-                return new wl0(ki0Var);
+                ji0 ji0Var = new ji0(viewGroup.getContext());
+                ji0Var.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(50.0f)));
+                return new wl0(ji0Var);
             case 4:
-                sj1 sj1Var = (sj1) this.d;
-                return new wl0(new oj1(sj1Var.E, sj1Var.c));
+                rj1 rj1Var = (rj1) this.d;
+                return new wl0(new nj1(rj1Var.E, rj1Var.c));
             case 5:
                 sg.j jVar = (sg.j) this.d;
                 c6 c6Var = jVar.a;
@@ -236,16 +236,16 @@ public final class m0 extends lm0 {
                     ImageView imageView = new ImageView(context);
                     iVar.c = imageView;
                     imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-                    iVar.addView(imageView, a6.a(28.0f, 25.0f, 12.0f, 16.0f, 0.0f, 28, 0));
+                    iVar.addView(imageView, z5.a(28.0f, 25.0f, 12.0f, 16.0f, 0.0f, 28, 0));
                     TextView textView = new TextView(context);
                     iVar.a = textView;
                     textView.setTypeface(AndroidUtilities.bold());
-                    yh.n(g6.G6, c6Var, textView, 1, 14.0f);
-                    iVar.addView(textView, a6.a(-2.0f, 68.0f, 8.0f, 16.0f, 0.0f, -1, 0));
+                    sk.o(g6.G6, c6Var, textView, 1, 14.0f);
+                    iVar.addView(textView, z5.a(-2.0f, 68.0f, 8.0f, 16.0f, 0.0f, -1, 0));
                     TextView textView2 = new TextView(context);
                     iVar.b = textView2;
-                    yh.n(g6.y6, c6Var, textView2, 1, 14.0f);
-                    iVar.addView(textView2, a6.a(-2.0f, 68.0f, 28.0f, 16.0f, 8.0f, -1, 0));
+                    sk.o(g6.y6, c6Var, textView2, 1, 14.0f);
+                    iVar.addView(textView2, z5.a(-2.0f, 68.0f, 28.0f, 16.0f, 8.0f, -1, 0));
                     view = iVar;
                 }
                 return k3.l(view, view, -1, -2);

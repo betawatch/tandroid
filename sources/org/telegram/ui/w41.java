@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.app.Activity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class w41 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final class w41 extends org.telegram.ui.ActionBar.j {
                 o91 o91Var = (o91) this.b;
                 if (i10 != -1) {
                     if (i10 == 2) {
-                        o91Var.l0(new eh0(null));
+                        o91Var.l0(new dh0(null));
                         break;
                     }
                 } else {
@@ -77,13 +77,13 @@ public final class w41 extends org.telegram.ui.ActionBar.j {
                 break;
             case 7:
                 if (i10 == -1) {
-                    ((af1) this.b).finishFragment();
+                    ((ze1) this.b).finishFragment();
                     break;
                 }
                 break;
             case 8:
                 if (i10 == -1) {
-                    ((rg1) this.b).finishFragment();
+                    ((qg1) this.b).finishFragment();
                     break;
                 }
                 break;
@@ -124,21 +124,21 @@ public final class w41 extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 12:
-                org.telegram.ui.Wallet.i8 i8Var = (org.telegram.ui.Wallet.i8) this.b;
+                org.telegram.ui.Wallet.j8 j8Var = (org.telegram.ui.Wallet.j8) this.b;
                 if (i10 != -1) {
                     if (i10 != 2) {
                         if (i10 == 3) {
-                            i8Var.o0();
+                            j8Var.o0();
                             break;
                         }
                     } else {
-                        Activity parentActivity = i8Var.getParentActivity();
-                        i11 = ((org.telegram.ui.ActionBar.m2) i8Var).currentAccount;
-                        org.telegram.ui.Wallet.z4.u0(parentActivity, i11, i8Var.getResourceProvider());
+                        Activity parentActivity = j8Var.getParentActivity();
+                        i11 = ((org.telegram.ui.ActionBar.m2) j8Var).currentAccount;
+                        org.telegram.ui.Wallet.a5.u0(parentActivity, i11, j8Var.getResourceProvider());
                         break;
                     }
                 } else {
-                    i8Var.finishFragment();
+                    j8Var.finishFragment();
                     break;
                 }
                 break;

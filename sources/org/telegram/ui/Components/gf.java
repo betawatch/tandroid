@@ -17,7 +17,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class gf extends wp0 {
     public final /* synthetic */ ChatActivityEnterView H;
@@ -37,7 +37,7 @@ public final class gf extends wp0 {
         this.s = tL_channels_sendAsPeers;
         ah.x xVar = new ah.x(this, context, 19);
         this.t = xVar;
-        xVar.setLayoutParams(w7.a6.d(-2.0f, -2));
+        xVar.setLayoutParams(w7.z5.d(-2.0f, -2));
         setContentView(xVar);
         setWidth(-2);
         setHeight(-2);
@@ -54,7 +54,7 @@ public final class gf extends wp0 {
         qp0Var.setOrientation(1);
         TextView textView = new TextView(context);
         this.p = textView;
-        org.telegram.messenger.yh.n(org.telegram.ui.ActionBar.g6.m5, c6Var, textView, 1, 16.0f);
+        org.telegram.messenger.sk.o(org.telegram.ui.ActionBar.g6.m5, c6Var, textView, 1, 16.0f);
         textView.setText(LocaleController.getString(R.string.SendMessageAsTitle));
         textView.setTypeface(AndroidUtilities.bold(), 1);
         int dp = AndroidUtilities.dp(18.0f);
@@ -83,8 +83,8 @@ public final class gf extends wp0 {
         drawable.setAlpha(153);
         view.setBackground(drawable);
         view.setAlpha(0.0f);
-        frameLayout.addView(view, w7.a6.d(4.0f, -1));
-        qp0Var.addView(frameLayout, w7.a6.d(-2.0f, -1));
+        frameLayout.addView(view, w7.z5.d(4.0f, -1));
+        qp0Var.addView(frameLayout, w7.z5.d(-2.0f, -1));
         xVar.addView(qp0Var);
     }
 

@@ -11,7 +11,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class nh1 extends ScrollView {
     public final int[] a;
@@ -65,7 +65,7 @@ public final class nh1 extends ScrollView {
             kVar2 = ((org.telegram.ui.ActionBar.m2) oh1Var).actionBar;
             animatorSet2.playTogether(ofFloat, ObjectAnimator.ofFloat(kVar2.getTitleTextView(), (Property<org.telegram.ui.ActionBar.h5, Float>) property, z10 ? 1.0f : 0.0f));
             oh1Var.K.setDuration(150L);
-            oh1Var.K.addListener(new lj0(this, 29));
+            oh1Var.K.addListener(new kj0(this, 29));
             oh1Var.K.start();
         }
     }

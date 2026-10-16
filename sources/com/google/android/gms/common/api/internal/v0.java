@@ -2,12 +2,12 @@ package com.google.android.gms.common.api.internal;
 
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public interface v0 {
-    void h(k6.a aVar);
+    void l(k6.a aVar);
 
-    void l(int i10);
+    void s(int i10);
 
-    void o(Bundle bundle);
+    void v(Bundle bundle);
 }

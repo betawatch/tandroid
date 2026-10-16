@@ -8,10 +8,8 @@ import android.os.Handler;
 import android.view.Surface;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import ji.w4;
-import org.telegram.ui.Wallet.t8;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class x implements l {
     public final MediaCodec a;
@@ -32,13 +30,18 @@ public final class x implements l {
     }
 
     @Override // r2.l
-    public final void e(int i10, h2.d dVar, long j10, int i11) {
+    public final void d(int i10, h2.d dVar, long j10, int i11) {
         this.a.queueSecureInputBuffer(i10, 0, dVar.i, j10, i11);
     }
 
     @Override // r2.l
-    public final void f(int i10) {
+    public final void e(int i10) {
         this.a.releaseOutputBuffer(i10, false);
+    }
+
+    @Override // r2.l
+    public final void f(a3.m mVar, Handler handler) {
+        this.a.setOnFrameRenderedListener(new a(this, mVar, 1), handler);
     }
 
     @Override // r2.l
@@ -47,8 +50,8 @@ public final class x implements l {
     }
 
     @Override // r2.l
-    public final void g(t8 t8Var) {
-        t8Var.run();
+    public final void g() {
+        this.a.detachOutputSurface();
     }
 
     @Override // r2.l
@@ -67,27 +70,17 @@ public final class x implements l {
     }
 
     @Override // r2.l
-    public final void h(a3.m mVar, Handler handler) {
-        this.a.setOnFrameRenderedListener(new a(this, mVar, 1), handler);
-    }
-
-    @Override // r2.l
-    public final void i() {
-        this.a.detachOutputSurface();
-    }
-
-    @Override // r2.l
-    public final void j(int i10, long j10) {
+    public final void h(int i10, long j10) {
         this.a.releaseOutputBuffer(i10, j10);
     }
 
     @Override // r2.l
-    public final int k() {
+    public final int i() {
         return this.a.dequeueInputBuffer(0L);
     }
 
     @Override // r2.l
-    public final int l(MediaCodec.BufferInfo bufferInfo) {
+    public final int j(MediaCodec.BufferInfo bufferInfo) {
         int dequeueOutputBuffer;
         do {
             dequeueOutputBuffer = this.a.dequeueOutputBuffer(bufferInfo, 0L);
@@ -96,27 +89,32 @@ public final class x implements l {
     }
 
     @Override // r2.l
-    public final void m(int i10) {
+    public final void k(int i10) {
         this.a.setVideoScalingMode(i10);
     }
 
     @Override // r2.l
-    public final void n(Surface surface) {
+    public final void l(org.telegram.ui.web.v vVar) {
+        vVar.run();
+    }
+
+    @Override // r2.l
+    public final void m(Surface surface) {
         this.a.setOutputSurface(surface);
     }
 
     @Override // r2.l
-    public final /* synthetic */ boolean o(w4 w4Var) {
+    public final void n(ArrayList arrayList) {
+        this.a.subscribeToVendorParameters(arrayList);
+    }
+
+    @Override // r2.l
+    public final /* synthetic */ boolean o(m.l lVar) {
         return false;
     }
 
     @Override // r2.l
     public final void p(ArrayList arrayList) {
-        this.a.subscribeToVendorParameters(arrayList);
-    }
-
-    @Override // r2.l
-    public final void q(ArrayList arrayList) {
         this.a.unsubscribeFromVendorParameters(arrayList);
     }
 

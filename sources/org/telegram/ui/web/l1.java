@@ -1,10 +1,27 @@
 package org.telegram.ui.web;
 
+import android.util.Base64InputStream;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FilterInputStream;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class l1 {
-    public String a;
-    public final HashMap b = new HashMap();
+    public final HashMap a = new HashMap();
+    public File b;
+    public long c;
+    public long d;
+
+    public final FilterInputStream a() {
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(new k1(this.c, this.d, this.b));
+        HashMap hashMap = this.a;
+        m1 m1Var = (m1) hashMap.get("content-transfer-encoding");
+        if ("base64".equals(m1Var == null ? null : m1Var.a)) {
+            return new Base64InputStream(bufferedInputStream, 0);
+        }
+        m1 m1Var2 = (m1) hashMap.get("content-transfer-encoding");
+        return "quoted-printable".equalsIgnoreCase(m1Var2 != null ? m1Var2.a : null) ? new n1(bufferedInputStream, 0) : bufferedInputStream;
+    }
 }

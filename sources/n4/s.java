@@ -1,6 +1,5 @@
 package n4;
 
-import a3.i0;
 import ab.a0;
 import ab.c0;
 import android.animation.Animator;
@@ -10,9 +9,12 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.content.pm.ServiceInfo;
 import android.media.session.MediaSession;
 import android.media.session.PlaybackState;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -31,16 +33,14 @@ import b2.b2;
 import b2.s0;
 import b2.x0;
 import bi.w2;
+import com.google.android.datatransport.cct.CctBackendFactory;
+import com.google.android.datatransport.runtime.backends.TransportBackendDiscovery;
 import e2.m0;
-import e9.l0;
-import e9.n0;
 import j$.util.DesugarCollections;
 import j$.util.concurrent.ConcurrentHashMap;
-import java.io.ByteArrayOutputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
 import java.lang.ref.ReferenceQueue;
 import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -61,20 +61,20 @@ import java.util.regex.Pattern;
 import ji.g1;
 import ji.h0;
 import ji.h1;
-import ji.h5;
 import ji.j0;
 import ji.k0;
-import ji.m5;
+import m.h3;
 import org.telegram.ui.Cells.o9;
 import p4.u0;
-import v7.q8;
+import r0.i0;
+import r0.l0;
 import v7.s6;
 import v7.u6;
 import w7.a9;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class s implements ee.b, d9.k, g6.n, ef.b, z3.n, c3.i, g1, e2.d, n5.b {
+public final class s implements ee.b, d9.k, g6.n, ef.b, z3.n, c3.i, g1, e2.d {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -85,7 +85,7 @@ public final class s implements ee.b, d9.k, g6.n, ef.b, z3.n, c3.i, g1, e2.d, n5
         this.c = obj2;
     }
 
-    public static String E(s sVar) {
+    public static String I(s sVar) {
         Collection<String> collection = (Collection) sVar.c;
         StringBuilder sb2 = new StringBuilder("com.google.android.gms.cast.CATEGORY_CAST");
         String str = (String) sVar.b;
@@ -137,21 +137,21 @@ public final class s implements ee.b, d9.k, g6.n, ef.b, z3.n, c3.i, g1, e2.d, n5
         return sb2.toString();
     }
 
-    public static void e(s sVar, i2.c cVar) {
+    public static void h(s sVar, i2.c cVar) {
         sVar.getClass();
         for (Map.Entry entry : new HashMap((HashMap) sVar.b).entrySet()) {
             if (entry.getKey() != null) {
                 throw new ClassCastException();
             }
             List list = (List) entry.getValue();
-            if (!f(cVar, list).equals(f((i2.c) sVar.c, list))) {
+            if (!i(cVar, list).equals(i((i2.c) sVar.c, list))) {
                 throw null;
             }
         }
         sVar.c = cVar;
     }
 
-    public static i2.c f(i2.c cVar, List list) {
+    public static i2.c i(i2.c cVar, List list) {
         cVar.getClass();
         Map map = cVar.a;
         HashMap hashMap = new HashMap(map);
@@ -164,8 +164,44 @@ public final class s implements ee.b, d9.k, g6.n, ef.b, z3.n, c3.i, g1, e2.d, n5
         return new i2.c(hashMap);
     }
 
+    @Override // g6.n
+    public void A(String str, long j10, int i10, Object obj, long j11, long j12) {
+        int i11;
+        g6.m mVar = (g6.m) this.c;
+        if (((g6.n) this.b) != null) {
+            if (i10 == 2001) {
+                Object[] objArr = {Integer.valueOf(mVar.i)};
+                g6.b bVar = mVar.a;
+                Log.w(bVar.a, bVar.d("Possibility of local queue out of sync with receiver queue. Refetching sequence number. Current Local Sequence Number = %d", objArr));
+                Iterator it = ((e6.h) mVar.h.b).i.iterator();
+                while (it.hasNext()) {
+                    ((e6.g) it.next()).o();
+                }
+                i11 = 2001;
+            } else {
+                i11 = i10;
+            }
+            ((g6.n) this.b).A(str, j10, i11, obj, j11, j12);
+        }
+    }
+
+    public void B(l lVar, Handler handler) {
+        n nVar = (n) this.b;
+        synchronized (nVar.d) {
+            nVar.l = lVar;
+            nVar.a.setCallback(lVar.b, handler);
+            lVar.C(nVar, handler);
+        }
+    }
+
+    @Override // ji.g1
+    public void C(Editable editable) {
+        ((k0) this.c).i();
+        ((j0) this.b).C0();
+    }
+
     /* JADX WARN: Type inference failed for: r1v4, types: [java.util.AbstractCollection, java.util.List] */
-    public void A(y yVar) {
+    public void D(y yVar) {
         n nVar = (n) this.b;
         nVar.g = yVar;
         synchronized (nVar.d) {
@@ -201,7 +237,26 @@ public final class s implements ee.b, d9.k, g6.n, ef.b, z3.n, c3.i, g1, e2.d, n5
         mediaSession.setPlaybackState(yVar.w);
     }
 
-    public void B(ArrayList arrayList) {
+    @Override // ji.g1
+    public /* synthetic */ boolean E(boolean z10) {
+        return false;
+    }
+
+    @Override // ef.b
+    public ef.a F(qf.b bVar) {
+        List list = (List) this.c;
+        List list2 = (List) bVar.b;
+        int size = list2 != null ? list2.size() : 0;
+        if (size > 0) {
+            ArrayList arrayList = new ArrayList(list.size() + size);
+            arrayList.addAll(list);
+            arrayList.addAll(list2);
+            list = arrayList;
+        }
+        return new gd.i(bVar, (List) this.b, list);
+    }
+
+    public void G(ArrayList arrayList) {
         f2.s sVar;
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             if (((f2.r) arrayList.get(i10)).a == 1) {
@@ -215,34 +270,16 @@ public final class s implements ee.b, d9.k, g6.n, ef.b, z3.n, c3.i, g1, e2.d, n5
         }
     }
 
-    @Override // ji.g1
-    public /* synthetic */ boolean C(h1 h1Var) {
-        return false;
-    }
-
-    public void D(b2 b2Var) {
+    public void H(b2 b2Var) {
         Handler handler = (Handler) this.b;
         if (handler != null) {
             handler.post(new a1.f(4, this, b2Var));
         }
     }
 
-    @Override // ji.g1
-    public /* synthetic */ boolean F0(boolean z10) {
-        return false;
-    }
-
-    @Override // ji.g1
-    public void U(h1 h1Var, int i10, int i11) {
-        o9 C;
-        j0 j0Var = (j0) this.b;
-        if (((k0) this.c).d || i10 == i11 || (C = j0Var.C()) == null) {
-            return;
-        }
-        if (C.x() && C.W == j0Var.L()) {
-            return;
-        }
-        h1Var.post(new h0(this, h1Var, i11, C, j0Var, i10));
+    @Override // z3.n
+    public int X() {
+        return 1;
     }
 
     @Override // ji.g1
@@ -252,7 +289,7 @@ public final class s implements ee.b, d9.k, g6.n, ef.b, z3.n, c3.i, g1, e2.d, n5
 
     @Override // d9.k
     public Object apply(Object obj) {
-        return ((d9.k) ((k6.h) this.b).b).apply(obj);
+        return ((d9.k) ((a4.l) this.b).b).apply(obj);
     }
 
     @Override // c3.i
@@ -261,7 +298,7 @@ public final class s implements ee.b, d9.k, g6.n, ef.b, z3.n, c3.i, g1, e2.d, n5
         int min = (int) Math.min(20000L, pVar.getLength() - position);
         e2.x xVar = (e2.x) this.c;
         xVar.K(min);
-        pVar.a(0, min, xVar.a);
+        pVar.b(0, min, xVar.a);
         int i10 = -1;
         int i11 = -1;
         long j11 = -9223372036854775807L;
@@ -336,13 +373,19 @@ public final class s implements ee.b, d9.k, g6.n, ef.b, z3.n, c3.i, g1, e2.d, n5
         xVar.L(bArr.length, bArr);
     }
 
-    @Override // e2.d
-    public j9.y d(s0 s0Var) {
-        j9.y d = ((e2.d) this.b).d(s0Var);
-        if (d == null) {
-            return null;
-        }
-        return q8.c(d, new m5(this, 8));
+    @Override // ji.g1
+    public boolean d() {
+        return ((j0) this.b).p0();
+    }
+
+    @Override // ji.g1
+    public /* synthetic */ boolean e(h1 h1Var) {
+        return false;
+    }
+
+    @Override // ji.g1
+    public void f(int i10, int i11) {
+        ((j0) this.b).t0(i10, i11);
     }
 
     @Override // ee.b
@@ -351,27 +394,7 @@ public final class s implements ee.b, d9.k, g6.n, ef.b, z3.n, c3.i, g1, e2.d, n5
         return g10 == ld.a.a ? g10 : id.i.a;
     }
 
-    @Override // ji.g1
-    public void g0(CharSequence charSequence) {
-        ((j0) this.b).F(charSequence);
-    }
-
-    @Override // hd.a
-    public Object get() {
-        return new m5.d((Context) ((n5.c) this.b).a, (li.k) ((h5) this.c).get());
-    }
-
-    @Override // ji.g1
-    public boolean h() {
-        return ((j0) this.b).Q();
-    }
-
-    @Override // z3.n
-    public int h0() {
-        return 1;
-    }
-
-    public void i(i2.e eVar) {
+    public void j(i2.e eVar) {
         synchronized (eVar) {
         }
         Handler handler = (Handler) this.b;
@@ -381,255 +404,90 @@ public final class s implements ee.b, d9.k, g6.n, ef.b, z3.n, c3.i, g1, e2.d, n5
     }
 
     @Override // g6.n
-    public void j(String str, long j10, long j11, long j12) {
+    public void k(String str, long j10, long j11, long j12) {
         g6.n nVar = (g6.n) this.b;
         if (nVar != null) {
-            nVar.j(str, j10, j11, j12);
+            nVar.k(str, j10, j11, j12);
         }
     }
 
-    public byte[] k(n3.a aVar) {
-        DataOutputStream dataOutputStream = (DataOutputStream) this.c;
-        ByteArrayOutputStream byteArrayOutputStream = (ByteArrayOutputStream) this.b;
-        byteArrayOutputStream.reset();
-        try {
-            dataOutputStream.writeBytes(aVar.a);
-            dataOutputStream.writeByte(0);
-            dataOutputStream.writeBytes(aVar.b);
-            dataOutputStream.writeByte(0);
-            dataOutputStream.writeLong(aVar.c);
-            dataOutputStream.writeLong(aVar.d);
-            dataOutputStream.write(aVar.e);
-            dataOutputStream.flush();
-            return byteArrayOutputStream.toByteArray();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @Override // ji.g1
-    public /* synthetic */ boolean l(h1 h1Var) {
-        return false;
-    }
-
-    public ec.b m() {
-        if (((ec.b) this.c) == null) {
-            ec.e eVar = (ec.e) this.b;
-            int[] iArr = eVar.c;
-            dc.d dVar = eVar.a;
-            int i10 = dVar.a;
-            int i11 = dVar.b;
-            ec.b bVar = new ec.b(i10, i11);
-            if (eVar.b.length < i10) {
-                eVar.b = new byte[i10];
+    /* JADX WARN: Removed duplicated region for block: B:10:0x003e  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0046  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public CctBackendFactory l(String str) {
+        Bundle bundle;
+        Map map;
+        PackageManager packageManager;
+        if (((Map) this.c) == null) {
+            Context context = (Context) this.b;
+            try {
+                packageManager = context.getPackageManager();
+            } catch (PackageManager.NameNotFoundException unused) {
+                Log.w("BackendRegistry", "Application info not found.");
             }
-            for (int i12 = 0; i12 < 32; i12++) {
-                iArr[i12] = 0;
-            }
-            for (int i13 = 1; i13 < 5; i13++) {
-                byte[] b10 = dVar.b((i11 * i13) / 5, eVar.b);
-                int i14 = (i10 * 4) / 5;
-                for (int i15 = i10 / 5; i15 < i14; i15++) {
-                    int i16 = (b10[i15] & 255) >> 3;
-                    iArr[i16] = iArr[i16] + 1;
-                }
-            }
-            int length = iArr.length;
-            int i17 = 0;
-            int i18 = 0;
-            int i19 = 0;
-            for (int i20 = 0; i20 < length; i20++) {
-                int i21 = iArr[i20];
-                if (i21 > i17) {
-                    i19 = i20;
-                    i17 = i21;
-                }
-                if (i21 > i18) {
-                    i18 = i21;
-                }
-            }
-            int i22 = 0;
-            int i23 = 0;
-            for (int i24 = 0; i24 < length; i24++) {
-                int i25 = i24 - i19;
-                int i26 = iArr[i24] * i25 * i25;
-                if (i26 > i23) {
-                    i22 = i24;
-                    i23 = i26;
-                }
-            }
-            if (i19 <= i22) {
-                int i27 = i19;
-                i19 = i22;
-                i22 = i27;
-            }
-            if (i19 - i22 <= length / 16) {
-                throw dc.e.a();
-            }
-            int i28 = i19 - 1;
-            int i29 = -1;
-            int i30 = i28;
-            while (i28 > i22) {
-                int i31 = i28 - i22;
-                int i32 = (i18 - iArr[i28]) * (i19 - i28) * i31 * i31;
-                if (i32 > i29) {
-                    i30 = i28;
-                    i29 = i32;
-                }
-                i28--;
-            }
-            int i33 = i30 << 3;
-            byte[] a2 = dVar.a();
-            for (int i34 = 0; i34 < i11; i34++) {
-                int i35 = i34 * i10;
-                for (int i36 = 0; i36 < i10; i36++) {
-                    if ((a2[i35 + i36] & 255) < i33) {
-                        int i37 = (i36 / 32) + (bVar.c * i34);
-                        int[] iArr2 = bVar.d;
-                        iArr2[i37] = iArr2[i37] | (1 << (i36 & 31));
+            if (packageManager == null) {
+                Log.w("BackendRegistry", "Context has no PackageManager.");
+            } else {
+                ServiceInfo serviceInfo = packageManager.getServiceInfo(new ComponentName(context, (Class<?>) TransportBackendDiscovery.class), 128);
+                if (serviceInfo == null) {
+                    Log.w("BackendRegistry", "TransportBackendDiscovery has no service info.");
+                } else {
+                    bundle = serviceInfo.metaData;
+                    if (bundle != null) {
+                        Log.w("BackendRegistry", "Could not retrieve metadata, returning empty list of transport backends.");
+                        map = Collections.EMPTY_MAP;
+                    } else {
+                        HashMap hashMap = new HashMap();
+                        for (String str2 : bundle.keySet()) {
+                            Object obj = bundle.get(str2);
+                            if ((obj instanceof String) && str2.startsWith("backend:")) {
+                                for (String str3 : ((String) obj).split(",", -1)) {
+                                    String trim = str3.trim();
+                                    if (!trim.isEmpty()) {
+                                        hashMap.put(trim, str2.substring(8));
+                                    }
+                                }
+                            }
+                        }
+                        map = hashMap;
                     }
+                    this.c = map;
                 }
             }
-            this.c = bVar;
-        }
-        return (ec.b) this.c;
-    }
-
-    public c3.o n(Object... objArr) {
-        Constructor a2;
-        synchronized (((AtomicBoolean) this.c)) {
-            if (!((AtomicBoolean) this.c).get()) {
-                try {
-                    a2 = ((w2) this.b).a();
-                } catch (ClassNotFoundException unused) {
-                    ((AtomicBoolean) this.c).set(true);
-                } catch (Exception e) {
-                    throw new RuntimeException("Error instantiating extension", e);
-                }
+            bundle = null;
+            if (bundle != null) {
             }
-            a2 = null;
+            this.c = map;
         }
-        if (a2 == null) {
+        String str4 = (String) ((Map) this.c).get(str);
+        if (str4 == null) {
             return null;
         }
         try {
-            return (c3.o) a2.newInstance(objArr);
-        } catch (Exception e7) {
-            throw new IllegalStateException("Unexpected error creating extractor", e7);
+            return (CctBackendFactory) Class.forName(str4).asSubclass(CctBackendFactory.class).getDeclaredConstructor(null).newInstance(null);
+        } catch (ClassNotFoundException e) {
+            Log.w("BackendRegistry", "Class " + str4 + " is not found.", e);
+            return null;
+        } catch (IllegalAccessException e7) {
+            Log.w("BackendRegistry", "Could not instantiate " + str4 + ".", e7);
+            return null;
+        } catch (InstantiationException e10) {
+            Log.w("BackendRegistry", "Could not instantiate " + str4 + ".", e10);
+            return null;
+        } catch (NoSuchMethodException e11) {
+            Log.w("BackendRegistry", "Could not instantiate ".concat(str4), e11);
+            return null;
+        } catch (InvocationTargetException e12) {
+            Log.w("BackendRegistry", "Could not instantiate ".concat(str4), e12);
+            return null;
         }
-    }
-
-    public synchronized Map o() {
-        try {
-            if (((Map) this.c) == null) {
-                this.c = DesugarCollections.unmodifiableMap(new HashMap((HashMap) this.b));
-            }
-        } catch (Throwable th2) {
-            throw th2;
-        }
-        return (Map) this.c;
     }
 
     @Override // ji.g1
-    public void p(int i10, int i11) {
-        ((j0) this.b).S(i10, i11);
-    }
-
-    @Override // ji.g1
-    public void p0(h1 h1Var) {
-        ((j0) this.b).f();
-    }
-
-    @Override // e2.d
-    public j9.y q(byte[] bArr) {
-        return q8.c(((e2.d) this.b).q(bArr), new m5(this, 8));
-    }
-
-    public void r(k.a aVar) {
-        qi.e eVar = (qi.e) this.b;
-        ((ActionMode.Callback) eVar.a).onDestroyActionMode(eVar.k(aVar));
-        g.r rVar = (g.r) this.c;
-        if (rVar.E != null) {
-            rVar.f.getDecorView().removeCallbacks(rVar.F);
-        }
-        if (rVar.y != null) {
-            r0.m0 m0Var = rVar.G;
-            if (m0Var != null) {
-                m0Var.b();
-            }
-            r0.m0 a2 = r0.j0.a(rVar.y);
-            a2.a(0.0f);
-            rVar.G = a2;
-            a2.d(new g.i(this, 2));
-        }
-        rVar.x = null;
-        ViewGroup viewGroup = rVar.J;
-        WeakHashMap weakHashMap = r0.j0.a;
-        r0.z.c(viewGroup);
-        rVar.y();
-    }
-
-    public boolean s(k.a aVar, Menu menu) {
-        ViewGroup viewGroup = ((g.r) this.c).J;
-        WeakHashMap weakHashMap = r0.j0.a;
-        r0.z.c(viewGroup);
-        qi.e eVar = (qi.e) this.b;
-        ActionMode.Callback callback = (ActionMode.Callback) eVar.a;
-        k.e k10 = eVar.k(aVar);
-        a0.l lVar = (a0.l) eVar.d;
-        Menu menu2 = (Menu) lVar.get(menu);
-        if (menu2 == null) {
-            menu2 = new l.a0((Context) eVar.b, (l.k) menu);
-            lVar.put(menu, menu2);
-        }
-        return callback.onPrepareActionMode(k10, menu2);
-    }
-
-    @Override // ji.g1
-    public void s0(Editable editable) {
-        ((k0) this.c).i();
-        ((j0) this.b).Z();
-    }
-
-    public void t(Exception exc, boolean z10) {
-        this.c = null;
-        HashSet hashSet = (HashSet) this.b;
-        n0 u10 = n0.u(hashSet);
-        hashSet.clear();
-        l0 listIterator = u10.listIterator(0);
-        while (listIterator.hasNext()) {
-            n2.b bVar = (n2.b) listIterator.next();
-            bVar.getClass();
-            bVar.l(z10 ? 1 : 3, exc);
-        }
-    }
-
-    public String toString() {
-        switch (this.a) {
-            case 13:
-                try {
-                    return m().toString();
-                } catch (dc.e unused) {
-                    return "";
-                }
-            default:
-                return super.toString();
-        }
-    }
-
-    public void u(n2.b bVar) {
-        ((HashSet) this.b).add(bVar);
-        if (((n2.b) this.c) != null) {
-            return;
-        }
-        this.c = bVar;
-        n2.q l4 = bVar.b.l();
-        bVar.z = l4;
-        android.support.v4.media.session.f fVar = bVar.s;
-        String str = m0.a;
-        l4.getClass();
-        fVar.getClass();
-        fVar.obtainMessage(1, new n2.a(u2.u.g.getAndIncrement(), true, SystemClock.elapsedRealtime(), l4)).sendToTarget();
+    public /* synthetic */ boolean m(h1 h1Var) {
+        return false;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:195:0x03ae, code lost:
@@ -661,7 +519,7 @@ public final class s implements ee.b, d9.k, g6.n, ef.b, z3.n, c3.i, g1, e2.d, n5
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void u0(byte[] bArr, int i10, int i11, z3.m mVar, e2.j jVar) {
+    public void m0(byte[] bArr, int i10, int i11, z3.m mVar, e2.j jVar) {
         i4.c cVar;
         String str;
         ?? r12;
@@ -982,60 +840,242 @@ public final class s implements ee.b, d9.k, g6.n, ef.b, z3.n, c3.i, g1, e2.d, n5
         }
     }
 
-    @Override // g6.n
-    public void v(String str, long j10, int i10, Object obj, long j11, long j12) {
-        int i11;
-        g6.m mVar = (g6.m) this.c;
-        if (((g6.n) this.b) != null) {
-            if (i10 == 2001) {
-                Object[] objArr = {Integer.valueOf(mVar.i)};
-                g6.b bVar = mVar.a;
-                Log.w(bVar.a, bVar.d("Possibility of local queue out of sync with receiver queue. Refetching sequence number. Current Local Sequence Number = %d", objArr));
-                Iterator it = ((e6.h) mVar.h.b).i.iterator();
-                while (it.hasNext()) {
-                    ((e6.g) it.next()).o();
-                }
-                i11 = 2001;
-            } else {
-                i11 = i10;
+    public ec.b n() {
+        if (((ec.b) this.c) == null) {
+            ec.e eVar = (ec.e) this.b;
+            int[] iArr = eVar.c;
+            dc.d dVar = eVar.a;
+            int i10 = dVar.a;
+            int i11 = dVar.b;
+            ec.b bVar = new ec.b(i10, i11);
+            if (eVar.b.length < i10) {
+                eVar.b = new byte[i10];
             }
-            ((g6.n) this.b).v(str, j10, i11, obj, j11, j12);
+            for (int i12 = 0; i12 < 32; i12++) {
+                iArr[i12] = 0;
+            }
+            for (int i13 = 1; i13 < 5; i13++) {
+                byte[] b10 = dVar.b((i11 * i13) / 5, eVar.b);
+                int i14 = (i10 * 4) / 5;
+                for (int i15 = i10 / 5; i15 < i14; i15++) {
+                    int i16 = (b10[i15] & 255) >> 3;
+                    iArr[i16] = iArr[i16] + 1;
+                }
+            }
+            int length = iArr.length;
+            int i17 = 0;
+            int i18 = 0;
+            int i19 = 0;
+            for (int i20 = 0; i20 < length; i20++) {
+                int i21 = iArr[i20];
+                if (i21 > i17) {
+                    i19 = i20;
+                    i17 = i21;
+                }
+                if (i21 > i18) {
+                    i18 = i21;
+                }
+            }
+            int i22 = 0;
+            int i23 = 0;
+            for (int i24 = 0; i24 < length; i24++) {
+                int i25 = i24 - i19;
+                int i26 = iArr[i24] * i25 * i25;
+                if (i26 > i23) {
+                    i22 = i24;
+                    i23 = i26;
+                }
+            }
+            if (i19 <= i22) {
+                int i27 = i19;
+                i19 = i22;
+                i22 = i27;
+            }
+            if (i19 - i22 <= length / 16) {
+                throw dc.e.a();
+            }
+            int i28 = i19 - 1;
+            int i29 = -1;
+            int i30 = i28;
+            while (i28 > i22) {
+                int i31 = i28 - i22;
+                int i32 = (i18 - iArr[i28]) * (i19 - i28) * i31 * i31;
+                if (i32 > i29) {
+                    i30 = i28;
+                    i29 = i32;
+                }
+                i28--;
+            }
+            int i33 = i30 << 3;
+            byte[] a2 = dVar.a();
+            for (int i34 = 0; i34 < i11; i34++) {
+                int i35 = i34 * i10;
+                for (int i36 = 0; i36 < i10; i36++) {
+                    if ((a2[i35 + i36] & 255) < i33) {
+                        int i37 = (i36 / 32) + (bVar.c * i34);
+                        int[] iArr2 = bVar.d;
+                        iArr2[i37] = iArr2[i37] | (1 << (i36 & 31));
+                    }
+                }
+            }
+            this.c = bVar;
+        }
+        return (ec.b) this.c;
+    }
+
+    @Override // e2.d
+    public j9.y o(s0 s0Var) {
+        Uri uri;
+        byte[] bArr;
+        h3 h3Var = (h3) this.c;
+        if (h3Var != null && (((uri = (Uri) h3Var.c) != null && uri.equals(s0Var.n)) || ((bArr = (byte[]) h3Var.b) != null && Arrays.equals(bArr, s0Var.k)))) {
+            j9.y yVar = (j9.y) ((h3) this.c).d;
+            yVar.getClass();
+            return yVar;
+        }
+        j9.y o10 = ((e2.d) this.b).o(s0Var);
+        if (o10 == null) {
+            return null;
+        }
+        this.c = new h3(s0Var, o10);
+        return o10;
+    }
+
+    public c3.o p(Object... objArr) {
+        Constructor a2;
+        synchronized (((AtomicBoolean) this.c)) {
+            if (!((AtomicBoolean) this.c).get()) {
+                try {
+                    a2 = ((w2) this.b).a();
+                } catch (ClassNotFoundException unused) {
+                    ((AtomicBoolean) this.c).set(true);
+                } catch (Exception e) {
+                    throw new RuntimeException("Error instantiating extension", e);
+                }
+            }
+            a2 = null;
+        }
+        if (a2 == null) {
+            return null;
+        }
+        try {
+            return (c3.o) a2.newInstance(objArr);
+        } catch (Exception e7) {
+            throw new IllegalStateException("Unexpected error creating extractor", e7);
+        }
+    }
+
+    @Override // ji.g1
+    public void q(h1 h1Var, int i10, int i11) {
+        o9 W;
+        j0 j0Var = (j0) this.b;
+        if (((k0) this.c).d || i10 == i11 || (W = j0Var.W()) == null) {
+            return;
+        }
+        if (W.x() && W.W == j0Var.g0()) {
+            return;
+        }
+        h1Var.post(new h0(this, h1Var, i11, W, j0Var, i10));
+    }
+
+    public synchronized Map s() {
+        try {
+            if (((Map) this.c) == null) {
+                this.c = DesugarCollections.unmodifiableMap(new HashMap((HashMap) this.b));
+            }
+        } catch (Throwable th2) {
+            throw th2;
+        }
+        return (Map) this.c;
+    }
+
+    public void t(k.a aVar) {
+        pi.e eVar = (pi.e) this.b;
+        ((ActionMode.Callback) eVar.a).onDestroyActionMode(eVar.k(aVar));
+        g.r rVar = (g.r) this.c;
+        if (rVar.E != null) {
+            rVar.f.getDecorView().removeCallbacks(rVar.F);
+        }
+        if (rVar.y != null) {
+            l0 l0Var = rVar.G;
+            if (l0Var != null) {
+                l0Var.b();
+            }
+            l0 a2 = i0.a(rVar.y);
+            a2.a(0.0f);
+            rVar.G = a2;
+            a2.d(new g.i(this, 2));
+        }
+        rVar.x = null;
+        ViewGroup viewGroup = rVar.J;
+        WeakHashMap weakHashMap = i0.a;
+        r0.y.c(viewGroup);
+        rVar.y();
+    }
+
+    public String toString() {
+        switch (this.a) {
+            case 13:
+                try {
+                    return n().toString();
+                } catch (dc.e unused) {
+                    return "";
+                }
+            default:
+                return super.toString();
+        }
+    }
+
+    @Override // e2.d
+    public j9.y u(byte[] bArr) {
+        byte[] bArr2;
+        h3 h3Var = (h3) this.c;
+        if (h3Var == null || (bArr2 = (byte[]) h3Var.b) == null || !Arrays.equals(bArr2, bArr)) {
+            j9.y u10 = ((e2.d) this.b).u(bArr);
+            this.c = new h3(bArr, u10);
+            return u10;
+        }
+        j9.y yVar = (j9.y) ((h3) this.c).d;
+        yVar.getClass();
+        return yVar;
+    }
+
+    public boolean v(k.a aVar, Menu menu) {
+        ViewGroup viewGroup = ((g.r) this.c).J;
+        WeakHashMap weakHashMap = i0.a;
+        r0.y.c(viewGroup);
+        pi.e eVar = (pi.e) this.b;
+        ActionMode.Callback callback = (ActionMode.Callback) eVar.a;
+        k.e k10 = eVar.k(aVar);
+        a0.l lVar = (a0.l) eVar.d;
+        Menu menu2 = (Menu) lVar.get(menu);
+        if (menu2 == null) {
+            menu2 = new l.a0((Context) eVar.b, (l.k) menu);
+            lVar.put(menu, menu2);
+        }
+        return callback.onPrepareActionMode(k10, menu2);
+    }
+
+    public void w(Object obj) {
+        Handler handler = (Handler) this.b;
+        if (handler != null) {
+            handler.post(new a3.i0(this, obj, SystemClock.elapsedRealtime(), 0));
         }
     }
 
     @Override // z3.n
-    public /* synthetic */ z3.e w(int i10, int i11, byte[] bArr) {
+    public /* synthetic */ z3.e x(int i10, int i11, byte[] bArr) {
         return t8.b.a(this, bArr, i11);
     }
 
-    @Override // ef.b
-    public ef.a x(qf.b bVar) {
-        List list = (List) this.c;
-        List list2 = (List) bVar.b;
-        int size = list2 != null ? list2.size() : 0;
-        if (size > 0) {
-            ArrayList arrayList = new ArrayList(list.size() + size);
-            arrayList.addAll(list);
-            arrayList.addAll(list2);
-            list = arrayList;
-        }
-        return new gd.i(bVar, (List) this.b, list);
+    @Override // ji.g1
+    public void y(CharSequence charSequence) {
+        ((j0) this.b).a0(charSequence);
     }
 
-    public void y(Object obj) {
-        Handler handler = (Handler) this.b;
-        if (handler != null) {
-            handler.post(new i0(this, obj, SystemClock.elapsedRealtime(), 0));
-        }
-    }
-
-    public void z(l lVar, Handler handler) {
-        n nVar = (n) this.b;
-        synchronized (nVar.d) {
-            nVar.l = lVar;
-            nVar.a.setCallback(lVar.b, handler);
-            lVar.C(nVar, handler);
-        }
+    @Override // ji.g1
+    public void z(h1 h1Var) {
+        ((j0) this.b).h();
     }
 
     public /* synthetic */ s(int i10, Object obj, boolean z10) {
@@ -1102,14 +1142,6 @@ public final class s implements ee.b, d9.k, g6.n, ef.b, z3.n, c3.i, g1, e2.d, n5
                 this.b = new e2.x();
                 this.c = new i4.a();
                 break;
-            case 28:
-                this.b = new HashSet();
-                break;
-            case 29:
-                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(512);
-                this.b = byteArrayOutputStream;
-                this.c = new DataOutputStream(byteArrayOutputStream);
-                break;
             default:
                 this.b = ByteBuffer.allocateDirect(500);
                 break;
@@ -1117,7 +1149,7 @@ public final class s implements ee.b, d9.k, g6.n, ef.b, z3.n, c3.i, g1, e2.d, n5
     }
 
     @Override // ji.g1
-    public /* synthetic */ void W() {
+    public /* synthetic */ void r() {
     }
 
     @Override // z3.n
@@ -1178,7 +1210,7 @@ public final class s implements ee.b, d9.k, g6.n, ef.b, z3.n, c3.i, g1, e2.d, n5
                 this.b = new n(context, str, bundle);
             }
             Looper myLooper = Looper.myLooper();
-            z(new j(), new Handler(myLooper == null ? Looper.getMainLooper() : myLooper));
+            B(new j(), new Handler(myLooper == null ? Looper.getMainLooper() : myLooper));
             ((n) this.b).a.setMediaButtonReceiver(pendingIntent);
             r rVar = ((n) this.b).c;
             w wVar = new w();

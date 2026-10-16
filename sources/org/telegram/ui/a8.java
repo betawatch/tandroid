@@ -22,7 +22,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class a8 extends s4.g0 {
     public final /* synthetic */ int c;
@@ -47,7 +47,7 @@ public final class a8 extends s4.g0 {
             case 4:
                 return 1;
             default:
-                return ((fq0) this.d).f.size();
+                return ((dq0) this.d).f.size();
         }
     }
 
@@ -207,18 +207,18 @@ public final class a8 extends s4.g0 {
                 break;
             case 1:
                 org.telegram.ui.Cells.s sVar = (org.telegram.ui.Cells.s) b1Var.a;
-                ob0 ob0Var = (ob0) ((org.telegram.ui.Cells.t) this.d).V2.get(i10);
+                nb0 nb0Var = (nb0) ((org.telegram.ui.Cells.t) this.d).V2.get(i10);
                 org.telegram.ui.Cells.q qVar = sVar.c;
-                int i21 = ob0Var.b;
-                int i22 = ob0Var.d;
+                int i21 = nb0Var.b;
+                int i22 = nb0Var.d;
                 qVar.setImageResource(i21);
                 TextView textView = sVar.d;
                 ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) textView.getLayoutParams();
-                if (!ob0Var.e || UserConfig.hasPremiumOnAccounts()) {
+                if (!nb0Var.e || UserConfig.hasPremiumOnAccounts()) {
                     marginLayoutParams.rightMargin = 0;
                     textView.setText(LocaleController.getString(i22));
                 } else {
-                    SpannableString spannableString = new SpannableString(org.telegram.messenger.q.h(i22, new StringBuilder("d ")));
+                    SpannableString spannableString = new SpannableString(org.telegram.messenger.g0.g(i22, new StringBuilder("d ")));
                     org.telegram.ui.Components.br brVar = new org.telegram.ui.Components.br(R.drawable.msg_mini_premiumlock, 0);
                     brVar.setTopOffset(1);
                     brVar.setSize(AndroidUtilities.dp(13.0f));
@@ -226,10 +226,10 @@ public final class a8 extends s4.g0 {
                     marginLayoutParams.rightMargin = AndroidUtilities.dp(4.0f);
                     textView.setText(spannableString);
                 }
-                sVar.b(w7.h6.a(ob0Var), false);
+                sVar.b(w7.g6.a(nb0Var), false);
                 int dp = AndroidUtilities.dp(18.0f);
                 qVar.setBackground(org.telegram.ui.ActionBar.g6.j0(dp, dp, dp, dp, 0, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.i6, false), -16777216));
-                qVar.setForeground(ob0Var.c);
+                qVar.setForeground(nb0Var.c);
                 break;
             case 2:
                 org.telegram.ui.Components.e9 e9Var = (org.telegram.ui.Components.e9) this.d;
@@ -286,9 +286,9 @@ public final class a8 extends s4.g0 {
                 break;
             default:
                 TextView textView2 = (TextView) b1Var.a;
-                fq0 fq0Var = (fq0) this.d;
-                textView2.setText((CharSequence) fq0Var.f.get(i10));
-                textView2.setTextColor(i10 == fq0Var.d ? fq0Var.E : fq0Var.y);
+                dq0 dq0Var = (dq0) this.d;
+                textView2.setText((CharSequence) dq0Var.f.get(i10));
+                textView2.setTextColor(i10 == dq0Var.d ? dq0Var.E : dq0Var.y);
                 break;
         }
     }
@@ -310,13 +310,13 @@ public final class a8 extends s4.g0 {
                 org.telegram.ui.Cells.q qVar = new org.telegram.ui.Cells.q(context);
                 sVar.c = qVar;
                 qVar.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-                sVar.addView(qVar, w7.a6.q(58, 58, 1));
+                sVar.addView(qVar, w7.z5.q(58, 58, 1));
                 TextView textView = new TextView(context);
                 sVar.d = textView;
                 textView.setSingleLine();
                 textView.setTextSize(1, 13.0f);
                 textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.G6, false));
-                sVar.addView(textView, w7.a6.t(-2, -2, 1, 0, 4, 0, 0));
+                sVar.addView(textView, w7.z5.t(-2, -2, 1, 0, 4, 0, 0));
                 paint.setStyle(Paint.Style.STROKE);
                 paint.setStrokeWidth(Math.max(2, AndroidUtilities.dp(0.5f)));
                 paint2.setColor(-1);
@@ -338,7 +338,7 @@ public final class a8 extends s4.g0 {
                 da0Var.setSingleLine();
                 da0Var.setMaxLines(1);
                 da0Var.setLayoutParams(new s4.o0(-2, AndroidUtilities.dp(28.0f)));
-                w7.c6.b(da0Var, 0.075f, 1.4f);
+                w7.b6.b(da0Var, 0.075f, 1.4f);
                 return new org.telegram.ui.Components.wl0(da0Var);
         }
     }

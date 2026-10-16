@@ -5,10 +5,10 @@ import android.os.Parcelable;
 import java.util.ArrayList;
 import o6.a;
 import v8.s;
-import w7.g0;
+import w7.f0;
 import w8.f;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class CommonWalletObject extends a {
     public static final Parcelable.Creator<CommonWalletObject> CREATOR = new s(14);
@@ -34,30 +34,30 @@ public class CommonWalletObject extends a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = g0.q(parcel, 20293);
-        g0.l(parcel, 2, this.a);
-        g0.l(parcel, 3, this.b);
-        g0.l(parcel, 4, this.c);
-        g0.l(parcel, 5, this.d);
-        g0.l(parcel, 6, this.e);
-        g0.l(parcel, 7, this.f);
-        g0.l(parcel, 8, this.h);
-        g0.l(parcel, 9, this.n);
+        int q6 = f0.q(parcel, 20293);
+        f0.l(parcel, 2, this.a);
+        f0.l(parcel, 3, this.b);
+        f0.l(parcel, 4, this.c);
+        f0.l(parcel, 5, this.d);
+        f0.l(parcel, 6, this.e);
+        f0.l(parcel, 7, this.f);
+        f0.l(parcel, 8, this.h);
+        f0.l(parcel, 9, this.n);
         int i11 = this.r;
-        g0.s(parcel, 10, 4);
+        f0.s(parcel, 10, 4);
         parcel.writeInt(i11);
-        g0.p(parcel, 11, this.s);
-        g0.k(parcel, 12, this.v, i10);
-        g0.p(parcel, 13, this.w);
-        g0.l(parcel, 14, this.x);
-        g0.l(parcel, 15, this.y);
-        g0.p(parcel, 16, this.E);
+        f0.p(parcel, 11, this.s);
+        f0.k(parcel, 12, this.v, i10);
+        f0.p(parcel, 13, this.w);
+        f0.l(parcel, 14, this.x);
+        f0.l(parcel, 15, this.y);
+        f0.p(parcel, 16, this.E);
         boolean z10 = this.F;
-        g0.s(parcel, 17, 4);
+        f0.s(parcel, 17, 4);
         parcel.writeInt(z10 ? 1 : 0);
-        g0.p(parcel, 18, this.G);
-        g0.p(parcel, 19, this.H);
-        g0.p(parcel, 20, this.I);
-        g0.r(parcel, q6);
+        f0.p(parcel, 18, this.G);
+        f0.p(parcel, 19, this.H);
+        f0.p(parcel, 20, this.I);
+        f0.r(parcel, q6);
     }
 }

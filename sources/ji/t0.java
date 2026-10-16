@@ -18,7 +18,7 @@ import org.telegram.ui.Cells.n9;
 import org.telegram.ui.Cells.o9;
 import org.telegram.ui.Components.AnimatedArrowDrawable;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class t0 extends FrameLayout implements org.telegram.ui.ActionBar.x5, n9 {
     public final org.telegram.ui.ActionBar.c6 a;
@@ -42,7 +42,7 @@ public final class t0 extends FrameLayout implements org.telegram.ui.ActionBar.x
         ab abVar = new ab(this, context, 6);
         this.b = abVar;
         abVar.setOnClickListener(new ah.g0(this, 29));
-        addView(abVar, w7.a6.e(53, -1, 51));
+        addView(abVar, w7.z5.e(53, -1, 51));
         h1 h1Var = new h1(context, c6Var);
         this.d = h1Var;
         h1Var.setAllowNewlines(false);
@@ -51,7 +51,7 @@ public final class t0 extends FrameLayout implements org.telegram.ui.ActionBar.x
         h1Var.setPadding(0, AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(12.66f));
         h1Var.setListener(new q0(this));
         h1Var.setDelegate(new f1.a(this, 23));
-        addView(h1Var, w7.a6.a(-2.0f, 53.0f, 0.0f, 16.0f, 0.0f, -1, 51));
+        addView(h1Var, w7.z5.a(-2.0f, 53.0f, 0.0f, 16.0f, 0.0f, -1, 51));
         d();
     }
 

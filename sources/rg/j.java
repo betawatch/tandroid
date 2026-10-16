@@ -16,14 +16,13 @@ import java.util.List;
 import java.util.UUID;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.ui.Components.ad;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.il0;
-import org.telegram.ui.li1;
 import v7.f7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class j extends FrameLayout {
     public static final List p0 = Arrays.asList(-90, 0, 90, 180);
@@ -36,7 +35,7 @@ public abstract class j extends FrameLayout {
     public boolean K;
     public int L;
     public int M;
-    public li1 N;
+    public org.telegram.ui.Wallet.i N;
     public float O;
     public ValueAnimator P;
     public ValueAnimator Q;
@@ -260,7 +259,7 @@ public abstract class j extends FrameLayout {
                 }
                 h hVar5 = this.F;
                 if (hVar5 != null) {
-                    hVar5.B(yh.b((float) getHeight(), 2.0f, scaleX, this.G.y) < ((float) AndroidUtilities.dp(66.0f)));
+                    hVar5.B(sk.b((float) getHeight(), 2.0f, scaleX, this.G.y) < ((float) AndroidUtilities.dp(66.0f)));
                     this.F.f(a1.g.d((float) getHeight(), 2.0f, scaleX, this.G.y) > ((float) (((View) getParent()).getHeight() - AndroidUtilities.dp(114.0f))));
                 }
                 h hVar6 = this.F;
@@ -312,9 +311,9 @@ public abstract class j extends FrameLayout {
         this.r = true;
         this.x = false;
         this.M = this.L;
-        li1 li1Var = this.N;
-        if (li1Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(li1Var);
+        org.telegram.ui.Wallet.i iVar = this.N;
+        if (iVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(iVar);
             this.N = null;
         }
         this.V = this.R;
@@ -439,22 +438,22 @@ public abstract class j extends FrameLayout {
                 if (Math.abs(intValue - f7) < 4.0f) {
                     if (this.M != intValue) {
                         this.M = intValue;
-                        li1 li1Var = this.N;
-                        if (li1Var != null) {
-                            AndroidUtilities.cancelRunOnUIThread(li1Var);
+                        org.telegram.ui.Wallet.i iVar = this.N;
+                        if (iVar != null) {
+                            AndroidUtilities.cancelRunOnUIThread(iVar);
                         }
-                        li1 li1Var2 = new li1(this, intValue, 7);
-                        this.N = li1Var2;
-                        AndroidUtilities.runOnUIThread(li1Var2, 250L);
+                        org.telegram.ui.Wallet.i iVar2 = new org.telegram.ui.Wallet.i(this, intValue, 6);
+                        this.N = iVar2;
+                        AndroidUtilities.runOnUIThread(iVar2, 250L);
                     }
                 }
             }
         } else if (z10) {
             if (Math.abs(this.L - f7) >= 12.0f || this.c0) {
                 this.M = -1;
-                li1 li1Var3 = this.N;
-                if (li1Var3 != null) {
-                    AndroidUtilities.cancelRunOnUIThread(li1Var3);
+                org.telegram.ui.Wallet.i iVar3 = this.N;
+                if (iVar3 != null) {
+                    AndroidUtilities.cancelRunOnUIThread(iVar3);
                     this.N = null;
                 }
                 ValueAnimator valueAnimator = this.P;

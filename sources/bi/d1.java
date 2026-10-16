@@ -9,7 +9,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class d1 extends FrameLayout {
     public final a1 a;
@@ -21,20 +21,20 @@ public final class d1 extends FrameLayout {
 
     public d1(Context context) {
         super(context);
-        w7.c6.a(this);
+        w7.b6.a(this);
         a1 a1Var = new a1(this, context);
         this.a = a1Var;
         a1Var.setOrientation(0);
-        addView(a1Var, w7.a6.a(-2.0f, 0.0f, 0.0f, 6.0f, 0.0f, -2, 119));
+        addView(a1Var, w7.z5.a(-2.0f, 0.0f, 0.0f, 6.0f, 0.0f, -2, 119));
         this.c = new org.telegram.ui.Components.k9((org.telegram.ui.ActionBar.c6) null);
         org.telegram.ui.Components.z9 z9Var = new org.telegram.ui.Components.z9(context);
         this.b = z9Var;
         z9Var.setRoundRadius(AndroidUtilities.dp(11.0f));
-        a1Var.addView(z9Var, w7.a6.p(22, 22, 0.0f, 51, 3, 2, 7, 2));
+        a1Var.addView(z9Var, w7.z5.p(22, 22, 0.0f, 51, 3, 2, 7, 2));
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setVisibility(8);
-        a1Var.addView(imageView, w7.a6.t(18, 18, 19, 0, 0, 3, 0));
+        a1Var.addView(imageView, w7.z5.t(18, 18, 19, 0, 0, 3, 0));
         b1 b1Var = new b1(context);
         this.e = b1Var;
         b1Var.setLines(1);
@@ -42,7 +42,7 @@ public final class d1 extends FrameLayout {
         b1Var.setTextColor(-1);
         b1Var.setTextSize(1, 14.0f);
         b1Var.setTypeface(AndroidUtilities.bold());
-        a1Var.addView(b1Var, w7.a6.t(-2, -2, 16, 0, 0, 7, 0));
+        a1Var.addView(b1Var, w7.z5.t(-2, -2, 16, 0, 0, 7, 0));
     }
 
     public void set(f1 f1Var) {

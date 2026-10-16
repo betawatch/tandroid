@@ -22,14 +22,15 @@ import bi.t;
 import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.g0;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.nq0;
+import org.telegram.ui.lq0;
 import org.telegram.ui.ra1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class g extends View implements i {
     public static final boolean A1;
@@ -403,7 +404,7 @@ public abstract class g extends View implements i {
             e eVar = this.Q0;
             if (eVar != null) {
                 getSelectedDate();
-                ra1 ra1Var = (ra1) ((nq0) eVar).b;
+                ra1 ra1Var = (ra1) ((lq0) eVar).b;
                 ra1Var.f();
                 ra1Var.b.t0.d(false, false);
             }
@@ -958,9 +959,9 @@ public abstract class g extends View implements i {
                                 c10 = c11;
                                 TextPaint textPaint = this.P;
                                 if (f15 < f17) {
-                                    textPaint.setAlpha((int) (i11 * org.telegram.messenger.q.y(f17, f15, f17, f7) * this.h * f10));
+                                    textPaint.setAlpha((int) (i11 * g0.x(f17, f15, f17, f7) * this.h * f10));
                                 } else if (f15 > f16) {
-                                    textPaint.setAlpha((int) (i11 * org.telegram.messenger.q.y(f15, f16, f12, f7) * this.h * f10));
+                                    textPaint.setAlpha((int) (i11 * g0.x(f15, f16, f12, f7) * this.h * f10));
                                 } else {
                                     textPaint.setAlpha((int) (i11 * this.h * f10));
                                 }

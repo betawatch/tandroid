@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class n6 extends FrameLayout {
     public final /* synthetic */ d7 E;
@@ -55,7 +55,7 @@ public final class n6 extends FrameLayout {
         s6Var.setText(LocaleController.getString(R.string.StorageUsage));
         s6Var.setGravity(17);
         s6Var.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.G6, false));
-        addView(s6Var, w7.a6.e(-2, 26, 49));
+        addView(s6Var, w7.z5.e(-2, 26, 49));
         int i10 = 0;
         while (i10 < 3) {
             this.b[i10] = new TextView(context);
@@ -74,7 +74,7 @@ public final class n6 extends FrameLayout {
                 this.b[i10].setVisibility(4);
             }
             this.b[i10].setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.B6, false));
-            addView(this.b[i10], w7.a6.a(-2.0f, 0.0f, i10 == 2 ? 12.0f : -6.0f, 0.0f, 0.0f, -2, 17));
+            addView(this.b[i10], w7.z5.a(-2.0f, 0.0f, i10 == 2 ? 12.0f : -6.0f, 0.0f, 0.0f, -2, 17));
             i10++;
         }
         this.d.f(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.z8, false), org.telegram.ui.ActionBar.g6.m1(0.2f, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.B6, false)));

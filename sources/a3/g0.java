@@ -6,7 +6,7 @@ import b2.b2;
 import b2.w0;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class g0 {
     public final qf.b a;
@@ -127,7 +127,7 @@ public final class g0 {
                 r2.l lVar = jVar2.a;
                 int i13 = jVar2.b;
                 Trace.beginSection("dropVideoBuffer");
-                lVar.f(i13);
+                lVar.e(i13);
                 Trace.endSection();
                 nVar.R0(0, 1);
             } else {

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ml0 implements View.OnLayoutChangeListener {
     public final /* synthetic */ s4.g0 a;
@@ -68,9 +68,9 @@ public final class ml0 implements View.OnLayoutChangeListener {
                         ((org.telegram.ui.Cells.o4) view2).e(false, false);
                     }
                     arrayList.remove(view2);
-                    w7.b6 b6Var = (w7.b6) pl0Var.i;
-                    if (b6Var != null) {
-                        b6Var.d(view2);
+                    w7.a6 a6Var = (w7.a6) pl0Var.i;
+                    if (a6Var != null) {
+                        a6Var.d(view2);
                     }
                     int top = childAt.getTop() - view2.getTop();
                     if (top != 0) {
@@ -107,9 +107,9 @@ public final class ml0 implements View.OnLayoutChangeListener {
             }
         }
         int i26 = i25 == Integer.MAX_VALUE ? 0 : i25;
-        w7.b6 b6Var2 = (w7.b6) pl0Var.i;
-        if (b6Var2 != null) {
-            b6Var2.b();
+        w7.a6 a6Var2 = (w7.a6) pl0Var.i;
+        if (a6Var2 != null) {
+            a6Var2.b();
         }
         if (arrayList.isEmpty()) {
             height = Math.abs(i21);

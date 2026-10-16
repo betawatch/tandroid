@@ -1,9 +1,51 @@
 package z7;
 
-import java.io.Serializable;
+import java.util.Map;
+import java.util.Set;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class lg extends kg implements Serializable, k {
-    public transient d c;
+public abstract class lg implements k {
+    public transient ed a;
+    public transient e9.e b;
+
+    public final Map a() {
+        e9.e eVar = this.b;
+        if (eVar != null) {
+            return eVar;
+        }
+        mg mgVar = (mg) this;
+        e9.e eVar2 = new e9.e(mgVar, mgVar.c, 2);
+        this.b = eVar2;
+        return eVar2;
+    }
+
+    public final Set b() {
+        ed edVar = this.a;
+        if (edVar != null) {
+            return edVar;
+        }
+        mg mgVar = (mg) this;
+        ed edVar2 = new ed(mgVar, mgVar.c);
+        this.a = edVar2;
+        return edVar2;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof k) {
+            return a().equals(((lg) ((k) obj)).a());
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return ((e9.e) a()).b.hashCode();
+    }
+
+    public final String toString() {
+        return ((e9.e) a()).b.toString();
+    }
 }

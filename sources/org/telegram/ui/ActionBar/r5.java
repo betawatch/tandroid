@@ -4,9 +4,9 @@ import android.graphics.Point;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class r5 extends w7.x5 {
+public final class r5 extends w7.w5 {
     public final /* synthetic */ boolean a;
     public final /* synthetic */ View b;
 
@@ -15,7 +15,7 @@ public final class r5 extends w7.x5 {
         this.b = view;
     }
 
-    @Override // w7.x5
+    @Override // w7.w5
     public final void b(int i10, int i11) {
         boolean z10 = this.a;
         View view = this.b;

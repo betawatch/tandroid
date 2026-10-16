@@ -1,86 +1,79 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+import android.R;
+import android.net.Uri;
+import org.telegram.messenger.Utilities;
+
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class vt0 extends org.telegram.ui.Components.h81 {
-    public final /* synthetic */ PhotoViewer m0;
+public final /* synthetic */ class vt0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wt0 b;
 
-    public vt0(PhotoViewer photoViewer) {
-        this.m0 = photoViewer;
+    public /* synthetic */ vt0(wt0 wt0Var, int i10) {
+        this.a = i10;
+        this.b = wt0Var;
     }
 
-    @Override // org.telegram.ui.Components.h81
-    public final void B() {
-        super.B();
-        PhotoViewer photoViewer = this.m0;
-        if (photoViewer.u4 == 0) {
-            PhotoViewer.Y(photoViewer, false);
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x0057, code lost:
+    
+        if (r2 != 7) goto L31;
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        b2.o oVar;
+        switch (this.a) {
+            case 0:
+                PhotoViewer photoViewer = this.b.b;
+                av0 av0Var = photoViewer.E2;
+                if (av0Var != null) {
+                    org.telegram.ui.Components.i81 i81Var = photoViewer.F2;
+                    if (av0Var.e != i81Var) {
+                        av0Var.c = false;
+                        av0Var.d = false;
+                        if (av0Var.b) {
+                            av0Var.a++;
+                            av0Var.b = false;
+                        }
+                        av0Var.setImageResource(R.color.transparent);
+                    }
+                    if (i81Var != null) {
+                        i2.h0 h0Var = i81Var.d;
+                        if (h0Var != null) {
+                            try {
+                                h0Var.F1();
+                                b2.x xVar = h0Var.S;
+                                if (xVar != null && (oVar = xVar.I) != null) {
+                                    int i10 = oVar.c;
+                                    if (i10 != 6) {
+                                        break;
+                                    }
+                                }
+                            } catch (Exception unused) {
+                            }
+                        }
+                        long p5 = i81Var.p() - i81Var.n();
+                        if (!av0Var.c && !av0Var.d && !av0Var.b && p5 < 5250.0f) {
+                            Uri uri = i81Var.F;
+                            int i11 = av0Var.a + 1;
+                            av0Var.a = i11;
+                            Utilities.globalQueue.postRunnable(new c90(av0Var, uri, i11, 4));
+                            av0Var.b = true;
+                        }
+                    }
+                    av0Var.e = i81Var;
+                    break;
+                }
+                break;
+            case 1:
+                av0.a(this.b.b.E2);
+                break;
+            default:
+                av0.a(this.b.b.E2);
+                break;
         }
-        if (photoViewer.O8) {
-            return;
-        }
-        b5.d.D(n());
-        b5.d.x(false);
-    }
-
-    @Override // org.telegram.ui.Components.h81
-    public final void C() {
-        super.C();
-        PhotoViewer photoViewer = this.m0;
-        PhotoViewer.Y(photoViewer, true);
-        if (photoViewer.O8) {
-            return;
-        }
-        b5.d.D(n());
-        b5.d.x(true);
-    }
-
-    @Override // org.telegram.ui.Components.h81
-    public final void K(long j10) {
-        L(j10, false);
-        PhotoViewer photoViewer = this.m0;
-        if (photoViewer.r1) {
-            PhotoViewer.Z(photoViewer, j10);
-        }
-        if (photoViewer.O8) {
-            return;
-        }
-        b5.d.D(j10);
-    }
-
-    @Override // org.telegram.ui.Components.h81
-    public final void Q(float f7) {
-        super.Q(f7);
-        if (this.m0.O8) {
-            return;
-        }
-        b5.d.z(f7);
-    }
-
-    @Override // org.telegram.ui.Components.h81, b2.e1
-    public final void onRenderedFirstFrame() {
-        b2.a1 h;
-        super.onRenderedFirstFrame();
-        PhotoViewer photoViewer = this.m0;
-        boolean z10 = true;
-        photoViewer.R = true;
-        if (photoViewer.D2) {
-            photoViewer.e0.invalidate();
-        }
-        photoViewer.z3();
-        if (!b5.d.u() && !photoViewer.r) {
-            z10 = false;
-        }
-        O(z10);
-        if (photoViewer.O8) {
-            return;
-        }
-        b5.d.D(n());
-        i2.h0 h0Var = this.d;
-        float f7 = 1.0f;
-        if (h0Var != null && (h = h0Var.h()) != null) {
-            f7 = h.a;
-        }
-        b5.d.z(f7);
     }
 }

@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class ax0 extends FrameLayout {
     public final org.telegram.ui.ActionBar.h5 a;
@@ -37,25 +37,25 @@ public class ax0 extends FrameLayout {
         h5Var.setTypeface(AndroidUtilities.bold());
         h5Var.setTextSize(15);
         h5Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.G6, c6Var));
-        linearLayout.addView(h5Var, w7.a6.n(-1, -2));
+        linearLayout.addView(h5Var, w7.z5.n(-1, -2));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 14.0f);
         textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.y6, c6Var));
         textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        linearLayout.addView(textView, w7.a6.p(-1, -2, 0.0f, 0, 0, 1, 0, 0));
-        addView(linearLayout, w7.a6.a(-2.0f, 62.0f, 8.0f, 48.0f, 9.0f, -1, 0));
+        linearLayout.addView(textView, w7.z5.p(-1, -2, 0.0f, 0, 0, 1, 0, 0));
+        addView(linearLayout, w7.z5.a(-2.0f, 62.0f, 8.0f, 48.0f, 9.0f, -1, 0));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER_INSIDE;
         imageView.setScaleType(scaleType);
-        addView(imageView, w7.a6.a(28.0f, 18.0f, 12.0f, 0.0f, 0.0f, 28, 0));
+        addView(imageView, w7.z5.a(28.0f, 18.0f, 12.0f, 0.0f, 0.0f, 28, 0));
         ImageView imageView2 = new ImageView(context);
         this.d = imageView2;
         imageView2.setScaleType(scaleType);
         imageView2.setImageResource(R.drawable.msg_arrowright);
         imageView2.setColorFilter(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.M6, c6Var));
-        addView(imageView2, w7.a6.a(24.0f, 0.0f, 0.0f, 18.0f, 0.0f, 24, 21));
+        addView(imageView2, w7.z5.a(24.0f, 0.0f, 0.0f, 18.0f, 0.0f, 24, 21));
     }
 
     public final void a(qx0 qx0Var, boolean z10) {

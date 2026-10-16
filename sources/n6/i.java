@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class i {
     public static final c5.a b = new c5.a("LibraryVersion", "");
@@ -48,8 +48,8 @@ public final class i {
                 properties.load(inputStream);
                 str3 = properties.getProperty("version", null);
                 String str4 = str + " version is " + str3;
-                if (Log.isLoggable(aVar.b, 2)) {
-                    String str5 = aVar.c;
+                if (Log.isLoggable(aVar.a, 2)) {
+                    String str5 = aVar.b;
                     if (str5 != null) {
                         str4 = str5.concat(str4);
                     }
@@ -57,8 +57,8 @@ public final class i {
                 }
             } else {
                 String str6 = "Failed to get app version for libraryName: " + str;
-                if (Log.isLoggable(aVar.b, 5)) {
-                    String str7 = aVar.c;
+                if (Log.isLoggable(aVar.a, 5)) {
+                    String str7 = aVar.b;
                     if (str7 != null) {
                         str6 = str7.concat(str6);
                     }
@@ -70,8 +70,8 @@ public final class i {
             inputStream2 = inputStream;
             str2 = null;
             String str8 = "Failed to get app version for libraryName: " + str;
-            if (Log.isLoggable(aVar.b, 6)) {
-                String str9 = aVar.c;
+            if (Log.isLoggable(aVar.a, 6)) {
+                String str9 = aVar.b;
                 if (str9 != null) {
                     str8 = str9.concat(str8);
                 }
@@ -98,8 +98,8 @@ public final class i {
             u6.b.a(inputStream);
         }
         if (str3 == null) {
-            if (Log.isLoggable(aVar.b, 3)) {
-                String str10 = aVar.c;
+            if (Log.isLoggable(aVar.a, 3)) {
+                String str10 = aVar.b;
                 Log.d("LibraryVersion", str10 != null ? str10.concat(".properties file is dropped during release process. Failure to read app version is expected during Google internal testing where locally-built libraries are used") : ".properties file is dropped during release process. Failure to read app version is expected during Google internal testing where locally-built libraries are used");
             }
             str3 = "UNKNOWN";

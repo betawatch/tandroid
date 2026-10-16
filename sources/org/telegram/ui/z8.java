@@ -17,7 +17,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class z8 extends org.telegram.ui.Components.ow0 {
     public final /* synthetic */ int w0;
@@ -287,7 +287,7 @@ public final class z8 extends org.telegram.ui.Components.ow0 {
     public org.telegram.ui.ActionBar.c6 getResourceProvider() {
         switch (this.w0) {
             case 2:
-                return ((org.telegram.ui.Components.z01) this.x0).c;
+                return ((org.telegram.ui.Components.a11) this.x0).c;
             default:
                 return super.getResourceProvider();
         }
@@ -331,13 +331,13 @@ public final class z8 extends org.telegram.ui.Components.ow0 {
                 ContactsActivity.d0(contactsActivity);
                 break;
             case 4:
-                ac0 ac0Var = (ac0) this.x0;
-                int scrollY = ac0Var.J.getScrollY();
+                zb0 zb0Var = (zb0) this.x0;
+                int scrollY = zb0Var.J.getScrollY();
                 super.onLayout(z10, i10, i11, i12, i13);
-                if (scrollY != ac0Var.J.getScrollY()) {
-                    ac0Var.J.setTranslationY(r11.getScrollY() - scrollY);
-                    ac0Var.J.animate().cancel();
-                    ac0Var.J.animate().translationY(0.0f).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.o1.w).start();
+                if (scrollY != zb0Var.J.getScrollY()) {
+                    zb0Var.J.setTranslationY(r11.getScrollY() - scrollY);
+                    zb0Var.J.animate().cancel();
+                    zb0Var.J.animate().translationY(0.0f).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.o1.w).start();
                     break;
                 }
                 break;
@@ -442,7 +442,7 @@ public final class z8 extends org.telegram.ui.Components.ow0 {
                 break;
             case 2:
                 super.onMeasure(i10, i11);
-                setMeasuredDimension(View.MeasureSpec.getSize(i10), ((org.telegram.ui.Components.z01) this.x0).d.getMeasuredHeight() + AndroidUtilities.dp(24.0f));
+                setMeasuredDimension(View.MeasureSpec.getSize(i10), ((org.telegram.ui.Components.a11) this.x0).d.getMeasuredHeight() + AndroidUtilities.dp(24.0f));
                 break;
             case 3:
                 ContactsActivity contactsActivity = (ContactsActivity) this.x0;
@@ -458,21 +458,21 @@ public final class z8 extends org.telegram.ui.Components.ow0 {
                 super.onMeasure(i10, i11);
                 break;
             case 4:
-                ac0 ac0Var = (ac0) this.x0;
+                zb0 zb0Var = (zb0) this.x0;
                 super.onMeasure(i10, i11);
                 R();
                 int i12 = this.f;
                 if (i12 != 0 && i12 < AndroidUtilities.dp(20.0f)) {
-                    ac0Var.F.clearFocus();
-                    ac0Var.K.clearFocus();
+                    zb0Var.F.clearFocus();
+                    zb0Var.K.clearFocus();
                 }
-                ac0Var.H.setVisibility(this.f > AndroidUtilities.dp(20.0f) ? 8 : 0);
+                zb0Var.H.setVisibility(this.f > AndroidUtilities.dp(20.0f) ? 8 : 0);
                 break;
             case 5:
-                bh0 bh0Var = (bh0) this.x0;
-                ViewGroup.MarginLayoutParams marginLayoutParams6 = (ViewGroup.MarginLayoutParams) bh0Var.N.getLayoutParams();
-                int dp = bh0Var.h1() ? AndroidUtilities.dp(226.0f) : 0;
-                if (bh0Var.h1() && R() > AndroidUtilities.dp(20.0f)) {
+                ah0 ah0Var = (ah0) this.x0;
+                ViewGroup.MarginLayoutParams marginLayoutParams6 = (ViewGroup.MarginLayoutParams) ah0Var.N.getLayoutParams();
+                int dp = ah0Var.h1() ? AndroidUtilities.dp(226.0f) : 0;
+                if (ah0Var.h1() && R() > AndroidUtilities.dp(20.0f)) {
                     dp -= R();
                 }
                 org.telegram.ui.Components.sc scVar = org.telegram.ui.Components.sc.w;
@@ -480,22 +480,22 @@ public final class z8 extends org.telegram.ui.Components.ow0 {
                     marginLayoutParams6.bottomMargin = AndroidUtilities.dp(14.0f) + dp;
                 } else {
                     super.onMeasure(i10, i11);
-                    marginLayoutParams6.bottomMargin = org.telegram.ui.Cells.d0.b(10.0f, org.telegram.ui.Components.sc.w.e.getMeasuredHeight() + AndroidUtilities.dp(14.0f), dp);
+                    marginLayoutParams6.bottomMargin = org.telegram.messenger.sk.D(10.0f, org.telegram.ui.Components.sc.w.e.getMeasuredHeight() + AndroidUtilities.dp(14.0f), dp);
                 }
                 int i13 = AndroidUtilities.isTablet() ? 0 : AndroidUtilities.statusBarHeight;
-                ((ViewGroup.MarginLayoutParams) bh0Var.U.getLayoutParams()).topMargin = AndroidUtilities.dp(16.0f) + i13;
-                ((ViewGroup.MarginLayoutParams) bh0Var.W.getLayoutParams()).topMargin = AndroidUtilities.dp(16.0f) + i13;
-                ((ViewGroup.MarginLayoutParams) bh0Var.V.getLayoutParams()).topMargin = AndroidUtilities.dp(16.0f) + i13;
-                TextView textView = bh0Var.f0;
+                ((ViewGroup.MarginLayoutParams) ah0Var.U.getLayoutParams()).topMargin = AndroidUtilities.dp(16.0f) + i13;
+                ((ViewGroup.MarginLayoutParams) ah0Var.W.getLayoutParams()).topMargin = AndroidUtilities.dp(16.0f) + i13;
+                ((ViewGroup.MarginLayoutParams) ah0Var.V.getLayoutParams()).topMargin = AndroidUtilities.dp(16.0f) + i13;
+                TextView textView = ah0Var.f0;
                 if (textView != null) {
                     ((ViewGroup.MarginLayoutParams) textView.getLayoutParams()).topMargin = AndroidUtilities.dp(16.0f) + i13;
                 }
-                if (R() > AndroidUtilities.dp(20.0f) && bh0Var.c.getVisibility() != 8 && !AndroidUtilities.isAccessibilityTouchExplorationEnabled() && !bh0Var.a0) {
-                    ValueAnimator valueAnimator = bh0Var.d;
+                if (R() > AndroidUtilities.dp(20.0f) && ah0Var.c.getVisibility() != 8 && !AndroidUtilities.isAccessibilityTouchExplorationEnabled() && !ah0Var.a0) {
+                    ValueAnimator valueAnimator = ah0Var.d;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
                     }
-                    bh0Var.c.setVisibility(8);
+                    ah0Var.c.setVisibility(8);
                 }
                 super.onMeasure(i10, i11);
                 break;

@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class u5 implements d6.h {
     public static final d5 b = new d5(1);
@@ -143,14 +143,14 @@ public final class u5 implements d6.h {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void i(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void h(d6.f fVar, int i10) {
         a1 a1Var = (a1) this.a;
         a1Var.h = (d6.c) fVar;
         a1.a(a1Var, i10);
     }
 
     @Override // d6.h
-    public void k(d6.f fVar) {
+    public void j(d6.f fVar) {
         g6.b bVar = a1.j;
         bVar.b("onSessionStarting", new Object[0]);
         a1 a1Var = (a1) this.a;
@@ -184,7 +184,7 @@ public final class u5 implements d6.h {
     }
 
     @Override // d6.h
-    public void q(d6.f fVar, String str) {
+    public void r(d6.f fVar, String str) {
         a1.j.b("onSessionStarted with sessionId = %s", str);
         a1 a1Var = (a1) this.a;
         a1Var.h = (d6.c) fVar;
@@ -197,7 +197,7 @@ public final class u5 implements d6.h {
     }
 
     @Override // d6.h
-    public void r(d6.f fVar, int i10) {
+    public void s(d6.f fVar, int i10) {
         a1.j.b("onSessionSuspended with reason = %d", Integer.valueOf(i10));
         a1 a1Var = (a1) this.a;
         a1Var.h = (d6.c) fVar;

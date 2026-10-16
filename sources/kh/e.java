@@ -21,11 +21,12 @@ import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.w40;
 import org.telegram.ui.fo;
 import org.telegram.ui.xe;
-import w7.a6;
+import w7.b6;
+import w7.z5;
 import zf.i0;
 import zf.j0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout implements ne.d {
     public static final int[] H;
@@ -81,11 +82,11 @@ public class e extends FrameLayout implements ne.d {
         float dp = AndroidUtilities.dp(22.0f);
         a2 a2Var = j0.a;
         frameLayout.setOutlineProvider(new i0(0, dp));
-        addView(frameLayout, a6.e(-1, 44, 16));
+        addView(frameLayout, z5.e(-1, 44, 16));
     }
 
     @Override // ne.d
-    public final void C(float f7, int i10) {
+    public final void A(float f7, int i10) {
         o oVar;
         d4 d4Var;
         if (i10 == 99 || i10 == 100) {
@@ -123,7 +124,7 @@ public class e extends FrameLayout implements ne.d {
                                                 foVar2.J0.p(false);
                                                 foVar2.J0.s(LocaleController.getString(R.string.Gift2ChannelSendHint));
                                                 foVar2.J0.l(1.0f, (-width) + 7.33f);
-                                                foVar2.X0.addView(foVar2.J0, w7.a6.a(100.0f, 0.0f, 0.0f, 0.0f, f10 + 50.0f, -1, 87));
+                                                foVar2.X0.addView(foVar2.J0, w7.z5.a(100.0f, 0.0f, 0.0f, 0.0f, f10 + 50.0f, -1, 87));
                                                 di.d4 d4Var3 = foVar2.J0;
                                                 d4Var3.l0 = new xg(foVar2, 3);
                                                 d4Var3.u();
@@ -148,7 +149,7 @@ public class e extends FrameLayout implements ne.d {
                                                     d4Var5.H.t(string, !LocaleController.isRTL, true);
                                                 }
                                                 foVar3.L0.l(1.0f, (-width2) + 7.33f);
-                                                foVar3.X0.addView(foVar3.L0, w7.a6.a(100.0f, 0.0f, 0.0f, 0.0f, f11 + 50.0f, -1, 87));
+                                                foVar3.X0.addView(foVar3.L0, w7.z5.a(100.0f, 0.0f, 0.0f, 0.0f, f11 + 50.0f, -1, 87));
                                                 di.d4 d4Var6 = foVar3.L0;
                                                 d4Var6.l0 = new xg(foVar3, 12);
                                                 d4Var6.u();
@@ -180,7 +181,7 @@ public class e extends FrameLayout implements ne.d {
                                                 foVar2.J0.p(false);
                                                 foVar2.J0.s(LocaleController.getString(R.string.Gift2ChannelSendHint));
                                                 foVar2.J0.l(1.0f, (-width) + 7.33f);
-                                                foVar2.X0.addView(foVar2.J0, w7.a6.a(100.0f, 0.0f, 0.0f, 0.0f, f10 + 50.0f, -1, 87));
+                                                foVar2.X0.addView(foVar2.J0, w7.z5.a(100.0f, 0.0f, 0.0f, 0.0f, f10 + 50.0f, -1, 87));
                                                 di.d4 d4Var3 = foVar2.J0;
                                                 d4Var3.l0 = new xg(foVar2, 3);
                                                 d4Var3.u();
@@ -205,7 +206,7 @@ public class e extends FrameLayout implements ne.d {
                                                     d4Var5.H.t(string, !LocaleController.isRTL, true);
                                                 }
                                                 foVar3.L0.l(1.0f, (-width2) + 7.33f);
-                                                foVar3.X0.addView(foVar3.L0, w7.a6.a(100.0f, 0.0f, 0.0f, 0.0f, f11 + 50.0f, -1, 87));
+                                                foVar3.X0.addView(foVar3.L0, w7.z5.a(100.0f, 0.0f, 0.0f, 0.0f, f11 + 50.0f, -1, 87));
                                                 di.d4 d4Var6 = foVar3.L0;
                                                 d4Var6.l0 = new xg(foVar3, 12);
                                                 d4Var6.u();
@@ -352,10 +353,10 @@ public class e extends FrameLayout implements ne.d {
                     } else if (i10 == 3) {
                         d.setContentDescription(LocaleController.getString(R.string.BroadcastGroupInfo));
                     }
-                    w7.c6.b(d, 0.13f, 2.0f);
+                    b6.b(d, 0.13f, 2.0f);
                     d.setVisibility(8);
                     d.setOnClickListener(new m4(this, i10, 3));
-                    addView(d, a6.d(56.0f, 56));
+                    addView(d, z5.d(56.0f, 56));
                     o oVar2 = new o();
                     oVar2.b = d;
                     oVar2.c = bVar;

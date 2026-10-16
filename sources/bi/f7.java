@@ -21,12 +21,12 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.c90;
-import org.telegram.ui.lg1;
+import org.telegram.ui.kg1;
 import org.telegram.ui.n50;
 import org.telegram.ui.n60;
-import org.telegram.ui.ok0;
+import org.telegram.ui.nk0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f7 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class f7 implements View.OnClickListener {
             case 2:
                 int[] iArr = (int[]) this.c;
                 AlertDialog$Builder alertDialog$Builder = (AlertDialog$Builder) this.d;
-                ok0 ok0Var = (ok0) this.e;
+                nk0 nk0Var = (nk0) this.e;
                 iArr[0] = ((Integer) view.getTag()).intValue();
                 SharedPreferences.Editor edit = MessagesController.getNotificationsSettings(UserConfig.selectedAccount).edit();
                 int i10 = this.b;
@@ -68,7 +68,7 @@ public final /* synthetic */ class f7 implements View.OnClickListener {
                 }
                 edit.commit();
                 alertDialog$Builder.a.L0.run();
-                ok0Var.run();
+                nk0Var.run();
                 break;
             case 3:
                 n60 n60Var = (n60) this.c;
@@ -123,19 +123,19 @@ public final /* synthetic */ class f7 implements View.OnClickListener {
                     return;
                 }
             case 6:
-                lg1 lg1Var = (lg1) this.c;
+                kg1 kg1Var = (kg1) this.c;
                 TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) this.d;
                 ActionBarPopupWindow$ActionBarPopupWindowLayout[] actionBarPopupWindow$ActionBarPopupWindowLayoutArr = (ActionBarPopupWindow$ActionBarPopupWindowLayout[]) this.e;
-                MessagesController messagesController = lg1Var.getMessagesController();
-                long j10 = -lg1Var.a;
+                MessagesController messagesController = kg1Var.getMessagesController();
+                long j10 = -kg1Var.a;
                 if (!messagesController.isDialogMuted(j10, tL_forumTopic.id)) {
                     actionBarPopupWindow$ActionBarPopupWindowLayoutArr[0].getSwipeBack().e(this.b);
                     break;
                 } else {
-                    lg1Var.getNotificationsController().muteDialog(j10, tL_forumTopic.id, false);
-                    lg1Var.finishPreviewFragment();
-                    if (zc.a(lg1Var)) {
-                        zc.z(lg1Var, 4, 0, lg1Var.getResourceProvider()).j();
+                    kg1Var.getNotificationsController().muteDialog(j10, tL_forumTopic.id, false);
+                    kg1Var.finishPreviewFragment();
+                    if (zc.a(kg1Var)) {
+                        zc.z(kg1Var, 4, 0, kg1Var.getResourceProvider()).j();
                         break;
                     }
                 }
@@ -146,10 +146,10 @@ public final /* synthetic */ class f7 implements View.OnClickListener {
                 org.telegram.ui.ActionBar.c6 c6Var = (org.telegram.ui.ActionBar.c6) this.e;
                 if (!dVar2.N) {
                     dVar2.setLoading(true);
-                    org.telegram.ui.Wallet.o3 o3Var = new org.telegram.ui.Wallet.o3(dVar2, e3Var2, c6Var, 0);
+                    org.telegram.ui.Wallet.p3 p3Var = new org.telegram.ui.Wallet.p3(dVar2, e3Var2, c6Var, 0);
                     int i13 = this.b;
-                    org.telegram.ui.Wallet.j0 v = org.telegram.ui.Wallet.j0.v(i13);
-                    v.h0(new c90(i13, o3Var, v));
+                    org.telegram.ui.Wallet.k0 v = org.telegram.ui.Wallet.k0.v(i13);
+                    v.h0(new c90(i13, p3Var, v));
                     break;
                 }
                 break;

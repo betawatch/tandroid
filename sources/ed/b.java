@@ -8,7 +8,7 @@ import n6.l;
 import x8.e;
 import y8.k;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class b implements Iterator {
     public final /* synthetic */ int a;
@@ -93,7 +93,7 @@ public class b implements Iterator {
                 }
             default:
                 if (!hasNext()) {
-                    throw new NoSuchElementException(i2.d.i(this.b, "Cannot advance the iterator beyond "));
+                    throw new NoSuchElementException(i2.d.j(this.b, "Cannot advance the iterator beyond "));
                 }
                 e eVar = (e) this.c;
                 int i13 = this.b;

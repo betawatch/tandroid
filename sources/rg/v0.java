@@ -4,13 +4,13 @@ import android.content.Context;
 import android.graphics.PointF;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.il0;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class v0 extends j {
     public final u0 q0;
@@ -27,7 +27,7 @@ public final class v0 extends j {
         u0Var.setMaxWidth(i11);
         r(i10, messageMedia, mediaArea);
         u0Var.e(0, this.s0);
-        addView(u0Var, a6.e(-2, -2, 51));
+        addView(u0Var, z5.e(-2, -2, 51));
         setClipChildren(false);
         setClipToPadding(false);
         k();
@@ -72,8 +72,8 @@ public final class v0 extends j {
         float scaleX = viewGroup.getScaleX();
         float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float dp2 = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float x10 = yh.x(dp, 2.0f, getPositionX(), scaleX);
-        return new il0(x10, yh.x(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + x10) - x10, dp2 * scaleX);
+        float y3 = sk.y(dp, 2.0f, getPositionX(), scaleX);
+        return new il0(y3, sk.y(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + y3) - y3, dp2 * scaleX);
     }
 
     @Override // rg.j

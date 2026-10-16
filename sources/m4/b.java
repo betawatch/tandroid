@@ -8,20 +8,20 @@ import android.os.Build;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class b {
     public static final Uri g = Uri.parse("content://androidx.car.app.connection");
     public final Context a;
-    public final g0 b;
+    public final f0 b;
     public final Executor c;
     public final androidx.mediarouter.app.f d;
     public final AtomicBoolean e;
     public final AtomicBoolean f;
 
-    public b(Context context, g0 g0Var) {
+    public b(Context context, f0 f0Var) {
         this.a = context.getApplicationContext();
-        this.b = g0Var;
+        this.b = f0Var;
         Executor e = e2.a.e();
         this.c = e;
         this.d = new androidx.mediarouter.app.f(this, 6);

@@ -29,14 +29,14 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.b5;
 import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Cells.d0;
+import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Cells.z;
 import org.telegram.ui.Components.cr;
 import org.telegram.ui.Components.mm0;
 import org.telegram.ui.LaunchActivity;
-import w7.s;
+import w7.r;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class i extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public ArrayList E;
@@ -57,11 +57,11 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
     public mm0 y;
 
     public static float a(DisplayMetrics displayMetrics, float f7) {
-        return s.a(f7, AndroidUtilities.dp(16.0f), displayMetrics.widthPixels - AndroidUtilities.dp(72.0f));
+        return r.a(f7, AndroidUtilities.dp(16.0f), displayMetrics.widthPixels - AndroidUtilities.dp(72.0f));
     }
 
     public static float b(DisplayMetrics displayMetrics, float f7) {
-        return s.a(f7, AndroidUtilities.dp(16.0f), displayMetrics.heightPixels - AndroidUtilities.dp(72.0f));
+        return r.a(f7, AndroidUtilities.dp(16.0f), displayMetrics.heightPixels - AndroidUtilities.dp(72.0f));
     }
 
     private List<a> getBuiltInDebugItems() {
@@ -89,15 +89,15 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
             if (getContext() instanceof LaunchActivity) {
                 b5 O = ((LaunchActivity) getContext()).O();
                 if (O instanceof b) {
-                    arrayList.addAll(((b) O).B());
+                    arrayList.addAll(((b) O).C());
                 }
                 ActionBarLayout actionBarLayout = ((LaunchActivity) getContext()).s0;
                 if (actionBarLayout != null) {
-                    arrayList.addAll(actionBarLayout.B());
+                    arrayList.addAll(actionBarLayout.C());
                 }
                 ActionBarLayout actionBarLayout2 = ((LaunchActivity) getContext()).r0;
                 if (actionBarLayout2 != null) {
-                    arrayList.addAll(actionBarLayout2.B());
+                    arrayList.addAll(actionBarLayout2.C());
                 }
             }
             arrayList.addAll(getBuiltInDebugItems());
@@ -110,9 +110,9 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
         final float translationX = vVar.getTranslationX();
         final float translationY = vVar.getTranslationY();
         k kVar = new k(new o1.j(z10 ? 0.0f : 1000.0f));
-        l k10 = d0.k(1000.0f, 900.0f, 1.0f);
-        k10.i = z10 ? 1000.0f : 0.0f;
-        kVar.u = k10;
+        l j10 = c1.j(1000.0f, 900.0f, 1.0f);
+        j10.i = z10 ? 1000.0f : 0.0f;
+        kVar.u = j10;
         kVar.b(new o1.g() { // from class: ng.d
             @Override // o1.g
             public final void a(o1.h hVar, float f7, float f10) {

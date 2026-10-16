@@ -16,7 +16,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements Utilities.Callback2 {
     public final /* synthetic */ int a = 0;
@@ -82,29 +82,29 @@ public final /* synthetic */ class c implements Utilities.Callback2 {
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.z1 z1Var = (org.telegram.ui.Wallet.z1) obj6;
+                org.telegram.ui.Wallet.a2 a2Var = (org.telegram.ui.Wallet.a2) obj6;
                 boolean[] zArr2 = (boolean[]) obj5;
-                org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) obj4;
+                org.telegram.ui.Wallet.k0 k0Var = (org.telegram.ui.Wallet.k0) obj4;
                 TextView textView = (TextView) obj3;
-                org.telegram.ui.Wallet.h2 h2Var = (org.telegram.ui.Wallet.h2) callback;
+                org.telegram.ui.Wallet.i2 i2Var = (org.telegram.ui.Wallet.i2) callback;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
                 String str = (String) obj2;
-                if (!zArr[0] && !z1Var.m && !z1Var.n) {
-                    boolean z11 = z1Var.p;
+                if (!zArr[0] && !a2Var.m && !a2Var.n) {
+                    boolean z11 = a2Var.p;
                     zArr2[0] = z11;
                     dVar.setEnabled(z11);
                     boolean z12 = zArr2[0];
                     if (z12 && !z10) {
-                        SpannableStringBuilder m10 = org.telegram.ui.Wallet.j0.m(wallettransaction.fee, true);
-                        CharSequence l4 = j0Var.l(wallettransaction.fee, true);
+                        SpannableStringBuilder m10 = org.telegram.ui.Wallet.k0.m(wallettransaction.fee, true);
+                        CharSequence l4 = k0Var.l(wallettransaction.fee, true);
                         textView.setText(TextUtils.isEmpty(l4) ? LocaleController.formatSpannable(R.string.WalletFeeAmount, m10) : LocaleController.formatSpannable(R.string.WalletFeeAmountWithCurrency, m10, l4));
                         break;
                     } else if (!z12) {
                         String string = str != null ? str : LocaleController.getString(R.string.WalletTransactionSimulationFailed);
                         if (str == null) {
-                            org.telegram.ui.Wallet.d2.k("preview", string);
+                            org.telegram.ui.Wallet.e2.k("preview", string);
                         }
-                        zc.c0(string, h2Var.topBulletinContainer, c6Var);
+                        zc.c0(string, i2Var.topBulletinContainer, c6Var);
                         break;
                     }
                 }
@@ -112,15 +112,15 @@ public final /* synthetic */ class c implements Utilities.Callback2 {
         }
     }
 
-    public /* synthetic */ c(boolean[] zArr, org.telegram.ui.Wallet.z1 z1Var, boolean[] zArr2, di.d dVar, boolean z10, org.telegram.ui.Wallet.j0 j0Var, TextView textView, org.telegram.ui.Wallet.h2 h2Var, org.telegram.ui.ActionBar.c6 c6Var) {
+    public /* synthetic */ c(boolean[] zArr, org.telegram.ui.Wallet.a2 a2Var, boolean[] zArr2, di.d dVar, boolean z10, org.telegram.ui.Wallet.k0 k0Var, TextView textView, org.telegram.ui.Wallet.i2 i2Var, org.telegram.ui.ActionBar.c6 c6Var) {
         this.b = zArr;
-        this.f = z1Var;
+        this.f = a2Var;
         this.g = zArr2;
         this.c = dVar;
         this.d = z10;
-        this.h = j0Var;
+        this.h = k0Var;
         this.i = textView;
-        this.j = h2Var;
+        this.j = i2Var;
         this.e = c6Var;
     }
 }

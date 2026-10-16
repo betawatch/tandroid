@@ -3,10 +3,11 @@ package uh;
 import android.view.View;
 import java.util.ArrayList;
 import java.util.HashMap;
+import m.h;
 import org.telegram.ui.Components.io;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ f b;
@@ -22,10 +23,10 @@ public final /* synthetic */ class a implements View.OnClickListener {
         f fVar = this.b;
         switch (i10) {
             case 0:
-                l2.f fVar2 = fVar.k0;
-                if (fVar2 != null) {
+                h hVar = fVar.k0;
+                if (hVar != null) {
                     ArrayList arrayList = new ArrayList(fVar.j0.keySet());
-                    io ioVar = (io) fVar2.b;
+                    io ioVar = (io) hVar.b;
                     ArrayList arrayList2 = ioVar.P0;
                     arrayList2.clear();
                     arrayList2.addAll(arrayList);
@@ -37,10 +38,10 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 fVar.dismiss();
                 break;
             case 1:
-                l2.f fVar3 = fVar.k0;
-                if (fVar3 != null) {
+                h hVar2 = fVar.k0;
+                if (hVar2 != null) {
                     ArrayList arrayList3 = new ArrayList(fVar.j0.keySet());
-                    io ioVar2 = (io) fVar3.b;
+                    io ioVar2 = (io) hVar2.b;
                     ArrayList arrayList4 = ioVar2.P0;
                     arrayList4.clear();
                     arrayList4.addAll(arrayList3);

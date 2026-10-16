@@ -4,9 +4,9 @@ import java.util.regex.Pattern;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tf implements org.telegram.ui.ActionBar.z1, MessagesController.ErrorDelegate, bp0 {
+public final /* synthetic */ class tf implements org.telegram.ui.ActionBar.z1, MessagesController.ErrorDelegate, zo0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Runnable b;
 
@@ -15,7 +15,7 @@ public final /* synthetic */ class tf implements org.telegram.ui.ActionBar.z1, M
         this.b = runnable;
     }
 
-    @Override // org.telegram.ui.bp0
+    @Override // org.telegram.ui.zo0
     public void a(int i10) {
         int i11 = this.a;
         Runnable runnable = this.b;

@@ -1,24 +1,24 @@
 package com.google.firebase.messaging;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class a implements ja.d {
     public static final a a = new a();
-    public static final ja.c b = new ja.c("projectNumber", i2.d.n(i2.d.m(ma.e.class, new ma.a(1))));
-    public static final ja.c c = new ja.c("messageId", i2.d.n(i2.d.m(ma.e.class, new ma.a(2))));
-    public static final ja.c d = new ja.c("instanceId", i2.d.n(i2.d.m(ma.e.class, new ma.a(3))));
-    public static final ja.c e = new ja.c("messageType", i2.d.n(i2.d.m(ma.e.class, new ma.a(4))));
-    public static final ja.c f = new ja.c("sdkPlatform", i2.d.n(i2.d.m(ma.e.class, new ma.a(5))));
-    public static final ja.c g = new ja.c("packageName", i2.d.n(i2.d.m(ma.e.class, new ma.a(6))));
-    public static final ja.c h = new ja.c("collapseKey", i2.d.n(i2.d.m(ma.e.class, new ma.a(7))));
-    public static final ja.c i = new ja.c("priority", i2.d.n(i2.d.m(ma.e.class, new ma.a(8))));
-    public static final ja.c j = new ja.c("ttl", i2.d.n(i2.d.m(ma.e.class, new ma.a(9))));
-    public static final ja.c k = new ja.c("topic", i2.d.n(i2.d.m(ma.e.class, new ma.a(10))));
-    public static final ja.c l = new ja.c("bulkId", i2.d.n(i2.d.m(ma.e.class, new ma.a(11))));
-    public static final ja.c m = new ja.c("event", i2.d.n(i2.d.m(ma.e.class, new ma.a(12))));
-    public static final ja.c n = new ja.c("analyticsLabel", i2.d.n(i2.d.m(ma.e.class, new ma.a(13))));
-    public static final ja.c o = new ja.c("campaignId", i2.d.n(i2.d.m(ma.e.class, new ma.a(14))));
-    public static final ja.c p = new ja.c("composerLabel", i2.d.n(i2.d.m(ma.e.class, new ma.a(15))));
+    public static final ja.c b = new ja.c("projectNumber", i2.d.o(i2.d.n(ma.e.class, new ma.a(1))));
+    public static final ja.c c = new ja.c("messageId", i2.d.o(i2.d.n(ma.e.class, new ma.a(2))));
+    public static final ja.c d = new ja.c("instanceId", i2.d.o(i2.d.n(ma.e.class, new ma.a(3))));
+    public static final ja.c e = new ja.c("messageType", i2.d.o(i2.d.n(ma.e.class, new ma.a(4))));
+    public static final ja.c f = new ja.c("sdkPlatform", i2.d.o(i2.d.n(ma.e.class, new ma.a(5))));
+    public static final ja.c g = new ja.c("packageName", i2.d.o(i2.d.n(ma.e.class, new ma.a(6))));
+    public static final ja.c h = new ja.c("collapseKey", i2.d.o(i2.d.n(ma.e.class, new ma.a(7))));
+    public static final ja.c i = new ja.c("priority", i2.d.o(i2.d.n(ma.e.class, new ma.a(8))));
+    public static final ja.c j = new ja.c("ttl", i2.d.o(i2.d.n(ma.e.class, new ma.a(9))));
+    public static final ja.c k = new ja.c("topic", i2.d.o(i2.d.n(ma.e.class, new ma.a(10))));
+    public static final ja.c l = new ja.c("bulkId", i2.d.o(i2.d.n(ma.e.class, new ma.a(11))));
+    public static final ja.c m = new ja.c("event", i2.d.o(i2.d.n(ma.e.class, new ma.a(12))));
+    public static final ja.c n = new ja.c("analyticsLabel", i2.d.o(i2.d.n(ma.e.class, new ma.a(13))));
+    public static final ja.c o = new ja.c("campaignId", i2.d.o(i2.d.n(ma.e.class, new ma.a(14))));
+    public static final ja.c p = new ja.c("composerLabel", i2.d.o(i2.d.n(ma.e.class, new ma.a(15))));
 
     @Override // ja.a
     public final void a(Object obj, Object obj2) {

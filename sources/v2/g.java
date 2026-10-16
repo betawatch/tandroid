@@ -3,7 +3,7 @@ package v2;
 import u2.c1;
 import u2.d1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class g implements d1 {
     public final i a;
@@ -34,13 +34,13 @@ public final class g implements d1 {
     @Override // u2.d1
     public final boolean e() {
         i iVar = this.e;
-        return !iVar.y() && this.b.A(iVar.P);
+        return !iVar.v() && this.b.A(iVar.P);
     }
 
     @Override // u2.d1
     public final int f(qf.b bVar, h2.h hVar, int i10) {
         i iVar = this.e;
-        if (iVar.y()) {
+        if (iVar.v()) {
             return -3;
         }
         a aVar = iVar.L;
@@ -53,9 +53,9 @@ public final class g implements d1 {
     }
 
     @Override // u2.d1
-    public final int m(long j10) {
+    public final int j(long j10) {
         i iVar = this.e;
-        if (iVar.y()) {
+        if (iVar.v()) {
             return 0;
         }
         boolean z10 = iVar.P;
@@ -73,6 +73,6 @@ public final class g implements d1 {
     }
 
     @Override // u2.d1
-    public final void d() {
+    public final void b() {
     }
 }

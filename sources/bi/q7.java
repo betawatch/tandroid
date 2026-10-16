@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q7 implements Comparator {
     public final /* synthetic */ int a;
@@ -68,7 +68,7 @@ public final /* synthetic */ class q7 implements Comparator {
                 TLRPC.User user2 = MessagesController.getInstance(i10).getUser(Long.valueOf(peerDialogId2));
                 ?? r12 = user2 == null ? 0 : user2.premium;
                 if (r02 == r12) {
-                    return (peerStories2.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) i2.d.g(1, peerStories2.stories)).date) - (peerStories.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) i2.d.g(1, peerStories.stories)).date);
+                    return (peerStories2.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) i2.d.h(1, peerStories2.stories)).date) - (peerStories.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) i2.d.h(1, peerStories.stories)).date);
                 }
                 return r12 - r02;
             case 1:

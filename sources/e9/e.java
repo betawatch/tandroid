@@ -15,9 +15,9 @@ import x7.qa;
 import z7.de;
 import z7.ed;
 import z7.l9;
-import z7.lg;
+import z7.mg;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class e extends AbstractMap {
     public final /* synthetic */ int a;
@@ -75,7 +75,7 @@ public class e extends AbstractMap {
                     break;
                 }
             default:
-                z7.d dVar3 = ((lg) this.e).c;
+                z7.d dVar3 = ((mg) this.e).c;
                 if (this.b != dVar3) {
                     d dVar4 = new d(this, (char) 0);
                     while (dVar4.hasNext()) {
@@ -222,10 +222,10 @@ public class e extends AbstractMap {
                 if (collection3 == null) {
                     return null;
                 }
-                lg lgVar = (lg) this.e;
-                lgVar.getClass();
+                mg mgVar = (mg) this.e;
+                mgVar.getClass();
                 List list3 = (List) collection3;
-                return list3 instanceof RandomAccess ? new de(lgVar, obj, list3, null) : new m(lgVar, obj, list3, (m) null);
+                return list3 instanceof RandomAccess ? new de(mgVar, obj, list3, null) : new m(mgVar, obj, list3, (m) null);
         }
     }
 
@@ -251,13 +251,13 @@ public class e extends AbstractMap {
                 fVar.a = aVar2;
                 return aVar2;
             default:
-                lg lgVar = (lg) this.e;
-                ed edVar = lgVar.a;
+                mg mgVar = (mg) this.e;
+                ed edVar = mgVar.a;
                 if (edVar != null) {
                     return edVar;
                 }
-                ed edVar2 = new ed(lgVar, lgVar.c);
-                lgVar.a = edVar2;
+                ed edVar2 = new ed(mgVar, mgVar.c);
+                mgVar.a = edVar2;
                 return edVar2;
         }
     }
@@ -289,12 +289,12 @@ public class e extends AbstractMap {
                 collection2.clear();
                 return arrayList;
             default:
-                lg lgVar = (lg) this.e;
+                mg mgVar = (mg) this.e;
                 Collection collection3 = (Collection) this.b.remove(obj);
                 if (collection3 == null) {
                     return null;
                 }
-                lgVar.getClass();
+                mgVar.getClass();
                 ArrayList arrayList2 = new ArrayList(3);
                 arrayList2.addAll(collection3);
                 collection3.size();

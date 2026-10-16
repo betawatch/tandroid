@@ -17,7 +17,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class m5 extends FrameLayout {
     public final k5 a;
@@ -38,7 +38,7 @@ public final class m5 extends FrameLayout {
         k5 k5Var = new k5(this, context, 0);
         this.a = k5Var;
         k5Var.setRoundRadius(AndroidUtilities.dp(16.0f));
-        addView(k5Var, w7.a6.a(32.0f, 12.0f, 2.0f, 0.0f, 0.0f, 32, 0));
+        addView(k5Var, w7.z5.a(32.0f, 12.0f, 2.0f, 0.0f, 0.0f, 32, 0));
         setClipChildren(false);
         l5 l5Var = new l5(context, 0);
         this.b = l5Var;
@@ -48,7 +48,7 @@ public final class m5 extends FrameLayout {
         l5Var.setEllipsizeByGradient(AndroidUtilities.dp(4.0f));
         l5Var.setPivotX(0.0f);
         NotificationCenter.listenEmojiLoading(l5Var);
-        addView(l5Var, w7.a6.a(-2.0f, 54.0f, 0.0f, 86.0f, 0.0f, -2, 0));
+        addView(l5Var, w7.z5.a(-2.0f, 54.0f, 0.0f, 86.0f, 0.0f, -2, 0));
         for (int i10 = 0; i10 < 2; i10++) {
             this.c[i10] = new TextView(context);
             this.c[i10].setTextSize(1, 12.0f);
@@ -57,7 +57,7 @@ public final class m5 extends FrameLayout {
             this.c[i10].setEllipsize(TextUtils.TruncateAt.MIDDLE);
             this.c[i10].setTextColor(-1);
             this.c[i10].setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(1.0f));
-            addView(this.c[i10], w7.a6.a(-2.0f, 51.0f, 18.0f, 83.0f, 0.0f, -2, 0));
+            addView(this.c[i10], w7.z5.a(-2.0f, 51.0f, 18.0f, 83.0f, 0.0f, -2, 0));
         }
         this.b.setTextColor(-1);
     }

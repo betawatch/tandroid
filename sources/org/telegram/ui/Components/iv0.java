@@ -20,7 +20,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class iv0 extends lm0 {
     public int E;
@@ -37,7 +37,7 @@ public final class iv0 extends lm0 {
     public boolean s = false;
     public int v = 0;
     public int y = -1;
-    public final lr0 F = new lr0(this, 7);
+    public final kr0 F = new kr0(this, 7);
 
     public iv0(xv0 xv0Var, Context context) {
         this.G = xv0Var;
@@ -95,9 +95,9 @@ public final class iv0 extends lm0 {
         if (this.x == null) {
             l();
         }
-        lr0 lr0Var = this.F;
-        AndroidUtilities.cancelRunOnUIThread(lr0Var);
-        AndroidUtilities.runOnUIThread(lr0Var, this.x != null ? 60L : 600L);
+        kr0 kr0Var = this.F;
+        AndroidUtilities.cancelRunOnUIThread(kr0Var);
+        AndroidUtilities.runOnUIThread(kr0Var, this.x != null ? 60L : 600L);
     }
 
     public final void F() {
@@ -117,7 +117,7 @@ public final class iv0 extends lm0 {
         }
         ArrayList arrayList = this.h;
         if (arrayList.size() > 0) {
-            tL_messages_search.offset_id = ((MessageObject) i2.d.g(1, arrayList)).getId();
+            tL_messages_search.offset_id = ((MessageObject) i2.d.h(1, arrayList)).getId();
         }
         tL_messages_search.limit = 10;
         this.s = false;

@@ -11,15 +11,15 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.m21;
+import org.telegram.ui.Components.n21;
 import org.telegram.ui.Components.ss;
 import org.telegram.ui.Components.xv0;
 import org.telegram.ui.Components.ys;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.wi0;
+import org.telegram.ui.vi0;
 import org.telegram.ui.z70;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ja implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -28,10 +28,10 @@ public final /* synthetic */ class ja implements RequestDelegate {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ ja(int i10, wi0 wi0Var, org.telegram.ui.ActionBar.m2 m2Var, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction) {
+    public /* synthetic */ ja(int i10, vi0 vi0Var, org.telegram.ui.ActionBar.m2 m2Var, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction) {
         this.a = 7;
         this.b = i10;
-        this.c = wi0Var;
+        this.c = vi0Var;
         this.d = m2Var;
         this.e = tL_payments_assignPlayMarketTransaction;
     }
@@ -91,24 +91,24 @@ public final /* synthetic */ class ja implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new fi.l3((LaunchActivity) obj3, tLObject, (Uri) obj2, this.b, (org.telegram.ui.ActionBar.a2) obj, 24), 2L);
                 break;
             case 7:
-                wi0 wi0Var = (wi0) obj3;
+                vi0 vi0Var = (vi0) obj3;
                 org.telegram.ui.ActionBar.m2 m2Var2 = (org.telegram.ui.ActionBar.m2) obj2;
                 TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction = (TLRPC.TL_payments_assignPlayMarketTransaction) obj;
                 boolean z10 = tLObject instanceof TLRPC.Updates;
                 int i12 = this.b;
                 if (!z10) {
                     if (tL_error != null) {
-                        AndroidUtilities.runOnUIThread(new m21(i12, tL_error, m2Var2, tL_payments_assignPlayMarketTransaction, 11));
+                        AndroidUtilities.runOnUIThread(new n21(i12, tL_error, m2Var2, tL_payments_assignPlayMarketTransaction, 11));
                         break;
                     }
                 } else {
                     MessagesController.getInstance(i12).lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
-                    AndroidUtilities.runOnUIThread(wi0Var);
+                    AndroidUtilities.runOnUIThread(vi0Var);
                     break;
                 }
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new ma((org.telegram.ui.web.b1) obj3, tLObject, this.b, (org.telegram.ui.web.y0) obj2, (n9) obj, tL_error));
+                AndroidUtilities.runOnUIThread(new ma((org.telegram.ui.web.c1) obj3, tLObject, this.b, (org.telegram.ui.web.z0) obj2, (n9) obj, tL_error));
                 break;
         }
     }

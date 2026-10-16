@@ -6,16 +6,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class q1 extends p implements f1 {
     public final f1 e;
-    public final k6.h f;
+    public final a4.l f;
 
-    public q1(f1 f1Var, k6.h hVar) {
+    public q1(f1 f1Var, a4.l lVar) {
         f1Var.getClass();
         this.e = f1Var;
-        this.f = hVar;
+        this.f = lVar;
     }
 
     @Override // e9.n1

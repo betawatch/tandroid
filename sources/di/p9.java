@@ -24,11 +24,11 @@ import org.telegram.ui.Components.bm0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.bh1;
-import org.telegram.ui.n01;
+import org.telegram.ui.m01;
 import org.telegram.ui.n60;
 import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p9 implements org.telegram.ui.ActionBar.z1, ChatObject.Call.OnParticipantsLoad, ImageReceiver.ImageReceiverDelegate, bm0, MessagesController.IsInChatCheckedCallback, t5.b, s5.e, qa.a, bh1 {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final /* synthetic */ class p9 implements org.telegram.ui.ActionBar.z1, C
             rawQuery.close();
             long j10 = this.b;
             if (z10) {
-                sQLiteDatabase.execSQL(org.telegram.ui.Cells.d0.i(j10, "UPDATE log_event_dropped SET events_dropped_count = events_dropped_count + ", " WHERE log_source = ? AND reason = ?"), new String[]{str, Integer.toString(i10)});
+                sQLiteDatabase.execSQL(org.telegram.ui.Cells.c1.h(j10, "UPDATE log_event_dropped SET events_dropped_count = events_dropped_count + ", " WHERE log_source = ? AND reason = ?"), new String[]{str, Integer.toString(i10)});
                 return null;
             }
             ContentValues contentValues = new ContentValues();
@@ -110,9 +110,16 @@ public final /* synthetic */ class p9 implements org.telegram.ui.ActionBar.z1, C
         org.telegram.messenger.l5.a(this, i10, str, drawable);
     }
 
-    @Override // qa.a
-    public void f(qa.b bVar) {
-        ((u9.a) bVar.get()).d((String) this.c, this.b, (z9.b1) this.d);
+    @Override // t5.b
+    public Object f() {
+        ea.b bVar = (ea.b) this.c;
+        l5.i iVar = (l5.i) this.d;
+        s5.d dVar = (s5.d) bVar.c;
+        long b10 = ((u5.a) bVar.g).b() + this.b;
+        s5.g gVar = (s5.g) dVar;
+        gVar.getClass();
+        gVar.c(new bi.p1(b10, iVar));
+        return null;
     }
 
     @Override // org.telegram.ui.ActionBar.z1
@@ -145,16 +152,9 @@ public final /* synthetic */ class p9 implements org.telegram.ui.ActionBar.z1, C
         }
     }
 
-    @Override // t5.b
-    public Object h() {
-        ea.b bVar = (ea.b) this.c;
-        l5.i iVar = (l5.i) this.d;
-        s5.d dVar = (s5.d) bVar.c;
-        long d = ((u5.a) bVar.g).d() + this.b;
-        s5.g gVar = (s5.g) dVar;
-        gVar.getClass();
-        gVar.c(new bi.p1(d, iVar));
-        return null;
+    @Override // qa.a
+    public void h(qa.b bVar) {
+        ((u9.a) bVar.get()).d((String) this.c, this.b, (z9.b1) this.d);
     }
 
     @Override // org.telegram.ui.bh1
@@ -174,7 +174,7 @@ public final /* synthetic */ class p9 implements org.telegram.ui.ActionBar.z1, C
 
     @Override // org.telegram.messenger.MessagesController.IsInChatCheckedCallback
     public void run(boolean z10, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str) {
-        AndroidUtilities.runOnUIThread(new bi.x2((n01) this.c, this.b, tL_chatAdminRights, str, z10, (yy) this.d));
+        AndroidUtilities.runOnUIThread(new bi.x2((m01) this.c, this.b, tL_chatAdminRights, str, z10, (yy) this.d));
     }
 
     public /* synthetic */ p9(Object obj, Object obj2, long j10, int i10) {

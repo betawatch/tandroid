@@ -17,14 +17,14 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ad;
 import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class xa extends View {
     public int a;
@@ -181,7 +181,7 @@ public final class xa extends View {
             float dpf22 = this.s ? AndroidUtilities.dpf2(43.0f) : AndroidUtilities.dpf2(23.66f);
             float dpf23 = AndroidUtilities.dpf2(23.66f);
             RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(com.google.android.gms.internal.play_billing.k3.z(getWidth(), dpf22, 2.0f, dpf2), (getHeight() - dpf23) / 2.0f, org.telegram.messenger.q.b(getWidth(), dpf22, 2.0f, dpf2), (getHeight() + dpf23) / 2.0f);
+            rectF.set(com.google.android.gms.internal.play_billing.k3.z(getWidth(), dpf22, 2.0f, dpf2), (getHeight() - dpf23) / 2.0f, org.telegram.messenger.g0.a(getWidth(), dpf22, 2.0f, dpf2), (getHeight() + dpf23) / 2.0f);
             float a2 = this.x.a(0.075f);
             canvas.save();
             canvas.scale(a2, a2, rectF.centerX(), rectF.centerY());
@@ -206,7 +206,7 @@ public final class xa extends View {
             } else {
                 float dpf24 = this.s ? AndroidUtilities.dpf2(14.66f) + rectF.left : rectF.centerX();
                 Drawable drawable2 = drawableArr[1];
-                int b10 = (int) yh.b(fArr[1], 2.0f, abs, dpf24);
+                int b10 = (int) sk.b(fArr[1], 2.0f, abs, dpf24);
                 float centerY = rectF.centerY();
                 float f11 = (fArr[1] / 2.0f) * abs;
                 f7 = 0.5f;
@@ -218,7 +218,7 @@ public final class xa extends View {
             if (drawableArr[c10] != null && d <= f7) {
                 float dpf25 = this.s ? AndroidUtilities.dpf2(14.66f) + rectF.left : rectF.centerX();
                 Drawable drawable3 = drawableArr[c10];
-                int b11 = (int) yh.b(fArr[c10], 2.0f, abs, dpf25);
+                int b11 = (int) sk.b(fArr[c10], 2.0f, abs, dpf25);
                 float centerY2 = rectF.centerY();
                 float f12 = (fArr[c10] / 2.0f) * abs;
                 drawable3.setBounds(b11, (int) (centerY2 - f12), (int) (f12 + dpf25), (int) a1.g.d(fArr[c10], 2.0f, abs, rectF.centerY()));

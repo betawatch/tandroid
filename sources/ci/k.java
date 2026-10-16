@@ -4,12 +4,12 @@ import android.view.KeyEvent;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.LocaleController;
 import org.telegram.ui.Components.ij;
+import org.telegram.ui.Components.mm;
 import org.telegram.ui.Components.ni;
-import org.telegram.ui.Components.nm;
-import org.telegram.ui.Components.ty0;
+import org.telegram.ui.Components.uy0;
 import s4.y0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class k extends s4.s {
     public final /* synthetic */ int Q;
@@ -26,7 +26,7 @@ public final class k extends s4.s {
     public boolean Y0() {
         switch (this.Q) {
             case 3:
-                return ((ty0) this.R).W != null && LocaleController.isRTL;
+                return ((uy0) this.R).W != null && LocaleController.isRTL;
             default:
                 return super.Y0();
         }
@@ -54,9 +54,9 @@ public final class k extends s4.s {
                 w0(ijVar);
                 break;
             case 2:
-                nm nmVar = new nm(this, recyclerView.getContext());
-                nmVar.a = i10;
-                w0(nmVar);
+                mm mmVar = new mm(this, recyclerView.getContext());
+                mmVar.a = i10;
+                w0(mmVar);
                 break;
             default:
                 super.v0(recyclerView, y0Var, i10);
@@ -79,10 +79,10 @@ public final class k extends s4.s {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(ty0 ty0Var) {
+    public k(uy0 uy0Var) {
         super(5);
         this.Q = 3;
-        this.R = ty0Var;
+        this.R = uy0Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

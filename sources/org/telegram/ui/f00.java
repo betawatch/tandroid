@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class f00 extends a00 {
     public final /* synthetic */ g00 E;
@@ -33,26 +33,26 @@ public final class f00 extends a00 {
         int v = org.telegram.ui.ActionBar.g6.v(org.telegram.ui.ActionBar.g6.x0(null, i10, false), org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.i6, false));
         frameLayout.setBackground(org.telegram.ui.ActionBar.g6.j0(dp, dp, dp, dp, x02, v, v));
         frameLayout.setOnClickListener(new yz(this, 0));
-        addView(frameLayout, w7.a6.a(48.0f, 22.0f, 9.0f, 22.0f, 0.0f, -1, 55));
+        addView(frameLayout, w7.z5.a(48.0f, 22.0f, 9.0f, 22.0f, 0.0f, -1, 55));
         org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(activity);
         this.b = h5Var;
         h5Var.setTextSize(16);
         int i11 = org.telegram.ui.ActionBar.g6.G6;
         h5Var.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i11, false));
         SpannableString spannableString = new SpannableString("t.me/folder/N3k/dImA/bIo");
-        org.telegram.ui.Components.p11 p11Var = new org.telegram.ui.Components.p11();
-        p11Var.a |= 256;
-        spannableString.setSpan(new org.telegram.ui.Components.q11(p11Var, 0), 0, spannableString.length(), 33);
+        org.telegram.ui.Components.q11 q11Var = new org.telegram.ui.Components.q11();
+        q11Var.a |= 256;
+        spannableString.setSpan(new org.telegram.ui.Components.r11(q11Var, 0), 0, spannableString.length(), 33);
         h5Var.l(spannableString, false);
         h5Var.setAlpha(1.0f);
-        frameLayout.addView(h5Var, w7.a6.a(-2.0f, 20.0f, 0.0f, 40.0f, 0.0f, -1, 23));
+        frameLayout.addView(h5Var, w7.z5.a(-2.0f, 20.0f, 0.0f, 40.0f, 0.0f, -1, 23));
         org.telegram.ui.ActionBar.h5 h5Var2 = new org.telegram.ui.ActionBar.h5(activity);
         this.c = h5Var2;
         h5Var2.setTextSize(16);
         h5Var2.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i11, false));
         h5Var2.l(spannableString, false);
         h5Var2.setAlpha(0.0f);
-        frameLayout.addView(h5Var2, w7.a6.a(-2.0f, 20.0f, 0.0f, 40.0f, 0.0f, -1, 23));
+        frameLayout.addView(h5Var2, w7.z5.a(-2.0f, 20.0f, 0.0f, 40.0f, 0.0f, -1, 23));
         ImageView imageView = new ImageView(activity);
         this.d = imageView;
         imageView.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_ab_other));
@@ -62,7 +62,7 @@ public final class f00 extends a00 {
         imageView.setVisibility(8);
         imageView.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
         imageView.setOnClickListener(new yz(this, 1));
-        frameLayout.addView(imageView, w7.a6.a(40.0f, 4.0f, 4.0f, 4.0f, 4.0f, 40, 21));
+        frameLayout.addView(imageView, w7.z5.a(40.0f, 4.0f, 4.0f, 4.0f, 4.0f, 40, 21));
         di.f9 f9Var = new di.f9(activity);
         Paint paint = new Paint();
         f9Var.b = paint;
@@ -71,7 +71,7 @@ public final class f00 extends a00 {
         f9Var.setWillNotDraw(false);
         paint.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Oh, false));
         this.e = f9Var;
-        addView(f9Var, w7.a6.a(42.0f, 22.0f, 69.0f, 22.0f, 0.0f, -1, 55));
+        addView(f9Var, w7.z5.a(42.0f, 22.0f, 69.0f, 22.0f, 0.0f, -1, 55));
         bi.f4 f4Var = new bi.f4(activity, 25);
         this.f = f4Var;
         f4Var.setGravity(17);
@@ -89,7 +89,7 @@ public final class f00 extends a00 {
         f4Var.setOnClickListener(new yz(this, 2));
         f4Var.setAlpha(0.0f);
         f4Var.setVisibility(8);
-        f9Var.addView(f4Var, w7.a6.e(-1, -1, 3));
+        f9Var.addView(f4Var, w7.z5.e(-1, -1, 3));
         bi.f4 f4Var2 = new bi.f4(activity, 26);
         this.h = f4Var2;
         f4Var2.setGravity(17);
@@ -106,7 +106,7 @@ public final class f00 extends a00 {
         f4Var2.setOnClickListener(new yz(this, 3));
         f4Var2.setAlpha(0.0f);
         f4Var2.setVisibility(8);
-        f9Var.addView(f4Var2, w7.a6.e(-1, -1, 5));
+        f9Var.addView(f4Var2, w7.z5.e(-1, -1, 5));
         TextView textView = new TextView(activity);
         this.n = textView;
         textView.setGravity(17);
@@ -118,6 +118,6 @@ public final class f00 extends a00 {
         textView.setOnClickListener(new ah.f(this, 19));
         textView.setAlpha(1.0f);
         textView.setVisibility(0);
-        f9Var.addView(textView, w7.a6.d(-1.0f, -1));
+        f9Var.addView(textView, w7.z5.d(-1.0f, -1));
     }
 }

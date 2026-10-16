@@ -23,7 +23,7 @@ import com.google.android.gms.common.api.internal.BasePendingResult;
 import com.google.android.gms.internal.clearcut.f2;
 import e0.n0;
 import java.util.concurrent.atomic.AtomicInteger;
-import m.z0;
+import m.b1;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
@@ -33,7 +33,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.aa;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static int a;
@@ -219,8 +219,8 @@ public abstract class d {
         return viewConfiguration.getScaledHoverSlop();
     }
 
-    public static PrecomputedText.Params p(z0 z0Var) {
-        return z0Var.getTextMetricsParams();
+    public static PrecomputedText.Params p(b1 b1Var) {
+        return b1Var.getTextMetricsParams();
     }
 
     public static int q(Object obj) {

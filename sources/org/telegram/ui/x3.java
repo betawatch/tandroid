@@ -13,7 +13,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class x3 implements org.telegram.ui.ActionBar.i2, org.telegram.ui.ActionBar.s3 {
     public ValueAnimator E;
@@ -106,7 +106,7 @@ public final class x3 implements org.telegram.ui.ActionBar.i2, org.telegram.ui.A
         dismiss(true);
     }
 
-    public final void e(boolean z10, tu0 tu0Var) {
+    public final void e(boolean z10, su0 su0Var) {
         ValueAnimator valueAnimator = this.E;
         if (valueAnimator != null) {
             valueAnimator.cancel();
@@ -114,7 +114,7 @@ public final class x3 implements org.telegram.ui.ActionBar.i2, org.telegram.ui.A
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.x, z10 ? 1.0f : 0.0f);
         this.E = ofFloat;
         ofFloat.addUpdateListener(new u3(this, 2));
-        this.E.addListener(new ah.q0(this, z10, tu0Var, 3));
+        this.E.addListener(new ah.q0(this, z10, su0Var, 3));
         this.E.setInterpolator(org.telegram.ui.Components.es.h);
         this.E.setDuration(250L);
         this.E.start();
@@ -299,7 +299,7 @@ public final class x3 implements org.telegram.ui.ActionBar.i2, org.telegram.ui.A
     public final int k() {
         int dp = AndroidUtilities.dp(16.0f);
         View view = this.d;
-        return org.telegram.messenger.q.C(20.0f, l(), dp + (view == null ? AndroidUtilities.displaySize.y : view.getHeight()));
+        return org.telegram.messenger.g0.A(20.0f, l(), dp + (view == null ? AndroidUtilities.displaySize.y : view.getHeight()));
     }
 
     public final int l() {
@@ -438,7 +438,7 @@ public final class x3 implements org.telegram.ui.ActionBar.i2, org.telegram.ui.A
         if (z10) {
             LaunchActivity.G1.y0.b(this);
         } else {
-            e(true, new tu0(this, 10));
+            e(true, new su0(this, 10));
         }
         i();
         h();

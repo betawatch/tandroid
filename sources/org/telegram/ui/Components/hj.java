@@ -30,7 +30,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class hj extends ni implements NotificationCenter.NotificationCenterDelegate, ne.d {
     public int E;
@@ -218,7 +218,7 @@ public final class hj extends ni implements NotificationCenter.NotificationCente
                         } catch (Exception e) {
                             FileLog.e(e);
                         }
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.rp(24, hjVar, arrayList));
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.vp(19, hjVar, arrayList));
                         return;
                 }
             }
@@ -353,7 +353,7 @@ public final class hj extends ni implements NotificationCenter.NotificationCente
                         } catch (Exception e) {
                             FileLog.e(e);
                         }
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.rp(24, hjVar, arrayList));
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.vp(19, hjVar, arrayList));
                         return;
                 }
             }
@@ -488,7 +488,7 @@ public final class hj extends ni implements NotificationCenter.NotificationCente
                         } catch (Exception e) {
                             FileLog.e(e);
                         }
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.rp(24, hjVar, arrayList));
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.vp(19, hjVar, arrayList));
                         return;
                 }
             }
@@ -628,7 +628,7 @@ public final class hj extends ni implements NotificationCenter.NotificationCente
                         } catch (Exception e) {
                             FileLog.e(e);
                         }
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.rp(24, hjVar, arrayList));
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.vp(19, hjVar, arrayList));
                         return;
                 }
             }
@@ -643,14 +643,14 @@ public final class hj extends ni implements NotificationCenter.NotificationCente
         riVar.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
         riVar.r.addTextChangedListener(new bj(this));
         riVar.r.setHint(LocaleController.getString(R.string.SearchMusic));
-        frameLayout.addView(uiVar, w7.a6.g());
-        FrameLayout.LayoutParams a2 = w7.a6.a(48.0f, 7.0f, 8.0f, 7.0f, 4.0f, -1, 51);
+        frameLayout.addView(uiVar, w7.z5.g());
+        FrameLayout.LayoutParams a2 = w7.z5.a(48.0f, 7.0f, 8.0f, 7.0f, 4.0f, -1, 51);
         ((ViewGroup.MarginLayoutParams) a2).topMargin += AndroidUtilities.statusBarHeight;
         frameLayout.addView(riVar, a2);
         xs xsVar = new xs(context);
         this.x = xsVar;
         xsVar.setPadding(AndroidUtilities.dp(11.0f), AndroidUtilities.dp(21.0f), AndroidUtilities.dp(11.0f), AndroidUtilities.dp(21.0f));
-        xsVar.setOnAnimatedHeightChangedListener(new org.telegram.ui.rp(25, this, viVar));
+        xsVar.setOnAnimatedHeightChangedListener(new org.telegram.ui.vp(20, this, viVar));
         if (viVar.f0 != null) {
             FrameLayout frameLayout2 = new FrameLayout(context);
             xsVar.addView(frameLayout2);
@@ -662,8 +662,8 @@ public final class hj extends ni implements NotificationCenter.NotificationCente
         } else {
             viewGroup = frameLayout;
         }
-        FrameLayout.LayoutParams a10 = w7.a6.a(-2.0f, 0.0f, 8.0f, 0.0f, 4.0f, -1, 51);
-        ((ViewGroup.MarginLayoutParams) a10).topMargin = org.telegram.messenger.yh.c(27.0f, AndroidUtilities.statusBarHeight, ((ViewGroup.MarginLayoutParams) a10).topMargin);
+        FrameLayout.LayoutParams a10 = w7.z5.a(-2.0f, 0.0f, 8.0f, 0.0f, 4.0f, -1, 51);
+        ((ViewGroup.MarginLayoutParams) a10).topMargin = org.telegram.messenger.g0.C(27.0f, AndroidUtilities.statusBarHeight, ((ViewGroup.MarginLayoutParams) a10).topMargin);
         viewGroup.addView(xsVar, a10);
         dj djVar = new dj(this, context, viVar.M1, new d(this, 5), new zi(this), new zi(this), c6Var);
         this.v = djVar;
@@ -676,10 +676,10 @@ public final class hj extends ni implements NotificationCenter.NotificationCente
         djVar.setClipToPadding(false);
         djVar.setHorizontalScrollBarEnabled(false);
         djVar.setVerticalScrollBarEnabled(false);
-        addView(djVar, w7.a6.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+        addView(djVar, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 51));
         djVar.setGlowColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.A5, this.a));
         djVar.setOnScrollListener(new ah.d0(this, 17));
-        addView(viewGroup, w7.a6.e(-1, 200, 51));
+        addView(viewGroup, w7.z5.e(-1, 200, 51));
         djVar.W2.N(false);
         O();
         int i14 = this.b.M1;
@@ -688,11 +688,11 @@ public final class hj extends ni implements NotificationCenter.NotificationCente
 
     public static boolean N(hj hjVar, MessageObject messageObject) {
         hjVar.O = messageObject;
-        return MediaController.getInstance().setPlaylist(org.telegram.messenger.q.l(messageObject), messageObject, 0L);
+        return MediaController.getInstance().setPlaylist(org.telegram.messenger.g0.k(messageObject), messageObject, 0L);
     }
 
     @Override // org.telegram.ui.Components.ni
-    public final void B(int i10, int i11) {
+    public final void C(int i10, int i11) {
         this.T = i11;
         O();
     }
@@ -756,22 +756,22 @@ public final class hj extends ni implements NotificationCenter.NotificationCente
         this.v.setPadding(0, (int) (this.x.c(0.0f) + AndroidUtilities.dp(56.0f) + i10 + AndroidUtilities.statusBarHeight), 0, this.e);
     }
 
-    public final void P(l61 l61Var, View view) {
-        if (l61Var != null && l61Var.d == this.R) {
+    public final void P(m61 m61Var, View view) {
+        if (m61Var != null && m61Var.d == this.R) {
             this.J.load();
             return;
         }
-        if (l61Var != null && l61Var.d == this.P) {
+        if (m61Var != null && m61Var.d == this.P) {
             Q();
             return;
         }
-        if (l61Var != null && l61Var.d == this.Q) {
+        if (m61Var != null && m61Var.d == this.Q) {
             R();
             return;
         }
-        if (view instanceof org.telegram.ui.Cells.j7) {
-            org.telegram.ui.Cells.j7 j7Var = (org.telegram.ui.Cells.j7) view;
-            MediaController.AudioEntry audioEntry = (MediaController.AudioEntry) j7Var.getTag();
+        if (view instanceof org.telegram.ui.Cells.i7) {
+            org.telegram.ui.Cells.i7 i7Var = (org.telegram.ui.Cells.i7) view;
+            MediaController.AudioEntry audioEntry = (MediaController.AudioEntry) i7Var.getTag();
             vi viVar = this.b;
             viVar.getClass();
             int i10 = 1;
@@ -784,8 +784,8 @@ public final class hj extends ni implements NotificationCenter.NotificationCente
                 HashSet hashSet = this.I;
                 if (hashSet.contains(audioEntry)) {
                     hashSet.remove(audioEntry);
-                    l61Var.e = false;
-                    j7Var.e(false, true);
+                    m61Var.e = false;
+                    i7Var.e(false, true);
                     i10 = 2;
                 } else {
                     if (this.E >= 0) {
@@ -798,13 +798,13 @@ public final class hj extends ni implements NotificationCenter.NotificationCente
                             org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
                             a2Var.R = string;
                             a2Var.T = formatString;
-                            org.telegram.messenger.q.A(R.string.OK, alertDialog$Builder, null);
+                            org.telegram.messenger.g0.p(R.string.OK, alertDialog$Builder, null);
                             return;
                         }
                     }
-                    l61Var.e = true;
+                    m61Var.e = true;
                     hashSet.add(audioEntry);
-                    j7Var.e(true, true);
+                    i7Var.e(true, true);
                 }
             }
             viVar.Z1(i10);
@@ -855,7 +855,7 @@ public final class hj extends ni implements NotificationCenter.NotificationCente
         tL_messages_searchGlobal.q = str2;
         tL_messages_searchGlobal.limit = arrayList.isEmpty() ? 3 : 15;
         if (arrayList.size() > 0) {
-            MessageObject messageObject = ((MediaController.AudioEntry) i2.d.g(1, arrayList)).messageObject;
+            MessageObject messageObject = ((MediaController.AudioEntry) i2.d.h(1, arrayList)).messageObject;
             tL_messages_searchGlobal.offset_id = messageObject.getId();
             tL_messages_searchGlobal.offset_rate = this.b0;
             tL_messages_searchGlobal.offset_peer = messagesController.getInputPeer(MessageObject.getPeerId(messageObject.messageOwner.peer_id));
@@ -905,7 +905,7 @@ public final class hj extends ni implements NotificationCenter.NotificationCente
                 return;
             }
             this.i0 = true;
-            messagesController.getUserNameResolver().resolve(str2, new org.telegram.ui.vc(19, this, messagesController));
+            messagesController.getUserNameResolver().resolve(str2, new org.telegram.ui.uc(19, this, messagesController));
             return;
         }
         TLRPC.User currentUser = UserConfig.getInstance(i10).getCurrentUser();
@@ -945,10 +945,10 @@ public final class hj extends ni implements NotificationCenter.NotificationCente
             int childCount = djVar.getChildCount();
             for (int i13 = 0; i13 < childCount; i13++) {
                 View childAt = djVar.getChildAt(i13);
-                if (childAt instanceof org.telegram.ui.Cells.j7) {
-                    org.telegram.ui.Cells.j7 j7Var = (org.telegram.ui.Cells.j7) childAt;
-                    if (j7Var.getMessage() != null) {
-                        j7Var.g(false, true);
+                if (childAt instanceof org.telegram.ui.Cells.i7) {
+                    org.telegram.ui.Cells.i7 i7Var = (org.telegram.ui.Cells.i7) childAt;
+                    if (i7Var.getMessage() != null) {
+                        i7Var.g(false, true);
                     }
                 }
             }
@@ -958,10 +958,10 @@ public final class hj extends ni implements NotificationCenter.NotificationCente
             int childCount2 = djVar.getChildCount();
             for (int i14 = 0; i14 < childCount2; i14++) {
                 View childAt2 = djVar.getChildAt(i14);
-                if (childAt2 instanceof org.telegram.ui.Cells.j7) {
-                    org.telegram.ui.Cells.j7 j7Var2 = (org.telegram.ui.Cells.j7) childAt2;
-                    if (j7Var2.getMessage() != null) {
-                        j7Var2.g(false, true);
+                if (childAt2 instanceof org.telegram.ui.Cells.i7) {
+                    org.telegram.ui.Cells.i7 i7Var2 = (org.telegram.ui.Cells.i7) childAt2;
+                    if (i7Var2.getMessage() != null) {
+                        i7Var2.g(false, true);
                     }
                 }
             }
@@ -1033,10 +1033,10 @@ public final class hj extends ni implements NotificationCenter.NotificationCente
         arrayList.add(new org.telegram.ui.ActionBar.i6(djVar, 32768, null, null, null, null, i10));
         arrayList.add(new org.telegram.ui.ActionBar.i6(djVar, 4096, null, null, null, null, org.telegram.ui.ActionBar.g6.i6));
         arrayList.add(new org.telegram.ui.ActionBar.i6(djVar, 0, new Class[]{View.class}, org.telegram.ui.ActionBar.g6.k0, null, null, org.telegram.ui.ActionBar.g6.d7));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(djVar, 8192, new Class[]{org.telegram.ui.Cells.j7.class}, new String[]{"checkBox"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.i7));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(djVar, 16384, new Class[]{org.telegram.ui.Cells.j7.class}, new String[]{"checkBox"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.k7));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(djVar, 4, new Class[]{org.telegram.ui.Cells.j7.class}, org.telegram.ui.ActionBar.g6.f3, null, null, org.telegram.ui.ActionBar.g6.G6));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(djVar, 4, new Class[]{org.telegram.ui.Cells.j7.class}, org.telegram.ui.ActionBar.g6.g3, null, null, org.telegram.ui.ActionBar.g6.z6));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(djVar, 8192, new Class[]{org.telegram.ui.Cells.i7.class}, new String[]{"checkBox"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.i7));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(djVar, 16384, new Class[]{org.telegram.ui.Cells.i7.class}, new String[]{"checkBox"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.k7));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(djVar, 4, new Class[]{org.telegram.ui.Cells.i7.class}, org.telegram.ui.ActionBar.g6.f3, null, null, org.telegram.ui.ActionBar.g6.G6));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(djVar, 4, new Class[]{org.telegram.ui.Cells.i7.class}, org.telegram.ui.ActionBar.g6.g3, null, null, org.telegram.ui.ActionBar.g6.z6));
         return arrayList;
     }
 
@@ -1115,6 +1115,6 @@ public final class hj extends ni implements NotificationCenter.NotificationCente
     }
 
     @Override // ne.d
-    public final /* synthetic */ void C(float f7, int i10) {
+    public final /* synthetic */ void A(float f7, int i10) {
     }
 }

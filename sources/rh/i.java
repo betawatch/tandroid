@@ -10,10 +10,10 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import w7.m6;
+import w7.l6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
 public abstract class i {
     public static int a(MessageObject messageObject) {
         if (messageObject.type != 17) {
@@ -59,12 +59,12 @@ public abstract class i {
         if (tL_messageMediaPoll == null) {
             return null;
         }
-        if (!m6.a(i10, 4)) {
-            if (m6.a(i10, 1)) {
+        if (!l6.a(i10, 4)) {
+            if (l6.a(i10, 1)) {
                 TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
                 return AndroidUtilities.replaceTags(LocaleController.formatString(R.string.PollV2ToastOnlySubscribersCanVote, DialogObject.getShortName(MessagesController.getInstance(i11).getChat(Long.valueOf(-(messageFwdHeader != null ? DialogObject.getPeerDialogId(messageFwdHeader.from_id) : messageObject.getDialogId()))))));
             }
-            if (m6.a(i10, 2)) {
+            if (l6.a(i10, 2)) {
                 return AndroidUtilities.replaceTags(LocaleController.getString(R.string.PollV2ToastOnlySubscribersJoined24hCanVote));
             }
             return null;
@@ -94,6 +94,6 @@ public abstract class i {
             }
             stringBuffer.append((String) arrayList.get(i13));
         }
-        return AndroidUtilities.replaceTags(LocaleController.formatString(z10 ? R.string.PollV2ToastOnlySubscribersFromCountriesCanVoteOther : R.string.PollV2ToastOnlyUsersFromCountriesCanVoteOther, stringBuffer, i2.d.g(1, arrayList)));
+        return AndroidUtilities.replaceTags(LocaleController.formatString(z10 ? R.string.PollV2ToastOnlySubscribersFromCountriesCanVoteOther : R.string.PollV2ToastOnlyUsersFromCountriesCanVoteOther, stringBuffer, i2.d.h(1, arrayList)));
     }
 }

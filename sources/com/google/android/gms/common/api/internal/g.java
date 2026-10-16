@@ -5,7 +5,7 @@ import android.util.Log;
 import android.util.Pair;
 import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class g extends com.google.android.gms.internal.cast.a0 {
     @Override // android.os.Handler
@@ -13,7 +13,7 @@ public final class g extends com.google.android.gms.internal.cast.a0 {
         int i10 = message.what;
         if (i10 != 1) {
             if (i10 != 2) {
-                Log.wtf("BasePendingResult", i2.d.i(i10, "Don't know how to handle message: "), new Exception());
+                Log.wtf("BasePendingResult", i2.d.j(i10, "Don't know how to handle message: "), new Exception());
                 return;
             } else {
                 ((BasePendingResult) message.obj).e(Status.n);

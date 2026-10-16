@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.m51;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m51 implements Runnable {
     public final /* synthetic */ int a = 2;
@@ -46,7 +46,7 @@ public final /* synthetic */ class m51 implements Runnable {
     public final void run() {
         boolean z10;
         View view;
-        String A;
+        String B;
         String str;
         switch (this.a) {
             case 0:
@@ -61,10 +61,10 @@ public final /* synthetic */ class m51 implements Runnable {
                 ArrayList arrayList2 = (ArrayList) this.c;
                 boolean z11 = false;
                 if (!zArr[0]) {
-                    if (str2 != null && (A = x41.A(x41.F(str2, null, null))) != null) {
+                    if (str2 != null && (B = x41.B(x41.F(str2, null, null))) != null) {
                         org.telegram.ui.ActionBar.e1 e1Var = new org.telegram.ui.ActionBar.e1(2, elVar.getContext(), elVar.d, false, false);
                         e1Var.setChecked(true);
-                        e1Var.setText(A);
+                        e1Var.setText(B);
                         linearLayout.addView(e1Var);
                     }
                     int size = arrayList.size();
@@ -116,7 +116,7 @@ public final /* synthetic */ class m51 implements Runnable {
                         }
                     }
                     int i13 = z11 ? 1 : 0;
-                    linearLayout.addView(new org.telegram.ui.ActionBar.j1(elVar.getContext(), elVar.d), w7.a6.n(-1, 8));
+                    linearLayout.addView(new org.telegram.ui.ActionBar.j1(elVar.getContext(), elVar.d), w7.z5.n(-1, 8));
                     int size2 = arrayList2.size();
                     int i14 = i13;
                     while (i14 < size2) {
@@ -195,18 +195,18 @@ public final /* synthetic */ class m51 implements Runnable {
                 TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr = (TL_wallet.inputTonConnectOauthSession[]) this.r;
                 bi.ma maVar = (bi.ma) this.s;
                 if (!tL_urlAuthResultRequest.request_wallet) {
-                    org.telegram.ui.rl0.a = e3Var;
+                    org.telegram.ui.ql0.a = e3Var;
                     e3Var.show();
                     break;
                 } else {
-                    org.telegram.ui.Wallet.i2 B = org.telegram.ui.Wallet.d2.B(context, iArr[0], null, tL_urlAuthResultRequest, c6Var, new org.telegram.ui.j90(e3VarArr, zArr2, inputtonconnectoauthsessionArr, tL_urlAuthResultRequest, e3Var, maVar, 2), new org.telegram.ui.wc0(23, e3VarArr, zArr2));
-                    e3VarArr[0] = B;
-                    org.telegram.ui.rl0.a = B;
+                    org.telegram.ui.Wallet.j2 B2 = org.telegram.ui.Wallet.e2.B(context, iArr[0], null, tL_urlAuthResultRequest, c6Var, new org.telegram.ui.j90(e3VarArr, zArr2, inputtonconnectoauthsessionArr, tL_urlAuthResultRequest, e3Var, maVar, 2), new org.telegram.ui.se0(18, e3VarArr, zArr2));
+                    e3VarArr[0] = B2;
+                    org.telegram.ui.ql0.a = B2;
                     break;
                 }
             case 3:
-                org.telegram.ui.Wallet.d2 d2Var = (org.telegram.ui.Wallet.d2) this.d;
-                org.telegram.ui.Wallet.g0 g0Var = (org.telegram.ui.Wallet.g0) this.e;
+                org.telegram.ui.Wallet.e2 e2Var = (org.telegram.ui.Wallet.e2) this.d;
+                org.telegram.ui.Wallet.h0 h0Var = (org.telegram.ui.Wallet.h0) this.e;
                 TL_wallet.tonConnectSession tonconnectsession = (TL_wallet.tonConnectSession) this.h;
                 String str6 = (String) this.f;
                 byte[] bArr = (byte[]) this.n;
@@ -214,38 +214,38 @@ public final /* synthetic */ class m51 implements Runnable {
                 TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest2 = (TLRPC.TL_urlAuthResultRequest) this.c;
                 TL_wallet.tonConnectChallenge tonconnectchallenge = (TL_wallet.tonConnectChallenge) this.r;
                 bi.f0 f0Var = (bi.f0) this.s;
-                d2Var.getClass();
+                e2Var.getClass();
                 try {
-                    AndroidUtilities.runOnUIThread(new bi.k8(d2Var, str6, bArr, org.telegram.ui.Wallet.d2.q(g0Var, tonconnectsession, str6, bArr, jSONArray, tL_urlAuthResultRequest2.domain, null, tonconnectchallenge, d2Var.f.getCurrentTime()), f0Var, tonconnectsession, 13));
+                    AndroidUtilities.runOnUIThread(new bi.k8(e2Var, str6, bArr, org.telegram.ui.Wallet.e2.q(h0Var, tonconnectsession, str6, bArr, jSONArray, tL_urlAuthResultRequest2.domain, null, tonconnectchallenge, e2Var.f.getCurrentTime()), f0Var, tonconnectsession, 13));
                     break;
                 } catch (Exception e) {
-                    f0Var.run(null, org.telegram.ui.Wallet.d2.h("prepare OAuth connect", e));
+                    f0Var.run(null, org.telegram.ui.Wallet.e2.h("prepare OAuth connect", e));
                     return;
                 }
             default:
-                final org.telegram.ui.Wallet.d2 d2Var2 = (org.telegram.ui.Wallet.d2) this.d;
+                final org.telegram.ui.Wallet.e2 e2Var2 = (org.telegram.ui.Wallet.e2) this.d;
                 final String str7 = (String) this.f;
                 final byte[] bArr2 = (byte[]) this.e;
                 final TL_wallet.tonConnectSession tonconnectsession2 = (TL_wallet.tonConnectSession) this.h;
-                String str8 = ((org.telegram.ui.Wallet.a2) this.n).a;
+                String str8 = ((org.telegram.ui.Wallet.b2) this.n).a;
                 final bi.f0 f0Var2 = (bi.f0) this.b;
-                final org.telegram.ui.Wallet.g0 g0Var2 = (org.telegram.ui.Wallet.g0) this.c;
+                final org.telegram.ui.Wallet.h0 h0Var2 = (org.telegram.ui.Wallet.h0) this.c;
                 final JSONArray jSONArray2 = (JSONArray) this.r;
                 final TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest3 = (TLRPC.TL_urlAuthResultRequest) this.s;
-                org.telegram.ui.Wallet.j0 j0Var = d2Var2.b;
-                if (!TextUtils.equals(str7, j0Var.r()) || !Arrays.equals(bArr2, j0Var.w()) || ((str = tonconnectsession2.client_id) != null && !str8.equalsIgnoreCase(str))) {
+                org.telegram.ui.Wallet.k0 k0Var = e2Var2.b;
+                if (!TextUtils.equals(str7, k0Var.r()) || !Arrays.equals(bArr2, k0Var.w()) || ((str = tonconnectsession2.client_id) != null && !str8.equalsIgnoreCase(str))) {
                     f0Var2.run(null, "Wallet or TON Connect session changed. Open the request again.");
                     break;
                 } else {
                     TL_wallet.tonConnectRegisterKey tonconnectregisterkey = new TL_wallet.tonConnectRegisterKey();
                     tonconnectregisterkey.session_id = tonconnectsession2.id;
                     tonconnectregisterkey.client_id = str8;
-                    d2Var2.f.sendRequestTyped(tonconnectregisterkey, new org.telegram.messenger.a(), new Utilities.Callback2() { // from class: org.telegram.ui.Wallet.v1
+                    e2Var2.f.sendRequestTyped(tonconnectregisterkey, new org.telegram.messenger.a(), new Utilities.Callback2() { // from class: org.telegram.ui.Wallet.w1
                         @Override // org.telegram.messenger.Utilities.Callback2
                         public final void run(Object obj, Object obj2) {
-                            d2 d2Var3 = d2.this;
+                            e2 e2Var3 = e2.this;
                             bi.f0 f0Var3 = f0Var2;
-                            g0 g0Var3 = g0Var2;
+                            h0 h0Var3 = h0Var2;
                             TL_wallet.tonConnectSession tonconnectsession3 = tonconnectsession2;
                             String str9 = str7;
                             byte[] bArr3 = bArr2;
@@ -253,11 +253,11 @@ public final /* synthetic */ class m51 implements Runnable {
                             TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest4 = tL_urlAuthResultRequest3;
                             TL_wallet.tonConnectChallenge tonconnectchallenge2 = (TL_wallet.tonConnectChallenge) obj;
                             TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                            d2Var3.getClass();
+                            e2Var3.getClass();
                             if (tL_error != null || tonconnectchallenge2 == null) {
-                                f0Var3.run(null, d2.x(tL_error, "registerKey"));
+                                f0Var3.run(null, e2.x(tL_error, "registerKey"));
                             } else {
-                                Utilities.globalQueue.postRunnable(new m51(d2Var3, g0Var3, tonconnectsession3, str9, bArr3, jSONArray3, tL_urlAuthResultRequest4, tonconnectchallenge2, f0Var3));
+                                Utilities.globalQueue.postRunnable(new m51(e2Var3, h0Var3, tonconnectsession3, str9, bArr3, jSONArray3, tL_urlAuthResultRequest4, tonconnectchallenge2, f0Var3));
                             }
                         }
                     });
@@ -290,21 +290,21 @@ public final /* synthetic */ class m51 implements Runnable {
         this.s = arrayList8;
     }
 
-    public /* synthetic */ m51(org.telegram.ui.Wallet.d2 d2Var, String str, byte[] bArr, TL_wallet.tonConnectSession tonconnectsession, org.telegram.ui.Wallet.a2 a2Var, bi.f0 f0Var, org.telegram.ui.Wallet.g0 g0Var, JSONArray jSONArray, TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest) {
-        this.d = d2Var;
+    public /* synthetic */ m51(org.telegram.ui.Wallet.e2 e2Var, String str, byte[] bArr, TL_wallet.tonConnectSession tonconnectsession, org.telegram.ui.Wallet.b2 b2Var, bi.f0 f0Var, org.telegram.ui.Wallet.h0 h0Var, JSONArray jSONArray, TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest) {
+        this.d = e2Var;
         this.f = str;
         this.e = bArr;
         this.h = tonconnectsession;
-        this.n = a2Var;
+        this.n = b2Var;
         this.b = f0Var;
-        this.c = g0Var;
+        this.c = h0Var;
         this.r = jSONArray;
         this.s = tL_urlAuthResultRequest;
     }
 
-    public /* synthetic */ m51(org.telegram.ui.Wallet.d2 d2Var, org.telegram.ui.Wallet.g0 g0Var, TL_wallet.tonConnectSession tonconnectsession, String str, byte[] bArr, JSONArray jSONArray, TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, TL_wallet.tonConnectChallenge tonconnectchallenge, bi.f0 f0Var) {
-        this.d = d2Var;
-        this.e = g0Var;
+    public /* synthetic */ m51(org.telegram.ui.Wallet.e2 e2Var, org.telegram.ui.Wallet.h0 h0Var, TL_wallet.tonConnectSession tonconnectsession, String str, byte[] bArr, JSONArray jSONArray, TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, TL_wallet.tonConnectChallenge tonconnectchallenge, bi.f0 f0Var) {
+        this.d = e2Var;
+        this.e = h0Var;
         this.h = tonconnectsession;
         this.f = str;
         this.n = bArr;

@@ -17,9 +17,10 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Set;
-import m.q3;
+import m.h3;
+import m.t3;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class p0 implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
     public final com.google.android.gms.common.api.c b;
@@ -39,15 +40,15 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
     public p0(h hVar, com.google.android.gms.common.api.j jVar) {
         this.o = hVar;
         Looper looper = hVar.x.getLooper();
-        li.k a2 = jVar.a();
+        h3 a2 = jVar.a();
         a0.g gVar = (a0.g) a2.b;
         String str = (String) a2.c;
         String str2 = (String) a2.d;
         n8.a aVar = n8.a.a;
-        q3 q3Var = new q3(gVar, null, str, str2, aVar);
+        t3 t3Var = new t3(gVar, null, str, str2, aVar);
         a8.d dVar = jVar.c.a;
         n6.l.h(dVar);
-        com.google.android.gms.common.api.c a10 = dVar.a(jVar.a, looper, q3Var, jVar.d, this, this);
+        com.google.android.gms.common.api.c a10 = dVar.a(jVar.a, looper, t3Var, jVar.d, this, this);
         String str3 = jVar.b;
         if (str3 != null && (a10 instanceof n6.g)) {
             ((n6.g) a10).N = str3;
@@ -66,8 +67,8 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
         }
         Context context = hVar.e;
         com.google.android.gms.internal.cast.a0 a0Var = hVar.x;
-        li.k a11 = jVar.a();
-        this.j = new d1(context, a0Var, new q3((a0.g) a11.b, null, (String) a11.c, (String) a11.d, aVar));
+        h3 a11 = jVar.a();
+        this.j = new d1(context, a0Var, new t3((a0.g) a11.b, null, (String) a11.c, (String) a11.d, aVar));
     }
 
     public final k6.c a(k6.c[] cVarArr) {
@@ -288,9 +289,9 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
             return;
         }
         try {
-            int L = hVar.h.L(hVar.e, cVar);
-            if (L != 0) {
-                k6.a aVar = new k6.a(L, null);
+            int K = hVar.h.K(hVar.e, cVar);
+            if (K != 0) {
+                k6.a aVar = new k6.a(K, null);
                 Log.w("GoogleApiManager", "The service for " + cVar.getClass().getName() + " is not available: " + aVar.toString());
                 m(aVar, null);
                 return;
@@ -300,13 +301,13 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
                 d1 d1Var = this.j;
                 n6.l.h(d1Var);
                 Handler handler = d1Var.c;
-                q3 q3Var = d1Var.f;
+                t3 t3Var = d1Var.f;
                 o8.a aVar2 = d1Var.i;
                 if (aVar2 != null) {
                     aVar2.disconnect();
                 }
-                q3Var.h = Integer.valueOf(System.identityHashCode(d1Var));
-                d1Var.i = (o8.a) d1Var.d.a(d1Var.b, handler.getLooper(), q3Var, (n8.a) q3Var.f, d1Var, d1Var);
+                t3Var.h = Integer.valueOf(System.identityHashCode(d1Var));
+                d1Var.i = (o8.a) d1Var.d.a(d1Var.b, handler.getLooper(), t3Var, (n8.a) t3Var.f, d1Var, d1Var);
                 d1Var.j = s0Var;
                 Set set = d1Var.e;
                 if (set == null || set.isEmpty()) {

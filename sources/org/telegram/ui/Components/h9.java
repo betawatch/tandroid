@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ic1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class h9 extends org.telegram.ui.ActionBar.m2 {
     public static final int[][] c0 = {new int[]{-11302949, -11562789, -10430789, -11480359}, new int[]{-11229725, -12014137, -10234219, -10819908}, new int[]{-12927610, -11158198, -3355566, -5191850}, new int[]{-8164117, -5281560, -2200166, -2525971}, new int[]{-1287263, -1350281, -1337532, -885148}, new int[]{-1419145, -1936819, -742839, -1014448}, new int[]{-1017772, -1212871, -998847, -1003446}};
@@ -43,7 +43,7 @@ public final class h9 extends org.telegram.ui.ActionBar.m2 {
     public boolean F;
     public ValueAnimator G;
     public org.telegram.ui.ActionBar.k H;
-    public t2 I;
+    public u2 I;
     public e9 J;
     public hd K;
     public boolean L;
@@ -117,8 +117,8 @@ public final class h9 extends org.telegram.ui.ActionBar.m2 {
         int i10 = org.telegram.ui.ActionBar.g6.G6;
         kVar.setTitleColor(org.telegram.ui.ActionBar.g6.x0(null, i10, false));
         this.actionBar.D(org.telegram.ui.ActionBar.g6.x0(null, i10, false), false);
-        this.actionBar.B(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.i6, false), false);
-        i2.d.v(false, this.actionBar);
+        this.actionBar.C(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.i6, false), false);
+        i2.d.y(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(false);
         this.actionBar.setTitle(LocaleController.getString(R.string.PhotoEditor));
         this.actionBar.setActionBarMenuOnItemClick(new y8(this, 0));
@@ -131,9 +131,9 @@ public final class h9 extends org.telegram.ui.ActionBar.m2 {
         this.H.setClipChildren(false);
         int k10 = i0.a.k(-1, 60);
         this.H.D(-1, false);
-        i2.d.v(false, this.H);
+        i2.d.y(false, this.H);
         this.H.setAllowOverlayTitle(false);
-        this.H.B(k10, false);
+        this.H.C(k10, false);
         org.telegram.ui.ActionBar.y n10 = this.H.n();
         n10.setClipChildren(false);
         g50 g50Var = this.T;
@@ -161,27 +161,27 @@ public final class h9 extends org.telegram.ui.ActionBar.m2 {
         textView2.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i11, false));
         this.W.setTextSize(1, 14.0f);
         this.W.setGravity(17);
-        this.r.addView(this.W, w7.a6.t(-1, -2, 0, 21, 10, 21, 10));
+        this.r.addView(this.W, w7.z5.t(-1, -2, 0, 21, 10, 21, 10));
         bi.i7 i7Var = new bi.i7(this, getParentActivity());
         e9 e9Var = new e9(this, getParentActivity());
         this.J = e9Var;
         i7Var.addView(e9Var);
-        this.r.addView(i7Var, w7.a6.t(-1, 48, 0, 12, 0, 12, 0));
+        this.r.addView(i7Var, w7.z5.t(-1, 48, 0, 12, 0, 12, 0));
         TextView textView3 = new TextView(getParentActivity());
         this.V = textView3;
         textView3.setText(LocaleController.getString(R.string.ChooseEmojiOrSticker));
         this.V.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i11, false));
         this.V.setTextSize(1, 14.0f);
         this.V.setGravity(17);
-        this.r.addView(this.V, w7.a6.t(-1, -2, 0, 21, 18, 21, 10));
+        this.r.addView(this.V, w7.z5.t(-1, -2, 0, 21, 18, 21, 10));
         b9 b9Var = new b9(this, this, getParentActivity(), getThemedColor(i10));
         this.b = b9Var;
         b9Var.R = true;
         b9Var.setAnimationsEnabled(this.fragmentBeginToShow);
         this.b.setClipChildren(false);
-        this.r.addView(this.b, w7.a6.t(-1, -1, 0, 12, 0, 12, 12));
+        this.r.addView(this.b, w7.z5.t(-1, -1, 0, 12, 0, 12, 12));
         this.r.setClipChildren(false);
-        z8Var.addView(this.r, w7.a6.a(-1.0f, 0.0f, 0.0f, 0.0f, 64.0f, -1, 0));
+        z8Var.addView(this.r, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 64.0f, -1, 0));
         View view = new View(getParentActivity());
         this.e = view;
         view.setVisibility(8);
@@ -210,11 +210,11 @@ public final class h9 extends org.telegram.ui.ActionBar.m2 {
         this.x.g(this.s, false, true);
         this.x.setOnClickListener(new f0(this, 2));
         this.y = new FrameLayout(context);
-        z8Var.addView(this.x, w7.a6.a(48.0f, 16.0f, 16.0f, 16.0f, 16.0f, -1, 80));
-        z8Var.addView(this.y, w7.a6.a(80.0f, 8.0f, 16.0f, 8.0f, 64.0f, -1, 80));
+        z8Var.addView(this.x, w7.z5.a(48.0f, 16.0f, 16.0f, 16.0f, 16.0f, -1, 80));
+        z8Var.addView(this.y, w7.z5.a(80.0f, 8.0f, 16.0f, 8.0f, 64.0f, -1, 80));
         z8Var.addView(this.actionBar);
         z8Var.addView(this.H);
-        z8Var.addView(this.e, w7.a6.d(-1.0f, -1));
+        z8Var.addView(this.e, w7.z5.d(-1.0f, -1));
         hd hdVar = new hd(z8Var);
         this.K = hdVar;
         hdVar.h = new t8(this, 0);
@@ -271,14 +271,14 @@ public final class h9 extends org.telegram.ui.ActionBar.m2 {
             new zc(this.y, this.resourceProvider).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.PremiumAvatarToast), new t8(this, i11))).j();
             return;
         }
-        t2 t2Var = this.I;
-        if (t2Var != null) {
+        u2 u2Var = this.I;
+        if (u2Var != null) {
             a9 a9Var = this.a;
             d9 d9Var = a9Var.h;
             long j10 = a9Var.a;
             TLRPC.Document document2 = a9Var.b;
-            ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) t2Var.b;
-            h9 h9Var = (h9) t2Var.c;
+            ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) u2Var.b;
+            h9 h9Var = (h9) u2Var.c;
             boolean z11 = ChatAttachAlertPhotoLayout.q1;
             vi viVar = chatAttachAlertPhotoLayout.b;
             HashMap hashMap = ChatAttachAlertPhotoLayout.s1;
@@ -496,7 +496,7 @@ public final class h9 extends org.telegram.ui.ActionBar.m2 {
             }
             hashMap.put(-1, photoEntry);
             ChatAttachAlertPhotoLayout.t1.add(-1);
-            viVar.c2.g0(7, true, false, 0, 0, 0L, viVar.u1(), false, 0L);
+            viVar.c2.b0(7, true, false, 0, 0, 0L, viVar.u1(), false, 0L);
             if (!h9Var.Q) {
                 org.telegram.ui.ActionBar.m2 m2Var = viVar.f0;
                 if (m2Var != null) {

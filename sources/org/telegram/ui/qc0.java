@@ -1,238 +1,241 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.os.Build;
-import android.text.TextUtils;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.Switch;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class qc0 extends FrameLayout {
-    public final ImageView a;
-    public final LinearLayout b;
-    public final bi.f4 c;
-    public final org.telegram.ui.Components.s6 d;
-    public final ImageView e;
-    public final Switch f;
-    public final org.telegram.ui.Components.aq h;
-    public boolean n;
-    public boolean r;
-    public boolean s;
-    public boolean v;
-    public int w;
-    public int x;
-    public final /* synthetic */ rc0 y;
+public final class qc0 extends org.telegram.ui.ActionBar.m2 {
+    public FrameLayout a;
+    public org.telegram.ui.Components.mm0 b;
+    public s4.b0 c;
+    public yu d;
+    public org.telegram.ui.Components.sc e;
+    public int f;
+    public final v3 h;
+    public final boolean[] n;
+    public final ArrayList r;
+    public final ArrayList s;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qc0(rc0 rc0Var, Context context) {
-        super(context);
-        this.y = rc0Var;
-        setImportantForAccessibility(1);
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        int x02 = org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.m6, false);
-        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        imageView.setColorFilter(new PorterDuffColorFilter(x02, mode));
-        imageView.setVisibility(8);
-        addView(imageView, w7.a6.a(24.0f, 20.0f, 0.0f, 20.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
-        bi.f4 f4Var = new bi.f4(context, 27);
-        this.c = f4Var;
-        f4Var.setLines(1);
-        f4Var.setSingleLine(true);
-        f4Var.setEllipsize(TextUtils.TruncateAt.END);
-        f4Var.setTextSize(1, 16.0f);
-        int i10 = org.telegram.ui.ActionBar.g6.G6;
-        f4Var.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i10, false));
-        f4Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        f4Var.setImportantForAccessibility(2);
-        org.telegram.ui.Components.s6 s6Var = new org.telegram.ui.Components.s6(context, false, true, true);
-        this.d = s6Var;
-        s6Var.b(0.35f, 200L, org.telegram.ui.Components.es.h);
-        s6Var.setTypeface(AndroidUtilities.bold());
-        s6Var.setTextSize(AndroidUtilities.dp(14.0f));
-        s6Var.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i10, false));
-        s6Var.setImportantForAccessibility(2);
-        ImageView imageView2 = new ImageView(context);
-        this.e = imageView2;
-        imageView2.setVisibility(8);
-        imageView2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.x0(null, i10, false), mode));
-        imageView2.setImageResource(R.drawable.arrow_more);
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.b = linearLayout;
-        linearLayout.setOrientation(0);
-        linearLayout.setGravity(LocaleController.isRTL ? 5 : 3);
-        if (LocaleController.isRTL) {
-            linearLayout.addView(imageView2, w7.a6.p(16, 16, 0.0f, 16, 0, 0, 6, 0));
-            linearLayout.addView(s6Var, w7.a6.p(-2, -2, 0.0f, 16, 0, 0, 6, 0));
-            linearLayout.addView(f4Var, w7.a6.o(-2, -2, 1.0f, 16));
-        } else {
-            linearLayout.addView(f4Var, w7.a6.o(-2, -2, 1.0f, 16));
-            linearLayout.addView(s6Var, w7.a6.p(-2, -2, 0.0f, 16, 6, 0, 0, 0));
-            linearLayout.addView(imageView2, w7.a6.p(16, 16, 0.0f, 16, 2, 0, 0, 0));
-        }
-        addView(linearLayout, w7.a6.a(-2.0f, 64.0f, 0.0f, 8.0f, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 16));
-        Switch r32 = new Switch(context, null);
-        this.f = r32;
-        r32.setVisibility(8);
-        int i11 = org.telegram.ui.ActionBar.g6.M6;
-        int i12 = org.telegram.ui.ActionBar.g6.N6;
-        int i13 = org.telegram.ui.ActionBar.g6.d6;
-        r32.d(i11, i12, i13, i13);
-        r32.setImportantForAccessibility(2);
-        addView(r32, w7.a6.a(50.0f, 19.0f, 0.0f, 19.0f, 0.0f, 37, (LocaleController.isRTL ? 3 : 5) | 16));
-        org.telegram.ui.Components.aq aqVar = new org.telegram.ui.Components.aq(context, 21, null);
-        this.h = aqVar;
-        aqVar.b(org.telegram.ui.ActionBar.g6.h7, org.telegram.ui.ActionBar.g6.j7, org.telegram.ui.ActionBar.g6.k7);
-        aqVar.setDrawUnchecked(true);
-        aqVar.a(true, false);
-        aqVar.setDrawBackgroundAsArc(10);
-        aqVar.setVisibility(8);
-        aqVar.setImportantForAccessibility(2);
-        boolean z10 = LocaleController.isRTL;
-        addView(aqVar, w7.a6.a(21.0f, z10 ? 0.0f : 64.0f, 0.0f, z10 ? 64.0f : 0.0f, 0.0f, 21, (z10 ? 5 : 3) | 16));
-        setFocusable(true);
+    public qc0() {
+        super(null);
+        this.h = new v3(this, 9);
+        this.n = new boolean[3];
+        this.r = new ArrayList();
+        this.s = new ArrayList();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x001e, code lost:
-    
-        if ((r5 & 16384) > 0) goto L12;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0020, code lost:
-    
-        r1 = r1 - 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:42:0x0031, code lost:
-    
-        if ((r5 & 4) > 0) goto L12;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int a(int i10) {
-        boolean isPremium = this.y.getUserConfig().isPremium();
-        int bitCount = Integer.bitCount(i10);
-        if (isPremium) {
-            if ((i10 & 4096) > 0) {
-                bitCount--;
-            }
-            if ((i10 & 8192) > 0) {
-                bitCount--;
-            }
-        } else {
-            if ((i10 & 16) > 0) {
-                bitCount--;
-            }
-            if ((i10 & 8) > 0) {
-                bitCount--;
-            }
+    public final int U(int i10) {
+        if (i10 == 3) {
+            return 0;
         }
-        if (SharedConfig.getDevicePerformanceClass() < 1 && (i10 & 256) > 0) {
-            bitCount--;
+        if (i10 == 28700) {
+            return 1;
         }
-        if ((Build.VERSION.SDK_INT < 33 || (SharedConfig.getDevicePerformanceClass() < 1 && !BuildVars.DEBUG_PRIVATE_VERSION)) && (262144 & i10) > 0) {
-            bitCount--;
-        }
-        return (org.telegram.ui.Components.y11.c() || (i10 & 65536) <= 0) ? bitCount : bitCount - 1;
+        return i10 == this.f ? 2 : -1;
     }
 
-    public final void b(boolean z10, boolean z11) {
-        if (this.s != z10) {
-            this.s = z10;
-            org.telegram.ui.Components.aq aqVar = this.h;
-            Switch r12 = this.f;
-            LinearLayout linearLayout = this.b;
-            ImageView imageView = this.a;
-            if (z11) {
-                imageView.animate().alpha(z10 ? 0.5f : 1.0f).setDuration(220L).start();
-                linearLayout.animate().alpha(z10 ? 0.5f : 1.0f).setDuration(220L).start();
-                r12.animate().alpha(z10 ? 0.5f : 1.0f).setDuration(220L).start();
-                org.telegram.messenger.yh.r(aqVar.animate(), z10 ? 0.5f : 1.0f, 220L);
-            } else {
-                imageView.setAlpha(z10 ? 0.5f : 1.0f);
-                linearLayout.setAlpha(z10 ? 0.5f : 1.0f);
-                r12.setAlpha(z10 ? 0.5f : 1.0f);
-                aqVar.setAlpha(z10 ? 0.5f : 1.0f);
-            }
-            setEnabled(!z10);
-        }
-    }
-
-    public final void c(lc0 lc0Var, boolean z10) {
-        int value = LiteMode.getValue(true);
-        int i10 = lc0Var.e;
-        this.w = a(value & i10);
-        this.x = a(i10);
-        boolean z11 = false;
-        String format = String.format("%d/%d", Integer.valueOf(this.w), Integer.valueOf(this.x));
-        if (z10 && !LocaleController.isRTL) {
-            z11 = true;
-        }
-        this.d.c(format, z11, true);
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        boolean z10 = LocaleController.isRTL;
-        bi.f4 f4Var = this.c;
-        if (z10) {
-            if (this.r) {
-                float dp = AndroidUtilities.dp(75.0f);
-                canvas.drawRect(dp - AndroidUtilities.dp(0.66f), (getMeasuredHeight() - AndroidUtilities.dp(20.0f)) / 2.0f, dp, (AndroidUtilities.dp(20.0f) + getMeasuredHeight()) / 2.0f, org.telegram.ui.ActionBar.g6.k0);
-            }
-            if (this.n) {
-                canvas.drawLine((getMeasuredWidth() - AndroidUtilities.dp(64.0f)) + (f4Var.getTranslationX() < 0.0f ? AndroidUtilities.dp(-32.0f) : 0), getMeasuredHeight() - 1, 0.0f, getMeasuredHeight() - 1, org.telegram.ui.ActionBar.g6.k0);
+    public final void V(int i10) {
+        int i11 = 0;
+        while (true) {
+            ArrayList arrayList = this.s;
+            if (i11 >= arrayList.size()) {
                 return;
             }
+            if (((kc0) arrayList.get(i11)).e == i10) {
+                this.b.e1(new i2.r(this, i11, 13), 700, true);
+                return;
+            }
+            i11++;
+        }
+    }
+
+    public final void W(int i10) {
+        int U = U(i10);
+        if (U == -1) {
             return;
         }
-        if (this.r) {
-            float measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(75.0f);
-            canvas.drawRect(measuredWidth - AndroidUtilities.dp(0.66f), (getMeasuredHeight() - AndroidUtilities.dp(20.0f)) / 2.0f, measuredWidth, (AndroidUtilities.dp(20.0f) + getMeasuredHeight()) / 2.0f, org.telegram.ui.ActionBar.g6.k0);
-        }
-        if (this.n) {
-            canvas.drawLine(f4Var.getTranslationX() + AndroidUtilities.dp(64.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.g6.k0);
-        }
+        this.n[U] = true;
+        Y();
+        X();
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        org.telegram.ui.Components.aq aqVar = this.h;
-        accessibilityNodeInfo.setClassName(aqVar.getVisibility() == 0 ? "android.widget.CheckBox" : "android.widget.Switch");
-        accessibilityNodeInfo.setCheckable(true);
-        accessibilityNodeInfo.setEnabled(true);
-        if (aqVar.getVisibility() == 0) {
-            accessibilityNodeInfo.setChecked(aqVar.a.q);
-        } else {
-            accessibilityNodeInfo.setChecked(this.f.h);
+    public final void X() {
+        ArrayList arrayList = this.r;
+        arrayList.clear();
+        ArrayList arrayList2 = this.s;
+        arrayList.addAll(arrayList2);
+        arrayList2.clear();
+        int i10 = Build.VERSION.SDK_INT;
+        arrayList2.add(new kc0(1, 0, null, 0, 0));
+        arrayList2.add(new kc0(2, 0, LiteMode.getPowerSaverLevel() <= 0 ? LocaleController.getString(R.string.LiteBatteryInfoDisabled) : LiteMode.getPowerSaverLevel() >= 100 ? LocaleController.getString(R.string.LiteBatteryInfoEnabled) : LocaleController.formatString(R.string.LiteBatteryInfoBelow, String.format("%d%%", Integer.valueOf(LiteMode.getPowerSaverLevel()))), 0, 0));
+        arrayList2.add(new kc0(0, 0, LocaleController.getString(R.string.LiteOptionsTitle), 0, 0));
+        arrayList2.add(kc0.c(R.drawable.msg2_sticker, 3, LocaleController.getString(R.string.LiteOptionsStickers)));
+        boolean[] zArr = this.n;
+        if (zArr[0]) {
+            arrayList2.add(kc0.b(1, LocaleController.getString(R.string.LiteOptionsAutoplayKeyboard)));
+            arrayList2.add(kc0.b(2, LocaleController.getString(R.string.LiteOptionsAutoplayChat)));
         }
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(this.c.getText());
-        if (this.v) {
-            sb2.append('\n');
-            sb2.append(LocaleController.formatString("Of", R.string.Of, Integer.valueOf(this.w), Integer.valueOf(this.x)));
+        arrayList2.add(kc0.c(R.drawable.msg2_smile_status, LiteMode.FLAGS_ANIMATED_EMOJI, LocaleController.getString(R.string.LiteOptionsEmoji)));
+        if (zArr[1]) {
+            arrayList2.add(kc0.b(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD, LocaleController.getString(R.string.LiteOptionsAutoplayKeyboard)));
+            arrayList2.add(kc0.b(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS, LocaleController.getString(R.string.LiteOptionsAutoplayReactions)));
+            arrayList2.add(kc0.b(LiteMode.FLAG_ANIMATED_EMOJI_CHAT, LocaleController.getString(R.string.LiteOptionsAutoplayChat)));
         }
-        accessibilityNodeInfo.setContentDescription(sb2);
+        arrayList2.add(kc0.c(R.drawable.msg2_ask_question, this.f, LocaleController.getString(R.string.LiteOptionsChat)));
+        if (zArr[2]) {
+            arrayList2.add(kc0.b(32, LocaleController.getString("LiteOptionsBackground")));
+            if (!AndroidUtilities.isTablet()) {
+                arrayList2.add(kc0.b(64, LocaleController.getString("LiteOptionsTopics")));
+            }
+            arrayList2.add(kc0.b(128, LocaleController.getString("LiteOptionsSpoiler")));
+            if (SharedConfig.getDevicePerformanceClass() >= 1 || BuildVars.DEBUG_PRIVATE_VERSION) {
+                arrayList2.add(kc0.b(256, LocaleController.getString("LiteOptionsBlur2")));
+            }
+            if (i10 >= 33 && (SharedConfig.getDevicePerformanceClass() >= 1 || BuildVars.DEBUG_PRIVATE_VERSION)) {
+                arrayList2.add(kc0.b(262144, LocaleController.getString("LiteOptionsLiquidGlass")));
+            }
+            arrayList2.add(kc0.b(32768, LocaleController.getString("LiteOptionsScale")));
+            if (org.telegram.ui.Components.z11.c()) {
+                arrayList2.add(kc0.b(65536, LocaleController.getString("LiteOptionsThanos")));
+            }
+        }
+        arrayList2.add(kc0.c(R.drawable.msg2_call_earpiece, 512, LocaleController.getString(R.string.LiteOptionsCalls)));
+        arrayList2.add(kc0.c(R.drawable.msg2_videocall, 1024, LocaleController.getString(R.string.LiteOptionsAutoplayVideo)));
+        arrayList2.add(kc0.c(R.drawable.msg2_gif, 2048, LocaleController.getString(R.string.LiteOptionsAutoplayGifs)));
+        arrayList2.add(kc0.c(R.drawable.photo_star, 131072, LocaleController.getString(R.string.LiteOptionsParticles)));
+        arrayList2.add(new kc0(2, 0, "", 0, 0));
+        arrayList2.add(new kc0(5, 0, LocaleController.getString(R.string.LiteSmoothTransitions), 0, 1));
+        arrayList2.add(new kc0(2, 0, LocaleController.getString("LiteSmoothTransitionsInfo"), 0, 0));
+        this.d.E(arrayList, arrayList2);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
+    public final void Y() {
+        if (this.b == null) {
+            return;
+        }
+        for (int i10 = 0; i10 < this.b.getChildCount(); i10++) {
+            View childAt = this.b.getChildAt(i10);
+            if (childAt != null) {
+                this.b.getClass();
+                int R = RecyclerView.R(childAt);
+                if (R >= 0) {
+                    ArrayList arrayList = this.s;
+                    if (R < arrayList.size()) {
+                        kc0 kc0Var = (kc0) arrayList.get(R);
+                        int i11 = kc0Var.a;
+                        if (i11 == 3 || i11 == 4) {
+                            pc0 pc0Var = (pc0) childAt;
+                            ImageView imageView = pc0Var.e;
+                            qc0 qc0Var = pc0Var.y;
+                            int i12 = kc0Var.e;
+                            if (i11 == 3) {
+                                boolean z10 = Integer.bitCount(i12) > 1;
+                                pc0Var.v = z10;
+                                if (z10) {
+                                    pc0Var.c(kc0Var, true);
+                                    int U = qc0Var.U(i12);
+                                    imageView.clearAnimation();
+                                    org.telegram.messenger.sk.t(imageView.animate().rotation((U < 0 || !qc0Var.n[U]) ? 0.0f : 180.0f), org.telegram.ui.Components.es.h, 240L);
+                                }
+                                pc0Var.f.c(LiteMode.isEnabled(i12), true);
+                            } else {
+                                pc0Var.h.a(LiteMode.isEnabled(i12), true);
+                            }
+                            pc0Var.b(LiteMode.isPowerSaverApplied(), true);
+                        } else if (i11 == 1) {
+                            ((oc0) childAt).a();
+                        }
+                    }
+                }
+            }
+        }
+        if (this.e == null || LiteMode.isPowerSaverApplied()) {
+            return;
+        }
+        this.e.b();
+        this.e = null;
+    }
+
+    @Override // org.telegram.ui.ActionBar.m2
+    public final View createView(Context context) {
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setTitle(LocaleController.getString(R.string.PowerUsage));
+        this.actionBar.setActionBarMenuOnItemClick(new q70(this, 6));
+        org.telegram.ui.ActionBar.b5 b5Var = this.parentLayout;
+        if (b5Var != null && ((ActionBarLayout) b5Var).N0) {
+            this.actionBar.setBackButtonImage(R.drawable.ic_ab_close);
+        }
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.a = frameLayout;
+        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.a7, false));
+        org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(context, null);
+        this.b = mm0Var;
+        mm0Var.p1();
+        this.actionBar.setAdaptiveBackground(this.b);
+        org.telegram.ui.Components.mm0 mm0Var2 = this.b;
+        s4.b0 b0Var = new s4.b0();
+        this.c = b0Var;
+        mm0Var2.setLayoutManager(b0Var);
+        org.telegram.ui.Components.mm0 mm0Var3 = this.b;
+        yu yuVar = new yu(this, 1);
+        this.d = yuVar;
+        mm0Var3.setAdapter(yuVar);
+        s4.k kVar = new s4.k();
+        kVar.n(350L);
+        kVar.o(org.telegram.ui.Components.es.h);
+        kVar.C = false;
+        kVar.m = false;
+        this.b.setItemAnimator(kVar);
+        this.a.addView(this.b, w7.z5.d(-1.0f, -1));
+        this.b.setOnItemClickListener(new mu(this, 16));
+        this.fragmentView = this.a;
+        this.f = AndroidUtilities.isTablet() ? 360864 : LiteMode.FLAGS_CHAT;
+        X();
+        return this.fragmentView;
+    }
+
+    @Override // org.telegram.ui.ActionBar.m2
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.m2
+    public final void onBecomeFullyHidden() {
+        super.onBecomeFullyHidden();
+        LiteMode.removeOnPowerSaverAppliedListener(this.h);
+    }
+
+    @Override // org.telegram.ui.ActionBar.m2
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        LiteMode.addOnPowerSaverAppliedListener(this.h);
+    }
+
+    @Override // org.telegram.ui.ActionBar.m2
+    public final void onFragmentDestroy() {
+        super.onFragmentDestroy();
+        LiteMode.savePreference();
+        org.telegram.ui.Components.s5.u();
+        org.telegram.ui.ActionBar.g6.p1(true);
+    }
+
+    @Override // org.telegram.ui.ActionBar.m2
+    public final void onInsets(int i10, int i11, int i12, int i13) {
+        this.b.setPadding(0, 0, 0, i13);
+        this.b.setClipToPadding(false);
     }
 }

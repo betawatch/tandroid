@@ -13,9 +13,9 @@ import org.telegram.ui.Components.o10;
 import org.telegram.ui.Components.sc;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.q6;
-import org.telegram.ui.ur0;
+import org.telegram.ui.tr0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class r4 implements Utilities.Callback {
                 int i10 = this.b;
                 float f7 = iArr[0];
                 float f10 = i10;
-                q6Var.run(Float.valueOf((w7.s.a(((Float) obj).floatValue(), 0.0f, 1.0f) * (1.0f / f10)) + (f7 / f10)), Boolean.FALSE);
+                q6Var.run(Float.valueOf((w7.r.a(((Float) obj).floatValue(), 0.0f, 1.0f) * (1.0f / f10)) + (f7 / f10)), Boolean.FALSE);
                 break;
             case 3:
                 o10 o10Var = (o10) this.c;
@@ -60,7 +60,7 @@ public final /* synthetic */ class r4 implements Utilities.Callback {
                 callback.run(Integer.valueOf(i11));
                 break;
             case 4:
-                Utilities.themeQueue.postRunnable(new rg.g2((rg.p2) this.c, this.b, (List) obj, new ArrayList(), (ur0) this.d));
+                Utilities.themeQueue.postRunnable(new rg.g2((rg.p2) this.c, this.b, (List) obj, new ArrayList(), (tr0) this.d));
                 break;
             default:
                 yh.q2 q2Var = (yh.q2) this.c;

@@ -21,7 +21,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class r4 extends View {
     public final org.telegram.ui.Components.g6 E;
@@ -67,7 +67,7 @@ public final class r4 extends View {
         paint.setColor(-1);
         paint2.setColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Oh, c6Var));
         imageReceiver.setRoundRadius(AndroidUtilities.dp(6.0f));
-        w7.c6.a(this);
+        w7.b6.a(this);
     }
 
     public final void a(int i10, int i11, final k8 k8Var) {

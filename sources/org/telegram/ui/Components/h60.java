@@ -10,7 +10,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class h60 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final class h60 implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        x50 x50Var;
+        y50 y50Var;
         long j10;
         long j11;
         switch (this.a) {
@@ -54,17 +54,17 @@ public final class h60 implements Runnable {
                     boolean z12 = z10;
                     if (((i60) this.b).z0.isEmpty()) {
                         try {
-                            x50Var = new x50();
+                            y50Var = new y50();
                         } catch (OutOfMemoryError unused2) {
                             System.gc();
-                            x50Var = new x50();
+                            y50Var = new y50();
                         }
                     } else {
-                        x50Var = (x50) ((i60) this.b).z0.poll();
+                        y50Var = (y50) ((i60) this.b).z0.poll();
                     }
-                    x50 x50Var2 = x50Var;
-                    x50Var2.e = 0;
-                    x50Var2.d = 10;
+                    y50 y50Var2 = y50Var;
+                    y50Var2.e = 0;
+                    y50Var2.d = 10;
                     int i10 = 0;
                     while (true) {
                         if (i10 < 10) {
@@ -72,7 +72,7 @@ public final class h60 implements Runnable {
                             if (j13 == j12 && !z11) {
                                 j13 = System.nanoTime() / 1000;
                             }
-                            ByteBuffer byteBuffer = x50Var2.a[i10];
+                            ByteBuffer byteBuffer = y50Var2.a[i10];
                             byteBuffer.rewind();
                             int read = ((i60) this.b).y0.read(byteBuffer, 2048);
                             if (read <= 0 || i10 % 2 != 0) {
@@ -102,9 +102,9 @@ public final class h60 implements Runnable {
                                 }
                             }
                             if (read <= 0) {
-                                x50Var2.d = i10;
+                                y50Var2.d = i10;
                                 if (!((i60) this.b).W) {
-                                    x50Var2.f = true;
+                                    y50Var2.f = true;
                                 }
                             } else {
                                 if (z11) {
@@ -117,8 +117,8 @@ public final class h60 implements Runnable {
                                         j13 = System.nanoTime() / j10;
                                         z11 = false;
                                     }
-                                    x50Var2.b[i10] = j13;
-                                    x50Var2.c[i10] = read;
+                                    y50Var2.b[i10] = j13;
+                                    y50Var2.c[i10] = read;
                                     int i12 = ((read * MediaController.VIDEO_BITRATE_480) / 48000) / 2;
                                     if (z11) {
                                         j11 += i12;
@@ -128,8 +128,8 @@ public final class h60 implements Runnable {
                                     j12 = -1;
                                 }
                                 j11 = j13;
-                                x50Var2.b[i10] = j13;
-                                x50Var2.c[i10] = read;
+                                y50Var2.b[i10] = j13;
+                                y50Var2.c[i10] = read;
                                 int i122 = ((read * MediaController.VIDEO_BITRATE_480) / 48000) / 2;
                                 if (z11) {
                                 }
@@ -139,14 +139,14 @@ public final class h60 implements Runnable {
                             }
                         }
                     }
-                    if (x50Var2.d >= 0 || x50Var2.f) {
-                        if (!((i60) this.b).W && x50Var2.d < 10) {
+                    if (y50Var2.d >= 0 || y50Var2.f) {
+                        if (!((i60) this.b).W && y50Var2.d < 10) {
                             z12 = true;
                         }
-                        ((i60) this.b).T.sendMessage(((i60) this.b).T.obtainMessage(3, x50Var2));
+                        ((i60) this.b).T.sendMessage(((i60) this.b).T.obtainMessage(3, y50Var2));
                     } else if (((i60) this.b).W) {
                         try {
-                            ((i60) this.b).z0.put(x50Var2);
+                            ((i60) this.b).z0.put(y50Var2);
                         } catch (Exception unused3) {
                         }
                     } else {
@@ -168,14 +168,14 @@ public final class h60 implements Runnable {
                 break;
             default:
                 long uptimeMillis = SystemClock.uptimeMillis();
-                org.telegram.ui.Wallet.k5 k5Var = (org.telegram.ui.Wallet.k5) this.b;
-                WeakHashMap weakHashMap = k5Var.e;
+                org.telegram.ui.Wallet.m5 m5Var = (org.telegram.ui.Wallet.m5) this.b;
+                WeakHashMap weakHashMap = m5Var.e;
                 Collection.-EL.removeIf(weakHashMap.entrySet(), new org.telegram.ui.t8(uptimeMillis, 3));
                 if (!weakHashMap.isEmpty()) {
-                    k5Var.d.postDelayed(this, 250L);
+                    m5Var.d.postDelayed(this, 250L);
                     break;
                 } else {
-                    k5Var.a();
+                    m5Var.a();
                     break;
                 }
         }

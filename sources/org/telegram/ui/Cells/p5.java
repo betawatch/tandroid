@@ -12,9 +12,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.vm;
+import org.telegram.ui.Components.um;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class p5 extends org.telegram.ui.Components.z9 {
     public final Paint G;
@@ -93,7 +93,7 @@ public final class p5 extends org.telegram.ui.Components.z9 {
         }
         if (t5Var.s) {
             r5 r5Var = t5Var.U;
-            if ((r5Var == null || !((vm) ((org.telegram.ui.Components.s) r5Var).b).s) && (photoEntry = t5Var.G) != null && photoEntry.isLivePhoto()) {
+            if ((r5Var == null || !((um) ((org.telegram.ui.Components.s) r5Var).b).s) && (photoEntry = t5Var.G) != null && photoEntry.isLivePhoto()) {
                 if (t5Var.G.isUnalivePhoto()) {
                     if (this.J == null) {
                         this.J = getContext().getResources().getDrawable(R.drawable.media_live_off).mutate();

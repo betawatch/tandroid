@@ -2,38 +2,52 @@ package m4;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class r0 implements f1, g1, e2.j {
-    public final /* synthetic */ j1 a;
-    public final /* synthetic */ int b;
+public final /* synthetic */ class r0 implements e1, f1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i1 b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ r0(j1 j1Var, int i10, int i11) {
-        this.a = j1Var;
-        this.b = i10;
-        this.c = i11;
-    }
-
-    @Override // m4.g1
-    public void a(n1 n1Var, w wVar, List list) {
-        j1 j1Var = this.a;
-        n1Var.O(j1Var.K0(wVar, n1Var, this.b), j1Var.K0(wVar, n1Var, this.c), list);
-    }
-
-    @Override // e2.j
-    public void accept(Object obj) {
-        j1 j1Var = this.a;
-        ((f0) j1Var.a.get()).getClass();
-        i1 i1Var = j1Var.i;
-        if (i1Var != null) {
-            i1Var.setFixedSize(this.b, this.c);
-        }
+    public /* synthetic */ r0(i1 i1Var, int i10, int i11) {
+        this.a = i11;
+        this.b = i1Var;
+        this.c = i10;
     }
 
     @Override // m4.f1
-    public void e(n1 n1Var, w wVar) {
-        j1 j1Var = this.a;
-        n1Var.R(j1Var.K0(wVar, n1Var, this.b), j1Var.K0(wVar, n1Var, this.c));
+    public void a(m1 m1Var, v vVar, List list) {
+        switch (this.a) {
+            case 1:
+                m1Var.b0(this.b.K0(vVar, m1Var, this.c), list);
+                break;
+            case 2:
+                i1 i1Var = this.b;
+                i1Var.getClass();
+                int size = list.size();
+                int i10 = this.c;
+                if (size != 1) {
+                    m1Var.O(i1Var.K0(vVar, m1Var, i10), i1Var.K0(vVar, m1Var, i10 + 1), list);
+                    break;
+                } else {
+                    m1Var.u0((b2.p0) list.get(0), i1Var.K0(vVar, m1Var, i10));
+                    break;
+                }
+            default:
+                m1Var.b0(this.b.K0(vVar, m1Var, this.c), list);
+                break;
+        }
+    }
+
+    @Override // m4.e1
+    public void h(m1 m1Var, v vVar) {
+        switch (this.a) {
+            case 0:
+                m1Var.Y(this.b.K0(vVar, m1Var, this.c));
+                break;
+            default:
+                m1Var.Q(this.b.K0(vVar, m1Var, this.c));
+                break;
+        }
     }
 }

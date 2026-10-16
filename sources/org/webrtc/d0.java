@@ -1,20 +1,22 @@
 package org.webrtc;
 
-import android.graphics.Matrix;
-import org.webrtc.VideoFrame;
+import org.webrtc.VideoProcessor;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public abstract /* synthetic */ class d0 {
-    public static VideoFrame.TextureBuffer a(VideoFrame.TextureBuffer textureBuffer, Matrix matrix, int i10, int i11) {
-        throw new UnsupportedOperationException("Not implemented");
+    public static void a(VideoProcessor videoProcessor, VideoFrame videoFrame, VideoProcessor.FrameAdaptationParameters frameAdaptationParameters) {
+        VideoFrame b10 = b(videoFrame, frameAdaptationParameters);
+        if (b10 != null) {
+            videoProcessor.onFrameCaptured(b10);
+            b10.release();
+        }
     }
 
-    public static int b(VideoFrame.TextureBuffer textureBuffer) {
-        return textureBuffer.getHeight();
-    }
-
-    public static int c(VideoFrame.TextureBuffer textureBuffer) {
-        return textureBuffer.getWidth();
+    public static VideoFrame b(VideoFrame videoFrame, VideoProcessor.FrameAdaptationParameters frameAdaptationParameters) {
+        if (frameAdaptationParameters.drop) {
+            return null;
+        }
+        return new VideoFrame(videoFrame.getBuffer().cropAndScale(frameAdaptationParameters.cropX, frameAdaptationParameters.cropY, frameAdaptationParameters.cropWidth, frameAdaptationParameters.cropHeight, frameAdaptationParameters.scaleWidth, frameAdaptationParameters.scaleHeight), videoFrame.getRotation(), frameAdaptationParameters.timestampNs);
     }
 }

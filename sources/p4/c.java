@@ -1,6 +1,8 @@
 package p4;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+import m.h3;
+
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -17,16 +19,16 @@ public final /* synthetic */ class c implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                w wVar = ((e) ((li.k) this.b.f).d).d;
-                if (wVar != null) {
-                    wVar.j(this.c);
+                v vVar = ((e) ((h3) this.b.f).d).d;
+                if (vVar != null) {
+                    vVar.j(this.c);
                     break;
                 }
                 break;
             default:
-                w wVar2 = ((e) ((li.k) this.b.f).d).d;
-                if (wVar2 != null) {
-                    wVar2.k(this.c);
+                v vVar2 = ((e) ((h3) this.b.f).d).d;
+                if (vVar2 != null) {
+                    vVar2.k(this.c);
                     break;
                 }
                 break;

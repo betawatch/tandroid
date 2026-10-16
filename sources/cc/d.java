@@ -8,26 +8,25 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import k.i;
-import m.q3;
+import m.t3;
 import n6.l;
-import n6.o;
 import org.telegram.tgnet.ConnectionsManager;
+import r0.l0;
 import r0.m0;
-import r0.n0;
 import w7.e9;
 import z7.ee;
 import z7.fb;
 import z7.g;
 import z7.gb;
-import z7.hg;
 import z7.ig;
+import z7.jg;
 import z7.qa;
 import z7.ra;
 import z7.te;
 import z7.va;
 import z7.vf;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements vf {
     public long a;
@@ -37,13 +36,13 @@ public final /* synthetic */ class d implements vf {
     public Object e;
     public final Object f;
 
-    public /* synthetic */ d(f fVar, long j10, gb gbVar, boolean z10, wb.a aVar, ig igVar) {
+    public /* synthetic */ d(f fVar, long j10, gb gbVar, boolean z10, wb.a aVar, jg jgVar) {
         this.c = fVar;
         this.a = j10;
         this.d = gbVar;
         this.b = z10;
         this.e = aVar;
-        this.f = igVar;
+        this.f = jgVar;
     }
 
     public void a() {
@@ -54,7 +53,7 @@ public final /* synthetic */ class d implements vf {
             while (i10 < size) {
                 Object obj = arrayList.get(i10);
                 i10++;
-                ((m0) obj).b();
+                ((l0) obj).b();
             }
             this.b = false;
         }
@@ -71,19 +70,19 @@ public final /* synthetic */ class d implements vf {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            m0 m0Var = (m0) obj;
+            l0 l0Var = (l0) obj;
             long j10 = this.a;
             if (j10 >= 0) {
-                m0Var.c(j10);
+                l0Var.c(j10);
             }
             Interpolator interpolator = (Interpolator) this.d;
-            if (interpolator != null && (view = (View) m0Var.a.get()) != null) {
+            if (interpolator != null && (view = (View) l0Var.a.get()) != null) {
                 view.animate().setInterpolator(interpolator);
             }
-            if (((n0) this.e) != null) {
-                m0Var.d((i) this.f);
+            if (((m0) this.e) != null) {
+                l0Var.d((i) this.f);
             }
-            View view2 = (View) m0Var.a.get();
+            View view2 = (View) l0Var.a.get();
             if (view2 != null) {
                 view2.animate().start();
             }
@@ -99,7 +98,7 @@ public final /* synthetic */ class d implements vf {
         gb gbVar = (gb) this.d;
         boolean z10 = this.b;
         wb.a aVar = (wb.a) this.e;
-        ig igVar = (ig) this.f;
+        jg jgVar = (jg) this.f;
         z5 z5Var = new z5();
         boolean z11 = false;
         u2.c cVar = new u2.c(18, false);
@@ -125,28 +124,28 @@ public final /* synthetic */ class d implements vf {
             }
             i10 = 0;
         }
-        o oVar = new o(28, z11);
-        oVar.b = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? qa.b : qa.d : qa.c : qa.e : qa.f : qa.h;
-        oVar.c = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        z5Var.c = new ra(oVar);
+        n3.b bVar = new n3.b(29, z11);
+        bVar.b = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? qa.b : qa.d : qa.c : qa.e : qa.f : qa.h;
+        bVar.c = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        z5Var.c = new ra(bVar);
         z5Var.a = fVar.e.a();
-        if (igVar != null) {
-            List list = igVar.d;
+        if (jgVar != null) {
+            List list = jgVar.d;
             g gVar = z7.i.b;
             Object[] array = list.toArray();
             int length = array.length;
             e9.a(length, array);
             z5Var.e = z7.i.q(length, array);
-            List<hg> list2 = igVar.a;
+            List<ig> list2 = jgVar.a;
             if (!list2.isEmpty()) {
                 Object[] objArr = new Object[4];
                 int i13 = 0;
-                for (hg hgVar : list2) {
-                    qi.e eVar = new qi.e();
-                    eVar.a = Integer.valueOf(hgVar.c & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    eVar.b = Integer.valueOf(hgVar.d & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    eVar.c = Integer.valueOf(hgVar.e & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    eVar.d = Integer.valueOf(hgVar.f & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                for (ig igVar : list2) {
+                    pi.e eVar = new pi.e();
+                    eVar.a = Integer.valueOf(igVar.c & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    eVar.b = Integer.valueOf(igVar.d & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    eVar.c = Integer.valueOf(igVar.e & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    eVar.d = Integer.valueOf(igVar.f & ConnectionsManager.DEFAULT_DATACENTER_ID);
                     te teVar = new te(eVar);
                     int i14 = i13 + 1;
                     int length2 = objArr.length;
@@ -167,10 +166,10 @@ public final /* synthetic */ class d implements vf {
                 z5Var.d = z7.i.q(i13, objArr);
             }
         }
-        q3 q3Var = new q3();
-        q3Var.c = fb.b;
-        q3Var.f = new ee(z5Var);
-        return new a5.a(q3Var, 0);
+        t3 t3Var = new t3();
+        t3Var.c = fb.b;
+        t3Var.f = new ee(z5Var);
+        return new a5.a(t3Var, 0);
     }
 
     public d() {

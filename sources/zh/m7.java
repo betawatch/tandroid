@@ -4,13 +4,13 @@ import android.content.Context;
 import android.widget.FrameLayout;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.f10;
-import org.telegram.ui.Components.h71;
+import org.telegram.ui.Components.i71;
 import org.telegram.ui.Components.kc0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class m7 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
-    public final h71 a;
+    public final i71 a;
     public final org.telegram.ui.ActionBar.c6 b;
     public final int c;
     public final int d;
@@ -26,27 +26,27 @@ public final class m7 extends FrameLayout implements NotificationCenter.Notifica
         this.f = j10;
         this.b = c6Var;
         this.h = new k7(j10, i11, i10, z10);
-        h71 h71Var = new h71(context, i11, i12, true, new l7(this, 0), new x3(this, 3), null, c6Var);
-        this.a = h71Var;
-        addView(h71Var, w7.a6.d(-1.0f, -1));
-        h71Var.setOnScrollListener(new kc0(this, 24));
+        i71 i71Var = new i71(context, i11, i12, true, new l7(this, 0), new x3(this, 3), null, c6Var);
+        this.a = i71Var;
+        addView(i71Var, w7.z5.d(-1.0f, -1));
+        i71Var.setOnScrollListener(new kc0(this, 24));
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         int i12 = NotificationCenter.starTransactionsLoaded;
-        h71 h71Var = this.a;
+        i71 i71Var = this.a;
         if (i10 != i12) {
             if (i10 == NotificationCenter.botStarsTransactionsLoaded && ((Long) objArr[0]).longValue() == this.f) {
-                h71Var.W2.N(true);
+                i71Var.W2.N(true);
                 return;
             }
             return;
         }
-        h71Var.W2.N(true);
-        if (h71Var.canScrollVertically(1)) {
-            for (int i13 = 0; i13 < h71Var.getChildCount(); i13++) {
-                if (!(h71Var.getChildAt(i13) instanceof f10)) {
+        i71Var.W2.N(true);
+        if (i71Var.canScrollVertically(1)) {
+            for (int i13 = 0; i13 < i71Var.getChildCount(); i13++) {
+                if (!(i71Var.getChildAt(i13) instanceof f10)) {
                 }
             }
             return;

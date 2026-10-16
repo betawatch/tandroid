@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SavedMessagesController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class fv0 extends s4.v {
     public final /* synthetic */ hv0 d;
@@ -54,13 +54,13 @@ public final class fv0 extends s4.v {
     public final void p(s4.b1 b1Var, int i10) {
         pu0 pu0Var;
         hv0 hv0Var = this.d;
-        lr0 lr0Var = hv0Var.n;
+        kr0 kr0Var = hv0Var.n;
         if (b1Var != null && (pu0Var = hv0Var.s) != null) {
             pu0Var.d1(false);
         }
         if (i10 == 0) {
-            AndroidUtilities.cancelRunOnUIThread(lr0Var);
-            AndroidUtilities.runOnUIThread(lr0Var, 300L);
+            AndroidUtilities.cancelRunOnUIThread(kr0Var);
+            AndroidUtilities.runOnUIThread(kr0Var, 300L);
         }
     }
 

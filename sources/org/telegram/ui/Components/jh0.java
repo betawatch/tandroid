@@ -20,7 +20,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class jh0 extends FrameLayout {
     public final /* synthetic */ int a = 4;
@@ -56,7 +56,7 @@ public final class jh0 extends FrameLayout {
                 if (this.b) {
                     paint2.setStyle(Paint.Style.STROKE);
                     paint2.setStrokeWidth(AndroidUtilities.dp(1.33f));
-                    paint2.setColor(((org.telegram.ui.kh0) obj).getThemedColor(org.telegram.ui.ActionBar.g6.Oh));
+                    paint2.setColor(((org.telegram.ui.jh0) obj).getThemedColor(org.telegram.ui.ActionBar.g6.Oh));
                     canvas.drawCircle(getWidth() / 2.0f, getHeight() / 2.0f, AndroidUtilities.dp(16.0f), paint2);
                 }
                 super.dispatchDraw(canvas);
@@ -310,9 +310,9 @@ public final class jh0 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jh0(org.telegram.ui.kh0 kh0Var, Activity activity, boolean z10) {
+    public jh0(org.telegram.ui.jh0 jh0Var, Activity activity, boolean z10) {
         super(activity);
-        this.d = kh0Var;
+        this.d = jh0Var;
         this.b = z10;
         this.c = new Paint(1);
     }

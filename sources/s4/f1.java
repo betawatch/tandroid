@@ -4,17 +4,17 @@ import android.content.Context;
 import android.util.DisplayMetrics;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Wallet.v4;
+import org.telegram.ui.Wallet.w4;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class f1 extends c0 {
-    public final /* synthetic */ v4 r;
+    public final /* synthetic */ w4 r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f1(v4 v4Var, Context context) {
+    public f1(w4 w4Var, Context context) {
         super(context);
-        this.r = v4Var;
+        this.r = w4Var;
     }
 
     @Override // s4.c0, s4.x0

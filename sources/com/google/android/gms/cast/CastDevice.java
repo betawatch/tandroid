@@ -16,10 +16,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import o6.a;
-import org.telegram.ui.Cells.d0;
-import w7.g0;
+import org.telegram.ui.Cells.c1;
+import w7.f0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class CastDevice extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<CastDevice> CREATOR = new v(22);
@@ -135,35 +135,35 @@ public class CastDevice extends a implements ReflectedParcelable {
             int length = str.length();
             str = length <= 2 ? length == 2 ? "xx" : "x" : String.format(locale, "%c%d%c", Character.valueOf(str.charAt(0)), Integer.valueOf(length - 2), Character.valueOf(str.charAt(length - 1)));
         }
-        return d0.j("\"", str, "\" (", this.a, ")");
+        return c1.i("\"", str, "\" (", this.a, ")");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = g0.q(parcel, 20293);
-        g0.l(parcel, 2, this.a);
-        g0.l(parcel, 3, this.b);
-        g0.l(parcel, 4, this.d);
-        g0.l(parcel, 5, this.e);
-        g0.l(parcel, 6, this.f);
-        g0.s(parcel, 7, 4);
+        int q6 = f0.q(parcel, 20293);
+        f0.l(parcel, 2, this.a);
+        f0.l(parcel, 3, this.b);
+        f0.l(parcel, 4, this.d);
+        f0.l(parcel, 5, this.e);
+        f0.l(parcel, 6, this.f);
+        f0.s(parcel, 7, 4);
         parcel.writeInt(this.h);
-        g0.p(parcel, 8, DesugarCollections.unmodifiableList(this.n));
-        g0.s(parcel, 9, 4);
+        f0.p(parcel, 8, DesugarCollections.unmodifiableList(this.n));
+        f0.s(parcel, 9, 4);
         parcel.writeInt(this.r);
-        g0.s(parcel, 10, 4);
+        f0.s(parcel, 10, 4);
         parcel.writeInt(this.s);
-        g0.l(parcel, 11, this.v);
-        g0.l(parcel, 12, this.w);
-        g0.s(parcel, 13, 4);
+        f0.l(parcel, 11, this.v);
+        f0.l(parcel, 12, this.w);
+        f0.s(parcel, 13, 4);
         parcel.writeInt(this.x);
-        g0.l(parcel, 14, this.y);
-        g0.c(parcel, 15, this.E);
-        g0.l(parcel, 16, this.F);
-        g0.s(parcel, 17, 4);
+        f0.l(parcel, 14, this.y);
+        f0.c(parcel, 15, this.E);
+        f0.l(parcel, 16, this.F);
+        f0.s(parcel, 17, 4);
         parcel.writeInt(this.G ? 1 : 0);
-        g0.k(parcel, 18, d(), i10);
-        g0.i(parcel, 19, this.I);
-        g0.r(parcel, q6);
+        f0.k(parcel, 18, d(), i10);
+        f0.i(parcel, 19, this.I);
+        f0.r(parcel, q6);
     }
 }

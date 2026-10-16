@@ -37,8 +37,8 @@ import org.telegram.messenger.TelegramMediaSession;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.sk;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.yh;
 import org.telegram.messenger.zg;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
@@ -64,20 +64,20 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.SecretMediaViewer;
 import org.telegram.ui.cn;
+import org.telegram.ui.d20;
 import org.telegram.ui.ej;
 import org.telegram.ui.fo;
 import org.telegram.ui.gm;
-import org.telegram.ui.jc0;
-import org.telegram.ui.kg0;
-import org.telegram.ui.kh0;
+import org.telegram.ui.ic0;
+import org.telegram.ui.jg0;
+import org.telegram.ui.jh0;
 import org.telegram.ui.ky;
 import org.telegram.ui.ln;
 import org.telegram.ui.n60;
-import org.telegram.ui.o00;
 import org.telegram.ui.qn;
 import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l3 implements Runnable {
     public final /* synthetic */ int a;
@@ -336,28 +336,28 @@ public final /* synthetic */ class l3 implements Runnable {
                 ((i2.g1) obj4).b.h.i(((Integer) pair.first).intValue(), (u2.g0) pair.second, (u2.u) obj3, (u2.c0) obj2, this.b);
                 break;
             case 5:
-                m4.q0 q0Var = (m4.q0) obj4;
-                m4.p1 p1Var = (m4.p1) obj;
+                m4.p0 p0Var = (m4.p0) obj4;
+                m4.o1 o1Var = (m4.o1) obj;
                 n4.t tVar = (n4.t) obj3;
-                m4.p0 p0Var = (m4.p0) obj2;
-                qi.e eVar = q0Var.f;
-                if (!q0Var.g.j()) {
-                    if (!((n4.n) q0Var.m.b).a.isActive()) {
+                m4.o0 o0Var = (m4.o0) obj2;
+                pi.e eVar = p0Var.f;
+                if (!p0Var.g.j()) {
+                    if (!((n4.n) p0Var.m.b).a.isActive()) {
                         StringBuilder sb2 = new StringBuilder("Ignore incoming session command before initialization. command=");
-                        sb2.append(p1Var == null ? Integer.valueOf(i12) : p1Var.b);
+                        sb2.append(o1Var == null ? Integer.valueOf(i12) : o1Var.b);
                         sb2.append(", pid=");
                         sb2.append(tVar.a.b);
                         e2.a.l("MediaSessionLegacyStub", sb2.toString());
                         break;
                     } else {
-                        m4.w L = q0Var.L(tVar);
-                        if (p1Var != null) {
-                            if (!eVar.x(L, p1Var)) {
+                        m4.v L = p0Var.L(tVar);
+                        if (o1Var != null) {
+                            if (!eVar.w(L, o1Var)) {
                             }
                         } else if (!eVar.v(L, i12)) {
                         }
                         try {
-                            p0Var.f(L);
+                            o0Var.e(L);
                             break;
                         } catch (RemoteException e) {
                             e2.a.m("MediaSessionLegacyStub", "Exception in " + L, e);
@@ -667,7 +667,7 @@ public final /* synthetic */ class l3 implements Runnable {
                         }
                         yy yyVar = new yy(h);
                         yyVar.C2 = launchActivity;
-                        if (!AndroidUtilities.isTablet() ? launchActivity.q0.getFragmentStack().size() <= 1 || !(launchActivity.q0.getFragmentStack().get(launchActivity.q0.getFragmentStack().size() - 1) instanceof kh0) : launchActivity.r0.getFragmentStack().isEmpty() || !(launchActivity.r0.getFragmentStack().get(launchActivity.r0.getFragmentStack().size() - 1) instanceof kh0)) {
+                        if (!AndroidUtilities.isTablet() ? launchActivity.q0.getFragmentStack().size() <= 1 || !(launchActivity.q0.getFragmentStack().get(launchActivity.q0.getFragmentStack().size() - 1) instanceof jh0) : launchActivity.r0.getFragmentStack().isEmpty() || !(launchActivity.r0.getFragmentStack().get(launchActivity.r0.getFragmentStack().size() - 1) instanceof jh0)) {
                             z15 = false;
                         }
                         ((ActionBarLayout) launchActivity.O()).S(yyVar, z15, false);
@@ -684,8 +684,8 @@ public final /* synthetic */ class l3 implements Runnable {
             case 25:
                 TLObject tLObject3 = (TLObject) obj;
                 String str2 = (String) obj3;
-                o00 o00Var = (o00) obj2;
-                org.telegram.ui.ActionBar.m2 m2Var4 = (org.telegram.ui.ActionBar.m2) i2.d.g(1, ((LaunchActivity) obj4).d0);
+                d20 d20Var = (d20) obj2;
+                org.telegram.ui.ActionBar.m2 m2Var4 = (org.telegram.ui.ActionBar.m2) i2.d.h(1, ((LaunchActivity) obj4).d0);
                 try {
                     if (tLObject3 instanceof TL_chatlists.chatlist_ChatlistInvite) {
                         TL_chatlists.chatlist_ChatlistInvite chatlist_chatlistinvite = (TL_chatlists.chatlist_ChatlistInvite) tLObject3;
@@ -748,7 +748,7 @@ public final /* synthetic */ class l3 implements Runnable {
                             }
                             o10Var.T();
                             m2Var4.showDialog(o10Var);
-                            o00Var.run();
+                            d20Var.run();
                             break;
                         } else {
                             a02 = zc.a0(m2Var4);
@@ -758,22 +758,22 @@ public final /* synthetic */ class l3 implements Runnable {
                         a02 = zc.a0(m2Var4);
                         i10 = R.string.NoFolderFound;
                     }
-                    o00Var.run();
+                    d20Var.run();
                 } catch (Exception e11) {
                     FileLog.e(e11);
                     return;
                 }
-                yh.p(i10, a02, null);
+                sk.q(i10, a02, null);
                 break;
             case 26:
                 LaunchActivity launchActivity2 = (LaunchActivity) obj4;
-                o00 o00Var2 = (o00) obj;
+                d20 d20Var2 = (d20) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj3;
                 TLRPC.Updates updates2 = (TLRPC.Updates) obj2;
                 ArrayList arrayList17 = launchActivity2.d0;
                 if (!launchActivity2.isFinishing()) {
                     try {
-                        o00Var2.run();
+                        d20Var2.run();
                     } catch (Exception e12) {
                         FileLog.e(e12);
                     }
@@ -800,7 +800,7 @@ public final /* synthetic */ class l3 implements Runnable {
                         MessagesController.getInstance(i12).putChats(updates2.chats, false);
                         Bundle bundle2 = new Bundle();
                         bundle2.putLong("chat_id", chat5.id);
-                        if (arrayList17.isEmpty() || MessagesController.getInstance(i12).checkCanOpenChat(bundle2, (org.telegram.ui.ActionBar.m2) i2.d.g(1, arrayList17))) {
+                        if (arrayList17.isEmpty() || MessagesController.getInstance(i12).checkCanOpenChat(bundle2, (org.telegram.ui.ActionBar.m2) i2.d.h(1, arrayList17))) {
                             fo foVar2 = new fo(bundle2);
                             NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
                             ((ActionBarLayout) launchActivity2.O()).S(foVar2, false, true);
@@ -810,17 +810,17 @@ public final /* synthetic */ class l3 implements Runnable {
                 }
                 break;
             case 27:
-                ((jc0) obj4).v((String) obj, i12 + 1, (String) obj3, (String) obj2);
+                ((ic0) obj4).v((String) obj, i12 + 1, (String) obj3, (String) obj2);
                 break;
             case 28:
                 String str3 = (String) obj;
                 ArrayList arrayList18 = new ArrayList();
                 c5.a aVar = new c5.a();
-                aVar.c = "inapp";
-                aVar.b = str3;
+                aVar.b = "inapp";
+                aVar.a = str3;
                 arrayList18.add(aVar.a());
                 FileLog.d("LoginBilling querying \"" + str3 + "\" product");
-                BillingController.getInstance().queryProductDetails(arrayList18, new org.telegram.ui.Components.e2((kg0) obj4, str3, (String) obj3, (String) obj2, this.b));
+                BillingController.getInstance().queryProductDetails(arrayList18, new org.telegram.ui.Components.e2((jg0) obj4, str3, (String) obj3, (String) obj2, this.b));
                 break;
             default:
                 k9 k9Var5 = (k9) obj3;

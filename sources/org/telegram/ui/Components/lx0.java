@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class lx0 extends lm0 {
     public int c;
@@ -81,7 +81,7 @@ public final class lx0 extends lm0 {
                 px0Var2.d();
             }
         });
-        AndroidUtilities.runOnUIThread(new lr0(px0Var, 10), 60L);
+        AndroidUtilities.runOnUIThread(new kr0(px0Var, 10), 60L);
         px0Var.l(z10, false);
         px0Var.setAlpha(ux0Var.m3);
         px0Var.setScaleX(ux0Var.m3);

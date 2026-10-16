@@ -33,7 +33,7 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.concurrent.Executor;
-import ji.d4;
+import ji.h5;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.EmuDetector;
@@ -56,18 +56,17 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.g6;
-import org.telegram.ui.Components.y11;
+import org.telegram.ui.Components.z11;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.b31;
-import org.telegram.ui.li1;
-import org.telegram.ui.lj1;
-import org.telegram.ui.ur0;
-import w7.a6;
+import org.telegram.ui.kj1;
+import org.telegram.ui.tr0;
+import w7.z5;
 import x7.fa;
 import x7.m7;
 import x7.o7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class p2 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int r0 = 0;
@@ -85,7 +84,7 @@ public final class p2 extends FrameLayout implements NotificationCenter.Notifica
     public float P;
     public float Q;
     public float R;
-    public y11 S;
+    public z11 S;
     public int T;
     public int U;
     public boolean V;
@@ -164,7 +163,7 @@ public final class p2 extends FrameLayout implements NotificationCenter.Notifica
         textView.setAlpha(0.0f);
         textView.setScaleX(0.3f);
         textView.setScaleY(0.3f);
-        addView(textView, a6.e(-2, -2, 17));
+        addView(textView, z5.e(-2, -2, 17));
         paint3.setColor(-1);
         paint3.setStrokeWidth(AndroidUtilities.dp(3.0f));
         paint3.setStyle(style);
@@ -187,10 +186,10 @@ public final class p2 extends FrameLayout implements NotificationCenter.Notifica
         y1Var.setTranslationX(-AndroidUtilities.dp(18.0f));
         y1Var.b(0.33f, 10.0f);
         y1Var.setBrushWeight(this.F);
-        y1Var.setValueOverride(new d4(this, 22));
+        y1Var.setValueOverride(new h5(this, 23));
         y1Var.setTranslationX(-AndroidUtilities.dp(18.0f));
         y1Var.setAlpha(0.0f);
-        addView(y1Var, a6.d(-1.0f, -1));
+        addView(y1Var, z5.d(-1.0f, -1));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:103:0x023c  */
@@ -475,7 +474,7 @@ public final class p2 extends FrameLayout implements NotificationCenter.Notifica
                 arrayList2.add(l2Var2);
             }
         }
-        arrayList2.add((l2) i2.d.g(1, arrayList));
+        arrayList2.add((l2) i2.d.h(1, arrayList));
         return arrayList2;
     }
 
@@ -1767,7 +1766,7 @@ public final class p2 extends FrameLayout implements NotificationCenter.Notifica
         if (n2Var.h) {
             h();
             NotificationCenter.getInstance(i10).postNotificationNameOnUIThread(NotificationCenter.customStickerCreated, Boolean.FALSE);
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.voip.m2(n2Var, 25), 350L);
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.voip.r2(n2Var, 24), 350L);
             Utilities.Callback callback = n2Var.n;
             if (callback != null) {
                 callback.run(Boolean.TRUE);
@@ -2418,7 +2417,7 @@ public final class p2 extends FrameLayout implements NotificationCenter.Notifica
         if (s0Var != null) {
             s0Var.setProgress(1.0f);
         }
-        AndroidUtilities.runOnUIThread(new li1(this, i10, 9), 450L);
+        AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.i(this, i10, 8), 450L);
         Utilities.Callback callback2 = n2Var.n;
         if (callback2 != null) {
             callback2.run(Boolean.TRUE);
@@ -2539,7 +2538,7 @@ public final class p2 extends FrameLayout implements NotificationCenter.Notifica
             tL_documentAttributeSticker.alt = n2Var3.c;
             tL_documentAttributeSticker.stickerset = new TLRPC.TL_inputStickerSetEmpty();
             tL_messages_uploadMedia.media.attributes.add(tL_documentAttributeSticker);
-            ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_messages_uploadMedia, new lj1(1, this, n2Var3), 2);
+            ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_messages_uploadMedia, new kj1(1, this, n2Var3), 2);
             return;
         }
         if (i10 == NotificationCenter.fileUploadProgressChanged) {
@@ -2755,14 +2754,14 @@ public final class p2 extends FrameLayout implements NotificationCenter.Notifica
         return this.I;
     }
 
-    public y11 getThanosEffect() {
-        if (!y11.c()) {
+    public z11 getThanosEffect() {
+        if (!z11.c()) {
             return null;
         }
         if (this.S == null) {
-            y11 y11Var = new y11(getContext(), new f2(this, 1));
-            this.S = y11Var;
-            addView(y11Var, a6.d(-1.0f, -1));
+            z11 z11Var = new z11(getContext(), new f2(this, 1));
+            this.S = z11Var;
+            addView(z11Var, z5.d(-1.0f, -1));
         }
         return this.S;
     }
@@ -2837,7 +2836,7 @@ public final class p2 extends FrameLayout implements NotificationCenter.Notifica
         }
     }
 
-    public final void m(Bitmap bitmap, int i10, int i11, int i12, ur0 ur0Var) {
+    public final void m(Bitmap bitmap, int i10, int i11, int i12, tr0 tr0Var) {
         xb.c cVar;
         int i13 = i11 <= 0 ? AndroidUtilities.displaySize.x : i11;
         int i14 = i12 <= 0 ? AndroidUtilities.displaySize.y : i12;
@@ -2849,7 +2848,7 @@ public final class p2 extends FrameLayout implements NotificationCenter.Notifica
         this.I = bitmap;
         this.J = i10;
         this.c0 = null;
-        r4 r4Var = new r4(this, i10, ur0Var, 4);
+        r4 r4Var = new r4(this, i10, tr0Var, 4);
         this.x = true;
         bc.d dVar = new bc.d();
         dVar.b = true;
@@ -2871,7 +2870,7 @@ public final class p2 extends FrameLayout implements NotificationCenter.Notifica
             return;
         }
         wb.a a10 = wb.a.a(bitmap, i10);
-        a2.g(a10).addOnSuccessListener(new b0(r4Var, 3)).addOnFailureListener(new org.telegram.ui.Components.e2(this, bitmap, i10, ur0Var, r4Var, 4));
+        a2.g(a10).addOnSuccessListener(new b0(r4Var, 3)).addOnFailureListener(new org.telegram.ui.Components.e2(this, bitmap, i10, tr0Var, r4Var, 4));
         if (this.c0 == null) {
             zb.a aVar = zb.a.b;
             n6.l.i(aVar, "options cannot be null");
@@ -2886,7 +2885,7 @@ public final class p2 extends FrameLayout implements NotificationCenter.Notifica
             com.google.firebase.messaging.m mVar = new com.google.firebase.messaging.m();
             mVar.c = m7.b;
             rb.m.a.execute(new com.google.android.gms.internal.cast.p(faVar, new a5.a(mVar, 1), o7.c, faVar.b(), 7));
-            new ImageLabelerImpl((rb.e) dVar2.a.R0(aVar), (Executor) dVar2.b.a.get(), new k6.c("vision.ica", 1L)).g(a10).addOnSuccessListener(new b0(this, 4)).addOnFailureListener(new r0.h(7));
+            new ImageLabelerImpl((rb.e) dVar2.a.R0(aVar), (Executor) dVar2.b.a.get(), new k6.c("vision.ica", 1L)).g(a10).addOnSuccessListener(new b0(this, 4)).addOnFailureListener(new r0.s0(5));
         }
         List<TLRPC.TL_availableReaction> enabledReactionsList = MediaDataController.getInstance(this.a).getEnabledReactionsList();
         for (int i15 = 0; i15 < Math.min(enabledReactionsList.size(), 9); i15++) {
@@ -3065,7 +3064,7 @@ public final class p2 extends FrameLayout implements NotificationCenter.Notifica
                     }
                     p2Var.d0.setOnCancelListener(new f2(p2Var, 0));
                     if (p2Var.d0.getParent() == null) {
-                        p2Var.addView(p2Var.d0, a6.e(-1, -1, 17));
+                        p2Var.addView(p2Var.d0, z5.e(-1, -1, 17));
                     }
                     di.s0 s0Var = p2Var.d0;
                     s0Var.E = true;

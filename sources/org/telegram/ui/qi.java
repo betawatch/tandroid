@@ -7,9 +7,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class qi extends gi0 {
+public final class qi extends fi0 {
     public final /* synthetic */ fo e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -25,7 +25,7 @@ public final class qi extends gi0 {
         f10Var.f(org.telegram.ui.ActionBar.g6.G8, org.telegram.ui.ActionBar.g6.i6, -1);
         f10Var.setViewType(13);
         f10Var.setIsSingleCell(false);
-        addView(f10Var, w7.a6.d(-1.0f, -2));
+        addView(f10Var, w7.z5.d(-1.0f, -2));
         org.telegram.ui.Components.da0 da0Var = new org.telegram.ui.Components.da0(context, null);
         this.b = da0Var;
         da0Var.setTextSize(1, 14.0f);
@@ -36,7 +36,7 @@ public final class qi extends gi0 {
         da0Var.setSingleLine();
         da0Var.setLines(1);
         da0Var.setMaxLines(1);
-        addView(da0Var, w7.a6.a(-2.0f, 12.0f, 0.0f, 12.0f, 0.0f, -1, 19));
+        addView(da0Var, w7.z5.a(-2.0f, 12.0f, 0.0f, 12.0f, 0.0f, -1, 19));
         TLRPC.TL_channels_getMessageAuthor tL_channels_getMessageAuthor = new TLRPC.TL_channels_getMessageAuthor();
         tL_channels_getMessageAuthor.channel = MessagesController.getInstance(i10).getInputChannel(-messageObject.getDialogId());
         tL_channels_getMessageAuthor.id = messageObject.getId();

@@ -7,10 +7,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.ck;
 import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.l80;
 import zh.f5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class h4 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ org.telegram.ui.ActionBar.u0 a;
@@ -40,13 +40,13 @@ public final class h4 extends org.telegram.ui.ActionBar.j {
             }
             return;
         }
-        m80 m80Var = k4Var.d0;
-        if (m80Var != null) {
-            m80Var.u();
+        l80 l80Var = k4Var.d0;
+        if (l80Var != null) {
+            l80Var.u();
         }
         org.telegram.ui.ActionBar.c3 c3Var = k4Var.container;
         c6Var = ((org.telegram.ui.ActionBar.e3) k4Var).resourcesProvider;
-        m80 F = m80.F(c3Var, c6Var, this.a);
+        l80 F = l80.F(c3Var, c6Var, this.a);
         k4Var.d0 = F;
         i11 = ((org.telegram.ui.ActionBar.e3) k4Var).currentAccount;
         long clientUserId = UserConfig.getInstance(i11).getClientUserId();

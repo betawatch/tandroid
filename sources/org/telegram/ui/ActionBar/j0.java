@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import org.telegram.ui.Components.fa0;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.gt0;
+import org.telegram.ui.ft0;
 import org.telegram.ui.oh1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class j0 extends ImageView {
     public final /* synthetic */ int a;
@@ -107,9 +107,9 @@ public final class j0 extends ImageView {
                         ((di.d4) obj).setTranslationY(f7);
                     }
                 }
-                gt0 gt0Var = photoViewer.g1;
-                if (gt0Var != null) {
-                    gt0Var.setTranslationY(f7);
+                ft0 ft0Var = photoViewer.g1;
+                if (ft0Var != null) {
+                    ft0Var.setTranslationY(f7);
                 }
                 fa0 fa0Var = photoViewer.f1;
                 if (fa0Var != null) {

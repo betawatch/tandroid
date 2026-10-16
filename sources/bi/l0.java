@@ -33,29 +33,29 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.gq0;
-import org.telegram.ui.Components.lr0;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.ey0;
+import org.telegram.ui.Components.kr0;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.x41;
-import org.telegram.ui.Components.yy0;
 import org.telegram.ui.Components.zc;
+import org.telegram.ui.Components.zy0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ce1;
 import org.telegram.ui.el;
 import org.telegram.ui.fo;
+import org.telegram.ui.jg0;
 import org.telegram.ui.kc1;
-import org.telegram.ui.kg0;
+import org.telegram.ui.kg1;
 import org.telegram.ui.l41;
-import org.telegram.ui.lg1;
-import org.telegram.ui.nl0;
+import org.telegram.ui.ml0;
+import org.telegram.ui.su0;
 import org.telegram.ui.tt;
-import org.telegram.ui.tu0;
 import org.telegram.ui.vt;
 import org.telegram.ui.xt;
 import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -256,7 +256,7 @@ public final /* synthetic */ class l0 implements View.OnClickListener {
                 String str = (String) this.c;
                 String str2 = (String) this.d;
                 CharSequence charSequence = (CharSequence) this.e;
-                org.telegram.ui.Cells.i0 i0Var = (org.telegram.ui.Cells.i0) this.f;
+                org.telegram.ui.Cells.h0 h0Var = (org.telegram.ui.Cells.h0) this.f;
                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(foVar.getParentActivity(), null);
                 Drawable mutate = foVar.getParentActivity().getDrawable(R.drawable.popup_fixed_alert4).mutate();
                 mutate.setColorFilter(new PorterDuffColorFilter(foVar.getThemedColor(org.telegram.ui.ActionBar.g6.G8), PorterDuff.Mode.MULTIPLY));
@@ -266,14 +266,14 @@ public final /* synthetic */ class l0 implements View.OnClickListener {
                 e1Var.setOnClickListener(new l0(foVar, str, str2, charSequence, r11, 8));
                 actionBarPopupWindow$ActionBarPopupWindowLayout.addView(e1Var);
                 org.telegram.ui.ActionBar.m1 m1Var2 = new org.telegram.ui.ActionBar.m1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-                Runnable[] runnableArr = {new tu0(m1Var2, 28)};
+                Runnable[] runnableArr = {new su0(m1Var2, 28)};
                 m1Var2.e = true;
                 m1Var2.c = 220;
                 m1Var2.setOutsideTouchable(true);
                 m1Var2.setClippingEnabled(true);
                 m1Var2.setAnimationStyle(R.style.PopupContextAnimation);
                 m1Var2.setFocusable(true);
-                m1Var2.showAsDropDown(i0Var, (i0Var.getWidth() / 2) - AndroidUtilities.dp(90.0f), AndroidUtilities.dp(-16.0f), 83);
+                m1Var2.showAsDropDown(h0Var, (h0Var.getWidth() / 2) - AndroidUtilities.dp(90.0f), AndroidUtilities.dp(-16.0f), 83);
                 break;
             case 8:
                 fo foVar2 = (fo) this.b;
@@ -391,10 +391,10 @@ public final /* synthetic */ class l0 implements View.OnClickListener {
                     bundle2.putLong("dialog_id", q9Var.f);
                     m2Var2.presentFragment(new ProfileActivity(bundle2, null), true);
                 }
-                if (q9Var.a == lg1.class) {
+                if (q9Var.a == kg1.class) {
                     Bundle bundle3 = new Bundle();
                     bundle3.putLong("chat_id", q9Var.c.id);
-                    m2Var2.presentFragment(new lg1(bundle3), true);
+                    m2Var2.presentFragment(new kg1(bundle3), true);
                 }
                 if (q9Var.a == yy.class) {
                     m2Var2.presentFragment(new yy(null), true);
@@ -410,7 +410,7 @@ public final /* synthetic */ class l0 implements View.OnClickListener {
                 int intValue = ((Integer) view.getTag()).intValue();
                 m1Var3.dismiss();
                 if (((Integer) arrayList2.get(intValue)).intValue() == 1) {
-                    yy0.a(tL_messages_stickerSet, m2Var4, c6Var3);
+                    zy0.a(tL_messages_stickerSet, m2Var4, c6Var3);
                     break;
                 } else {
                     ((fo) m2Var4).da();
@@ -443,7 +443,7 @@ public final /* synthetic */ class l0 implements View.OnClickListener {
                     replaceTags.replace(0, 1, (CharSequence) replaceTags.toString().substring(0, 1).toUpperCase());
                     spannableStringBuilder = replaceTags;
                 }
-                zc.a0(elVar.c).J(R.raw.msg_translate, spannableStringBuilder, LocaleController.getString(R.string.Settings), new lr0(elVar, 25)).j();
+                zc.a0(elVar.c).J(R.raw.msg_translate, spannableStringBuilder, LocaleController.getString(R.string.Settings), new kr0(elVar, 25)).j();
                 m1Var4.d(true);
                 break;
             case 13:
@@ -489,17 +489,17 @@ public final /* synthetic */ class l0 implements View.OnClickListener {
                 }
                 break;
             case 14:
-                kg0 kg0Var = (kg0) this.b;
+                jg0 jg0Var = (jg0) this.b;
                 c5.p pVar = (c5.p) this.c;
                 TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = (TLRPC.TL_inputStorePaymentAuthCode) this.d;
                 String str7 = (String) this.e;
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = (TLRPC.TL_payments_canPurchaseStore) this.f;
-                di.d dVar2 = kg0Var.b;
+                di.d dVar2 = jg0Var.b;
                 if (!dVar2.N) {
                     dVar2.setLoading(true);
-                    org.telegram.ui.v3 v3Var = new org.telegram.ui.v3(kg0Var, 10);
+                    org.telegram.ui.v3 v3Var = new org.telegram.ui.v3(jg0Var, 10);
                     FileLog.d("LoginBilling, querying done purchases...");
-                    BillingController.getInstance().queryPurchases("inapp", new s5(kg0Var, str7, tL_inputStorePaymentAuthCode, tL_payments_canPurchaseStore, new gq0(kg0Var, pVar, v3Var, tL_inputStorePaymentAuthCode, 21)));
+                    BillingController.getInstance().queryPurchases("inapp", new s5(jg0Var, str7, tL_inputStorePaymentAuthCode, tL_payments_canPurchaseStore, new ey0(jg0Var, pVar, v3Var, tL_inputStorePaymentAuthCode, 20)));
                     break;
                 }
                 break;
@@ -508,8 +508,8 @@ public final /* synthetic */ class l0 implements View.OnClickListener {
                 FrameLayout frameLayout = (FrameLayout) this.b;
                 ArrayList arrayList4 = (ArrayList) this.c;
                 int[] iArr = (int[]) this.d;
-                nl0 nl0Var = (nl0) this.e;
-                m80 F = m80.F(e3Var3.container, e3Var3.getResourcesProvider(), frameLayout);
+                ml0 ml0Var = (ml0) this.e;
+                l80 F = l80.F(e3Var3.container, e3Var3.getResourcesProvider(), frameLayout);
                 int size3 = arrayList4.size();
                 int i14 = 0;
                 while (i14 < size3) {
@@ -517,7 +517,7 @@ public final /* synthetic */ class l0 implements View.OnClickListener {
                     i14++;
                     int intValue3 = ((Integer) obj).intValue();
                     if (UserConfig.getInstance(intValue3).getCurrentUser() != null) {
-                        F.e(intValue3, iArr[0] == intValue3, new org.telegram.ui.Components.o8(nl0Var, intValue3, 22));
+                        F.e(intValue3, iArr[0] == intValue3, new org.telegram.ui.Components.o8(ml0Var, intValue3, 21));
                     }
                 }
                 F.t = false;
@@ -530,12 +530,12 @@ public final /* synthetic */ class l0 implements View.OnClickListener {
         }
     }
 
-    public /* synthetic */ l0(org.telegram.ui.ActionBar.e3 e3Var, FrameLayout frameLayout, ArrayList arrayList, int[] iArr, nl0 nl0Var) {
+    public /* synthetic */ l0(org.telegram.ui.ActionBar.e3 e3Var, FrameLayout frameLayout, ArrayList arrayList, int[] iArr, ml0 ml0Var) {
         this.a = 15;
         this.f = e3Var;
         this.b = frameLayout;
         this.c = arrayList;
         this.d = iArr;
-        this.e = nl0Var;
+        this.e = ml0Var;
     }
 }

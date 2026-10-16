@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class k0 extends o6.a implements x8.g {
     public static final Parcelable.Creator<k0> CREATOR = new c(27);
@@ -33,12 +33,12 @@ public final class k0 extends o6.a implements x8.g {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.g0.q(parcel, 20293);
-        w7.g0.s(parcel, 2, 4);
+        int q6 = w7.f0.q(parcel, 20293);
+        w7.f0.s(parcel, 2, 4);
         parcel.writeInt(this.a);
-        w7.g0.l(parcel, 3, this.b);
-        w7.g0.c(parcel, 4, this.c);
-        w7.g0.l(parcel, 5, this.d);
-        w7.g0.r(parcel, q6);
+        w7.f0.l(parcel, 3, this.b);
+        w7.f0.c(parcel, 4, this.c);
+        w7.f0.l(parcel, 5, this.d);
+        w7.f0.r(parcel, q6);
     }
 }

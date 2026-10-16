@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class FileLog {
     private static volatile FileLog Instance = null;
@@ -53,7 +53,7 @@ public class FileLog {
     private OutputStreamWriter tlStreamWriter = null;
     private File tlRequestsFile = null;
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class ByteArrayHexAdapter extends eb.u {
         @Override // eb.u
         public byte[] read(mb.a aVar) {
@@ -81,14 +81,14 @@ public class FileLog {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class IgnoreSentException extends Exception {
         public IgnoreSentException(String str) {
             super(str);
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class TLObjectDeserializer implements eb.o {
         private TLObjectDeserializer() {
         }
@@ -119,7 +119,7 @@ public class FileLog {
                                         }
                                     }
                                 }
-                                lVar.n(field.getName(), ((a6.i) nVar).l(obj));
+                                lVar.n(field.getName(), ((a6.i) nVar).n(obj));
                             }
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();
@@ -176,7 +176,7 @@ public class FileLog {
                     return "message".equalsIgnoreCase(field2.getName()) && String.class.equals(field2.getGenericType());
                 }
             };
-            gb.g gVar = gb.g.c;
+            gb.h hVar = gb.h.c;
             HashMap hashMap = new HashMap();
             ArrayList arrayList = new ArrayList();
             ArrayList arrayList2 = new ArrayList();
@@ -186,8 +186,8 @@ public class FileLog {
             ArrayDeque arrayDeque = new ArrayDeque();
             eb.a aVar = exclusionStrategy;
             Objects.requireNonNull(aVar);
-            gb.g clone = gVar.clone();
-            ArrayList arrayList3 = new ArrayList(gVar.a);
+            gb.h clone = hVar.clone();
+            ArrayList arrayList3 = new ArrayList(hVar.a);
             clone.a = arrayList3;
             arrayList3.add(aVar);
             ByteArrayHexAdapter byteArrayHexAdapter = new ByteArrayHexAdapter();

@@ -11,11 +11,11 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.mm0;
-import org.telegram.ui.rp;
+import org.telegram.ui.vp;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n5 implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -106,7 +106,7 @@ public final /* synthetic */ class n5 implements Utilities.CallbackReturn {
                     return Boolean.FALSE;
                 }
                 final TL_aicompose.TL_aiComposeTone tL_aiComposeTone = (TL_aicompose.TL_aiComposeTone) aiComposeTone;
-                m80 F = m80.F(e0Var.container, c6Var2, c0Var);
+                l80 F = l80.F(e0Var.container, c6Var2, c0Var);
                 F.W(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(12.0f), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.d6, c6Var2)));
                 final int i12 = 0;
                 F.l(R.drawable.msg_edit, LocaleController.getString(R.string.AIEditorEditStyle), new Runnable() { // from class: org.telegram.ui.Components.f
@@ -136,15 +136,15 @@ public final /* synthetic */ class n5 implements Utilities.CallbackReturn {
                                 alertDialog$Builder.a.R = LocaleController.getString(R.string.AIEditorDeleteStyle);
                                 alertDialog$Builder.a.T = LocaleController.getString(R.string.AIEditorDeleteStyleText);
                                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new m4.z0(23, e0Var3, tL_aiComposeTone));
+                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new m4.y0(22, e0Var3, tL_aiComposeTone));
                                 alertDialog$Builder.d(-1);
                                 alertDialog$Builder.o();
                                 break;
                         }
                     }
                 }, tL_aiComposeTone.creator);
-                F.c(R.drawable.msg_share, LocaleController.getString(R.string.AIEditorShareStyle), new org.telegram.ui.p6(e0Var, tL_aiComposeTone, context, c6Var2, 14), false);
-                F.m(!tL_aiComposeTone.creator, R.drawable.msg_delete, LocaleController.getString(R.string.AIEditorRemoveStyle), true, new rp(8, e0Var, tL_aiComposeTone));
+                F.c(R.drawable.msg_share, LocaleController.getString(R.string.AIEditorShareStyle), new org.telegram.ui.p6(e0Var, tL_aiComposeTone, context, c6Var2, 13), false);
+                F.m(!tL_aiComposeTone.creator, R.drawable.msg_delete, LocaleController.getString(R.string.AIEditorRemoveStyle), true, new vp(3, e0Var, tL_aiComposeTone));
                 final int i13 = 1;
                 F.m(tL_aiComposeTone.creator, R.drawable.msg_delete, LocaleController.getString(R.string.AIEditorDeleteStyle), true, new Runnable() { // from class: org.telegram.ui.Components.f
                     @Override // java.lang.Runnable
@@ -173,7 +173,7 @@ public final /* synthetic */ class n5 implements Utilities.CallbackReturn {
                                 alertDialog$Builder.a.R = LocaleController.getString(R.string.AIEditorDeleteStyle);
                                 alertDialog$Builder.a.T = LocaleController.getString(R.string.AIEditorDeleteStyleText);
                                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new m4.z0(23, e0Var3, tL_aiComposeTone));
+                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new m4.y0(22, e0Var3, tL_aiComposeTone));
                                 alertDialog$Builder.d(-1);
                                 alertDialog$Builder.o();
                                 break;

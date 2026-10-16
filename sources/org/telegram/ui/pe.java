@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class pe extends FrameLayout {
     public final org.telegram.ui.ActionBar.c6 a;
@@ -27,22 +27,22 @@ public final class pe extends FrameLayout {
     public pe(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
         super(context);
         this.a = c6Var;
-        LinearLayout e = org.telegram.messenger.yh.e(context, 1);
-        addView(e, w7.a6.a(-2.0f, 17.0f, 9.0f, 130.0f, 9.0f, -1, 119));
+        LinearLayout e = org.telegram.messenger.sk.e(context, 1);
+        addView(e, w7.z5.a(-2.0f, 17.0f, 9.0f, 130.0f, 9.0f, -1, 119));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTextSize(1, 16.0f);
         textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.G6, c6Var));
-        TextView i10 = com.google.android.gms.internal.play_billing.k3.i(e, textView, w7.a6.n(-1, -2), context);
+        TextView i10 = com.google.android.gms.internal.play_billing.k3.i(e, textView, w7.z5.n(-1, -2), context);
         this.d = i10;
         i10.setTextSize(1, 13.0f);
         i10.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.y6, c6Var));
-        e.addView(i10, w7.a6.k(0.0f, 4.0f, 0.0f, 0.0f, -1, -2));
+        e.addView(i10, w7.z5.k(0.0f, 4.0f, 0.0f, 0.0f, -1, -2));
         org.telegram.ui.Components.a6 a6Var = new org.telegram.ui.Components.a6(context);
         this.b = a6Var;
         a6Var.setTypeface(AndroidUtilities.bold());
         a6Var.setTextSize(1, 13.0f);
-        addView(a6Var, w7.a6.a(-2.0f, 0.0f, 0.0f, 18.0f, 0.0f, -2, 21));
+        addView(a6Var, w7.z5.a(-2.0f, 0.0f, 0.0f, 18.0f, 0.0f, -2, 21));
         DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.US);
         decimalFormatSymbols.setDecimalSeparator('.');
         DecimalFormat decimalFormat = new DecimalFormat("#.##", decimalFormatSymbols);
@@ -57,9 +57,9 @@ public final class pe extends FrameLayout {
         super.onDraw(canvas);
         if (this.f) {
             org.telegram.ui.ActionBar.c6 c6Var = this.a;
-            Paint G = c6Var != null ? c6Var.G("paintDivider") : org.telegram.ui.ActionBar.g6.k0;
-            if (G != null) {
-                canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(17.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(17.0f) : 0), getMeasuredHeight() - 1, G);
+            Paint F = c6Var != null ? c6Var.F("paintDivider") : org.telegram.ui.ActionBar.g6.k0;
+            if (F != null) {
+                canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(17.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(17.0f) : 0), getMeasuredHeight() - 1, F);
             }
         }
     }

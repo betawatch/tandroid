@@ -6,9 +6,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rc1 implements ImageReceiver.ImageReceiverDelegate, org.telegram.ui.Components.bm0, org.telegram.ui.Components.m91, org.telegram.ui.ActionBar.z1 {
+public final /* synthetic */ class rc1 implements ImageReceiver.ImageReceiverDelegate, org.telegram.ui.Components.bm0, org.telegram.ui.Components.n91, org.telegram.ui.ActionBar.z1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ ce1 b;
 
@@ -41,7 +41,7 @@ public final /* synthetic */ class rc1 implements ImageReceiver.ImageReceiverDel
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         ce1 ce1Var = this.b;
-        if (ce1Var.B1 instanceof pj1) {
+        if (ce1Var.B1 instanceof oj1) {
             return;
         }
         Drawable drawable = imageReceiver.getDrawable();
@@ -64,7 +64,7 @@ public final /* synthetic */ class rc1 implements ImageReceiver.ImageReceiverDel
         org.telegram.messenger.l5.a(this, i10, str, drawable);
     }
 
-    @Override // org.telegram.ui.Components.m91
+    @Override // org.telegram.ui.Components.n91
     public void e(int i10, int i11) {
         ce1 ce1Var = this.b;
         if (ce1Var.E1) {
@@ -143,9 +143,9 @@ public final /* synthetic */ class rc1 implements ImageReceiver.ImageReceiverDel
                         if (ce1Var2.l1 < 0.0f) {
                             ce1Var2.x0.getImageReceiver().setGradientBitmap(cd0Var.k);
                         }
-                        org.telegram.ui.Cells.k0 k0Var = ce1Var2.T0;
-                        if (k0Var != null) {
-                            k0Var.setTwoSided(true);
+                        org.telegram.ui.Cells.j0 j0Var = ce1Var2.T0;
+                        if (j0Var != null) {
+                            j0Var.setTwoSided(true);
                         }
                     } else {
                         float f10 = ce1Var2.l1;
@@ -154,9 +154,9 @@ public final /* synthetic */ class rc1 implements ImageReceiver.ImageReceiverDel
                         }
                     }
                 }
-                org.telegram.ui.Cells.k0 k0Var2 = ce1Var2.T0;
-                if (k0Var2 != null) {
-                    k0Var2.setProgress(ce1Var2.l1);
+                org.telegram.ui.Cells.j0 j0Var2 = ce1Var2.T0;
+                if (j0Var2 != null) {
+                    j0Var2.setProgress(ce1Var2.l1);
                 }
                 org.telegram.ui.ActionBar.g6.q1(true);
                 ce1Var2.Y0(2, false);

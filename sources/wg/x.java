@@ -8,9 +8,9 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Cells.m4;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.s6;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class x extends m4 {
     public final s6 r;
@@ -24,7 +24,7 @@ public final class x extends m4 {
         s6Var.setTextSize(AndroidUtilities.dp(15.0f));
         s6Var.setTypeface(AndroidUtilities.bold());
         s6Var.setTextColor(g6.w0(g6.L6, c6Var));
-        addView(s6Var, a6.a(24.0f, 24.0f, 0.0f, 24.0f, 0.0f, -2, (LocaleController.isRTL ? 3 : 5) | 80));
+        addView(s6Var, z5.a(24.0f, 24.0f, 0.0f, 24.0f, 0.0f, -2, (LocaleController.isRTL ? 3 : 5) | 80));
         setBackgroundColor(g6.w0(g6.h5, c6Var));
     }
 }

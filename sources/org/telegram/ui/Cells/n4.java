@@ -25,7 +25,7 @@ import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.ir;
 import org.telegram.ui.Components.jr;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class n4 extends FrameLayout {
     public boolean E;
@@ -62,7 +62,7 @@ public final class n4 extends FrameLayout {
         org.telegram.ui.Components.z9 z9Var = new org.telegram.ui.Components.z9(context);
         this.a = z9Var;
         z9Var.setRoundRadius(AndroidUtilities.dp(27.0f));
-        addView(z9Var, w7.a6.a(54.0f, 0.0f, 7.0f, 0.0f, 0.0f, 54, 49));
+        addView(z9Var, w7.z5.a(54.0f, 0.0f, 7.0f, 0.0f, 0.0f, 54, 49));
         bi.f4 f4Var = new bi.f4(context, 5);
         this.b = f4Var;
         NotificationCenter.listenEmojiLoading(f4Var);
@@ -72,10 +72,10 @@ public final class n4 extends FrameLayout {
         f4Var.setGravity(49);
         f4Var.setLines(1);
         f4Var.setEllipsize(TextUtils.TruncateAt.END);
-        addView(f4Var, w7.a6.a(-2.0f, 6.0f, 64.0f, 6.0f, 0.0f, -1, 51));
+        addView(f4Var, w7.z5.a(-2.0f, 6.0f, 64.0f, 6.0f, 0.0f, -1, 51));
         jr jrVar = new jr(context, c6Var);
         this.s = jrVar;
-        addView(jrVar, w7.a6.a(28.0f, 0.0f, 4.0f, 0.0f, 0.0f, -1, 48));
+        addView(jrVar, w7.z5.a(28.0f, 0.0f, 4.0f, 0.0f, 0.0f, -1, 48));
         int i10 = org.telegram.ui.ActionBar.g6.W8;
         int i11 = org.telegram.ui.ActionBar.g6.U8;
         ir irVar = jrVar.a;
@@ -89,7 +89,7 @@ public final class n4 extends FrameLayout {
             aqVar.setDrawUnchecked(false);
             aqVar.setDrawBackgroundAsArc(4);
             aqVar.setProgressDelegate(new ja(this, 4));
-            addView(aqVar, w7.a6.a(24.0f, 19.0f, 42.0f, 0.0f, 0.0f, 24, 49));
+            addView(aqVar, w7.z5.a(24.0f, 19.0f, 42.0f, 0.0f, 0.0f, 24, 49));
             aqVar.a(false, false);
             setWillNotDraw(false);
         }

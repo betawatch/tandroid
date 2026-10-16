@@ -17,7 +17,7 @@ import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class ra1 extends FrameLayout {
     public final Window a;
@@ -41,7 +41,7 @@ public abstract class ra1 extends FrameLayout {
             this.a = null;
         }
         this.s = i10;
-        LinearLayout e = org.telegram.messenger.yh.e(context, 1);
+        LinearLayout e = org.telegram.messenger.sk.e(context, 1);
         this.h = new d61(context, 2);
         lg.c cVar = new lg.c(getContext(), c6Var);
         this.d = cVar;
@@ -131,14 +131,14 @@ public abstract class ra1 extends FrameLayout {
         frameLayout.addView(this.b.t0, -2, -2);
         frameLayout.addView(this.c);
         frameLayout.addView(this.c.t0, -2, -2);
-        frameLayout.addView(radialProgressView, w7.a6.a(44.0f, 0.0f, 0.0f, 0.0f, 60.0f, 44, 17));
+        frameLayout.addView(radialProgressView, w7.z5.a(44.0f, 0.0f, 0.0f, 0.0f, 60.0f, 44, 17));
         TextView textView = new TextView(context);
         this.f = textView;
         textView.setTextSize(1, 15.0f);
-        frameLayout.addView(textView, w7.a6.a(-2.0f, 0.0f, 0.0f, 0.0f, 30.0f, -2, 17));
+        frameLayout.addView(textView, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 30.0f, -2, 17));
         radialProgressView.setVisibility(8);
         textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.s5, c6Var));
-        this.b.setDateSelectionListener(new nq0(this, 18));
+        this.b.setDateSelectionListener(new lq0(this, 18));
         this.b.t0.d(false, false);
         this.b.t0.setOnTouchListener(new org.telegram.ui.Components.vl0());
         final int i13 = 1;
@@ -190,9 +190,9 @@ public abstract class ra1 extends FrameLayout {
         this.b.setVisibility(0);
         this.c.setVisibility(4);
         this.b.setHeader(this.d);
-        e.addView(this.d, w7.a6.d(52.0f, -1));
-        e.addView(frameLayout, w7.a6.d(-2.0f, -1));
-        e.addView(this.h, w7.a6.a(-2.0f, 10.0f, 0.0f, 10.0f, 0.0f, -1, 7));
+        e.addView(this.d, w7.z5.d(52.0f, -1));
+        e.addView(frameLayout, w7.z5.d(-2.0f, -1));
+        e.addView(this.h, w7.z5.a(-2.0f, 10.0f, 0.0f, 10.0f, 0.0f, -1, 7));
         if (this.s == 4) {
             frameLayout.setClipChildren(false);
             frameLayout.setClipToPadding(false);

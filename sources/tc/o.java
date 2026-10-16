@@ -7,7 +7,7 @@ import java.nio.ByteBuffer;
 import java.util.zip.Deflater;
 import java.util.zip.DeflaterOutputStream;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class o extends w {
     public static final byte[] e = {0, 0, -1, -1};
@@ -19,39 +19,39 @@ public final class o extends w {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static byte[] a(byte[] bArr) {
-        boolean n10;
+        boolean i10;
         boolean z10;
-        int i10;
         int i11;
+        int i12;
         c0 c0Var = new c0(bArr.length + 1, 10);
-        c0Var.r(bArr);
+        c0Var.m(bArr);
         int[] iArr = new int[1];
         boolean[] zArr = new boolean[1];
         do {
-            n10 = c0Var.n(iArr[0]);
-            int i12 = iArr[0];
-            iArr[0] = i12 + 1;
-            if (n10) {
-                int i13 = i12 / 8;
-                ((ByteBuffer) c0Var.c).put(i13, (byte) ((~(1 << (i12 % 8))) & c0Var.l(i13)));
+            i10 = c0Var.i(iArr[0]);
+            int i13 = iArr[0];
+            iArr[0] = i13 + 1;
+            if (i10) {
+                int i14 = i13 / 8;
+                ((ByteBuffer) c0Var.c).put(i14, (byte) ((~(1 << (i13 % 8))) & c0Var.g(i14)));
             }
-            int s10 = c0Var.s(2, iArr);
-            if (s10 == 0) {
-                int i14 = ((iArr[0] + 7) & (-8)) / 8;
-                int l4 = ((255 & c0Var.l(i14 + 1)) * 256) + (c0Var.l(i14) & 255);
-                iArr[0] = (i14 + 4 + l4) * 8;
-                if (l4 == 0) {
+            int n10 = c0Var.n(2, iArr);
+            if (n10 == 0) {
+                int i15 = ((iArr[0] + 7) & (-8)) / 8;
+                int g10 = ((255 & c0Var.g(i15 + 1)) * 256) + (c0Var.g(i15) & 255);
+                iArr[0] = (i15 + 4 + g10) * 8;
+                if (g10 == 0) {
                     z10 = true;
-                    i10 = c0Var.b;
-                    i11 = iArr[0];
-                    if (i10 <= i11 / 8) {
-                        n10 = true;
+                    i11 = c0Var.b;
+                    i12 = iArr[0];
+                    if (i11 <= i12 / 8) {
+                        i10 = true;
                     }
-                    if (n10 && z10) {
+                    if (i10 && z10) {
                         zArr[0] = true;
                     }
                 }
-            } else if (s10 == 1) {
+            } else if (n10 == 1) {
                 g gVar = g.f;
                 f fVar = f.f;
                 while (true) {
@@ -65,7 +65,7 @@ public final class o extends w {
                     }
                 }
             } else {
-                if (s10 != 2) {
+                if (n10 != 2) {
                     throw new com.google.firebase.messaging.r(String.format("[%s] Bad compression type '11' at the bit index '%d'.", o.class.getSimpleName(), Integer.valueOf(iArr[0])));
                 }
                 j0[] j0VarArr = new j0[2];
@@ -84,24 +84,24 @@ public final class o extends w {
                 }
             }
             z10 = false;
-            i10 = c0Var.b;
-            i11 = iArr[0];
-            if (i10 <= i11 / 8) {
+            i11 = c0Var.b;
+            i12 = iArr[0];
+            if (i11 <= i12 / 8) {
             }
-            if (n10) {
+            if (i10) {
                 zArr[0] = true;
             }
-        } while (!n10);
+        } while (!i10);
         if (zArr[0]) {
-            return c0Var.w(0, i2.d.z(i11, 1, 8, -3));
+            return c0Var.r(0, i2.d.C(i12, 1, 8, -3));
         }
-        int i15 = i11 % 8;
-        if (i15 == 0 || i15 == 6 || i15 == 7) {
-            c0Var.p(0);
+        int i16 = i12 % 8;
+        if (i16 == 0 || i16 == 6 || i16 == 7) {
+            c0Var.k(0);
         }
-        int i16 = iArr[0];
-        iArr[0] = i16 + 3;
-        return c0Var.w(0, ((i16 + 2) / 8) + 1);
+        int i17 = iArr[0];
+        iArr[0] = i17 + 3;
+        return c0Var.r(0, ((i17 + 2) / 8) + 1);
     }
 
     public final byte[] b(byte[] bArr) {
@@ -124,8 +124,8 @@ public final class o extends w {
 
     public final byte[] c(byte[] bArr) {
         c0 c0Var = new c0(bArr.length + 4, 10);
-        c0Var.r(bArr);
-        c0Var.r(e);
+        c0Var.m(bArr);
+        c0Var.m(e);
         if (this.d == null) {
             this.d = new c0(0, 10);
         }
@@ -134,17 +134,17 @@ public final class o extends w {
         try {
             c.a(c0Var, c0Var2);
             c0 c0Var3 = this.d;
-            byte[] w9 = c0Var3.w(i10, c0Var3.b);
+            byte[] r10 = c0Var3.r(i10, c0Var3.b);
             c0 c0Var4 = this.d;
             if (((ByteBuffer) c0Var4.c).capacity() > 0) {
                 int i11 = c0Var4.b;
-                byte[] w10 = c0Var4.w(i11, i11);
-                ByteBuffer wrap = ByteBuffer.wrap(w10);
+                byte[] r11 = c0Var4.r(i11, i11);
+                ByteBuffer wrap = ByteBuffer.wrap(r11);
                 c0Var4.c = wrap;
-                wrap.position(w10.length);
-                c0Var4.b = w10.length;
+                wrap.position(r11.length);
+                c0Var4.b = r11.length;
             }
-            return w9;
+            return r10;
         } catch (Exception e7) {
             throw new v(43, t8.b.h("Failed to decompress the message: ", e7.getMessage()), e7);
         }

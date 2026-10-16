@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class a80 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public TextView a;
@@ -56,22 +56,22 @@ public final class a80 extends org.telegram.ui.ActionBar.m2 implements Notificat
         this.f = linearLayout;
         linearLayout.setOrientation(1);
         this.f.setWeightSum(100.0f);
-        frameLayout.addView(this.f, w7.a6.d(-1.0f, -1));
+        frameLayout.addView(this.f, w7.z5.d(-1.0f, -1));
         ?? frameLayout2 = new FrameLayout(context);
         frameLayout2.setPadding(AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f));
-        this.f.addView(frameLayout2, w7.a6.l(50.0f, -1, -1));
+        this.f.addView(frameLayout2, w7.z5.l(50.0f, -1, -1));
         ImageView imageView = new ImageView(context);
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-        frameLayout2.addView(imageView, w7.a6.d(-1.0f, -1));
+        frameLayout2.addView(imageView, w7.z5.d(-1.0f, -1));
         l0 l0Var = new l0(this, context, 8);
         this.d = l0Var;
         l0Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
-        this.f.addView(this.d, w7.a6.l(50.0f, -1, -1));
+        this.f.addView(this.d, w7.z5.l(50.0f, -1, -1));
         LinearLayout linearLayout2 = new LinearLayout(context);
         this.e = linearLayout2;
         linearLayout2.setOrientation(1);
         this.e.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
-        this.d.addView(this.e, w7.a6.e(-2, -2, 17));
+        this.d.addView(this.e, w7.z5.e(-2, -2, 17));
         TextView textView = new TextView(context);
         this.b = textView;
         int i10 = org.telegram.ui.ActionBar.g6.B6;
@@ -79,7 +79,7 @@ public final class a80 extends org.telegram.ui.ActionBar.m2 implements Notificat
         this.b.setGravity(17);
         this.b.setTypeface(Typeface.MONOSPACE);
         this.b.setTextSize(1, 16.0f);
-        this.e.addView(this.b, w7.a6.q(-2, -2, 1));
+        this.e.addView(this.b, w7.z5.q(-2, -2, 1));
         TextView textView2 = new TextView(context);
         this.a = textView2;
         textView2.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i10, false));
@@ -89,13 +89,13 @@ public final class a80 extends org.telegram.ui.ActionBar.m2 implements Notificat
         this.a.setClickable(true);
         this.a.setGravity(17);
         this.a.setMovementMethod(new org.telegram.ui.Components.cw(1));
-        this.e.addView(this.a, w7.a6.e(-2, -2, 1));
+        this.e.addView(this.a, w7.z5.e(-2, -2, 1));
         TextView textView3 = new TextView(context);
         this.c = textView3;
         textView3.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i10, false));
         this.c.setGravity(17);
         this.c.setTextSize(1, 32.0f);
-        this.d.addView(this.c, w7.a6.d(-2.0f, -2));
+        this.d.addView(this.c, w7.z5.d(-2.0f, -2));
         TLRPC.EncryptedChat encryptedChat = MessagesController.getInstance(this.currentAccount).getEncryptedChat(Integer.valueOf(this.h));
         if (encryptedChat != null) {
             org.telegram.ui.Components.a50 a50Var = new org.telegram.ui.Components.a50();
@@ -155,7 +155,7 @@ public final class a80 extends org.telegram.ui.ActionBar.m2 implements Notificat
             spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString("EncryptionKeyDescription", i16, objArr)));
             int indexOf = spannableStringBuilder.toString().indexOf("telegram.org");
             if (indexOf != -1) {
-                spannableStringBuilder.setSpan(new org.telegram.ui.Components.r61(LocaleController.getString(R.string.EncryptionKeyLink), null), indexOf, indexOf + 12, 33);
+                spannableStringBuilder.setSpan(new org.telegram.ui.Components.s61(LocaleController.getString(R.string.EncryptionKeyLink), null), indexOf, indexOf + 12, 33);
             }
             this.a.setText(spannableStringBuilder);
         }

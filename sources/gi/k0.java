@@ -36,30 +36,31 @@ import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Cells.o2;
 import org.telegram.ui.Cells.s2;
 import org.telegram.ui.Cells.v8;
 import org.telegram.ui.Components.es;
+import org.telegram.ui.Components.f90;
 import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.g90;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.i71;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.o20;
 import org.telegram.ui.Components.sc;
 import org.telegram.ui.Components.zc;
-import org.telegram.ui.c20;
+import org.telegram.ui.b20;
 import org.telegram.ui.fo;
-import org.telegram.ui.lg1;
-import w7.a6;
+import org.telegram.ui.kg1;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class k0 extends e3 implements NotificationCenter.NotificationCenterDelegate, ne.d, o2 {
     public static final /* synthetic */ int V = 0;
     public final o20 E;
-    public final c20 F;
-    public final h71 G;
+    public final b20 F;
+    public final i71 G;
     public final ab H;
     public final ab I;
     public final zf.z J;
@@ -92,14 +93,14 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
         this(m2Var, j10, null, null);
     }
 
-    public static void A(k0 k0Var, l61 l61Var, View view) {
+    public static void B(k0 k0Var, m61 m61Var, View view) {
         long j10;
         TLRPC.Chat chat;
         m2 m2Var = k0Var.s;
-        if (k0Var.U(l61Var)) {
+        if (k0Var.U(m61Var)) {
             return;
         }
-        int i10 = l61Var.d;
+        int i10 = m61Var.d;
         boolean z10 = false;
         if (i10 == 101) {
             k0Var.h = !k0Var.h;
@@ -117,7 +118,7 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
             k0Var.M.e();
             return;
         }
-        Object obj = l61Var.G;
+        Object obj = m61Var.G;
         if (obj instanceof TLRPC.Chat) {
             chat = (TLRPC.Chat) obj;
             z10 = ChatObject.isChannelAndNotMegaGroup(chat);
@@ -133,13 +134,13 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
         int b10 = u0.b(k0Var.currentAccount, j10);
         if (b10 != 1 && b10 != 2) {
             if (b10 == 3) {
-                g90 g90Var = new g90(k0Var.getContext(), chat2, null, k0Var.s, k0Var.resourcesProvider);
-                g90Var.n = new zc((FrameLayout) k0Var.containerView, k0Var.resourcesProvider);
-                g90Var.show();
+                f90 f90Var = new f90(k0Var.getContext(), chat2, null, k0Var.s, k0Var.resourcesProvider);
+                f90Var.n = new zc((FrameLayout) k0Var.containerView, k0Var.resourcesProvider);
+                f90Var.show();
                 return;
             } else {
                 if (b10 == 4) {
-                    org.telegram.messenger.q.r(z10 ? R.string.CommunityHiddenChannelUnavailable : R.string.CommunityHiddenGroupUnavailable, new zc((FrameLayout) k0Var.containerView, k0Var.resourcesProvider), R.raw.e_hand_2, 36);
+                    org.telegram.messenger.g0.q(z10 ? R.string.CommunityHiddenChannelUnavailable : R.string.CommunityHiddenGroupUnavailable, new zc((FrameLayout) k0Var.containerView, k0Var.resourcesProvider), R.raw.e_hand_2, 36);
                     return;
                 }
                 return;
@@ -167,31 +168,31 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
             og.d.a(foVar2, MessagesStorage.TopicKey.of(j10, MessagesController.getInstance(k0Var.currentAccount).getForumLastTopicId(chat2.id)));
             m2Var.presentFragment(foVar2);
         } else {
-            m2Var.presentFragment(new lg1(bundle));
+            m2Var.presentFragment(new kg1(bundle));
         }
         k0Var.dismiss();
     }
 
-    public static void B(k0 k0Var, ArrayList arrayList) {
+    public static void C(k0 k0Var, ArrayList arrayList) {
         boolean z10;
         ArrayList arrayList2;
-        arrayList.add(l61.D(99, Math.min(AndroidUtilities.dp(176.0f) + AndroidUtilities.statusBarHeight, (int) (AndroidUtilities.displaySize.y * 0.25f))));
+        arrayList.add(m61.D(99, Math.min(AndroidUtilities.dp(176.0f) + AndroidUtilities.statusBarHeight, (int) (AndroidUtilities.displaySize.y * 0.25f))));
         int i10 = 0;
-        arrayList.add(l61.D(0, AndroidUtilities.dp(56.0f)));
+        arrayList.add(m61.D(0, AndroidUtilities.dp(56.0f)));
         String string = LocaleController.getString(R.string.CommunityShowAsOneChat);
-        l61 l61Var = new l61(39);
-        l61Var.d = 101;
-        l61Var.l = string;
-        l61Var.z = 0;
-        l61Var.K(k0Var.h);
-        arrayList.add(l61Var);
-        arrayList.add(l61.A(2, LocaleController.getString(R.string.CommunityShowAsOneChatInfo)));
+        m61 m61Var = new m61(39);
+        m61Var.d = 101;
+        m61Var.l = string;
+        m61Var.z = 0;
+        m61Var.K(k0Var.h);
+        arrayList.add(m61Var);
+        arrayList.add(m61.A(2, LocaleController.getString(R.string.CommunityShowAsOneChatInfo)));
         t0 t0Var = k0Var.M;
         boolean z11 = true;
         if (t0Var.n && t0Var.l == 1 && (arrayList2 = t0Var.j) != null && arrayList2.size() == 1) {
-            arrayList.add(l61.s(3, LocaleController.getString(R.string.CommunityPendingRequest)));
+            arrayList.add(m61.s(3, LocaleController.getString(R.string.CommunityPendingRequest)));
             t0Var.c(arrayList);
-            arrayList.add(l61.D(5, AndroidUtilities.dp(14.33f)));
+            arrayList.add(m61.D(5, AndroidUtilities.dp(14.33f)));
         } else {
             int i11 = t0Var.l;
             if (i11 > 0) {
@@ -200,7 +201,7 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
                 String string2 = i11 == i12 ? LocaleController.getString(R.string.CommunityPendingRequests) : LocaleController.formatPluralString("CommunityPendingRequestsRow", i11, new Object[0]);
                 String num = i12 > 0 ? Integer.toString(i12) : null;
                 int i14 = hi.i.a;
-                l61 J = l61.J(hi.i.class);
+                m61 J = m61.J(hi.i.class);
                 J.d = 100;
                 J.k = i13;
                 J.l = string2;
@@ -208,7 +209,7 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
                 J.B = ((-15497247) << 32) | ((-14899731) & 4294967295L);
                 J.q = true;
                 arrayList.add(J);
-                arrayList.add(l61.D(5, AndroidUtilities.dp(14.33f)));
+                arrayList.add(m61.D(5, AndroidUtilities.dp(14.33f)));
             }
         }
         MessagesController.CommunityPeersDialog buildCommunityPeers = MessagesController.getInstance(k0Var.currentAccount).buildCommunityPeers(k0Var.e);
@@ -218,7 +219,7 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
         if (buildCommunityPeers.chatsYouAreIn.isEmpty()) {
             z10 = false;
         } else {
-            arrayList.add(l61.s(21, LocaleController.getString(R.string.CommunitySectionChatsYouAreIn)));
+            arrayList.add(m61.s(21, LocaleController.getString(R.string.CommunitySectionChatsYouAreIn)));
             ArrayList<MessagesController.CommunityPeerDialog> arrayList3 = buildCommunityPeers.chatsYouAreIn;
             int size = arrayList3.size();
             int i15 = 0;
@@ -231,9 +232,9 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
         }
         if (!buildCommunityPeers.chatsYouCanView.isEmpty()) {
             if (z10) {
-                arrayList.add(l61.D(22, AndroidUtilities.dp(12.0f)));
+                arrayList.add(m61.D(22, AndroidUtilities.dp(12.0f)));
             }
-            arrayList.add(l61.s(23, LocaleController.getString(R.string.CommunitySectionChatsYouCanView)));
+            arrayList.add(m61.s(23, LocaleController.getString(R.string.CommunitySectionChatsYouCanView)));
             ArrayList<MessagesController.CommunityPeerDialog> arrayList4 = buildCommunityPeers.chatsYouCanView;
             int size2 = arrayList4.size();
             int i16 = 0;
@@ -248,9 +249,9 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
             z11 = z10;
         } else {
             if (z10) {
-                arrayList.add(l61.D(24, AndroidUtilities.dp(12.0f)));
+                arrayList.add(m61.D(24, AndroidUtilities.dp(12.0f)));
             }
-            arrayList.add(l61.s(25, LocaleController.getString(R.string.CommunitySectionChatsYouCanRequestToJoin)));
+            arrayList.add(m61.s(25, LocaleController.getString(R.string.CommunitySectionChatsYouCanRequestToJoin)));
             ArrayList<MessagesController.CommunityPeerDialog> arrayList5 = buildCommunityPeers.chatsYouCanJoin;
             int size3 = arrayList5.size();
             int i17 = 0;
@@ -264,9 +265,9 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
             return;
         }
         if (z11) {
-            arrayList.add(l61.D(26, AndroidUtilities.dp(12.0f)));
+            arrayList.add(m61.D(26, AndroidUtilities.dp(12.0f)));
         }
-        arrayList.add(l61.s(27, LocaleController.getString(R.string.CommunitySectionHiddenChats)));
+        arrayList.add(m61.s(27, LocaleController.getString(R.string.CommunitySectionHiddenChats)));
         ArrayList<MessagesController.CommunityPeerDialog> arrayList6 = buildCommunityPeers.chatsOther;
         int size4 = arrayList6.size();
         while (i10 < size4) {
@@ -281,7 +282,7 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
             u0.f(new zc((FrameLayout) k0Var.containerView, k0Var.resourcesProvider), 1, z10);
             k0Var.d.D(0);
         } else if (!TextUtils.equals("COMMUNITY_REQUEST_CREATED", tL_error.text)) {
-            org.telegram.ui.Cells.d0.r((FrameLayout) k0Var.containerView, k0Var.resourcesProvider, tL_error, false);
+            c1.p((FrameLayout) k0Var.containerView, k0Var.resourcesProvider, tL_error, false);
         } else {
             u0.f(new zc((FrameLayout) k0Var.containerView, k0Var.resourcesProvider), 2, z10);
             k0Var.d.D(0);
@@ -291,7 +292,7 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
     public static void o(k0 k0Var, ArrayList arrayList, TLRPC.TL_error tL_error) {
         k0Var.n.setLoading(false);
         if (tL_error != null) {
-            org.telegram.ui.Cells.d0.r((FrameLayout) k0Var.containerView, k0Var.resourcesProvider, tL_error, false);
+            c1.p((FrameLayout) k0Var.containerView, k0Var.resourcesProvider, tL_error, false);
             return;
         }
         if (arrayList != null) {
@@ -300,14 +301,14 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
                 k0Var.x.d.W2.N(false);
                 k0Var.d.D(2);
             } else {
-                org.telegram.messenger.q.r(R.string.CommunityNoChatsToAdd, new zc((FrameLayout) k0Var.containerView, k0Var.resourcesProvider), R.raw.info, 36);
+                org.telegram.messenger.g0.q(R.string.CommunityNoChatsToAdd, new zc((FrameLayout) k0Var.containerView, k0Var.resourcesProvider), R.raw.info, 36);
             }
         }
     }
 
     public static void q(k0 k0Var, TLRPC.TL_error tL_error) {
         if (tL_error != null) {
-            org.telegram.ui.Cells.d0.r((FrameLayout) k0Var.containerView, k0Var.resourcesProvider, tL_error, false);
+            c1.p((FrameLayout) k0Var.containerView, k0Var.resourcesProvider, tL_error, false);
         }
     }
 
@@ -341,8 +342,8 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
         MessagesController.getInstance(k0Var.currentAccount).fetchChatsToAddToCommunity(new t(k0Var, 2));
     }
 
-    public final boolean U(l61 l61Var) {
-        Object obj = l61Var.G;
+    public final boolean U(m61 m61Var) {
+        Object obj = m61Var.G;
         if (!(obj instanceof hi.f)) {
             return false;
         }
@@ -367,8 +368,8 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
         String str;
         int i10 = 0;
         if (!z10) {
-            arrayList.add(l61.D(99, (int) (AndroidUtilities.displaySize.y * 0.35f)));
-            arrayList.add(l61.D(0, AndroidUtilities.dp(56.0f)));
+            arrayList.add(m61.D(99, (int) (AndroidUtilities.displaySize.y * 0.35f)));
+            arrayList.add(m61.D(0, AndroidUtilities.dp(56.0f)));
         }
         if (this.Q != null) {
             String lowerCase = (!z10 || (str = this.S) == null) ? null : str.toLowerCase();
@@ -379,11 +380,11 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
                 i10++;
                 TLRPC.Chat chat = (TLRPC.Chat) obj;
                 if (!z10 || TextUtils.isEmpty(lowerCase)) {
-                    arrayList.add(l61.v(chat));
+                    arrayList.add(m61.v(chat));
                 } else {
                     String str2 = chat.title;
                     if (str2 != null && str2.toLowerCase().contains(lowerCase)) {
-                        arrayList.add(l61.v(chat));
+                        arrayList.add(m61.v(chat));
                     }
                 }
             }
@@ -402,8 +403,8 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
         MessagesController.getInstance(this.currentAccount).convertToMegaGroup(getContext(), -j11, null, new d(this, a2Var, j10, z10, 1));
     }
 
-    public final void X(l61 l61Var) {
-        Object obj = l61Var.G;
+    public final void X(m61 m61Var) {
+        Object obj = m61Var.G;
         if (obj instanceof TLRPC.Chat) {
             TLRPC.Chat chat = (TLRPC.Chat) obj;
             if (!this.N) {
@@ -526,9 +527,9 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
             this.n.setScaleX(AndroidUtilities.lerp(0.95f, 1.0f, b10));
             this.n.setScaleY(AndroidUtilities.lerp(0.95f, 1.0f, b10));
             this.n.setVisibility(b10 > 0.0f ? 0 : 8);
-            c20 c20Var = this.F;
-            c20Var.setAlpha(f7);
-            c20Var.setVisibility(f7 > 0.0f ? 0 : 8);
+            b20 b20Var = this.F;
+            b20Var.setAlpha(f7);
+            b20Var.setVisibility(f7 > 0.0f ? 0 : 8);
             this.containerView.invalidate();
             this.H.invalidate();
         }
@@ -554,9 +555,9 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
                 this.r.setScaleY(AndroidUtilities.lerp(0.95f, 1.0f, b11));
                 this.r.setVisibility(b11 > 0.0f ? 0 : 8);
             }
-            h71 h71Var = this.G;
-            h71Var.setAlpha(f7);
-            h71Var.setVisibility(f7 > 0.0f ? 0 : 8);
+            i71 i71Var = this.G;
+            i71Var.setAlpha(f7);
+            i71Var.setVisibility(f7 > 0.0f ? 0 : 8);
             this.containerView.invalidate();
             this.I.invalidate();
         }
@@ -594,7 +595,7 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
         this.d = h1Var;
         int i14 = this.backgroundPaddingLeft;
         h1Var.setPadding(i14, 0, i14, 0);
-        this.containerView.addView(this.d, a6.e(-1, -1, 119));
+        this.containerView.addView(this.d, z5.e(-1, -1, 119));
         int i15 = 3;
         this.H = new ab(this, context, i15);
         this.I = new ab(this, context, i15);
@@ -618,21 +619,21 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
         g2Var2.setHint(string2);
         g2Var2.addTextChangedListener(new x(this));
         o20Var2.setVisibility(8);
-        h71 h71Var = new h71(context, this.currentAccount, 0, false, new t(this, i12), new u(this, i12), null, this.resourcesProvider);
-        this.G = h71Var;
-        h71Var.j(new y(this));
-        h71Var.setClipToPadding(false);
-        h71Var.setVisibility(8);
-        h71Var.p1();
-        h71Var.W2.r = false;
-        h71Var.setPadding(0, AndroidUtilities.dp(52.0f) + AndroidUtilities.statusBarHeight, 0, AndroidUtilities.navigationBarHeight);
-        c20 c20Var = new c20(m2Var);
-        this.F = c20Var;
-        c20Var.setVisibility(8);
-        c20Var.setBackground(null);
-        c20Var.setChatPreviewDelegate(new z());
-        c20Var.setUiCallback(new a0(this));
-        c20Var.b.setClipToPadding(false);
+        i71 i71Var = new i71(context, this.currentAccount, 0, false, new t(this, i12), new u(this, i12), null, this.resourcesProvider);
+        this.G = i71Var;
+        i71Var.j(new y(this));
+        i71Var.setClipToPadding(false);
+        i71Var.setVisibility(8);
+        i71Var.p1();
+        i71Var.W2.r = false;
+        i71Var.setPadding(0, AndroidUtilities.dp(52.0f) + AndroidUtilities.statusBarHeight, 0, AndroidUtilities.navigationBarHeight);
+        b20 b20Var = new b20(m2Var);
+        this.F = b20Var;
+        b20Var.setVisibility(8);
+        b20Var.setBackground(null);
+        b20Var.setChatPreviewDelegate(new z());
+        b20Var.setUiCallback(new a0(this));
+        b20Var.b.setClipToPadding(false);
         this.L = new View(getContext());
         Context context2 = getContext();
         c6 c6Var = this.resourcesProvider;
@@ -663,12 +664,8 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
         sc.a((FrameLayout) this.containerView, new d0());
         ViewGroup viewGroup = this.containerView;
         u uVar = new u(this, i10);
-        WeakHashMap weakHashMap = r0.j0.a;
-        r0.b0.i(viewGroup, uVar);
-    }
-
-    @Override // org.telegram.ui.Cells.o2
-    public final void c() {
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.a0.i(viewGroup, uVar);
     }
 
     @Override // org.telegram.ui.Cells.o2
@@ -679,7 +676,11 @@ public final class k0 extends e3 implements NotificationCenter.NotificationCente
     public final void g(s2 s2Var) {
     }
 
+    @Override // org.telegram.ui.Cells.o2
+    public final void c() {
+    }
+
     @Override // ne.d
-    public final /* synthetic */ void C(float f7, int i10) {
+    public final /* synthetic */ void A(float f7, int i10) {
     }
 }

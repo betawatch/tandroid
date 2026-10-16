@@ -25,7 +25,7 @@ import java.util.List;
 import org.webrtc.NetworkChangeDetector;
 import org.webrtc.NetworkMonitorAutoDetect;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public class NetworkMonitorAutoDetect extends BroadcastReceiver implements NetworkChangeDetector {
     private static final long INVALID_NET_ID = -1;
@@ -42,7 +42,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
     private WifiManagerDelegate wifiManagerDelegate;
     private String wifiSSID;
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class NetworkState {
         private final boolean connected;
         private final int subtype;
@@ -79,7 +79,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public class SimpleNetworkCallback extends ConnectivityManager.NetworkCallback {
         private SimpleNetworkCallback() {
         }
@@ -121,7 +121,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class WifiDirectManagerDelegate extends BroadcastReceiver {
         private static final int WIFI_P2P_NETWORK_HANDLE = 0;
         private final Context context;
@@ -142,7 +142,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
             }
             if (i10 > 28) {
                 WifiP2pManager wifiP2pManager = (WifiP2pManager) context.getSystemService("wifip2p");
-                wifiP2pManager.requestGroupInfo(wifiP2pManager.initialize(context, context.getMainLooper(), null), new WifiP2pManager.GroupInfoListener() { // from class: org.webrtc.m
+                wifiP2pManager.requestGroupInfo(wifiP2pManager.initialize(context, context.getMainLooper(), null), new WifiP2pManager.GroupInfoListener() { // from class: org.webrtc.l
                     @Override // android.net.wifi.p2p.WifiP2pManager.GroupInfoListener
                     public final void onGroupInfoAvailable(WifiP2pGroup wifiP2pGroup) {
                         NetworkMonitorAutoDetect.WifiDirectManagerDelegate.this.lambda$new$0(wifiP2pGroup);
@@ -379,7 +379,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         return this.connectivityManagerDelegate.supportNetworkCallback();
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class WifiManagerDelegate {
         private final Context context;
 
@@ -399,7 +399,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class ConnectivityManagerDelegate {
         private final ConnectivityManager connectivityManager;
 

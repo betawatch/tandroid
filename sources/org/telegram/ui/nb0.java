@@ -1,90 +1,59 @@
 package org.telegram.ui;
 
-import android.view.Window;
-import java.lang.ref.WeakReference;
+import android.content.ComponentName;
+import android.content.Context;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* JADX WARN: Enum visitor error
+jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'h' uses external variables
+	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
+	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
+	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
+	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
+ */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class nb0 implements zf.k0 {
-    public final /* synthetic */ int a;
-    public boolean b;
-    public boolean c;
-    public final Object d;
+public final class nb0 {
+    public static final nb0 h;
+    public static final /* synthetic */ nb0[] n;
+    public final String a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final boolean e;
+    public ComponentName f;
 
-    public /* synthetic */ nb0(Object obj, int i10) {
-        this.a = i10;
-        this.d = obj;
+    static {
+        int i10 = R.drawable.icon_background_sa;
+        int i11 = R.mipmap.icon_foreground_sa;
+        nb0 nb0Var = new nb0("DEFAULT", 0, "DefaultIcon", i10, i11, R.string.AppIconDefault, false);
+        h = nb0Var;
+        n = new nb0[]{nb0Var, new nb0("VINTAGE", 1, "VintageIcon", R.drawable.icon_6_background_sa, R.mipmap.icon_6_foreground_sa, R.string.AppIconVintage, false), new nb0("AQUA", 2, "AquaIcon", R.drawable.icon_4_background_sa, i11, R.string.AppIconAqua, false), new nb0("PREMIUM", 3, "PremiumIcon", R.drawable.icon_3_background_sa, R.mipmap.icon_3_foreground_sa, R.string.AppIconPremium, true), new nb0("TURBO", 4, "TurboIcon", R.drawable.icon_5_background_sa, R.mipmap.icon_5_foreground_sa, R.string.AppIconTurbo, true), new nb0("NOX", 5, "NoxIcon", R.mipmap.icon_2_background_sa, i11, R.string.AppIconNox, true)};
     }
 
-    @Override // zf.k0
-    public void a(boolean z10) {
-        switch (this.a) {
-            case 0:
-                if (this.b != z10 && !this.c) {
-                    this.b = z10;
-                    LaunchActivity launchActivity = (LaunchActivity) ((WeakReference) this.d).get();
-                    if (launchActivity != null) {
-                        int i10 = launchActivity.A1 + (z10 ? 1 : -1);
-                        launchActivity.A1 = i10;
-                        l0 l0Var = launchActivity.w0;
-                        if (l0Var != null) {
-                            l0Var.setVisibility(i10 > 0 ? 8 : 0);
-                        }
-                        launchActivity.getWindow();
-                        break;
-                    }
-                }
-                break;
-            default:
-                zf.l0 l0Var2 = (zf.l0) this.d;
-                if (this.b != z10 && !this.c) {
-                    this.b = z10;
-                    if (z10) {
-                        l0Var2.a++;
-                    } else {
-                        l0Var2.a--;
-                    }
-                    boolean z11 = l0Var2.a > 0;
-                    if (l0Var2.b != z11) {
-                        l0Var2.b = z11;
-                        Window window = (Window) ((WeakReference) l0Var2.c.b).get();
-                        if (window != null) {
-                            window.getDecorView().setVisibility(z11 ? 8 : 0);
-                            break;
-                        }
-                    }
-                }
-                break;
-        }
+    public nb0(String str, int i10, String str2, int i11, int i12, int i13, boolean z10) {
+        this.a = str2;
+        this.b = i11;
+        this.c = i12;
+        this.d = i13;
+        this.e = z10;
     }
 
-    public void b() {
-        if (this.b) {
-            return;
-        }
-        this.b = true;
-        Runnable runnable = (Runnable) this.d;
-        if (runnable != null) {
-            runnable.run();
-        }
+    public static nb0 valueOf(String str) {
+        return (nb0) Enum.valueOf(nb0.class, str);
     }
 
-    @Override // zf.k0
-    public void destroy() {
-        switch (this.a) {
-            case 0:
-                a(false);
-                this.c = true;
-                break;
-            default:
-                a(false);
-                this.c = true;
-                break;
-        }
+    public static nb0[] values() {
+        return (nb0[]) n.clone();
     }
 
-    public nb0(LaunchActivity launchActivity, boolean z10) {
-        this.a = 0;
-        this.d = new WeakReference(launchActivity);
+    public final ComponentName a(Context context) {
+        if (this.f == null) {
+            this.f = new ComponentName(context.getPackageName(), "org.telegram.messenger." + this.a);
+        }
+        return this.f;
     }
 }

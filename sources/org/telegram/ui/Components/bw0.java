@@ -15,7 +15,7 @@ import org.telegram.messenger.LocationController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class bw0 extends org.telegram.ui.ActionBar.e3 implements NotificationCenter.NotificationCenterDelegate {
     public final bi.o0 b;
@@ -54,12 +54,12 @@ public final class bw0 extends org.telegram.ui.ActionBar.e3 implements Notificat
         o0Var.setGlowColor(getThemedColor(org.telegram.ui.ActionBar.g6.A5));
         o0Var.setOnScrollListener(new kc0(this, 5));
         o0Var.setOnItemClickListener(new j(this, 13));
-        this.containerView.addView(o0Var, w7.a6.a(-1.0f, 0.0f, 0.0f, 0.0f, 48.0f, -1, 51));
+        this.containerView.addView(o0Var, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 48.0f, -1, 51));
         View view = new View(context);
         view.setBackgroundResource(R.drawable.header_shadow_reverse);
-        this.containerView.addView(view, w7.a6.a(3.0f, 0.0f, 0.0f, 0.0f, 48.0f, -1, 83));
-        rg0 rg0Var = new rg0(context);
-        rg0Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
+        this.containerView.addView(view, w7.z5.a(3.0f, 0.0f, 0.0f, 0.0f, 48.0f, -1, 83));
+        sg0 sg0Var = new sg0(context);
+        sg0Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
         TextView textView = new TextView(context);
         textView.setTextSize(1, 14.0f);
         int i12 = org.telegram.ui.ActionBar.g6.ii;
@@ -68,27 +68,27 @@ public final class bw0 extends org.telegram.ui.ActionBar.e3 implements Notificat
         textView.setPadding(AndroidUtilities.dp(33.0f), 0, AndroidUtilities.dp(33.0f), 0);
         textView.setText(LocaleController.getString(R.string.Cancel).toUpperCase());
         textView.setTypeface(AndroidUtilities.bold());
-        rg0Var.addView(textView, w7.a6.e(-2, -1, 51));
+        sg0Var.addView(textView, w7.z5.e(-2, -1, 51));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
         linearLayout.setBackground(org.telegram.ui.ActionBar.g6.g0(org.telegram.ui.ActionBar.g6.x0(null, i12, false) & 268435455, 0, -1));
         linearLayout.setPadding(AndroidUtilities.dp(33.0f), 0, AndroidUtilities.dp(33.0f), 0);
-        rg0Var.addView(linearLayout, w7.a6.e(-2, -1, 53));
+        sg0Var.addView(linearLayout, w7.z5.e(-2, -1, 53));
         TextView textView2 = new TextView(context);
-        org.telegram.messenger.yh.k(13.0f, 1, textView2);
+        org.telegram.messenger.sk.k(13.0f, 1, textView2);
         com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.g6.li, null, false, textView2, 17);
         textView2.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(11.0f), org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.ki, false)));
         textView2.setMinWidth(AndroidUtilities.dp(23.0f));
         textView2.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(1.0f));
-        TextView i13 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView2, w7.a6.t(-2, 23, 16, 0, 0, 10, 0), context);
+        TextView i13 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView2, w7.z5.t(-2, 23, 16, 0, 0, 10, 0), context);
         i13.setTextSize(1, 14.0f);
         com.google.android.gms.internal.play_billing.k3.o(i12, null, false, i13, 17);
         i13.setCompoundDrawablePadding(AndroidUtilities.dp(8.0f));
         i13.setText(LocaleController.getString(R.string.Send).toUpperCase());
         i13.setTypeface(AndroidUtilities.bold());
-        linearLayout.addView(i13, w7.a6.q(-2, -2, 16));
-        rg0Var.setBackgroundColor(getThemedColor(i10));
-        this.containerView.addView(rg0Var, w7.a6.e(-1, 48, 83));
+        linearLayout.addView(i13, w7.z5.q(-2, -2, 16));
+        sg0Var.setBackgroundColor(getThemedColor(i10));
+        this.containerView.addView(sg0Var, w7.z5.e(-1, 48, 83));
         textView.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
         textView.setTextColor(getThemedColor(org.telegram.ui.ActionBar.g6.q7));
         textView.setText(LocaleController.getString(R.string.StopAllLocationSharings));

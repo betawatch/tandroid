@@ -7,13 +7,13 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.af0;
 import org.telegram.ui.Components.ze0;
 import org.telegram.ui.WallpapersListActivity;
-import org.telegram.ui.cp0;
-import org.telegram.ui.fn0;
-import org.telegram.ui.hr0;
-import org.telegram.ui.ma0;
+import org.telegram.ui.ap0;
+import org.telegram.ui.en0;
+import org.telegram.ui.fr0;
+import org.telegram.ui.gm0;
 import org.telegram.ui.np;
 import org.telegram.ui.oh1;
 import org.telegram.ui.qn;
@@ -21,7 +21,7 @@ import org.telegram.ui.ro;
 import org.telegram.ui.s70;
 import org.telegram.ui.zo;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s3 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final /* synthetic */ class s3 implements RequestDelegate {
                 }
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new x0((qn) obj, tLObject, z10, 15));
+                AndroidUtilities.runOnUIThread(new x0((qn) obj, tLObject, z10, 13));
                 break;
             case 5:
                 zo zoVar = (zo) obj;
@@ -79,37 +79,37 @@ public final /* synthetic */ class s3 implements RequestDelegate {
                     break;
                 } else {
                     zoVar.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
-                    AndroidUtilities.runOnUIThread(new ah.t(23, zoVar, z10));
+                    AndroidUtilities.runOnUIThread(new ah.t(22, zoVar, z10));
                     break;
                 }
             case 6:
-                AndroidUtilities.runOnUIThread(new bi.h4((np) obj, tL_error, tLObject, this.b, 13));
+                AndroidUtilities.runOnUIThread(new bi.h4((np) obj, tL_error, tLObject, this.b, 12));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new v70((ze0) obj, tL_error, tLObject, z10));
+                AndroidUtilities.runOnUIThread(new ze0((af0) obj, tL_error, tLObject, z10));
                 break;
             case 8:
-                AndroidUtilities.runOnUIThread(new bi.h4((s70) obj, tL_error, tLObject, this.b, 22));
+                AndroidUtilities.runOnUIThread(new bi.h4((s70) obj, tL_error, tLObject, this.b, 21));
                 break;
             case 9:
-                AndroidUtilities.runOnUIThread(new bi.h4((fn0) obj, tL_error, tLObject, this.b, 23));
+                AndroidUtilities.runOnUIThread(new bi.h4((en0) obj, tL_error, tLObject, this.b, 22));
                 break;
             case 10:
-                AndroidUtilities.runOnUIThread(new bi.h4((cp0) obj, tL_error, tLObject, this.b, 26));
+                AndroidUtilities.runOnUIThread(new bi.h4((ap0) obj, tL_error, tLObject, this.b, 25));
                 break;
             case 11:
-                hr0 hr0Var = (hr0) obj;
+                fr0 fr0Var = (fr0) obj;
                 if (tLObject != null) {
-                    AndroidUtilities.runOnUIThread(new ma0(hr0Var, tLObject, z10, 4));
+                    AndroidUtilities.runOnUIThread(new gm0(fr0Var, tLObject, z10, 2));
                     break;
                 }
                 break;
             case 12:
-                AndroidUtilities.runOnUIThread(new bi.h4((oh1) obj, tL_error, tLObject, this.b, 28));
+                AndroidUtilities.runOnUIThread(new bi.h4((oh1) obj, tL_error, tLObject, this.b, 27));
                 break;
             default:
                 int[][] iArr = WallpapersListActivity.k0;
-                AndroidUtilities.runOnUIThread(new ma0((WallpapersListActivity) obj, tLObject, z10, 13));
+                AndroidUtilities.runOnUIThread(new gm0((WallpapersListActivity) obj, tLObject, z10, 11));
                 break;
         }
     }

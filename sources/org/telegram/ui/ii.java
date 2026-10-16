@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ii implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -50,16 +50,16 @@ public final class ii implements ViewTreeObserver.OnPreDrawListener {
                 }
                 break;
             case 3:
-                qq0 qq0Var = (qq0) this.b;
-                if (qq0Var.getParentActivity() != null) {
+                oq0 oq0Var = (oq0) this.b;
+                if (oq0Var.getParentActivity() != null) {
                     int rotation2 = ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
-                    qq0Var.f = 2;
+                    oq0Var.f = 2;
                     if (!AndroidUtilities.isTablet() && (rotation2 == 3 || rotation2 == 1)) {
-                        qq0Var.f = 4;
+                        oq0Var.f = 4;
                     }
-                    qq0Var.n.l();
+                    oq0Var.n.l();
                 }
-                org.telegram.ui.Components.mm0 mm0Var = ((qq0) this.b).h;
+                org.telegram.ui.Components.mm0 mm0Var = ((oq0) this.b).h;
                 if (mm0Var != null) {
                     mm0Var.getViewTreeObserver().removeOnPreDrawListener(this);
                     break;
@@ -71,7 +71,7 @@ public final class ii implements ViewTreeObserver.OnPreDrawListener {
                 ImageView imageView = photoViewer.x3;
                 if (imageView != null) {
                     if (photoViewer.J3) {
-                        AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.ui.ru0
+                        AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.ui.qu0
                             public final /* synthetic */ ii b;
 
                             {
@@ -112,7 +112,7 @@ public final class ii implements ViewTreeObserver.OnPreDrawListener {
                         }
                     }
                 }
-                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.ui.ru0
+                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.ui.qu0
                     public final /* synthetic */ ii b;
 
                     {

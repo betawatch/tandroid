@@ -21,10 +21,10 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.x5;
 import org.telegram.ui.Components.k9;
 import org.telegram.ui.Components.z9;
-import w7.a6;
+import w7.z5;
 import zf.q;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class c extends FrameLayout implements x5 {
     public final c6 a;
@@ -39,7 +39,7 @@ public final class c extends FrameLayout implements x5 {
         z9 z9Var = new z9(context);
         this.b = z9Var;
         z9Var.setRoundRadius(AndroidUtilities.dp(9.0f));
-        addView(z9Var, a6.a(32.0f, 20.0f, 0.0f, 0.0f, 0.0f, 32, 19));
+        addView(z9Var, z5.a(32.0f, 20.0f, 0.0f, 0.0f, 0.0f, 32, 19));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setGravity(16);
@@ -50,19 +50,19 @@ public final class c extends FrameLayout implements x5 {
         textView.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
-        linearLayout.addView(textView, a6.n(-1, -2));
+        linearLayout.addView(textView, z5.n(-1, -2));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setTextSize(1, 13.0f);
         textView2.setSingleLine(true);
         textView2.setEllipsize(truncateAt);
-        linearLayout.addView(textView2, a6.k(0.0f, 2.0f, 0.0f, 0.0f, -1, -2));
-        addView(linearLayout, a6.a(-2.0f, 67.0f, 0.0f, 48.0f, 1.0f, -1, 19));
+        linearLayout.addView(textView2, z5.k(0.0f, 2.0f, 0.0f, 0.0f, -1, -2));
+        addView(linearLayout, z5.a(-2.0f, 67.0f, 0.0f, 48.0f, 1.0f, -1, 19));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setImageResource(R.drawable.msg_inputarrow);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, a6.a(24.0f, 0.0f, 0.0f, 11.0f, 0.0f, 24, 21));
+        addView(imageView, z5.a(24.0f, 0.0f, 0.0f, 11.0f, 0.0f, 24, 21));
         d();
     }
 

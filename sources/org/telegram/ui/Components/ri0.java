@@ -14,7 +14,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotchInfoUtils;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ri0 implements si0 {
     public final float f;
@@ -116,7 +116,7 @@ public final class ri0 implements si0 {
             float f19 = -f15;
             beginRecording.translate(f18, f19);
             int ilerp = (int) ((1.0f - AndroidUtilities.ilerp(ti0Var.e, 0.5f, 1.0f)) * 255.0f);
-            int b10 = w7.s.b(ilerp, 0, 255);
+            int b10 = w7.r.b(ilerp, 0, 255);
             ti0.a((ti0) xvVar.b, beginRecording);
             this.b.endRecording();
             float f20 = this.f;
@@ -229,7 +229,7 @@ public final class ri0 implements si0 {
             canvas.drawRenderNode(this.c);
             canvas.drawRenderNode(this.d);
             canvas.restore();
-            int b11 = w7.s.b((ilerp * 3) / 4, 0, 255);
+            int b11 = w7.r.b((ilerp * 3) / 4, 0, 255);
             if (b11 < 255) {
                 canvas.saveLayer(rectF2, null);
                 if (ti0Var.f != 0.0f) {

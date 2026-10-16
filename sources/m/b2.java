@@ -1,29 +1,16 @@
 package m;
 
-import android.widget.AbsListView;
+import android.graphics.Rect;
+import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class b2 implements AbsListView.OnScrollListener {
-    public final /* synthetic */ d2 a;
-
-    public b2(d2 d2Var) {
-        this.a = d2Var;
+public abstract class b2 {
+    public static void a(PopupWindow popupWindow, Rect rect) {
+        popupWindow.setEpicenterBounds(rect);
     }
 
-    @Override // android.widget.AbsListView.OnScrollListener
-    public final void onScrollStateChanged(AbsListView absListView, int i10) {
-        d2 d2Var = this.a;
-        a2 a2Var = d2Var.G;
-        x xVar = d2Var.O;
-        if (i10 != 1 || xVar.getInputMethodMode() == 2 || xVar.getContentView() == null) {
-            return;
-        }
-        d2Var.K.removeCallbacks(a2Var);
-        a2Var.run();
-    }
-
-    @Override // android.widget.AbsListView.OnScrollListener
-    public final void onScroll(AbsListView absListView, int i10, int i11, int i12) {
+    public static void b(PopupWindow popupWindow, boolean z10) {
+        popupWindow.setIsClippedToScreen(z10);
     }
 }

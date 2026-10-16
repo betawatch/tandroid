@@ -19,7 +19,7 @@ import javax.crypto.Cipher;
 import javax.crypto.Mac;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class q extends androidx.fragment.app.r {
     public final Handler k0 = new Handler(Looper.getMainLooper());
@@ -333,7 +333,7 @@ public class q extends androidx.fragment.app.r {
             }
         }
         Context applicationContext = K().getApplicationContext();
-        k0.b bVar = new k0.b(applicationContext, false);
+        k0.b bVar = new k0.b(applicationContext, (byte) 0);
         FingerprintManager d10 = k0.b.d(applicationContext);
         if (d10 == null || !d10.isHardwareDetected()) {
             i10 = 12;
@@ -390,7 +390,6 @@ public class q extends androidx.fragment.app.r {
                 zVar8.i = new n4.s(5);
             }
             n4.s sVar2 = zVar8.i;
-            int i12 = 3;
             if (((b2.u) sVar2.c) == null) {
                 sVar2.c = new b2.u(3);
             }
@@ -400,11 +399,11 @@ public class q extends androidx.fragment.app.r {
                 zVar9.h = new e(new x(zVar9));
             }
             e eVar3 = zVar9.h;
-            if (((k6.h) eVar3.c) == null) {
-                eVar3.c = new k6.h(eVar3, i12);
+            if (((a4.l) eVar3.c) == null) {
+                eVar3.c = new a4.l(eVar3, 2);
             }
             try {
-                bVar.a(eVar, uVar, (k6.h) eVar3.c);
+                bVar.a(eVar, uVar, (a4.l) eVar3.c);
             } catch (NullPointerException e7) {
                 Log.e("BiometricFragment", "Got NPE while authenticating with fingerprint.", e7);
                 T(1, v7.n.a(applicationContext, 1));
@@ -431,7 +430,7 @@ public class q extends androidx.fragment.app.r {
         if (k() == null) {
             return;
         }
-        z zVar = (z) new e(k()).m(z.class);
+        z zVar = (z) new e(k()).k(z.class);
         this.l0 = zVar;
         if (zVar.r == null) {
             zVar.r = new androidx.lifecycle.z();
@@ -451,7 +450,7 @@ public class q extends androidx.fragment.app.r {
         if (zVar4.u == null) {
             zVar4.u = new androidx.lifecycle.z();
         }
-        zVar4.u.d(this, new k6.h(this, 4));
+        zVar4.u.d(this, new a4.l(this, 3));
         z zVar5 = this.l0;
         if (zVar5.v == null) {
             zVar5.v = new androidx.lifecycle.z();

@@ -21,7 +21,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class p80 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate, View.OnClickListener, ne.d, qh.d {
     public boolean E;
@@ -107,7 +107,7 @@ public final class p80 extends org.telegram.ui.ActionBar.m2 implements Notificat
                 o80Var.b = false;
                 AnimatorSet animatorSet2 = new AnimatorSet();
                 o80Var.a = animatorSet2;
-                animatorSet2.addListener(new org.telegram.ui.Components.u61(o80Var, 27));
+                animatorSet2.addListener(new org.telegram.ui.Components.v61(o80Var, 27));
                 o80Var.a.setInterpolator(org.telegram.ui.Components.es.h);
                 o80Var.a.setDuration(320L);
                 o80Var.d = z30Var2;
@@ -228,7 +228,7 @@ public final class p80 extends org.telegram.ui.ActionBar.m2 implements Notificat
         u1Var.setVerticalScrollBarEnabled(false);
         o80 o80Var = new o80(this, context);
         this.f = o80Var;
-        this.e.addView(o80Var, w7.a6.d(108.0f, -1));
+        this.e.addView(o80Var, w7.z5.d(108.0f, -1));
         this.d = new n80(this, context, this.e);
         org.telegram.ui.Components.f10 f10Var = new org.telegram.ui.Components.f10(context, null);
         f10Var.setViewType(6);
@@ -254,7 +254,7 @@ public final class p80 extends org.telegram.ui.ActionBar.m2 implements Notificat
         this.h.setVerticalScrollBarEnabled(true);
         this.h.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
         this.h.setClipToPadding(false);
-        l0Var.addView(this.h, w7.a6.a(-1.0f, 0.0f, -this.a, 0.0f, 0.0f, -1, 119));
+        l0Var.addView(this.h, w7.z5.a(-1.0f, 0.0f, -this.a, 0.0f, 0.0f, -1, 119));
         this.h.setOnItemClickListener(new i(this, 15));
         this.h.setOnScrollListener(new k3(this, 16));
         org.telegram.ui.ActionBar.f2 f2Var = new org.telegram.ui.ActionBar.f2(false);
@@ -277,7 +277,7 @@ public final class p80 extends org.telegram.ui.ActionBar.m2 implements Notificat
         }
         l0Var.addView(this.c, org.telegram.ui.Components.l20.b());
         l0Var.addView(this.actionBar);
-        l0Var.addView(this.d, w7.a6.a(-2.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 48));
+        l0Var.addView(this.d, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 48));
         LaunchActivity launchActivity = LaunchActivity.G1;
         if (launchActivity != null) {
             launchActivity.g1.d.add(this);
@@ -431,6 +431,6 @@ public final class p80 extends org.telegram.ui.ActionBar.m2 implements Notificat
     }
 
     @Override // ne.d
-    public final /* synthetic */ void C(float f7, int i10) {
+    public final /* synthetic */ void A(float f7, int i10) {
     }
 }

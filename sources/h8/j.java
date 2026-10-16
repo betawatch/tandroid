@@ -12,10 +12,11 @@ import android.widget.TextView;
 import androidx.mediarouter.app.z;
 import java.util.ArrayList;
 import java.util.LinkedList;
-import n6.r;
+import n6.q;
+import v0.k;
 import v7.a8;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class j {
     public androidx.biometric.e a;
@@ -23,8 +24,8 @@ public final class j {
     public LinkedList c;
     public final d e;
     public final Context f;
-    public u9.d g;
-    public final u9.d d = new u9.d(this);
+    public k g;
+    public final k d = new k(this);
     public final ArrayList h = new ArrayList();
 
     public j(d dVar, Context context) {
@@ -36,8 +37,8 @@ public final class j {
         k6.d dVar2 = k6.d.d;
         Context context = dVar.getContext();
         int d = dVar2.d(context, k6.e.a);
-        String c10 = r.c(context, d);
-        String b10 = r.b(context, d);
+        String c10 = q.c(context, d);
+        String b10 = q.b(context, d);
         LinearLayout linearLayout = new LinearLayout(dVar.getContext());
         linearLayout.setOrientation(1);
         linearLayout.setLayoutParams(new FrameLayout.LayoutParams(-2, -2));
@@ -92,13 +93,13 @@ public final class j {
                 if (W0 == null) {
                     return;
                 }
-                this.g.a(new androidx.biometric.e(this.e, W0));
+                this.g.b(new androidx.biometric.e(this.e, W0));
                 int size = arrayList.size();
                 int i10 = 0;
                 while (i10 < size) {
                     Object obj = arrayList.get(i10);
                     i10++;
-                    this.a.p((f) obj);
+                    this.a.n((f) obj);
                 }
                 arrayList.clear();
             } catch (RemoteException e) {

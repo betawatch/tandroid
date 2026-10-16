@@ -16,7 +16,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class u4 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public t4 a;
@@ -153,14 +153,14 @@ public final class u4 extends org.telegram.ui.ActionBar.m2 implements Notificati
         FrameLayout frameLayout2 = new FrameLayout(context);
         org.telegram.ui.Components.xx0 xx0Var = new org.telegram.ui.Components.xx0(context, this.currentAccount);
         xx0Var.setStickerNum(10);
-        frameLayout2.addView(xx0Var, w7.a6.e(130, 130, 17));
+        frameLayout2.addView(xx0Var, w7.z5.e(130, 130, 17));
         frameLayout2.setTag(-33024);
-        eeVar.addView(frameLayout2, w7.a6.n(-1, 170));
+        eeVar.addView(frameLayout2, w7.z5.n(-1, 170));
         LinearLayout linearLayout = new LinearLayout(getParentActivity());
         this.f = linearLayout;
         linearLayout.setOrientation(1);
         this.f.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
-        eeVar.addView(this.f, w7.a6.n(-1, -2));
+        eeVar.addView(this.f, w7.z5.n(-1, -2));
         org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(getParentActivity());
         m4Var.setText(LocaleController.getString(R.string.MessageLifetime));
         this.f.addView(m4Var);
@@ -203,7 +203,7 @@ public final class u4 extends org.telegram.ui.ActionBar.m2 implements Notificati
         X();
         org.telegram.ui.Cells.e9 e9Var = new org.telegram.ui.Cells.e9(context, 12, this.resourceProvider);
         e9Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.GlobalAutoDeleteInfo), new r4(this)));
-        eeVar.addView(e9Var, w7.a6.n(-1, -2));
+        eeVar.addView(e9Var, w7.z5.n(-1, -2));
         V(this.n, false);
         return this.fragmentView;
     }

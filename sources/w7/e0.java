@@ -1,85 +1,263 @@
 package w7;
 
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.GestureDetector;
-import android.view.ViewConfiguration;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.Parcel;
+import android.os.Parcelable;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class e0 {
-    public static ng.i a;
-
-    public static void a(LaunchActivity launchActivity, boolean z10, boolean z11) {
-        ng.i iVar = a;
-        if (z10 == (iVar != null)) {
+    public static void A(Parcel parcel, int i10, int i11) {
+        if (i10 == i11) {
             return;
         }
-        if (z10) {
-            ng.i iVar2 = new ng.i(launchActivity);
-            iVar2.r = new ng.c(iVar2, 3);
-            iVar2.E = new ArrayList();
-            ng.f fVar = new ng.f(iVar2);
-            iVar2.e = launchActivity.getSharedPreferences("floating_debug", 0);
-            iVar2.F = ViewConfiguration.get(launchActivity).getScaledTouchSlop();
-            ji.d4 d4Var = new ji.d4(launchActivity, fVar);
-            ((GestureDetector) d4Var.b).setIsLongpressEnabled(false);
-            ah.v vVar = new ah.v(iVar2, launchActivity, d4Var, 4);
-            iVar2.a = vVar;
-            ImageView imageView = new ImageView(launchActivity);
-            imageView.setImageResource(R.drawable.device_phone_android);
-            imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.O9, false), PorterDuff.Mode.SRC_IN));
-            vVar.addView(imageView);
-            vVar.setVisibility(8);
-            iVar2.addView(vVar, a6.d(56.0f, 56));
-            LinearLayout linearLayout = new LinearLayout(launchActivity);
-            iVar2.w = linearLayout;
-            linearLayout.setOrientation(1);
-            linearLayout.setVisibility(8);
-            TextView textView = new TextView(launchActivity);
-            iVar2.x = textView;
-            textView.setTextSize(1, 20.0f);
-            textView.setText(LocaleController.getString(R.string.DebugMenu));
-            textView.setTypeface(AndroidUtilities.bold());
-            textView.setPadding(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(19.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(19.0f));
-            linearLayout.addView(textView, a6.n(-1, -2));
-            mm0 mm0Var = new mm0(launchActivity, null);
-            iVar2.y = mm0Var;
-            mm0Var.setLayoutManager(new s4.b0());
-            mm0Var.setAdapter(new ng.g(iVar2, launchActivity));
-            mm0Var.setOnItemClickListener(new bi.d(iVar2, 13));
-            linearLayout.addView(mm0Var, a6.l(1.0f, -1, 0));
-            iVar2.addView(linearLayout, a6.a(-1.0f, 8.0f, 8.0f, 8.0f, 8.0f, -1, 0));
-            iVar2.d();
-            iVar2.setFitsSystemWindows(true);
-            iVar2.setWillNotDraw(false);
-            a = iVar2;
-            launchActivity.w0.addView(iVar2, new FrameLayout.LayoutParams(-1, -1));
-            ng.i iVar3 = a;
-            iVar3.a.setVisibility(0);
-            o1.k kVar = new o1.k(new o1.j(0.0f));
-            kVar.u = org.telegram.ui.Cells.d0.k(1000.0f, 750.0f, 0.75f);
-            kVar.b(new bi.aa(2, iVar3));
-            kVar.h();
-        } else {
-            iVar.getClass();
-            launchActivity.w0.removeView(a);
-            a = null;
+        throw new androidx.car.app.j(a1.g.s(i2.d.m("Expected size ", i11, " got ", i10, " (0x"), Integer.toHexString(i10), ")"), parcel);
+    }
+
+    public static void B(Parcel parcel, int i10, int i11) {
+        int x10 = x(parcel, i10);
+        if (x10 == i11) {
+            return;
         }
-        if (z11) {
-            SharedConfig.isFloatingDebugActive = z10;
-            SharedConfig.saveConfig();
+        throw new androidx.car.app.j(a1.g.s(i2.d.m("Expected size ", i11, " got ", x10, " (0x"), Integer.toHexString(x10), ")"), parcel);
+    }
+
+    public static Bundle a(Parcel parcel, int i10) {
+        int x10 = x(parcel, i10);
+        int dataPosition = parcel.dataPosition();
+        if (x10 == 0) {
+            return null;
         }
+        Bundle readBundle = parcel.readBundle();
+        parcel.setDataPosition(dataPosition + x10);
+        return readBundle;
+    }
+
+    public static byte[] b(Parcel parcel, int i10) {
+        int x10 = x(parcel, i10);
+        int dataPosition = parcel.dataPosition();
+        if (x10 == 0) {
+            return null;
+        }
+        byte[] createByteArray = parcel.createByteArray();
+        parcel.setDataPosition(dataPosition + x10);
+        return createByteArray;
+    }
+
+    public static byte[][] c(Parcel parcel, int i10) {
+        int x10 = x(parcel, i10);
+        int dataPosition = parcel.dataPosition();
+        if (x10 == 0) {
+            return null;
+        }
+        int readInt = parcel.readInt();
+        byte[][] bArr = new byte[readInt][];
+        for (int i11 = 0; i11 < readInt; i11++) {
+            bArr[i11] = parcel.createByteArray();
+        }
+        parcel.setDataPosition(dataPosition + x10);
+        return bArr;
+    }
+
+    public static int[] d(Parcel parcel, int i10) {
+        int x10 = x(parcel, i10);
+        int dataPosition = parcel.dataPosition();
+        if (x10 == 0) {
+            return null;
+        }
+        int[] createIntArray = parcel.createIntArray();
+        parcel.setDataPosition(dataPosition + x10);
+        return createIntArray;
+    }
+
+    public static ArrayList e(Parcel parcel, int i10) {
+        int x10 = x(parcel, i10);
+        int dataPosition = parcel.dataPosition();
+        if (x10 == 0) {
+            return null;
+        }
+        ArrayList arrayList = new ArrayList();
+        int readInt = parcel.readInt();
+        for (int i11 = 0; i11 < readInt; i11++) {
+            arrayList.add(Integer.valueOf(parcel.readInt()));
+        }
+        parcel.setDataPosition(dataPosition + x10);
+        return arrayList;
+    }
+
+    public static long[] f(Parcel parcel, int i10) {
+        int x10 = x(parcel, i10);
+        int dataPosition = parcel.dataPosition();
+        if (x10 == 0) {
+            return null;
+        }
+        long[] createLongArray = parcel.createLongArray();
+        parcel.setDataPosition(dataPosition + x10);
+        return createLongArray;
+    }
+
+    public static Parcelable g(Parcel parcel, int i10, Parcelable.Creator creator) {
+        int x10 = x(parcel, i10);
+        int dataPosition = parcel.dataPosition();
+        if (x10 == 0) {
+            return null;
+        }
+        Parcelable parcelable = (Parcelable) creator.createFromParcel(parcel);
+        parcel.setDataPosition(dataPosition + x10);
+        return parcelable;
+    }
+
+    public static String h(Parcel parcel, int i10) {
+        int x10 = x(parcel, i10);
+        int dataPosition = parcel.dataPosition();
+        if (x10 == 0) {
+            return null;
+        }
+        String readString = parcel.readString();
+        parcel.setDataPosition(dataPosition + x10);
+        return readString;
+    }
+
+    public static String[] i(Parcel parcel, int i10) {
+        int x10 = x(parcel, i10);
+        int dataPosition = parcel.dataPosition();
+        if (x10 == 0) {
+            return null;
+        }
+        String[] createStringArray = parcel.createStringArray();
+        parcel.setDataPosition(dataPosition + x10);
+        return createStringArray;
+    }
+
+    public static ArrayList j(Parcel parcel, int i10) {
+        int x10 = x(parcel, i10);
+        int dataPosition = parcel.dataPosition();
+        if (x10 == 0) {
+            return null;
+        }
+        ArrayList<String> createStringArrayList = parcel.createStringArrayList();
+        parcel.setDataPosition(dataPosition + x10);
+        return createStringArrayList;
+    }
+
+    public static Object[] k(Parcel parcel, int i10, Parcelable.Creator creator) {
+        int x10 = x(parcel, i10);
+        int dataPosition = parcel.dataPosition();
+        if (x10 == 0) {
+            return null;
+        }
+        Object[] createTypedArray = parcel.createTypedArray(creator);
+        parcel.setDataPosition(dataPosition + x10);
+        return createTypedArray;
+    }
+
+    public static ArrayList l(Parcel parcel, int i10, Parcelable.Creator creator) {
+        int x10 = x(parcel, i10);
+        int dataPosition = parcel.dataPosition();
+        if (x10 == 0) {
+            return null;
+        }
+        ArrayList createTypedArrayList = parcel.createTypedArrayList(creator);
+        parcel.setDataPosition(dataPosition + x10);
+        return createTypedArrayList;
+    }
+
+    public static void m(Parcel parcel, int i10) {
+        if (parcel.dataPosition() != i10) {
+            throw new androidx.car.app.j(i2.d.j(i10, "Overread allowed size end="), parcel);
+        }
+    }
+
+    public static boolean n(Parcel parcel, int i10) {
+        B(parcel, i10, 4);
+        return parcel.readInt() != 0;
+    }
+
+    public static Boolean o(Parcel parcel, int i10) {
+        int x10 = x(parcel, i10);
+        if (x10 == 0) {
+            return null;
+        }
+        A(parcel, x10, 4);
+        return Boolean.valueOf(parcel.readInt() != 0);
+    }
+
+    public static byte p(Parcel parcel, int i10) {
+        B(parcel, i10, 4);
+        return (byte) parcel.readInt();
+    }
+
+    public static double q(Parcel parcel, int i10) {
+        B(parcel, i10, 8);
+        return parcel.readDouble();
+    }
+
+    public static float r(Parcel parcel, int i10) {
+        B(parcel, i10, 4);
+        return parcel.readFloat();
+    }
+
+    public static Float s(Parcel parcel, int i10) {
+        int x10 = x(parcel, i10);
+        if (x10 == 0) {
+            return null;
+        }
+        A(parcel, x10, 4);
+        return Float.valueOf(parcel.readFloat());
+    }
+
+    public static IBinder t(Parcel parcel, int i10) {
+        int x10 = x(parcel, i10);
+        int dataPosition = parcel.dataPosition();
+        if (x10 == 0) {
+            return null;
+        }
+        IBinder readStrongBinder = parcel.readStrongBinder();
+        parcel.setDataPosition(dataPosition + x10);
+        return readStrongBinder;
+    }
+
+    public static int u(Parcel parcel, int i10) {
+        B(parcel, i10, 4);
+        return parcel.readInt();
+    }
+
+    public static Integer v(Parcel parcel, int i10) {
+        int x10 = x(parcel, i10);
+        if (x10 == 0) {
+            return null;
+        }
+        A(parcel, x10, 4);
+        return Integer.valueOf(parcel.readInt());
+    }
+
+    public static long w(Parcel parcel, int i10) {
+        B(parcel, i10, 8);
+        return parcel.readLong();
+    }
+
+    public static int x(Parcel parcel, int i10) {
+        return (i10 & (-65536)) != -65536 ? (char) (i10 >> 16) : parcel.readInt();
+    }
+
+    public static void y(Parcel parcel, int i10) {
+        parcel.setDataPosition(parcel.dataPosition() + x(parcel, i10));
+    }
+
+    public static int z(Parcel parcel) {
+        int readInt = parcel.readInt();
+        int x10 = x(parcel, readInt);
+        char c10 = (char) readInt;
+        int dataPosition = parcel.dataPosition();
+        if (c10 != 20293) {
+            throw new androidx.car.app.j("Expected object header. Got 0x".concat(String.valueOf(Integer.toHexString(readInt))), parcel);
+        }
+        int i10 = x10 + dataPosition;
+        if (i10 < dataPosition || i10 > parcel.dataSize()) {
+            throw new androidx.car.app.j(a1.g.l(dataPosition, i10, "Size read is invalid start=", " end="), parcel);
+        }
+        return i10;
     }
 }

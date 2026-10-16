@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 import org.webrtc.CameraEnumerationAndroid;
 import org.webrtc.CameraSession;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 class Camera1Session implements CameraSession {
     private static final int NUMBER_OF_CAPTURE_BUFFERS = 3;
@@ -34,7 +34,7 @@ class Camera1Session implements CameraSession {
     private static final Histogram camera1StopTimeMsHistogram = Histogram.createCounts("WebRTC.Android.Camera1.StopTimeMs", 1, 10000, 50);
     private static final Histogram camera1ResolutionHistogram = Histogram.createEnumeration("WebRTC.Android.Camera1.Resolution", CameraEnumerationAndroid.COMMON_RESOLUTIONS.size());
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public class 2 implements Camera.PreviewCallback {
         public 2() {
         }
@@ -73,7 +73,7 @@ class Camera1Session implements CameraSession {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public enum SessionState {
         RUNNING,
         STOPPED
@@ -207,13 +207,13 @@ class Camera1Session implements CameraSession {
         this.camera.setErrorCallback(new Camera.ErrorCallback() { // from class: org.webrtc.Camera1Session.1
             @Override // android.hardware.Camera.ErrorCallback
             public void onError(int i10, Camera camera) {
-                String i11 = i10 == 100 ? "Camera server died!" : i2.d.i(i10, "Camera error: ");
-                Logging.e(Camera1Session.TAG, i11);
+                String j10 = i10 == 100 ? "Camera server died!" : i2.d.j(i10, "Camera error: ");
+                Logging.e(Camera1Session.TAG, j10);
                 Camera1Session.this.stopInternal();
                 if (i10 == 2) {
                     Camera1Session.this.events.onCameraDisconnected(Camera1Session.this);
                 } else {
-                    Camera1Session.this.events.onCameraError(Camera1Session.this, i11);
+                    Camera1Session.this.events.onCameraError(Camera1Session.this, j10);
                 }
             }
         });

@@ -22,7 +22,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ic1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class o20 extends FrameLayout implements ne.d, org.telegram.ui.ActionBar.x5 {
     public final AnimationNotificationsLocker E;
@@ -71,29 +71,29 @@ public class o20 extends FrameLayout implements ne.d, org.telegram.ui.ActionBar.
         if (Build.VERSION.SDK_INT >= 35) {
             g2Var.setLocalePreferredLineHeightForMinimumUsed(false);
         }
-        addView(g2Var, w7.a6.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 119));
+        addView(g2Var, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 119));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         imageView.setImageResource(R.drawable.outline_search_1_24);
-        addView(imageView, w7.a6.a(24.0f, 12.0f, 0.0f, 12.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
+        addView(imageView, w7.z5.a(24.0f, 12.0f, 0.0f, 12.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
         LinearLayout linearLayout = new LinearLayout(context);
         this.h = linearLayout;
         linearLayout.setOrientation(0);
-        addView(linearLayout, w7.a6.a(-1.0f, 32.0f, 0.0f, 32.0f, 0.0f, -2, (LocaleController.isRTL ? 3 : 5) | 16));
+        addView(linearLayout, w7.z5.a(-1.0f, 32.0f, 0.0f, 32.0f, 0.0f, -2, (LocaleController.isRTL ? 3 : 5) | 16));
         ImageView imageView2 = new ImageView(context);
         this.f = imageView2;
         imageView2.setScaleType(scaleType);
         imageView2.setImageResource(R.drawable.miniplayer_close);
         imageView2.setVisibility(8);
         imageView2.setOnClickListener(new f0(this, 16));
-        addView(imageView2, w7.a6.a(24.0f, 12.0f, 0.0f, 12.0f, 0.0f, 24, (LocaleController.isRTL ? 3 : 5) | 16));
+        addView(imageView2, w7.z5.a(24.0f, 12.0f, 0.0f, 12.0f, 0.0f, 24, (LocaleController.isRTL ? 3 : 5) | 16));
         ic1 ic1Var = new ic1(this, getContext(), 7);
         this.G = ic1Var;
         ic1Var.setOrientation(0);
         ic1Var.setVisibility(0);
-        addView(ic1Var, w7.a6.a(32.0f, 4.0f, 0.0f, 4.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 16));
+        addView(ic1Var, w7.z5.a(32.0f, 4.0f, 0.0f, 4.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 16));
         setWillNotDraw(false);
         b();
         d();
@@ -251,7 +251,7 @@ public class o20 extends FrameLayout implements ne.d, org.telegram.ui.ActionBar.
             t0Var.setData(p0Var);
             t0Var.setOnClickListener(new rt(4, this, t0Var));
             boolean z10 = LocaleController.isRTL;
-            ic1Var.addView(t0Var, w7.a6.t(-2, -1, 0, z10 ? 6 : 0, 0, z10 ? 0 : 6, 0));
+            ic1Var.addView(t0Var, w7.z5.t(-2, -1, 0, z10 ? 6 : 0, 0, z10 ? 0 : 6, 0));
         }
         int i12 = 0;
         while (i12 < ic1Var.getChildCount()) {
@@ -344,6 +344,6 @@ public class o20 extends FrameLayout implements ne.d, org.telegram.ui.ActionBar.
     }
 
     @Override // ne.d
-    public final /* synthetic */ void C(float f7, int i10) {
+    public final /* synthetic */ void A(float f7, int i10) {
     }
 }

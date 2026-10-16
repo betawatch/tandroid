@@ -14,7 +14,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g6;
@@ -26,9 +26,8 @@ import org.telegram.ui.Components.lm0;
 import org.telegram.ui.Components.q10;
 import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.xn;
-import org.telegram.ui.dt;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class t1 extends lm0 {
     public int E;
@@ -108,7 +107,7 @@ public abstract class t1 extends lm0 {
         }
         Timer timer2 = new Timer();
         this.n = timer2;
-        timer2.schedule(new r1((dt) this, str, 0), 200L, 300L);
+        timer2.schedule(new r1(this, str, 0), 200L, 300L);
     }
 
     @Override // s4.g0
@@ -172,7 +171,7 @@ public abstract class t1 extends lm0 {
                     return;
                 }
                 ContactsController.Contact contact = (ContactsController.Contact) E(i10);
-                ((i6) view).u(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), yh.g(new StringBuilder("+"), contact.shortPhones.get(0), jf.b.c()), false, false);
+                ((i6) view).u(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), sk.g(new StringBuilder("+"), contact.shortPhones.get(0), jf.b.c()), false, false);
                 return;
             }
             String str2 = (String) E(i10);

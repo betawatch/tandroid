@@ -36,7 +36,7 @@ import org.telegram.ui.Components.cr;
 import org.telegram.ui.Components.g8;
 import org.telegram.ui.Components.gp0;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.j61;
 import org.telegram.ui.Components.k9;
 import org.telegram.ui.Components.m90;
 import org.telegram.ui.Components.mm0;
@@ -52,7 +52,7 @@ import org.telegram.ui.Components.z30;
 import org.telegram.ui.Components.z9;
 import org.telegram.ui.Components.zm0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class i6 {
     public final View a;
@@ -168,12 +168,12 @@ public final class i6 {
             CharSequence text = textView.getText();
             if (text instanceof SpannedString) {
                 SpannedString spannedString = (SpannedString) text;
-                i61[] i61VarArr = (i61[]) spannedString.getSpans(0, spannedString.length(), i61.class);
-                if (i61VarArr == null || i61VarArr.length <= 0) {
+                j61[] j61VarArr = (j61[]) spannedString.getSpans(0, spannedString.length(), j61.class);
+                if (j61VarArr == null || j61VarArr.length <= 0) {
                     return;
                 }
-                for (i61 i61Var : i61VarArr) {
-                    i61Var.b = i10;
+                for (j61 j61Var : j61VarArr) {
+                    j61Var.b = i10;
                 }
                 return;
             }
@@ -319,10 +319,10 @@ public final class i6 {
                         CharSequence text2 = textView2.getText();
                         if (text2 instanceof SpannedString) {
                             SpannedString spannedString2 = (SpannedString) text2;
-                            i61[] i61VarArr2 = (i61[]) spannedString2.getSpans(0, spannedString2.length(), i61.class);
-                            if (i61VarArr2 != null && i61VarArr2.length > 0) {
-                                for (i61 i61Var2 : i61VarArr2) {
-                                    i61Var2.b = i10;
+                            j61[] j61VarArr2 = (j61[]) spannedString2.getSpans(0, spannedString2.length(), j61.class);
+                            if (j61VarArr2 != null && j61VarArr2.length > 0) {
+                                for (j61 j61Var2 : j61VarArr2) {
+                                    j61Var2.b = i10;
                                 }
                             }
                         }
@@ -342,10 +342,10 @@ public final class i6 {
                             CharSequence text3 = textView3.getText();
                             if (text3 instanceof SpannedString) {
                                 SpannedString spannedString3 = (SpannedString) text3;
-                                i61[] i61VarArr3 = (i61[]) spannedString3.getSpans(0, spannedString3.length(), i61.class);
-                                if (i61VarArr3 != null && i61VarArr3.length > 0) {
-                                    for (i61 i61Var3 : i61VarArr3) {
-                                        i61Var3.b = i10;
+                                j61[] j61VarArr3 = (j61[]) spannedString3.getSpans(0, spannedString3.length(), j61.class);
+                                if (j61VarArr3 != null && j61VarArr3.length > 0) {
+                                    for (j61 j61Var3 : j61VarArr3) {
+                                        j61Var3.b = i10;
                                     }
                                 }
                             }
@@ -360,7 +360,7 @@ public final class i6 {
     public final int c() {
         c6 c6Var = this.o;
         int i10 = this.f;
-        Integer valueOf = c6Var != null ? Integer.valueOf(c6Var.F0(i10)) : null;
+        Integer valueOf = c6Var != null ? Integer.valueOf(c6Var.E0(i10)) : null;
         return valueOf != null ? valueOf.intValue() : g6.x0(null, i10, false);
     }
 
@@ -565,10 +565,10 @@ public final class i6 {
                 ((k) view).setTitleColor(i10);
             }
             if ((i13 & 256) != 0) {
-                ((k) view).B(i10, false);
+                ((k) view).C(i10, false);
             }
             if ((4194304 & i13) != 0) {
-                ((k) view).B(i10, true);
+                ((k) view).C(i10, true);
             }
             if ((i13 & 512) != 0) {
                 ((k) view).D(i10, true);

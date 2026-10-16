@@ -7,43 +7,43 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.WeakHashMap;
 import ji.w4;
 import org.telegram.tgnet.TLObject;
-import r0.j0;
+import r0.i0;
 import s0.c;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class a extends w4 {
     public final /* synthetic */ b c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public a(b bVar) {
-        super(25);
+        super(24);
         this.c = bVar;
     }
 
     @Override // ji.w4
-    public final c I(int i10) {
+    public final c Z0(int i10) {
         return new c(AccessibilityNodeInfo.obtain(this.c.j(i10).a));
     }
 
     @Override // ji.w4
-    public final c P(int i10) {
+    public final c c1(int i10) {
         b bVar = this.c;
         int i11 = i10 == 2 ? bVar.k : bVar.l;
         if (i11 == Integer.MIN_VALUE) {
             return null;
         }
-        return I(i11);
+        return Z0(i11);
     }
 
     @Override // ji.w4
-    public final boolean U(int i10, int i11, Bundle bundle) {
+    public final boolean k1(int i10, int i11, Bundle bundle) {
         int i12;
         int i13;
         b bVar = this.c;
         View view = bVar.i;
         if (i10 == -1) {
-            WeakHashMap weakHashMap = j0.a;
+            WeakHashMap weakHashMap = i0.a;
             return view.performAccessibilityAction(i11, bundle);
         }
         if (i11 != 1) {

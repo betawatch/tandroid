@@ -21,7 +21,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ei1 extends org.telegram.ui.Components.ul0 {
     public final Context c;
@@ -85,7 +85,7 @@ public final class ei1 extends org.telegram.ui.Components.ul0 {
         hg.a2 a2Var = new hg.a2(false);
         this.f = a2Var;
         a2Var.p = false;
-        a2Var.a = new nq0(this, 24);
+        a2Var.a = new lq0(this, 24);
     }
 
     @Override // s4.g0

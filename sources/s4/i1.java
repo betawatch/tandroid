@@ -1,6 +1,6 @@
 package s4;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class i1 {
     public static final c5.c0 d = new c5.c0(20, 8);
@@ -9,7 +9,7 @@ public final class i1 {
     public b2.v0 c;
 
     public static i1 a() {
-        i1 i1Var = (i1) d.b();
+        i1 i1Var = (i1) d.a();
         return i1Var == null ? new i1() : i1Var;
     }
 }

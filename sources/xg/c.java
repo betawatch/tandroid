@@ -32,7 +32,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.g0;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
@@ -46,7 +46,7 @@ import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.yj0;
 import ug.s;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class c {
     public TextPaint A;
@@ -259,7 +259,7 @@ public final class c {
         canvas.restore();
         float f14 = 6.0f;
         canvas.translate(0.0f, AndroidUtilities.dp(6.0f) + this.o);
-        int c10 = yh.c(6.0f, this.o, dp5);
+        int C = g0.C(6.0f, this.o, dp5);
         int i15 = 0;
         int i16 = 0;
         while (true) {
@@ -310,7 +310,7 @@ public final class c {
                     this.G.set(0.0f, 0.0f, this.h[i19] + AndroidUtilities.dp(40.0f), AndroidUtilities.dp(24.0f));
                     canvas.drawRoundRect(this.G, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), this.C);
                     float f17 = i21;
-                    this.j[i19].set(i21, c10, (int) (this.G.width() + f17), AndroidUtilities.dp(24.0f) + c10);
+                    this.j[i19].set(i21, C, (int) (this.G.width() + f17), AndroidUtilities.dp(24.0f) + C);
                     canvas.translate(this.G.width() + AndroidUtilities.dp(f7), 0.0f);
                     i18 = (int) (this.G.width() + AndroidUtilities.dp(f7) + f17);
                     i19++;
@@ -323,7 +323,7 @@ public final class c {
                 }
                 canvas.restore();
                 canvas.translate(0.0f, AndroidUtilities.dp(30.0f));
-                c10 += AndroidUtilities.dp(30.0f);
+                C += AndroidUtilities.dp(30.0f);
                 f14 = f7;
                 i15 = i19;
                 i16 = i12;

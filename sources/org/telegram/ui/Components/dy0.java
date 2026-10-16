@@ -2,18 +2,18 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dy0 implements org.telegram.ui.ActionBar.q0, MessagesStorage.StringCallback {
-    public final /* synthetic */ ty0 a;
+    public final /* synthetic */ uy0 a;
 
-    public /* synthetic */ dy0(ty0 ty0Var) {
-        this.a = ty0Var;
+    public /* synthetic */ dy0(uy0 uy0Var) {
+        this.a = uy0Var;
     }
 
     @Override // org.telegram.ui.ActionBar.q0
-    public void l(int i10) {
-        ty0.E(this.a, i10);
+    public void k(int i10) {
+        uy0.E(this.a, i10);
     }
 
     @Override // org.telegram.messenger.MessagesStorage.StringCallback

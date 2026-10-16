@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class u implements s4.d0, androidx.lifecycle.a0, y9.i {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final class u implements s4.d0, androidx.lifecycle.a0, y9.i {
     }
 
     @Override // s4.d0
-    public void P0(int i10, int i11) {
+    public void O0(int i10, int i11) {
         this.b = true;
         ((s4.g0) this.c).t(i10, i11);
     }
@@ -172,6 +172,16 @@ public final class u implements s4.d0, androidx.lifecycle.a0, y9.i {
         ((s4.g0) this.c).r(i10, i11, null);
     }
 
+    @Override // androidx.lifecycle.a0
+    public void n0(Object obj) {
+        this.b = true;
+        a6.m mVar = (a6.m) this.c;
+        mVar.getClass();
+        SignInHubActivity signInHubActivity = (SignInHubActivity) mVar.b;
+        signInHubActivity.setResult(signInHubActivity.R, signInHubActivity.S);
+        signInHubActivity.finish();
+    }
+
     public String toString() {
         switch (this.a) {
             case 5:
@@ -199,18 +209,8 @@ public final class u implements s4.d0, androidx.lifecycle.a0, y9.i {
             default:
                 return super.toString();
             case 7:
-                return ((qb.c) this.c).toString();
+                return ((a6.m) this.c).toString();
         }
-    }
-
-    @Override // androidx.lifecycle.a0
-    public void v0(Object obj) {
-        this.b = true;
-        qb.c cVar = (qb.c) this.c;
-        cVar.getClass();
-        SignInHubActivity signInHubActivity = (SignInHubActivity) cVar.b;
-        signInHubActivity.setResult(signInHubActivity.R, signInHubActivity.S);
-        signInHubActivity.finish();
     }
 
     public /* synthetic */ u(Object obj, int i10) {
@@ -240,10 +240,10 @@ public final class u implements s4.d0, androidx.lifecycle.a0, y9.i {
         this.b = z10;
     }
 
-    public u(a6.d dVar, qb.c cVar) {
+    public u(a6.d dVar, a6.m mVar) {
         this.a = 7;
         this.b = false;
-        this.c = cVar;
+        this.c = mVar;
     }
 
     public u(StringBuilder sb2) {

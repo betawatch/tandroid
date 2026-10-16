@@ -17,6 +17,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.ga0;
@@ -24,7 +25,7 @@ import org.telegram.ui.Components.gq;
 import org.telegram.ui.Components.ha0;
 import org.telegram.ui.he;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public class d extends FrameLayout implements ga0 {
     public boolean E;
@@ -97,7 +98,7 @@ public class d extends FrameLayout implements ga0 {
             this.Q = ofFloat;
             ofFloat.addUpdateListener(new b(this, 0));
             this.Q.addListener(new c(this, i12));
-            org.telegram.ui.Cells.d0.l(2.0f, this.Q);
+            sk.l(2.0f, this.Q);
             this.Q.setDuration(200L);
             this.Q.start();
         }
@@ -294,7 +295,7 @@ public class d extends FrameLayout implements ga0 {
             org.telegram.ui.Components.r6 r6Var2 = this.f;
             float a2 = a(r6Var2.c() + dp3, d) + c10 + dp2;
             Rect rect = AndroidUtilities.rectTmp2;
-            rect.set((int) (((getMeasuredWidth() - a2) - getWidth()) / 2.0f), (int) (((getMeasuredHeight() - r6Var.e) / 2.0f) - AndroidUtilities.dp(1.0f)), (int) org.telegram.messenger.q.b(getMeasuredWidth() - a2, getWidth(), 2.0f, c10), (int) (((getMeasuredHeight() + r6Var.e) / 2.0f) - AndroidUtilities.dp(1.0f)));
+            rect.set((int) (((getMeasuredWidth() - a2) - getWidth()) / 2.0f), (int) (((getMeasuredHeight() - r6Var.e) / 2.0f) - AndroidUtilities.dp(1.0f)), (int) org.telegram.messenger.g0.a(getMeasuredWidth() - a2, getWidth(), 2.0f, c10), (int) (((getMeasuredHeight() + r6Var.e) / 2.0f) - AndroidUtilities.dp(1.0f)));
             rect.offset(0, (int) ((-AndroidUtilities.dp(7.0f)) * this.H));
             r6Var.B = (int) (AndroidUtilities.lerp(0.5f, 1.0f, this.V) * (1.0f - this.M) * this.c0);
             r6Var.setBounds(rect);
@@ -302,7 +303,7 @@ public class d extends FrameLayout implements ga0 {
             if (this.J) {
                 org.telegram.ui.Components.r6 r6Var3 = this.e;
                 a2 = r6Var3.c();
-                rect.set((int) (((getMeasuredWidth() - a2) - getWidth()) / 2.0f), (int) (((getMeasuredHeight() - r6Var3.e) / 2.0f) - AndroidUtilities.dp(1.0f)), (int) org.telegram.messenger.q.b(getMeasuredWidth() - a2, getWidth(), 2.0f, a2), (int) (((getMeasuredHeight() + r6Var3.e) / 2.0f) - AndroidUtilities.dp(1.0f)));
+                rect.set((int) (((getMeasuredWidth() - a2) - getWidth()) / 2.0f), (int) (((getMeasuredHeight() - r6Var3.e) / 2.0f) - AndroidUtilities.dp(1.0f)), (int) org.telegram.messenger.g0.a(getMeasuredWidth() - a2, getWidth(), 2.0f, a2), (int) (((getMeasuredHeight() + r6Var3.e) / 2.0f) - AndroidUtilities.dp(1.0f)));
                 rect.offset(0, AndroidUtilities.dp(11.0f));
                 canvas.save();
                 float lerp = AndroidUtilities.lerp(0.1f, 1.0f, this.H);
@@ -332,11 +333,11 @@ public class d extends FrameLayout implements ga0 {
             }
             CharSequence charSequence = r6Var2.i;
             rect.offset(-AndroidUtilities.dp((charSequence != null ? charSequence.length() : 0) > 1 ? 0.3f : 0.0f), -AndroidUtilities.dp(0.4f));
-            float B = org.telegram.messenger.q.B(1.0f, this.M, this.c0, d);
+            float z11 = org.telegram.messenger.g0.z(1.0f, this.M, this.c0, d);
             if (this.E) {
                 f7 = 1.0f;
             }
-            r6Var2.B = (int) (B * f7);
+            r6Var2.B = (int) (z11 * f7);
             r6Var2.setBounds(rect);
             canvas.save();
             if (this.E && this.T) {
@@ -551,10 +552,10 @@ public class d extends FrameLayout implements ga0 {
         this.c0 = 255;
         this.s = z10;
         this.a = c6Var;
-        w7.c6.b(this, 0.02f, 1.2f);
+        w7.b6.b(this, 0.02f, 1.2f);
         View view = new View(context);
         this.r = view;
-        addView(view, w7.a6.d(-1.0f, -1));
+        addView(view, w7.z5.d(-1.0f, -1));
         if (z10) {
             int dp = AndroidUtilities.dp(8.0f);
             int w02 = org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Oh, c6Var);

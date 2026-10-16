@@ -14,15 +14,15 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.b6;
 import org.telegram.ui.Components.il0;
-import org.telegram.ui.qe0;
-import w7.a6;
+import org.telegram.ui.oe0;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class x2 extends j {
     public String A0;
@@ -66,7 +66,7 @@ public final class x2 extends j {
         w2Var.setFocusableInTouchMode(true);
         w2Var.setInputType(16384);
         w2Var.setSingleLine(false);
-        addView(w2Var, a6.e(-2, -2, 51));
+        addView(w2Var, z5.e(-2, -2, 51));
         if (i12 >= 29) {
             w2Var.setBreakStrategy(0);
         } else {
@@ -75,7 +75,7 @@ public final class x2 extends j {
         setSwatch(q1Var);
         setType(i11);
         k();
-        w2Var.addTextChangedListener(new qe0(this));
+        w2Var.addTextChangedListener(new oe0(this));
     }
 
     @Override // rg.j
@@ -116,10 +116,10 @@ public final class x2 extends j {
         float scaleX = viewGroup.getScaleX();
         float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float dp2 = (AndroidUtilities.dp(52.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float x10 = yh.x(dp, 2.0f, getPositionX(), scaleX);
+        float y3 = sk.y(dp, 2.0f, getPositionX(), scaleX);
         float positionY = getPositionY();
         w2 w2Var = this.q0;
-        return new il0(x10, (positionY - (((dp2 - w2Var.getExtendedPaddingTop()) - AndroidUtilities.dpf2(4.0f)) / 2.0f)) * scaleX, ((dp * scaleX) + x10) - x10, (dp2 - w2Var.getExtendedPaddingBottom()) * scaleX);
+        return new il0(y3, (positionY - (((dp2 - w2Var.getExtendedPaddingTop()) - AndroidUtilities.dpf2(4.0f)) / 2.0f)) * scaleX, ((dp * scaleX) + y3) - y3, (dp2 - w2Var.getExtendedPaddingBottom()) * scaleX);
     }
 
     @Override // rg.j
@@ -196,7 +196,7 @@ public final class x2 extends j {
         w2Var.setClickable(true);
         w2Var.requestFocus();
         w2Var.setSelection(w2Var.getText().length());
-        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.voip.m2(this, 26), 300L);
+        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.voip.r2(this, 25), 300L);
     }
 
     public final void r() {

@@ -2,205 +2,223 @@ package m;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.content.res.Resources;
-import android.content.res.TypedArray;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.os.Bundle;
-import android.os.Parcelable;
+import android.text.InputFilter;
 import android.util.AttributeSet;
-import android.widget.CompoundButton;
-import android.widget.TextView;
-import java.util.Iterator;
-import java.util.Map;
+import android.widget.CheckBox;
+import org.telegram.messenger.beta.R;
 import v7.q7;
+import w7.n6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class p {
-    public Parcelable a;
-    public Object b;
-    public boolean c;
-    public boolean d;
-    public boolean e;
-    public final Object f;
+public final class p extends CheckBox implements u0.k {
+    public final r a;
+    public final e2.c b;
+    public final y0 c;
+    public v d;
 
-    public /* synthetic */ p(TextView textView) {
-        this.a = null;
-        this.b = null;
-        this.c = false;
-        this.d = false;
-        this.f = textView;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p(Context context, AttributeSet attributeSet) {
+        super(context, attributeSet, R.attr.checkboxStyle);
+        e3.a(context);
+        d3.a(this, getContext());
+        r rVar = new r(this);
+        this.a = rVar;
+        rVar.e(attributeSet, R.attr.checkboxStyle);
+        e2.c cVar = new e2.c(this);
+        this.b = cVar;
+        cVar.f(attributeSet, R.attr.checkboxStyle);
+        y0 y0Var = new y0(this);
+        this.c = y0Var;
+        y0Var.f(attributeSet, R.attr.checkboxStyle);
+        getEmojiTextViewHelper().a(attributeSet, R.attr.checkboxStyle);
     }
 
-    public void a() {
-        CompoundButton compoundButton = (CompoundButton) this.f;
-        Drawable buttonDrawable = compoundButton.getButtonDrawable();
-        if (buttonDrawable != null) {
-            if (this.c || this.d) {
-                Drawable mutate = buttonDrawable.mutate();
-                if (this.c) {
-                    mutate.setTintList((ColorStateList) this.a);
-                }
-                if (this.d) {
-                    mutate.setTintMode((PorterDuff.Mode) this.b);
-                }
-                if (mutate.isStateful()) {
-                    mutate.setState(compoundButton.getDrawableState());
-                }
-                compoundButton.setButtonDrawable(mutate);
-            }
+    private v getEmojiTextViewHelper() {
+        if (this.d == null) {
+            this.d = new v(this);
         }
+        return this.d;
     }
 
-    public void b() {
-        o oVar = (o) this.f;
-        Drawable checkMarkDrawable = oVar.getCheckMarkDrawable();
-        if (checkMarkDrawable != null) {
-            if (this.c || this.d) {
-                Drawable mutate = checkMarkDrawable.mutate();
-                if (this.c) {
-                    mutate.setTintList((ColorStateList) this.a);
-                }
-                if (this.d) {
-                    mutate.setTintMode((PorterDuff.Mode) this.b);
-                }
-                if (mutate.isStateful()) {
-                    mutate.setState(oVar.getDrawableState());
-                }
-                oVar.setCheckMarkDrawable(mutate);
-            }
+    @Override // android.widget.CompoundButton, android.widget.TextView, android.view.View
+    public final void drawableStateChanged() {
+        super.drawableStateChanged();
+        e2.c cVar = this.b;
+        if (cVar != null) {
+            cVar.b();
+        }
+        y0 y0Var = this.c;
+        if (y0Var != null) {
+            y0Var.b();
         }
     }
 
-    public Bundle c(String str) {
-        if (!this.d) {
-            throw new IllegalStateException("You can consumeRestoredStateForKey only after super.onCreate of corresponding component");
+    @Override // android.widget.CompoundButton, android.widget.TextView
+    public int getCompoundPaddingLeft() {
+        int compoundPaddingLeft = super.getCompoundPaddingLeft();
+        r rVar = this.a;
+        if (rVar != null) {
+            rVar.getClass();
         }
-        Bundle bundle = (Bundle) this.a;
-        if (bundle == null) {
-            return null;
-        }
-        Bundle bundle2 = bundle.getBundle(str);
-        Bundle bundle3 = (Bundle) this.a;
-        if (bundle3 != null) {
-            bundle3.remove(str);
-        }
-        Bundle bundle4 = (Bundle) this.a;
-        if (bundle4 != null && !bundle4.isEmpty()) {
-            return bundle2;
-        }
-        this.a = null;
-        return bundle2;
+        return compoundPaddingLeft;
     }
 
-    public t4.d d() {
-        String str;
-        t4.d dVar;
-        Iterator it = ((o.f) this.f).iterator();
-        do {
-            o.b bVar = (o.b) it;
-            if (!bVar.hasNext()) {
-                return null;
-            }
-            Map.Entry components = (Map.Entry) bVar.next();
-            kotlin.jvm.internal.i.d(components, "components");
-            str = (String) components.getKey();
-            dVar = (t4.d) components.getValue();
-        } while (!kotlin.jvm.internal.i.a(str, "androidx.lifecycle.internal.SavedStateHandlesProvider"));
-        return dVar;
+    public ColorStateList getSupportBackgroundTintList() {
+        e2.c cVar = this.b;
+        if (cVar != null) {
+            return cVar.d();
+        }
+        return null;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x005c A[Catch: all -> 0x003b, TryCatch #1 {all -> 0x003b, blocks: (B:3:0x0022, B:5:0x0029, B:8:0x002f, B:9:0x0055, B:11:0x005c, B:12:0x0063, B:14:0x006a, B:21:0x003e, B:23:0x0044, B:25:0x004a), top: B:2:0x0022 }] */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x006a A[Catch: all -> 0x003b, TRY_LEAVE, TryCatch #1 {all -> 0x003b, blocks: (B:3:0x0022, B:5:0x0029, B:8:0x002f, B:9:0x0055, B:11:0x005c, B:12:0x0063, B:14:0x006a, B:21:0x003e, B:23:0x0044, B:25:0x004a), top: B:2:0x0022 }] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void e(AttributeSet attributeSet, int i10) {
-        int resourceId;
-        int resourceId2;
-        CompoundButton compoundButton = (CompoundButton) this.f;
-        Context context = compoundButton.getContext();
-        int[] iArr = f.a.m;
-        li.k P = li.k.P(context, attributeSet, iArr, i10);
-        TypedArray typedArray = (TypedArray) P.c;
-        r0.j0.i(compoundButton, compoundButton.getContext(), iArr, attributeSet, (TypedArray) P.c, i10);
-        try {
-            if (typedArray.hasValue(1) && (resourceId2 = typedArray.getResourceId(1, 0)) != 0) {
-                try {
-                    compoundButton.setButtonDrawable(q7.b(compoundButton.getContext(), resourceId2));
-                } catch (Resources.NotFoundException unused) {
-                }
-                if (typedArray.hasValue(2)) {
-                    compoundButton.setButtonTintList(P.E(2));
-                }
-                if (typedArray.hasValue(3)) {
-                    compoundButton.setButtonTintMode(l1.b(typedArray.getInt(3, -1), null));
-                }
-                P.Q();
-            }
-            if (typedArray.hasValue(0) && (resourceId = typedArray.getResourceId(0, 0)) != 0) {
-                compoundButton.setButtonDrawable(q7.b(compoundButton.getContext(), resourceId));
-            }
-            if (typedArray.hasValue(2)) {
-            }
-            if (typedArray.hasValue(3)) {
-            }
-            P.Q();
-        } catch (Throwable th2) {
-            P.Q();
-            throw th2;
+    public PorterDuff.Mode getSupportBackgroundTintMode() {
+        e2.c cVar = this.b;
+        if (cVar != null) {
+            return cVar.e();
+        }
+        return null;
+    }
+
+    public ColorStateList getSupportButtonTintList() {
+        r rVar = this.a;
+        if (rVar != null) {
+            return (ColorStateList) rVar.a;
+        }
+        return null;
+    }
+
+    public PorterDuff.Mode getSupportButtonTintMode() {
+        r rVar = this.a;
+        if (rVar != null) {
+            return (PorterDuff.Mode) rVar.b;
+        }
+        return null;
+    }
+
+    public ColorStateList getSupportCompoundDrawablesTintList() {
+        return this.c.d();
+    }
+
+    public PorterDuff.Mode getSupportCompoundDrawablesTintMode() {
+        return this.c.e();
+    }
+
+    @Override // android.widget.TextView
+    public void setAllCaps(boolean z10) {
+        super.setAllCaps(z10);
+        getEmojiTextViewHelper().b(z10);
+    }
+
+    @Override // android.view.View
+    public void setBackgroundDrawable(Drawable drawable) {
+        super.setBackgroundDrawable(drawable);
+        e2.c cVar = this.b;
+        if (cVar != null) {
+            cVar.g();
         }
     }
 
-    public void f(String str, t4.d provider) {
-        Object obj;
-        kotlin.jvm.internal.i.e(provider, "provider");
-        o.f fVar = (o.f) this.f;
-        o.c h = fVar.h(str);
-        if (h != null) {
-            obj = h.b;
-        } else {
-            o.c cVar = new o.c(str, provider);
-            fVar.d++;
-            o.c cVar2 = fVar.b;
-            if (cVar2 == null) {
-                fVar.a = cVar;
-                fVar.b = cVar;
+    @Override // android.view.View
+    public void setBackgroundResource(int i10) {
+        super.setBackgroundResource(i10);
+        e2.c cVar = this.b;
+        if (cVar != null) {
+            cVar.h(i10);
+        }
+    }
+
+    @Override // android.widget.CompoundButton
+    public void setButtonDrawable(Drawable drawable) {
+        super.setButtonDrawable(drawable);
+        r rVar = this.a;
+        if (rVar != null) {
+            if (rVar.e) {
+                rVar.e = false;
             } else {
-                cVar2.c = cVar;
-                cVar.d = cVar2;
-                fVar.b = cVar;
+                rVar.e = true;
+                rVar.a();
             }
-            obj = null;
-        }
-        if (((t4.d) obj) != null) {
-            throw new IllegalArgumentException("SavedStateProvider with the given key is already registered");
         }
     }
 
-    public void g() {
-        if (!this.e) {
-            throw new IllegalStateException("Can not perform this action after onSaveInstanceState");
-        }
-        t4.a aVar = (t4.a) this.b;
-        if (aVar == null) {
-            aVar = new t4.a(this);
-        }
-        this.b = aVar;
-        try {
-            androidx.lifecycle.j.class.getDeclaredConstructor(null);
-            t4.a aVar2 = (t4.a) this.b;
-            if (aVar2 != null) {
-                aVar2.a.add(androidx.lifecycle.j.class.getName());
-            }
-        } catch (NoSuchMethodException e) {
-            throw new IllegalArgumentException("Class " + androidx.lifecycle.j.class.getSimpleName() + " must have default constructor in order to be automatically recreated", e);
+    @Override // android.widget.TextView
+    public final void setCompoundDrawables(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
+        super.setCompoundDrawables(drawable, drawable2, drawable3, drawable4);
+        y0 y0Var = this.c;
+        if (y0Var != null) {
+            y0Var.b();
         }
     }
 
-    public p() {
-        this.f = new o.f();
-        this.e = true;
+    @Override // android.widget.TextView
+    public final void setCompoundDrawablesRelative(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
+        super.setCompoundDrawablesRelative(drawable, drawable2, drawable3, drawable4);
+        y0 y0Var = this.c;
+        if (y0Var != null) {
+            y0Var.b();
+        }
+    }
+
+    public void setEmojiCompatEnabled(boolean z10) {
+        getEmojiTextViewHelper().c(z10);
+    }
+
+    @Override // android.widget.TextView
+    public void setFilters(InputFilter[] inputFilterArr) {
+        super.setFilters(((n6) getEmojiTextViewHelper().b.b).a(inputFilterArr));
+    }
+
+    public void setSupportBackgroundTintList(ColorStateList colorStateList) {
+        e2.c cVar = this.b;
+        if (cVar != null) {
+            cVar.l(colorStateList);
+        }
+    }
+
+    public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
+        e2.c cVar = this.b;
+        if (cVar != null) {
+            cVar.m(mode);
+        }
+    }
+
+    public void setSupportButtonTintList(ColorStateList colorStateList) {
+        r rVar = this.a;
+        if (rVar != null) {
+            rVar.a = colorStateList;
+            rVar.c = true;
+            rVar.a();
+        }
+    }
+
+    public void setSupportButtonTintMode(PorterDuff.Mode mode) {
+        r rVar = this.a;
+        if (rVar != null) {
+            rVar.b = mode;
+            rVar.d = true;
+            rVar.a();
+        }
+    }
+
+    @Override // u0.k
+    public void setSupportCompoundDrawablesTintList(ColorStateList colorStateList) {
+        y0 y0Var = this.c;
+        y0Var.l(colorStateList);
+        y0Var.b();
+    }
+
+    @Override // u0.k
+    public void setSupportCompoundDrawablesTintMode(PorterDuff.Mode mode) {
+        y0 y0Var = this.c;
+        y0Var.m(mode);
+        y0Var.b();
+    }
+
+    @Override // android.widget.CompoundButton
+    public void setButtonDrawable(int i10) {
+        setButtonDrawable(q7.b(getContext(), i10));
     }
 }

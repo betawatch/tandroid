@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class vn extends s4.c0 {
     public final /* synthetic */ ig.e0 r;
@@ -27,7 +27,7 @@ public final class vn extends s4.c0 {
             k10 += AndroidUtilities.dp(160.0f);
         }
         if (!ioVar.V0) {
-            k10 = org.telegram.messenger.q.C(7.0f, ioVar.R0 - AndroidUtilities.statusBarHeight, k10);
+            k10 = org.telegram.messenger.g0.A(7.0f, ioVar.R0 - AndroidUtilities.statusBarHeight, k10);
         }
         if (ioVar.V0 && k10 == 0 && (i11 = ioVar.W0) >= 0) {
             io.N(ioVar, i11);

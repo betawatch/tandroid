@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class RuntimeClassNameTypeAdapterFactory<T> implements eb.v {
     private final Class<?> baseType;
@@ -132,13 +132,13 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements eb.v {
                     gb.d.l(jsonTree, bVar);
                     return;
                 }
-                gb.n nVar = jsonTree.h().a;
-                if (nVar.containsKey(RuntimeClassNameTypeAdapterFactory.this.typeFieldName)) {
+                gb.o oVar = jsonTree.h().a;
+                if (oVar.containsKey(RuntimeClassNameTypeAdapterFactory.this.typeFieldName)) {
                     throw new androidx.car.app.j("cannot serialize " + cls3.getSimpleName() + " because it already defines a field named " + RuntimeClassNameTypeAdapterFactory.this.typeFieldName);
                 }
                 eb.l lVar = new eb.l();
                 lVar.n(RuntimeClassNameTypeAdapterFactory.this.typeFieldName, new eb.m(simpleName));
-                Iterator it = ((gb.l) nVar.entrySet()).iterator();
+                Iterator it = ((gb.m) oVar.entrySet()).iterator();
                 while (it.hasNext()) {
                     Map.Entry entry = (Map.Entry) it.next();
                     lVar.n((String) entry.getKey(), (eb.i) entry.getValue());

@@ -33,7 +33,7 @@ public abstract class n1 {
         byte[] bArr = w1Var.e;
         long j10 = w1Var.a;
         int i10 = 0;
-        int I = j10 != 0 ? a6.i.I(j10) + a6.i.J(1) : 0;
+        int F = j10 != 0 ? a6.i.F(j10) + a6.i.G(1) : 0;
         x1[] x1VarArr = w1Var.d;
         if (x1VarArr != null && x1VarArr.length > 0) {
             int i11 = 0;
@@ -48,36 +48,36 @@ public abstract class n1 {
         }
         byte[] bArr2 = m1.d;
         if (!Arrays.equals(bArr, bArr2)) {
-            I += a6.i.M(bArr.length) + bArr.length + a6.i.J(4);
+            F += a6.i.I(bArr.length) + bArr.length + a6.i.G(4);
         }
         if (!Arrays.equals(w1Var.f, bArr2)) {
             byte[] bArr3 = w1Var.f;
-            I += a6.i.M(bArr3.length) + bArr3.length + a6.i.J(6);
+            F += a6.i.I(bArr3.length) + bArr3.length + a6.i.G(6);
         }
         if (str4 != null && !str4.equals("")) {
-            I += a6.i.A(8, str4);
+            F += a6.i.B(8, str4);
         }
         int i12 = w1Var.c;
         if (i12 != 0) {
-            I += (i12 >= 0 ? a6.i.M(i12) : 10) + a6.i.J(11);
+            F += (i12 >= 0 ? a6.i.I(i12) : 10) + a6.i.G(11);
         }
         if (str3 != null && !str3.equals("")) {
-            I += a6.i.A(13, str3);
+            F += a6.i.B(13, str3);
         }
         if (str2 != null && !str2.equals("")) {
-            I += a6.i.A(14, str2);
+            F += a6.i.B(14, str2);
         }
         long j11 = w1Var.s;
         if (j11 != 180000) {
-            I += a6.i.I((j11 >> 63) ^ (j11 << 1)) + a6.i.J(15);
+            F += a6.i.F((j11 >> 63) ^ (j11 << 1)) + a6.i.G(15);
         }
         long j12 = w1Var.b;
         if (j12 != 0) {
-            I += a6.i.I(j12) + a6.i.J(17);
+            F += a6.i.F(j12) + a6.i.G(17);
         }
         if (!Arrays.equals(w1Var.v, bArr2)) {
             byte[] bArr4 = w1Var.v;
-            I += a6.i.M(bArr4.length) + bArr4.length + a6.i.J(18);
+            F += a6.i.I(bArr4.length) + bArr4.length + a6.i.G(18);
         }
         int[] iArr2 = w1Var.x;
         if (iArr2 != null && iArr2.length > 0) {
@@ -88,15 +88,15 @@ public abstract class n1 {
                     break;
                 }
                 int i14 = iArr[i10];
-                i13 += i14 >= 0 ? a6.i.M(i14) : 10;
+                i13 += i14 >= 0 ? a6.i.I(i14) : 10;
                 i10++;
             }
-            I = I + i13 + (iArr.length * 2);
+            F = F + i13 + (iArr.length * 2);
         }
         if (str != null && !str.equals("")) {
-            I += a6.i.A(24, str);
+            F += a6.i.B(24, str);
         }
-        return w1Var.y ? a6.i.J(25) + 1 + I : I;
+        return w1Var.y ? a6.i.G(25) + 1 + F : F;
     }
 
     public final n1 d() {

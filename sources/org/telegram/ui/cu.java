@@ -21,7 +21,7 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class cu extends org.telegram.ui.Components.im0 {
     public final Context r;
@@ -30,7 +30,7 @@ public final class cu extends org.telegram.ui.Components.im0 {
     public final /* synthetic */ fu w;
 
     public cu(fu fuVar, Context context, ArrayList arrayList, boolean z10) {
-        Comparator es0Var;
+        Comparator ds0Var;
         this.w = fuVar;
         this.r = context;
         if (arrayList != null) {
@@ -80,14 +80,14 @@ public final class cu extends org.telegram.ui.Components.im0 {
         if (Build.VERSION.SDK_INT >= 24) {
             Collator collator = Collator.getInstance(LocaleController.getInstance().getCurrentLocale() != null ? LocaleController.getInstance().getCurrentLocale() : Locale.getDefault());
             Objects.requireNonNull(collator);
-            es0Var = new bi.q7(collator, 5);
+            ds0Var = new bi.q7(collator, 5);
         } else {
-            es0Var = new es0(13);
+            ds0Var = new ds0(13);
         }
-        Collections.sort(this.v, es0Var);
+        Collections.sort(this.v, ds0Var);
         Iterator it = this.s.values().iterator();
         while (it.hasNext()) {
-            Collections.sort((ArrayList) it.next(), new bu(es0Var, 0));
+            Collections.sort((ArrayList) it.next(), new bu(ds0Var, 0));
         }
     }
 

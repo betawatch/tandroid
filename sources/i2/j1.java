@@ -9,7 +9,7 @@ import java.util.IdentityHashMap;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class j1 {
     public final j2.k a;
@@ -144,13 +144,13 @@ public final class j1 {
             myLooper2 = Looper.getMainLooper();
         }
         Handler handler2 = new Handler(myLooper2, null);
-        n2.k kVar = b0Var.d;
-        kVar.getClass();
-        CopyOnWriteArrayList copyOnWriteArrayList2 = kVar.c;
-        n2.j jVar = new n2.j();
-        jVar.a = handler2;
-        jVar.b = g1Var;
-        copyOnWriteArrayList2.add(jVar);
+        n2.j jVar = b0Var.d;
+        jVar.getClass();
+        CopyOnWriteArrayList copyOnWriteArrayList2 = jVar.c;
+        n2.i iVar = new n2.i();
+        iVar.a = handler2;
+        iVar.b = g1Var;
+        copyOnWriteArrayList2.add(iVar);
         b0Var.l(r12, this.l, this.a);
     }
 

@@ -32,7 +32,7 @@ import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.px;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class u extends FrameLayout {
     public long E;
@@ -99,7 +99,7 @@ public final class u extends FrameLayout {
             setClipChildren(false);
         }
         b();
-        addView(frameLayout, w7.a6.d(-2.0f, -1));
+        addView(frameLayout, w7.z5.d(-2.0f, -1));
         imageReceiver.setRoundRadius(AndroidUtilities.dp(48.0f) / 2);
         imageReceiver2.setRoundRadius(AndroidUtilities.dp(48.0f) / 2);
     }
@@ -127,7 +127,7 @@ public final class u extends FrameLayout {
         h5Var2.setTextColor(textColor);
         NotificationCenter.listenEmojiLoading(this.y);
         this.y.setMaxLines(1);
-        this.x.addView(this.y, w7.a6.a(-2.0f, 1.0f, 0.0f, 1.0f, 0.0f, -1, 0));
+        this.x.addView(this.y, w7.z5.a(-2.0f, 1.0f, 0.0f, 1.0f, 0.0f, -1, 0));
         this.r.setRoundRadius(AndroidUtilities.dp(48.0f) / 2);
         this.s.setRoundRadius(AndroidUtilities.dp(48.0f) / 2);
     }
@@ -283,7 +283,7 @@ public final class u extends FrameLayout {
                     f23 += ((w8) arrayList.get(i11)).h;
                 }
                 size = (x8Var.d + f23) / (arrayList.size() + r4);
-                z10 = ((w8) i2.d.g(1, arrayList)).G;
+                z10 = ((w8) i2.d.h(1, arrayList)).G;
                 pxVar3.m0 = z10;
             } else {
                 z10 = pxVar3.m0;

@@ -14,12 +14,12 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ha implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -169,13 +169,13 @@ public final /* synthetic */ class ha implements Utilities.Callback {
                         ucVar.G = true;
                         oc ocVar = ucVar.a;
                         if (ocVar != null) {
-                            ocVar.R(true);
+                            ocVar.N(true);
                         }
                     }
                 }
                 kcVar5.X0.x(2, bool.booleanValue());
                 kcVar5.Y0.clearAnimation();
-                yh.r(kcVar5.Y0.animate(), bool.booleanValue() ? 0.0f : 1.0f, 120L);
+                sk.s(kcVar5.Y0.animate(), bool.booleanValue() ? 0.0f : 1.0f, 120L);
                 org.telegram.ui.Components.sc scVar = org.telegram.ui.Components.sc.w;
                 if (scVar != null && scVar.a == 2) {
                     scVar.l();

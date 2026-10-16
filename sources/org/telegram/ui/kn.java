@@ -8,9 +8,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class kn extends org.telegram.ui.Components.jr0 {
+public final class kn extends org.telegram.ui.Components.ir0 {
     public final /* synthetic */ MessageObject b1;
     public final /* synthetic */ qn c1;
 
@@ -22,7 +22,7 @@ public final class kn extends org.telegram.ui.Components.jr0 {
         this.a0 = z12;
     }
 
-    @Override // org.telegram.ui.Components.jr0
+    @Override // org.telegram.ui.Components.ir0
     public final void S0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
         qn qnVar = this.c1;
         fo foVar = qnVar.a;
@@ -41,10 +41,10 @@ public final class kn extends org.telegram.ui.Components.jr0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.jr0
+    @Override // org.telegram.ui.Components.ir0
     public final void T0(final View view) {
         fo foVar = this.c1.a;
-        di.dc b10 = view instanceof org.telegram.ui.Cells.g7 ? di.fc.b((org.telegram.ui.Cells.g7) view) : null;
+        di.dc b10 = view instanceof org.telegram.ui.Cells.f7 ? di.fc.b((org.telegram.ui.Cells.f7) view) : null;
         ArrayList arrayList = new ArrayList();
         MessageObject messageObject = this.b1;
         MessageObject.GroupedMessages groupedMessages = messageObject.getGroupId() != 0 ? (MessageObject.GroupedMessages) foVar.x6.f(messageObject.getGroupId()) : null;
@@ -64,13 +64,13 @@ public final class kn extends org.telegram.ui.Components.jr0 {
                 di.dc dcVar = null;
                 if (booleanValue) {
                     kn knVar = kn.this;
-                    AndroidUtilities.runOnUIThread(new fc(26, knVar, l4));
+                    AndroidUtilities.runOnUIThread(new jd(21, knVar, l4));
                     knVar.dismiss();
                     kcVar.X(null);
                 } else {
                     View view2 = view;
-                    if ((view2 instanceof org.telegram.ui.Cells.g7) && view2.isAttachedToWindow()) {
-                        dcVar = di.fc.b((org.telegram.ui.Cells.g7) view2);
+                    if ((view2 instanceof org.telegram.ui.Cells.f7) && view2.isAttachedToWindow()) {
+                        dcVar = di.fc.b((org.telegram.ui.Cells.f7) view2);
                     }
                     kcVar.X(dcVar);
                 }
@@ -80,7 +80,7 @@ public final class kn extends org.telegram.ui.Components.jr0 {
         D.T(b10, di.k8.y(arrayList));
     }
 
-    @Override // org.telegram.ui.Components.jr0, org.telegram.ui.ActionBar.e3
+    @Override // org.telegram.ui.Components.ir0, org.telegram.ui.ActionBar.e3
     public final void dismissInternal() {
         int i10;
         fo foVar = this.c1.a;

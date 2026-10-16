@@ -8,7 +8,7 @@ import org.telegram.ui.Components.f5;
 import org.telegram.ui.Components.rw0;
 import org.telegram.ui.Components.s6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements f5, rw0, wg.f, wg.k {
     public final /* synthetic */ a0 a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class u implements f5, rw0, wg.f, wg.k {
     }
 
     @Override // org.telegram.ui.Components.rw0
-    public void f(int i10) {
+    public void h(int i10) {
         a0 a0Var = this.a;
         int i11 = a0Var.h0;
         int i12 = wg.d.v;

@@ -19,7 +19,7 @@ import org.telegram.ui.Components.NumberTextView;
 import org.telegram.ui.Components.le;
 import org.telegram.ui.fo;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class q3 extends ChatActivityEnterView {
     public ValueAnimator o5;
@@ -48,15 +48,15 @@ public final class q3 extends ChatActivityEnterView {
     }
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void J1(int i10, boolean z10) {
-        super.J1(i10, z10);
-        S1();
+    public final void I1(int i10, boolean z10) {
+        super.I1(i10, z10);
+        Q1();
     }
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void O1(boolean z10) {
+    public final void M1(boolean z10) {
         q5 q5Var = this.s5;
-        P1(q5Var.F1 || q5Var.G1, z10);
+        N1(q5Var.F1 || q5Var.G1, z10);
     }
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
@@ -111,22 +111,12 @@ public final class q3 extends ChatActivityEnterView {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final boolean R0(int i10, boolean z10, int i11, boolean z11, long j10) {
-        q5 q5Var = this.s5;
-        if (!MessagesController.getInstance(q5Var.C2).isFrozen()) {
-            return super.R0(i10, z10, i11, z11, j10);
-        }
-        org.telegram.ui.b.b(q5Var.C2);
-        return false;
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:14:0x002c  */
     /* JADX WARN: Removed duplicated region for block: B:20:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void S1() {
+    public final void Q1() {
         boolean z10;
         le leVar;
         q5 q5Var = this.s5;
@@ -153,6 +143,16 @@ public final class q3 extends ChatActivityEnterView {
         q5Var.G2 = z10;
         if (z11 == z10) {
         }
+    }
+
+    @Override // org.telegram.ui.Components.ChatActivityEnterView
+    public final boolean R0(int i10, boolean z10, int i11, boolean z11, long j10) {
+        q5 q5Var = this.s5;
+        if (!MessagesController.getInstance(q5Var.C2).isFrozen()) {
+            return super.R0(i10, z10, i11, z11, j10);
+        }
+        org.telegram.ui.b.b(q5Var.C2);
+        return false;
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -187,17 +187,17 @@ public final class q3 extends ChatActivityEnterView {
     }
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void f0(Menu menu) {
-        fo.n8(menu, null, false, !this.s5.O1.f, true, true);
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void f1(float f7, float f10, float f11, boolean z10) {
+    public final void e1(float f7, float f10, float f11, boolean z10) {
         LinearLayout linearLayout = this.s5.g2;
         if (linearLayout != null) {
             linearLayout.setTranslationX((1.0f - f11) * f7);
         }
-        super.f1(f7, f10, f11, z10);
+        super.e1(f7, f10, f11, z10);
+    }
+
+    @Override // org.telegram.ui.Components.ChatActivityEnterView
+    public final void f0(Menu menu) {
+        fo.n8(menu, null, false, !this.s5.O1.f, true, true);
     }
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
@@ -220,7 +220,7 @@ public final class q3 extends ChatActivityEnterView {
     }
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final boolean p1(Runnable runnable) {
+    public final boolean o1(Runnable runnable) {
         this.s5.n0(runnable);
         return true;
     }
@@ -232,6 +232,6 @@ public final class q3 extends ChatActivityEnterView {
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
     public final void v0() {
-        S1();
+        Q1();
     }
 }

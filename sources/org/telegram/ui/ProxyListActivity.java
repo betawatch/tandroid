@@ -22,7 +22,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class ProxyListActivity extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public NumberTextView E;
@@ -269,7 +269,7 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.m2 implements N
             SharedConfig.ProxyInfo proxyInfo2 = (SharedConfig.ProxyInfo) arrayList.get(i18);
             if (!proxyInfo2.checking && SystemClock.elapsedRealtime() - proxyInfo2.availableCheckTime >= 120000) {
                 proxyInfo2.checking = true;
-                ConnectionsManager.getInstance(this.currentAccount).checkProxy(proxyInfo2.settings, new nq0(proxyInfo2, 12));
+                ConnectionsManager.getInstance(this.currentAccount).checkProxy(proxyInfo2.settings, new lq0(proxyInfo2, 12));
             }
         }
         if (!z10 || (m21Var = this.a) == null) {
@@ -280,7 +280,7 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.m2 implements N
 
     @Override // org.telegram.ui.ActionBar.m2
     public final View createView(Context context) {
-        i2.d.v(false, this.actionBar);
+        i2.d.y(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.ProxySettings));
         org.telegram.ui.ActionBar.b5 b5Var = this.parentLayout;
@@ -302,7 +302,7 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.m2 implements N
         ((s4.k) this.b.getItemAnimator()).o = org.telegram.ui.Components.es.f;
         this.b.setVerticalScrollBarEnabled(false);
         this.b.setLayoutManager(new s4.b0(1, false));
-        frameLayout2.addView(this.b, w7.a6.e(-1, -1, 51));
+        frameLayout2.addView(this.b, w7.z5.e(-1, -1, 51));
         this.b.setAdapter(this.a);
         this.b.setOnItemClickListener(new i21(this, 0));
         this.b.setOnItemLongClickListener(new j21(this));
@@ -312,7 +312,7 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.m2 implements N
         numberTextView.setTextSize(18);
         this.E.setTypeface(AndroidUtilities.bold());
         this.E.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.y8, false));
-        j10.addView(this.E, w7.a6.m(1.0f, 0, -1, 72, 0, 0));
+        j10.addView(this.E, w7.z5.m(1.0f, 0, -1, 72, 0, 0));
         this.E.setOnTouchListener(new ci.d(2));
         j10.g(1, R.drawable.msg_share, AndroidUtilities.dp(54.0f)).setContentDescription(LocaleController.getString(R.string.StickersShare));
         j10.g(0, R.drawable.msg_delete, AndroidUtilities.dp(54.0f)).setContentDescription(LocaleController.getString(R.string.Delete));

@@ -19,7 +19,7 @@ import org.telegram.ui.Components.am0;
 import org.telegram.ui.Components.mm0;
 import org.telegram.ui.he1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class na extends mm0 implements NotificationCenter.NotificationCenterDelegate {
     public static final byte[] g3 = new byte[1024];
@@ -94,7 +94,7 @@ public abstract class na extends mm0 implements NotificationCenter.NotificationC
         if (f6Var != null) {
             this.X2.remove(str);
             if (this.Y2.remove(f6Var) != null) {
-                Utilities.globalQueue.postRunnable(new n2.h(this, f6Var, file, 13));
+                Utilities.globalQueue.postRunnable(new org.telegram.messenger.video.f(this, f6Var, file, 10));
             } else {
                 x1(f6Var);
             }

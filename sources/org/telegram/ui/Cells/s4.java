@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class s4 extends FrameLayout {
     public final int a;
@@ -26,6 +26,6 @@ public final class s4 extends FrameLayout {
         this.a = i11;
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         radialProgressView.setSize(i10);
-        addView(radialProgressView, w7.a6.e(-2, -2, 17));
+        addView(radialProgressView, w7.z5.e(-2, -2, 17));
     }
 }

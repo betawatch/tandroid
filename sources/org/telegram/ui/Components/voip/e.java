@@ -20,14 +20,14 @@ import android.view.accessibility.AccessibilityNodeProvider;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.ad;
 import org.telegram.ui.Components.yj0;
-import org.telegram.ui.bj1;
+import org.telegram.ui.aj1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
 public final class e extends View {
     public boolean E;
     public boolean F;
@@ -197,11 +197,11 @@ public final class e extends View {
         this.x = (AndroidUtilities.dp(8.0f) * 0.005f) + this.x;
         int measuredWidth = getMeasuredWidth();
         int i10 = this.v;
-        int D = org.telegram.messenger.q.D(46.0f, measuredWidth, i10);
+        int B = org.telegram.messenger.g0.B(46.0f, measuredWidth, i10);
         int dp5 = AndroidUtilities.dp(40.0f);
         int measuredWidth2 = getMeasuredWidth() - AndroidUtilities.dp(46.0f);
         int dp6 = AndroidUtilities.dp(40.0f) + i10;
-        this.N.set(D, dp5, measuredWidth2, dp6);
+        this.N.set(B, dp5, measuredWidth2, dp6);
         canvas.save();
         canvas.translate(0.0f, AndroidUtilities.dp(40.0f));
         canvas.save();
@@ -321,9 +321,9 @@ public final class e extends View {
         super.onMeasure(i10, i11);
         int i12 = this.v;
         this.L = (getMeasuredWidth() / 2.0f) - ((i12 / 2.0f) + AndroidUtilities.dp(46.0f));
-        int B = yh.B(28.0f, i12, 2);
-        this.c.setBounds(B, B, AndroidUtilities.dp(28.0f) + B, AndroidUtilities.dp(28.0f) + B);
-        this.d.setBounds(B, B, AndroidUtilities.dp(28.0f) + B, AndroidUtilities.dp(28.0f) + B);
+        int A = sk.A(28.0f, i12, 2);
+        this.c.setBounds(A, A, AndroidUtilities.dp(28.0f) + A, AndroidUtilities.dp(28.0f) + A);
+        this.d.setBounds(A, A, AndroidUtilities.dp(28.0f) + A, AndroidUtilities.dp(28.0f) + A);
         float dp = AndroidUtilities.dp(3.0f);
         Paint paint = this.T;
         paint.setStrokeWidth(dp);
@@ -361,7 +361,7 @@ public final class e extends View {
                         ofFloat.start();
                         this.O = ofFloat;
                         if (this.Q != null && (Math.abs(y3) < f7 || this.J > this.L * 0.8f)) {
-                            ((bj1) this.Q).b();
+                            ((aj1) this.Q).b();
                         }
                     } else {
                         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.K, 0.0f);
@@ -369,7 +369,7 @@ public final class e extends View {
                         ofFloat2.start();
                         this.P = ofFloat2;
                         if (this.Q != null && (Math.abs(y3) < f7 || (-this.K) > this.L * 0.8f)) {
-                            ((bj1) this.Q).a();
+                            ((aj1) this.Q).a();
                         }
                     }
                 }

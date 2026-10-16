@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ws extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.h50 {
     public us E;
@@ -52,7 +52,7 @@ public final class ws extends org.telegram.ui.ActionBar.m2 implements Notificati
     public TLRPC.Photo T;
     public org.telegram.ui.Components.z9 U;
     public FrameLayout V;
-    public org.telegram.ui.Components.h71 W;
+    public org.telegram.ui.Components.i71 W;
     public boolean X;
     public boolean Y;
     public MessageObject Z;
@@ -341,7 +341,7 @@ public final class ws extends org.telegram.ui.ActionBar.m2 implements Notificati
         int i10 = org.telegram.ui.ActionBar.g6.f8;
         org.telegram.ui.ActionBar.c6 c6Var = this.r;
         final int i11 = 0;
-        kVar.B(org.telegram.ui.ActionBar.g6.w0(i10, c6Var), false);
+        kVar.C(org.telegram.ui.ActionBar.g6.w0(i10, c6Var), false);
         this.actionBar.D(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.v8, c6Var), false);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         final int i12 = 1;
@@ -363,18 +363,18 @@ public final class ws extends org.telegram.ui.ActionBar.m2 implements Notificati
         org.telegram.ui.Components.z9 z9Var = new org.telegram.ui.Components.z9(context);
         this.e = z9Var;
         z9Var.setRoundRadius(AndroidUtilities.dp(32.0f));
-        this.V.addView(this.e, w7.a6.a(64.0f, 16.0f, 13.0f, 16.0f, 13.0f, 64, (LocaleController.isRTL ? 5 : 3) | 48));
+        this.V.addView(this.e, w7.z5.a(64.0f, 16.0f, 13.0f, 16.0f, 13.0f, 64, (LocaleController.isRTL ? 5 : 3) | 48));
         Paint paint = new Paint(1);
         paint.setColor(1426063360);
         di.p6 p6Var = new di.p6(this, context, paint, 8);
         this.v = p6Var;
-        this.V.addView(p6Var, w7.a6.a(64.0f, 16.0f, 13.0f, 16.0f, 13.0f, 64, (LocaleController.isRTL ? 5 : 3) | 48));
+        this.V.addView(p6Var, w7.z5.a(64.0f, 16.0f, 13.0f, 16.0f, 13.0f, 64, (LocaleController.isRTL ? 5 : 3) | 48));
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         this.s = radialProgressView;
         radialProgressView.setSize(AndroidUtilities.dp(30.0f));
         this.s.setProgressColor(-1);
         this.s.setNoProgress(false);
-        this.V.addView(this.s, w7.a6.a(64.0f, 16.0f, 13.0f, 16.0f, 13.0f, 64, (LocaleController.isRTL ? 5 : 3) | 48));
+        this.V.addView(this.s, w7.z5.a(64.0f, 16.0f, 13.0f, 16.0f, 13.0f, 64, (LocaleController.isRTL ? 5 : 3) | 48));
         e0(false, false);
         TextView textView = new TextView(context);
         this.f = textView;
@@ -391,9 +391,9 @@ public final class ws extends org.telegram.ui.ActionBar.m2 implements Notificati
         FrameLayout frameLayout3 = this.V;
         TextView textView3 = this.f;
         boolean z10 = LocaleController.isRTL;
-        TextView h = org.telegram.ui.Cells.d0.h(frameLayout3, textView3, w7.a6.a(-2.0f, z10 ? 0.0f : 94.0f, 25.66f, z10 ? 94.0f : 0.0f, 0.0f, -2, (z10 ? 5 : 3) | 48), context);
-        this.h = h;
-        h.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.A6, c6Var));
+        TextView g10 = org.telegram.ui.Cells.c1.g(frameLayout3, textView3, w7.z5.a(-2.0f, z10 ? 0.0f : 94.0f, 25.66f, z10 ? 94.0f : 0.0f, 0.0f, -2, (z10 ? 5 : 3) | 48), context);
+        this.h = g10;
+        g10.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.A6, c6Var));
         this.h.setTextSize(1, 14.0f);
         this.h.setLines(1);
         this.h.setMaxLines(1);
@@ -403,7 +403,7 @@ public final class ws extends org.telegram.ui.ActionBar.m2 implements Notificati
         FrameLayout frameLayout4 = this.V;
         TextView textView4 = this.h;
         boolean z11 = LocaleController.isRTL;
-        frameLayout4.addView(textView4, w7.a6.a(-2.0f, z11 ? 0.0f : 94.0f, 49.66f, z11 ? 94.0f : 0.0f, 0.0f, -2, (z11 ? 5 : 3) | 48));
+        frameLayout4.addView(textView4, w7.z5.a(-2.0f, z11 ? 0.0f : 94.0f, 49.66f, z11 ? 94.0f : 0.0f, 0.0f, -2, (z11 ? 5 : 3) | 48));
         org.telegram.ui.Cells.j3 j3Var = new org.telegram.ui.Cells.j3(context, LocaleController.getString(R.string.FirstName), false, false, -1, this.r);
         this.b = j3Var;
         j3Var.b.setImeOptions(5);
@@ -588,9 +588,9 @@ public final class ws extends org.telegram.ui.ActionBar.m2 implements Notificati
                                     switch (i18) {
                                         case 0:
                                             ws wsVar2 = wsVar;
-                                            boolean g10 = wsVar2.P.g();
+                                            boolean g11 = wsVar2.P.g();
                                             org.telegram.ui.Components.yj0 yj0Var3 = yj0Var2;
-                                            if (!g10) {
+                                            if (!g11) {
                                                 yj0Var3.P(86);
                                                 wsVar2.y.e.d();
                                                 break;
@@ -600,9 +600,9 @@ public final class ws extends org.telegram.ui.ActionBar.m2 implements Notificati
                                             }
                                         default:
                                             ws wsVar3 = wsVar;
-                                            boolean g11 = wsVar3.P.g();
+                                            boolean g12 = wsVar3.P.g();
                                             org.telegram.ui.Components.yj0 yj0Var4 = yj0Var2;
-                                            if (!g11) {
+                                            if (!g12) {
                                                 yj0Var4.P(85);
                                                 wsVar3.x.e.d();
                                                 break;
@@ -634,9 +634,9 @@ public final class ws extends org.telegram.ui.ActionBar.m2 implements Notificati
                                     switch (i19) {
                                         case 0:
                                             ws wsVar22 = wsVar2;
-                                            boolean g10 = wsVar22.P.g();
+                                            boolean g11 = wsVar22.P.g();
                                             org.telegram.ui.Components.yj0 yj0Var32 = yj0Var3;
-                                            if (!g10) {
+                                            if (!g11) {
                                                 yj0Var32.P(86);
                                                 wsVar22.y.e.d();
                                                 break;
@@ -646,9 +646,9 @@ public final class ws extends org.telegram.ui.ActionBar.m2 implements Notificati
                                             }
                                         default:
                                             ws wsVar3 = wsVar2;
-                                            boolean g11 = wsVar3.P.g();
+                                            boolean g12 = wsVar3.P.g();
                                             org.telegram.ui.Components.yj0 yj0Var4 = yj0Var3;
-                                            if (!g11) {
+                                            if (!g12) {
                                                 yj0Var4.P(85);
                                                 wsVar3.x.e.d();
                                                 break;
@@ -701,9 +701,9 @@ public final class ws extends org.telegram.ui.ActionBar.m2 implements Notificati
                                     switch (i18) {
                                         case 0:
                                             ws wsVar22 = wsVar;
-                                            boolean g10 = wsVar22.P.g();
+                                            boolean g11 = wsVar22.P.g();
                                             org.telegram.ui.Components.yj0 yj0Var32 = yj0Var22;
-                                            if (!g10) {
+                                            if (!g11) {
                                                 yj0Var32.P(86);
                                                 wsVar22.y.e.d();
                                                 break;
@@ -713,9 +713,9 @@ public final class ws extends org.telegram.ui.ActionBar.m2 implements Notificati
                                             }
                                         default:
                                             ws wsVar3 = wsVar;
-                                            boolean g11 = wsVar3.P.g();
+                                            boolean g12 = wsVar3.P.g();
                                             org.telegram.ui.Components.yj0 yj0Var4 = yj0Var22;
-                                            if (!g11) {
+                                            if (!g12) {
                                                 yj0Var4.P(85);
                                                 wsVar3.x.e.d();
                                                 break;
@@ -747,9 +747,9 @@ public final class ws extends org.telegram.ui.ActionBar.m2 implements Notificati
                                     switch (i19) {
                                         case 0:
                                             ws wsVar22 = wsVar2;
-                                            boolean g10 = wsVar22.P.g();
+                                            boolean g11 = wsVar22.P.g();
                                             org.telegram.ui.Components.yj0 yj0Var32 = yj0Var3;
-                                            if (!g10) {
+                                            if (!g11) {
                                                 yj0Var32.P(86);
                                                 wsVar22.y.e.d();
                                                 break;
@@ -759,9 +759,9 @@ public final class ws extends org.telegram.ui.ActionBar.m2 implements Notificati
                                             }
                                         default:
                                             ws wsVar3 = wsVar2;
-                                            boolean g11 = wsVar3.P.g();
+                                            boolean g12 = wsVar3.P.g();
                                             org.telegram.ui.Components.yj0 yj0Var4 = yj0Var3;
-                                            if (!g11) {
+                                            if (!g12) {
                                                 yj0Var4.P(85);
                                                 wsVar3.x.e.d();
                                                 break;
@@ -785,7 +785,7 @@ public final class ws extends org.telegram.ui.ActionBar.m2 implements Notificati
                 this.n = new org.telegram.ui.Components.k9(0, user);
             }
             this.U.e(user.photo, this.n);
-            this.E.addView(this.U, w7.a6.a(30.0f, 21.0f, 0.0f, 21.0f, 0.0f, 30, 16));
+            this.E.addView(this.U, w7.z5.a(30.0f, 21.0f, 0.0f, 21.0f, 0.0f, 30, 16));
             this.E.i(LocaleController.getString(R.string.ResetToOriginalPhoto), false);
             this.E.getImageView().setVisibility(0);
             this.E.setBackground(org.telegram.ui.ActionBar.g6.K0(c6Var, true));
@@ -809,12 +809,12 @@ public final class ws extends org.telegram.ui.ActionBar.m2 implements Notificati
             }
             g0();
         }
-        org.telegram.ui.Components.h71 h71Var = new org.telegram.ui.Components.h71(this, new f5(this, 7), new b1(this, 26), null);
-        this.W = h71Var;
-        h71Var.p1();
+        org.telegram.ui.Components.i71 i71Var = new org.telegram.ui.Components.i71(this, new f5(this, 7), new b1(this, 26), null);
+        this.W = i71Var;
+        i71Var.p1();
         this.W.setOnScrollListener(new ji.n3(4, this, frameLayout));
         this.W.setBackgroundColor(getThemedColor(i13));
-        frameLayout.addView(this.W, w7.a6.e(-1, -1, 119));
+        frameLayout.addView(this.W, w7.z5.e(-1, -1, 119));
         this.actionBar.setAdaptiveBackground(this.W);
         if (this.I && this.K) {
             this.X = true;
@@ -967,7 +967,7 @@ public final class ws extends org.telegram.ui.ActionBar.m2 implements Notificati
     }
 
     @Override // org.telegram.ui.Components.h50
-    public final /* synthetic */ kv0 getCloseIntoObject() {
+    public final /* synthetic */ jv0 getCloseIntoObject() {
         return null;
     }
 

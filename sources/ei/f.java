@@ -16,7 +16,7 @@ import s4.b0;
 import s4.b1;
 import zh.p7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class f extends u20 {
     public final /* synthetic */ int K0 = 0;
@@ -30,7 +30,7 @@ public final class f extends u20 {
         this.L0 = new v0();
     }
 
-    @Override // org.telegram.ui.Components.md0, r0.m
+    @Override // org.telegram.ui.Components.md0, r0.l
     public final void E(ViewGroup viewGroup, int i10, int i11, int[] iArr, int i12) {
         k kVar;
         int i13;
@@ -152,12 +152,12 @@ public final class f extends u20 {
         }
     }
 
-    @Override // org.telegram.ui.Components.md0, r0.m
+    @Override // org.telegram.ui.Components.md0, r0.l
     public final void b(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14) {
         int i15 = this.K0;
     }
 
-    @Override // org.telegram.ui.Components.md0, r0.n
+    @Override // org.telegram.ui.Components.md0, r0.m
     public final void i(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14, int[] iArr) {
         switch (this.K0) {
             case 0:
@@ -196,7 +196,7 @@ public final class f extends u20 {
         }
     }
 
-    @Override // org.telegram.ui.Components.md0, r0.m
+    @Override // org.telegram.ui.Components.md0, r0.l
     public final void n(int i10, View view) {
         switch (this.K0) {
             case 0:
@@ -213,7 +213,7 @@ public final class f extends u20 {
         int i10 = this.K0;
     }
 
-    @Override // org.telegram.ui.Components.md0, r0.m
+    @Override // org.telegram.ui.Components.md0, r0.l
     public final boolean p(View view, View view2, int i10, int i11) {
         switch (this.K0) {
             case 0:
@@ -228,7 +228,7 @@ public final class f extends u20 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.md0, r0.m
+    @Override // org.telegram.ui.Components.md0, r0.l
     public final void s(View view, View view2, int i10, int i11) {
         switch (this.K0) {
             case 0:

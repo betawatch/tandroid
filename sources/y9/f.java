@@ -17,9 +17,9 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.ui.po0;
+import org.telegram.ui.no0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class f {
     public static final Charset b = Charset.forName("UTF-8");
@@ -63,7 +63,7 @@ public final class f {
         JSONArray jSONArray = new JSONArray();
         for (int i10 = 0; i10 < list.size(); i10++) {
             try {
-                jSONArray.put(new JSONObject(l.a.N(list.get(i10))));
+                jSONArray.put(new JSONObject(l.a.b1(list.get(i10))));
             } catch (JSONException e) {
                 Log.w("FirebaseCrashlytics", "Exception parsing rollout assignment!", e);
             }
@@ -249,9 +249,9 @@ public final class f {
         BufferedWriter bufferedWriter2 = null;
         try {
             try {
-                po0 po0Var = new po0();
-                po0Var.put("userId", str2);
-                obj = po0Var.toString();
+                no0 no0Var = new no0();
+                no0Var.put("userId", str2);
+                obj = no0Var.toString();
                 bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(b10), b));
             } catch (Exception e) {
                 e = e;

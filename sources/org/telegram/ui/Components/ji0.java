@@ -11,7 +11,7 @@ import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ji0 extends z9 implements lw0 {
     public final int G;
@@ -58,8 +58,8 @@ public final class ji0 extends z9 implements lw0 {
         Path path = pi0Var.M0;
         ArrayList arrayList = pi0Var.b1;
         RectF rectF = pi0Var.N0;
-        org.telegram.ui.wv0 wv0Var = pi0Var.h1;
-        if (wv0Var == null || !wv0Var.n) {
+        org.telegram.ui.vv0 vv0Var = pi0Var.h1;
+        if (vv0Var == null || !vv0Var.n) {
             if (this.H != null) {
                 int k10 = pi0Var.D0.k(this.M);
                 if (pi0Var.i1) {
@@ -95,7 +95,7 @@ public final class ji0 extends z9 implements lw0 {
                     ofFloat.setStartDelay(j10);
                     this.I.setDuration((long) (this.J * 250.0f));
                     this.I.setInterpolator(es.f);
-                    this.I.addUpdateListener(new g80(this, 5));
+                    this.I.addUpdateListener(new f80(this, 5));
                     this.I.addListener(new fi.v2(this, k10, 9));
                     this.I.start();
                 }
@@ -143,7 +143,7 @@ public final class ji0 extends z9 implements lw0 {
             RadialProgress2 radialProgress2 = this.H;
             int i14 = this.G;
             int i15 = (i11 - currentActionBarHeight) - dp2;
-            radialProgress2.q((i10 - i14) / 2, i2.d.z(i15, i14, 2, currentActionBarHeight), (i10 + i14) / 2, ((i15 + i14) / 2) + currentActionBarHeight);
+            radialProgress2.q((i10 - i14) / 2, i2.d.C(i15, i14, 2, currentActionBarHeight), (i10 + i14) / 2, ((i15 + i14) / 2) + currentActionBarHeight);
         }
     }
 

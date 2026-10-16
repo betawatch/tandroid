@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ic1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class z8 extends ow0 {
     public float A0;
@@ -136,9 +136,9 @@ public final class z8 extends ow0 {
             if (h9Var.U) {
                 h9Var.i0(0.0f, false);
                 h9Var.a.setExpanded(false);
-                addView(h9Var.a, 0, w7.a6.d(-1.0f, -1));
+                addView(h9Var.a, 0, w7.z5.d(-1.0f, -1));
             } else {
-                h9Var.r.addView(h9Var.a, 0, w7.a6.d(-2.0f, -1));
+                h9Var.r.addView(h9Var.a, 0, w7.z5.d(-2.0f, -1));
             }
             AndroidUtilities.requestAdjustResize(h9Var.getParentActivity(), h9Var.getClassGuid());
         }

@@ -12,9 +12,9 @@ import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.x5;
 import org.telegram.ui.Components.z9;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class e extends FrameLayout implements x5 {
     public final z9 a;
@@ -28,19 +28,19 @@ public final class e extends FrameLayout implements x5 {
         z9 z9Var = new z9(context);
         this.a = z9Var;
         z9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-        addView(z9Var, a6.a(72.0f, 0.0f, 36.0f, 0.0f, 0.0f, 72, 49));
+        addView(z9Var, z5.a(72.0f, 0.0f, 36.0f, 0.0f, 0.0f, 72, 49));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 20.0f);
         textView.setGravity(17);
-        addView(textView, a6.a(-2.0f, 24.0f, 123.0f, 24.0f, 0.0f, -1, 49));
+        addView(textView, z5.a(-2.0f, 24.0f, 123.0f, 24.0f, 0.0f, -1, 49));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setTextSize(1, 14.0f);
         textView2.setGravity(17);
         textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        addView(textView2, a6.a(-2.0f, 32.0f, 157.0f, 32.0f, 0.0f, -1, 49));
+        addView(textView2, z5.a(-2.0f, 32.0f, 157.0f, 32.0f, 0.0f, -1, 49));
         d();
     }
 

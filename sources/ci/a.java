@@ -4,15 +4,15 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
-import org.telegram.ui.Components.k91;
+import org.telegram.ui.Components.l91;
 import org.telegram.ui.Components.ms0;
 import org.telegram.ui.Components.rs0;
 import org.telegram.ui.Components.ss0;
 import org.telegram.ui.Components.xv0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class a extends k91 {
+public final class a extends l91 {
     public final /* synthetic */ int T = 0;
     public Object U;
     public final /* synthetic */ FrameLayout V;
@@ -24,7 +24,7 @@ public final class a extends k91 {
         this.U = rs0Var;
     }
 
-    @Override // org.telegram.ui.Components.k91
+    @Override // org.telegram.ui.Components.l91
     public boolean i(MotionEvent motionEvent) {
         switch (this.T) {
             case 0:
@@ -34,7 +34,7 @@ public final class a extends k91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.k91
+    @Override // org.telegram.ui.Components.l91
     public final void w(boolean z10) {
         switch (this.T) {
             case 0:
@@ -42,18 +42,18 @@ public final class a extends k91 {
                 String currentLang = ms0Var.getCurrentLang();
                 if (!TextUtils.equals((String) this.U, currentLang)) {
                     this.U = currentLang;
-                    ms0Var.G.L0();
+                    ms0Var.G.M0();
                     break;
                 }
                 break;
             default:
                 rs0 rs0Var = (rs0) this.U;
-                rs0Var.d.J0(((ss0) this.V).n.getAnimatingIndicatorProgress());
+                rs0Var.d.K0(((ss0) this.V).n.getAnimatingIndicatorProgress());
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.k91
+    @Override // org.telegram.ui.Components.l91
     public void x(int i10) {
         switch (this.T) {
             case 0:
@@ -61,14 +61,14 @@ public final class a extends k91 {
                 String currentLang = ms0Var.getCurrentLang();
                 if (!TextUtils.equals((String) this.U, currentLang)) {
                     this.U = currentLang;
-                    ms0Var.G.L0();
+                    ms0Var.G.M0();
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.k91
+    @Override // org.telegram.ui.Components.l91
     public void y(int i10, boolean z10) {
         switch (this.T) {
             case 1:
@@ -76,7 +76,7 @@ public final class a extends k91 {
                 int i11 = ((ss0) this.V).n.b0.get(i10, -1);
                 xv0 xv0Var = rs0Var.d;
                 if (i11 > 0) {
-                    xv0.t(xv0Var, xv0Var.i1(i11).a, z10);
+                    xv0.t(xv0Var, xv0Var.j1(i11).a, z10);
                     break;
                 } else {
                     xv0.t(xv0Var, 8, z10);
@@ -88,7 +88,7 @@ public final class a extends k91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.k91
+    @Override // org.telegram.ui.Components.l91
     public final void z(int i10) {
         switch (this.T) {
             case 0:
@@ -96,14 +96,14 @@ public final class a extends k91 {
                 String currentLang = ms0Var.getCurrentLang();
                 if (!TextUtils.equals((String) this.U, currentLang)) {
                     this.U = currentLang;
-                    ms0Var.G.L0();
+                    ms0Var.G.M0();
                     break;
                 }
                 break;
             default:
                 rs0 rs0Var = (rs0) this.U;
                 ((ss0) this.V).n.b0.get(i10, -1);
-                rs0Var.d.J0(1.0f);
+                rs0Var.d.K0(1.0f);
                 break;
         }
     }

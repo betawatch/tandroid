@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.voip.m2;
+import org.telegram.ui.Components.voip.r2;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class t1 {
     public s1 a;
@@ -20,7 +20,7 @@ public final class t1 {
     public final void b(UUID uuid, Runnable runnable) {
         this.b.put(uuid, runnable);
         this.c.add(uuid);
-        AndroidUtilities.runOnUIThread(new m2(this, 18));
+        AndroidUtilities.runOnUIThread(new r2(this, 18));
     }
 
     public final void c() {
@@ -35,6 +35,6 @@ public final class t1 {
         hashMap.remove(uuid);
         arrayList.remove(size);
         runnable.run();
-        AndroidUtilities.runOnUIThread(new m2(this, 18));
+        AndroidUtilities.runOnUIThread(new r2(this, 18));
     }
 }

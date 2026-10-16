@@ -1,29 +1,22 @@
 package m4;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+import android.os.Binder;
+import android.os.IBinder;
+import android.os.IInterface;
+
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class p {
-    public static final String d;
-    public static final String e;
-    public static final String f;
-    public static final String g;
-    public final int a;
-    public final long b;
-    public final r1 c;
-
-    static {
-        String str = e2.m0.a;
-        d = Integer.toString(0, 36);
-        e = Integer.toString(1, 36);
-        Integer.toString(2, 36);
-        Integer.toString(3, 36);
-        f = Integer.toString(4, 36);
-        g = Integer.toString(5, 36);
-    }
-
-    public p(int i10, long j10, r1 r1Var) {
-        this.a = i10;
-        this.b = j10;
-        this.c = r1Var;
+public abstract class p extends Binder implements l {
+    public static l F0(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
+        }
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("androidx.media3.session.IMediaController");
+        if (queryLocalInterface != null && (queryLocalInterface instanceof l)) {
+            return (l) queryLocalInterface;
+        }
+        k kVar = new k();
+        kVar.a = iBinder;
+        return kVar;
     }
 }

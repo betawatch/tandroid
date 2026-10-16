@@ -5,7 +5,7 @@ import org.telegram.messenger.MrzRecognizer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class z81 implements y9 {
     public TLObject a = null;
@@ -47,15 +47,15 @@ public final class z81 implements y9 {
     }
 
     @Override // org.telegram.ui.y9
-    public final boolean e1(String str, o9 o9Var) {
+    public final boolean d1(String str, o9 o9Var) {
         this.a = null;
         this.b = null;
-        AndroidUtilities.runOnUIThread(new uf0(this, str, o9Var, 29), 750L);
+        AndroidUtilities.runOnUIThread(new tf0(this, str, o9Var, 29), 750L);
         return true;
     }
 
     @Override // org.telegram.ui.y9
-    public final /* synthetic */ void W0(MrzRecognizer.Result result) {
+    public final /* synthetic */ void V0(MrzRecognizer.Result result) {
     }
 
     @Override // org.telegram.ui.y9

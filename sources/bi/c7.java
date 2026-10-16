@@ -5,9 +5,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class c7 extends FrameLayout implements r0.n {
+public final class c7 extends FrameLayout implements r0.m {
     public final b2.v0 a;
     public final /* synthetic */ e7 b;
 
@@ -18,7 +18,7 @@ public final class c7 extends FrameLayout implements r0.n {
         this.a = new b2.v0();
     }
 
-    @Override // r0.m
+    @Override // r0.l
     public final void E(ViewGroup viewGroup, int i10, int i11, int[] iArr, int i12) {
         e7 e7Var = this.b;
         sb sbVar = e7Var.r;
@@ -47,7 +47,7 @@ public final class c7 extends FrameLayout implements r0.n {
         }
     }
 
-    @Override // r0.n
+    @Override // r0.m
     public final void i(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14, int[] iArr) {
         e7 e7Var = this.b;
         sb sbVar = e7Var.r;
@@ -70,22 +70,22 @@ public final class c7 extends FrameLayout implements r0.n {
         }
     }
 
-    @Override // r0.m
+    @Override // r0.l
     public final void n(int i10, View view) {
         this.a.a = 0;
     }
 
-    @Override // r0.m
+    @Override // r0.l
     public final boolean p(View view, View view2, int i10, int i11) {
         return this.b.x <= 0 && i10 == 2;
     }
 
-    @Override // r0.m
+    @Override // r0.l
     public final void s(View view, View view2, int i10, int i11) {
         this.a.a = i10;
     }
 
-    @Override // r0.m
+    @Override // r0.l
     public final void b(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14) {
     }
 }

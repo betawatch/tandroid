@@ -1,49 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import java.util.Map;
-import org.telegram.messenger.secretmedia.ExtendedDefaultDataSource;
+import android.content.Context;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class c81 implements g2.h {
-    public final g2.h a;
-    public final long b;
+public final class c81 extends i2.k {
+    public final /* synthetic */ i81 d;
 
-    public c81(ExtendedDefaultDataSource extendedDefaultDataSource, long j10) {
-        this.a = extendedDefaultDataSource;
-        this.b = j10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c81(Context context, i81 i81Var) {
+        super(context);
+        this.d = i81Var;
     }
 
-    @Override // g2.h
-    public final void addTransferListener(g2.c0 c0Var) {
-        this.a.addTransferListener(c0Var);
-    }
-
-    @Override // g2.h
-    public final void close() {
-        this.a.close();
-    }
-
-    @Override // g2.h
-    public final Map getResponseHeaders() {
-        return this.a.getResponseHeaders();
-    }
-
-    @Override // g2.h
-    public final Uri getUri() {
-        return this.a.getUri();
-    }
-
-    @Override // g2.h
-    public final long open(g2.m mVar) {
-        g2.l a2 = mVar.a();
-        a2.b = mVar.e + this.b;
-        return this.a.open(a2.d());
-    }
-
-    @Override // b2.p
-    public final int read(byte[] bArr, int i10, int i11) {
-        return this.a.read(bArr, i10, i11);
+    @Override // i2.k
+    public final k2.s0 a(Context context) {
+        bi.p5 p5Var = new bi.p5(context);
+        p5Var.d = new androidx.biometric.e(new c2.n[]{new k2.a1(new h81(this.d))});
+        return p5Var.a();
     }
 }

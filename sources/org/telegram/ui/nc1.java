@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class nc1 extends FrameLayout {
     public final org.telegram.ui.Cells.ga a;
@@ -36,14 +36,14 @@ public final class nc1 extends FrameLayout {
         this.b = gp0Var;
         gp0Var.setReportChanges(true);
         gp0Var.setSeparatorsCount(19);
-        gp0Var.setDelegate(new pw0(this, 4));
+        gp0Var.setDelegate(new ow0(this, 4));
         gp0Var.setImportantForAccessibility(2);
-        addView(gp0Var, w7.a6.a(38.0f, 5.0f, 5.0f, 39.0f, 0.0f, -1, 51));
+        addView(gp0Var, w7.z5.a(38.0f, 5.0f, 5.0f, 39.0f, 0.0f, -1, 51));
         b5Var = ((org.telegram.ui.ActionBar.m2) themeActivity).parentLayout;
         org.telegram.ui.Cells.ga gaVar = new org.telegram.ui.Cells.ga(context, b5Var, 0);
         this.a = gaVar;
         gaVar.setImportantForAccessibility(4);
-        addView(gaVar, w7.a6.a(-2.0f, 0.0f, 53.0f, 0.0f, 0.0f, -1, 51));
+        addView(gaVar, w7.z5.a(-2.0f, 0.0f, 53.0f, 0.0f, 0.0f, -1, 51));
     }
 
     @Override // android.view.View

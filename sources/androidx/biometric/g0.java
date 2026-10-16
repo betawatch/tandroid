@@ -18,7 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class g0 extends androidx.fragment.app.o {
     public final Handler A0 = new Handler(Looper.getMainLooper());
@@ -94,9 +94,9 @@ public class g0 extends androidx.fragment.app.o {
         bVar.f = charSequence;
         bVar.g = yVar;
         bVar.k = inflate;
-        g.f g10 = c0Var.g();
-        g10.setCanceledOnTouchOutside(false);
-        return g10;
+        g.f d = c0Var.d();
+        d.setCanceledOnTouchOutside(false);
+        return d;
     }
 
     public final int P(int i10) {
@@ -128,18 +128,17 @@ public class g0 extends androidx.fragment.app.o {
         super.z(bundle);
         androidx.fragment.app.u k10 = k();
         if (k10 != null) {
-            z zVar = (z) new e(k10).m(z.class);
+            z zVar = (z) new e(k10).k(z.class);
             this.C0 = zVar;
             if (zVar.z == null) {
                 zVar.z = new androidx.lifecycle.z();
             }
-            int i10 = 4;
-            zVar.z.d(this, new qb.c(this, i10));
+            zVar.z.d(this, new a6.m(this, 3));
             z zVar2 = this.C0;
             if (zVar2.A == null) {
                 zVar2.A = new androidx.lifecycle.z();
             }
-            zVar2.A.d(this, new ya.c(this, i10));
+            zVar2.A.d(this, new ya.c(this, 4));
         }
         if (Build.VERSION.SDK_INT >= 26) {
             this.D0 = P(f0.a());

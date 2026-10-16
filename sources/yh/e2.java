@@ -6,13 +6,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.j91;
+import org.telegram.ui.Components.k91;
 import org.telegram.ui.Components.ns0;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.ProfileActivity;
 import zh.e5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -45,9 +45,9 @@ public final /* synthetic */ class e2 implements Utilities.Callback {
                 arrayList.add(savedStarGift);
                 e5Var.a(i12, arrayList);
                 ns0Var.f(true);
-                j91 j91Var = ns0Var.n;
+                k91 k91Var = ns0Var.n;
                 int i13 = tL_starGiftCollection.collection_id;
-                j91Var.d(i13, ns0Var.e.f(i13) + 1);
+                k91Var.d(i13, ns0Var.e.f(i13) + 1);
                 org.telegram.ui.ActionBar.m2 m2Var2 = ns0Var.a;
                 if (m2Var2 instanceof ProfileActivity) {
                     ((ProfileActivity) m2Var2).G4(true);

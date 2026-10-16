@@ -7,7 +7,7 @@ import android.service.media.MediaBrowserService;
 import android.widget.Toast;
 import java.util.List;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class MusicBrowserService extends MediaBrowserService {
     private static final String MEDIA_ID_ROOT = "__ROOT__";
@@ -40,7 +40,7 @@ public class MusicBrowserService extends MediaBrowserService {
         TelegramMediaSession telegramMediaSession = TelegramMediaSession.getInstance(this);
         if (!telegramMediaSession.isPasscodeLocked()) {
             result.detach();
-            telegramMediaSession.loadBrowseChildren(str, new e0(result, 8));
+            telegramMediaSession.loadBrowseChildren(str, new d0(result, 8));
         } else {
             Toast.makeText(getApplicationContext(), LocaleController.getString(R.string.EnterYourTelegramPasscode), 1).show();
             stopSelf();

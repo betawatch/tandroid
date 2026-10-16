@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class g0 extends a0 implements org.telegram.ui.ActionBar.x5 {
     public e0 E;
@@ -44,7 +44,7 @@ public final class g0 extends a0 implements org.telegram.ui.ActionBar.x5 {
         this.v = linearLayout;
         linearLayout.setOrientation(0);
         horizontalScrollView.addView(linearLayout, new FrameLayout.LayoutParams(-2, -1));
-        addView(horizontalScrollView, w7.a6.e(-1, -1, 23));
+        addView(horizontalScrollView, w7.z5.e(-1, -1, 23));
         z1 z1Var = new z1(context, R.drawable.msg_add, c6Var);
         z1Var.e = 19;
         z1Var.d();
@@ -70,7 +70,7 @@ public final class g0 extends a0 implements org.telegram.ui.ActionBar.x5 {
                         if (e0Var != null && (aVar = g0Var.a) != null) {
                             x3 x3Var = ((p3) e0Var).a;
                             x3Var.p3(false);
-                            x3Var.f3.h(new u3(x3Var, aVar, -1), view);
+                            x3Var.f3.i(new u3(x3Var, aVar, -1), view);
                             break;
                         }
                         break;
@@ -80,14 +80,14 @@ public final class g0 extends a0 implements org.telegram.ui.ActionBar.x5 {
                         if (e0Var2 != null && (aVar2 = g0Var2.a) != null) {
                             x3 x3Var2 = ((p3) e0Var2).a;
                             x3Var2.p3(false);
-                            x3Var2.f3.h(new u3(x3Var2, aVar2, -1), view);
+                            x3Var2.f3.i(new u3(x3Var2, aVar2, -1), view);
                             break;
                         }
                         break;
                 }
             }
         });
-        addView(z1Var, w7.a6.e(38, 38, 21));
+        addView(z1Var, w7.z5.e(38, 38, 21));
         TextView textView = new TextView(context);
         this.x = textView;
         textView.setText(LocaleController.getString(R.string.RichEditorAddButton));
@@ -115,7 +115,7 @@ public final class g0 extends a0 implements org.telegram.ui.ActionBar.x5 {
                         if (e0Var != null && (aVar = g0Var.a) != null) {
                             x3 x3Var = ((p3) e0Var).a;
                             x3Var.p3(false);
-                            x3Var.f3.h(new u3(x3Var, aVar, -1), view);
+                            x3Var.f3.i(new u3(x3Var, aVar, -1), view);
                             break;
                         }
                         break;
@@ -125,14 +125,14 @@ public final class g0 extends a0 implements org.telegram.ui.ActionBar.x5 {
                         if (e0Var2 != null && (aVar2 = g0Var2.a) != null) {
                             x3 x3Var2 = ((p3) e0Var2).a;
                             x3Var2.p3(false);
-                            x3Var2.f3.h(new u3(x3Var2, aVar2, -1), view);
+                            x3Var2.f3.i(new u3(x3Var2, aVar2, -1), view);
                             break;
                         }
                         break;
                 }
             }
         });
-        addView(textView, w7.a6.e(-2, 38, 17));
+        addView(textView, w7.z5.e(-2, 38, 17));
         j();
     }
 
@@ -190,7 +190,7 @@ public final class g0 extends a0 implements org.telegram.ui.ActionBar.x5 {
                 while (i10 < size) {
                     d0 d0Var = new d0(this, getContext(), pageblockbuttonrow.buttons.get(i10), i10);
                     arrayList2.add(d0Var);
-                    linearLayout.addView(d0Var, w7.a6.t(-2, -1, 16, i10 == 0 ? 0 : 7, 0, 0, 0));
+                    linearLayout.addView(d0Var, w7.z5.t(-2, -1, 16, i10 == 0 ? 0 : 7, 0, 0, 0));
                     i10++;
                 }
                 boolean z10 = size >= 8;

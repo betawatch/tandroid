@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class y6 extends FrameLayout {
     public final org.telegram.ui.Components.s6 a;
@@ -25,12 +25,12 @@ public final class y6 extends FrameLayout {
         this.a = s6Var;
         s6Var.getDrawable().r(true, true);
         s6Var.setTextSize(AndroidUtilities.dp(15.0f));
-        addView(s6Var, w7.a6.i(-1.0f, -1.0f, 8388627, 22.0f, 0.0f, 58.0f, 0.0f));
+        addView(s6Var, w7.z5.i(-1.0f, -1.0f, 8388627, 22.0f, 0.0f, 58.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setImageResource(R.drawable.arrow_more);
-        addView(imageView, w7.a6.i(24.0f, 24.0f, 8388629, 0.0f, 0.0f, 17.0f, 0.0f));
+        addView(imageView, w7.z5.i(24.0f, 24.0f, 8388629, 0.0f, 0.0f, 17.0f, 0.0f));
     }
 
     @Override // android.view.ViewGroup, android.view.View

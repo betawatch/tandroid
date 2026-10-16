@@ -1,22 +1,47 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class y1 {
-    public final String a;
-    public final String b;
-    public final String c;
-    public final String d;
-    public TL_wallet.tonConnectSession e;
-    public boolean f;
+public final class y1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ a2 c;
+    public final /* synthetic */ i2 d;
 
-    public y1(TL_wallet.tonConnectSession tonconnectsession, String str, String str2, String str3, String str4) {
-        this.e = tonconnectsession;
-        this.a = str;
-        this.b = str2;
-        this.c = str3;
-        this.d = str4;
+    public /* synthetic */ y1(boolean[] zArr, a2 a2Var, i2 i2Var, int i10) {
+        this.a = i10;
+        this.b = zArr;
+        this.c = a2Var;
+        this.d = i2Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                if (!this.b[0]) {
+                    if (!this.c.m) {
+                        this.d.dismiss();
+                        break;
+                    } else {
+                        AndroidUtilities.runOnUIThread(this, 1000L);
+                        break;
+                    }
+                }
+                break;
+            default:
+                if (!this.b[0]) {
+                    if (!this.c.m) {
+                        this.d.dismiss();
+                        break;
+                    } else {
+                        AndroidUtilities.runOnUIThread(this, 1000L);
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

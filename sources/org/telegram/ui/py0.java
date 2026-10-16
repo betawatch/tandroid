@@ -16,9 +16,9 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class py0 implements org.telegram.ui.ActionBar.z1, MessagesStorage.BooleanCallback, r0.o, org.telegram.ui.Components.di0, org.telegram.ui.Components.cm0, FlagSecureReason.FlagSecureCondition, ne.d, e70, org.telegram.ui.Components.gx0 {
+public final /* synthetic */ class py0 implements org.telegram.ui.ActionBar.z1, MessagesStorage.BooleanCallback, r0.n, org.telegram.ui.Components.di0, org.telegram.ui.Components.cm0, FlagSecureReason.FlagSecureCondition, ne.d, e70, org.telegram.ui.Components.gx0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ ProfileActivity b;
 
@@ -27,7 +27,7 @@ public final /* synthetic */ class py0 implements org.telegram.ui.ActionBar.z1, 
         this.b = profileActivity;
     }
 
-    @Override // r0.o
+    @Override // r0.n
     public r0.l1 Q0(View view, r0.l1 l1Var) {
         int i10 = l1Var.a.f(519).d;
         ProfileActivity profileActivity = this.b;
@@ -41,9 +41,9 @@ public final /* synthetic */ class py0 implements org.telegram.ui.ActionBar.z1, 
                 profileActivity.s5.setLayoutParams(marginLayoutParams);
             }
         }
-        r01 r01Var = profileActivity.O;
-        if (r01Var != null) {
-            r01Var.setPagesPaddingBottom(profileActivity.l6 + profileActivity.j6);
+        q01 q01Var = profileActivity.O;
+        if (q01Var != null) {
+            q01Var.setPagesPaddingBottom(profileActivity.l6 + profileActivity.j6);
             org.telegram.ui.Components.ns0 ns0Var = profileActivity.O.V;
             if (ns0Var != null) {
                 ns0Var.setButtonOffset(profileActivity.l6 + profileActivity.k6);
@@ -114,7 +114,7 @@ public final /* synthetic */ class py0 implements org.telegram.ui.ActionBar.z1, 
                 hashSet.add(Long.valueOf(profileActivity.u2.participants.participants.get(i11).user_id));
             }
         }
-        profileActivity.getMessagesController().addUsersToChat(profileActivity.E2, profileActivity, arrayList, i10, new j3(arrayList2, 5), new j3(profileActivity, 6), new uf0(profileActivity, arrayList2, hashSet, 23));
+        profileActivity.getMessagesController().addUsersToChat(profileActivity.E2, profileActivity, arrayList, i10, new j3(arrayList2, 5), new j3(profileActivity, 6), new tf0(profileActivity, arrayList2, hashSet, 23));
     }
 
     @Override // ne.d
@@ -145,6 +145,6 @@ public final /* synthetic */ class py0 implements org.telegram.ui.ActionBar.z1, 
     }
 
     @Override // ne.d
-    public /* synthetic */ void C(float f7, int i10) {
+    public /* synthetic */ void A(float f7, int i10) {
     }
 }

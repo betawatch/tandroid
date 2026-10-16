@@ -32,27 +32,27 @@ import org.telegram.ui.ActionBar.z1;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.bm0;
 import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.t20;
 import org.telegram.ui.Components.ti;
+import org.telegram.ui.Components.um;
 import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.vm;
 import org.telegram.ui.Components.voip.d2;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.c10;
-import org.telegram.ui.em0;
+import org.telegram.ui.b10;
+import org.telegram.ui.cm0;
+import org.telegram.ui.fm0;
 import org.telegram.ui.fo;
-import org.telegram.ui.hm0;
 import org.telegram.ui.ht;
+import org.telegram.ui.k10;
 import org.telegram.ui.ka;
 import org.telegram.ui.kp;
-import org.telegram.ui.l10;
 import org.telegram.ui.mp;
 import org.telegram.ui.n9;
-import org.telegram.ui.un0;
+import org.telegram.ui.sn0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i implements Continuation, z1, bm0, ht, androidx.car.app.utils.c {
     public final /* synthetic */ int a;
@@ -114,9 +114,9 @@ public final /* synthetic */ class i implements Continuation, z1, bm0, ht, andro
                 return;
             }
             int i12 = Build.VERSION.SDK_INT;
-            vm vmVar = chatAttachAlertPhotoLayout.G;
+            um umVar = chatAttachAlertPhotoLayout.G;
             try {
-                if (vmVar.d && chatAttachAlertPhotoLayout.T0 == chatAttachAlertPhotoLayout.U0 && i11 == 0 && chatAttachAlertPhotoLayout.O0) {
+                if (umVar.d && chatAttachAlertPhotoLayout.T0 == chatAttachAlertPhotoLayout.U0 && i11 == 0 && chatAttachAlertPhotoLayout.O0) {
                     R.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 18);
                     return;
                 }
@@ -130,7 +130,7 @@ public final /* synthetic */ class i implements Continuation, z1, bm0, ht, andro
                         return;
                     }
                 }
-                boolean z11 = vmVar.f;
+                boolean z11 = umVar.f;
                 if (z11 && i11 == chatAttachAlertPhotoLayout.M0) {
                     chatAttachAlertPhotoLayout.i0();
                     return;
@@ -162,14 +162,14 @@ public final /* synthetic */ class i implements Continuation, z1, bm0, ht, andro
                     return;
                 }
                 ti tiVar = viVar.c2;
-                if (tiVar != null && tiVar.p0() && (allPhotosArray.get(i11) instanceof MediaController.PhotoEntry)) {
+                if (tiVar != null && tiVar.r0() && (allPhotosArray.get(i11) instanceof MediaController.PhotoEntry)) {
                     MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) allPhotosArray.get(i11);
                     hashMap.clear();
                     if (photoEntry != null) {
                         chatAttachAlertPhotoLayout.Q(photoEntry, -1);
                     }
                     viVar.a1();
-                    viVar.c2.g0(7, true, true, 0, 0, 0L, viVar.u1(), false, 0L);
+                    viVar.c2.b0(7, true, true, 0, 0, 0L, viVar.u1(), false, 0L);
                     hashMap.clear();
                     ChatAttachAlertPhotoLayout.r1.clear();
                     arrayList.clear();
@@ -196,7 +196,7 @@ public final /* synthetic */ class i implements Continuation, z1, bm0, ht, andro
                     }
                     i13 = 0;
                 }
-                if (!viVar.c2.x()) {
+                if (!viVar.c2.w()) {
                     AndroidUtilities.hideKeyboard(R.getFragmentView().findFocus());
                     AndroidUtilities.hideKeyboard(viVar.getContainer().findFocus());
                 }
@@ -231,7 +231,7 @@ public final /* synthetic */ class i implements Continuation, z1, bm0, ht, andro
         switch (this.a) {
             case 1:
                 ig.a0 a0Var = (ig.a0) this.c;
-                (!this.b ? a0Var.k : a0Var.j).remove(Long.valueOf(((l61) this.d).x));
+                (!this.b ? a0Var.k : a0Var.j).remove(Long.valueOf(((m61) this.d).x));
                 a0Var.e.run();
                 break;
             case 2:
@@ -274,27 +274,27 @@ public final /* synthetic */ class i implements Continuation, z1, bm0, ht, andro
             case 6:
             case 8:
             default:
-                un0 un0Var = (un0) this.c;
+                sn0 sn0Var = (sn0) this.c;
                 TLRPC.TL_secureRequiredType tL_secureRequiredType = (TLRPC.TL_secureRequiredType) this.d;
                 boolean z14 = this.b;
-                un0Var.x1();
-                un0Var.i1(tL_secureRequiredType, null, null, true, new em0(un0Var, 4), new hm0(un0Var, 6), z14);
+                sn0Var.x1();
+                sn0Var.i1(tL_secureRequiredType, null, null, true, new cm0(sn0Var, 4), new fm0(sn0Var, 6), z14);
                 break;
             case 7:
-                l10 l10Var = (l10) this.c;
-                c10 c10Var = (c10) this.d;
+                k10 k10Var = (k10) this.c;
+                b10 b10Var = (b10) this.d;
                 boolean z15 = this.b;
-                int i11 = c10Var.j;
+                int i11 = b10Var.j;
                 if (i11 > 0) {
-                    l10Var.y &= ~i11;
+                    k10Var.y &= ~i11;
                 } else {
-                    (z15 ? l10Var.F : l10Var.G).remove(Long.valueOf(c10Var.h));
+                    (z15 ? k10Var.F : k10Var.G).remove(Long.valueOf(b10Var.h));
                 }
-                l10Var.j0();
-                l10Var.w0();
-                l10Var.i0(true);
+                k10Var.j0();
+                k10Var.w0();
+                k10Var.i0(true);
                 if (z15) {
-                    l10Var.n0(1, false);
+                    k10Var.n0(1, false);
                     break;
                 }
                 break;

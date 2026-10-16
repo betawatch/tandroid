@@ -54,7 +54,7 @@ import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class sb implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.i2, tf.a {
     public static boolean A1;
@@ -367,7 +367,7 @@ public final class sb implements NotificationCenter.NotificationCenterDelegate, 
             ib ibVar2 = new ib(this, this.h, context, this, this.y);
             this.n0 = ibVar2;
             ibVar2.setDelegate(new jb(this, o8Var, arrayList, context));
-            this.v.addView(this.n0, w7.a6.e(-1, -1, 1));
+            this.v.addView(this.n0, w7.z5.e(-1, -1, 1));
             this.y0 = new org.telegram.ui.n4(context);
             if (this.a) {
                 SurfaceView surfaceView = new SurfaceView(context);
@@ -392,7 +392,7 @@ public final class sb implements NotificationCenter.NotificationCenterDelegate, 
             y9Var.e = new org.telegram.ui.Components.g6(y9Var);
             paint.setColor(-1);
             this.d1 = y9Var;
-            this.v.addView(y9Var, w7.a6.a(-1.0f, 4.0f, 0.0f, 4.0f, 0.0f, -1, 0));
+            this.v.addView(y9Var, w7.z5.a(-1.0f, 4.0f, 0.0f, 4.0f, 0.0f, -1, 0));
         }
         di.j4 j4Var2 = this.D0;
         if (j4Var2 != null) {
@@ -429,8 +429,8 @@ public final class sb implements NotificationCenter.NotificationCenterDelegate, 
         this.c = this.b && R != null && R.isSupportEdgeToEdge();
         hb hbVar = this.v;
         a1.c cVar = new a1.c(this, 11);
-        WeakHashMap weakHashMap = r0.j0.a;
-        r0.b0.i(hbVar, cVar);
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.a0.i(hbVar, cVar);
         if (this.b) {
             AndroidUtilities.removeFromParent(this.s);
             this.s.setTag(R.id.sheet_attached_to_fragment_tag, new Object());
@@ -678,26 +678,26 @@ public final class sb implements NotificationCenter.NotificationCenterDelegate, 
                 b2Var.x = scaleGestureDetector;
                 scaleGestureDetector.setQuickScaleEnabled(false);
                 b2Var.x.setStylusScaleEnabled(false);
-                b2Var.y = new ji.d4(context, new x1(scaledTouchSlop));
+                b2Var.y = new ji.h5(context, new x1(scaledTouchSlop));
                 y1 y1Var = new y1(context, 0);
                 y1Var.b = new Path();
                 b2Var.e = y1Var;
                 z1 z1Var = new z1(context);
                 b2Var.d = z1Var;
-                z1Var.addView(b2Var.e, w7.a6.d(-1.0f, -1));
+                z1Var.addView(b2Var.e, w7.z5.d(-1.0f, -1));
                 b2Var.e.setOutlineProvider(new a2(i12));
                 b2Var.e.setClipToOutline(true);
                 b2Var.e.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.gg, false));
                 org.telegram.ui.Components.z9 z9Var = new org.telegram.ui.Components.z9(context);
                 b2Var.n = z9Var;
-                b2Var.e.addView(z9Var, w7.a6.d(-1.0f, -1));
+                b2Var.e.addView(z9Var, w7.z5.d(-1.0f, -1));
                 di.j4 j4Var = new di.j4(context, b2Var.w);
                 b2Var.f = j4Var;
                 j4Var.setAlpha(0.0f);
-                b2Var.e.addView(b2Var.f, w7.a6.d(-1.0f, -1));
+                b2Var.e.addView(b2Var.f, w7.z5.d(-1.0f, -1));
                 xn xnVar = new xn(context, i10);
                 b2Var.r = xnVar;
-                b2Var.e.addView(xnVar, w7.a6.d(-1.0f, -1));
+                b2Var.e.addView(xnVar, w7.z5.d(-1.0f, -1));
                 FrameLayout frameLayout = new FrameLayout(context);
                 b2Var.h = frameLayout;
                 frameLayout.setAlpha(0.0f);
@@ -706,7 +706,7 @@ public final class sb implements NotificationCenter.NotificationCenterDelegate, 
                 gradientDrawable.setColors(new int[]{1140850688, 0});
                 gradientDrawable.setOrientation(GradientDrawable.Orientation.TOP_BOTTOM);
                 view.setBackground(gradientDrawable);
-                b2Var.h.addView(view, w7.a6.d(-1.0f, -1));
+                b2Var.h.addView(view, w7.z5.d(-1.0f, -1));
                 int dp = AndroidUtilities.dp(8.0f);
                 ImageView imageView = new ImageView(context);
                 imageView.setImageResource(R.drawable.pip_video_close);
@@ -718,15 +718,15 @@ public final class sb implements NotificationCenter.NotificationCenterDelegate, 
                 imageView.setOnClickListener(new ah.f(i10));
                 float f7 = 38;
                 float f10 = 4;
-                b2Var.h.addView(imageView, w7.a6.a(f7, 0.0f, f10, f10, 0.0f, 38, 5));
+                b2Var.h.addView(imageView, w7.z5.a(f7, 0.0f, f10, f10, 0.0f, 38, 5));
                 ImageView imageView2 = new ImageView(context);
                 imageView2.setImageResource(R.drawable.pip_video_expand);
                 imageView2.setColorFilter(org.telegram.ui.ActionBar.g6.x0(null, i13, false));
                 imageView2.setBackground(org.telegram.ui.ActionBar.g6.g0(org.telegram.ui.ActionBar.g6.x0(null, i14, false), 1, -1));
                 imageView2.setPadding(dp, dp, dp, dp);
                 imageView2.setOnClickListener(new u1(i12, t1Var, context));
-                b2Var.h.addView(imageView2, w7.a6.a(f7, 0.0f, f10, 48, 0.0f, 38, 5));
-                b2Var.e.addView(b2Var.h, w7.a6.d(-1.0f, -1));
+                b2Var.h.addView(imageView2, w7.z5.a(f7, 0.0f, f10, 48, 0.0f, 38, 5));
+                b2Var.e.addView(b2Var.h, w7.z5.d(-1.0f, -1));
                 b2Var.b = (WindowManager) context.getSystemService("window");
                 WindowManager.LayoutParams b10 = uf.b.b(context, false);
                 b2Var.c = b10;
@@ -901,7 +901,7 @@ public final class sb implements NotificationCenter.NotificationCenterDelegate, 
                         pbVar.o = 0;
                         pbVar.j = null;
                         pbVar.k = 1.0f;
-                        if (!this.t0.H0(j10, this.U0, i11, storyItem == null ? -1 : storyItem.messageType, pbVar)) {
+                        if (!this.t0.G0(j10, this.U0, i11, storyItem == null ? -1 : storyItem.messageType, pbVar)) {
                             this.V0 = false;
                             this.O = 0.0f;
                             this.N = 0.0f;
@@ -1002,7 +1002,7 @@ public final class sb implements NotificationCenter.NotificationCenterDelegate, 
                 pbVar.o = 0;
                 pbVar.j = null;
                 pbVar.k = 1.0f;
-                if (!this.t0.H0(j10, this.U0, i11, storyItem == null ? -1 : storyItem.messageType, pbVar)) {
+                if (!this.t0.G0(j10, this.U0, i11, storyItem == null ? -1 : storyItem.messageType, pbVar)) {
                 }
             }
         }
@@ -1036,7 +1036,7 @@ public final class sb implements NotificationCenter.NotificationCenterDelegate, 
         pbVar.o = 0;
         pbVar.j = null;
         pbVar.k = 1.0f;
-        if (!this.t0.H0(j10, this.U0, i11, storyItem == null ? -1 : storyItem.messageType, pbVar)) {
+        if (!this.t0.G0(j10, this.U0, i11, storyItem == null ? -1 : storyItem.messageType, pbVar)) {
         }
     }
 

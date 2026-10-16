@@ -1,24 +1,66 @@
 package org.telegram.ui.Wallet;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes4.dex */
-public final class d0 {
-    public String a;
-    public g0 b;
-    public byte[] c;
-    public final /* synthetic */ j0 d;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Wallet.WalletEngine2;
+import org.telegram.ui.b31;
 
-    public d0(j0 j0Var) {
-        this.d = j0Var;
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class d0 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e0 b;
+
+    public /* synthetic */ d0(e0 e0Var, int i10) {
+        this.a = i10;
+        this.b = e0Var;
     }
 
-    public final void a() {
-        g0 g0Var = this.b;
-        this.b = null;
-        try {
-            this.d.R(g0Var, false, new c0(this, 0));
-        } finally {
-            g0Var.close();
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                WalletEngine2.ImportedWalletProof importedWalletProof = (WalletEngine2.ImportedWalletProof) obj;
+                String str = (String) obj2;
+                e0 e0Var = this.b;
+                k0 k0Var = e0Var.d;
+                if (importedWalletProof != null) {
+                    TL_wallet.disableBackup disablebackup = new TL_wallet.disableBackup();
+                    disablebackup.new_public_key = e0Var.c;
+                    TL_wallet.walletOwnershipProof walletownershipproof = new TL_wallet.walletOwnershipProof();
+                    disablebackup.proof = walletownershipproof;
+                    walletownershipproof.signature = importedWalletProof.signature;
+                    walletownershipproof.timestamp = importedWalletProof.timestamp;
+                    ConnectionsManager.getInstance(k0Var.a).sendRequestTyped(disablebackup, new org.telegram.messenger.a(), new d0(e0Var, 1));
+                    break;
+                } else {
+                    if (str == null) {
+                        str = "NULL_ERROR";
+                    }
+                    k0.i("disable backup: failed to prove challenge: ".concat(str));
+                    break;
+                }
+            default:
+                TL_wallet.WalletState walletState = (TL_wallet.WalletState) obj;
+                Object obj3 = (TLRPC.TL_error) obj2;
+                k0 k0Var2 = this.b.d;
+                if (walletState != null) {
+                    k0Var2.g0(walletState);
+                    k0Var2.O();
+                    AndroidUtilities.runOnUIThread(new b31(6), 1000L);
+                    break;
+                } else {
+                    StringBuilder sb2 = new StringBuilder("disable backup: failed to disable backup on server: ");
+                    if (obj3 == null) {
+                        obj3 = "NULL_ERROR";
+                    }
+                    sb2.append(obj3);
+                    k0.i(sb2.toString());
+                    break;
+                }
         }
     }
 }

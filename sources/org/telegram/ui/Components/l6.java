@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class l6 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final class l6 extends AnimatorListenerAdapter {
     public void onAnimationCancel(Animator animator) {
         switch (this.a) {
             case 12:
-                ((km) this.b).a.O = null;
+                ((jm) this.b).a.O = null;
                 break;
             default:
                 super.onAnimationCancel(animator);
@@ -144,9 +144,9 @@ public final class l6 extends AnimatorListenerAdapter {
                 okVar.X.I = null;
                 break;
             case 12:
-                km kmVar = (km) this.b;
-                if (animator.equals(kmVar.a.O)) {
-                    ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = kmVar.a;
+                jm jmVar = (jm) this.b;
+                if (animator.equals(jmVar.a.O)) {
+                    ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = jmVar.a;
                     chatAttachAlertPhotoLayout.c0 = true;
                     chatAttachAlertPhotoLayout.O = null;
                     break;
@@ -264,17 +264,17 @@ public final class l6 extends AnimatorListenerAdapter {
                 }
                 break;
             case 28:
-                m80 m80Var = (m80) this.b;
-                k80 k80Var = m80Var.x;
-                if (k80Var != null) {
-                    k80Var.setProgress(1.0f);
-                    m80Var.x.invalidate();
+                l80 l80Var = (l80) this.b;
+                j80 j80Var = l80Var.x;
+                if (j80Var != null) {
+                    j80Var.setProgress(1.0f);
+                    l80Var.x.invalidate();
                 }
-                m80Var.m0 = null;
+                l80Var.m0 = null;
                 break;
             default:
                 x00 x00Var = (x00) this.b;
-                ((w80) x00Var.e).E = false;
+                ((v80) x00Var.e).E = false;
                 TextView[] textViewArr = (TextView[]) x00Var.d;
                 TextView textView = textViewArr[0];
                 textViewArr[0] = textViewArr[1];

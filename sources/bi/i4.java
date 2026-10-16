@@ -15,7 +15,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.sc;
 import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i4 implements Utilities.Callback {
     public final /* synthetic */ int a = 1;
@@ -128,7 +128,7 @@ public final /* synthetic */ class i4 implements Utilities.Callback {
                     i10 = R.raw.error;
                     i11 = R.string.UnknownError;
                 }
-                org.telegram.messenger.q.r(i11, zcVar, i10, 36);
+                org.telegram.messenger.g0.q(i11, zcVar, i10, 36);
                 break;
             default:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj4;

@@ -2,12 +2,12 @@ package v3;
 
 import c3.b0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public interface h extends b0 {
-    long a();
+    long a(long j10);
 
-    long b(long j10);
+    long b();
 
     long c();
 

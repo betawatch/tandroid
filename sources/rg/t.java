@@ -8,9 +8,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.g6;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -74,7 +74,7 @@ public final /* synthetic */ class t implements Runnable {
                         }
                     }
                 });
-                linearLayout.addView(textView, a6.n(-2, 48));
+                linearLayout.addView(textView, z5.n(-2, 48));
                 if (jVar instanceof x2) {
                     TextView textView2 = new TextView(o0Var.getContext());
                     textView2.setTextColor(g6.w0(i10, aVar));
@@ -86,7 +86,7 @@ public final /* synthetic */ class t implements Runnable {
                     textView2.setTag(1);
                     textView2.setText(LocaleController.getString(R.string.PaintEdit));
                     textView2.setOnClickListener(new k(o0Var, 2));
-                    linearLayout.addView(textView2, a6.n(-2, 48));
+                    linearLayout.addView(textView2, z5.n(-2, 48));
                 }
                 if (jVar instanceof q2) {
                     TextView textView3 = new TextView(o0Var.getContext());
@@ -126,7 +126,7 @@ public final /* synthetic */ class t implements Runnable {
                             }
                         }
                     });
-                    linearLayout.addView(textView3, a6.n(-2, 48));
+                    linearLayout.addView(textView3, z5.n(-2, 48));
                 }
                 if (!(jVar instanceof z1)) {
                     TextView textView4 = new TextView(o0Var.getContext());
@@ -139,7 +139,7 @@ public final /* synthetic */ class t implements Runnable {
                     textView4.setTag(2);
                     textView4.setText(LocaleController.getString(R.string.PaintDuplicate));
                     textView4.setOnClickListener(new k(o0Var, 3));
-                    linearLayout.addView(textView4, a6.n(-2, 48));
+                    linearLayout.addView(textView4, z5.n(-2, 48));
                 }
                 o0Var.S1.addView(linearLayout);
                 LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) linearLayout.getLayoutParams();

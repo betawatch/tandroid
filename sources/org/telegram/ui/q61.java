@@ -26,7 +26,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class q61 extends org.telegram.ui.Components.lm0 {
     public final /* synthetic */ r71 c;
@@ -557,7 +557,7 @@ public final class q61 extends org.telegram.ui.Components.lm0 {
             textView.setBackground(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(11.0f), r71Var.g1 ? org.telegram.ui.ActionBar.g6.v(r71Var.f1, org.telegram.ui.ActionBar.g6.m1(0.4f, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false))) : i0.a.k(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Te, false), 99)));
             textView.setTypeface(AndroidUtilities.bold());
             textView.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(1.66f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f));
-            v61Var.addView(textView, w7.a6.e(-2, -2, 17));
+            v61Var.addView(textView, w7.z5.e(-2, -2, 17));
             view = v61Var;
         } else if (i10 == 5) {
             u61 u61Var = new u61(r71Var.getContext());
@@ -571,26 +571,26 @@ public final class q61 extends org.telegram.ui.Components.lm0 {
             FrameLayout frameLayout = new FrameLayout(u61Var.getContext());
             u61Var.a = frameLayout;
             frameLayout.setBackground(org.telegram.ui.ActionBar.w5.e(new float[]{8.0f}, org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Oh, c6Var)));
-            frameLayout.addView(u3Var, w7.a6.e(-1, -2, 17));
-            u61Var.addView(frameLayout, w7.a6.d(-1.0f, -1));
+            frameLayout.addView(u3Var, w7.z5.e(-1, -2, 17));
+            u61Var.addView(frameLayout, w7.z5.d(-1.0f, -1));
             sg.q0 q0Var = new sg.q0(u61Var.getContext(), c6Var, false);
             u61Var.c = q0Var;
             q0Var.setIcon(R.raw.unlock_icon);
-            u61Var.addView(q0Var, w7.a6.d(-1.0f, -1));
+            u61Var.addView(q0Var, w7.z5.d(-1.0f, -1));
             view = u61Var;
         } else if (i10 == 6) {
-            mn0 mn0Var = new mn0(r71Var.getContext(), 2);
-            mn0Var.setTextSize(1, 13.0f);
+            ln0 ln0Var = new ln0(r71Var.getContext(), 2);
+            ln0Var.setTextSize(1, 13.0f);
             if (i11 == 3) {
-                mn0Var.setText(LocaleController.getString(R.string.SelectTopicIconHint));
+                ln0Var.setText(LocaleController.getString(R.string.SelectTopicIconHint));
             } else if (i11 == 0 || i11 == 12 || i11 == 9 || i11 == 10) {
-                mn0Var.setText(LocaleController.getString(R.string.EmojiLongtapHint));
+                ln0Var.setText(LocaleController.getString(R.string.EmojiLongtapHint));
             } else {
-                mn0Var.setText(LocaleController.getString(R.string.ReactionsLongtapHint));
+                ln0Var.setText(LocaleController.getString(R.string.ReactionsLongtapHint));
             }
-            mn0Var.setGravity(17);
-            mn0Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.y6, c6Var));
-            view = mn0Var;
+            ln0Var.setGravity(17);
+            ln0Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.y6, c6Var));
+            view = ln0Var;
         } else if (i10 == 7) {
             View t3Var = new org.telegram.ui.Cells.t3(r71Var.getContext(), 52);
             t3Var.setTag("searchbox");

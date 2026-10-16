@@ -11,9 +11,9 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.concurrent.locks.LockSupport;
-import org.telegram.ui.Cells.d0;
+import org.telegram.ui.Cells.c1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class c implements Executor, Closeable {
     public static final /* synthetic */ AtomicLongFieldUpdater n = AtomicLongFieldUpdater.newUpdater(c.class, "parkedWorkersStack$volatile");
@@ -37,16 +37,16 @@ public final class c implements Executor, Closeable {
         this.c = j10;
         this.d = str;
         if (i10 < 1) {
-            throw new IllegalArgumentException(i2.d.j(i10, "Core pool size ", " should be at least 1").toString());
+            throw new IllegalArgumentException(i2.d.k(i10, "Core pool size ", " should be at least 1").toString());
         }
         if (i11 < i10) {
             throw new IllegalArgumentException(a1.g.l(i11, i10, "Max pool size ", " should be greater than or equals to core pool size ").toString());
         }
         if (i11 > 2097150) {
-            throw new IllegalArgumentException(i2.d.j(i11, "Max pool size ", " should not exceed maximal supported number of threads 2097150").toString());
+            throw new IllegalArgumentException(i2.d.k(i11, "Max pool size ", " should not exceed maximal supported number of threads 2097150").toString());
         }
         if (j10 <= 0) {
-            throw new IllegalArgumentException(d0.i(j10, "Idle worker keep alive time ", " must be positive").toString());
+            throw new IllegalArgumentException(c1.h(j10, "Idle worker keep alive time ", " must be positive").toString());
         }
         this.e = new f();
         this.f = new f();
@@ -393,9 +393,9 @@ public final class c implements Executor, Closeable {
         int i17 = this.a;
         sb5.append(i17);
         sb5.append(", max = ");
-        i2.d.u(sb5, this.b, "}, Worker States {CPU = ", i10, ", blocking = ");
-        i2.d.u(sb5, i11, ", parked = ", i12, ", dormant = ");
-        i2.d.u(sb5, i13, ", terminated = ", i14, "}, running workers queues = ");
+        i2.d.w(sb5, this.b, "}, Worker States {CPU = ", i10, ", blocking = ");
+        i2.d.w(sb5, i11, ", parked = ", i12, ", dormant = ");
+        i2.d.w(sb5, i13, ", terminated = ", i14, "}, running workers queues = ");
         sb5.append(arrayList);
         sb5.append(", global CPU queue size = ");
         sb5.append(this.e.c());

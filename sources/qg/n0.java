@@ -1,8 +1,8 @@
 package qg;
 
-import ji.h5;
+import ji.w4;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n0 implements Runnable {
     public final /* synthetic */ int a;
@@ -19,9 +19,9 @@ public final /* synthetic */ class n0 implements Runnable {
             case 0:
                 q0 q0Var = this.b;
                 q0Var.c = null;
-                h5 h5Var = q0Var.a;
-                if (h5Var != null) {
-                    h5Var.Q0();
+                w4 w4Var = q0Var.a;
+                if (w4Var != null) {
+                    w4Var.Y0();
                     break;
                 }
                 break;

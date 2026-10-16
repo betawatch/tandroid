@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class ma implements ja {
     public final r9.n a;
@@ -24,7 +24,7 @@ public final class ma implements ja {
     }
 
     @Override // w7.ja
-    public final void a(n6.o oVar) {
+    public final void a(n3.b bVar) {
         f fVar;
         ja.d dVar;
         ia iaVar = this.b;
@@ -32,9 +32,9 @@ public final class ma implements ja {
         l5.r rVar = (l5.r) this.a.get();
         iaVar.getClass();
         pa paVar = pa.c;
-        u2.c cVar = (u2.c) oVar.b;
-        ((v7.d8) oVar.c).h = false;
-        v7.d8 d8Var = (v7.d8) oVar.c;
+        u2.c cVar = (u2.c) bVar.b;
+        ((v7.d8) bVar.c).h = false;
+        v7.d8 d8Var = (v7.d8) bVar.c;
         d8Var.f = Boolean.FALSE;
         cVar.b = new l9(d8Var);
         try {

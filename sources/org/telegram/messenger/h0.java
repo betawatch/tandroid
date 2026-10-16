@@ -25,7 +25,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -65,13 +65,13 @@ public final /* synthetic */ class h0 implements Runnable {
                 ((TranslateController) this.b).lambda$detectStoryLanguage$33((TL_stories.StoryItem) this.c, (TranslateController.StoryKey) this.d);
                 break;
             case 7:
-                AndroidUtilities.lambda$showProxyAlert$19((boolean[]) this.b, (org.telegram.ui.Components.bd[]) this.c, (qi.a) this.d);
+                AndroidUtilities.lambda$showProxyAlert$19((boolean[]) this.b, (org.telegram.ui.Components.bd[]) this.c, (pi.a) this.d);
                 break;
             case 8:
                 ((BetaUpdaterController) this.b).lambda$checkForUpdate$1((String) this.c, (Runnable) this.d);
                 break;
             case 9:
-                BillingController.lambda$launchBillingFlow$3((ArrayList) this.d, (AtomicInteger) this.b, (c0) this.c);
+                BillingController.lambda$launchBillingFlow$3((ArrayList) this.d, (AtomicInteger) this.b, (b0) this.c);
                 break;
             case 10:
                 BillingController.lambda$onPurchasesUpdatedInternal$7((AccountInstance) this.b, (TLRPC.TL_payments_assignPlayMarketTransaction) this.c, (TL_update.TL_updateSentPhoneCode) this.d);
@@ -133,11 +133,11 @@ public final /* synthetic */ class h0 implements Runnable {
         }
     }
 
-    public /* synthetic */ h0(ArrayList arrayList, AtomicInteger atomicInteger, c0 c0Var) {
+    public /* synthetic */ h0(ArrayList arrayList, AtomicInteger atomicInteger, b0 b0Var) {
         this.a = 9;
         this.d = arrayList;
         this.b = atomicInteger;
-        this.c = c0Var;
+        this.c = b0Var;
     }
 
     public /* synthetic */ h0(BaseController baseController, ArrayList arrayList, Object obj, int i10) {

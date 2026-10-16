@@ -10,11 +10,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.p11;
 import org.telegram.ui.Components.q11;
-import w7.a6;
+import org.telegram.ui.Components.r11;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class t extends FrameLayout {
     public final wh.n a;
@@ -35,13 +35,13 @@ public final class t extends FrameLayout {
         nVar.setSingleLine(true);
         nVar.setTextColor(g6.w0(g6.G6, c6Var));
         nVar.r = false;
-        frameLayout.addView(nVar, a6.e(-2, -2, 17));
+        frameLayout.addView(nVar, z5.e(-2, -2, 17));
         int dp = AndroidUtilities.dp(8.0f);
         int w02 = g6.w0(g6.e7, c6Var);
         int i10 = g6.i6;
         int k10 = i0.a.k(g6.w0(i10, c6Var), 76);
         frameLayout.setBackground(g6.j0(dp, dp, dp, dp, w02, k10, k10));
-        addView(frameLayout, a6.a(-2.0f, 14.0f, 0.0f, 14.0f, 0.0f, -1, 0));
+        addView(frameLayout, z5.a(-2.0f, 14.0f, 0.0f, 14.0f, 0.0f, -1, 0));
         final int i11 = 0;
         frameLayout.setOnClickListener(new View.OnClickListener(this) { // from class: wg.s
             public final /* synthetic */ t b;
@@ -70,7 +70,7 @@ public final class t extends FrameLayout {
         int dp2 = AndroidUtilities.dp(20.0f);
         int k11 = i0.a.k(g6.w0(i10, c6Var), 76);
         imageView.setBackground(g6.j0(dp2, dp2, dp2, dp2, 0, k11, k11));
-        addView(imageView, a6.a(40.0f, 15.0f, 0.0f, 17.0f, 0.0f, 40, 21));
+        addView(imageView, z5.a(40.0f, 15.0f, 0.0f, 17.0f, 0.0f, 40, 21));
         final int i12 = 1;
         imageView.setOnClickListener(new View.OnClickListener(this) { // from class: wg.s
             public final /* synthetic */ t b;
@@ -101,13 +101,13 @@ public final class t extends FrameLayout {
         int dp4 = AndroidUtilities.dp(18.0f);
         wh.n nVar = this.a;
         nVar.setPadding(dp, dp2, dp3, dp4);
-        p11 p11Var = new p11();
-        p11Var.a |= 256;
+        q11 q11Var = new q11();
+        q11Var.a |= 256;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("t.me/giftcode/" + this.c);
         if (this.c == null) {
             spannableStringBuilder.append((CharSequence) "1234567891011123654897566536223");
         }
-        spannableStringBuilder.setSpan(new q11(p11Var, 0), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new r11(q11Var, 0), 0, spannableStringBuilder.length(), 33);
         nVar.setText(spannableStringBuilder);
         this.b.setOnClickListener(new ci.o(4, runnable));
     }

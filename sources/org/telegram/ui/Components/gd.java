@@ -12,7 +12,7 @@ import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class gd extends Drawable {
     public final /* synthetic */ int a;
@@ -193,7 +193,7 @@ public final class gd extends Drawable {
     public void onBoundsChange(Rect rect) {
         switch (this.a) {
             case 4:
-                ((ImageReceiver) this.b).setImageCoords(AndroidUtilities.dp(2.0f) + rect.left, AndroidUtilities.dp(2.0f) + rect.top, org.telegram.messenger.yh.A(2.0f, rect.left, rect.right - AndroidUtilities.dp(2.0f)), org.telegram.messenger.yh.A(2.0f, rect.top, rect.bottom - AndroidUtilities.dp(2.0f)));
+                ((ImageReceiver) this.b).setImageCoords(AndroidUtilities.dp(2.0f) + rect.left, AndroidUtilities.dp(2.0f) + rect.top, org.telegram.messenger.sk.z(2.0f, rect.left, rect.right - AndroidUtilities.dp(2.0f)), org.telegram.messenger.sk.z(2.0f, rect.top, rect.bottom - AndroidUtilities.dp(2.0f)));
                 break;
             default:
                 super.onBoundsChange(rect);

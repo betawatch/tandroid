@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class be implements fi.l0, org.telegram.ui.ActionBar.z1, lu, org.telegram.ui.ActionBar.k1 {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class be implements fi.l0, org.telegram.ui.ActionBa
         chatActivityEnterView.E0.invalidateEffects();
         pg pgVar = chatActivityEnterView.Z2;
         if (pgVar != null) {
-            pgVar.q1(chatActivityEnterView.E0.getTextToUse());
+            pgVar.r1(chatActivityEnterView.E0.getTextToUse());
         }
     }
 }

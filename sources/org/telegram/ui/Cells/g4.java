@@ -29,7 +29,7 @@ import org.telegram.ui.Components.aq;
 import org.telegram.ui.Components.cr;
 import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class g4 extends FrameLayout {
     public boolean E;
@@ -621,7 +621,7 @@ public final class g4 extends FrameLayout {
         this.a = z9Var;
         z9Var.setRoundRadius(AndroidUtilities.dp(24.0f));
         boolean z12 = LocaleController.isRTL;
-        addView(z9Var, w7.a6.a(46.0f, z12 ? 0.0f : i11 + 13, 6.0f, z12 ? i11 + 13 : 0.0f, 0.0f, 46, (z12 ? 5 : 3) | 48));
+        addView(z9Var, w7.z5.a(46.0f, z12 ? 0.0f : i11 + 13, 6.0f, z12 ? i11 + 13 : 0.0f, 0.0f, 46, (z12 ? 5 : 3) | 48));
         bi.l5 l5Var = new bi.l5(context, 1);
         this.b = l5Var;
         NotificationCenter.listenEmojiLoading(l5Var);
@@ -630,13 +630,13 @@ public final class g4 extends FrameLayout {
         l5Var.setTextSize(16);
         l5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z13 = LocaleController.isRTL;
-        addView(l5Var, w7.a6.a(20.0f, (z13 ? 28 : 72) + i11, 10.0f, (z13 ? 72 : 28) + i11, 0.0f, -1, (z13 ? 5 : 3) | 48));
+        addView(l5Var, w7.z5.a(20.0f, (z13 ? 28 : 72) + i11, 10.0f, (z13 ? 72 : 28) + i11, 0.0f, -1, (z13 ? 5 : 3) | 48));
         org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(context);
         this.c = h5Var;
         h5Var.setTextSize(14);
         h5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z14 = LocaleController.isRTL;
-        addView(h5Var, w7.a6.a(20.0f, (z14 ? 28 : 72) + i11, 32.0f, (z14 ? 72 : 28) + i11, 0.0f, -1, (z14 ? 5 : 3) | 48));
+        addView(h5Var, w7.z5.a(20.0f, (z14 ? 28 : 72) + i11, 32.0f, (z14 ? 72 : 28) + i11, 0.0f, -1, (z14 ? 5 : 3) | 48));
         if (i10 == 1) {
             aq aqVar = new aq(context, 21, c6Var);
             this.d = aqVar;
@@ -644,7 +644,7 @@ public final class g4 extends FrameLayout {
             aqVar.setDrawUnchecked(false);
             aqVar.setDrawBackgroundAsArc(3);
             boolean z15 = LocaleController.isRTL;
-            addView(aqVar, w7.a6.a(24.0f, z15 ? 0.0f : i11 + 40, 33.0f, z15 ? i11 + 39 : 0.0f, 0.0f, 24, (z15 ? 5 : 3) | 48));
+            addView(aqVar, w7.z5.a(24.0f, z15 ? 0.0f : i11 + 40, 33.0f, z15 ? i11 + 39 : 0.0f, 0.0f, 24, (z15 ? 5 : 3) | 48));
         } else if (i10 == 2) {
             Paint paint = new Paint(1);
             this.J = paint;

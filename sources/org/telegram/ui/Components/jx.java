@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class jx extends FrameLayout {
     public final Paint a;
@@ -31,9 +31,9 @@ public final class jx extends FrameLayout {
         if (dp != 0.0f) {
             canvas.clipRect(0.0f, dp, getMeasuredWidth(), getMeasuredHeight());
         }
-        int A = wzVar.A(org.telegram.ui.ActionBar.g6.He);
+        int B = wzVar.B(org.telegram.ui.ActionBar.g6.He);
         Paint paint = this.a;
-        paint.setColor(A);
+        paint.setColor(B);
         canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), ixVar.getExpandedOffset() + AndroidUtilities.dp(36.0f), paint);
         super.dispatchDraw(canvas);
         if (ixVar.s != null) {

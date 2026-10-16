@@ -1,29 +1,53 @@
 package org.telegram.ui;
 
+import android.app.Activity;
 import android.content.Context;
+import android.view.OrientationEventListener;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class tt0 extends org.telegram.ui.Components.p81 {
-    public final /* synthetic */ PhotoViewer h0;
+public final class tt0 extends OrientationEventListener {
+    public final /* synthetic */ PhotoViewer a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tt0(PhotoViewer photoViewer, Context context, wr0 wr0Var) {
-        super(context, wr0Var);
-        this.h0 = photoViewer;
+    public tt0(Context context, PhotoViewer photoViewer) {
+        super(context);
+        this.a = photoViewer;
     }
 
-    @Override // android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        PhotoViewer.X(this.h0);
-    }
-
-    @Override // android.view.View
-    public final void setVisibility(int i10) {
-        super.setVisibility(i10);
-        if (i10 == 0) {
-            PhotoViewer.X(this.h0);
+    @Override // android.view.OrientationEventListener
+    public final void onOrientationChanged(int i10) {
+        yt0 yt0Var;
+        Activity activity;
+        int i11;
+        PhotoViewer photoViewer = this.a;
+        if (photoViewer.W3 == null || (yt0Var = photoViewer.y2) == null || yt0Var.getVisibility() != 0 || (activity = photoViewer.y) == null || (i11 = photoViewer.Y3) == 0) {
+            return;
+        }
+        if (i11 != 1) {
+            if (i10 > 0 && (i10 >= 330 || i10 <= 30)) {
+                photoViewer.Z3 = true;
+                return;
+            }
+            if (!photoViewer.Z3 || i10 < 240 || i10 > 300) {
+                return;
+            }
+            activity.setRequestedOrientation(photoViewer.X3);
+            photoViewer.Y3 = 0;
+            photoViewer.Z3 = false;
+            return;
+        }
+        if (i10 >= 240 && i10 <= 300) {
+            photoViewer.Z3 = true;
+            return;
+        }
+        if (!photoViewer.Z3 || i10 <= 0) {
+            return;
+        }
+        if (i10 >= 330 || i10 <= 30) {
+            activity.setRequestedOrientation(photoViewer.X3);
+            photoViewer.Y3 = 0;
+            photoViewer.Z3 = false;
         }
     }
 }

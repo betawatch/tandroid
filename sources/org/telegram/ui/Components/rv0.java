@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class rv0 extends ul0 {
     public final Context c;
@@ -29,7 +29,7 @@ public class rv0 extends ul0 {
     @Override // org.telegram.ui.Components.ul0
     public final boolean E(mm0 mm0Var) {
         xv0 xv0Var = this.f;
-        if (!xv0Var.t0()) {
+        if (!xv0Var.u0()) {
             int ceil = (int) Math.ceil(k() / ((this == xv0Var.H || xv0.u(xv0Var, this) != -1) ? xv0Var.m1[0] : xv0Var.q1));
             if (mm0Var.getChildCount() != 0 && mm0Var.getChildAt(0).getMeasuredHeight() * ceil > mm0Var.getMeasuredHeight()) {
                 return true;
@@ -49,7 +49,7 @@ public class rv0 extends ul0 {
                 return ((vu0) arrayList.get(i11)).a;
             }
         }
-        return ((vu0) i2.d.g(1, arrayList)).a;
+        return ((vu0) i2.d.h(1, arrayList)).a;
     }
 
     @Override // org.telegram.ui.Components.ul0
@@ -88,7 +88,7 @@ public class rv0 extends ul0 {
 
     @Override // org.telegram.ui.Components.ul0
     public void I() {
-        this.f.c1(0, true);
+        this.f.d1(0, true);
     }
 
     @Override // org.telegram.ui.Components.ul0

@@ -8,7 +8,7 @@ import c3.i;
 import c3.p;
 import c3.s;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class a {
     public final e a;
@@ -99,7 +99,7 @@ public final class a {
         f fVar = this.c;
         if (fVar == null || fVar.a != j10) {
             e eVar = this.a;
-            this.c = new f(j10, eVar.a.k(j10), eVar.c, eVar.d, eVar.e, eVar.f);
+            this.c = new f(j10, eVar.a.l(j10), eVar.c, eVar.d, eVar.e, eVar.f);
         }
     }
 }

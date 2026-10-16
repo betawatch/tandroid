@@ -33,11 +33,12 @@ import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.pi0;
 import org.telegram.ui.Components.z9;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.c8;
+import org.telegram.ui.Wallet.d8;
 import org.telegram.ui.fo;
+import ri.h0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
 public final class k extends Dialog {
     public final /* synthetic */ l E;
     public final int a;
@@ -274,7 +275,7 @@ public final class k extends Dialog {
         int i11 = (-this.f.getTop()) / 2;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(z10 ? 0.0f : 1.0f, z10 ? 1.0f : 0.0f);
         this.s = ofFloat;
-        ofFloat.addUpdateListener(new c8(this, width, left, top, width2, i11, 1));
+        ofFloat.addUpdateListener(new d8(this, width, left, top, width2, i11, 1));
         this.s.addListener(new hn0(this, z10, width, i10));
         this.s.setDuration(220L);
         this.s.setInterpolator(es.f);
@@ -329,6 +330,6 @@ public final class k extends Dialog {
     @Override // android.app.Dialog
     public final void show() {
         super.show();
-        AndroidUtilities.runOnUIThread(new rh.j(this, 21), 80L);
+        AndroidUtilities.runOnUIThread(new h0(this, 21), 80L);
     }
 }

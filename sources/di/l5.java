@@ -12,13 +12,13 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.vi;
 import org.telegram.ui.Components.wg;
 import org.telegram.ui.fo;
-import org.telegram.ui.hj0;
+import org.telegram.ui.gj0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l5 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class l5 implements View.OnLongClickListener {
                     kcVar.o();
                     kcVar.E0.setSelected(true);
                     kcVar.s.e(0.85f, 240L, null);
-                    m80 F = m80.F(kcVar.r, kcVar.a, kcVar.E0);
+                    l80 F = l80.F(kcVar.r, kcVar.a, kcVar.E0);
                     e8 e8Var = new e8(activity, 1);
                     e8Var.d(kcVar.s.o);
                     e8Var.h = new ha(kcVar, 21);
@@ -100,14 +100,14 @@ public final /* synthetic */ class l5 implements View.OnLongClickListener {
                             if (!a32.isEmpty()) {
                                 org.telegram.ui.ActionBar.m2 m2Var = viVar.f0;
                                 fo foVar = m2Var instanceof fo ? (fo) m2Var : null;
-                                hj0 hj0Var = rVar.O;
-                                if (hj0Var != null) {
-                                    hj0Var.h(false);
+                                gj0 gj0Var = rVar.O;
+                                if (gj0Var != null) {
+                                    gj0Var.h(false);
                                     rVar.O = null;
                                 }
-                                hj0 hj0Var2 = new hj0(rVar.getContext(), c6Var);
-                                rVar.O = hj0Var2;
-                                hj0Var2.setOnDismissListener(new bi.t4(rVar, 4));
+                                gj0 gj0Var2 = new gj0(rVar.getContext(), c6Var);
+                                rVar.O = gj0Var2;
+                                gj0Var2.setOnDismissListener(new bi.t4(rVar, 4));
                                 long p12 = viVar.p1();
                                 MessageObject messageObject = foVar != null ? foVar.n5 : null;
                                 TLRPC.TL_message tL_message = new TLRPC.TL_message();
@@ -135,22 +135,22 @@ public final /* synthetic */ class l5 implements View.OnLongClickListener {
                                 messageObject2.isOutOwnerCached = Boolean.TRUE;
                                 messageObject2.generateLayout(null);
                                 messageObject2.notime = true;
-                                rVar.O.q(org.telegram.messenger.q.l(messageObject2));
+                                rVar.O.q(org.telegram.messenger.g0.k(messageObject2));
                                 wg sendButton = c4Var.getSendButton();
                                 sendButton.setScaleX(1.0f);
                                 sendButton.setScaleY(1.0f);
                                 wg r10 = rVar.O.r(sendButton, true, new ah.g0(rVar, 28));
                                 if (r10 != null) {
                                     r10.setBackground(new ji.c2(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Oh, c6Var))));
-                                    hj0 hj0Var3 = rVar.O;
+                                    gj0 gj0Var3 = rVar.O;
                                     int dp = AndroidUtilities.dp(44.0f);
                                     z10 = true;
-                                    hj0Var3.m0 = true;
-                                    hj0Var3.Y = dp;
+                                    gj0Var3.m0 = true;
+                                    gj0Var3.Y = dp;
                                 } else {
                                     z10 = true;
                                 }
-                                m80 F2 = m80.F(rVar, c6Var, sendButton);
+                                l80 F2 = l80.F(rVar, c6Var, sendButton);
                                 boolean z12 = (foVar == null || !UserObject.isUserSelf(foVar.i())) ? false : z10;
                                 if (foVar != null && foVar.G6()) {
                                     F2.c(R.drawable.msg_calendar2, LocaleController.getString(z12 ? R.string.SetReminder : R.string.ScheduleMessage), new bi.g(rVar, p12, 11), false);

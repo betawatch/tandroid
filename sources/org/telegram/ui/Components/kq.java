@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kq implements Runnable {
     public final /* synthetic */ int a;
@@ -89,7 +89,7 @@ public final /* synthetic */ class kq implements Runnable {
                 ((wu) obj).getClass();
                 break;
             case 10:
-                pf.d.s(((cv) obj).a.getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
+                pf.d.r(((cv) obj).a.getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
                 break;
             case 11:
                 hv hvVar = ((gv) obj).a;
@@ -233,7 +233,7 @@ public final /* synthetic */ class kq implements Runnable {
                                 }
                                 sc I = zc.a0(yyVar).I(R.raw.filter_reorder, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.LimitReachedReorderFolder, LocaleController.getString(R.string.FilterAllChats))), LocaleController.getString(R.string.PremiumMore), 5000, false, new org.telegram.ui.gj(wwVar, 23));
                                 I.k(true);
-                                yyVar.n3 = I;
+                                yyVar.o3 = I;
                                 break;
                             }
                         } else {
@@ -279,14 +279,14 @@ public final /* synthetic */ class kq implements Runnable {
             case 24:
                 p60 p60Var = (p60) ((di.n2) obj).b;
                 try {
-                    h81 h81Var = p60Var.T;
-                    if (h81Var != null && (videoEditedInfo = p60Var.S) != null && videoEditedInfo.endTime > 0) {
-                        long n10 = h81Var.n();
+                    i81 i81Var = p60Var.T;
+                    if (i81Var != null && (videoEditedInfo = p60Var.S) != null && videoEditedInfo.endTime > 0) {
+                        long n10 = i81Var.n();
                         VideoEditedInfo videoEditedInfo2 = p60Var.S;
                         if (n10 >= videoEditedInfo2.endTime) {
-                            h81 h81Var2 = p60Var.T;
+                            i81 i81Var2 = p60Var.T;
                             long j10 = videoEditedInfo2.startTime;
-                            h81Var2.K(j10 > 0 ? j10 : 0L);
+                            i81Var2.K(j10 > 0 ? j10 : 0L);
                             break;
                         }
                     }
@@ -297,8 +297,8 @@ public final /* synthetic */ class kq implements Runnable {
                 break;
             case 25:
                 o60 o60Var = (o60) obj;
-                li.t0 t0Var = o60Var.R;
-                if (t0Var != null && t0Var.a == 3) {
+                ri.q0 q0Var = o60Var.R;
+                if (q0Var != null && q0Var.a == 3) {
                     long elapsedRealtimeNanos = SystemClock.elapsedRealtimeNanos();
                     long j11 = o60Var.F0;
                     if (j11 == 0 || elapsedRealtimeNanos - j11 >= 70000000) {

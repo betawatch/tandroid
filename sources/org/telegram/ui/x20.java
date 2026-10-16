@@ -16,7 +16,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.messenger.voip.VoipAudioManager;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x20 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -236,7 +236,7 @@ public final /* synthetic */ class x20 implements View.OnClickListener {
                 n60Var.y3 = Integer.valueOf(i11);
                 n60Var.O1(true, true);
                 n60Var.y3 = null;
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.o8(n60Var, i11, 16));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.o8(n60Var, i11, 15));
                 break;
         }
     }

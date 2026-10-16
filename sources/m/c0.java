@@ -1,47 +1,31 @@
 package m;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
+import android.graphics.Bitmap;
 import android.util.AttributeSet;
-import android.widget.SeekBar;
+import android.view.View;
+import android.widget.RatingBar;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public class c0 extends SeekBar {
-    public final d0 a;
+public final class c0 extends RatingBar {
+    public final a0 a;
 
-    public c0(Context context, AttributeSet attributeSet, int i10) {
-        super(context, attributeSet, i10);
-        b3.a(this, getContext());
-        d0 d0Var = new d0(this);
-        this.a = d0Var;
-        d0Var.b(attributeSet, i10);
+    public c0(Context context, AttributeSet attributeSet) {
+        super(context, attributeSet, R.attr.ratingBarStyle);
+        d3.a(this, getContext());
+        a0 a0Var = new a0(this);
+        this.a = a0Var;
+        a0Var.b(attributeSet, R.attr.ratingBarStyle);
     }
 
-    @Override // android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
-    public void drawableStateChanged() {
-        super.drawableStateChanged();
-        d0 d0Var = this.a;
-        c0 c0Var = d0Var.e;
-        Drawable drawable = d0Var.f;
-        if (drawable != null && drawable.isStateful() && drawable.setState(c0Var.getDrawableState())) {
-            c0Var.invalidateDrawable(drawable);
+    @Override // android.widget.RatingBar, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
+    public final synchronized void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        Bitmap bitmap = (Bitmap) this.a.c;
+        if (bitmap != null) {
+            setMeasuredDimension(View.resolveSizeAndState(bitmap.getWidth() * getNumStars(), i10, 0), getMeasuredHeight());
         }
-    }
-
-    @Override // android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
-    public final void jumpDrawablesToCurrentState() {
-        super.jumpDrawablesToCurrentState();
-        Drawable drawable = this.a.f;
-        if (drawable != null) {
-            drawable.jumpToCurrentState();
-        }
-    }
-
-    @Override // android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
-    public final synchronized void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        this.a.g(canvas);
     }
 }

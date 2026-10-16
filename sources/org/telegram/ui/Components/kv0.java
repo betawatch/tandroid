@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class kv0 extends ul0 {
     public final Context c;
@@ -37,7 +37,7 @@ public final class kv0 extends ul0 {
                 return ((vu0) arrayList.get(i11)).a;
             }
         }
-        return ((vu0) i2.d.g(1, arrayList)).a;
+        return ((vu0) i2.d.h(1, arrayList)).a;
     }
 
     @Override // org.telegram.ui.Components.ul0
@@ -137,28 +137,28 @@ public final class kv0 extends ul0 {
         int i11 = b1Var.f;
         View view = b1Var.a;
         if (i11 == 7) {
-            if (view instanceof org.telegram.ui.Cells.k7) {
-                org.telegram.ui.Cells.k7 k7Var = (org.telegram.ui.Cells.k7) view;
+            if (view instanceof org.telegram.ui.Cells.j7) {
+                org.telegram.ui.Cells.j7 j7Var = (org.telegram.ui.Cells.j7) view;
                 MessageObject messageObject = (MessageObject) arrayList.get(i10 - mv0Var.m);
-                k7Var.c(messageObject, i10 != arrayList.size() - 1);
+                j7Var.c(messageObject, i10 != arrayList.size() - 1);
                 if (xv0Var.C1) {
-                    k7Var.b(sparseArrayArr[(messageObject.getDialogId() > j10 ? 1 : (messageObject.getDialogId() == j10 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(messageObject.getId()) >= 0, !xv0Var.b1);
+                    j7Var.b(sparseArrayArr[(messageObject.getDialogId() > j10 ? 1 : (messageObject.getDialogId() == j10 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(messageObject.getId()) >= 0, !xv0Var.b1);
                     return;
                 } else {
-                    k7Var.b(false, !xv0Var.b1);
+                    j7Var.b(false, !xv0Var.b1);
                     return;
                 }
             }
             return;
         }
-        if (i11 == 10 && (view instanceof org.telegram.ui.Cells.j7)) {
-            org.telegram.ui.Cells.j7 j7Var = (org.telegram.ui.Cells.j7) view;
+        if (i11 == 10 && (view instanceof org.telegram.ui.Cells.i7)) {
+            org.telegram.ui.Cells.i7 i7Var = (org.telegram.ui.Cells.i7) view;
             MessageObject messageObject2 = (MessageObject) arrayList.get(i10 - mv0Var.m);
-            j7Var.f(messageObject2, i10 != arrayList.size() - 1);
+            i7Var.f(messageObject2, i10 != arrayList.size() - 1);
             if (xv0Var.C1) {
-                j7Var.e(sparseArrayArr[(messageObject2.getDialogId() > j10 ? 1 : (messageObject2.getDialogId() == j10 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(messageObject2.getId()) >= 0, !xv0Var.b1);
+                i7Var.e(sparseArrayArr[(messageObject2.getDialogId() > j10 ? 1 : (messageObject2.getDialogId() == j10 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(messageObject2.getId()) >= 0, !xv0Var.b1);
             } else {
-                j7Var.e(false, !xv0Var.b1);
+                i7Var.e(false, !xv0Var.b1);
             }
         }
     }
@@ -204,18 +204,18 @@ public final class kv0 extends ul0 {
                         view2 = view3;
                     }
                 }
-                org.telegram.ui.Cells.j7 j7Var = (org.telegram.ui.Cells.j7) view2;
-                j7Var.setGlobalGradientView(f10Var);
+                org.telegram.ui.Cells.i7 i7Var = (org.telegram.ui.Cells.i7) view2;
+                i7Var.setGlobalGradientView(f10Var);
                 view = view2;
                 if (i11 == 4) {
-                    xv0Var.H0.add(j7Var);
+                    xv0Var.H0.add(i7Var);
                     view = view2;
                 }
             }
         } else {
-            org.telegram.ui.Cells.k7 k7Var = new org.telegram.ui.Cells.k7(context, 0, c6Var);
-            k7Var.setGlobalGradientView(f10Var);
-            view = k7Var;
+            org.telegram.ui.Cells.j7 j7Var = new org.telegram.ui.Cells.j7(context, 0, c6Var);
+            j7Var.setGlobalGradientView(f10Var);
+            view = j7Var;
         }
         return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
     }

@@ -5,7 +5,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class om0 implements s4.q0 {
     public RecyclerView a;
@@ -19,7 +19,7 @@ public final class om0 implements s4.q0 {
     public final nm0 k;
     public int b = -1;
     public final int j = AndroidUtilities.dp(80.0f);
-    public final org.telegram.ui.Cells.t6 l = new org.telegram.ui.Cells.t6(this, 21);
+    public final org.telegram.ui.Cells.l7 l = new org.telegram.ui.Cells.l7(this, 20);
 
     public om0(nm0 nm0Var) {
         this.k = nm0Var;
@@ -32,12 +32,12 @@ public final class om0 implements s4.q0 {
         float y3 = motionEvent.getY();
         int action = motionEvent.getAction();
         nm0 nm0Var = this.k;
-        org.telegram.ui.Cells.t6 t6Var = this.l;
+        org.telegram.ui.Cells.l7 l7Var = this.l;
         if (action == 1) {
             this.c = false;
             this.g = false;
             this.h = false;
-            AndroidUtilities.cancelRunOnUIThread(t6Var);
+            AndroidUtilities.cancelRunOnUIThread(l7Var);
             nm0Var.a(false);
             return;
         }
@@ -50,20 +50,20 @@ public final class om0 implements s4.q0 {
                 this.h = false;
                 if (!this.g) {
                     this.g = true;
-                    AndroidUtilities.cancelRunOnUIThread(t6Var);
-                    AndroidUtilities.runOnUIThread(t6Var);
+                    AndroidUtilities.cancelRunOnUIThread(l7Var);
+                    AndroidUtilities.runOnUIThread(l7Var);
                 }
                 this.i = ((int) (this.d - (y3 - f7))) / 2;
             } else if (y3 >= this.e && y3 <= this.f) {
                 this.g = false;
                 if (!this.h) {
                     this.h = true;
-                    AndroidUtilities.cancelRunOnUIThread(t6Var);
-                    AndroidUtilities.runOnUIThread(t6Var);
+                    AndroidUtilities.cancelRunOnUIThread(l7Var);
+                    AndroidUtilities.runOnUIThread(l7Var);
                 }
                 this.i = ((int) ((y3 + this.f) - (this.e + r11))) / 2;
             } else if (this.g || this.h) {
-                AndroidUtilities.cancelRunOnUIThread(t6Var);
+                AndroidUtilities.cancelRunOnUIThread(l7Var);
                 this.g = false;
                 this.h = false;
             }

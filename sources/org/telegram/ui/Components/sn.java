@@ -6,7 +6,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class sn implements wy {
     public final /* synthetic */ Utilities.Callback a;
@@ -96,7 +96,7 @@ public final class sn implements wy {
     }
 
     @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ void o(h61 h61Var) {
+    public final /* synthetic */ void o(i61 i61Var) {
     }
 
     @Override // org.telegram.ui.Components.wy

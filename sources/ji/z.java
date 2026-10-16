@@ -27,9 +27,9 @@ import org.telegram.ui.Cells.n9;
 import org.telegram.ui.Cells.o9;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.cp0;
-import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.j61;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class z extends a0 implements org.telegram.ui.ActionBar.x5, n9, l0, NotificationCenter.NotificationCenterDelegate, DownloadController.FileDownloadProgressListener {
     public int E;
@@ -81,7 +81,7 @@ public final class z extends a0 implements org.telegram.ui.ActionBar.x5, n9, l0,
         setMinimumHeight(AndroidUtilities.dp(66.0f));
         k0 k0Var = new k0(context, c6Var, new ya.c(this, 28));
         this.U = k0Var;
-        addView(k0Var.a, w7.a6.e(-2, -2, 51));
+        addView(k0Var.a, w7.z5.e(-2, -2, 51));
         d();
     }
 
@@ -288,7 +288,7 @@ public final class z extends a0 implements org.telegram.ui.ActionBar.x5, n9, l0,
         } else {
             SpannableStringBuilder spannableStringBuilder = (TextUtils.isEmpty(musicTitle) || TextUtils.isEmpty(musicAuthor)) ? !TextUtils.isEmpty(musicTitle) ? new SpannableStringBuilder(musicTitle) : new SpannableStringBuilder(musicAuthor) : new SpannableStringBuilder(a1.g.D(musicAuthor, " - ", musicTitle));
             if (!TextUtils.isEmpty(musicAuthor)) {
-                spannableStringBuilder.setSpan(new i61(AndroidUtilities.bold()), 0, musicAuthor.length(), 18);
+                spannableStringBuilder.setSpan(new j61(AndroidUtilities.bold()), 0, musicAuthor.length(), 18);
             }
             float dp2 = AndroidUtilities.dp(16.0f);
             TextPaint textPaint = this.v;

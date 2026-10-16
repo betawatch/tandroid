@@ -4,22 +4,22 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class d extends l.v {
     public final /* synthetic */ int l = 0;
-    public final /* synthetic */ h m;
+    public final /* synthetic */ i m;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d(h hVar, Context context, l.k kVar, View view) {
+    public d(i iVar, Context context, l.k kVar, View view) {
         super(context, kVar, view, true, R.attr.actionOverflowMenuStyle, 0);
-        this.m = hVar;
+        this.m = iVar;
         this.f = 8388613;
-        l2.f fVar = hVar.M;
-        this.h = fVar;
+        h hVar = iVar.M;
+        this.h = hVar;
         l.s sVar = this.i;
         if (sVar != null) {
-            sVar.h(fVar);
+            sVar.h(hVar);
         }
     }
 
@@ -27,36 +27,36 @@ public final class d extends l.v {
     public final void c() {
         switch (this.l) {
             case 0:
-                h hVar = this.m;
-                hVar.J = null;
-                hVar.getClass();
+                i iVar = this.m;
+                iVar.J = null;
+                iVar.getClass();
                 super.c();
                 break;
             default:
-                h hVar2 = this.m;
-                l.k kVar = hVar2.c;
+                i iVar2 = this.m;
+                l.k kVar = iVar2.c;
                 if (kVar != null) {
                     kVar.c(true);
                 }
-                hVar2.I = null;
+                iVar2.I = null;
                 super.c();
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d(h hVar, Context context, l.d0 d0Var, View view) {
+    public d(i iVar, Context context, l.d0 d0Var, View view) {
         super(context, d0Var, view, false, R.attr.actionOverflowMenuStyle, 0);
-        this.m = hVar;
+        this.m = iVar;
         if ((d0Var.A.x & 32) != 32) {
-            View view2 = hVar.r;
-            this.e = view2 == null ? (View) hVar.n : view2;
+            View view2 = iVar.r;
+            this.e = view2 == null ? (View) iVar.n : view2;
         }
-        l2.f fVar = hVar.M;
-        this.h = fVar;
+        h hVar = iVar.M;
+        this.h = hVar;
         l.s sVar = this.i;
         if (sVar != null) {
-            sVar.h(fVar);
+            sVar.h(hVar);
         }
     }
 }

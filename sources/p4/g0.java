@@ -1,11 +1,23 @@
 package p4;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+import android.media.MediaRouter;
+
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class g0 extends k0 {
-    @Override // p4.k0
-    public void u(i0 i0Var, l lVar) {
-        super.u(i0Var, lVar);
-        lVar.a.putInt("deviceType", i0Var.a.getDeviceType());
+public final class g0 extends q {
+    public final MediaRouter.RouteInfo a;
+
+    public g0(MediaRouter.RouteInfo routeInfo) {
+        this.a = routeInfo;
+    }
+
+    @Override // p4.q
+    public final void f(int i10) {
+        this.a.requestSetVolume(i10);
+    }
+
+    @Override // p4.q
+    public final void i(int i10) {
+        this.a.requestUpdateVolume(i10);
     }
 }

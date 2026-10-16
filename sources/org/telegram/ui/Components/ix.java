@@ -13,7 +13,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ix extends dy {
     public static final /* synthetic */ int H0 = 0;
@@ -41,7 +41,7 @@ public final class ix extends dy {
     @Override // org.telegram.ui.Components.kn0
     public final void o(int i10, int i11) {
         wz wzVar = this.G0;
-        org.telegram.ui.Cells.t6 t6Var = wzVar.f2;
+        org.telegram.ui.Cells.l7 l7Var = wzVar.f2;
         int i12 = wzVar.E1;
         int i13 = i10 - i12;
         int i14 = i11 - i12;
@@ -50,15 +50,15 @@ public final class ix extends dy {
         ArrayList arrayList = wzVar.d1;
         arrayList.add(i14, (TLRPC.TL_messages_stickerSet) arrayList.remove(i13));
         int i16 = 1;
-        Collections.sort(mediaDataController.getStickerSets(0), new cm(this, i16));
+        Collections.sort(mediaDataController.getStickerSets(0), new bm(this, i16));
         ArrayList arrayList2 = wzVar.G2;
         if (arrayList2 != null) {
             arrayList2.clear();
             wzVar.G2.addAll(arrayList);
         }
         wzVar.E();
-        AndroidUtilities.cancelRunOnUIThread(t6Var);
-        AndroidUtilities.runOnUIThread(t6Var, 1500L);
+        AndroidUtilities.cancelRunOnUIThread(l7Var);
+        AndroidUtilities.runOnUIThread(l7Var, 1500L);
         MediaDataController.getInstance(i15).calcNewHash(0);
         TLRPC.TL_messages_reorderStickerSets tL_messages_reorderStickerSets = new TLRPC.TL_messages_reorderStickerSets();
         tL_messages_reorderStickerSets.masks = false;

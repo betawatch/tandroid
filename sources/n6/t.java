@@ -1,62 +1,42 @@
 package n6;
 
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.util.Log;
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicInteger;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.api.internal.BasePendingResult;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import java.util.concurrent.TimeUnit;
+import v7.g5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class t implements Handler.Callback {
-    public final ya.c a;
-    public final com.google.android.gms.internal.cast.a0 n;
-    public final ArrayList b = new ArrayList();
-    public final ArrayList c = new ArrayList();
-    public final ArrayList d = new ArrayList();
-    public volatile boolean e = false;
-    public final AtomicInteger f = new AtomicInteger(0);
-    public boolean h = false;
-    public final Object r = new Object();
+public final class t implements com.google.android.gms.common.api.o {
+    public final /* synthetic */ g5 a;
+    public final /* synthetic */ TaskCompletionSource b;
+    public final /* synthetic */ k c;
 
-    public t(Looper looper, ya.c cVar) {
-        this.a = cVar;
-        this.n = new com.google.android.gms.internal.cast.a0(looper, this);
+    public t(g5 g5Var, TaskCompletionSource taskCompletionSource, k kVar) {
+        this.a = g5Var;
+        this.b = taskCompletionSource;
+        this.c = kVar;
     }
 
-    public final void a(com.google.android.gms.common.api.l lVar) {
-        l.h(lVar);
-        synchronized (this.r) {
-            try {
-                if (this.d.contains(lVar)) {
-                    Log.w("GmsClientEvents", "registerConnectionFailedListener(): listener " + String.valueOf(lVar) + " is already registered");
-                } else {
-                    this.d.add(lVar);
-                }
-            } catch (Throwable th2) {
-                throw th2;
+    @Override // com.google.android.gms.common.api.o
+    public final void a(Status status) {
+        if (!status.b()) {
+            this.b.setException(l.m(status));
+            return;
+        }
+        g5 g5Var = this.a;
+        TimeUnit timeUnit = TimeUnit.MILLISECONDS;
+        BasePendingResult basePendingResult = (BasePendingResult) g5Var;
+        l.j("Result has already been consumed.", !basePendingResult.j);
+        try {
+            if (!basePendingResult.d.await(0L, timeUnit)) {
+                basePendingResult.e(Status.n);
             }
+        } catch (InterruptedException unused) {
+            basePendingResult.e(Status.f);
         }
-    }
-
-    @Override // android.os.Handler.Callback
-    public final boolean handleMessage(Message message) {
-        int i10 = message.what;
-        if (i10 != 1) {
-            Log.wtf("GmsClientEvents", i2.d.i(i10, "Don't know how to handle message: "), new Exception());
-            return false;
-        }
-        com.google.android.gms.common.api.k kVar = (com.google.android.gms.common.api.k) message.obj;
-        synchronized (this.r) {
-            try {
-                if (this.e && this.a.B0() && this.b.contains(kVar)) {
-                    kVar.onConnected(null);
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return true;
+        l.j("Result is not ready.", basePendingResult.g());
+        this.b.setResult(this.c.a(basePendingResult.j()));
     }
 }

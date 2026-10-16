@@ -23,13 +23,13 @@ import u2.g0;
 import u2.j1;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class l extends u2.a {
     public final c h;
-    public final l2.f i;
+    public final m.h i;
     public final oa.d j;
-    public final n2.n k;
+    public final n2.m k;
     public final oa.d l;
     public final boolean m;
     public final int n;
@@ -43,13 +43,13 @@ public final class l extends u2.a {
         q0.a("media3.exoplayer.hls");
     }
 
-    public l(p0 p0Var, l2.f fVar, c cVar, oa.d dVar, n2.n nVar, oa.d dVar2, p2.d dVar3, long j10, boolean z10, int i10) {
+    public l(p0 p0Var, m.h hVar, c cVar, oa.d dVar, n2.m mVar, oa.d dVar2, p2.d dVar3, long j10, boolean z10, int i10) {
         this.s = p0Var;
         this.q = p0Var.c;
-        this.i = fVar;
+        this.i = hVar;
         this.h = cVar;
         this.j = dVar;
-        this.k = nVar;
+        this.k = mVar;
         this.l = dVar2;
         this.o = dVar3;
         this.p = j10;
@@ -85,11 +85,11 @@ public final class l extends u2.a {
     @Override // u2.a
     public final e0 c(g0 g0Var, androidx.biometric.e eVar, long j10) {
         a5.a b10 = b(g0Var);
-        n2.k kVar = new n2.k(this.d.c, 0, g0Var);
+        n2.j jVar = new n2.j(this.d.c, 0, g0Var);
         c0 c0Var = this.r;
-        j2.k kVar2 = this.g;
-        kVar2.getClass();
-        return new k(this.h, this.o, this.i, c0Var, this.k, kVar, this.l, b10, eVar, this.j, this.m, this.n, kVar2);
+        j2.k kVar = this.g;
+        kVar.getClass();
+        return new k(this.h, this.o, this.i, c0Var, this.k, jVar, this.l, b10, eVar, this.j, this.m, this.n, kVar);
     }
 
     @Override // u2.a
@@ -102,7 +102,7 @@ public final class l extends u2.a {
         p2.d dVar = this.o;
         y2.l lVar = dVar.h;
         if (lVar != null) {
-            lVar.d();
+            lVar.b();
         }
         x0 x0Var = dVar.v;
         if (x0Var != null) {
@@ -121,9 +121,9 @@ public final class l extends u2.a {
         myLooper.getClass();
         j2.k kVar = this.g;
         kVar.getClass();
-        n2.n nVar = this.k;
-        nVar.D(myLooper, kVar);
-        nVar.b();
+        n2.m mVar = this.k;
+        mVar.F(myLooper, kVar);
+        mVar.b();
         a5.a b10 = b(null);
         k0 k0Var = i().b;
         k0Var.getClass();
@@ -135,7 +135,7 @@ public final class l extends u2.a {
         dVar.r = this;
         Map map = Collections.EMPTY_MAP;
         u6.l(uri, "The uri must be set.");
-        y2.o oVar = new y2.o(((g2.g) dVar.a.b).createDataSource(), new g2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, dVar.b.H());
+        y2.o oVar = new y2.o(((g2.g) dVar.a.b).createDataSource(), new g2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, dVar.b.U());
         u6.p(dVar.h == null);
         y2.l lVar = new y2.l("DefaultHlsPlaylistTracker:MultivariantPlaylist");
         dVar.h = lVar;
@@ -164,7 +164,7 @@ public final class l extends u2.a {
             Uri c10 = iVar.e[l4].c();
             p2.c cVar = (p2.c) dVar.d.get(c10);
             if (cVar != null) {
-                p2.b bVar = (p2.b) i2.d.h(cVar.b, c10, c10);
+                p2.b bVar = (p2.b) i2.d.i(cVar.b, c10, c10);
                 bVar.getClass();
                 bVar.w = false;
             }

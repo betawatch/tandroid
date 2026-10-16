@@ -2,7 +2,7 @@ package androidx.lifecycle;
 
 import android.os.Handler;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class e0 implements t {
     public static final e0 r = new e0();
@@ -13,7 +13,7 @@ public final class e0 implements t {
     public boolean d = true;
     public final v f = new v(this);
     public final a3.d h = new a3.d(this, 12);
-    public final qb.c n = new qb.c(this, 6);
+    public final a6.m n = new a6.m(this, 5);
 
     public final void a() {
         int i10 = this.b + 1;

@@ -23,7 +23,7 @@ import x9.n;
 import x9.x;
 import y8.w0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class b implements s0, s {
     public Object a;
@@ -33,7 +33,7 @@ public final class b implements s0, s {
     }
 
     @Override // androidx.lifecycle.s0
-    public p0 W0(Class cls, c cVar) {
+    public p0 X0(Class cls, c cVar) {
         m0 m0Var = null;
         for (d dVar : (d[]) this.a) {
             if (dVar.a.equals(cls)) {
@@ -118,7 +118,7 @@ public final class b implements s0, s {
     }
 
     @Override // androidx.lifecycle.s0
-    public p0 e(Class cls) {
+    public p0 f(Class cls) {
         throw new UnsupportedOperationException("Factory.create(String) is unsupported.  This Factory requires `CreationExtras` to be passed into `create` method.");
     }
 

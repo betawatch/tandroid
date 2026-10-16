@@ -14,16 +14,16 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class m10 extends View {
     public TextPaint a;
     public Paint b;
     public Path c;
     public float[] d;
-    public h11 e;
-    public h11 f;
-    public h11 h;
+    public i11 e;
+    public i11 f;
+    public i11 h;
     public LinearGradient n;
     public LinearGradient r;
     public Paint s;
@@ -42,24 +42,24 @@ public final class m10 extends View {
         float f10;
         float f11;
         float f12;
-        h11 h11Var;
+        i11 i11Var;
         float f13;
         float f14;
         Paint paint = this.b;
         Matrix matrix = this.x;
         Matrix matrix2 = this.w;
         Path path = this.c;
-        h11 h11Var2 = this.e;
+        i11 i11Var2 = this.e;
         r6 r6Var = this.y;
-        h11 h11Var3 = this.h;
+        i11 i11Var3 = this.h;
         super.onDraw(canvas);
         canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), 255, 31);
         float measuredWidth = getMeasuredWidth() / 2.0f;
         float measuredHeight = getMeasuredHeight() / 2.0f;
-        h11 h11Var4 = this.f;
-        if (h11Var4 != null) {
+        i11 i11Var4 = this.f;
+        if (i11Var4 != null) {
             canvas.save();
-            float f15 = h11Var4.c;
+            float f15 = i11Var4.c;
             f7 = 15.32f;
             CharSequence charSequence = r6Var.i;
             if (charSequence == null || charSequence.length() == 0) {
@@ -69,8 +69,8 @@ public final class m10 extends View {
             }
             float f16 = f15 + f14;
             f10 = measuredWidth - (f16 / 2.0f);
-            canvas.translate(f10, measuredHeight - (h11Var4.j() / 2.0f));
-            h11Var4.d(canvas);
+            canvas.translate(f10, measuredHeight - (i11Var4.j() / 2.0f));
+            i11Var4.d(canvas);
             canvas.restore();
             f11 = f16;
         } else {
@@ -81,16 +81,16 @@ public final class m10 extends View {
         CharSequence charSequence2 = r6Var.i;
         if (charSequence2 == null || charSequence2.length() == 0) {
             f12 = measuredHeight;
-            h11Var = h11Var4;
+            i11Var = i11Var4;
             f13 = 2.0f;
         } else {
             Rect rect = AndroidUtilities.rectTmp2;
             f13 = 2.0f;
-            int dp = (int) (h11Var4.c + f10 + AndroidUtilities.dp(4.66f));
+            int dp = (int) (i11Var4.c + f10 + AndroidUtilities.dp(4.66f));
             int dp2 = (int) (measuredHeight - AndroidUtilities.dp(9.0f));
             f12 = measuredHeight;
-            int c10 = (int) (r6Var.c() + h11Var4.c + f10 + AndroidUtilities.dp(f7));
-            h11Var = h11Var4;
+            int c10 = (int) (r6Var.c() + i11Var4.c + f10 + AndroidUtilities.dp(f7));
+            i11Var = i11Var4;
             rect.set(dp, dp2, c10, (int) (f12 + AndroidUtilities.dp(9.0f)));
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(rect);
@@ -100,21 +100,21 @@ public final class m10 extends View {
             r6Var.draw(canvas);
         }
         float dp3 = AndroidUtilities.dp(30.0f);
-        float f17 = (f10 - dp3) - h11Var2.c;
+        float f17 = (f10 - dp3) - i11Var2.c;
         canvas.save();
-        canvas.translate(f17, (f12 - (h11Var2.j() / f13)) + AndroidUtilities.dp(1.0f));
-        h11Var2.d(canvas);
+        canvas.translate(f17, (f12 - (i11Var2.j() / f13)) + AndroidUtilities.dp(1.0f));
+        i11Var2.d(canvas);
         canvas.restore();
         float f18 = f10 + f11;
-        if (h11Var3 != null) {
+        if (i11Var3 != null) {
             canvas.save();
-            canvas.translate(f18 + dp3, (f12 - (h11Var3.j() / f13)) + AndroidUtilities.dp(1.0f));
-            h11Var3.d(canvas);
+            canvas.translate(f18 + dp3, (f12 - (i11Var3.j() / f13)) + AndroidUtilities.dp(1.0f));
+            i11Var3.d(canvas);
             canvas.restore();
-            f18 += dp3 + h11Var3.c;
+            f18 += dp3 + i11Var3.c;
         }
         float f19 = f18;
-        float dp4 = AndroidUtilities.dp(12.0f) + (h11Var.j() / f13) + f12;
+        float dp4 = AndroidUtilities.dp(12.0f) + (i11Var.j() / f13) + f12;
         canvas.drawRect(0.0f, dp4, getMeasuredWidth(), 1.0f + dp4, this.a);
         path.rewind();
         RectF rectF2 = AndroidUtilities.rectTmp;

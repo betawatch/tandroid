@@ -3,26 +3,26 @@ package ji;
 import org.telegram.ui.Cells.n9;
 import org.telegram.ui.Cells.o9;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public interface j0 {
-    o9 C();
+    void C0();
 
-    void F(CharSequence charSequence);
+    void R0();
 
-    n9 L();
-
-    a O();
-
-    boolean Q();
-
-    void S(int i10, int i11);
-
-    void Z();
+    o9 W();
 
     void a(h1 h1Var);
 
-    void f();
+    void a0(CharSequence charSequence);
 
-    void o0();
+    n9 g0();
+
+    void h();
+
+    a j0();
+
+    boolean p0();
+
+    void t0(int i10, int i11);
 }

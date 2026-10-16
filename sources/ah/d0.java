@@ -26,8 +26,8 @@ import org.telegram.ui.Components.f10;
 import org.telegram.ui.Components.hb0;
 import org.telegram.ui.Components.hj;
 import org.telegram.ui.Components.io;
-import org.telegram.ui.Components.iz0;
 import org.telegram.ui.Components.jo;
+import org.telegram.ui.Components.jz0;
 import org.telegram.ui.Components.kj;
 import org.telegram.ui.Components.m8;
 import org.telegram.ui.Components.mm0;
@@ -38,7 +38,7 @@ import org.telegram.ui.Components.ow0;
 import org.telegram.ui.Components.pf;
 import org.telegram.ui.Components.pk;
 import org.telegram.ui.Components.qk;
-import org.telegram.ui.Components.ul;
+import org.telegram.ui.Components.tl;
 import org.telegram.ui.Components.uv;
 import org.telegram.ui.Components.v40;
 import org.telegram.ui.Components.vi;
@@ -52,7 +52,7 @@ import org.telegram.ui.Components.zp;
 import org.telegram.ui.kc1;
 import org.telegram.ui.px;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class d0 extends s4.r0 {
     public final /* synthetic */ int a;
@@ -97,7 +97,7 @@ public final class d0 extends s4.r0 {
                 }
                 break;
             case 12:
-                ((ni.e) this.b).f++;
+                ((mi.e) this.b).f++;
                 break;
             case 15:
                 m8 m8Var = (m8) this.b;
@@ -176,9 +176,9 @@ public final class d0 extends s4.r0 {
                 break;
             case 22:
                 if (i10 == 1) {
-                    ul ulVar = (ul) this.b;
-                    if (ulVar.l0 && ulVar.m0) {
-                        AndroidUtilities.hideKeyboard(ulVar.b.getCurrentFocus());
+                    tl tlVar = (tl) this.b;
+                    if (tlVar.l0 && tlVar.m0) {
+                        AndroidUtilities.hideKeyboard(tlVar.b.getCurrentFocus());
                         break;
                     }
                 }
@@ -349,10 +349,10 @@ public final class d0 extends s4.r0 {
                 i0Var.P();
                 break;
             case 12:
-                ((ni.e) this.b).f++;
+                ((mi.e) this.b).f++;
                 break;
             case 13:
-                ((org.telegram.messenger.voip.j) this.b).run();
+                ((org.telegram.messenger.voip.p0) this.b).run();
                 break;
             case 14:
                 ((org.telegram.ui.Components.e0) this.b).s0();
@@ -432,7 +432,7 @@ public final class d0 extends s4.r0 {
                 ioVar.b.b2(ioVar, i11);
                 wn wnVar = ioVar.x;
                 if (wnVar != null && wnVar.s) {
-                    iz0 delegate = wnVar.getDelegate();
+                    jz0 delegate = wnVar.getDelegate();
                     if (delegate instanceof d6) {
                         kc1 kc1Var = ioVar.s;
                         View F = kc1Var.F((d6) delegate);

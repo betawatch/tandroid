@@ -28,8 +28,9 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.la;
 import org.telegram.ui.x5;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class g1 extends j {
     public boolean A0;
@@ -203,7 +204,7 @@ public abstract class g1 extends j {
         }
         x5 x5Var = new x5(a6Var, context);
         this.q0 = x5Var;
-        addView(x5Var, w7.a6.d(-1.0f, -1));
+        addView(x5Var, z5.d(-1.0f, -1));
         z0 z0Var = new z0(a6Var, context, this.D0);
         this.r0 = z0Var;
         z0Var.setAdapter(new c1(a6Var, context, laVar, z6Var, z10));
@@ -211,7 +212,7 @@ public abstract class g1 extends j {
         d1Var.O = new e1(a6Var);
         z0Var.setLayoutManager(d1Var);
         z0Var.i(new f1());
-        x5Var.addView(z0Var, w7.a6.d(-1.0f, -1));
+        x5Var.addView(z0Var, z5.d(-1.0f, -1));
         if (z6Var != null && z6Var.g) {
             ji.p1 p1Var = new ji.p1(a6Var, 8);
             ii.a aVar2 = new ii.a(a6Var, 7);
@@ -349,13 +350,13 @@ public abstract class g1 extends j {
                 f15 = Math.max(Math.max(f15, f7), f10);
                 f14 = Math.min(Math.min(f14, f11), y3);
                 f13 = Math.max(Math.max(f13, f11), y3);
-            } else if (childAt instanceof org.telegram.ui.Cells.x0) {
-                org.telegram.ui.Cells.x0 x0Var = (org.telegram.ui.Cells.x0) childAt;
-                if (x0Var.L()) {
-                    float x12 = x0Var.getX() + x5Var.getX() + x0Var.getBoundsLeft();
-                    float x13 = x0Var.getX() + x5Var.getX() + x0Var.getBoundsRight();
-                    float y10 = x0Var.getY() + x5Var.getY();
-                    float y11 = x0Var.getY() + x5Var.getY() + x0Var.getMeasuredHeight();
+            } else if (childAt instanceof org.telegram.ui.Cells.w0) {
+                org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) childAt;
+                if (w0Var.L()) {
+                    float x12 = w0Var.getX() + x5Var.getX() + w0Var.getBoundsLeft();
+                    float x13 = w0Var.getX() + x5Var.getX() + w0Var.getBoundsRight();
+                    float y10 = w0Var.getY() + x5Var.getY();
+                    float y11 = w0Var.getY() + x5Var.getY() + w0Var.getMeasuredHeight();
                     f12 = Math.min(Math.min(f12, x12), x13);
                     f15 = Math.max(Math.max(f15, x12), x13);
                     f14 = Math.min(Math.min(f14, y10), y11);

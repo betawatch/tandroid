@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class mc extends pb {
     public final bk0 a;
@@ -22,12 +22,12 @@ public final class mc extends pb {
         bk0 bk0Var = new bk0(context);
         this.a = bk0Var;
         bk0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(bk0Var, w7.a6.h(56.0f, 48.0f, 8388627));
+        addView(bk0Var, w7.z5.h(56.0f, 48.0f, 8388627));
         int themedColor = getThemedColor(i10);
         getThemedColor(org.telegram.ui.ActionBar.g6.Gi);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        addView(linearLayout, w7.a6.i(-1.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
+        addView(linearLayout, w7.z5.i(-1.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
         s6 s6Var = new s6(context, true, true, true);
         this.b = s6Var;
         s6Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
@@ -35,7 +35,7 @@ public final class mc extends pb {
         s6Var.setTextSize(AndroidUtilities.dp(14.0f));
         s6Var.setTypeface(AndroidUtilities.bold());
         s6Var.setEllipsizeByGradient(true);
-        linearLayout.addView(s6Var, w7.a6.n(-1, 20));
+        linearLayout.addView(s6Var, w7.z5.n(-1, 20));
         s6 s6Var2 = new s6(context, true, true, true);
         this.c = s6Var2;
         s6Var2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
@@ -43,7 +43,7 @@ public final class mc extends pb {
         s6Var2.setTypeface(Typeface.SANS_SERIF);
         s6Var2.setTextSize(AndroidUtilities.dp(13.0f));
         s6Var2.setEllipsizeByGradient(true);
-        linearLayout.addView(s6Var2, w7.a6.n(-1, 18));
+        linearLayout.addView(s6Var2, w7.z5.n(-1, 18));
     }
 
     public final void c(int i10, String... strArr) {

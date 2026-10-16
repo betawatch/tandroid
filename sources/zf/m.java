@@ -14,10 +14,10 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.b6;
-import org.telegram.ui.Components.r61;
+import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.tj0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class m {
     public static SpannableStringBuilder a(String str) {
@@ -98,7 +98,7 @@ public abstract class m {
                     if (charSequence.equals(url)) {
                         spannableStringBuilder.setSpan(new URLSpan(url), spanStart2, spanEnd2, 33);
                     } else {
-                        spannableStringBuilder.setSpan(new r61(url, null), spanStart2, spanEnd2, 33);
+                        spannableStringBuilder.setSpan(new s61(url, null), spanStart2, spanEnd2, 33);
                     }
                 }
             }
@@ -107,7 +107,7 @@ public abstract class m {
                 l lVar2 = (l) arrayList2.get(i11);
                 int spanStart3 = fromHtml.getSpanStart(lVar2);
                 int spanEnd3 = fromHtml.getSpanEnd(lVar2);
-                spannableStringBuilder.setSpan(new mi.h(true, lVar2.b, spannableStringBuilder.subSequence(spanStart3, spanEnd3).toString()), spanStart3, spanEnd3, 33);
+                spannableStringBuilder.setSpan(new li.h(true, lVar2.b, spannableStringBuilder.subSequence(spanStart3, spanEnd3).toString()), spanStart3, spanEnd3, 33);
             }
             for (int i12 = 0; i12 < arrayList3.size(); i12++) {
                 l lVar3 = (l) arrayList3.get(i12);

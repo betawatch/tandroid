@@ -8,7 +8,7 @@ import java.io.EOFException;
 import java.util.List;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class d implements c3.o {
     public final int a;
@@ -199,7 +199,7 @@ public final class d implements c3.o {
         int i10 = 0;
         while (true) {
             e2.x xVar = this.d;
-            pVar.a(0, 10, xVar.a);
+            pVar.b(0, 10, xVar.a);
             xVar.N(0);
             if (xVar.D() != 4801587) {
                 break;

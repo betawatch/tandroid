@@ -16,14 +16,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.ix0;
 import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class b0 extends View {
     public boolean E;
@@ -212,7 +211,7 @@ public final class b0 extends View {
         AndroidUtilities.dp(4.0f);
         int dp2 = AndroidUtilities.dp(40.0f);
         if (this.f) {
-            dp2 = yh.c(4.0f, (int) this.s, dp2);
+            dp2 = org.telegram.messenger.g0.C(4.0f, (int) this.s, dp2);
         }
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(dp2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
     }

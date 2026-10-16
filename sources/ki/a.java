@@ -12,11 +12,11 @@ import org.telegram.ui.Components.voip.s1;
 import org.telegram.ui.Components.voip.z0;
 import org.telegram.ui.ee;
 import org.telegram.ui.fo;
-import org.telegram.ui.gu0;
+import org.telegram.ui.fu0;
 import org.telegram.ui.m0;
-import org.telegram.ui.web.u1;
-import org.telegram.ui.wi1;
-import org.telegram.ui.y00;
+import org.telegram.ui.vi1;
+import org.telegram.ui.web.v1;
+import org.telegram.ui.x00;
 import rg.a2;
 import rg.p2;
 import rg.t1;
@@ -32,7 +32,7 @@ import zh.r3;
 import zh.s2;
 import zh.v3;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -70,11 +70,11 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
                 q0Var.i = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 break;
             case 2:
-                wi1 wi1Var = (wi1) obj;
-                wi1Var.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                vi1 vi1Var = (vi1) obj;
+                vi1Var.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 int dp = (AndroidUtilities.displaySize.x - AndroidUtilities.dp(36.0f)) - AndroidUtilities.dp(52.0f);
-                z0 z0Var = wi1Var.c;
-                z0Var.getLayoutParams().width = AndroidUtilities.dp(52.0f) + ((int) (dp * wi1Var.E));
+                z0 z0Var = vi1Var.c;
+                z0Var.getLayoutParams().width = AndroidUtilities.dp(52.0f) + ((int) (dp * vi1Var.E));
                 z0Var.requestLayout();
                 break;
             case 3:
@@ -100,11 +100,11 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
                 b4Var.invalidate();
                 break;
             case 7:
-                u1 u1Var = (u1) obj;
+                v1 v1Var = (v1) obj;
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                u1Var.U = floatValue;
-                u1Var.V.setAlpha(floatValue);
-                u1Var.invalidate();
+                v1Var.U = floatValue;
+                v1Var.V.setAlpha(floatValue);
+                v1Var.invalidate();
                 break;
             case 8:
                 m0 m0Var = (m0) obj;
@@ -117,7 +117,7 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
                 m0Var.invalidate();
                 break;
             case 9:
-                ((gu0) ((y0) obj)).K.e0.invalidate();
+                ((fu0) ((y0) obj)).K.e0.invalidate();
                 break;
             case 10:
                 t1 t1Var = (t1) obj;
@@ -218,9 +218,9 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
                 break;
             case 26:
                 float floatValue6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                y00 y00Var = ((d7) obj).c;
-                y00Var.setScaleX(floatValue6);
-                y00Var.setScaleY(floatValue6);
+                x00 x00Var = ((d7) obj).c;
+                x00Var.setScaleX(floatValue6);
+                x00Var.setScaleY(floatValue6);
                 break;
             default:
                 e8 e8Var = (e8) obj;

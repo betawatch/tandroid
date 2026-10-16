@@ -27,7 +27,7 @@ import org.telegram.ui.Components.wu;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class j {
     public static void a(a2 a2Var, boolean z10) {
@@ -272,15 +272,15 @@ public abstract class j {
         int i14 = 8;
         if (tL_payments_giveawayInfoResults.refunded) {
             String string3 = LocaleController.getString("BoostingGiveawayCanceledByPayment", R.string.BoostingGiveawayCanceledByPayment);
-            TextView g10 = org.telegram.messenger.q.g(context, i11, 14.0f);
-            g10.setTypeface(AndroidUtilities.bold());
-            g10.setGravity(17);
-            g10.setText(string3);
+            TextView f7 = org.telegram.messenger.g0.f(context, i11, 14.0f);
+            f7.setTypeface(AndroidUtilities.bold());
+            f7.setGravity(17);
+            f7.setText(string3);
             int i15 = g6.p7;
-            g10.setTextColor(g6.w0(i15, c6Var));
-            g10.setBackground(g6.d0(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), g6.m1(0.1f, g6.w0(i15, c6Var))));
-            g10.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
-            a2Var.c = g10;
+            f7.setTextColor(g6.w0(i15, c6Var));
+            f7.setBackground(g6.d0(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), g6.m1(0.1f, g6.w0(i15, c6Var))));
+            f7.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
+            a2Var.c = f7;
             a2Var.T = spannableStringBuilder;
             alertDialog$Builder.k(LocaleController.getString("Close", R.string.Close), new t0.a(i14));
             a(alertDialog$Builder.o(), true);
@@ -352,7 +352,7 @@ public abstract class j {
         } else {
             replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("BoostingGiftLinkForwardedTo", R.string.BoostingGiftLinkForwardedTo, UserObject.getFirstName(MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(j10)))));
         }
-        AndroidUtilities.runOnUIThread(new rh.j(replaceTags, 13), 450L);
+        AndroidUtilities.runOnUIThread(new ri.h0(replaceTags, 13), 450L);
     }
 
     public static void i(long j10, sg.j0 j0Var) {

@@ -15,7 +15,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SecretMediaViewer;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class b8 extends org.telegram.ui.ActionBar.k {
     public final /* synthetic */ int u1;
@@ -284,7 +284,7 @@ public final class b8 extends org.telegram.ui.ActionBar.k {
     public boolean v() {
         switch (this.u1) {
             case 3:
-                org.telegram.ui.sx sxVar = ((org.telegram.ui.yy) this.v1).F3;
+                org.telegram.ui.sx sxVar = ((org.telegram.ui.yy) this.v1).G3;
                 return sxVar != null && sxVar.c();
             default:
                 return super.v();
@@ -295,7 +295,7 @@ public final class b8 extends org.telegram.ui.ActionBar.k {
     public void w(boolean z10) {
         switch (this.u1) {
             case 3:
-                org.telegram.ui.sx sxVar = ((org.telegram.ui.yy) this.v1).F3;
+                org.telegram.ui.sx sxVar = ((org.telegram.ui.yy) this.v1).G3;
                 if (sxVar != null && sxVar.c() && getBackButton() != null) {
                     getBackButton().animate().alpha(z10 ? 1.0f : 0.0f).start();
                 }

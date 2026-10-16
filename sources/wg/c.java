@@ -22,9 +22,9 @@ import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.br;
 import org.telegram.ui.Components.k9;
 import org.telegram.ui.Components.z9;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class c extends FrameLayout {
     public final c6 a;
@@ -45,7 +45,7 @@ public abstract class c extends FrameLayout {
         this.a = c6Var;
         View view = new View(context);
         this.r = view;
-        addView(view, a6.n(-1, -1));
+        addView(view, z5.n(-1, -1));
         view.setBackgroundColor(g6.w0(g6.h5, c6Var));
         k9Var.r = AndroidUtilities.dp(40.0f);
         z9 z9Var = new z9(context);
@@ -106,7 +106,7 @@ public abstract class c extends FrameLayout {
             f7 = 53.0f;
             f14 = 16.0f;
         }
-        this.c.setLayoutParams(a6.a(40.0f, f14, 0.0f, b() ? f7 : 16.0f, 0.0f, 40, i10));
+        this.c.setLayoutParams(z5.a(40.0f, f14, 0.0f, b() ? f7 : 16.0f, 0.0f, 40, i10));
         boolean z10 = LocaleController.isRTL;
         int i11 = (z10 ? 5 : 3) | 16;
         if (z10) {
@@ -119,7 +119,7 @@ public abstract class c extends FrameLayout {
         } else {
             f11 = 20.0f;
         }
-        this.d.setLayoutParams(a6.a(-2.0f, f10, 0.0f, f11, 0.0f, -1, i11));
+        this.d.setLayoutParams(z5.a(-2.0f, f10, 0.0f, f11, 0.0f, -1, i11));
         boolean z11 = LocaleController.isRTL;
         int i12 = (z11 ? 5 : 3) | 16;
         if (z11) {
@@ -132,9 +132,9 @@ public abstract class c extends FrameLayout {
         } else {
             f13 = 20.0f;
         }
-        this.e.setLayoutParams(a6.a(-2.0f, f12, 0.0f, f13, 0.0f, -1, i12));
+        this.e.setLayoutParams(z5.a(-2.0f, f12, 0.0f, f13, 0.0f, -1, i12));
         boolean z12 = LocaleController.isRTL;
-        this.f.setLayoutParams(a6.a(22.0f, z12 ? 15.0f : 20.0f, 0.0f, z12 ? 20.0f : 15.0f, 0.0f, 22, (z12 ? 5 : 3) | 16));
+        this.f.setLayoutParams(z5.a(22.0f, z12 ? 15.0f : 20.0f, 0.0f, z12 ? 20.0f : 15.0f, 0.0f, 22, (z12 ? 5 : 3) | 16));
     }
 
     @Override // android.view.ViewGroup, android.view.View

@@ -6,7 +6,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bs0 implements org.telegram.ui.ActionBar.z1, MessagesStorage.StringCallback {
     public final /* synthetic */ xv0 a;
@@ -30,6 +30,6 @@ public final /* synthetic */ class bs0 implements org.telegram.ui.ActionBar.z1, 
 
     @Override // org.telegram.messenger.MessagesStorage.StringCallback
     public void run(String str) {
-        r0.getStoriesController().r(r0.j1, str, new org.telegram.ui.vc(29, this.a, this.b));
+        r0.getStoriesController().r(r0.j1, str, new org.telegram.ui.uc(29, this.a, this.b));
     }
 }

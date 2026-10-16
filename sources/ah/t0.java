@@ -20,6 +20,7 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.sk;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.cx0;
@@ -34,9 +35,9 @@ import org.telegram.ui.fo;
 import org.telegram.ui.l61;
 import org.telegram.ui.o61;
 import org.telegram.ui.s61;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class t0 {
     public final int[] A;
@@ -118,7 +119,7 @@ public final class t0 {
         n0Var.setSelectedReactions((HashSet<i1>) hashSet);
         n0Var.setDrawBackground(false);
         n0Var.s(null);
-        s0Var.addView(n0Var, a6.a(-2.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 0));
+        s0Var.addView(n0Var, z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 0));
         int i13 = i10 == 5 ? 2 : 16;
         if (i10 == 5) {
             s0Var.setClipChildren(false);
@@ -127,9 +128,9 @@ public final class t0 {
             vVar.setClipToPadding(false);
         }
         float f7 = i13;
-        vVar.addView(s0Var, a6.a(-1.0f, f7, f7, f7, 16.0f, -1, i10 == 5 ? 85 : 48));
+        vVar.addView(s0Var, z5.a(-1.0f, f7, f7, f7, 16.0f, -1, i10 == 5 ? 85 : 48));
         vVar.setClipChildren(false);
-        if (i10 == 1 || (gl0Var.getDelegate() != null && gl0Var.getDelegate().D())) {
+        if (i10 == 1 || (gl0Var.getDelegate() != null && gl0Var.getDelegate().z())) {
             n0Var.setBackgroundDelegate(new h0(i11, this, gl0Var));
         }
         if (z12) {
@@ -373,7 +374,7 @@ public final class t0 {
             this.x.setInterpolator(es.h);
         } else if (this.w) {
             this.x.setDuration(450L);
-            org.telegram.ui.Cells.d0.l(0.5f, this.x);
+            sk.l(0.5f, this.x);
         } else {
             this.x.setDuration(350L);
             this.x.setInterpolator(es.f);

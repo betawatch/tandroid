@@ -14,7 +14,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class yz extends FrameLayout {
     public static final /* synthetic */ int h = 0;
@@ -29,7 +29,7 @@ public final class yz extends FrameLayout {
         super(context);
         this.a = c6Var;
         View radialProgressView = new RadialProgressView(context, null);
-        addView(radialProgressView, w7.a6.d(-2.0f, -2));
+        addView(radialProgressView, w7.z5.d(-2.0f, -2));
         this.c = radialProgressView;
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
@@ -42,15 +42,15 @@ public final class yz extends FrameLayout {
         bk0Var.setScaleType(ImageView.ScaleType.FIT_XY);
         bk0Var.setImportantForAccessibility(2);
         bk0Var.setVisibility(8);
-        linearLayout.addView(bk0Var, w7.a6.t(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 17, 0, 0, 0, 20));
+        linearLayout.addView(bk0Var, w7.z5.t(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 17, 0, 0, 0, 20));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 20.0f);
         textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.c7, c6Var));
         textView.setGravity(1);
         textView.setText(LocaleController.getString(R.string.NoResult));
-        linearLayout.addView(textView, w7.a6.q(-2, -2, 17));
-        addView(linearLayout, w7.a6.d(-2.0f, -2));
+        linearLayout.addView(textView, w7.z5.q(-2, -2, 17));
+        addView(linearLayout, w7.z5.d(-2.0f, -2));
         AndroidUtilities.updateViewVisibilityAnimated(textView, false, 2.0f, false);
         AndroidUtilities.updateViewVisibilityAnimated(radialProgressView, false, 1.0f, false);
         setOnTouchListener(new ci.d(18));

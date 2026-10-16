@@ -9,7 +9,7 @@ import android.view.TextureView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b7 implements Runnable {
     public final /* synthetic */ int a;
@@ -52,14 +52,14 @@ public final /* synthetic */ class b7 implements Runnable {
                         if (bitmap2 != null && (nVar = (r8.n) e7Var.a.get()) != null && nVar.b.k()) {
                             int width2 = bitmap2.getWidth();
                             int height2 = bitmap2.getHeight();
-                            li.k kVar = new li.k(23);
+                            m.h3 h3Var = new m.h3(23);
                             int width3 = bitmap2.getWidth();
                             int height3 = bitmap2.getHeight();
-                            kVar.d = bitmap2;
-                            a3.l lVar = (a3.l) kVar.b;
+                            h3Var.d = bitmap2;
+                            a3.l lVar = (a3.l) h3Var.b;
                             lVar.a = width3;
                             lVar.b = height3;
-                            SparseArray e12 = nVar.e1(kVar);
+                            SparseArray e12 = nVar.e1(h3Var);
                             for (int i11 = 0; i11 < e12.size(); i11++) {
                                 r8.m mVar = (r8.m) e12.valueAt(i11);
                                 String str2 = mVar.b;
@@ -98,7 +98,7 @@ public final /* synthetic */ class b7 implements Runnable {
                             }
                         }
                         e7Var.d = c7Var;
-                        AndroidUtilities.runOnUIThread(new x6(4, e7Var, c7Var));
+                        AndroidUtilities.runOnUIThread(new y6(4, e7Var, c7Var));
                     }
                     if (!e7Var.b.get()) {
                         Utilities.globalQueue.cancelRunnable(e7Var.h);

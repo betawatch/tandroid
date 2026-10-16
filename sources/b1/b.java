@@ -1,12 +1,12 @@
 package b1;
 
 import com.google.android.gms.common.api.r;
-import di.x6;
+import di.y6;
 import java.util.concurrent.Executor;
 import v0.i;
-import v0.o;
+import v0.p;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements td.a {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class b implements td.a {
                 this.b.execute(new a1.f(14, this.c, this.d));
                 break;
             case 1:
-                this.b.execute(new a1.f(15, this.c, (o) this.d));
+                this.b.execute(new a1.f(15, this.c, (p) this.d));
                 break;
             case 2:
                 this.b.execute(new h(this.c, (w0.i) this.d, 0));
@@ -54,7 +54,7 @@ public final /* synthetic */ class b implements td.a {
                 } else {
                     cVar = new w0.c("Conditional create failed, failure: " + exc, 2);
                 }
-                this.b.execute(new x6(16, this.c, cVar));
+                this.b.execute(new y6(16, this.c, cVar));
                 break;
         }
         return id.i.a;

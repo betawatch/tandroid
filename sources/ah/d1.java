@@ -29,7 +29,7 @@ import org.telegram.ui.Components.s5;
 import org.telegram.ui.a71;
 import org.telegram.ui.fo;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class d1 {
     public static d1 B;
@@ -146,8 +146,8 @@ public final class d1 {
             messageObject = ((u1) view).getMessageObject();
             this.n = messageObject.getId();
             this.o = messageObject.getGroupId();
-        } else if (view instanceof org.telegram.ui.Cells.x0) {
-            messageObject = ((org.telegram.ui.Cells.x0) view).getMessageObject();
+        } else if (view instanceof org.telegram.ui.Cells.w0) {
+            messageObject = ((org.telegram.ui.Cells.w0) view).getMessageObject();
             this.n = messageObject.getId();
             this.o = 0L;
         } else {
@@ -158,7 +158,7 @@ public final class d1 {
         this.p = i1Var;
         this.a = i11;
         this.v = view;
-        g1 l4 = z12 ? ((u1) view).N.l(i1Var) : view instanceof org.telegram.ui.Cells.x0 ? ((org.telegram.ui.Cells.x0) view).E0.l(i1Var) : null;
+        g1 l4 = z12 ? ((u1) view).N.l(i1Var) : view instanceof org.telegram.ui.Cells.w0 ? ((org.telegram.ui.Cells.w0) view).E0.l(i1Var) : null;
         if (z10 && i11 == 2) {
             view3 = view2;
             g1Var = l4;
@@ -219,11 +219,11 @@ public final class d1 {
                                 imageReceiver.setForUserOrChat(chat, k9Var);
                                 c1 c1Var = new c1();
                                 c1Var.a = imageReceiver;
-                                c1Var.e = a1.g.d(org.telegram.ui.Cells.d0.e(random, 100), 100.0f, 0.1f, 0.3f);
-                                c1Var.h = a1.g.d(org.telegram.ui.Cells.d0.e(random, 100), 100.0f, 0.4f, 0.8f);
+                                c1Var.e = a1.g.d(org.telegram.ui.Cells.c1.d(random, 100), 100.0f, 0.1f, 0.3f);
+                                c1Var.h = a1.g.d(org.telegram.ui.Cells.c1.d(random, 100), 100.0f, 0.4f, 0.8f);
                                 c1Var.i = (Math.abs(random.nextInt() % 100) * 60) / 100.0f;
                                 float f17 = 0.4f;
-                                c1Var.b = (int) a1.g.d(org.telegram.ui.Cells.d0.e(random, 100), 100.0f, 200.0f, 400.0f);
+                                c1Var.b = (int) a1.g.d(org.telegram.ui.Cells.c1.d(random, 100), 100.0f, 200.0f, 400.0f);
                                 float f18 = 0.6f;
                                 float f19 = 0.2f;
                                 if (this.x.isEmpty()) {
@@ -233,8 +233,8 @@ public final class d1 {
                                     int i24 = 0;
                                     while (i24 < 10) {
                                         int i25 = i24;
-                                        float B2 = a1.g.B(org.telegram.ui.Cells.d0.e(random, 100), f18, 100.0f, f19);
-                                        float B3 = a1.g.B(org.telegram.ui.Cells.d0.e(random, 100), f17, 100.0f, f19);
+                                        float B2 = a1.g.B(org.telegram.ui.Cells.c1.d(random, 100), f18, 100.0f, f19);
+                                        float B3 = a1.g.B(org.telegram.ui.Cells.c1.d(random, 100), f17, 100.0f, f19);
                                         float f23 = 2.14748365E9f;
                                         for (int i26 = 0; i26 < this.x.size(); i26++) {
                                             float f24 = ((c1) this.x.get(i26)).f - B2;
@@ -257,8 +257,8 @@ public final class d1 {
                                     c1Var.f = f21;
                                     c1Var.g = f22;
                                 } else {
-                                    c1Var.f = a1.g.B(org.telegram.ui.Cells.d0.e(random, 100), 0.6f, 100.0f, 0.2f);
-                                    c1Var.g = (org.telegram.ui.Cells.d0.e(random, 100) * 0.4f) / 100.0f;
+                                    c1Var.f = a1.g.B(org.telegram.ui.Cells.c1.d(random, 100), 0.6f, 100.0f, 0.2f);
+                                    c1Var.g = (org.telegram.ui.Cells.c1.d(random, 100) * 0.4f) / 100.0f;
                                 }
                                 this.x.add(c1Var);
                             }
@@ -270,11 +270,11 @@ public final class d1 {
                                 imageReceiver.setForUserOrChat(user, k9Var);
                                 c1 c1Var2 = new c1();
                                 c1Var2.a = imageReceiver;
-                                c1Var2.e = a1.g.d(org.telegram.ui.Cells.d0.e(random, 100), 100.0f, 0.1f, 0.3f);
-                                c1Var2.h = a1.g.d(org.telegram.ui.Cells.d0.e(random, 100), 100.0f, 0.4f, 0.8f);
+                                c1Var2.e = a1.g.d(org.telegram.ui.Cells.c1.d(random, 100), 100.0f, 0.1f, 0.3f);
+                                c1Var2.h = a1.g.d(org.telegram.ui.Cells.c1.d(random, 100), 100.0f, 0.4f, 0.8f);
                                 c1Var2.i = (Math.abs(random.nextInt() % 100) * 60) / 100.0f;
                                 float f172 = 0.4f;
-                                c1Var2.b = (int) a1.g.d(org.telegram.ui.Cells.d0.e(random, 100), 100.0f, 200.0f, 400.0f);
+                                c1Var2.b = (int) a1.g.d(org.telegram.ui.Cells.c1.d(random, 100), 100.0f, 200.0f, 400.0f);
                                 float f182 = 0.6f;
                                 float f192 = 0.2f;
                                 if (this.x.isEmpty()) {
@@ -525,7 +525,7 @@ public final class d1 {
                     float f29 = ((a71) view3).G;
                     if (f29 > f11) {
                         f12 = view3.getWidth() * ((f29 * 2.0f) + 1.0f);
-                        f15 = org.telegram.messenger.q.y(f12, view3.getWidth(), 2.0f, f15);
+                        f15 = org.telegram.messenger.g0.x(f12, view3.getWidth(), 2.0f, f15);
                         f16 -= f12 - view3.getWidth();
                     }
                 }
@@ -773,8 +773,8 @@ public final class d1 {
             View view = d1Var2.v;
             if (view instanceof u1) {
                 ((u1) view).N.b(d1Var2.p);
-            } else if (view instanceof org.telegram.ui.Cells.x0) {
-                ((org.telegram.ui.Cells.x0) view).E0.b(d1Var2.p);
+            } else if (view instanceof org.telegram.ui.Cells.w0) {
+                ((org.telegram.ui.Cells.w0) view).E0.b(d1Var2.p);
             }
         }
     }

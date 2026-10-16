@@ -16,7 +16,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class m4 extends FrameLayout {
     public int a;
@@ -179,7 +179,7 @@ public class m4 extends FrameLayout {
             s6Var.setTag(Integer.valueOf(i10));
             s6Var.getDrawable().r(true, false);
             float f7 = i11;
-            addView(s6Var, w7.a6.a(this.h - i12, f7, i12, f7, z10 ? 0.0f : i13, -1, (LocaleController.isRTL ? 5 : 3) | 48));
+            addView(s6Var, w7.z5.a(this.h - i12, f7, i12, f7, z10 ? 0.0f : i13, -1, (LocaleController.isRTL ? 5 : 3) | 48));
         } else {
             TextView textView = new TextView(getContext());
             this.d = textView;
@@ -190,7 +190,7 @@ public class m4 extends FrameLayout {
             textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(i10, c6Var));
             textView.setTag(Integer.valueOf(i10));
             float f10 = i11;
-            addView(textView, w7.a6.a(-1.0f, f10, i12, f10, z10 ? 0.0f : i13, -1, (LocaleController.isRTL ? 5 : 3) | 48));
+            addView(textView, w7.z5.a(-1.0f, f10, i12, f10, z10 ? 0.0f : i13, -1, (LocaleController.isRTL ? 5 : 3) | 48));
         }
         if (z10) {
             org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(getContext());
@@ -198,9 +198,9 @@ public class m4 extends FrameLayout {
             h5Var.setTextSize(13);
             h5Var.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
             float f11 = i11;
-            addView(h5Var, w7.a6.a(-1.0f, f11, 21.0f, f11, i13, -1, (LocaleController.isRTL ? 3 : 5) | 48));
+            addView(h5Var, w7.z5.a(-1.0f, f11, 21.0f, f11, i13, -1, (LocaleController.isRTL ? 3 : 5) | 48));
         }
-        WeakHashMap weakHashMap = r0.j0.a;
-        new r0.x(R.id.tag_accessibility_heading, Boolean.class, 0, 28, 2).d(this, Boolean.TRUE);
+        WeakHashMap weakHashMap = r0.i0.a;
+        new r0.w(R.id.tag_accessibility_heading, Boolean.class, 0, 28, 2).d(this, Boolean.TRUE);
     }
 }

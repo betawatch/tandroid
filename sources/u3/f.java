@@ -46,7 +46,7 @@ import org.telegram.tgnet.TLRPC;
 import v7.u6;
 import z3.l;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class f implements o {
     public static final byte[] k0 = {49, 10, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 10};
@@ -145,7 +145,7 @@ public final class f implements o {
         this.L = -1L;
         this.M = -9223372036854775807L;
         this.a = bVar;
-        bVar.d = new l2.f(this, 21);
+        bVar.d = new m.l(this);
         this.f = lVar;
         this.C = new SparseArray();
         this.d = (i10 & 1) == 0;
@@ -202,20 +202,20 @@ public final class f implements o {
                 lVar.j(xVar.a, 0, 1, false);
                 C = ((C << 8) & (-256)) | (xVar.a[0] & 255);
             } else {
-                long t10 = c0Var.t(lVar);
+                long p5 = c0Var.p(lVar);
                 long j12 = c0Var.b;
-                if (t10 != Long.MIN_VALUE && (j10 == -1 || j12 + t10 < j10)) {
+                if (p5 != Long.MIN_VALUE && (j10 == -1 || j12 + p5 < j10)) {
                     while (true) {
                         long j13 = c0Var.b;
-                        long j14 = j12 + t10;
+                        long j14 = j12 + p5;
                         if (j13 < j14) {
-                            if (c0Var.t(lVar) != Long.MIN_VALUE) {
-                                long t11 = c0Var.t(lVar);
-                                if (t11 < 0 || t11 > 2147483647L) {
+                            if (c0Var.p(lVar) != Long.MIN_VALUE) {
+                                long p9 = c0Var.p(lVar);
+                                if (p9 < 0 || p9 > 2147483647L) {
                                     break;
                                 }
-                                if (t11 != 0) {
-                                    int i12 = (int) t11;
+                                if (p9 != 0) {
+                                    int i12 = (int) p9;
                                     lVar.v(i12, false);
                                     c0Var.b += i12;
                                 }
@@ -456,7 +456,7 @@ public final class f implements o {
                             pVar3.q();
                             int i20 = r43;
                             while (true) {
-                                pVar3.a(i20, i19, bArr2);
+                                pVar3.b(i20, i19, bArr2);
                                 byte b11 = bArr2[i20];
                                 int i21 = 0;
                                 while (true) {
@@ -470,7 +470,7 @@ public final class f implements o {
                                 }
                                 if (i11 != -1 && i11 <= 4) {
                                     a2 = (int) g.a(i11, false, bArr2);
-                                    Object obj = bVar.d.b;
+                                    Object obj = bVar.d.a;
                                     if (a2 == 357149030 || a2 == 524531317 || a2 == 475249515 || a2 == 374648427) {
                                     }
                                 }
@@ -497,9 +497,9 @@ public final class f implements o {
                         bVar.g = r82.b(pVar3, false, z10, 8);
                         bVar.e = 2;
                     }
-                    l2.f fVar2 = bVar.d;
+                    m.l lVar = bVar.d;
                     int i22 = bVar.f;
-                    Object obj2 = fVar2.b;
+                    Object obj2 = lVar.a;
                     switch (i22) {
                         case 131:
                         case 136:
@@ -618,7 +618,7 @@ public final class f implements o {
                     } else if (i10 == 1) {
                         long position = pVar3.getPosition();
                         arrayDeque.push(new a(bVar.f, bVar.g + position));
-                        bVar.d.s(bVar.f, position, bVar.g);
+                        bVar.d.F(bVar.f, position, bVar.g);
                         z11 = false;
                         bVar.e = 0;
                         pVar2 = pVar3;
@@ -627,7 +627,7 @@ public final class f implements o {
                         if (j13 > 8) {
                             throw x0.a(null, "Invalid integer size: " + bVar.g);
                         }
-                        fVar2.g(i22, bVar.a(pVar3, (int) j13));
+                        lVar.C(i22, bVar.a(pVar3, (int) j13));
                         z11 = false;
                         bVar.e = 0;
                         pVar2 = pVar3;
@@ -649,12 +649,12 @@ public final class f implements o {
                             r15 = 0;
                             str = new String(bArr3, 0, i23);
                         }
-                        fVar2.u(i22, str);
+                        lVar.G(i22, str);
                         bVar.e = r15;
                         z11 = r15;
                         pVar2 = pVar3;
                     } else if (i10 == 4) {
-                        fVar2.b(i22, (int) bVar.g, pVar3);
+                        lVar.t(i22, (int) bVar.g, pVar3);
                         z11 = false;
                         bVar.e = 0;
                         pVar2 = pVar3;
@@ -668,85 +668,85 @@ public final class f implements o {
                         }
                         int i24 = (int) j15;
                         double intBitsToFloat = i24 == 4 ? Float.intBitsToFloat((int) r4) : Double.longBitsToDouble(bVar.a(pVar3, i24));
-                        f fVar3 = (f) fVar2.b;
+                        f fVar2 = (f) lVar.a;
                         if (i22 == 181) {
-                            fVar3.h(i22);
-                            fVar3.y.S = (int) intBitsToFloat;
+                            fVar2.h(i22);
+                            fVar2.y.S = (int) intBitsToFloat;
                         } else if (i22 != 17545) {
                             switch (i22) {
                                 case 21969:
-                                    fVar3.h(i22);
-                                    fVar3.y.F = (float) intBitsToFloat;
+                                    fVar2.h(i22);
+                                    fVar2.y.F = (float) intBitsToFloat;
                                     break;
                                 case 21970:
-                                    fVar3.h(i22);
-                                    fVar3.y.G = (float) intBitsToFloat;
+                                    fVar2.h(i22);
+                                    fVar2.y.G = (float) intBitsToFloat;
                                     break;
                                 case 21971:
-                                    fVar3.h(i22);
-                                    fVar3.y.H = (float) intBitsToFloat;
+                                    fVar2.h(i22);
+                                    fVar2.y.H = (float) intBitsToFloat;
                                     break;
                                 case 21972:
-                                    fVar3.h(i22);
-                                    fVar3.y.I = (float) intBitsToFloat;
+                                    fVar2.h(i22);
+                                    fVar2.y.I = (float) intBitsToFloat;
                                     break;
                                 case 21973:
-                                    fVar3.h(i22);
-                                    fVar3.y.J = (float) intBitsToFloat;
+                                    fVar2.h(i22);
+                                    fVar2.y.J = (float) intBitsToFloat;
                                     break;
                                 case 21974:
-                                    fVar3.h(i22);
-                                    fVar3.y.K = (float) intBitsToFloat;
+                                    fVar2.h(i22);
+                                    fVar2.y.K = (float) intBitsToFloat;
                                     break;
                                 case 21975:
-                                    fVar3.h(i22);
-                                    fVar3.y.L = (float) intBitsToFloat;
+                                    fVar2.h(i22);
+                                    fVar2.y.L = (float) intBitsToFloat;
                                     break;
                                 case 21976:
-                                    fVar3.h(i22);
-                                    fVar3.y.M = (float) intBitsToFloat;
+                                    fVar2.h(i22);
+                                    fVar2.y.M = (float) intBitsToFloat;
                                     break;
                                 case 21977:
-                                    fVar3.h(i22);
-                                    fVar3.y.N = (float) intBitsToFloat;
+                                    fVar2.h(i22);
+                                    fVar2.y.N = (float) intBitsToFloat;
                                     break;
                                 case 21978:
-                                    fVar3.h(i22);
-                                    fVar3.y.O = (float) intBitsToFloat;
+                                    fVar2.h(i22);
+                                    fVar2.y.O = (float) intBitsToFloat;
                                     break;
                                 default:
                                     switch (i22) {
                                         case 30323:
-                                            fVar3.h(i22);
-                                            fVar3.y.u = (float) intBitsToFloat;
+                                            fVar2.h(i22);
+                                            fVar2.y.u = (float) intBitsToFloat;
                                             break;
                                         case 30324:
-                                            fVar3.h(i22);
-                                            fVar3.y.v = (float) intBitsToFloat;
+                                            fVar2.h(i22);
+                                            fVar2.y.v = (float) intBitsToFloat;
                                             break;
                                         case 30325:
-                                            fVar3.h(i22);
-                                            fVar3.y.w = (float) intBitsToFloat;
+                                            fVar2.h(i22);
+                                            fVar2.y.w = (float) intBitsToFloat;
                                             break;
                                     }
                             }
                         } else {
-                            fVar3.u = (long) intBitsToFloat;
+                            fVar2.u = (long) intBitsToFloat;
                         }
                         z11 = false;
                         bVar.e = 0;
                         pVar2 = pVar3;
                     }
                 } else {
-                    l2.f fVar4 = bVar.d;
+                    m.l lVar2 = bVar.d;
                     int i25 = ((a) arrayDeque.pop()).a;
-                    f fVar5 = (f) fVar4.b;
-                    ?? r83 = fVar5.C;
-                    ?? r92 = fVar5.c;
-                    fVar5.j0.getClass();
+                    f fVar3 = (f) lVar2.a;
+                    ?? r83 = fVar3.C;
+                    ?? r92 = fVar3.c;
+                    fVar3.j0.getClass();
                     if (i25 != 160) {
                         if (i25 == 174) {
-                            e eVar = fVar5.y;
+                            e eVar = fVar3.y;
                             eVar.getClass();
                             String str5 = eVar.c;
                             if (str5 == null) {
@@ -1140,7 +1140,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 2:
@@ -1188,7 +1188,7 @@ public final class f implements o {
                                                     wVar.j = str2;
                                                     wVar.v = eVar.m;
                                                     eVar.b0 = wVar.a();
-                                                    eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                                    eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                                     r92.put(eVar.d, eVar);
                                                 }
                                                 int i34 = eVar.R;
@@ -1222,7 +1222,7 @@ public final class f implements o {
                                                     wVar.j = str2;
                                                     wVar.v = eVar.m;
                                                     eVar.b0 = wVar.a();
-                                                    eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                                    eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                                     r92.put(eVar.d, eVar);
                                                 }
                                                 str6 = "audio/raw";
@@ -1250,7 +1250,7 @@ public final class f implements o {
                                                 wVar.j = str2;
                                                 wVar.v = eVar.m;
                                                 eVar.b0 = wVar.a();
-                                                eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                                eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                                 r92.put(eVar.d, eVar);
                                             } catch (ArrayIndexOutOfBoundsException unused) {
                                                 throw x0.a(null, "Error parsing MS/ACM codec private");
@@ -1284,7 +1284,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 4:
@@ -1360,7 +1360,7 @@ public final class f implements o {
                                                                     wVar.j = str2;
                                                                     wVar.v = eVar.m;
                                                                     eVar.b0 = wVar.a();
-                                                                    eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                                                    eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                                                     r92.put(eVar.d, eVar);
                                                                 }
                                                             }
@@ -1400,7 +1400,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 6:
@@ -1430,7 +1430,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 7:
@@ -1494,7 +1494,7 @@ public final class f implements o {
                                                 wVar.j = str2;
                                                 wVar.v = eVar.m;
                                                 eVar.b0 = wVar.a();
-                                                eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                                eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                                 r92.put(eVar.d, eVar);
                                             } catch (ArrayIndexOutOfBoundsException unused5) {
                                                 runtimeException = null;
@@ -1531,7 +1531,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case '\n':
@@ -1567,7 +1567,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 11:
@@ -1599,7 +1599,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case '\f':
@@ -1629,7 +1629,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case '\r':
@@ -1666,7 +1666,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 14:
@@ -1696,7 +1696,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 15:
@@ -1728,7 +1728,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 16:
@@ -1762,7 +1762,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 17:
@@ -1792,7 +1792,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 18:
@@ -1826,7 +1826,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 19:
@@ -1856,7 +1856,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 20:
@@ -1885,7 +1885,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 22:
@@ -1916,7 +1916,7 @@ public final class f implements o {
                                                 wVar.j = str2;
                                                 wVar.v = eVar.m;
                                                 eVar.b0 = wVar.a();
-                                                eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                                eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                                 r92.put(eVar.d, eVar);
                                             } else {
                                                 e2.a.l("MatroskaExtractor", "Unsupported floating point PCM bit depth: " + eVar.R + ". Setting mimeType to audio/x-unknown");
@@ -1946,7 +1946,7 @@ public final class f implements o {
                                                 wVar.j = str2;
                                                 wVar.v = eVar.m;
                                                 eVar.b0 = wVar.a();
-                                                eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                                eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                                 r92.put(eVar.d, eVar);
                                             }
                                             break;
@@ -1979,7 +1979,7 @@ public final class f implements o {
                                                 wVar.j = str2;
                                                 wVar.v = eVar.m;
                                                 eVar.b0 = wVar.a();
-                                                eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                                eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                                 r92.put(eVar.d, eVar);
                                             } else {
                                                 if (i47 == 16) {
@@ -2016,7 +2016,7 @@ public final class f implements o {
                                                     wVar.j = str2;
                                                     wVar.v = eVar.m;
                                                     eVar.b0 = wVar.a();
-                                                    eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                                    eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                                     r92.put(eVar.d, eVar);
                                                 }
                                                 str6 = "audio/raw";
@@ -2044,7 +2044,7 @@ public final class f implements o {
                                                 wVar.j = str2;
                                                 wVar.v = eVar.m;
                                                 eVar.b0 = wVar.a();
-                                                eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                                eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                                 r92.put(eVar.d, eVar);
                                             }
                                             break;
@@ -2080,7 +2080,7 @@ public final class f implements o {
                                                 wVar.j = str2;
                                                 wVar.v = eVar.m;
                                                 eVar.b0 = wVar.a();
-                                                eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                                eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                                 r92.put(eVar.d, eVar);
                                             }
                                             str6 = "audio/raw";
@@ -2108,7 +2108,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 25:
@@ -2141,7 +2141,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 27:
@@ -2177,7 +2177,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 28:
@@ -2207,7 +2207,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 29:
@@ -2237,7 +2237,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case MessageObject.TYPE_GIFT_STARS /* 30 */:
@@ -2267,7 +2267,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
@@ -2297,7 +2297,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case ' ':
@@ -2330,7 +2330,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case '!':
@@ -2368,32 +2368,32 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.a0(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.W(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         default:
                                             throw x0.a(null, "Unrecognized codec identifier.");
                                     }
                                 default:
-                                    fVar5.y = null;
+                                    fVar3.y = null;
                                     break;
                             }
                         } else if (i25 != 183) {
                             if (i25 == 19899) {
-                                int i49 = fVar5.A;
+                                int i49 = fVar3.A;
                                 if (i49 != -1) {
-                                    long j16 = fVar5.B;
+                                    long j16 = fVar3.B;
                                     if (j16 != -1) {
                                         if (i49 == 475249515) {
-                                            fVar5.K = j16;
+                                            fVar3.K = j16;
                                         }
                                     }
                                 }
                                 throw x0.a(null, "Mandatory element SeekID or SeekPosition not found");
                             }
                             if (i25 == 25152) {
-                                fVar5.h(i25);
-                                e eVar2 = fVar5.y;
+                                fVar3.h(i25);
+                                e eVar2 = fVar3.y;
                                 if (eVar2.i) {
                                     h0 h0Var = eVar2.k;
                                     if (h0Var == null) {
@@ -2402,25 +2402,25 @@ public final class f implements o {
                                     eVar2.m = new t(null, true, new b2.s(n.b, null, "video/webm", h0Var.b));
                                 }
                             } else if (i25 == 28032) {
-                                fVar5.h(i25);
-                                e eVar3 = fVar5.y;
+                                fVar3.h(i25);
+                                e eVar3 = fVar3.y;
                                 if (eVar3.i && eVar3.j != null) {
                                     throw x0.a(null, "Combining encryption and compression is not supported");
                                 }
                             } else if (i25 == 357149030) {
-                                if (fVar5.t == -9223372036854775807L) {
-                                    fVar5.t = 1000000L;
+                                if (fVar3.t == -9223372036854775807L) {
+                                    fVar3.t = 1000000L;
                                 }
-                                long j17 = fVar5.u;
+                                long j17 = fVar3.u;
                                 if (j17 != -9223372036854775807L) {
-                                    fVar5.v = fVar5.n(j17);
+                                    fVar3.v = fVar3.n(j17);
                                 }
                             } else if (i25 == 374648427) {
                                 boolean z15 = z12;
                                 if (r92.size() == 0) {
                                     throw x0.a(null, "No valid tracks were found");
                                 }
-                                boolean z16 = (!fVar5.d || fVar5.K == -1) ? true : z15 ? 1 : 0;
+                                boolean z16 = (!fVar3.d || fVar3.K == -1) ? true : z15 ? 1 : 0;
                                 int i50 = -1;
                                 int i51 = -1;
                                 int i52 = -1;
@@ -2454,42 +2454,42 @@ public final class f implements o {
                                     }
                                 }
                                 if (i50 != -1) {
-                                    fVar5.I = i50;
+                                    fVar3.I = i50;
                                 } else if (i51 != -1) {
-                                    fVar5.I = i51;
+                                    fVar3.I = i51;
                                 } else if (i52 != -1) {
-                                    fVar5.I = i52;
+                                    fVar3.I = i52;
                                 } else if (i53 != -1) {
-                                    fVar5.I = i53;
+                                    fVar3.I = i53;
                                 } else {
-                                    fVar5.I = r92.size() > 0 ? ((e) r92.valueAt(z15 ? 1 : 0)).d : -1;
+                                    fVar3.I = r92.size() > 0 ? ((e) r92.valueAt(z15 ? 1 : 0)).d : -1;
                                 }
                                 if (z16) {
-                                    fVar5.k();
+                                    fVar3.k();
                                 }
-                            } else if (i25 == 475249515 && !fVar5.z) {
+                            } else if (i25 == 475249515 && !fVar3.z) {
                                 ?? r62 = z12;
                                 while (true) {
                                     if (r62 < r83.size()) {
                                         if (((List) r83.valueAt(r62)).isEmpty()) {
                                             r62++;
-                                        } else if (fVar5.v != -9223372036854775807L) {
+                                        } else if (fVar3.v != -9223372036854775807L) {
                                             for (?? r63 = z12; r63 < r83.size(); r63++) {
                                                 Collections.sort((List) r83.valueAt(r63));
                                             }
-                                            fVar5.j0.K(new d(r83, fVar5.v, fVar5.I, fVar5.s, fVar5.r));
+                                            fVar3.j0.K(new d(r83, fVar3.v, fVar3.I, fVar3.s, fVar3.r));
                                         }
                                     }
                                 }
-                                fVar5.j0.K(new c3.t(fVar5.v));
-                                fVar5.z = r42;
-                                fVar5.D = z12;
+                                fVar3.j0.K(new c3.t(fVar3.v));
+                                fVar3.z = r42;
+                                fVar3.D = z12;
                                 int i56 = r42;
                                 for (?? r64 = z12; r64 < r92.size(); r64 = i17 + 1) {
                                     e eVar5 = (e) r92.valueAt(r64);
-                                    long j18 = fVar5.v;
-                                    long j19 = fVar5.s;
-                                    long j20 = fVar5.r;
+                                    long j18 = fVar3.v;
+                                    long j19 = fVar3.s;
+                                    long j20 = fVar3.r;
                                     boolean z17 = z12;
                                     int i57 = i56;
                                     if (eVar5.e != 2 || (list5 = (List) r83.get(eVar5.d)) == null || list5.isEmpty()) {
@@ -2568,52 +2568,52 @@ public final class f implements o {
                                     z12 = z17 ? 1 : 0;
                                     i56 = 1;
                                 }
-                                fVar5.k();
+                                fVar3.k();
                                 z11 = z12;
                                 pVar2 = pVar;
                             }
-                        } else if (!fVar5.z) {
-                            fVar5.g(i25);
-                            if (fVar5.E != -9223372036854775807L && (i16 = fVar5.F) != -1 && fVar5.G != -1) {
+                        } else if (!fVar3.z) {
+                            fVar3.g(i25);
+                            if (fVar3.E != -9223372036854775807L && (i16 = fVar3.F) != -1 && fVar3.G != -1) {
                                 List list7 = (List) r83.get(i16);
                                 if (list7 == null) {
                                     list7 = new ArrayList();
-                                    r83.put(fVar5.F, list7);
+                                    r83.put(fVar3.F, list7);
                                 }
-                                list7.add(new c(fVar5.E, fVar5.s + fVar5.G, fVar5.H));
+                                list7.add(new c(fVar3.E, fVar3.s + fVar3.G, fVar3.H));
                             }
                         }
                         z11 = false;
                         pVar2 = pVar;
                     } else {
-                        if (fVar5.O == 2) {
-                            e eVar6 = (e) r92.get(fVar5.U);
+                        if (fVar3.O == 2) {
+                            e eVar6 = (e) r92.get(fVar3.U);
                             eVar6.a0.getClass();
-                            if (fVar5.Z > 0 && "A_OPUS".equals(eVar6.c)) {
-                                x xVar6 = fVar5.p;
-                                byte[] array = ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putLong(fVar5.Z).array();
+                            if (fVar3.Z > 0 && "A_OPUS".equals(eVar6.c)) {
+                                x xVar6 = fVar3.p;
+                                byte[] array = ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putLong(fVar3.Z).array();
                                 xVar6.getClass();
                                 xVar6.L(array.length, array);
                             }
                             int i60 = 0;
-                            for (int i61 = 0; i61 < fVar5.S; i61++) {
-                                i60 += fVar5.T[i61];
+                            for (int i61 = 0; i61 < fVar3.S; i61++) {
+                                i60 += fVar3.T[i61];
                             }
                             int i62 = 0;
-                            while (i62 < fVar5.S) {
-                                long j25 = fVar5.P + ((eVar6.f * i62) / MediaDataController.MAX_STYLE_RUNS_COUNT);
-                                int i63 = fVar5.W;
-                                if (i62 == 0 && !fVar5.Y) {
+                            while (i62 < fVar3.S) {
+                                long j25 = fVar3.P + ((eVar6.f * i62) / MediaDataController.MAX_STYLE_RUNS_COUNT);
+                                int i63 = fVar3.W;
+                                if (i62 == 0 && !fVar3.Y) {
                                     i63 |= 1;
                                 }
-                                int i64 = fVar5.T[i62];
+                                int i64 = fVar3.T[i62];
                                 int i65 = i60 - i64;
-                                fVar5.i(eVar6, j25, i63, i64, i65);
+                                fVar3.i(eVar6, j25, i63, i64, i65);
                                 i62++;
                                 i60 = i65;
                             }
                             z11 = false;
-                            fVar5.O = 0;
+                            fVar3.O = 0;
                             pVar2 = pVar;
                         }
                         z11 = false;

@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class xk extends TextView {
     public final /* synthetic */ int a;
@@ -101,7 +101,7 @@ public final class xk extends TextView {
             case 5:
                 super.onLayout(z10, i10, i11, i12, i13);
                 if (z10) {
-                    ((dj1) this.b).G();
+                    ((cj1) this.b).G();
                     break;
                 }
                 break;
@@ -133,11 +133,11 @@ public final class xk extends TextView {
                 break;
             case 6:
                 super.onMeasure(i10, i11);
-                setMeasuredDimension(getMeasuredWidth(), Math.round(getMeasuredHeight() * ((org.telegram.ui.Wallet.i8) this.b).U));
+                setMeasuredDimension(getMeasuredWidth(), Math.round(getMeasuredHeight() * ((org.telegram.ui.Wallet.j8) this.b).U));
                 break;
             case 7:
                 super.onMeasure(i10, i11);
-                ((org.telegram.ui.web.x1) this.b).c.setPivotY(getMeasuredHeight() / 2.0f);
+                ((org.telegram.ui.web.y1) this.b).c.setPivotY(getMeasuredHeight() / 2.0f);
                 break;
         }
     }

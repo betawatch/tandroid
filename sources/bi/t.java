@@ -34,8 +34,8 @@ import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.td;
 import org.telegram.ui.Components.vi;
 import org.telegram.ui.Components.wz;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.Components.z30;
-import org.telegram.ui.Components.z70;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.dq;
 import org.telegram.ui.fo;
@@ -43,7 +43,7 @@ import org.telegram.ui.gj;
 import org.telegram.ui.lm;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class t extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -367,7 +367,7 @@ public final class t extends AnimatorListenerAdapter {
                     if (!animatorSet2.equals(animator) || (kVar = viVar.s2) == null || kVar.f) {
                         return;
                     }
-                    ((n2.h) obj).run();
+                    ((org.telegram.messenger.video.f) obj).run();
                     return;
                 }
                 return;
@@ -413,11 +413,11 @@ public final class t extends AnimatorListenerAdapter {
                 r20Var2.b = false;
                 return;
             case 27:
-                z70 z70Var = (z70) obj2;
-                z70Var.removeView((z30) obj);
-                z70Var.c = null;
-                z70Var.e.d0 = null;
-                z70Var.a = false;
+                y70 y70Var = (y70) obj2;
+                y70Var.removeView((z30) obj);
+                y70Var.c = null;
+                y70Var.e.d0 = null;
+                y70Var.a = false;
                 return;
             case 28:
                 ml0 ml0Var = (ml0) obj2;
@@ -440,15 +440,15 @@ public final class t extends AnimatorListenerAdapter {
                     ((s4.b0) pl0Var.f).getClass();
                     s4.n0.x0(view4);
                     ((mm0) pl0Var.e).removeView(view4);
-                    w7.b6 b6Var = (w7.b6) pl0Var.i;
-                    if (b6Var != null) {
-                        b6Var.d(view4);
+                    w7.a6 a6Var = (w7.a6) pl0Var.i;
+                    if (a6Var != null) {
+                        a6Var.d(view4);
                     }
                 }
                 ((mm0) pl0Var.e).setScrollEnabled(true);
                 ((mm0) pl0Var.e).setVerticalScrollBarEnabled(true);
                 if (BuildVars.DEBUG_PRIVATE_VERSION) {
-                    if (((mm0) pl0Var.e).e.C() != ((mm0) pl0Var.e).getChildCount()) {
+                    if (((mm0) pl0Var.e).e.D() != ((mm0) pl0Var.e).getChildCount()) {
                         throw new RuntimeException("views count in child helper must be quals views count in recycler view");
                     }
                     if (((ArrayList) ((mm0) pl0Var.e).e.d).size() != 0) {
@@ -479,9 +479,9 @@ public final class t extends AnimatorListenerAdapter {
                 if (nl0Var != null) {
                     nl0Var.E();
                 }
-                w7.b6 b6Var2 = (w7.b6) pl0Var.i;
-                if (b6Var2 != null) {
-                    b6Var2.a();
+                w7.a6 a6Var2 = (w7.a6) pl0Var.i;
+                if (a6Var2 != null) {
+                    a6Var2.a();
                 }
                 ((SparseArray) pl0Var.j).clear();
                 pl0Var.g = null;

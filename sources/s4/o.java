@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class o {
-    public static final gb.j a = new gb.j(4);
+    public static final gb.k a = new gb.k(4);
 
     /* JADX WARN: Code restructure failed: missing block: B:101:0x0189, code lost:
     
@@ -139,7 +139,7 @@ public abstract class o {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static m4.d c(o oVar, boolean z10) {
+    public static m4.c c(o oVar, boolean z10) {
         int i10;
         int[] iArr;
         int[] iArr2;
@@ -168,7 +168,7 @@ public abstract class o {
         int[] iArr4 = new int[i18];
         ArrayList arrayList3 = new ArrayList();
         while (!arrayList2.isEmpty()) {
-            m mVar2 = (m) i2.d.x(1, arrayList2);
+            m mVar2 = (m) i2.d.A(1, arrayList2);
             int i19 = mVar2.a;
             int i20 = mVar2.b;
             int i21 = mVar2.c;
@@ -271,7 +271,7 @@ public abstract class o {
                 }
                 nVar.a += mVar2.a;
                 nVar.b += mVar2.c;
-                m mVar3 = arrayList3.isEmpty() ? new m() : (m) i2.d.x(1, arrayList3);
+                m mVar3 = arrayList3.isEmpty() ? new m() : (m) i2.d.A(1, arrayList3);
                 mVar3.a = mVar2.a;
                 mVar3.c = mVar2.c;
                 if (nVar.e) {
@@ -312,7 +312,7 @@ public abstract class o {
         }
         int[] iArr5 = iArr3;
         Collections.sort(arrayList, a);
-        return new m4.d(oVar, arrayList, iArr5, iArr4, z10);
+        return new m4.c(oVar, arrayList, iArr5, iArr4, z10);
     }
 
     public abstract boolean a(int i10, int i11);

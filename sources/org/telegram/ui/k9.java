@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class k9 extends FrameLayout {
     public static final /* synthetic */ int e = 0;
@@ -19,13 +19,13 @@ public final class k9 extends FrameLayout {
 
     public k9(n9 n9Var, Context context, org.telegram.ui.Components.f10 f10Var) {
         super(context);
-        addView(f10Var, w7.a6.d(-1.0f, -1));
+        addView(f10Var, w7.z5.d(-1.0f, -1));
         this.c = f10Var;
         org.telegram.ui.Components.bk0 bk0Var = new org.telegram.ui.Components.bk0(context);
         this.d = bk0Var;
         bk0Var.f(R.raw.utyan_call, 110, 110, null);
         bk0Var.setAutoRepeat(false);
-        addView(bk0Var, w7.a6.a(110.0f, 52.0f, 17.0f, 52.0f, 60.0f, 110, 17));
+        addView(bk0Var, w7.z5.a(110.0f, 52.0f, 17.0f, 52.0f, 60.0f, 110, 17));
         bk0Var.setOnClickListener(new a(this, 10));
         TextView textView = new TextView(context);
         this.a = textView;
@@ -34,7 +34,7 @@ public final class k9 extends FrameLayout {
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);
-        addView(textView, w7.a6.a(-2.0f, 17.0f, 40.0f, 17.0f, 0.0f, -1, 17));
+        addView(textView, w7.z5.a(-2.0f, 17.0f, 40.0f, 17.0f, 0.0f, -1, 17));
         TextView textView2 = new TextView(context);
         this.b = textView2;
         String formatString = LocaleController.formatString(R.string.MakeYourFirstCallHint, Integer.valueOf(n9Var.getMessagesController().conferenceCallSizeLimit));
@@ -46,7 +46,7 @@ public final class k9 extends FrameLayout {
         textView2.setTextSize(1, 14.0f);
         textView2.setGravity(17);
         textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        addView(textView2, w7.a6.a(-2.0f, 17.0f, 80.0f, 17.0f, 0.0f, -1, 17));
+        addView(textView2, w7.z5.a(-2.0f, 17.0f, 80.0f, 17.0f, 0.0f, -1, 17));
         f10Var.setAlpha(0.0f);
         bk0Var.setAlpha(0.0f);
         textView.setAlpha(0.0f);

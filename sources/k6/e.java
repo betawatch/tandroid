@@ -7,10 +7,10 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
 import java.util.concurrent.atomic.AtomicBoolean;
-import n6.l0;
+import n6.k0;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class e {
     public static final int a;
@@ -37,14 +37,14 @@ public class e {
             if (i10 != 3) {
                 return null;
             }
-            int i11 = l0.a;
+            int i11 = k0.a;
             Uri fromParts = Uri.fromParts("package", "com.google.android.gms", null);
             Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
             intent.setData(fromParts);
             return intent;
         }
         if (context != null && u6.b.f(context)) {
-            int i12 = l0.a;
+            int i12 = k0.a;
             Intent intent2 = new Intent("com.google.android.clockwork.home.UPDATE_ANDROID_WEAR_ACTION");
             intent2.setPackage("com.google.android.wearable.app");
             return intent2;
@@ -67,7 +67,7 @@ public class e {
             }
         }
         String sb3 = sb2.toString();
-        int i13 = l0.a;
+        int i13 = k0.a;
         Intent intent3 = new Intent("android.intent.action.VIEW");
         Uri.Builder appendQueryParameter = Uri.parse("market://details").buildUpon().appendQueryParameter("id", "com.google.android.gms");
         if (!TextUtils.isEmpty(sb3)) {

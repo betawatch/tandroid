@@ -24,9 +24,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.lg1;
+import org.telegram.ui.kg1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nz implements MediaDataController.KeywordResultCallback, f5, org.telegram.ui.ActionBar.z1, ImageReceiver.ImageReceiverDelegate, MessagesStorage.BooleanCallback, t5.b, s5.e, e2.j, x2.k, org.telegram.ui.sy {
     public final /* synthetic */ int a;
@@ -49,15 +49,15 @@ public final /* synthetic */ class nz implements MediaDataController.KeywordResu
     @Override // org.telegram.ui.Components.f5
     public void J(int i10, int i11, boolean z10) {
         i60 i60Var = (i60) this.b;
-        d60 d60Var = (d60) this.c;
+        e60 e60Var = (e60) this.c;
         VideoEditedInfo videoEditedInfo = (VideoEditedInfo) this.d;
         p60 p60Var = i60Var.H0;
         MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, 0, 0L, i60Var.a.getAbsolutePath(), 0, true, 0, 0, 0L);
-        if (d60Var != null) {
-            photoEntry.ttl = d60Var.c;
-            photoEntry.effectId = d60Var.d;
+        if (e60Var != null) {
+            photoEntry.ttl = e60Var.c;
+            photoEntry.effectId = e60Var.d;
         }
-        p60Var.n.s(photoEntry, videoEditedInfo, z10 || d60Var == null || d60Var.a, i10 != 0 ? i10 : d60Var != null ? d60Var.b : 0, i11 != 0 ? i11 : 0, false, d60Var != null ? d60Var.e : 0L);
+        p60Var.n.s(photoEntry, videoEditedInfo, z10 || e60Var == null || e60Var.a, i10 != 0 ? i10 : e60Var != null ? e60Var.b : 0, i11 != 0 ? i11 : 0, false, e60Var != null ? e60Var.e : 0L);
         p60Var.r(false, false);
     }
 
@@ -263,7 +263,7 @@ public final /* synthetic */ class nz implements MediaDataController.KeywordResu
                         } else if (i23 == 6) {
                             cVar4 = o5.c.n;
                         } else {
-                            w7.l6.a(Integer.valueOf(i23), "SQLiteEventStore", "%n is not valid. No matched LogEventDropped-Reason found. Treated it as REASON_UNKNOWN");
+                            w7.k6.a(Integer.valueOf(i23), "SQLiteEventStore", "%n is not valid. No matched LogEventDropped-Reason found. Treated it as REASON_UNKNOWN");
                         }
                     }
                     cVar = cVar4;
@@ -281,14 +281,14 @@ public final /* synthetic */ class nz implements MediaDataController.KeywordResu
                     new ArrayList();
                     arrayList4.add(new o5.e((String) entry2.getKey(), DesugarCollections.unmodifiableList((List) entry2.getValue())));
                 }
-                long d = gVar.b.d();
+                long b11 = gVar.b.b();
                 SQLiteDatabase a2 = gVar.a();
                 a2.beginTransaction();
                 try {
                     Cursor rawQuery = a2.rawQuery("SELECT last_metrics_upload_ms FROM global_log_event_state LIMIT 1", new String[0]);
                     try {
                         rawQuery.moveToNext();
-                        o5.g gVar2 = new o5.g(rawQuery.getLong(0), d);
+                        o5.g gVar2 = new o5.g(rawQuery.getLong(0), b11);
                         rawQuery.close();
                         a2.setTransactionSuccessful();
                         a2.endTransaction();
@@ -310,7 +310,7 @@ public final /* synthetic */ class nz implements MediaDataController.KeywordResu
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         Bitmap bitmap;
-        v21 v21Var = (v21) this.b;
+        w21 w21Var = (w21) this.b;
         yp ypVar = (yp) this.c;
         TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) this.d;
         ImageReceiver.BitmapHolder bitmapSafe = imageReceiver.getBitmapSafe();
@@ -321,15 +321,34 @@ public final /* synthetic */ class nz implements MediaDataController.KeywordResu
         if (drawable instanceof cd0) {
             cd0 cd0Var = (cd0) drawable;
             TLRPC.WallPaperSettings wallPaperSettings = wallPaper.settings;
-            cd0Var.t(v21.e(bitmap), (wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100);
-            cd0Var.u(v21Var.L);
-            v21Var.invalidate();
+            cd0Var.t(w21.e(bitmap), (wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100);
+            cd0Var.u(w21Var.L);
+            w21Var.invalidate();
         }
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
         org.telegram.messenger.l5.a(this, i10, str, drawable);
+    }
+
+    @Override // t5.b
+    public Object f() {
+        q5.a aVar = (q5.a) this.b;
+        l5.i iVar = (l5.i) this.c;
+        l5.h hVar = (l5.h) this.d;
+        s5.g gVar = (s5.g) aVar.d;
+        gVar.getClass();
+        i5.d dVar = iVar.c;
+        String str = hVar.a;
+        String str2 = iVar.a;
+        String c10 = w7.k6.c("SQLiteEventStore");
+        if (Log.isLoggable(c10, 3)) {
+            Log.d(c10, "Storing event with priority=" + dVar + ", name=" + str + " for destination " + str2);
+        }
+        ((Long) gVar.c(new nz(gVar, hVar, iVar, 7))).getClass();
+        aVar.a.U(iVar, 1, false);
+        return null;
     }
 
     @Override // org.telegram.ui.ActionBar.z1
@@ -359,25 +378,6 @@ public final /* synthetic */ class nz implements MediaDataController.KeywordResu
         }
     }
 
-    @Override // t5.b
-    public Object h() {
-        q5.a aVar = (q5.a) this.b;
-        l5.i iVar = (l5.i) this.c;
-        l5.h hVar = (l5.h) this.d;
-        s5.g gVar = (s5.g) aVar.d;
-        gVar.getClass();
-        i5.d dVar = iVar.c;
-        String str = hVar.a;
-        String str2 = iVar.a;
-        String c10 = w7.l6.c("SQLiteEventStore");
-        if (Log.isLoggable(c10, 3)) {
-            Log.d(c10, "Storing event with priority=" + dVar + ", name=" + str + " for destination " + str2);
-        }
-        ((Long) gVar.c(new nz(gVar, hVar, iVar, 7))).getClass();
-        aVar.a.U(iVar, 1, false);
-        return null;
-    }
-
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
         org.telegram.messenger.l5.b(this, imageReceiver);
@@ -391,7 +391,7 @@ public final /* synthetic */ class nz implements MediaDataController.KeywordResu
     }
 
     @Override // org.telegram.ui.sy
-    public boolean w(org.telegram.ui.yy yyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, lg1 lg1Var) {
+    public boolean w(org.telegram.ui.yy yyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, kg1 kg1Var) {
         return zh.r3.Y((zh.r3) this.b, (TL_stars.TL_starGiftUnique) this.c, (org.telegram.ui.yy) this.d, arrayList);
     }
 

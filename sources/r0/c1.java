@@ -8,9 +8,9 @@ import android.view.WindowInsets;
 import j$.util.Objects;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import w7.v6;
+import w7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class c1 extends i1 {
     public static boolean i = false;
@@ -180,7 +180,7 @@ public abstract class c1 extends i1 {
             if (i10 != 2) {
                 if (i10 == 8) {
                     i0.b[] bVarArr = this.d;
-                    i11 = bVarArr != null ? bVarArr[v6.a(8)] : null;
+                    i11 = bVarArr != null ? bVarArr[u6.a(8)] : null;
                     if (i11 != null) {
                         return i11;
                     }
@@ -206,7 +206,7 @@ public abstract class c1 extends i1 {
                     }
                     if (i10 == 128) {
                         l1 l1Var = this.f;
-                        j e = l1Var != null ? l1Var.a.e() : e();
+                        i e = l1Var != null ? l1Var.a.e() : e();
                         if (e != null) {
                             int i14 = Build.VERSION.SDK_INT;
                             return i0.b.b(i14 >= 28 ? b5.d.l(e.a) : 0, i14 >= 28 ? b5.d.n(e.a) : 0, i14 >= 28 ? b5.d.m(e.a) : 0, i14 >= 28 ? b5.d.k(e.a) : 0);

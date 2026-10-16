@@ -3,11 +3,11 @@ package bi;
 import android.content.Context;
 import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.zn0;
+import org.telegram.ui.Components.yn0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class f6 extends zn0 {
+public final class f6 extends yn0 {
     public a1.f h;
     public final /* synthetic */ w6 n;
 
@@ -17,7 +17,7 @@ public final class f6 extends zn0 {
         this.n = w6Var;
     }
 
-    @Override // org.telegram.ui.Components.zn0
+    @Override // org.telegram.ui.Components.yn0
     public final void a(String str) {
         a1.f fVar = this.h;
         if (fVar != null) {

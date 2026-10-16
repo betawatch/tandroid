@@ -43,7 +43,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class pk extends ni {
     public static final /* synthetic */ int g0 = 0;
@@ -194,7 +194,7 @@ public final class pk extends ni {
         addView(f10Var);
         bi.p6 p6Var = new bi.p6(this, context, f10Var, c6Var);
         this.L = p6Var;
-        addView(p6Var, w7.a6.d(-1.0f, -1));
+        addView(p6Var, w7.z5.d(-1.0f, -1));
         p6Var.setVisibility(8);
         p6Var.setOnTouchListener(new ci.d(14));
         ek ekVar = new ek(this, context, c6Var, 0);
@@ -208,7 +208,7 @@ public final class pk extends ni {
         ik ikVar2 = new ik(this, context);
         this.w = ikVar2;
         ekVar.setAdapter(ikVar2);
-        addView(ekVar, w7.a6.d(-1.0f, -1));
+        addView(ekVar, w7.z5.d(-1.0f, -1));
         ekVar.setVisibility(8);
         ek ekVar2 = new ek(this, context, c6Var, 1);
         this.r = ekVar2;
@@ -224,7 +224,7 @@ public final class pk extends ni {
         ekVar2.setLayoutManager(e0Var);
         ekVar2.setClipToPadding(false);
         ekVar2.setAdapter(this.v);
-        addView(ekVar2, w7.a6.d(-1.0f, -1));
+        addView(ekVar2, w7.z5.d(-1.0f, -1));
         this.y = new ok(this, context);
         ekVar2.setOnScrollListener(new ah.d0(this, 20));
         final int i12 = 0;
@@ -307,7 +307,7 @@ public final class pk extends ni {
             }
         });
         r0Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.h5, this.a));
-        addView(r0Var, w7.a6.e(-1, 44, 48));
+        addView(r0Var, w7.z5.e(-1, 44, 48));
         r0Var.setTranslationY(-AndroidUtilities.dp(44.0f));
         r0Var.setVisibility(4);
         R();
@@ -371,17 +371,17 @@ public final class pk extends ni {
             ArrayList arrayList = new ArrayList();
             org.telegram.ui.ActionBar.m2 m2Var = viVar.f0;
             org.telegram.ui.fo foVar = m2Var instanceof org.telegram.ui.fo ? (org.telegram.ui.fo) m2Var : null;
-            org.telegram.ui.hr0 hr0Var = new org.telegram.ui.hr0(0, MediaController.allMediaAlbumEntry, hashMap, arrayList, 0, foVar != null, foVar, false);
-            hr0Var.l0 = true;
-            hr0Var.s0 = new li.k(pkVar, hashMap, arrayList, false, 14);
-            hr0Var.f0(pkVar.V, false);
+            org.telegram.ui.fr0 fr0Var = new org.telegram.ui.fr0(0, MediaController.allMediaAlbumEntry, hashMap, arrayList, 0, foVar != null, foVar, false);
+            fr0Var.l0 = true;
+            fr0Var.s0 = new m.h3(pkVar, hashMap, arrayList, false, 13);
+            fr0Var.f0(pkVar.V, false);
             org.telegram.ui.ActionBar.m2 m2Var2 = viVar.f0;
             if (m2Var2 != null) {
-                m2Var2.presentFragment(hr0Var);
+                m2Var2.presentFragment(fr0Var);
             } else {
                 org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
                 if (R != null) {
-                    R.presentFragment(hr0Var);
+                    R.presentFragment(fr0Var);
                 }
             }
             viVar.dismiss(true);
@@ -397,7 +397,7 @@ public final class pk extends ni {
         }
         int topForScroll = pkVar.getTopForScroll();
         pkVar.T();
-        hk hkVar2 = (hk) i2.d.x(1, ikVar.d);
+        hk hkVar2 = (hk) i2.d.A(1, ikVar.d);
         viVar.a1.setTitle(hkVar2.b);
         File file2 = hkVar2.a;
         if (file2 != null) {
@@ -423,7 +423,7 @@ public final class pk extends ni {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void B(int i10, int i11) {
+    public final void C(int i10, int i11) {
         int dp;
         int i12;
         vi viVar = this.b;
@@ -494,7 +494,7 @@ public final class pk extends ni {
         final ArrayList arrayList = new ArrayList();
         Iterator it = hashMap.keySet().iterator();
         while (it.hasNext()) {
-            arrayList.add((MessageObject) hashMap.get((org.telegram.ui.u10) it.next()));
+            arrayList.add((MessageObject) hashMap.get((org.telegram.ui.t10) it.next()));
         }
         final ArrayList arrayList2 = new ArrayList(this.S);
         vi viVar = this.b;
@@ -618,7 +618,7 @@ public final class pk extends ni {
             jk jkVar2 = new jk();
             jkVar2.b = "..";
             if (arrayList2.size() > 0) {
-                File file3 = ((hk) i2.d.g(1, arrayList2)).a;
+                File file3 = ((hk) i2.d.h(1, arrayList2)).a;
                 if (file3 == null) {
                     jkVar2.c = LocaleController.getString(R.string.Folder);
                 } else {
@@ -803,11 +803,11 @@ public final class pk extends ni {
         if (!z11) {
             if (obj instanceof MessageObject) {
                 MessageObject messageObject = (MessageObject) obj;
-                org.telegram.ui.u10 u10Var = new org.telegram.ui.u10(messageObject.getId(), messageObject.getDialogId());
-                if (hashMap2.containsKey(u10Var)) {
-                    hashMap2.remove(u10Var);
+                org.telegram.ui.t10 t10Var = new org.telegram.ui.t10(messageObject.getId(), messageObject.getDialogId());
+                if (hashMap2.containsKey(t10Var)) {
+                    hashMap2.remove(t10Var);
                 } else if (hashMap2.size() < 100) {
-                    hashMap2.put(u10Var, messageObject);
+                    hashMap2.put(t10Var, messageObject);
                     z12 = true;
                 }
                 z10 = z12;
@@ -857,8 +857,8 @@ public final class pk extends ni {
             }
             this.U = false;
             if (viVar.H) {
-                if (view instanceof org.telegram.ui.Cells.k7) {
-                    ((org.telegram.ui.Cells.k7) view).b(z10, true);
+                if (view instanceof org.telegram.ui.Cells.j7) {
+                    ((org.telegram.ui.Cells.j7) view).b(z10, true);
                 }
                 viVar.Z1(z10 ? 1 : 2);
                 return true;
@@ -867,7 +867,7 @@ public final class pk extends ni {
                 ArrayList arrayList2 = new ArrayList();
                 Iterator it = hashMap2.keySet().iterator();
                 while (it.hasNext()) {
-                    arrayList2.add((MessageObject) hashMap2.get((org.telegram.ui.u10) it.next()));
+                    arrayList2.add((MessageObject) hashMap2.get((org.telegram.ui.t10) it.next()));
                 }
                 this.Q.l(new ArrayList(arrayList), null, null, arrayList2, false, 0, 0L, false, 0L);
             }
@@ -968,7 +968,7 @@ public final class pk extends ni {
         org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
         a2Var.R = string;
         a2Var.T = str;
-        org.telegram.messenger.q.A(R.string.OK, alertDialog$Builder, null);
+        org.telegram.messenger.g0.p(R.string.OK, alertDialog$Builder, null);
     }
 
     public final void W() {
@@ -1046,17 +1046,17 @@ public final class pk extends ni {
         int i10 = org.telegram.ui.ActionBar.g6.A5;
         ek ekVar = this.r;
         arrayList.add(new org.telegram.ui.ActionBar.i6(ekVar, 32768, null, null, null, null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(ekVar, 32, new Class[]{org.telegram.ui.Cells.b7.class}, null, null, null, org.telegram.ui.ActionBar.g6.b7));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(ekVar, 48, new Class[]{org.telegram.ui.Cells.b7.class}, null, null, null, org.telegram.ui.ActionBar.g6.a7));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(ekVar, 32, new Class[]{org.telegram.ui.Cells.a7.class}, null, null, null, org.telegram.ui.ActionBar.g6.b7));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(ekVar, 48, new Class[]{org.telegram.ui.Cells.a7.class}, null, null, null, org.telegram.ui.ActionBar.g6.a7));
         arrayList.add(new org.telegram.ui.ActionBar.i6(ekVar, 4096, null, null, null, null, org.telegram.ui.ActionBar.g6.i6));
         arrayList.add(new org.telegram.ui.ActionBar.i6(ekVar, 0, new Class[]{View.class}, org.telegram.ui.ActionBar.g6.k0, null, null, org.telegram.ui.ActionBar.g6.d7));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(ekVar, 4, new Class[]{org.telegram.ui.Cells.k7.class}, new String[]{"nameTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.G6));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(ekVar, 4, new Class[]{org.telegram.ui.Cells.k7.class}, new String[]{"dateTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.A6));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(ekVar, 8192, new Class[]{org.telegram.ui.Cells.k7.class}, new String[]{"checkBox"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.i7));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(ekVar, 16384, new Class[]{org.telegram.ui.Cells.k7.class}, new String[]{"checkBox"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.k7));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(ekVar, 8, new Class[]{org.telegram.ui.Cells.k7.class}, new String[]{"thumbImageView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.zi));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(ekVar, 40, new Class[]{org.telegram.ui.Cells.k7.class}, new String[]{"thumbImageView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.Ai));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(ekVar, 4, new Class[]{org.telegram.ui.Cells.k7.class}, new String[]{"extTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.Bi));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(ekVar, 4, new Class[]{org.telegram.ui.Cells.j7.class}, new String[]{"nameTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.G6));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(ekVar, 4, new Class[]{org.telegram.ui.Cells.j7.class}, new String[]{"dateTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.A6));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(ekVar, 8192, new Class[]{org.telegram.ui.Cells.j7.class}, new String[]{"checkBox"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.i7));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(ekVar, 16384, new Class[]{org.telegram.ui.Cells.j7.class}, new String[]{"checkBox"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.k7));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(ekVar, 8, new Class[]{org.telegram.ui.Cells.j7.class}, new String[]{"thumbImageView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.zi));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(ekVar, 40, new Class[]{org.telegram.ui.Cells.j7.class}, new String[]{"thumbImageView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.Ai));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(ekVar, 4, new Class[]{org.telegram.ui.Cells.j7.class}, new String[]{"extTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.Bi));
         return arrayList;
     }
 
@@ -1072,7 +1072,7 @@ public final class pk extends ni {
             return false;
         }
         T();
-        hk hkVar = (hk) i2.d.x(1, ikVar.d);
+        hk hkVar = (hk) i2.d.A(1, ikVar.d);
         this.b.a1.setTitle(hkVar.b);
         int topForScroll = getTopForScroll();
         File file = hkVar.a;

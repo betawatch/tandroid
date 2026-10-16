@@ -30,12 +30,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.j61;
 import org.telegram.ui.Components.nu;
 import org.telegram.ui.Components.ow0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class FactCheckController {
     private static org.telegram.ui.ActionBar.a2 currentDialog;
@@ -48,7 +48,7 @@ public class FactCheckController {
     private final ArrayList<Key> loading = new ArrayList<>();
     private final Runnable loadMissingRunnable = new h1(this, 17);
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class Key {
         public final long dialogId;
         public final long hash;
@@ -140,7 +140,7 @@ public class FactCheckController {
             if (U != null) {
                 boolean z11 = tL_textWithEntities == null || TextUtils.isEmpty(tL_textWithEntities.text);
                 if (z11 || !z10) {
-                    q.r(z11 ? R.string.FactCheckDeleted : R.string.FactCheckEdited, org.telegram.ui.Components.zc.a0(U), z11 ? R.raw.ic_delete : R.raw.contact_check, 36);
+                    g0.q(z11 ? R.string.FactCheckDeleted : R.string.FactCheckEdited, org.telegram.ui.Components.zc.a0(U), z11 ? R.raw.ic_delete : R.raw.contact_check, 36);
                 }
             }
         }
@@ -149,7 +149,7 @@ public class FactCheckController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$applyFactCheck$16(TLRPC.TL_textWithEntities tL_textWithEntities, boolean z10, org.telegram.ui.ActionBar.a2 a2Var, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new di.t1(this, tLObject, tL_textWithEntities, z10, a2Var, 5));
+        AndroidUtilities.runOnUIThread(new di.t1(this, tLObject, tL_textWithEntities, z10, a2Var, 4));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -494,10 +494,10 @@ public class FactCheckController {
                 }
                 menu.removeItem(android.R.id.shareText);
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.Bold));
-                spannableStringBuilder.setSpan(new i61(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
+                spannableStringBuilder.setSpan(new j61(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
                 menu.add(R.id.menu_groupbolditalic, R.id.menu_bold, 6, spannableStringBuilder);
                 SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(LocaleController.getString(R.string.Italic));
-                spannableStringBuilder2.setSpan(new i61(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC)), 0, spannableStringBuilder2.length(), 33);
+                spannableStringBuilder2.setSpan(new j61(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC)), 0, spannableStringBuilder2.length(), 33);
                 menu.add(R.id.menu_groupbolditalic, R.id.menu_italic, 7, spannableStringBuilder2);
                 menu.add(R.id.menu_groupbolditalic, R.id.menu_link, 8, LocaleController.getString(R.string.CreateLink));
                 menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 9, LocaleController.getString(R.string.Regular));
@@ -612,7 +612,7 @@ public class FactCheckController {
         });
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        linearLayout.addView(nuVar, w7.a6.k(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
+        linearLayout.addView(nuVar, w7.z5.k(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
         d2Var.c();
         d2Var.n(linearLayout);
         a2Var.a = AndroidUtilities.dp(292.0f);

@@ -13,13 +13,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.da0;
 import org.telegram.ui.b51;
 import org.telegram.ui.n41;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class i5 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -113,11 +113,11 @@ public final class i5 extends FrameLayout {
                 for (int i16 = 0; i16 < childCount; i16++) {
                     if (getChildAt(i16).getVisibility() != 8) {
                         if (getChildAt(i16).getMeasuredWidth() + i14 > getMeasuredWidth()) {
-                            i15 = yh.c(8.0f, getChildAt(i16).getMeasuredHeight(), i15);
+                            i15 = org.telegram.messenger.g0.C(8.0f, getChildAt(i16).getMeasuredHeight(), i15);
                             i14 = 0;
                         }
                         getChildAt(i16).layout(i14, i15, getChildAt(i16).getMeasuredWidth() + i14, getChildAt(i16).getMeasuredHeight() + i15);
-                        i14 = yh.c(16.0f, getChildAt(i16).getMeasuredWidth(), i14);
+                        i14 = org.telegram.messenger.g0.C(16.0f, getChildAt(i16).getMeasuredWidth(), i14);
                     }
                 }
                 break;
@@ -173,7 +173,7 @@ public final class i5 extends FrameLayout {
                 super.onMeasure(i10, i11);
                 break;
             case 18:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), yh.D(48.0f, 1, TLObject.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), sk.C(48.0f, 1, TLObject.FLAG_30));
                 break;
             case 20:
                 super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
@@ -184,10 +184,10 @@ public final class i5 extends FrameLayout {
                 for (int i15 = 0; i15 < childCount; i15++) {
                     if (getChildAt(i15).getVisibility() != 8) {
                         if (getChildAt(i15).getMeasuredWidth() + i13 > View.MeasureSpec.getSize(i10)) {
-                            i14 = yh.c(8.0f, getChildAt(i15).getMeasuredHeight(), i14);
+                            i14 = org.telegram.messenger.g0.C(8.0f, getChildAt(i15).getMeasuredHeight(), i14);
                             i13 = 0;
                         }
-                        i13 = yh.c(16.0f, getChildAt(i15).getMeasuredWidth(), i13);
+                        i13 = org.telegram.messenger.g0.C(16.0f, getChildAt(i15).getMeasuredWidth(), i13);
                         i12 = getChildAt(i15).getMeasuredHeight() + i14;
                     }
                 }
@@ -240,13 +240,13 @@ public final class i5 extends FrameLayout {
         c6Var = ((org.telegram.ui.ActionBar.e3) b51Var).resourcesProvider;
         mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(i11, c6Var), PorterDuff.Mode.MULTIPLY));
         imageView.setImageDrawable(mutate);
-        addView(imageView, w7.a6.a(24.0f, z10 ? 0.0f : 27.0f, 6.0f, z10 ? 27.0f : 0.0f, 0.0f, 24, z10 ? 5 : 3));
+        addView(imageView, w7.z5.a(24.0f, z10 ? 0.0f : 27.0f, 6.0f, z10 ? 27.0f : 0.0f, 0.0f, 24, z10 ? 5 : 3));
         TextView textView = new TextView(getContext());
         textView.setText(str);
         c6Var2 = ((org.telegram.ui.ActionBar.e3) b51Var).resourcesProvider;
         textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(i11, c6Var2));
         com.google.android.gms.internal.play_billing.k3.m(14.0f, 1, textView);
-        addView(textView, w7.a6.a(-2.0f, z10 ? 27.0f : 68.0f, 0.0f, z10 ? 68.0f : 27.0f, 0.0f, -2, z10 ? 5 : 3));
+        addView(textView, w7.z5.a(-2.0f, z10 ? 27.0f : 68.0f, 0.0f, z10 ? 68.0f : 27.0f, 0.0f, -2, z10 ? 5 : 3));
         da0 da0Var = new da0(getContext(), null);
         da0Var.setText(charSequence);
         da0Var.setTextSize(1, 14.0f);
@@ -258,7 +258,7 @@ public final class i5 extends FrameLayout {
         da0Var.setLinkTextColor(org.telegram.ui.ActionBar.g6.w0(i13, c6Var4));
         da0Var.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
         da0Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        addView(da0Var, w7.a6.a(-2.0f, (z10 ? 27 : 68) - 4, 18.0f, (z10 ? 68 : 27) - 4, 0.0f, -2, z10 ? 5 : 3));
+        addView(da0Var, w7.z5.a(-2.0f, (z10 ? 27 : 68) - 4, 18.0f, (z10 ? 68 : 27) - 4, 0.0f, -2, z10 ? 5 : 3));
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -276,13 +276,13 @@ public final class i5 extends FrameLayout {
         c6Var = ((org.telegram.ui.ActionBar.e3) n41Var).resourcesProvider;
         mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(i11, c6Var), PorterDuff.Mode.MULTIPLY));
         imageView.setImageDrawable(mutate);
-        addView(imageView, w7.a6.a(24.0f, z10 ? 0.0f : 27.0f, 6.0f, z10 ? 27.0f : 0.0f, 0.0f, 24, z10 ? 5 : 3));
+        addView(imageView, w7.z5.a(24.0f, z10 ? 0.0f : 27.0f, 6.0f, z10 ? 27.0f : 0.0f, 0.0f, 24, z10 ? 5 : 3));
         TextView textView = new TextView(getContext());
         textView.setText(str);
         c6Var2 = ((org.telegram.ui.ActionBar.e3) n41Var).resourcesProvider;
         textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(i11, c6Var2));
         com.google.android.gms.internal.play_billing.k3.m(14.0f, 1, textView);
-        addView(textView, w7.a6.a(-2.0f, z10 ? 27.0f : 68.0f, 0.0f, z10 ? 68.0f : 27.0f, 0.0f, -2, z10 ? 5 : 3));
+        addView(textView, w7.z5.a(-2.0f, z10 ? 27.0f : 68.0f, 0.0f, z10 ? 68.0f : 27.0f, 0.0f, -2, z10 ? 5 : 3));
         da0 da0Var = new da0(getContext(), null);
         da0Var.setText(charSequence);
         da0Var.setTextSize(1, 14.0f);
@@ -293,7 +293,7 @@ public final class i5 extends FrameLayout {
         c6Var4 = ((org.telegram.ui.ActionBar.e3) n41Var).resourcesProvider;
         da0Var.setLinkTextColor(org.telegram.ui.ActionBar.g6.w0(i13, c6Var4));
         da0Var.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        addView(da0Var, w7.a6.a(-2.0f, z10 ? 27.0f : 68.0f, 18.0f, z10 ? 68.0f : 27.0f, 0.0f, -2, z10 ? 5 : 3));
+        addView(da0Var, w7.z5.a(-2.0f, z10 ? 27.0f : 68.0f, 18.0f, z10 ? 68.0f : 27.0f, 0.0f, -2, z10 ? 5 : 3));
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -307,14 +307,14 @@ public final class i5 extends FrameLayout {
         int i11 = org.telegram.ui.ActionBar.g6.j5;
         imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.x0(null, i11, false), PorterDuff.Mode.MULTIPLY));
         boolean z10 = LocaleController.isRTL;
-        addView(imageView, w7.a6.a(24.0f, z10 ? 0.0f : 22.0f, 0.0f, z10 ? 22.0f : 0.0f, 0.0f, 24, (z10 ? 5 : 3) | 16));
+        addView(imageView, w7.z5.a(24.0f, z10 ? 0.0f : 22.0f, 0.0f, z10 ? 22.0f : 0.0f, 0.0f, 24, (z10 ? 5 : 3) | 16));
         TextView textView = new TextView(context);
         textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i11, false));
         textView.setTextSize(1, 14.0f);
         textView.setGravity(LocaleController.isRTL ? 5 : 3);
         textView.setText(str);
         boolean z11 = LocaleController.isRTL;
-        addView(textView, w7.a6.a(-2.0f, z11 ? 0.0f : 61.0f, 0.0f, z11 ? 61.0f : 0.0f, 0.0f, -1, 23));
+        addView(textView, w7.z5.a(-2.0f, z11 ? 0.0f : 61.0f, 0.0f, z11 ? 61.0f : 0.0f, 0.0f, -1, 23));
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -326,10 +326,10 @@ public final class i5 extends FrameLayout {
         int i11 = org.telegram.ui.ActionBar.g6.G6;
         imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(i11, c6Var), PorterDuff.Mode.SRC_IN));
         imageView.setImageResource(i10);
-        addView(imageView, w7.a6.a(24.0f, 0.0f, 5.0f, 18.0f, 0.0f, 24, 51));
+        addView(imageView, w7.z5.a(24.0f, 0.0f, 5.0f, 18.0f, 0.0f, 24, 51));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        addView(linearLayout, w7.a6.a(-2.0f, 42.0f, 0.0f, 0.0f, 0.0f, -1, 55));
+        addView(linearLayout, w7.z5.a(-2.0f, 42.0f, 0.0f, 0.0f, 0.0f, -1, 55));
         da0 da0Var = new da0(context, null);
         da0Var.setTypeface(AndroidUtilities.bold());
         da0Var.setTextSize(1, 14.0f);
@@ -337,13 +337,13 @@ public final class i5 extends FrameLayout {
         int i12 = org.telegram.ui.ActionBar.g6.gc;
         da0Var.setLinkTextColor(org.telegram.ui.ActionBar.g6.w0(i12, c6Var));
         da0Var.setText(str);
-        linearLayout.addView(da0Var, w7.a6.t(-1, -2, 55, 0, 0, 0, 2));
+        linearLayout.addView(da0Var, w7.z5.t(-1, -2, 55, 0, 0, 0, 2));
         da0 da0Var2 = new da0(context, null);
         da0Var2.setTextSize(1, 14.0f);
         da0Var2.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.y6, c6Var));
         da0Var2.setLinkTextColor(org.telegram.ui.ActionBar.g6.w0(i12, c6Var));
         da0Var2.setText(charSequence);
-        linearLayout.addView(da0Var2, w7.a6.t(-1, -2, 55, 0, 0, 0, 0));
+        linearLayout.addView(da0Var2, w7.z5.t(-1, -2, 55, 0, 0, 0, 0));
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

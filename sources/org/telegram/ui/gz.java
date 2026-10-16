@@ -34,7 +34,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class gz extends FrameLayout {
     public org.telegram.ui.Components.x9 a;
@@ -57,32 +57,32 @@ public final class gz extends FrameLayout {
         int i10 = 0;
         setWillNotDraw(false);
         setPadding(0, AndroidUtilities.dp(24.0f), 0, AndroidUtilities.dp(24.0f));
-        LinearLayout e = org.telegram.messenger.yh.e(context, 1);
-        addView(e, w7.a6.e(-2, -2, 17));
-        org.telegram.ui.Cells.x0 x0Var = new org.telegram.ui.Cells.x0(context);
-        x0Var.setCustomText(LocaleController.getString(R.string.WidgetPreview));
-        e.addView(x0Var, w7.a6.t(-2, -2, 17, 0, 0, 0, 4));
+        LinearLayout e = org.telegram.messenger.sk.e(context, 1);
+        addView(e, w7.z5.e(-2, -2, 17));
+        org.telegram.ui.Cells.w0 w0Var = new org.telegram.ui.Cells.w0(context);
+        w0Var.setCustomText(LocaleController.getString(R.string.WidgetPreview));
+        e.addView(w0Var, w7.z5.t(-2, -2, 17, 0, 0, 0, 4));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setBackgroundResource(R.drawable.widget_bg);
-        e.addView(linearLayout, w7.a6.t(-2, -2, 17, 10, 0, 10, 0));
+        e.addView(linearLayout, w7.z5.t(-2, -2, 17, 10, 0, 10, 0));
         hzVar.d = new ImageView(context);
         int i11 = hzVar.w;
         if (i11 == 0) {
             while (i10 < 2) {
                 this.n[i10] = (ViewGroup) hzVar.getParentActivity().getLayoutInflater().inflate(R.layout.shortcut_widget_item, (ViewGroup) null);
-                linearLayout.addView(this.n[i10], w7.a6.n(-1, -2));
+                linearLayout.addView(this.n[i10], w7.z5.n(-1, -2));
                 i10++;
             }
-            linearLayout.addView(hzVar.d, w7.a6.q(218, 160, 17));
+            linearLayout.addView(hzVar.d, w7.z5.q(218, 160, 17));
             hzVar.d.setImageResource(R.drawable.chats_widget_preview);
         } else if (i11 == 1) {
             while (i10 < 2) {
                 this.n[i10] = (ViewGroup) hzVar.getParentActivity().getLayoutInflater().inflate(R.layout.contacts_widget_item, (ViewGroup) null);
-                linearLayout.addView(this.n[i10], w7.a6.n(160, -2));
+                linearLayout.addView(this.n[i10], w7.z5.n(160, -2));
                 i10++;
             }
-            linearLayout.addView(hzVar.d, w7.a6.q(160, 160, 17));
+            linearLayout.addView(hzVar.d, w7.z5.q(160, 160, 17));
             hzVar.d.setImageResource(R.drawable.contacts_widget_preview);
         }
         a();
@@ -141,7 +141,7 @@ public final class gz extends FrameLayout {
         CharSequence charSequence;
         SpannableStringBuilder valueOf;
         char c10;
-        String j11;
+        String i13;
         SpannableStringBuilder spannableStringBuilder;
         CharSequence charSequence2;
         CharSequence charSequence3;
@@ -150,24 +150,24 @@ public final class gz extends FrameLayout {
         TLRPC.UserProfilePhoto userProfilePhoto2;
         hz hzVar = this.r;
         ArrayList arrayList = hzVar.e;
-        int i13 = hzVar.w;
-        int i14 = 8;
-        int i15 = 2;
+        int i14 = hzVar.w;
+        int i15 = 8;
+        int i16 = 2;
         ?? r12 = 1;
-        int i16 = 0;
+        int i17 = 0;
         ViewGroup[] viewGroupArr = this.n;
-        if (i13 == 0) {
-            int i17 = 0;
-            while (i17 < i15) {
+        if (i14 == 0) {
+            int i18 = 0;
+            while (i18 < i16) {
                 if (arrayList.isEmpty()) {
-                    dialog2 = i17 < hzVar.getMessagesController().dialogsServerOnly.size() ? hzVar.getMessagesController().dialogsServerOnly.get(i17) : null;
+                    dialog2 = i18 < hzVar.getMessagesController().dialogsServerOnly.size() ? hzVar.getMessagesController().dialogsServerOnly.get(i18) : null;
                     j10 = 0;
-                } else if (i17 < arrayList.size()) {
+                } else if (i18 < arrayList.size()) {
                     j10 = 0;
-                    TLRPC.Dialog dialog3 = (TLRPC.Dialog) hzVar.getMessagesController().dialogs_dict.f(((Long) arrayList.get(i17)).longValue());
+                    TLRPC.Dialog dialog3 = (TLRPC.Dialog) hzVar.getMessagesController().dialogs_dict.f(((Long) arrayList.get(i18)).longValue());
                     if (dialog3 == null) {
                         dialog3 = new TLRPC.TL_dialog();
-                        dialog3.id = ((Long) arrayList.get(i17)).longValue();
+                        dialog3.id = ((Long) arrayList.get(i18)).longValue();
                     }
                     dialog2 = dialog3;
                 } else {
@@ -175,18 +175,18 @@ public final class gz extends FrameLayout {
                     dialog2 = null;
                 }
                 if (dialog2 == null) {
-                    viewGroupArr[i17].setVisibility(i14);
-                    i11 = i17;
+                    viewGroupArr[i18].setVisibility(i15);
+                    i11 = i18;
                 } else {
-                    viewGroupArr[i17].setVisibility(i16);
+                    viewGroupArr[i18].setVisibility(i17);
                     if (DialogObject.isUserDialog(dialog2.id)) {
                         user2 = hzVar.getMessagesController().getUser(Long.valueOf(dialog2.id));
                         if (user2 != null) {
                             str2 = UserObject.isUserSelf(user2) ? LocaleController.getString(R.string.SavedMessages) : UserObject.isReplyUser(user2) ? LocaleController.getString(R.string.RepliesTitle) : UserObject.isDeleted(user2) ? LocaleController.getString(R.string.HiddenName) : ContactsController.formatName(user2.first_name, user2.last_name);
                             if (UserObject.isReplyUser(user2) || UserObject.isUserSelf(user2) || (userProfilePhoto2 = user2.photo) == null || (fileLocation2 = userProfilePhoto2.photo_small) == null) {
-                                i11 = i17;
+                                i11 = i18;
                             } else {
-                                i11 = i17;
+                                i11 = i18;
                                 if (fileLocation2.volume_id != j10 && fileLocation2.local_id != 0) {
                                     chat2 = null;
                                     ((TextView) viewGroupArr[i11].findViewById(R.id.shortcut_widget_item_text)).setText(str2);
@@ -204,22 +204,22 @@ public final class gz extends FrameLayout {
                                             }
                                             if (dialog2.unread_count <= 0) {
                                             }
-                                            i17 = i11 + 1;
-                                            i14 = 8;
-                                            i15 = 2;
+                                            i18 = i11 + 1;
+                                            i15 = 8;
+                                            i16 = 2;
                                             r12 = 1;
-                                            i16 = 0;
+                                            i17 = 0;
                                         }
                                     } else {
                                         decodeFile2 = null;
                                     }
                                     int dp = AndroidUtilities.dp(48.0f);
                                     Bitmap createBitmap = Bitmap.createBitmap(dp, dp, Bitmap.Config.ARGB_8888);
-                                    createBitmap.eraseColor(i16);
+                                    createBitmap.eraseColor(i17);
                                     Canvas canvas2 = new Canvas(createBitmap);
                                     if (decodeFile2 != null) {
                                         if (user2 != null) {
-                                            org.telegram.ui.Components.k9 k9Var3 = new org.telegram.ui.Components.k9(i16, user2);
+                                            org.telegram.ui.Components.k9 k9Var3 = new org.telegram.ui.Components.k9(i17, user2);
                                             if (UserObject.isReplyUser(user2)) {
                                                 k9Var3.g(12);
                                                 k9Var2 = k9Var3;
@@ -233,7 +233,7 @@ public final class gz extends FrameLayout {
                                         } else {
                                             k9Var2 = new org.telegram.ui.Components.k9(chat2);
                                         }
-                                        k9Var2.setBounds(i16, i16, dp, dp);
+                                        k9Var2.setBounds(i17, i17, dp, dp);
                                         k9Var2.draw(canvas2);
                                         canvas = canvas2;
                                         i12 = r12;
@@ -257,7 +257,7 @@ public final class gz extends FrameLayout {
                                     canvas.setBitmap(null);
                                     ((ImageView) viewGroupArr[i11].findViewById(R.id.shortcut_widget_item_avatar)).setImageBitmap(createBitmap);
                                     ArrayList arrayList22 = (ArrayList) hzVar.getMessagesController().dialogMessage.f(dialog2.id);
-                                    messageObject = (arrayList22 != null || arrayList22.size() <= 0) ? null : (MessageObject) arrayList22.get(i16);
+                                    messageObject = (arrayList22 != null || arrayList22.size() <= 0) ? null : (MessageObject) arrayList22.get(i17);
                                     if (messageObject == null) {
                                         long fromChatId = messageObject.getFromChatId();
                                         if (fromChatId > j10) {
@@ -369,14 +369,14 @@ public final class gz extends FrameLayout {
                                                             color = getContext().getResources().getColor(R.color.widget_action_text);
                                                             TLRPC.MessageMedia messageMedia2 = messageObject.messageOwner.media;
                                                             if (messageMedia2 instanceof TLRPC.TL_messageMediaPoll) {
-                                                                j11 = a1.g.p("📊 \u2068", ((TLRPC.TL_messageMediaPoll) messageMedia2).poll.question.text, "\u2069");
+                                                                i13 = a1.g.p("📊 \u2068", ((TLRPC.TL_messageMediaPoll) messageMedia2).poll.question.text, "\u2069");
                                                             } else if (messageMedia2 instanceof TLRPC.TL_messageMediaGame) {
-                                                                j11 = a1.g.p("🎮 \u2068", messageMedia2.game.title, "\u2069");
+                                                                i13 = a1.g.p("🎮 \u2068", messageMedia2.game.title, "\u2069");
                                                             } else {
-                                                                j11 = messageObject.type == 14 ? org.telegram.ui.Cells.d0.j("🎧 \u2068", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle(), "\u2069") : messageObject.messageText.toString();
+                                                                i13 = messageObject.type == 14 ? org.telegram.ui.Cells.c1.i("🎧 \u2068", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle(), "\u2069") : messageObject.messageText.toString();
                                                                 c11 = '\n';
                                                             }
-                                                            String replace = j11.replace(c11, ' ');
+                                                            String replace = i13.replace(c11, ' ');
                                                             Object[] objArr3 = new Object[2];
                                                             objArr3[0] = replace;
                                                             objArr3[i12] = string;
@@ -429,7 +429,7 @@ public final class gz extends FrameLayout {
                                 }
                             }
                         } else {
-                            i11 = i17;
+                            i11 = i18;
                             str2 = "";
                         }
                         chat2 = null;
@@ -439,7 +439,7 @@ public final class gz extends FrameLayout {
                         }
                         int dp2 = AndroidUtilities.dp(48.0f);
                         Bitmap createBitmap2 = Bitmap.createBitmap(dp2, dp2, Bitmap.Config.ARGB_8888);
-                        createBitmap2.eraseColor(i16);
+                        createBitmap2.eraseColor(i17);
                         Canvas canvas22 = new Canvas(createBitmap2);
                         if (decodeFile2 != null) {
                         }
@@ -453,7 +453,7 @@ public final class gz extends FrameLayout {
                         if (dialog2.unread_count <= 0) {
                         }
                     } else {
-                        i11 = i17;
+                        i11 = i18;
                         TLRPC.Chat chat4 = hzVar.getMessagesController().getChat(Long.valueOf(-dialog2.id));
                         if (chat4 != null) {
                             str2 = chat4.title;
@@ -468,7 +468,7 @@ public final class gz extends FrameLayout {
                                 }
                                 int dp22 = AndroidUtilities.dp(48.0f);
                                 Bitmap createBitmap22 = Bitmap.createBitmap(dp22, dp22, Bitmap.Config.ARGB_8888);
-                                createBitmap22.eraseColor(i16);
+                                createBitmap22.eraseColor(i17);
                                 Canvas canvas222 = new Canvas(createBitmap22);
                                 if (decodeFile2 != null) {
                                 }
@@ -493,7 +493,7 @@ public final class gz extends FrameLayout {
                         }
                         int dp222 = AndroidUtilities.dp(48.0f);
                         Bitmap createBitmap222 = Bitmap.createBitmap(dp222, dp222, Bitmap.Config.ARGB_8888);
-                        createBitmap222.eraseColor(i16);
+                        createBitmap222.eraseColor(i17);
                         Canvas canvas2222 = new Canvas(createBitmap222);
                         if (decodeFile2 != null) {
                         }
@@ -508,52 +508,52 @@ public final class gz extends FrameLayout {
                         }
                     }
                 }
-                i17 = i11 + 1;
-                i14 = 8;
-                i15 = 2;
+                i18 = i11 + 1;
+                i15 = 8;
+                i16 = 2;
                 r12 = 1;
-                i16 = 0;
+                i17 = 0;
             }
-            viewGroupArr[i16].findViewById(R.id.shortcut_widget_item_divider).setVisibility(viewGroupArr[1].getVisibility());
+            viewGroupArr[i17].findViewById(R.id.shortcut_widget_item_divider).setVisibility(viewGroupArr[1].getVisibility());
             viewGroupArr[1].findViewById(R.id.shortcut_widget_item_divider).setVisibility(8);
-        } else if (i13 == 1) {
-            int i18 = 0;
+        } else if (i14 == 1) {
+            int i19 = 0;
             while (true) {
-                if (i18 >= 2) {
+                if (i19 >= 2) {
                     break;
                 }
-                int i19 = 0;
-                for (int i20 = 2; i19 < i20; i20 = 2) {
-                    int i21 = (i18 * 2) + i19;
+                int i20 = 0;
+                for (int i21 = 2; i20 < i21; i21 = 2) {
+                    int i22 = (i19 * 2) + i20;
                     if (arrayList.isEmpty()) {
-                        if (i21 < hzVar.getMediaDataController().hints.size()) {
-                            long j12 = hzVar.getMediaDataController().hints.get(i21).peer.user_id;
-                            dialog = (TLRPC.Dialog) hzVar.getMessagesController().dialogs_dict.f(j12);
+                        if (i22 < hzVar.getMediaDataController().hints.size()) {
+                            long j11 = hzVar.getMediaDataController().hints.get(i22).peer.user_id;
+                            dialog = (TLRPC.Dialog) hzVar.getMessagesController().dialogs_dict.f(j11);
                             if (dialog == null) {
                                 dialog = new TLRPC.TL_dialog();
-                                dialog.id = j12;
+                                dialog.id = j11;
                             }
                         }
                         dialog = null;
                     } else {
-                        if (i21 < arrayList.size()) {
-                            dialog = (TLRPC.Dialog) hzVar.getMessagesController().dialogs_dict.f(((Long) arrayList.get(i21)).longValue());
+                        if (i22 < arrayList.size()) {
+                            dialog = (TLRPC.Dialog) hzVar.getMessagesController().dialogs_dict.f(((Long) arrayList.get(i22)).longValue());
                             if (dialog == null) {
                                 dialog = new TLRPC.TL_dialog();
-                                dialog.id = ((Long) arrayList.get(i21)).longValue();
+                                dialog.id = ((Long) arrayList.get(i22)).longValue();
                             }
                         }
                         dialog = null;
                     }
                     if (dialog == null) {
-                        viewGroupArr[i18].findViewById(i19 == 0 ? R.id.contacts_widget_item1 : R.id.contacts_widget_item2).setVisibility(4);
-                        if (i21 == 0 || i21 == 2) {
-                            viewGroupArr[i18].setVisibility(8);
+                        viewGroupArr[i19].findViewById(i20 == 0 ? R.id.contacts_widget_item1 : R.id.contacts_widget_item2).setVisibility(4);
+                        if (i22 == 0 || i22 == 2) {
+                            viewGroupArr[i19].setVisibility(8);
                         }
                     } else {
-                        viewGroupArr[i18].findViewById(i19 == 0 ? R.id.contacts_widget_item1 : R.id.contacts_widget_item2).setVisibility(0);
-                        if (i21 == 0 || i21 == 2) {
-                            viewGroupArr[i18].setVisibility(0);
+                        viewGroupArr[i19].findViewById(i20 == 0 ? R.id.contacts_widget_item1 : R.id.contacts_widget_item2).setVisibility(0);
+                        if (i22 == 0 || i22 == 2) {
+                            viewGroupArr[i19].setVisibility(0);
                         }
                         if (DialogObject.isUserDialog(dialog.id)) {
                             user = hzVar.getMessagesController().getUser(Long.valueOf(dialog.id));
@@ -582,7 +582,7 @@ public final class gz extends FrameLayout {
                             chat = chat5;
                             user = null;
                         }
-                        ((TextView) viewGroupArr[i18].findViewById(i19 == 0 ? R.id.contacts_widget_item_text1 : R.id.contacts_widget_item_text2)).setText(str);
+                        ((TextView) viewGroupArr[i19].findViewById(i20 == 0 ? R.id.contacts_widget_item_text1 : R.id.contacts_widget_item_text2)).setText(str);
                         if (fileLocation != null) {
                             try {
                                 decodeFile = BitmapFactory.decodeFile(hzVar.getFileLoader().getPathToAttach(fileLocation, true).toString());
@@ -592,7 +592,7 @@ public final class gz extends FrameLayout {
                                 i10 = dialog.unread_count;
                                 if (i10 > 0) {
                                 }
-                                i19++;
+                                i20++;
                             }
                         } else {
                             decodeFile = null;
@@ -614,7 +614,7 @@ public final class gz extends FrameLayout {
                                             i10 = dialog.unread_count;
                                             if (i10 > 0) {
                                             }
-                                            i19++;
+                                            i20++;
                                         }
                                     } else if (UserObject.isUserSelf(user)) {
                                         k9Var.g(1);
@@ -644,31 +644,31 @@ public final class gz extends FrameLayout {
                                 i10 = dialog.unread_count;
                                 if (i10 > 0) {
                                 }
-                                i19++;
+                                i20++;
                             }
                         }
                         try {
                             canvas3.setBitmap(null);
-                            ((ImageView) viewGroupArr[i18].findViewById(i19 == 0 ? R.id.contacts_widget_item_avatar1 : R.id.contacts_widget_item_avatar2)).setImageBitmap(createBitmap3);
+                            ((ImageView) viewGroupArr[i19].findViewById(i20 == 0 ? R.id.contacts_widget_item_avatar1 : R.id.contacts_widget_item_avatar2)).setImageBitmap(createBitmap3);
                         } catch (Throwable th7) {
                             th = th7;
                             FileLog.e(th);
                             i10 = dialog.unread_count;
                             if (i10 > 0) {
                             }
-                            i19++;
+                            i20++;
                         }
                         i10 = dialog.unread_count;
                         if (i10 > 0) {
-                            ((TextView) viewGroupArr[i18].findViewById(i19 == 0 ? R.id.contacts_widget_item_badge1 : R.id.contacts_widget_item_badge2)).setText(i10 > 99 ? String.format("%d+", 99) : String.format("%d", Integer.valueOf(i10)));
-                            viewGroupArr[i18].findViewById(i19 == 0 ? R.id.contacts_widget_item_badge_bg1 : R.id.contacts_widget_item_badge_bg2).setVisibility(0);
+                            ((TextView) viewGroupArr[i19].findViewById(i20 == 0 ? R.id.contacts_widget_item_badge1 : R.id.contacts_widget_item_badge2)).setText(i10 > 99 ? String.format("%d+", 99) : String.format("%d", Integer.valueOf(i10)));
+                            viewGroupArr[i19].findViewById(i20 == 0 ? R.id.contacts_widget_item_badge_bg1 : R.id.contacts_widget_item_badge_bg2).setVisibility(0);
                         } else {
-                            viewGroupArr[i18].findViewById(i19 == 0 ? R.id.contacts_widget_item_badge_bg1 : R.id.contacts_widget_item_badge_bg2).setVisibility(8);
+                            viewGroupArr[i19].findViewById(i20 == 0 ? R.id.contacts_widget_item_badge_bg1 : R.id.contacts_widget_item_badge_bg2).setVisibility(8);
                         }
                     }
-                    i19++;
+                    i20++;
                 }
-                i18++;
+                i19++;
             }
         }
         if (viewGroupArr[0].getVisibility() == 0) {

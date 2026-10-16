@@ -10,7 +10,7 @@ import org.telegram.messenger.ProxyRotationController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class m21 extends org.telegram.ui.Components.lm0 {
     public final Context c;
@@ -228,7 +228,7 @@ public final class m21 extends org.telegram.ui.Components.lm0 {
                     for (int i14 = 0; i14 < arrayList3.size(); i14++) {
                         strArr[i14] = LocaleController.formatString(R.string.ProxyRotationTimeoutSeconds, arrayList3.get(i14));
                     }
-                    sw0Var.setCallback(new ul0(7));
+                    sw0Var.setCallback(new ps0(5));
                     sw0Var.b(SharedConfig.proxyRotationTimeout, null, strArr);
                     break;
                 }
@@ -271,29 +271,29 @@ public final class m21 extends org.telegram.ui.Components.lm0 {
 
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        View b7Var;
+        View a7Var;
         Context context = this.c;
         if (i10 == 0) {
-            b7Var = new org.telegram.ui.Cells.b7(context, (org.telegram.ui.Cells.d0) null);
+            a7Var = new org.telegram.ui.Cells.a7(context, (org.telegram.ui.Cells.c1) null);
         } else if (i10 == 1) {
-            b7Var = new org.telegram.ui.Cells.ca(context);
-            b7Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
+            a7Var = new org.telegram.ui.Cells.ca(context);
+            a7Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
         } else if (i10 == 2) {
-            b7Var = new org.telegram.ui.Cells.m4(context);
-            b7Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
+            a7Var = new org.telegram.ui.Cells.m4(context);
+            a7Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
         } else if (i10 == 3) {
-            b7Var = new org.telegram.ui.Cells.w8(context);
-            b7Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
+            a7Var = new org.telegram.ui.Cells.w8(context);
+            a7Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
         } else if (i10 == 4) {
-            b7Var = new org.telegram.ui.Cells.e9(context);
+            a7Var = new org.telegram.ui.Cells.e9(context);
         } else if (i10 != 6) {
-            b7Var = new n21(this.d, context);
-            b7Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
+            a7Var = new n21(this.d, context);
+            a7Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
         } else {
-            b7Var = new org.telegram.ui.Components.sw0(context, null);
-            b7Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
+            a7Var = new org.telegram.ui.Components.sw0(context, null);
+            a7Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
         }
-        return com.google.android.gms.internal.play_billing.k3.l(b7Var, b7Var, -1, -2);
+        return com.google.android.gms.internal.play_billing.k3.l(a7Var, a7Var, -1, -2);
     }
 
     @Override // s4.g0

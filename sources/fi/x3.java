@@ -4,13 +4,13 @@ import android.app.Activity;
 import android.view.ViewGroup;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.z61;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class x3 extends z61 {
+public final class x3 extends a71 {
     public final /* synthetic */ f4 N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -19,7 +19,7 @@ public final class x3 extends z61 {
         this.N = f4Var;
     }
 
-    @Override // org.telegram.ui.Components.z61, s4.g0
+    @Override // org.telegram.ui.Components.a71, s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
         c6 c6Var;
         if (i10 != 42) {

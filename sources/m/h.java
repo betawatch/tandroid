@@ -1,466 +1,407 @@
 package m;
 
 import android.content.Context;
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
-import android.util.SparseBooleanArray;
-import android.view.LayoutInflater;
+import android.graphics.Canvas;
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.RemoteException;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import androidx.appcompat.view.menu.ActionMenuItemView;
-import androidx.appcompat.widget.ActionMenuView;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
+import android.widget.TextView;
+import androidx.appcompat.widget.Toolbar;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import java.io.IOException;
+import java.util.Collection;
+import java.util.ConcurrentModificationException;
+import java.util.Iterator;
+import java.util.concurrent.CopyOnWriteArrayList;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Cells.e9;
+import org.telegram.ui.Components.d91;
+import org.telegram.ui.Components.fp0;
+import org.telegram.ui.Components.ir0;
+import org.telegram.ui.Components.j91;
+import org.telegram.ui.Components.l91;
+import org.telegram.ui.Components.p9;
+import org.telegram.ui.Components.u6;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.ThemeActivity;
+import org.telegram.ui.hc1;
+import v7.i8;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class h implements l.x {
-    public int E;
-    public int F;
-    public boolean G;
-    public d I;
-    public d J;
-    public f K;
-    public e L;
-    public final Context a;
-    public Context b;
-    public l.k c;
-    public final LayoutInflater d;
-    public l.w e;
-    public l.z n;
-    public g r;
-    public Drawable s;
-    public boolean v;
-    public boolean w;
-    public boolean x;
-    public int y;
-    public final int f = R.layout.abc_action_menu_layout;
-    public final int h = R.layout.abc_action_menu_item_layout;
-    public final SparseBooleanArray H = new SparseBooleanArray();
-    public final l2.f M = new l2.f(this, 1);
+public final class h implements l.w, l.i, k1.f, fp0, ne.f, bh.h, j91, com.google.android.gms.common.api.internal.s, s4.d0, n5.b, v0.i, y2.g {
+    public final /* synthetic */ int a;
+    public Object b;
 
-    public h(Context context) {
-        this.a = context;
-        this.d = LayoutInflater.from(context);
+    public /* synthetic */ h() {
+        this.a = 21;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r5v0, types: [android.view.View] */
-    /* JADX WARN: Type inference failed for: r5v4, types: [l.y] */
-    /* JADX WARN: Type inference failed for: r5v7 */
-    /* JADX WARN: Type inference failed for: r5v8 */
-    public final View a(l.m mVar, View view, ViewGroup viewGroup) {
-        View actionView = mVar.getActionView();
-        if (actionView == null || mVar.e()) {
-            ActionMenuItemView actionMenuItemView = view instanceof l.y ? (l.y) view : (l.y) this.d.inflate(this.h, viewGroup, false);
-            actionMenuItemView.b(mVar);
-            ActionMenuItemView actionMenuItemView2 = actionMenuItemView;
-            actionMenuItemView2.setItemInvoker((ActionMenuView) this.n);
-            if (this.L == null) {
-                this.L = new e(this);
-            }
-            actionMenuItemView2.setPopupCallback(this.L);
-            actionView = actionMenuItemView;
-        }
-        actionView.setVisibility(mVar.C ? 8 : 0);
-        ViewGroup.LayoutParams layoutParams = actionView.getLayoutParams();
-        ((ActionMenuView) viewGroup).getClass();
-        if (!(layoutParams instanceof j)) {
-            actionView.setLayoutParams(ActionMenuView.j(layoutParams));
-        }
-        return actionView;
-    }
-
-    @Override // l.x
-    public final boolean b(l.m mVar) {
-        return false;
-    }
-
-    @Override // l.x
-    public final boolean c() {
-        int i10;
-        ArrayList arrayList;
-        int i11;
+    @Override // y2.g
+    public void A(y2.i iVar, long j10, long j11) {
         boolean z10;
-        h hVar = this;
-        l.k kVar = hVar.c;
-        if (kVar != null) {
-            arrayList = kVar.l();
-            i10 = arrayList.size();
+        l2.d dVar = (l2.d) this.b;
+        synchronized (z2.b.b) {
+            z10 = z2.b.c;
+        }
+        if (z10) {
+            dVar.a();
         } else {
-            i10 = 0;
-            arrayList = null;
+            dVar.a.y(new IOException(new ConcurrentModificationException()));
         }
-        int i12 = hVar.F;
-        int i13 = hVar.E;
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
-        ViewGroup viewGroup = (ViewGroup) hVar.n;
-        int i14 = 0;
-        boolean z11 = false;
-        int i15 = 0;
-        int i16 = 0;
-        while (true) {
-            i11 = 2;
-            z10 = true;
-            if (i14 >= i10) {
-                break;
-            }
-            l.m mVar = (l.m) arrayList.get(i14);
-            int i17 = mVar.y;
-            if ((i17 & 2) == 2) {
-                i15++;
-            } else if ((i17 & 1) == 1) {
-                i16++;
-            } else {
-                z11 = true;
-            }
-            if (hVar.G && mVar.C) {
-                i12 = 0;
-            }
-            i14++;
-        }
-        if (hVar.w && (z11 || i16 + i15 > i12)) {
-            i12--;
-        }
-        int i18 = i12 - i15;
-        SparseBooleanArray sparseBooleanArray = hVar.H;
-        sparseBooleanArray.clear();
-        int i19 = 0;
-        int i20 = 0;
-        while (i19 < i10) {
-            l.m mVar2 = (l.m) arrayList.get(i19);
-            int i21 = mVar2.y;
-            boolean z12 = (i21 & 2) == i11 ? z10 : false;
-            int i22 = mVar2.b;
-            if (z12) {
-                View a2 = hVar.a(mVar2, null, viewGroup);
-                a2.measure(makeMeasureSpec, makeMeasureSpec);
-                int measuredWidth = a2.getMeasuredWidth();
-                i13 -= measuredWidth;
-                if (i20 == 0) {
-                    i20 = measuredWidth;
-                }
-                if (i22 != 0) {
-                    sparseBooleanArray.put(i22, z10);
-                }
-                mVar2.f(z10);
-            } else if ((i21 & 1) == z10) {
-                boolean z13 = sparseBooleanArray.get(i22);
-                boolean z14 = ((i18 > 0 || z13) && i13 > 0) ? z10 : false;
-                if (z14) {
-                    View a10 = hVar.a(mVar2, null, viewGroup);
-                    a10.measure(makeMeasureSpec, makeMeasureSpec);
-                    int measuredWidth2 = a10.getMeasuredWidth();
-                    i13 -= measuredWidth2;
-                    if (i20 == 0) {
-                        i20 = measuredWidth2;
-                    }
-                    z14 &= i13 + i20 > 0;
-                }
-                if (z14 && i22 != 0) {
-                    sparseBooleanArray.put(i22, true);
-                } else if (z13) {
-                    sparseBooleanArray.put(i22, false);
-                    for (int i23 = 0; i23 < i19; i23++) {
-                        l.m mVar3 = (l.m) arrayList.get(i23);
-                        if (mVar3.b == i22) {
-                            if ((mVar3.x & 32) == 32) {
-                                i18++;
-                            }
-                            mVar3.f(false);
-                        }
-                    }
-                }
-                if (z14) {
-                    i18--;
-                }
-                mVar2.f(z14);
-            } else {
-                mVar2.f(false);
-                i19++;
-                i11 = 2;
-                hVar = this;
-                z10 = true;
-            }
-            i19++;
-            i11 = 2;
-            hVar = this;
-            z10 = true;
-        }
-        return z10;
     }
 
-    @Override // l.x
-    public final void d(l.k kVar, boolean z10) {
-        f();
-        d dVar = this.J;
-        if (dVar != null && dVar.b()) {
-            dVar.i.dismiss();
+    @Override // s4.d0
+    public void D(int i10, int i11) {
+        ((s4.g0) this.b).p(i10, i11);
+    }
+
+    @Override // s4.d0
+    public void O0(int i10, int i11) {
+        ((s4.g0) this.b).t(i10, i11);
+    }
+
+    @Override // org.telegram.ui.Components.fp0
+    public void X(float f7, boolean z10) {
+        switch (this.a) {
+            case 3:
+                ng.h hVar = (ng.h) this.b;
+                float f10 = hVar.b;
+                float y3 = com.google.android.gms.internal.play_billing.k3.y(hVar.c, f10, f7, f10);
+                hVar.d = y3;
+                if (z10) {
+                    u6 u6Var = hVar.e;
+                    u6Var.getClass();
+                    u6Var.c(null, y3);
+                }
+                hVar.invalidate();
+                break;
+            default:
+                hc1 hc1Var = (hc1) ((org.telegram.ui.Cells.k0) this.b);
+                int i10 = (int) (g6.q * 100.0f);
+                int i11 = (int) (f7 * 100.0f);
+                g6.q = f7;
+                if (i10 != i11) {
+                    ThemeActivity themeActivity = hc1Var.e.e;
+                    wl0 wl0Var = (wl0) themeActivity.b.K(themeActivity.f0);
+                    if (wl0Var != null) {
+                        ((e9) wl0Var.a).setText(LocaleController.formatString("AutoNightBrightnessInfo", R.string.AutoNightBrightnessInfo, Integer.valueOf((int) (g6.q * 100.0f))));
+                    }
+                    g6.E(true);
+                    break;
+                }
+                break;
         }
-        l.w wVar = this.e;
+    }
+
+    @Override // k1.f
+    public Object a(td.p pVar, md.c cVar) {
+        return ((k1.z) this.b).a(new n1.c(pVar, null, 0), cVar);
+    }
+
+    @Override // com.google.android.gms.common.api.internal.s
+    public void accept(Object obj, Object obj2) {
+        switch (this.a) {
+            case 14:
+                g8.e eVar = (g8.e) this.b;
+                r7.z zVar = (r7.z) ((r7.k) obj).u();
+                r7.f fVar = new r7.f(1, (TaskCompletionSource) obj2);
+                Parcel N0 = zVar.N0();
+                r7.d.c(N0, eVar);
+                r7.d.d(N0, fVar);
+                N0.writeString(null);
+                zVar.R0(N0, 63);
+                return;
+            default:
+                v8.j jVar = (v8.j) this.b;
+                e8.b bVar = (e8.b) obj;
+                Bundle G = bVar.G();
+                G.putBoolean("com.google.android.gms.wallet.EXTRA_USING_AUTO_RESOLVABLE_RESULT", true);
+                e8.a aVar = new e8.a(0, (TaskCompletionSource) obj2);
+                try {
+                    e8.i iVar = (e8.i) bVar.u();
+                    Parcel obtain = Parcel.obtain();
+                    obtain.writeInterfaceToken("com.google.android.gms.wallet.internal.IOwService");
+                    int i10 = e8.c.a;
+                    obtain.writeInt(1);
+                    jVar.writeToParcel(obtain, 0);
+                    obtain.writeInt(1);
+                    G.writeToParcel(obtain, 0);
+                    obtain.writeStrongBinder(aVar);
+                    try {
+                        iVar.a.transact(19, obtain, null, 1);
+                        obtain.recycle();
+                        return;
+                    } catch (Throwable th2) {
+                        obtain.recycle();
+                        throw th2;
+                    }
+                } catch (RemoteException e) {
+                    Log.e("WalletClientImpl", "RemoteException getting payment data", e);
+                    Bundle bundle = Bundle.EMPTY;
+                    aVar.O(Status.h, null);
+                    return;
+                }
+        }
+    }
+
+    public boolean b(int i10) {
+        d91 d91Var = ((l91) this.b).L;
+        if (d91Var == null) {
+            return false;
+        }
+        return d91Var.c(i10);
+    }
+
+    @Override // l.w
+    public void d(l.k kVar, boolean z10) {
+        if (kVar instanceof l.d0) {
+            ((l.d0) kVar).z.k().c(false);
+        }
+        l.w wVar = ((i) this.b).e;
         if (wVar != null) {
             wVar.d(kVar, z10);
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // l.x
-    public final void e() {
-        int i10;
-        ViewGroup viewGroup = (ViewGroup) this.n;
-        ArrayList arrayList = null;
-        boolean z10 = false;
-        if (viewGroup != null) {
-            l.k kVar = this.c;
-            if (kVar != null) {
-                kVar.i();
-                ArrayList l4 = this.c.l();
-                int size = l4.size();
-                i10 = 0;
-                for (int i11 = 0; i11 < size; i11++) {
-                    l.m mVar = (l.m) l4.get(i11);
-                    if ((mVar.x & 32) == 32) {
-                        View childAt = viewGroup.getChildAt(i10);
-                        l.m itemData = childAt instanceof l.y ? ((l.y) childAt).getItemData() : null;
-                        View a2 = a(mVar, childAt, viewGroup);
-                        if (mVar != itemData) {
-                            a2.setPressed(false);
-                            a2.jumpDrawablesToCurrentState();
-                        }
-                        if (a2 != childAt) {
-                            ViewGroup viewGroup2 = (ViewGroup) a2.getParent();
-                            if (viewGroup2 != null) {
-                                viewGroup2.removeView(a2);
-                            }
-                            ((ViewGroup) this.n).addView(a2, i10);
-                        }
-                        i10++;
-                    }
-                }
-            } else {
-                i10 = 0;
+    public void e(float f7) {
+        l91 l91Var = (l91) this.b;
+        if (f7 == 1.0f) {
+            View[] viewArr = l91Var.e;
+            View[] viewArr2 = l91Var.e;
+            if (viewArr[1] != null) {
+                l91Var.F();
+                l91Var.h.put(l91Var.f[1], viewArr2[1]);
+                l91Var.removeView(viewArr2[1]);
+                l91Var.E(viewArr2[0], 0.0f);
+                viewArr2[1] = null;
             }
-            while (i10 < viewGroup.getChildCount()) {
-                if (viewGroup.getChildAt(i10) == this.r) {
-                    i10++;
-                } else {
-                    viewGroup.removeViewAt(i10);
-                }
-            }
+            l91Var.z(l91Var.b);
+            return;
         }
-        ((View) this.n).requestLayout();
-        l.k kVar2 = this.c;
-        if (kVar2 != null) {
-            kVar2.i();
-            ArrayList arrayList2 = kVar2.i;
-            int size2 = arrayList2.size();
-            for (int i12 = 0; i12 < size2; i12++) {
-                l.n nVar = ((l.m) arrayList2.get(i12)).A;
-            }
+        View[] viewArr3 = l91Var.e;
+        View[] viewArr4 = l91Var.e;
+        View view = viewArr3[1];
+        if (view == null) {
+            return;
         }
-        l.k kVar3 = this.c;
-        if (kVar3 != null) {
-            kVar3.i();
-            arrayList = kVar3.j;
-        }
-        if (this.w && arrayList != null) {
-            int size3 = arrayList.size();
-            if (size3 == 1) {
-                z10 = !((l.m) arrayList.get(0)).C;
-            } else if (size3 > 0) {
-                z10 = true;
-            }
-        }
-        if (z10) {
-            if (this.r == null) {
-                this.r = new g(this, this.a);
-            }
-            ViewGroup viewGroup3 = (ViewGroup) this.r.getParent();
-            if (viewGroup3 != this.n) {
-                if (viewGroup3 != null) {
-                    viewGroup3.removeView(this.r);
-                }
-                ActionMenuView actionMenuView = (ActionMenuView) this.n;
-                g gVar = this.r;
-                actionMenuView.getClass();
-                j i13 = ActionMenuView.i();
-                i13.a = true;
-                actionMenuView.addView(gVar, i13);
-            }
+        if (l91Var.y) {
+            l91Var.E(view, (1.0f - f7) * viewArr3[0].getMeasuredWidth());
+            l91Var.E(viewArr4[0], (-r1.getMeasuredWidth()) * f7);
         } else {
-            g gVar2 = this.r;
-            if (gVar2 != null) {
-                Object parent = gVar2.getParent();
-                Object obj = this.n;
-                if (parent == obj) {
-                    ((ViewGroup) obj).removeView(this.r);
-                }
-            }
+            l91Var.E(view, (1.0f - f7) * (-viewArr3[0].getMeasuredWidth()));
+            l91Var.E(viewArr4[0], r1.getMeasuredWidth() * f7);
         }
-        ((ActionMenuView) this.n).setOverflowReserved(this.w);
+        l91Var.w(false);
     }
 
-    public final boolean f() {
-        Object obj;
-        f fVar = this.K;
-        if (fVar != null && (obj = this.n) != null) {
-            ((View) obj).removeCallbacks(fVar);
-            this.K = null;
-            return true;
+    public void f(p4.p pVar, p4.m mVar, Collection collection) {
+        p4.e eVar = (p4.e) this.b;
+        if (pVar != eVar.y || mVar == null) {
+            if (pVar == eVar.e) {
+                if (mVar != null) {
+                    eVar.n(eVar.d, mVar);
+                }
+                eVar.d.n(collection);
+                return;
+            }
+            return;
         }
-        d dVar = this.I;
-        if (dVar == null) {
+        p4.u uVar = eVar.x.a;
+        String d = mVar.d();
+        p4.v vVar = new p4.v(uVar, d, eVar.b(uVar, d), false);
+        vVar.i(mVar);
+        if (eVar.d == vVar) {
+            return;
+        }
+        eVar.h(eVar, vVar, eVar.y, 3, eVar.x, collection);
+        eVar.x = null;
+        eVar.y = null;
+    }
+
+    @Override // hd.a
+    public Object get() {
+        String packageName = ((Context) ((hd.a) this.b).get()).getPackageName();
+        if (packageName != null) {
+            return packageName;
+        }
+        throw new NullPointerException("Cannot return null from a non-@Nullable @Provides method");
+    }
+
+    @Override // org.telegram.ui.Components.fp0
+    public CharSequence getContentDescription() {
+        switch (this.a) {
+            case 3:
+                ng.h hVar = (ng.h) this.b;
+                float f7 = hVar.b;
+                return String.valueOf(Math.round((hVar.a.getProgress() * (hVar.c - f7)) + f7));
+            default:
+                return " ";
+        }
+    }
+
+    @Override // k1.f
+    public ee.b getData() {
+        return ((k1.z) this.b).c;
+    }
+
+    @Override // ne.f
+    public /* synthetic */ boolean i() {
+        return false;
+    }
+
+    @Override // ne.f
+    public /* synthetic */ boolean j(float f7) {
+        return false;
+    }
+
+    @Override // s4.d0
+    public void j0(int i10, int i11) {
+        ((s4.g0) this.b).s(i10, i11);
+    }
+
+    @Override // bh.h
+    public void k(Canvas canvas) {
+        ir0 ir0Var = (ir0) this.b;
+        canvas.drawColor(ir0Var.getThemedColor(g6.d6));
+        if (SharedConfig.chatBlurEnabled()) {
+            ir0Var.O0.b(canvas, -2);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.fp0
+    public /* synthetic */ int k0() {
+        switch (this.a) {
+        }
+        return 0;
+    }
+
+    @Override // l.i
+    public void l(l.k kVar) {
+        Toolbar toolbar = (Toolbar) this.b;
+        i iVar = toolbar.a.J;
+        if (iVar == null || !iVar.g()) {
+            Iterator it = ((CopyOnWriteArrayList) toolbar.W.c).iterator();
+            while (it.hasNext()) {
+                ((androidx.fragment.app.a0) it.next()).a.t();
+            }
+        }
+    }
+
+    @Override // bh.h
+    public void m0(bh.a aVar) {
+        aVar.a(((ir0) this.b).getThemedColor(g6.d6));
+        aVar.b(SharedConfig.chatBlurEnabled());
+    }
+
+    @Override // s4.d0
+    public void m1(int i10, int i11) {
+        ((s4.g0) this.b).r(i10, i11, null);
+    }
+
+    @Override // l.i
+    public boolean o(l.k kVar, MenuItem menuItem) {
+        ((Toolbar) this.b).getClass();
+        return false;
+    }
+
+    @Override // v0.i
+    public void onError(Object obj) {
+        w0.d e = (w0.d) obj;
+        kotlin.jvm.internal.i.e(e, "e");
+        be.m mVar = (be.m) this.b;
+        if (mVar.w()) {
+            mVar.resumeWith(i8.a(e));
+        }
+    }
+
+    @Override // v0.i
+    public void onResult(Object obj) {
+        v0.c result = (v0.c) obj;
+        kotlin.jvm.internal.i.e(result, "result");
+        be.m mVar = (be.m) this.b;
+        if (mVar.w()) {
+            mVar.resumeWith(result);
+        }
+    }
+
+    @Override // l.w
+    public boolean q(l.k kVar) {
+        i iVar = (i) this.b;
+        if (kVar == iVar.c) {
             return false;
         }
-        if (dVar.b()) {
-            dVar.i.dismiss();
-        }
-        return true;
-    }
-
-    public final boolean g() {
-        d dVar = this.I;
-        return dVar != null && dVar.b();
-    }
-
-    @Override // l.x
-    public final void h(l.w wVar) {
-        throw null;
-    }
-
-    @Override // l.x
-    public final void i(Context context, l.k kVar) {
-        this.b = context;
-        LayoutInflater.from(context);
-        this.c = kVar;
-        Resources resources = context.getResources();
-        if (!this.x) {
-            this.w = true;
-        }
-        int i10 = 2;
-        this.y = context.getResources().getDisplayMetrics().widthPixels / 2;
-        Configuration configuration = context.getResources().getConfiguration();
-        int i11 = configuration.screenWidthDp;
-        int i12 = configuration.screenHeightDp;
-        if (configuration.smallestScreenWidthDp > 600 || i11 > 600 || ((i11 > 960 && i12 > 720) || (i11 > 720 && i12 > 960))) {
-            i10 = 5;
-        } else if (i11 >= 500 || ((i11 > 640 && i12 > 480) || (i11 > 480 && i12 > 640))) {
-            i10 = 4;
-        } else if (i11 >= 360) {
-            i10 = 3;
-        }
-        this.F = i10;
-        int i13 = this.y;
-        if (this.w) {
-            if (this.r == null) {
-                g gVar = new g(this, this.a);
-                this.r = gVar;
-                if (this.v) {
-                    gVar.setImageDrawable(this.s);
-                    this.s = null;
-                    this.v = false;
-                }
-                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
-                this.r.measure(makeMeasureSpec, makeMeasureSpec);
-            }
-            i13 -= this.r.getMeasuredWidth();
-        } else {
-            this.r = null;
-        }
-        this.E = i13;
-        float f7 = resources.getDisplayMetrics().density;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // l.x
-    public final boolean j(l.d0 d0Var) {
-        boolean z10;
-        if (d0Var.hasVisibleItems()) {
-            l.d0 d0Var2 = d0Var;
-            while (true) {
-                l.k kVar = d0Var2.z;
-                if (kVar == this.c) {
-                    break;
-                }
-                d0Var2 = (l.d0) kVar;
-            }
-            l.m mVar = d0Var2.A;
-            ViewGroup viewGroup = (ViewGroup) this.n;
-            View view = null;
-            if (viewGroup != null) {
-                int childCount = viewGroup.getChildCount();
-                int i10 = 0;
-                while (true) {
-                    if (i10 >= childCount) {
-                        break;
-                    }
-                    View childAt = viewGroup.getChildAt(i10);
-                    if ((childAt instanceof l.y) && ((l.y) childAt).getItemData() == mVar) {
-                        view = childAt;
-                        break;
-                    }
-                    i10++;
-                }
-            }
-            if (view != null) {
-                d0Var.A.getClass();
-                int size = d0Var.f.size();
-                int i11 = 0;
-                while (true) {
-                    if (i11 >= size) {
-                        z10 = false;
-                        break;
-                    }
-                    MenuItem item = d0Var.getItem(i11);
-                    if (item.isVisible() && item.getIcon() != null) {
-                        z10 = true;
-                        break;
-                    }
-                    i11++;
-                }
-                d dVar = new d(this, this.b, d0Var, view);
-                this.J = dVar;
-                dVar.g = z10;
-                l.s sVar = dVar.i;
-                if (sVar != null) {
-                    sVar.o(z10);
-                }
-                d dVar2 = this.J;
-                if (!dVar2.b()) {
-                    if (dVar2.e == null) {
-                        throw new IllegalStateException("MenuPopupHelper cannot be used without an anchor");
-                    }
-                    dVar2.d(0, 0, false, false);
-                }
-                l.w wVar = this.e;
-                if (wVar != null) {
-                    wVar.q(d0Var);
-                }
-                return true;
-            }
+        ((l.d0) kVar).A.getClass();
+        iVar.getClass();
+        l.w wVar = iVar.e;
+        if (wVar != null) {
+            return wVar.q(kVar);
         }
         return false;
     }
 
-    @Override // l.x
-    public final boolean k(l.m mVar) {
-        return false;
+    @Override // ne.f
+    public void t() {
+        ((p9) this.b).a.invalidate();
     }
 
-    public final boolean l() {
-        l.k kVar;
-        if (!this.w || g() || (kVar = this.c) == null || this.n == null || this.K != null) {
-            return false;
-        }
-        kVar.i();
-        if (kVar.j.isEmpty()) {
-            return false;
-        }
-        f fVar = new f(this, new d(this, this.b, this.c, this.r));
-        this.K = fVar;
-        ((View) this.n).post(fVar);
-        return true;
+    @Override // y2.g
+    public k4.d w(y2.i iVar, long j10, long j11, IOException iOException, int i10) {
+        ((l2.d) this.b).a.y(iOException);
+        return y2.l.e;
+    }
+
+    @Override // org.telegram.ui.Components.fp0
+    public void z() {
+        int i10 = this.a;
+    }
+
+    public /* synthetic */ h(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
+    }
+
+    public h(TextView textView) {
+        this.a = 13;
+        this.b = new q1.g(textView);
+    }
+
+    public h(int i10, int i11) {
+        this.a = 9;
+        this.b = ApplicationLoader.applicationContext.getSharedPreferences(a1.g.l(i10, i11, "pip_layout_", "_"), 0);
+    }
+
+    private final void g() {
+    }
+
+    private final void n() {
+    }
+
+    @Override // ne.f
+    public /* synthetic */ void c() {
+    }
+
+    @Override // ne.f
+    public /* synthetic */ void m() {
+    }
+
+    @Override // ne.f
+    public /* synthetic */ void h(boolean z10) {
+    }
+
+    @Override // y2.g
+    public void X0(y2.i iVar, long j10, long j11, boolean z10) {
+    }
+
+    @Override // y2.g
+    public /* synthetic */ void y(y2.i iVar, long j10, long j11, int i10) {
     }
 }

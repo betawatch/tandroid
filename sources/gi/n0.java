@@ -8,7 +8,7 @@ import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n0 implements MessagesStorage.LongCallback, MessagesStorage.BooleanCallback {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class n0 implements MessagesStorage.LongCallback, M
     public void run(boolean z10) {
         yy yyVar = (yy) this.d;
         TLRPC.Chat chat = (TLRPC.Chat) this.e;
-        yy.t0(this.a, this.b, chat, yyVar, this.c, z10);
+        yy.s0(this.a, this.b, chat, yyVar, this.c, z10);
     }
 
     public /* synthetic */ n0(yy yyVar, int i10, TLRPC.Chat chat, long j10, boolean z10) {

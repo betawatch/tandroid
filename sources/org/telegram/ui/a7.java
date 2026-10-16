@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class a7 extends w7 {
     public final /* synthetic */ int w;
@@ -36,7 +36,7 @@ public final class a7 extends w7 {
     public final void onMeasure(int i10, int i11) {
         switch (this.w) {
             case 0:
-                super.onMeasure(i10, org.telegram.messenger.yh.z(12.0f, View.MeasureSpec.getSize(i11) - (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2), TLObject.FLAG_30));
+                super.onMeasure(i10, org.telegram.messenger.sk.c(12.0f, View.MeasureSpec.getSize(i11) - (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2), TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((((ov) this.x).h - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight, TLObject.FLAG_30));

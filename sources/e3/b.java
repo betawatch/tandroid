@@ -21,7 +21,7 @@ import java.util.Arrays;
 import java.util.List;
 import t7.u;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class b implements o {
     public final x a;
@@ -57,7 +57,7 @@ public final class b implements o {
     @Override // c3.o
     public final boolean a(p pVar) {
         x xVar = this.a;
-        pVar.a(0, 12, xVar.a);
+        pVar.b(0, 12, xVar.a);
         xVar.N(0);
         if (xVar.o() != 1179011410) {
             return false;
@@ -204,11 +204,11 @@ public final class b implements o {
                                     }
                                     int h = w0.h(xVar3.s);
                                     if (h == 1 || h == 2) {
-                                        i0 a03 = this.f.a0(i16, h);
-                                        a03.b(new b2.x(a2));
-                                        a03.e(a02);
+                                        i0 W = this.f.W(i16, h);
+                                        W.b(new b2.x(a2));
+                                        W.e(a02);
                                         this.h = Math.max(this.h, a02);
-                                        eVar = new e(i16, dVar, a03);
+                                        eVar = new e(i16, dVar, W);
                                         if (eVar != null) {
                                             arrayList.add(eVar);
                                         }
@@ -234,7 +234,7 @@ public final class b implements o {
                                 return 0;
                             }
                         }
-                        pVar.a(0, 12, xVar.a);
+                        pVar.b(0, 12, xVar.a);
                         pVar.q();
                         xVar.N(0);
                         lVar.getClass();
@@ -370,7 +370,7 @@ public final class b implements o {
                         if ((pVar.getPosition() & 1) == 1) {
                             pVar.r(1);
                         }
-                        pVar.a(0, 12, xVar.a);
+                        pVar.b(0, 12, xVar.a);
                         xVar.N(0);
                         int o18 = xVar.o();
                         if (o18 == 1414744396) {

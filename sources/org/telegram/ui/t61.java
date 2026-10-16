@@ -17,7 +17,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class t61 extends org.telegram.ui.Components.mm0 {
     public final SparseArray V2;
@@ -218,7 +218,7 @@ public abstract class t61 extends org.telegram.ui.Components.mm0 {
                         a71Var.getBackground().setAlpha(255);
                     }
                     if (arrayList5 == null) {
-                        arrayList3 = !arrayList.isEmpty() ? (ArrayList) i2.d.x(1, arrayList) : new ArrayList();
+                        arrayList3 = !arrayList.isEmpty() ? (ArrayList) i2.d.A(1, arrayList) : new ArrayList();
                         sparseArray.put(y3, arrayList3);
                     } else {
                         arrayList3 = arrayList5;
@@ -238,7 +238,7 @@ public abstract class t61 extends org.telegram.ui.Components.mm0 {
                     int i18 = r71Var.N1;
                     List list = r71.Z1;
                     if (R == i18 - 1) {
-                        float interpolation = org.telegram.ui.Components.es.g.getInterpolation(w7.s.a((SystemClock.elapsedRealtime() - r71Var.P1) / 200.0f, 0.0f, 1.0f));
+                        float interpolation = org.telegram.ui.Components.es.g.getInterpolation(w7.r.a((SystemClock.elapsedRealtime() - r71Var.P1) / 200.0f, 0.0f, 1.0f));
                         if (interpolation < 1.0f) {
                             float f14 = 1.0f - interpolation;
                             canvas2.saveLayerAlpha(view.getLeft(), view.getTop(), view.getRight(), view.getBottom(), (int) (255.0f * f14), 31);
@@ -293,7 +293,7 @@ public abstract class t61 extends org.telegram.ui.Components.mm0 {
                     s61Var = new s61(this);
                     s61Var.l(7);
                 } else {
-                    s61Var = (s61) i2.d.x(1, arrayList2);
+                    s61Var = (s61) i2.d.A(1, arrayList2);
                 }
                 s61Var.M = R2;
                 s61Var.e();

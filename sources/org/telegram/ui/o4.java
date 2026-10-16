@@ -7,7 +7,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o4 implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class o4 implements DialogInterface.OnClickListener
             case 0:
                 q4 q4Var = (q4) this.b;
                 q4Var.getClass();
-                si.e.c.b(i10 == 0 ? ri.j.a : ri.j.b);
+                si.e.c.b(i10 == 0 ? qi.j.a : qi.j.b);
                 q4Var.b.m(2);
                 break;
             case 1:
@@ -39,10 +39,10 @@ public final /* synthetic */ class o4 implements DialogInterface.OnClickListener
                             } else {
                                 xy xyVar = xyVarArr[i11];
                                 if (xyVar.s == 0 && xyVar.getVisibility() == 0) {
-                                    org.telegram.ui.Cells.s2 N3 = yy.N3(yyVar.e0[i11]);
+                                    org.telegram.ui.Cells.s2 O3 = yy.O3(yyVar.e0[i11]);
                                     uy uyVar = yyVar.e0[i11].a;
                                     int i12 = uy.t3;
-                                    uyVar.A1(true, N3);
+                                    uyVar.A1(true, O3);
                                 }
                                 i11++;
                             }
@@ -54,16 +54,16 @@ public final /* synthetic */ class o4 implements DialogInterface.OnClickListener
                 }
                 break;
             case 2:
-                ah0 ah0Var = (ah0) this.b;
+                zg0 zg0Var = (zg0) this.b;
                 if (i10 != 0) {
-                    ProfileActivity.H4(ah0Var.V.getParentActivity(), false);
+                    ProfileActivity.H4(zg0Var.V.getParentActivity(), false);
                     break;
                 } else {
                     BuildVars.LOGS_ENABLED = !BuildVars.LOGS_ENABLED;
                     ApplicationLoader.applicationContext.getSharedPreferences("systemConfig", 0).edit().putBoolean("logsEnabled", BuildVars.LOGS_ENABLED).commit();
-                    org.telegram.ui.Components.zc.a0(ah0Var.V).Q(R.raw.chats_infotip, 36, BuildVars.LOGS_ENABLED ? "Logs enabled." : "Logs disabled.").j();
+                    org.telegram.ui.Components.zc.a0(zg0Var.V).Q(R.raw.chats_infotip, 36, BuildVars.LOGS_ENABLED ? "Logs enabled." : "Logs disabled.").j();
                     if (BuildVars.LOGS_ENABLED) {
-                        org.telegram.messenger.q.s(new StringBuilder("app start time = "), ApplicationLoader.startTime);
+                        i2.d.x(new StringBuilder("app start time = "), ApplicationLoader.startTime);
                         try {
                             FileLog.d("buildVersion = " + ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0).versionCode);
                             break;
@@ -75,19 +75,19 @@ public final /* synthetic */ class o4 implements DialogInterface.OnClickListener
                 }
                 break;
             case 3:
-                un0 un0Var = (un0) this.b;
+                sn0 sn0Var = (sn0) this.b;
                 if (i10 != 0) {
                     if (i10 != 1) {
-                        un0Var.getClass();
+                        sn0Var.getClass();
                         break;
                     } else {
-                        un0Var.w = "female";
-                        un0Var.Y[4].setText(LocaleController.getString(R.string.PassportFemale));
+                        sn0Var.w = "female";
+                        sn0Var.Y[4].setText(LocaleController.getString(R.string.PassportFemale));
                         break;
                     }
                 } else {
-                    un0Var.w = "male";
-                    un0Var.Y[4].setText(LocaleController.getString(R.string.PassportMale));
+                    sn0Var.w = "male";
+                    sn0Var.Y[4].setText(LocaleController.getString(R.string.PassportMale));
                     break;
                 }
             default:

@@ -7,9 +7,9 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class ok extends org.telegram.ui.Components.c91 {
+public final class ok extends org.telegram.ui.Components.d91 {
     public final /* synthetic */ Context a;
     public final /* synthetic */ fo b;
 
@@ -18,16 +18,16 @@ public final class ok extends org.telegram.ui.Components.c91 {
         this.a = context;
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final void b(View view, int i10, int i11) {
         if (view instanceof ho) {
             ((ho) view).a.Nc(this.b.u3);
         }
-        WeakHashMap weakHashMap = r0.j0.a;
-        r0.z.c(view);
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.y.c(view);
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final View d(int i10) {
         Context context = this.a;
         fo foVar = this.b;
@@ -48,17 +48,17 @@ public final class ok extends org.telegram.ui.Components.c91 {
         return nkVar;
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final int e() {
         return 3;
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final CharSequence g(int i10) {
         return i10 != 1 ? i10 != 2 ? LocaleController.getString(R.string.SearchThisChat) : LocaleController.getString(R.string.SearchPublicPosts) : LocaleController.getString(R.string.SearchMyMessages);
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final int h(int i10) {
         return i10;
     }

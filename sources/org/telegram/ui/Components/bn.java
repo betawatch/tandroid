@@ -18,7 +18,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class bn {
     public TextPaint B;
@@ -79,7 +79,7 @@ public final class bn {
         if (bnVar.c == null) {
             bnVar.c = new ImageReceiver(cnVar.z);
             bnVar.d = new ImageReceiver(cnVar.z);
-            bnVar.c.setDelegate(new t2(10, bnVar, photoEntry));
+            bnVar.c.setDelegate(new u2(9, bnVar, photoEntry));
         }
         String str = photoEntry.thumbPath;
         if (str != null) {

@@ -18,7 +18,7 @@ import java.util.List;
 import v7.b8;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class i implements c3.o {
     public final n a;
@@ -39,7 +39,7 @@ public final class i implements c3.o {
             w a2 = xVar.a();
             a2.r = w0.n("application/x-media3-cues");
             a2.j = xVar.s;
-            a2.P = nVar.h0();
+            a2.P = nVar.X();
             xVar2 = new x(a2);
         } else {
             xVar2 = null;
@@ -59,11 +59,11 @@ public final class i implements c3.o {
     @Override // c3.o
     public final void c(q qVar) {
         u6.p(this.h == 0);
-        i0 a02 = qVar.a0(0, 3);
-        this.f = a02;
+        i0 W = qVar.W(0, 3);
+        this.f = W;
         x xVar = this.b;
         if (xVar != null) {
-            a02.b(xVar);
+            W.b(xVar);
             qVar.D();
             qVar.K(new y(-9223372036854775807L, new long[]{0}, new long[]{0}));
         }
@@ -111,7 +111,7 @@ public final class i implements c3.o {
      */
     /* JADX WARN: Code restructure failed: missing block: B:56:0x008f, code lost:
     
-        r20.a.u0(r20.e, 0, r20.g, r2, new rg.b0(r20, 22));
+        r20.a.m0(r20.e, 0, r20.g, r2, new rg.b0(r20, 22));
         java.util.Collections.sort(r11);
         r20.i = new long[r11.size()];
         r2 = r22;

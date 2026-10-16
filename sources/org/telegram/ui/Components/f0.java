@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.FiltersSetupActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class f0 implements View.OnClickListener {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:214:0x0456  */
+    /* JADX WARN: Removed duplicated region for block: B:214:0x0458  */
     @Override // android.view.View.OnClickListener
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -275,7 +275,6 @@ public final /* synthetic */ class f0 implements View.OnClickListener {
                                 tL_chatlists_joinChatlistInvite = tL_chatlists_joinChatlistUpdates;
                             }
                             org.telegram.ui.ActionBar.b5 parentLayout = m2Var.getParentLayout();
-                            int i20 = 26;
                             if (z10) {
                                 if (parentLayout != null) {
                                     org.telegram.ui.ActionBar.m2 lastFragment = parentLayout.getLastFragment();
@@ -284,10 +283,10 @@ public final /* synthetic */ class f0 implements View.OnClickListener {
                                         foVar.T7();
                                         undoView = foVar.y3;
                                     } else if (lastFragment instanceof org.telegram.ui.yy) {
-                                        undoView = ((org.telegram.ui.yy) lastFragment).V3();
+                                        undoView = ((org.telegram.ui.yy) lastFragment).W3();
                                     } else if (lastFragment instanceof FiltersSetupActivity) {
                                         undoView = ((FiltersSetupActivity) lastFragment).Y();
-                                    } else if (lastFragment instanceof org.telegram.ui.l10) {
+                                    } else if (lastFragment instanceof org.telegram.ui.k10) {
                                         List fragmentStack = parentLayout.getFragmentStack();
                                         if (fragmentStack.size() >= 2 && (t8.b.g(2, fragmentStack) instanceof FiltersSetupActivity)) {
                                             FiltersSetupActivity filtersSetupActivity = (FiltersSetupActivity) t8.b.g(2, fragmentStack);
@@ -302,11 +301,11 @@ public final /* synthetic */ class f0 implements View.OnClickListener {
                                         break;
                                     } else {
                                         ArrayList<Long> arrayList5 = new ArrayList<>();
-                                        for (int i21 = 0; i21 < arrayList4.size(); i21++) {
-                                            arrayList5.add(Long.valueOf(DialogObject.getPeerDialogId((TLRPC.InputPeer) arrayList4.get(i21))));
+                                        for (int i20 = 0; i20 < arrayList4.size(); i20++) {
+                                            arrayList5.add(Long.valueOf(DialogObject.getPeerDialogId((TLRPC.InputPeer) arrayList4.get(i20))));
                                         }
                                         Pair<Runnable, Runnable> removeFolderTemporarily = m2Var.getMessagesController().removeFolderTemporarily(i17, arrayList5);
-                                        undoView2.k(0L, 88, o10Var.c0, Integer.valueOf(arrayList4.size()), new n2.h(o10Var, tL_chatlists_joinChatlistInvite, removeFolderTemporarily, i20), (Runnable) removeFolderTemporarily.second);
+                                        undoView2.k(0L, 88, o10Var.c0, Integer.valueOf(arrayList4.size()), new org.telegram.messenger.video.f(o10Var, tL_chatlists_joinChatlistInvite, removeFolderTemporarily, 23), (Runnable) removeFolderTemporarily.second);
                                         o10Var.A0 = true;
                                         o10Var.dismiss();
                                         m2Var.getMessagesController().invalidateChatlistFolderUpdate(i17);
@@ -314,13 +313,13 @@ public final /* synthetic */ class f0 implements View.OnClickListener {
                                     }
                                 }
                             } else if (parentLayout != null) {
-                                org.telegram.ui.vc vcVar = new org.telegram.ui.vc(i20, o10Var, arrayList4);
-                                h10 h10Var = tL_chatlists_chatlistUpdates != null ? new h10(vcVar, parentLayout) : new h10(parentLayout, vcVar);
-                                int i22 = 0;
+                                org.telegram.ui.uc ucVar = new org.telegram.ui.uc(26, o10Var, arrayList4);
+                                h10 h10Var = tL_chatlists_chatlistUpdates != null ? new h10(ucVar, parentLayout) : new h10(parentLayout, ucVar);
+                                int i21 = 0;
                                 while (true) {
-                                    if (i22 < arrayList4.size()) {
-                                        if (o10Var.h0.contains(Long.valueOf(DialogObject.getPeerDialogId((TLRPC.InputPeer) arrayList4.get(i22))))) {
-                                            i22++;
+                                    if (i21 < arrayList4.size()) {
+                                        if (o10Var.h0.contains(Long.valueOf(DialogObject.getPeerDialogId((TLRPC.InputPeer) arrayList4.get(i21))))) {
+                                            i21++;
                                             i18 = 0;
                                         } else {
                                             boolean[] zArr = new boolean[1];
@@ -337,9 +336,9 @@ public final /* synthetic */ class f0 implements View.OnClickListener {
                             }
                         } else {
                             k10 k10Var2 = o10Var.l0;
-                            int i23 = -o10Var.C0;
-                            o10Var.C0 = i23;
-                            AndroidUtilities.shakeViewSpring(k10Var2, i23);
+                            int i22 = -o10Var.C0;
+                            o10Var.C0 = i22;
+                            AndroidUtilities.shakeViewSpring(k10Var2, i22);
                             BotWebViewVibrationEffect.APP_ERROR.vibrate();
                             break;
                         }
@@ -357,9 +356,9 @@ public final /* synthetic */ class f0 implements View.OnClickListener {
                     if (n20Var != null && (iyVar = ((org.telegram.ui.ey) n20Var).b.C0) != null) {
                         iyVar.Q(false);
                     }
-                    for (int i24 = 0; i24 < arrayList6.size(); i24++) {
-                        if (o20Var.H != null && ((hg.p0) arrayList6.get(i24)).h) {
-                            ((org.telegram.ui.ey) o20Var.H).c((hg.p0) arrayList6.get(i24));
+                    for (int i23 = 0; i23 < arrayList6.size(); i23++) {
+                        if (o20Var.H != null && ((hg.p0) arrayList6.get(i23)).h) {
+                            ((org.telegram.ui.ey) o20Var.H).c((hg.p0) arrayList6.get(i23));
                         }
                     }
                     o20Var.c();
@@ -376,10 +375,10 @@ public final /* synthetic */ class f0 implements View.OnClickListener {
                 }
                 break;
             case 17:
-                ((zl) obj).run();
+                ((yl) obj).run();
                 break;
             case 18:
-                ((zl) obj).run();
+                ((yl) obj).run();
                 break;
             case 19:
                 a30 a30Var = (a30) obj;
@@ -431,26 +430,26 @@ public final /* synthetic */ class f0 implements View.OnClickListener {
                 ((k50) obj).dismiss();
                 break;
             case 27:
-                m80 m80Var = (m80) obj;
+                l80 l80Var = (l80) obj;
                 HashSet hashSet = fi.k3.W0;
-                if (m80Var.J) {
-                    m80Var.u();
+                if (l80Var.J) {
+                    l80Var.u();
                     break;
                 }
                 break;
             case 28:
-                w80.o((w80) obj);
+                v80.o((v80) obj);
                 break;
             default:
-                y80 y80Var = (y80) obj;
-                y80Var.b = true;
-                y80Var.dismiss();
+                x80 x80Var = (x80) obj;
+                x80Var.b = true;
+                x80Var.dismiss();
                 break;
         }
     }
 
-    public /* synthetic */ f0(m80 m80Var, ah.j jVar) {
+    public /* synthetic */ f0(l80 l80Var, ah.j jVar) {
         this.a = 27;
-        this.b = m80Var;
+        this.b = l80Var;
     }
 }

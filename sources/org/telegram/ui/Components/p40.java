@@ -6,7 +6,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p40 implements Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ q40 a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class p40 implements Utilities.Callback5, Utilities
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        int i10 = ((l61) obj).d;
+        int i10 = ((m61) obj).d;
         q40 q40Var = this.a;
         if (i10 == 0) {
             HashtagSearchController.getInstance(q40Var.a).clearHistory();
@@ -38,7 +38,7 @@ public final /* synthetic */ class p40 implements Utilities.Callback5, Utilities
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        int i10 = ((l61) obj).d;
+        int i10 = ((m61) obj).d;
         boolean z10 = false;
         if (i10 != 0) {
             q40 q40Var = this.a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class p40 implements Utilities.Callback5, Utilities
             org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
             a2Var.R = string;
             a2Var.T = LocaleController.formatString(R.string.ClearSearchSingleHashtagAlertText, str);
-            alertDialog$Builder.k(LocaleController.getString(R.string.ClearSearchRemove), new t2(16, q40Var, str));
+            alertDialog$Builder.k(LocaleController.getString(R.string.ClearSearchRemove), new u2(15, q40Var, str));
             alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
             a2Var.show();
             z10 = true;

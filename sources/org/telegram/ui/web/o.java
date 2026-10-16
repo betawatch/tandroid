@@ -13,21 +13,20 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.yh;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.NumberTextView;
-import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.d71;
 import org.telegram.ui.Components.kc0;
-import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.wx0;
-import org.telegram.ui.Components.z61;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class o extends c71 {
+public final class o extends d71 {
     public i e;
     public final Runnable f;
     public final org.telegram.ui.r h;
@@ -62,18 +61,18 @@ public final class o extends c71 {
         }
         String lowerCase = str.toLowerCase();
         String lowerCase2 = str2.toLowerCase();
-        if (!lowerCase.startsWith(lowerCase2) && !yh.v(" ", lowerCase2, lowerCase) && !yh.v(".", lowerCase2, lowerCase)) {
+        if (!lowerCase.startsWith(lowerCase2) && !org.telegram.messenger.g0.w(" ", lowerCase2, lowerCase) && !org.telegram.messenger.g0.w(".", lowerCase2, lowerCase)) {
             String translitSafe = AndroidUtilities.translitSafe(lowerCase);
             String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
-            if (!translitSafe.startsWith(translitSafe2) && !yh.v(" ", translitSafe2, translitSafe) && !yh.v(".", translitSafe2, translitSafe)) {
+            if (!translitSafe.startsWith(translitSafe2) && !org.telegram.messenger.g0.w(" ", translitSafe2, translitSafe) && !org.telegram.messenger.g0.w(".", translitSafe2, translitSafe)) {
                 return false;
             }
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Components.c71
-    public final void U(ArrayList arrayList, z61 z61Var) {
+    @Override // org.telegram.ui.Components.d71
+    public final void U(ArrayList arrayList, a71 a71Var) {
         CharSequence charSequence;
         TLRPC.MessageMedia messageMedia;
         HashSet hashSet = this.x;
@@ -92,7 +91,7 @@ public final class o extends c71 {
                 if (!TextUtils.isEmpty(a2) && !a2.startsWith("#") && !a2.startsWith("$") && !a2.startsWith("@")) {
                     hashSet.add(a2);
                     int i11 = g.a;
-                    l61 J = l61.J(g.class);
+                    m61 J = m61.J(g.class);
                     J.z = 3;
                     J.q = false;
                     J.H = messageObject;
@@ -102,9 +101,9 @@ public final class o extends c71 {
             }
             charSequence = null;
             if (!iVar.f) {
-                arrayList.add(l61.o(arrayList.size(), 32));
-                arrayList.add(l61.o(arrayList.size(), 32));
-                arrayList.add(l61.o(arrayList.size(), 32));
+                arrayList.add(m61.o(arrayList.size(), 32));
+                arrayList.add(m61.o(arrayList.size(), 32));
+                arrayList.add(m61.o(arrayList.size(), 32));
             }
         } else {
             charSequence = null;
@@ -119,7 +118,7 @@ public final class o extends c71 {
                 if (!TextUtils.isEmpty(a10) && !a10.startsWith("#") && !a10.startsWith("$") && !a10.startsWith("@")) {
                     hashSet.add(a10);
                     String hostAuthority = AndroidUtilities.getHostAuthority(a10, true);
-                    l2 a11 = m2.b().a(hostAuthority);
+                    m2 a11 = n2.b().a(hostAuthority);
                     TLRPC.Message message = messageObject2.messageOwner;
                     TLRPC.WebPage webPage = (message == null || (messageMedia = message.media) == null) ? null : messageMedia.webpage;
                     String str = (webPage == null || TextUtils.isEmpty(webPage.site_name)) ? (a11 == null || TextUtils.isEmpty(a11.d)) ? null : a11.d : webPage.site_name;
@@ -127,7 +126,7 @@ public final class o extends c71 {
                     if (f0(hostAuthority, this.s) || f0(str, this.s) || f0(str2, this.s)) {
                         String str3 = this.s;
                         int i13 = g.a;
-                        l61 J2 = l61.J(g.class);
+                        m61 J2 = m61.J(g.class);
                         J2.z = 3;
                         J2.q = false;
                         J2.H = messageObject2;
@@ -149,7 +148,7 @@ public final class o extends c71 {
                     hashSet.add(a12);
                     String str4 = this.s;
                     int i15 = g.a;
-                    l61 J3 = l61.J(g.class);
+                    m61 J3 = m61.J(g.class);
                     J3.z = 3;
                     J3.q = false;
                     J3.H = messageObject3;
@@ -159,46 +158,46 @@ public final class o extends c71 {
                 }
             }
             if (!this.e.f) {
-                arrayList.add(l61.o(arrayList.size(), 32));
-                arrayList.add(l61.o(arrayList.size(), 32));
-                arrayList.add(l61.o(arrayList.size(), 32));
+                arrayList.add(m61.o(arrayList.size(), 32));
+                arrayList.add(m61.o(arrayList.size(), 32));
+                arrayList.add(m61.o(arrayList.size(), 32));
             }
         }
         if (arrayList.isEmpty()) {
             return;
         }
-        arrayList.add(l61.B(charSequence));
+        arrayList.add(m61.B(charSequence));
     }
 
-    @Override // org.telegram.ui.Components.c71
+    @Override // org.telegram.ui.Components.d71
     public final CharSequence V() {
         return LocaleController.getString(R.string.WebBookmarks);
     }
 
-    @Override // org.telegram.ui.Components.c71
-    public final void W(l61 l61Var, View view) {
-        if (l61Var.G(g.class)) {
+    @Override // org.telegram.ui.Components.d71
+    public final void W(m61 m61Var, View view) {
+        if (m61Var.G(g.class)) {
             if (this.actionBar.t()) {
-                c0(l61Var, view);
+                c0(m61Var, view);
                 return;
             }
             finishFragment();
-            this.h.run(k.a((MessageObject) l61Var.H));
+            this.h.run(k.a((MessageObject) m61Var.H));
         }
     }
 
-    @Override // org.telegram.ui.Components.c71
-    public final boolean X(l61 l61Var, View view) {
-        if (!l61Var.G(g.class)) {
+    @Override // org.telegram.ui.Components.d71
+    public final boolean X(m61 m61Var, View view) {
+        if (!m61Var.G(g.class)) {
             return false;
         }
-        c0(l61Var, view);
+        c0(m61Var, view);
         return true;
     }
 
-    public final void c0(l61 l61Var, View view) {
+    public final void c0(m61 m61Var, View view) {
         h hVar = (h) view;
-        MessageObject messageObject = (MessageObject) l61Var.H;
+        MessageObject messageObject = (MessageObject) m61Var.H;
         boolean e02 = e0(messageObject);
         HashSet hashSet = this.w;
         if (e02) {
@@ -221,7 +220,7 @@ public final class o extends c71 {
         AndroidUtilities.updateViewShow(this.r, hashSet.size() == 1, true, true);
     }
 
-    @Override // org.telegram.ui.Components.c71, org.telegram.ui.ActionBar.m2
+    @Override // org.telegram.ui.Components.d71, org.telegram.ui.ActionBar.m2
     public final View createView(Context context) {
         this.fragmentView = super.createView(context);
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
@@ -232,7 +231,7 @@ public final class o extends c71 {
         org.telegram.ui.ActionBar.k kVar2 = this.actionBar;
         int i11 = g6.G6;
         kVar2.setTitleColor(getThemedColor(i11));
-        this.actionBar.B(getThemedColor(g6.z8), false);
+        this.actionBar.C(getThemedColor(g6.z8), false);
         this.actionBar.D(getThemedColor(i11), false);
         this.actionBar.D(getThemedColor(i11), true);
         this.actionBar.setCastShadows(true);
@@ -244,7 +243,7 @@ public final class o extends c71 {
         this.v.setTypeface(AndroidUtilities.bold());
         this.v.setTextColor(getThemedColor(g6.y8));
         this.v.setOnTouchListener(new ci.d(2));
-        j10.addView(this.v, a6.m(1.0f, 0, -1, 65, 0, 0));
+        j10.addView(this.v, z5.m(1.0f, 0, -1, 65, 0, 0));
         this.r = j10.h(R.id.menu_link, R.drawable.msg_message, LocaleController.getString(R.string.AccDescrGoToMessage), AndroidUtilities.dp(54.0f));
         j10.h(R.id.menu_delete, R.drawable.msg_delete, LocaleController.getString(R.string.Delete), AndroidUtilities.dp(54.0f));
         org.telegram.ui.ActionBar.u0 c10 = this.actionBar.n().c(0, R.drawable.outline_header_search, getResourceProvider());
@@ -263,7 +262,7 @@ public final class o extends c71 {
         wx0Var.e.setVisibility(8);
         wx0Var.e(false, false);
         wx0Var.setAnimateLayoutChange(true);
-        ((FrameLayout) this.fragmentView).addView(wx0Var, a6.d(-1.0f, -1));
+        ((FrameLayout) this.fragmentView).addView(wx0Var, z5.d(-1.0f, -1));
         this.a.setEmptyView(wx0Var);
         return this.fragmentView;
     }

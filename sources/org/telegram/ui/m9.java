@@ -7,7 +7,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class m9 extends FrameLayout {
     public final org.telegram.ui.Cells.i6 a;
@@ -28,7 +28,7 @@ public final class m9 extends FrameLayout {
         int i10 = -AndroidUtilities.dp(4.0f);
         i6Var.b0 = 0;
         i6Var.c0 = i10;
-        addView(i6Var, w7.a6.d(-1.0f, -1));
+        addView(i6Var, w7.z5.d(-1.0f, -1));
         yi0Var.setText(string);
         yi0Var.setTextSize(1, 14.0f);
         yi0Var.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Sh, false));
@@ -37,6 +37,6 @@ public final class m9 extends FrameLayout {
         org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Qh, false);
         yi0Var.setBackground(org.telegram.ui.ActionBar.w5.e(new float[]{16.0f}, x02));
         yi0Var.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
-        addView(yi0Var, w7.a6.i(-2.0f, 28.0f, 8388661, 0.0f, 16.0f, 14.0f, 0.0f));
+        addView(yi0Var, w7.z5.i(-2.0f, 28.0f, 8388661, 0.0f, 16.0f, 14.0f, 0.0f));
     }
 }

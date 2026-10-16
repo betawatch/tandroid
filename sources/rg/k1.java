@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.mm0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class k1 extends mm0 {
     public static final Paint a3;
@@ -90,9 +90,9 @@ public abstract class k1 extends mm0 {
         Path path = c3;
         path.rewind();
         path.moveTo(rectF.centerX(), rectF.centerY());
-        path.lineTo((float) org.telegram.messenger.q.a(-1.5707963267948966d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(-1.5707963267948966d) * (rectF.height() / 2.0f)) + rectF.centerY()));
+        path.lineTo((float) i2.d.f(-1.5707963267948966d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(-1.5707963267948966d) * (rectF.height() / 2.0f)) + rectF.centerY()));
         path.moveTo(rectF.centerX(), rectF.centerY());
-        path.lineTo((float) org.telegram.messenger.q.a(4.71238898038469d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(4.71238898038469d) * (rectF.height() / 2.0f)) + rectF.centerY()));
+        path.lineTo((float) i2.d.f(4.71238898038469d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(4.71238898038469d) * (rectF.height() / 2.0f)) + rectF.centerY()));
         path.addArc(rectF, -45.0f, 180.0f);
         canvas.save();
         canvas.clipPath(path);

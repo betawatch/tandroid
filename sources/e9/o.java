@@ -9,9 +9,9 @@ import java.util.Map;
 import v7.t6;
 import w7.g9;
 import w7.m8;
-import z7.lg;
+import z7.mg;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class o extends AbstractCollection {
     public final /* synthetic */ int a;
@@ -229,7 +229,7 @@ public class o extends AbstractCollection {
                             hashSet3.add(entry3.getKey());
                         }
                     }
-                    return ((lg) eVar2.e).b().removeAll(hashSet3);
+                    return ((mg) eVar2.e).b().removeAll(hashSet3);
                 }
         }
     }
@@ -285,7 +285,7 @@ public class o extends AbstractCollection {
                             hashSet3.add(entry3.getKey());
                         }
                     }
-                    return ((lg) eVar2.e).b().retainAll(hashSet3);
+                    return ((mg) eVar2.e).b().retainAll(hashSet3);
                 }
         }
     }

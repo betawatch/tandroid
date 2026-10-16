@@ -8,7 +8,7 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class on implements org.telegram.ui.vt {
     public final /* synthetic */ int a;
@@ -125,8 +125,8 @@ public final class on implements org.telegram.ui.vt {
     }
 
     @Override // org.telegram.ui.vt
-    public final m80 u(ah.v vVar) {
-        m80 F = m80.F(vVar, null, new View(this.b.getContext()));
+    public final l80 u(ah.v vVar) {
+        l80 F = l80.F(vVar, null, new View(this.b.getContext()));
         F.s = 0;
         F.t = false;
         int i10 = R.drawable.msg_replace;

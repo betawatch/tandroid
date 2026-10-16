@@ -25,7 +25,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.cd0;
 import v7.v7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class d5 extends Drawable {
     public static final cd0[] S = new cd0[3];
@@ -38,7 +38,7 @@ public class d5 extends Drawable {
     public boolean M;
     public Bitmap N;
     public BitmapShader O;
-    public m.d3 P;
+    public m.f3 P;
     public int Q;
     public float R;
     public Shader a;
@@ -150,11 +150,11 @@ public class d5 extends Drawable {
             bounds.height();
             int i11 = this.b;
         }
-        m.d3 d3Var = this.P;
+        m.f3 f3Var = this.P;
         boolean z11 = true;
-        if (d3Var != null) {
-            path = (Path) d3Var.c;
-            z10 = d3Var.a(bounds, true, true);
+        if (f3Var != null) {
+            path = (Path) f3Var.c;
+            z10 = f3Var.a(bounds, true, true);
         } else {
             path = this.n;
             z10 = true;
@@ -179,11 +179,11 @@ public class d5 extends Drawable {
         }
     }
 
-    public final void d(Canvas canvas, m.d3 d3Var, Paint paint) {
-        this.P = d3Var;
+    public final void d(Canvas canvas, m.f3 f3Var, Paint paint) {
+        this.P = f3Var;
         d5 d5Var = this.J;
         if (d5Var != null) {
-            d5Var.P = d3Var;
+            d5Var.P = f3Var;
         }
         c(canvas, paint);
         this.P = null;
@@ -449,7 +449,7 @@ public class d5 extends Drawable {
             return g6.x0(null, i10, false);
         }
         c6 c6Var = this.p;
-        return c6Var != null ? c6Var.F0(i10) : g6.x0(null, i10, false);
+        return c6Var != null ? c6Var.E0(i10) : g6.x0(null, i10, false);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -462,7 +462,7 @@ public class d5 extends Drawable {
             return g6.x0(null, i10, false);
         }
         c6 c6Var = this.p;
-        return c6Var != null ? c6Var.g1(i10) : g6.ul.get(i10);
+        return c6Var != null ? c6Var.f1(i10) : g6.ul.get(i10);
     }
 
     public final cd0 i() {
@@ -547,7 +547,7 @@ public class d5 extends Drawable {
         boolean z10;
         boolean z11;
         Path path;
-        m.d3 d3Var = this.P;
+        m.f3 f3Var = this.P;
         Rect bounds = getBounds();
         int b11 = b(2.0f);
         int i11 = this.Q;
@@ -570,16 +570,16 @@ public class d5 extends Drawable {
         int b12 = b(6.0f);
         int max = Math.max(bounds.top, 0);
         boolean z12 = true;
-        if (d3Var == null || bounds.height() >= this.b) {
+        if (f3Var == null || bounds.height() >= this.b) {
             z10 = i12 != 1 ? (this.r + bounds.bottom) - i11 < this.b : (this.r + bounds.bottom) - (b12 * 2) < this.b;
             z11 = (i11 * 2) + this.r >= 0;
         } else {
             z10 = true;
             z11 = true;
         }
-        if (d3Var != null) {
-            path = (Path) d3Var.c;
-            z12 = d3Var.a(bounds, z10, z11);
+        if (f3Var != null) {
+            path = (Path) f3Var.c;
+            z12 = f3Var.a(bounds, z10, z11);
         } else {
             path = this.n;
         }

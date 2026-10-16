@@ -27,7 +27,7 @@ import org.telegram.ui.ce1;
 import org.telegram.ui.co;
 import org.telegram.ui.f00;
 import org.telegram.ui.fo;
-import org.telegram.ui.mf0;
+import org.telegram.ui.lf0;
 import org.telegram.ui.o91;
 import org.telegram.ui.oh1;
 import org.telegram.ui.p70;
@@ -37,7 +37,7 @@ import org.telegram.ui.sd;
 import org.telegram.ui.ws;
 import org.telegram.ui.zo;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class p6 extends View implements ne.d {
     public final /* synthetic */ int a;
@@ -398,9 +398,9 @@ public final class p6 extends View implements ne.d {
                 break;
             case 12:
                 Paint paint10 = (Paint) this.b;
-                mf0 mf0Var = (mf0) this.c;
-                qd qdVar = mf0Var.r;
-                bi.k5 k5Var3 = mf0Var.e;
+                lf0 lf0Var = (lf0) this.c;
+                qd qdVar = lf0Var.r;
+                bi.k5 k5Var3 = lf0Var.e;
                 if (k5Var3 != null && qdVar.getVisibility() == 0) {
                     paint10.setAlpha((int) (qdVar.getAlpha() * k5Var3.getImageReceiver().getCurrentAlpha() * 85.0f));
                     canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f, paint10);
@@ -683,6 +683,6 @@ public final class p6 extends View implements ne.d {
     }
 
     @Override // ne.d
-    public /* synthetic */ void C(float f7, int i10) {
+    public /* synthetic */ void A(float f7, int i10) {
     }
 }

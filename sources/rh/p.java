@@ -1,27 +1,46 @@
 package rh;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.Components.f10;
-import org.telegram.ui.Components.k61;
-import org.telegram.ui.Components.mm0;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.voip.r2;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes3.dex */
-public final class p extends k61 {
-    public static final /* synthetic */ int a = 0;
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
+public final class p {
+    public final int a;
+    public final TLRPC.InputPeer b;
+    public final int c;
+    public final byte[] d;
+    public final r2 e;
+    public final Utilities.Callback f;
+    public String g;
+    public boolean h;
+    public boolean i;
+    public final ArrayList j = new ArrayList();
 
-    static {
-        k61.setup(new p());
+    public p(int i10, TLRPC.InputPeer inputPeer, int i11, byte[] bArr, r2 r2Var, Utilities.Callback callback) {
+        this.a = i10;
+        this.b = inputPeer;
+        this.c = i11;
+        this.d = bArr;
+        this.e = r2Var;
+        this.f = callback;
     }
 
-    @Override // org.telegram.ui.Components.k61
-    public final View createView(Context context, mm0 mm0Var, int i10, int i11, c6 c6Var) {
-        f10 f10Var = new f10(context, null);
-        f10Var.setViewType(16);
-        f10Var.setMinimumHeight(AndroidUtilities.dp(48.0f));
-        return f10Var;
+    public final void a() {
+        if (this.h || this.i) {
+            return;
+        }
+        this.i = true;
+        TLRPC.TL_messages_getPollVotes tL_messages_getPollVotes = new TLRPC.TL_messages_getPollVotes();
+        String str = this.g;
+        tL_messages_getPollVotes.limit = str != null ? 10 : 15;
+        tL_messages_getPollVotes.peer = this.b;
+        tL_messages_getPollVotes.id = this.c;
+        tL_messages_getPollVotes.option = this.d;
+        tL_messages_getPollVotes.offset = str;
+        ConnectionsManager.getInstance(this.a).sendRequestTyped(tL_messages_getPollVotes, new org.telegram.messenger.a(), new j(this, 1));
     }
 }

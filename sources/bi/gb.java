@@ -26,7 +26,7 @@ import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.ow0;
 import org.telegram.ui.Components.sc;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class gb extends ow0 {
     public final Path A0;
@@ -324,12 +324,12 @@ public final class gb extends ow0 {
                             int saveCount = canvas.getSaveCount();
                             mb mbVar2 = pbVar.f;
                             if (mbVar2 != null) {
-                                mbVar2.h(f38, canvas, rectF11, sbVar.E);
+                                mbVar2.f(f38, canvas, rectF11, sbVar.E);
                             }
                             pbVar.c.draw(canvas);
                             nb nbVar2 = pbVar.e;
                             if (nbVar2 != null) {
-                                nbVar2.h(canvas, rectF11, f38);
+                                nbVar2.f(canvas, rectF11, f38);
                             }
                             pbVar.c.setVisible(visible, false);
                             pbVar.c.setImageCoords(imageX, imageY, imageWidth, imageHeight);
@@ -361,7 +361,7 @@ public final class gb extends ow0 {
                             AndroidUtilities.lerp(rectF4, rectF9, sbVar.U, rectF11);
                             int saveCount2 = canvas.getSaveCount();
                             if (pbVar != null && (mbVar = pbVar.f) != null) {
-                                mbVar.h(1.0f - f19, canvas, rectF11, sbVar.E);
+                                mbVar.f(1.0f - f19, canvas, rectF11, sbVar.E);
                             }
                             if (sbVar.V0) {
                                 boolean z15 = (pbVar == null || pbVar.l == null) ? false : true;
@@ -411,7 +411,7 @@ public final class gb extends ow0 {
                                             pbVar.l.setRoundRadius(i15);
                                         }
                                         if (pbVar != null && (nbVar = pbVar.e) != null) {
-                                            nbVar.h(canvas, rectF11, 1.0f - f20);
+                                            nbVar.f(canvas, rectF11, 1.0f - f20);
                                         }
                                     }
                                 }
@@ -432,7 +432,7 @@ public final class gb extends ow0 {
                                     pbVar.l.setRoundRadius(i152);
                                 }
                                 if (pbVar != null) {
-                                    nbVar.h(canvas, rectF11, 1.0f - f20);
+                                    nbVar.f(canvas, rectF11, 1.0f - f20);
                                 }
                             }
                             canvas.restoreToCount(saveCount2);
@@ -451,7 +451,7 @@ public final class gb extends ow0 {
                                     canvas.save();
                                 }
                                 canvas.translate(sbVar.K, sbVar.L);
-                                ((org.telegram.ui.Cells.s2) sbVar.M).B(canvas);
+                                ((org.telegram.ui.Cells.s2) sbVar.M).C(canvas);
                                 canvas.restore();
                             }
                         }

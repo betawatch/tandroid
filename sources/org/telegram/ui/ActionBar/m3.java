@@ -27,12 +27,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.h11;
+import org.telegram.ui.Components.i11;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.fo;
 import org.telegram.ui.sk;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class m3 extends FrameLayout {
     public static final HashMap K = new HashMap();
@@ -76,7 +76,7 @@ public final class m3 extends FrameLayout {
         setNavigationBarColor(g6.x0(null, g6.a7, false));
         k3 k3Var = new k3(this, this);
         this.e = k3Var;
-        r0.j0.j(this, k3Var);
+        r0.i0.j(this, k3Var);
         n();
         o(false);
     }
@@ -107,7 +107,7 @@ public final class m3 extends FrameLayout {
         if (size == 0) {
             return;
         }
-        l3 l3Var = (l3) i2.d.g(1, tabs);
+        l3 l3Var = (l3) i2.d.h(1, tabs);
         LaunchActivity launchActivity = LaunchActivity.G1;
         v3 v3Var = launchActivity == null ? null : launchActivity.y0;
         if (v3Var != null && (valueAnimator = v3Var.d) != null) {
@@ -211,7 +211,7 @@ public final class m3 extends FrameLayout {
                     return;
                 }
                 this.c = true;
-                AndroidUtilities.runOnUIThread(new n2.h(this, R, fo.W9(l3Var.a.c), 8), 220L);
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.f(this, R, fo.W9(l3Var.a.c), 5), 220L);
                 return;
             }
             return;
@@ -362,7 +362,7 @@ public final class m3 extends FrameLayout {
             }
         }
         n();
-        AndroidUtilities.runOnUIThread(new n2.h(this, arrayList3, l3Var, 9), 320L);
+        AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.f(this, arrayList3, l3Var, 6), 320L);
         o(true);
         invalidate();
         k3 k3Var = this.e;
@@ -472,8 +472,8 @@ public final class m3 extends FrameLayout {
             l3 l3Var = tabs.get(i10);
             org.telegram.ui.k4 k4Var = l3Var.J;
             if (k4Var != null && !k4Var.d0.isEmpty()) {
-                Object g10 = i2.d.g(1, l3Var.J.d0);
-                if ((g10 instanceof TLRPC.WebPage) && ((TLRPC.WebPage) g10).id == webPage.id) {
+                Object h = i2.d.h(1, l3Var.J.d0);
+                if ((h instanceof TLRPC.WebPage) && ((TLRPC.WebPage) h).id == webPage.id) {
                     e(l3Var);
                     return l3Var;
                 }
@@ -497,7 +497,7 @@ public final class m3 extends FrameLayout {
                 if (replaceEmoji == null) {
                     j3Var.v = null;
                 } else {
-                    j3Var.v = new h11(replaceEmoji, 17.0f, AndroidUtilities.bold());
+                    j3Var.v = new i11(replaceEmoji, 17.0f, AndroidUtilities.bold());
                 }
             }
             charSequence = replaceEmoji;
@@ -543,8 +543,8 @@ public final class m3 extends FrameLayout {
         }
         Object parent = getParent();
         if (parent instanceof View) {
-            WeakHashMap weakHashMap = r0.j0.a;
-            r0.z.c((View) parent);
+            WeakHashMap weakHashMap = r0.i0.a;
+            r0.y.c((View) parent);
         }
     }
 

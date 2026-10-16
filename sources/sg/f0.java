@@ -14,9 +14,9 @@ import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.h5;
 import org.telegram.ui.x5;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class f0 extends FrameLayout {
     public final ImageView a;
@@ -37,14 +37,14 @@ public final class f0 extends FrameLayout {
         this.a = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(g6.w0(g6.Lj, c6Var), PorterDuff.Mode.SRC_IN));
-        addView(imageView, a6.a(24.0f, 24.0f, 0.0f, 24.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
+        addView(imageView, z5.a(24.0f, 24.0f, 0.0f, 24.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
         h5 h5Var = new h5(context);
         this.b = h5Var;
         h5Var.setWidthWrapContent(true);
         h5Var.setTextColor(g6.w0(g6.j5, c6Var));
         h5Var.setTextSize(14);
         boolean z10 = LocaleController.isRTL;
-        addView(h5Var, a6.a(-2.0f, z10 ? 30.0f : 60.0f, 0.0f, z10 ? 60.0f : 30.0f, 0.0f, -2, (z10 ? 5 : 3) | 16));
+        addView(h5Var, z5.a(-2.0f, z10 ? 30.0f : 60.0f, 0.0f, z10 ? 60.0f : 30.0f, 0.0f, -2, (z10 ? 5 : 3) | 16));
         h5 h5Var2 = new h5(context);
         this.d = h5Var2;
         h5Var2.setTextColor(-1);
@@ -54,8 +54,8 @@ public final class f0 extends FrameLayout {
         x5 x5Var = new x5(this, context, c6Var);
         this.c = x5Var;
         x5Var.setWillNotDraw(false);
-        x5Var.addView(h5Var2, a6.e(-2, -2, 17));
-        addView(x5Var, a6.d(-1.0f, -1));
+        x5Var.addView(h5Var2, z5.e(-2, -2, 17));
+        addView(x5Var, z5.d(-1.0f, -1));
     }
 
     @Override // android.widget.FrameLayout, android.view.View

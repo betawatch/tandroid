@@ -36,7 +36,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ew;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.sc;
 import org.telegram.ui.Components.xw0;
 import org.telegram.ui.Components.zc;
@@ -52,7 +52,7 @@ import org.telegram.ui.yd;
 import org.telegram.ui.z70;
 import org.telegram.ui.zd;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -149,7 +149,7 @@ public final /* synthetic */ class u1 implements View.OnClickListener {
                 break;
             case 5:
                 di.t8 t8Var = (di.t8) this.b;
-                di.x6 x6Var = (di.x6) this.c;
+                di.y6 y6Var = (di.y6) this.c;
                 org.telegram.ui.Cells.j3 j3Var = t8Var.Y;
                 try {
                     charSequence = ((ClipboardManager) t8Var.getContext().getSystemService("clipboard")).getPrimaryClip().getItemAt(0).coerceToText(t8Var.getContext());
@@ -162,7 +162,7 @@ public final /* synthetic */ class u1 implements View.OnClickListener {
                     org.telegram.ui.Cells.h3 h3Var = j3Var.b;
                     h3Var.setSelection(0, h3Var.getText().length());
                 }
-                x6Var.run();
+                y6Var.run();
                 break;
             case 6:
                 kc kcVar = (kc) this.b;
@@ -183,9 +183,9 @@ public final /* synthetic */ class u1 implements View.OnClickListener {
                         AndroidUtilities.openForView(file2, file2.getName(), null, LaunchActivity.G1, null, true);
                     }
                 }
-                m80 m80Var = k3Var.K0;
-                if (m80Var != null) {
-                    m80Var.u();
+                l80 l80Var = k3Var.K0;
+                if (l80Var != null) {
+                    l80Var.u();
                     k3Var.K0 = null;
                     break;
                 }
@@ -265,7 +265,7 @@ public final /* synthetic */ class u1 implements View.OnClickListener {
                 if (yVar == null) {
                     org.telegram.ui.ActionBar.q0 q0Var = u0Var2.P;
                     if (q0Var != null) {
-                        q0Var.l(((Integer) view.getTag()).intValue());
+                        q0Var.k(((Integer) view.getTag()).intValue());
                         break;
                     }
                 } else {
@@ -344,9 +344,9 @@ public final /* synthetic */ class u1 implements View.OnClickListener {
                         }
                     } else if (o3Var.getWebView() != null && !k4Var.h0.W) {
                         if (k4Var.i0 != null) {
-                            org.telegram.ui.web.y0 webView = o3Var.getWebView();
+                            org.telegram.ui.web.z0 webView = o3Var.getWebView();
                             String title = webView != null ? webView.getTitle() : null;
-                            String u11 = org.telegram.ui.web.b1.u(webView != null ? webView.getUrl() : null);
+                            String u11 = org.telegram.ui.web.c1.u(webView != null ? webView.getUrl() : null);
                             org.telegram.ui.web.k kVar = k4Var.i0;
                             Bitmap favicon = webView != null ? webView.getFavicon() : null;
                             if (TextUtils.isEmpty(title)) {
@@ -373,7 +373,7 @@ public final /* synthetic */ class u1 implements View.OnClickListener {
                             textView.setText(Emoji.replaceEmoji(title, textView.getPaint().getFontMetricsInt(), false));
                             try {
                                 Uri parse = Uri.parse(str);
-                                str2 = pf.d.v(parse, null, null, pf.d.a(parse.getHost()), null);
+                                str2 = pf.d.u(parse, null, null, pf.d.a(parse.getHost()), null);
                             } catch (Exception e7) {
                                 try {
                                     FileLog.e((Throwable) e7, false);
@@ -539,7 +539,7 @@ public final /* synthetic */ class u1 implements View.OnClickListener {
                 }
                 break;
             default:
-                pf.d.s((Context) this.c, ((TL_stats.TL_broadcastRevenueTransactionWithdrawal) this.b).transaction_url);
+                pf.d.r((Context) this.c, ((TL_stats.TL_broadcastRevenueTransactionWithdrawal) this.b).transaction_url);
                 break;
         }
     }

@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.util.Property;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ke extends Property {
     public final /* synthetic */ int a;
@@ -58,31 +58,31 @@ public final class ke extends Property {
                 float floatValue = ((Float) obj2).floatValue();
                 ChatActivityEnterView chatActivityEnterView = this.b;
                 chatActivityEnterView.h = floatValue;
-                chatActivityEnterView.D1();
+                chatActivityEnterView.C1();
                 break;
             case 1:
                 float floatValue2 = ((Float) obj2).floatValue();
                 ChatActivityEnterView chatActivityEnterView2 = this.b;
                 chatActivityEnterView2.E = floatValue2;
-                chatActivityEnterView2.y1();
+                chatActivityEnterView2.x1();
                 break;
             case 2:
                 float floatValue3 = ((Float) obj2).floatValue();
                 ChatActivityEnterView chatActivityEnterView3 = this.b;
                 chatActivityEnterView3.n = floatValue3;
-                chatActivityEnterView3.D1();
+                chatActivityEnterView3.C1();
                 break;
             case 3:
                 float floatValue4 = ((Float) obj2).floatValue();
                 ChatActivityEnterView chatActivityEnterView4 = this.b;
                 chatActivityEnterView4.x = floatValue4;
-                chatActivityEnterView4.y1();
+                chatActivityEnterView4.x1();
                 break;
             default:
                 float floatValue5 = ((Float) obj2).floatValue();
                 ChatActivityEnterView chatActivityEnterView5 = this.b;
                 chatActivityEnterView5.G = floatValue5;
-                chatActivityEnterView5.H1();
+                chatActivityEnterView5.G1();
                 break;
         }
     }

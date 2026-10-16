@@ -2,7 +2,6 @@ package qh;
 
 import android.view.View;
 import ji.p1;
-import n6.o;
 import ne.m;
 import ne.n;
 import org.telegram.messenger.AndroidUtilities;
@@ -11,7 +10,7 @@ import org.telegram.ui.ActionBar.o1;
 import r0.i1;
 import r0.l1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class i implements g, f, d {
     public View E;
@@ -35,7 +34,7 @@ public class i implements g, f, d {
     /* JADX WARN: Multi-variable type inference failed */
     public i(Runnable runnable) {
         this.h = runnable;
-        this.a = new ne.e(0, new o(this, runnable, 0 == true ? 1 : 0, 13), o1.w, 250L);
+        this.a = new ne.e(0, new n3.b(this, runnable, 0 == true ? 1 : 0, 14), o1.w, 250L);
     }
 
     @Override // qh.d

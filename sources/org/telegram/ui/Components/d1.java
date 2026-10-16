@@ -9,7 +9,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.sh1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d1 implements org.telegram.ui.ActionBar.z1, BillingController.ProductDetailsResponseListenerLegacy {
     public final /* synthetic */ int a;
@@ -62,18 +62,18 @@ public final /* synthetic */ class d1 implements org.telegram.ui.ActionBar.z1, B
                 accountInstance.getConnectionsManager().sendRequest(tL_contacts_blockFromReplies, new y1(accountInstance, 0));
                 break;
             default:
-                org.telegram.ui.bn0 bn0Var = (org.telegram.ui.bn0) this.b;
+                org.telegram.ui.an0 an0Var = (org.telegram.ui.an0) this.b;
                 String str = (String) this.c;
                 String str2 = (String) this.d;
                 String str3 = (String) this.e;
-                org.telegram.ui.yk0 yk0Var = (org.telegram.ui.yk0) this.f;
-                m4.c cVar = (m4.c) this.h;
-                org.telegram.ui.un0 un0Var = bn0Var.a;
-                un0Var.Y[0].setText(str);
-                un0Var.Y[1].setText(str2);
-                un0Var.Y[2].setText(str3);
-                un0Var.M1(true, true);
-                bn0Var.c(yk0Var, cVar);
+                org.telegram.ui.xk0 xk0Var = (org.telegram.ui.xk0) this.f;
+                m2.t tVar = (m2.t) this.h;
+                org.telegram.ui.sn0 sn0Var = an0Var.a;
+                sn0Var.Y[0].setText(str);
+                sn0Var.Y[1].setText(str2);
+                sn0Var.Y[2].setText(str3);
+                sn0Var.M1(true, true);
+                an0Var.c(xk0Var, tVar);
                 break;
         }
     }

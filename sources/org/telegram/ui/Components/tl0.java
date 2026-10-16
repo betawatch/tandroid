@@ -21,7 +21,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class tl0 extends View {
     public boolean E;
@@ -58,7 +58,7 @@ public final class tl0 extends View {
     public final boolean g0;
     public float h;
     public int h0;
-    public final org.telegram.ui.Cells.t6 i0;
+    public final org.telegram.ui.Cells.l7 i0;
     public float j0;
     public boolean k0;
     public long l0;
@@ -90,7 +90,7 @@ public final class tl0 extends View {
         this.K = new Path();
         this.L = new float[8];
         this.W = new int[2];
-        this.i0 = new org.telegram.ui.Cells.t6(this, 20);
+        this.i0 = new org.telegram.ui.Cells.l7(this, 19);
         this.n0 = 1.0f;
         this.R = i10;
         if (i10 == 0) {
@@ -205,9 +205,9 @@ public final class tl0 extends View {
             this.U = true;
             invalidate();
         }
-        org.telegram.ui.Cells.t6 t6Var = this.i0;
-        AndroidUtilities.cancelRunOnUIThread(t6Var);
-        AndroidUtilities.runOnUIThread(t6Var, 2000L);
+        org.telegram.ui.Cells.l7 l7Var = this.i0;
+        AndroidUtilities.cancelRunOnUIThread(l7Var);
+        AndroidUtilities.runOnUIThread(l7Var, 2000L);
     }
 
     public final void c() {

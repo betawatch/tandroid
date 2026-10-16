@@ -9,24 +9,24 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class yh1 extends org.telegram.ui.Components.k61 {
+public final class yh1 extends org.telegram.ui.Components.l61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        org.telegram.ui.Components.k61.setup(new yh1());
+        org.telegram.ui.Components.l61.setup(new yh1());
     }
 
-    @Override // org.telegram.ui.Components.k61
-    public final void bindView(View view, org.telegram.ui.Components.l61 l61Var, boolean z10, org.telegram.ui.Components.z61 z61Var, org.telegram.ui.Components.h71 h71Var) {
+    @Override // org.telegram.ui.Components.l61
+    public final void bindView(View view, org.telegram.ui.Components.m61 m61Var, boolean z10, org.telegram.ui.Components.a71 a71Var, org.telegram.ui.Components.i71 i71Var) {
         zh1 zh1Var = (zh1) view;
-        int i10 = l61Var.k;
-        CharSequence charSequence = l61Var.l;
-        CharSequence charSequence2 = l61Var.m;
-        boolean z11 = l61Var.q;
-        boolean z12 = l61Var.r;
-        int i11 = l61Var.z;
+        int i10 = m61Var.k;
+        CharSequence charSequence = m61Var.l;
+        CharSequence charSequence2 = m61Var.m;
+        boolean z11 = m61Var.q;
+        boolean z12 = m61Var.r;
+        int i11 = m61Var.z;
         TextView textView = zh1Var.d;
         TextView textView2 = zh1Var.e;
         ImageView imageView = zh1Var.f;
@@ -54,7 +54,7 @@ public final class yh1 extends org.telegram.ui.Components.k61 {
         textView2.setTextColor(org.telegram.ui.ActionBar.g6.w0(zh1Var.n ? org.telegram.ui.ActionBar.g6.p7 : zh1Var.h ? org.telegram.ui.ActionBar.g6.n6 : org.telegram.ui.ActionBar.g6.y6, c6Var));
     }
 
-    @Override // org.telegram.ui.Components.k61
+    @Override // org.telegram.ui.Components.l61
     public final View createView(Context context, org.telegram.ui.Components.mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
         return new zh1(context, c6Var);
     }

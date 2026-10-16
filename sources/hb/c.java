@@ -4,16 +4,16 @@ import java.lang.reflect.Type;
 import java.util.Collection;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class c extends eb.u {
     public final /* synthetic */ int a = 0;
     public final Object b;
     public final Object c;
 
-    public c(eb.g gVar, Type type, eb.u uVar, gb.o oVar) {
+    public c(eb.g gVar, Type type, eb.u uVar, gb.p pVar) {
         this.b = new o(gVar, uVar, type);
-        this.c = oVar;
+        this.c = pVar;
     }
 
     @Override // eb.u
@@ -24,7 +24,7 @@ public final class c extends eb.u {
                     aVar.t();
                     return null;
                 }
-                Collection collection = (Collection) ((gb.o) this.c).f2();
+                Collection collection = (Collection) ((gb.p) this.c).i2();
                 aVar.a();
                 while (aVar.k()) {
                     collection.add(((eb.u) ((o) this.b).c).read(aVar));

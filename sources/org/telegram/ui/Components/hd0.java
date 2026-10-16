@@ -11,7 +11,7 @@ import android.graphics.RectF;
 import android.os.Build;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class hd0 {
     public static final float[] k = new float[4];
@@ -21,7 +21,7 @@ public final class hd0 {
     public int f;
     public int g;
     public int h;
-    public final androidx.biometric.e a = new androidx.biometric.e(new l2(18));
+    public final androidx.biometric.e a = new androidx.biometric.e(new n2(16));
     public final a5.a b = new a5.a(14, (byte) 0);
     public final u10 c = new u10();
     public final Matrix i = new Matrix();
@@ -114,7 +114,7 @@ public final class hd0 {
 
     public final Paint e(Bitmap bitmap, Bitmap bitmap2, int i10, int i11, int i12, boolean z10) {
         Bitmap bitmap3;
-        Bitmap bitmap4 = (Bitmap) this.a.o(bitmap2);
+        Bitmap bitmap4 = (Bitmap) this.a.m(bitmap2);
         if (i12 >= 0) {
             int k10 = i0.a.k(i10, ((Color.alpha(i10) * i11) * i12) / 25500);
             a5.a aVar = this.b;

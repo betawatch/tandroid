@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class tg extends FrameLayout {
     public final Drawable E;
@@ -81,7 +81,7 @@ public final class tg extends FrameLayout {
         this.O = new g6(this, 0L, 350L, es.h);
         sg sgVar = new sg(this, this);
         this.G = sgVar;
-        r0.j0.j(this, sgVar);
+        r0.i0.j(this, sgVar);
         di.l lVar = new di.l(5);
         this.y = lVar;
         lVar.setCallback(this);
@@ -139,7 +139,7 @@ public final class tg extends FrameLayout {
         } else {
             MessagesController.getGlobalMainSettings().edit().putInt("voiceoncehint", MessagesController.getGlobalMainSettings().getInt("voiceoncehint", 0) + 1).apply();
         }
-        addView(this.b, w7.a6.a(-1.0f, 0.0f, 0.0f, 54.0f, 58.0f, -1, 119));
+        addView(this.b, w7.z5.a(-1.0f, 0.0f, 0.0f, 54.0f, 58.0f, -1, 119));
         di.d4 d4Var4 = this.b;
         d4Var4.l0 = new rg(this, d4Var4, 0);
         d4Var4.u();
@@ -198,7 +198,7 @@ public final class tg extends FrameLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:104:0x07bd, code lost:
     
-        if (r2.j1() == false) goto L151;
+        if (r2.k1() == false) goto L151;
      */
     /* JADX WARN: Code restructure failed: missing block: B:105:0x07bf, code lost:
     
@@ -485,7 +485,7 @@ public final class tg extends FrameLayout {
         r46.drawPath(r2, r6);
         r46.restore();
         r46.save();
-        r4.setBounds(r7 - (r4.getIntrinsicWidth() / 2), (int) (org.telegram.messenger.AndroidUtilities.dpf2(20.0f) + (r45.f.getHeight() + r14)), org.telegram.ui.Cells.d0.y(2, r7, r4), r4.getIntrinsicHeight() + ((int) (org.telegram.messenger.AndroidUtilities.dpf2(20.0f) + (r45.f.getHeight() + r14))));
+        r4.setBounds(r7 - (r4.getIntrinsicWidth() / 2), (int) (org.telegram.messenger.AndroidUtilities.dpf2(20.0f) + (r45.f.getHeight() + r14)), org.telegram.ui.Cells.c1.v(2, r7, r4), r4.getIntrinsicHeight() + ((int) (org.telegram.messenger.AndroidUtilities.dpf2(20.0f) + (r45.f.getHeight() + r14))));
         r4.draw(r46);
         r46.restore();
      */
@@ -607,7 +607,7 @@ public final class tg extends FrameLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:72:0x03e0, code lost:
     
-        r2 = org.telegram.messenger.q.B(1.0f, r2, (1.0f - r10) * r8.i4, r5);
+        r2 = org.telegram.messenger.g0.z(1.0f, r2, (1.0f - r10) * r8.i4, r5);
         r9 = r7;
         r6 = r30 + r26;
         r46.scale(r2, r2, r9, r6);
@@ -901,7 +901,7 @@ public final class tg extends FrameLayout {
                     if (slideTextView != null) {
                         slideTextView.setEnabled(false);
                     }
-                    chatActivityEnterView.Z2.i1();
+                    chatActivityEnterView.Z2.j1();
                 } else {
                     qg qgVar = new qg(this, 0);
                     di.d4 d4Var = this.a;
@@ -915,15 +915,15 @@ public final class tg extends FrameLayout {
                     if (!MediaController.getInstance().isRecordingPaused() || (chatActivityEnterView.h1.getAudioLeft() <= 0.01f && chatActivityEnterView.h1.getAudioRight() >= 0.99f)) {
                         qgVar.run();
                     } else {
-                        org.telegram.ui.rp rpVar = new org.telegram.ui.rp(18, this, qgVar);
+                        org.telegram.ui.vp vpVar = new org.telegram.ui.vp(13, this, qgVar);
                         if (MessagesController.getGlobalMainSettings().getBoolean("trimvoicehint", true)) {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext(), 0, chatActivityEnterView.W3);
                             alertDialog$Builder.a.R = LocaleController.getString(R.string.RecordingTrimTitle);
                             alertDialog$Builder.a.T = LocaleController.getString(R.string.RecordingTrimText);
-                            alertDialog$Builder.k(LocaleController.getString(R.string.OK), new s(rpVar, 19));
-                            org.telegram.messenger.q.q(R.string.Cancel, alertDialog$Builder, null);
+                            alertDialog$Builder.k(LocaleController.getString(R.string.OK), new s(vpVar, 19));
+                            i2.d.r(R.string.Cancel, alertDialog$Builder, null);
                         } else {
-                            rpVar.run();
+                            vpVar.run();
                         }
                     }
                 }

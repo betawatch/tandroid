@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedPrefsHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fa0 implements Runnable {
     public final /* synthetic */ LaunchActivity a;
@@ -98,7 +98,7 @@ public final /* synthetic */ class fa0 implements Runnable {
                     return;
                 }
                 boolean z13 = tL_attachMenuBot.show_in_side_menu;
-                AndroidUtilities.runOnUIThread(new di.x6(28, k3Var, (z13 && tL_attachMenuBot.show_in_attach_menu) ? LocaleController.formatString(R.string.BotAttachMenuShortcatAddedAttachAndSide, user2.first_name) : z13 ? LocaleController.formatString(R.string.BotAttachMenuShortcatAddedSide, user2.first_name) : LocaleController.formatString(R.string.BotAttachMenuShortcatAddedAttach, user2.first_name)), 200L);
+                AndroidUtilities.runOnUIThread(new di.y6(28, k3Var, (z13 && tL_attachMenuBot.show_in_attach_menu) ? LocaleController.formatString(R.string.BotAttachMenuShortcatAddedAttachAndSide, user2.first_name) : z13 ? LocaleController.formatString(R.string.BotAttachMenuShortcatAddedSide, user2.first_name) : LocaleController.formatString(R.string.BotAttachMenuShortcatAddedAttach, user2.first_name)), 200L);
             }
         }
     }

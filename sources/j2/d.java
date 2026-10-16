@@ -6,12 +6,12 @@ import bi.g7;
 import e2.o;
 import e2.x;
 import java.util.List;
-import m4.f0;
-import m4.f1;
-import m4.h1;
-import m4.j1;
-import m4.n1;
-import m4.w;
+import m4.e0;
+import m4.e1;
+import m4.g1;
+import m4.i1;
+import m4.m1;
+import m4.v;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
@@ -28,9 +28,9 @@ import org.telegram.ui.ActionBar.z1;
 import org.telegram.ui.Components.xv0;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements o, f1, h1, RequestDelegateTimestamp, z1, MessagesStorage.StringCallback, e2.j {
+public final /* synthetic */ class d implements o, e1, g1, RequestDelegateTimestamp, z1, MessagesStorage.StringCallback, e2.j {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ long c;
@@ -48,11 +48,11 @@ public final /* synthetic */ class d implements o, f1, h1, RequestDelegateTimest
         z3.o oVar = (z3.o) this.d;
         z3.b bVar = (z3.b) obj;
         oVar.h.getClass();
-        byte[] s22 = sb.a.s2(bVar.a, bVar.c);
+        byte[] v22 = sb.a.v2(bVar.a, bVar.c);
         x xVar = oVar.c;
         xVar.getClass();
-        xVar.L(s22.length, s22);
-        oVar.a.d(s22.length, xVar);
+        xVar.L(v22.length, v22);
+        oVar.a.d(v22.length, xVar);
         long j10 = bVar.b;
         long j11 = this.c;
         if (j10 == -9223372036854775807L) {
@@ -61,20 +61,14 @@ public final /* synthetic */ class d implements o, f1, h1, RequestDelegateTimest
             long j12 = oVar.h.x;
             j11 = j12 == Long.MAX_VALUE ? j11 + j10 : j10 + j12;
         }
-        oVar.a.c(j11, this.b | 1, s22.length, 0, null);
+        oVar.a.c(j11, this.b | 1, v22.length, 0, null);
     }
 
-    @Override // m4.h1
-    public Object c(f0 f0Var, w wVar, int i10) {
+    @Override // m4.g1
+    public Object c(e0 e0Var, v vVar, int i10) {
         List list = (List) this.d;
         int i11 = this.b;
-        return f0Var.q(wVar, list, i11 == -1 ? f0Var.t.n0() : i11, i11 == -1 ? f0Var.t.M0() : this.c);
-    }
-
-    @Override // m4.f1
-    public void e(n1 n1Var, w wVar) {
-        j1 j1Var = (j1) this.d;
-        n1Var.r(j1Var.K0(wVar, n1Var, this.b), this.c);
+        return e0Var.q(vVar, list, i11 == -1 ? e0Var.t.n0() : i11, i11 == -1 ? e0Var.t.M0() : this.c);
     }
 
     @Override // org.telegram.ui.ActionBar.z1
@@ -151,6 +145,12 @@ public final /* synthetic */ class d implements o, f1, h1, RequestDelegateTimest
                 }
                 break;
         }
+    }
+
+    @Override // m4.e1
+    public void h(m1 m1Var, v vVar) {
+        i1 i1Var = (i1) this.d;
+        m1Var.r(i1Var.K0(vVar, m1Var, this.b), this.c);
     }
 
     @Override // e2.o

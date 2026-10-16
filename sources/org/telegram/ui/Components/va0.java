@@ -7,7 +7,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class va0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ cb0 a;
@@ -29,7 +29,7 @@ public final class va0 extends org.telegram.ui.ActionBar.j {
         if (i10 != 2) {
             if (i10 == 10) {
                 za0 za0Var = cb0Var.V;
-                za0Var.c1(za0Var.getClosestTab(), false);
+                za0Var.d1(za0Var.getClosestTab(), false);
                 return;
             } else {
                 if (i10 == 11) {
@@ -54,8 +54,8 @@ public final class va0 extends org.telegram.ui.ActionBar.j {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(cb0Var.getParentActivity(), 0, cb0Var.getResourceProvider());
             alertDialog$Builder.a.R = LocaleController.getString(arrayList.size() > 1 ? R.string.DeleteStoriesTitle : R.string.DeleteStoryTitle);
             alertDialog$Builder.a.T = LocaleController.formatPluralString("DeleteStoriesSubtitle", arrayList.size(), new Object[0]);
-            alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new t2(17, this, arrayList));
-            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new l2(17));
+            alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new u2(16, this, arrayList));
+            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new n2(15));
             org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
             a2Var.show();
             a2Var.h();

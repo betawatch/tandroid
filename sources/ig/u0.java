@@ -21,7 +21,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -33,13 +33,13 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ds;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.gq;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.i71;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class u0 extends m2 {
     public static final int U = -1;
@@ -81,7 +81,7 @@ public final class u0 extends m2 {
     public boolean T;
     public ds a;
     public org.telegram.ui.ActionBar.u0 b;
-    public h71 c;
+    public i71 c;
     public hg.a2 d;
     public FrameLayout e;
     public EditTextBoldCursor f;
@@ -116,7 +116,7 @@ public final class u0 extends m2 {
         }
         if (tLObject instanceof TLRPC.TL_boolFalse) {
             u0Var.a.a(0.0f);
-            yh.p(R.string.UnknownError, zc.a0(u0Var), null);
+            sk.q(R.string.UnknownError, zc.a0(u0Var), null);
             return;
         }
         if (tLObject instanceof TLRPC.Updates) {
@@ -132,19 +132,19 @@ public final class u0 extends m2 {
                 if (user == null || (U2 = LaunchActivity.U()) == null) {
                     return;
                 }
-                i2.d.q(R.string.BusinessBotUpdated, new Object[]{UserObject.getUserName(user)}, zc.a0(U2), R.raw.contact_check, 36);
+                i2.d.s(R.string.BusinessBotUpdated, new Object[]{UserObject.getUserName(user)}, zc.a0(U2), R.raw.contact_check, 36);
                 return;
             }
             m2 U3 = LaunchActivity.U();
             if (U3 != null) {
-                i2.d.q(R.string.BusinessBotDone, new Object[]{UserObject.getUserName(user)}, zc.a0(U3), R.raw.contact_check, 36);
+                i2.d.s(R.string.BusinessBotDone, new Object[]{UserObject.getUserName(user)}, zc.a0(U3), R.raw.contact_check, 36);
             }
         }
     }
 
-    public static void W(final u0 u0Var, l61 l61Var, final View view) {
-        if (l61Var.g && !u0Var.v.h(l61Var)) {
-            int i10 = l61Var.d;
+    public static void W(final u0 u0Var, m61 m61Var, final View view) {
+        if (m61Var.g && !u0Var.v.h(m61Var)) {
+            int i10 = m61Var.d;
             if (i10 == U) {
                 a0 a0Var = u0Var.v;
                 u0Var.I = true;
@@ -167,8 +167,8 @@ public final class u0 extends m2 {
                 u0Var.Y(true);
                 return;
             }
-            if (l61Var.a == 13) {
-                TLRPC.User user = (TLRPC.User) u0Var.N.get(l61Var.x);
+            if (m61Var.a == 13) {
+                TLRPC.User user = (TLRPC.User) u0Var.N.get(m61Var.x);
                 if (user == null) {
                     return;
                 }
@@ -978,7 +978,7 @@ public final class u0 extends m2 {
         this.f.addTextChangedListener(new h2(this, 2));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.e = frameLayout2;
-        frameLayout2.addView(this.f, a6.a(-1.0f, 21.0f, 15.0f, 21.0f, 15.0f, -1, 48));
+        frameLayout2.addView(this.f, z5.a(-1.0f, 21.0f, 15.0f, 21.0f, 15.0f, -1, 48));
         FrameLayout frameLayout3 = this.e;
         int i12 = g6.d6;
         frameLayout3.setBackgroundColor(getThemedColor(i12));
@@ -989,7 +989,7 @@ public final class u0 extends m2 {
         View view2 = this.h;
         float f7 = 1.0f / AndroidUtilities.density;
         boolean z10 = LocaleController.isRTL;
-        frameLayout4.addView(view2, a6.a(f7, z10 ? 0 : 21, 0.0f, z10 ? 21 : 0, 0.0f, -1, 87));
+        frameLayout4.addView(view2, z5.a(f7, z10 ? 0 : 21, 0.0f, z10 ? 21 : 0, 0.0f, -1, 87));
         i5 i5Var = new i5(context, 3);
         this.n = i5Var;
         i5Var.setBackgroundColor(getThemedColor(i12));
@@ -1000,12 +1000,12 @@ public final class u0 extends m2 {
         TextView textView2 = this.r;
         int i13 = g6.z6;
         textView2.setTextColor(getThemedColor(i13));
-        this.n.addView(this.r, a6.e(-2, -2, 17));
+        this.n.addView(this.r, z5.e(-2, -2, 17));
         this.s = new ImageView(context);
         q8 q8Var = new q8(getThemedColor(i13));
         this.s.setScaleType(ImageView.ScaleType.CENTER);
         this.s.setImageDrawable(q8Var);
-        this.n.addView(this.s, a6.e(-2, -2, 17));
+        this.n.addView(this.s, z5.e(-2, -2, 17));
         this.s.setAlpha(0.0f);
         this.s.setTranslationY(AndroidUtilities.dp(8.0f));
         hg.a2 a2Var = new hg.a2(true);
@@ -1015,13 +1015,13 @@ public final class u0 extends m2 {
         this.v = a0Var;
         TL_account.TL_connectedBot tL_connectedBot = this.H;
         a0Var.i(tL_connectedBot == null ? null : tL_connectedBot.recipients);
-        h71 h71Var = new h71(this, new ci.u(this, 24), new p0(this, 3), null);
-        this.c = h71Var;
-        h71Var.p1();
-        h71 h71Var2 = this.c;
-        h71Var2.W2.r = false;
-        frameLayout.addView(h71Var2, a6.d(-1.0f, -1));
-        this.actionBar.A(this.c, true);
+        i71 i71Var = new i71(this, new ci.u(this, 24), new p0(this, 3), null);
+        this.c = i71Var;
+        i71Var.p1();
+        i71 i71Var2 = this.c;
+        i71Var2.W2.r = false;
+        frameLayout.addView(i71Var2, z5.d(-1.0f, -1));
+        this.actionBar.B(this.c, true);
         this.fragmentView = frameLayout;
         return frameLayout;
     }

@@ -9,7 +9,7 @@ import android.util.SparseIntArray;
 import j$.util.Objects;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public class b implements org.telegram.ui.ActionBar.c6 {
     public final HashSet a = new HashSet();
@@ -175,11 +175,11 @@ public class b implements org.telegram.ui.ActionBar.c6 {
         sparseIntArray.put(org.telegram.ui.ActionBar.g6.Ui, -11184811);
         sparseIntArray.put(org.telegram.ui.ActionBar.g6.Zk, -15198183);
         b();
-        paint.setColor(F0(i13));
+        paint.setColor(E0(i13));
     }
 
     @Override // org.telegram.ui.ActionBar.c6
-    public final int F0(int i10) {
+    public final int E0(int i10) {
         SparseIntArray sparseIntArray = this.b;
         int indexOfKey = sparseIntArray.indexOfKey(i10);
         if (indexOfKey >= 0) {
@@ -194,7 +194,7 @@ public class b implements org.telegram.ui.ActionBar.c6 {
     }
 
     @Override // org.telegram.ui.ActionBar.c6
-    public final Paint G(String str) {
+    public final Paint F(String str) {
         if (str.equals("paintDivider")) {
             return this.c;
         }
@@ -216,12 +216,12 @@ public class b implements org.telegram.ui.ActionBar.c6 {
 
     @Override // org.telegram.ui.ActionBar.c6
     public final int b0(int i10) {
-        return F0(i10);
+        return E0(i10);
     }
 
     @Override // org.telegram.ui.ActionBar.c6
-    public final int g1(int i10) {
-        return F0(i10);
+    public final int f1(int i10) {
+        return E0(i10);
     }
 
     @Override // org.telegram.ui.ActionBar.c6
@@ -246,9 +246,9 @@ public class b implements org.telegram.ui.ActionBar.c6 {
     }
 
     @Override // org.telegram.ui.ActionBar.c6
-    public final ColorFilter x() {
+    public final ColorFilter w() {
         if (this.e == null) {
-            this.e = new PorterDuffColorFilter(F0(org.telegram.ui.ActionBar.g6.G6), PorterDuff.Mode.SRC_IN);
+            this.e = new PorterDuffColorFilter(E0(org.telegram.ui.ActionBar.g6.G6), PorterDuff.Mode.SRC_IN);
         }
         return this.e;
     }
@@ -257,6 +257,6 @@ public class b implements org.telegram.ui.ActionBar.c6 {
     }
 
     @Override // org.telegram.ui.ActionBar.c6
-    public final /* synthetic */ void N0(int i10, int i11) {
+    public final /* synthetic */ void M0(int i10, int i11) {
     }
 }

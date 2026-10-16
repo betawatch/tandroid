@@ -12,10 +12,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.kc0;
 import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Wallet.m5;
-import org.telegram.ui.es0;
+import org.telegram.ui.ds0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class q1 extends mm0 implements NotificationCenter.NotificationCenterDelegate, l0 {
     public final ArrayList V2;
@@ -25,10 +24,10 @@ public abstract class q1 extends mm0 implements NotificationCenter.NotificationC
     public final int Z2;
     public boolean a3;
     public boolean b3;
-    public final m5 c3;
+    public final p4.s0 c3;
     public final es d3;
     public final ArrayList e3;
-    public final es0 f3;
+    public final ds0 f3;
     public View g3;
     public boolean h3;
     public int i3;
@@ -43,10 +42,10 @@ public abstract class q1 extends mm0 implements NotificationCenter.NotificationC
         this.X2 = true;
         this.Y2 = true;
         t0 t0Var = (t0) this;
-        this.c3 = new m5(t0Var, 6);
+        this.c3 = new p4.s0(t0Var, 6);
         this.d3 = new es(0.0f, 0.5f, 0.5f, 1.0f);
         this.e3 = new ArrayList();
-        this.f3 = new es0(12);
+        this.f3 = new ds0(12);
         this.j3 = -1;
         this.Z2 = i10;
         s4.b0 b0Var = new s4.b0();
@@ -92,13 +91,13 @@ public abstract class q1 extends mm0 implements NotificationCenter.NotificationC
             }
             Collections.sort(arrayList, this.f3);
             if ((this.Y2 || this.h3) && arrayList.size() > 0 && !this.V2.isEmpty()) {
-                View view = (View) i2.d.g(1, arrayList);
+                View view = (View) i2.d.h(1, arrayList);
                 this.g3 = view;
                 x1(view, !this.Y2);
                 this.Y2 = false;
                 this.h3 = false;
-            } else if (this.g3 != i2.d.g(1, arrayList)) {
-                this.g3 = (View) i2.d.g(1, arrayList);
+            } else if (this.g3 != i2.d.h(1, arrayList)) {
+                this.g3 = (View) i2.d.h(1, arrayList);
                 if (this.b3) {
                     try {
                         performHapticFeedback(3);
@@ -138,7 +137,7 @@ public abstract class q1 extends mm0 implements NotificationCenter.NotificationC
         super.onLayout(z10, i10, i11, i12, i13);
         if (this.X2 && !this.V2.isEmpty() && getChildCount() > 0) {
             this.X2 = false;
-            AndroidUtilities.runOnUIThread(new rh.j(this, 5));
+            AndroidUtilities.runOnUIThread(new ri.h0(this, 5));
         }
         int i14 = this.j3;
         if (i14 > 0) {
@@ -197,9 +196,9 @@ public abstract class q1 extends mm0 implements NotificationCenter.NotificationC
 
     public final void y1() {
         if (this.l3) {
-            m5 m5Var = this.c3;
-            AndroidUtilities.cancelRunOnUIThread(m5Var);
-            AndroidUtilities.runOnUIThread(m5Var, 2700L);
+            p4.s0 s0Var = this.c3;
+            AndroidUtilities.cancelRunOnUIThread(s0Var);
+            AndroidUtilities.runOnUIThread(s0Var, 2700L);
         }
     }
 }

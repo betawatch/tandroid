@@ -18,15 +18,15 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.d90;
+import org.telegram.ui.Components.c90;
 import org.telegram.ui.Components.sd0;
 import org.telegram.ui.Components.ud0;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.ff;
 import org.telegram.ui.r71;
-import org.telegram.ui.yz0;
+import org.telegram.ui.xz0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s5 implements mb, OnFailureListener, org.telegram.ui.ActionBar.z1, sd0, c5.q, MediaDataController.KeywordResultCallback, BillingController.ProductDetailsResponseListenerLegacy {
     public final /* synthetic */ Object a;
@@ -48,21 +48,8 @@ public final /* synthetic */ class s5 implements mb, OnFailureListener, org.tele
         AndroidUtilities.runOnUIThread(new ff(this.a, (Object) iVar, (Object) list, (String) this.b, this.c, this.d, this.e, 4));
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        org.telegram.ui.ActionBar.m3 m3Var = (org.telegram.ui.ActionBar.m3) this.a;
-        boolean[] zArr = (boolean[]) this.b;
-        org.telegram.ui.ActionBar.l3 l3Var = (org.telegram.ui.ActionBar.l3) this.c;
-        Utilities.Callback callback = (Utilities.Callback) this.d;
-        org.telegram.ui.ActionBar.a2[] a2VarArr = (org.telegram.ui.ActionBar.a2[]) this.e;
-        zArr[0] = true;
-        m3Var.h(m3Var.w, l3Var, true);
-        callback.run(Boolean.TRUE);
-        a2VarArr[0].dismiss();
-    }
-
     @Override // bi.mb
-    public void h(float f7, Canvas canvas, RectF rectF, boolean z10) {
+    public void f(float f7, Canvas canvas, RectF rectF, boolean z10) {
         ya.c cVar = (ya.c) this.a;
         RectF rectF2 = (RectF) this.b;
         t5 t5Var = (t5) this.d;
@@ -82,16 +69,29 @@ public final /* synthetic */ class s5 implements mb, OnFailureListener, org.tele
             rectF5.set(centerX - width2, centerY - height, centerX + width2, centerY + height);
         } catch (Exception unused) {
         }
-        yz0 yz0Var = (yz0) cVar.b;
+        xz0 xz0Var = (xz0) cVar.b;
         int i10 = ProfileStoriesView.s0;
-        yz0Var.a(canvas, t5Var, t5Var2);
+        xz0Var.a(canvas, t5Var, t5Var2);
         rectF4.set(rectF2);
         rectF5.set(rectF3);
     }
 
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+        org.telegram.ui.ActionBar.m3 m3Var = (org.telegram.ui.ActionBar.m3) this.a;
+        boolean[] zArr = (boolean[]) this.b;
+        org.telegram.ui.ActionBar.l3 l3Var = (org.telegram.ui.ActionBar.l3) this.c;
+        Utilities.Callback callback = (Utilities.Callback) this.d;
+        org.telegram.ui.ActionBar.a2[] a2VarArr = (org.telegram.ui.ActionBar.a2[]) this.e;
+        zArr[0] = true;
+        m3Var.h(m3Var.w, l3Var, true);
+        callback.run(Boolean.TRUE);
+        a2VarArr[0].dismiss();
+    }
+
     @Override // com.google.android.gms.tasks.OnFailureListener
     public void onFailure(Exception e) {
-        v0.n request = (v0.n) this.a;
+        v0.o request = (v0.o) this.a;
         f1.b bVar = (f1.b) this.b;
         v0.i iVar = (v0.i) this.c;
         Executor executor = (Executor) this.d;
@@ -99,7 +99,7 @@ public final /* synthetic */ class s5 implements mb, OnFailureListener, org.tele
         kotlin.jvm.internal.i.e(e, "e");
         CredentialProviderPlayServicesImpl.Companion.getClass();
         kotlin.jvm.internal.i.e(request, "request");
-        for (v0.p pVar : request.a) {
+        for (v0.q qVar : request.a) {
         }
         Log.w("GetCredentialController", "Pre-u credman get flow failed; retrying with gis flow");
         new c1.e(bVar.e).g(request, cancellationSignal, executor, iVar);
@@ -107,7 +107,7 @@ public final /* synthetic */ class s5 implements mb, OnFailureListener, org.tele
 
     @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
     public void onProductDetailsResponse(c5.i iVar, List list) {
-        AndroidUtilities.runOnUIThread(new ff((zh.n5) this.a, list, (d90) this.b, (TLRPC.TL_inputStorePaymentStarsGift) this.c, (TL_stars.TL_starsGiftOption) this.d, iVar, (Activity) this.e, 15));
+        AndroidUtilities.runOnUIThread(new ff((zh.n5) this.a, list, (c90) this.b, (TLRPC.TL_inputStorePaymentStarsGift) this.c, (TL_stars.TL_starsGiftOption) this.d, iVar, (Activity) this.e, 15));
     }
 
     @Override // org.telegram.ui.Components.sd0

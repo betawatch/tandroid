@@ -43,7 +43,7 @@ import java.util.HashSet;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class t extends g.f {
     public static final int F0;
@@ -76,12 +76,12 @@ public final class t extends g.f {
     public HashSet Z;
     public SeekBar a0;
     public r b0;
-    public p4.w c0;
+    public p4.v c0;
     public int d0;
     public int e0;
     public int f0;
     public final int g0;
-    public final p4.y h;
+    public final p4.x h;
     public HashMap h0;
     public qf.b i0;
     public final q j0;
@@ -93,7 +93,7 @@ public final class t extends g.f {
     public Uri o0;
     public boolean p0;
     public Bitmap q0;
-    public final p4.w r;
+    public final p4.v r;
     public int r0;
     public final Context s;
     public boolean s0;
@@ -128,11 +128,11 @@ public final class t extends g.f {
         Context context2 = getContext();
         this.s = context2;
         this.j0 = new q(this, 0);
-        this.h = p4.y.d(context2);
-        this.P = p4.y.g();
+        this.h = p4.x.d(context2);
+        this.P = p4.x.g();
         this.n = new c(this, i10);
-        this.r = p4.y.f();
-        p(p4.y.e());
+        this.r = p4.x.f();
+        p(p4.x.e());
         this.g0 = context2.getResources().getDimensionPixelSize(R.dimen.mr_controller_volume_group_list_padding_top);
         this.D0 = (AccessibilityManager) context2.getSystemService("accessibility");
         this.B0 = AnimationUtils.loadInterpolator(a2, R.interpolator.mr_linear_out_slow_in);
@@ -162,8 +162,8 @@ public final class t extends g.f {
         int firstVisiblePosition = this.U.getFirstVisiblePosition();
         for (int i10 = 0; i10 < this.U.getChildCount(); i10++) {
             View childAt = this.U.getChildAt(i10);
-            p4.w wVar = (p4.w) this.V.getItem(firstVisiblePosition + i10);
-            if (!z10 || (hashSet = this.X) == null || !hashSet.contains(wVar)) {
+            p4.v vVar = (p4.v) this.V.getItem(firstVisiblePosition + i10);
+            if (!z10 || (hashSet = this.X) == null || !hashSet.contains(vVar)) {
                 ((LinearLayout) childAt.findViewById(R.id.volume_item_container)).setVisibility(0);
                 AnimationSet animationSet = new AnimationSet(true);
                 AlphaAnimation alphaAnimation = new AlphaAnimation(1.0f, 1.0f);
@@ -188,7 +188,7 @@ public final class t extends g.f {
             n4.s sVar = o0Var.l;
             if (sVar != null) {
                 t tVar = (t) sVar.c;
-                tVar.Z.remove((p4.w) sVar.b);
+                tVar.Z.remove((p4.v) sVar.b);
                 tVar.V.notifyDataSetChanged();
             }
         }
@@ -228,16 +228,16 @@ public final class t extends g.f {
     }
 
     public final boolean n() {
-        p4.w wVar = this.r;
-        return wVar.e() && DesugarCollections.unmodifiableList(wVar.v).size() > 1;
+        p4.v vVar = this.r;
+        return vVar.e() && DesugarCollections.unmodifiableList(vVar.v).size() > 1;
     }
 
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.w = true;
-        this.h.a(p4.s.c, this.n, 2);
-        p(p4.y.e());
+        this.h.a(p4.r.c, this.n, 2);
+        p(p4.x.e());
     }
 
     @Override // g.f, g.t, androidx.activity.n, android.app.Dialog
@@ -289,8 +289,8 @@ public final class t extends g.f {
         linearLayout2.setVisibility(8);
         SeekBar seekBar = (SeekBar) findViewById(R.id.mr_volume_slider);
         this.a0 = seekBar;
-        p4.w wVar = this.r;
-        seekBar.setTag(wVar);
+        p4.v vVar = this.r;
+        seekBar.setTag(vVar);
         r rVar = new r(this);
         this.b0 = rVar;
         this.a0.setOnSeekBarChangeListener(rVar);
@@ -322,7 +322,7 @@ public final class t extends g.f {
         mediaRouteVolumeSlider.a(b10, b10);
         HashMap hashMap = new HashMap();
         this.h0 = hashMap;
-        hashMap.put(wVar, this.a0);
+        hashMap.put(vVar, this.a0);
         MediaRouteExpandCollapseButton mediaRouteExpandCollapseButton = (MediaRouteExpandCollapseButton) findViewById(R.id.mr_group_expand_collapse);
         this.G = mediaRouteExpandCollapseButton;
         mediaRouteExpandCollapseButton.r = new o(this, 3);
@@ -373,7 +373,7 @@ public final class t extends g.f {
         if (mediaSessionCompat$Token != null && this.w) {
             qf.b bVar2 = new qf.b(this.s, mediaSessionCompat$Token);
             this.i0 = bVar2;
-            bVar2.a0(qVar);
+            bVar2.c0(qVar);
             MediaMetadata metadata = ((android.support.v4.media.session.h) this.i0.b).a.getMetadata();
             if (metadata != null) {
                 a0.f fVar = MediaMetadataCompat.d;
@@ -433,14 +433,14 @@ public final class t extends g.f {
         }
         this.s0 = false;
         this.t0 = false;
-        p4.w wVar = this.r;
-        if (!wVar.g() || wVar.d()) {
+        p4.v vVar = this.r;
+        if (!vVar.g() || vVar.d()) {
             dismiss();
             return;
         }
         if (this.v) {
-            this.N.setText(wVar.d);
-            this.y.setVisibility(wVar.j ? 0 : 8);
+            this.N.setText(vVar.d);
+            this.y.setVisibility(vVar.j ? 0 : 8);
             if (this.p0) {
                 Bitmap bitmap = this.q0;
                 if (bitmap == null || !bitmap.isRecycled()) {
@@ -457,13 +457,13 @@ public final class t extends g.f {
             if (z15 || !n()) {
                 if (!this.u0 || z15) {
                     if (this.O) {
-                        if (((!wVar.e() || p4.y.g()) ? wVar.o : 0) == 1) {
+                        if (((!vVar.e() || p4.x.g()) ? vVar.o : 0) == 1) {
                             z11 = true;
                             if (z11) {
                                 if (this.S.getVisibility() == 8) {
                                     this.S.setVisibility(0);
-                                    this.a0.setMax(wVar.q);
-                                    this.a0.setProgress(wVar.p);
+                                    this.a0.setMax(vVar.q);
+                                    this.a0.setProgress(vVar.p);
                                     this.G.setVisibility(n() ? 0 : 8);
                                 }
                             }
@@ -488,7 +488,7 @@ public final class t extends g.f {
                 MediaDescriptionCompat mediaDescriptionCompat2 = this.l0;
                 CharSequence charSequence2 = mediaDescriptionCompat2 != null ? mediaDescriptionCompat2.c : null;
                 boolean isEmpty2 = TextUtils.isEmpty(charSequence2);
-                if (wVar.r != -1) {
+                if (vVar.r != -1) {
                     this.L.setText(R.string.mr_controller_casting_screen);
                 } else {
                     PlaybackStateCompat playbackStateCompat2 = this.k0;

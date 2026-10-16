@@ -14,7 +14,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import zh.t;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class a implements Runnable {
                 new t(this.b).show();
                 break;
             case 1:
-                pf.d.s(this.b, LocaleController.getString(R.string.ChannelAffiliateProgramJoinButtonInfoLink));
+                pf.d.r(this.b, LocaleController.getString(R.string.ChannelAffiliateProgramJoinButtonInfoLink));
                 break;
             case 2:
                 (Build.VERSION.SDK_INT >= 28 ? r4.g.a(Looper.getMainLooper()) : new Handler(Looper.getMainLooper())).postDelayed(new a(this.b, 3), new Random().nextInt(Math.max(MediaDataController.MAX_STYLE_RUNS_COUNT, 1)) + 5000);
@@ -47,25 +47,25 @@ public final /* synthetic */ class a implements Runnable {
                 new t(this.b).show();
                 break;
             case 6:
-                pf.d.s(this.b, LocaleController.getString(R.string.StarsTOSLink));
+                pf.d.r(this.b, LocaleController.getString(R.string.StarsTOSLink));
                 break;
             case 7:
                 new t(this.b).show();
                 break;
             case 8:
-                pf.d.s(this.b, LocaleController.getString(R.string.StarsTOSLink));
+                pf.d.r(this.b, LocaleController.getString(R.string.StarsTOSLink));
                 break;
             case 9:
-                pf.d.s(this.b, LocaleController.getString(R.string.StarsTOSLink));
+                pf.d.r(this.b, LocaleController.getString(R.string.StarsTOSLink));
                 break;
             case 10:
-                pf.d.s(this.b, LocaleController.getString(R.string.PaidContentInfoLink));
+                pf.d.r(this.b, LocaleController.getString(R.string.PaidContentInfoLink));
                 break;
             case 11:
-                pf.d.s(this.b, LocaleController.getString(R.string.StarsSubscribeInfoLink));
+                pf.d.r(this.b, LocaleController.getString(R.string.StarsSubscribeInfoLink));
                 break;
             default:
-                pf.d.s(this.b, LocaleController.getString(R.string.StarsReactionTermsLink));
+                pf.d.r(this.b, LocaleController.getString(R.string.StarsReactionTermsLink));
                 break;
         }
     }

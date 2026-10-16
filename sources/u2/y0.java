@@ -4,12 +4,12 @@ import android.net.Uri;
 import android.os.Looper;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class y0 extends a {
     public final g2.g h;
     public final rg.b0 i;
-    public final n2.n j;
+    public final n2.m j;
     public final oa.d k;
     public final int l;
     public final b2.x m;
@@ -21,11 +21,11 @@ public final class y0 extends a {
     public g2.c0 s;
     public b2.p0 t;
 
-    public y0(b2.p0 p0Var, g2.g gVar, rg.b0 b0Var, n2.n nVar, oa.d dVar, int i10, b2.x xVar) {
+    public y0(b2.p0 p0Var, g2.g gVar, rg.b0 b0Var, n2.m mVar, oa.d dVar, int i10, b2.x xVar) {
         this.t = p0Var;
         this.h = gVar;
         this.i = b0Var;
-        this.j = nVar;
+        this.j = mVar;
         this.k = dVar;
         this.l = i10;
         this.m = xVar;
@@ -50,7 +50,7 @@ public final class y0 extends a {
         k0Var.getClass();
         Uri uri = k0Var.a;
         this.g.getClass();
-        return new w0(uri, createDataSource, new c((c3.r) this.i.b), this.j, new n2.k(this.d.c, 0, g0Var), this.k, b(g0Var), this, eVar, k0Var.f, this.l, this.m, e2.m0.S(k0Var.h), null);
+        return new w0(uri, createDataSource, new c((c3.r) this.i.b), this.j, new n2.j(this.d.c, 0, g0Var), this.k, b(g0Var), this, eVar, k0Var.f, this.l, this.m, e2.m0.S(k0Var.h), null);
     }
 
     @Override // u2.a
@@ -65,9 +65,9 @@ public final class y0 extends a {
         myLooper.getClass();
         j2.k kVar = this.g;
         kVar.getClass();
-        n2.n nVar = this.j;
-        nVar.D(myLooper, kVar);
-        nVar.b();
+        n2.m mVar = this.j;
+        mVar.F(myLooper, kVar);
+        mVar.b();
         u();
     }
 

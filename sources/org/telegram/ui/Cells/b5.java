@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class b5 extends FrameLayout {
     public boolean E;
@@ -65,7 +65,7 @@ public final class b5 extends FrameLayout {
         this.a = z4Var;
         z4Var.setRoundRadius(AndroidUtilities.dp(23.0f));
         boolean z11 = LocaleController.isRTL;
-        addView(z4Var, w7.a6.a(46.0f, z11 ? 0.0f : i10 + 7, 8.0f, z11 ? i10 + 7 : 0.0f, 0.0f, 46, (z11 ? 5 : 3) | 48));
+        addView(z4Var, w7.z5.a(46.0f, z11 ? 0.0f : i10 + 7, 8.0f, z11 ? i10 + 7 : 0.0f, 0.0f, 46, (z11 ? 5 : 3) | 48));
         org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(context);
         this.b = h5Var;
         h5Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.G6, c6Var));
@@ -73,14 +73,14 @@ public final class b5 extends FrameLayout {
         h5Var.setTypeface(AndroidUtilities.bold());
         h5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z12 = LocaleController.isRTL;
-        addView(h5Var, w7.a6.a(20.0f, z12 ? 46.0f : i11 + 68, 11.5f, z12 ? i11 + 68 : 46.0f, 0.0f, -1, (z12 ? 5 : 3) | 48));
+        addView(h5Var, w7.z5.a(20.0f, z12 ? 46.0f : i11 + 68, 11.5f, z12 ? i11 + 68 : 46.0f, 0.0f, -1, (z12 ? 5 : 3) | 48));
         NotificationCenter.listenEmojiLoading(h5Var);
         org.telegram.ui.ActionBar.h5 h5Var2 = new org.telegram.ui.ActionBar.h5(context);
         this.c = h5Var2;
         h5Var2.setTextSize(14);
         h5Var2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z13 = LocaleController.isRTL;
-        addView(h5Var2, w7.a6.a(20.0f, z13 ? 28.0f : i11 + 68, 34.5f, z13 ? i11 + 68 : 28.0f, 0.0f, -1, (z13 ? 5 : 3) | 48));
+        addView(h5Var2, w7.z5.a(20.0f, z13 ? 28.0f : i11 + 68, 34.5f, z13 ? i11 + 68 : 28.0f, 0.0f, -1, (z13 ? 5 : 3) | 48));
         if (z10) {
             ImageView imageView = new ImageView(context);
             this.f = imageView;
@@ -89,7 +89,7 @@ public final class b5 extends FrameLayout {
             imageView.setImageResource(R.drawable.ic_ab_other);
             imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Uh, c6Var), PorterDuff.Mode.MULTIPLY));
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            addView(imageView, w7.a6.e(60, 64, (LocaleController.isRTL ? 3 : 5) | 48));
+            addView(imageView, w7.z5.e(60, 64, (LocaleController.isRTL ? 3 : 5) | 48));
             imageView.setOnClickListener(new a(this, 7));
             imageView.setContentDescription(LocaleController.getString(R.string.AccDescrUserOptions));
         }
@@ -122,7 +122,7 @@ public final class b5 extends FrameLayout {
             boolean d = this.L.d(this, false);
             imageView.setVisibility(d ? 0 : 4);
             boolean z11 = LocaleController.isRTL;
-            h5Var2.setLayoutParams(w7.a6.a(20.0f, z11 ? d ? 46 : 28 : i10 + 68, (charSequence2 == null || charSequence2.length() > 0) ? 11.5f : 20.5f, LocaleController.isRTL ? i10 + 68 : d ? 46 : 28, 0.0f, -1, (z11 ? 5 : 3) | 48));
+            h5Var2.setLayoutParams(w7.z5.a(20.0f, z11 ? d ? 46 : 28 : i10 + 68, (charSequence2 == null || charSequence2.length() > 0) ? 11.5f : 20.5f, LocaleController.isRTL ? i10 + 68 : d ? 46 : 28, 0.0f, -1, (z11 ? 5 : 3) | 48));
             boolean z12 = LocaleController.isRTL;
             int i11 = (z12 ? 5 : 3) | 48;
             float f11 = z12 ? d ? 46 : 28 : i10 + 68;
@@ -131,13 +131,13 @@ public final class b5 extends FrameLayout {
             } else {
                 f10 = d ? 46 : 28;
             }
-            h5Var.setLayoutParams(w7.a6.a(20.0f, f11, 34.5f, f10, 0.0f, -1, i11));
+            h5Var.setLayoutParams(w7.z5.a(20.0f, f11, 34.5f, f10, 0.0f, -1, i11));
         } else {
             ImageView imageView2 = this.h;
             if (imageView2 != null) {
                 boolean z13 = imageView2.getVisibility() == 0;
                 boolean z14 = LocaleController.isRTL;
-                h5Var2.setLayoutParams(w7.a6.a(20.0f, z14 ? z13 ? 54 : 28 : i10 + 68, (charSequence2 == null || charSequence2.length() > 0) ? 11.5f : 20.5f, LocaleController.isRTL ? i10 + 68 : z13 ? 54 : 28, 0.0f, -1, (z14 ? 5 : 3) | 48));
+                h5Var2.setLayoutParams(w7.z5.a(20.0f, z14 ? z13 ? 54 : 28 : i10 + 68, (charSequence2 == null || charSequence2.length() > 0) ? 11.5f : 20.5f, LocaleController.isRTL ? i10 + 68 : z13 ? 54 : 28, 0.0f, -1, (z14 ? 5 : 3) | 48));
                 boolean z15 = LocaleController.isRTL;
                 int i12 = (z15 ? 5 : 3) | 48;
                 float f12 = z15 ? z13 ? 54 : 28 : i10 + 68;
@@ -146,7 +146,7 @@ public final class b5 extends FrameLayout {
                 } else {
                     f7 = z13 ? 54 : 28;
                 }
-                h5Var.setLayoutParams(w7.a6.a(20.0f, f12, 34.5f, f7, 0.0f, -1, i12));
+                h5Var.setLayoutParams(w7.z5.a(20.0f, f12, 34.5f, f7, 0.0f, -1, i12));
             }
         }
         this.F = z10;
@@ -375,7 +375,7 @@ public final class b5 extends FrameLayout {
         imageView.setImageResource(i10);
         this.h.setScaleType(ImageView.ScaleType.CENTER);
         this.h.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.mg, this.d), PorterDuff.Mode.MULTIPLY));
-        addView(this.h, w7.a6.e(52, 64, (LocaleController.isRTL ? 3 : 5) | 48));
+        addView(this.h, w7.z5.e(52, 64, (LocaleController.isRTL ? 3 : 5) | 48));
     }
 
     public void setDelegate(a5 a5Var) {

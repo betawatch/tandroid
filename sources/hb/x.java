@@ -12,17 +12,17 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import v7.r8;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class x implements eb.v {
     public final qf.b a;
-    public final gb.g b;
+    public final gb.h b;
     public final j c;
     public final ArrayList d;
 
-    public x(qf.b bVar, gb.g gVar, j jVar, ArrayList arrayList) {
+    public x(qf.b bVar, gb.h hVar, j jVar, ArrayList arrayList) {
         this.a = bVar;
-        this.b = gVar;
+        this.b = hVar;
         this.c = jVar;
         this.d = arrayList;
     }
@@ -233,10 +233,10 @@ public final class x implements eb.v {
 
     public final boolean c(Field field, boolean z10) {
         boolean z11;
-        gb.g gVar = this.b;
-        gVar.getClass();
-        if ((136 & field.getModifiers()) == 0 && !field.isSynthetic() && !gVar.b(field.getType(), z10)) {
-            List list = z10 ? gVar.a : gVar.b;
+        gb.h hVar = this.b;
+        hVar.getClass();
+        if ((136 & field.getModifiers()) == 0 && !field.isSynthetic() && !hVar.b(field.getType(), z10)) {
+            List list = z10 ? hVar.a : hVar.b;
             if (!list.isEmpty()) {
                 eb.b bVar = new eb.b(field);
                 Iterator it = list.iterator();
@@ -263,6 +263,6 @@ public final class x implements eb.v {
             return new eb.d(2);
         }
         gb.d.f(this.d);
-        return jb.c.a.d(cls) ? new w(cls, b(gVar, aVar, cls, true)) : new u(this.a.S(aVar), b(gVar, aVar, cls, false));
+        return jb.c.a.d(cls) ? new w(cls, b(gVar, aVar, cls, true)) : new u(this.a.W(aVar), b(gVar, aVar, cls, false));
     }
 }

@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class ac extends pb {
     public final bk0 a;
@@ -21,7 +21,7 @@ public class ac extends pb {
         bk0 bk0Var = new bk0(context);
         this.a = bk0Var;
         bk0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(bk0Var, w7.a6.h(56.0f, 48.0f, 8388627));
+        addView(bk0Var, w7.z5.h(56.0f, 48.0f, 8388627));
         zb zbVar = new zb(context, 0, null);
         zbVar.setDisablePaddingsOffset(true);
         this.b = zbVar;
@@ -31,7 +31,7 @@ public class ac extends pb {
         this.b.setTextSize(1, 15.0f);
         this.b.setEllipsize(TextUtils.TruncateAt.END);
         this.b.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-        addView(this.b, w7.a6.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
+        addView(this.b, w7.z5.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
         this.b.setLinkTextColor(getThemedColor(org.telegram.ui.ActionBar.g6.Gi));
         setTextColor(getThemedColor(org.telegram.ui.ActionBar.g6.Hi));
         setBackground(getThemedColor(org.telegram.ui.ActionBar.g6.Fi));
@@ -70,7 +70,7 @@ public class ac extends pb {
     }
 
     public void setIconPaddingBottom(int i10) {
-        this.a.setLayoutParams(w7.a6.i(56.0f, 48 - i10, 8388627, 0.0f, 0.0f, 0.0f, i10));
+        this.a.setLayoutParams(w7.z5.i(56.0f, 48 - i10, 8388627, 0.0f, 0.0f, 0.0f, i10));
     }
 
     public void setTextColor(int i10) {

@@ -6,9 +6,9 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public class l implements gb.o {
+public class l implements gb.p {
     public String a;
 
     public /* synthetic */ l(String str, boolean z10) {
@@ -65,8 +65,8 @@ public class l implements gb.o {
         return sb2.toString();
     }
 
-    @Override // gb.o
-    public Object f2() {
+    @Override // gb.p
+    public Object i2() {
         throw new eb.j(this.a);
     }
 

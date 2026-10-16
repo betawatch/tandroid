@@ -1,38 +1,19 @@
 package org.telegram.ui;
 
+import android.animation.ValueAnimator;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class is0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PhotoViewer b;
-
-    public /* synthetic */ is0(PhotoViewer photoViewer, int i10) {
-        this.a = i10;
-        this.b = photoViewer;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        PhotoViewer photoViewer = this.b;
-        switch (i10) {
-            case 0:
-                Drawable[] drawableArr = PhotoViewer.U8;
-                photoViewer.G0(true, false);
-                break;
-            case 1:
-                Drawable[] drawableArr2 = PhotoViewer.U8;
-                photoViewer.f3(1, false);
-                break;
-            case 2:
-                Drawable[] drawableArr3 = PhotoViewer.U8;
-                photoViewer.f3(-1, false);
-                break;
-            default:
-                PhotoViewer.S(photoViewer);
-                break;
+public final /* synthetic */ class is0 implements ValueAnimator.AnimatorUpdateListener {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        org.telegram.ui.Components.wb wbVar;
+        Drawable[] drawableArr = PhotoViewer.U8;
+        org.telegram.ui.Components.sc scVar = org.telegram.ui.Components.sc.w;
+        if (scVar == null || (wbVar = scVar.e) == null) {
+            return;
         }
+        wbVar.updatePosition();
     }
 }

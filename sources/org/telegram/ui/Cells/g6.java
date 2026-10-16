@@ -13,7 +13,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class g6 {
     public final int a;
@@ -46,8 +46,8 @@ public final class g6 {
         messagesStorage.putMessages(messages_messages, -j10, 3, 0, false, 0, 0L);
         if (i10 == g6Var.e && !messages_messages.messages.isEmpty()) {
             arrayList2.clear();
-            Collections.sort(arrayList, Comparator$-CC.comparingInt(new bi.s6(7)));
-            TLRPC.Message message = (TLRPC.Message) i2.d.g(1, messages_messages.messages);
+            Collections.sort(arrayList, Comparator$-CC.comparingInt(new bi.s6(8)));
+            TLRPC.Message message = (TLRPC.Message) i2.d.h(1, messages_messages.messages);
             long j11 = message.grouped_id;
             if (j11 != 0) {
                 ArrayList<TLRPC.Message> arrayList3 = messages_messages.messages;
@@ -79,7 +79,7 @@ public final class g6 {
         }
         if (!arrayList.isEmpty()) {
             arrayList2.clear();
-            Collections.sort(arrayList, Comparator$-CC.comparingInt(new bi.s6(6)));
+            Collections.sort(arrayList, Comparator$-CC.comparingInt(new bi.s6(7)));
             TLRPC.Message message = (TLRPC.Message) arrayList.get(arrayList.size() - 1);
             long j11 = message.grouped_id;
             if (j11 != 0) {

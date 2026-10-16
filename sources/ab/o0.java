@@ -16,17 +16,18 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
-import ji.d4;
 import ji.h5;
 import ji.m5;
+import ji.w4;
 import org.telegram.ui.Components.u20;
 import org.telegram.ui.Components.v20;
 import org.telegram.ui.Components.w20;
 import org.telegram.ui.Components.x20;
 import org.telegram.ui.Components.y20;
 import org.telegram.ui.PhotoViewer;
+import z7.xf;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class o0 extends Handler {
     public final /* synthetic */ int a;
@@ -45,18 +46,18 @@ public final class o0 extends Handler {
         int i10 = message.what;
         if (i10 == 1) {
             n2.b bVar = (n2.b) this.b;
-            n4.s sVar = bVar.c;
+            xf xfVar = bVar.c;
             if (obj == bVar.z) {
                 if (bVar.p == 2 || bVar.k()) {
                     bVar.z = null;
                     if (obj2 instanceof Exception) {
-                        sVar.t((Exception) obj2, false);
+                        xfVar.a((Exception) obj2, false);
                         return;
                     }
                     try {
-                        bVar.b.k0(((n2.w) obj2).a);
-                        sVar.c = null;
-                        HashSet hashSet = (HashSet) sVar.b;
+                        bVar.b.j0(((n2.v) obj2).a);
+                        xfVar.b = null;
+                        HashSet hashSet = (HashSet) xfVar.a;
                         e9.n0 u10 = e9.n0.u(hashSet);
                         hashSet.clear();
                         e9.l0 listIterator = u10.listIterator(0);
@@ -68,7 +69,7 @@ public final class o0 extends Handler {
                         }
                         return;
                     } catch (Exception e) {
-                        sVar.t(e, true);
+                        xfVar.a(e, true);
                         return;
                     }
                 }
@@ -83,10 +84,10 @@ public final class o0 extends Handler {
         if (obj == bVar3.x && bVar3.k()) {
             bVar3.x = null;
             synchronized (bVar3.o) {
-                d4 d4Var = bVar3.y;
-                d4Var.getClass();
+                h5 h5Var = bVar3.y;
+                h5Var.getClass();
                 dVar = new oa.d(14);
-                ((e9.k0) d4Var.b).f();
+                ((e9.k0) h5Var.b).f();
                 bVar3.y = null;
             }
             if ((obj2 instanceof Exception) || (obj2 instanceof NoSuchMethodError)) {
@@ -94,9 +95,9 @@ public final class o0 extends Handler {
                 return;
             }
             try {
-                byte[] j02 = bVar3.b.j0(bVar3.v, ((n2.w) obj2).a);
-                if (bVar3.w != null && j02 != null && j02.length != 0) {
-                    bVar3.w = j02;
+                byte[] g02 = bVar3.b.g0(bVar3.v, ((n2.v) obj2).a);
+                if (bVar3.w != null && g02 != null && g02.length != 0) {
+                    bVar3.w = g02;
                 }
                 bVar3.p = 4;
                 bVar3.i(new m5(dVar, 10));
@@ -216,13 +217,13 @@ public final class o0 extends Handler {
                     return;
                 }
             case 4:
-                m4.w wVar = (m4.w) msg.obj;
-                qi.e eVar = (qi.e) this.b;
-                if (eVar.t(wVar)) {
-                    m4.v vVar = wVar.d;
-                    vVar.getClass();
-                    vVar.g();
-                    eVar.C(wVar);
+                m4.v vVar = (m4.v) msg.obj;
+                pi.e eVar = (pi.e) this.b;
+                if (eVar.t(vVar)) {
+                    m4.u uVar = vVar.d;
+                    uVar.getClass();
+                    uVar.g();
+                    eVar.C(vVar);
                     return;
                 }
                 return;
@@ -319,20 +320,20 @@ public final class o0 extends Handler {
                 Object obj2 = msg.obj;
                 Bundle peekData = msg.peekData();
                 SparseArray sparseArray = ((p4.g) this.b).j;
-                p4.p0 p0Var = (p4.p0) sparseArray.get(i17);
-                if (p0Var == null) {
+                p4.o0 o0Var2 = (p4.o0) sparseArray.get(i17);
+                if (o0Var2 == null) {
                     Log.w("MR2Provider", "Pending callback not found for control request.");
                     return;
                 }
                 sparseArray.remove(i17);
                 if (i16 == 3) {
-                    p0Var.b((Bundle) obj2);
+                    o0Var2.b((Bundle) obj2);
                     return;
                 } else {
                     if (i16 != 4) {
                         return;
                     }
-                    p4.p0.a(peekData != null ? peekData.getString("error") : 0, (Bundle) obj2);
+                    p4.o0.a(peekData != null ? peekData.getString("error") : 0, (Bundle) obj2);
                     return;
                 }
             case 11:
@@ -347,13 +348,13 @@ public final class o0 extends Handler {
                     return;
                 }
                 g3Var.c = false;
-                h5 h5Var = (h5) g3Var.f;
-                if (h5Var != null) {
-                    b2.u uVar = (b2.u) g3Var.n;
-                    p4.e eVar2 = (p4.e) h5Var.b;
-                    p4.v d = eVar2.d(g3Var);
+                w4 w4Var = (w4) g3Var.f;
+                if (w4Var != null) {
+                    b2.u uVar2 = (b2.u) g3Var.n;
+                    p4.e eVar2 = (p4.e) w4Var.b;
+                    p4.u d = eVar2.d(g3Var);
                     if (d != null) {
-                        eVar2.m(d, uVar);
+                        eVar2.m(d, uVar2);
                         return;
                     }
                     return;
@@ -442,7 +443,7 @@ public final class o0 extends Handler {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o0(Looper looper, qi.e eVar) {
+    public o0(Looper looper, pi.e eVar) {
         super(looper);
         this.a = 4;
         this.b = eVar;

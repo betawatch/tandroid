@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ia implements org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.p6, org.telegram.ui.Components.cm0, MessagesStorage.BooleanCallback, c5.q, org.telegram.ui.Components.voip.h3, e2.j, BillingController.ProductDetailsResponseListenerLegacy, org.telegram.ui.Components.h50 {
     public final /* synthetic */ int a;
@@ -96,7 +96,7 @@ public final /* synthetic */ class ia implements org.telegram.ui.ActionBar.z1, o
                     io0Var.q();
                 }
                 org.telegram.ui.Components.ho0 ho0Var = (org.telegram.ui.Components.ho0) arrayList.get(i10);
-                org.telegram.ui.Components.m80 H = org.telegram.ui.Components.m80.H(m2Var, view);
+                org.telegram.ui.Components.l80 H = org.telegram.ui.Components.l80.H(m2Var, view);
                 H.i = 3;
                 H.c(R.drawable.menu_tag_rename, LocaleController.getString(TextUtils.isEmpty(ho0Var.c) ? R.string.SavedTagLabelTag : R.string.SavedTagRenameTag), new bi.n8(ko0Var, i11, ho0Var, c6Var, 22), false);
                 H.Z();
@@ -119,14 +119,14 @@ public final /* synthetic */ class ia implements org.telegram.ui.ActionBar.z1, o
 
     @Override // org.telegram.ui.Components.voip.h3
     public void c(org.telegram.ui.Components.voip.i3 i3Var) {
-        dj1 dj1Var = (dj1) this.c;
+        cj1 cj1Var = (cj1) this.c;
         org.telegram.ui.Components.voip.j3 j3Var = (org.telegram.ui.Components.voip.j3) this.d;
         VoIPService voIPService = (VoIPService) this.e;
         if (VoIPService.getSharedInstance() != null) {
-            AndroidUtilities.cancelRunOnUIThread(dj1Var.S0);
-            dj1Var.R0 = false;
-            VoIPService.getSharedInstance().toggleSpeakerphoneOrShowRouteSheet(dj1Var.b, false, Integer.valueOf(this.b));
-            dj1Var.t(j3Var, voIPService);
+            AndroidUtilities.cancelRunOnUIThread(cj1Var.S0);
+            cj1Var.R0 = false;
+            VoIPService.getSharedInstance().toggleSpeakerphoneOrShowRouteSheet(cj1Var.b, false, Integer.valueOf(this.b));
+            cj1Var.t(j3Var, voIPService);
         }
     }
 
@@ -192,7 +192,7 @@ public final /* synthetic */ class ia implements org.telegram.ui.ActionBar.z1, o
                 connectionsManager.sendRequest(toggleusername, new RequestDelegate() { // from class: org.telegram.ui.ja
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.bj(ka.this, str, tLObject, i15, z11, tL_error, tL_username, z10));
+                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.aj(ka.this, str, tLObject, i15, z11, tL_error, tL_username, z10));
                     }
                 });
                 vaVar.w.add(tL_username.username);
@@ -239,7 +239,7 @@ public final /* synthetic */ class ia implements org.telegram.ui.ActionBar.z1, o
     }
 
     @Override // org.telegram.ui.Components.h50
-    public /* synthetic */ kv0 getCloseIntoObject() {
+    public /* synthetic */ jv0 getCloseIntoObject() {
         return null;
     }
 
@@ -285,12 +285,12 @@ public final /* synthetic */ class ia implements org.telegram.ui.ActionBar.z1, o
             return;
         }
         ArrayList arrayList2 = new ArrayList(arrayList);
-        UndoView V3 = yyVar.V3();
+        UndoView W3 = yyVar.W3();
         int i10 = this.b;
-        if (V3 != null) {
-            V3.n(arrayList2, i10 == 102 ? 27 : 26, null, null, new kw(yyVar, i10, arrayList2, z10, hashSet), null);
+        if (W3 != null) {
+            W3.n(arrayList2, i10 == 102 ? 27 : 26, null, null, new jw(yyVar, i10, arrayList2, z10, hashSet), null);
         }
-        yyVar.Y3(i10 == 103);
+        yyVar.Z3(i10 == 103);
     }
 
     @Override // org.telegram.ui.Components.h50

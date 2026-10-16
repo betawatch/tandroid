@@ -17,10 +17,10 @@ import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.br;
 import org.telegram.ui.Components.r6;
 import org.telegram.ui.Components.s6;
-import w7.a6;
+import w7.z5;
 import zh.p7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class e extends FrameLayout {
     public final di.d a;
@@ -64,10 +64,10 @@ public final class e extends FrameLayout {
         if (document != null) {
             bk0Var.g(44, 44, document);
         }
-        addView(s6Var, a6.a(18.0f, 64.0f, 15.0f, 15.0f, 0.0f, -1, 51));
-        addView(s6Var2, a6.a(17.0f, 64.0f, 34.0f, 15.0f, 0.0f, -1, 51));
-        addView(bk0Var, a6.a(44.0f, 14.0f, 11.0f, 0.0f, 0.0f, 44, 51));
-        addView(dVar, a6.a(44.0f, 15.0f, 0.0f, 15.0f, 15.0f, -1, 80));
+        addView(s6Var, z5.a(18.0f, 64.0f, 15.0f, 15.0f, 0.0f, -1, 51));
+        addView(s6Var2, z5.a(17.0f, 64.0f, 34.0f, 15.0f, 0.0f, -1, 51));
+        addView(bk0Var, z5.a(44.0f, 14.0f, 11.0f, 0.0f, 0.0f, 44, 51));
+        addView(dVar, z5.a(44.0f, 15.0f, 0.0f, 15.0f, 15.0f, -1, 80));
         b(false);
     }
 
@@ -87,15 +87,15 @@ public final class e extends FrameLayout {
         if (auction.auctionStateActive != null) {
             this.b.c(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveRound, LocaleController.formatNumber(r1.current_round, ','), LocaleController.formatNumber(auction.auctionStateActive.total_rounds, ',')), z10, true);
         }
-        String i10 = org.telegram.messenger.q.i(auction.auctionUserState.bid_amount, ',', new StringBuilder("⭐️"));
+        String h = org.telegram.messenger.g0.h(auction.auctionUserState.bid_amount, ',', new StringBuilder("⭐️"));
         boolean isOutbid = auction.getBidStatus().isOutbid();
         br[] brVarArr = this.n;
         s6 s6Var = this.c;
         if (isOutbid) {
-            s6Var.c(p7.Y0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidOutbid, i10)), 0.66f, brVarArr), z10, true);
+            s6Var.c(p7.Y0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidOutbid, h)), 0.66f, brVarArr), z10, true);
             s6Var.setTextColor(g6.x0(null, g6.q7, false));
         } else {
-            s6Var.c(p7.Y0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidActive, i10, Integer.valueOf(auction.getApproximatedMyPlace()))), 0.66f, brVarArr), z10, true);
+            s6Var.c(p7.Y0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidActive, h, Integer.valueOf(auction.getApproximatedMyPlace()))), 0.66f, brVarArr), z10, true);
             s6Var.setTextColor(g6.x0(null, g6.G6, false));
         }
     }

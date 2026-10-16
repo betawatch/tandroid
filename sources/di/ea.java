@@ -29,9 +29,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.j61;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class ea extends org.telegram.ui.ActionBar.e3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int d0 = 0;
@@ -211,7 +211,7 @@ public final class ea extends org.telegram.ui.ActionBar.e3 implements Notificati
         k1(context);
         this.b.setAdapter(new y8(this, context, 0));
         MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
-        messagesStorage.getStorageQueue().postRunnable(new x6(11, this, messagesStorage));
+        messagesStorage.getStorageQueue().postRunnable(new y6(11, this, messagesStorage));
         MessagesController.getInstance(this.currentAccount).getStoriesController().P();
         MessagesController.getInstance(this.currentAccount).getStoriesController().R();
     }
@@ -496,7 +496,7 @@ public final class ea extends org.telegram.ui.ActionBar.e3 implements Notificati
             }
             g9 g9Var = this.T;
             if (g9Var != null) {
-                g9Var.e(caVar, this.w, this.x, this.y, this.G, this.c, this.H, new x6(13, dVar, runnable), new x8(dVar, 0));
+                g9Var.j(caVar, this.w, this.x, this.y, this.G, this.c, this.H, new y6(13, dVar, runnable), new x8(dVar, 0));
                 return;
             } else {
                 runnable.run();
@@ -509,14 +509,14 @@ public final class ea extends org.telegram.ui.ActionBar.e3 implements Notificati
                 spannableStringBuilder.append((CharSequence) ", ");
             }
             SpannableString spannableString = new SpannableString("@" + ((String) arrayList.get(i11)));
-            spannableString.setSpan(new i61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
+            spannableString.setSpan(new j61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
             spannableStringBuilder.append((CharSequence) spannableString);
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext(), 0, this.resourcesProvider);
         alertDialog$Builder.a.R = LocaleController.getString(R.string.StoryRestrictions);
         alertDialog$Builder.a.T = AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(R.string.StoryRestrictionsInfo), spannableStringBuilder);
         alertDialog$Builder.k(LocaleController.getString(R.string.Proceed), new androidx.car.app.utils.a(this, caVar, runnable, 6));
-        org.telegram.messenger.q.q(R.string.Cancel, alertDialog$Builder, null);
+        i2.d.r(R.string.Cancel, alertDialog$Builder, null);
     }
 
     public final ArrayList i1() {
@@ -555,7 +555,7 @@ public final class ea extends org.telegram.ui.ActionBar.e3 implements Notificati
         this.b = h1Var;
         int i11 = this.backgroundPaddingLeft;
         h1Var.setPadding(i11, 0, i11, 0);
-        this.containerView.addView(this.b, w7.a6.e(-1, -1, 119));
+        this.containerView.addView(this.b, w7.z5.e(-1, -1, 119));
     }
 
     public final void l1(boolean z10) {

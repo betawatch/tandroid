@@ -10,7 +10,7 @@ import fi.c2;
 import org.telegram.ui.Components.cd0;
 import org.telegram.ui.io;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class k {
     public static final Rect f = new Rect();
@@ -25,7 +25,7 @@ public final class k {
             return ((gh.c) aVar).a.getColor();
         }
         if (aVar instanceof gh.b) {
-            return ((Integer) this.d.o(((gh.b) aVar).d)).intValue();
+            return ((Integer) this.d.m(((gh.b) aVar).d)).intValue();
         }
         if (aVar instanceof gh.e) {
             return a(((gh.e) aVar).a);
@@ -38,7 +38,7 @@ public final class k {
             return ((gh.c) aVar).a.getColor();
         }
         if (aVar instanceof gh.b) {
-            return ((Integer) this.e.o(((gh.b) aVar).d)).intValue();
+            return ((Integer) this.e.m(((gh.b) aVar).d)).intValue();
         }
         if (aVar instanceof gh.e) {
             return b(((gh.e) aVar).a);
@@ -67,7 +67,7 @@ public final class k {
         boolean z12 = drawable instanceof BitmapDrawable;
         androidx.biometric.e eVar = this.c;
         if (z12) {
-            bVar.a((Bitmap) eVar.o(((BitmapDrawable) drawable).getBitmap()));
+            bVar.a((Bitmap) eVar.m(((BitmapDrawable) drawable).getBitmap()));
             return bVar;
         }
         if (drawable instanceof io) {
@@ -95,7 +95,7 @@ public final class k {
             drawable.setBounds(rect);
             bVar.a(bVar.f);
             bVar.f = null;
-            bVar.a((Bitmap) eVar.o(bVar.d));
+            bVar.a((Bitmap) eVar.m(bVar.d));
         }
         return bVar;
     }

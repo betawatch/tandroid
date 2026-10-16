@@ -15,7 +15,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class b91 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final org.telegram.ui.Components.z9 a;
@@ -31,7 +31,7 @@ public final class b91 extends FrameLayout implements NotificationCenter.Notific
         this.c = hVar;
         org.telegram.ui.Components.z9 z9Var = new org.telegram.ui.Components.z9(context);
         this.a = z9Var;
-        addView(z9Var, w7.a6.a(120.0f, 0.0f, 16.0f, 0.0f, 0.0f, 120, 1));
+        addView(z9Var, w7.z5.a(120.0f, 0.0f, 16.0f, 0.0f, 0.0f, 120, 1));
         hVar.j = false;
         hVar.n = 1.2f;
         z9Var.setOnClickListener(new c8(this, 2));
@@ -43,7 +43,7 @@ public final class b91 extends FrameLayout implements NotificationCenter.Notific
         org.telegram.ui.ActionBar.g6.x0(null, i12, false);
         org.telegram.ui.ActionBar.g6.x0(null, i11, false);
         org.telegram.ui.Components.da0 da0Var = new org.telegram.ui.Components.da0(context, null);
-        addView(da0Var, w7.a6.a(-2.0f, 36.0f, 152.0f, 36.0f, 0.0f, -1, 0));
+        addView(da0Var, w7.z5.a(-2.0f, 36.0f, 152.0f, 36.0f, 0.0f, -1, 0));
         da0Var.setGravity(1);
         da0Var.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i10, false));
         da0Var.setTextSize(1, 15.0f);
@@ -58,7 +58,7 @@ public final class b91 extends FrameLayout implements NotificationCenter.Notific
             da0Var.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
             spannableStringBuilder.replace(indexOf2, indexOf2 + 1, (CharSequence) "");
             spannableStringBuilder.replace(indexOf, i13, (CharSequence) "");
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.p61(LocaleController.getString(R.string.AuthAnotherClientDownloadClientUrl), (org.telegram.ui.Components.p11) null), indexOf, indexOf2 - 1, 33);
+            spannableStringBuilder.setSpan(new org.telegram.ui.Components.q61(LocaleController.getString(R.string.AuthAnotherClientDownloadClientUrl), (org.telegram.ui.Components.q11) null), indexOf, indexOf2 - 1, 33);
         }
         String spannableStringBuilder2 = spannableStringBuilder.toString();
         int indexOf3 = spannableStringBuilder2.indexOf(42);
@@ -68,7 +68,7 @@ public final class b91 extends FrameLayout implements NotificationCenter.Notific
             da0Var.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
             spannableStringBuilder.replace(indexOf4, indexOf4 + 1, (CharSequence) "");
             spannableStringBuilder.replace(indexOf3, i14, (CharSequence) "");
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.p61(LocaleController.getString(R.string.AuthAnotherWebClientUrl), (org.telegram.ui.Components.p11) null), indexOf3, indexOf4 - 1, 33);
+            spannableStringBuilder.setSpan(new org.telegram.ui.Components.q61(LocaleController.getString(R.string.AuthAnotherWebClientUrl), (org.telegram.ui.Components.q11) null), indexOf3, indexOf4 - 1, 33);
         }
         da0Var.setText(spannableStringBuilder);
         xk xkVar = new xk(this, context, 3);
@@ -87,7 +87,7 @@ public final class b91 extends FrameLayout implements NotificationCenter.Notific
         int x03 = org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Qh, false);
         xkVar.setBackground(org.telegram.ui.ActionBar.g6.j0(dp, dp, dp, dp, x02, x03, x03));
         xkVar.setOnClickListener(new v41(this, 4));
-        addView(xkVar, w7.a6.a(48.0f, 16.0f, 15.0f, 16.0f, 16.0f, -1, 80));
+        addView(xkVar, w7.z5.a(48.0f, 16.0f, 15.0f, 16.0f, 16.0f, -1, 80));
         a();
     }
 

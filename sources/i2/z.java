@@ -9,6 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g6;
@@ -24,7 +25,7 @@ import org.telegram.ui.wy;
 import org.telegram.ui.xy;
 import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ int a;
@@ -62,9 +63,9 @@ public final /* synthetic */ class z implements Runnable {
                 break;
             case 3:
                 im imVar = (im) this.d;
-                org.telegram.ui.Cells.x0 x0Var = (org.telegram.ui.Cells.x0) this.e;
+                org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) this.e;
                 imVar.getClass();
-                MessageObject messageObject = x0Var.getMessageObject();
+                MessageObject messageObject = w0Var.getMessageObject();
                 rm rmVar = imVar.a;
                 rmVar.Q.bb(this.b, messageObject.getId(), true, messageObject.getDialogId() == rmVar.Q.L6 ? 1 : 0, true, 0, Integer.valueOf(this.c), null, null);
                 break;
@@ -74,7 +75,7 @@ public final /* synthetic */ class z implements Runnable {
                 fo foVar = qnVar.a;
                 if (foVar.A1 != null) {
                     u1Var.getLocationInWindow(new int[2]);
-                    foVar.A1.setTranslationY(org.telegram.ui.Cells.d0.b(520.0f, r3[1] - r2.getTop(), this.b));
+                    foVar.A1.setTranslationY(sk.D(520.0f, r3[1] - r2.getTop(), this.b));
                     foVar.A1.m(0.0f, (-AndroidUtilities.dp(16.0f)) + r3[0] + this.c);
                     foVar.A1.u();
                     break;
@@ -96,22 +97,22 @@ public final /* synthetic */ class z implements Runnable {
                         xyVar.c.m(N0).requestLayout();
                     }
                     if (!yyVar.getMessagesController().isPromoDialog(dialog.id, false)) {
-                        int addDialogToFolder = yyVar.getMessagesController().addDialogToFolder(dialog.id, yyVar.V2 == 0 ? 1 : 0, -1, 0L);
+                        int addDialogToFolder = yyVar.getMessagesController().addDialogToFolder(dialog.id, yyVar.W2 == 0 ? 1 : 0, -1, 0L);
                         int i12 = this.c;
                         if (addDialogToFolder != 2 || i12 != 0) {
                             xyVar.x.D();
                             xyVar.q(true);
                         }
-                        if (yyVar.V2 == 0) {
+                        if (yyVar.W2 == 0) {
                             if (addDialogToFolder == 2) {
                                 if (SharedConfig.archiveHidden) {
                                     SharedConfig.toggleArchiveHidden();
                                 }
                                 xyVar.x.D();
                                 if (i12 == 0) {
-                                    yyVar.x4(true, true);
+                                    yyVar.y4(true, true);
                                     xyVar.q(true);
-                                    yyVar.l3();
+                                    yyVar.m3();
                                 } else {
                                     xyVar.q(true);
                                     if (!SharedConfig.archiveHidden && xyVar.c.L0() == 0) {
@@ -120,7 +121,7 @@ public final /* synthetic */ class z implements Runnable {
                                     }
                                 }
                                 i10 = ((m2) yyVar).currentAccount;
-                                yyVar.R1.add(0, (TLRPC.Dialog) yyVar.O3(i10, xyVar.s, yyVar.V2, false).get(0));
+                                yyVar.R1.add(0, (TLRPC.Dialog) yyVar.P3(i10, xyVar.s, yyVar.W2, false).get(0));
                                 xyVar.q(true);
                                 final int i13 = 0;
                                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.vy
@@ -128,10 +129,10 @@ public final /* synthetic */ class z implements Runnable {
                                     public final void run() {
                                         switch (i13) {
                                             case 0:
-                                                wyVar.h.x4(false, true);
+                                                wyVar.h.y4(false, true);
                                                 break;
                                             default:
-                                                wyVar.h.x4(false, true);
+                                                wyVar.h.y4(false, true);
                                                 break;
                                         }
                                     }
@@ -157,10 +158,10 @@ public final /* synthetic */ class z implements Runnable {
                                     public final void run() {
                                         switch (i14) {
                                             case 0:
-                                                wyVar.h.x4(false, true);
+                                                wyVar.h.y4(false, true);
                                                 break;
                                             default:
-                                                wyVar.h.x4(false, true);
+                                                wyVar.h.y4(false, true);
                                                 break;
                                         }
                                     }
@@ -171,12 +172,12 @@ public final /* synthetic */ class z implements Runnable {
                             if (!z10) {
                                 globalMainSettings.edit().putBoolean("archivehint_l", true).commit();
                             }
-                            UndoView V3 = yyVar.V3();
-                            if (V3 != null) {
-                                V3.l(dialog.id, z10 ? 2 : 3, null, new gm(wyVar, dialog, i11, 28));
+                            UndoView W3 = yyVar.W3();
+                            if (W3 != null) {
+                                W3.l(dialog.id, z10 ? 2 : 3, null, new gm(wyVar, dialog, i11, 28));
                             }
                         }
-                        if (yyVar.V2 != 0 && yyVar.R1.isEmpty()) {
+                        if (yyVar.W2 != 0 && yyVar.R1.isEmpty()) {
                             xyVar.a.setEmptyView(null);
                             xyVar.w.setVisibility(4);
                             break;

@@ -19,7 +19,7 @@ import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class s5 extends pg.b {
     public final /* synthetic */ z5 d;
@@ -147,7 +147,7 @@ public final class s5 extends pg.b {
 
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        View b7Var;
+        View a7Var;
         View view;
         org.telegram.ui.ActionBar.c6 c6Var;
         org.telegram.ui.ActionBar.c6 c6Var2;
@@ -163,8 +163,8 @@ public final class s5 extends pg.b {
                 view = cVar;
                 return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
             case 2:
-                b7Var = new org.telegram.ui.Cells.b7(viewGroup.getContext(), 0, 0);
-                view = b7Var;
+                a7Var = new org.telegram.ui.Cells.a7(viewGroup.getContext(), 0, 0);
+                view = a7Var;
                 return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
             case 3:
                 org.telegram.ui.Components.w90 w90Var = new org.telegram.ui.Components.w90(z5Var.getParentActivity(), z5Var, null, false, false);
@@ -184,8 +184,8 @@ public final class s5 extends pg.b {
             case 6:
                 Context context = viewGroup.getContext();
                 c6Var = ((org.telegram.ui.ActionBar.m2) z5Var).resourceProvider;
-                b7Var = new org.telegram.ui.Cells.e9(context, 20, c6Var);
-                view = b7Var;
+                a7Var = new org.telegram.ui.Cells.e9(context, 20, c6Var);
+                view = a7Var;
                 return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
             case 7:
                 view = new org.telegram.ui.Cells.t3(z5Var.getParentActivity(), 8);
@@ -193,9 +193,9 @@ public final class s5 extends pg.b {
             case 8:
                 bi.i5 i5Var = new bi.i5(z5Var.getParentActivity(), 7);
                 TextView textView = new TextView(z5Var.getParentActivity());
-                org.telegram.messenger.yh.j(14.0f, ChatObject.isChannelAndNotMegaGroup(z5Var.g0) ? R.string.NoBoostersHint : R.string.NoBoostersGroupHint, 1, textView);
+                org.telegram.messenger.sk.j(14.0f, ChatObject.isChannelAndNotMegaGroup(z5Var.g0) ? R.string.NoBoostersHint : R.string.NoBoostersGroupHint, 1, textView);
                 com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.g6.y6, null, false, textView, 17);
-                i5Var.addView(textView, w7.a6.a(-2.0f, 0.0f, 16.0f, 0.0f, 0.0f, -1, 0));
+                i5Var.addView(textView, w7.z5.a(-2.0f, 0.0f, 16.0f, 0.0f, 0.0f, -1, 0));
                 view = i5Var;
                 return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
             case 9:
@@ -231,7 +231,7 @@ public final class s5 extends pg.b {
                 scrollSlidingTextTabStrip.d();
                 ah.v vVar = new ah.v(this, z5Var.getParentActivity());
                 z5Var.T.setDelegate(new g(this, 6));
-                vVar.addView(z5Var.T, w7.a6.d(48.0f, -2));
+                vVar.addView(z5Var.T, w7.z5.d(48.0f, -2));
                 view = vVar;
                 return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
             case 14:

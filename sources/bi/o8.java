@@ -25,7 +25,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public class o8 {
     public static HashMap B;
@@ -123,7 +123,7 @@ public class o8 {
         sb2.append(this.d);
         sb2.append("} updateDeletedStories {");
         sb2.append(x8.h0(list));
-        i2.d.t("}", sb2);
+        i2.d.v("}", sb2);
         if (list == null) {
             return;
         }
@@ -205,7 +205,7 @@ public class o8 {
         sb2.append(this.d);
         sb2.append("} updateStories {");
         sb2.append(x8.h0(list));
-        i2.d.t("}", sb2);
+        i2.d.v("}", sb2);
         if (list == null) {
             return;
         }
@@ -236,7 +236,7 @@ public class o8 {
                 HashMap hashMap = this.j;
                 if (z12 != z13) {
                     if (!z13) {
-                        org.telegram.messenger.q.p(storyItem2.id, new StringBuilder("StoriesList remove story "));
+                        org.telegram.messenger.g0.o(storyItem2.id, new StringBuilder("StoriesList remove story "));
                         u(storyItem2.id, true);
                         int i13 = this.s;
                         if (i13 != -1) {
@@ -267,7 +267,7 @@ public class o8 {
                         p(Utilities.clamp(size2, 50, 10), true);
                     }
                 } else if (z12 && z13 && ((messageObject = (MessageObject) hashMap.get(Integer.valueOf(storyItem2.id))) == null || z10 || (storyItem = messageObject.storyItem) == null || (storyItem != storyItem2 && (storyItem.id != storyItem2.id || storyItem.media != storyItem2.media || !TextUtils.equals(storyItem.caption, storyItem2.caption))))) {
-                    org.telegram.messenger.q.p(storyItem2.id, new StringBuilder("StoriesList update story "));
+                    org.telegram.messenger.g0.o(storyItem2.id, new StringBuilder("StoriesList update story "));
                     hashMap.put(Integer.valueOf(storyItem2.id), y(storyItem2));
                 }
                 z11 = true;
@@ -548,7 +548,7 @@ public class o8 {
         sb2.append(i12);
         sb2.append("{");
         sb2.append(j10);
-        i2.d.t("} load", sb2);
+        i2.d.v("} load", sb2);
         this.u = true;
         this.A = ConnectionsManager.getInstance(i13).sendRequest(tL_stories_getStoriesArchive, new u7(this, n10, 1));
         return true;

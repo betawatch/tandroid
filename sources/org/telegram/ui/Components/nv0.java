@@ -13,7 +13,7 @@ import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class nv0 extends pu0 {
     public final HashSet d3;
@@ -94,15 +94,15 @@ public abstract class nv0 extends pu0 {
                 if (p5 != 0 && getMessageAlphaEnter() != null) {
                     if (getMessageAlphaEnter().get(p5, null) != null) {
                         f7 = getMessageAlphaEnter().get(p5, valueOf).floatValue();
-                        if (!(childAt instanceof org.telegram.ui.Cells.k7)) {
-                            ((org.telegram.ui.Cells.k7) childAt).setEnterAnimationAlpha(f7);
-                        } else if (childAt instanceof org.telegram.ui.Cells.j7) {
+                        if (!(childAt instanceof org.telegram.ui.Cells.j7)) {
                             ((org.telegram.ui.Cells.j7) childAt).setEnterAnimationAlpha(f7);
+                        } else if (childAt instanceof org.telegram.ui.Cells.i7) {
+                            ((org.telegram.ui.Cells.i7) childAt).setEnterAnimationAlpha(f7);
                         }
                     }
                 }
                 f7 = 1.0f;
-                if (!(childAt instanceof org.telegram.ui.Cells.k7)) {
+                if (!(childAt instanceof org.telegram.ui.Cells.j7)) {
                 }
             }
             super.dispatchDraw(canvas);

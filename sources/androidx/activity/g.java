@@ -21,7 +21,7 @@ import org.telegram.ui.Components.jw0;
 import org.telegram.ui.Components.kw0;
 import org.telegram.ui.Components.ow0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class g implements Runnable {
     public final /* synthetic */ int a;
@@ -64,7 +64,7 @@ public final class g implements Runnable {
                 } else {
                     androidx.activity.result.b bVar = dVar.a;
                     if (hVar.d.remove(str)) {
-                        bVar.i(obj);
+                        bVar.j(obj);
                         return;
                     }
                     return;
@@ -74,10 +74,10 @@ public final class g implements Runnable {
                 return;
             case 2:
                 com.google.android.gms.internal.cast.r rVar2 = (com.google.android.gms.internal.cast.r) this.d;
-                p4.s sVar = (p4.s) this.c;
+                p4.r rVar3 = (p4.r) this.c;
                 int i12 = this.b;
                 synchronized (rVar2.e) {
-                    rVar2.L0(sVar, i12);
+                    rVar2.L0(rVar3, i12);
                 }
                 return;
             case 3:

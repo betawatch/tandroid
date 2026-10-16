@@ -1,9 +1,9 @@
 package hg;
 
 import org.telegram.ui.aw;
-import org.telegram.ui.t10;
+import org.telegram.ui.s10;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -19,9 +19,9 @@ public final /* synthetic */ class v implements Runnable {
         switch (this.a) {
             case 0:
                 h0 h0Var = this.b;
-                t10 t10Var = h0Var.A0;
-                if (t10Var != null) {
-                    ((aw) t10Var).i(false, null, h0Var.y0, h0Var.z0);
+                s10 s10Var = h0Var.A0;
+                if (s10Var != null) {
+                    ((aw) s10Var).i(false, null, h0Var.y0, h0Var.z0);
                     break;
                 }
                 break;

@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class ConferenceCall {
     public static final int PERMISSION_ADD = 1;
@@ -53,7 +53,7 @@ public class ConferenceCall {
     private final Runnable pollRunnable = new b(this, 2);
     private final int[] pollRequestId = new int[2];
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static final class CallParticipant {
         int permissions;
         long public_key_id;
@@ -67,7 +67,7 @@ public class ConferenceCall {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static final class CallState {
         int height;
         CallParticipant[] participants;
@@ -105,7 +105,7 @@ public class ConferenceCall {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static final class CallVerificationState {
         byte[] emoji_hash;
         int height;
@@ -124,7 +124,7 @@ public class ConferenceCall {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static final class CallVerificationWords {
         int height;
         String[] words;
@@ -485,7 +485,7 @@ public class ConferenceCall {
                 z10 = true;
             }
         }
-        Utilities.stageQueue.postRunnable(new v2(29, this, updates));
+        Utilities.stageQueue.postRunnable(new v2(24, this, updates));
         return z10;
     }
 
@@ -572,9 +572,9 @@ public class ConferenceCall {
             long j10 = max;
             byte[] bArr = this.blocksQueue[i10].get(j10);
             if (bArr == null) {
-                StringBuilder l4 = i2.d.l("[tde2e] {subchain: ", i10, "} got into hole (might be the end) in ", i10, " subchain at #");
-                i2.d.u(l4, max, ", when our last_offset[", i10, "] = ");
-                org.telegram.messenger.q.p(this.last_offset[i10], l4);
+                StringBuilder m10 = i2.d.m("[tde2e] {subchain: ", i10, "} got into hole (might be the end) in ", i10, " subchain at #");
+                i2.d.w(m10, max, ", when our last_offset[", i10, "] = ");
+                org.telegram.messenger.g0.o(this.last_offset[i10], m10);
                 this.last_offset[i10] = max;
                 return;
             }
@@ -627,7 +627,7 @@ public class ConferenceCall {
             StringBuilder sb2 = new StringBuilder("[tde2e] received updateGroupCallChainBlocks for ");
             sb2.append(tL_updateGroupCallChainBlocks.call.id);
             sb2.append(" but we have ");
-            org.telegram.messenger.q.s(sb2, this.groupCall.id);
+            i2.d.x(sb2, this.groupCall.id);
             return false;
         }
         StringBuilder sb3 = new StringBuilder("[tde2e] received update with ");
@@ -638,7 +638,7 @@ public class ConferenceCall {
         sb3.append(tL_updateGroupCallChainBlocks.next_offset);
         sb3.append(" requested_offset=");
         sb3.append(num);
-        i2.d.t(l4 != null ? " in " + (System.currentTimeMillis() - l4.longValue()) + "ms" : "", sb3);
+        i2.d.v(l4 != null ? " in " + (System.currentTimeMillis() - l4.longValue()) + "ms" : "", sb3);
         int i10 = tL_updateGroupCallChainBlocks.sub_chain_id;
         int i11 = tL_updateGroupCallChainBlocks.next_offset;
         if (i10 == 0 || i10 == 1) {

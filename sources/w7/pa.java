@@ -1,8 +1,8 @@
 package w7;
 
-import org.telegram.ui.Components.tz0;
+import org.telegram.ui.Components.uz0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class pa implements i5.e {
     public static pa b;
@@ -73,9 +73,9 @@ public final class pa implements i5.e {
         aVar.a(z5.class, s1.a);
         aVar.a(y5.class, r1.a);
         aVar.a(a6.class, t1.a);
-        aVar.a(d6.class, w1.a);
+        aVar.a(uz0.class, w1.a);
         aVar.a(c6.class, v1.a);
-        aVar.a(tz0.class, x1.a);
+        aVar.a(d6.class, x1.a);
         aVar.a(e6.class, y1.a);
         aVar.a(f6.class, z1.a);
         aVar.a(g6.class, a2.a);

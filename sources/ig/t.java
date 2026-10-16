@@ -18,9 +18,9 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.h5;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class t extends FrameLayout {
     public final h5 a;
@@ -41,20 +41,20 @@ public final class t extends FrameLayout {
         imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
         imageView.setBackground(g6.K(AndroidUtilities.dp(36.0f), g6.x0(null, g6.Oh, false)));
         imageView.setOnClickListener(new ah.g0(this, 26));
-        addView(imageView, a6.i(36.0f, 36.0f, 8388627, 14.0f, 0.0f, 14.0f, 0.0f));
+        addView(imageView, z5.i(36.0f, 36.0f, 8388627, 14.0f, 0.0f, 14.0f, 0.0f));
         h5 h5Var = new h5(context);
         this.a = h5Var;
         h5Var.setTextSize(15);
         h5Var.setTextColor(g6.x0(null, g6.G6, false));
         h5Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(h5Var, a6.i(-1.0f, 20.0f, 55, 64.0f, 10.0f, 14.0f, 0.0f));
+        addView(h5Var, z5.i(-1.0f, 20.0f, 55, 64.0f, 10.0f, 14.0f, 0.0f));
         h5 h5Var2 = new h5(context);
         this.c = h5Var2;
         h5Var2.setTextSize(14);
         int i10 = g6.z6;
         h5Var2.setTextColor(g6.x0(null, i10, false));
         h5Var2.setGravity(LocaleController.isRTL ? 3 : 5);
-        addView(h5Var2, a6.i(-1.0f, 18.0f, 55, 64.0f, 10.66f, 14.0f, 0.0f));
+        addView(h5Var2, z5.i(-1.0f, 18.0f, 55, 64.0f, 10.66f, 14.0f, 0.0f));
         wh.n nVar = new wh.n(context);
         this.b = nVar;
         nVar.setTextSize(1, 13.0f);
@@ -65,7 +65,7 @@ public final class t extends FrameLayout {
         nVar.r = false;
         nVar.setUseAlphaForEmoji(false);
         NotificationCenter.listenEmojiLoading(nVar);
-        addView(nVar, a6.i(-1.0f, 20.0f, 87, 64.0f, 0.0f, 14.0f, 6.0f));
+        addView(nVar, z5.i(-1.0f, 20.0f, 87, 64.0f, 0.0f, 14.0f, 6.0f));
     }
 
     @Override // android.view.View

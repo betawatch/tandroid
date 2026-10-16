@@ -3,7 +3,7 @@ package y8;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class b1 extends o6.a implements x8.n {
     public static final Parcelable.Creator<b1> CREATOR = new n0(9);
@@ -84,7 +84,7 @@ public final class b1 extends o6.a implements x8.n {
         sb2.append("', eventId=");
         sb2.append((int) this.n);
         sb2.append(", eventFlags=");
-        i2.d.u(sb2, this.r, ", categoryId=", this.s, ", categoryCount=");
+        i2.d.w(sb2, this.r, ", categoryId=", this.s, ", categoryCount=");
         sb2.append((int) this.v);
         sb2.append(", packageName='");
         sb2.append(this.w);
@@ -94,29 +94,29 @@ public final class b1 extends o6.a implements x8.n {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.g0.q(parcel, 20293);
-        w7.g0.s(parcel, 2, 4);
+        int q6 = w7.f0.q(parcel, 20293);
+        w7.f0.s(parcel, 2, 4);
         parcel.writeInt(this.a);
         String str = this.b;
-        w7.g0.l(parcel, 3, str);
-        w7.g0.l(parcel, 4, this.c);
-        w7.g0.l(parcel, 5, this.d);
-        w7.g0.l(parcel, 6, this.e);
-        w7.g0.l(parcel, 7, this.f);
+        w7.f0.l(parcel, 3, str);
+        w7.f0.l(parcel, 4, this.c);
+        w7.f0.l(parcel, 5, this.d);
+        w7.f0.l(parcel, 6, this.e);
+        w7.f0.l(parcel, 7, this.f);
         String str2 = this.h;
         if (str2 != null) {
             str = str2;
         }
-        w7.g0.l(parcel, 8, str);
-        w7.g0.s(parcel, 9, 4);
+        w7.f0.l(parcel, 8, str);
+        w7.f0.s(parcel, 9, 4);
         parcel.writeInt(this.n);
-        w7.g0.s(parcel, 10, 4);
+        w7.f0.s(parcel, 10, 4);
         parcel.writeInt(this.r);
-        w7.g0.s(parcel, 11, 4);
+        w7.f0.s(parcel, 11, 4);
         parcel.writeInt(this.s);
-        w7.g0.s(parcel, 12, 4);
+        w7.f0.s(parcel, 12, 4);
         parcel.writeInt(this.v);
-        w7.g0.l(parcel, 13, this.w);
-        w7.g0.r(parcel, q6);
+        w7.f0.l(parcel, 13, this.w);
+        w7.f0.r(parcel, q6);
     }
 }

@@ -1,7 +1,22 @@
 package m4;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+import java.util.ArrayDeque;
+
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public interface h {
-    j9.y run();
+public final class h {
+    public final Object a;
+    public final com.google.android.gms.common.api.internal.v b;
+    public p1 d;
+    public b2.c1 e;
+    public boolean f;
+    public final ArrayDeque c = new ArrayDeque();
+    public b2.c1 g = b2.c1.b;
+
+    public h(Object obj, com.google.android.gms.common.api.internal.v vVar, p1 p1Var, b2.c1 c1Var) {
+        this.a = obj;
+        this.b = vVar;
+        this.d = p1Var;
+        this.e = c1Var;
+    }
 }

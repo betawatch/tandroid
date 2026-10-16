@@ -75,29 +75,29 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.b90;
+import org.telegram.ui.Components.a90;
+import org.telegram.ui.Components.ag0;
 import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.cr;
-import org.telegram.ui.Components.ea1;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.gg0;
+import org.telegram.ui.Components.fa1;
 import org.telegram.ui.Components.gh0;
 import org.telegram.ui.Components.gq;
-import org.telegram.ui.Components.h11;
-import org.telegram.ui.Components.h81;
-import org.telegram.ui.Components.ig0;
-import org.telegram.ui.Components.m80;
-import org.telegram.ui.Components.q11;
-import org.telegram.ui.Components.s61;
-import org.telegram.ui.Components.x71;
-import org.telegram.ui.Components.xf0;
+import org.telegram.ui.Components.hg0;
+import org.telegram.ui.Components.i11;
+import org.telegram.ui.Components.i81;
+import org.telegram.ui.Components.jg0;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.r11;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.y71;
 import org.telegram.ui.Components.yc0;
+import org.telegram.ui.Components.yf0;
 import org.telegram.ui.Components.yj0;
-import org.telegram.ui.Components.zf0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.nb0;
+import org.telegram.ui.mb0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class kc implements NotificationCenter.NotificationCenterDelegate {
     public static kc F2;
@@ -105,21 +105,21 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
     public View A1;
     public boolean A2;
     public nb B0;
-    public ig0 B1;
+    public jg0 B1;
     public boolean B2;
     public e7 C0;
-    public final gg0 C1;
+    public final hg0 C1;
     public sb C2;
     public final s7 D0;
     public TextureView D1;
     public float D2;
     public ValueAnimator E;
     public final vc E0;
-    public xf0 E1;
+    public yf0 E1;
     public ValueAnimator E2;
     public fc F;
     public final wc F0;
-    public zf0 F1;
+    public ag0 F1;
     public float G;
     public final z G0;
     public File G1;
@@ -166,7 +166,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
     public final a4 U0;
     public int U1;
     public boolean V;
-    public final ea1 V0;
+    public final fa1 V0;
     public boolean V1;
     public boolean W;
     public final d4 W0;
@@ -265,7 +265,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
     public TLRPC.InputPeer x0;
     public View x1;
     public ga x2;
-    public final nb0 y;
+    public final mb0 y;
     public ca y0;
     public View y1;
     public ah.g y2;
@@ -307,7 +307,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         this.b = activity;
         this.c = i10;
         LaunchActivity launchActivity = LaunchActivity.G1;
-        this.y = launchActivity != null ? new nb0(launchActivity, true) : null;
+        this.y = launchActivity != null ? new mb0(launchActivity, true) : null;
         WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
         this.h = layoutParams;
         layoutParams.height = -1;
@@ -324,8 +324,8 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         jc jcVar = new jc(this, activity);
         this.n = jcVar;
         pa paVar = new pa(this, i12);
-        WeakHashMap weakHashMap = r0.j0.a;
-        r0.b0.i(jcVar, paVar);
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.a0.i(jcVar, paVar);
         this.n.setFocusable(true);
         int i15 = 2;
         this.n.setImportantForAccessibility(2);
@@ -370,7 +370,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         Objects.requireNonNull(jcVar3);
         xbVar.setCancelGestures(new x8(jcVar3, i15));
         this.A0.setResetState(new ga(this, 13));
-        this.h0.addView(this.A0, w7.a6.e(-1, -1, 119));
+        this.h0.addView(this.A0, w7.z5.e(-1, -1, 119));
         this.A0.setOnClickListener(new ia(this, 12));
         wb wbVar2 = this.h0;
         int i17 = this.J;
@@ -381,14 +381,14 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         wbVar3.setOutlineProvider(new zf.i0(0, dp));
         this.h0.setClipToOutline(true);
         ga gaVar = new ga(this, 14);
-        gg0 gg0Var = new gg0(activity);
-        gg0Var.a = new TextPaint(1);
-        gg0Var.b = new TextPaint(1);
+        hg0 hg0Var = new hg0(activity);
+        hg0Var.a = new TextPaint(1);
+        hg0Var.b = new TextPaint(1);
         es esVar = es.h;
-        gg0Var.s = new org.telegram.ui.Components.g6(gg0Var, 0L, 350L, esVar);
-        gg0Var.I = new yc0(gg0Var, i16);
-        gg0Var.x = gaVar;
-        this.C1 = gg0Var;
+        hg0Var.s = new org.telegram.ui.Components.g6(hg0Var, 0L, 350L, esVar);
+        hg0Var.I = new yc0(hg0Var, i16);
+        hg0Var.x = gaVar;
+        this.C1 = hg0Var;
         yb ybVar = new yb(this, activity, this.r0, this.s0);
         this.X0 = ybVar;
         ybVar.setCollageView(this.A0);
@@ -398,8 +398,8 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         this.X0.setVisibility(8);
         yb ybVar3 = this.X0;
         ybVar3.N = new ga(this, 17);
-        this.h0.addView(ybVar3, w7.a6.e(-1, -1, 119));
-        this.h0.addView(this.C1, w7.a6.e(-1, -1, 119));
+        this.h0.addView(ybVar3, w7.z5.e(-1, -1, 119));
+        this.h0.addView(this.C1, w7.z5.e(-1, -1, 119));
         jc jcVar4 = this.n;
         ac acVar = new ac(this, activity, jcVar4, jcVar4, this.r, bVar, this.r0);
         this.c1 = acVar;
@@ -430,14 +430,14 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         FrameLayout frameLayout4 = new FrameLayout(activity);
         this.Y0 = frameLayout4;
         float f7 = 388;
-        frameLayout4.addView(this.Z0, w7.a6.a(f7, 0.0f, 0.0f, 0.0f, 0.0f, -1, 87));
+        frameLayout4.addView(this.Z0, w7.z5.a(f7, 0.0f, 0.0f, 0.0f, 0.0f, -1, 87));
         yc ycVar = new yc(activity);
         this.a1 = ycVar;
         ycVar.setVisibility(8);
         this.a1.a(false);
-        this.Y0.addView(this.a1, w7.a6.a(25.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 55));
-        this.l0.addView(this.Y0, w7.a6.a(413, 0.0f, 0.0f, 0.0f, 68.0f, -1, 87));
-        this.l0.addView(this.c1, w7.a6.a(-1.0f, 0.0f, 200.0f, 0.0f, 0.0f, -1, 87));
+        this.Y0.addView(this.a1, w7.z5.a(25.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 55));
+        this.l0.addView(this.Y0, w7.z5.a(413, 0.0f, 0.0f, 0.0f, 68.0f, -1, 87));
+        this.l0.addView(this.c1, w7.z5.a(-1.0f, 0.0f, 200.0f, 0.0f, 0.0f, -1, 87));
         this.A0.setTimelineView(this.Z0);
         this.A0.setPreviewView(this.X0);
         uc ucVar2 = new uc(activity, this.r, this.h0, bVar, this.r0);
@@ -445,11 +445,11 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         ucVar2.X0 = true;
         ucVar2.setVisibility(8);
         this.t1.setAlpha(0.0f);
-        this.l0.addView(this.t1, w7.a6.a(f7, 0.0f, 0.0f, 0.0f, 6.0f, -1, 87));
+        this.l0.addView(this.t1, w7.z5.a(f7, 0.0f, 0.0f, 0.0f, 6.0f, -1, 87));
         bb bbVar = new bb(this, activity, bVar, this.r0);
         this.d1 = bbVar;
         bbVar.setVisibility(8);
-        this.l0.addView(this.d1, w7.a6.e(-1, -2, 85));
+        this.l0.addView(this.d1, w7.z5.e(-1, -2, 85));
         u2 u2Var = new u2(activity);
         this.n0 = u2Var;
         u2Var.setContentDescription(LocaleController.getString(R.string.AccDescrGoBack));
@@ -462,13 +462,13 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         u2Var3.setColorFilter(new PorterDuffColorFilter(-1, mode));
         this.n0.setBackground(org.telegram.ui.ActionBar.g6.g0(553648127, 1, -1));
         this.n0.setOnClickListener(new ia(this, i12));
-        this.i0.addView(this.n0, w7.a6.e(56, 56, 51));
+        this.i0.addView(this.n0, w7.z5.e(56, 56, 51));
         this.s.a(this.n0);
         d8 d8Var = new d8(activity, i10);
         this.o0 = d8Var;
         d8Var.a(false, false);
         this.o0.setOnClickListener(new bi.u1(i18, this, activity));
-        this.i0.addView(this.o0, w7.a6.a(56.0f, 50.0f, 0.0f, 50.0f, 0.0f, -1, 51));
+        this.i0.addView(this.o0, w7.z5.a(56.0f, 50.0f, 0.0f, 50.0f, 0.0f, -1, 51));
         org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(activity);
         this.p0 = h5Var;
         h5Var.setTextSize(20);
@@ -481,12 +481,12 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         this.p0.setVisibility(8);
         this.p0.setEllipsizeByGradient(true);
         this.p0.setRightPadding(AndroidUtilities.dp(144.0f));
-        this.i0.addView(this.p0, w7.a6.a(56.0f, 71.0f, 0.0f, 0.0f, 0.0f, -1, 55));
+        this.i0.addView(this.p0, w7.z5.a(56.0f, 71.0f, 0.0f, 0.0f, 0.0f, -1, 55));
         LinearLayout linearLayout = new LinearLayout(activity);
         this.j0 = linearLayout;
         linearLayout.setOrientation(0);
         this.j0.setGravity(5);
-        this.i0.addView(this.j0, w7.a6.a(56.0f, 0.0f, 0.0f, 8.0f, 0.0f, -1, 7));
+        this.i0.addView(this.j0, w7.z5.a(56.0f, 0.0f, 0.0f, 8.0f, 0.0f, -1, 7));
         ha haVar = new ha(this, 7);
         jc jcVar5 = this.n;
         t0 t0Var = new t0(activity);
@@ -511,7 +511,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         d4Var.H.r(true, false);
         this.k1 = d4Var;
         d4Var.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
-        this.i0.addView(this.k1, w7.a6.a(-1.0f, 0.0f, 52.0f, 0.0f, 0.0f, -1, 48));
+        this.i0.addView(this.k1, w7.z5.a(-1.0f, 0.0f, 52.0f, 0.0f, 0.0f, -1, 48));
         bk0 bk0Var = new bk0(activity);
         this.g1 = bk0Var;
         bk0Var.setScaleType(scaleType);
@@ -529,9 +529,9 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         this.j1.setVisibility(8);
         this.j1.setAlpha(0.0f);
         this.j1.setOnClickListener(new ia(this, 3));
-        this.j0.addView(this.j1, w7.a6.q(46, 56, 53));
-        this.j0.addView(this.g1, w7.a6.q(46, 56, 53));
-        this.j0.addView(this.e1, w7.a6.e(46, 56, 53));
+        this.j0.addView(this.j1, w7.z5.q(46, 56, 53));
+        this.j0.addView(this.g1, w7.z5.q(46, 56, 53));
+        this.j0.addView(this.e1, w7.z5.e(46, 56, 53));
         vc vcVar = new vc(activity);
         this.E0 = vcVar;
         vcVar.setBackground(org.telegram.ui.ActionBar.g6.g0(553648127, 1, -1));
@@ -540,7 +540,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         this.E0.setVisibility(8);
         this.E0.setAlpha(0.0f);
         this.s.a(this.E0);
-        this.i0.addView(this.E0, w7.a6.e(56, 56, 53));
+        this.i0.addView(this.E0, w7.z5.e(56, 56, 53));
         wc wcVar = new wc(activity, R.drawable.media_dual_camera2_shadow, R.drawable.media_dual_camera2);
         this.F0 = wcVar;
         wcVar.setContentDescription(LocaleController.getString(R.string.AccDescrDualCameraOn));
@@ -549,7 +549,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         this.F0.setVisibility(q6 ? 0 : 8);
         this.F0.setAlpha(q6 ? 1.0f : 0.0f);
         this.s.a(this.F0);
-        this.i0.addView(this.F0, w7.a6.e(56, 56, 53));
+        this.i0.addView(this.F0, w7.z5.e(56, 56, 53));
         z zVar = new z(activity);
         this.G0 = zVar;
         zVar.setContentDescription(LocaleController.getString(R.string.AccDescrCollage));
@@ -566,7 +566,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         this.G0.setVisibility(0);
         this.G0.setAlpha(1.0f);
         this.s.a(this.G0);
-        this.i0.addView(this.G0, w7.a6.e(56, 56, 53));
+        this.i0.addView(this.G0, w7.z5.e(56, 56, 53));
         vc vcVar2 = new vc(activity);
         this.H0 = vcVar2;
         vcVar2.setContentDescription(LocaleController.getString(R.string.AccDescrCollageClose));
@@ -576,13 +576,13 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         this.H0.setAlpha(0.0f);
         this.H0.setOnClickListener(new ia(this, 7));
         this.s.a(this.H0);
-        this.i0.addView(this.H0, w7.a6.e(56, 56, 53));
+        this.i0.addView(this.H0, w7.z5.e(56, 56, 53));
         y yVar = new y(activity, this.s);
         this.I0 = yVar;
         yVar.a.u0(6);
         this.I0.setSelected((t) null);
         this.I0.setOnLayoutClick(new ha(this, i16));
-        this.i0.addView(this.I0, w7.a6.e(-1, 56, 53));
+        this.i0.addView(this.I0, w7.z5.e(-1, 56, 53));
         d4 d4Var2 = new d4(activity, 1);
         d4Var2.l(1.0f, -20.0f);
         d4Var2.d = 5000L;
@@ -591,20 +591,20 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         d4Var2.l0 = new ah.j(10);
         this.l1 = d4Var2;
         d4Var2.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
-        this.i0.addView(this.l1, w7.a6.a(-1.0f, 0.0f, 52.0f, 0.0f, 0.0f, -1, 48));
+        this.i0.addView(this.l1, w7.z5.a(-1.0f, 0.0f, 52.0f, 0.0f, 0.0f, -1, 48));
         d4 d4Var3 = new d4(activity, 2);
         d4Var3.l(0.0f, 28.0f);
         d4Var3.d = 5000L;
         d4Var3.p(true);
         this.m1 = d4Var3;
-        this.i0.addView(d4Var3, w7.a6.a(-1.0f, 0.0f, 0.0f, 52.0f, 0.0f, -1, 48));
+        this.i0.addView(d4Var3, w7.z5.a(-1.0f, 0.0f, 0.0f, 52.0f, 0.0f, -1, 48));
         d4 d4Var4 = new d4(activity, 1);
         d4Var4.l(1.0f, -20.0f);
         d4Var4.d = 5000L;
         d4Var4.s(LocaleController.getString(R.string.StoryCollageRemoveGrid));
         this.n1 = d4Var4;
         d4Var4.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
-        this.i0.addView(this.n1, w7.a6.a(-1.0f, 0.0f, 52.0f, 0.0f, 0.0f, -1, 48));
+        this.i0.addView(this.n1, w7.z5.a(-1.0f, 0.0f, 52.0f, 0.0f, 0.0f, -1, 48));
         zc zcVar = new zc(activity);
         Paint paint = new Paint(1);
         zcVar.a = paint;
@@ -624,7 +624,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         zcVar.a(0L, false);
         this.J0 = zcVar;
         h0(false, false);
-        this.i0.addView(this.J0, w7.a6.a(45.0f, 56.0f, 0.0f, 56.0f, 0.0f, -1, 55));
+        this.i0.addView(this.J0, w7.z5.a(45.0f, 56.0f, 0.0f, 56.0f, 0.0f, -1, 55));
         this.s.a(this.J0);
         MediaController.loadGalleryPhotosAlbums(0);
         i7 i7Var = new i7(activity);
@@ -635,7 +635,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         i7Var2.n0 = -1.0f;
         i7Var2.o0 = z10;
         i7Var2.invalidate();
-        this.k0.addView(this.O0, w7.a6.e(-1, 100, 87));
+        this.k0.addView(this.O0, w7.z5.e(-1, 100, 87));
         this.s.a(this.O0);
         this.O0.e(this.A0.j() ? this.A0.getFilledProgress() : 0.0f, true);
         d dVar = new d(activity, bVar, true);
@@ -647,7 +647,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         this.P0.setScaleX(0.8f);
         this.P0.setScaleY(0.8f);
         this.P0.setVisibility(8);
-        this.k0.addView(this.P0, w7.a6.a(48.0f, 20.0f, 20.0f, 20.0f, 20.0f, -1, 87));
+        this.k0.addView(this.P0, w7.z5.a(48.0f, 20.0f, 20.0f, 20.0f, 20.0f, -1, 87));
         this.P0.setOnClickListener(new ia(this, i16));
         d4 d4Var5 = new d4(activity, 3);
         d4Var5.p(true);
@@ -656,26 +656,26 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         d4Var5.d = 5000L;
         d4Var5.K = Layout.Alignment.ALIGN_CENTER;
         this.W0 = d4Var5;
-        this.k0.addView(d4Var5, w7.a6.a(-1.0f, 0.0f, 0.0f, 0.0f, 100.0f, -1, 80));
-        ea1 ea1Var = new ea1(activity);
-        this.V0 = ea1Var;
-        ea1Var.M = false;
-        ea1Var.setAlpha(0.0f);
-        this.k0.addView(this.V0, w7.a6.a(50.0f, 0.0f, 0.0f, 0.0f, 108.0f, -1, 81));
+        this.k0.addView(d4Var5, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 100.0f, -1, 80));
+        fa1 fa1Var = new fa1(activity);
+        this.V0 = fa1Var;
+        fa1Var.M = false;
+        fa1Var.setAlpha(0.0f);
+        this.k0.addView(this.V0, w7.z5.a(50.0f, 0.0f, 0.0f, 0.0f, 108.0f, -1, 81));
         this.V0.setDelegate(new pa(this, 4));
-        ea1 ea1Var2 = this.V0;
+        fa1 fa1Var2 = this.V0;
         this.T1 = 0.0f;
-        ea1Var2.b(0.0f, false);
+        fa1Var2.b(0.0f, false);
         int i20 = 12;
         s7 s7Var = new s7(activity, i10, new ga(this, i20));
         this.D0 = s7Var;
         s7Var.c = new ha(this, 9);
-        this.k0.addView(s7Var, w7.a6.a(80.0f, 0.0f, 0.0f, 0.0f, 90.0f, -1, 87));
+        this.k0.addView(s7Var, w7.z5.a(80.0f, 0.0f, 0.0f, 0.0f, 90.0f, -1, 87));
         cb cbVar = new cb(this, activity);
         this.Q0 = cbVar;
         cbVar.setOnSwitchModeListener(new ha(this, 10));
         this.Q0.setOnSwitchingModeListener(new ha(this, 11));
-        this.m0.addView(this.Q0, w7.a6.e(-1, 48, 55));
+        this.m0.addView(this.Q0, w7.z5.e(-1, 48, 55));
         this.s.a(this.Q0);
         u2 u2Var4 = new u2(activity);
         this.R0 = u2Var4;
@@ -684,7 +684,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         this.R0.setScaleType(scaleType);
         this.R0.setColorFilter(new PorterDuffColorFilter(-1, mode));
         this.R0.setBackground(org.telegram.ui.ActionBar.g6.g0(553648127, 1, -1));
-        this.m0.addView(this.R0, w7.a6.a(24.0f, 20.0f, 0.0f, 20.0f, 4.0f, 24, 19));
+        this.m0.addView(this.R0, w7.z5.a(24.0f, 20.0f, 0.0f, 20.0f, 4.0f, 24, 19));
         this.s.a(this.R0);
         this.R0.setOnClickListener(new ia(this, 9));
         u2 u2Var5 = new u2(activity);
@@ -694,19 +694,19 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         this.S0.setScaleType(scaleType);
         this.S0.setColorFilter(new PorterDuffColorFilter(-1, mode));
         this.S0.setBackground(org.telegram.ui.ActionBar.g6.g0(553648127, 1, -1));
-        this.m0.addView(this.S0, w7.a6.a(24.0f, 20.0f, 0.0f, 20.0f, 4.0f, 24, 21));
+        this.m0.addView(this.S0, w7.z5.a(24.0f, 20.0f, 0.0f, 20.0f, 4.0f, 24, 21));
         this.s.a(this.S0);
         this.S0.setOnClickListener(new ia(this, 10));
         a4 a4Var = new a4(activity);
         this.T0 = a4Var;
-        this.m0.addView(a4Var, w7.a6.a(32.0f, 8.0f, 0.0f, 8.0f, 8.0f, -1, 17));
+        this.m0.addView(a4Var, w7.z5.a(32.0f, 8.0f, 0.0f, 8.0f, 8.0f, -1, 17));
         this.s.a(this.T0);
         a4 a4Var2 = new a4(activity);
         this.U0 = a4Var2;
         a4Var2.a.t(LocaleController.getString(R.string.StoryCollageReorderHint), false, true);
         a4Var2.invalidate();
         this.U0.setAlpha(0.0f);
-        this.m0.addView(this.U0, w7.a6.a(32.0f, 8.0f, 0.0f, 8.0f, 8.0f, -1, 17));
+        this.m0.addView(this.U0, w7.z5.a(32.0f, 8.0f, 0.0f, 8.0f, 8.0f, -1, 17));
         this.s.a(this.U0);
         d dVar2 = new d(activity, bVar, true);
         dVar2.setRoundRadius(24);
@@ -715,7 +715,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         this.u1.setAlpha(0.0f);
         this.u1.g(LocaleController.getString(R.string.StoryCoverSave), false, true);
         this.u1.setOnClickListener(new ia(this, 11));
-        this.m0.addView(this.u1, w7.a6.a(48.0f, 10.0f, 10.0f, 10.0f, 10.0f, -1, 119));
+        this.m0.addView(this.u1, w7.z5.a(48.0f, 10.0f, 10.0f, 10.0f, 10.0f, -1, 119));
         s6 s6Var = new s6(activity);
         s6Var.b = new ArrayList();
         s6Var.e = true;
@@ -723,7 +723,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         View view = new View(activity);
         s6Var.a = view;
         view.setBackground(new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{1711276032, 0}));
-        s6Var.addView(view, w7.a6.e(-1, -1, 119));
+        s6Var.addView(view, w7.z5.e(-1, -1, 119));
         s6Var.a(0, R.drawable.media_draw, LocaleController.getString(R.string.AccDescrPaint));
         s6Var.a(2, R.drawable.msg_photo_sticker, LocaleController.getString(R.string.AccDescrStickers));
         s6Var.a(1, R.drawable.msg_photo_text2, LocaleController.getString(R.string.AccDescrPlaceText));
@@ -735,20 +735,20 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         r6 r6Var2 = new r6(s6Var, activity, string, true);
         s6Var.c = r6Var2;
         r6Var2.setContentDescription(LocaleController.getString(R.string.Send));
-        s6Var.addView(s6Var.c, w7.a6.d(-2.0f, -2));
+        s6Var.addView(s6Var.c, w7.z5.d(-2.0f, -2));
         s6Var.e();
         this.b1 = s6Var;
         s6Var.setVisibility(8);
         this.b1.setOnClickListener(new ha(this, i20));
-        this.m0.addView(this.b1, w7.a6.e(-1, 52, 23));
+        this.m0.addView(this.b1, w7.z5.e(-1, 52, 23));
         xc xcVar = new xc(activity);
         this.p1 = xcVar;
         xcVar.setAlpha(0.0f);
         this.p1.setVisibility(8);
-        this.h0.addView(this.p1, w7.a6.a(120.0f, 0.0f, 0.0f, 0.0f, 16.0f, -1, 81));
+        this.h0.addView(this.p1, w7.z5.a(120.0f, 0.0f, 0.0f, 0.0f, 16.0f, -1, 81));
         t6 t6Var = new t6(activity, i10, bVar);
         this.o1 = t6Var;
-        this.h0.addView(t6Var, w7.a6.e(-1, -1, 119));
+        this.h0.addView(t6Var, w7.z5.e(-1, -1, 119));
         l0(false);
     }
 
@@ -870,7 +870,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         if (this.N0 == null) {
             u0 u0Var = new u0(this.b);
             this.N0 = u0Var;
-            this.k0.addView(u0Var, w7.a6.a(-2.0f, 0.0f, 0.0f, 0.0f, 78.0f, -1, 87));
+            this.k0.addView(u0Var, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 78.0f, -1, 87));
         }
         return this.N0;
     }
@@ -917,7 +917,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
             this.i1.setVisibility(8);
             this.i1.setImageDrawable(this.h1);
             this.i1.setAlpha(0.0f);
-            this.j0.addView(this.i1, 0, w7.a6.q(46, 56, 53));
+            this.j0.addView(this.i1, 0, w7.z5.q(46, 56, 53));
         }
         return this.i1;
     }
@@ -1106,7 +1106,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
                 if (imageView != null) {
                     arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property, (i10 == 1 && (k8Var3 = this.K1) != null && k8Var3.u) ? 1.0f : 0.0f));
                 }
-                arrayList.add(ObjectAnimator.ofFloat(this.V0, (Property<ea1, Float>) property, 0.0f));
+                arrayList.add(ObjectAnimator.ofFloat(this.V0, (Property<fa1, Float>) property, 0.0f));
                 this.i2.playTogether(arrayList);
                 this.i2.addListener(new hb(this, i13, i10, 0));
                 this.i2.setDuration(460L);
@@ -1127,7 +1127,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         imageView = this.i1;
         if (imageView != null) {
         }
-        arrayList.add(ObjectAnimator.ofFloat(this.V0, (Property<ea1, Float>) property, 0.0f));
+        arrayList.add(ObjectAnimator.ofFloat(this.V0, (Property<fa1, Float>) property, 0.0f));
         this.i2.playTogether(arrayList);
         this.i2.addListener(new hb(this, i13, i10, 0));
         this.i2.setDuration(460L);
@@ -1328,9 +1328,9 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
                 t();
                 G();
             }
-            gg0 gg0Var = this.C1;
-            if (gg0Var != null) {
-                gg0Var.setAllowTouch(false);
+            hg0 hg0Var = this.C1;
+            if (hg0Var != null) {
+                hg0Var.setAllowTouch(false);
             }
             this.X0.x(2, false);
             this.X0.x(3, false);
@@ -1359,9 +1359,9 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
             this.O0.h();
         }
         this.V1 = false;
-        gg0 gg0Var2 = this.C1;
-        if (gg0Var2 != null) {
-            gg0Var2.setAllowTouch(i11 == 1 && ((i12 = this.g0) == -1 || i12 == 1));
+        hg0 hg0Var2 = this.C1;
+        if (hg0Var2 != null) {
+            hg0Var2.setAllowTouch(i11 == 1 && ((i12 = this.g0) == -1 || i12 == 1));
         }
         ac acVar = this.c1;
         if (acVar != null) {
@@ -1390,7 +1390,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         k8 k8Var3;
         k8 k8Var4;
         k8 k8Var5;
-        x71 textureView;
+        y71 textureView;
         k8 k8Var6;
         boolean z11 = true;
         if (i11 == 0) {
@@ -1550,7 +1550,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
                 r6 r6Var = new r6(s6Var, context, string, z16);
                 s6Var.c = r6Var;
                 r6Var.setContentDescription(string);
-                s6Var.addView(s6Var.c, w7.a6.d(-2.0f, -2));
+                s6Var.addView(s6Var.c, w7.z5.d(-2.0f, -2));
                 s6Var.e();
             }
             this.t1.setVisibility(8);
@@ -1575,8 +1575,8 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
                 bbVar.c = arrayList;
                 bbVar.d = arrayList2;
                 bbVar.e = arrayList3;
-                bbVar.w = new h11(Integer.toString(arrayList.size()), 20.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
-                bbVar.K = new h11(LocaleController.formatPluralStringComma("HintViewStoriesMultiple", arrayList.size()), 14.0f, null);
+                bbVar.w = new i11(Integer.toString(arrayList.size()), 20.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+                bbVar.K = new i11(LocaleController.formatPluralStringComma("HintViewStoriesMultiple", arrayList.size()), 14.0f, null);
                 bbVar.b.W2.N(false);
                 this.d1.setSelected(this.H1.indexOf(this.K1));
             }
@@ -1669,9 +1669,9 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         }
         if (i10 == z11) {
             ac acVar3 = this.c1;
-            m80 m80Var = acVar3.V0;
-            if (m80Var != null) {
-                m80Var.u();
+            l80 l80Var = acVar3.V0;
+            if (l80Var != null) {
+                l80Var.u();
                 acVar3.V0 = null;
             }
             this.k1.e(z11);
@@ -1715,9 +1715,9 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
             this.t1.setVideoRight(0.04f + max);
             uVar.run(Boolean.TRUE, Float.valueOf(max));
         }
-        gg0 gg0Var = this.C1;
-        if (gg0Var != null) {
-            gg0Var.setAllowTouch(false);
+        hg0 hg0Var = this.C1;
+        if (hg0Var != null) {
+            hg0Var.setAllowTouch(false);
         }
         d4 d4Var2 = this.m1;
         if (d4Var2 != null) {
@@ -1819,12 +1819,12 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         if ((i11 == 0 || i10 == 0) && (mbVar = this.v1) != null) {
             mbVar.d1.setLayerType(0, null);
         }
-        gg0 gg0Var = this.C1;
-        if (gg0Var != null) {
+        hg0 hg0Var = this.C1;
+        if (hg0Var != null) {
             if (i11 != 1 && i11 != -1) {
                 z10 = false;
             }
-            gg0Var.setAllowTouch(z10);
+            hg0Var.setAllowTouch(z10);
         }
         if (i11 == 3) {
             ub ubVar2 = this.r1;
@@ -1987,14 +1987,14 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
     }
 
     public final void S() {
-        m80 m80Var;
+        l80 l80Var;
         yb ybVar = this.X0;
         if (ybVar != null) {
             ybVar.x(4, true);
         }
         ac acVar = this.c1;
-        if (acVar != null && (m80Var = acVar.V0) != null) {
-            m80Var.u();
+        if (acVar != null && (l80Var = acVar.V0) != null) {
+            l80Var.u();
             acVar.V0 = null;
         }
         sg.y0 y0Var = new sg.y0((org.telegram.ui.ActionBar.m2) new ob(this, 1), 14, false);
@@ -2093,17 +2093,17 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         if (xcVar != null) {
             xcVar.bringToFront();
         }
-        gg0 gg0Var = this.C1;
-        if (gg0Var != null) {
-            gg0Var.bringToFront();
+        hg0 hg0Var = this.C1;
+        if (hg0Var != null) {
+            hg0Var.bringToFront();
         }
-        xf0 xf0Var = this.E1;
-        if (xf0Var != null) {
-            xf0Var.bringToFront();
+        yf0 yf0Var = this.E1;
+        if (yf0Var != null) {
+            yf0Var.bringToFront();
         }
-        zf0 zf0Var = this.F1;
-        if (zf0Var != null) {
-            zf0Var.bringToFront();
+        ag0 ag0Var = this.F1;
+        if (ag0Var != null) {
+            ag0Var.bringToFront();
         }
         t6 t6Var = this.o1;
         if (t6Var != null) {
@@ -2137,7 +2137,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         AndroidUtilities.makingGlobalBlurBitmap = false;
         canvas.restore();
         Paint paint = new Paint(2);
-        x71 textureView = this.X0.getTextureView();
+        y71 textureView = this.X0.getTextureView();
         if (k8Var.K && !k8Var.u && textureView != null) {
             Bitmap bitmap = textureView.getBitmap();
             Matrix transform = textureView.getTransform(null);
@@ -2267,7 +2267,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
             CharSequence text = acVar.getText();
             if (text instanceof Spannable) {
                 Spannable spannable = (Spannable) text;
-                if (((q11[]) spannable.getSpans(0, text.length(), q11.class)).length > 0 || ((URLSpan[]) spannable.getSpans(0, text.length(), URLSpan.class)).length > 0) {
+                if (((r11[]) spannable.getSpans(0, text.length(), r11.class)).length > 0 || ((URLSpan[]) spannable.getSpans(0, text.length(), URLSpan.class)).length > 0) {
                     new org.telegram.ui.Components.zc(this.n, bVar).Q(R.raw.voip_invite, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryPremiumFormatting), org.telegram.ui.ActionBar.g6.gc, 0, new ga(this, 27), bVar)).k(true);
                     int i14 = -this.U1;
                     this.U1 = i14;
@@ -2300,10 +2300,10 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         CharSequence text2 = acVar.getText();
         ArrayList arrayList2 = new ArrayList();
         if (text2 instanceof Spanned) {
-            for (s61 s61Var : (s61[]) ((Spanned) text2).getSpans(0, text2.length(), s61.class)) {
-                if (s61Var != null) {
+            for (t61 t61Var : (t61[]) ((Spanned) text2).getSpans(0, text2.length(), t61.class)) {
+                if (t61Var != null) {
                     try {
-                        TLRPC.User user = MessagesController.getInstance(i12).getUser(Long.valueOf(Long.parseLong(s61Var.getURL())));
+                        TLRPC.User user = MessagesController.getInstance(i12).getUser(Long.valueOf(Long.parseLong(t61Var.getURL())));
                         if (user != null && !UserObject.isUserSelf(user) && UserObject.getPublicUsername(user) != null && !arrayList2.contains(user)) {
                             arrayList2.add(UserObject.getPublicUsername(user));
                         }
@@ -2847,7 +2847,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         }
         pb pbVar = new pb(q8Var.b(), this.c, this.b, new ob(this, 0), null);
         pbVar.X = A();
-        pbVar.setOnDismissListener(new b90(2, this, z10));
+        pbVar.setOnDismissListener(new a90(2, this, z10));
         this.X0.x(7, true);
         this.z2 = true;
         pbVar.show();
@@ -2857,23 +2857,23 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         k8 k8Var;
         Runnable runnable2;
         yb ybVar;
-        ig0 ig0Var = this.B1;
-        if (ig0Var == null || (k8Var = this.K1) == null) {
+        jg0 jg0Var = this.B1;
+        if (jg0Var == null || (k8Var = this.K1) == null) {
             if (runnable != null) {
                 runnable.run();
                 return;
             }
             return;
         }
-        k8Var.j = ig0Var.d() | k8Var.j;
+        k8Var.j = jg0Var.d() | k8Var.j;
         k8 k8Var2 = this.K1;
-        ig0 ig0Var2 = this.B1;
+        jg0 jg0Var2 = this.B1;
         File file = k8Var2.Z0;
         if (file != null) {
             file.delete();
             k8Var2.Z0 = null;
         }
-        MediaController.SavedFilterState savedFilterState = ig0Var2.getSavedFilterState();
+        MediaController.SavedFilterState savedFilterState = jg0Var2.getSavedFilterState();
         k8Var2.a1 = savedFilterState;
         if (k8Var2.K) {
             runnable2 = runnable;
@@ -2882,7 +2882,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
             }
         } else {
             if (!savedFilterState.isEmpty()) {
-                Bitmap bitmap = ig0Var2.getBitmap();
+                Bitmap bitmap = jg0Var2.getBitmap();
                 if (bitmap != null) {
                     Matrix matrix = new Matrix();
                     int i10 = k8Var2.R;
@@ -2969,8 +2969,8 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
     }
 
     public final void i0(boolean z10) {
-        ea1 ea1Var = this.V0;
-        if ((ea1Var.getTag() != null && z10) || (ea1Var.getTag() == null && !z10)) {
+        fa1 fa1Var = this.V0;
+        if ((fa1Var.getTag() != null && z10) || (fa1Var.getTag() == null && !z10)) {
             if (z10) {
                 Runnable runnable = this.e2;
                 if (runnable != null) {
@@ -2987,14 +2987,14 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         if (animatorSet != null) {
             animatorSet.cancel();
         }
-        ea1Var.setTag(z10 ? 1 : null);
+        fa1Var.setTag(z10 ? 1 : null);
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.f2 = animatorSet2;
         animatorSet2.setDuration(180L);
         if (z10) {
-            ea1Var.setVisibility(0);
+            fa1Var.setVisibility(0);
         }
-        this.f2.playTogether(ObjectAnimator.ofFloat(ea1Var, (Property<ea1, Float>) View.ALPHA, z10 ? 1.0f : 0.0f));
+        this.f2.playTogether(ObjectAnimator.ofFloat(fa1Var, (Property<fa1, Float>) View.ALPHA, z10 ? 1.0f : 0.0f));
         this.f2.addListener(new ah.p0(14, this, z10));
         this.f2.start();
         if (z10) {
@@ -3321,8 +3321,8 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         int i14;
         float f12;
         float f13;
-        zf0 zf0Var;
-        xf0 xf0Var;
+        ag0 ag0Var;
+        yf0 yf0Var;
         ImageView imageView2;
         int i15;
         k8 k8Var2;
@@ -3395,9 +3395,9 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
             if (this.B1 != null && i16 == 1) {
                 h(null);
             }
-            gg0 gg0Var = this.C1;
-            if (gg0Var != null) {
-                gg0Var.setAllowTouch(false);
+            hg0 hg0Var = this.C1;
+            if (hg0Var != null) {
+                hg0Var.setAllowTouch(false);
             }
             this.k1.e(true);
             jc jcVar = this.n;
@@ -3441,14 +3441,14 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         }
         this.b1.b((i10 == -1 || i10 == 2) && this.I > 0.0f, z11);
         ArrayList arrayList = new ArrayList();
-        ig0 ig0Var = this.B1;
-        boolean z13 = ig0Var == null && i10 == 1;
+        jg0 jg0Var = this.B1;
+        boolean z13 = jg0Var == null && i10 == 1;
         float f14 = 1.0f;
         if (i10 == 1) {
             r();
-            ig0 ig0Var2 = this.B1;
-            this.v2 = ig0Var2;
-            FrameLayout toolsView = ig0Var2 != null ? ig0Var2.getToolsView() : null;
+            jg0 jg0Var2 = this.B1;
+            this.v2 = jg0Var2;
+            FrameLayout toolsView = jg0Var2 != null ? jg0Var2.getToolsView() : null;
             if (toolsView != null) {
                 toolsView.setAlpha(0.0f);
                 toolsView.setVisibility(0);
@@ -3460,10 +3460,10 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
             }
         } else {
             f7 = 0.0f;
-            if (i16 == 1 && ig0Var != null) {
+            if (i16 == 1 && jg0Var != null) {
                 this.v2 = null;
                 z12 = z13;
-                arrayList.add(ObjectAnimator.ofFloat(ig0Var.getToolsView(), (Property<FrameLayout, Float>) View.TRANSLATION_Y, AndroidUtilities.dp(226.0f)));
+                arrayList.add(ObjectAnimator.ofFloat(jg0Var.getToolsView(), (Property<FrameLayout, Float>) View.TRANSLATION_Y, AndroidUtilities.dp(226.0f)));
                 arrayList.add(ObjectAnimator.ofFloat(this.B1.getToolsView(), (Property<FrameLayout, Float>) View.ALPHA, 0.0f));
                 if (i10 != 0) {
                     t();
@@ -3637,13 +3637,13 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
                         } else {
                             f13 = 0.0f;
                         }
-                        zf0Var = this.F1;
-                        if (zf0Var != null) {
-                            arrayList.add(ObjectAnimator.ofFloat(zf0Var, (Property<zf0, Float>) property13, i10 == 1 ? 1.0f : f13));
+                        ag0Var = this.F1;
+                        if (ag0Var != null) {
+                            arrayList.add(ObjectAnimator.ofFloat(ag0Var, (Property<ag0, Float>) property13, i10 == 1 ? 1.0f : f13));
                         }
-                        xf0Var = this.E1;
-                        if (xf0Var != null) {
-                            arrayList.add(ObjectAnimator.ofFloat(xf0Var, (Property<xf0, Float>) property13, i10 == 1 ? 1.0f : f13));
+                        yf0Var = this.E1;
+                        if (yf0Var != null) {
+                            arrayList.add(ObjectAnimator.ofFloat(yf0Var, (Property<yf0, Float>) property13, i10 == 1 ? 1.0f : f13));
                         }
                         arrayList.add(ObjectAnimator.ofFloat(acVar, (Property<ac, Float>) property13, i10 == -1 ? 1.0f : f13));
                         float[] fArr13 = {(i10 != -1 || i10 == 2) ? 1.0f : f13};
@@ -3737,11 +3737,11 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
                 arrayList.add(ObjectAnimator.ofFloat(wbVar2, (Property<wb, Float>) View.SCALE_Y, f12));
                 if (i10 == -1) {
                 }
-                zf0Var = this.F1;
-                if (zf0Var != null) {
+                ag0Var = this.F1;
+                if (ag0Var != null) {
                 }
-                xf0Var = this.E1;
-                if (xf0Var != null) {
+                yf0Var = this.E1;
+                if (yf0Var != null) {
                 }
                 arrayList.add(ObjectAnimator.ofFloat(acVar, (Property<ac, Float>) property13, i10 == -1 ? 1.0f : f13));
                 float[] fArr132 = {(i10 != -1 || i10 == 2) ? 1.0f : f13};
@@ -3810,11 +3810,11 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         arrayList.add(ObjectAnimator.ofFloat(wbVar22, (Property<wb, Float>) View.SCALE_Y, f12));
         if (i10 == -1) {
         }
-        zf0Var = this.F1;
-        if (zf0Var != null) {
+        ag0Var = this.F1;
+        if (ag0Var != null) {
         }
-        xf0Var = this.E1;
-        if (xf0Var != null) {
+        yf0Var = this.E1;
+        if (yf0Var != null) {
         }
         arrayList.add(ObjectAnimator.ofFloat(acVar, (Property<ac, Float>) property132, i10 == -1 ? 1.0f : f13));
         float[] fArr1322 = {(i10 != -1 || i10 == 2) ? 1.0f : f13};
@@ -3937,9 +3937,9 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
         if (z10 == this.A2) {
             return;
         }
-        nb0 nb0Var = this.y;
-        if (nb0Var != null) {
-            nb0Var.a(!z10);
+        mb0 mb0Var = this.y;
+        if (mb0Var != null) {
+            mb0Var.a(!z10);
         }
         this.A2 = z10;
     }
@@ -4050,22 +4050,22 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
                 return;
             }
             this.e = true;
-            h81 h81Var = ybVar.y;
-            if (h81Var != null) {
-                h81Var.B();
+            i81 i81Var = ybVar.y;
+            if (i81Var != null) {
+                i81Var.B();
                 ybVar.y.H();
                 ybVar.y = null;
             }
-            h81 h81Var2 = ybVar.x;
-            if (h81Var2 != null) {
-                j10 = h81Var2.n();
+            i81 i81Var2 = ybVar.x;
+            if (i81Var2 != null) {
+                j10 = i81Var2.n();
                 ybVar.x.B();
                 ybVar.x.H();
                 ybVar.x = null;
             }
-            h81 h81Var3 = ybVar.e;
-            if (h81Var3 != null) {
-                j10 = h81Var3.n();
+            i81 i81Var3 = ybVar.e;
+            if (i81Var3 != null) {
+                j10 = i81Var3.n();
                 ybVar.e.B();
                 ybVar.e.H();
                 ybVar.e = null;
@@ -4141,15 +4141,15 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
             bitmap = q6;
         }
         if (bitmap != null || this.K1.K) {
-            x71 textureView = this.X0.getTextureView();
+            y71 textureView = this.X0.getTextureView();
             int orientation = this.X0.getOrientation();
             k8 k8Var2 = this.K1;
-            ig0 ig0Var = new ig0(this.b, textureView, bitmap, null, orientation, k8Var2 != null ? k8Var2.a1 : null, null, 0, false, false, this.r0, this.a);
-            this.B1 = ig0Var;
-            this.r.addView(ig0Var);
-            gg0 gg0Var = this.C1;
-            if (gg0Var != null) {
-                gg0Var.setFilterView(this.B1);
+            jg0 jg0Var = new jg0(this.b, textureView, bitmap, null, orientation, k8Var2 != null ? k8Var2.a1 : null, null, 0, false, false, this.r0, this.a);
+            this.B1 = jg0Var;
+            this.r.addView(jg0Var);
+            hg0 hg0Var = this.C1;
+            if (hg0Var != null) {
+                hg0Var.setFilterView(this.B1);
             }
             TextureView myTextureView = this.B1.getMyTextureView();
             this.D1 = myTextureView;
@@ -4163,12 +4163,12 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
                 this.D1.animate().alpha(1.0f).setDuration(220L).start();
             }
             i();
-            xf0 blurControl = this.B1.getBlurControl();
+            yf0 blurControl = this.B1.getBlurControl();
             this.E1 = blurControl;
             if (blurControl != null) {
                 this.h0.addView(blurControl);
             }
-            zf0 curveControl = this.B1.getCurveControl();
+            ag0 curveControl = this.B1.getCurveControl();
             this.F1 = curveControl;
             if (curveControl != null) {
                 this.h0.addView(curveControl);
@@ -4213,7 +4213,7 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
             e3Var.B = a0Var;
             e3Var.l0();
         }
-        this.n.addView(this.M0, w7.a6.e(-1, -1, 119));
+        this.n.addView(this.M0, w7.z5.e(-1, -1, 119));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -4468,11 +4468,11 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
     }
 
     public final void x() {
-        ig0 ig0Var = this.B1;
-        if (ig0Var == null) {
+        jg0 jg0Var = this.B1;
+        if (jg0Var == null) {
             return;
         }
-        ig0Var.e();
+        jg0Var.e();
         this.C1.setFilterView(null);
         this.r.removeView(this.B1);
         TextureView textureView = this.D1;
@@ -4481,14 +4481,14 @@ public final class kc implements NotificationCenter.NotificationCenterDelegate {
             this.D1 = null;
         }
         this.X0.o(null, null);
-        xf0 xf0Var = this.E1;
-        if (xf0Var != null) {
-            this.h0.removeView(xf0Var);
+        yf0 yf0Var = this.E1;
+        if (yf0Var != null) {
+            this.h0.removeView(yf0Var);
             this.E1 = null;
         }
-        zf0 zf0Var = this.F1;
-        if (zf0Var != null) {
-            this.h0.removeView(zf0Var);
+        ag0 ag0Var = this.F1;
+        if (ag0Var != null) {
+            this.h0.removeView(ag0Var);
             this.F1 = null;
         }
         this.B1 = null;

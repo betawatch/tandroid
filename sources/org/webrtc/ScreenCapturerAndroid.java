@@ -8,7 +8,7 @@ import android.media.projection.MediaProjectionManager;
 import android.view.Surface;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
     private static final int DISPLAY_FLAGS = 3;
@@ -76,7 +76,7 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
         if (this.virtualDisplay == null) {
             return;
         }
-        ThreadUtils.invokeAtFrontUninterruptibly(this.surfaceTextureHelper.getHandler(), new q(this, 0));
+        ThreadUtils.invokeAtFrontUninterruptibly(this.surfaceTextureHelper.getHandler(), new p(this, 0));
     }
 
     @Override // org.webrtc.VideoCapturer
@@ -119,7 +119,7 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
 
     @Override // org.webrtc.VideoSink
     public final /* synthetic */ void setParentSink(VideoSink videoSink) {
-        f0.a(this, videoSink);
+        e0.a(this, videoSink);
     }
 
     @Override // org.webrtc.VideoCapturer
@@ -146,6 +146,6 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
     @Override // org.webrtc.VideoCapturer
     public synchronized void stopCapture() {
         checkNotDisposed();
-        ThreadUtils.invokeAtFrontUninterruptibly(this.surfaceTextureHelper.getHandler(), new q(this, 1));
+        ThreadUtils.invokeAtFrontUninterruptibly(this.surfaceTextureHelper.getHandler(), new p(this, 1));
     }
 }

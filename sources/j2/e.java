@@ -12,7 +12,7 @@ import k2.s0;
 import k2.t0;
 import k2.x;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements o {
     public final /* synthetic */ int a;
@@ -100,7 +100,7 @@ public final /* synthetic */ class e implements o {
             default:
                 x xVar2 = ((n0) obj).a.n;
                 if (xVar2 != null) {
-                    xVar2.q();
+                    xVar2.w();
                     break;
                 }
                 break;
@@ -118,7 +118,7 @@ public final /* synthetic */ class e implements o {
                     } else {
                         j10 = -9223372036854775807L;
                     }
-                    s0Var.n.m(((k2.o) s0Var.p.e).f, m0.h0(j10), SystemClock.elapsedRealtime() - s0Var.W);
+                    s0Var.n.t(((k2.o) s0Var.p.e).f, m0.h0(j10), SystemClock.elapsedRealtime() - s0Var.W);
                     break;
                 }
                 break;
@@ -129,7 +129,7 @@ public final /* synthetic */ class e implements o {
                 x xVar3 = o0Var2.b.n;
                 if (xVar3 != null) {
                     int i11 = o0Var2.a.a;
-                    xVar3.E(new t0());
+                    xVar3.F(new t0());
                     break;
                 }
                 break;
@@ -137,7 +137,7 @@ public final /* synthetic */ class e implements o {
                 o0 o0Var3 = (o0) obj;
                 s0 s0Var2 = o0Var3.b;
                 if (o0Var3.equals(s0Var2.j) && (xVar = s0Var2.n) != null && s0Var2.O) {
-                    xVar.I();
+                    xVar.G();
                     break;
                 }
                 break;

@@ -1,53 +1,66 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_stars;
+import android.view.View;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ip0 implements Utilities.Callback2 {
+public final class ip0 extends org.telegram.ui.Components.d91 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ ip0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Object obj, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, Object obj2, int i10) {
+    public /* synthetic */ ip0(Object obj, int i10) {
         this.a = i10;
-        this.d = notificationCenterDelegate;
-        this.e = obj;
-        this.b = tL_starGiftUnique;
-        this.c = j10;
-        this.f = obj2;
+        this.b = obj;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // org.telegram.ui.Components.d91
+    public final void b(View view, int i10, int i11) {
         switch (this.a) {
             case 0:
-                gq0.U((gq0) this.d, (boolean[]) this.e, this.b, this.c, (ep0) this.f, (zh.v2) obj, (pf.c) obj2);
                 break;
             default:
-                zh.r3 r3Var = (zh.r3) this.d;
-                pf.c cVar = (pf.c) this.e;
-                yh.k0 k0Var = (yh.k0) this.f;
-                cVar.b();
-                if (((Boolean) obj).booleanValue()) {
-                    zh.f2 f2Var = r3Var.P0;
-                    if (f2Var != null) {
-                        f2Var.b(this.b, this.c, k0Var != null);
-                    }
-                    if (k0Var != null) {
-                        AndroidUtilities.runOnUIThread(new yh.e0(k0Var, 2));
-                        r3Var.skipDismissAnimation();
-                    }
-                    r3Var.dismiss();
+                if (view instanceof org.telegram.ui.Wallet.g2) {
+                    ((org.telegram.ui.Wallet.g2) view).getClass();
                     break;
                 }
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.Components.d91
+    public final View d(int i10) {
+        switch (this.a) {
+            case 0:
+                eq0 eq0Var = (eq0) this.b;
+                if (i10 == 1) {
+                    return eq0Var.h;
+                }
+                if (i10 == 0) {
+                    return eq0Var.n;
+                }
+                return null;
+            default:
+                return (View) ((org.telegram.ui.Wallet.i2) this.b).c.get(i10);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.d91
+    public final int e() {
+        switch (this.a) {
+            case 0:
+                return 2;
+            default:
+                return ((org.telegram.ui.Wallet.i2) this.b).c.size();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.d91
+    public final int h(int i10) {
+        int i11 = this.a;
+        return i10;
+    }
+
+    private final void i(View view, int i10, int i11) {
     }
 }

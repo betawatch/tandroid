@@ -25,11 +25,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.vh0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout {
     public int E;
@@ -76,7 +76,7 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
     }
 
     public final int b(View view) {
-        FrameLayout.LayoutParams e = w7.a6.e(-2, -2, this.v ? 80 : 48);
+        FrameLayout.LayoutParams e = w7.z5.e(-2, -2, this.v ? 80 : 48);
         this.J.addView(view, e);
         return r1.getChildCount() - 1;
     }
@@ -415,7 +415,7 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
                         View childAt = i1Var.getChildAt(i10);
                         if (childAt != null && childAt.getVisibility() == 0 && !(childAt instanceof j1)) {
                             if (((Integer) hashMap.get(childAt)) != null) {
-                                if (yh.A(32.0f, AndroidUtilities.dp(48.0f) * r5.intValue(), measuredHeight) > measuredHeight * f7) {
+                                if (sk.z(32.0f, AndroidUtilities.dp(48.0f) * r5.intValue(), measuredHeight) > measuredHeight * f7) {
                                     break;
                                 }
                             }
@@ -562,10 +562,10 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
             vh0Var.J = -1;
             vh0Var.L = new Rect();
             vh0Var.I = c6Var;
-            vh0Var.d = new ji.d4(context, new fi.n4(vh0Var, ViewConfiguration.get(context).getScaledTouchSlop(), 2));
+            vh0Var.d = new ji.h5(context, new fi.n4(vh0Var, ViewConfiguration.get(context).getScaledTouchSlop(), 2));
             paint.setColor(-16777216);
             this.J = vh0Var;
-            addView(vh0Var, w7.a6.d(-2.0f, -2));
+            addView(vh0Var, w7.z5.d(-2.0f, -2));
         }
         if ((i11 & 4) == 0) {
             try {
@@ -575,9 +575,9 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
                 scrollView.setVerticalScrollBarEnabled(false);
                 vh0 vh0Var2 = this.J;
                 if (vh0Var2 != null) {
-                    vh0Var2.addView(scrollView, w7.a6.e(-2, -2, this.v ? 80 : 48));
+                    vh0Var2.addView(scrollView, w7.z5.e(-2, -2, this.v ? 80 : 48));
                 } else {
-                    addView(scrollView, w7.a6.d(-2.0f, -2));
+                    addView(scrollView, w7.z5.d(-2.0f, -2));
                 }
             } catch (Throwable th2) {
                 FileLog.e(th2);
@@ -593,9 +593,9 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
         }
         vh0 vh0Var3 = this.J;
         if (vh0Var3 != null) {
-            vh0Var3.addView(i1Var, w7.a6.e(-2, -2, this.v ? 80 : 48));
+            vh0Var3.addView(i1Var, w7.z5.e(-2, -2, this.v ? 80 : 48));
         } else {
-            addView(i1Var, w7.a6.d(-2.0f, -2));
+            addView(i1Var, w7.z5.d(-2.0f, -2));
         }
     }
 }

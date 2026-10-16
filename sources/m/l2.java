@@ -1,64 +1,49 @@
 package m;
 
 import android.content.Context;
-import android.content.res.Resources;
-import android.content.res.XmlResourceParser;
-import android.graphics.drawable.Drawable;
-import android.util.AttributeSet;
+import android.os.Build;
 import android.util.Log;
+import android.view.MenuItem;
+import android.widget.PopupWindow;
+import java.lang.reflect.Method;
+import ji.w4;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class l2 {
-    public final /* synthetic */ int a;
+public final class l2 extends f2 implements g2 {
+    public static final Method T;
+    public w4 S;
 
-    public /* synthetic */ l2(int i10) {
-        this.a = i10;
+    static {
+        try {
+            if (Build.VERSION.SDK_INT <= 28) {
+                T = PopupWindow.class.getDeclaredMethod("setTouchModal", Boolean.TYPE);
+            }
+        } catch (NoSuchMethodException unused) {
+            Log.i("MenuPopupWindow", "Could not find method setTouchModal() on PopupWindow. Oh well.");
+        }
     }
 
-    public final Drawable a(Context context, XmlResourceParser xmlResourceParser, AttributeSet attributeSet, Resources.Theme theme) {
-        switch (this.a) {
-            case 0:
-                String classAttribute = attributeSet.getClassAttribute();
-                if (classAttribute != null) {
-                    try {
-                        Drawable drawable = (Drawable) l2.class.getClassLoader().loadClass(classAttribute).asSubclass(Drawable.class).getDeclaredConstructor(null).newInstance(null);
-                        j.b.c(drawable, context.getResources(), xmlResourceParser, attributeSet, theme);
-                        break;
-                    } catch (Exception e) {
-                        Log.e("DrawableDelegate", "Exception while inflating <drawable>", e);
-                        return null;
-                    }
-                }
-                break;
-            case 1:
-                try {
-                    break;
-                } catch (Exception e7) {
-                    Log.e("AsldcInflateDelegate", "Exception while inflating <animated-selector>", e7);
-                    return null;
-                }
-            case 2:
-                try {
-                    Resources resources = context.getResources();
-                    x4.d dVar = new x4.d(context);
-                    dVar.inflate(resources, xmlResourceParser, attributeSet, theme);
-                    break;
-                } catch (Exception e10) {
-                    Log.e("AvdcInflateDelegate", "Exception while inflating <animated-vector>", e10);
-                    return null;
-                }
-            default:
-                try {
-                    Resources resources2 = context.getResources();
-                    x4.o oVar = new x4.o();
-                    oVar.inflate(resources2, xmlResourceParser, attributeSet, theme);
-                    break;
-                } catch (Exception e11) {
-                    Log.e("VdcInflateDelegate", "Exception while inflating <vector>", e11);
-                    return null;
-                }
+    @Override // m.f2
+    public final t1 o(Context context, boolean z10) {
+        k2 k2Var = new k2(context, z10);
+        k2Var.setHoverListener(this);
+        return k2Var;
+    }
+
+    @Override // m.g2
+    public final void w0(l.k kVar, l.m mVar) {
+        w4 w4Var = this.S;
+        if (w4Var != null) {
+            w4Var.w0(kVar, mVar);
         }
-        return null;
+    }
+
+    @Override // m.g2
+    public final void z(l.k kVar, MenuItem menuItem) {
+        w4 w4Var = this.S;
+        if (w4Var != null) {
+            w4Var.z(kVar, menuItem);
+        }
     }
 }

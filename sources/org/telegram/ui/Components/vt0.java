@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class vt0 extends org.telegram.ui.ActionBar.e5 {
     public final /* synthetic */ xv0 f;
@@ -60,7 +60,7 @@ public final class vt0 extends org.telegram.ui.ActionBar.e5 {
         if (iv0Var != null) {
             iv0Var.E(null, null);
         }
-        xv0Var.K0(false);
+        xv0Var.L0(false);
         bk0 bk0Var = xv0Var.s0;
         if (bk0Var != null) {
             bk0Var.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f).setDuration(320L).setInterpolator(es.h).start();
@@ -68,7 +68,7 @@ public final class vt0 extends org.telegram.ui.ActionBar.e5 {
         if (xv0Var.z0) {
             xv0Var.z0 = false;
         } else {
-            xv0Var.m1(false);
+            xv0Var.n1(false);
         }
     }
 
@@ -89,7 +89,7 @@ public final class vt0 extends org.telegram.ui.ActionBar.e5 {
             u0Var.setVisibility(8);
         }
         xv0Var.n0.setVisibility(8);
-        xv0Var.K0(true);
+        xv0Var.L0(true);
         bk0 bk0Var = xv0Var.s0;
         if (bk0Var != null) {
             bk0Var.animate().scaleX(0.6f).scaleY(0.6f).alpha(0.0f).setDuration(320L).setInterpolator(es.h).start();
@@ -131,7 +131,7 @@ public final class vt0 extends org.telegram.ui.ActionBar.e5 {
         }
         xv0Var.n0.setVisibility(8);
         xv0Var.U0 = (obj.length() == 0 && xv0Var.W0 == null) ? false : true;
-        xv0Var.post(new lr0(this, 3));
+        xv0Var.post(new kr0(this, 3));
         int i10 = xv0Var.k0[0].F;
         if (i10 == 1) {
             tu0 tu0Var = xv0Var.g0;

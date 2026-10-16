@@ -6,7 +6,7 @@ import android.view.View;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class iv implements View.OnClickListener {
     public final /* synthetic */ Context a;
@@ -28,12 +28,12 @@ public final class iv implements View.OnClickListener {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onClick(View view) {
-        if (yy.w4) {
+        if (yy.x4) {
             return;
         }
         int x02 = org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.q6, false);
         int x03 = org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.a7, false);
-        yy.w4 = true;
+        yy.x4 = true;
         SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0);
         String str = "Blue";
         String string = sharedPreferences.getString("lastDayTheme", "Blue");
@@ -57,7 +57,7 @@ public final class iv implements View.OnClickListener {
             org.telegram.ui.Components.yj0 yj0Var = this.c.d;
             yj0Var.P(q6 ? yj0Var.e[0] - 1 : 0);
             this.c.e.getImageView().d();
-            int[] iArr = {(this.c.e.getImageView().getMeasuredWidth() / 2) + r2, org.telegram.messenger.yh.c(3.0f, this.c.e.getImageView().getMeasuredHeight() / 2, r2)};
+            int[] iArr = {(this.c.e.getImageView().getMeasuredWidth() / 2) + r2, org.telegram.messenger.g0.C(3.0f, this.c.e.getImageView().getMeasuredHeight() / 2, r2)};
             this.c.e.getImageView().getLocationInWindow(iArr);
             int i10 = iArr[0];
             int i11 = iArr[1];
@@ -71,7 +71,7 @@ public final class iv implements View.OnClickListener {
         org.telegram.ui.Components.yj0 yj0Var2 = this.c.d;
         yj0Var2.P(q62 ? yj0Var2.e[0] - 1 : 0);
         this.c.e.getImageView().d();
-        int[] iArr2 = {(this.c.e.getImageView().getMeasuredWidth() / 2) + i10, org.telegram.messenger.yh.c(3.0f, this.c.e.getImageView().getMeasuredHeight() / 2, i11)};
+        int[] iArr2 = {(this.c.e.getImageView().getMeasuredWidth() / 2) + i10, org.telegram.messenger.g0.C(3.0f, this.c.e.getImageView().getMeasuredHeight() / 2, i11)};
         this.c.e.getImageView().getLocationInWindow(iArr2);
         int i102 = iArr2[0];
         int i112 = iArr2[1];

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import org.xmlpull.v1.XmlPullParser;
 import v7.x7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final int[] a = {R.attr.name, R.attr.tint, R.attr.height, R.attr.width, R.attr.alpha, R.attr.autoMirrored, R.attr.tintMode, R.attr.viewportWidth, R.attr.viewportHeight};
@@ -37,40 +37,40 @@ public abstract class a {
     public static final int[] j = {R.attr.value, R.attr.interpolator, R.attr.valueType, R.attr.fraction};
     public static final int[] k = {R.attr.propertyName, R.attr.pathData, R.attr.propertyXName, R.attr.propertyYName};
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x03aa, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x03a9, code lost:
     
         r2 = new android.animation.Animator[r10.size()];
         r3 = r10.size();
         r11 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x03b5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x03b4, code lost:
     
         if (r1 >= r3) goto L220;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x03b7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x03b6, code lost:
     
         r4 = r10.get(r1);
         r1 = r1 + 1;
         r2[r11] = (android.animation.Animator) r4;
         r11 = r11 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x03c5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x03c4, code lost:
     
         if (r33 != 0) goto L211;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x03c7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x03c6, code lost:
     
         r32.playTogether(r2);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x03ca, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x03c9, code lost:
     
         return r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x03cb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x03ca, code lost:
     
         r32.playSequentially(r2);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x03ce, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x03cd, code lost:
     
         return r0;
      */
@@ -78,17 +78,17 @@ public abstract class a {
     
         r1 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x03a6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x03a5, code lost:
     
         if (r32 == null) goto L212;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x03a8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x03a7, code lost:
     
         if (r10 == null) goto L212;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x037e A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0382  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x037d A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0381  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

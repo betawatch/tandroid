@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class l90 extends LinearLayout {
     public final org.telegram.ui.Cells.m4 a;
@@ -253,7 +253,7 @@ public abstract class l90 extends LinearLayout {
         this.r = ofFloat;
         ofFloat.setDuration(200L);
         this.r.setInterpolator(es.f);
-        this.r.addUpdateListener(new g80(this, 2));
+        this.r.addUpdateListener(new f80(this, 2));
         this.r.addListener(new k90(this, 0));
         w8Var2.setVisibility(0);
         this.r.start();

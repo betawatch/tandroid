@@ -9,7 +9,7 @@ import bi.x8;
 import di.k8;
 import di.kc;
 import di.r2;
-import di.x6;
+import di.y6;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -43,7 +43,7 @@ import org.telegram.ui.u4;
 import org.telegram.ui.xm;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
@@ -180,7 +180,7 @@ public final /* synthetic */ class g implements Runnable {
                     ji.a aVar = g0Var.a;
                     x3 x3Var = ((p3) e0Var).a;
                     x3Var.p3(false);
-                    x3Var.f3.h(new u3(x3Var, aVar, i13), d0Var);
+                    x3Var.f3.i(new u3(x3Var, aVar, i13), d0Var);
                     break;
                 }
                 break;
@@ -192,7 +192,7 @@ public final /* synthetic */ class g implements Runnable {
                 cVar.getClass();
                 u6.p(Looper.myLooper() == ((e2.i0) cVar.c).a.getLooper());
                 cVar.a++;
-                cVar.i(new x6(19, cVar, vVar));
+                cVar.i(new y6(19, cVar, vVar));
                 cVar.n(Integer.valueOf(i13));
                 break;
             case 14:
@@ -211,21 +211,21 @@ public final /* synthetic */ class g implements Runnable {
                 u1 u1Var = (u1) obj;
                 int i15 = u1Var.v7;
                 if (i13 == i15) {
-                    org.telegram.ui.Cells.f0 f0Var = (org.telegram.ui.Cells.f0) u1Var.o7.get(i15);
-                    if (f0Var != null) {
-                        org.telegram.ui.Cells.z zVar = f0Var.s;
+                    org.telegram.ui.Cells.e0 e0Var2 = (org.telegram.ui.Cells.e0) u1Var.o7.get(i15);
+                    if (e0Var2 != null) {
+                        org.telegram.ui.Cells.z zVar = e0Var2.s;
                         if (zVar != null) {
                             zVar.setState(StateSet.NOTHING);
                         }
-                        f0Var.b(false);
+                        e0Var2.b(false);
                         if (!u1Var.y7.scheduled) {
-                            if (f0Var.j != null) {
+                            if (e0Var2.j != null) {
                                 u1Var.k();
-                            } else if (f0Var.i != null) {
+                            } else if (e0Var2.i != null) {
                                 u1Var.k();
                                 org.telegram.ui.Cells.l1 l1Var = u1Var.Jc;
                                 if (l1Var != null) {
-                                    l1Var.A1(u1Var, f0Var.i);
+                                    l1Var.B1(u1Var, e0Var2.i);
                                 }
                             }
                         }

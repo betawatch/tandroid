@@ -1,6 +1,6 @@
 package u2;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class k1 implements d1 {
     public int a;
@@ -21,12 +21,12 @@ public final class k1 implements d1 {
     }
 
     @Override // u2.d1
-    public final void d() {
+    public final void b() {
         m1 m1Var = this.c;
         if (m1Var.v) {
             return;
         }
-        m1Var.r.d();
+        m1Var.r.b();
     }
 
     @Override // u2.d1
@@ -69,7 +69,7 @@ public final class k1 implements d1 {
     }
 
     @Override // u2.d1
-    public final int m(long j10) {
+    public final int j(long j10) {
         a();
         if (j10 <= 0 || this.a == 2) {
             return 0;

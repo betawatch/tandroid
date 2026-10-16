@@ -33,12 +33,12 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.aa0;
 import org.telegram.ui.Components.ea0;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.j61;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.yj0;
-import org.telegram.ui.yk0;
+import org.telegram.ui.xk0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public class d4 extends View {
     public boolean A0;
@@ -90,7 +90,7 @@ public class d4 extends View {
     public float j0;
     public int k0;
     public Runnable l0;
-    public final yk0 m0;
+    public final xk0 m0;
     public Drawable n;
     public ValueAnimator n0;
     public float o0;
@@ -137,7 +137,7 @@ public class d4 extends View {
         es esVar = es.h;
         this.W = new org.telegram.ui.Components.g6(this, 350L, esVar);
         this.e0 = AndroidUtilities.dp(2.0f);
-        this.m0 = new yk0(this, 27);
+        this.m0 = new xk0(this, 27);
         this.o0 = 1.0f;
         this.p0 = new org.telegram.ui.Components.ad(this, 2.0f, 5.0f);
         this.q0 = new Rect();
@@ -257,7 +257,7 @@ public class d4 extends View {
             return textPaint.measureText(charSequence.toString());
         }
         Spanned spanned = (Spanned) charSequence;
-        i61[] i61VarArr = (i61[]) spanned.getSpans(0, charSequence.length(), i61.class);
+        j61[] j61VarArr = (j61[]) spanned.getSpans(0, charSequence.length(), j61.class);
         ReplacementSpan[] replacementSpanArr = (ReplacementSpan[]) spanned.getSpans(0, charSequence.length(), ReplacementSpan.class);
         int i10 = 0;
         int i11 = 0;
@@ -271,13 +271,13 @@ public class d4 extends View {
         }
         CharSequence charSequence2 = charSequence;
         TextPaint textPaint3 = textPaint;
-        if (i61VarArr == null || i61VarArr.length == 0) {
+        if (j61VarArr == null || j61VarArr.length == 0) {
             return textPaint3.measureText(charSequence2.toString()) + i11;
         }
         int i12 = 0;
-        for (int i13 = 0; i13 < i61VarArr.length; i13++) {
-            int spanStart = spanned.getSpanStart(i61VarArr[i13]);
-            int spanEnd = spanned.getSpanEnd(i61VarArr[i13]);
+        for (int i13 = 0; i13 < j61VarArr.length; i13++) {
+            int spanStart = spanned.getSpanStart(j61VarArr[i13]);
+            int spanEnd = spanned.getSpanEnd(j61VarArr[i13]);
             int max = Math.max(i12, spanStart);
             if (max - i12 > 0) {
                 f7 += textPaint3.measureText(spanned, i12, max);
@@ -285,7 +285,7 @@ public class d4 extends View {
             i12 = Math.max(max, spanEnd);
             if (i12 - max > 0) {
                 Typeface typeface = textPaint3.getTypeface();
-                textPaint3.setTypeface(i61VarArr[i13].a);
+                textPaint3.setTypeface(j61VarArr[i13].a);
                 float measureText = textPaint3.measureText(spanned, max, i12) + f7;
                 textPaint3.setTypeface(typeface);
                 f7 = measureText;
@@ -792,7 +792,7 @@ public class d4 extends View {
                         ClickableSpan[] clickableSpanArr = (ClickableSpan[]) new SpannableString(this.L.getText()).getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
                         if (clickableSpanArr.length != 0 && !AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
                             clickableSpan = clickableSpanArr[0];
-                            yk0 yk0Var = this.m0;
+                            xk0 xk0Var = this.m0;
                             aa0 aa0Var = this.Q;
                             if (clickableSpan == null && motionEvent.getAction() == 0) {
                                 ea0 ea0Var = new ea0(clickableSpan, null, motionEvent.getX(), motionEvent.getY(), 0);
@@ -806,16 +806,16 @@ public class d4 extends View {
                                 this.L.getSelectionPath(spanStart, spanEnd, b10);
                                 invalidate();
                                 AndroidUtilities.runOnUIThread(new b4(this, ea0Var, clickableSpan), ViewConfiguration.getLongPressTimeout());
-                                AndroidUtilities.cancelRunOnUIThread(yk0Var);
+                                AndroidUtilities.cancelRunOnUIThread(xk0Var);
                                 return true;
                             }
                             if (motionEvent.getAction() == 1) {
                                 aa0Var.d(true);
                                 invalidate();
-                                AndroidUtilities.cancelRunOnUIThread(yk0Var);
+                                AndroidUtilities.cancelRunOnUIThread(xk0Var);
                                 long j10 = this.d;
                                 if (j10 > 0) {
-                                    AndroidUtilities.runOnUIThread(yk0Var, j10);
+                                    AndroidUtilities.runOnUIThread(xk0Var, j10);
                                 }
                                 ea0 ea0Var2 = this.K0;
                                 if (ea0Var2 != null && (characterStyle = ea0Var2.i) == clickableSpan) {
@@ -830,10 +830,10 @@ public class d4 extends View {
                             if (motionEvent.getAction() == 3) {
                                 aa0Var.d(true);
                                 invalidate();
-                                AndroidUtilities.cancelRunOnUIThread(yk0Var);
+                                AndroidUtilities.cancelRunOnUIThread(xk0Var);
                                 long j11 = this.d;
                                 if (j11 > 0) {
-                                    AndroidUtilities.runOnUIThread(yk0Var, j11);
+                                    AndroidUtilities.runOnUIThread(xk0Var, j11);
                                 }
                                 this.K0 = null;
                             }
@@ -841,7 +841,7 @@ public class d4 extends View {
                     }
                 }
                 clickableSpan = null;
-                yk0 yk0Var2 = this.m0;
+                xk0 xk0Var2 = this.m0;
                 aa0 aa0Var2 = this.Q;
                 if (clickableSpan == null) {
                 }
@@ -950,11 +950,11 @@ public class d4 extends View {
         AndroidUtilities.makeAccessibilityAnnouncement(getText());
         this.V = true;
         invalidate();
-        yk0 yk0Var = this.m0;
-        AndroidUtilities.cancelRunOnUIThread(yk0Var);
+        xk0 xk0Var = this.m0;
+        AndroidUtilities.cancelRunOnUIThread(xk0Var);
         long j10 = this.d;
         if (j10 > 0) {
-            AndroidUtilities.runOnUIThread(yk0Var, j10);
+            AndroidUtilities.runOnUIThread(xk0Var, j10);
         }
         Runnable runnable = this.l0;
         if (runnable != null) {

@@ -8,15 +8,15 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class as {
     public final ActionBarPopupWindow$ActionBarPopupWindowLayout a;
     public final LinearLayout b;
-    public final wr0 c;
+    public final vr0 c;
 
-    public as(ContextThemeWrapper contextThemeWrapper, org.telegram.ui.Components.vh0 vh0Var, wr0 wr0Var) {
-        this.c = wr0Var;
+    public as(ContextThemeWrapper contextThemeWrapper, org.telegram.ui.Components.vh0 vh0Var, vr0 vr0Var) {
+        this.c = vr0Var;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(0, 0, contextThemeWrapper, null);
         this.a = actionBarPopupWindow$ActionBarPopupWindowLayout;
         actionBarPopupWindow$ActionBarPopupWindowLayout.setFitItems(true);

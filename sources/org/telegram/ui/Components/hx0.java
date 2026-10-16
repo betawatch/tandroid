@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class hx0 extends View {
     public final aa a;
@@ -70,10 +70,10 @@ public final class hx0 extends View {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         float e = this.c.e(this.d);
-        int B = org.telegram.messenger.yh.B(24.0f, getMeasuredWidth(), 2);
+        int A = org.telegram.messenger.sk.A(24.0f, getMeasuredWidth(), 2);
         int measuredHeight = (getMeasuredHeight() - AndroidUtilities.dp(24.0f)) / 2;
         canvas.save();
-        canvas.translate(B, measuredHeight);
+        canvas.translate(A, measuredHeight);
         canvas.scale(e, e, 0.0f, AndroidUtilities.dp(12.0f));
         int dp = AndroidUtilities.dp(24.0f);
         int dp2 = AndroidUtilities.dp(24.0f);
@@ -122,7 +122,7 @@ public final class hx0 extends View {
             if (i10 < 0) {
                 b10 = 18;
             } else {
-                b10 = w7.s.b(i10 <= 10 ? i10 - 1 : (i10 / 10) + 8, 0, 17);
+                b10 = w7.r.b(i10 <= 10 ? i10 - 1 : (i10 / 10) + 8, 0, 17);
             }
             Context context = aaVar.a;
             if (aaVar.n != b10 || aaVar.c == null || aaVar.d == null) {
@@ -148,7 +148,7 @@ public final class hx0 extends View {
             aaVar.invalidateSelf();
         }
         StringBuilder sb2 = new StringBuilder();
-        org.telegram.ui.Cells.d0.n(R.string.AccDescrProfileRatingLevel, " ", sb2);
+        org.telegram.ui.Cells.c1.l(R.string.AccDescrProfileRatingLevel, " ", sb2);
         sb2.append(tl_starsRating.level);
         setContentDescription(sb2.toString());
         invalidate();

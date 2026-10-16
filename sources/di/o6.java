@@ -55,7 +55,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -63,7 +63,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.bh;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.h81;
+import org.telegram.ui.Components.i81;
 import org.telegram.ui.Components.iw0;
 import org.telegram.ui.Components.nw0;
 import org.telegram.ui.Components.pw0;
@@ -74,7 +74,7 @@ import org.telegram.ui.Components.yj0;
 import org.telegram.ui.Components.zg;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public abstract class o6 extends pw0 implements rg.s1, rg.h, rg.o1, nw0, gc {
     public final rg.h1 A0;
@@ -137,7 +137,7 @@ public abstract class o6 extends pw0 implements rg.s1, rg.h, rg.o1, nw0, gc {
     public boolean c2;
     public final rg.y1 d1;
     public boolean d2;
-    public final k6.h e1;
+    public final a4.l e1;
     public org.telegram.ui.Components.la e2;
     public final int f1;
     public final z6 f2;
@@ -189,9 +189,9 @@ public abstract class o6 extends pw0 implements rg.s1, rg.h, rg.o1, nw0, gc {
         	at jadx.core.dex.visitors.InitCodeVariables.initCodeVars(InitCodeVariables.java:48)
         	at jadx.core.dex.visitors.InitCodeVariables.visit(InitCodeVariables.java:29)
         */
-    public o6(android.content.Context r30, boolean r31, java.io.File r32, boolean r33, boolean r34, di.jc r35, android.app.Activity r36, int r37, android.graphics.Bitmap r38, android.graphics.Bitmap r39, int r40, java.util.ArrayList r41, di.k8 r42, int r43, int r44, org.telegram.messenger.MediaController.CropState r45, org.telegram.ui.Components.la r46, org.telegram.ui.ActionBar.c6 r47, di.z6 r48, di.a7 r49) {
+    public o6(android.content.Context r31, boolean r32, java.io.File r33, boolean r34, boolean r35, di.jc r36, android.app.Activity r37, int r38, android.graphics.Bitmap r39, android.graphics.Bitmap r40, int r41, java.util.ArrayList r42, di.k8 r43, int r44, int r45, org.telegram.messenger.MediaController.CropState r46, org.telegram.ui.Components.la r47, org.telegram.ui.ActionBar.c6 r48, di.z6 r49, di.a7 r50) {
         /*
-            Method dump skipped, instructions count: 1490
+            Method dump skipped, instructions count: 1488
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: di.o6.<init>(android.content.Context, boolean, java.io.File, boolean, boolean, di.jc, android.app.Activity, int, android.graphics.Bitmap, android.graphics.Bitmap, int, java.util.ArrayList, di.k8, int, int, org.telegram.messenger.MediaController$CropState, org.telegram.ui.Components.la, org.telegram.ui.ActionBar.c6, di.z6, di.a7):void");
@@ -313,7 +313,7 @@ public abstract class o6 extends pw0 implements rg.s1, rg.h, rg.o1, nw0, gc {
         this.W0 = v5Var;
         v5Var.setClipToPadding(false);
         this.W0.setOrientation(0);
-        this.T0.addView(this.W0, w7.a6.a(40.0f, 52.0f, 0.0f, 52.0f, 0.0f, -1, 80));
+        this.T0.addView(this.W0, w7.z5.a(40.0f, 52.0f, 0.0f, 52.0f, 0.0f, -1, 80));
         TextView textView = new TextView(context);
         this.h1 = textView;
         textView.setText(LocaleController.getString(R.string.PhotoEditorDraw).toUpperCase());
@@ -362,7 +362,7 @@ public abstract class o6 extends pw0 implements rg.s1, rg.h, rg.o1, nw0, gc {
                 }
             }
         });
-        this.W0.addView(this.h1, w7.a6.l(1.0f, 0, -2));
+        this.W0.addView(this.h1, w7.z5.l(1.0f, 0, -2));
         TextView textView3 = new TextView(context);
         this.i1 = textView3;
         textView3.setText(LocaleController.getString(R.string.PhotoEditorSticker).toUpperCase());
@@ -409,7 +409,7 @@ public abstract class o6 extends pw0 implements rg.s1, rg.h, rg.o1, nw0, gc {
         this.i1.setTypeface(AndroidUtilities.bold());
         this.i1.setAlpha(0.6f);
         this.i1.setSingleLine();
-        this.W0.addView(this.i1, w7.a6.l(1.0f, 0, -2));
+        this.W0.addView(this.i1, w7.z5.l(1.0f, 0, -2));
         TextView textView4 = new TextView(context);
         this.j1 = textView4;
         textView4.setText(LocaleController.getString(R.string.PhotoEditorText).toUpperCase());
@@ -456,7 +456,7 @@ public abstract class o6 extends pw0 implements rg.s1, rg.h, rg.o1, nw0, gc {
                 }
             }
         });
-        this.W0.addView(this.j1, w7.a6.l(1.0f, 0, -2));
+        this.W0.addView(this.j1, w7.z5.l(1.0f, 0, -2));
     }
 
     public static boolean w0(TLRPC.Document document) {
@@ -500,13 +500,13 @@ public abstract class o6 extends pw0 implements rg.s1, rg.h, rg.o1, nw0, gc {
             qg.t1 t1Var = this.D0;
             t1Var.b.remove(uuid);
             t1Var.c.remove(uuid);
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.voip.m2(t1Var, 18));
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.voip.r2(t1Var, 18));
         }
         rg.y1 y1Var = this.d1;
-        k6.h hVar = this.e1;
-        y1Var.setValueOverride(hVar);
+        a4.l lVar = this.e1;
+        y1Var.setValueOverride(lVar);
         y1Var.setShowPreview(true);
-        float f7 = hVar.get();
+        float f7 = lVar.get();
         qg.q1 q1Var = this.A1;
         q1Var.c = f7;
         D0(q1Var, null, false);
@@ -635,7 +635,7 @@ public abstract class o6 extends pw0 implements rg.s1, rg.h, rg.o1, nw0, gc {
                             this.Z1 = gl0Var2;
                             org.telegram.ui.Components.pa paVar = new org.telegram.ui.Components.pa(this.e2, gl0Var2, 0, false);
                             this.Z1.setPadding(0, AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f));
-                            this.M1.addView(this.Z1, w7.a6.a(96.0f, 0.0f, 0.0f, 12.0f, 64.0f, -2, 53));
+                            this.M1.addView(this.Z1, w7.z5.a(96.0f, 0.0f, 0.0f, 12.0f, 64.0f, -2, 53));
                             Paint paint = new Paint(1);
                             paint.setColor(i0.a.k(-16777216, 120));
                             gl0 gl0Var3 = this.Z1;
@@ -688,7 +688,7 @@ public abstract class o6 extends pw0 implements rg.s1, rg.h, rg.o1, nw0, gc {
             ucVar.l(true);
         }
         rg.j jVar6 = this.J0;
-        k6.h hVar = this.e1;
+        a4.l lVar = this.e1;
         qg.q1 q1Var2 = this.A1;
         rg.y1 y1Var = this.d1;
         if (jVar6 != null) {
@@ -704,9 +704,9 @@ public abstract class o6 extends pw0 implements rg.s1, rg.h, rg.o1, nw0, gc {
                 y1Var.setValueOverride(new s5(x2Var3, (int) (this.H0.a / 9.0f), 0));
                 y1Var.setShowPreview(false);
             } else {
-                y1Var.setValueOverride(hVar);
+                y1Var.setValueOverride(lVar);
                 y1Var.setShowPreview(true);
-                q1Var2.c = hVar.get();
+                q1Var2.c = lVar.get();
                 D0(q1Var2, null, false);
             }
         } else {
@@ -718,9 +718,9 @@ public abstract class o6 extends pw0 implements rg.s1, rg.h, rg.o1, nw0, gc {
                 H0(false);
             }
             Q0(0);
-            y1Var.setValueOverride(hVar);
+            y1Var.setValueOverride(lVar);
             y1Var.setShowPreview(true);
-            q1Var2.c = hVar.get();
+            q1Var2.c = lVar.get();
             D0(q1Var2, null, false);
             z13 = z11;
         }
@@ -947,9 +947,9 @@ public abstract class o6 extends pw0 implements rg.s1, rg.h, rg.o1, nw0, gc {
                         yb ybVar = kcVar.X0;
                         if (ybVar != null) {
                             ybVar.w = l02;
-                            h81 h81Var = ybVar.x;
-                            if (h81Var != null) {
-                                h81Var.V(l02.u0);
+                            i81 i81Var = ybVar.x;
+                            if (i81Var != null) {
+                                i81Var.V(l02.u0);
                             }
                         }
                         ac acVar = kcVar.c1;
@@ -1859,7 +1859,7 @@ public abstract class o6 extends pw0 implements rg.s1, rg.h, rg.o1, nw0, gc {
         }
         s0Var.setDelegate(this);
         s0Var.setMaxWidth(dp);
-        i6Var.addView(s0Var, w7.a6.d(-2.0f, -2));
+        i6Var.addView(s0Var, w7.z5.d(-2.0f, -2));
         f0();
         MediaController.CropState cropState = this.F0;
         if (cropState != null) {
@@ -1890,7 +1890,7 @@ public abstract class o6 extends pw0 implements rg.s1, rg.h, rg.o1, nw0, gc {
         }
         v0Var.setDelegate(this);
         v0Var.setMaxWidth(dp);
-        i6Var.addView(v0Var, w7.a6.d(-2.0f, -2));
+        i6Var.addView(v0Var, w7.z5.d(-2.0f, -2));
         f0();
         MediaController.CropState cropState = this.F0;
         if (cropState != null) {
@@ -2090,7 +2090,7 @@ public abstract class o6 extends pw0 implements rg.s1, rg.h, rg.o1, nw0, gc {
         int i10 = this.F1;
         x2Var.setTypeface(qg.s0.e(i10).j);
         x2Var.setType(qg.s0.e(i10).h);
-        i6Var.addView(x2Var, w7.a6.d(-2.0f, -2));
+        i6Var.addView(x2Var, w7.z5.d(-2.0f, -2));
         f0();
         MediaController.CropState cropState = this.F0;
         if (cropState != null) {
@@ -2156,7 +2156,7 @@ public abstract class o6 extends pw0 implements rg.s1, rg.h, rg.o1, nw0, gc {
         }
         y2Var.setDelegate(this);
         y2Var.setMaxWidth(dp);
-        i6Var.addView(y2Var, w7.a6.d(-2.0f, -2));
+        i6Var.addView(y2Var, w7.z5.d(-2.0f, -2));
         f0();
         MediaController.CropState cropState = this.F0;
         if (cropState != null) {
@@ -2314,7 +2314,7 @@ public abstract class o6 extends pw0 implements rg.s1, rg.h, rg.o1, nw0, gc {
         ImageReceiver imageReceiver2;
         boolean z17;
         TLRPC.Message message;
-        org.telegram.ui.Cells.x0 x0Var;
+        org.telegram.ui.Cells.w0 w0Var;
         zh.t3 t3Var;
         ImageReceiver imageReceiver3;
         ImageReceiver imageReceiver4;
@@ -2584,16 +2584,16 @@ public abstract class o6 extends pw0 implements rg.s1, rg.h, rg.o1, nw0, gc {
                                                     mediaAreaCoordinates2.y = ((mediaEntity.height / 2.0f) + mediaEntity.y) * 100.0f;
                                                     if (z19) {
                                                         rg.u0 u0Var3 = ((rg.v0) jVar).q0;
-                                                        mediaAreaCoordinates2.w = yh.x(u0Var3.I * 2 * scaleX, i6Var.getMeasuredWidth(), f14, 100.0f);
-                                                        mediaEntity.mediaArea.coordinates.h = yh.x(u0Var3.J * 2 * scaleY, i6Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
+                                                        mediaAreaCoordinates2.w = sk.y(u0Var3.I * 2 * scaleX, i6Var.getMeasuredWidth(), f14, 100.0f);
+                                                        mediaEntity.mediaArea.coordinates.h = sk.y(u0Var3.J * 2 * scaleY, i6Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
                                                     } else if (jVar instanceof rg.y2) {
                                                         rg.u0 u0Var4 = ((rg.y2) jVar).q0;
-                                                        mediaAreaCoordinates2.w = yh.x(u0Var4.I * 2 * scaleX, i6Var.getMeasuredWidth(), f14, 100.0f);
-                                                        mediaEntity.mediaArea.coordinates.h = yh.x(u0Var4.J * 2 * scaleY, i6Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
+                                                        mediaAreaCoordinates2.w = sk.y(u0Var4.I * 2 * scaleX, i6Var.getMeasuredWidth(), f14, 100.0f);
+                                                        mediaEntity.mediaArea.coordinates.h = sk.y(u0Var4.J * 2 * scaleY, i6Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
                                                     } else if (jVar instanceof rg.s0) {
                                                         rg.q0 q0Var = ((rg.s0) jVar).q0;
-                                                        mediaAreaCoordinates2.w = yh.x(q0Var.f * 2 * scaleX, i6Var.getMeasuredWidth(), f14, 100.0f);
-                                                        mediaEntity.mediaArea.coordinates.h = yh.x(q0Var.h * 2 * scaleY, i6Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
+                                                        mediaAreaCoordinates2.w = sk.y(q0Var.f * 2 * scaleX, i6Var.getMeasuredWidth(), f14, 100.0f);
+                                                        mediaEntity.mediaArea.coordinates.h = sk.y(q0Var.h * 2 * scaleY, i6Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
                                                     } else if (jVar instanceof rg.c2) {
                                                         rg.c2 c2Var = (rg.c2) jVar;
                                                         float padding = ((c2Var.getPadding() * 2) * scaleX) / i6Var.getMeasuredWidth();
@@ -2623,8 +2623,8 @@ public abstract class o6 extends pw0 implements rg.s1, rg.h, rg.o1, nw0, gc {
                                             double r10 = g1Var2.r(rectF);
                                             rectF.offset(x5Var2.getX(), x5Var2.getY());
                                             rectF.offset(z0Var.getX(), z0Var.getY());
-                                            mediaEntity.mediaArea.coordinates.x = (((rectF.centerX() * scaleX) + yh.b(view.getWidth(), 2.0f, scaleX, (view.getWidth() / 2.0f) + x10)) / i6Var.getMeasuredWidth()) * 100.0f;
-                                            mediaEntity.mediaArea.coordinates.y = (((rectF.centerY() * scaleY) + yh.b(view.getHeight(), 2.0f, scaleY, (view.getHeight() / 2.0f) + y3)) / i6Var.getMeasuredHeight()) * 100.0f;
+                                            mediaEntity.mediaArea.coordinates.x = (((rectF.centerX() * scaleX) + sk.b(view.getWidth(), 2.0f, scaleX, (view.getWidth() / 2.0f) + x10)) / i6Var.getMeasuredWidth()) * 100.0f;
+                                            mediaEntity.mediaArea.coordinates.y = (((rectF.centerY() * scaleY) + sk.b(view.getHeight(), 2.0f, scaleY, (view.getHeight() / 2.0f) + y3)) / i6Var.getMeasuredHeight()) * 100.0f;
                                             mediaEntity.mediaArea.coordinates.w = ((rectF.width() * scaleX) / i6Var.getMeasuredWidth()) * 100.0f;
                                             mediaEntity.mediaArea.coordinates.h = ((rectF.height() * scaleY) / i6Var.getMeasuredHeight()) * 100.0f;
                                             mediaEntity.mediaArea.coordinates.rotation = ((-mediaEntity.rotation) / 3.141592653589793d) * 180.0d;
@@ -2734,17 +2734,17 @@ public abstract class o6 extends pw0 implements rg.s1, rg.h, rg.o1, nw0, gc {
                                                         int i26 = 0;
                                                         while (true) {
                                                             if (i26 >= z0Var2.getChildCount()) {
-                                                                x0Var = null;
+                                                                w0Var = null;
                                                                 break;
                                                             }
                                                             View childAt2 = z0Var2.getChildAt(i26);
-                                                            if (childAt2 instanceof org.telegram.ui.Cells.x0) {
-                                                                x0Var = (org.telegram.ui.Cells.x0) childAt2;
+                                                            if (childAt2 instanceof org.telegram.ui.Cells.w0) {
+                                                                w0Var = (org.telegram.ui.Cells.w0) childAt2;
                                                                 break;
                                                             }
                                                             i26++;
                                                         }
-                                                        if (x0Var == null || (t3Var = x0Var.H0) == null || (imageReceiver3 = t3Var.d) == null) {
+                                                        if (w0Var == null || (t3Var = w0Var.H0) == null || (imageReceiver3 = t3Var.d) == null) {
                                                             g1Var = g1Var3;
                                                             i12 = i15;
                                                             x5Var = x5Var3;
@@ -2818,8 +2818,8 @@ public abstract class o6 extends pw0 implements rg.s1, rg.h, rg.o1, nw0, gc {
                                                             if (stargiftattributemodel != null) {
                                                                 float dp = AndroidUtilities.dp(110.0f);
                                                                 g1Var = g1Var3;
-                                                                float centerX = imageReceiver3.getCenterX() + x0Var.getX() + z0Var2.getX() + x0Var.F0;
-                                                                float centerY = imageReceiver3.getCenterY() + x0Var.getY() + z0Var2.getY() + x0Var.G0;
+                                                                float centerX = imageReceiver3.getCenterX() + w0Var.getX() + z0Var2.getX() + w0Var.F0;
+                                                                float centerY = imageReceiver3.getCenterY() + w0Var.getY() + z0Var2.getY() + w0Var.G0;
                                                                 VideoEditedInfo.MediaEntity mediaEntity2 = new VideoEditedInfo.MediaEntity();
                                                                 imageReceiver4 = imageReceiver3;
                                                                 mediaEntity2.type = (byte) 0;
@@ -2853,8 +2853,8 @@ public abstract class o6 extends pw0 implements rg.s1, rg.h, rg.o1, nw0, gc {
                                                                 mediaEntity2.x = (childAt.getWidth() / 2.0f) + x11;
                                                                 mediaEntity2.y = (childAt.getHeight() / 2.0f) + y10;
                                                                 i12 = i15;
-                                                                float b12 = yh.b(childAt.getWidth(), 2.0f, scaleX2, centerX * scaleX2);
-                                                                float b13 = yh.b(childAt.getHeight(), 2.0f, scaleY3, centerY * scaleY3);
+                                                                float b12 = sk.b(childAt.getWidth(), 2.0f, scaleX2, centerX * scaleX2);
+                                                                float b13 = sk.b(childAt.getHeight(), 2.0f, scaleY3, centerY * scaleY3);
                                                                 x5Var = x5Var3;
                                                                 view = childAt;
                                                                 double d10 = mediaEntity2.x;
@@ -3333,10 +3333,10 @@ public abstract class o6 extends pw0 implements rg.s1, rg.h, rg.o1, nw0, gc {
         y0(true);
     }
 
-    public View getView() {
-        return this;
+    public /* bridge */ /* synthetic */ void setOffsetTranslationX(float f7) {
     }
 
-    public /* bridge */ /* synthetic */ void setOffsetTranslationX(float f7) {
+    public View getView() {
+        return this;
     }
 }

@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.z9;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class c extends FrameLayout implements org.telegram.ui.ActionBar.x5 {
     public final org.telegram.ui.ActionBar.c6 a;
@@ -33,11 +33,11 @@ public final class c extends FrameLayout implements org.telegram.ui.ActionBar.x5
         z9 z9Var = new z9(context);
         this.b = z9Var;
         z9Var.setRoundRadius(AndroidUtilities.dp(8.0f));
-        addView(z9Var, w7.a6.a(46.0f, 15.0f, 0.0f, 0.0f, 0.0f, 46, 19));
+        addView(z9Var, w7.z5.a(46.0f, 15.0f, 0.0f, 0.0f, 0.0f, 46, 19));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setGravity(16);
-        addView(linearLayout, w7.a6.a(-1.0f, 71.0f, 0.0f, 20.0f, 0.0f, -1, 119));
+        addView(linearLayout, w7.z5.a(-1.0f, 71.0f, 0.0f, 20.0f, 0.0f, -1, 119));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setSingleLine(true);
@@ -47,7 +47,7 @@ public final class c extends FrameLayout implements org.telegram.ui.ActionBar.x5
         textView.setGravity(16);
         textView.setTextSize(1, 16.0f);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        linearLayout.addView(textView, w7.a6.n(-1, 20));
+        linearLayout.addView(textView, w7.z5.n(-1, 20));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setSingleLine(true);
@@ -55,7 +55,7 @@ public final class c extends FrameLayout implements org.telegram.ui.ActionBar.x5
         textView2.setIncludeFontPadding(false);
         textView2.setGravity(16);
         textView2.setTextSize(1, 14.0f);
-        linearLayout.addView(textView2, w7.a6.k(0.0f, 2.0f, 0.0f, 0.0f, -1, 18));
+        linearLayout.addView(textView2, w7.z5.k(0.0f, 2.0f, 0.0f, 0.0f, -1, 18));
         d();
     }
 

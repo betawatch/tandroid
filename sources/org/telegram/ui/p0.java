@@ -5,7 +5,7 @@ import android.text.TextPaint;
 import android.text.style.ClickableSpan;
 import android.view.View;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class p0 extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -24,14 +24,14 @@ public final class p0 extends ClickableSpan {
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                ((z70) this.b).c((i4) this.c, (org.telegram.ui.Components.l11) this.d);
+                ((z70) this.b).c((i4) this.c, (org.telegram.ui.Components.m11) this.d);
                 break;
             default:
                 org.telegram.ui.ActionBar.a2 a2Var = ((org.telegram.ui.ActionBar.a2[]) this.b)[0];
                 if (a2Var != null) {
                     a2Var.dismiss();
                 }
-                pf.d.s((Context) this.c, "https://t.me/" + ((String) this.d));
+                pf.d.r((Context) this.c, "https://t.me/" + ((String) this.d));
                 break;
         }
     }

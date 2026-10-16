@@ -15,11 +15,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class sd1 extends View {
-    public org.telegram.ui.Components.h11 a;
-    public org.telegram.ui.Components.h11 b;
+    public org.telegram.ui.Components.i11 a;
+    public org.telegram.ui.Components.i11 b;
     public boolean c;
     public final org.telegram.ui.Components.g6 d;
     public final org.telegram.ui.Cells.z e;
@@ -45,16 +45,16 @@ public final class sd1 extends View {
     }
 
     public final CharSequence b() {
-        org.telegram.ui.Components.h11 h11Var = this.a;
-        if (h11Var != null) {
-            return h11Var.k();
+        org.telegram.ui.Components.i11 i11Var = this.a;
+        if (i11Var != null) {
+            return i11Var.k();
         }
         return null;
     }
 
     public final void c(SpannableStringBuilder spannableStringBuilder, boolean z10) {
         if (spannableStringBuilder != null) {
-            this.b = new org.telegram.ui.Components.h11(spannableStringBuilder, 12.0f, null);
+            this.b = new org.telegram.ui.Components.i11(spannableStringBuilder, 12.0f, null);
         }
         boolean z11 = spannableStringBuilder != null;
         this.c = z11;
@@ -65,7 +65,7 @@ public final class sd1 extends View {
     }
 
     public final void d(CharSequence charSequence) {
-        this.a = new org.telegram.ui.Components.h11(charSequence, 14.0f, AndroidUtilities.bold());
+        this.a = new org.telegram.ui.Components.i11(charSequence, 14.0f, AndroidUtilities.bold());
     }
 
     @Override // android.view.View
@@ -77,11 +77,11 @@ public final class sd1 extends View {
         rd1 rd1Var = ce1Var.x0;
         cd1 cd1Var = ce1Var.a;
         org.telegram.ui.ActionBar.g6.s(this, rd1Var, cd1Var);
-        Paint G = cd1Var.G("paintChatActionBackground");
-        ColorFilter colorFilter = G.getColorFilter();
-        G.setColorFilter(this.f);
-        canvas.drawRoundRect(rectF, height, height, G);
-        G.setColorFilter(colorFilter);
+        Paint F = cd1Var.F("paintChatActionBackground");
+        ColorFilter colorFilter = F.getColorFilter();
+        F.setColorFilter(this.f);
+        canvas.drawRoundRect(rectF, height, height, F);
+        F.setColorFilter(colorFilter);
         if (ce1Var.M1) {
             float f7 = ce1Var.n1;
             if (f7 > 0.0f) {
@@ -95,17 +95,17 @@ public final class sd1 extends View {
         paint2.setColor(520093695);
         canvas.drawRoundRect(rectF, height, height, paint2);
         float e = this.d.e(this.c);
-        org.telegram.ui.Components.h11 h11Var = this.a;
-        if (h11Var != null) {
-            h11Var.p = getWidth() - AndroidUtilities.dp(14.0f);
-            h11Var.c((getWidth() - this.a.l()) / 2.0f, ((AndroidUtilities.dp(24.0f) * 0.0f) + (getHeight() / 2.0f)) - (AndroidUtilities.dp(7.0f) * e), 1.0f, -1, canvas);
+        org.telegram.ui.Components.i11 i11Var = this.a;
+        if (i11Var != null) {
+            i11Var.p = getWidth() - AndroidUtilities.dp(14.0f);
+            i11Var.c((getWidth() - this.a.l()) / 2.0f, ((AndroidUtilities.dp(24.0f) * 0.0f) + (getHeight() / 2.0f)) - (AndroidUtilities.dp(7.0f) * e), 1.0f, -1, canvas);
         }
         if (this.b != null) {
             canvas.save();
             canvas.scale(e, e, getWidth() / 2.0f, (getHeight() / 2.0f) + AndroidUtilities.dp(11.0f));
-            org.telegram.ui.Components.h11 h11Var2 = this.b;
-            h11Var2.p = getWidth() - AndroidUtilities.dp(14.0f);
-            h11Var2.c((getWidth() - this.b.l()) / 2.0f, AndroidUtilities.dp(11.0f) + (0.0f * AndroidUtilities.dp(24.0f)) + (getHeight() / 2.0f), 1.0f, org.telegram.ui.ActionBar.g6.m1(0.75f, -1), canvas);
+            org.telegram.ui.Components.i11 i11Var2 = this.b;
+            i11Var2.p = getWidth() - AndroidUtilities.dp(14.0f);
+            i11Var2.c((getWidth() - this.b.l()) / 2.0f, AndroidUtilities.dp(11.0f) + (0.0f * AndroidUtilities.dp(24.0f)) + (getHeight() / 2.0f), 1.0f, org.telegram.ui.ActionBar.g6.m1(0.75f, -1), canvas);
             canvas.restore();
         }
         int width = getWidth();

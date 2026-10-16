@@ -53,8 +53,8 @@ import org.telegram.ui.Components.dm0;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.g5;
 import org.telegram.ui.Components.j2;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.m80;
 import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.sb0;
 import org.telegram.ui.Components.sc;
@@ -62,17 +62,17 @@ import org.telegram.ui.Components.za;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.Wallet.m5;
 import org.telegram.ui.bz0;
 import org.telegram.ui.fo;
 import org.telegram.ui.s20;
 import org.telegram.ui.z20;
-import w7.a6;
+import w7.b6;
+import w7.z5;
 import yh.p1;
 import zh.a7;
 import zh.n5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class m1 extends db implements NotificationCenter.NotificationCenterDelegate {
     public static f1 G0;
@@ -107,7 +107,7 @@ public class m1 extends db implements NotificationCenter.NotificationCenterDeleg
     public float t0;
     public sb0 u0;
     public final BirthdayController.BirthdayState v0;
-    public final m5 w0;
+    public final p4.s0 w0;
     public int x0;
     public cr y0;
     public String z0;
@@ -128,7 +128,7 @@ public class m1 extends db implements NotificationCenter.NotificationCenterDeleg
         this.q0 = AndroidUtilities.dp(120.0f);
         this.r0 = new ArrayList();
         this.s0 = false;
-        this.w0 = new m5(this, 9);
+        this.w0 = new p4.s0(this, 9);
         this.x0 = -1;
         this.C0 = new HashSet();
         this.currentAccount = i10;
@@ -144,7 +144,7 @@ public class m1 extends db implements NotificationCenter.NotificationCenterDeleg
         g1 g1Var = new g1(getContext(), c6Var);
         this.b0 = g1Var;
         g1Var.setOnCloseClickListener(new a1(this, 11));
-        g1Var.setText(A());
+        g1Var.setText(B());
         g1Var.setCloseImageVisible(false);
         g1Var.e.c(0.0f, false);
         this.u0 = new sb0(this, 2);
@@ -157,13 +157,13 @@ public class m1 extends db implements NotificationCenter.NotificationCenterDeleg
         this.a0 = i1Var;
         ViewGroup viewGroup = this.containerView;
         int i13 = this.backgroundPaddingLeft;
-        viewGroup.addView(g1Var, 0, a6.f(-2.0f, 55, i13, 0, i13, 0));
+        viewGroup.addView(g1Var, 0, z5.f(-2.0f, 55, i13, 0, i13, 0));
         ViewGroup viewGroup2 = this.containerView;
         int i14 = this.backgroundPaddingLeft;
-        viewGroup2.addView(h1Var, a6.f(-2.0f, 55, i14, 0, i14, 0));
+        viewGroup2.addView(h1Var, z5.f(-2.0f, 55, i14, 0, i14, 0));
         ViewGroup viewGroup3 = this.containerView;
         int i15 = this.backgroundPaddingLeft;
-        viewGroup3.addView(i1Var, a6.f(1.0f, 55, i15, 0, i15, 0));
+        viewGroup3.addView(i1Var, z5.f(1.0f, 55, i15, 0, i15, 0));
         s20 s20Var = new s20(getContext(), c6Var, (mm0) null);
         this.d0 = s20Var;
         s20Var.setClickable(true);
@@ -182,13 +182,13 @@ public class m1 extends db implements NotificationCenter.NotificationCenterDeleg
             aqVar.setDrawUnchecked(true);
             aqVar.a(false, false);
             aqVar.setDrawBackgroundAsArc(10);
-            linearLayout.addView(aqVar, a6.t(26, 26, 16, 0, 0, 0, 0));
+            linearLayout.addView(aqVar, z5.t(26, 26, 16, 0, 0, 0, 0));
             TextView textView = new TextView(context);
             textView.setTextColor(getThemedColor(g6.j5));
             textView.setTextSize(1, 14.0f);
             textView.setText(LocaleController.getString(R.string.ConferenceCallWithVideo));
-            linearLayout.addView(textView, a6.t(-2, -2, 16, 9, 0, 0, 0));
-            w7.c6.b(linearLayout, 0.025f, 1.5f);
+            linearLayout.addView(textView, z5.t(-2, -2, 16, 9, 0, 0, 0));
+            b6.b(linearLayout, 0.025f, 1.5f);
             final int i16 = 0;
             linearLayout.setOnClickListener(new View.OnClickListener(this) { // from class: ug.e1
                 public final /* synthetic */ m1 b;
@@ -209,7 +209,7 @@ public class m1 extends db implements NotificationCenter.NotificationCenterDeleg
                     }
                 }
             });
-            s20Var.addView(linearLayout, a6.t(-2, -2, 17, 0, 0, 0, 8));
+            s20Var.addView(linearLayout, z5.t(-2, -2, 17, 0, 0, 0, 8));
         }
         j1 j1Var = new j1(this, getContext(), c6Var);
         this.Y = j1Var;
@@ -237,17 +237,17 @@ public class m1 extends db implements NotificationCenter.NotificationCenterDeleg
                 }
             }
         });
-        s20Var.addView(j1Var, a6.q(-1, 48, 87));
+        s20Var.addView(j1Var, z5.q(-1, 48, 87));
         if (i11 == 4) {
             ViewGroup viewGroup4 = this.containerView;
             int i18 = this.backgroundPaddingLeft;
-            viewGroup4.addView(s20Var, a6.f(-2.0f, 87, i18, 0, i18, 0));
+            viewGroup4.addView(s20Var, z5.f(-2.0f, 87, i18, 0, i18, 0));
         }
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.e0 = frameLayout;
         ViewGroup viewGroup5 = this.containerView;
         int i19 = this.backgroundPaddingLeft;
-        viewGroup5.addView(frameLayout, a6.f(300.0f, 87, i19, 0, i19, AndroidUtilities.dp(68.0f)));
+        viewGroup5.addView(frameLayout, z5.f(300.0f, 87, i19, 0, i19, AndroidUtilities.dp(68.0f)));
         vg.h hVar2 = this.p0;
         mm0 mm0Var = this.d;
         hVar2.n = arrayList;
@@ -255,7 +255,7 @@ public class m1 extends db implements NotificationCenter.NotificationCenterDeleg
         int i20 = this.backgroundPaddingLeft;
         mm0Var.setPadding(i20, 0, i20, AndroidUtilities.dp(i11 != 1 ? 60.0f : 0.0f));
         this.d.j(new k1(this));
-        this.d.setOnItemClickListener(new m4.t0(this, i11, c6Var, i10));
+        this.d.setOnItemClickListener(new m4.s0(this, i11, c6Var, i10));
         if (i11 == 4) {
             this.d.setOnItemLongClickListener((dm0) new i2.r(this, i11, 19));
         }
@@ -269,10 +269,10 @@ public class m1 extends db implements NotificationCenter.NotificationCenterDeleg
         h1Var.setText("");
         h1Var.d.b(false);
         h1Var.b(false, hashSet, new a1(this, 12), null);
-        g1Var.setText(A());
+        g1Var.setText(B());
         za zaVar = this.e;
         if (zaVar != null) {
-            zaVar.setTitle(A());
+            zaVar.setTitle(B());
         }
         h0(false);
         c0(false);
@@ -450,17 +450,17 @@ public class m1 extends db implements NotificationCenter.NotificationCenterDeleg
             MessagesStorage.getInstance(m1Var.currentAccount).updateUserInfo(userFull, false);
         }
         if (tL_error == null || (str = tL_error.text) == null || !str.startsWith("FLOOD_WAIT_")) {
-            org.telegram.messenger.q.r(R.string.UnknownError, new zc(frameLayout, m1Var.resourcesProvider), R.raw.error, 36);
+            org.telegram.messenger.g0.q(R.string.UnknownError, new zc(frameLayout, m1Var.resourcesProvider), R.raw.error, 36);
         } else if (m1Var.getContext() != null) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(m1Var.getContext(), 0, m1Var.resourcesProvider);
             alertDialog$Builder.a.R = LocaleController.getString(R.string.PrivacyBirthdayTooOftenTitle);
             alertDialog$Builder.a.T = LocaleController.getString(R.string.PrivacyBirthdayTooOftenMessage);
-            org.telegram.messenger.q.A(R.string.OK, alertDialog$Builder, null);
+            org.telegram.messenger.g0.p(R.string.OK, alertDialog$Builder, null);
         }
     }
 
     public static void T(final m1 m1Var, final TLRPC.User user, View view) {
-        m80 F = m80.F(m1Var.container, m1Var.resourcesProvider, (View) view.getParent());
+        l80 F = l80.F(m1Var.container, m1Var.resourcesProvider, (View) view.getParent());
         final int i10 = 0;
         F.c(R.drawable.profile_discuss, LocaleController.getString(R.string.SendMessage), new Runnable(m1Var) { // from class: ug.d1
             public final /* synthetic */ m1 b;
@@ -648,7 +648,7 @@ public class m1 extends db implements NotificationCenter.NotificationCenterDeleg
     }
 
     @Override // org.telegram.ui.Components.db
-    public final CharSequence A() {
+    public final CharSequence B() {
         String str = this.z0;
         if (str != null) {
             return str;

@@ -10,7 +10,7 @@ import android.view.ActionMode;
 import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MotionEvent;
-import ji.d4;
+import ji.h5;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
@@ -18,18 +18,18 @@ import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.nu;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class w0 extends nu {
     public final c6 c;
-    public final d4 d;
+    public final h5 d;
     public Runnable e;
     public int f;
 
     public w0(Context context, int i10, c6 c6Var) {
         super(context, c6Var);
         this.c = c6Var;
-        this.d = new d4(getContext(), new v0());
+        this.d = new h5(getContext(), new v0());
         setBackground(null);
         setIncludeFontPadding(true);
         int i11 = Build.VERSION.SDK_INT;

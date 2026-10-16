@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class jn extends pf.c {
     public final /* synthetic */ int d;
@@ -56,7 +56,7 @@ public final class jn extends pf.c {
                 break;
             default:
                 if (!z10) {
-                    AndroidUtilities.runOnUIThread(new fc(24, this, (org.telegram.ui.Cells.x0) this.e), 250L);
+                    AndroidUtilities.runOnUIThread(new jd(19, this, (org.telegram.ui.Cells.w0) this.e), 250L);
                     break;
                 }
                 break;
@@ -129,13 +129,13 @@ public final class jn extends pf.c {
             default:
                 im imVar = (im) this.f;
                 fo foVar13 = imVar.a.Q;
-                org.telegram.ui.Cells.x0 x0Var = (org.telegram.ui.Cells.x0) this.e;
-                foVar13.wb = x0Var.getMessageObject().getId();
+                org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) this.e;
+                foVar13.wb = w0Var.getMessageObject().getId();
                 fo foVar14 = imVar.a.Q;
                 foVar14.xb = 4;
                 foVar14.yb = null;
-                x0Var.getMessageObject().flickerLoading = true;
-                x0Var.invalidate();
+                w0Var.getMessageObject().flickerLoading = true;
+                w0Var.invalidate();
                 break;
         }
     }

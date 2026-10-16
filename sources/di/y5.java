@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.fo;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class y5 extends fo {
     public final /* synthetic */ Utilities.Callback2 Qc;
@@ -26,13 +26,13 @@ public final class y5 extends fo {
         return false;
     }
 
-    @Override // org.telegram.ui.fo, org.telegram.ui.Components.ch, org.telegram.ui.Components.b60
+    @Override // org.telegram.ui.fo, org.telegram.ui.Components.ch, org.telegram.ui.Components.c60
     public final long a() {
         return 0L;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.fo, org.telegram.ui.id0
+    @Override // org.telegram.ui.fo, org.telegram.ui.gd0
     public final void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j10) {
         TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint;
         TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint2;

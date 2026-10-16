@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public abstract class i0 extends FrameLayout {
     public final a7 a;
@@ -43,24 +43,24 @@ public abstract class i0 extends FrameLayout {
         this.c = new org.telegram.ui.Components.g6(this, 0L, 360L, esVar);
         g0 g0Var = new g0(this, context, 0);
         this.f = g0Var;
-        g0Var.setListener(new k6.h(this, 18));
+        g0Var.setListener(new a4.l(this, 17));
         addView(g0Var);
         FrameLayout frameLayout = new FrameLayout(context);
         this.e = frameLayout;
-        addView(frameLayout, w7.a6.e(-1, -1, 119));
+        addView(frameLayout, w7.z5.e(-1, -1, 119));
         mg.f fVar = new mg.f(context);
         this.h = fVar;
-        fVar.setListener(new qb.c(this, 15));
-        frameLayout.addView(fVar, w7.a6.a(-2.0f, 0.0f, 0.0f, 0.0f, 52.0f, -1, 81));
+        fVar.setListener(new a6.m(this, 14));
+        frameLayout.addView(fVar, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 52.0f, -1, 81));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.n = frameLayout2;
-        frameLayout.addView(frameLayout2, w7.a6.a(52.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 80));
+        frameLayout.addView(frameLayout2, w7.z5.a(52.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 80));
         TextView textView = new TextView(context);
         com.google.android.gms.internal.play_billing.k3.m(14.0f, 1, textView);
         textView.setBackground(org.telegram.ui.ActionBar.g6.g0(-12763843, 0, -1));
         textView.setTextColor(-1);
-        textView.setPadding(org.telegram.ui.Cells.d0.c(12.0f, R.string.Cancel, textView), 0, AndroidUtilities.dp(12.0f), 0);
-        frameLayout2.addView(textView, w7.a6.e(-2, -1, 115));
+        textView.setPadding(org.telegram.ui.Cells.c1.b(12.0f, R.string.Cancel, textView), 0, AndroidUtilities.dp(12.0f), 0);
+        frameLayout2.addView(textView, w7.z5.e(-2, -1, 115));
         final int i10 = 0;
         textView.setOnClickListener(new View.OnClickListener(this) { // from class: di.f0
             public final /* synthetic */ i0 b;
@@ -103,8 +103,8 @@ public abstract class i0 extends FrameLayout {
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setBackground(org.telegram.ui.ActionBar.g6.g0(-12763843, 0, -1));
         textView2.setTextColor(-1);
-        textView2.setPadding(org.telegram.ui.Cells.d0.c(12.0f, R.string.CropReset, textView2), 0, AndroidUtilities.dp(12.0f), 0);
-        frameLayout2.addView(textView2, w7.a6.e(-2, -1, 113));
+        textView2.setPadding(org.telegram.ui.Cells.c1.b(12.0f, R.string.CropReset, textView2), 0, AndroidUtilities.dp(12.0f), 0);
+        frameLayout2.addView(textView2, w7.z5.e(-2, -1, 113));
         final int i11 = 1;
         textView2.setOnClickListener(new View.OnClickListener(this) { // from class: di.f0
             public final /* synthetic */ i0 b;
@@ -147,8 +147,8 @@ public abstract class i0 extends FrameLayout {
         textView3.setTypeface(AndroidUtilities.bold());
         textView3.setBackground(org.telegram.ui.ActionBar.g6.g0(-12763843, 0, -1));
         textView3.setTextColor(-15098625);
-        textView3.setPadding(org.telegram.ui.Cells.d0.c(12.0f, R.string.StoryCrop, textView3), 0, AndroidUtilities.dp(12.0f), 0);
-        frameLayout2.addView(textView3, w7.a6.e(-2, -1, 117));
+        textView3.setPadding(org.telegram.ui.Cells.c1.b(12.0f, R.string.StoryCrop, textView3), 0, AndroidUtilities.dp(12.0f), 0);
+        frameLayout2.addView(textView3, w7.z5.e(-2, -1, 117));
         final int i12 = 2;
         textView3.setOnClickListener(new View.OnClickListener(this) { // from class: di.f0
             public final /* synthetic */ i0 b;

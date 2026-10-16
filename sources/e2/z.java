@@ -11,15 +11,16 @@ import b2.g1;
 import b2.p0;
 import b2.p1;
 import b2.s0;
+import b2.u0;
 import b2.u1;
 import b2.w1;
 import b2.z0;
 import java.util.List;
-import li.u0;
-import org.telegram.ui.Components.h81;
+import org.telegram.ui.Components.i81;
 import org.telegram.ui.Components.o60;
+import ri.r0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class z implements e1 {
     public final /* synthetic */ int a;
@@ -72,20 +73,12 @@ public final class z implements e1 {
     public final void onIsPlayingChanged(boolean z10) {
         switch (this.a) {
             case 0:
-                break;
             case 1:
-                u0 u0Var = (u0) this.b;
-                if (u0Var.W == 5) {
-                    u0Var.x(z10);
-                    break;
-                }
                 break;
             case 2:
-                break;
-            default:
-                ri.q qVar = (ri.q) this.b;
-                ri.h hVar = qVar.e;
-                ri.f fVar = qVar.E;
+                qi.q qVar = (qi.q) this.b;
+                qi.h hVar = qVar.e;
+                qi.f fVar = qVar.E;
                 Handler handler = qVar.h;
                 if (qVar.u != z10) {
                     qVar.u = z10;
@@ -95,6 +88,13 @@ public final class z implements e1 {
                     }
                     hVar.onPreviewPlaybackChanged(z10);
                     hVar.onStateChanged(qVar.e());
+                    break;
+                }
+                break;
+            default:
+                r0 r0Var = (r0) this.b;
+                if (r0Var.W == 5) {
+                    r0Var.x(z10);
                     break;
                 }
                 break;
@@ -117,7 +117,7 @@ public final class z implements e1 {
     }
 
     @Override // b2.e1
-    public final /* synthetic */ void onMetadata(b2.u0 u0Var) {
+    public final /* synthetic */ void onMetadata(u0 u0Var) {
         int i10 = this.a;
     }
 
@@ -137,23 +137,22 @@ public final class z implements e1 {
         i2.h0 h0Var2;
         switch (this.a) {
             case 0:
-                break;
             case 1:
-                u0 u0Var = (u0) this.b;
-                u0Var.m.b("preview playback state=" + i10);
-                if (u0Var.W == 5 && i10 == 4 && (h0Var = u0Var.S) != null) {
-                    h0Var.Z0(5, u0Var.G);
-                    u0Var.S.i();
+                break;
+            case 2:
+                qi.q qVar = (qi.q) this.b;
+                if (i10 == 4 && qVar.m == qi.o.e && (h0Var = qVar.A) != null) {
+                    h0Var.Z0(5, qVar.r);
+                    qVar.A.e();
                     break;
                 }
                 break;
-            case 2:
-                break;
             default:
-                ri.q qVar = (ri.q) this.b;
-                if (i10 == 4 && qVar.m == ri.o.e && (h0Var2 = qVar.A) != null) {
-                    h0Var2.Z0(5, qVar.r);
-                    qVar.A.e();
+                r0 r0Var = (r0) this.b;
+                r0Var.m.b("preview playback state=" + i10);
+                if (r0Var.W == 5 && i10 == 4 && (h0Var2 = r0Var.S) != null) {
+                    h0Var2.Z0(5, r0Var.G);
+                    r0Var.S.i();
                     break;
                 }
                 break;
@@ -169,16 +168,15 @@ public final class z implements e1 {
     public final void onPlayerError(z0 z0Var) {
         switch (this.a) {
             case 0:
-                break;
             case 1:
-                u0 u0Var = (u0) this.b;
-                u0Var.m.b("preview player error: code=" + z0Var.a);
-                u0Var.h(z0Var);
                 break;
             case 2:
+                ((qi.q) this.b).g(z0Var);
                 break;
             default:
-                ((ri.q) this.b).g(z0Var);
+                r0 r0Var = (r0) this.b;
+                r0Var.m.b("preview player error: code=" + z0Var.a);
+                r0Var.h(z0Var);
                 break;
         }
     }
@@ -191,12 +189,12 @@ public final class z implements e1 {
     @Override // b2.e1
     public final void onPlayerStateChanged(boolean z10, int i10) {
         switch (this.a) {
-            case 2:
-                h81 h81Var = (h81) this.b;
-                if (!h81Var.H && i10 == 3) {
-                    h81Var.H = true;
-                    if (h81Var.G && h81Var.I) {
-                        h81Var.C();
+            case 1:
+                i81 i81Var = (i81) this.b;
+                if (!i81Var.H && i10 == 3) {
+                    i81Var.H = true;
+                    if (i81Var.G && i81Var.I) {
+                        i81Var.C();
                         break;
                     }
                 }
@@ -217,10 +215,14 @@ public final class z implements e1 {
     @Override // b2.e1
     public final void onRenderedFirstFrame() {
         switch (this.a) {
+            case 0:
             case 1:
-                u0 u0Var = (u0) this.b;
-                if (u0Var.W == 5) {
-                    o60.m((o60) u0Var.d.b);
+            case 2:
+                break;
+            default:
+                r0 r0Var = (r0) this.b;
+                if (r0Var.W == 5) {
+                    o60.m((o60) r0Var.d.b);
                     break;
                 }
                 break;
@@ -357,22 +359,22 @@ public final class z implements e1 {
     private final /* synthetic */ void O0(boolean z10) {
     }
 
-    private final /* synthetic */ void P(b2.u0 u0Var) {
+    private final /* synthetic */ void P(u0 u0Var) {
     }
 
     private final /* synthetic */ void P0(boolean z10) {
     }
 
-    private final /* synthetic */ void Q(b2.u0 u0Var) {
+    private final /* synthetic */ void Q(u0 u0Var) {
     }
 
     private final /* synthetic */ void Q0(boolean z10) {
     }
 
-    private final /* synthetic */ void R(b2.u0 u0Var) {
+    private final /* synthetic */ void R(u0 u0Var) {
     }
 
-    private final /* synthetic */ void S(b2.u0 u0Var) {
+    private final /* synthetic */ void S(u0 u0Var) {
     }
 
     private final /* synthetic */ void X(a1 a1Var) {

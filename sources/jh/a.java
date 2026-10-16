@@ -16,9 +16,9 @@ import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.gq;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class a extends FrameLayout implements d {
     public final ne.b a;
@@ -117,7 +117,7 @@ public final class a extends FrameLayout implements d {
             ImageView imageView = new ImageView(getContext());
             this.c = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            addView(this.c, a6.e(i11, i11, 17));
+            addView(this.c, z5.e(i11, i11, 17));
             a();
         }
         this.c.setImageResource(i10);
@@ -193,6 +193,6 @@ public final class a extends FrameLayout implements d {
     }
 
     @Override // ne.d
-    public final /* synthetic */ void C(float f7, int i10) {
+    public final /* synthetic */ void A(float f7, int i10) {
     }
 }

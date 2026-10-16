@@ -18,7 +18,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class p9 extends ba {
     public final SparseArray p0 = new SparseArray();
@@ -187,9 +187,9 @@ public abstract class p9 extends ba {
         this.u = i10;
         this.v = i11;
         w();
-        w7.w5 w5Var = this.D;
-        if (w5Var != null) {
-            w5Var.a(true);
+        w7.j0 j0Var = this.D;
+        if (j0Var != null) {
+            j0Var.a(true);
         }
         this.g = 0.0f;
         this.f = 0.0f;
@@ -224,7 +224,7 @@ public abstract class p9 extends ba {
             int i12 = this.c;
             rect.set(i12, this.d, richMessageLayout2.getMinWidth() + i12, richMessageLayout2.getHeight() + this.d);
         } else if (u1Var.P2() && u1Var.getCaptionLayout().textLayoutBlocks.size() > 0) {
-            MessageObject.TextLayoutBlock textLayoutBlock = (MessageObject.TextLayoutBlock) i2.d.g(1, u1Var.getCaptionLayout().textLayoutBlocks);
+            MessageObject.TextLayoutBlock textLayoutBlock = (MessageObject.TextLayoutBlock) i2.d.h(1, u1Var.getCaptionLayout().textLayoutBlocks);
             int i13 = this.c;
             rect.set(i13, this.d, textLayoutBlock.textLayout.getWidth() + i13, (int) (textLayoutBlock.textYOffset(u1Var.getCaptionLayout().textLayoutBlocks, t1Var) + this.d + textLayoutBlock.padTop + textLayoutBlock.textLayout.getHeight()));
         } else {
@@ -232,7 +232,7 @@ public abstract class p9 extends ba {
                 this.X = null;
                 return;
             }
-            MessageObject.TextLayoutBlock textLayoutBlock2 = (MessageObject.TextLayoutBlock) i2.d.g(1, messageObject.textLayoutBlocks);
+            MessageObject.TextLayoutBlock textLayoutBlock2 = (MessageObject.TextLayoutBlock) i2.d.h(1, messageObject.textLayoutBlocks);
             int i14 = this.c;
             rect.set(i14, this.d, textLayoutBlock2.textLayout.getWidth() + i14, (int) (textLayoutBlock2.textYOffset(messageObject.textLayoutBlocks, t1Var) + this.d + textLayoutBlock2.padTop + textLayoutBlock2.textLayout.getHeight()));
         }
@@ -404,7 +404,7 @@ public abstract class p9 extends ba {
                 if (z13) {
                     RichMessageLayout richMessageLayout = u1Var.getMessageObject() != null ? u1Var.getMessageObject().richLayout : null;
                     if (richMessageLayout != null && !richMessageLayout.textBlocks.isEmpty()) {
-                        z9 z9Var = (z9) i2.d.g(1, richMessageLayout.textBlocks);
+                        z9 z9Var = (z9) i2.d.h(1, richMessageLayout.textBlocks);
                         Layout layout2 = z9Var.getLayout();
                         staticLayout = layout2 instanceof StaticLayout ? (StaticLayout) layout2 : null;
                         f7 = z9Var.getY();

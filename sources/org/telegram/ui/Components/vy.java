@@ -17,7 +17,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class vy extends lm0 {
     public boolean E;
@@ -44,7 +44,7 @@ public final class vy extends lm0 {
         qyVar.W2.r = false;
         qyVar.setNestedScrollingEnabled(false);
         qyVar.setDrawSelection(false);
-        qyVar.setOnTouchListener(new m.c2(this, 1));
+        qyVar.setOnTouchListener(new m.e2(this, 1));
     }
 
     public static void E(vy vyVar, Runnable runnable, ArrayList arrayList, boolean z10) {
@@ -336,15 +336,15 @@ public final class vy extends lm0 {
         } else if (i10 != 5) {
             ah.x xVar = new ah.x(this, wzVar.getContext(), 14);
             TextView textView = new TextView(wzVar.getContext());
-            org.telegram.messenger.yh.j(16.0f, R.string.NoEmojiFound, 1, textView);
+            org.telegram.messenger.sk.j(16.0f, R.string.NoEmojiFound, 1, textView);
             int i11 = org.telegram.ui.ActionBar.g6.Le;
-            textView.setTextColor(wzVar.A(i11));
-            xVar.addView(textView, w7.a6.a(-2.0f, 0.0f, 10.0f, 0.0f, 0.0f, -2, 49));
+            textView.setTextColor(wzVar.B(i11));
+            xVar.addView(textView, w7.z5.a(-2.0f, 0.0f, 10.0f, 0.0f, 0.0f, -2, 49));
             ImageView imageView = new ImageView(wzVar.getContext());
             imageView.setScaleType(ImageView.ScaleType.CENTER);
             imageView.setImageResource(R.drawable.msg_emoji_question);
-            imageView.setColorFilter(new PorterDuffColorFilter(wzVar.A(i11), PorterDuff.Mode.MULTIPLY));
-            xVar.addView(imageView, w7.a6.e(48, 48, 85));
+            imageView.setColorFilter(new PorterDuffColorFilter(wzVar.B(i11), PorterDuff.Mode.MULTIPLY));
+            xVar.addView(imageView, w7.z5.e(48, 48, 85));
             imageView.setOnClickListener(new sy(this));
             xVar.setLayoutParams(new s4.o0(-1, -2));
             view = xVar;

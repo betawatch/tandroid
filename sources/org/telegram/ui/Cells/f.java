@@ -9,10 +9,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.ea0;
-import org.telegram.ui.Components.p61;
+import org.telegram.ui.Components.q61;
 import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class f implements Runnable {
     public final /* synthetic */ j a;
@@ -27,7 +27,7 @@ public final class f implements Runnable {
         ea0 ea0Var = jVar.w;
         if (ea0Var != null) {
             CharacterStyle characterStyle = ea0Var.i;
-            final String url = characterStyle instanceof p61 ? ((p61) characterStyle).getURL() : characterStyle instanceof URLSpan ? ((URLSpan) characterStyle).getURL() : characterStyle.toString();
+            final String url = characterStyle instanceof q61 ? ((q61) characterStyle).getURL() : characterStyle instanceof URLSpan ? ((URLSpan) characterStyle).getURL() : characterStyle.toString();
             try {
                 jVar.performHapticFeedback(0, 2);
             } catch (Exception unused) {
@@ -55,11 +55,11 @@ public final class f implements Runnable {
                             AndroidUtilities.addToClipboard(str);
                             if (AndroidUtilities.shouldShowClipboardToast()) {
                                 if (str.startsWith("@")) {
-                                    org.telegram.messenger.q.r(R.string.UsernameCopied, zc.a0(m2Var), R.raw.copy, 36);
+                                    org.telegram.messenger.g0.q(R.string.UsernameCopied, zc.a0(m2Var), R.raw.copy, 36);
                                 } else if (str.startsWith("#") || str.startsWith("$")) {
-                                    org.telegram.messenger.q.r(R.string.HashtagCopied, zc.a0(m2Var), R.raw.copy, 36);
+                                    org.telegram.messenger.g0.q(R.string.HashtagCopied, zc.a0(m2Var), R.raw.copy, 36);
                                 } else {
-                                    org.telegram.messenger.q.r(R.string.LinkCopied, zc.a0(m2Var), R.raw.copy, 36);
+                                    org.telegram.messenger.g0.q(R.string.LinkCopied, zc.a0(m2Var), R.raw.copy, 36);
                                 }
                             }
                         }

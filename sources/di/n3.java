@@ -14,7 +14,7 @@ import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.ul0;
 import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class n3 extends ul0 {
     public final /* synthetic */ v3 c;
@@ -147,7 +147,7 @@ public final class n3 extends ul0 {
                 q3Var.O = null;
             } else if (photoEntry.isVideo) {
                 StringBuilder sb2 = new StringBuilder();
-                org.telegram.ui.Cells.d0.n(R.string.AttachVideo, ", ", sb2);
+                org.telegram.ui.Cells.c1.l(R.string.AttachVideo, ", ", sb2);
                 sb2.append(LocaleController.formatDuration(photoEntry.duration));
                 q3Var.O = sb2.toString();
             } else {
@@ -177,7 +177,7 @@ public final class n3 extends ul0 {
             textView.setTextColor(-1);
             textView.setTypeface(AndroidUtilities.bold());
             textView.setText(v3Var.getTitle());
-            i5Var.addView(textView, w7.a6.a(-1.0f, 0.0f, 0.0f, z10 ? 32.0f : 0.0f, 0.0f, -1, 119));
+            i5Var.addView(textView, w7.z5.a(-1.0f, 0.0f, 0.0f, z10 ? 32.0f : 0.0f, 0.0f, -1, 119));
             v3Var.i0 = i5Var;
             view = i5Var;
         } else {

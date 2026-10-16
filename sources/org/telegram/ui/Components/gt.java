@@ -9,9 +9,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public abstract class gt extends z61 {
+public abstract class gt extends a71 {
     public final int N;
     public final int O;
     public final ArrayList P;
@@ -69,7 +69,7 @@ public abstract class gt extends z61 {
         if (z10) {
             ArrayList arrayList = this.P;
             if (!arrayList.isEmpty()) {
-                MessageObject messageObject = (MessageObject) i2.d.g(1, arrayList);
+                MessageObject messageObject = (MessageObject) i2.d.h(1, arrayList);
                 tL_messages_searchGlobal.offset_rate = this.Z;
                 tL_messages_searchGlobal.offset_id = messageObject.getId();
                 if (messageObject.messageOwner.peer_id == null) {
@@ -77,7 +77,7 @@ public abstract class gt extends z61 {
                 } else {
                     tL_messages_searchGlobal.offset_peer = MessagesController.getInstance(i12).getInputPeer(messageObject.messageOwner.peer_id);
                 }
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.n0(this, i10, tL_messages_searchGlobal, z10, 4), !z10 ? 800L : 0L);
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.m0(this, i10, tL_messages_searchGlobal, z10, 4), !z10 ? 800L : 0L);
                 if (z10) {
                     this.X = true;
                     TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
@@ -93,7 +93,7 @@ public abstract class gt extends z61 {
         tL_messages_searchGlobal.offset_rate = 0;
         tL_messages_searchGlobal.offset_id = 0;
         tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
-        AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.n0(this, i10, tL_messages_searchGlobal, z10, 4), !z10 ? 800L : 0L);
+        AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.m0(this, i10, tL_messages_searchGlobal, z10, 4), !z10 ? 800L : 0L);
         if (z10) {
         }
     }

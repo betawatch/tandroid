@@ -2,7 +2,7 @@ package e9;
 
 import java.util.Map;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class j1 extends n {
     public final /* synthetic */ Map.Entry a;
@@ -21,6 +21,6 @@ public final class j1 extends n {
     @Override // java.util.Map.Entry
     public final Object getValue() {
         Map.Entry entry = this.a;
-        return this.b.e(entry.getKey(), entry.getValue());
+        return this.b.k(entry.getKey(), entry.getValue());
     }
 }

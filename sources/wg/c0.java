@@ -12,14 +12,14 @@ import bi.a2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.da0;
 import org.telegram.ui.Components.z9;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class c0 extends FrameLayout {
     public final TextView a;
@@ -71,9 +71,9 @@ public final class c0 extends FrameLayout {
         FrameLayout frameLayout = new FrameLayout(context);
         this.w = frameLayout;
         boolean z11 = LocaleController.isRTL;
-        frameLayout.addView(z9Var, a6.a(24.0f, z11 ? 0.0f : 12.0f, 0.0f, z11 ? 12.0f : 0.0f, 0.0f, 24, z11 ? 5 : 3));
+        frameLayout.addView(z9Var, z5.a(24.0f, z11 ? 0.0f : 12.0f, 0.0f, z11 ? 12.0f : 0.0f, 0.0f, 24, z11 ? 5 : 3));
         boolean z12 = LocaleController.isRTL;
-        frameLayout.addView(a14, a6.a(-2.0f, z12 ? 0.0f : 29.0f, 0.0f, z12 ? 29.0f : 0.0f, 0.0f, -2, (z12 ? 5 : 3) | 16));
+        frameLayout.addView(a14, z5.a(-2.0f, z12 ? 0.0f : 29.0f, 0.0f, z12 ? 29.0f : 0.0f, 0.0f, -2, (z12 ? 5 : 3) | 16));
         TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(-2, -2, LocaleController.isRTL ? 1.0f : 0.0f);
         layoutParams.gravity = 16;
         if (LocaleController.isRTL) {
@@ -88,9 +88,9 @@ public final class c0 extends FrameLayout {
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.x = frameLayout2;
         boolean z13 = LocaleController.isRTL;
-        frameLayout2.addView(z9Var2, a6.a(24.0f, z13 ? 0.0f : 12.0f, 0.0f, z13 ? 12.0f : 0.0f, 0.0f, 24, z13 ? 5 : 3));
+        frameLayout2.addView(z9Var2, z5.a(24.0f, z13 ? 0.0f : 12.0f, 0.0f, z13 ? 12.0f : 0.0f, 0.0f, 24, z13 ? 5 : 3));
         boolean z14 = LocaleController.isRTL;
-        frameLayout2.addView(a15, a6.a(-2.0f, z14 ? 0.0f : 29.0f, 0.0f, z14 ? 29.0f : 0.0f, 0.0f, -2, (z14 ? 5 : 3) | 16));
+        frameLayout2.addView(a15, z5.a(-2.0f, z14 ? 0.0f : 29.0f, 0.0f, z14 ? 29.0f : 0.0f, 0.0f, -2, (z14 ? 5 : 3) | 16));
         TableRow.LayoutParams layoutParams2 = new TableRow.LayoutParams(-2, -2, LocaleController.isRTL ? 1.0f : 0.0f);
         layoutParams2.gravity = 16;
         if (LocaleController.isRTL) {
@@ -139,7 +139,7 @@ public final class c0 extends FrameLayout {
             z10 = true;
             b0Var.setColumnShrinkable(1, true);
         }
-        addView(b0Var, a6.d(-2.0f, -1));
+        addView(b0Var, z5.d(-2.0f, -1));
         b0Var.setOutlineProvider(new a2(22));
         b0Var.setClipToOutline(z10);
         setPaddingRelative(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(14.0f), 0);
@@ -154,7 +154,7 @@ public final class c0 extends FrameLayout {
         } else {
             textView = new TextView(getContext());
         }
-        yh.n(z10 ? g6.m5 : g6.j5, c6Var, textView, 1, 14.0f);
+        sk.o(z10 ? g6.m5 : g6.j5, c6Var, textView, 1, 14.0f);
         if (!z10) {
             textView.setGravity(LocaleController.isRTL ? 5 : 3);
         }

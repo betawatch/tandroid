@@ -16,12 +16,12 @@ import di.l5;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.g6;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout {
     public final Paint a;
@@ -73,7 +73,7 @@ public final class f extends FrameLayout {
                         f fVar = this.b;
                         e eVar = fVar.v;
                         if (eVar != null) {
-                            fVar.setMirrored(eVar.x());
+                            fVar.setMirrored(eVar.p());
                             break;
                         }
                         break;
@@ -88,7 +88,7 @@ public final class f extends FrameLayout {
                         f fVar2 = this.b;
                         e eVar3 = fVar2.v;
                         if (eVar3 != null) {
-                            fVar2.setRotated(eVar3.k0());
+                            fVar2.setRotated(eVar3.r0());
                             break;
                         }
                         break;
@@ -97,7 +97,7 @@ public final class f extends FrameLayout {
         });
         imageView.setOnLongClickListener(new l5(this, 5));
         imageView.setContentDescription(LocaleController.getString(R.string.AccDescrMirror));
-        addView(imageView, a6.e(70, 64, 19));
+        addView(imageView, z5.e(70, 64, 19));
         ImageView imageView2 = new ImageView(context);
         this.c = imageView2;
         imageView2.setImageResource(R.drawable.msg_photo_cropfix);
@@ -118,7 +118,7 @@ public final class f extends FrameLayout {
                         f fVar = this.b;
                         e eVar = fVar.v;
                         if (eVar != null) {
-                            fVar.setMirrored(eVar.x());
+                            fVar.setMirrored(eVar.p());
                             break;
                         }
                         break;
@@ -133,7 +133,7 @@ public final class f extends FrameLayout {
                         f fVar2 = this.b;
                         e eVar3 = fVar2.v;
                         if (eVar3 != null) {
-                            fVar2.setRotated(eVar3.k0());
+                            fVar2.setRotated(eVar3.r0());
                             break;
                         }
                         break;
@@ -142,7 +142,7 @@ public final class f extends FrameLayout {
         });
         imageView2.setVisibility(8);
         imageView2.setContentDescription(LocaleController.getString(R.string.AccDescrAspectRatio));
-        addView(imageView2, a6.e(70, 64, 19));
+        addView(imageView2, z5.e(70, 64, 19));
         ImageView imageView3 = new ImageView(context);
         this.d = imageView3;
         imageView3.setImageResource(R.drawable.msg_photo_rotate);
@@ -163,7 +163,7 @@ public final class f extends FrameLayout {
                         f fVar = this.b;
                         e eVar = fVar.v;
                         if (eVar != null) {
-                            fVar.setMirrored(eVar.x());
+                            fVar.setMirrored(eVar.p());
                             break;
                         }
                         break;
@@ -178,7 +178,7 @@ public final class f extends FrameLayout {
                         f fVar2 = this.b;
                         e eVar3 = fVar2.v;
                         if (eVar3 != null) {
-                            fVar2.setRotated(eVar3.k0());
+                            fVar2.setRotated(eVar3.r0());
                             break;
                         }
                         break;
@@ -186,7 +186,7 @@ public final class f extends FrameLayout {
             }
         });
         imageView3.setContentDescription(LocaleController.getString(R.string.AccDescrRotate));
-        addView(imageView3, a6.e(70, 64, 21));
+        addView(imageView3, z5.e(70, 64, 21));
         TextPaint textPaint = new TextPaint(1);
         this.h = textPaint;
         textPaint.setColor(-1);
@@ -241,7 +241,7 @@ public final class f extends FrameLayout {
                 float dp = (width - AndroidUtilities.dp(2.5f)) / 2;
                 RectF rectF = this.r;
                 rectF.left = dp;
-                rectF.top = yh.B(22.0f, height, 2);
+                rectF.top = sk.A(22.0f, height, 2);
                 rectF.right = (AndroidUtilities.dp(2.5f) + width) / 2;
                 rectF.bottom = (AndroidUtilities.dp(22.0f) + height) / 2;
                 canvas2.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), paint);
@@ -276,14 +276,14 @@ public final class f extends FrameLayout {
             this.s = x10;
             e eVar = this.v;
             if (eVar != null) {
-                eVar.N0();
+                eVar.Q0();
                 return true;
             }
         } else {
             if (actionMasked == 1 || actionMasked == 3) {
                 e eVar2 = this.v;
                 if (eVar2 != null) {
-                    eVar2.a0();
+                    eVar2.b0();
                 }
                 AndroidUtilities.makeAccessibilityAnnouncement(String.format("%.1f°", Float.valueOf(this.n)));
                 return true;
@@ -307,7 +307,7 @@ public final class f extends FrameLayout {
                     b(max);
                     e eVar3 = this.v;
                     if (eVar3 != null) {
-                        eVar3.P0(this.n);
+                        eVar3.V0(this.n);
                     }
                     this.s = x10;
                 }

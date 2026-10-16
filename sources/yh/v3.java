@@ -4,28 +4,28 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.m61;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v3 implements Utilities.Callback5 {
     public final /* synthetic */ int a;
     public final /* synthetic */ e4 b;
-    public final /* synthetic */ m80 c;
+    public final /* synthetic */ l80 c;
 
-    public /* synthetic */ v3(e4 e4Var, m80 m80Var, int i10) {
+    public /* synthetic */ v3(e4 e4Var, l80 l80Var, int i10) {
         this.a = i10;
         this.b = e4Var;
-        this.c = m80Var;
+        this.c = l80Var;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5
     public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        l61 l61Var = (l61) obj;
+        m61 m61Var = (m61) obj;
         switch (this.a) {
             case 0:
-                long j10 = ((TL_stars.starGiftAttributeModel) l61Var.G).document.id;
+                long j10 = ((TL_stars.starGiftAttributeModel) m61Var.G).document.id;
                 t3 t3Var = this.b.c;
                 HashSet hashSet = t3Var.j;
                 HashSet hashSet2 = t3Var.j;
@@ -50,7 +50,7 @@ public final /* synthetic */ class v3 implements Utilities.Callback5 {
                 this.c.u();
                 break;
             case 1:
-                int i11 = ((TL_stars.starGiftAttributeBackdrop) l61Var.G).backdrop_id;
+                int i11 = ((TL_stars.starGiftAttributeBackdrop) m61Var.G).backdrop_id;
                 t3 t3Var2 = this.b.c;
                 HashSet hashSet3 = t3Var2.k;
                 HashSet hashSet4 = t3Var2.k;
@@ -75,7 +75,7 @@ public final /* synthetic */ class v3 implements Utilities.Callback5 {
                 this.c.u();
                 break;
             default:
-                long j12 = ((TL_stars.starGiftAttributePattern) l61Var.G).document.id;
+                long j12 = ((TL_stars.starGiftAttributePattern) m61Var.G).document.id;
                 t3 t3Var3 = this.b.c;
                 HashSet hashSet5 = t3Var3.l;
                 HashSet hashSet6 = t3Var3.l;

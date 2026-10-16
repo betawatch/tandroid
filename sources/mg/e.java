@@ -1,17 +1,17 @@
 package mg;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public interface e {
     void H();
 
-    void N0();
+    void Q0();
 
-    void P0(float f7);
+    void V0(float f7);
 
-    void a0();
+    void b0();
 
-    boolean k0();
+    boolean p();
 
-    boolean x();
+    boolean r0();
 }

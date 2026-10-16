@@ -1,39 +1,39 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Point;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashMap;
-import java.util.Map;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.IMapsProvider;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class rl extends FrameLayout {
-    public final HashMap a;
-    public final /* synthetic */ ul b;
+public final class rl extends TextView {
+    public final /* synthetic */ int a;
+    public float b;
+    public float c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rl(ul ulVar, Context context) {
+    public /* synthetic */ rl(Context context, int i10) {
         super(context);
-        this.b = ulVar;
-        this.a = new HashMap();
+        this.a = i10;
     }
 
-    public final void a() {
-        IMapsProvider.IMap iMap = this.b.H;
-        if (iMap == null) {
-            return;
+    @Override // android.view.View
+    public final float getTranslationX() {
+        switch (this.a) {
         }
-        IMapsProvider.IProjection projection = iMap.getProjection();
-        for (Map.Entry entry : this.a.entrySet()) {
-            IMapsProvider.IMarker iMarker = (IMapsProvider.IMarker) entry.getKey();
-            View view = (View) entry.getValue();
-            Point screenLocation = projection.toScreenLocation(iMarker.getPosition());
-            view.setTranslationX(screenLocation.x - (view.getMeasuredWidth() / 2));
-            view.setTranslationY(AndroidUtilities.dp(22.0f) + (screenLocation.y - view.getMeasuredHeight()));
+        return this.b;
+    }
+
+    @Override // android.view.View
+    public final void setTranslationX(float f7) {
+        switch (this.a) {
+            case 0:
+                this.b = f7;
+                setTranslationY(this.c + f7);
+                break;
+            default:
+                this.b = f7;
+                setTranslationY(this.c + f7);
+                break;
         }
     }
 }

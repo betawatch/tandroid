@@ -11,7 +11,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class yg extends View {
     public float E;
@@ -93,7 +93,7 @@ public final class yg extends View {
         long j13 = 0;
         if (chatActivityEnterView.c1 && j11 >= 59500 && !this.b) {
             chatActivityEnterView.D2 = -1.0f;
-            chatActivityEnterView.Z2.a2(3, 0, chatActivityEnterView.O ? Integer.MAX_VALUE : 0, chatActivityEnterView.S4, 0L, true);
+            chatActivityEnterView.Z2.d2(3, 0, chatActivityEnterView.O ? Integer.MAX_VALUE : 0, chatActivityEnterView.S4, 0L, true);
             ze zeVar = chatActivityEnterView.J0;
             chatActivityEnterView.S4 = 0L;
             zeVar.setEffect(0L);

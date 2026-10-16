@@ -29,9 +29,9 @@ import ji.y4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.s01;
+import org.telegram.ui.r01;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -120,11 +120,11 @@ public final /* synthetic */ class c0 implements ValueAnimator.AnimatorUpdateLis
                 break;
             case 10:
                 ProfileStoriesView profileStoriesView = (ProfileStoriesView) this.b;
-                s01 s01Var = profileStoriesView.h;
+                r01 r01Var = profileStoriesView.h;
                 float floatValue6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 profileStoriesView.G = floatValue6;
-                s01Var.R = floatValue6;
-                s01Var.invalidate();
+                r01Var.R = floatValue6;
+                r01Var.invalidate();
                 profileStoriesView.invalidate();
                 break;
             case 11:

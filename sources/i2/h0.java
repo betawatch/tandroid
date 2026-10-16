@@ -30,7 +30,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class h0 extends b2.h implements q {
     public final ai.a A;
@@ -241,9 +241,9 @@ public final class h0 extends b2.h implements q {
             j2.f fVar = hVar.s;
             b11.getClass();
             fVar.getClass();
-            u9.d dVar = b11.c;
-            dVar.getClass();
-            CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) dVar.a;
+            v0.k kVar2 = b11.c;
+            kVar2.getClass();
+            CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) kVar2.a;
             Iterator it = copyOnWriteArrayList.iterator();
             while (it.hasNext()) {
                 y2.b bVar = (y2.b) it.next();
@@ -1234,11 +1234,11 @@ public final class h0 extends b2.h implements q {
             String name2 = looper.getThread().getName();
             String str = e2.m0.a;
             Locale locale = Locale.US;
-            String j10 = org.telegram.ui.Cells.d0.j("Player is accessed on the wrong thread.\nCurrent thread: '", name, "'\nExpected thread: '", name2, "'\nSee https://developer.android.com/guide/topics/media/issues/player-accessed-on-wrong-thread");
+            String i10 = org.telegram.ui.Cells.c1.i("Player is accessed on the wrong thread.\nCurrent thread: '", name, "'\nExpected thread: '", name2, "'\nSee https://developer.android.com/guide/topics/media/issues/player-accessed-on-wrong-thread");
             if (this.f0) {
-                throw new IllegalStateException(j10);
+                throw new IllegalStateException(i10);
             }
-            e2.a.m("ExoPlayerImpl", j10, this.g0 ? null : new IllegalStateException());
+            e2.a.m("ExoPlayerImpl", i10, this.g0 ? null : new IllegalStateException());
             this.g0 = true;
         }
     }

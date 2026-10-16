@@ -1,108 +1,102 @@
 package li;
 
-import android.os.Handler;
+import android.content.Context;
+import android.content.Intent;
+import android.text.Spannable;
+import com.google.android.gms.internal.play_billing.s0;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.voip.VoIPPreNotificationService;
+import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l b;
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ a(l lVar, int i10) {
-        this.a = i10;
-        this.b = lVar;
+    public /* synthetic */ a(Intent intent, TL_phone.PhoneCall phoneCall, Context context, int i10, long j10, boolean z10) {
+        this.e = intent;
+        this.f = phoneCall;
+        this.h = context;
+        this.b = i10;
+        this.c = j10;
+        this.d = z10;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0092 A[Catch: all -> 0x007f, TryCatch #0 {all -> 0x007f, blocks: (B:9:0x0033, B:11:0x003d, B:14:0x004b, B:16:0x0055, B:20:0x005d, B:22:0x0063, B:24:0x006f, B:30:0x0077, B:31:0x0081, B:33:0x0092, B:35:0x009b, B:37:0x00a1, B:38:0x00ac, B:42:0x00ae), top: B:8:0x0033 }] */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00a1 A[Catch: all -> 0x007f, TryCatch #0 {all -> 0x007f, blocks: (B:9:0x0033, B:11:0x003d, B:14:0x004b, B:16:0x0055, B:20:0x005d, B:22:0x0063, B:24:0x006f, B:30:0x0077, B:31:0x0081, B:33:0x0092, B:35:0x009b, B:37:0x00a1, B:38:0x00ac, B:42:0x00ae), top: B:8:0x0033 }] */
     @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void run() {
-        o oVar;
         boolean z10;
         switch (this.a) {
             case 0:
-                this.b.u();
-                return;
-            case 1:
-                this.b.d0();
-                return;
-            case 2:
-                l lVar = this.b;
-                Handler handler = lVar.n;
-                if (handler != null) {
-                    handler.post(new a(lVar, 3));
-                    return;
-                }
-                return;
-            case 3:
-                l lVar2 = this.b;
-                if (!lVar2.V || lVar2.A == null || (oVar = lVar2.x) == null) {
-                    return;
-                }
-                synchronized (oVar) {
-                    z10 = oVar.z;
-                }
-                if (z10) {
-                    return;
-                }
-                try {
-                    o oVar2 = lVar2.x;
-                    lVar2.y = oVar2;
-                    Handler handler2 = lVar2.n;
-                    if (handler2 != null) {
-                        handler2.removeCallbacks(lVar2.m1);
-                        handler2.postDelayed(lVar2.m1, 3000L);
-                    }
-                    oVar2.p(new d(lVar2, oVar2, 0), new d(lVar2, oVar2, 1));
-                    lVar2.j.b("first camera frame received; audio startup requested: segmentElapsedMs=" + l.z(lVar2.E0));
-                    return;
-                } catch (RuntimeException e) {
-                    lVar2.k();
-                    lVar2.N(e);
-                    return;
-                }
-            case 4:
-                l lVar3 = this.b;
-                o oVar3 = lVar3.y;
-                if (!lVar3.V || lVar3.b0 || oVar3 == null || lVar3.x != oVar3) {
-                    return;
-                }
-                lVar3.y = null;
-                lVar3.N(new IllegalStateException("Timed out waiting for synchronized audio and video start"));
-                return;
-            case 5:
-                this.b.g();
-                return;
-            case 6:
-                this.b.I();
-                return;
-            case 7:
-                l lVar4 = this.b;
-                lVar4.V = false;
-                lVar4.k();
-                o oVar4 = lVar4.x;
-                if (oVar4 != null) {
-                    long l4 = oVar4.l();
-                    u uVar = lVar4.w;
-                    if (uVar != null && l4 != Long.MAX_VALUE) {
-                        uVar.q = Math.max(0L, l4) * 1000;
-                        Handler handler3 = uVar.u;
-                        if (handler3 != null) {
-                            handler3.removeCallbacks(uVar.x0);
+                j jVar = (j) this.e;
+                long j10 = this.c;
+                g gVar = (g) this.f;
+                int i10 = this.b;
+                boolean z11 = this.d;
+                n4.s sVar = (n4.s) this.h;
+                synchronized (k.d) {
+                    try {
+                        Spannable spannable = (Spannable) jVar.a.get();
+                        if (spannable != null && jVar.b.get(Long.valueOf(j10)) == gVar) {
+                            String str = gVar.a;
+                            if (i10 <= spannable.length() && i10 == str.length()) {
+                                for (int i11 = 0; i11 < str.length(); i11++) {
+                                    if (spannable.charAt(i11) == str.charAt(i11)) {
+                                    }
+                                }
+                                z10 = true;
+                                if (z10 && !z11) {
+                                    k.a(spannable, i10, (s0) sVar.b);
+                                }
+                                jVar.b.remove(Long.valueOf(j10));
+                                if (jVar.b.isEmpty()) {
+                                    k.e.remove(jVar);
+                                    if (spannable instanceof e) {
+                                        ((e) spannable).a = true;
+                                    }
+                                }
+                                if (z10) {
+                                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.emojiLoaded, new Object[0]);
+                                }
+                                return;
+                            }
+                            z10 = false;
+                            if (z10) {
+                                k.a(spannable, i10, (s0) sVar.b);
+                            }
+                            jVar.b.remove(Long.valueOf(j10));
+                            if (jVar.b.isEmpty()) {
+                            }
+                            if (z10) {
+                            }
+                            return;
                         }
+                        return;
+                    } finally {
                     }
                 }
-                lVar4.p();
-                o oVar5 = lVar4.x;
-                if (oVar5 != null) {
-                    oVar5.q();
-                    lVar4.x = null;
-                }
-                lVar4.b0 = false;
-                u0 u0Var = (u0) lVar4.k.b;
-                u0Var.i.post(new f0(u0Var, 3));
-                return;
             default:
-                this.b.d0();
+                VoIPPreNotificationService.lambda$show$1((Intent) this.e, (TL_phone.PhoneCall) this.f, (Context) this.h, this.b, this.c, this.d);
                 return;
         }
+    }
+
+    public /* synthetic */ a(j jVar, long j10, g gVar, int i10, boolean z10, n4.s sVar) {
+        this.e = jVar;
+        this.c = j10;
+        this.f = gVar;
+        this.b = i10;
+        this.d = z10;
+        this.h = sVar;
     }
 }

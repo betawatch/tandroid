@@ -1,6 +1,6 @@
 package u2;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class o1 implements d1 {
     public final d1 a;
@@ -12,8 +12,8 @@ public final class o1 implements d1 {
     }
 
     @Override // u2.d1
-    public final void d() {
-        this.a.d();
+    public final void b() {
+        this.a.b();
     }
 
     @Override // u2.d1
@@ -31,7 +31,7 @@ public final class o1 implements d1 {
     }
 
     @Override // u2.d1
-    public final int m(long j10) {
-        return this.a.m(j10 - this.b);
+    public final int j(long j10) {
+        return this.a.j(j10 - this.b);
     }
 }

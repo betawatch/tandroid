@@ -9,22 +9,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.Components.k91;
+import org.telegram.ui.Components.l91;
 import org.telegram.ui.Components.mm0;
-import org.telegram.ui.aq0;
+import org.telegram.ui.eq0;
 import org.telegram.ui.fo;
 import org.telegram.ui.g41;
-import org.telegram.ui.gq0;
 import org.telegram.ui.h41;
 import org.telegram.ui.hb1;
 import org.telegram.ui.i41;
 import org.telegram.ui.pk;
-import org.telegram.ui.se1;
-import org.telegram.ui.sw0;
+import org.telegram.ui.re1;
+import org.telegram.ui.rw0;
+import org.telegram.ui.yp0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class h1 extends k91 {
+public final class h1 extends l91 {
     public final /* synthetic */ int T;
     public final /* synthetic */ Object U;
 
@@ -35,7 +35,7 @@ public final class h1 extends k91 {
         this.U = obj;
     }
 
-    @Override // org.telegram.ui.Components.k91
+    @Override // org.telegram.ui.Components.l91
     public int G() {
         switch (this.T) {
             case 10:
@@ -49,7 +49,7 @@ public final class h1 extends k91 {
     /* JADX WARN: Removed duplicated region for block: B:54:0x00d8  */
     /* JADX WARN: Removed duplicated region for block: B:56:0x00de A[ORIG_RETURN, RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:57:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.Components.k91
+    @Override // org.telegram.ui.Components.l91
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -116,7 +116,7 @@ public final class h1 extends k91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.k91
+    @Override // org.telegram.ui.Components.l91
     public boolean j(MotionEvent motionEvent) {
         switch (this.T) {
             case 2:
@@ -126,7 +126,7 @@ public final class h1 extends k91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.k91
+    @Override // org.telegram.ui.Components.l91
     public boolean k(MotionEvent motionEvent) {
         switch (this.T) {
             case 2:
@@ -151,7 +151,7 @@ public final class h1 extends k91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.k91, android.view.View
+    @Override // org.telegram.ui.Components.l91, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         switch (this.T) {
             case 3:
@@ -161,7 +161,7 @@ public final class h1 extends k91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.k91
+    @Override // org.telegram.ui.Components.l91
     public void t(View view, View view2, int i10, int i11) {
         boolean z10;
         switch (this.T) {
@@ -176,7 +176,7 @@ public final class h1 extends k91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.k91
+    @Override // org.telegram.ui.Components.l91
     public void u() {
         switch (this.T) {
             case 2:
@@ -194,7 +194,7 @@ public final class h1 extends k91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.k91
+    @Override // org.telegram.ui.Components.l91
     public void v() {
         g41 g41Var;
         switch (this.T) {
@@ -207,7 +207,7 @@ public final class h1 extends k91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.k91
+    @Override // org.telegram.ui.Components.l91
     public void w(boolean z10) {
         ViewGroup viewGroup;
         ViewGroup viewGroup2;
@@ -244,23 +244,23 @@ public final class h1 extends k91 {
                 foVar.v9(1);
                 break;
             case 4:
-                gq0 gq0Var = (gq0) this.U;
-                float positionAnimated = gq0Var.I.getPositionAnimated();
-                gq0Var.M.setSelected(positionAnimated);
-                gq0Var.e.setProgressToGradient(1.0f - w7.s.a((positionAnimated - 0.333333f) / 0.333333f, 0.0f, 1.0f));
-                gq0Var.G0();
-                aq0 C0 = gq0Var.C0();
-                d dVar = gq0Var.Q;
-                if (dVar != null && C0 != null && C0 != gq0Var.R) {
-                    gq0Var.R = C0;
-                    n6.o oVar = C0.e;
-                    dVar.g((CharSequence) oVar.b, true, true);
-                    gq0Var.Q.f((SpannableStringBuilder) oVar.c, true);
+                eq0 eq0Var = (eq0) this.U;
+                float positionAnimated = eq0Var.I.getPositionAnimated();
+                eq0Var.M.setSelected(positionAnimated);
+                eq0Var.e.setProgressToGradient(1.0f - w7.r.a((positionAnimated - 0.333333f) / 0.333333f, 0.0f, 1.0f));
+                eq0Var.G0();
+                yp0 C0 = eq0Var.C0();
+                d dVar = eq0Var.Q;
+                if (dVar != null && C0 != null && C0 != eq0Var.R) {
+                    eq0Var.R = C0;
+                    n3.b bVar = C0.e;
+                    dVar.g((CharSequence) bVar.b, true, true);
+                    eq0Var.Q.f((SpannableStringBuilder) bVar.c, true);
                 }
-                gq0Var.D0(1);
+                eq0Var.D0(1);
                 break;
             case 5:
-                ((sw0) this.U).e();
+                ((rw0) this.U).e();
                 break;
             case 6:
                 viewGroup4 = ((org.telegram.ui.ActionBar.e3) ((i41) this.U)).containerView;
@@ -277,30 +277,30 @@ public final class h1 extends k91 {
                 hb1.Y(hb1Var);
                 break;
             case 8:
-                ((se1) this.U).e();
+                ((re1) this.U).e();
                 break;
             case 9:
-                viewGroup5 = ((org.telegram.ui.ActionBar.e3) ((org.telegram.ui.Wallet.h2) this.U)).containerView;
+                viewGroup5 = ((org.telegram.ui.ActionBar.e3) ((org.telegram.ui.Wallet.i2) this.U)).containerView;
                 viewGroup5.invalidate();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.k91
+    @Override // org.telegram.ui.Components.l91
     public void x(int i10) {
         switch (this.T) {
             case 10:
-                org.telegram.ui.Wallet.z4 z4Var = (org.telegram.ui.Wallet.z4) this.U;
-                z4Var.f0 = i10;
+                org.telegram.ui.Wallet.a5 a5Var = (org.telegram.ui.Wallet.a5) this.U;
+                a5Var.f0 = i10;
                 if (i10 == 1) {
-                    z4Var.n0.post(new org.telegram.ui.Wallet.f3(z4Var, 12));
+                    a5Var.n0.post(new org.telegram.ui.Wallet.g3(a5Var, 12));
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.k91
+    @Override // org.telegram.ui.Components.l91
     public void z(int i10) {
         switch (this.T) {
             case 3:

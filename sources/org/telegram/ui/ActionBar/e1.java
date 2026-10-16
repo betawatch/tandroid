@@ -22,7 +22,7 @@ import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.z9;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class e1 extends FrameLayout {
     public int E;
@@ -60,12 +60,12 @@ public class e1 extends FrameLayout {
             this.e.setDrawBackgroundAsArc(-1);
             org.telegram.ui.Components.a6 a6Var = this.a;
             if (i10 != 1) {
-                addView(this.e, w7.a6.e(26, -1, (LocaleController.isRTL ? 3 : 5) | 16));
+                addView(this.e, w7.z5.e(26, -1, (LocaleController.isRTL ? 3 : 5) | 16));
                 a6Var.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(34.0f) : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.dp(34.0f), 0);
             } else {
                 boolean z10 = LocaleController.isRTL;
                 this.d = !z10;
-                addView(this.e, w7.a6.e(26, -1, (z10 ? 5 : 3) | 16));
+                addView(this.e, w7.z5.e(26, -1, (z10 ? 5 : 3) | 16));
                 a6Var.setPadding(!LocaleController.isRTL ? AndroidUtilities.dp(34.0f) : 0, 0, !LocaleController.isRTL ? 0 : AndroidUtilities.dp(34.0f), 0);
             }
         }
@@ -171,7 +171,7 @@ public class e1 extends FrameLayout {
             z9 z9Var = new z9(getContext());
             this.h = z9Var;
             z9Var.setRoundRadius(AndroidUtilities.dp(5.0f));
-            addView(this.h, w7.a6.e(28, 28, (LocaleController.isRTL ? 5 : 3) | 16));
+            addView(this.h, w7.z5.e(28, 28, (LocaleController.isRTL ? 5 : 3) | 16));
         }
         this.c.setVisibility(4);
         this.h.h(imageLocation, str, svgDrawable, tL_attachMenuBot);
@@ -284,7 +284,7 @@ public class e1 extends FrameLayout {
             if (LocaleController.isRTL) {
                 this.f.setScaleX(-1.0f);
             }
-            addView(this.f, w7.a6.e(24, -1, (LocaleController.isRTL ? 3 : 5) | 16));
+            addView(this.f, w7.z5.e(24, -1, (LocaleController.isRTL ? 3 : 5) | 16));
         }
         org.telegram.ui.Components.a6 a6Var = this.a;
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) a6Var.getLayoutParams();
@@ -322,7 +322,7 @@ public class e1 extends FrameLayout {
             this.b.setVisibility(8);
             this.b.setTextSize(1, 13.0f);
             this.b.setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.dp(43.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(43.0f) : 0, 0);
-            addView(this.b, w7.a6.a(-2.0f, 0.0f, 10.0f, 0.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 16));
+            addView(this.b, w7.z5.a(-2.0f, 0.0f, 10.0f, 0.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 16));
         }
         boolean isEmpty = TextUtils.isEmpty(charSequence);
         if ((!isEmpty) != (this.b.getVisibility() == 0)) {
@@ -379,7 +379,7 @@ public class e1 extends FrameLayout {
         this.c = bk0Var;
         bk0Var.setScaleType(ImageView.ScaleType.CENTER);
         bk0Var.setColorFilter(new PorterDuffColorFilter(this.r, PorterDuff.Mode.SRC_IN));
-        addView(bk0Var, w7.a6.e(-2, 40, (LocaleController.isRTL ? 5 : 3) | 16));
+        addView(bk0Var, w7.z5.e(-2, 40, (LocaleController.isRTL ? 5 : 3) | 16));
         org.telegram.ui.Components.a6 a6Var = new org.telegram.ui.Components.a6(context);
         this.a = a6Var;
         a6Var.setLines(1);
@@ -388,7 +388,7 @@ public class e1 extends FrameLayout {
         a6Var.setEllipsize(TextUtils.TruncateAt.END);
         a6Var.setTextColor(this.n);
         a6Var.setTextSize(1, 16.0f);
-        addView(a6Var, w7.a6.e(-2, -2, (LocaleController.isRTL ? 5 : 3) | 16));
+        addView(a6Var, w7.z5.e(-2, -2, (LocaleController.isRTL ? 5 : 3) | 16));
         this.d = LocaleController.isRTL;
         a(i10);
     }

@@ -6,7 +6,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class vp0 extends LinearLayout {
     public final ew0 a;
@@ -23,10 +23,10 @@ public final class vp0 extends LinearLayout {
         setPadding(dp, i10, dp, i10);
         ew0 ew0Var = new ew0(context);
         this.a = ew0Var;
-        addView(ew0Var, w7.a6.d(40.0f, 40));
+        addView(ew0Var, w7.z5.d(40.0f, 40));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        addView(linearLayout, w7.a6.m(1.0f, 0, -1, 12, 0, 0));
+        addView(linearLayout, w7.z5.m(1.0f, 0, -1, 12, 0, 0));
         TextView textView = new TextView(context);
         this.b = textView;
         int i11 = org.telegram.ui.ActionBar.g6.E8;

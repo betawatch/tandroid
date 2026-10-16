@@ -10,7 +10,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wf implements Runnable {
     public final /* synthetic */ int a;
@@ -216,7 +216,7 @@ public final /* synthetic */ class wf implements Runnable {
                         foVar.g2.setAlpha(0.0f);
                         foVar.g2.setVisibility(4);
                         foVar.g2.setText(LocaleController.getString(R.string.ScheduledOrNoSoundHint));
-                        foVar.X0.addView(foVar.g2, w7.a6.a(-2.0f, 10.0f, 0.0f, 10.0f, 0.0f, -2, 51));
+                        foVar.X0.addView(foVar.g2, w7.z5.a(-2.0f, 10.0f, 0.0f, 10.0f, 0.0f, -2, 51));
                     }
                     foVar.g2.f(sendButton, true);
                     foVar.h2 = true;
@@ -240,7 +240,7 @@ public final /* synthetic */ class wf implements Runnable {
                         foVar.i2.setAlpha(0.0f);
                         foVar.i2.setVisibility(4);
                         foVar.i2.setText(LocaleController.getString(R.string.ScheduledHint));
-                        foVar.X0.addView(foVar.i2, w7.a6.a(-2.0f, 10.0f, 0.0f, 10.0f, 0.0f, -2, 51));
+                        foVar.X0.addView(foVar.i2, w7.z5.a(-2.0f, 10.0f, 0.0f, 10.0f, 0.0f, -2, 51));
                     }
                     foVar.i2.f(sendButton2, true);
                     foVar.j2 = true;

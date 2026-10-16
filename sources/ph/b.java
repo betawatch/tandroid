@@ -30,14 +30,14 @@ import org.telegram.ui.Components.k9;
 import org.telegram.ui.Components.r6;
 import org.telegram.ui.Components.yj0;
 import org.telegram.ui.Components.z9;
-import org.telegram.ui.lh0;
+import org.telegram.ui.kh0;
 import sg.b1;
-import w7.a6;
-import w7.s;
+import w7.r;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class b extends FrameLayout implements lh0, d {
+public final class b extends FrameLayout implements kh0, d {
     public static final RectF V = new RectF();
     public TLRPC.TL_attachMenuBot E;
     public final TextPaint F;
@@ -81,7 +81,7 @@ public final class b extends FrameLayout implements lh0, d {
         this.S = 1.0f;
         bk0 bk0Var = new bk0(context);
         this.b = bk0Var;
-        addView(bk0Var, a6.a(44.0f, 0.0f, -6.0f, 0.0f, 0.0f, 44, 49));
+        addView(bk0Var, z5.a(44.0f, 0.0f, -6.0f, 0.0f, 0.0f, 44, 49));
         bk0Var.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.SRC_IN));
         TextView textView = new TextView(context);
         this.a = textView;
@@ -92,7 +92,7 @@ public final class b extends FrameLayout implements lh0, d {
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);
         this.F = new TextPaint(textView.getPaint());
-        addView(textView, a6.a(-2.0f, 0.0f, 28.33f, 0.0f, 0.0f, -1, 49));
+        addView(textView, z5.a(-2.0f, 0.0f, 28.33f, 0.0f, 0.0f, -1, 49));
         r6 r6Var = new r6(false, false, false);
         this.f = r6Var;
         r6Var.x(AndroidUtilities.bold());
@@ -108,7 +108,7 @@ public final class b extends FrameLayout implements lh0, d {
         bVar.y = aVar;
         bVar.a.setText(LocaleController.getString(i10));
         bVar.a(false);
-        bVar.b.setLayoutParams(a6.a(24.0f, 0.0f, 4.0f, 0.0f, 0.0f, 24, 49));
+        bVar.b.setLayoutParams(z5.a(24.0f, 0.0f, 4.0f, 0.0f, 0.0f, 24, 49));
         bVar.w = g6.w0(g6.cl, c6Var);
         bVar.s = g6.w0(g6.al, c6Var);
         bVar.v = g6.w0(g6.bl, c6Var);
@@ -230,7 +230,7 @@ public final class b extends FrameLayout implements lh0, d {
 
     public final float c() {
         float measureText = this.F.measureText(this.a.getText().toString());
-        return Math.min(AndroidUtilities.dp(84.0f), (int) ((AndroidUtilities.lerp(AndroidUtilities.dpf2(16.0f), AndroidUtilities.dp(8.0f), s.a((measureText - AndroidUtilities.dp(40.0f)) / AndroidUtilities.dp(16.0f), 0.0f, 1.0f)) * 2.0f) + measureText));
+        return Math.min(AndroidUtilities.dp(84.0f), (int) ((AndroidUtilities.lerp(AndroidUtilities.dpf2(16.0f), AndroidUtilities.dp(8.0f), r.a((measureText - AndroidUtilities.dp(40.0f)) / AndroidUtilities.dp(16.0f), 0.0f, 1.0f)) * 2.0f) + measureText));
     }
 
     public final void d(String str, boolean z10, boolean z11) {
@@ -249,7 +249,7 @@ public final class b extends FrameLayout implements lh0, d {
             paint.setColor(g6.m1(me.a.a.getInterpolation(f7) * 0.09f, this.s));
             rectF.set(0.0f, 0.0f, width, getHeight());
             float min = Math.min(rectF.width(), rectF.height()) / 2.0f;
-            float a2 = s.a(this.S, 0.0f, 1.0f) * AndroidUtilities.lerp(0.6f, 1.0f, f7);
+            float a2 = r.a(this.S, 0.0f, 1.0f) * AndroidUtilities.lerp(0.6f, 1.0f, f7);
             canvas.save();
             canvas.scale(a2, a2, rectF.centerX(), rectF.centerY());
             canvas.drawRoundRect(rectF, min, min, paint);
@@ -419,6 +419,6 @@ public final class b extends FrameLayout implements lh0, d {
     }
 
     @Override // ne.d
-    public final /* synthetic */ void C(float f7, int i10) {
+    public final /* synthetic */ void A(float f7, int i10) {
     }
 }

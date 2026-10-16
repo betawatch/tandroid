@@ -36,9 +36,9 @@ import java.util.List;
 import org.telegram.messenger.MediaDataController;
 import p4.l;
 import p4.m;
-import p4.x;
+import p4.w;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class f {
     public static volatile e a;
@@ -496,8 +496,8 @@ public abstract class f {
             bundle2.putBoolean("enabled", true);
             bundle2.putBoolean("canDisconnect", false);
             if (Build.VERSION.SDK_INT >= 34) {
-                bundle2.putStringArrayList("deduplicationIds", new ArrayList<>(x.b(mediaRoute2Info)));
-                int c10 = x.c(mediaRoute2Info);
+                bundle2.putStringArrayList("deduplicationIds", new ArrayList<>(w.b(mediaRoute2Info)));
+                int c10 = w.c(mediaRoute2Info);
                 i10 = 2;
                 if (c10 == 2) {
                     i10 = 12;

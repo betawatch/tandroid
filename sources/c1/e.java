@@ -1,5 +1,6 @@
 package c1;
 
+import a4.l;
 import ah.h0;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -20,21 +21,21 @@ import d1.f;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.concurrent.Executor;
-import n7.s0;
+import n7.t0;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import v0.i;
-import v0.m;
 import v0.n;
 import v0.o;
 import v0.p;
+import v0.q;
 import v7.p6;
 import w0.h;
 import w7.h8;
 import x5.g;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class e extends b1.d {
     public final Context e;
@@ -56,8 +57,8 @@ public final class e extends b1.d {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final o d(g gVar) {
-        m mVar;
+    public final p d(g gVar) {
+        n nVar;
         k kVar;
         c7.g gVar2;
         String jSONObject;
@@ -70,7 +71,7 @@ public final class e extends b1.d {
             Bundle bundle = new Bundle();
             bundle.putString("androidx.credentials.BUNDLE_KEY_ID", id2);
             bundle.putString("androidx.credentials.BUNDLE_KEY_PASSWORD", str);
-            mVar = new m(str, 2, bundle);
+            nVar = new n(str, 2, bundle);
         } else {
             boolean z10 = false;
             JSONObject jSONObject2 = null;
@@ -104,7 +105,7 @@ public final class e extends b1.d {
                 bundle2.putString("com.google.android.libraries.identity.googleid.BUNDLE_KEY_GIVEN_NAME", str3);
                 bundle2.putString("com.google.android.libraries.identity.googleid.BUNDLE_KEY_PHONE_NUMBER", str5);
                 bundle2.putParcelable("com.google.android.libraries.identity.googleid.BUNDLE_KEY_PROFILE_PICTURE_URI", uri2);
-                mVar = new z8.a("com.google.android.libraries.identity.googleid.TYPE_GOOGLE_ID_TOKEN_CREDENTIAL", 0, bundle2);
+                nVar = new z8.a("com.google.android.libraries.identity.googleid.TYPE_GOOGLE_ID_TOKEN_CREDENTIAL", 0, bundle2);
                 if (id2.length() <= 0) {
                     throw new IllegalArgumentException("id should not be empty");
                 }
@@ -143,11 +144,11 @@ public final class e extends b1.d {
                 }
                 if (kVar instanceof c7.i) {
                     try {
-                        s0 s0Var = uVar.c;
+                        t0 t0Var = uVar.c;
                         try {
                             JSONObject jSONObject4 = new JSONObject();
-                            if (s0Var != null && s0Var.t().length > 0) {
-                                jSONObject4.put("rawId", u6.b.c(s0Var.t()));
+                            if (t0Var != null && t0Var.t().length > 0) {
+                                jSONObject4.put("rawId", u6.b.c(t0Var.t()));
                             }
                             String str7 = uVar.n;
                             if (str7 != null) {
@@ -213,14 +214,14 @@ public final class e extends b1.d {
                 }
                 Bundle bundle3 = new Bundle();
                 bundle3.putString("androidx.credentials.BUNDLE_KEY_AUTHENTICATION_RESPONSE_JSON", jSONObject);
-                mVar = new m(jSONObject, 3, bundle3);
+                nVar = new n(jSONObject, 3, bundle3);
             } else {
                 Log.w("BeginSignIn", "Credential returned but no google Id or password or passkey found");
-                mVar = null;
+                nVar = null;
             }
         }
-        if (mVar != null) {
-            return new o(mVar);
+        if (nVar != null) {
+            return new p(nVar);
         }
         throw new h("When attempting to convert get response, null credential found", 2);
     }
@@ -243,7 +244,7 @@ public final class e extends b1.d {
         throw null;
     }
 
-    public final void g(n request, CancellationSignal cancellationSignal, Executor executor, i callback) {
+    public final void g(o request, CancellationSignal cancellationSignal, Executor executor, i callback) {
         kotlin.jvm.internal.i.e(request, "request");
         kotlin.jvm.internal.i.e(callback, "callback");
         kotlin.jvm.internal.i.e(executor, "executor");
@@ -275,20 +276,20 @@ public final class e extends b1.d {
                 x5.e eVar = new x5.e(dVar, aVar, a2.k, false, 0, cVar, bVar2, z11);
                 v b10 = w.b();
                 b10.d = new k6.c[]{new k6.c("auth_api_credentials_begin_sign_in", 8L)};
-                b10.c = new k6.h(a2, eVar);
+                b10.c = new l(a2, eVar);
                 b10.b = false;
                 b10.a = 1553;
                 a2.e(0, b10.a()).addOnSuccessListener(new a1.c(new b1.f(i10, cancellationSignal, this), 12)).addOnFailureListener(new h0(5, this, cancellationSignal));
                 return;
             }
-            p pVar = (p) it.next();
-            if ((pVar instanceof p) && !z10) {
+            q qVar = (q) it.next();
+            if ((qVar instanceof q) && !z10) {
                 if (j10 >= 231815000) {
                     LinkedHashMap linkedHashMap = f.a;
-                    bVar2 = new x5.b(pVar.d, true);
+                    bVar2 = new x5.b(qVar.d, true);
                 } else {
                     LinkedHashMap linkedHashMap2 = f.a;
-                    JSONObject jSONObject = new JSONObject(pVar.d);
+                    JSONObject jSONObject = new JSONObject(qVar.d);
                     String optString = jSONObject.optString("rpId", "");
                     kotlin.jvm.internal.i.b(optString);
                     if (optString.length() == 0) {

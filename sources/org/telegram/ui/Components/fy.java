@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class fy extends lm0 {
     public int E;
@@ -743,15 +743,15 @@ public final class fy extends lm0 {
                 s6Var.b(0.3f, 250L, es.h);
                 s6Var.setTextSize(AndroidUtilities.dp(14.0f));
                 s6Var.setTypeface(AndroidUtilities.bold());
-                s6Var.setTextColor(wzVar.A(org.telegram.ui.ActionBar.g6.Sh));
+                s6Var.setTextColor(wzVar.B(org.telegram.ui.ActionBar.g6.Sh));
                 s6Var.setGravity(17);
                 FrameLayout frameLayout = new FrameLayout(kyVar.getContext());
-                frameLayout.setBackground(org.telegram.ui.ActionBar.w5.e(new float[]{8.0f}, wzVar.A(org.telegram.ui.ActionBar.g6.Oh)));
-                frameLayout.addView(s6Var, w7.a6.e(-1, -2, 17));
-                kyVar.addView(frameLayout, w7.a6.d(-1.0f, -1));
+                frameLayout.setBackground(org.telegram.ui.ActionBar.w5.e(new float[]{8.0f}, wzVar.B(org.telegram.ui.ActionBar.g6.Oh)));
+                frameLayout.addView(s6Var, w7.z5.e(-1, -2, 17));
+                kyVar.addView(frameLayout, w7.z5.d(-1.0f, -1));
                 sg.q0 q0Var = new sg.q0(kyVar.getContext(), c6Var, false);
                 q0Var.setIcon(R.raw.unlock_icon);
-                kyVar.addView(q0Var, w7.a6.d(-1.0f, -1));
+                kyVar.addView(q0Var, w7.z5.d(-1.0f, -1));
                 view = kyVar;
             } else if (i10 == 4) {
                 Context context = wzVar.getContext();
@@ -779,7 +779,7 @@ public final class fy extends lm0 {
                 textView.setBackground(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(11.0f), i0.a.k(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Te, c6Var), 99)));
                 textView.setTypeface(AndroidUtilities.bold());
                 textView.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(1.66f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(2.0f));
-                lyVar.addView(textView, w7.a6.e(-2, -2, 17));
+                lyVar.addView(textView, w7.z5.e(-2, -2, 17));
                 view = lyVar;
             }
         } else {

@@ -12,12 +12,10 @@ import android.view.Surface;
 import e2.m0;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import ji.w4;
-import org.telegram.ui.Components.voip.m2;
-import org.telegram.ui.Wallet.t8;
+import org.telegram.ui.Components.voip.r2;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class c implements l {
     public final MediaCodec a;
@@ -77,13 +75,18 @@ public final class c implements l {
     }
 
     @Override // r2.l
-    public final void e(int i10, h2.d dVar, long j10, int i11) {
-        this.c.e(i10, dVar, j10, i11);
+    public final void d(int i10, h2.d dVar, long j10, int i11) {
+        this.c.d(i10, dVar, j10, i11);
     }
 
     @Override // r2.l
-    public final void f(int i10) {
+    public final void e(int i10) {
         this.a.releaseOutputBuffer(i10, false);
+    }
+
+    @Override // r2.l
+    public final void f(a3.m mVar, Handler handler) {
+        this.a.setOnFrameRenderedListener(new a(this, mVar, 0), handler);
     }
 
     @Override // r2.l
@@ -95,19 +98,14 @@ public final class c implements l {
             fVar.l++;
             Handler handler = fVar.c;
             String str = m0.a;
-            handler.post(new m2(fVar, 21));
+            handler.post(new r2(fVar, 20));
         }
         this.a.start();
     }
 
     @Override // r2.l
-    public final void g(t8 t8Var) {
-        f fVar = this.b;
-        t8 t8Var2 = new t8(21, this, t8Var);
-        synchronized (fVar.a) {
-            fVar.b();
-            t8Var2.run();
-        }
+    public final void g() {
+        this.a.detachOutputSurface();
     }
 
     @Override // r2.l
@@ -138,17 +136,7 @@ public final class c implements l {
     }
 
     @Override // r2.l
-    public final void h(a3.m mVar, Handler handler) {
-        this.a.setOnFrameRenderedListener(new a(this, mVar, 0), handler);
-    }
-
-    @Override // r2.l
-    public final void i() {
-        this.a.detachOutputSurface();
-    }
-
-    @Override // r2.l
-    public final void j(int i10, long j10) {
+    public final void h(int i10, long j10) {
         this.a.releaseOutputBuffer(i10, j10);
     }
 
@@ -158,9 +146,9 @@ public final class c implements l {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int k() {
+    public final int i() {
         boolean z10;
-        this.c.r0();
+        this.c.s0();
         f fVar = this.b;
         synchronized (fVar.a) {
             try {
@@ -198,9 +186,9 @@ public final class c implements l {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int l(MediaCodec.BufferInfo bufferInfo) {
+    public final int j(MediaCodec.BufferInfo bufferInfo) {
         boolean z10;
-        this.c.r0();
+        this.c.s0();
         f fVar = this.b;
         synchronized (fVar.a) {
             try {
@@ -239,31 +227,41 @@ public final class c implements l {
     }
 
     @Override // r2.l
-    public final void m(int i10) {
+    public final void k(int i10) {
         this.a.setVideoScalingMode(i10);
     }
 
     @Override // r2.l
-    public final void n(Surface surface) {
+    public final void l(org.telegram.ui.web.v vVar) {
+        f fVar = this.b;
+        org.telegram.ui.web.v vVar2 = new org.telegram.ui.web.v(16, this, vVar);
+        synchronized (fVar.a) {
+            fVar.b();
+            vVar2.run();
+        }
+    }
+
+    @Override // r2.l
+    public final void m(Surface surface) {
         this.a.setOutputSurface(surface);
     }
 
     @Override // r2.l
-    public final boolean o(w4 w4Var) {
+    public final void n(ArrayList arrayList) {
+        this.a.subscribeToVendorParameters(arrayList);
+    }
+
+    @Override // r2.l
+    public final boolean o(m.l lVar) {
         f fVar = this.b;
         synchronized (fVar.a) {
-            fVar.o = w4Var;
+            fVar.o = lVar;
         }
         return true;
     }
 
     @Override // r2.l
     public final void p(ArrayList arrayList) {
-        this.a.subscribeToVendorParameters(arrayList);
-    }
-
-    @Override // r2.l
-    public final void q(ArrayList arrayList) {
         this.a.unsubscribeFromVendorParameters(arrayList);
     }
 

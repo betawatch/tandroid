@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.c6;
@@ -22,10 +22,10 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.b30;
 import org.telegram.ui.Components.k9;
 import org.telegram.ui.Components.z9;
-import org.telegram.ui.jg0;
-import w7.a6;
+import org.telegram.ui.ig0;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class g extends FrameLayout {
     public final z9 a;
@@ -46,7 +46,7 @@ public final class g extends FrameLayout {
             z9 z9Var = new z9(context);
             this.a = z9Var;
             z9Var.setRoundRadius((int) (AndroidUtilities.dp(65.0f) / 2.0f));
-            addView(z9Var, a6.a(65.0f, 0.0f, 32.0f, 0.0f, 0.0f, 65, 1));
+            addView(z9Var, z5.a(65.0f, 0.0f, 32.0f, 0.0f, 0.0f, 65, 1));
             TLRPC.User currentUser = UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser();
             k9 k9Var = new k9((c6) null);
             k9Var.r(currentUser);
@@ -55,7 +55,7 @@ public final class g extends FrameLayout {
             k3.m(20.0f, 1, textView);
             textView.setTextColor(g6.w0(g6.G6, c6Var));
             textView.setText(LocaleController.getString(R.string.UpgradedStories));
-            addView(textView, a6.a(-2.0f, 0.0f, 111.0f, 0.0f, 0.0f, -2, 1));
+            addView(textView, z5.a(-2.0f, 0.0f, 111.0f, 0.0f, 0.0f, -2, 1));
             b30Var.m = true;
             b30Var.a = true;
             b30Var.d(g6.x0(null, g6.Mj, false), g6.x0(null, g6.Lj, false), 0, 0);
@@ -66,30 +66,30 @@ public final class g extends FrameLayout {
         }
         if (i10 == 1) {
             fi.f fVar = new fi.f(context, 4);
-            addView(fVar, a6.e(-1, 190, 55));
-            jg0 jg0Var = new jg0(context, 1, 1, 1);
-            jg0Var.setStarParticlesView(fVar);
+            addView(fVar, z5.e(-1, 190, 55));
+            ig0 ig0Var = new ig0(context, 1, 1, 1);
+            ig0Var.setStarParticlesView(fVar);
             Bitmap createBitmap = Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888);
             Canvas canvas = new Canvas(createBitmap);
             int i11 = g6.Mj;
             canvas.drawColor(i0.a.d(0.5f, g6.w0(i11, c6Var), g6.w0(g6.h5, c6Var)));
-            jg0Var.setBackgroundBitmap(createBitmap);
-            tg.g gVar = jg0Var.b;
+            ig0Var.setBackgroundBitmap(createBitmap);
+            tg.g gVar = ig0Var.b;
             gVar.z = i11;
             gVar.A = g6.Lj;
             gVar.b();
-            addView(jg0Var, a6.e(160, 160, 1));
-            jg0Var.m(100L);
-            TextView g10 = org.telegram.messenger.q.g(context, 1, 20.0f);
-            g10.setTypeface(AndroidUtilities.bold());
-            g10.setTextColor(g6.w0(g6.G6, c6Var));
-            yh.l(R.string.TelegramBusiness, g10, 17);
-            addView(g10, a6.a(-2.0f, 33.0f, 150.0f, 33.0f, 0.0f, -2, 1));
+            addView(ig0Var, z5.e(160, 160, 1));
+            ig0Var.m(100L);
+            TextView f7 = org.telegram.messenger.g0.f(context, 1, 20.0f);
+            f7.setTypeface(AndroidUtilities.bold());
+            f7.setTextColor(g6.w0(g6.G6, c6Var));
+            sk.m(R.string.TelegramBusiness, f7, 17);
+            addView(f7, z5.a(-2.0f, 33.0f, 150.0f, 33.0f, 0.0f, -2, 1));
             TextView textView2 = new TextView(context);
             textView2.setTextSize(1, 14.0f);
             textView2.setTextColor(g6.w0(g6.z6, c6Var));
-            yh.l(R.string.TelegramBusinessSubtitle2, textView2, 17);
-            addView(textView2, a6.a(-2.0f, 33.0f, 183.0f, 33.0f, 20.0f, -2, 1));
+            sk.m(R.string.TelegramBusinessSubtitle2, textView2, 17);
+            addView(textView2, z5.a(-2.0f, 33.0f, 183.0f, 33.0f, 20.0f, -2, 1));
         }
     }
 

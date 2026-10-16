@@ -3,10 +3,10 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class o70 extends org.telegram.ui.Cells.e9 {
-    public final org.telegram.ui.Cells.t6 v;
+    public final org.telegram.ui.Cells.l7 v;
     public boolean w;
     public final /* synthetic */ p70 x;
 
@@ -14,16 +14,16 @@ public final class o70 extends org.telegram.ui.Cells.e9 {
     public o70(p70 p70Var, Context context) {
         super(context);
         this.x = p70Var;
-        this.v = new org.telegram.ui.Cells.t6(this, 15);
+        this.v = new org.telegram.ui.Cells.l7(this, 14);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        org.telegram.ui.Cells.t6 t6Var = this.v;
-        AndroidUtilities.cancelRunOnUIThread(t6Var);
+        org.telegram.ui.Cells.l7 l7Var = this.v;
+        AndroidUtilities.cancelRunOnUIThread(l7Var);
         if (this.w) {
-            AndroidUtilities.runOnUIThread(t6Var, 500L);
+            AndroidUtilities.runOnUIThread(l7Var, 500L);
         }
     }
 

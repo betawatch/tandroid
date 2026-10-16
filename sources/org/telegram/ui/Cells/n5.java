@@ -6,10 +6,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class n5 extends FrameLayout {
     public ImageView a;
@@ -19,7 +19,7 @@ public final class n5 extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.d, TLObject.FLAG_30), yh.D(2.0f, this.d, TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.d, TLObject.FLAG_30), sk.C(2.0f, this.d, TLObject.FLAG_30));
     }
 
     public void setItemSize(int i10) {
@@ -34,14 +34,14 @@ public final class n5 extends FrameLayout {
             imageView2.setImageResource(R.drawable.permissions_camera1);
             imageView.setImageResource(R.drawable.permissions_camera2);
             textView.setText(LocaleController.getString(R.string.CameraPermissionText));
-            imageView2.setLayoutParams(w7.a6.a(44.0f, 5.0f, 0.0f, 0.0f, 27.0f, 44, 17));
-            imageView.setLayoutParams(w7.a6.a(44.0f, 5.0f, 0.0f, 0.0f, 27.0f, 44, 17));
+            imageView2.setLayoutParams(w7.z5.a(44.0f, 5.0f, 0.0f, 0.0f, 27.0f, 44, 17));
+            imageView.setLayoutParams(w7.z5.a(44.0f, 5.0f, 0.0f, 0.0f, 27.0f, 44, 17));
             return;
         }
         imageView2.setImageResource(R.drawable.permissions_gallery1);
         imageView.setImageResource(R.drawable.permissions_gallery2);
         textView.setText(LocaleController.getString(R.string.GalleryPermissionText));
-        imageView2.setLayoutParams(w7.a6.a(44.0f, 0.0f, 0.0f, 2.0f, 27.0f, 44, 17));
-        imageView.setLayoutParams(w7.a6.a(44.0f, 0.0f, 0.0f, 2.0f, 27.0f, 44, 17));
+        imageView2.setLayoutParams(w7.z5.a(44.0f, 0.0f, 0.0f, 2.0f, 27.0f, 44, 17));
+        imageView.setLayoutParams(w7.z5.a(44.0f, 0.0f, 0.0f, 2.0f, 27.0f, 44, 17));
     }
 }

@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements OnSuccessListener, OnFailureListener, d6.h {
     public final /* synthetic */ u a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
     }
 
     @Override // d6.h
-    public void i(d6.f fVar, int i10) {
+    public void h(d6.f fVar, int i10) {
         g6.b bVar = u.i;
         bVar.b("onSessionEnded with error = %d", Integer.valueOf(i10));
         u uVar = this.a;
@@ -70,7 +70,7 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void k(d6.f fVar) {
+    public /* bridge */ /* synthetic */ void j(d6.f fVar) {
     }
 
     @Override // d6.h
@@ -101,7 +101,7 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
     }
 
     @Override // d6.h
-    public void q(d6.f fVar, String str) {
+    public void r(d6.f fVar, String str) {
         c6.k kVar;
         g6.b bVar = u.i;
         u uVar = this.a;
@@ -133,6 +133,6 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void r(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void s(d6.f fVar, int i10) {
     }
 }

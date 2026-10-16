@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class k3 extends s4.r0 {
     public final /* synthetic */ int a;
@@ -145,16 +145,16 @@ public final class k3 extends s4.r0 {
                 break;
             case 18:
                 if (i10 == 1) {
-                    nd0 nd0Var = (nd0) this.b;
-                    if (nd0Var.r0 && nd0Var.s0) {
-                        AndroidUtilities.hideKeyboard(nd0Var.getParentActivity().getCurrentFocus());
+                    ld0 ld0Var = (ld0) this.b;
+                    if (ld0Var.r0 && ld0Var.s0) {
+                        AndroidUtilities.hideKeyboard(ld0Var.getParentActivity().getCurrentFocus());
                         break;
                     }
                 }
                 break;
             case 21:
                 if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(((xj0) this.b).Y.getEditText());
+                    AndroidUtilities.hideKeyboard(((wj0) this.b).Y.getEditText());
                     break;
                 }
                 break;
@@ -198,7 +198,7 @@ public final class k3 extends s4.r0 {
 
     @Override // s4.r0
     public void b(RecyclerView recyclerView, int i10, int i11) {
-        f10 f10Var;
+        e10 e10Var;
         org.telegram.ui.Cells.e3 e3Var;
         org.telegram.ui.ActionBar.k kVar;
         bh.f fVar;
@@ -280,8 +280,8 @@ public final class k3 extends s4.r0 {
                 }
                 break;
             case 10:
-                l10 l10Var = (l10) obj;
-                if (l10Var.a.I1 && (f10Var = l10Var.K) != null && (e3Var = f10Var.b) != null) {
+                k10 k10Var = (k10) obj;
+                if (k10Var.a.I1 && (e10Var = k10Var.K) != null && (e3Var = e10Var.b) != null) {
                     if (!e3Var.e) {
                         e3Var.d();
                         break;
@@ -297,7 +297,7 @@ public final class k3 extends s4.r0 {
             case 12:
                 x60 x60Var = (x60) obj;
                 if (x60Var.z0 == null) {
-                    x60Var.z0 = (ad) x60Var.y0(x60Var.Z);
+                    x60Var.z0 = (zc) x60Var.y0(x60Var.Z);
                 }
                 int measuredHeight = x60Var.z0.getMeasuredHeight();
                 kVar = ((org.telegram.ui.ActionBar.m2) x60Var).actionBar;
@@ -343,46 +343,46 @@ public final class k3 extends s4.r0 {
                 }
                 break;
             case 19:
-                ((hj0) obj).K.invalidate();
+                ((gj0) obj).K.invalidate();
                 break;
             case 20:
-                qj0 qj0Var = (qj0) obj;
-                int L02 = qj0Var.h.L0();
-                int abs = L02 != -1 ? Math.abs(qj0Var.h.N0() - L02) + 1 : 0;
+                pj0 pj0Var = (pj0) obj;
+                int L02 = pj0Var.h.L0();
+                int abs = L02 != -1 ? Math.abs(pj0Var.h.N0() - L02) + 1 : 0;
                 int h = recyclerView.getAdapter().h();
-                if (abs > 0 && !qj0Var.V && !qj0Var.E && !qj0Var.x.isEmpty() && L02 + abs >= h - 5 && qj0Var.y) {
-                    qj0Var.b0();
+                if (abs > 0 && !pj0Var.V && !pj0Var.E && !pj0Var.x.isEmpty() && L02 + abs >= h - 5 && pj0Var.y) {
+                    pj0Var.b0();
                     break;
                 }
                 break;
             case 23:
-                gw0 gw0Var = (gw0) obj;
-                if (i11 != 0 && (v40Var = gw0Var.h) != null) {
+                fw0 fw0Var = (fw0) obj;
+                if (i11 != 0 && (v40Var = fw0Var.h) != null) {
                     v40Var.b(true);
                 }
-                org.telegram.ui.Components.kz0 kz0Var = gw0Var.Q;
-                if (kz0Var != null && kz0Var.s) {
-                    org.telegram.ui.Components.iz0 delegate = kz0Var.getDelegate();
+                org.telegram.ui.Components.lz0 lz0Var = fw0Var.Q;
+                if (lz0Var != null && lz0Var.s) {
+                    org.telegram.ui.Components.jz0 delegate = lz0Var.getDelegate();
                     if (!(delegate instanceof org.telegram.ui.Cells.d6)) {
-                        gw0Var.Q.f();
+                        fw0Var.Q.f();
                         break;
                     } else {
-                        kc1 kc1Var = gw0Var.c;
+                        kc1 kc1Var = fw0Var.c;
                         View F = kc1Var.F((org.telegram.ui.Cells.d6) delegate);
                         s4.b1 T = F == null ? null : kc1Var.T(F);
                         if (T == null) {
-                            gw0Var.Q.f();
+                            fw0Var.Q.f();
                             break;
                         } else {
                             View view = T.a;
-                            if (gw0Var.Q.getDirection() == 0) {
-                                gw0Var.Q.setTranslationY((view.getY() - AndroidUtilities.dp(166.0f)) + view.getMeasuredHeight());
+                            if (fw0Var.Q.getDirection() == 0) {
+                                fw0Var.Q.setTranslationY((view.getY() - AndroidUtilities.dp(166.0f)) + view.getMeasuredHeight());
                             } else {
-                                gw0Var.Q.setTranslationY(view.getY());
+                                fw0Var.Q.setTranslationY(view.getY());
                             }
-                            s4.b0 b0Var = gw0Var.d;
+                            s4.b0 b0Var = fw0Var.d;
                             if (!b0Var.c.H(view) || !b0Var.d.H(view)) {
-                                gw0Var.Q.f();
+                                fw0Var.Q.f();
                                 break;
                             }
                         }

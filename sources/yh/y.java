@@ -7,7 +7,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.c6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class y extends zh.o3 {
     public final Path A0;
@@ -16,8 +16,8 @@ public final class y extends zh.o3 {
     public final /* synthetic */ d0 D0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y(d0 d0Var, Context context, c6 c6Var, rh.j jVar, ah.f fVar, ah.f fVar2, ah.f fVar3, ah.f fVar4, ah.f fVar5, ah.f fVar6, int i10) {
-        super(context, c6Var, jVar, fVar, null, fVar2, fVar3, fVar4, fVar5, fVar6);
+    public y(d0 d0Var, Context context, c6 c6Var, ri.h0 h0Var, ah.f fVar, ah.f fVar2, ah.f fVar3, ah.f fVar4, ah.f fVar5, ah.f fVar6, int i10) {
+        super(context, c6Var, h0Var, fVar, null, fVar2, fVar3, fVar4, fVar5, fVar6);
         this.D0 = d0Var;
         this.C0 = i10;
         this.A0 = new Path();

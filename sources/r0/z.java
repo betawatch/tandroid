@@ -1,21 +1,40 @@
 package r0;
 
+import android.os.Build;
 import android.view.View;
 import android.view.WindowInsets;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public abstract class z {
-    public static WindowInsets a(View view, WindowInsets windowInsets) {
-        int i10 = l0.a;
-        return view.dispatchApplyWindowInsets(windowInsets);
+public final class z implements View.OnApplyWindowInsetsListener {
+    public l1 a = null;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ n c;
+
+    public z(View view, n nVar) {
+        this.b = view;
+        this.c = nVar;
     }
 
-    public static WindowInsets b(View view, WindowInsets windowInsets) {
-        return view.onApplyWindowInsets(windowInsets);
-    }
-
-    public static void c(View view) {
-        view.requestApplyInsets();
+    @Override // android.view.View.OnApplyWindowInsetsListener
+    public WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
+        l1 h = l1.h(view, windowInsets);
+        int i10 = Build.VERSION.SDK_INT;
+        n nVar = this.c;
+        if (i10 < 30) {
+            a0.a(windowInsets, this.b);
+            if (h.equals(this.a)) {
+                return nVar.Q0(view, h).g();
+            }
+        }
+        this.a = h;
+        l1 Q0 = nVar.Q0(view, h);
+        if (i10 >= 30) {
+            return Q0.g();
+        }
+        WeakHashMap weakHashMap = i0.a;
+        y.c(view);
+        return Q0.g();
     }
 }

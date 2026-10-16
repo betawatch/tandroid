@@ -3,9 +3,9 @@ package di;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.ce1;
-import org.telegram.ui.gq0;
+import org.telegram.ui.eq0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class tb implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -33,19 +33,19 @@ public final class tb implements ValueAnimator.AnimatorUpdateListener {
                 }
                 break;
             case 1:
-                org.telegram.ui.hd hdVar = (org.telegram.ui.hd) this.c;
-                hdVar.n0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                hdVar.m0.invalidate();
-                if (!this.b && hdVar.n0 > 0.5f) {
+                org.telegram.ui.gd gdVar = (org.telegram.ui.gd) this.c;
+                gdVar.n0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                gdVar.m0.invalidate();
+                if (!this.b && gdVar.n0 > 0.5f) {
                     this.b = true;
                     break;
                 }
                 break;
             case 2:
-                gq0 gq0Var = (gq0) this.c;
-                gq0Var.Y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                gq0Var.X.invalidate();
-                if (!this.b && gq0Var.Y > 0.5f) {
+                eq0 eq0Var = (eq0) this.c;
+                eq0Var.Y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                eq0Var.X.invalidate();
+                if (!this.b && eq0Var.Y > 0.5f) {
                     this.b = true;
                     break;
                 }

@@ -19,7 +19,7 @@ import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ox;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class j7 extends org.telegram.ui.ActionBar.e3 {
     public static final /* synthetic */ int h = 0;
@@ -38,15 +38,15 @@ public final class j7 extends org.telegram.ui.ActionBar.e3 {
         imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         imageView.setBackground(org.telegram.ui.ActionBar.g6.K(AndroidUtilities.dp(80.0f), org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Oh, false)));
         imageView.setImageResource(R.drawable.large_stealth);
-        h7Var.addView(imageView, w7.a6.a(80.0f, 0.0f, 18.0f, 0.0f, 0.0f, 80, 1));
+        h7Var.addView(imageView, w7.z5.a(80.0f, 0.0f, 18.0f, 0.0f, 0.0f, 80, 1));
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(1);
-        h7Var.addView(linearLayout, w7.a6.a(-2.0f, 0.0f, 116.0f, 0.0f, 0.0f, -1, 0));
+        h7Var.addView(linearLayout, w7.z5.a(-2.0f, 0.0f, 116.0f, 0.0f, 0.0f, -1, 0));
         TextView textView = new TextView(getContext());
         com.google.android.gms.internal.play_billing.k3.m(20.0f, 1, textView);
         textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.G6, c6Var));
         textView.setText(LocaleController.getString(R.string.StealthModeTitle));
-        linearLayout.addView(textView, w7.a6.q(-2, -2, 1));
+        linearLayout.addView(textView, w7.z5.q(-2, -2, 1));
         org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(getContext());
         h5Var.setTextSize(14);
         h5Var.setAlignment(Layout.Alignment.ALIGN_CENTER);
@@ -57,23 +57,23 @@ public final class j7 extends org.telegram.ui.ActionBar.e3 {
         } else {
             h5Var.l(LocaleController.getString(R.string.StealthModePremiumHint), false);
         }
-        linearLayout.addView(h5Var, w7.a6.t(-2, -2, 1, 36, 10, 36, 0));
+        linearLayout.addView(h5Var, w7.z5.t(-2, -2, 1, 36, 10, 36, 0));
         i7 i7Var = new i7(this, getContext());
         ((ImageView) i7Var.d).setImageResource(R.drawable.msg_stealth_5min);
         ((TextView) i7Var.b).setText(LocaleController.getString(R.string.HideRecentViews));
         ((TextView) i7Var.c).setText(LocaleController.getString(R.string.HideRecentViewsDescription));
-        linearLayout.addView(i7Var, w7.a6.t(-1, -2, 0, 0, 20, 0, 0));
+        linearLayout.addView(i7Var, w7.z5.t(-1, -2, 0, 0, 20, 0, 0));
         i7 i7Var2 = new i7(this, getContext());
         ((ImageView) i7Var2.d).setImageResource(R.drawable.msg_stealth_25min);
         ((TextView) i7Var2.b).setText(LocaleController.getString(R.string.HideNextViews));
         ((TextView) i7Var2.c).setText(LocaleController.getString(R.string.HideNextViewsDescription));
-        linearLayout.addView(i7Var2, w7.a6.t(-1, -2, 0, 0, 10, 0, 0));
+        linearLayout.addView(i7Var2, w7.z5.t(-1, -2, 0, 0, 10, 0, 0));
         sg.q0 q0Var = new sg.q0(AndroidUtilities.dp(8.0f), context, c6Var, true);
         this.b = q0Var;
         q0Var.H = false;
         q0Var.e.getDrawable().D = false;
         q0Var.setIcon(R.raw.unlock_icon);
-        w7.c6.a(q0Var);
+        w7.b6.a(q0Var);
         TLRPC.User currentUser = UserConfig.getInstance(this.currentAccount).getCurrentUser();
         if (currentUser.premium) {
             s(false);
@@ -81,7 +81,7 @@ public final class j7 extends org.telegram.ui.ActionBar.e3 {
             q0Var.setIcon(R.raw.unlock_icon);
             q0Var.a(LocaleController.getString(R.string.UnlockStealthMode), new ah.g0(this, 4), false);
         }
-        linearLayout.addView(q0Var, w7.a6.t(-1, 48, 80, 14, 24, 14, 16));
+        linearLayout.addView(q0Var, w7.z5.t(-1, 48, 80, 14, 24, 14, 16));
         setCustomView(h7Var);
         q0Var.setOnClickListener(new f7(this, currentUser, i10, c6Var, 0));
     }

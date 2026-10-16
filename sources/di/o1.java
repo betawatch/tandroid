@@ -13,7 +13,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.pl0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class o1 extends mm0 {
     public pl0 V2;
@@ -48,7 +48,7 @@ public final class o1 extends mm0 {
         int L0 = sVar.L0();
         if ((m10 == null && Math.abs(i10 - L0) > sVar.J * 9.0f) || !SharedConfig.animationsEnabled()) {
             o1Var.V2.b = sVar.L0() < i10 ? 0 : 1;
-            o1Var.V2.c(i10, i11, false, false);
+            o1Var.V2.d(i10, i11, false, false);
         } else {
             l1 l1Var = new l1(o1Var, o1Var.getContext(), 0);
             l1Var.a = i10;
@@ -108,7 +108,7 @@ public final class o1 extends mm0 {
                     int y3 = this.Z2 ? (int) n1Var.getY() : n1Var.getTop();
                     ArrayList arrayList4 = (ArrayList) sparseArray.get(y3);
                     if (arrayList4 == null) {
-                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) i2.d.x(1, arrayList) : new ArrayList();
+                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) i2.d.A(1, arrayList) : new ArrayList();
                         sparseArray.put(y3, arrayList4);
                     }
                     arrayList4.add(n1Var);
@@ -151,7 +151,7 @@ public final class o1 extends mm0 {
                     m1Var = new m1(this);
                     m1Var.l(7);
                 } else {
-                    m1Var = (m1) i2.d.x(1, arrayList2);
+                    m1Var = (m1) i2.d.A(1, arrayList2);
                 }
                 m1Var.M = R;
                 m1Var.e();

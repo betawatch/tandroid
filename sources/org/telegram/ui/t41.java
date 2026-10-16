@@ -10,7 +10,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class t41 extends org.telegram.ui.ActionBar.m2 {
     public static final int[] c = {MediaController.VIDEO_BITRATE_360, MediaController.VIDEO_BITRATE_480, 1200000, 2000000};
@@ -27,10 +27,10 @@ public final class t41 extends org.telegram.ui.ActionBar.m2 {
         return (i10 / MediaDataController.MAX_STYLE_RUNS_COUNT) + " kbps";
     }
 
-    public final void V(int i10, CharSequence[] charSequenceArr, ul0 ul0Var) {
+    public final void V(int i10, CharSequence[] charSequenceArr, ps0 ps0Var) {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
         alertDialog$Builder.a.R = LocaleController.getString(i10);
-        alertDialog$Builder.f(charSequenceArr, new mg.j(11, this, ul0Var));
+        alertDialog$Builder.f(charSequenceArr, new mg.j(11, this, ps0Var));
         showDialog(alertDialog$Builder.a);
     }
 
@@ -54,7 +54,7 @@ public final class t41 extends org.telegram.ui.ActionBar.m2 {
         this.b = s41Var;
         mm0Var2.setAdapter(s41Var);
         this.a.setOnItemClickListener(new i21(this, 4));
-        frameLayout.addView(this.a, w7.a6.d(-1.0f, -1));
+        frameLayout.addView(this.a, w7.z5.d(-1.0f, -1));
         return this.fragmentView;
     }
 }

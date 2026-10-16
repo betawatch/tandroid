@@ -9,9 +9,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n implements r0.o, k1, z1 {
+public final /* synthetic */ class n implements r0.n, k1, z1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -20,7 +20,7 @@ public final /* synthetic */ class n implements r0.o, k1, z1 {
         this.b = obj;
     }
 
-    @Override // r0.o
+    @Override // r0.n
     public r0.l1 Q0(View view, r0.l1 l1Var) {
         int i10 = this.a;
         int i11 = 0;
@@ -61,7 +61,7 @@ public final /* synthetic */ class n implements r0.o, k1, z1 {
                 while (i11 < childCount2) {
                     View childAt = x3Var.getChildAt(i11);
                     if ((childAt instanceof ActionBarLayout) || childAt.getTag() == null) {
-                        r0.j0.b(childAt, l1Var);
+                        r0.i0.b(childAt, l1Var);
                     }
                     i11++;
                 }

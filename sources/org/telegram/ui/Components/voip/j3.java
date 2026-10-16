@@ -9,12 +9,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.ql0;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.v61;
 import org.telegram.ui.Components.yj0;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
 public final class j3 extends FrameLayout {
     public final o1 a;
     public i3 b;
@@ -29,21 +29,21 @@ public final class j3 extends FrameLayout {
         setWillNotDraw(true);
         i3 i3Var = new i3(activity, o1Var);
         this.b = i3Var;
-        addView(i3Var, a6.b(53.5f, 53.5f, 1));
+        addView(i3Var, z5.b(53.5f, 53.5f, 1));
         TextView textView = new TextView(activity);
         this.d = textView;
         textView.setGravity(1);
         textView.setTextSize(1, 11.0f);
         textView.setTextColor(-1);
         textView.setImportantForAccessibility(2);
-        addView(textView, a6.a(-2.0f, 0.0f, 58.0f, 0.0f, 2.0f, -1, 0));
+        addView(textView, z5.a(-2.0f, 0.0f, 58.0f, 0.0f, 2.0f, -1, 0));
         TextView textView2 = new TextView(activity);
         this.e = textView2;
         textView2.setGravity(1);
         textView2.setTextSize(1, 11.0f);
         textView2.setTextColor(-1);
         textView2.setImportantForAccessibility(2);
-        addView(textView2, a6.a(-2.0f, 0.0f, 58.0f, 0.0f, 2.0f, -1, 0));
+        addView(textView2, z5.a(-2.0f, 0.0f, 58.0f, 0.0f, 2.0f, -1, 0));
         textView.setVisibility(8);
         textView2.setVisibility(8);
     }
@@ -69,7 +69,7 @@ public final class j3 extends FrameLayout {
         i3Var.a(i12, z10, false);
         i3Var.setAlpha(0.0f);
         i3Var.setOnBtnClickedListener(this.b.x);
-        addView(i3Var, a6.b(53.5f, 53.5f, 1));
+        addView(i3Var, z5.b(53.5f, 53.5f, 1));
         i3 i3Var2 = this.b;
         this.b = i3Var;
         i3Var.animate().alpha(1.0f).setDuration(250L).start();
@@ -175,7 +175,7 @@ public final class j3 extends FrameLayout {
                 textView2.setVisibility(0);
                 textView2.setAlpha(0.0f);
                 textView2.setTranslationY(AndroidUtilities.dp(5.0f));
-                textView2.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setListener(new u61(this, 16)).start();
+                textView2.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setListener(new v61(this, 16)).start();
             }
             this.c = i10;
         }
@@ -205,7 +205,7 @@ public final class j3 extends FrameLayout {
         textView2.setVisibility(0);
         textView2.setAlpha(0.0f);
         textView2.setTranslationY(AndroidUtilities.dp(5.0f));
-        textView2.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setListener(new u61(this, 16)).start();
+        textView2.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setListener(new v61(this, 16)).start();
         this.c = i10;
     }
 

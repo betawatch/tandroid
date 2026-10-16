@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class si extends lm0 {
     public int E;
@@ -90,37 +90,37 @@ public final class si extends lm0 {
             this.J = 1;
             this.d = 0;
             int i12 = viVar.I;
-            if (i12 == 0 || w7.m6.a(i12, 16)) {
+            if (i12 == 0 || w7.l6.a(i12, 16)) {
                 int i13 = this.J;
                 this.J = i13 + 1;
                 this.n = i13;
             }
             int i14 = viVar.I;
-            if (i14 == 0 || w7.m6.a(i14, 8192)) {
+            if (i14 == 0 || w7.l6.a(i14, 8192)) {
                 int i15 = this.J;
                 this.J = i15 + 1;
                 this.F = i15;
             }
             int i16 = viVar.I;
-            if (i16 == 0 || w7.m6.a(i16, 16384)) {
+            if (i16 == 0 || w7.l6.a(i16, 16384)) {
                 int i17 = this.J;
                 this.J = i17 + 1;
                 this.G = i17;
             }
             int i18 = viVar.I;
-            if (i18 == 0 || w7.m6.a(i18, 8)) {
+            if (i18 == 0 || w7.l6.a(i18, 8)) {
                 int i19 = this.J;
                 this.J = i19 + 1;
                 this.s = i19;
             }
             int i20 = viVar.I;
-            if (i20 == 0 || w7.m6.a(i20, 64)) {
+            if (i20 == 0 || w7.l6.a(i20, 64)) {
                 int i21 = this.J;
                 this.J = i21 + 1;
                 this.E = i21;
             }
             int i22 = viVar.I;
-            if (i22 == 0 || w7.m6.a(i22, 32768)) {
+            if (i22 == 0 || w7.l6.a(i22, 32768)) {
                 int i23 = this.J;
                 this.J = i23 + 1;
                 this.H = i23;
@@ -284,7 +284,7 @@ public final class si extends lm0 {
                     bVar2.a.setText(tL_attachMenuBot.short_name);
                     bVar2.c.setRoundRadius(0);
                     bVar2.c.s(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
-                    bVar2.c.setLayoutParams(w7.a6.a(24.0f, 0.0f, 4.0f, 0.0f, 0.0f, 24, 49));
+                    bVar2.c.setLayoutParams(w7.z5.a(24.0f, 0.0f, 4.0f, 0.0f, 0.0f, 24, 49));
                     bVar2.M = true;
                     bVar2.a(false);
                     bVar2.f();
@@ -317,7 +317,7 @@ public final class si extends lm0 {
             bVar3.c.e(user2, bVar3.U);
             bVar3.c.s(-1, -1);
             bVar3.c.setRoundRadius(AndroidUtilities.dp(11.33f));
-            bVar3.c.setLayoutParams(w7.a6.a(22.0f, 0.0f, 5.0f, 0.0f, 0.0f, 22, 49));
+            bVar3.c.setLayoutParams(w7.z5.a(22.0f, 0.0f, 5.0f, 0.0f, 0.0f, 22, 49));
             bVar3.c.setColorFilter(null);
             bVar3.M = false;
             bVar3.invalidate();

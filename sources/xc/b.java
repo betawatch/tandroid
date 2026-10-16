@@ -19,14 +19,14 @@ import javax.net.ssl.HttpsURLConnection;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.ui.Cells.d0;
+import org.telegram.ui.Cells.c1;
 import vc.d;
 import vc.e;
 import vc.f;
 import w7.m9;
 import w7.q8;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final c a = new c();
@@ -189,7 +189,7 @@ public abstract class b {
         }
         if (!(obj instanceof List)) {
             if ("".equals(obj)) {
-                throw new d(d0.j("You cannot set '", str, "' to an empty string. We interpret empty strings as null in requests. You may set '", str, "' to null to delete the property."), null, null);
+                throw new d(c1.i("You cannot set '", str, "' to an empty string. We interpret empty strings as null in requests. You may set '", str, "' to null to delete the property."), null, null);
             }
             if (obj == null) {
                 LinkedList linkedList = new LinkedList();

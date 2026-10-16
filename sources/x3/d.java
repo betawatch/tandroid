@@ -16,7 +16,7 @@ import java.util.Arrays;
 import java.util.List;
 import u2.z0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class d implements o {
     public q a;
@@ -60,7 +60,7 @@ public final class d implements o {
                 iVar.e = j12;
                 g gVar = iVar.d;
                 String str = m0.a;
-                gVar.W(j12);
+                gVar.g0(j12);
                 iVar.h = 2;
             }
         }
@@ -89,11 +89,11 @@ public final class d implements o {
             pVar.q();
         }
         if (!this.c) {
-            i0 a02 = this.a.a0(0, 1);
+            i0 W = this.a.W(0, 1);
             this.a.D();
             i iVar = this.b;
             iVar.c = this.a;
-            iVar.b = a02;
+            iVar.b = W;
             iVar.d(true);
             this.c = true;
         }
@@ -116,19 +116,19 @@ public final class d implements o {
                 }
                 throw new IllegalStateException();
             }
-            long k10 = iVar2.d.k(pVar);
-            if (k10 >= 0) {
-                sVar.a = k10;
+            long l4 = iVar2.d.l(pVar);
+            if (l4 >= 0) {
+                sVar.a = l4;
                 return 1;
             }
-            if (k10 < -1) {
-                iVar2.a(-(k10 + 2));
+            if (l4 < -1) {
+                iVar2.a(-(l4 + 2));
             }
             if (!iVar2.l) {
-                b0 v = iVar2.d.v();
-                v.getClass();
-                iVar2.c.K(v);
-                iVar2.b.e(v.h());
+                b0 y3 = iVar2.d.y();
+                y3.getClass();
+                iVar2.c.K(y3);
+                iVar2.b.e(y3.h());
                 iVar2.l = true;
             }
             if (iVar2.k <= 0 && !eVar.b(pVar)) {
@@ -203,7 +203,7 @@ public final class d implements o {
         if (fVar.a(pVar, true) && (fVar.a & 2) == 2) {
             int min = Math.min(fVar.e, 8);
             x xVar = new x(min);
-            pVar.a(0, min, xVar.a);
+            pVar.b(0, min, xVar.a);
             xVar.N(0);
             if (xVar.a() >= 5 && xVar.A() == 127 && xVar.C() == 1179402563) {
                 this.b = new c();

@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.function.Consumer;
 import org.telegram.ui.Components.xx0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class FilesMigrationService extends Service {
     public static FilesMigrationBottomSheet filesMigrationBottomSheet = null;
@@ -36,7 +36,7 @@ public class FilesMigrationService extends Service {
     private int movedFilesCount;
     private int totalFilesCount;
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public class 1 extends Thread {
         public 1() {
         }
@@ -216,7 +216,7 @@ public class FilesMigrationService extends Service {
         return super.onStartCommand(intent, i10, i11);
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class FilesMigrationBottomSheet extends org.telegram.ui.ActionBar.e3 {
         org.telegram.ui.ActionBar.m2 fragment;
 
@@ -225,23 +225,23 @@ public class FilesMigrationService extends Service {
             this.fragment = m2Var;
             setCanceledOnTouchOutside(false);
             Activity parentActivity = m2Var.getParentActivity();
-            LinearLayout f7 = q.f(parentActivity, 1);
+            LinearLayout e = g0.e(parentActivity, 1);
             xx0 xx0Var = new xx0(parentActivity, this.currentAccount);
             xx0Var.setStickerNum(7);
             xx0Var.getImageReceiver().setAutoRepeat(1);
-            f7.addView(xx0Var, w7.a6.t(144, 144, 1, 0, 16, 0, 0));
+            e.addView(xx0Var, w7.z5.t(144, 144, 1, 0, 16, 0, 0));
             TextView textView = new TextView(parentActivity);
             textView.setGravity(8388611);
             int i10 = org.telegram.ui.ActionBar.g6.j5;
-            q.n(20.0f, org.telegram.ui.ActionBar.g6.x0(null, i10, false), 1, textView);
+            g0.m(20.0f, org.telegram.ui.ActionBar.g6.x0(null, i10, false), 1, textView);
             textView.setText(LocaleController.getString(R.string.MigrateOldFolderTitle));
-            f7.addView(textView, w7.a6.a(-2.0f, 21.0f, 30.0f, 21.0f, 0.0f, -1, 0));
+            e.addView(textView, w7.z5.a(-2.0f, 21.0f, 30.0f, 21.0f, 0.0f, -1, 0));
             TextView textView2 = new TextView(parentActivity);
             textView2.setGravity(8388611);
             textView2.setTextSize(1, 15.0f);
             textView2.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i10, false));
-            q.o(R.string.MigrateOldFolderDescription, textView2);
-            f7.addView(textView2, w7.a6.a(-2.0f, 21.0f, 15.0f, 21.0f, 16.0f, -1, 0));
+            g0.n(R.string.MigrateOldFolderDescription, textView2);
+            e.addView(textView2, w7.z5.a(-2.0f, 21.0f, 15.0f, 21.0f, 16.0f, -1, 0));
             TextView textView3 = new TextView(parentActivity);
             textView3.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
             textView3.setGravity(17);
@@ -250,10 +250,10 @@ public class FilesMigrationService extends Service {
             textView3.setText(LocaleController.getString(R.string.MigrateOldFolderButton));
             textView3.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Sh, false));
             textView3.setBackground(org.telegram.ui.ActionBar.w5.f(new float[]{6.0f}, org.telegram.ui.ActionBar.g6.Oh));
-            f7.addView(textView3, w7.a6.a(48.0f, 16.0f, 15.0f, 16.0f, 16.0f, -1, 0));
+            e.addView(textView3, w7.z5.a(48.0f, 16.0f, 15.0f, 16.0f, 16.0f, -1, 0));
             textView3.setOnClickListener(new a4(this, 0));
             ScrollView scrollView = new ScrollView(parentActivity);
-            scrollView.addView(f7);
+            scrollView.addView(e);
             setCustomView(scrollView);
         }
 

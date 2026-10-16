@@ -17,7 +17,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class o40 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public float E;
@@ -115,7 +115,7 @@ public final class o40 extends org.telegram.ui.ActionBar.m2 implements Notificat
             return;
         }
         this.r.setVisibility(0);
-        ViewPropertyAnimator duration = this.r.animate().translationY(z10 ? 0.0f : -AndroidUtilities.dp(48.0f)).withEndAction(new ah.t(27, this, z10)).setDuration(320L);
+        ViewPropertyAnimator duration = this.r.animate().translationY(z10 ? 0.0f : -AndroidUtilities.dp(48.0f)).withEndAction(new ah.t(26, this, z10)).setDuration(320L);
         es esVar = es.h;
         duration.setInterpolator(esVar).start();
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.w, z10 ? 1.0f : 0.0f);
@@ -140,7 +140,7 @@ public final class o40 extends org.telegram.ui.ActionBar.m2 implements Notificat
         org.telegram.ui.ActionBar.k kVar3 = this.actionBar;
         int i11 = org.telegram.ui.ActionBar.g6.G6;
         kVar3.D(getThemedColor(i11), false);
-        this.actionBar.B(getThemedColor(org.telegram.ui.ActionBar.g6.u8), false);
+        this.actionBar.C(getThemedColor(org.telegram.ui.ActionBar.g6.u8), false);
         this.actionBar.setTitleColor(getThemedColor(i11));
         this.actionBar.setCastShadows(true);
         this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.nb(this, 11));
@@ -149,7 +149,7 @@ public final class o40 extends org.telegram.ui.ActionBar.m2 implements Notificat
         frameLayout.setBackgroundColor(getThemedColor(i10));
         bi.i5 i5Var = new bi.i5(context, 16);
         this.e = i5Var;
-        frameLayout.addView(i5Var, w7.a6.e(-1, -1, 119));
+        frameLayout.addView(i5Var, w7.z5.e(-1, -1, 119));
         HashtagSearchController.getInstance(this.currentAccount).clearSearchResults(3);
         Bundle bundle = new Bundle();
         bundle.putInt("chatMode", 7);
@@ -158,7 +158,7 @@ public final class o40 extends org.telegram.ui.ActionBar.m2 implements Notificat
         org.telegram.ui.nk nkVar = new org.telegram.ui.nk(context, getParentLayout(), bundle, 1);
         nkVar.h = false;
         this.f = nkVar;
-        this.e.addView(nkVar, w7.a6.e(-1, -1, 119));
+        this.e.addView(nkVar, w7.z5.e(-1, -1, 119));
         l40 l40Var = new l40(this, context, new pv0(null), this, new k40(), this.resourceProvider);
         this.n = l40Var;
         if (l40Var.getSearchOptionsItem() != null) {
@@ -182,7 +182,7 @@ public final class o40 extends org.telegram.ui.ActionBar.m2 implements Notificat
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.h = frameLayout2;
         frameLayout2.setBackgroundColor(getThemedColor(i10));
-        this.h.addView(this.n, w7.a6.a(-1.0f, 0.0f, 0.0f, 0.0f, 49.0f, -1, 119));
+        this.h.addView(this.n, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 49.0f, -1, 119));
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.s = frameLayout3;
         frameLayout3.setBackgroundColor(getThemedColor(i10));
@@ -192,19 +192,19 @@ public final class o40 extends org.telegram.ui.ActionBar.m2 implements Notificat
         this.v.setTextSize(1, 15.0f);
         this.v.setTextColor(getThemedColor(org.telegram.ui.ActionBar.g6.ye));
         this.v.setText(LocaleController.formatPluralString("FoundStories", g8Var.J, new Object[0]));
-        this.s.addView(this.v, w7.a6.a(-2.0f, 18.0f, 0.0f, 18.0f, 0.0f, -1, 19));
+        this.s.addView(this.v, w7.z5.a(-2.0f, 18.0f, 0.0f, 18.0f, 0.0f, -1, 19));
         View view = new View(context);
         view.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.d7, this.resourceProvider));
-        this.s.addView(view, w7.a6.b(-1.0f, 1.0f / AndroidUtilities.density, 55));
-        this.h.addView(this.s, w7.a6.e(-1, 49, 87));
-        this.e.addView(this.h, w7.a6.e(-1, -1, 119));
+        this.s.addView(view, w7.z5.b(-1.0f, 1.0f / AndroidUtilities.density, 55));
+        this.h.addView(this.s, w7.z5.e(-1, 49, 87));
+        this.e.addView(this.h, w7.z5.e(-1, -1, 119));
         hg.m1 m1Var = new hg.m1(context, this.resourceProvider);
         this.r = m1Var;
         m1Var.setBackground(org.telegram.ui.ActionBar.g6.h0(getThemedColor(i10), getThemedColor(org.telegram.ui.ActionBar.g6.i6)));
         this.r.setOnClickListener(new f0(this, 24));
         V(this.r.a(g8Var), false);
         this.r.b(HashtagSearchController.getInstance(this.currentAccount).getCount(3), this.b, this.c);
-        frameLayout.addView(this.r, w7.a6.e(-1, 48, 55));
+        frameLayout.addView(this.r, w7.z5.e(-1, 48, 55));
         U(false, false);
         return this.fragmentView;
     }

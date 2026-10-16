@@ -8,14 +8,14 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.Components.jr0;
+import org.telegram.ui.Components.ir0;
 import org.telegram.ui.Components.ns0;
 import org.telegram.ui.Components.sc;
 import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class x1 extends jr0 {
+public final class x1 extends ir0 {
     public final /* synthetic */ org.telegram.ui.ActionBar.m2 b1;
     public final /* synthetic */ ns0 c1;
 
@@ -26,7 +26,7 @@ public final class x1 extends jr0 {
         this.b1 = m2Var;
     }
 
-    @Override // org.telegram.ui.Components.jr0
+    @Override // org.telegram.ui.Components.ir0
     public final void S0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
         zc a02;
         if (z10 && (a02 = zc.a0(this.b1)) != null) {

@@ -13,15 +13,15 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.ha0;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class k1 extends LinearLayout {
     public final c6 a;
@@ -50,13 +50,13 @@ public final class k1 extends LinearLayout {
         textView.setTextColor(g6.w0(i10, c6Var));
         textView.setTextSize(1, 16.0f);
         boolean z10 = LocaleController.isRTL;
-        addView(textView, a6.t(-1, -2, 55, z10 ? 70 : 18, 10, z10 ? 18 : 70, 4));
+        addView(textView, z5.t(-1, -2, 55, z10 ? 70 : 18, 10, z10 ? 18 : 70, 4));
         TextView textView2 = new TextView(context);
         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
         textView2.setTextColor(g6.w0(g6.z6, c6Var));
-        yh.j(13.0f, R.string.BusinessProfileLocation, 1, textView2);
+        sk.j(13.0f, R.string.BusinessProfileLocation, 1, textView2);
         boolean z11 = LocaleController.isRTL;
-        addView(textView2, a6.t(-1, -2, 55, z11 ? 70 : 18, 0, z11 ? 18 : 70, 8));
+        addView(textView2, z5.t(-1, -2, 55, z11 ? 70 : 18, 0, z11 ? 18 : 70, 8));
         setWillNotDraw(false);
     }
 

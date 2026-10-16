@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class hs extends LinearLayout {
     public final Paint a;
@@ -76,7 +76,7 @@ public abstract class hs extends LinearLayout {
                         i18 = 7;
                         i13 = 42;
                         i14 = 34;
-                        addView(this.f[i16], w7.a6.t(i14, i13, 1, 0, 0, i16 == i10 + (-1) ? i18 : 0, 0));
+                        addView(this.f[i16], w7.z5.t(i14, i13, 1, 0, 0, i16 == i10 + (-1) ? i18 : 0, 0));
                         this.f[i16].addTextChangedListener(new gs(this, i16, i10));
                         this.f[i16].setOnEditorActionListener(new na(this, 3));
                         i16++;
@@ -84,7 +84,7 @@ public abstract class hs extends LinearLayout {
                 }
                 i14 = i17;
                 i13 = i12;
-                addView(this.f[i16], w7.a6.t(i14, i13, 1, 0, 0, i16 == i10 + (-1) ? i18 : 0, 0));
+                addView(this.f[i16], w7.z5.t(i14, i13, 1, 0, 0, i16 == i10 + (-1) ? i18 : 0, 0));
                 this.f[i16].addTextChangedListener(new gs(this, i16, i10));
                 this.f[i16].setOnEditorActionListener(new na(this, 3));
                 i16++;

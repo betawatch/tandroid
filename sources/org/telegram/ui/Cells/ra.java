@@ -20,7 +20,7 @@ import org.telegram.ui.Components.zc;
 import org.telegram.ui.fo;
 import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ra implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -74,7 +74,7 @@ public final /* synthetic */ class ra implements View.OnClickListener {
                     LinearLayout linearLayout = new LinearLayout(foVar.getParentActivity());
                     linearLayout.setOrientation(1);
                     TextView textView = new TextView(foVar.getParentActivity());
-                    linearLayout.addView(textView, w7.a6.t(-1, -1, 0, 21, 0, 21, 8));
+                    linearLayout.addView(textView, w7.z5.t(-1, -1, 0, 21, 0, 21, 8));
                     textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.G6, false));
                     textView.setTextSize(1, 16.0f);
                     textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("ChatWithAdminMessage", R.string.ChatWithAdminMessage, str, LocaleController.formatDateAudio(i11, false))));
@@ -89,7 +89,7 @@ public final /* synthetic */ class ra implements View.OnClickListener {
                     int x02 = org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Oh, false);
                     int x03 = org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Qh, false);
                     textView2.setBackground(org.telegram.ui.ActionBar.g6.j0(dp, dp, dp, dp, x02, x03, x03));
-                    linearLayout.addView(textView2, w7.a6.t(-1, 48, 0, 16, 12, 16, 8));
+                    linearLayout.addView(textView2, w7.z5.t(-1, 48, 0, 16, 12, 16, 8));
                     e3Var.customView = linearLayout;
                     e3Var.show();
                     textView2.setOnClickListener(new org.telegram.ui.Components.g3(e3Var, i12));

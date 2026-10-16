@@ -23,7 +23,7 @@ import java.util.Map;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class b implements o {
     public final x a = new x(4);
@@ -130,10 +130,10 @@ public final class b implements o {
                 boolean z13 = (A & 4) != 0;
                 boolean z14 = (A & 1) != 0;
                 if (z13 && this.o == null) {
-                    this.o = new a(this.f.a0(8, 1));
+                    this.o = new a(this.f.W(8, 1));
                 }
                 if (z14 && this.p == null) {
-                    this.p = new e(this.f.a0(9, 2));
+                    this.p = new e(this.f.W(9, 2));
                 }
                 this.f.D();
                 this.j = xVar.m() - 5;
@@ -234,7 +234,7 @@ public final class b implements o {
                             int i14 = (A2 >> 4) & 15;
                             int i15 = A2 & 15;
                             if (i15 != 7) {
-                                throw new d(i2.d.i(i15, "Video format not supported: "));
+                                throw new d(i2.d.j(i15, "Video format not supported: "));
                             }
                             eVar.g = i14;
                             if (i14 != 5) {
@@ -268,7 +268,7 @@ public final class b implements o {
                                     wVar.z = a2.d;
                                     wVar.E = a2.k;
                                     wVar.u = a2.a;
-                                    i2.d.s(wVar, i0Var);
+                                    i2.d.u(wVar, i0Var);
                                     eVar.e = true;
                                 } else if (A3 == 1 && eVar.e) {
                                     int i20 = eVar.g == 1 ? 1 : 0;
@@ -326,7 +326,7 @@ public final class b implements o {
                                 wVar2.r = w0.n("audio/mpeg");
                                 wVar2.J = 1;
                                 wVar2.K = i24;
-                                i2.d.s(wVar2, i0Var2);
+                                i2.d.u(wVar2, i0Var2);
                                 aVar.c = true;
                             } else if (i23 == 7 || i23 == 8) {
                                 String str = i23 == 7 ? "audio/g711-alaw" : "audio/g711-mlaw";
@@ -335,7 +335,7 @@ public final class b implements o {
                                 wVar3.r = w0.n(str);
                                 wVar3.J = 1;
                                 wVar3.K = 8000;
-                                i2.d.s(wVar3, i0Var2);
+                                i2.d.u(wVar3, i0Var2);
                                 aVar.c = true;
                             } else if (i23 != 10) {
                                 throw new d("Audio format not supported: " + aVar.d);
@@ -362,7 +362,7 @@ public final class b implements o {
                                 wVar4.J = n10.c;
                                 wVar4.K = n10.b;
                                 wVar4.u = Collections.singletonList(bArr4);
-                                i2.d.s(wVar4, i0Var3);
+                                i2.d.u(wVar4, i0Var3);
                                 aVar.c = true;
                             } else if (aVar.d != 10 || A5 == 1) {
                                 int a12 = g12.a();

@@ -28,7 +28,7 @@ import org.telegram.ui.Components.g6;
 import org.telegram.ui.Components.s5;
 import v7.v7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class e1 extends Drawable {
     public static l1 C = new l1();
@@ -73,7 +73,7 @@ public final class e1 extends Drawable {
         this.o = new Matrix();
         Paint paint3 = new Paint(1);
         this.q = paint3;
-        this.r = new g6(new rh.j(this, 26), 320L, es.h);
+        this.r = new g6(new ri.h0(this, 26), 320L, es.h);
         this.s = AndroidUtilities.dp(11.0f);
         this.u = true;
         this.v = 0;

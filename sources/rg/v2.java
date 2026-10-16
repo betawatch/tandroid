@@ -24,12 +24,12 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.uc0;
 import org.telegram.ui.ee;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class v2 extends Dialog {
     public ValueAnimator E;
@@ -63,34 +63,34 @@ public final class v2 extends Dialog {
         ee eeVar = new ee(context, 8);
         this.c = eeVar;
         eeVar.setOrientation(1);
-        xVar.addView(eeVar, a6.a(-2.0f, 8.0f, 8.0f, 8.0f, 8.0f, -2, 17));
+        xVar.addView(eeVar, z5.a(-2.0f, 8.0f, 8.0f, 8.0f, 8.0f, -2, 17));
         i7 i7Var = new i7(this, context, 10);
         i7Var.setWillNotDraw(false);
-        eeVar.addView(i7Var, a6.p(-1, -2, 1.0f, 49, 0, 0, 0, 0));
+        eeVar.addView(i7Var, z5.p(-1, -2, 1.0f, 49, 0, 0, 0, 0));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setBackgroundColor(-14737633);
-        i7Var.addView(frameLayout, a6.e(-1, 56, 55));
+        i7Var.addView(frameLayout, z5.e(-1, 56, 55));
         TextView textView = new TextView(context);
         textView.setText(LocaleController.getString(R.string.StoryLinkPreviewTitle));
         textView.setTextColor(-1);
         textView.setTextSize(1, 18.0f);
         textView.setTypeface(AndroidUtilities.bold());
-        TextView h = org.telegram.ui.Cells.d0.h(frameLayout, textView, a6.a(-2.0f, 18.0f, 8.33f, 18.0f, 0.0f, -1, 55), context);
-        h.setText(LocaleController.getString(R.string.StoryLinkPreviewSubtitle));
-        h.setTextColor(-8421505);
-        h.setTextSize(1, 14.0f);
-        frameLayout.addView(h, a6.a(-2.0f, 18.0f, 31.0f, 18.0f, 0.0f, -1, 55));
+        TextView g10 = org.telegram.ui.Cells.c1.g(frameLayout, textView, z5.a(-2.0f, 18.0f, 8.33f, 18.0f, 0.0f, -1, 55), context);
+        g10.setText(LocaleController.getString(R.string.StoryLinkPreviewSubtitle));
+        g10.setTextColor(-8421505);
+        g10.setTextSize(1, 14.0f);
+        frameLayout.addView(g10, z5.a(-2.0f, 18.0f, 31.0f, 18.0f, 0.0f, -1, 55));
         i7 i7Var2 = new i7(this, context, 11);
         this.d = i7Var2;
-        i7Var.addView(i7Var2, a6.a(-1.0f, 0.0f, 56.0f, 0.0f, 0.0f, -1, 119));
+        i7Var.addView(i7Var2, z5.a(-1.0f, 0.0f, 56.0f, 0.0f, 0.0f, -1, 119));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        i7Var2.addView(imageView, a6.e(-1, -1, 119));
+        i7Var2.addView(imageView, z5.e(-1, -1, 119));
         t2 t2Var = new t2(this, context, AndroidUtilities.density);
         this.f = t2Var;
-        i7Var2.addView(t2Var, a6.e(-2, -2, 17));
-        m80 F = m80.F(xVar, bVar, xVar);
+        i7Var2.addView(t2Var, z5.e(-2, -2, 17));
+        l80 F = l80.F(xVar, bVar, xVar);
         uc0 uc0Var = new uc0(getContext(), R.raw.position_below, LocaleController.getString(R.string.StoryLinkCaptionAbove), R.raw.position_above, LocaleController.getString(R.string.StoryLinkCaptionBelow), bVar);
         this.w = uc0Var;
         final int i11 = 0;
@@ -160,7 +160,7 @@ public final class v2 extends Dialog {
         F.k();
         F.c(R.drawable.msg_select, LocaleController.getString(R.string.ApplyChanges), new r2(this, 2), false);
         F.c(R.drawable.msg_delete, LocaleController.getString(R.string.DoNotLinkPreview), new r2(this, 3), true);
-        eeVar.addView(F.A, a6.o(-2, -2, 0.0f, 85));
+        eeVar.addView(F.A, z5.o(-2, -2, 0.0f, 85));
         xVar.setFitsSystemWindows(true);
         xVar.setOnApplyWindowInsetsListener(new u2(this));
     }

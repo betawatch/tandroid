@@ -20,7 +20,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class gk0 extends FrameLayout {
     public final f10 a;
@@ -47,27 +47,27 @@ public final class gk0 extends FrameLayout {
         f10Var.f(org.telegram.ui.ActionBar.g6.G8, org.telegram.ui.ActionBar.g6.i6, -1);
         f10Var.setViewType(13);
         f10Var.setIsSingleCell(false);
-        addView(f10Var, w7.a6.d(-1.0f, -2));
+        addView(f10Var, w7.z5.d(-1.0f, -2));
         TextView textView = new TextView(context);
         this.b = textView;
-        org.telegram.messenger.yh.t(textView, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.E8, false), 1, 16.0f, 1);
+        org.telegram.messenger.sk.u(textView, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.E8, false), 1, 16.0f, 1);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        addView(textView, w7.a6.i(-2.0f, -2.0f, 8388627, 40.0f, 0.0f, 62.0f, 0.0f));
+        addView(textView, w7.z5.i(-2.0f, -2.0f, 8388627, 40.0f, 0.0f, 62.0f, 0.0f));
         n9 n9Var = new n9(context, false);
         this.c = n9Var;
         n9Var.setStyle(11);
         n9Var.setAvatarsTextSize(AndroidUtilities.dp(22.0f));
-        addView(n9Var, w7.a6.i(56.0f, -1.0f, 8388629, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(n9Var, w7.z5.i(56.0f, -1.0f, 8388629, 0.0f, 0.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.d = imageView;
-        addView(imageView, w7.a6.i(24.0f, 24.0f, 8388627, 11.0f, 0.0f, 0.0f, 0.0f));
+        addView(imageView, w7.z5.i(24.0f, 24.0f, 8388627, 11.0f, 0.0f, 0.0f, 0.0f));
         Drawable mutate = context.getDrawable(R.drawable.msg_reactions).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.F8, false), PorterDuff.Mode.MULTIPLY));
         imageView.setImageDrawable(mutate);
         imageView.setVisibility(8);
         z9 z9Var = new z9(context);
         this.e = z9Var;
-        addView(z9Var, w7.a6.i(24.0f, 24.0f, 8388627, 11.0f, 0.0f, 0.0f, 0.0f));
+        addView(z9Var, w7.z5.i(24.0f, 24.0f, 8388627, 11.0f, 0.0f, 0.0f, 0.0f));
         textView.setAlpha(0.0f);
         n9Var.setAlpha(0.0f);
         setBackground(org.telegram.ui.ActionBar.g6.L0(false));

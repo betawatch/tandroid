@@ -2,7 +2,7 @@ package z3;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class k extends h2.j implements e {
     public e a;
@@ -22,23 +22,23 @@ public abstract class k extends h2.j implements e {
     }
 
     @Override // z3.e
-    public final long d(int i10) {
+    public final long h(int i10) {
         e eVar = this.a;
         eVar.getClass();
-        return eVar.d(i10) + this.b;
+        return eVar.h(i10) + this.b;
     }
 
     @Override // z3.e
-    public final List f(long j10) {
+    public final List o(long j10) {
         e eVar = this.a;
         eVar.getClass();
-        return eVar.f(j10 - this.b);
+        return eVar.o(j10 - this.b);
     }
 
     @Override // z3.e
-    public final int j() {
+    public final int u() {
         e eVar = this.a;
         eVar.getClass();
-        return eVar.j();
+        return eVar.u();
     }
 }

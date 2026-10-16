@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class j6 extends FrameLayout {
     public final TextView a;
@@ -30,7 +30,7 @@ public final class j6 extends FrameLayout {
             radioButton.b(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.g7, false), org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.h7, false));
         }
         boolean z11 = LocaleController.isRTL;
-        addView(radioButton, w7.a6.a(22.0f, z11 ? 0 : 20, 10.0f, z11 ? 20 : 0, 0.0f, 22, (z11 ? 5 : 3) | 48));
+        addView(radioButton, w7.z5.a(22.0f, z11 ? 0 : 20, 10.0f, z11 ? 20 : 0, 0.0f, 22, (z11 ? 5 : 3) | 48));
         TextView textView = new TextView(context);
         this.a = textView;
         if (z10) {
@@ -44,7 +44,7 @@ public final class j6 extends FrameLayout {
         textView.setSingleLine(true);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         boolean z12 = LocaleController.isRTL;
-        addView(textView, w7.a6.a(-2.0f, z12 ? 23 : 61, 10.0f, z12 ? 61 : 23, 0.0f, -2, (z12 ? 5 : 3) | 48));
+        addView(textView, w7.z5.a(-2.0f, z12 ? 23 : 61, 10.0f, z12 ? 61 : 23, 0.0f, -2, (z12 ? 5 : 3) | 48));
         TextView textView2 = new TextView(context);
         this.b = textView2;
         if (z10) {
@@ -59,7 +59,7 @@ public final class j6 extends FrameLayout {
         textView2.setSingleLine(false);
         textView2.setPadding(0, 0, 0, AndroidUtilities.dp(12.0f));
         boolean z13 = LocaleController.isRTL;
-        addView(textView2, w7.a6.a(-2.0f, z13 ? 17 : 61, 35.0f, z13 ? 61 : 17, 0.0f, -2, (z13 ? 5 : 3) | 48));
+        addView(textView2, w7.z5.a(-2.0f, z13 ? 17 : 61, 35.0f, z13 ? 61 : 17, 0.0f, -2, (z13 ? 5 : 3) | 48));
     }
 
     public final void a(boolean z10) {

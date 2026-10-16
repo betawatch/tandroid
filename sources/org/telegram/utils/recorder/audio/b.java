@@ -8,17 +8,17 @@ import java.io.File;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import org.telegram.ui.uo;
-import ri.j;
-import ri.k;
-import ri.q;
+import qi.j;
+import qi.k;
+import qi.q;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class b {
     public final File a;
     public final File b;
     public final j c;
-    public final ri.b d;
+    public final qi.b d;
     public final cc.e e;
     public final HandlerThread f;
     public final Handler g;
@@ -38,7 +38,7 @@ public final class b {
     public final ByteBuffer i = ByteBuffer.allocateDirect(1920).order(ByteOrder.nativeOrder());
     public double s = -1.0d;
 
-    public b(File file, File file2, j jVar, ri.b bVar, cc.e eVar) {
+    public b(File file, File file2, j jVar, qi.b bVar, cc.e eVar) {
         this.a = file;
         this.b = file2;
         this.c = jVar;
@@ -96,7 +96,7 @@ public final class b {
                 }
                 Handler handler = qVar.h;
                 final long j14 = eVar.a;
-                handler.post(new Runnable() { // from class: ri.g
+                handler.post(new Runnable() { // from class: qi.g
                     @Override // java.lang.Runnable
                     public final void run() {
                         q qVar2 = (q) cc.e.this.c;
@@ -121,7 +121,7 @@ public final class b {
                 Handler handler2 = qVar2.h;
                 final long j16 = eVar2.a;
                 final double d11 = -1.0d;
-                handler2.post(new Runnable() { // from class: ri.g
+                handler2.post(new Runnable() { // from class: qi.g
                     @Override // java.lang.Runnable
                     public final void run() {
                         q qVar22 = (q) cc.e.this.c;
@@ -136,7 +136,7 @@ public final class b {
                     }
                 });
             }
-            bVar.g.post(new ri.a(bVar, 1));
+            bVar.g.post(new qi.a(bVar, 1));
         } catch (Throwable th2) {
             if (bVar.j) {
                 bVar.e();
@@ -187,7 +187,7 @@ public final class b {
             this.t++;
             this.u += nanoTime2;
             this.v = Math.max(this.v, nanoTime2);
-            ri.b bVar = this.d;
+            qi.b bVar = this.d;
             if (b10) {
                 long j10 = 0;
                 for (int i12 = 0; i12 + 1 < i10; i12 += 2) {
@@ -281,7 +281,7 @@ public final class b {
         File file = this.a;
         long length = file.isFile() ? file.length() : 0L;
         long j10 = this.t;
-        ri.b bVar = this.d;
+        qi.b bVar = this.d;
         if (j10 > 0) {
             bVar.b("RNNoise summary: frames=" + this.t + ", averageMs=" + ((this.u / this.t) / 1000000.0d) + ", maxMs=" + (this.v / 1000000.0d));
         }
@@ -293,13 +293,13 @@ public final class b {
             qVar.a((k) eVar.b, length);
             qVar.h.post(new uo(eVar, eVar.a, j11, 3));
         } else {
-            ((q) eVar.c).h.post(new ri.e(eVar, eVar.a, exc2, 1));
+            ((q) eVar.c).h.post(new qi.e(eVar, eVar.a, exc2, 1));
         }
         this.f.quitSafely();
     }
 
     public final void f() {
         this.j = true;
-        this.g.postAtFrontOfQueue(new ri.a(this, 0));
+        this.g.postAtFrontOfQueue(new qi.a(this, 0));
     }
 }

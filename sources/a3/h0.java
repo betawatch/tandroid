@@ -4,8 +4,6 @@ import bi.g1;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.regex.Pattern;
-import li.q0;
-import li.u0;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.FileUploadOperation;
 import org.telegram.messenger.MediaDataController;
@@ -18,15 +16,16 @@ import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.c11;
 import org.telegram.ui.Components.cp;
+import org.telegram.ui.Components.d11;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.fo;
-import org.telegram.ui.lg1;
+import org.telegram.ui.kg1;
 import org.telegram.ui.yy;
+import ri.r0;
 import zh.r3;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -72,82 +71,82 @@ public final /* synthetic */ class h0 implements Runnable {
                 fVar2.q(p9, 1008, new j2.c(p9, str3, j13, j12, 3));
                 return;
             case 3:
-                u0 u0Var = (u0) this.d;
-                q0 q0Var = (q0) this.e;
-                long j14 = this.b;
-                long j15 = this.c;
-                synchronized (u0Var.g) {
-                    if (!q0Var.d && !q0Var.e) {
-                        ((c11) u0Var.e).a(q0Var.a, q0Var.b, j14, j15);
-                        return;
-                    }
-                    return;
-                }
-            case 4:
                 ((FileUploadOperation) this.d).lambda$checkNewDataAvailable$4((Float) this.e, this.b, this.c);
                 return;
-            case 5:
+            case 4:
                 ((MediaDataController) this.d).lambda$loadPinnedMessages$163(this.b, this.c, (ArrayList) this.e);
                 return;
-            case 6:
+            case 5:
                 ((MediaDataController) this.d).lambda$saveDraftReplyMessage$193(this.b, this.c, (TLRPC.Message) this.e);
                 return;
-            case 7:
+            case 6:
                 ((MessagesStorage) this.d).lambda$loadPendingTasks$29(this.b, this.c, (TLRPC.TL_messages_deleteScheduledMessages) this.e);
                 return;
-            case 8:
+            case 7:
                 ((MessagesStorage) this.d).lambda$loadPendingTasks$21(this.b, (TLRPC.InputPeer) this.e, this.c);
                 return;
-            case 9:
+            case 8:
                 ((MessagesStorage) this.d).lambda$getUnreadMention$156(this.b, this.c, (MessagesStorage.IntCallback) this.e);
                 return;
-            case 10:
+            case 9:
                 ((NotificationsSettingsFacade) this.d).lambda$applyDialogNotificationsSettings$1(this.b, this.c, (TLRPC.PeerNotifySettings) this.e);
                 return;
-            case 11:
+            case 10:
                 ((SecretChatHelper) this.d).lambda$resendMessages$15(this.b, (TLRPC.EncryptedChat) this.e, this.c);
                 return;
-            case 12:
+            case 11:
                 ((GroupCallMessagesController) this.d).lambda$processUpdate$3(this.b, this.c, (byte[]) this.e);
                 return;
-            case 13:
+            case 12:
                 ((cp) this.d).d(this.b, this.c, (HashSet) this.e);
                 return;
-            case 14:
+            case 13:
                 yy yyVar = (yy) this.d;
-                long j16 = this.b;
-                long j17 = this.c;
-                lg1 lg1Var = (lg1) this.e;
+                long j14 = this.b;
+                long j15 = this.c;
+                kg1 kg1Var = (kg1) this.e;
                 if (yyVar.C2 == null) {
                     yyVar.finishFragment();
                     return;
                 }
                 ArrayList arrayList = new ArrayList();
-                arrayList.add(MessagesStorage.TopicKey.of(j16, j17));
-                yyVar.C2.w(yyVar, arrayList, null, false, yyVar.J2, yyVar.K2, yyVar.L2, lg1Var);
+                arrayList.add(MessagesStorage.TopicKey.of(j14, j15));
+                yyVar.C2.w(yyVar, arrayList, null, false, yyVar.J2, yyVar.K2, yyVar.L2, kg1Var);
                 if (yyVar.i2) {
                     yyVar.C2 = null;
                     return;
                 }
                 return;
-            case 15:
+            case 14:
                 LaunchActivity launchActivity = (LaunchActivity) this.d;
-                long j18 = this.b;
-                long j19 = this.c;
+                long j16 = this.b;
+                long j17 = this.c;
                 fo foVar = (fo) this.e;
                 Pattern pattern = LaunchActivity.B1;
-                TLRPC.TL_forumTopic findTopic = MessagesController.getInstance(launchActivity.O).getTopicsController().findTopic(j18, j19);
-                StringBuilder t10 = a1.g.t(j18, "LaunchActivity openForum after load ", " ");
-                t10.append(j19);
+                TLRPC.TL_forumTopic findTopic = MessagesController.getInstance(launchActivity.O).getTopicsController().findTopic(j16, j17);
+                StringBuilder t10 = a1.g.t(j16, "LaunchActivity openForum after load ", " ");
+                t10.append(j17);
                 t10.append(" TL_forumTopic ");
                 t10.append(findTopic);
                 FileLog.d(t10.toString());
                 if (launchActivity.q0 != null) {
-                    og.d.a(foVar, MessagesStorage.TopicKey.of(-j18, j19));
+                    og.d.a(foVar, MessagesStorage.TopicKey.of(-j16, j17));
                     ((ActionBarLayout) launchActivity.O()).P(foVar);
                     return;
                 }
                 return;
+            case 15:
+                r0 r0Var = (r0) this.d;
+                ri.n0 n0Var = (ri.n0) this.e;
+                long j18 = this.b;
+                long j19 = this.c;
+                synchronized (r0Var.g) {
+                    if (!n0Var.d && !n0Var.e) {
+                        ((d11) r0Var.e).a(n0Var.a, n0Var.b, j18, j19);
+                        return;
+                    }
+                    return;
+                }
             default:
                 r3.f0((r3) this.d, this.b, this.c, (Utilities.Callback) this.e);
                 return;

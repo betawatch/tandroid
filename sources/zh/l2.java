@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class l2 extends FrameLayout {
     public float E;
@@ -58,7 +58,7 @@ public final class l2 extends FrameLayout {
         android.opengl.Matrix.setIdentityM(fArr, 0);
         this.a = viewArr;
         for (View view : viewArr) {
-            addView(view, w7.a6.e(108, 108, 17));
+            addView(view, w7.z5.e(108, 108, 17));
         }
     }
 
@@ -354,7 +354,7 @@ public final class l2 extends FrameLayout {
         }
         AndroidUtilities.removeFromParent(frameLayout);
         int childCount = getChildCount();
-        addView(frameLayout, w7.a6.e(64, 64, 17));
+        addView(frameLayout, w7.z5.e(64, 64, 17));
         this.v.add(Integer.valueOf(i10));
         this.w.put(Integer.valueOf(childCount), Integer.valueOf(i10));
     }

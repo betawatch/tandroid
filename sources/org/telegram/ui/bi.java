@@ -5,7 +5,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bi implements Utilities.Callback0Return {
     public final /* synthetic */ int a;
@@ -30,13 +30,13 @@ public final /* synthetic */ class bi implements Utilities.Callback0Return {
             case 0:
                 return fo.p0((fo) this.b, (Context) this.c);
             case 1:
-                org.telegram.ui.Components.z61 z61Var = (org.telegram.ui.Components.z61) this.b;
-                Object obj = ((org.telegram.ui.Components.l61) this.c).G;
-                org.telegram.ui.Components.mm0 mm0Var = z61Var.d;
+                org.telegram.ui.Components.a71 a71Var = (org.telegram.ui.Components.a71) this.b;
+                Object obj = ((org.telegram.ui.Components.m61) this.c).G;
+                org.telegram.ui.Components.mm0 mm0Var = a71Var.d;
                 int i10 = 0;
                 while (true) {
-                    if (i10 < z61Var.x.size()) {
-                        org.telegram.ui.Components.l61 G = z61Var.G(i10);
+                    if (i10 < a71Var.x.size()) {
+                        org.telegram.ui.Components.m61 G = a71Var.G(i10);
                         if (G == null || G.G != obj) {
                             i10++;
                         }

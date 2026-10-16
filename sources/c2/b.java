@@ -39,28 +39,27 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import java.util.concurrent.atomic.AtomicReference;
-import m.q3;
+import m.t3;
 import n2.w;
-import n2.x;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.m21;
+import org.telegram.ui.Components.n21;
 import org.telegram.ui.Components.xu;
-import org.telegram.ui.Wallet.x0;
 import org.telegram.ui.Wallet.y0;
+import org.telegram.ui.Wallet.z0;
 import org.telegram.ui.b1;
 import org.telegram.ui.b5;
 import org.telegram.ui.g5;
 import org.telegram.ui.w4;
 import org.telegram.ui.z4;
-import r0.j0;
 import tc.v;
 import v7.u6;
+import w7.a0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class b implements c3.q {
     public static b e;
@@ -186,20 +185,20 @@ public final class b implements c3.q {
     }
 
     @Override // c3.q
-    public i0 a0(int i10, int i11) {
+    public i0 W(int i10, int i11) {
         SparseArray sparseArray = (SparseArray) this.d;
         c3.q qVar = (c3.q) this.b;
         if (i11 != 3 && i11 != 5) {
             this.a = true;
         }
         if (i11 != 3) {
-            return qVar.a0(i10, i11);
+            return qVar.W(i10, i11);
         }
         z3.o oVar = (z3.o) sparseArray.get(i10);
         if (oVar != null) {
             return oVar;
         }
-        z3.o oVar2 = new z3.o(qVar.a0(i10, i11), (z3.l) this.c);
+        z3.o oVar2 = new z3.o(qVar.W(i10, i11), (z3.l) this.c);
         sparseArray.put(i10, oVar2);
         return oVar2;
     }
@@ -309,15 +308,15 @@ public final class b implements c3.q {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            x0 x0Var = (x0) obj;
+            y0 y0Var = (y0) obj;
             try {
                 try {
                     tc.u uVar = (tc.u) this.b;
-                    AndroidUtilities.runOnUIThread(new m21(x0Var.c, uVar, x0Var.a, "websocket error: " + y0.a(vVar), 14));
+                    AndroidUtilities.runOnUIThread(new n21(y0Var.c, uVar, y0Var.a, "websocket error: " + z0.a(vVar), 14));
                 } catch (Throwable unused) {
                 }
             } catch (Throwable unused2) {
-                x0Var.getClass();
+                y0Var.getClass();
             }
         }
     }
@@ -329,12 +328,12 @@ public final class b implements c3.q {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            x0 x0Var = (x0) obj;
+            y0 y0Var = (y0) obj;
             try {
                 try {
-                    x0Var.getClass();
+                    y0Var.getClass();
                 } catch (Throwable unused) {
-                    x0Var.getClass();
+                    y0Var.getClass();
                 }
             } catch (Throwable unused2) {
             }
@@ -393,8 +392,8 @@ public final class b implements c3.q {
         throw new com.google.firebase.messaging.r(a1.g.p("Internal error: failed to encode \"", str, "\""));
     }
 
-    public w k(UUID uuid, n2.p pVar) {
-        String str = pVar.b;
+    public n2.v k(UUID uuid, n2.o oVar) {
+        String str = oVar.b;
         if (this.a || TextUtils.isEmpty(str)) {
             str = (String) this.c;
         }
@@ -402,7 +401,7 @@ public final class b implements c3.q {
             Map map = Collections.EMPTY_MAP;
             Uri uri = Uri.EMPTY;
             u6.l(uri, "The uri must be set.");
-            throw new x(new g2.m(uri, 1, null, map, 0L, -1L, null, 0), uri, c2.h, 0L, new IllegalStateException("No license URL"));
+            throw new w(new g2.m(uri, 1, null, map, 0L, -1L, null, 0), uri, c2.h, 0L, new IllegalStateException("No license URL"));
         }
         HashMap hashMap = new HashMap();
         UUID uuid2 = b2.n.f;
@@ -413,12 +412,12 @@ public final class b implements c3.q {
         synchronized (((HashMap) this.d)) {
             hashMap.putAll((HashMap) this.d);
         }
-        return w7.b0.a(((g2.o) this.b).createDataSource(), str, pVar.a, hashMap);
+        return a0.a(((g2.o) this.b).createDataSource(), str, oVar.a, hashMap);
     }
 
-    public w l(n2.q qVar) {
+    public n2.v l(n2.p pVar) {
         Charset charset = StandardCharsets.UTF_8;
-        byte[][] bArr = {"{\"signedRequest\":\"".getBytes(charset), qVar.a, "\"}".getBytes(charset)};
+        byte[][] bArr = {"{\"signedRequest\":\"".getBytes(charset), pVar.a, "\"}".getBytes(charset)};
         long j10 = 0;
         for (int i10 = 0; i10 < 3; i10++) {
             j10 += bArr[i10].length;
@@ -433,12 +432,12 @@ public final class b implements c3.q {
             i12 += bArr3.length;
         }
         g2.h createDataSource = ((g2.o) this.b).createDataSource();
-        String str = qVar.b;
+        String str = pVar.b;
         String aVar = h9.a.i.toString();
         String valueOf = String.valueOf(i11);
         e9.s.e("Content-Type", aVar);
         e9.s.e("Content-Length", valueOf);
-        return w7.b0.a(createDataSource, str, bArr2, c2.f(2, new Object[]{"Content-Type", aVar, "Content-Length", valueOf}, null));
+        return a0.a(createDataSource, str, bArr2, c2.f(2, new Object[]{"Content-Type", aVar, "Content-Length", valueOf}, null));
     }
 
     public List n() {
@@ -454,7 +453,7 @@ public final class b implements c3.q {
                 while (i10 < size) {
                     Object obj = arrayList2.get(i10);
                     i10++;
-                    arrayList.add((x0) obj);
+                    arrayList.add((y0) obj);
                 }
                 this.d = arrayList;
                 this.a = false;
@@ -629,7 +628,7 @@ public final class b implements c3.q {
                         return true;
                     }
                 }
-                ((com.google.firebase.messaging.s) ((q3) this.d).b).v(gVar);
+                ((com.google.firebase.messaging.s) ((t3) this.d).b).v(gVar);
                 return true;
             } catch (Throwable th2) {
                 throw th2;
@@ -651,8 +650,8 @@ public final class b implements c3.q {
             w4 w4Var2 = new w4(this, context, c6Var, z4Var);
             this.d = w4Var2;
             b1 b1Var = new b1(this, 3);
-            WeakHashMap weakHashMap = j0.a;
-            r0.b0.i(w4Var2, b1Var);
+            WeakHashMap weakHashMap = r0.i0.a;
+            r0.a0.i(w4Var2, b1Var);
         }
         ((w4) this.d).a(b5Var);
         if (this.a) {
@@ -692,8 +691,8 @@ public final class b implements c3.q {
         this.d = new SparseArray();
     }
 
-    public b(q3 q3Var, boolean z10) {
-        this.d = q3Var;
+    public b(t3 t3Var, boolean z10) {
+        this.d = t3Var;
         this.c = new AtomicReference(null);
         this.a = z10;
         this.b = new AtomicMarkableReference(new y9.d(z10 ? 8192 : 1024), false);

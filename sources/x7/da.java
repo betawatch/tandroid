@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import z7.hb;
-import z7.lg;
+import z7.mg;
 import z7.wf;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class da implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -56,7 +56,7 @@ public final /* synthetic */ class da implements Runnable {
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 if (faVar.c(o7Var, elapsedRealtime)) {
                     faVar.i.put(o7Var, Long.valueOf(elapsedRealtime));
-                    rb.m.a.execute(new org.telegram.ui.Wallet.m5(faVar, 10));
+                    rb.m.a.execute(new p4.s0(faVar, 10));
                     return;
                 }
                 return;
@@ -67,16 +67,16 @@ public final /* synthetic */ class da implements Runnable {
                 HashMap hashMap2 = wfVar.j;
                 if (!hashMap2.containsKey(hbVar)) {
                     z7.d dVar = new z7.d();
-                    lg lgVar = new lg();
+                    mg mgVar = new mg();
                     if (!dVar.isEmpty()) {
                         throw new IllegalArgumentException();
                     }
-                    lgVar.c = dVar;
-                    hashMap2.put(hbVar, lgVar);
+                    mgVar.c = dVar;
+                    hashMap2.put(hbVar, mgVar);
                 }
-                lg lgVar2 = (lg) hashMap2.get(hbVar);
+                mg mgVar2 = (mg) hashMap2.get(hbVar);
                 Long valueOf2 = Long.valueOf(this.b);
-                z7.d dVar2 = lgVar2.c;
+                z7.d dVar2 = mgVar2.c;
                 Collection collection2 = (Collection) dVar2.get(i1Var);
                 if (collection2 == null) {
                     ArrayList arrayList2 = new ArrayList(3);
@@ -90,7 +90,7 @@ public final /* synthetic */ class da implements Runnable {
                 long elapsedRealtime2 = SystemClock.elapsedRealtime();
                 if (wfVar.d(hbVar, elapsedRealtime2)) {
                     wfVar.i.put(hbVar, Long.valueOf(elapsedRealtime2));
-                    rb.m.a.execute(new org.telegram.ui.Wallet.m5(wfVar));
+                    rb.m.a.execute(new p4.s0(wfVar));
                     return;
                 }
                 return;

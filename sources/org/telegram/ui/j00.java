@@ -3,26 +3,26 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j00 implements org.telegram.ui.Components.cm0, org.telegram.ui.ActionBar.z1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l10 b;
+    public final /* synthetic */ k10 b;
 
-    public /* synthetic */ j00(l10 l10Var, int i10) {
+    public /* synthetic */ j00(k10 k10Var, int i10) {
         this.a = i10;
-        this.b = l10Var;
+        this.b = k10Var;
     }
 
     @Override // org.telegram.ui.Components.cm0
     public boolean a(int i10, View view) {
-        l10 l10Var = this.b;
-        c10 c10Var = (c10) l10Var.P.get(i10);
-        if (c10Var == null || !(view instanceof org.telegram.ui.Cells.xa)) {
+        k10 k10Var = this.b;
+        b10 b10Var = (b10) k10Var.P.get(i10);
+        if (b10Var == null || !(view instanceof org.telegram.ui.Cells.xa)) {
             return false;
         }
         org.telegram.ui.Cells.xa xaVar = (org.telegram.ui.Cells.xa) view;
-        l10Var.v0(c10Var, xaVar.getName(), xaVar.getCurrentObject(), c10Var.g);
+        k10Var.v0(b10Var, xaVar.getName(), xaVar.getCurrentObject(), b10Var.g);
         return true;
     }
 
@@ -30,17 +30,17 @@ public final /* synthetic */ class j00 implements org.telegram.ui.Components.cm0
     public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
         switch (this.a) {
             case 1:
-                l10 l10Var = this.b;
+                k10 k10Var = this.b;
                 org.telegram.ui.ActionBar.a2 a2Var2 = null;
-                if (l10Var.getParentActivity() != null) {
-                    org.telegram.ui.ActionBar.a2 a2Var3 = new org.telegram.ui.ActionBar.a2(l10Var.getParentActivity(), 3, null);
+                if (k10Var.getParentActivity() != null) {
+                    org.telegram.ui.ActionBar.a2 a2Var3 = new org.telegram.ui.ActionBar.a2(k10Var.getParentActivity(), 3, null);
                     a2Var3.g0 = false;
                     a2Var3.show();
                     a2Var2 = a2Var3;
                 }
                 TLRPC.TL_messages_updateDialogFilter tL_messages_updateDialogFilter = new TLRPC.TL_messages_updateDialogFilter();
-                tL_messages_updateDialogFilter.id = l10Var.r.id;
-                l10Var.getConnectionsManager().sendRequest(tL_messages_updateDialogFilter, new to(20, l10Var, a2Var2));
+                tL_messages_updateDialogFilter.id = k10Var.r.id;
+                k10Var.getConnectionsManager().sendRequest(tL_messages_updateDialogFilter, new to(20, k10Var, a2Var2));
                 break;
             case 2:
                 this.b.q0();

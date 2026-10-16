@@ -17,7 +17,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class kv extends LinearLayout {
     public final kc1 a;
@@ -43,7 +43,7 @@ public final class kv extends LinearLayout {
         this.s = i10;
         setOrientation(1);
         FrameLayout frameLayout = new FrameLayout(context);
-        addView(frameLayout, w7.a6.d(-2.0f, -1));
+        addView(frameLayout, w7.z5.d(-2.0f, -1));
         org.telegram.ui.Components.xp xpVar = new org.telegram.ui.Components.xp(m2Var.getCurrentAccount(), (i10 == 0 || i10 == -1) ? 0 : 1, null);
         this.c = xpVar;
         kc1 kc1Var = new kc1(getContext(), 8, c6Var);
@@ -63,11 +63,11 @@ public final class kv extends LinearLayout {
         f10Var.setViewType(14);
         f10Var.setVisibility(0);
         if (i10 == 0 || i10 == -1) {
-            frameLayout.addView(f10Var, w7.a6.a(104.0f, 0.0f, 8.0f, 0.0f, 8.0f, -1, 8388611));
-            frameLayout.addView(kc1Var, w7.a6.a(104.0f, 0.0f, 8.0f, 0.0f, 8.0f, -1, 8388611));
+            frameLayout.addView(f10Var, w7.z5.a(104.0f, 0.0f, 8.0f, 0.0f, 8.0f, -1, 8388611));
+            frameLayout.addView(kc1Var, w7.z5.a(104.0f, 0.0f, 8.0f, 0.0f, 8.0f, -1, 8388611));
         } else {
-            frameLayout.addView(f10Var, w7.a6.a(104.0f, 0.0f, 8.0f, 0.0f, 8.0f, -1, 8388611));
-            frameLayout.addView(kc1Var, w7.a6.a(-2.0f, 0.0f, 8.0f, 0.0f, 8.0f, -1, 8388611));
+            frameLayout.addView(f10Var, w7.z5.a(104.0f, 0.0f, 8.0f, 0.0f, 8.0f, -1, 8388611));
+            frameLayout.addView(kc1Var, w7.z5.a(-2.0f, 0.0f, 8.0f, 0.0f, 8.0f, -1, 8388611));
         }
         kc1Var.setEmptyView(f10Var);
         kc1Var.W1 = true;
@@ -82,11 +82,11 @@ public final class kv extends LinearLayout {
             this.e = r8Var;
             r8Var.setBackground(org.telegram.ui.ActionBar.g6.g0(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.i6, false), 2, -1));
             r8Var.w = 21;
-            addView(r8Var, w7.a6.d(-2.0f, -1));
+            addView(r8Var, w7.z5.d(-2.0f, -1));
             org.telegram.ui.Cells.r8 r8Var2 = new org.telegram.ui.Cells.r8(context);
             this.f = r8Var2;
             r8Var2.m(R.drawable.msg_colors, LocaleController.getString(R.string.SettingsBrowseThemes), false);
-            addView(r8Var2, w7.a6.d(-2.0f, -1));
+            addView(r8Var2, w7.z5.d(-2.0f, -1));
             r8Var.setOnClickListener(new iv(this, context, m2Var));
             yj0Var.h = true;
             r8Var2.setOnClickListener(new a(m2Var, 17));

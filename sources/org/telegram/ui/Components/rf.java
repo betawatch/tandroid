@@ -16,7 +16,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class rf extends og {
     public boolean e;
@@ -65,11 +65,11 @@ public final class rf extends og {
         ChatActivityEnterView chatActivityEnterView = this.r;
         if (chatActivityEnterView.T != chatActivityEnterView.E0.getLineCount()) {
             boolean z10 = false;
-            chatActivityEnterView.n1((chatActivityEnterView.E0.getLineCount() <= 2 || chatActivityEnterView.E0.getText() == null || TextUtils.isEmpty(chatActivityEnterView.E0.getText().toString().trim())) ? false : true);
+            chatActivityEnterView.m1((chatActivityEnterView.E0.getLineCount() <= 2 || chatActivityEnterView.E0.getText() == null || TextUtils.isEmpty(chatActivityEnterView.E0.getText().toString().trim())) ? false : true);
             if (chatActivityEnterView.E0.getLineCount() > 2 && chatActivityEnterView.E0.getText() != null && !TextUtils.isEmpty(chatActivityEnterView.E0.getText().toString().trim())) {
                 z10 = true;
             }
-            chatActivityEnterView.t1(z10);
+            chatActivityEnterView.s1(z10);
         }
     }
 
@@ -138,7 +138,7 @@ public final class rf extends og {
                 int i10 = org.telegram.ui.ActionBar.g6.vf;
                 int i11 = ChatActivityEnterView.n5;
                 setHandlesColor(chatActivityEnterView.g0(i10));
-                chatActivityEnterView.Z2.m1();
+                chatActivityEnterView.Z2.n1();
             }
             return super.onTouchEvent(motionEvent);
         }
@@ -155,7 +155,7 @@ public final class rf extends og {
                 int i12 = org.telegram.ui.ActionBar.g6.vf;
                 int i13 = ChatActivityEnterView.n5;
                 setHandlesColor(chatActivityEnterView.g0(i12));
-                chatActivityEnterView.Z2.m1();
+                chatActivityEnterView.Z2.n1();
             }
             rf rfVar = chatActivityEnterView.E0;
             if (rfVar != null && !AndroidUtilities.showKeyboard(rfVar)) {

@@ -10,7 +10,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class ProxyRotationController implements NotificationCenter.NotificationCenterDelegate {
     public static final int DEFAULT_TIMEOUT_INDEX = 1;
@@ -59,7 +59,7 @@ public class ProxyRotationController implements NotificationCenter.NotificationC
             SharedConfig.ProxyInfo proxyInfo = SharedConfig.proxyList.get(i11);
             if (!proxyInfo.checking && SystemClock.elapsedRealtime() - proxyInfo.availableCheckTime >= 120000) {
                 proxyInfo.checking = true;
-                ConnectionsManager.getInstance(i10).checkProxy(proxyInfo.settings, new e0(proxyInfo, 10));
+                ConnectionsManager.getInstance(i10).checkProxy(proxyInfo.settings, new d0(proxyInfo, 10));
                 z10 = true;
             }
         }

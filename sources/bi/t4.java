@@ -3,10 +3,10 @@ package bi;
 import android.content.DialogInterface;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.jg0;
+import org.telegram.ui.ig0;
 import org.telegram.ui.t31;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t4 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -54,14 +54,14 @@ public final /* synthetic */ class t4 implements DialogInterface.OnDismissListen
                 }
                 break;
             case 7:
-                org.telegram.ui.web.b1 b1Var = ((org.telegram.ui.web.n0) this.b).e.Q;
-                if (b1Var != null && (h0Var = b1Var.c) != null) {
+                org.telegram.ui.web.c1 c1Var = ((org.telegram.ui.web.n0) this.b).e.Q;
+                if (c1Var != null && (h0Var = c1Var.c) != null) {
                     h0Var.y();
                     break;
                 }
                 break;
             case 8:
-                org.telegram.ui.web.h0 h0Var2 = ((org.telegram.ui.web.u0) this.b).b.e.Q.c;
+                org.telegram.ui.web.h0 h0Var2 = ((org.telegram.ui.web.v0) this.b).b.e.Q.c;
                 if (h0Var2 != null) {
                     h0Var2.y();
                     break;
@@ -76,9 +76,9 @@ public final /* synthetic */ class t4 implements DialogInterface.OnDismissListen
                 break;
             case 10:
                 sg.m1 m1Var = (sg.m1) this.b;
-                jg0 jg0Var = m1Var.r0;
-                if (jg0Var != null) {
-                    jg0Var.setDialogVisible(false);
+                ig0 ig0Var = m1Var.r0;
+                if (ig0Var != null) {
+                    ig0Var.setDialogVisible(false);
                 }
                 m1Var.q0.setPaused(false);
                 break;

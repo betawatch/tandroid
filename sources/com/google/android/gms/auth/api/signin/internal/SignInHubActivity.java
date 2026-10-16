@@ -1,9 +1,9 @@
 package com.google.android.gms.auth.api.signin.internal;
 
-import a0.m;
 import a6.b;
 import a6.d;
 import a6.i;
+import a6.m;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,10 +18,9 @@ import com.google.android.gms.auth.api.signin.SignInAccount;
 import com.google.android.gms.common.api.Status;
 import java.lang.reflect.Modifier;
 import java.util.Set;
-import qb.c;
 import w1.a;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class SignInHubActivity extends u {
     public static boolean T = false;
@@ -49,11 +48,11 @@ public class SignInHubActivity extends u {
         if (intent != null) {
             SignInAccount signInAccount = (SignInAccount) intent.getParcelableExtra("signInAccount");
             if (signInAccount != null && (googleSignInAccount = signInAccount.b) != null) {
-                i n10 = i.n(this);
+                i o10 = i.o(this);
                 GoogleSignInOptions googleSignInOptions = this.P.b;
-                synchronized (n10) {
-                    synchronized (n10) {
-                        ((b) n10.b).c(googleSignInAccount, googleSignInOptions);
+                synchronized (o10) {
+                    synchronized (o10) {
+                        ((b) o10.b).c(googleSignInAccount, googleSignInOptions);
                     }
                     intent.removeExtra("signInAccount");
                     intent.putExtra("googleSignInAccount", googleSignInAccount);
@@ -176,17 +175,17 @@ public class SignInHubActivity extends u {
     }
 
     public final void u() {
-        w1.b bVar = (w1.b) new e(f(), w1.b.f).m(w1.b.class);
-        c cVar = new c(this, 1);
+        w1.b bVar = (w1.b) new e(f(), w1.b.f).k(w1.b.class);
+        m mVar = new m(this, 0);
         boolean z10 = bVar.e;
-        m mVar = bVar.d;
+        a0.m mVar2 = bVar.d;
         if (z10) {
             throw new IllegalStateException("Called while creating a loader");
         }
         if (Looper.getMainLooper() != Looper.myLooper()) {
             throw new IllegalStateException("initLoader must be called on the main thread");
         }
-        a aVar = (a) mVar.c(0);
+        a aVar = (a) mVar2.c(0);
         if (aVar == null) {
             try {
                 bVar.e = true;
@@ -198,9 +197,9 @@ public class SignInHubActivity extends u {
                     throw new IllegalArgumentException("Object returned from onCreateLoader must not be a non-static inner member class: " + dVar);
                 }
                 a aVar2 = new a(dVar);
-                mVar.d(0, aVar2);
+                mVar2.d(0, aVar2);
                 bVar.e = false;
-                b2.u uVar = new b2.u(aVar2.l, cVar);
+                b2.u uVar = new b2.u(aVar2.l, mVar);
                 aVar2.d(this, uVar);
                 b2.u uVar2 = aVar2.n;
                 if (uVar2 != null) {
@@ -213,7 +212,7 @@ public class SignInHubActivity extends u {
                 throw th2;
             }
         } else {
-            b2.u uVar3 = new b2.u(aVar.l, cVar);
+            b2.u uVar3 = new b2.u(aVar.l, mVar);
             aVar.d(this, uVar3);
             b2.u uVar4 = aVar.n;
             if (uVar4 != null) {

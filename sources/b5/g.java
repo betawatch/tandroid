@@ -4,10 +4,10 @@ import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import java.util.concurrent.atomic.AtomicReference;
-import m.q3;
+import m.t3;
 import org.chromium.support_lib_boundary.JsReplyProxyBoundaryInterface;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements Callable {
     public final /* synthetic */ int a;
@@ -21,13 +21,13 @@ public final /* synthetic */ class g implements Callable {
     private final Object a() {
         boolean z10;
         String str;
-        q3 q3Var = (q3) this.b;
-        synchronized (((AtomicMarkableReference) q3Var.h)) {
+        t3 t3Var = (t3) this.b;
+        synchronized (((AtomicMarkableReference) t3Var.h)) {
             try {
                 z10 = false;
-                if (((AtomicMarkableReference) q3Var.h).isMarked()) {
-                    str = (String) ((AtomicMarkableReference) q3Var.h).getReference();
-                    ((AtomicMarkableReference) q3Var.h).set(str, false);
+                if (((AtomicMarkableReference) t3Var.h).isMarked()) {
+                    str = (String) ((AtomicMarkableReference) t3Var.h).getReference();
+                    ((AtomicMarkableReference) t3Var.h).set(str, false);
                     z10 = true;
                 } else {
                     str = null;
@@ -37,7 +37,7 @@ public final /* synthetic */ class g implements Callable {
             }
         }
         if (z10) {
-            ((y9.f) q3Var.a).i((String) q3Var.c, str);
+            ((y9.f) t3Var.a).i((String) t3Var.c, str);
         }
         return null;
     }
@@ -67,8 +67,8 @@ public final /* synthetic */ class g implements Callable {
                     }
                 }
                 if (map != null) {
-                    q3 q3Var = (q3) bVar.d;
-                    ((y9.f) q3Var.a).g((String) q3Var.c, map, bVar.a);
+                    t3 t3Var = (t3) bVar.d;
+                    ((y9.f) t3Var.a).g((String) t3Var.c, map, bVar.a);
                 }
                 return null;
         }

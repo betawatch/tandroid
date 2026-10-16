@@ -11,16 +11,16 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.h11;
+import org.telegram.ui.Components.i11;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class w7 extends View {
     public final LinearGradient a;
     public final Matrix b;
     public final Paint c;
     public final Paint d;
-    public final h11 e;
+    public final i11 e;
     public final /* synthetic */ org.telegram.ui.ActionBar.c6 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -31,7 +31,7 @@ public final class w7 extends View {
         this.b = new Matrix();
         this.c = new Paint(1);
         this.d = new Paint(1);
-        this.e = new h11(LocaleController.getString(R.string.StarsReactionTopSenders), 14.16f, AndroidUtilities.bold());
+        this.e = new i11(LocaleController.getString(R.string.StarsReactionTopSenders), 14.16f, AndroidUtilities.bold());
     }
 
     @Override // android.view.View
@@ -44,8 +44,8 @@ public final class w7 extends View {
         linearGradient.setLocalMatrix(matrix);
         Paint paint = this.c;
         paint.setShader(linearGradient);
-        h11 h11Var = this.e;
-        float dp = h11Var.c + AndroidUtilities.dp(30.0f);
+        i11 i11Var = this.e;
+        float dp = i11Var.c + AndroidUtilities.dp(30.0f);
         int w02 = org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.d7, this.f);
         Paint paint2 = this.d;
         paint2.setColor(w02);
@@ -54,6 +54,6 @@ public final class w7 extends View {
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set((getWidth() - dp) / 2.0f, 0.0f, (getWidth() + dp) / 2.0f, getHeight());
         canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, paint);
-        this.e.c((getWidth() - h11Var.c) / 2.0f, getHeight() / 2.0f, 1.0f, -1, canvas);
+        this.e.c((getWidth() - i11Var.c) / 2.0f, getHeight() / 2.0f, 1.0f, -1, canvas);
     }
 }

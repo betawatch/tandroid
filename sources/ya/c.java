@@ -88,7 +88,7 @@ import ji.x3;
 import ji.z;
 import l.k;
 import l.w;
-import m.q3;
+import m.t3;
 import mg.o;
 import oa.d;
 import org.chromium.support_lib_boundary.StaticsBoundaryInterface;
@@ -102,23 +102,23 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Cells.n9;
 import org.telegram.ui.Cells.o9;
-import org.telegram.ui.Components.h81;
 import org.telegram.ui.Components.hh;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.i81;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.vi;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.p71;
-import org.telegram.ui.s01;
-import org.telegram.ui.yz0;
+import org.telegram.ui.r01;
+import org.telegram.ui.xz0;
 import v7.f7;
 import v7.u6;
 import z3.m;
 import z3.n;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, OnCompleteListener, o, oc, f6.a, w, gb.o, z1, n, ti, j0, v3 {
+public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, OnCompleteListener, o, oc, f6.a, w, gb.p, z1, n, ti, j0, v3 {
     public static volatile c c;
     public final /* synthetic */ int a;
     public final Object b;
@@ -133,120 +133,11 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
         ((l0) this.b).e.invalidate();
     }
 
-    public Set A0() {
-        Set unmodifiableSet;
-        synchronized (((HashSet) this.b)) {
-            unmodifiableSet = DesugarCollections.unmodifiableSet((HashSet) this.b);
-        }
-        return unmodifiableSet;
-    }
-
-    @Override // di.oc
-    public void B(float f7, int i10) {
-        ArrayList arrayList;
-        a7 a7Var = (a7) this.b;
-        k8 k8Var = a7Var.d;
-        if (k8Var == null || (arrayList = k8Var.T) == null || i10 < 0 || i10 >= arrayList.size()) {
-            return;
-        }
-        ((k8) a7Var.d.T.get(i10)).P = f7;
-    }
-
-    public boolean B0() {
-        x0 x0Var = ((com.google.android.gms.common.api.internal.j0) this.b).d;
-        return x0Var != null && x0Var.b();
-    }
-
-    @Override // ji.j0
-    public o9 C() {
-        r3 r3Var = ((z) this.b).O;
-        if (r3Var != null) {
-            return r3Var.a.getTextSelectionHelper();
-        }
-        return null;
-    }
-
-    public float C0(int i10, int i11, int i12, int i13) {
-        int i14;
-        int i15;
-        int i16;
-        int i17;
-        int i18;
-        int i19;
-        c cVar;
-        int i20;
-        int i21 = 1;
-        boolean z10 = Math.abs(i13 - i11) > Math.abs(i12 - i10);
-        if (z10) {
-            i15 = i10;
-            i14 = i11;
-            i17 = i12;
-            i16 = i13;
-        } else {
-            i14 = i10;
-            i15 = i11;
-            i16 = i12;
-            i17 = i13;
-        }
-        int abs = Math.abs(i16 - i14);
-        int abs2 = Math.abs(i17 - i15);
-        int i22 = 2;
-        int i23 = (-abs) / 2;
-        int i24 = i14 < i16 ? 1 : -1;
-        int i25 = i15 < i17 ? 1 : -1;
-        int i26 = i16 + i24;
-        int i27 = i14;
-        int i28 = i15;
-        int i29 = 0;
-        while (true) {
-            if (i27 == i26) {
-                i18 = i22;
-                break;
-            }
-            int i30 = z10 ? i28 : i27;
-            int i31 = z10 ? i27 : i28;
-            boolean z11 = z10;
-            if (i29 == i21) {
-                i19 = i21;
-                i20 = abs;
-                cVar = this;
-            } else {
-                i19 = 0;
-                cVar = this;
-                i20 = abs;
-            }
-            if (i19 == ((ec.b) cVar.b).b(i30, i31)) {
-                if (i29 == 2) {
-                    return f7.b(i27, i28, i14, i15);
-                }
-                i29++;
-            }
-            i23 += abs2;
-            if (i23 > 0) {
-                if (i28 == i17) {
-                    i18 = 2;
-                    break;
-                }
-                i28 += i25;
-                i23 -= i20;
-            }
-            i27 += i24;
-            abs = i20;
-            z10 = z11;
-            i21 = 1;
-            i22 = 2;
-        }
-        if (i29 == i18) {
-            return f7.b(i26, i17, i14, i15);
-        }
-        return Float.NaN;
-    }
-
-    public float D0(int i10, int i11, int i12, int i13) {
+    public float A0(int i10, int i11, int i12, int i13) {
         float f7;
         float f10;
         ec.b bVar = (ec.b) this.b;
-        float C0 = C0(i10, i11, i12, i13);
+        float z02 = z0(i10, i11, i12, i13);
         int i14 = i10 - (i12 - i10);
         int i15 = 0;
         if (i14 < 0) {
@@ -277,11 +168,37 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
                 f10 = 1.0f;
             }
         }
-        return (C0(i10, i11, (int) (((i14 - i10) * f10) + i10), i15) + C0) - 1.0f;
+        return (z0(i10, i11, (int) (((i14 - i10) * f10) + i10), i15) + z02) - 1.0f;
     }
 
     @Override // di.oc
-    public void E(float f7) {
+    public void B(float f7, int i10) {
+        ArrayList arrayList;
+        a7 a7Var = (a7) this.b;
+        k8 k8Var = a7Var.d;
+        if (k8Var == null || (arrayList = k8Var.T) == null || i10 < 0 || i10 >= arrayList.size()) {
+            return;
+        }
+        ((k8) a7Var.d.T.get(i10)).P = f7;
+    }
+
+    @Override // ji.j0
+    public void C0() {
+        z zVar = (z) this.b;
+        r3 r3Var = zVar.O;
+        if (r3Var != null) {
+            ji.a aVar = zVar.a;
+            x3 x3Var = r3Var.a;
+            h2 h2Var = x3Var.H3;
+            if (h2Var != null) {
+                h2Var.g();
+            }
+            x3Var.f3.onContentChanged();
+        }
+    }
+
+    @Override // di.oc
+    public void D(float f7) {
         a7 a7Var = (a7) this.b;
         k8 k8Var = a7Var.d;
         if (k8Var == null) {
@@ -291,36 +208,45 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
         a7Var.c();
     }
 
-    @Override // ji.j0
-    public void F(CharSequence charSequence) {
-        r3 r3Var = ((z) this.b).O;
-        if (r3Var != null) {
-            r3Var.getClass();
-            if (charSequence == null || charSequence.length() <= 0) {
-                return;
-            }
-            r3Var.a.u4(charSequence.toString());
+    @Override // di.oc
+    public void E(float f7, boolean z10) {
+        a7 a7Var = (a7) this.b;
+        k8 k8Var = a7Var.d;
+        if (k8Var == null) {
+            return;
         }
+        k8Var.Z = f7;
+        k8Var.j = true;
+        i81 i81Var = a7Var.e;
+        if (i81Var == null || i81Var.p() == -9223372036854775807L) {
+            return;
+        }
+        a7Var.m((long) (f7 * a7Var.e.p()));
+    }
+
+    @Override // hg.z1
+    public /* synthetic */ boolean E0(int i10) {
+        return true;
     }
 
     @Override // bi.ob
-    public boolean H0(long j10, int i10, int i11, int i12, pb pbVar) {
+    public boolean G0(long j10, int i10, int i11, int i12, pb pbVar) {
         ImageReceiver imageReceiver;
         t5 t5Var;
         t5 t5Var2;
         pbVar.b = null;
         pbVar.c = null;
-        yz0 yz0Var = (yz0) this.b;
-        s01 s01Var = yz0Var.h;
-        ArrayList arrayList = yz0Var.w;
-        if (yz0Var.N < 0.2f) {
-            pbVar.b = s01Var.getImageReceiver();
+        xz0 xz0Var = (xz0) this.b;
+        r01 r01Var = xz0Var.h;
+        ArrayList arrayList = xz0Var.w;
+        if (xz0Var.N < 0.2f) {
+            pbVar.b = r01Var.getImageReceiver();
             pbVar.c = null;
-            pbVar.a = s01Var;
+            pbVar.a = r01Var;
             pbVar.h = 0.0f;
             pbVar.i = AndroidUtilities.displaySize.y;
-            pbVar.g = (View) yz0Var.getParent();
-            pbVar.d = yz0Var.y;
+            pbVar.g = (View) xz0Var.getParent();
+            pbVar.d = xz0Var.y;
             pbVar.n = true;
             return true;
         }
@@ -349,10 +275,10 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
         }
         pbVar.c = imageReceiver;
         pbVar.b = null;
-        pbVar.a = yz0Var;
+        pbVar.a = xz0Var;
         pbVar.h = 0.0f;
         pbVar.i = AndroidUtilities.displaySize.y;
-        pbVar.g = (View) yz0Var.getParent();
+        pbVar.g = (View) xz0Var.getParent();
         if (t5Var == null || t5Var2 == null) {
             pbVar.f = null;
             return true;
@@ -361,33 +287,8 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
         return true;
     }
 
-    @Override // di.oc
-    public void I(float f7, boolean z10) {
-        a7 a7Var = (a7) this.b;
-        k8 k8Var = a7Var.d;
-        if (k8Var == null) {
-            return;
-        }
-        k8Var.Z = f7;
-        k8Var.j = true;
-        h81 h81Var = a7Var.e;
-        if (h81Var == null || h81Var.p() == -9223372036854775807L) {
-            return;
-        }
-        a7Var.m((long) (f7 * a7Var.e.p()));
-    }
-
-    @Override // hg.z1
-    public void I0(ArrayList arrayList) {
-        j1 j1Var = (j1) this.b;
-        String str = j1Var.Z;
-        if (str != null) {
-            j1Var.U(str, j1Var.c0, j1Var.d0, j1Var.b0, j1Var.a0);
-        }
-    }
-
     @Override // b5.p
-    public String[] J() {
+    public String[] H() {
         return ((WebViewProviderFactoryBoundaryInterface) this.b).getSupportedFeatures();
     }
 
@@ -396,13 +297,8 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
         return null;
     }
 
-    @Override // ji.j0
-    public n9 L() {
-        return (z) this.b;
-    }
-
     @Override // ji.v3
-    public void N(ji.a aVar) {
+    public void L(ji.a aVar) {
         d2 d2Var = (d2) this.b;
         if (aVar != null && (aVar.b instanceof TL_iv.pageBlockMap) && AndroidUtilities.isMapsInstalled(d2Var)) {
             vi viVar = new vi(d2Var.getParentActivity(), d2Var, false, false, false, d2Var.getResourceProvider());
@@ -415,13 +311,8 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
         }
     }
 
-    @Override // ji.j0
-    public ji.a O() {
-        return ((z) this.b).a;
-    }
-
     @Override // di.oc
-    public void P(long j10) {
+    public void M(long j10) {
         a7 a7Var = (a7) this.b;
         k8 k8Var = a7Var.d;
         if (k8Var == null) {
@@ -432,19 +323,8 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
         a7Var.y(true);
     }
 
-    @Override // ji.j0
-    public boolean Q() {
-        z zVar = (z) this.b;
-        r3 r3Var = zVar.O;
-        if (r3Var == null) {
-            return false;
-        }
-        ji.a aVar = zVar.a;
-        return r3Var.a.T4();
-    }
-
     @Override // di.oc
-    public void R(boolean z10) {
+    public void N(boolean z10) {
         rg.d2 d2Var;
         kc kcVar = ((yb) ((a7) this.b)).C0;
         mb mbVar = kcVar.v1;
@@ -492,21 +372,8 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
         }
     }
 
-    @Override // ji.j0
-    public void S(int i10, int i11) {
-        z zVar = (z) this.b;
-        r3 r3Var = zVar.O;
-        if (r3Var != null) {
-            ji.a aVar = zVar.a;
-            h2 h2Var = r3Var.a.H3;
-            if (h2Var != null) {
-                h2Var.f(i10, i11);
-            }
-        }
-    }
-
     @Override // di.oc
-    public void T(float f7, int i10) {
+    public void O(float f7, int i10) {
         ArrayList arrayList;
         a7 a7Var = (a7) this.b;
         k8 k8Var = a7Var.d;
@@ -516,8 +383,17 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
         ((k8) a7Var.d.T.get(i10)).V = f7;
     }
 
+    @Override // hg.z1
+    public void O0(ArrayList arrayList) {
+        j1 j1Var = (j1) this.b;
+        String str = j1Var.Z;
+        if (str != null) {
+            j1Var.U(str, j1Var.c0, j1Var.d0, j1Var.b0, j1Var.a0);
+        }
+    }
+
     @Override // di.oc
-    public void V(float f7) {
+    public void P(float f7) {
         a7 a7Var = (a7) this.b;
         k8 k8Var = a7Var.d;
         if (k8Var == null) {
@@ -529,7 +405,7 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
     }
 
     @Override // ji.v3
-    public void X() {
+    public void Q() {
         d2 d2Var = (d2) this.b;
         d2.Z(d2Var, false, true);
         int i10 = d2Var.I0;
@@ -537,37 +413,22 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
     }
 
     @Override // ji.v3
-    public m80 Y(View view) {
-        return m80.H((d2) this.b, view);
+    public l80 R(View view) {
+        return l80.H((d2) this.b, view);
     }
 
     @Override // ji.j0
-    public void Z() {
+    public void R0() {
         z zVar = (z) this.b;
         r3 r3Var = zVar.O;
         if (r3Var != null) {
             ji.a aVar = zVar.a;
-            x3 x3Var = r3Var.a;
-            h2 h2Var = x3Var.H3;
-            if (h2Var != null) {
-                h2Var.g();
-            }
-            x3Var.f3.onContentChanged();
-        }
-    }
-
-    @Override // ji.j0
-    public void a(h1 h1Var) {
-        r3 r3Var = ((z) this.b).O;
-        if (r3Var != null) {
-            x3 x3Var = r3Var.a;
-            x3.N1(x3Var, h1Var);
-            x3Var.f3.c0(h1Var, true);
+            x3.P1(r3Var.a);
         }
     }
 
     @Override // di.oc
-    public void a0(float f7) {
+    public void S(float f7) {
         a7 a7Var = (a7) this.b;
         k8 k8Var = a7Var.d;
         if (k8Var == null) {
@@ -576,6 +437,70 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
         k8Var.E = f7;
         k8Var.j = true;
         a7Var.w(true);
+    }
+
+    @Override // ji.v3
+    public void T() {
+        d2 d2Var = (d2) this.b;
+        d2Var.z0();
+        d2Var.C0();
+    }
+
+    @Override // ji.j0
+    public o9 W() {
+        r3 r3Var = ((z) this.b).O;
+        if (r3Var != null) {
+            return r3Var.a.getTextSelectionHelper();
+        }
+        return null;
+    }
+
+    @Override // z3.n
+    public int X() {
+        return 2;
+    }
+
+    @Override // di.oc
+    public void Y(float f7, int i10) {
+        ArrayList arrayList;
+        a7 a7Var = (a7) this.b;
+        k8 k8Var = a7Var.d;
+        if (k8Var == null || (arrayList = k8Var.T) == null || i10 < 0 || i10 >= arrayList.size()) {
+            return;
+        }
+        ((k8) a7Var.d.T.get(i10)).W = f7;
+    }
+
+    @Override // di.oc
+    public void Z(float f7) {
+        k8 k8Var = ((a7) this.b).d;
+        if (k8Var == null) {
+            return;
+        }
+        k8Var.a0 = f7;
+        k8Var.j = true;
+    }
+
+    @Override // ji.j0
+    public void a(h1 h1Var) {
+        r3 r3Var = ((z) this.b).O;
+        if (r3Var != null) {
+            x3 x3Var = r3Var.a;
+            x3.N1(x3Var, h1Var);
+            x3Var.f3.V(h1Var, true);
+        }
+    }
+
+    @Override // ji.j0
+    public void a0(CharSequence charSequence) {
+        r3 r3Var = ((z) this.b).O;
+        if (r3Var != null) {
+            r3Var.getClass();
+            if (charSequence == null || charSequence.length() <= 0) {
+                return;
+            }
+            r3Var.a.u4(charSequence.toString());
+        }
     }
 
     @Override // com.google.android.gms.common.api.internal.s
@@ -629,13 +554,6 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
     }
 
     @Override // ji.v3
-    public void b0() {
-        d2 d2Var = (d2) this.b;
-        d2Var.z0();
-        d2Var.C0();
-    }
-
-    @Override // ji.v3
     public boolean c(float f7) {
         boolean z10;
         d2 d2Var = (d2) this.b;
@@ -653,6 +571,11 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
         return z10;
     }
 
+    @Override // di.oc
+    public void c0() {
+        ((a7) this.b).q(null);
+    }
+
     @Override // b5.p
     public WebViewProviderBoundaryInterface createWebView(WebView webView) {
         return (WebViewProviderBoundaryInterface) androidx.activity.result.c.a(WebViewProviderBoundaryInterface.class, ((WebViewProviderFactoryBoundaryInterface) this.b).createWebView(webView));
@@ -661,17 +584,6 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
     @Override // l.w
     public void d(k kVar, boolean z10) {
         ((g.r) this.b).g(kVar);
-    }
-
-    @Override // di.oc
-    public void d0(float f7, int i10) {
-        ArrayList arrayList;
-        a7 a7Var = (a7) this.b;
-        k8 k8Var = a7Var.d;
-        if (k8Var == null || (arrayList = k8Var.T) == null || i10 < 0 || i10 >= arrayList.size()) {
-            return;
-        }
-        ((k8) a7Var.d.T.get(i10)).W = f7;
     }
 
     @Override // di.oc
@@ -696,39 +608,30 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
 
     @Override // di.oc
     public void e0(float f7) {
-        k8 k8Var = ((a7) this.b).d;
+        a7 a7Var = (a7) this.b;
+        k8 k8Var = a7Var.d;
         if (k8Var == null) {
             return;
         }
-        k8Var.a0 = f7;
+        k8Var.t0 = f7;
         k8Var.j = true;
+        a7Var.y(true);
     }
 
-    @Override // ji.j0
-    public void f() {
-        z zVar = (z) this.b;
-        r3 r3Var = zVar.O;
-        if (r3Var != null) {
-            x3.Q1(r3Var.a, zVar.a);
-        }
+    @Override // hg.z1
+    public void f(int i10) {
+        ((j1) this.b).l();
     }
 
     @Override // di.oc
-    public void f0() {
-        ((a7) this.b).q(null);
-    }
-
-    @Override // gb.o
-    public Object f2() {
-        Type type = (Type) this.b;
-        if (!(type instanceof ParameterizedType)) {
-            throw new j("Invalid EnumSet type: " + type.toString());
+    public void f0(int i10, long j10) {
+        ArrayList arrayList;
+        a7 a7Var = (a7) this.b;
+        k8 k8Var = a7Var.d;
+        if (k8Var == null || (arrayList = k8Var.T) == null || i10 < 0 || i10 >= arrayList.size()) {
+            return;
         }
-        Type type2 = ((ParameterizedType) type).getActualTypeArguments()[0];
-        if (type2 instanceof Class) {
-            return EnumSet.noneOf((Class) type2);
-        }
-        throw new j("Invalid EnumSet type: " + type.toString());
+        ((k8) a7Var.d.T.get(i10)).X = j10;
     }
 
     @Override // di.oc
@@ -743,26 +646,57 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
         a7Var.c();
     }
 
+    @Override // ji.j0
+    public n9 g0() {
+        return (z) this.b;
+    }
+
     @Override // b5.p
     public StaticsBoundaryInterface getStatics() {
         return (StaticsBoundaryInterface) androidx.activity.result.c.a(StaticsBoundaryInterface.class, ((WebViewProviderFactoryBoundaryInterface) this.b).getStatics());
     }
 
+    @Override // ji.j0
+    public void h() {
+        z zVar = (z) this.b;
+        r3 r3Var = zVar.O;
+        if (r3Var != null) {
+            x3.Q1(r3Var.a, zVar.a);
+        }
+    }
+
     @Override // ji.v3
-    public void h(u3 u3Var, View view) {
+    public void i(u3 u3Var, View view) {
         d2 d2Var = (d2) this.b;
-        m80 H = m80.H(d2Var, view);
+        l80 H = l80.H(d2Var, view);
         H.Q = true;
         d2Var.x0 = l4.c(H, d2Var, d2Var.getParentActivity(), d2Var.getResourceProvider(), u3Var, false);
     }
 
-    @Override // z3.n
-    public int h0() {
-        return 2;
+    @Override // ji.v3
+    public void i0(ji.i6 i6Var, String str) {
+        d2 d2Var = (d2) this.b;
+        if (d2Var.z0 == null) {
+            d2Var.z0 = new t3(new f1.a(this, 24), d2Var.getResourceProvider());
+        }
+        d2Var.z0.f(i6Var, str);
+    }
+
+    @Override // gb.p
+    public Object i2() {
+        Type type = (Type) this.b;
+        if (!(type instanceof ParameterizedType)) {
+            throw new j("Invalid EnumSet type: " + type.toString());
+        }
+        Type type2 = ((ParameterizedType) type).getActualTypeArguments()[0];
+        if (type2 instanceof Class) {
+            return EnumSet.noneOf((Class) type2);
+        }
+        throw new j("Invalid EnumSet type: " + type.toString());
     }
 
     @Override // androidx.activity.result.b
-    public void i(Object obj) {
+    public void j(Object obj) {
         switch (this.a) {
             case 5:
                 Map map = (Map) obj;
@@ -803,8 +737,13 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
         }
     }
 
+    @Override // ji.j0
+    public ji.a j0() {
+        return ((z) this.b).a;
+    }
+
     @Override // di.oc
-    public void j(float f7) {
+    public void k(float f7) {
         a7 a7Var = (a7) this.b;
         k8 k8Var = a7Var.d;
         if (k8Var == null) {
@@ -816,19 +755,14 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
     }
 
     @Override // hg.z1
-    public /* synthetic */ h j0() {
+    public /* synthetic */ h k0() {
         return null;
-    }
-
-    @Override // hg.z1
-    public void k(int i10) {
-        ((j1) this.b).l();
     }
 
     @Override // ji.v3
     public void l(w3 w3Var, View view) {
         d2 d2Var = (d2) this.b;
-        m80 H = m80.H(d2Var, view);
+        l80 H = l80.H(d2Var, view);
         H.Q = true;
         d2Var.getParentActivity();
         d2Var.getResourceProvider();
@@ -836,128 +770,7 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
     }
 
     @Override // di.oc
-    public void l0(float f7) {
-        a7 a7Var = (a7) this.b;
-        k8 k8Var = a7Var.d;
-        if (k8Var == null) {
-            return;
-        }
-        k8Var.t0 = f7;
-        k8Var.j = true;
-        a7Var.y(true);
-    }
-
-    @Override // ji.v3
-    public void m(int i10) {
-        ((d2) this.b).o0(74, i10);
-    }
-
-    @Override // ji.v3
-    public void m0(ji.i6 i6Var, String str) {
-        d2 d2Var = (d2) this.b;
-        if (d2Var.z0 == null) {
-            d2Var.z0 = new q3(new f1.a(this, 24), d2Var.getResourceProvider());
-        }
-        d2Var.z0.f(i6Var, str);
-    }
-
-    @Override // di.oc
-    public void n(long j10, boolean z10) {
-        a7 a7Var = (a7) this.b;
-        if (!z10) {
-            a7Var.m(j10);
-            return;
-        }
-        h81 h81Var = a7Var.e;
-        if (h81Var != null) {
-            h81Var.L(j10, true);
-            return;
-        }
-        if (a7Var.j()) {
-            a7Var.E.m(j10, true);
-            return;
-        }
-        h81 h81Var2 = a7Var.y;
-        if (h81Var2 != null) {
-            h81Var2.L(j10, false);
-        }
-    }
-
-    @Override // di.oc
-    public void n0(int i10, long j10) {
-        ArrayList arrayList;
-        a7 a7Var = (a7) this.b;
-        k8 k8Var = a7Var.d;
-        if (k8Var == null || (arrayList = k8Var.T) == null || i10 < 0 || i10 >= arrayList.size()) {
-            return;
-        }
-        ((k8) a7Var.d.T.get(i10)).X = j10;
-    }
-
-    @Override // ji.v3
-    public void o() {
-        d2 d2Var = (d2) this.b;
-        k3 k3Var = d2Var.P.l3;
-        d2Var.x0((k3Var != null && k3Var.x() && d2Var.P.D4()) ? 1 : 0, true);
-        d2Var.y0();
-        d2Var.w0();
-    }
-
-    @Override // ji.j0
-    public void o0() {
-        z zVar = (z) this.b;
-        r3 r3Var = zVar.O;
-        if (r3Var != null) {
-            ji.a aVar = zVar.a;
-            x3.P1(r3Var.a);
-        }
-    }
-
-    @Override // com.google.android.gms.tasks.OnCompleteListener
-    public void onComplete(Task task) {
-        d6.c.h((d6.c) ((d6.j) this.b).c, "joinApplication", task);
-    }
-
-    @Override // ji.v3
-    public void onContentChanged() {
-        d2 d2Var = (d2) this.b;
-        if (d2Var.y0 != null) {
-            boolean n32 = d2Var.P.n3();
-            d2Var.L0 = n32;
-            d2Var.y0.h(n32);
-            d2Var.y0.invalidate();
-        }
-        d2Var.C0();
-        Runnable runnable = d2Var.M0;
-        AndroidUtilities.cancelRunOnUIThread(runnable);
-        AndroidUtilities.runOnUIThread(runnable, 1000L);
-    }
-
-    @Override // bi.ob
-    public void p(long j10, int i10, r4 r4Var) {
-        yz0 yz0Var = (yz0) this.b;
-        int i11 = ProfileStoriesView.s0;
-        yz0Var.f(true, false);
-        r4Var.run();
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public /* synthetic */ boolean p0() {
-        return false;
-    }
-
-    @Override // l.w
-    public boolean q(k kVar) {
-        Window.Callback callback = ((g.r) this.b).f.getCallback();
-        if (callback == null) {
-            return true;
-        }
-        callback.onMenuOpened(108, kVar);
-        return true;
-    }
-
-    @Override // di.oc
-    public void q0(long j10) {
+    public void l0(long j10) {
         a7 a7Var = (a7) this.b;
         k8 k8Var = a7Var.d;
         if (k8Var == null) {
@@ -968,102 +781,13 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
         a7Var.w(true);
     }
 
-    @Override // di.oc
-    public void r() {
-        a7 a7Var = (a7) this.b;
-        a7Var.s(null, null, true);
-        kc kcVar = ((yb) a7Var).C0;
-        yb ybVar = kcVar.X0;
-        if (ybVar != null) {
-            ybVar.s(null, null, true);
-        }
-        mb mbVar = kcVar.v1;
-        if (mbVar != null) {
-            mbVar.p0();
-        }
-        ac acVar = kcVar.c1;
-        if (acVar != null) {
-            acVar.setHasRoundVideo(false);
-        }
-        k8 k8Var = kcVar.K1;
-        if (k8Var != null) {
-            File file = k8Var.o0;
-            if (file != null) {
-                try {
-                    file.delete();
-                } catch (Exception unused) {
-                }
-                kcVar.K1.o0 = null;
-            }
-            if (kcVar.K1.p0 != null) {
-                try {
-                    new File(kcVar.K1.p0).delete();
-                } catch (Exception unused2) {
-                }
-                kcVar.K1.p0 = null;
-            }
-        }
-    }
-
-    @Override // di.oc
-    public void s(float f7) {
-        a7 a7Var = (a7) this.b;
-        k8 k8Var = a7Var.d;
-        if (k8Var == null) {
-            return;
-        }
-        k8Var.s0 = f7;
-        k8Var.j = true;
-        a7Var.y(true);
-    }
-
-    public float s0(jc.c cVar, jc.c cVar2) {
-        int i10 = (int) cVar.a;
-        int i11 = (int) cVar.b;
-        int i12 = (int) cVar2.a;
-        int i13 = (int) cVar2.b;
-        float D0 = D0(i10, i11, i12, i13);
-        float D02 = D0((int) cVar2.a, i13, (int) cVar.a, i11);
-        return Float.isNaN(D0) ? D02 / 7.0f : Float.isNaN(D02) ? D0 / 7.0f : (D0 + D02) / 14.0f;
-    }
-
-    @Override // f6.a
-    public void t(Bitmap bitmap) {
-        g6.b bVar = f6.h.v;
-        Bitmap bitmap2 = null;
-        if (bitmap != null) {
-            int width = bitmap.getWidth();
-            float f7 = width;
-            int height = bitmap.getHeight();
-            int B = (int) a1.g.B(f7, 9.0f, 16.0f, 0.5f);
-            float f10 = (B - height) / 2.0f;
-            RectF rectF = new RectF(0.0f, f10, f7, height + f10);
-            Bitmap.Config config = bitmap.getConfig();
-            if (config == null) {
-                config = Bitmap.Config.ARGB_8888;
-            }
-            Bitmap createBitmap = Bitmap.createBitmap(width, B, config);
-            new Canvas(createBitmap).drawBitmap(bitmap, (Rect) null, rectF, (Paint) null);
-            bitmap2 = createBitmap;
-        }
-        ((f6.h) this.b).e(bitmap2, 0);
-    }
-
-    @Override // hg.z1
-    public /* synthetic */ boolean t0(int i10) {
-        return true;
-    }
-
     @Override // ji.v3
-    public void u() {
-        d2 d2Var = (d2) this.b;
-        d2Var.I0 = d2Var.K0;
-        d2.Z(d2Var, false, false);
-        d2Var.x0(2, true);
+    public void m(int i10) {
+        ((d2) this.b).o0(74, i10);
     }
 
     @Override // z3.n
-    public void u0(byte[] bArr, int i10, int i11, m mVar, e2.j jVar) {
+    public void m0(byte[] bArr, int i10, int i11, m mVar, e2.j jVar) {
         d2.b a2;
         x xVar = (x) this.b;
         xVar.L(i10 + i11, bArr);
@@ -1116,15 +840,30 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
         jVar.accept(new z3.b(-9223372036854775807L, -9223372036854775807L, arrayList));
     }
 
-    @Override // org.telegram.ui.Components.ti
-    public void v(hh hhVar) {
-        int i10;
-        i10 = ((m2) ((ig.m) this.b)).currentAccount;
-        NotificationCenter.getInstance(i10).doOnIdle(hhVar);
+    @Override // di.oc
+    public void n(long j10, boolean z10) {
+        a7 a7Var = (a7) this.b;
+        if (!z10) {
+            a7Var.m(j10);
+            return;
+        }
+        i81 i81Var = a7Var.e;
+        if (i81Var != null) {
+            i81Var.L(j10, true);
+            return;
+        }
+        if (a7Var.j()) {
+            a7Var.E.m(j10, true);
+            return;
+        }
+        i81 i81Var2 = a7Var.y;
+        if (i81Var2 != null) {
+            i81Var2.L(j10, false);
+        }
     }
 
     @Override // androidx.lifecycle.a0
-    public void v0(Object obj) {
+    public void n0(Object obj) {
         CharSequence charSequence = (CharSequence) obj;
         g0 g0Var = (g0) this.b;
         Handler handler = g0Var.A0;
@@ -1137,12 +876,75 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
         handler.postDelayed(iVar, 2000L);
     }
 
-    @Override // z3.n
-    public /* synthetic */ z3.e w(int i10, int i11, byte[] bArr) {
-        return t8.b.a(this, bArr, i11);
+    @Override // ji.v3
+    public void o() {
+        d2 d2Var = (d2) this.b;
+        k3 k3Var = d2Var.P.l3;
+        d2Var.x0((k3Var != null && k3Var.x() && d2Var.P.D4()) ? 1 : 0, true);
+        d2Var.y0();
+        d2Var.w0();
     }
 
-    public void w0() {
+    public float o0(jc.c cVar, jc.c cVar2) {
+        int i10 = (int) cVar.a;
+        int i11 = (int) cVar.b;
+        int i12 = (int) cVar2.a;
+        int i13 = (int) cVar2.b;
+        float A0 = A0(i10, i11, i12, i13);
+        float A02 = A0((int) cVar2.a, i13, (int) cVar.a, i11);
+        return Float.isNaN(A0) ? A02 / 7.0f : Float.isNaN(A02) ? A0 / 7.0f : (A0 + A02) / 14.0f;
+    }
+
+    @Override // com.google.android.gms.tasks.OnCompleteListener
+    public void onComplete(Task task) {
+        d6.c.h((d6.c) ((d6.j) this.b).c, "joinApplication", task);
+    }
+
+    @Override // ji.v3
+    public void onContentChanged() {
+        d2 d2Var = (d2) this.b;
+        if (d2Var.y0 != null) {
+            boolean n32 = d2Var.P.n3();
+            d2Var.L0 = n32;
+            d2Var.y0.h(n32);
+            d2Var.y0.invalidate();
+        }
+        d2Var.C0();
+        Runnable runnable = d2Var.M0;
+        AndroidUtilities.cancelRunOnUIThread(runnable);
+        AndroidUtilities.runOnUIThread(runnable, 1000L);
+    }
+
+    @Override // bi.ob
+    public void p(long j10, int i10, r4 r4Var) {
+        xz0 xz0Var = (xz0) this.b;
+        int i11 = ProfileStoriesView.s0;
+        xz0Var.f(true, false);
+        r4Var.run();
+    }
+
+    @Override // ji.j0
+    public boolean p0() {
+        z zVar = (z) this.b;
+        r3 r3Var = zVar.O;
+        if (r3Var == null) {
+            return false;
+        }
+        ji.a aVar = zVar.a;
+        return r3Var.a.T4();
+    }
+
+    @Override // l.w
+    public boolean q(k kVar) {
+        Window.Callback callback = ((g.r) this.b).f.getCallback();
+        if (callback == null) {
+            return true;
+        }
+        callback.onMenuOpened(108, kVar);
+        return true;
+    }
+
+    public void q0() {
         ArrayList arrayList = (ArrayList) this.b;
         int size = arrayList.size();
         int i10 = 0;
@@ -1161,12 +963,104 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
         arrayList.clear();
     }
 
+    @Override // di.oc
+    public void r() {
+        a7 a7Var = (a7) this.b;
+        a7Var.s(null, null, true);
+        kc kcVar = ((yb) a7Var).C0;
+        yb ybVar = kcVar.X0;
+        if (ybVar != null) {
+            ybVar.s(null, null, true);
+        }
+        mb mbVar = kcVar.v1;
+        if (mbVar != null) {
+            mbVar.p0();
+        }
+        ac acVar = kcVar.c1;
+        if (acVar != null) {
+            acVar.setHasRoundVideo(false);
+        }
+        k8 k8Var = kcVar.K1;
+        if (k8Var != null) {
+            File file = k8Var.o0;
+            if (file != null) {
+                try {
+                    file.delete();
+                } catch (Exception unused) {
+                }
+                kcVar.K1.o0 = null;
+            }
+            if (kcVar.K1.p0 != null) {
+                try {
+                    new File(kcVar.K1.p0).delete();
+                } catch (Exception unused2) {
+                }
+                kcVar.K1.p0 = null;
+            }
+        }
+    }
+
     @Override // org.telegram.ui.Components.ti
-    public /* synthetic */ boolean x() {
+    public /* synthetic */ boolean r0() {
         return false;
     }
 
-    public int x0(int i10, int[] iArr) {
+    @Override // di.oc
+    public void s(float f7) {
+        a7 a7Var = (a7) this.b;
+        k8 k8Var = a7Var.d;
+        if (k8Var == null) {
+            return;
+        }
+        k8Var.s0 = f7;
+        k8Var.j = true;
+        a7Var.y(true);
+    }
+
+    @Override // f6.a
+    public void t(Bitmap bitmap) {
+        g6.b bVar = f6.h.v;
+        Bitmap bitmap2 = null;
+        if (bitmap != null) {
+            int width = bitmap.getWidth();
+            float f7 = width;
+            int height = bitmap.getHeight();
+            int B = (int) a1.g.B(f7, 9.0f, 16.0f, 0.5f);
+            float f10 = (B - height) / 2.0f;
+            RectF rectF = new RectF(0.0f, f10, f7, height + f10);
+            Bitmap.Config config = bitmap.getConfig();
+            if (config == null) {
+                config = Bitmap.Config.ARGB_8888;
+            }
+            Bitmap createBitmap = Bitmap.createBitmap(width, B, config);
+            new Canvas(createBitmap).drawBitmap(bitmap, (Rect) null, rectF, (Paint) null);
+            bitmap2 = createBitmap;
+        }
+        ((f6.h) this.b).e(bitmap2, 0);
+    }
+
+    @Override // ji.j0
+    public void t0(int i10, int i11) {
+        z zVar = (z) this.b;
+        r3 r3Var = zVar.O;
+        if (r3Var != null) {
+            ji.a aVar = zVar.a;
+            h2 h2Var = r3Var.a.H3;
+            if (h2Var != null) {
+                h2Var.f(i10, i11);
+            }
+        }
+    }
+
+    @Override // ji.v3
+    public void u() {
+        d2 d2Var = (d2) this.b;
+        d2Var.I0 = d2Var.K0;
+        d2.Z(d2Var, false, false);
+        d2Var.x0(2, true);
+    }
+
+    public int u0(int i10, int[] iArr) {
         int[] iArr2;
         int[] iArr3;
         int i11;
@@ -1313,20 +1207,23 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
         return iArr3.length;
     }
 
-    @Override // di.oc
-    public void y(boolean z10) {
-        a7 a7Var = (a7) this.b;
-        if (a7Var.j()) {
-            a7Var.E.getClass();
-        }
-        a7Var.x(-4, z10);
+    @Override // org.telegram.ui.Components.ti
+    public void v(hh hhVar) {
+        int i10;
+        i10 = ((m2) ((ig.m) this.b)).currentAccount;
+        NotificationCenter.getInstance(i10).doOnIdle(hhVar);
     }
 
-    public synchronized void y0() {
+    public synchronized void v0() {
         ((SharedPreferences) this.b).edit().clear().commit();
     }
 
-    public jc.a z0(float f7, float f10, int i10, int i11) {
+    @Override // org.telegram.ui.Components.ti
+    public /* synthetic */ boolean w() {
+        return false;
+    }
+
+    public jc.a w0(float f7, float f10, int i10, int i11) {
         jc.a b10;
         jc.a b11;
         int i12 = (int) (f10 * f7);
@@ -1393,6 +1290,109 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
         return (jc.a) arrayList.get(0);
     }
 
+    @Override // z3.n
+    public /* synthetic */ z3.e x(int i10, int i11, byte[] bArr) {
+        return t8.b.a(this, bArr, i11);
+    }
+
+    public Set x0() {
+        Set unmodifiableSet;
+        synchronized (((HashSet) this.b)) {
+            unmodifiableSet = DesugarCollections.unmodifiableSet((HashSet) this.b);
+        }
+        return unmodifiableSet;
+    }
+
+    @Override // di.oc
+    public void y(boolean z10) {
+        a7 a7Var = (a7) this.b;
+        if (a7Var.j()) {
+            a7Var.E.getClass();
+        }
+        a7Var.x(-4, z10);
+    }
+
+    public boolean y0() {
+        x0 x0Var = ((com.google.android.gms.common.api.internal.j0) this.b).d;
+        return x0Var != null && x0Var.b();
+    }
+
+    public float z0(int i10, int i11, int i12, int i13) {
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        int i19;
+        c cVar;
+        int i20;
+        int i21 = 1;
+        boolean z10 = Math.abs(i13 - i11) > Math.abs(i12 - i10);
+        if (z10) {
+            i15 = i10;
+            i14 = i11;
+            i17 = i12;
+            i16 = i13;
+        } else {
+            i14 = i10;
+            i15 = i11;
+            i16 = i12;
+            i17 = i13;
+        }
+        int abs = Math.abs(i16 - i14);
+        int abs2 = Math.abs(i17 - i15);
+        int i22 = 2;
+        int i23 = (-abs) / 2;
+        int i24 = i14 < i16 ? 1 : -1;
+        int i25 = i15 < i17 ? 1 : -1;
+        int i26 = i16 + i24;
+        int i27 = i14;
+        int i28 = i15;
+        int i29 = 0;
+        while (true) {
+            if (i27 == i26) {
+                i18 = i22;
+                break;
+            }
+            int i30 = z10 ? i28 : i27;
+            int i31 = z10 ? i27 : i28;
+            boolean z11 = z10;
+            if (i29 == i21) {
+                i19 = i21;
+                i20 = abs;
+                cVar = this;
+            } else {
+                i19 = 0;
+                cVar = this;
+                i20 = abs;
+            }
+            if (i19 == ((ec.b) cVar.b).b(i30, i31)) {
+                if (i29 == 2) {
+                    return f7.b(i27, i28, i14, i15);
+                }
+                i29++;
+            }
+            i23 += abs2;
+            if (i23 > 0) {
+                if (i28 == i17) {
+                    i18 = 2;
+                    break;
+                }
+                i28 += i25;
+                i23 -= i20;
+            }
+            i27 += i24;
+            abs = i20;
+            z10 = z11;
+            i21 = 1;
+            i22 = 2;
+        }
+        if (i29 == i18) {
+            return f7.b(i26, i17, i14, i15);
+        }
+        return Float.NaN;
+    }
+
     public /* synthetic */ c(Object obj, int i10) {
         this.a = i10;
         this.b = obj;
@@ -1438,7 +1438,7 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
                     return;
                 }
                 Log.i("FirebaseMessaging", "App restored, clearing state");
-                y0();
+                v0();
             }
         } catch (IOException e) {
             if (Log.isLoggable("FirebaseMessaging", 3)) {
@@ -1448,15 +1448,15 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
     }
 
     @Override // ji.v3
-    public void D() {
+    public void C() {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public /* synthetic */ void H() {
+    public /* synthetic */ void F() {
     }
 
     @Override // mg.o
-    public void k0() {
+    public void h0() {
     }
 
     @Override // z3.n
@@ -1472,15 +1472,15 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
     }
 
     @Override // mg.o
-    public void M(boolean z10) {
+    public void I(boolean z10) {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public /* synthetic */ void U(Object obj) {
+    public /* synthetic */ void J(Object obj) {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public /* synthetic */ void W(TLRPC.User user) {
+    public /* synthetic */ void U(TLRPC.User user) {
     }
 
     @Override // bi.ob
@@ -1488,18 +1488,18 @@ public final class c implements s, p71, a0, androidx.activity.result.b, p, ob, O
     }
 
     @Override // mg.o
-    public void i0(boolean z10) {
+    public void d0(boolean z10) {
     }
 
     @Override // ji.v3
-    public void c0(h1 h1Var, boolean z10) {
+    public void V(h1 h1Var, boolean z10) {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public /* synthetic */ void r0(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j10, boolean z11, long j11) {
+    public /* synthetic */ void s0(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j10, boolean z11, long j11) {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public void g0(int i10, boolean z10, boolean z11, int i11, int i12, long j10, boolean z12, boolean z13, long j11) {
+    public void b0(int i10, boolean z10, boolean z11, int i11, int i12, long j10, boolean z12, boolean z13, long j11) {
     }
 }

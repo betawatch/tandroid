@@ -19,7 +19,7 @@ import java.util.StringTokenizer;
 import java.util.logging.Level;
 import javax.net.ssl.SSLException;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class e {
     public final ya.c a;
@@ -211,7 +211,7 @@ public final class e {
                                 throw new SocketException("NanoHttpd Shutdown");
                             }
                             l.d(e);
-                            cVar.w0();
+                            cVar.q0();
                         } catch (SSLException e7) {
                             throw e7;
                         } catch (IOException unused) {
@@ -223,18 +223,18 @@ public final class e {
                         l.c(e10.a(), "text/plain", e10.getMessage()).d(outputStream);
                         l.d(outputStream);
                         l.d(null);
-                        cVar.w0();
+                        cVar.q0();
                     }
                 } catch (SSLException e11) {
                     l.c(hVar, "text/plain", "SSL PROTOCOL FAILURE: " + e11.getMessage()).d(outputStream);
                     l.d(outputStream);
                     l.d(null);
-                    cVar.w0();
+                    cVar.q0();
                 } catch (IOException e12) {
                     l.c(hVar, "text/plain", "SERVER INTERNAL ERROR: IOException: " + e12.getMessage()).d(outputStream);
                     l.d(outputStream);
                     l.d(null);
-                    cVar.w0();
+                    cVar.q0();
                 }
             } catch (SocketException e13) {
                 throw e13;
@@ -243,7 +243,7 @@ public final class e {
             }
         } catch (Throwable th2) {
             l.d(null);
-            cVar.w0();
+            cVar.q0();
             throw th2;
         }
     }

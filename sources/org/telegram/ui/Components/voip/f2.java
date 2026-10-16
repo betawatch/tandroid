@@ -10,12 +10,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.yh;
 import org.telegram.ui.Components.ix0;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
 public final class f2 extends LinearLayout {
     public HashMap a;
     public ArrayList b;
@@ -51,7 +50,7 @@ public final class f2 extends LinearLayout {
             this.b.add(e2Var);
         } else {
             this.f = true;
-            addView(e2Var, a6.t(-2, -2, 1, 4, 0, 0, 4));
+            addView(e2Var, z5.t(-2, -2, 1, 4, 0, 0, 4));
         }
     }
 
@@ -77,7 +76,7 @@ public final class f2 extends LinearLayout {
 
     public int getChildsHight() {
         int childCount = getChildCount();
-        return yh.y(32.0f, childCount, childCount > 0 ? AndroidUtilities.dp(16.0f) : 0);
+        return org.telegram.messenger.g0.D(32.0f, childCount, childCount > 0 ? AndroidUtilities.dp(16.0f) : 0);
     }
 
     public void setOnViewsUpdated(Runnable runnable) {

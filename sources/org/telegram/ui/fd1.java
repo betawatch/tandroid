@@ -7,7 +7,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class fd1 implements org.telegram.ui.Components.yq {
     public final /* synthetic */ ce1 a;
@@ -17,7 +17,7 @@ public final class fd1 implements org.telegram.ui.Components.yq {
     }
 
     @Override // org.telegram.ui.Components.yq
-    public final int L0(int i10) {
+    public final int J0(int i10) {
         org.telegram.ui.ActionBar.e6 e6Var;
         ce1 ce1Var = this.a;
         if (ce1Var.n != 3) {
@@ -53,7 +53,7 @@ public final class fd1 implements org.telegram.ui.Components.yq {
         sb2.append("/addtheme/");
         sb2.append(e6Var.r.slug);
         String sb3 = sb2.toString();
-        ce1Var.showDialog(new org.telegram.ui.Components.jr0(ce1Var.getParentActivity(), null, sb3, false, sb3, false, null));
+        ce1Var.showDialog(new org.telegram.ui.Components.ir0(ce1Var.getParentActivity(), null, sb3, false, sb3, false, null));
     }
 
     @Override // org.telegram.ui.Components.yq
@@ -193,7 +193,7 @@ public final class fd1 implements org.telegram.ui.Components.yq {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ce1Var.getParentActivity());
         alertDialog$Builder.a.R = LocaleController.getString(R.string.DeleteThemeTitle);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.DeleteThemeAlert);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new nq0(this, 20));
+        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new lq0(this, 20));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
         org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
         ce1Var.showDialog(a2Var);

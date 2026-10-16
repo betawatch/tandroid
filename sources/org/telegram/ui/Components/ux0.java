@@ -22,7 +22,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class ux0 extends mm0 {
     public static final sx0 v3 = new sx0();
@@ -161,7 +161,7 @@ public abstract class ux0 extends mm0 {
     public final void D1() {
         int dp = (AndroidUtilities.dp(34.0f) * this.k3) + ((-getScrollToStartWidth()) - Math.max(0, this.e3));
         scrollBy(dp, 0);
-        post(new o8((di.j2) this, dp, 12));
+        post(new o8((di.j2) this, dp, 11));
     }
 
     public final void E1() {
@@ -226,7 +226,7 @@ public abstract class ux0 extends mm0 {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.m3, r52 != 0 ? 1.0f : 0.0f);
         this.n3 = ofFloat;
-        ofFloat.addUpdateListener(new g80(this, 24));
+        ofFloat.addUpdateListener(new f80(this, 24));
         this.n3.addListener(new k90(this, 20));
         this.n3.setInterpolator(es.h);
         this.n3.setDuration((this.W2 == null ? 5 : r6.length) * 120);

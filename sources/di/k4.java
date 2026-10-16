@@ -18,19 +18,19 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UnconfirmedAuthController;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.h00;
-import org.telegram.ui.Components.ig0;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.ul;
-import org.telegram.ui.Components.x71;
+import org.telegram.ui.Components.jg0;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.tl;
+import org.telegram.ui.Components.y71;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.x60;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -58,7 +58,7 @@ public final /* synthetic */ class k4 implements Utilities.Callback {
                 if (view instanceof r4) {
                     n4Var.getClass();
                     int R = RecyclerView.R(view);
-                    l61 G = n4Var.W2.G(R);
+                    m61 G = n4Var.W2.G(R);
                     if (G != null) {
                         r4 r4Var = (r4) view;
                         r4Var.setPosition(s4Var.b(R));
@@ -80,29 +80,29 @@ public final /* synthetic */ class k4 implements Utilities.Callback {
                 k8Var.B0 = i15;
                 a7Var.T.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, i12, iArr, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
                 a7Var.invalidate();
-                x71 x71Var = a7Var.n;
-                if (x71Var != null) {
+                y71 y71Var = a7Var.n;
+                if (y71Var != null) {
                     int i16 = a7Var.U;
                     int i17 = a7Var.V;
-                    h00 h00Var = x71Var.b;
+                    h00 h00Var = y71Var.b;
                     if (h00Var == null) {
-                        x71Var.n = i16;
-                        x71Var.r = i17;
+                        y71Var.n = i16;
+                        y71Var.r = i17;
                     } else {
                         h00Var.i(i16, i17);
                     }
                 }
-                ig0 ig0Var = a7Var.s;
-                if (ig0Var != null) {
+                jg0 jg0Var = a7Var.s;
+                if (jg0Var != null) {
                     int i18 = a7Var.U;
                     int i19 = a7Var.V;
-                    h00 h00Var2 = ig0Var.l0;
+                    h00 h00Var2 = jg0Var.l0;
                     if (h00Var2 != null) {
                         h00Var2.i(i18, i19);
                         break;
                     } else {
-                        ig0Var.J0 = i18;
-                        ig0Var.K0 = i19;
+                        jg0Var.J0 = i18;
+                        jg0Var.K0 = i19;
                         break;
                     }
                 }
@@ -119,7 +119,7 @@ public final /* synthetic */ class k4 implements Utilities.Callback {
                 uaVar.getClass();
                 if (LaunchActivity.C1) {
                     if (arrayList == null || arrayList.size() == 0) {
-                        yh.p(R.string.UnknownError, new org.telegram.ui.Components.zc(org.telegram.ui.Components.nb.a(uaVar.getContext()), null), null);
+                        sk.q(R.string.UnknownError, new org.telegram.ui.Components.zc(org.telegram.ui.Components.nb.a(uaVar.getContext()), null), null);
                     } else {
                         LinearLayout linearLayout = new LinearLayout(uaVar.getContext());
                         linearLayout.setOrientation(1);
@@ -129,14 +129,14 @@ public final /* synthetic */ class k4 implements Utilities.Callback {
                         bk0Var.d();
                         bk0Var.setScaleType(ImageView.ScaleType.CENTER);
                         bk0Var.setBackground(org.telegram.ui.ActionBar.g6.K(AndroidUtilities.dp(80.0f), org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.I6, false)));
-                        linearLayout.addView(bk0Var, w7.a6.t(80, 80, 17, 0, 14, 0, 0));
+                        linearLayout.addView(bk0Var, w7.z5.t(80, 80, 17, 0, 14, 0, 0));
                         TextView textView = new TextView(uaVar.getContext());
                         textView.setTypeface(AndroidUtilities.bold());
                         textView.setTextSize(1, 20.0f);
                         textView.setGravity(17);
                         textView.setText(LocaleController.formatPluralString("UnconfirmedAuthDeniedTitle", arrayList.size(), new Object[0]));
                         textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.j5, false));
-                        linearLayout.addView(textView, w7.a6.k(28.0f, 14.0f, 28.0f, 0.0f, -1, -2));
+                        linearLayout.addView(textView, w7.z5.k(28.0f, 14.0f, 28.0f, 0.0f, -1, -2));
                         TextView textView2 = new TextView(uaVar.getContext());
                         textView2.setTextSize(1, 14.0f);
                         textView2.setGravity(17);
@@ -153,7 +153,7 @@ public final /* synthetic */ class k4 implements Utilities.Callback {
                             textView2.setText(LocaleController.formatString(R.string.UnconfirmedAuthDeniedMessageMultiple, str));
                         }
                         textView2.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.j5, false));
-                        linearLayout.addView(textView2, w7.a6.k(40.0f, 9.0f, 40.0f, 0.0f, -1, -2));
+                        linearLayout.addView(textView2, w7.z5.k(40.0f, 9.0f, 40.0f, 0.0f, -1, -2));
                         FrameLayout frameLayout = new FrameLayout(uaVar.getContext());
                         frameLayout.setPadding(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(10.0f));
                         int dp = AndroidUtilities.dp(12.0f);
@@ -165,13 +165,13 @@ public final /* synthetic */ class k4 implements Utilities.Callback {
                         textView3.setGravity(17);
                         textView3.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i22, false));
                         textView3.setText(LocaleController.getString(R.string.UnconfirmedAuthDeniedWarning));
-                        frameLayout.addView(textView3, w7.a6.e(-1, -1, 119));
-                        linearLayout.addView(frameLayout, w7.a6.k(14.0f, 19.0f, 14.0f, 0.0f, -1, -2));
+                        frameLayout.addView(textView3, w7.z5.e(-1, -1, 119));
+                        linearLayout.addView(frameLayout, w7.z5.k(14.0f, 19.0f, 14.0f, 0.0f, -1, -2));
                         d dVar = new d(uaVar.getContext(), null, true);
                         dVar.setRoundRadius(24);
-                        w7.c6.b(dVar, 0.02f, 1.5f);
+                        w7.b6.b(dVar, 0.02f, 1.5f);
                         dVar.g(LocaleController.getString(R.string.GotIt), false, true);
-                        linearLayout.addView(dVar, w7.a6.k(14.0f, 20.0f, 14.0f, 4.0f, -1, 48));
+                        linearLayout.addView(dVar, w7.z5.k(14.0f, 20.0f, 14.0f, 4.0f, -1, 48));
                         org.telegram.ui.ActionBar.e3 e3Var = new org.telegram.ui.ActionBar.e3(1, uaVar.getContext(), (org.telegram.ui.ActionBar.c6) null, false);
                         e3Var.fixNavigationBar();
                         e3Var.customView = linearLayout;
@@ -194,32 +194,32 @@ public final /* synthetic */ class k4 implements Utilities.Callback {
                 MessagesController.getInstance(i12).getUnconfirmedAuthController().cleanup();
                 break;
             case 4:
-                ul ulVar = (ul) obj2;
+                tl tlVar = (tl) obj2;
                 TLRPC.TL_messageMediaGeoLive tL_messageMediaGeoLive = new TLRPC.TL_messageMediaGeoLive();
                 TLRPC.TL_geoPoint tL_geoPoint = new TLRPC.TL_geoPoint();
                 tL_messageMediaGeoLive.geo = tL_geoPoint;
-                tL_geoPoint.lat = AndroidUtilities.fixLocationCoord(ulVar.q0.getLatitude());
-                tL_messageMediaGeoLive.geo._long = AndroidUtilities.fixLocationCoord(ulVar.q0.getLongitude());
+                tL_geoPoint.lat = AndroidUtilities.fixLocationCoord(tlVar.q0.getLatitude());
+                tL_messageMediaGeoLive.geo._long = AndroidUtilities.fixLocationCoord(tlVar.q0.getLongitude());
                 tL_messageMediaGeoLive.period = i12;
-                ulVar.x0.b(tL_messageMediaGeoLive, ulVar.y0, true, 0, ((Long) obj).longValue());
-                ulVar.b.dismiss(true);
+                tlVar.x0.b(tL_messageMediaGeoLive, tlVar.y0, true, 0, ((Long) obj).longValue());
+                tlVar.b.dismiss(true);
                 break;
             case 5:
                 x60.e1((x60) obj2, i12, (ChannelBoostsController.CanApplyBoost) obj);
                 break;
             default:
-                org.telegram.ui.Wallet.r8 r8Var = (org.telegram.ui.Wallet.r8) obj2;
+                org.telegram.ui.Wallet.s8 s8Var = (org.telegram.ui.Wallet.s8) obj2;
                 String str2 = (String) obj;
-                if (!r8Var.n && i12 == r8Var.I) {
-                    r8Var.y = 0;
-                    r8Var.K = false;
+                if (!s8Var.n && i12 == s8Var.I) {
+                    s8Var.y = 0;
+                    s8Var.K = false;
                     String userFriendlyAddress = WalletEngine2.isValidRecipientAddress(str2) ? WalletEngine2.toUserFriendlyAddress(str2) : null;
-                    r8Var.w = userFriendlyAddress;
-                    d dVar2 = r8Var.V;
+                    s8Var.w = userFriendlyAddress;
+                    d dVar2 = s8Var.V;
                     if (dVar2 != null) {
                         dVar2.setEnabled(userFriendlyAddress != null);
                     }
-                    r8Var.a.W2.N(true);
+                    s8Var.a.W2.N(true);
                     break;
                 }
                 break;

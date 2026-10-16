@@ -2,7 +2,7 @@ package androidx.mediarouter.app;
 
 import android.widget.SeekBar;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class m0 implements SeekBar.OnSeekBarChangeListener {
     public final /* synthetic */ n0 a;
@@ -14,12 +14,12 @@ public final class m0 implements SeekBar.OnSeekBarChangeListener {
     @Override // android.widget.SeekBar.OnSeekBarChangeListener
     public final void onProgressChanged(SeekBar seekBar, int i10, boolean z10) {
         if (z10) {
-            p4.w wVar = (p4.w) seekBar.getTag();
-            f0 f0Var = (f0) this.a.L.get(wVar.c);
+            p4.v vVar = (p4.v) seekBar.getTag();
+            f0 f0Var = (f0) this.a.L.get(vVar.c);
             if (f0Var != null) {
                 f0Var.u(i10 == 0);
             }
-            wVar.j(i10);
+            vVar.j(i10);
         }
     }
 
@@ -29,7 +29,7 @@ public final class m0 implements SeekBar.OnSeekBarChangeListener {
         if (n0Var.M != null) {
             n0Var.H.removeMessages(2);
         }
-        n0Var.M = (p4.w) seekBar.getTag();
+        n0Var.M = (p4.v) seekBar.getTag();
     }
 
     @Override // android.widget.SeekBar.OnSeekBarChangeListener

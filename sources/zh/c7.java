@@ -14,11 +14,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class c7 extends FrameLayout {
     public final org.telegram.ui.ActionBar.c6 a;
@@ -42,15 +42,15 @@ public final class c7 extends FrameLayout {
         setWillNotDraw(false);
         TextView textView = new TextView(context);
         this.d = textView;
-        yh.k(15.0f, 1, textView);
+        sk.k(15.0f, 1, textView);
         textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.G6, c6Var));
-        addView(textView, w7.a6.i(-2.0f, -2.0f, 8388627, 48.0f, 0.0f, 0.0f, 0.0f));
+        addView(textView, w7.z5.i(-2.0f, -2.0f, 8388627, 48.0f, 0.0f, 0.0f, 0.0f));
         org.telegram.ui.Components.s6 s6Var = new org.telegram.ui.Components.s6(context, false, false, false);
         this.e = s6Var;
         s6Var.setTextSize(AndroidUtilities.dp(15.0f));
         s6Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.z6, c6Var));
         s6Var.setGravity(LocaleController.isRTL ? 3 : 5);
-        addView(s6Var, w7.a6.i(-2.0f, 21.0f, 8388629, 0.0f, 0.0f, 19.0f, 0.0f));
+        addView(s6Var, w7.z5.i(-2.0f, 21.0f, 8388629, 0.0f, 0.0f, 19.0f, 0.0f));
     }
 
     @Override // android.view.View
@@ -87,11 +87,11 @@ public final class c7 extends FrameLayout {
         }
         if (this.h) {
             org.telegram.ui.ActionBar.c6 c6Var = this.a;
-            Paint G = c6Var != null ? c6Var.G("paintDivider") : null;
-            if (G == null) {
-                G = org.telegram.ui.ActionBar.g6.k0;
+            Paint F = c6Var != null ? c6Var.F("paintDivider") : null;
+            if (F == null) {
+                F = org.telegram.ui.ActionBar.g6.k0;
             }
-            canvas.drawRect(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(22.0f) : 0), getMeasuredHeight(), G);
+            canvas.drawRect(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(22.0f) : 0), getMeasuredHeight(), F);
         }
     }
 

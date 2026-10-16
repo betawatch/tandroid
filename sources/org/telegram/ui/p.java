@@ -12,7 +12,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class p extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -30,7 +30,7 @@ public final class p extends org.telegram.ui.ActionBar.m2 implements Notificatio
     public boolean n;
     public boolean r;
     public boolean s;
-    public org.telegram.messenger.voip.j v;
+    public org.telegram.messenger.voip.p0 v;
     public int w;
     public int x;
     public int y;
@@ -58,7 +58,7 @@ public final class p extends org.telegram.ui.ActionBar.m2 implements Notificatio
         }
         TLRPC.TL_messages_getArchivedStickers tL_messages_getArchivedStickers = new TLRPC.TL_messages_getArchivedStickers();
         ArrayList arrayList = this.h;
-        tL_messages_getArchivedStickers.offset_id = arrayList.isEmpty() ? 0L : ((TLRPC.StickerSetCovered) i2.d.g(1, arrayList)).set.id;
+        tL_messages_getArchivedStickers.offset_id = arrayList.isEmpty() ? 0L : ((TLRPC.StickerSetCovered) i2.d.h(1, arrayList)).set.id;
         tL_messages_getArchivedStickers.limit = 15;
         int i10 = this.H;
         tL_messages_getArchivedStickers.masks = i10 == 1;
@@ -68,7 +68,7 @@ public final class p extends org.telegram.ui.ActionBar.m2 implements Notificatio
 
     public final void X(TLRPC.TL_messages_archivedStickers tL_messages_archivedStickers) {
         if (this.s) {
-            this.v = new org.telegram.messenger.voip.j(15, this, tL_messages_archivedStickers);
+            this.v = new org.telegram.messenger.voip.p0(10, this, tL_messages_archivedStickers);
             return;
         }
         ArrayList<TLRPC.StickerSetCovered> arrayList = tL_messages_archivedStickers.sets;
@@ -161,7 +161,7 @@ public final class p extends org.telegram.ui.ActionBar.m2 implements Notificatio
         } else {
             yzVar.setText(LocaleController.getString(R.string.ArchivedMasksEmpty));
         }
-        frameLayout.addView(this.c, w7.a6.d(-1.0f, -1));
+        frameLayout.addView(this.c, w7.z5.d(-1.0f, -1));
         if (this.I) {
             this.c.b();
         } else {
@@ -177,7 +177,7 @@ public final class p extends org.telegram.ui.ActionBar.m2 implements Notificatio
         mm0Var2.setLayoutManager(b0Var);
         this.e.p1();
         this.actionBar.setAdaptiveBackground(this.e);
-        frameLayout.addView(this.e, w7.a6.d(-1.0f, -1));
+        frameLayout.addView(this.e, w7.z5.d(-1.0f, -1));
         this.e.setAdapter(this.b);
         int i11 = 1;
         this.e.setOnItemClickListener(new i(this, i11));
@@ -312,9 +312,9 @@ public final class p extends org.telegram.ui.ActionBar.m2 implements Notificatio
     @Override // org.telegram.ui.ActionBar.m2
     public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
         this.s = false;
-        org.telegram.messenger.voip.j jVar = this.v;
-        if (jVar != null) {
-            jVar.run();
+        org.telegram.messenger.voip.p0 p0Var = this.v;
+        if (p0Var != null) {
+            p0Var.run();
             this.v = null;
         }
     }

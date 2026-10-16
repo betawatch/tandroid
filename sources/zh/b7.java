@@ -9,25 +9,25 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.h71;
+import org.telegram.ui.Components.i71;
 import org.telegram.ui.Components.ia0;
-import org.telegram.ui.Components.k61;
 import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.z61;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class b7 extends k61 {
+public final class b7 extends l61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        k61.setup(new b7());
+        l61.setup(new b7());
     }
 
-    public static l61 a(int i10, int i11, TL_stars.TL_starsTopupOption tL_starsTopupOption) {
-        l61 J = l61.J(b7.class);
+    public static m61 a(int i10, int i11, TL_stars.TL_starsTopupOption tL_starsTopupOption) {
+        m61 J = m61.J(b7.class);
         J.d = i10;
         J.z = i11;
         long j10 = tL_starsTopupOption.stars;
@@ -38,12 +38,12 @@ public final class b7 extends k61 {
         return J;
     }
 
-    @Override // org.telegram.ui.Components.k61
-    public final void bindView(View view, l61 l61Var, boolean z10, z61 z61Var, h71 h71Var) {
+    @Override // org.telegram.ui.Components.l61
+    public final void bindView(View view, m61 m61Var, boolean z10, a71 a71Var, i71 i71Var) {
         c7 c7Var = (c7) view;
-        int i10 = l61Var.z;
-        CharSequence charSequence = l61Var.l;
-        CharSequence charSequence2 = l61Var.m;
+        int i10 = m61Var.z;
+        CharSequence charSequence = m61Var.l;
+        CharSequence charSequence2 = m61Var.m;
         org.telegram.ui.Components.s6 s6Var = c7Var.e;
         TextView textView = c7Var.d;
         boolean equals = TextUtils.equals(textView.getText(), charSequence);
@@ -71,18 +71,18 @@ public final class b7 extends k61 {
         c7Var.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.k61
-    public final boolean contentsEquals(l61 l61Var, l61 l61Var2) {
-        return l61Var.z == l61Var2.z && l61Var.d == l61Var2.d && TextUtils.equals(l61Var.m, l61Var2.m);
+    @Override // org.telegram.ui.Components.l61
+    public final boolean contentsEquals(m61 m61Var, m61 m61Var2) {
+        return m61Var.z == m61Var2.z && m61Var.d == m61Var2.d && TextUtils.equals(m61Var.m, m61Var2.m);
     }
 
-    @Override // org.telegram.ui.Components.k61
+    @Override // org.telegram.ui.Components.l61
     public final View createView(Context context, mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
         return new c7(context, c6Var);
     }
 
-    @Override // org.telegram.ui.Components.k61
-    public final boolean equals(l61 l61Var, l61 l61Var2) {
-        return l61Var.d == l61Var2.d;
+    @Override // org.telegram.ui.Components.l61
+    public final boolean equals(m61 m61Var, m61 m61Var2) {
+        return m61Var.d == m61Var2.d;
     }
 }

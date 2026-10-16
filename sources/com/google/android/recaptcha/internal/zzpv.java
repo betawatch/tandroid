@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class zzpv<MessageType extends zzpw<MessageType, BuilderType>, BuilderType extends zzpv<MessageType, BuilderType>> implements zztr {
     public static void zzd(Iterable iterable, List list) {
@@ -20,12 +20,12 @@ public abstract class zzpv<MessageType extends zzpw<MessageType, BuilderType>, B
             int size = list.size();
             for (Object obj : zza) {
                 if (obj == null) {
-                    String j10 = d.j(zzteVar.size() - size, "Element at index ", " is null.");
+                    String k10 = d.k(zzteVar.size() - size, "Element at index ", " is null.");
                     int size2 = zzteVar.size();
                     while (true) {
                         size2--;
                         if (size2 < size) {
-                            throw new NullPointerException(j10);
+                            throw new NullPointerException(k10);
                         }
                         zzteVar.remove(size2);
                     }
@@ -75,12 +75,12 @@ public abstract class zzpv<MessageType extends zzpw<MessageType, BuilderType>, B
     }
 
     private static void zze(List list, int i10) {
-        String j10 = d.j(list.size() - i10, "Element at index ", " is null.");
+        String k10 = d.k(list.size() - i10, "Element at index ", " is null.");
         int size = list.size();
         while (true) {
             size--;
             if (size < i10) {
-                throw new NullPointerException(j10);
+                throw new NullPointerException(k10);
             }
             list.remove(size);
         }

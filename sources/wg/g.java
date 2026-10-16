@@ -18,9 +18,9 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.k9;
 import org.telegram.ui.Components.z9;
 import org.telegram.ui.bz0;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class g extends c {
     public final ImageView s;
@@ -40,7 +40,7 @@ public final class g extends c {
         imageView.setColorFilter(new PorterDuffColorFilter(g6.x0(null, g6.m6, false), PorterDuff.Mode.MULTIPLY));
         imageView.setContentDescription(LocaleController.getString(R.string.Delete));
         boolean z10 = LocaleController.isRTL;
-        addView(imageView, a6.a(50.0f, z10 ? 3.0f : 0.0f, 0.0f, z10 ? 0.0f : 3.0f, 0.0f, 48, (z10 ? 3 : 5) | 17));
+        addView(imageView, z5.a(50.0f, z10 ? 3.0f : 0.0f, 0.0f, z10 ? 0.0f : 3.0f, 0.0f, 48, (z10 ? 3 : 5) | 17));
         this.d.setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 24.0f : 0.0f), 0, AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 24.0f), 0);
     }
 

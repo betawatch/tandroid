@@ -8,7 +8,7 @@ import org.telegram.ui.Components.fs;
 import org.telegram.ui.Components.is;
 import org.telegram.ui.Components.vh0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class n4 extends GestureDetector.SimpleOnGestureListener {
     public final /* synthetic */ int a;
@@ -43,7 +43,7 @@ public final class n4 extends GestureDetector.SimpleOnGestureListener {
 
     @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
     public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
-        org.telegram.ui.web.y0 y0Var;
+        org.telegram.ui.web.z0 z0Var;
         switch (this.a) {
             case 0:
                 p4 p4Var = (p4) this.c;
@@ -58,7 +58,7 @@ public final class n4 extends GestureDetector.SimpleOnGestureListener {
                 }
                 float distance = AndroidUtilities.distance(motionEvent.getX(), motionEvent.getY(), motionEvent2.getX(), motionEvent2.getY());
                 float eventTime = motionEvent2.getEventTime() - motionEvent.getEventTime();
-                if (f10 >= AndroidUtilities.dp(650.0f) && ((distance > AndroidUtilities.dp(200.0f) || eventTime > 250.0f) && ((y0Var = p4Var.x) == null || y0Var.getScrollY() == 0))) {
+                if (f10 >= AndroidUtilities.dp(650.0f) && ((distance > AndroidUtilities.dp(200.0f) || eventTime > 250.0f) && ((z0Var = p4Var.x) == null || z0Var.getScrollY() == 0))) {
                     p4Var.w = true;
                     float f11 = p4Var.r;
                     if (f11 < p4Var.H && !p4Var.J) {
@@ -116,7 +116,7 @@ public final class n4 extends GestureDetector.SimpleOnGestureListener {
     */
     public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
         float f11;
-        org.telegram.ui.web.y0 y0Var;
+        org.telegram.ui.web.z0 z0Var;
         MotionEvent motionEvent3;
         switch (this.a) {
             case 0:
@@ -141,7 +141,7 @@ public final class n4 extends GestureDetector.SimpleOnGestureListener {
                         if (!((Boolean) p4Var.I.provide(null)).booleanValue() || p4Var.r != (-p4Var.f) + p4Var.e) {
                             float abs2 = Math.abs(f11);
                             float f15 = this.b;
-                            if (abs2 >= f15 && Math.abs(f11) * 1.5f >= Math.abs(f7) && (p4Var.r != (-p4Var.f) + p4Var.e || (y0Var = p4Var.x) == null || (f11 < 0.0f && y0Var.getScrollY() == 0))) {
+                            if (abs2 >= f15 && Math.abs(f11) * 1.5f >= Math.abs(f7) && (p4Var.r != (-p4Var.f) + p4Var.e || (z0Var = p4Var.x) == null || (f11 < 0.0f && z0Var.getScrollY() == 0))) {
                                 p4Var.c = true;
                                 MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
                                 for (int i10 = 0; i10 < p4Var.getChildCount(); i10++) {
@@ -150,8 +150,8 @@ public final class n4 extends GestureDetector.SimpleOnGestureListener {
                                 obtain.recycle();
                                 return true;
                             }
-                            org.telegram.ui.web.y0 y0Var2 = p4Var.x;
-                            if (y0Var2 != null) {
+                            org.telegram.ui.web.z0 z0Var2 = p4Var.x;
+                            if (z0Var2 != null) {
                                 break;
                             }
                             if (Math.abs(f7) >= f15) {
@@ -170,7 +170,7 @@ public final class n4 extends GestureDetector.SimpleOnGestureListener {
                         } else {
                             if (p4Var.x != null) {
                                 float scrollY = r6.getScrollY() + f11;
-                                p4Var.x.setScrollY((int) w7.s.a(scrollY, 0.0f, Math.max(r2.getContentHeight(), p4Var.x.getHeight()) - p4Var.e));
+                                p4Var.x.setScrollY((int) w7.r.a(scrollY, 0.0f, Math.max(r2.getContentHeight(), p4Var.x.getHeight()) - p4Var.e));
                                 if (scrollY < 0.0f) {
                                     p4Var.r -= scrollY;
                                 }
@@ -183,10 +183,10 @@ public final class n4 extends GestureDetector.SimpleOnGestureListener {
                         p4Var.r = f17;
                         if (p4Var.x != null && f17 < (-p4Var.f) + p4Var.e) {
                             float scrollY2 = r2.getScrollY() - ((p4Var.r + p4Var.f) - p4Var.e);
-                            p4Var.x.setScrollY((int) w7.s.a(scrollY2, 0.0f, Math.max(r5.getContentHeight(), p4Var.x.getHeight()) - p4Var.e));
+                            p4Var.x.setScrollY((int) w7.r.a(scrollY2, 0.0f, Math.max(r5.getContentHeight(), p4Var.x.getHeight()) - p4Var.e));
                         }
                     }
-                    float a2 = w7.s.a(p4Var.r, (-p4Var.f) + p4Var.e, (p4Var.getHeight() - p4Var.f) + p4Var.e);
+                    float a2 = w7.r.a(p4Var.r, (-p4Var.f) + p4Var.e, (p4Var.getHeight() - p4Var.f) + p4Var.e);
                     p4Var.r = a2;
                     if (p4Var.J && !p4Var.L) {
                         p4Var.r = Math.min(a2, (-p4Var.f) + p4Var.e);

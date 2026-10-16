@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class sa extends FrameLayout {
     public float E;
@@ -56,7 +56,7 @@ public abstract class sa extends FrameLayout {
         h5Var.setTextSize(16);
         h5Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.G6, c6Var));
         h5Var.setEllipsizeByGradient(true);
-        addView(h5Var, w7.a6.a(-2.0f, 70.0f, 9.0f, 0.0f, 50.0f, -1, 48));
+        addView(h5Var, w7.z5.a(-2.0f, 70.0f, 9.0f, 0.0f, 50.0f, -1, 48));
         ImageView imageView = new ImageView(getContext());
         this.d = imageView;
         org.telegram.ui.Components.gq gqVar = new org.telegram.ui.Components.gq(AndroidUtilities.dp(7.0f), AndroidUtilities.dp(1.35f), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.n6, c6Var));
@@ -66,13 +66,13 @@ public abstract class sa extends FrameLayout {
         imageView.setAlpha(0.0f);
         imageView.setVisibility(0);
         gqVar.setBounds(0, 0, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f));
-        addView(imageView, w7.a6.a(14.0f, 70.0f, 35.0f, 0.0f, 0.0f, 14, 48));
+        addView(imageView, w7.z5.a(14.0f, 70.0f, 35.0f, 0.0f, 0.0f, 14, 48));
         org.telegram.ui.Components.s6 s6Var = new org.telegram.ui.Components.s6(getContext(), false, true, true);
         this.f = s6Var;
         s6Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.z6, c6Var));
         s6Var.b(0.4f, 120L, org.telegram.ui.Components.es.g);
         s6Var.setTextSize(AndroidUtilities.dp(13.0f));
-        addView(s6Var, w7.a6.a(-2.0f, 70.0f, 23.0f, 0.0f, 0.0f, -1, 48));
+        addView(s6Var, w7.z5.a(-2.0f, 70.0f, 23.0f, 0.0f, 0.0f, -1, 48));
         Drawable[] drawableArr = {context.getDrawable(R.drawable.msg_link_1).mutate(), context.getDrawable(R.drawable.msg_link_2).mutate()};
         this.h = drawableArr;
         Drawable drawable = drawableArr[0];
@@ -160,7 +160,7 @@ public abstract class sa extends FrameLayout {
             canvas.drawCircle(AndroidUtilities.dp(35.0f), AndroidUtilities.dp(29.0f), AndroidUtilities.dp(16.0f), va.I);
             drawableArr[1].setAlpha((int) ((1.0f - d) * 255.0f));
             f7 = 255.0f;
-            drawableArr[1].setBounds(org.telegram.ui.Cells.d0.u(2, AndroidUtilities.dp(35.0f), drawableArr[1]), org.telegram.ui.Cells.d0.d(2, AndroidUtilities.dp(29.0f), drawableArr[1]), org.telegram.ui.Cells.d0.y(2, AndroidUtilities.dp(35.0f), drawableArr[1]), org.telegram.ui.Cells.d0.x(2, AndroidUtilities.dp(29.0f), drawableArr[1]));
+            drawableArr[1].setBounds(org.telegram.ui.Cells.c1.r(2, AndroidUtilities.dp(35.0f), drawableArr[1]), org.telegram.ui.Cells.c1.c(2, AndroidUtilities.dp(29.0f), drawableArr[1]), org.telegram.ui.Cells.c1.v(2, AndroidUtilities.dp(35.0f), drawableArr[1]), org.telegram.ui.Cells.c1.u(2, AndroidUtilities.dp(29.0f), drawableArr[1]));
             drawableArr[1].draw(canvas);
         } else {
             f7 = 255.0f;
@@ -172,7 +172,7 @@ public abstract class sa extends FrameLayout {
             paint.setAlpha(i10);
             canvas.drawCircle(AndroidUtilities.dp(35.0f), AndroidUtilities.dp(29.0f), AndroidUtilities.dp(16.0f) * d, paint);
             drawableArr[0].setAlpha(i10);
-            drawableArr[0].setBounds(org.telegram.ui.Cells.d0.u(2, AndroidUtilities.dp(35.0f), drawableArr[0]), org.telegram.ui.Cells.d0.d(2, AndroidUtilities.dp(29.0f), drawableArr[0]), org.telegram.ui.Cells.d0.y(2, AndroidUtilities.dp(35.0f), drawableArr[0]), org.telegram.ui.Cells.d0.x(2, AndroidUtilities.dp(29.0f), drawableArr[0]));
+            drawableArr[0].setBounds(org.telegram.ui.Cells.c1.r(2, AndroidUtilities.dp(35.0f), drawableArr[0]), org.telegram.ui.Cells.c1.c(2, AndroidUtilities.dp(29.0f), drawableArr[0]), org.telegram.ui.Cells.c1.v(2, AndroidUtilities.dp(35.0f), drawableArr[0]), org.telegram.ui.Cells.c1.u(2, AndroidUtilities.dp(29.0f), drawableArr[0]));
             drawableArr[0].draw(canvas);
         }
         float d10 = this.y.d(this.w ? 1.0f : f10, false);

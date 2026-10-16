@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.TranslateController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class k41 extends org.telegram.ui.Components.lm0 {
     public final Context c;
@@ -105,7 +105,7 @@ public final class k41 extends org.telegram.ui.Components.lm0 {
         if (i10 == 0) {
             view = new org.telegram.ui.Cells.x8(context);
         } else if (i10 != 2) {
-            view = new org.telegram.ui.Cells.b7(context, (org.telegram.ui.Cells.d0) null);
+            view = new org.telegram.ui.Cells.a7(context, (org.telegram.ui.Cells.c1) null);
         } else {
             org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(context);
             m4Var.setText(LocaleController.getString(R.string.ChooseLanguages));

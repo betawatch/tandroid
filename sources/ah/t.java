@@ -29,19 +29,21 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.b4;
 import org.telegram.ui.Components.cb0;
 import org.telegram.ui.Components.i60;
-import org.telegram.ui.Components.kz0;
+import org.telegram.ui.Components.lz0;
 import org.telegram.ui.Components.ms0;
 import org.telegram.ui.Components.o10;
 import org.telegram.ui.Components.o40;
 import org.telegram.ui.Components.ow;
 import org.telegram.ui.Components.p60;
+import org.telegram.ui.Components.xn0;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.yp;
 import org.telegram.ui.Components.zp;
+import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.vm;
 import org.telegram.ui.zo;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -152,60 +154,51 @@ public final /* synthetic */ class t implements Runnable {
                 }
                 break;
             case 10:
-                li.l lVar = (li.l) obj;
-                lVar.P = z10;
-                lVar.Q = lVar.F();
-                lVar.R = 0;
-                lVar.S = 0;
-                lVar.j.b("torch requested: enabled=" + z10 + ", available=" + lVar.F() + ", cameraId=" + lVar.o + ", facing=" + lVar.G);
-                lVar.g();
-                break;
-            case 11:
                 ((FileLoader) obj).lambda$onNetworkChanged$4(z10);
                 break;
-            case 12:
+            case 11:
                 ((FileUploadOperation) obj).lambda$onNetworkChanged$1(z10);
                 break;
-            case 13:
+            case 12:
                 ((LocationController) obj).lambda$startFusedLocationRequest$5(z10);
                 break;
-            case 14:
+            case 13:
                 ((RichMessageLayout.RichBlock) obj).lambda$toggleCheckbox$1(z10);
                 break;
-            case 15:
+            case 14:
                 ((UserConfig) obj).lambda$saveConfig$0(z10);
                 break;
-            case 16:
+            case 15:
                 ((CameraController) obj).lambda$recordVideo$11(z10);
                 break;
-            case 17:
+            case 16:
                 ((VideoCapturerDevice) obj).lambda$new$0(z10);
                 break;
-            case 18:
+            case 17:
                 ((VoIPService) obj).lambda$startGroupCall$27(z10);
                 break;
-            case 19:
+            case 18:
                 ((AudioManager) obj).setSpeakerphoneOn(z10);
                 break;
-            case 20:
+            case 19:
                 ((ConnectionsManager) obj).lambda$setIsUpdating$22(z10);
                 break;
-            case 21:
-                pf.d.s((Context) obj, LocaleController.getString(z10 ? R.string.BotMonetizationInfoTONLink : R.string.MonetizationInfoTONLink));
+            case 20:
+                pf.d.r((Context) obj, LocaleController.getString(z10 ? R.string.BotMonetizationInfoTONLink : R.string.MonetizationInfoTONLink));
                 break;
-            case 22:
-                kz0 kz0Var = ((vm) obj).c.d1;
-                if (kz0Var != null && z10) {
-                    kz0Var.setVisibility(8);
+            case 21:
+                lz0 lz0Var = ((vm) obj).c.d1;
+                if (lz0Var != null && z10) {
+                    lz0Var.setVisibility(8);
                     break;
                 }
                 break;
-            case 23:
+            case 22:
                 zo zoVar = (zo) obj;
                 zoVar.x0.autotranslation = z10;
                 zoVar.getMessagesController().putChat(zoVar.x0, false);
                 break;
-            case 24:
+            case 23:
                 zp zpVar = (zp) obj;
                 xp xpVar = zpVar.h;
                 if (xpVar != null && xpVar.d != null && !zpVar.isDismissed()) {
@@ -230,18 +223,18 @@ public final /* synthetic */ class t implements Runnable {
                     }
                 }
                 break;
-            case 25:
+            case 24:
                 ow owVar = (ow) obj;
                 if (!z10) {
                     owVar.E.setVisibility(8);
                     break;
                 }
                 break;
-            case 26:
+            case 25:
                 o10 o10Var = (o10) obj;
                 o10Var.S(o10Var.y0, z10);
                 break;
-            case 27:
+            case 26:
                 o40 o40Var = (o40) obj;
                 if (!z10) {
                     o40Var.r.setVisibility(8);
@@ -250,7 +243,7 @@ public final /* synthetic */ class t implements Runnable {
                     o40Var.getClass();
                     break;
                 }
-            case 28:
+            case 27:
                 p60 p60Var = ((i60) obj).H0;
                 if (!p60Var.l0) {
                     try {
@@ -267,7 +260,7 @@ public final /* synthetic */ class t implements Runnable {
                     break;
                 }
                 break;
-            default:
+            case 28:
                 cb0 cb0Var = (cb0) obj;
                 if (!z10) {
                     cb0Var.getClass();
@@ -276,6 +269,9 @@ public final /* synthetic */ class t implements Runnable {
                     cb0Var.G.setVisibility(8);
                     break;
                 }
+            default:
+                ((xn0) obj).G.presentFragment(new PremiumPreviewFragment(0, z10 ? "upload_speed" : "download_speed"));
+                break;
         }
     }
 }

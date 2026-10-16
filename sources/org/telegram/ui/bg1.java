@@ -1,37 +1,28 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class bg1 extends FrameLayout {
-    public TextView a;
-    public float b;
-    public boolean c;
+public final class bg1 extends pg.a {
+    public final TLRPC.TL_forumTopic c;
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (this.c) {
-            float f7 = this.b + 0.013333334f;
-            this.b = f7;
-            if (f7 > 1.0f) {
-                this.c = false;
-                this.b = 1.0f;
-            }
-        } else {
-            float f10 = this.b - 0.013333334f;
-            this.b = f10;
-            if (f10 < 0.0f) {
-                this.c = true;
-                this.b = 0.0f;
+    public bg1(int i10, TLRPC.TL_forumTopic tL_forumTopic) {
+        super(i10, true);
+        this.c = tL_forumTopic;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && bg1.class == obj.getClass()) {
+            bg1 bg1Var = (bg1) obj;
+            int i10 = this.a;
+            if (i10 == bg1Var.a && i10 == 0 && this.c.id == bg1Var.c.id) {
+                return true;
             }
         }
-        this.a.setTranslationX(org.telegram.ui.Components.es.f.getInterpolation(this.b) * AndroidUtilities.dp(8.0f) * (LocaleController.isRTL ? -1 : 1));
-        invalidate();
+        return false;
     }
 }

@@ -7,9 +7,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.Components.gq;
 import org.telegram.ui.Components.jr;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class b extends FrameLayout {
     public final c6 a;
@@ -27,7 +27,7 @@ public final class b extends FrameLayout {
             jr jrVar = new jr(getContext(), this.a);
             this.c = jrVar;
             jrVar.setReverse(this.d);
-            addView(this.c, a6.e(-1, 28, 48));
+            addView(this.c, z5.e(-1, 28, 48));
         }
         this.c.a.c(i10, z10);
     }
@@ -50,7 +50,7 @@ public final class b extends FrameLayout {
             aVar.d = imageView;
             imageView.setBackground(aVar.e);
             aVar.d.setVisibility(8);
-            aVar.addView(aVar.d, a6.e(46, 46, 17));
+            aVar.addView(aVar.d, z5.e(46, 46, 17));
         }
         ne.b bVar = aVar.a;
         if (!bVar.f && bVar.e == 0.0f) {

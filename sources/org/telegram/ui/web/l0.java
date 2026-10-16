@@ -13,17 +13,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class l0 implements View.OnLongClickListener {
-    public final /* synthetic */ y0 a;
+    public final /* synthetic */ z0 a;
 
-    public l0(y0 y0Var) {
-        this.a = y0Var;
+    public l0(z0 z0Var) {
+        this.a = z0Var;
     }
 
     @Override // android.view.View.OnLongClickListener
@@ -61,8 +61,8 @@ public final class l0 implements View.OnLongClickListener {
                     final int i13 = 0;
                     switch (i11) {
                         case 0:
-                            y0 y0Var = l0Var.a;
-                            e3 i14 = yh.i(1, y0Var.getContext(), null, false);
+                            z0 z0Var = l0Var.a;
+                            e3 i14 = sk.i(1, z0Var.getContext(), null, false);
                             try {
                                 parse = Uri.parse(str5);
                             } catch (Exception e) {
@@ -85,14 +85,14 @@ public final class l0 implements View.OnLongClickListener {
                                             l0 l0Var2 = l0Var;
                                             switch (i16) {
                                                 case 0:
-                                                    y0 y0Var2 = l0Var2.a;
+                                                    z0 z0Var2 = l0Var2.a;
                                                     if (i15 != 0) {
                                                         if (i15 != 1) {
                                                             if (i15 == 2) {
                                                                 AndroidUtilities.addToClipboard(str6);
-                                                                b1 b1Var = y0Var2.Q;
-                                                                if (b1Var != null) {
-                                                                    new zc(b1Var, b1Var.e).k(false).k(true);
+                                                                c1 c1Var = z0Var2.Q;
+                                                                if (c1Var != null) {
+                                                                    new zc(c1Var, c1Var.e).k(false).k(true);
                                                                     break;
                                                                 }
                                                             }
@@ -107,13 +107,13 @@ public final class l0 implements View.OnLongClickListener {
                                                                 request.setDescription(LocaleController.getString(R.string.WebDownloading));
                                                                 request.setNotificationVisibility(1);
                                                                 request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
-                                                                DownloadManager downloadManager = (DownloadManager) y0Var2.getContext().getSystemService("download");
+                                                                DownloadManager downloadManager = (DownloadManager) z0Var2.getContext().getSystemService("download");
                                                                 if (downloadManager != null) {
                                                                     downloadManager.enqueue(request);
                                                                 }
-                                                                b1 b1Var2 = y0Var2.Q;
-                                                                if (b1Var2 != null) {
-                                                                    new zc(b1Var2, b1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                                c1 c1Var2 = z0Var2.Q;
+                                                                if (c1Var2 != null) {
+                                                                    new zc(c1Var2, c1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
                                                                     break;
                                                                 }
                                                             } catch (Exception e10) {
@@ -125,25 +125,25 @@ public final class l0 implements View.OnLongClickListener {
                                                         try {
                                                             Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
                                                             intent.putExtra("create_new_tab", true);
-                                                            intent.putExtra("com.android.browser.application_id", y0Var2.getContext().getPackageName());
-                                                            y0Var2.getContext().startActivity(intent);
+                                                            intent.putExtra("com.android.browser.application_id", z0Var2.getContext().getPackageName());
+                                                            z0Var2.getContext().startActivity(intent);
                                                             break;
                                                         } catch (Exception e11) {
                                                             FileLog.e(e11);
-                                                            y0Var2.loadUrl(str6);
+                                                            z0Var2.loadUrl(str6);
                                                             return;
                                                         }
                                                     }
                                                     break;
                                                 default:
-                                                    y0 y0Var3 = l0Var2.a;
+                                                    z0 z0Var3 = l0Var2.a;
                                                     if (i15 != 0) {
                                                         if (i15 != 1) {
                                                             if (i15 == 2) {
                                                                 AndroidUtilities.addToClipboard(str6);
-                                                                b1 b1Var3 = y0Var3.Q;
-                                                                if (b1Var3 != null) {
-                                                                    new zc(b1Var3, b1Var3.e).k(false).k(true);
+                                                                c1 c1Var3 = z0Var3.Q;
+                                                                if (c1Var3 != null) {
+                                                                    new zc(c1Var3, c1Var3.e).k(false).k(true);
                                                                     break;
                                                                 }
                                                             }
@@ -151,17 +151,17 @@ public final class l0 implements View.OnLongClickListener {
                                                             try {
                                                                 Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
                                                                 intent2.putExtra("create_new_tab", true);
-                                                                intent2.putExtra("com.android.browser.application_id", y0Var3.getContext().getPackageName());
-                                                                y0Var3.getContext().startActivity(intent2);
+                                                                intent2.putExtra("com.android.browser.application_id", z0Var3.getContext().getPackageName());
+                                                                z0Var3.getContext().startActivity(intent2);
                                                                 break;
                                                             } catch (Exception e12) {
                                                                 FileLog.e(e12);
-                                                                y0Var3.loadUrl(str6);
+                                                                z0Var3.loadUrl(str6);
                                                                 return;
                                                             }
                                                         }
                                                     } else {
-                                                        y0Var3.loadUrl(str6);
+                                                        z0Var3.loadUrl(str6);
                                                         break;
                                                     }
                                                     break;
@@ -171,12 +171,12 @@ public final class l0 implements View.OnLongClickListener {
                                     i14.items = charSequenceArr;
                                     i14.onClickListener = onClickListener;
                                     i14.show();
-                                    y0Var.F = i14;
+                                    z0Var.F = i14;
                                     return;
                                 }
                             }
                             if (parse != null && !parse.getScheme().equalsIgnoreCase("data")) {
-                                str = pf.d.v(parse, null, null, pf.d.a(parse.getHost()), null);
+                                str = pf.d.u(parse, null, null, pf.d.a(parse.getHost()), null);
                                 str2 = URLDecoder.decode(str.replaceAll("\\+", "%2b"), "UTF-8");
                                 i14.multipleLinesTitle = true;
                                 i14.title = str2;
@@ -190,14 +190,14 @@ public final class l0 implements View.OnLongClickListener {
                                         l0 l0Var2 = l0Var;
                                         switch (i16) {
                                             case 0:
-                                                y0 y0Var2 = l0Var2.a;
+                                                z0 z0Var2 = l0Var2.a;
                                                 if (i15 != 0) {
                                                     if (i15 != 1) {
                                                         if (i15 == 2) {
                                                             AndroidUtilities.addToClipboard(str6);
-                                                            b1 b1Var = y0Var2.Q;
-                                                            if (b1Var != null) {
-                                                                new zc(b1Var, b1Var.e).k(false).k(true);
+                                                            c1 c1Var = z0Var2.Q;
+                                                            if (c1Var != null) {
+                                                                new zc(c1Var, c1Var.e).k(false).k(true);
                                                                 break;
                                                             }
                                                         }
@@ -212,13 +212,13 @@ public final class l0 implements View.OnLongClickListener {
                                                             request.setDescription(LocaleController.getString(R.string.WebDownloading));
                                                             request.setNotificationVisibility(1);
                                                             request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
-                                                            DownloadManager downloadManager = (DownloadManager) y0Var2.getContext().getSystemService("download");
+                                                            DownloadManager downloadManager = (DownloadManager) z0Var2.getContext().getSystemService("download");
                                                             if (downloadManager != null) {
                                                                 downloadManager.enqueue(request);
                                                             }
-                                                            b1 b1Var2 = y0Var2.Q;
-                                                            if (b1Var2 != null) {
-                                                                new zc(b1Var2, b1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                            c1 c1Var2 = z0Var2.Q;
+                                                            if (c1Var2 != null) {
+                                                                new zc(c1Var2, c1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
                                                                 break;
                                                             }
                                                         } catch (Exception e10) {
@@ -230,25 +230,25 @@ public final class l0 implements View.OnLongClickListener {
                                                     try {
                                                         Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
                                                         intent.putExtra("create_new_tab", true);
-                                                        intent.putExtra("com.android.browser.application_id", y0Var2.getContext().getPackageName());
-                                                        y0Var2.getContext().startActivity(intent);
+                                                        intent.putExtra("com.android.browser.application_id", z0Var2.getContext().getPackageName());
+                                                        z0Var2.getContext().startActivity(intent);
                                                         break;
                                                     } catch (Exception e11) {
                                                         FileLog.e(e11);
-                                                        y0Var2.loadUrl(str6);
+                                                        z0Var2.loadUrl(str6);
                                                         return;
                                                     }
                                                 }
                                                 break;
                                             default:
-                                                y0 y0Var3 = l0Var2.a;
+                                                z0 z0Var3 = l0Var2.a;
                                                 if (i15 != 0) {
                                                     if (i15 != 1) {
                                                         if (i15 == 2) {
                                                             AndroidUtilities.addToClipboard(str6);
-                                                            b1 b1Var3 = y0Var3.Q;
-                                                            if (b1Var3 != null) {
-                                                                new zc(b1Var3, b1Var3.e).k(false).k(true);
+                                                            c1 c1Var3 = z0Var3.Q;
+                                                            if (c1Var3 != null) {
+                                                                new zc(c1Var3, c1Var3.e).k(false).k(true);
                                                                 break;
                                                             }
                                                         }
@@ -256,17 +256,17 @@ public final class l0 implements View.OnLongClickListener {
                                                         try {
                                                             Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
                                                             intent2.putExtra("create_new_tab", true);
-                                                            intent2.putExtra("com.android.browser.application_id", y0Var3.getContext().getPackageName());
-                                                            y0Var3.getContext().startActivity(intent2);
+                                                            intent2.putExtra("com.android.browser.application_id", z0Var3.getContext().getPackageName());
+                                                            z0Var3.getContext().startActivity(intent2);
                                                             break;
                                                         } catch (Exception e12) {
                                                             FileLog.e(e12);
-                                                            y0Var3.loadUrl(str6);
+                                                            z0Var3.loadUrl(str6);
                                                             return;
                                                         }
                                                     }
                                                 } else {
-                                                    y0Var3.loadUrl(str6);
+                                                    z0Var3.loadUrl(str6);
                                                     break;
                                                 }
                                                 break;
@@ -276,7 +276,7 @@ public final class l0 implements View.OnLongClickListener {
                                 i14.items = charSequenceArr2;
                                 i14.onClickListener = onClickListener2;
                                 i14.show();
-                                y0Var.F = i14;
+                                z0Var.F = i14;
                             }
                             str = str5;
                             str2 = URLDecoder.decode(str.replaceAll("\\+", "%2b"), "UTF-8");
@@ -292,14 +292,14 @@ public final class l0 implements View.OnLongClickListener {
                                     l0 l0Var2 = l0Var;
                                     switch (i16) {
                                         case 0:
-                                            y0 y0Var2 = l0Var2.a;
+                                            z0 z0Var2 = l0Var2.a;
                                             if (i15 != 0) {
                                                 if (i15 != 1) {
                                                     if (i15 == 2) {
                                                         AndroidUtilities.addToClipboard(str6);
-                                                        b1 b1Var = y0Var2.Q;
-                                                        if (b1Var != null) {
-                                                            new zc(b1Var, b1Var.e).k(false).k(true);
+                                                        c1 c1Var = z0Var2.Q;
+                                                        if (c1Var != null) {
+                                                            new zc(c1Var, c1Var.e).k(false).k(true);
                                                             break;
                                                         }
                                                     }
@@ -314,13 +314,13 @@ public final class l0 implements View.OnLongClickListener {
                                                         request.setDescription(LocaleController.getString(R.string.WebDownloading));
                                                         request.setNotificationVisibility(1);
                                                         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
-                                                        DownloadManager downloadManager = (DownloadManager) y0Var2.getContext().getSystemService("download");
+                                                        DownloadManager downloadManager = (DownloadManager) z0Var2.getContext().getSystemService("download");
                                                         if (downloadManager != null) {
                                                             downloadManager.enqueue(request);
                                                         }
-                                                        b1 b1Var2 = y0Var2.Q;
-                                                        if (b1Var2 != null) {
-                                                            new zc(b1Var2, b1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                        c1 c1Var2 = z0Var2.Q;
+                                                        if (c1Var2 != null) {
+                                                            new zc(c1Var2, c1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
                                                             break;
                                                         }
                                                     } catch (Exception e10) {
@@ -332,25 +332,25 @@ public final class l0 implements View.OnLongClickListener {
                                                 try {
                                                     Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
                                                     intent.putExtra("create_new_tab", true);
-                                                    intent.putExtra("com.android.browser.application_id", y0Var2.getContext().getPackageName());
-                                                    y0Var2.getContext().startActivity(intent);
+                                                    intent.putExtra("com.android.browser.application_id", z0Var2.getContext().getPackageName());
+                                                    z0Var2.getContext().startActivity(intent);
                                                     break;
                                                 } catch (Exception e11) {
                                                     FileLog.e(e11);
-                                                    y0Var2.loadUrl(str6);
+                                                    z0Var2.loadUrl(str6);
                                                     return;
                                                 }
                                             }
                                             break;
                                         default:
-                                            y0 y0Var3 = l0Var2.a;
+                                            z0 z0Var3 = l0Var2.a;
                                             if (i15 != 0) {
                                                 if (i15 != 1) {
                                                     if (i15 == 2) {
                                                         AndroidUtilities.addToClipboard(str6);
-                                                        b1 b1Var3 = y0Var3.Q;
-                                                        if (b1Var3 != null) {
-                                                            new zc(b1Var3, b1Var3.e).k(false).k(true);
+                                                        c1 c1Var3 = z0Var3.Q;
+                                                        if (c1Var3 != null) {
+                                                            new zc(c1Var3, c1Var3.e).k(false).k(true);
                                                             break;
                                                         }
                                                     }
@@ -358,17 +358,17 @@ public final class l0 implements View.OnLongClickListener {
                                                     try {
                                                         Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
                                                         intent2.putExtra("create_new_tab", true);
-                                                        intent2.putExtra("com.android.browser.application_id", y0Var3.getContext().getPackageName());
-                                                        y0Var3.getContext().startActivity(intent2);
+                                                        intent2.putExtra("com.android.browser.application_id", z0Var3.getContext().getPackageName());
+                                                        z0Var3.getContext().startActivity(intent2);
                                                         break;
                                                     } catch (Exception e12) {
                                                         FileLog.e(e12);
-                                                        y0Var3.loadUrl(str6);
+                                                        z0Var3.loadUrl(str6);
                                                         return;
                                                     }
                                                 }
                                             } else {
-                                                y0Var3.loadUrl(str6);
+                                                z0Var3.loadUrl(str6);
                                                 break;
                                             }
                                             break;
@@ -378,14 +378,14 @@ public final class l0 implements View.OnLongClickListener {
                             i14.items = charSequenceArr22;
                             i14.onClickListener = onClickListener22;
                             i14.show();
-                            y0Var.F = i14;
+                            z0Var.F = i14;
                             break;
                         default:
-                            y0 y0Var2 = l0Var.a;
-                            e3 i15 = yh.i(1, y0Var2.getContext(), null, false);
+                            z0 z0Var2 = l0Var.a;
+                            e3 i15 = sk.i(1, z0Var2.getContext(), null, false);
                             try {
                                 Uri parse2 = Uri.parse(str5);
-                                str3 = pf.d.v(parse2, null, null, pf.d.a(parse2.getHost()), null);
+                                str3 = pf.d.u(parse2, null, null, pf.d.a(parse2.getHost()), null);
                             } catch (Exception e10) {
                                 try {
                                     FileLog.e((Throwable) e10, false);
@@ -407,14 +407,14 @@ public final class l0 implements View.OnLongClickListener {
                                             l0 l0Var2 = l0Var;
                                             switch (i16) {
                                                 case 0:
-                                                    y0 y0Var22 = l0Var2.a;
+                                                    z0 z0Var22 = l0Var2.a;
                                                     if (i152 != 0) {
                                                         if (i152 != 1) {
                                                             if (i152 == 2) {
                                                                 AndroidUtilities.addToClipboard(str6);
-                                                                b1 b1Var = y0Var22.Q;
-                                                                if (b1Var != null) {
-                                                                    new zc(b1Var, b1Var.e).k(false).k(true);
+                                                                c1 c1Var = z0Var22.Q;
+                                                                if (c1Var != null) {
+                                                                    new zc(c1Var, c1Var.e).k(false).k(true);
                                                                     break;
                                                                 }
                                                             }
@@ -429,13 +429,13 @@ public final class l0 implements View.OnLongClickListener {
                                                                 request.setDescription(LocaleController.getString(R.string.WebDownloading));
                                                                 request.setNotificationVisibility(1);
                                                                 request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
-                                                                DownloadManager downloadManager = (DownloadManager) y0Var22.getContext().getSystemService("download");
+                                                                DownloadManager downloadManager = (DownloadManager) z0Var22.getContext().getSystemService("download");
                                                                 if (downloadManager != null) {
                                                                     downloadManager.enqueue(request);
                                                                 }
-                                                                b1 b1Var2 = y0Var22.Q;
-                                                                if (b1Var2 != null) {
-                                                                    new zc(b1Var2, b1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                                c1 c1Var2 = z0Var22.Q;
+                                                                if (c1Var2 != null) {
+                                                                    new zc(c1Var2, c1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
                                                                     break;
                                                                 }
                                                             } catch (Exception e102) {
@@ -447,25 +447,25 @@ public final class l0 implements View.OnLongClickListener {
                                                         try {
                                                             Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
                                                             intent.putExtra("create_new_tab", true);
-                                                            intent.putExtra("com.android.browser.application_id", y0Var22.getContext().getPackageName());
-                                                            y0Var22.getContext().startActivity(intent);
+                                                            intent.putExtra("com.android.browser.application_id", z0Var22.getContext().getPackageName());
+                                                            z0Var22.getContext().startActivity(intent);
                                                             break;
                                                         } catch (Exception e112) {
                                                             FileLog.e(e112);
-                                                            y0Var22.loadUrl(str6);
+                                                            z0Var22.loadUrl(str6);
                                                             return;
                                                         }
                                                     }
                                                     break;
                                                 default:
-                                                    y0 y0Var3 = l0Var2.a;
+                                                    z0 z0Var3 = l0Var2.a;
                                                     if (i152 != 0) {
                                                         if (i152 != 1) {
                                                             if (i152 == 2) {
                                                                 AndroidUtilities.addToClipboard(str6);
-                                                                b1 b1Var3 = y0Var3.Q;
-                                                                if (b1Var3 != null) {
-                                                                    new zc(b1Var3, b1Var3.e).k(false).k(true);
+                                                                c1 c1Var3 = z0Var3.Q;
+                                                                if (c1Var3 != null) {
+                                                                    new zc(c1Var3, c1Var3.e).k(false).k(true);
                                                                     break;
                                                                 }
                                                             }
@@ -473,17 +473,17 @@ public final class l0 implements View.OnLongClickListener {
                                                             try {
                                                                 Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
                                                                 intent2.putExtra("create_new_tab", true);
-                                                                intent2.putExtra("com.android.browser.application_id", y0Var3.getContext().getPackageName());
-                                                                y0Var3.getContext().startActivity(intent2);
+                                                                intent2.putExtra("com.android.browser.application_id", z0Var3.getContext().getPackageName());
+                                                                z0Var3.getContext().startActivity(intent2);
                                                                 break;
                                                             } catch (Exception e12) {
                                                                 FileLog.e(e12);
-                                                                y0Var3.loadUrl(str6);
+                                                                z0Var3.loadUrl(str6);
                                                                 return;
                                                             }
                                                         }
                                                     } else {
-                                                        y0Var3.loadUrl(str6);
+                                                        z0Var3.loadUrl(str6);
                                                         break;
                                                     }
                                                     break;
@@ -493,7 +493,7 @@ public final class l0 implements View.OnLongClickListener {
                                     i15.items = charSequenceArr3;
                                     i15.onClickListener = onClickListener3;
                                     i15.show();
-                                    y0Var2.F = i15;
+                                    z0Var2.F = i15;
                                 }
                             }
                             try {
@@ -514,14 +514,14 @@ public final class l0 implements View.OnLongClickListener {
                                         l0 l0Var2 = l0Var;
                                         switch (i16) {
                                             case 0:
-                                                y0 y0Var22 = l0Var2.a;
+                                                z0 z0Var22 = l0Var2.a;
                                                 if (i152 != 0) {
                                                     if (i152 != 1) {
                                                         if (i152 == 2) {
                                                             AndroidUtilities.addToClipboard(str6);
-                                                            b1 b1Var = y0Var22.Q;
-                                                            if (b1Var != null) {
-                                                                new zc(b1Var, b1Var.e).k(false).k(true);
+                                                            c1 c1Var = z0Var22.Q;
+                                                            if (c1Var != null) {
+                                                                new zc(c1Var, c1Var.e).k(false).k(true);
                                                                 break;
                                                             }
                                                         }
@@ -536,13 +536,13 @@ public final class l0 implements View.OnLongClickListener {
                                                             request.setDescription(LocaleController.getString(R.string.WebDownloading));
                                                             request.setNotificationVisibility(1);
                                                             request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
-                                                            DownloadManager downloadManager = (DownloadManager) y0Var22.getContext().getSystemService("download");
+                                                            DownloadManager downloadManager = (DownloadManager) z0Var22.getContext().getSystemService("download");
                                                             if (downloadManager != null) {
                                                                 downloadManager.enqueue(request);
                                                             }
-                                                            b1 b1Var2 = y0Var22.Q;
-                                                            if (b1Var2 != null) {
-                                                                new zc(b1Var2, b1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                            c1 c1Var2 = z0Var22.Q;
+                                                            if (c1Var2 != null) {
+                                                                new zc(c1Var2, c1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
                                                                 break;
                                                             }
                                                         } catch (Exception e102) {
@@ -554,25 +554,25 @@ public final class l0 implements View.OnLongClickListener {
                                                     try {
                                                         Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
                                                         intent.putExtra("create_new_tab", true);
-                                                        intent.putExtra("com.android.browser.application_id", y0Var22.getContext().getPackageName());
-                                                        y0Var22.getContext().startActivity(intent);
+                                                        intent.putExtra("com.android.browser.application_id", z0Var22.getContext().getPackageName());
+                                                        z0Var22.getContext().startActivity(intent);
                                                         break;
                                                     } catch (Exception e112) {
                                                         FileLog.e(e112);
-                                                        y0Var22.loadUrl(str6);
+                                                        z0Var22.loadUrl(str6);
                                                         return;
                                                     }
                                                 }
                                                 break;
                                             default:
-                                                y0 y0Var3 = l0Var2.a;
+                                                z0 z0Var3 = l0Var2.a;
                                                 if (i152 != 0) {
                                                     if (i152 != 1) {
                                                         if (i152 == 2) {
                                                             AndroidUtilities.addToClipboard(str6);
-                                                            b1 b1Var3 = y0Var3.Q;
-                                                            if (b1Var3 != null) {
-                                                                new zc(b1Var3, b1Var3.e).k(false).k(true);
+                                                            c1 c1Var3 = z0Var3.Q;
+                                                            if (c1Var3 != null) {
+                                                                new zc(c1Var3, c1Var3.e).k(false).k(true);
                                                                 break;
                                                             }
                                                         }
@@ -580,17 +580,17 @@ public final class l0 implements View.OnLongClickListener {
                                                         try {
                                                             Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
                                                             intent2.putExtra("create_new_tab", true);
-                                                            intent2.putExtra("com.android.browser.application_id", y0Var3.getContext().getPackageName());
-                                                            y0Var3.getContext().startActivity(intent2);
+                                                            intent2.putExtra("com.android.browser.application_id", z0Var3.getContext().getPackageName());
+                                                            z0Var3.getContext().startActivity(intent2);
                                                             break;
                                                         } catch (Exception e122) {
                                                             FileLog.e(e122);
-                                                            y0Var3.loadUrl(str6);
+                                                            z0Var3.loadUrl(str6);
                                                             return;
                                                         }
                                                     }
                                                 } else {
-                                                    y0Var3.loadUrl(str6);
+                                                    z0Var3.loadUrl(str6);
                                                     break;
                                                 }
                                                 break;
@@ -600,7 +600,7 @@ public final class l0 implements View.OnLongClickListener {
                                 i15.items = charSequenceArr32;
                                 i15.onClickListener = onClickListener32;
                                 i15.show();
-                                y0Var2.F = i15;
+                                z0Var2.F = i15;
                             }
                             i15.multipleLinesTitle = true;
                             i15.title = str4;
@@ -614,14 +614,14 @@ public final class l0 implements View.OnLongClickListener {
                                     l0 l0Var2 = l0Var;
                                     switch (i16) {
                                         case 0:
-                                            y0 y0Var22 = l0Var2.a;
+                                            z0 z0Var22 = l0Var2.a;
                                             if (i152 != 0) {
                                                 if (i152 != 1) {
                                                     if (i152 == 2) {
                                                         AndroidUtilities.addToClipboard(str6);
-                                                        b1 b1Var = y0Var22.Q;
-                                                        if (b1Var != null) {
-                                                            new zc(b1Var, b1Var.e).k(false).k(true);
+                                                        c1 c1Var = z0Var22.Q;
+                                                        if (c1Var != null) {
+                                                            new zc(c1Var, c1Var.e).k(false).k(true);
                                                             break;
                                                         }
                                                     }
@@ -636,13 +636,13 @@ public final class l0 implements View.OnLongClickListener {
                                                         request.setDescription(LocaleController.getString(R.string.WebDownloading));
                                                         request.setNotificationVisibility(1);
                                                         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
-                                                        DownloadManager downloadManager = (DownloadManager) y0Var22.getContext().getSystemService("download");
+                                                        DownloadManager downloadManager = (DownloadManager) z0Var22.getContext().getSystemService("download");
                                                         if (downloadManager != null) {
                                                             downloadManager.enqueue(request);
                                                         }
-                                                        b1 b1Var2 = y0Var22.Q;
-                                                        if (b1Var2 != null) {
-                                                            new zc(b1Var2, b1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                        c1 c1Var2 = z0Var22.Q;
+                                                        if (c1Var2 != null) {
+                                                            new zc(c1Var2, c1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
                                                             break;
                                                         }
                                                     } catch (Exception e102) {
@@ -654,25 +654,25 @@ public final class l0 implements View.OnLongClickListener {
                                                 try {
                                                     Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
                                                     intent.putExtra("create_new_tab", true);
-                                                    intent.putExtra("com.android.browser.application_id", y0Var22.getContext().getPackageName());
-                                                    y0Var22.getContext().startActivity(intent);
+                                                    intent.putExtra("com.android.browser.application_id", z0Var22.getContext().getPackageName());
+                                                    z0Var22.getContext().startActivity(intent);
                                                     break;
                                                 } catch (Exception e112) {
                                                     FileLog.e(e112);
-                                                    y0Var22.loadUrl(str6);
+                                                    z0Var22.loadUrl(str6);
                                                     return;
                                                 }
                                             }
                                             break;
                                         default:
-                                            y0 y0Var3 = l0Var2.a;
+                                            z0 z0Var3 = l0Var2.a;
                                             if (i152 != 0) {
                                                 if (i152 != 1) {
                                                     if (i152 == 2) {
                                                         AndroidUtilities.addToClipboard(str6);
-                                                        b1 b1Var3 = y0Var3.Q;
-                                                        if (b1Var3 != null) {
-                                                            new zc(b1Var3, b1Var3.e).k(false).k(true);
+                                                        c1 c1Var3 = z0Var3.Q;
+                                                        if (c1Var3 != null) {
+                                                            new zc(c1Var3, c1Var3.e).k(false).k(true);
                                                             break;
                                                         }
                                                     }
@@ -680,17 +680,17 @@ public final class l0 implements View.OnLongClickListener {
                                                     try {
                                                         Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
                                                         intent2.putExtra("create_new_tab", true);
-                                                        intent2.putExtra("com.android.browser.application_id", y0Var3.getContext().getPackageName());
-                                                        y0Var3.getContext().startActivity(intent2);
+                                                        intent2.putExtra("com.android.browser.application_id", z0Var3.getContext().getPackageName());
+                                                        z0Var3.getContext().startActivity(intent2);
                                                         break;
                                                     } catch (Exception e122) {
                                                         FileLog.e(e122);
-                                                        y0Var3.loadUrl(str6);
+                                                        z0Var3.loadUrl(str6);
                                                         return;
                                                     }
                                                 }
                                             } else {
-                                                y0Var3.loadUrl(str6);
+                                                z0Var3.loadUrl(str6);
                                                 break;
                                             }
                                             break;
@@ -700,7 +700,7 @@ public final class l0 implements View.OnLongClickListener {
                             i15.items = charSequenceArr322;
                             i15.onClickListener = onClickListener322;
                             i15.show();
-                            y0Var2.F = i15;
+                            z0Var2.F = i15;
                     }
                 }
             });
@@ -740,8 +740,8 @@ public final class l0 implements View.OnLongClickListener {
                 final int i13 = 0;
                 switch (i112) {
                     case 0:
-                        y0 y0Var = l0Var.a;
-                        e3 i14 = yh.i(1, y0Var.getContext(), null, false);
+                        z0 z0Var = l0Var.a;
+                        e3 i14 = sk.i(1, z0Var.getContext(), null, false);
                         try {
                             parse = Uri.parse(str5);
                         } catch (Exception e) {
@@ -764,14 +764,14 @@ public final class l0 implements View.OnLongClickListener {
                                         l0 l0Var2 = l0Var;
                                         switch (i16) {
                                             case 0:
-                                                y0 y0Var22 = l0Var2.a;
+                                                z0 z0Var22 = l0Var2.a;
                                                 if (i152 != 0) {
                                                     if (i152 != 1) {
                                                         if (i152 == 2) {
                                                             AndroidUtilities.addToClipboard(str6);
-                                                            b1 b1Var = y0Var22.Q;
-                                                            if (b1Var != null) {
-                                                                new zc(b1Var, b1Var.e).k(false).k(true);
+                                                            c1 c1Var = z0Var22.Q;
+                                                            if (c1Var != null) {
+                                                                new zc(c1Var, c1Var.e).k(false).k(true);
                                                                 break;
                                                             }
                                                         }
@@ -786,13 +786,13 @@ public final class l0 implements View.OnLongClickListener {
                                                             request.setDescription(LocaleController.getString(R.string.WebDownloading));
                                                             request.setNotificationVisibility(1);
                                                             request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
-                                                            DownloadManager downloadManager = (DownloadManager) y0Var22.getContext().getSystemService("download");
+                                                            DownloadManager downloadManager = (DownloadManager) z0Var22.getContext().getSystemService("download");
                                                             if (downloadManager != null) {
                                                                 downloadManager.enqueue(request);
                                                             }
-                                                            b1 b1Var2 = y0Var22.Q;
-                                                            if (b1Var2 != null) {
-                                                                new zc(b1Var2, b1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                            c1 c1Var2 = z0Var22.Q;
+                                                            if (c1Var2 != null) {
+                                                                new zc(c1Var2, c1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
                                                                 break;
                                                             }
                                                         } catch (Exception e102) {
@@ -804,25 +804,25 @@ public final class l0 implements View.OnLongClickListener {
                                                     try {
                                                         Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
                                                         intent.putExtra("create_new_tab", true);
-                                                        intent.putExtra("com.android.browser.application_id", y0Var22.getContext().getPackageName());
-                                                        y0Var22.getContext().startActivity(intent);
+                                                        intent.putExtra("com.android.browser.application_id", z0Var22.getContext().getPackageName());
+                                                        z0Var22.getContext().startActivity(intent);
                                                         break;
                                                     } catch (Exception e112) {
                                                         FileLog.e(e112);
-                                                        y0Var22.loadUrl(str6);
+                                                        z0Var22.loadUrl(str6);
                                                         return;
                                                     }
                                                 }
                                                 break;
                                             default:
-                                                y0 y0Var3 = l0Var2.a;
+                                                z0 z0Var3 = l0Var2.a;
                                                 if (i152 != 0) {
                                                     if (i152 != 1) {
                                                         if (i152 == 2) {
                                                             AndroidUtilities.addToClipboard(str6);
-                                                            b1 b1Var3 = y0Var3.Q;
-                                                            if (b1Var3 != null) {
-                                                                new zc(b1Var3, b1Var3.e).k(false).k(true);
+                                                            c1 c1Var3 = z0Var3.Q;
+                                                            if (c1Var3 != null) {
+                                                                new zc(c1Var3, c1Var3.e).k(false).k(true);
                                                                 break;
                                                             }
                                                         }
@@ -830,17 +830,17 @@ public final class l0 implements View.OnLongClickListener {
                                                         try {
                                                             Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
                                                             intent2.putExtra("create_new_tab", true);
-                                                            intent2.putExtra("com.android.browser.application_id", y0Var3.getContext().getPackageName());
-                                                            y0Var3.getContext().startActivity(intent2);
+                                                            intent2.putExtra("com.android.browser.application_id", z0Var3.getContext().getPackageName());
+                                                            z0Var3.getContext().startActivity(intent2);
                                                             break;
                                                         } catch (Exception e122) {
                                                             FileLog.e(e122);
-                                                            y0Var3.loadUrl(str6);
+                                                            z0Var3.loadUrl(str6);
                                                             return;
                                                         }
                                                     }
                                                 } else {
-                                                    y0Var3.loadUrl(str6);
+                                                    z0Var3.loadUrl(str6);
                                                     break;
                                                 }
                                                 break;
@@ -850,12 +850,12 @@ public final class l0 implements View.OnLongClickListener {
                                 i14.items = charSequenceArr22;
                                 i14.onClickListener = onClickListener22;
                                 i14.show();
-                                y0Var.F = i14;
+                                z0Var.F = i14;
                                 return;
                             }
                         }
                         if (parse != null && !parse.getScheme().equalsIgnoreCase("data")) {
-                            str = pf.d.v(parse, null, null, pf.d.a(parse.getHost()), null);
+                            str = pf.d.u(parse, null, null, pf.d.a(parse.getHost()), null);
                             str2 = URLDecoder.decode(str.replaceAll("\\+", "%2b"), "UTF-8");
                             i14.multipleLinesTitle = true;
                             i14.title = str2;
@@ -869,14 +869,14 @@ public final class l0 implements View.OnLongClickListener {
                                     l0 l0Var2 = l0Var;
                                     switch (i16) {
                                         case 0:
-                                            y0 y0Var22 = l0Var2.a;
+                                            z0 z0Var22 = l0Var2.a;
                                             if (i152 != 0) {
                                                 if (i152 != 1) {
                                                     if (i152 == 2) {
                                                         AndroidUtilities.addToClipboard(str6);
-                                                        b1 b1Var = y0Var22.Q;
-                                                        if (b1Var != null) {
-                                                            new zc(b1Var, b1Var.e).k(false).k(true);
+                                                        c1 c1Var = z0Var22.Q;
+                                                        if (c1Var != null) {
+                                                            new zc(c1Var, c1Var.e).k(false).k(true);
                                                             break;
                                                         }
                                                     }
@@ -891,13 +891,13 @@ public final class l0 implements View.OnLongClickListener {
                                                         request.setDescription(LocaleController.getString(R.string.WebDownloading));
                                                         request.setNotificationVisibility(1);
                                                         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
-                                                        DownloadManager downloadManager = (DownloadManager) y0Var22.getContext().getSystemService("download");
+                                                        DownloadManager downloadManager = (DownloadManager) z0Var22.getContext().getSystemService("download");
                                                         if (downloadManager != null) {
                                                             downloadManager.enqueue(request);
                                                         }
-                                                        b1 b1Var2 = y0Var22.Q;
-                                                        if (b1Var2 != null) {
-                                                            new zc(b1Var2, b1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                        c1 c1Var2 = z0Var22.Q;
+                                                        if (c1Var2 != null) {
+                                                            new zc(c1Var2, c1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
                                                             break;
                                                         }
                                                     } catch (Exception e102) {
@@ -909,25 +909,25 @@ public final class l0 implements View.OnLongClickListener {
                                                 try {
                                                     Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
                                                     intent.putExtra("create_new_tab", true);
-                                                    intent.putExtra("com.android.browser.application_id", y0Var22.getContext().getPackageName());
-                                                    y0Var22.getContext().startActivity(intent);
+                                                    intent.putExtra("com.android.browser.application_id", z0Var22.getContext().getPackageName());
+                                                    z0Var22.getContext().startActivity(intent);
                                                     break;
                                                 } catch (Exception e112) {
                                                     FileLog.e(e112);
-                                                    y0Var22.loadUrl(str6);
+                                                    z0Var22.loadUrl(str6);
                                                     return;
                                                 }
                                             }
                                             break;
                                         default:
-                                            y0 y0Var3 = l0Var2.a;
+                                            z0 z0Var3 = l0Var2.a;
                                             if (i152 != 0) {
                                                 if (i152 != 1) {
                                                     if (i152 == 2) {
                                                         AndroidUtilities.addToClipboard(str6);
-                                                        b1 b1Var3 = y0Var3.Q;
-                                                        if (b1Var3 != null) {
-                                                            new zc(b1Var3, b1Var3.e).k(false).k(true);
+                                                        c1 c1Var3 = z0Var3.Q;
+                                                        if (c1Var3 != null) {
+                                                            new zc(c1Var3, c1Var3.e).k(false).k(true);
                                                             break;
                                                         }
                                                     }
@@ -935,17 +935,17 @@ public final class l0 implements View.OnLongClickListener {
                                                     try {
                                                         Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
                                                         intent2.putExtra("create_new_tab", true);
-                                                        intent2.putExtra("com.android.browser.application_id", y0Var3.getContext().getPackageName());
-                                                        y0Var3.getContext().startActivity(intent2);
+                                                        intent2.putExtra("com.android.browser.application_id", z0Var3.getContext().getPackageName());
+                                                        z0Var3.getContext().startActivity(intent2);
                                                         break;
                                                     } catch (Exception e122) {
                                                         FileLog.e(e122);
-                                                        y0Var3.loadUrl(str6);
+                                                        z0Var3.loadUrl(str6);
                                                         return;
                                                     }
                                                 }
                                             } else {
-                                                y0Var3.loadUrl(str6);
+                                                z0Var3.loadUrl(str6);
                                                 break;
                                             }
                                             break;
@@ -955,7 +955,7 @@ public final class l0 implements View.OnLongClickListener {
                             i14.items = charSequenceArr222;
                             i14.onClickListener = onClickListener222;
                             i14.show();
-                            y0Var.F = i14;
+                            z0Var.F = i14;
                         }
                         str = str5;
                         str2 = URLDecoder.decode(str.replaceAll("\\+", "%2b"), "UTF-8");
@@ -971,14 +971,14 @@ public final class l0 implements View.OnLongClickListener {
                                 l0 l0Var2 = l0Var;
                                 switch (i16) {
                                     case 0:
-                                        y0 y0Var22 = l0Var2.a;
+                                        z0 z0Var22 = l0Var2.a;
                                         if (i152 != 0) {
                                             if (i152 != 1) {
                                                 if (i152 == 2) {
                                                     AndroidUtilities.addToClipboard(str6);
-                                                    b1 b1Var = y0Var22.Q;
-                                                    if (b1Var != null) {
-                                                        new zc(b1Var, b1Var.e).k(false).k(true);
+                                                    c1 c1Var = z0Var22.Q;
+                                                    if (c1Var != null) {
+                                                        new zc(c1Var, c1Var.e).k(false).k(true);
                                                         break;
                                                     }
                                                 }
@@ -993,13 +993,13 @@ public final class l0 implements View.OnLongClickListener {
                                                     request.setDescription(LocaleController.getString(R.string.WebDownloading));
                                                     request.setNotificationVisibility(1);
                                                     request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
-                                                    DownloadManager downloadManager = (DownloadManager) y0Var22.getContext().getSystemService("download");
+                                                    DownloadManager downloadManager = (DownloadManager) z0Var22.getContext().getSystemService("download");
                                                     if (downloadManager != null) {
                                                         downloadManager.enqueue(request);
                                                     }
-                                                    b1 b1Var2 = y0Var22.Q;
-                                                    if (b1Var2 != null) {
-                                                        new zc(b1Var2, b1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                    c1 c1Var2 = z0Var22.Q;
+                                                    if (c1Var2 != null) {
+                                                        new zc(c1Var2, c1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
                                                         break;
                                                     }
                                                 } catch (Exception e102) {
@@ -1011,25 +1011,25 @@ public final class l0 implements View.OnLongClickListener {
                                             try {
                                                 Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
                                                 intent.putExtra("create_new_tab", true);
-                                                intent.putExtra("com.android.browser.application_id", y0Var22.getContext().getPackageName());
-                                                y0Var22.getContext().startActivity(intent);
+                                                intent.putExtra("com.android.browser.application_id", z0Var22.getContext().getPackageName());
+                                                z0Var22.getContext().startActivity(intent);
                                                 break;
                                             } catch (Exception e112) {
                                                 FileLog.e(e112);
-                                                y0Var22.loadUrl(str6);
+                                                z0Var22.loadUrl(str6);
                                                 return;
                                             }
                                         }
                                         break;
                                     default:
-                                        y0 y0Var3 = l0Var2.a;
+                                        z0 z0Var3 = l0Var2.a;
                                         if (i152 != 0) {
                                             if (i152 != 1) {
                                                 if (i152 == 2) {
                                                     AndroidUtilities.addToClipboard(str6);
-                                                    b1 b1Var3 = y0Var3.Q;
-                                                    if (b1Var3 != null) {
-                                                        new zc(b1Var3, b1Var3.e).k(false).k(true);
+                                                    c1 c1Var3 = z0Var3.Q;
+                                                    if (c1Var3 != null) {
+                                                        new zc(c1Var3, c1Var3.e).k(false).k(true);
                                                         break;
                                                     }
                                                 }
@@ -1037,17 +1037,17 @@ public final class l0 implements View.OnLongClickListener {
                                                 try {
                                                     Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
                                                     intent2.putExtra("create_new_tab", true);
-                                                    intent2.putExtra("com.android.browser.application_id", y0Var3.getContext().getPackageName());
-                                                    y0Var3.getContext().startActivity(intent2);
+                                                    intent2.putExtra("com.android.browser.application_id", z0Var3.getContext().getPackageName());
+                                                    z0Var3.getContext().startActivity(intent2);
                                                     break;
                                                 } catch (Exception e122) {
                                                     FileLog.e(e122);
-                                                    y0Var3.loadUrl(str6);
+                                                    z0Var3.loadUrl(str6);
                                                     return;
                                                 }
                                             }
                                         } else {
-                                            y0Var3.loadUrl(str6);
+                                            z0Var3.loadUrl(str6);
                                             break;
                                         }
                                         break;
@@ -1057,14 +1057,14 @@ public final class l0 implements View.OnLongClickListener {
                         i14.items = charSequenceArr2222;
                         i14.onClickListener = onClickListener2222;
                         i14.show();
-                        y0Var.F = i14;
+                        z0Var.F = i14;
                         break;
                     default:
-                        y0 y0Var2 = l0Var.a;
-                        e3 i15 = yh.i(1, y0Var2.getContext(), null, false);
+                        z0 z0Var2 = l0Var.a;
+                        e3 i15 = sk.i(1, z0Var2.getContext(), null, false);
                         try {
                             Uri parse2 = Uri.parse(str5);
-                            str3 = pf.d.v(parse2, null, null, pf.d.a(parse2.getHost()), null);
+                            str3 = pf.d.u(parse2, null, null, pf.d.a(parse2.getHost()), null);
                         } catch (Exception e10) {
                             try {
                                 FileLog.e((Throwable) e10, false);
@@ -1086,14 +1086,14 @@ public final class l0 implements View.OnLongClickListener {
                                         l0 l0Var2 = l0Var;
                                         switch (i16) {
                                             case 0:
-                                                y0 y0Var22 = l0Var2.a;
+                                                z0 z0Var22 = l0Var2.a;
                                                 if (i152 != 0) {
                                                     if (i152 != 1) {
                                                         if (i152 == 2) {
                                                             AndroidUtilities.addToClipboard(str6);
-                                                            b1 b1Var = y0Var22.Q;
-                                                            if (b1Var != null) {
-                                                                new zc(b1Var, b1Var.e).k(false).k(true);
+                                                            c1 c1Var = z0Var22.Q;
+                                                            if (c1Var != null) {
+                                                                new zc(c1Var, c1Var.e).k(false).k(true);
                                                                 break;
                                                             }
                                                         }
@@ -1108,13 +1108,13 @@ public final class l0 implements View.OnLongClickListener {
                                                             request.setDescription(LocaleController.getString(R.string.WebDownloading));
                                                             request.setNotificationVisibility(1);
                                                             request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
-                                                            DownloadManager downloadManager = (DownloadManager) y0Var22.getContext().getSystemService("download");
+                                                            DownloadManager downloadManager = (DownloadManager) z0Var22.getContext().getSystemService("download");
                                                             if (downloadManager != null) {
                                                                 downloadManager.enqueue(request);
                                                             }
-                                                            b1 b1Var2 = y0Var22.Q;
-                                                            if (b1Var2 != null) {
-                                                                new zc(b1Var2, b1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                            c1 c1Var2 = z0Var22.Q;
+                                                            if (c1Var2 != null) {
+                                                                new zc(c1Var2, c1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
                                                                 break;
                                                             }
                                                         } catch (Exception e102) {
@@ -1126,25 +1126,25 @@ public final class l0 implements View.OnLongClickListener {
                                                     try {
                                                         Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
                                                         intent.putExtra("create_new_tab", true);
-                                                        intent.putExtra("com.android.browser.application_id", y0Var22.getContext().getPackageName());
-                                                        y0Var22.getContext().startActivity(intent);
+                                                        intent.putExtra("com.android.browser.application_id", z0Var22.getContext().getPackageName());
+                                                        z0Var22.getContext().startActivity(intent);
                                                         break;
                                                     } catch (Exception e112) {
                                                         FileLog.e(e112);
-                                                        y0Var22.loadUrl(str6);
+                                                        z0Var22.loadUrl(str6);
                                                         return;
                                                     }
                                                 }
                                                 break;
                                             default:
-                                                y0 y0Var3 = l0Var2.a;
+                                                z0 z0Var3 = l0Var2.a;
                                                 if (i152 != 0) {
                                                     if (i152 != 1) {
                                                         if (i152 == 2) {
                                                             AndroidUtilities.addToClipboard(str6);
-                                                            b1 b1Var3 = y0Var3.Q;
-                                                            if (b1Var3 != null) {
-                                                                new zc(b1Var3, b1Var3.e).k(false).k(true);
+                                                            c1 c1Var3 = z0Var3.Q;
+                                                            if (c1Var3 != null) {
+                                                                new zc(c1Var3, c1Var3.e).k(false).k(true);
                                                                 break;
                                                             }
                                                         }
@@ -1152,17 +1152,17 @@ public final class l0 implements View.OnLongClickListener {
                                                         try {
                                                             Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
                                                             intent2.putExtra("create_new_tab", true);
-                                                            intent2.putExtra("com.android.browser.application_id", y0Var3.getContext().getPackageName());
-                                                            y0Var3.getContext().startActivity(intent2);
+                                                            intent2.putExtra("com.android.browser.application_id", z0Var3.getContext().getPackageName());
+                                                            z0Var3.getContext().startActivity(intent2);
                                                             break;
                                                         } catch (Exception e122) {
                                                             FileLog.e(e122);
-                                                            y0Var3.loadUrl(str6);
+                                                            z0Var3.loadUrl(str6);
                                                             return;
                                                         }
                                                     }
                                                 } else {
-                                                    y0Var3.loadUrl(str6);
+                                                    z0Var3.loadUrl(str6);
                                                     break;
                                                 }
                                                 break;
@@ -1172,7 +1172,7 @@ public final class l0 implements View.OnLongClickListener {
                                 i15.items = charSequenceArr322;
                                 i15.onClickListener = onClickListener322;
                                 i15.show();
-                                y0Var2.F = i15;
+                                z0Var2.F = i15;
                             }
                         }
                         try {
@@ -1193,14 +1193,14 @@ public final class l0 implements View.OnLongClickListener {
                                     l0 l0Var2 = l0Var;
                                     switch (i16) {
                                         case 0:
-                                            y0 y0Var22 = l0Var2.a;
+                                            z0 z0Var22 = l0Var2.a;
                                             if (i152 != 0) {
                                                 if (i152 != 1) {
                                                     if (i152 == 2) {
                                                         AndroidUtilities.addToClipboard(str6);
-                                                        b1 b1Var = y0Var22.Q;
-                                                        if (b1Var != null) {
-                                                            new zc(b1Var, b1Var.e).k(false).k(true);
+                                                        c1 c1Var = z0Var22.Q;
+                                                        if (c1Var != null) {
+                                                            new zc(c1Var, c1Var.e).k(false).k(true);
                                                             break;
                                                         }
                                                     }
@@ -1215,13 +1215,13 @@ public final class l0 implements View.OnLongClickListener {
                                                         request.setDescription(LocaleController.getString(R.string.WebDownloading));
                                                         request.setNotificationVisibility(1);
                                                         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
-                                                        DownloadManager downloadManager = (DownloadManager) y0Var22.getContext().getSystemService("download");
+                                                        DownloadManager downloadManager = (DownloadManager) z0Var22.getContext().getSystemService("download");
                                                         if (downloadManager != null) {
                                                             downloadManager.enqueue(request);
                                                         }
-                                                        b1 b1Var2 = y0Var22.Q;
-                                                        if (b1Var2 != null) {
-                                                            new zc(b1Var2, b1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                        c1 c1Var2 = z0Var22.Q;
+                                                        if (c1Var2 != null) {
+                                                            new zc(c1Var2, c1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
                                                             break;
                                                         }
                                                     } catch (Exception e102) {
@@ -1233,25 +1233,25 @@ public final class l0 implements View.OnLongClickListener {
                                                 try {
                                                     Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
                                                     intent.putExtra("create_new_tab", true);
-                                                    intent.putExtra("com.android.browser.application_id", y0Var22.getContext().getPackageName());
-                                                    y0Var22.getContext().startActivity(intent);
+                                                    intent.putExtra("com.android.browser.application_id", z0Var22.getContext().getPackageName());
+                                                    z0Var22.getContext().startActivity(intent);
                                                     break;
                                                 } catch (Exception e112) {
                                                     FileLog.e(e112);
-                                                    y0Var22.loadUrl(str6);
+                                                    z0Var22.loadUrl(str6);
                                                     return;
                                                 }
                                             }
                                             break;
                                         default:
-                                            y0 y0Var3 = l0Var2.a;
+                                            z0 z0Var3 = l0Var2.a;
                                             if (i152 != 0) {
                                                 if (i152 != 1) {
                                                     if (i152 == 2) {
                                                         AndroidUtilities.addToClipboard(str6);
-                                                        b1 b1Var3 = y0Var3.Q;
-                                                        if (b1Var3 != null) {
-                                                            new zc(b1Var3, b1Var3.e).k(false).k(true);
+                                                        c1 c1Var3 = z0Var3.Q;
+                                                        if (c1Var3 != null) {
+                                                            new zc(c1Var3, c1Var3.e).k(false).k(true);
                                                             break;
                                                         }
                                                     }
@@ -1259,17 +1259,17 @@ public final class l0 implements View.OnLongClickListener {
                                                     try {
                                                         Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
                                                         intent2.putExtra("create_new_tab", true);
-                                                        intent2.putExtra("com.android.browser.application_id", y0Var3.getContext().getPackageName());
-                                                        y0Var3.getContext().startActivity(intent2);
+                                                        intent2.putExtra("com.android.browser.application_id", z0Var3.getContext().getPackageName());
+                                                        z0Var3.getContext().startActivity(intent2);
                                                         break;
                                                     } catch (Exception e122) {
                                                         FileLog.e(e122);
-                                                        y0Var3.loadUrl(str6);
+                                                        z0Var3.loadUrl(str6);
                                                         return;
                                                     }
                                                 }
                                             } else {
-                                                y0Var3.loadUrl(str6);
+                                                z0Var3.loadUrl(str6);
                                                 break;
                                             }
                                             break;
@@ -1279,7 +1279,7 @@ public final class l0 implements View.OnLongClickListener {
                             i15.items = charSequenceArr3222;
                             i15.onClickListener = onClickListener3222;
                             i15.show();
-                            y0Var2.F = i15;
+                            z0Var2.F = i15;
                         }
                         i15.multipleLinesTitle = true;
                         i15.title = str4;
@@ -1293,14 +1293,14 @@ public final class l0 implements View.OnLongClickListener {
                                 l0 l0Var2 = l0Var;
                                 switch (i16) {
                                     case 0:
-                                        y0 y0Var22 = l0Var2.a;
+                                        z0 z0Var22 = l0Var2.a;
                                         if (i152 != 0) {
                                             if (i152 != 1) {
                                                 if (i152 == 2) {
                                                     AndroidUtilities.addToClipboard(str6);
-                                                    b1 b1Var = y0Var22.Q;
-                                                    if (b1Var != null) {
-                                                        new zc(b1Var, b1Var.e).k(false).k(true);
+                                                    c1 c1Var = z0Var22.Q;
+                                                    if (c1Var != null) {
+                                                        new zc(c1Var, c1Var.e).k(false).k(true);
                                                         break;
                                                     }
                                                 }
@@ -1315,13 +1315,13 @@ public final class l0 implements View.OnLongClickListener {
                                                     request.setDescription(LocaleController.getString(R.string.WebDownloading));
                                                     request.setNotificationVisibility(1);
                                                     request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
-                                                    DownloadManager downloadManager = (DownloadManager) y0Var22.getContext().getSystemService("download");
+                                                    DownloadManager downloadManager = (DownloadManager) z0Var22.getContext().getSystemService("download");
                                                     if (downloadManager != null) {
                                                         downloadManager.enqueue(request);
                                                     }
-                                                    b1 b1Var2 = y0Var22.Q;
-                                                    if (b1Var2 != null) {
-                                                        new zc(b1Var2, b1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                    c1 c1Var2 = z0Var22.Q;
+                                                    if (c1Var2 != null) {
+                                                        new zc(c1Var2, c1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
                                                         break;
                                                     }
                                                 } catch (Exception e102) {
@@ -1333,25 +1333,25 @@ public final class l0 implements View.OnLongClickListener {
                                             try {
                                                 Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
                                                 intent.putExtra("create_new_tab", true);
-                                                intent.putExtra("com.android.browser.application_id", y0Var22.getContext().getPackageName());
-                                                y0Var22.getContext().startActivity(intent);
+                                                intent.putExtra("com.android.browser.application_id", z0Var22.getContext().getPackageName());
+                                                z0Var22.getContext().startActivity(intent);
                                                 break;
                                             } catch (Exception e112) {
                                                 FileLog.e(e112);
-                                                y0Var22.loadUrl(str6);
+                                                z0Var22.loadUrl(str6);
                                                 return;
                                             }
                                         }
                                         break;
                                     default:
-                                        y0 y0Var3 = l0Var2.a;
+                                        z0 z0Var3 = l0Var2.a;
                                         if (i152 != 0) {
                                             if (i152 != 1) {
                                                 if (i152 == 2) {
                                                     AndroidUtilities.addToClipboard(str6);
-                                                    b1 b1Var3 = y0Var3.Q;
-                                                    if (b1Var3 != null) {
-                                                        new zc(b1Var3, b1Var3.e).k(false).k(true);
+                                                    c1 c1Var3 = z0Var3.Q;
+                                                    if (c1Var3 != null) {
+                                                        new zc(c1Var3, c1Var3.e).k(false).k(true);
                                                         break;
                                                     }
                                                 }
@@ -1359,17 +1359,17 @@ public final class l0 implements View.OnLongClickListener {
                                                 try {
                                                     Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
                                                     intent2.putExtra("create_new_tab", true);
-                                                    intent2.putExtra("com.android.browser.application_id", y0Var3.getContext().getPackageName());
-                                                    y0Var3.getContext().startActivity(intent2);
+                                                    intent2.putExtra("com.android.browser.application_id", z0Var3.getContext().getPackageName());
+                                                    z0Var3.getContext().startActivity(intent2);
                                                     break;
                                                 } catch (Exception e122) {
                                                     FileLog.e(e122);
-                                                    y0Var3.loadUrl(str6);
+                                                    z0Var3.loadUrl(str6);
                                                     return;
                                                 }
                                             }
                                         } else {
-                                            y0Var3.loadUrl(str6);
+                                            z0Var3.loadUrl(str6);
                                             break;
                                         }
                                         break;
@@ -1379,7 +1379,7 @@ public final class l0 implements View.OnLongClickListener {
                         i15.items = charSequenceArr32222;
                         i15.onClickListener = onClickListener32222;
                         i15.show();
-                        y0Var2.F = i15;
+                        z0Var2.F = i15;
                 }
             }
         });

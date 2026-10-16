@@ -14,7 +14,7 @@ import android.view.MotionEvent;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class w9 extends TextView {
     public final /* synthetic */ int a = 0;
@@ -99,14 +99,14 @@ public final class w9 extends TextView {
                 super.onMeasure(i10, i11);
                 if (getText() instanceof Spanned) {
                     Spanned spanned = (Spanned) getText();
-                    org.telegram.ui.Components.p61[] p61VarArr = (org.telegram.ui.Components.p61[]) spanned.getSpans(0, spanned.length(), org.telegram.ui.Components.p61.class);
-                    if (p61VarArr != null && p61VarArr.length > 0) {
+                    org.telegram.ui.Components.q61[] q61VarArr = (org.telegram.ui.Components.q61[]) spanned.getSpans(0, spanned.length(), org.telegram.ui.Components.q61.class);
+                    if (q61VarArr != null && q61VarArr.length > 0) {
                         org.telegram.ui.Components.x90 x90Var = new org.telegram.ui.Components.x90(0);
                         this.c = x90Var;
                         x90Var.n = false;
-                        for (int i12 = 0; i12 < p61VarArr.length; i12++) {
-                            int spanStart = spanned.getSpanStart(p61VarArr[i12]);
-                            int spanEnd = spanned.getSpanEnd(p61VarArr[i12]);
+                        for (int i12 = 0; i12 < q61VarArr.length; i12++) {
+                            int spanStart = spanned.getSpanStart(q61VarArr[i12]);
+                            int spanEnd = spanned.getSpanEnd(q61VarArr[i12]);
                             ((org.telegram.ui.Components.x90) this.c).d(getLayout(), spanStart, 0.0f);
                             int i13 = getText() != null ? getPaint().baselineShift : 0;
                             org.telegram.ui.Components.x90 x90Var2 = (org.telegram.ui.Components.x90) this.c;

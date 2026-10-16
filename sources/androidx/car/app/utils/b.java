@@ -8,13 +8,12 @@ import android.graphics.SurfaceTexture;
 import android.location.Location;
 import android.media.session.MediaSession;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.Log;
 import androidx.car.app.IOnDoneCallback;
+import androidx.lifecycle.o;
 import b2.c1;
 import b2.p0;
 import b2.s0;
@@ -32,18 +31,17 @@ import bi.rb;
 import bi.sb;
 import bi.x8;
 import bi.z4;
-import com.google.android.gms.common.api.internal.v;
 import di.a1;
 import di.a7;
 import di.fc;
 import di.ga;
 import di.k8;
 import di.kc;
+import e9.n0;
 import fi.f4;
-import fi.u1;
+import hg.m;
 import ig.a2;
 import ig.b2;
-import j9.e0;
 import j9.y;
 import java.io.File;
 import java.util.ArrayList;
@@ -55,25 +53,19 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import ji.r;
-import li.n0;
-import li.u;
-import li.v0;
-import m4.e1;
-import m4.f0;
-import m4.g1;
-import m4.j1;
+import m4.d1;
+import m4.e0;
+import m4.f1;
+import m4.i1;
 import m4.k;
+import m4.k1;
 import m4.l;
-import m4.l1;
-import m4.m;
-import m4.n1;
-import m4.o;
-import m4.o0;
-import m4.q0;
-import m4.q1;
-import m4.v1;
-import m4.w;
-import n4.n;
+import m4.m1;
+import m4.n;
+import m4.p1;
+import m4.t;
+import m4.u1;
+import m4.v;
 import n4.q;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
@@ -94,6 +86,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.camera.CameraSession;
+import org.telegram.messenger.g0;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 import org.telegram.messenger.video.VideoAds;
 import org.telegram.tgnet.ConnectionsManager;
@@ -111,14 +104,16 @@ import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.la;
-import org.telegram.ui.Components.m80;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.t6;
+import org.telegram.ui.v6;
 import v7.q8;
-import w7.x;
+import w7.w;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -133,78 +128,6 @@ public final /* synthetic */ class b implements Runnable {
         this.d = str;
         this.c = iArr;
         this.e = callback;
-    }
-
-    private final void a() {
-        b2 b2Var = (b2) this.b;
-        ArrayList<Integer> arrayList = (ArrayList) this.c;
-        a2 a2Var = (a2) this.d;
-        TLRPC.TL_messages_sendQuickReplyMessages tL_messages_sendQuickReplyMessages = (TLRPC.TL_messages_sendQuickReplyMessages) this.e;
-        int i10 = b2Var.a;
-        if (arrayList.isEmpty() || arrayList.size() < a2Var.a()) {
-            TLRPC.TL_messages_getQuickReplyMessages tL_messages_getQuickReplyMessages = new TLRPC.TL_messages_getQuickReplyMessages();
-            tL_messages_getQuickReplyMessages.shortcut_id = a2Var.a;
-            ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getQuickReplyMessages, new e5(b2Var, arrayList, tL_messages_sendQuickReplyMessages, 6));
-        } else {
-            tL_messages_sendQuickReplyMessages.id = arrayList;
-            for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                tL_messages_sendQuickReplyMessages.random_id.add(Long.valueOf(Utilities.random.nextLong()));
-            }
-            ConnectionsManager.getInstance(i10).sendRequest(tL_messages_sendQuickReplyMessages, null);
-        }
-    }
-
-    private final void b() {
-        int a2;
-        u uVar = (u) this.b;
-        n0 n0Var = (n0) this.c;
-        n0 n0Var2 = (n0) this.d;
-        Handler handler = (Handler) this.e;
-        if (uVar.r0 && uVar.W == 0 && uVar.T) {
-            uVar.N.g(uVar.L, uVar.D, false);
-            uVar.U = false;
-            uVar.V = false;
-            uVar.c0 = 0.0f;
-            uVar.W = 1;
-            long elapsedRealtimeNanos = SystemClock.elapsedRealtimeNanos();
-            uVar.X = elapsedRealtimeNanos;
-            uVar.Y = elapsedRealtimeNanos;
-            uVar.d0 = n0Var;
-            uVar.e0 = n0Var2;
-            String[] strArr = v0.a;
-            synchronized (v0.class) {
-                v0.b();
-                if (n0Var == n0Var2) {
-                    throw new IllegalArgumentException("Camera switch direction must change");
-                }
-                a2 = v0.a(n0Var == n0.b ? 0 : 1);
-            }
-            uVar.b0 = a2;
-            uVar.Z = ((Math.max(210, Math.min(300, 300 - ((Math.max(0, a2 - 400) * 3) / 20))) * 45) / 100) * 1000000;
-            uVar.a0 = (r4 - r5) * 1000000;
-            uVar.i.b("synthetic camera switch started: from=" + n0Var + ", to=" + n0Var2 + ", expectedWaitMs=" + uVar.b0 + ", targetBlurRadiusPx=" + (((uVar.N.a * 4.0f) / 48.0f) * 1.15f) + ", overdueBlurGrowth=0.35, revealMs=" + ((uVar.Z + uVar.a0) / 1000000));
-            uVar.Q = -1L;
-            handler.removeCallbacks(uVar.x0);
-            handler.post(uVar.x0);
-        }
-    }
-
-    private final void c() {
-        qi.e eVar = (qi.e) this.b;
-        AtomicBoolean atomicBoolean = (AtomicBoolean) this.c;
-        m4.i iVar = (m4.i) this.d;
-        AtomicBoolean atomicBoolean2 = (AtomicBoolean) this.e;
-        synchronized (eVar.a) {
-            try {
-                if (atomicBoolean.get()) {
-                    atomicBoolean2.set(true);
-                } else {
-                    eVar.i(iVar);
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -231,10 +154,10 @@ public final /* synthetic */ class b implements Runnable {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private final void d() {
+    private final void a() {
         Bitmap bitmap;
         Bundle bundle;
-        e9.n0 n0Var;
+        n0 n0Var;
         Bundle bundle2;
         boolean z10;
         boolean z11;
@@ -243,7 +166,7 @@ public final /* synthetic */ class b implements Runnable {
         Bundle bundle3;
         CharSequence charSequence;
         CharSequence charSequence2;
-        o0 o0Var = (o0) this.b;
+        m4.n0 n0Var2 = (m4.n0) this.b;
         AtomicInteger atomicInteger = (AtomicInteger) this.c;
         ArrayList arrayList3 = (ArrayList) this.d;
         if (atomicInteger.incrementAndGet() == arrayList3.size()) {
@@ -260,7 +183,7 @@ public final /* synthetic */ class b implements Runnable {
                         }
                     }
                     p0 p0Var = (p0) arrayList3.get(i10);
-                    int i11 = o.a;
+                    int i11 = n.a;
                     String str = !p0Var.a.equals("") ? null : p0Var.a;
                     s0 s0Var = p0Var.d;
                     Bitmap bitmap2 = bitmap == null ? bitmap : null;
@@ -289,7 +212,7 @@ public final /* synthetic */ class b implements Runnable {
                             num2.getClass();
                             arrayList = arrayList3;
                             arrayList2 = arrayList5;
-                            bundle4.putLong("android.media.extra.BT_FOLDER_TYPE", o.a(num2.intValue()));
+                            bundle4.putLong("android.media.extra.BT_FOLDER_TYPE", n.a(num2.intValue()));
                         }
                         if (z11) {
                             num.getClass();
@@ -438,7 +361,7 @@ public final /* synthetic */ class b implements Runnable {
                 }
                 bitmap = null;
                 p0 p0Var2 = (p0) arrayList3.get(i10);
-                int i112 = o.a;
+                int i112 = n.a;
                 if (!p0Var2.a.equals("")) {
                 }
                 s0 s0Var2 = p0Var2.d;
@@ -477,7 +400,7 @@ public final /* synthetic */ class b implements Runnable {
                 i10++;
                 arrayList3 = arrayList;
             }
-            q0.D(((q0) o0Var.e).m, arrayList4);
+            m4.p0.D(((m4.p0) n0Var2.e).m, arrayList4);
         }
     }
 
@@ -488,134 +411,189 @@ public final /* synthetic */ class b implements Runnable {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private final void f() {
-        j1 j1Var = (j1) this.b;
-        w wVar = (w) this.c;
-        f0 f0Var = (f0) this.d;
-        m mVar = (m) this.e;
-        qi.e eVar = j1Var.b;
+    private final void b() {
+        i1 i1Var = (i1) this.b;
+        v vVar = (v) this.c;
+        e0 e0Var = (e0) this.d;
+        l lVar = (l) this.e;
+        pi.e eVar = i1Var.b;
         boolean z10 = false;
         try {
-            j1Var.c.remove(wVar);
-            if (f0Var.j()) {
-                x.a(mVar);
+            i1Var.c.remove(vVar);
+            if (e0Var.j()) {
+                w.a(lVar);
                 return;
             }
-            e1 e1Var = (e1) wVar.d;
-            e1Var.getClass();
-            IBinder asBinder = e1Var.a.asBinder();
-            m4.u m10 = f0Var.m(wVar);
-            if (eVar.t(wVar)) {
-                e2.a.l("MediaSessionStub", "Controller " + wVar + " has sent connection request multiple times");
+            d1 d1Var = (d1) vVar.d;
+            d1Var.getClass();
+            IBinder asBinder = d1Var.a.asBinder();
+            t m10 = e0Var.m(vVar);
+            if (eVar.t(vVar)) {
+                e2.a.l("MediaSessionStub", "Controller " + vVar + " has sent connection request multiple times");
             }
-            eVar.a(asBinder, wVar, m10.a, m10.b);
-            v q6 = eVar.q(wVar);
+            eVar.a(asBinder, vVar, m10.a, m10.b);
+            com.google.android.gms.common.api.internal.v q6 = eVar.q(vVar);
             if (q6 == null) {
                 e2.a.l("MediaSessionStub", "Ignoring connection request from unknown controller info");
-                x.a(mVar);
+                w.a(lVar);
                 return;
             }
-            n1 n1Var = f0Var.t;
-            l1 l1Var = f0Var.s;
+            m1 m1Var = e0Var.t;
+            k1 k1Var = e0Var.s;
             c1 c1Var = m10.b;
-            l1 Y0 = j1Var.Y0(l1Var);
-            MediaSession.Token token = ((n) f0Var.h.m.b).c.b;
-            e9.n0 n0Var = m10.c;
+            k1 Y0 = i1Var.Y0(k1Var);
+            MediaSession.Token token = ((n4.n) e0Var.h.m.b).c.b;
+            n0 n0Var = m10.c;
             if (n0Var == null) {
-                n0Var = f0Var.y;
+                n0Var = e0Var.y;
             }
-            e9.n0 n0Var2 = m10.d;
+            n0 n0Var2 = m10.d;
             if (n0Var2 == null) {
-                n0Var2 = f0Var.z;
+                n0Var2 = e0Var.z;
             }
-            e9.n0 n0Var3 = f0Var.r;
-            q1 q1Var = m10.a;
-            c1 s10 = n1Var.s();
-            v1 v1Var = f0Var.j.a;
-            v1Var.getClass();
-            k kVar = new k(j1Var, n0Var, n0Var2, n0Var3, q1Var, c1Var, s10, new Bundle(v1Var.g), f0Var.A, Y0, token);
-            if (f0Var.j()) {
-                x.a(mVar);
+            n0 n0Var3 = e0Var.r;
+            p1 p1Var = m10.a;
+            c1 s10 = m1Var.s();
+            u1 u1Var = e0Var.j.a;
+            u1Var.getClass();
+            m4.j jVar = new m4.j(i1Var, n0Var, n0Var2, n0Var3, p1Var, c1Var, s10, new Bundle(u1Var.g), e0Var.A, Y0, token);
+            if (e0Var.j()) {
+                w.a(lVar);
                 return;
             }
             try {
-                ((l) mVar).F0(q6.e(), kVar.a(wVar.c));
+                ((k) lVar).F0(q6.e(), jVar.a(vVar.c));
                 z10 = true;
             } catch (RemoteException unused) {
             }
-            if (z10 && (!f0Var.x || !f0.k(wVar))) {
-                f0Var.e.getClass();
+            if (z10 && (!e0Var.x || !e0.k(vVar))) {
+                e0Var.e.getClass();
             }
         } finally {
             if (0 == 0) {
-                x.a(mVar);
+                w.a(lVar);
             }
         }
     }
 
-    private final void g() {
-        f0 f0Var = (f0) this.b;
-        e0 e0Var = (e0) this.c;
-        e2.j jVar = (e2.j) this.d;
-        y yVar = (y) this.e;
-        if (f0Var.j()) {
-            e0Var.m(null);
-            return;
-        }
-        try {
-            jVar.accept(yVar);
-            e0Var.m(null);
-        } catch (Throwable th2) {
-            e0Var.n(th2);
-        }
-    }
-
-    private final void h() {
-        f0 f0Var = (f0) this.b;
-        g1 g1Var = (g1) this.c;
-        w wVar = (w) this.d;
+    private final void c() {
+        e0 e0Var = (e0) this.b;
+        f1 f1Var = (f1) this.c;
+        v vVar = (v) this.d;
         List list = (List) this.e;
-        if (f0Var.j()) {
+        if (e0Var.j()) {
             return;
         }
-        g1Var.a(f0Var.t, wVar, list);
+        f1Var.a(e0Var.t, vVar, list);
     }
 
-    private final void i() {
-        CameraController.lambda$openRound$9((CameraSession) this.b, (Runnable) this.c, (SurfaceTexture) this.d, (Runnable) this.e);
-    }
-
-    private final void j() {
+    private final void d() {
         CameraController.lambda$close$5((Runnable) this.b, (CameraSession) this.c, (CountDownLatch) this.d, (Runnable) this.e);
     }
 
-    private final void k() {
-        ((VideoAds) this.b).lambda$show$14((Context) this.c, (TLRPC.TL_sponsoredMessage) this.d, (m80) this.e);
+    private final void f() {
+        ((VideoAds) this.b).lambda$show$14((Context) this.c, (TLRPC.TL_sponsoredMessage) this.d, (l80) this.e);
     }
 
-    private final void l() {
+    private final void g() {
         ((Utilities.Callback) this.b).run(g6.R0((File) this.c, (String) this.d, (String[]) this.e));
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:347:0x08ca, code lost:
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00dc  */
+    /* JADX WARN: Removed duplicated region for block: B:35:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    private final void h() {
+        boolean z10;
+        TLRPC.WallPaperSettings wallPaperSettings;
+        TLObject tLObject = (TLObject) this.b;
+        e6 e6Var = (e6) this.c;
+        f6 f6Var = (f6) this.d;
+        TLRPC.TL_theme tL_theme = (TLRPC.TL_theme) this.e;
+        g6.A--;
+        if (tLObject instanceof TLRPC.TL_theme) {
+            TLRPC.TL_theme tL_theme2 = (TLRPC.TL_theme) tLObject;
+            TLRPC.ThemeSettings themeSettings = tL_theme2.settings.size() > 0 ? tL_theme2.settings.get(0) : null;
+            if (e6Var == null || themeSettings == null) {
+                TLRPC.Document document = tL_theme2.document;
+                if (document != null && document.id != tL_theme.document.id) {
+                    if (e6Var != null) {
+                        e6Var.r = tL_theme2;
+                    } else {
+                        f6Var.F = tL_theme2;
+                        f6Var.G = false;
+                        f6Var.g0 = null;
+                        f6Var.h0 = null;
+                        NotificationCenter.getInstance(f6Var.E).addObserver(f6Var, NotificationCenter.fileLoaded);
+                        NotificationCenter.getInstance(f6Var.E).addObserver(f6Var, NotificationCenter.fileLoadFailed);
+                        FileLoader fileLoader = FileLoader.getInstance(f6Var.E);
+                        TLRPC.TL_theme tL_theme3 = f6Var.F;
+                        fileLoader.loadFile(tL_theme3.document, tL_theme3, 1, 1);
+                    }
+                }
+            } else {
+                if (f6.a(e6Var, themeSettings)) {
+                    z10 = false;
+                } else {
+                    File d = e6Var.d();
+                    if (d != null) {
+                        d.delete();
+                    }
+                    f6.i(e6Var, themeSettings);
+                    f6 f6Var2 = g6.I;
+                    if (f6Var2 == f6Var && f6Var2.Y == e6Var.a) {
+                        g6.o1(false, false);
+                        g6.J(ApplicationLoader.applicationContext, false);
+                        NotificationCenter globalInstance = NotificationCenter.getGlobalInstance();
+                        int i10 = NotificationCenter.needSetDayNightTheme;
+                        f6 f6Var3 = g6.I;
+                        globalInstance.lambda$postNotificationNameOnUIThread$1(i10, f6Var3, Boolean.valueOf(g6.J == f6Var3), null, -1);
+                    }
+                    b6.a(true);
+                    z10 = true;
+                }
+                TLRPC.WallPaper wallPaper = themeSettings.wallpaper;
+                e6Var.q = (wallPaper == null || (wallPaperSettings = wallPaper.settings) == null || !wallPaperSettings.motion) ? false : true;
+                r5 = z10;
+            }
+            if (g6.A != 0) {
+                g6.B = (int) (System.currentTimeMillis() / 1000);
+                g6.t1(r5, false);
+                return;
+            }
+            return;
+        }
+        r5 = false;
+        if (g6.A != 0) {
+        }
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:338:0x089a, code lost:
+    
+        if (r6 != null) goto L299;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:339:0x089c, code lost:
+    
+        r6.dispose();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:340:0x08b2, code lost:
     
         org.telegram.messenger.AndroidUtilities.runOnUIThread(new bi.j8(r2, 2));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:348:0x08d3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:341:0x08bb, code lost:
     
         return;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:355:0x08c7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:349:0x08af, code lost:
     
-        if (r6 != null) goto L315;
+        if (r6 != null) goto L299;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:90:0x017f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x0168, code lost:
     
-        if (r11 == null) goto L87;
+        if (r10 == null) goto L72;
      */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00e5  */
-    /* JADX WARN: Removed duplicated region for block: B:37:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:417:0x09fe  */
+    /* JADX WARN: Removed duplicated region for block: B:409:0x09ee  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -625,30 +603,30 @@ public final /* synthetic */ class b implements Runnable {
         File file;
         ArrayList arrayList;
         TL_stories.StoryItem storyItem;
-        TLRPC.Photo photo;
+        long j10;
         rb rbVar;
         char c10;
         m2 U;
         SQLitePreparedStatement sQLitePreparedStatement;
         SQLitePreparedStatement sQLitePreparedStatement2;
         int i10;
-        float f7;
         int i11;
-        long j10;
+        int i12;
+        float f7;
+        long j11;
         float f10;
         int[][] iArr;
-        long j11;
         long j12;
+        long j13;
         ArrayList arrayList2;
-        boolean z10;
-        TLRPC.WallPaperSettings wallPaperSettings;
+        int i13 = 6;
         char c11 = 2;
-        r11 = null;
+        r10 = null;
         SQLiteCursor sQLiteCursor = null;
-        int i12 = 0;
+        int i14 = 0;
         switch (this.a) {
             case 0:
-                androidx.lifecycle.o oVar = (androidx.lifecycle.o) this.b;
+                o oVar = (o) this.b;
                 IOnDoneCallback iOnDoneCallback = (IOnDoneCallback) this.c;
                 String str = (String) this.d;
                 c cVar = (c) this.e;
@@ -668,9 +646,9 @@ public final /* synthetic */ class b implements Runnable {
                     TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject;
                     MessagesController.getInstance(q5Var.C2).putUsers(tL_stories_stories.users, false);
                     MessagesController.getInstance(q5Var.C2).putChats(tL_stories_stories.chats, false);
-                    for (int i13 = 0; i13 < tL_stories_stories.stories.size(); i13++) {
-                        if (tL_stories_stories.stories.get(i13).id == storyItem2.id) {
-                            callback.run(tL_stories_stories.stories.get(i13).media.document);
+                    for (int i15 = 0; i15 < tL_stories_stories.stories.size(); i15++) {
+                        if (tL_stories_stories.stories.get(i15).id == storyItem2.id) {
+                            callback.run(tL_stories_stories.stories.get(i15).media.document);
                             return;
                         }
                     }
@@ -684,50 +662,67 @@ public final /* synthetic */ class b implements Runnable {
                 n5 n5Var = (n5) this.e;
                 kc D = kc.D(activity, h5Var2.l.C2);
                 p5 p5Var = h5Var2.l.M2;
-                long j13 = (p5Var == null || (rbVar = (rb) p5Var.c) == null) ? 0L : rbVar.currentPosition;
+                long j14 = (p5Var == null || (rbVar = (rb) p5Var.c) == null) ? 0L : rbVar.currentPosition;
                 a1 a1Var = MessagesController.getInstance(h5Var2.l.C2).getStoriesController().w;
                 TL_stories.StoryItem storyItem3 = h5Var2.l.O1.a;
-                long j14 = storyItem3.dialogId;
+                long j15 = storyItem3.dialogId;
                 ArrayList arrayList3 = a1Var.b;
                 int size = arrayList3.size();
-                int i14 = 0;
-                while (i14 < size) {
-                    Object obj = arrayList3.get(i14);
-                    i14++;
+                int i16 = 0;
+                while (i16 < size) {
+                    Object obj = arrayList3.get(i16);
+                    i16++;
                     k8 k8Var2 = (k8) obj;
-                    if (k8Var2.g && storyItem3.id == k8Var2.f && j14 == k8Var2.e) {
-                        TLRPC.MessageMedia messageMedia = storyItem3.media;
-                        TLRPC.Document document = messageMedia.document;
-                        arrayList = arrayList3;
-                        storyItem = storyItem3;
-                        if ((document == null || document.id == k8Var2.H) && ((photo = messageMedia.photo) == null || photo.id == k8Var2.I)) {
-                            k8Var2.h = true;
-                            k8Var = k8Var2;
-                            if (k8Var != null || k8Var.u || (file = k8Var.L) == null || !file.exists()) {
-                                k8Var = k8.n(h5Var2.l.O1.h(), h5Var2.l.O1.a);
-                                k8Var.e = h5Var2.l.B1;
-                            }
-                            k8 g10 = k8Var.g();
-                            if (h5Var2.l.I0()) {
-                                q5 q5Var2 = h5Var2.l;
-                                g10.J0 = q5Var2.B1;
-                                g10.L0 = MessagesController.toInputMedia(q5Var2.O1.a.media);
-                                o8 o8Var = sbVar.O0;
-                                if (o8Var instanceof f8) {
-                                    g10.K0 = ((f8) o8Var).E;
+                    if (k8Var2.g && storyItem3.id == k8Var2.f) {
+                        j10 = j15;
+                        if (j10 == k8Var2.e) {
+                            TLRPC.MessageMedia messageMedia = storyItem3.media;
+                            TLRPC.Document document = messageMedia.document;
+                            if (document != null) {
+                                arrayList = arrayList3;
+                                storyItem = storyItem3;
+                                if (document.id != k8Var2.H) {
+                                    continue;
                                 }
+                            } else {
+                                arrayList = arrayList3;
+                                storyItem = storyItem3;
                             }
-                            D.R(fc.d(sbVar), g10, j13);
-                            D.Q = new z4(h5Var2, 3);
-                            D.R = new c5(h5Var2, n5Var, 1);
-                            return;
+                            TLRPC.Photo photo = messageMedia.photo;
+                            if (photo == null || photo.id == k8Var2.I) {
+                                k8Var2.h = true;
+                                k8Var = k8Var2;
+                                if (k8Var != null || k8Var.u || (file = k8Var.L) == null || !file.exists()) {
+                                    k8Var = k8.n(h5Var2.l.O1.h(), h5Var2.l.O1.a);
+                                    k8Var.e = h5Var2.l.B1;
+                                }
+                                k8 g10 = k8Var.g();
+                                if (h5Var2.l.I0()) {
+                                    q5 q5Var2 = h5Var2.l;
+                                    g10.J0 = q5Var2.B1;
+                                    g10.L0 = MessagesController.toInputMedia(q5Var2.O1.a.media);
+                                    o8 o8Var = sbVar.O0;
+                                    if (o8Var instanceof f8) {
+                                        g10.K0 = ((f8) o8Var).E;
+                                    }
+                                }
+                                D.R(fc.d(sbVar), g10, j14);
+                                D.Q = new z4(h5Var2, 3);
+                                D.R = new c5(h5Var2, n5Var, 1);
+                                return;
+                            }
+                        } else {
+                            arrayList = arrayList3;
+                            storyItem = storyItem3;
                         }
                     } else {
                         arrayList = arrayList3;
                         storyItem = storyItem3;
+                        j10 = j15;
                     }
                     storyItem3 = storyItem;
                     arrayList3 = arrayList;
+                    j15 = j10;
                 }
                 k8Var = null;
                 if (k8Var != null) {
@@ -737,7 +732,7 @@ public final /* synthetic */ class b implements Runnable {
                 k8 g102 = k8Var.g();
                 if (h5Var2.l.I0()) {
                 }
-                D.R(fc.d(sbVar), g102, j13);
+                D.R(fc.d(sbVar), g102, j14);
                 D.Q = new z4(h5Var2, 3);
                 D.R = new c5(h5Var2, n5Var, 1);
                 return;
@@ -764,94 +759,101 @@ public final /* synthetic */ class b implements Runnable {
                     zc.a0(U).f0(tL_error, false);
                 }
                 NotificationCenter notificationCenter = NotificationCenter.getInstance(i8Var.a);
-                int i15 = NotificationCenter.storyAlbumsCollectionsUpdate;
+                int i17 = NotificationCenter.storyAlbumsCollectionsUpdate;
                 Object[] objArr = new Object[2];
                 objArr[c10] = Long.valueOf(i8Var.b);
                 objArr[1] = i8Var;
-                notificationCenter.lambda$postNotificationNameOnUIThread$1(i15, objArr);
+                notificationCenter.lambda$postNotificationNameOnUIThread$1(i17, objArr);
                 return;
             case 4:
-                int i16 = 4;
-                int i17 = 3;
                 int i18 = 5;
+                int i19 = 4;
+                int i20 = 3;
                 o8 o8Var2 = (o8) this.b;
                 ArrayList arrayList4 = (ArrayList) this.c;
                 MessagesStorage messagesStorage = (MessagesStorage) this.d;
                 ArrayList arrayList5 = (ArrayList) this.e;
-                int i19 = o8Var2.f;
+                int i21 = o8Var2.f;
                 StringBuilder sb2 = new StringBuilder("StoriesList ");
-                int i20 = o8Var2.e;
-                sb2.append(i20);
+                int i22 = o8Var2.e;
+                sb2.append(i22);
                 sb2.append("{");
-                long j15 = o8Var2.d;
-                sb2.append(j15);
+                long j16 = o8Var2.d;
+                sb2.append(j16);
                 sb2.append("} saveCache {");
                 sb2.append(x8.a(arrayList4));
-                i2.d.t("}", sb2);
+                i2.d.v("}", sb2);
                 try {
                     SQLiteDatabase database = messagesStorage.getDatabase();
-                    sQLitePreparedStatement2 = database.executeFast("REPLACE INTO profile_stories VALUES(?, ?, ?, ?, ?, ?)");
+                    SQLitePreparedStatement executeFast = database.executeFast("REPLACE INTO profile_stories VALUES(?, ?, ?, ?, ?, ?)");
                     try {
                         Locale locale = Locale.US;
-                        database.executeFast("DELETE FROM profile_stories_albums_links WHERE dialog_id = " + j15 + " AND album_id = " + i19).stepThis().dispose();
+                        database.executeFast("DELETE FROM profile_stories_albums_links WHERE dialog_id = " + j16 + " AND album_id = " + i21).stepThis().dispose();
                         sQLitePreparedStatement = database.executeFast("REPLACE INTO profile_stories_albums_links VALUES(?, ?, ?, ?)");
-                        int i21 = 0;
-                        while (i21 < arrayList4.size()) {
+                        int i23 = 0;
+                        while (i23 < arrayList4.size()) {
                             try {
-                                TL_stories.StoryItem storyItem4 = ((MessageObject) arrayList4.get(i21)).storyItem;
+                                TL_stories.StoryItem storyItem4 = ((MessageObject) arrayList4.get(i23)).storyItem;
                                 if (storyItem4 == null) {
-                                    i10 = i16;
+                                    i10 = i13;
+                                    i11 = i19;
                                 } else {
                                     NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(storyItem4.getObjectSize());
                                     storyItem4.serializeToStream(nativeByteBuffer);
-                                    sQLitePreparedStatement2.requery();
-                                    sQLitePreparedStatement2.bindLong(1, j15);
-                                    sQLitePreparedStatement2.bindInteger(2, storyItem4.id);
-                                    sQLitePreparedStatement2.bindByteBuffer(i17, nativeByteBuffer);
-                                    sQLitePreparedStatement2.bindInteger(i16, i20);
-                                    sQLitePreparedStatement2.bindInteger(i18, o8Var2.m.contains(Integer.valueOf(storyItem4.id)) ? 1 : 0);
-                                    sQLitePreparedStatement2.bindInteger(6, arrayList5.indexOf(Integer.valueOf(storyItem4.id)) + 1);
-                                    sQLitePreparedStatement2.step();
+                                    executeFast.requery();
+                                    executeFast.bindLong(1, j16);
+                                    executeFast.bindInteger(2, storyItem4.id);
+                                    executeFast.bindByteBuffer(i20, nativeByteBuffer);
+                                    executeFast.bindInteger(i19, i22);
+                                    executeFast.bindInteger(i18, o8Var2.m.contains(Integer.valueOf(storyItem4.id)) ? 1 : 0);
+                                    i10 = 6;
+                                    executeFast.bindInteger(6, arrayList5.indexOf(Integer.valueOf(storyItem4.id)) + 1);
+                                    executeFast.step();
                                     nativeByteBuffer.reuse();
                                     sQLitePreparedStatement.requery();
-                                    sQLitePreparedStatement.bindLong(1, j15);
+                                    sQLitePreparedStatement.bindLong(1, j16);
+                                    sQLitePreparedStatement.bindInteger(2, i21);
                                     i18 = 5;
-                                    sQLitePreparedStatement.bindInteger(2, i19);
                                     sQLitePreparedStatement.bindInteger(3, storyItem4.id);
-                                    i10 = 4;
-                                    sQLitePreparedStatement.bindInteger(4, i21);
+                                    i11 = 4;
+                                    sQLitePreparedStatement.bindInteger(4, i23);
                                     sQLitePreparedStatement.step();
                                 }
-                                i21++;
-                                i16 = i10;
-                                i17 = 3;
+                                i23++;
+                                i19 = i11;
+                                i13 = i10;
+                                i20 = 3;
                             } catch (Throwable th2) {
                                 th = th2;
+                                sQLitePreparedStatement2 = executeFast;
                                 try {
                                     messagesStorage.checkSQLException(th);
                                     if (sQLitePreparedStatement2 != null) {
                                         sQLitePreparedStatement2.dispose();
                                         break;
                                     }
-                                } finally {
+                                } catch (Throwable th3) {
                                     if (sQLitePreparedStatement2 != null) {
                                         sQLitePreparedStatement2.dispose();
                                     }
                                     if (sQLitePreparedStatement != null) {
                                         sQLitePreparedStatement.dispose();
                                     }
+                                    throw th3;
                                 }
                             }
                         }
-                        if (sQLitePreparedStatement2 != null) {
+                        if (executeFast != null) {
+                            executeFast.dispose();
                             break;
                         }
-                    } catch (Throwable th3) {
-                        th = th3;
+                    } catch (Throwable th4) {
+                        th = th4;
+                        sQLitePreparedStatement2 = executeFast;
                         sQLitePreparedStatement = null;
                     }
-                } catch (Throwable th4) {
-                    th = th4;
+                } catch (Throwable th5) {
+                    th = th5;
                     sQLitePreparedStatement = null;
                     sQLitePreparedStatement2 = null;
                 }
@@ -908,6 +910,7 @@ public final /* synthetic */ class b implements Runnable {
                 int extractRealEncoderBitrate = MediaController.extractRealEncoderBitrate(videoEditedInfo.resultWidth, videoEditedInfo.resultHeight, videoEditedInfo.bitrate, true);
                 float f11 = 8.0f;
                 if (!k8Var4.K || str2 == null || k8Var4.v()) {
+                    i12 = 0;
                     File file6 = k8Var4.Z0;
                     if (file6 != null) {
                         videoEditedInfo.originalPath = file6.getAbsolutePath();
@@ -917,72 +920,69 @@ public final /* synthetic */ class b implements Runnable {
                     videoEditedInfo.isPhoto = true;
                     videoEditedInfo.collage = k8Var4.S;
                     if (k8Var4.v()) {
-                        int i22 = 0;
-                        boolean z11 = false;
-                        while (i22 < k8Var4.T.size()) {
-                            k8 k8Var5 = (k8) k8Var4.T.get(i22);
+                        int i24 = 0;
+                        boolean z10 = false;
+                        while (i24 < k8Var4.T.size()) {
+                            k8 k8Var5 = (k8) k8Var4.T.get(i24);
                             if (k8Var5.K) {
-                                k8Var5.k0 = Math.max(k8Var5.k0, iArr2[i22][1]);
-                                k8Var5.l0 = Math.max(k8Var5.l0, iArr2[i22][c11]);
+                                k8Var5.k0 = Math.max(k8Var5.k0, iArr2[i24][1]);
+                                k8Var5.l0 = Math.max(k8Var5.l0, iArr2[i24][c11]);
                                 f10 = f11;
                                 iArr = iArr2;
-                                k8Var5.h0 = Math.max(k8Var5.h0, iArr2[i22][4]);
-                                z11 = true;
+                                k8Var5.h0 = Math.max(k8Var5.h0, iArr2[i24][4]);
+                                z10 = true;
                             } else {
                                 f10 = f11;
                                 iArr = iArr2;
                             }
-                            i22++;
+                            i24++;
                             f11 = f10;
                             iArr2 = iArr;
                             c11 = 2;
-                            z11 = z11;
+                            z10 = z10;
                         }
-                        f7 = f11;
+                        float f12 = f11;
                         ArrayList<VideoEditedInfo.Part> parts = VideoEditedInfo.Part.toParts(k8Var4);
                         videoEditedInfo.collageParts = parts;
-                        if (z11) {
+                        if (z10) {
                             int size2 = parts.size();
                             VideoEditedInfo.Part part = null;
-                            int i23 = 0;
-                            long j16 = 0;
-                            while (i23 < size2) {
-                                VideoEditedInfo.Part part2 = parts.get(i23);
-                                i23++;
+                            int i25 = 0;
+                            long j17 = 0;
+                            while (i25 < size2) {
+                                VideoEditedInfo.Part part2 = parts.get(i25);
+                                i25++;
                                 VideoEditedInfo.Part part3 = part2;
-                                int i24 = i12;
-                                long j17 = j16;
+                                float f13 = f12;
                                 if (part3.isVideo) {
                                     long j18 = part3.duration;
                                     if (j18 > j17) {
-                                        j16 = j18;
+                                        j17 = j18;
                                         part = part3;
-                                        i12 = i24;
                                     }
                                 }
-                                j16 = j17;
-                                i12 = i24;
+                                f12 = f13;
                             }
-                            i11 = i12;
+                            f7 = f12;
                             if (part != null) {
-                                float f12 = part.duration;
-                                float f13 = part.right;
-                                float f14 = part.left;
-                                long j19 = (long) ((f13 - f14) * f12);
+                                float f14 = part.duration;
+                                float f15 = part.right;
+                                float f16 = part.left;
+                                long j19 = (long) ((f15 - f16) * f14);
                                 k8Var4.h0 = j19;
                                 videoEditedInfo.originalDuration = j19;
                                 videoEditedInfo.estimatedDuration = j19;
-                                j10 = -(part.offset + ((long) (f14 * f12)));
-                                part.offset = j10;
+                                j11 = -(part.offset + ((long) (f16 * f14)));
+                                part.offset = j11;
                                 ArrayList<VideoEditedInfo.Part> arrayList6 = videoEditedInfo.collageParts;
                                 int size3 = arrayList6.size();
-                                int i25 = i11;
-                                while (i25 < size3) {
-                                    VideoEditedInfo.Part part4 = arrayList6.get(i25);
-                                    i25++;
+                                int i26 = 0;
+                                while (i26 < size3) {
+                                    VideoEditedInfo.Part part4 = arrayList6.get(i26);
+                                    i26++;
                                     VideoEditedInfo.Part part5 = part4;
                                     if (part5.isVideo && part5 != part) {
-                                        part5.offset += j10;
+                                        part5.offset += j11;
                                     }
                                 }
                                 videoEditedInfo.startTime = -1L;
@@ -1000,11 +1000,10 @@ public final /* synthetic */ class b implements Runnable {
                             k8Var4.h0 = j20;
                             videoEditedInfo.originalDuration = j20;
                             videoEditedInfo.estimatedDuration = j20;
-                            i11 = 0;
+                            f7 = f12;
                         }
                     } else {
                         f7 = 8.0f;
-                        i11 = 0;
                         if (k8Var4.o0 != null) {
                             long j21 = (long) ((k8Var4.t0 - k8Var4.s0) * k8Var4.q0);
                             k8Var4.h0 = j21;
@@ -1022,7 +1021,7 @@ public final /* synthetic */ class b implements Runnable {
                             videoEditedInfo.estimatedDuration = j23;
                         }
                     }
-                    j10 = 0;
+                    j11 = 0;
                     videoEditedInfo.startTime = -1L;
                     videoEditedInfo.endTime = -1L;
                     videoEditedInfo.muted = true;
@@ -1042,12 +1041,12 @@ public final /* synthetic */ class b implements Runnable {
                     }
                     videoEditedInfo.originalBitrate = videoBitrate;
                     if (videoBitrate >= 1000000 || (arrayList2 = k8Var4.T0) == null || arrayList2.isEmpty()) {
-                        int i26 = videoEditedInfo.originalBitrate;
-                        if (i26 < 500000) {
+                        int i27 = videoEditedInfo.originalBitrate;
+                        if (i27 < 500000) {
                             videoEditedInfo.bitrate = 2500000;
                             videoEditedInfo.originalBitrate = -1;
                         } else {
-                            videoEditedInfo.bitrate = Utilities.clamp(i26, 3000000, 500000);
+                            videoEditedInfo.bitrate = Utilities.clamp(i27, 3000000, 500000);
                         }
                     } else {
                         videoEditedInfo.bitrate = 2000000;
@@ -1056,26 +1055,26 @@ public final /* synthetic */ class b implements Runnable {
                     StringBuilder sb3 = new StringBuilder("story bitrate, original = ");
                     sb3.append(videoEditedInfo.originalBitrate);
                     sb3.append(" => ");
-                    org.telegram.messenger.q.p(videoEditedInfo.bitrate, sb3);
-                    int i27 = iArr2[0][4];
-                    long j24 = i27;
+                    g0.o(videoEditedInfo.bitrate, sb3);
+                    int i28 = iArr2[0][4];
+                    i12 = 0;
+                    long j24 = i28;
                     k8Var4.h0 = j24;
                     videoEditedInfo.originalDuration = j24 * 1000;
-                    float f15 = j24;
-                    long j25 = ((long) (k8Var4.Z * f15)) * 1000;
+                    float f17 = j24;
+                    long j25 = ((long) (k8Var4.Z * f17)) * 1000;
                     videoEditedInfo.startTime = j25;
-                    long j26 = ((long) (k8Var4.a0 * f15)) * 1000;
+                    long j26 = ((long) (k8Var4.a0 * f17)) * 1000;
                     videoEditedInfo.endTime = j26;
                     videoEditedInfo.estimatedDuration = j26 - j25;
                     videoEditedInfo.volume = k8Var4.P;
                     videoEditedInfo.muted = k8Var4.Y;
-                    videoEditedInfo.estimatedSize = (long) a1.g.B(i27 / 1000.0f, extractRealEncoderBitrate, 8.0f, r7[5]);
+                    videoEditedInfo.estimatedSize = (long) a1.g.B(i28 / 1000.0f, extractRealEncoderBitrate, 8.0f, r5[5]);
                     videoEditedInfo.estimatedSize = Math.max(k8Var4.L.length(), videoEditedInfo.estimatedSize);
                     videoEditedInfo.filterState = k8Var4.a1;
                     File file7 = k8Var4.Q0;
                     videoEditedInfo.blurPath = file7 != null ? file7.getPath() : null;
-                    i11 = 0;
-                    j10 = 0;
+                    j11 = 0;
                 }
                 videoEditedInfo.account = k8Var4.a;
                 videoEditedInfo.wallpaperPeerId = k8Var4.z0;
@@ -1098,19 +1097,19 @@ public final /* synthetic */ class b implements Runnable {
                 if (k8Var4.v() && !k8Var4.Y) {
                     ArrayList<VideoEditedInfo.Part> arrayList7 = videoEditedInfo.collageParts;
                     int size4 = arrayList7.size();
-                    int i28 = i11;
-                    while (i28 < size4) {
-                        VideoEditedInfo.Part part6 = arrayList7.get(i28);
-                        i28++;
+                    int i29 = i12;
+                    while (i29 < size4) {
+                        VideoEditedInfo.Part part6 = arrayList7.get(i29);
+                        i29++;
                         VideoEditedInfo.Part part7 = part6;
                         if (part7.isVideo && part7.volume > 0.0f && !part7.muted) {
                             MediaCodecVideoConvertor.MixedSoundInfo mixedSoundInfo = new MediaCodecVideoConvertor.MixedSoundInfo(part7.path);
                             mixedSoundInfo.volume = part7.volume;
-                            float f16 = part7.left;
-                            float f17 = part7.duration;
-                            mixedSoundInfo.audioOffset = ((long) (f16 * f17)) * 1000;
+                            float f18 = part7.left;
+                            float f19 = part7.duration;
+                            mixedSoundInfo.audioOffset = ((long) (f18 * f19)) * 1000;
                             mixedSoundInfo.startTime = part7.offset * 1000;
-                            mixedSoundInfo.duration = ((long) ((part7.right - f16) * f17)) * 1000;
+                            mixedSoundInfo.duration = ((long) ((part7.right - f18) * f19)) * 1000;
                             videoEditedInfo.mixedSoundInfos.add(mixedSoundInfo);
                         }
                     }
@@ -1119,48 +1118,48 @@ public final /* synthetic */ class b implements Runnable {
                 if (file8 != null) {
                     MediaCodecVideoConvertor.MixedSoundInfo mixedSoundInfo2 = new MediaCodecVideoConvertor.MixedSoundInfo(file8.getAbsolutePath());
                     mixedSoundInfo2.volume = k8Var4.u0;
-                    float f18 = k8Var4.s0;
-                    float f19 = k8Var4.q0;
-                    long j27 = ((long) (f18 * f19)) * 1000;
+                    float f20 = k8Var4.s0;
+                    float f21 = k8Var4.q0;
+                    long j27 = ((long) (f20 * f21)) * 1000;
                     mixedSoundInfo2.audioOffset = j27;
                     if (k8Var4.K) {
                         mixedSoundInfo2.startTime = ((long) (k8Var4.r0 - (k8Var4.Z * k8Var4.h0))) * 1000;
-                        j12 = 0;
+                        j13 = 0;
                     } else {
-                        j12 = 0;
+                        j13 = 0;
                         mixedSoundInfo2.startTime = 0L;
                     }
-                    long j28 = mixedSoundInfo2.startTime + j10;
+                    long j28 = mixedSoundInfo2.startTime + j11;
                     mixedSoundInfo2.startTime = j28;
-                    if (j28 < j12) {
+                    if (j28 < j13) {
                         mixedSoundInfo2.audioOffset = j27 - j28;
-                        mixedSoundInfo2.startTime = j12;
+                        mixedSoundInfo2.startTime = j13;
                     }
-                    mixedSoundInfo2.duration = ((long) ((k8Var4.t0 - f18) * f19)) * 1000;
+                    mixedSoundInfo2.duration = ((long) ((k8Var4.t0 - f20) * f21)) * 1000;
                     videoEditedInfo.mixedSoundInfos.add(mixedSoundInfo2);
                 }
                 String str3 = k8Var4.y;
                 if (str3 != null) {
                     MediaCodecVideoConvertor.MixedSoundInfo mixedSoundInfo3 = new MediaCodecVideoConvertor.MixedSoundInfo(str3);
                     mixedSoundInfo3.volume = k8Var4.G;
-                    float f20 = k8Var4.E;
-                    float f21 = k8Var4.C;
-                    long j29 = ((long) (f20 * f21)) * 1000;
+                    float f22 = k8Var4.E;
+                    float f23 = k8Var4.C;
+                    long j29 = ((long) (f22 * f23)) * 1000;
                     mixedSoundInfo3.audioOffset = j29;
                     if (k8Var4.K) {
                         mixedSoundInfo3.startTime = ((long) (k8Var4.D - (k8Var4.Z * k8Var4.h0))) * 1000;
-                        j11 = 0;
+                        j12 = 0;
                     } else {
-                        j11 = 0;
+                        j12 = 0;
                         mixedSoundInfo3.startTime = 0L;
                     }
-                    long j30 = mixedSoundInfo3.startTime + j10;
+                    long j30 = mixedSoundInfo3.startTime + j11;
                     mixedSoundInfo3.startTime = j30;
-                    if (j30 < j11) {
+                    if (j30 < j12) {
                         mixedSoundInfo3.audioOffset = j29 - j30;
-                        mixedSoundInfo3.startTime = j11;
+                        mixedSoundInfo3.startTime = j12;
                     }
-                    mixedSoundInfo3.duration = ((long) ((k8Var4.F - f20) * f21)) * 1000;
+                    mixedSoundInfo3.duration = ((long) ((k8Var4.F - f22) * f23)) * 1000;
                     videoEditedInfo.mixedSoundInfos.add(mixedSoundInfo3);
                 }
                 callback3.run(videoEditedInfo);
@@ -1169,7 +1168,7 @@ public final /* synthetic */ class b implements Runnable {
                 di.d dVar = (di.d) this.b;
                 TLObject tLObject3 = (TLObject) this.c;
                 e3 e3Var = (e3) this.d;
-                u1 u1Var = (u1) this.e;
+                fi.u1 u1Var = (fi.u1) this.e;
                 dVar.setLoading(false);
                 if (tLObject3 instanceof TLRPC.TL_boolTrue) {
                     e3Var.dismiss();
@@ -1240,8 +1239,8 @@ public final /* synthetic */ class b implements Runnable {
                     cVar3.x = str5;
                     TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject5;
                     int size5 = messages_botresults.results.size();
-                    while (i12 < size5) {
-                        TLRPC.BotInlineResult botInlineResult = messages_botresults.results.get(i12);
+                    while (i14 < size5) {
+                        TLRPC.BotInlineResult botInlineResult = messages_botresults.results.get(i14);
                         if ("venue".equals(botInlineResult.type)) {
                             TLRPC.BotInlineMessage botInlineMessage = botInlineResult.send_message;
                             if (botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaVenue) {
@@ -1259,7 +1258,7 @@ public final /* synthetic */ class b implements Runnable {
                                 arrayList10.add(tL_messageMediaVenue);
                             }
                         }
-                        i12++;
+                        i14++;
                     }
                 }
                 hg.b bVar = cVar3.y;
@@ -1269,20 +1268,20 @@ public final /* synthetic */ class b implements Runnable {
                 cVar3.l();
                 return;
             case 13:
-                AndroidUtilities.runOnUIThread(new b((hg.m) this.b, (Runnable) this.d, (ArrayList) this.e, s4.o.c((hg.g) this.c, true), 14));
+                AndroidUtilities.runOnUIThread(new b((m) this.b, (Runnable) this.d, (ArrayList) this.e, s4.o.c((hg.g) this.c, true), 14));
                 return;
             case 14:
-                hg.m mVar = (hg.m) this.b;
+                m mVar = (m) this.b;
                 Runnable runnable = (Runnable) this.c;
                 ArrayList arrayList11 = (ArrayList) this.d;
-                m4.d dVar2 = (m4.d) this.e;
+                m4.c cVar4 = (m4.c) this.e;
                 if (mVar.Z) {
                     mVar.Z = false;
                     if (runnable != null) {
                         runnable.run();
                     }
                     mVar.M = arrayList11;
-                    dVar2.c(mVar);
+                    cVar4.c(mVar);
                     if (mVar.a0) {
                         mVar.a0 = false;
                         mVar.W(runnable);
@@ -1324,122 +1323,116 @@ public final /* synthetic */ class b implements Runnable {
                         while (sQLiteCursor.next()) {
                             arrayList13.add(Integer.valueOf(sQLiteCursor.intValue(0)));
                         }
-                    } catch (Throwable th5) {
-                        if (sQLiteCursor != null) {
-                            sQLiteCursor.dispose();
-                        }
-                        throw th5;
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                        break;
                     }
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    break;
+                    sQLiteCursor.dispose();
+                    AndroidUtilities.runOnUIThread(new b(b2Var, arrayList13, a2Var, tL_messages_sendQuickReplyMessages, 17));
+                    return;
+                } catch (Throwable th6) {
+                    if (sQLiteCursor != null) {
+                        sQLiteCursor.dispose();
+                    }
+                    throw th6;
                 }
-                sQLiteCursor.dispose();
-                AndroidUtilities.runOnUIThread(new b(b2Var, arrayList13, a2Var, tL_messages_sendQuickReplyMessages, 17));
-                return;
             case 17:
-                a();
-                return;
+                b2 b2Var2 = (b2) this.b;
+                ArrayList<Integer> arrayList14 = (ArrayList) this.c;
+                a2 a2Var2 = (a2) this.d;
+                TLRPC.TL_messages_sendQuickReplyMessages tL_messages_sendQuickReplyMessages2 = (TLRPC.TL_messages_sendQuickReplyMessages) this.e;
+                int i30 = b2Var2.a;
+                if (arrayList14.isEmpty() || arrayList14.size() < a2Var2.a()) {
+                    TLRPC.TL_messages_getQuickReplyMessages tL_messages_getQuickReplyMessages = new TLRPC.TL_messages_getQuickReplyMessages();
+                    tL_messages_getQuickReplyMessages.shortcut_id = a2Var2.a;
+                    ConnectionsManager.getInstance(i30).sendRequest(tL_messages_getQuickReplyMessages, new e5(b2Var2, arrayList14, tL_messages_sendQuickReplyMessages2, i13));
+                    return;
+                } else {
+                    tL_messages_sendQuickReplyMessages2.id = arrayList14;
+                    while (i14 < arrayList14.size()) {
+                        tL_messages_sendQuickReplyMessages2.random_id.add(Long.valueOf(Utilities.random.nextLong()));
+                        i14++;
+                    }
+                    ConnectionsManager.getInstance(i30).sendRequest(tL_messages_sendQuickReplyMessages2, null);
+                    return;
+                }
             case 18:
                 r rVar = (r) this.b;
                 ji.a aVar = (ji.a) this.c;
                 TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) this.d;
-                m80 m80Var = (m80) this.e;
+                l80 l80Var = (l80) this.e;
                 rVar.r.W4(aVar, pageBlock);
-                m80Var.u();
+                l80Var.u();
                 return;
             case 19:
-                b();
+                pi.e eVar = (pi.e) this.b;
+                AtomicBoolean atomicBoolean = (AtomicBoolean) this.c;
+                m4.h hVar = (m4.h) this.d;
+                AtomicBoolean atomicBoolean2 = (AtomicBoolean) this.e;
+                synchronized (eVar.a) {
+                    try {
+                        if (atomicBoolean.get()) {
+                            atomicBoolean2.set(true);
+                        } else {
+                            eVar.i(hVar);
+                        }
+                    } finally {
+                    }
+                }
                 return;
             case 20:
-                c();
+                a();
                 return;
             case 21:
-                d();
+                b();
                 return;
             case 22:
-                f();
-                return;
-            case 23:
-                g();
-                return;
-            case 24:
-                h();
-                return;
-            case 25:
-                i();
-                return;
-            case 26:
-                j();
-                return;
-            case 27:
-                k();
-                return;
-            case 28:
-                l();
-                return;
-            default:
-                TLObject tLObject7 = (TLObject) this.b;
-                e6 e6Var = (e6) this.c;
-                f6 f6Var = (f6) this.d;
-                TLRPC.TL_theme tL_theme = (TLRPC.TL_theme) this.e;
-                g6.A--;
-                if (tLObject7 instanceof TLRPC.TL_theme) {
-                    TLRPC.TL_theme tL_theme2 = (TLRPC.TL_theme) tLObject7;
-                    TLRPC.ThemeSettings themeSettings = tL_theme2.settings.size() > 0 ? tL_theme2.settings.get(0) : null;
-                    if (e6Var == null || themeSettings == null) {
-                        TLRPC.Document document2 = tL_theme2.document;
-                        if (document2 != null && document2.id != tL_theme.document.id) {
-                            if (e6Var != null) {
-                                e6Var.r = tL_theme2;
-                            } else {
-                                f6Var.F = tL_theme2;
-                                f6Var.G = false;
-                                f6Var.g0 = null;
-                                f6Var.h0 = null;
-                                NotificationCenter.getInstance(f6Var.E).addObserver(f6Var, NotificationCenter.fileLoaded);
-                                NotificationCenter.getInstance(f6Var.E).addObserver(f6Var, NotificationCenter.fileLoadFailed);
-                                FileLoader fileLoader = FileLoader.getInstance(f6Var.E);
-                                TLRPC.TL_theme tL_theme3 = f6Var.F;
-                                fileLoader.loadFile(tL_theme3.document, tL_theme3, 1, 1);
-                            }
-                        }
-                    } else {
-                        if (f6.a(e6Var, themeSettings)) {
-                            z10 = false;
-                        } else {
-                            File d = e6Var.d();
-                            if (d != null) {
-                                d.delete();
-                            }
-                            f6.i(e6Var, themeSettings);
-                            f6 f6Var2 = g6.I;
-                            if (f6Var2 == f6Var && f6Var2.Y == e6Var.a) {
-                                g6.o1(false, false);
-                                g6.J(ApplicationLoader.applicationContext, false);
-                                NotificationCenter globalInstance = NotificationCenter.getGlobalInstance();
-                                int i29 = NotificationCenter.needSetDayNightTheme;
-                                f6 f6Var3 = g6.I;
-                                globalInstance.lambda$postNotificationNameOnUIThread$1(i29, f6Var3, Boolean.valueOf(g6.J == f6Var3), null, -1);
-                            }
-                            b6.a(true);
-                            z10 = true;
-                        }
-                        TLRPC.WallPaper wallPaper = themeSettings.wallpaper;
-                        e6Var.q = (wallPaper == null || (wallPaperSettings = wallPaper.settings) == null || !wallPaperSettings.motion) ? false : true;
-                        r12 = z10;
-                    }
-                    if (g6.A != 0) {
-                        g6.B = (int) (System.currentTimeMillis() / 1000);
-                        g6.t1(r12, false);
-                        return;
-                    }
+                e0 e0Var = (e0) this.b;
+                j9.e0 e0Var2 = (j9.e0) this.c;
+                e2.j jVar = (e2.j) this.d;
+                y yVar2 = (y) this.e;
+                if (e0Var.j()) {
+                    e0Var2.m(null);
                     return;
                 }
-                r12 = false;
-                if (g6.A != 0) {
+                try {
+                    jVar.accept(yVar2);
+                    e0Var2.m(null);
+                    return;
+                } catch (Throwable th7) {
+                    e0Var2.n(th7);
+                    return;
                 }
-                break;
+            case 23:
+                c();
+                return;
+            case 24:
+                CameraController.lambda$openRound$9((CameraSession) this.b, (Runnable) this.c, (SurfaceTexture) this.d, (Runnable) this.e);
+                return;
+            case 25:
+                d();
+                return;
+            case 26:
+                f();
+                return;
+            case 27:
+                g();
+                return;
+            case 28:
+                h();
+                return;
+            default:
+                t6 t6Var = (t6) this.b;
+                v6 v6Var = (v6) this.c;
+                float[] fArr = (float[]) this.d;
+                boolean[] zArr3 = (boolean[]) this.e;
+                t6Var.getClass();
+                v6Var.a(fArr[0]);
+                if (zArr3[0]) {
+                    t6Var.d.w0(true);
+                    return;
+                }
+                return;
         }
     }
 

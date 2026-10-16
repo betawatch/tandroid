@@ -10,7 +10,7 @@ import org.telegram.ui.Components.CheckBoxSquare;
 import org.telegram.ui.Components.aa0;
 import org.telegram.ui.Components.da0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class p6 extends FrameLayout {
     public final aa0 a;
@@ -25,7 +25,7 @@ public final class p6 extends FrameLayout {
         checkBoxSquare.setFocusable(false);
         checkBoxSquare.setFocusableInTouchMode(false);
         checkBoxSquare.setClickable(false);
-        addView(checkBoxSquare, w7.a6.a(18.0f, 21.0f, 0.0f, 21.0f, 0.0f, 18, (LocaleController.isRTL ? 5 : 3) | 16));
+        addView(checkBoxSquare, w7.z5.a(18.0f, 21.0f, 0.0f, 21.0f, 0.0f, 18, (LocaleController.isRTL ? 5 : 3) | 16));
         aa0 aa0Var = new aa0(this);
         this.a = aa0Var;
         da0 da0Var = new da0(context, aa0Var, c6Var);
@@ -37,7 +37,7 @@ public final class p6 extends FrameLayout {
         da0Var.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         da0Var.setEllipsize(TextUtils.TruncateAt.END);
         boolean z10 = LocaleController.isRTL;
-        addView(da0Var, w7.a6.a(-1.0f, z10 ? 16.0f : 58.0f, 21.0f, z10 ? 58.0f : 16.0f, 21.0f, -1, (z10 ? 5 : 3) | 48));
+        addView(da0Var, w7.z5.a(-1.0f, z10 ? 16.0f : 58.0f, 21.0f, z10 ? 58.0f : 16.0f, 21.0f, -1, (z10 ? 5 : 3) | 48));
         setWillNotDraw(false);
     }
 

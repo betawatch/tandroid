@@ -8,9 +8,9 @@ import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.List;
 import v7.z6;
-import w7.g0;
+import w7.f0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class b extends o6.a {
     public static final Parcelable.Creator<b> CREATOR;
@@ -66,34 +66,34 @@ public final class b extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = g0.q(parcel, 20293);
-        g0.l(parcel, 2, this.a);
-        g0.n(parcel, 3, DesugarCollections.unmodifiableList(this.b));
-        g0.s(parcel, 4, 4);
+        int q6 = f0.q(parcel, 20293);
+        f0.l(parcel, 2, this.a);
+        f0.n(parcel, 3, DesugarCollections.unmodifiableList(this.b));
+        f0.s(parcel, 4, 4);
         parcel.writeInt(this.c ? 1 : 0);
-        g0.k(parcel, 5, this.d, i10);
-        g0.s(parcel, 6, 4);
+        f0.k(parcel, 5, this.d, i10);
+        f0.s(parcel, 6, 4);
         parcel.writeInt(this.e ? 1 : 0);
-        g0.k(parcel, 7, this.f, i10);
-        g0.s(parcel, 8, 4);
+        f0.k(parcel, 7, this.f, i10);
+        f0.s(parcel, 8, 4);
         parcel.writeInt(this.h ? 1 : 0);
-        g0.s(parcel, 9, 8);
+        f0.s(parcel, 9, 8);
         parcel.writeDouble(this.n);
-        g0.s(parcel, 10, 4);
+        f0.s(parcel, 10, 4);
         parcel.writeInt(this.r ? 1 : 0);
-        g0.s(parcel, 11, 4);
+        f0.s(parcel, 11, 4);
         parcel.writeInt(this.s ? 1 : 0);
-        g0.s(parcel, 12, 4);
+        f0.s(parcel, 12, 4);
         parcel.writeInt(this.v ? 1 : 0);
-        g0.n(parcel, 13, DesugarCollections.unmodifiableList(this.w));
-        g0.s(parcel, 14, 4);
+        f0.n(parcel, 13, DesugarCollections.unmodifiableList(this.w));
+        f0.s(parcel, 14, 4);
         parcel.writeInt(this.x ? 1 : 0);
-        g0.s(parcel, 15, 4);
+        f0.s(parcel, 15, 4);
         parcel.writeInt(0);
-        g0.s(parcel, 16, 4);
+        f0.s(parcel, 16, 4);
         parcel.writeInt(this.y ? 1 : 0);
-        g0.k(parcel, 17, this.E, i10);
-        g0.k(parcel, 18, this.F, i10);
-        g0.r(parcel, q6);
+        f0.k(parcel, 17, this.E, i10);
+        f0.k(parcel, 18, this.F, i10);
+        f0.r(parcel, q6);
     }
 }

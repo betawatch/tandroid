@@ -11,16 +11,16 @@ import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.da0;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.k9;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class r0 extends LinearLayout {
     public final ArrayList a;
@@ -40,30 +40,30 @@ public final class r0 extends LinearLayout {
         FrameLayout frameLayout2 = new FrameLayout(getContext());
         this.d = frameLayout2;
         frameLayout2.setClipChildren(false);
-        frameLayout.addView(frameLayout2, a6.a(70.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 0));
+        frameLayout.addView(frameLayout2, z5.a(70.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 0));
         n0 n0Var = new n0(context);
         ImageView imageView = new ImageView(n0Var.getContext());
         imageView.setImageResource(R.drawable.msg_arrow_avatar);
         imageView.setColorFilter(g6.x0(null, g6.E6, false));
         n0Var.addView(imageView);
-        frameLayout.addView(n0Var, a6.e(24, 24, 17));
+        frameLayout.addView(n0Var, z5.e(24, 24, 17));
         o0 o0Var = new o0(context);
         this.b = o0Var;
         o0Var.setLayerType(2, null);
-        frameLayout.addView(o0Var, a6.e(70, 70, 17));
-        addView(frameLayout, a6.k(0.0f, 15.0f, 0.0f, 0.0f, -1, 70));
+        frameLayout.addView(o0Var, z5.e(70, 70, 17));
+        addView(frameLayout, z5.k(0.0f, 15.0f, 0.0f, 0.0f, -1, 70));
         TextView textView = new TextView(context);
         textView.setTypeface(AndroidUtilities.bold());
-        yh.j(20.0f, R.string.BoostingReassignBoost, 1, textView);
+        sk.j(20.0f, R.string.BoostingReassignBoost, 1, textView);
         textView.setTextColor(g6.x0(null, g6.G6, false));
-        addView(textView, a6.t(-2, -2, 1, 0, 15, 0, 7));
+        addView(textView, z5.t(-2, -2, 1, 0, 15, 0, 7));
         da0 da0Var = new da0(getContext(), null);
         this.e = da0Var;
         da0Var.setTextSize(1, 14.0f);
         da0Var.setGravity(1);
         da0Var.setTextColor(g6.x0(null, g6.j5, false));
         da0Var.setLineSpacing(da0Var.getLineSpacingExtra(), da0Var.getLineSpacingMultiplier() * 1.1f);
-        addView(da0Var, a6.t(-2, -2, 1, 28, 0, 28, 18));
+        addView(da0Var, z5.t(-2, -2, 1, 28, 0, 28, 18));
     }
 
     public final void a(ArrayList arrayList, TLRPC.Chat chat) {
@@ -140,7 +140,7 @@ public final class r0 extends LinearLayout {
             k9Var.q(chat4);
             o0Var3.a.e(chat4, k9Var);
             int size5 = arrayList6.size();
-            frameLayout.addView(o0Var3, i12, a6.e(70, 70, 17));
+            frameLayout.addView(o0Var3, i12, z5.e(70, 70, 17));
             o0Var3.setTranslationX(AndroidUtilities.dp(23.0f) * (-size5));
             o0Var3.setAlpha(0.0f);
             o0Var3.setScaleX(0.1f);
@@ -199,11 +199,11 @@ public final class r0 extends LinearLayout {
                     size6 = i11;
                 }
                 i10 = size6;
-                if (i2.d.g(1, arrayList6) != o0Var || arrayList6.size() <= 1) {
+                if (i2.d.h(1, arrayList6) != o0Var || arrayList6.size() <= 1) {
                     c11 = 2;
                 } else {
                     c11 = 2;
-                    ((o0) i2.d.g(2, arrayList6)).b.setScaleY(0.1f);
+                    ((o0) i2.d.h(2, arrayList6)).b.setScaleY(0.1f);
                     ((o0) arrayList6.get(arrayList6.size() - 2)).b.setScaleX(0.1f);
                     ((o0) arrayList6.get(arrayList6.size() - 2)).b.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(j10).setInterpolator(esVar).start();
                     c10 = c11;

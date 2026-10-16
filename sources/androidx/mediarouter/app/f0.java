@@ -8,10 +8,10 @@ import org.telegram.messenger.beta.R;
 import s4.b1;
 import v7.q7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class f0 extends b1 {
-    public p4.w v;
+    public p4.v v;
     public final ImageButton w;
     public final MediaRouteVolumeSlider x;
     public final /* synthetic */ n0 y;
@@ -40,17 +40,17 @@ public abstract class f0 extends b1 {
         mediaRouteVolumeSlider.a(color, color2);
     }
 
-    public final void t(p4.w wVar) {
-        this.v = wVar;
-        int i10 = wVar.p;
+    public final void t(p4.v vVar) {
+        this.v = vVar;
+        int i10 = vVar.p;
         boolean z10 = i10 == 0;
         ImageButton imageButton = this.w;
         imageButton.setActivated(z10);
         imageButton.setOnClickListener(new w(this, 1));
-        p4.w wVar2 = this.v;
+        p4.v vVar2 = this.v;
         MediaRouteVolumeSlider mediaRouteVolumeSlider = this.x;
-        mediaRouteVolumeSlider.setTag(wVar2);
-        mediaRouteVolumeSlider.setMax(wVar.q);
+        mediaRouteVolumeSlider.setTag(vVar2);
+        mediaRouteVolumeSlider.setMax(vVar.q);
         mediaRouteVolumeSlider.setProgress(i10);
         mediaRouteVolumeSlider.setOnSeekBarChangeListener(this.y.K);
     }

@@ -11,29 +11,29 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SaveToGallerySettingsHelper;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class d5 extends FrameLayout {
     public TextView a;
     public TextView b;
-    public k0 c;
+    public j0 c;
     public long d;
 
     public final void a(ArrayList arrayList, boolean z10) {
         TextView textView = this.b;
-        k0 k0Var = this.c;
+        j0 j0Var = this.c;
         TextView textView2 = this.a;
         super.setEnabled(z10);
         if (arrayList != null) {
             arrayList.add(ObjectAnimator.ofFloat(textView2, "alpha", z10 ? 1.0f : 0.5f));
-            arrayList.add(ObjectAnimator.ofFloat(k0Var, "alpha", z10 ? 1.0f : 0.5f));
+            arrayList.add(ObjectAnimator.ofFloat(j0Var, "alpha", z10 ? 1.0f : 0.5f));
             arrayList.add(ObjectAnimator.ofFloat(textView, "alpha", z10 ? 1.0f : 0.5f));
         } else {
             textView2.setAlpha(z10 ? 1.0f : 0.5f);
-            k0Var.setAlpha(z10 ? 1.0f : 0.5f);
+            j0Var.setAlpha(z10 ? 1.0f : 0.5f);
             textView.setAlpha(z10 ? 1.0f : 0.5f);
         }
     }
@@ -70,8 +70,8 @@ public abstract class d5 extends FrameLayout {
         int measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(42.0f);
         TextView textView = this.b;
         textView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
-        this.a.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.q.c(8.0f, measuredWidth - textView.getMeasuredWidth(), AndroidUtilities.dp(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
-        this.c.measure(yh.z(20.0f, getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
+        this.a.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.b(8.0f, measuredWidth - textView.getMeasuredWidth(), AndroidUtilities.dp(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
+        this.c.measure(sk.c(20.0f, getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
     }
 
     @Override // android.view.View

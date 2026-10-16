@@ -23,7 +23,7 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class gi0 extends View {
     public int E;
@@ -157,7 +157,7 @@ public final class gi0 extends View {
         this.f[i10].setShader(new ComposeShader(new BitmapShader(bitmap, tileMode, tileMode), linearGradient, PorterDuff.Mode.DST_IN));
     }
 
-    public final void c(float f7, org.telegram.ui.s01 s01Var, float f10, float f11) {
+    public final void c(float f7, org.telegram.ui.r01 r01Var, float f10, float f11) {
         if (this.I == null && this.J == null) {
             this.K = false;
         } else {
@@ -191,9 +191,9 @@ public final class gi0 extends View {
         this.M.setAlpha(this.O.d(1.0f, false));
         ei0 ei0Var2 = this.I;
         if (ei0Var2 != null) {
-            if (s01Var != null) {
+            if (r01Var != null) {
                 ei0Var2.w = this.M;
-                ei0Var2.r = s01Var;
+                ei0Var2.r = r01Var;
                 ei0Var2.s = renderNodeScale / f10;
                 ei0Var2.v = -f11;
                 ei0Var2.invalidate();
@@ -207,7 +207,7 @@ public final class gi0 extends View {
         }
         wi0 wi0Var2 = this.J;
         if (wi0Var2 != null) {
-            if (s01Var == null) {
+            if (r01Var == null) {
                 wi0Var2.I = this.M;
                 wi0Var2.J = renderNodeScale;
                 wi0Var2.K = (-f11) + AndroidUtilities.dp(22.0f);
@@ -230,11 +230,11 @@ public final class gi0 extends View {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean d() {
-        org.telegram.ui.wv0 wv0Var;
+        org.telegram.ui.vv0 vv0Var;
         lw0[] lw0VarArr;
         pi0 pi0Var = this.h;
         boolean z10 = false;
-        if (pi0Var != null && ((wv0Var = pi0Var.h1) == null || !wv0Var.n)) {
+        if (pi0Var != null && ((vv0Var = pi0Var.h1) == null || !vv0Var.n)) {
             int measuredWidth = (int) (pi0Var.getMeasuredWidth() / 6.0f);
             int i10 = (int) (this.r / 6.0f);
             if (measuredWidth > 0 && i10 > 0) {
@@ -363,7 +363,7 @@ public final class gi0 extends View {
         }
     }
 
-    public final void f(Canvas canvas, org.telegram.ui.s01 s01Var, float f7, float f10, boolean z10, float f11, float f12) {
+    public final void f(Canvas canvas, org.telegram.ui.r01 r01Var, float f7, float f10, boolean z10, float f11, float f12) {
         float f13;
         char c10;
         int i10;
@@ -374,8 +374,8 @@ public final class gi0 extends View {
         }
         if (this.a && Build.VERSION.SDK_INT >= 31) {
             if (canvas2.isHardwareAccelerated()) {
-                if (s01Var != null || getVisibility() != 0 || getAlpha() <= 0.0f) {
-                    if (s01Var != null) {
+                if (r01Var != null || getVisibility() != 0 || getAlpha() <= 0.0f) {
+                    if (r01Var != null) {
                         float measuredWidth = f7 / this.h.getMeasuredWidth();
                         float f14 = this.r * (1.0f - f11);
                         float f15 = f14 * measuredWidth;
@@ -385,17 +385,17 @@ public final class gi0 extends View {
                         RecordingCanvas beginRecording = this.L.beginRecording();
                         float f16 = 1.0f / renderNodeScale;
                         beginRecording.scale(f16, f16);
-                        s5 s5Var = s01Var.e;
-                        g(s5Var != null ? s5Var.k : s01Var.a, beginRecording, f15, f10);
-                        if (s01Var.a0 && s01Var.V > 0.0f) {
-                            g(s01Var.U, beginRecording, f15, f10);
+                        s5 s5Var = r01Var.e;
+                        g(s5Var != null ? s5Var.k : r01Var.a, beginRecording, f15, f10);
+                        if (r01Var.a0 && r01Var.V > 0.0f) {
+                            g(r01Var.U, beginRecording, f15, f10);
                         }
                         this.L.endRecording();
                         this.L.setAlpha(f12);
                         canvas2.translate(0.0f, -f15);
                         canvas2.scale(renderNodeScale, renderNodeScale);
                         canvas2.drawRenderNode(this.L);
-                        c(f7, s01Var, measuredWidth, f14);
+                        c(f7, r01Var, measuredWidth, f14);
                         return;
                     }
                     return;
@@ -437,7 +437,7 @@ public final class gi0 extends View {
                 c(f7, null, 1.0f, this.r);
                 return;
             }
-            if (s01Var != null || AndroidUtilities.makingGlobalBlurBitmap) {
+            if (r01Var != null || AndroidUtilities.makingGlobalBlurBitmap) {
                 return;
             }
             this.a = false;

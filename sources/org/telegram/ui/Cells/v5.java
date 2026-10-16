@@ -6,15 +6,15 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.uf0;
 import org.telegram.ui.Components.vf0;
+import org.telegram.ui.Components.wf0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class v5 extends FrameLayout {
     public TextView a;
     public TextView b;
-    public vf0 c;
+    public wf0 c;
     public AnimatorSet d;
     public androidx.activity.i e;
 
@@ -36,10 +36,10 @@ public final class v5 extends FrameLayout {
         }
         textView2.setAlpha(0.0f);
         textView.setAlpha(1.0f);
-        vf0 vf0Var = this.c;
-        vf0Var.h = i10;
-        vf0Var.n = 100;
-        vf0Var.a((int) f7, false);
+        wf0 wf0Var = this.c;
+        wf0Var.h = i10;
+        wf0Var.n = 100;
+        wf0Var.a((int) f7, false);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -47,8 +47,8 @@ public final class v5 extends FrameLayout {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLObject.FLAG_30));
     }
 
-    public void setSeekBarDelegate(uf0 uf0Var) {
-        this.c.setDelegate(new k9(this, uf0Var));
+    public void setSeekBarDelegate(vf0 vf0Var) {
+        this.c.setDelegate(new k9(this, vf0Var));
     }
 
     @Override // android.view.View

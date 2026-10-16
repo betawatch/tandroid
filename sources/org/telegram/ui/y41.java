@@ -15,7 +15,7 @@ import org.telegram.messenger.SaveToGallerySettingsHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class y41 extends pg.b {
     public final /* synthetic */ SaveToGallerySettingsActivity d;
@@ -130,7 +130,7 @@ public final class y41 extends pg.b {
                 view3 = view;
                 break;
             case 3:
-                view2 = new org.telegram.ui.Cells.b7(viewGroup.getContext(), (org.telegram.ui.Cells.d0) null);
+                view2 = new org.telegram.ui.Cells.a7(viewGroup.getContext(), (org.telegram.ui.Cells.c1) null);
                 view3 = view2;
                 break;
             case 4:
@@ -164,16 +164,16 @@ public final class y41 extends pg.b {
                 a51 a51Var = new a51(saveToGallerySettingsActivity, saveToGallerySettingsActivity.getParentActivity());
                 a51Var.setTextSize(AndroidUtilities.dp(13.0f));
                 a51Var.setText(AndroidUtilities.formatFileSize(524288L, true, false));
-                frameLayout.addView(a51Var, w7.a6.e(-2, -2, 83));
+                frameLayout.addView(a51Var, w7.z5.e(-2, -2, 83));
                 a51 a51Var2 = new a51(saveToGallerySettingsActivity, saveToGallerySettingsActivity.getParentActivity());
                 a51Var2.setTextSize(AndroidUtilities.dp(13.0f));
-                frameLayout.addView(a51Var2, w7.a6.e(-2, -2, 81));
+                frameLayout.addView(a51Var2, w7.z5.e(-2, -2, 81));
                 a51 a51Var3 = new a51(saveToGallerySettingsActivity, saveToGallerySettingsActivity.getParentActivity());
                 a51Var3.setTextSize(AndroidUtilities.dp(13.0f));
                 a51Var3.setText(AndroidUtilities.formatFileSize(4194304000L, true, false));
-                frameLayout.addView(a51Var3, w7.a6.e(-2, -2, 85));
-                linearLayout.addView(frameLayout, w7.a6.t(-1, 20, 0, 21, 10, 21, 0));
-                linearLayout.addView(gp0Var, w7.a6.t(-1, 38, 0, 5, 0, 5, 4));
+                frameLayout.addView(a51Var3, w7.z5.e(-2, -2, 85));
+                linearLayout.addView(frameLayout, w7.z5.t(-1, 20, 0, 21, 10, 21, 0));
+                linearLayout.addView(gp0Var, w7.z5.t(-1, 38, 0, 5, 0, 5, 4));
                 long j10 = saveToGallerySettingsActivity.X().limitVideo;
                 if (j10 < 0 || j10 > 4194304000L) {
                     j10 = 4194304000L;
@@ -201,9 +201,9 @@ public final class y41 extends pg.b {
                 view3 = view2;
                 break;
             case 10:
-                View b7Var = new org.telegram.ui.Cells.b7(viewGroup.getContext(), (org.telegram.ui.Cells.d0) null);
-                b7Var.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.V0(saveToGallerySettingsActivity.getParentActivity(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.b7, saveToGallerySettingsActivity.getResourceProvider())));
-                view2 = b7Var;
+                View a7Var = new org.telegram.ui.Cells.a7(viewGroup.getContext(), (org.telegram.ui.Cells.c1) null);
+                a7Var.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.V0(saveToGallerySettingsActivity.getParentActivity(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.b7, saveToGallerySettingsActivity.getResourceProvider())));
+                view2 = a7Var;
                 view3 = view2;
                 break;
         }

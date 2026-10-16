@@ -1,14 +1,12 @@
 package n7;
 
-import java.io.Serializable;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class e0 extends f0 implements Serializable {
-    public final byte[] b;
-
-    public e0(byte[] bArr) {
-        bArr.getClass();
-        this.b = bArr;
+public abstract class e0 implements Iterator {
+    @Override // java.util.Iterator
+    public final void remove() {
+        throw new UnsupportedOperationException();
     }
 }

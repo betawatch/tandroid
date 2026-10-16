@@ -21,7 +21,7 @@ import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class g extends g.t {
     public LinearLayout E;
@@ -33,9 +33,9 @@ public final class g extends g.t {
     public boolean K;
     public long L;
     public final ab.o0 M;
-    public final p4.y f;
+    public final p4.x f;
     public final c h;
-    public p4.s n;
+    public p4.r n;
     public ArrayList r;
     public TextView s;
     public TextView v;
@@ -52,9 +52,9 @@ public final class g extends g.t {
         int i10 = 0;
         ContextThemeWrapper a2 = v7.a0.a(context, false);
         int g10 = v7.a0.g(a2, R.attr.mediaRouteTheme);
-        this.n = p4.s.c;
+        this.n = p4.r.c;
         this.M = new ab.o0(this, 1);
-        this.f = p4.y.d(getContext());
+        this.f = p4.x.d(getContext());
         this.h = new c(this, i10);
         this.J = new f(this, 0);
     }
@@ -87,16 +87,16 @@ public final class g extends g.t {
     public final void f() {
         if (this.K) {
             this.f.getClass();
-            p4.y.b();
-            ArrayList arrayList = new ArrayList(p4.y.c().j);
+            p4.x.b();
+            ArrayList arrayList = new ArrayList(p4.x.c().j);
             int size = arrayList.size();
             while (true) {
                 int i10 = size - 1;
                 if (size <= 0) {
                     break;
                 }
-                p4.w wVar = (p4.w) arrayList.get(i10);
-                if (wVar.d() || !wVar.g || !wVar.h(this.n)) {
+                p4.v vVar = (p4.v) arrayList.get(i10);
+                if (vVar.d() || !vVar.g || !vVar.h(this.n)) {
                     arrayList.remove(i10);
                 }
                 size = i10;
@@ -112,19 +112,19 @@ public final class g extends g.t {
         }
     }
 
-    public final void h(p4.s sVar) {
-        if (sVar == null) {
+    public final void h(p4.r rVar) {
+        if (rVar == null) {
             throw new IllegalArgumentException("selector must not be null");
         }
-        if (this.n.equals(sVar)) {
+        if (this.n.equals(rVar)) {
             return;
         }
-        this.n = sVar;
+        this.n = rVar;
         if (this.K) {
-            p4.y yVar = this.f;
+            p4.x xVar = this.f;
             c cVar = this.h;
-            yVar.h(cVar);
-            yVar.a(sVar, cVar, 1);
+            xVar.h(cVar);
+            xVar.a(rVar, cVar, 1);
         }
         f();
     }

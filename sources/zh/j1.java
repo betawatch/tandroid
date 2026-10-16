@@ -16,7 +16,7 @@ import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.z9;
 import org.telegram.ui.b31;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j1 implements Runnable {
     public final /* synthetic */ int a;
@@ -100,14 +100,14 @@ public final /* synthetic */ class j1 implements Runnable {
                         h1Var.x.setVisibility(8);
                         h1Var.setRibbonColor(-3065286);
                         z9 z9Var = h1Var.y;
-                        FrameLayout.LayoutParams e = w7.a6.e(42, 42, 17);
+                        FrameLayout.LayoutParams e = w7.z5.e(42, 42, 17);
                         h1Var.E = e;
                         z9Var.setLayoutParams(e);
                         int i12 = i11 + 1;
                         boolean z10 = i12 >= arrayList.size();
                         LinearLayout linearLayout = s2Var.N;
                         s2Var.O[i11] = h1Var;
-                        linearLayout.addView(h1Var, w7.a6.p(74, 74, 0.0f, 51, 0, 0, z10 ? 0 : 6, 0));
+                        linearLayout.addView(h1Var, w7.z5.p(74, 74, 0.0f, 51, 0, 0, z10 ? 0 : 6, 0));
                         i11 = i12;
                     }
                     break;

@@ -14,7 +14,7 @@ import org.telegram.ui.Components.ow0;
 import org.telegram.ui.Components.wz;
 import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class v1 extends ow0 {
     public boolean w0;
@@ -83,7 +83,7 @@ public final class v1 extends ow0 {
         d2 d2Var = this.z0;
         if (action == 0 && keyEvent.getKeyCode() == 47 && keyEvent.isCtrlPressed()) {
             if (d2Var.q0()) {
-                org.telegram.messenger.q.r(R.string.RichEditorDraftSaved, new zc(d2Var.X, d2Var.getResourceProvider()), R.raw.contact_check, 36);
+                org.telegram.messenger.g0.q(R.string.RichEditorDraftSaved, new zc(d2Var.X, d2Var.getResourceProvider()), R.raw.contact_check, 36);
                 return true;
             }
         } else if (!d2Var.P.i3(keyEvent)) {

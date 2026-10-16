@@ -15,7 +15,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class aq extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public long E;
@@ -91,7 +91,7 @@ public final class aq extends org.telegram.ui.ActionBar.m2 implements Notificati
             return;
         }
         if (!ChatObject.isChannel(chat)) {
-            getMessagesController().convertToMegaGroup(getParentActivity(), chat.id, this, new m4.z0(20, this, m2Var));
+            getMessagesController().convertToMegaGroup(getParentActivity(), chat.id, this, new m4.y0(19, this, m2Var));
             return;
         }
         org.telegram.ui.ActionBar.a2[] a2VarArr = {m2Var == null ? new org.telegram.ui.ActionBar.a2(getParentActivity(), 3, null) : null};
@@ -139,7 +139,7 @@ public final class aq extends org.telegram.ui.ActionBar.m2 implements Notificati
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         String formatString = !ChatObject.isPublic(chat) ? LocaleController.formatString("DiscussionLinkGroupPublicPrivateAlert", R.string.DiscussionLinkGroupPublicPrivateAlert, chat.title, this.f.title) : !ChatObject.isPublic(this.f) ? LocaleController.formatString("DiscussionLinkGroupPrivateAlert", R.string.DiscussionLinkGroupPrivateAlert, chat.title, this.f.title) : LocaleController.formatString("DiscussionLinkGroupPublicAlert", R.string.DiscussionLinkGroupPublicAlert, chat.title, this.f.title);
         if (chatFull.hidden_prehistory) {
-            formatString = org.telegram.messenger.q.h(R.string.DiscussionLinkGroupAlertHistory, t8.b.i(formatString, "\n\n"));
+            formatString = org.telegram.messenger.g0.g(R.string.DiscussionLinkGroupAlertHistory, t8.b.i(formatString, "\n\n"));
         }
         textView.setText(AndroidUtilities.replaceTags(formatString));
         FrameLayout frameLayout = new FrameLayout(getParentActivity());
@@ -148,7 +148,7 @@ public final class aq extends org.telegram.ui.ActionBar.m2 implements Notificati
         k9Var.u(AndroidUtilities.dp(12.0f));
         org.telegram.ui.Components.z9 z9Var = new org.telegram.ui.Components.z9(getParentActivity());
         z9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-        frameLayout.addView(z9Var, w7.a6.a(40.0f, 22.0f, 5.0f, 22.0f, 0.0f, 40, (LocaleController.isRTL ? 5 : 3) | 48));
+        frameLayout.addView(z9Var, w7.z5.a(40.0f, 22.0f, 5.0f, 22.0f, 0.0f, 40, (LocaleController.isRTL ? 5 : 3) | 48));
         TextView textView2 = new TextView(getParentActivity());
         textView2.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.E8, false));
         textView2.setTextSize(1, 20.0f);
@@ -160,8 +160,8 @@ public final class aq extends org.telegram.ui.ActionBar.m2 implements Notificati
         textView2.setEllipsize(TextUtils.TruncateAt.END);
         textView2.setText(chat.title);
         boolean z11 = LocaleController.isRTL;
-        frameLayout.addView(textView2, w7.a6.a(-2.0f, z11 ? 21 : 76, 11.0f, z11 ? 76 : 21, 0.0f, -1, (z11 ? 5 : 3) | 48));
-        frameLayout.addView(textView, w7.a6.a(-2.0f, 24.0f, 57.0f, 24.0f, 9.0f, -2, (LocaleController.isRTL ? 5 : 3) | 48));
+        frameLayout.addView(textView2, w7.z5.a(-2.0f, z11 ? 21 : 76, 11.0f, z11 ? 76 : 21, 0.0f, -1, (z11 ? 5 : 3) | 48));
+        frameLayout.addView(textView, w7.z5.a(-2.0f, 24.0f, 57.0f, 24.0f, 9.0f, -2, (LocaleController.isRTL ? 5 : 3) | 48));
         k9Var.k(this.currentAccount, chat);
         z9Var.e(chat, k9Var);
         alertDialog$Builder.k(LocaleController.getString(R.string.DiscussionLinkGroup), new f7(this, chatFull, chat, 9));
@@ -251,7 +251,7 @@ public final class aq extends org.telegram.ui.ActionBar.m2 implements Notificati
         this.d = yzVar;
         yzVar.b();
         this.d.setText(LocaleController.getString(R.string.NoResult));
-        frameLayout2.addView(this.d, w7.a6.d(-1.0f, -1));
+        frameLayout2.addView(this.d, w7.z5.d(-1.0f, -1));
         org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(context, null);
         this.b = mm0Var;
         mm0Var.p1();
@@ -262,7 +262,7 @@ public final class aq extends org.telegram.ui.ActionBar.m2 implements Notificati
         this.a = xpVar;
         mm0Var2.setAdapter(xpVar);
         this.b.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
-        frameLayout2.addView(this.b, w7.a6.d(-1.0f, -1));
+        frameLayout2.addView(this.b, w7.z5.d(-1.0f, -1));
         this.actionBar.setAdaptiveBackground(this.b);
         this.b.setOnItemClickListener(new i(this, 4));
         b0();
@@ -367,7 +367,7 @@ public final class aq extends org.telegram.ui.ActionBar.m2 implements Notificati
         arrayList.add(new org.telegram.ui.ActionBar.i6(null, 0, null, null, null, eVar, org.telegram.ui.ActionBar.g6.S7));
         arrayList.add(new org.telegram.ui.ActionBar.i6(null, 0, null, null, null, eVar, org.telegram.ui.ActionBar.g6.T7));
         arrayList.add(new org.telegram.ui.ActionBar.i6(null, 0, null, null, null, eVar, org.telegram.ui.ActionBar.g6.U7));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 0, new Class[]{up.class}, new String[]{"messageTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.g9));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 0, new Class[]{tp.class}, new String[]{"messageTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.g9));
         arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 262144, new Class[]{org.telegram.ui.Cells.y4.class}, new String[]{"textView"}, null, null, -1, null, i11));
         arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 262144, new Class[]{org.telegram.ui.Cells.y4.class}, new String[]{"imageView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.m6));
         arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 262144, new Class[]{org.telegram.ui.Cells.y4.class}, new String[]{"imageView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.u6));

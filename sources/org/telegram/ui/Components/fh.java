@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fh implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -33,9 +33,9 @@ public final /* synthetic */ class fh implements ValueAnimator.AnimatorUpdateLis
             case 4:
                 vi viVar2 = this.b;
                 ni niVar = viVar2.B0;
-                dl dlVar = viVar2.w0;
-                if (niVar == dlVar && dlVar != null) {
-                    dlVar.invalidate();
+                cl clVar = viVar2.w0;
+                if (niVar == clVar && clVar != null) {
+                    clVar.invalidate();
                     break;
                 }
                 break;

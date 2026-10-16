@@ -27,7 +27,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import v7.k5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class a {
     public static final g6.b l = new g6.b("CastContext", null);
@@ -143,7 +143,7 @@ public final class a {
                             com.google.android.gms.internal.cast.n nVar = this.h;
                             List unmodifiableList = DesugarCollections.unmodifiableList(this.e.w);
                             nVar.getClass();
-                            com.google.android.gms.internal.cast.n.f.b(i2.d.j(unmodifiableList.size(), "SetRouteDiscovery for ", " IDs"), new Object[0]);
+                            com.google.android.gms.internal.cast.n.f.b(i2.d.k(unmodifiableList.size(), "SetRouteDiscovery for ", " IDs"), new Object[0]);
                             LinkedHashSet<String> linkedHashSet = new LinkedHashSet();
                             Iterator it2 = unmodifiableList.iterator();
                             while (it2.hasNext()) {
@@ -177,7 +177,7 @@ public final class a {
                         b10.d = new k6.c[]{c6.y.d};
                         b10.b = false;
                         b10.a = 8427;
-                        rVar2.e(0, b10.a()).addOnSuccessListener(new k6.h(this, 16));
+                        rVar2.e(0, b10.a()).addOnSuccessListener(new a4.l(this, 15));
                     } catch (RemoteException e) {
                         throw new IllegalStateException("Failed to call addAppVisibilityListener", e);
                     }
@@ -202,7 +202,7 @@ public final class a {
                     b castOptions = d.getCastOptions(applicationContext);
                     g6.r rVar = new g6.r(applicationContext, g6.r.k, com.google.android.gms.common.api.b.p, com.google.android.gms.common.api.i.c);
                     try {
-                        n = new a(applicationContext, castOptions, d.getAdditionalSessionProviders(applicationContext), new com.google.android.gms.internal.cast.r(applicationContext, p4.y.d(applicationContext), castOptions, rVar), rVar);
+                        n = new a(applicationContext, castOptions, d.getAdditionalSessionProviders(applicationContext), new com.google.android.gms.internal.cast.r(applicationContext, p4.x.d(applicationContext), castOptions, rVar), rVar);
                     } catch (d e) {
                         throw new RuntimeException(e);
                     }
@@ -250,14 +250,14 @@ public final class a {
         }
     }
 
-    public final p4.s a() {
+    public final p4.r a() {
         n6.l.e("Must be called from the main thread.");
         try {
             l lVar = (l) this.b;
             Parcel P0 = lVar.P0(lVar.N0(), 1);
             Bundle bundle = (Bundle) com.google.android.gms.internal.cast.v.a(P0, Bundle.CREATOR);
             P0.recycle();
-            return p4.s.b(bundle);
+            return p4.r.b(bundle);
         } catch (RemoteException e) {
             l.a(e, "Unable to call %s on %s.", "getMergedSelectorAsBundle", n.class.getSimpleName());
             return null;

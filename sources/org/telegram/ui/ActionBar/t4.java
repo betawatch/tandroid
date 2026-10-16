@@ -34,7 +34,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.ic1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class t4 {
     public final Rect A = new Rect();
@@ -215,9 +215,9 @@ public final class t4 {
         animatedVectorDrawable2.setTint(w02);
         textView.setTextColor(w02);
         p4Var.setOnClickListener(new j4(this, 2));
-        frameLayout.addView(p4Var, w7.a6.e(-2, -2, 19));
-        frameLayout.addView(textView, w7.a6.a(-2.0f, 56.0f, 0.0f, 0.0f, 0.0f, -1, 19));
-        frameLayout.addView(view2, w7.a6.b(-1.0f, f7 / AndroidUtilities.density, 55));
+        frameLayout.addView(p4Var, w7.z5.e(-2, -2, 19));
+        frameLayout.addView(textView, w7.z5.a(-2.0f, 56.0f, 0.0f, 0.0f, 0.0f, -1, 19));
+        frameLayout.addView(view2, w7.z5.b(-1.0f, f7 / AndroidUtilities.density, 55));
         p4Var.measure(0, 0);
         this.H = new Size(p4Var.getMeasuredWidth(), p4Var.getMeasuredHeight());
         this.g = new ic1(this, context, 4);

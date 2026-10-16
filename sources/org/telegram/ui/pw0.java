@@ -1,215 +1,78 @@
 package org.telegram.ui;
 
-import android.graphics.ColorFilter;
+import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.Point;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import java.util.HashSet;
+import android.graphics.Path;
+import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class pw0 implements r0.o, org.telegram.ui.Components.i81, org.telegram.ui.Components.yq0, org.telegram.ui.Components.fp0, org.telegram.ui.ActionBar.c6, org.telegram.ui.Components.vo0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class pw0 extends org.telegram.ui.Cells.u1 {
+    public final Path Ge;
+    public final Paint He;
+    public final /* synthetic */ byte[] Ie;
+    public final /* synthetic */ int Je;
+    public final /* synthetic */ int Ke;
+    public final /* synthetic */ rw0 Le;
 
-    public /* synthetic */ pw0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pw0(rw0 rw0Var, Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var, byte[] bArr, int i11, int i12) {
+        super(context, i10, false, null, c6Var);
+        this.Le = rw0Var;
+        this.Ie = bArr;
+        this.Je = i11;
+        this.Ke = i12;
+        this.Ge = new Path();
+        this.He = new Paint(1);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public int F0(int i10) {
-        return ((yd1) this.b).f.a.F0(i10);
+    @Override // org.telegram.ui.Cells.u1
+    public final void Y1(Canvas canvas) {
+        this.i6 = 0;
+        this.j6 = this.Y5.size() - 1;
+        this.k6 = (-AndroidUtilities.dp(7.0f)) * this.Le.y;
+        super.Y1(canvas);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public Paint G(String str) {
-        return ((yd1) this.b).f.a.G(str);
-    }
-
-    @Override // r0.o
-    public r0.l1 Q0(View view, r0.l1 l1Var) {
-        switch (this.a) {
-            case 0:
-                sw0 sw0Var = (sw0) this.b;
-                i0.b g10 = l1Var.a.g(519);
-                sw0Var.r = g10;
-                sw0Var.d.setPadding(g10.a, g10.b, g10.c, g10.d);
-                sw0Var.c.requestLayout();
-                break;
-            default:
-                se1 se1Var = (se1) this.b;
-                i0.b g11 = l1Var.a.g(519);
-                se1Var.n = g11;
-                se1Var.c.setPadding(g11.a, g11.b, g11.c, g11.d);
-                se1Var.b.requestLayout();
-                break;
+    @Override // org.telegram.ui.Cells.u1, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        int I2 = I2(this.Ie);
+        float H2 = H2(I2);
+        float G2 = G2(I2);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(getPollButtonsLeft(), H2, getPollButtonsRight(), G2);
+        float f7 = rectF.top;
+        float dp = AndroidUtilities.dp(3.0f);
+        rw0 rw0Var = this.Le;
+        rectF.top = AndroidUtilities.lerp(dp, rw0Var.V ? -AndroidUtilities.dp(3.0f) : 0.0f, rw0Var.y) + f7;
+        float f10 = rectF.bottom;
+        boolean z10 = rw0Var.V;
+        float dp2 = AndroidUtilities.dp(3.0f);
+        if (!z10) {
+            dp2 = AndroidUtilities.lerp(dp2, 0.0f, rw0Var.y);
         }
-        return r0.l1.b;
+        rectF.bottom = f10 + dp2;
+        Path path = this.Ge;
+        path.rewind();
+        path.addRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), Path.Direction.CW);
+        Paint paint = this.He;
+        paint.setColor(0);
+        paint.setShadowLayer(AndroidUtilities.dp(2.0f), 0.0f, AndroidUtilities.dp(0.66f), org.telegram.ui.ActionBar.g6.m1(rw0Var.y * 0.2f, -16777216));
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), paint);
+        canvas.clipPath(path);
+        S1(canvas);
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.yq0
-    public void U() {
-        ((StickersActivity) this.b).j0();
+    @Override // org.telegram.ui.Cells.u1, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(this.Je, this.Ke);
     }
 
-    @Override // org.telegram.ui.Components.fp0
-    public void X(float f7, boolean z10) {
-        switch (this.a) {
-            case 3:
-                ThemeActivity.Y(((cc1) this.b).d, Math.round((r5.b * f7) + 0), false);
-                break;
-            default:
-                nc1 nc1Var = (nc1) this.b;
-                ThemeActivity.k0(nc1Var.h, Math.round(((nc1Var.d - r1) * f7) + nc1Var.c));
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public boolean a() {
-        return ((yd1) this.b).f.a.a();
-    }
-
-    @Override // org.telegram.ui.Components.i81
-    public void b(float f7) {
-        SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
-        j51 j51Var = secretMediaViewer.y;
-        if (j51Var != null) {
-            long p5 = j51Var.p();
-            if (p5 != -9223372036854775807L) {
-                secretMediaViewer.y.L((long) (f7 * p5), false);
-            }
-            secretMediaViewer.y.C();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public int b0(int i10) {
-        return ((yd1) this.b).f.a.F0(i10);
-    }
-
-    @Override // org.telegram.ui.Components.i81
-    public void c(float f7) {
-        SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
-        j51 j51Var = secretMediaViewer.y;
-        if (j51Var != null) {
-            j51Var.B();
-            long p5 = secretMediaViewer.y.p();
-            if (p5 != -9223372036854775807L) {
-                secretMediaViewer.y.L((long) (f7 * p5), false);
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.vo0
-    public void e(float f7) {
-        Point point = AndroidUtilities.displaySize;
-        if (point.x > point.y) {
-            ((hg1) this.b).t0.movePreviewFragment(f7);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.vo0
-    public void f(org.telegram.ui.Cells.s2 s2Var) {
-        lg1 lg1Var = ((hg1) this.b).t0;
-        HashSet hashSet = lg1.n1;
-        lg1Var.M0(s2Var);
-    }
-
-    @Override // org.telegram.ui.Components.vo0
-    public void finish() {
-        Point point = AndroidUtilities.displaySize;
-        if (point.x > point.y) {
-            ((hg1) this.b).t0.finishPreviewFragment();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public int g1(int i10) {
-        return ((yd1) this.b).f.a.g1(i10);
-    }
-
-    @Override // org.telegram.ui.Components.fp0
-    public CharSequence getContentDescription() {
-        switch (this.a) {
-            case 3:
-                return String.valueOf(Math.round((((cc1) this.b).a.getProgress() * r0.b) + 0));
-            default:
-                nc1 nc1Var = (nc1) this.b;
-                return String.valueOf(Math.round((nc1Var.b.getProgress() * (nc1Var.d - r1)) + nc1Var.c));
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public Drawable getDrawable(String str) {
-        ce1 ce1Var = ((yd1) this.b).f;
-        if (str.equals("drawableMsgOut")) {
-            return ce1Var.R;
-        }
-        if (str.equals("drawableMsgOutSelected")) {
-            return ce1Var.S;
-        }
-        if (str.equals("drawableMsgOutMedia")) {
-            return ce1Var.T;
-        }
-        if (str.equals("drawableMsgOutMediaSelected")) {
-            return ce1Var.U;
-        }
-        cd1 cd1Var = ce1Var.a;
-        return cd1Var != null ? cd1Var.getDrawable(str) : org.telegram.ui.ActionBar.g6.P0(str);
-    }
-
-    @Override // org.telegram.ui.Components.fp0
-    public int k0() {
-        switch (this.a) {
-            case 3:
-                return ((cc1) this.b).b;
-            default:
-                nc1 nc1Var = (nc1) this.b;
-                return nc1Var.d - nc1Var.c;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public void l(float f7, float f10, int i10, int i11) {
-        cd1 cd1Var = ((yd1) this.b).f.a;
-        if (cd1Var != null) {
-            cd1Var.l(f7, f10, i10, i11);
-        } else {
-            org.telegram.ui.ActionBar.g6.q(f7, f10, i10, i11);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public boolean m0() {
-        return ((yd1) this.b).f.a.m0();
-    }
-
-    @Override // org.telegram.ui.Components.yq0
-    public void s0() {
-        ((StickersActivity) this.b).j0();
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public ColorFilter x() {
-        return org.telegram.ui.ActionBar.g6.v3;
-    }
-
-    @Override // org.telegram.ui.Components.fp0
-    public void z() {
-        int i10 = this.a;
-    }
-
-    private final void d() {
-    }
-
-    private final void g() {
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public /* synthetic */ void N0(int i10, int i11) {
+    @Override // org.telegram.ui.Cells.u1, android.view.View
+    public final void setPressed(boolean z10) {
     }
 }

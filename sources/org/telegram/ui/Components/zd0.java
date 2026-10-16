@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class zd0 extends Dialog implements org.telegram.ui.ActionBar.y4 {
     public final ActionBarLayout a;
@@ -39,13 +39,13 @@ public final class zd0 extends Dialog implements org.telegram.ui.ActionBar.y4 {
         frameLayout.addView(actionBarLayout.getView(), new FrameLayout.LayoutParams(-1, -1, 17));
         if (AndroidUtilities.isTablet() && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isSmallTablet()) {
             frameLayout.setBackgroundColor(-1728053248);
-            frameLayout.setOnClickListener(new z80(this, 3));
+            frameLayout.setOnClickListener(new y80(this, 3));
             actionBarLayout.setRemoveActionBarExtraHeight(true);
-            li.k.o(actionBarLayout.getView());
+            m.h3.p(actionBarLayout.getView());
         }
         re0 re0Var = new re0(context);
         this.c = re0Var;
-        frameLayout.addView(re0Var, w7.a6.d(-1.0f, -1));
+        frameLayout.addView(re0Var, w7.z5.d(-1.0f, -1));
         setContentView(frameLayout);
     }
 

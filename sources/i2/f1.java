@@ -41,9 +41,9 @@ import org.telegram.ui.kp;
 import org.telegram.ui.mp;
 import org.telegram.ui.np;
 import org.telegram.ui.qe;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f1 implements Runnable {
     public final /* synthetic */ int a;
@@ -99,7 +99,7 @@ public final /* synthetic */ class f1 implements Runnable {
                     twoStepVerificationActivity.o0();
                     twoStepVerificationActivity.finishFragment();
                     if (tLObject instanceof TLRPC.TL_payments_starsRevenueWithdrawalUrl) {
-                        pf.d.s(qeVar.getContext(), ((TLRPC.TL_payments_starsRevenueWithdrawalUrl) tLObject).url);
+                        pf.d.r(qeVar.getContext(), ((TLRPC.TL_payments_starsRevenueWithdrawalUrl) tLObject).url);
                         if (z10) {
                             qeVar.c0(true);
                         }
@@ -134,10 +134,10 @@ public final /* synthetic */ class f1 implements Runnable {
                     textView.setTextSize(1, 16.0f);
                     textView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
                     textView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.WithdrawChannelAlertText)));
-                    linearLayout.addView(textView, a6.n(-1, -2));
+                    linearLayout.addView(textView, z5.n(-1, -2));
                     LinearLayout linearLayout2 = new LinearLayout(activity);
                     linearLayout2.setOrientation(0);
-                    linearLayout.addView(linearLayout2, a6.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
+                    linearLayout.addView(linearLayout2, z5.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
                     ImageView imageView = new ImageView(activity);
                     imageView.setImageResource(R.drawable.list_circle);
                     imageView.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(11.0f) : 0, AndroidUtilities.dp(9.0f), LocaleController.isRTL ? 0 : AndroidUtilities.dp(11.0f), 0);
@@ -148,16 +148,16 @@ public final /* synthetic */ class f1 implements Runnable {
                     textView2.setTextColor(g6.x0(null, i11, false));
                     textView2.setTextSize(1, 16.0f);
                     textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-                    org.telegram.messenger.q.o(R.string.EditAdminTransferAlertText1, textView2);
+                    org.telegram.messenger.g0.n(R.string.EditAdminTransferAlertText1, textView2);
                     if (LocaleController.isRTL) {
-                        linearLayout2.addView(textView2, a6.n(-1, -2));
-                        linearLayout2.addView(imageView, a6.q(-2, -2, 5));
+                        linearLayout2.addView(textView2, z5.n(-1, -2));
+                        linearLayout2.addView(imageView, z5.q(-2, -2, 5));
                     } else {
-                        linearLayout2.addView(imageView, a6.n(-2, -2));
-                        linearLayout2.addView(textView2, a6.n(-1, -2));
+                        linearLayout2.addView(imageView, z5.n(-2, -2));
+                        linearLayout2.addView(textView2, z5.n(-1, -2));
                     }
-                    LinearLayout f7 = org.telegram.messenger.q.f(activity, 0);
-                    linearLayout.addView(f7, a6.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
+                    LinearLayout e = org.telegram.messenger.g0.e(activity, 0);
+                    linearLayout.addView(e, z5.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
                     ImageView imageView2 = new ImageView(activity);
                     imageView2.setImageResource(R.drawable.list_circle);
                     imageView2.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(11.0f) : 0, AndroidUtilities.dp(9.0f), LocaleController.isRTL ? 0 : AndroidUtilities.dp(11.0f), 0);
@@ -166,15 +166,15 @@ public final /* synthetic */ class f1 implements Runnable {
                     textView3.setTextColor(g6.x0(null, i11, false));
                     textView3.setTextSize(1, 16.0f);
                     textView3.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-                    org.telegram.messenger.q.o(R.string.EditAdminTransferAlertText2, textView3);
+                    org.telegram.messenger.g0.n(R.string.EditAdminTransferAlertText2, textView3);
                     if (LocaleController.isRTL) {
-                        f7.addView(textView3, a6.n(-1, -2));
+                        e.addView(textView3, z5.n(-1, -2));
                         i10 = 5;
-                        f7.addView(imageView2, a6.q(-2, -2, 5));
+                        e.addView(imageView2, z5.q(-2, -2, 5));
                     } else {
                         i10 = 5;
-                        f7.addView(imageView2, a6.n(-2, -2));
-                        f7.addView(textView3, a6.n(-1, -2));
+                        e.addView(imageView2, z5.n(-2, -2));
+                        e.addView(textView3, z5.n(-1, -2));
                     }
                     if ("PASSWORD_MISSING".equals(tL_error.text)) {
                         alertDialog$Builder.k(LocaleController.getString(R.string.EditAdminTransferSetPassword), new de(qeVar));
@@ -185,7 +185,7 @@ public final /* synthetic */ class f1 implements Runnable {
                         textView4.setTextSize(1, 16.0f);
                         textView4.setGravity((LocaleController.isRTL ? i10 : 3) | 48);
                         textView4.setText(LocaleController.getString(R.string.EditAdminTransferAlertText3));
-                        linearLayout.addView(textView4, a6.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
+                        linearLayout.addView(textView4, z5.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
                         alertDialog$Builder.h(LocaleController.getString(R.string.OK), null);
                     }
                     if (twoStepVerificationActivity == null) {
@@ -218,8 +218,8 @@ public final /* synthetic */ class f1 implements Runnable {
                         try {
                             AndroidUtilities.openForView(messageObject, foVar.getParentActivity(), foVar.ea, false);
                             break;
-                        } catch (Exception e) {
-                            FileLog.e(e);
+                        } catch (Exception e7) {
+                            FileLog.e(e7);
                             foVar.C6(messageObject);
                             return;
                         }
@@ -243,7 +243,7 @@ public final /* synthetic */ class f1 implements Runnable {
                     mpVar.x1(tL_username, z12, true);
                     npVar.V();
                 } else {
-                    AndroidUtilities.runOnUIThread(new di.x0(kpVar, tL_username, z12, 16));
+                    AndroidUtilities.runOnUIThread(new di.x0(kpVar, tL_username, z12, 14));
                 }
                 npVar.getMessagesController().updateUsernameActiveness(npVar.X, tL_username.username, tL_username.active);
                 break;

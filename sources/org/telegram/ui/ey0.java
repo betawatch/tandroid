@@ -19,7 +19,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ey0 extends org.telegram.ui.Components.lm0 {
     public final Context c;
@@ -495,11 +495,11 @@ public final class ey0 extends org.telegram.ui.Components.lm0 {
                 i22 = privacyControlActivity.priceRow;
                 if (i10 == i22) {
                     int[] a2 = org.telegram.ui.Cells.z7.a((int) privacyControlActivity.getMessagesController().starsPaidMessageAmountMax, new int[]{1, 10, 50, 100, 200, MediaDataController.MAX_LINKS_COUNT, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000});
-                    nq0 nq0Var = new nq0(this, i33);
+                    lq0 lq0Var = new lq0(this, i33);
                     org.telegram.ui.Cells.y7 y7Var = new org.telegram.ui.Cells.y7();
                     y7Var.c = a2;
                     y7Var.d = 20;
-                    y7Var.e = nq0Var;
+                    y7Var.e = lq0Var;
                     z7Var.d((int) Utilities.clamp(privacyControlActivity.L, privacyControlActivity.getMessagesController().starsPaidMessageAmountMax, 1L), y7Var, new cy0(this, r8 ? 1 : 0));
                     return;
                 }
@@ -653,7 +653,7 @@ public final class ey0 extends org.telegram.ui.Components.lm0 {
                 break;
             case 5:
             default:
-                view = new org.telegram.ui.Cells.b7(context, (org.telegram.ui.Cells.d0) null);
+                view = new org.telegram.ui.Cells.a7(context, (org.telegram.ui.Cells.c1) null);
                 break;
             case 6:
                 org.telegram.ui.Cells.r8 r8Var = new org.telegram.ui.Cells.r8(privacyControlActivity.getParentActivity());
@@ -688,7 +688,7 @@ public final class ey0 extends org.telegram.ui.Components.lm0 {
                         z9Var2.h(forLocal, "50_50", null, UserConfig.getInstance(i11).getCurrentUser());
                     }
                 }
-                privacyControlActivity.w0.addView(privacyControlActivity.v0, w7.a6.a(30.0f, 21.0f, 0.0f, 21.0f, 0.0f, 30, 16));
+                privacyControlActivity.w0.addView(privacyControlActivity.v0, w7.z5.a(30.0f, 21.0f, 0.0f, 21.0f, 0.0f, 30, 16));
                 privacyControlActivity.w0.i(LocaleController.getString(R.string.RemovePublicPhoto), false);
                 privacyControlActivity.w0.getImageView().setVisibility(0);
                 privacyControlActivity.w0.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.L0(false));
@@ -716,7 +716,7 @@ public final class ey0 extends org.telegram.ui.Components.lm0 {
                 spannableStringBuilder.setSpan(brVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
                 dVar.g(spannableStringBuilder, false, true);
                 dVar.setOnClickListener(new t60(this, 23));
-                frameLayout.addView(dVar, w7.a6.a(48.0f, 18.0f, 0.0f, 18.0f, 16.0f, -1, 119));
+                frameLayout.addView(dVar, w7.z5.a(48.0f, 18.0f, 0.0f, 18.0f, 16.0f, -1, 119));
                 view = frameLayout;
                 break;
         }

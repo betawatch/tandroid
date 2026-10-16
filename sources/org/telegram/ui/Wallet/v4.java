@@ -1,143 +1,106 @@
 package org.telegram.ui.Wallet;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.view.View;
-import android.view.animation.DecelerateInterpolator;
-import android.widget.Scroller;
-import androidx.recyclerview.widget.RecyclerView;
-import di.r9;
-import java.util.ArrayList;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.b71;
-import org.telegram.ui.Components.h71;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Cells.sa;
+import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class v4 extends s4.p0 {
-    public RecyclerView a;
-    public b71 c;
-    public boolean d;
+public final class v4 extends FrameLayout implements org.telegram.ui.ActionBar.x5 {
+    public final org.telegram.ui.ActionBar.c6 a;
+    public final u4 b;
+    public final TextView[] c;
+    public int d;
     public boolean e;
-    public boolean f;
-    public float g;
-    public float h;
-    public final /* synthetic */ z4 j;
-    public final r9 b = new r9(this);
-    public final m i = new m(this, 7);
+    public final org.telegram.ui.Components.g6 f;
+    public final Paint h;
 
-    public v4(z4 z4Var) {
-        this.j = z4Var;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:35:0x008a  */
-    @Override // s4.p0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean a(int i10, int i11) {
-        int minFlingVelocity;
-        int i12;
-        boolean z10 = this.f;
-        if (z10) {
-            if (z10) {
-                this.d = true;
-            }
-            s4.n0 layoutManager = this.a.getLayoutManager();
-            if (layoutManager != null && this.a.getAdapter() != null && ((Math.abs(i11) > (minFlingVelocity = this.a.getMinFlingVelocity()) || Math.abs(i10) > minFlingVelocity) && (layoutManager instanceof s4.b0))) {
-                s4.f1 f1Var = new s4.f1(this, this.a.getContext());
-                if (this.c != null && this.f && Math.abs(i11) >= AndroidUtilities.dp(600.0f)) {
-                    z4 z4Var = this.j;
-                    if (z4Var.o0()) {
-                        int i13 = i11 > 0 ? 1 : -1;
-                        h71 n02 = z4Var.n0();
-                        if (this.c.canScrollVertically(i13) && (i13 >= 0 || n02 == null || !n02.canScrollVertically(-1))) {
-                            i12 = i13 > 0 ? layoutManager.B() - 1 : 0;
-                            if (i12 != -1) {
-                                f1Var.a = i12;
-                                layoutManager.w0(f1Var);
-                                return true;
-                            }
-                        }
-                    }
-                }
-                i12 = -1;
-                if (i12 != -1) {
-                }
-            }
-        }
-        return false;
-    }
-
-    public final void b(b71 b71Var) {
-        b71 b71Var2 = this.c;
-        if (b71Var2 != null) {
-            b71Var2.removeCallbacks(this.i);
-        }
-        this.c = b71Var;
-        RecyclerView recyclerView = this.a;
-        if (recyclerView == b71Var) {
-            return;
-        }
-        r9 r9Var = this.b;
-        if (recyclerView != null) {
-            ArrayList arrayList = recyclerView.w0;
-            if (arrayList != null) {
-                arrayList.remove(r9Var);
-            }
-            this.a.setOnFlingListener(null);
-        }
-        this.a = b71Var;
-        if (b71Var != null) {
-            if (b71Var.getOnFlingListener() != null) {
-                throw new IllegalStateException("An instance of OnFlingListener already set.");
-            }
-            this.a.j(r9Var);
-            this.a.setOnFlingListener(this);
-            new Scroller(this.a.getContext(), new DecelerateInterpolator());
-            e();
-        }
-    }
-
-    public final void c() {
+    public v4(Context context, CharSequence[] charSequenceArr, k kVar, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context);
+        this.d = 0;
         this.e = false;
-        this.f = false;
-        this.d = false;
-        b71 b71Var = this.c;
-        if (b71Var != null) {
-            b71Var.removeCallbacks(this.i);
+        this.h = new Paint(1);
+        this.a = c6Var;
+        u4 u4Var = new u4(this, context, c6Var);
+        this.b = u4Var;
+        this.f = new org.telegram.ui.Components.g6(new t4(this, 0), 420L, es.h);
+        u4Var.setOrientation(0);
+        u4Var.setPadding(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
+        this.c = new TextView[charSequenceArr.length];
+        int i10 = 0;
+        while (i10 < charSequenceArr.length) {
+            TextView textView = new TextView(context);
+            textView.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(6.0f));
+            textView.setTypeface(AndroidUtilities.bold());
+            textView.setTextSize(1, 14.0f);
+            textView.setText(charSequenceArr[i10]);
+            textView.setOnClickListener(new sa(this, kVar, i10, 17));
+            w7.b6.a(textView);
+            this.b.addView(textView, w7.z5.p(-2, -2, 0.0f, 19, i10 == 0 ? 0 : 3, 0, 0, 0));
+            this.c[i10] = textView;
+            i10++;
+        }
+        addView(this.b, w7.z5.e(-2, -2, 17));
+        d();
+    }
+
+    public final void a() {
+        int i10 = 0;
+        float d = this.f.d(this.d, false);
+        while (true) {
+            TextView[] textViewArr = this.c;
+            if (i10 >= textViewArr.length) {
+                this.b.invalidate();
+                return;
+            }
+            float clamp01 = Utilities.clamp01(1.0f - Math.abs(d - i10));
+            TextView textView = textViewArr[i10];
+            int i11 = org.telegram.ui.ActionBar.g6.z6;
+            org.telegram.ui.ActionBar.c6 c6Var = this.a;
+            textView.setTextColor(i0.a.d(clamp01, org.telegram.ui.ActionBar.g6.w0(i11, c6Var), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Oh, c6Var)));
+            i10++;
         }
     }
 
-    public final View d(s4.n0 n0Var) {
-        b71 b71Var;
-        if (this.e || (b71Var = this.c) == null || b71Var.getScrollState() != 0) {
-            return null;
-        }
-        z4 z4Var = this.j;
-        h71 n02 = z4Var.n0();
-        if ((n02 != null && n02.getScrollState() != 0) || !this.d) {
-            return null;
-        }
-        this.d = false;
-        if (!z4Var.o0()) {
-            return null;
-        }
-        View m10 = n0Var.m(0);
-        View m11 = n0Var.m(n0Var.B() - 1);
-        return m10 == null ? m11 : (m11 != null && Math.abs(new int[]{0, s4.n0.z(m10) - n0Var.F()}[1]) >= Math.abs(new int[]{0, s4.n0.z(m11) - n0Var.F()}[1])) ? m11 : m10;
+    @Override // org.telegram.ui.ActionBar.x5
+    public final void d() {
+        a();
+        this.b.setBackground(this.e ? null : org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(18.0f), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.d6, this.a)));
     }
 
-    public final void e() {
-        s4.n0 layoutManager;
-        View d;
-        RecyclerView recyclerView = this.a;
-        if (recyclerView == null || (layoutManager = recyclerView.getLayoutManager()) == null || (d = d(layoutManager)) == null) {
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        u4 u4Var;
+        if (this.e && view == (u4Var = this.b)) {
+            float dpf2 = AndroidUtilities.dpf2(1.67f);
+            float dpf22 = AndroidUtilities.dpf2(0.67f);
+            Paint paint = this.h;
+            paint.setShadowLayer(dpf2, 0.0f, dpf22, 520093696);
+            paint.setColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.d6, this.a));
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(u4Var.getX(), u4Var.getY(), u4Var.getX() + u4Var.getWidth(), u4Var.getY() + u4Var.getHeight());
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), paint);
+        }
+        return super.drawChild(canvas, view, j10);
+    }
+
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    public void setSelected(int i10) {
+        if (this.d == i10) {
             return;
         }
-        int[] iArr = {0, s4.n0.z(d) - layoutManager.F()};
-        int i10 = iArr[0];
-        if (i10 == 0 && iArr[1] == 0) {
-            return;
-        }
-        this.a.v0(i10, iArr[1], null);
+        this.d = i10;
+        a();
     }
 }

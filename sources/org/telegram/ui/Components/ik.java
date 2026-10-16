@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ik extends lm0 {
     public final ArrayList c = new ArrayList();
@@ -93,18 +93,18 @@ public final class ik extends lm0 {
             return;
         }
         jk E = E(i10);
-        org.telegram.ui.Cells.k7 k7Var = (org.telegram.ui.Cells.k7) view;
+        org.telegram.ui.Cells.j7 j7Var = (org.telegram.ui.Cells.j7) view;
         int i12 = E.a;
         if (i12 != 0) {
-            k7Var.d(E.b, E.c, null, null, i12, i10 != this.c.size() - 1);
+            j7Var.d(E.b, E.c, null, null, i12, i10 != this.c.size() - 1);
         } else {
-            k7Var.d(E.b, E.c, E.d.toUpperCase().substring(0, Math.min(E.d.length(), 4)), E.e, 0, false);
+            j7Var.d(E.b, E.c, E.d.toUpperCase().substring(0, Math.min(E.d.length(), 4)), E.e, 0, false);
         }
         File file = E.f;
         if (file != null) {
-            k7Var.b(pkVar.R.containsKey(file.toString()), !pkVar.U);
+            j7Var.b(pkVar.R.containsKey(file.toString()), !pkVar.U);
         } else {
-            k7Var.b(false, !pkVar.U);
+            j7Var.b(false, !pkVar.U);
         }
     }
 
@@ -122,11 +122,11 @@ public final class ik extends lm0 {
                     view = new View(context);
                     view.setTag(-33024);
                 } else {
-                    view = new org.telegram.ui.Cells.b7(context, (org.telegram.ui.Cells.d0) null);
+                    view = new org.telegram.ui.Cells.a7(context, (org.telegram.ui.Cells.c1) null);
                 }
                 return new wl0(view);
             }
-            m4Var = new org.telegram.ui.Cells.k7(context, 1, c6Var);
+            m4Var = new org.telegram.ui.Cells.j7(context, 1, c6Var);
         }
         view = m4Var;
         return new wl0(view);

@@ -33,7 +33,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class r {
     public static final WeakHashMap k = new WeakHashMap();
@@ -46,7 +46,7 @@ public final class r {
     public boolean f;
     public String g;
     public String h;
-    public k6.h i;
+    public a4.l i;
     public bi.f0 j;
 
     public r(Context context, int i10, long j10) {
@@ -160,7 +160,7 @@ public final class r {
         } catch (Exception e) {
             FileLog.e(e);
         }
-        if (new androidx.biometric.e(new androidx.biometric.t(context, 0)).h(15) == 0) {
+        if (new androidx.biometric.e(new androidx.biometric.t(context, 0)).f(15) == 0) {
             str = "unknown";
             if (str == null) {
                 jSONObject.put("available", true);
@@ -246,7 +246,7 @@ public final class r {
         this.j = null;
         try {
             if (this.i == null) {
-                this.i = new k6.h(LaunchActivity.G1, f0.c.d(this.a), new p(this));
+                this.i = new a4.l(LaunchActivity.G1, f0.c.d(this.a), new p(this));
             }
             androidx.biometric.v i11 = i(z10);
             TLRPC.User user = MessagesController.getInstance(this.b).getUser(Long.valueOf(this.c));
@@ -279,11 +279,11 @@ public final class r {
             }
             this.j = new bi.f0(3, callback3, (i11 == null || Build.VERSION.SDK_INT >= 30) ? null : i11);
             if (i11 == null || (i10 = Build.VERSION.SDK_INT) >= 30) {
-                this.i.k(a2, null);
+                this.i.L(a2, null);
                 return;
             }
-            k6.h hVar = this.i;
-            hVar.getClass();
+            a4.l lVar2 = this.i;
+            lVar2.getClass();
             int i12 = a2.a;
             int i13 = i12 != 0 ? i12 : 15;
             if ((i13 & 255) == 255) {
@@ -292,7 +292,7 @@ public final class r {
             if (i10 < 30 && v7.k.a(i13)) {
                 throw new IllegalArgumentException("Crypto-based authentication is not supported for device credential prior to API 30.");
             }
-            hVar.k(a2, i11);
+            lVar2.L(a2, i11);
         } catch (Exception e7) {
             FileLog.e(e7);
             callback3.run(Boolean.FALSE, null, null);

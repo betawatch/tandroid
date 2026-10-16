@@ -34,12 +34,12 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.h11;
+import org.telegram.ui.Components.i11;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.p20;
 import v7.f7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class v3 extends View {
     public float E;
@@ -73,7 +73,7 @@ public final class v3 extends View {
     public final RectF e0;
     public final org.telegram.ui.Components.g6 f;
     public final Path f0;
-    public h11 g0;
+    public i11 g0;
     public final OverScroller h;
     public boolean h0;
     public org.telegram.ui.Cells.z i0;
@@ -104,9 +104,9 @@ public final class v3 extends View {
         this.r = viewConfiguration.getScaledMinimumFlingVelocity();
         r3 r3Var = new r3(this, this);
         this.v = r3Var;
-        r0.j0.j(this, r3Var);
+        r0.i0.j(this, r3Var);
         setImportantForAccessibility(2);
-        r0.b0.i(this, new n(this, 7));
+        r0.a0.i(this, new n(this, 7));
     }
 
     public static void g(ViewGroup viewGroup, float f7, final bi.v2 v2Var) {
@@ -558,7 +558,7 @@ public final class v3 extends View {
         canvas.restore();
         canvas.restore();
         if (this.g0 == null) {
-            this.g0 = new h11(LocaleController.getString(R.string.BotCloseAllTabs), 14.0f, AndroidUtilities.bold());
+            this.g0 = new i11(LocaleController.getString(R.string.BotCloseAllTabs), 14.0f, AndroidUtilities.bold());
         }
         if (this.i0 == null || this.h0 != g6.I.q()) {
             boolean q6 = g6.I.q();

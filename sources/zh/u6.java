@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class u6 implements ImageReceiver.ImageReceiverDelegate {
     public final /* synthetic */ boolean[] a;
@@ -25,7 +25,7 @@ public final class u6 implements ImageReceiver.ImageReceiverDelegate {
             return;
         }
         lottieAnimation.N(0, false, false);
-        AndroidUtilities.runOnUIThread(new org.telegram.ui.Cells.s0(lottieAnimation, 0));
+        AndroidUtilities.runOnUIThread(new org.telegram.ui.Cells.r0(lottieAnimation, 0));
         zArr[0] = true;
     }
 

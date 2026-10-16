@@ -1,17 +1,22 @@
 package w3;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes.dex */
-public final class e {
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
+import e2.x;
+import f2.v;
 
-    public e(int i10, int i11, int i12, int i13) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-        this.d = i13;
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class e implements d9.k, v {
+    public final /* synthetic */ h a;
+
+    @Override // f2.v
+    public void a(long j10, x xVar) {
+        c3.b.c(j10, xVar, this.a.K);
+    }
+
+    @Override // d9.k
+    public Object apply(Object obj) {
+        q qVar = (q) obj;
+        this.a.getClass();
+        return qVar;
     }
 }

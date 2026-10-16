@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class os implements MessagesStorage.LongCallback, bm0 {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class os implements MessagesStorage.LongCallback, b
     public void d(float f7, float f10, int i10, View view) {
         boolean z10;
         ss ssVar = this.b;
-        l61 G = ssVar.X.G(i10 - 1);
+        m61 G = ssVar.X.G(i10 - 1);
         if (G == null) {
             return;
         }
@@ -198,7 +198,7 @@ public final /* synthetic */ class os implements MessagesStorage.LongCallback, b
                                 if (i15 >= ssVar.X.x.size()) {
                                     break;
                                 }
-                                l61 G2 = ssVar.X.G(i15);
+                                m61 G2 = ssVar.X.G(i15);
                                 if (G2.a == 39 && G2.d == 0) {
                                     s4.b1 K = ssVar.d.K(i15 + 1);
                                     if (K != null) {

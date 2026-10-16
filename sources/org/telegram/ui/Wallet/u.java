@@ -1,89 +1,75 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.mt;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class u implements Utilities.Callback2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
+public final /* synthetic */ class u implements Utilities.Callback3 {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ k0 b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ u(Object obj, Object obj2, Object obj3, boolean z10, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.e = obj3;
-        this.b = z10;
+    public /* synthetic */ u(k0 k0Var, Utilities.Callback callback, byte[] bArr, h0 h0Var) {
+        this.b = k0Var;
+        this.c = callback;
+        this.d = bArr;
+        this.e = h0Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // org.telegram.messenger.Utilities.Callback3
+    public final void run(Object obj, Object obj2, Object obj3) {
         switch (this.a) {
             case 0:
-                j0 j0Var = (j0) this.c;
-                g0 g0Var = (g0) this.d;
-                Utilities.Callback2 callback2 = (Utilities.Callback2) this.e;
-                boolean z10 = this.b;
-                TL_wallet.proofChallenge proofchallenge = (TL_wallet.proofChallenge) obj;
+                Utilities.Callback callback = (Utilities.Callback) this.c;
+                byte[] bArr = (byte[]) this.d;
+                h0 h0Var = (h0) this.e;
+                TL_wallet.WalletState walletState = (TL_wallet.WalletState) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                if (proofchallenge != null) {
-                    int currentTime = ConnectionsManager.getInstance(j0Var.a).getCurrentTime();
-                    StringBuilder sb2 = new StringBuilder("received proof challenge, expires at ");
-                    i2.d.u(sb2, proofchallenge.expires, ", now = ", currentTime, ", expires in ");
-                    sb2.append(proofchallenge.expires - currentTime);
-                    sb2.append("s");
-                    j0.E(sb2.toString());
-                    Utilities.stageQueue.postRunnable(new ji.r2(j0Var, z10, g0Var, proofchallenge, currentTime, callback2));
-                    break;
-                } else {
-                    g0Var.close();
-                    callback2.run(null, tL_error == null ? "NULL_ERROR" : tL_error.text);
-                    break;
-                }
-            default:
-                d2 d2Var = (d2) this.c;
-                o oVar = (o) this.d;
-                z1 z1Var = (z1) this.e;
-                boolean z11 = this.b;
-                g0 g0Var2 = (g0) obj;
-                String str = (String) obj2;
-                if (g0Var2 != null && str == null) {
-                    g0 b10 = g0Var2.b();
-                    mt mtVar = new mt(26, b10, oVar);
-                    String str2 = z1Var.e;
-                    TL_wallet.tonConnectSession tonconnectsession = z1Var.a;
-                    if ("sendTransaction".equals(str2)) {
-                        if (MessagesController.getMainSettings(d2Var.a).contains(d2.j(tonconnectsession.id, z1Var.b) + ".transfer")) {
-                            d2Var.z(z1Var, b10, mtVar);
-                            break;
-                        }
-                    }
-                    s1 s1Var = new s1(d2Var, z1Var, mtVar, z11, b10);
-                    if (!tonconnectsession.closed) {
-                        TL_wallet.tonConnectRegisterKey tonconnectregisterkey = new TL_wallet.tonConnectRegisterKey();
-                        tonconnectregisterkey.session_id = tonconnectsession.id;
-                        tonconnectregisterkey.client_id = tonconnectsession.client_id;
-                        d2Var.f.sendRequestTyped(tonconnectregisterkey, new org.telegram.messenger.a(), new n(mtVar, b10, z1Var, s1Var, 6));
+                k0 k0Var = this.b;
+                int i10 = k0Var.a;
+                if (tL_error == null || !"WALLET_PROOF_EXPIRED".equalsIgnoreCase(tL_error.text)) {
+                    if (tL_error == null) {
+                        k0Var.g0(walletState);
+                        new p0(k0.u(), k0Var.r(), i10).p(UserConfig.getInstance(i10).getClientUserId(), bArr, h0Var, callback);
+                        k0Var.O();
                         break;
                     } else {
-                        s1Var.run(null);
+                        String str = tL_error.text;
+                        if (str == null) {
+                            str = "NULL_ERROR";
+                        }
+                        callback.run(str);
                         break;
                     }
+                }
+                break;
+            default:
+                s8 s8Var = (s8) this.c;
+                TLRPC.User user = (TLRPC.User) this.d;
+                String str2 = (String) this.e;
+                String str3 = (String) obj;
+                Utilities.Callback callback2 = (Utilities.Callback) obj3;
+                String str4 = s8Var.e;
+                k0 k0Var2 = this.b;
+                if (!k0.b(str4, k0Var2.r())) {
+                    callback2.run("WALLET_CHANGED");
+                    break;
                 } else {
-                    if (str == null) {
-                        str = "Recovery phrase is unavailable";
-                    }
-                    oVar.run(str);
+                    k0Var2.Z(user, str2, 0L, str3, null, s8Var.d, null, new z6(4, s8Var, callback2), null);
                     break;
                 }
         }
+    }
+
+    public /* synthetic */ u(s8 s8Var, k0 k0Var, TLRPC.User user, String str) {
+        this.c = s8Var;
+        this.b = k0Var;
+        this.d = user;
+        this.e = str;
     }
 }

@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class w81 extends UndoView {
     public final /* synthetic */ SessionsActivity f0;
@@ -25,7 +25,7 @@ public final class w81 extends UndoView {
             TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
             resetauthorization.hash = tL_authorization.hash;
             i11 = ((org.telegram.ui.ActionBar.m2) this.f0).currentAccount;
-            ConnectionsManager.getInstance(i11).sendRequest(resetauthorization, new fc0(19, this, tL_authorization));
+            ConnectionsManager.getInstance(i11).sendRequest(resetauthorization, new ec0(19, this, tL_authorization));
         }
         super.e(i10, z10);
     }

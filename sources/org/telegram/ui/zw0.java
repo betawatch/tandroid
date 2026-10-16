@@ -17,13 +17,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class zw0 extends org.telegram.ui.ActionBar.m2 {
     public final long a;
     public org.telegram.ui.Cells.z7 b;
     public org.telegram.ui.Components.w90 c;
-    public org.telegram.ui.Components.h71 d;
+    public org.telegram.ui.Components.i71 d;
     public org.telegram.ui.Components.ds e;
     public org.telegram.ui.ActionBar.u0 f;
     public final boolean h;
@@ -111,7 +111,7 @@ public final class zw0 extends org.telegram.ui.ActionBar.m2 {
         boolean z10 = this.r;
         updatepaidmessagesprice.send_paid_messages_stars = z10 ? this.s : 0L;
         updatepaidmessagesprice.suggestions_allowed = z10;
-        getConnectionsManager().sendRequest(updatepaidmessagesprice, new fc0(12, this, updatepaidmessagesprice));
+        getConnectionsManager().sendRequest(updatepaidmessagesprice, new ec0(12, this, updatepaidmessagesprice));
         TLRPC.Chat chat = getMessagesController().getChat(Long.valueOf(j10));
         if (chat != null) {
             if (this.r) {
@@ -166,10 +166,10 @@ public final class zw0 extends org.telegram.ui.ActionBar.m2 {
         this.c.setBackgroundColor(getThemedColor(i11));
         this.c.b(true);
         this.c.d(0, null, false);
-        org.telegram.ui.Components.h71 h71Var = new org.telegram.ui.Components.h71(context, this.currentAccount, this.classGuid, false, new f5(this, 16), new yw0(this, 2), null, this.resourceProvider);
-        this.d = h71Var;
-        h71Var.p1();
-        frameLayout2.addView(this.d, w7.a6.e(-1, -1, 51));
+        org.telegram.ui.Components.i71 i71Var = new org.telegram.ui.Components.i71(context, this.currentAccount, this.classGuid, false, new f5(this, 16), new xw0(this, 2), null, this.resourceProvider);
+        this.d = i71Var;
+        i71Var.p1();
+        frameLayout2.addView(this.d, w7.z5.e(-1, -1, 51));
         this.actionBar.setAdaptiveBackground(this.d);
         return this.fragmentView;
     }
@@ -190,21 +190,21 @@ public final class zw0 extends org.telegram.ui.ActionBar.m2 {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
         alertDialog$Builder.a.R = LocaleController.getString(R.string.UnsavedChanges);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.MessageSuggestionsUnsavedChanges);
-        alertDialog$Builder.k(LocaleController.getString(R.string.ApplyTheme), new yw0(this, 0));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Discard), new yw0(this, 1));
+        alertDialog$Builder.k(LocaleController.getString(R.string.ApplyTheme), new xw0(this, 0));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Discard), new xw0(this, 1));
         showDialog(alertDialog$Builder.a);
         return false;
     }
 
     @Override // org.telegram.ui.ActionBar.m2
     public final boolean onFragmentCreate() {
-        org.telegram.ui.Components.z61 z61Var;
+        org.telegram.ui.Components.a71 a71Var;
         super.onFragmentCreate();
-        org.telegram.ui.Components.h71 h71Var = this.d;
-        if (h71Var == null || (z61Var = h71Var.W2) == null) {
+        org.telegram.ui.Components.i71 i71Var = this.d;
+        if (i71Var == null || (a71Var = i71Var.W2) == null) {
             return true;
         }
-        z61Var.N(false);
+        a71Var.N(false);
         return true;
     }
 }

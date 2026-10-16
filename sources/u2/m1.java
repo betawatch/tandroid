@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class m1 implements e0, y2.g {
     public final g2.m a;
@@ -37,7 +37,21 @@ public final class m1 implements e0, y2.g {
     }
 
     @Override // y2.g
-    public final void B(y2.i iVar, long j10, long j11, boolean z10) {
+    public final void A(y2.i iVar, long j10, long j11) {
+        l1 l1Var = (l1) iVar;
+        this.y = (int) l1Var.b.b;
+        byte[] bArr = l1Var.c;
+        bArr.getClass();
+        this.x = bArr;
+        this.w = true;
+        g2.b0 b0Var = l1Var.b;
+        u uVar = new u(l1Var.a, b0Var.c, b0Var.d, j10, j11, this.y);
+        this.d.getClass();
+        this.e.r(uVar, 1, -1, this.s, 0, null, 0L, this.n);
+    }
+
+    @Override // y2.g
+    public final void X0(y2.i iVar, long j10, long j11, boolean z10) {
         l1 l1Var = (l1) iVar;
         g2.b0 b0Var = l1Var.b;
         u uVar = new u(l1Var.a, b0Var.c, b0Var.d, j10, j11, b0Var.b);
@@ -46,13 +60,13 @@ public final class m1 implements e0, y2.g {
     }
 
     @Override // u2.f1
-    public final long b() {
-        return (this.w || this.r.c()) ? Long.MIN_VALUE : 0L;
+    public final boolean c() {
+        return this.r.d();
     }
 
     @Override // u2.f1
-    public final boolean c() {
-        return this.r.c();
+    public final long d() {
+        return (this.w || this.r.d()) ? Long.MIN_VALUE : 0L;
     }
 
     @Override // u2.e0
@@ -71,8 +85,67 @@ public final class m1 implements e0, y2.g {
         }
     }
 
+    @Override // u2.e0
+    public final void k(d0 d0Var, long j10) {
+        d0Var.q(this);
+    }
+
+    @Override // u2.e0
+    public final long l() {
+        return -9223372036854775807L;
+    }
+
+    @Override // u2.f1
+    public final boolean m(i2.v0 v0Var) {
+        if (this.w) {
+            return false;
+        }
+        y2.l lVar = this.r;
+        if (lVar.d() || lVar.c()) {
+            return false;
+        }
+        g2.h createDataSource = this.b.createDataSource();
+        g2.c0 c0Var = this.c;
+        if (c0Var != null) {
+            createDataSource.addTransferListener(c0Var);
+        }
+        l1 l1Var = new l1(createDataSource, this.a);
+        this.d.getClass();
+        lVar.f(l1Var, this, 3);
+        return true;
+    }
+
+    @Override // u2.e0
+    public final long n(x2.p[] pVarArr, boolean[] zArr, d1[] d1VarArr, boolean[] zArr2, long j10) {
+        for (int i10 = 0; i10 < pVarArr.length; i10++) {
+            d1 d1Var = d1VarArr[i10];
+            ArrayList arrayList = this.h;
+            if (d1Var != null && (pVarArr[i10] == null || !zArr[i10])) {
+                arrayList.remove(d1Var);
+                d1VarArr[i10] = null;
+            }
+            if (d1VarArr[i10] == null && pVarArr[i10] != null) {
+                k1 k1Var = new k1(this);
+                arrayList.add(k1Var);
+                d1VarArr[i10] = k1Var;
+                zArr2[i10] = true;
+            }
+        }
+        return j10;
+    }
+
+    @Override // u2.e0
+    public final r1 o() {
+        return this.f;
+    }
+
+    @Override // u2.f1
+    public final long p() {
+        return this.w ? Long.MIN_VALUE : 0L;
+    }
+
     @Override // y2.g
-    public final k4.d j(y2.i iVar, long j10, long j11, IOException iOException, int i10) {
+    public final k4.d w(y2.i iVar, long j10, long j11, IOException iOException, int i10) {
         long min;
         IOException iOException2;
         k4.d dVar;
@@ -103,83 +176,10 @@ public final class m1 implements e0, y2.g {
     }
 
     @Override // y2.g
-    public final void k(y2.i iVar, long j10, long j11, int i10) {
+    public final void y(y2.i iVar, long j10, long j11, int i10) {
         l1 l1Var = (l1) iVar;
         g2.b0 b0Var = l1Var.b;
         this.e.v(i10 == 0 ? new u(l1Var.a, j10) : new u(l1Var.a, b0Var.c, b0Var.d, j10, j11, b0Var.b), 1, -1, this.s, 0, null, 0L, this.n, i10);
-    }
-
-    @Override // y2.g
-    public final void l(y2.i iVar, long j10, long j11) {
-        l1 l1Var = (l1) iVar;
-        this.y = (int) l1Var.b.b;
-        byte[] bArr = l1Var.c;
-        bArr.getClass();
-        this.x = bArr;
-        this.w = true;
-        g2.b0 b0Var = l1Var.b;
-        u uVar = new u(l1Var.a, b0Var.c, b0Var.d, j10, j11, this.y);
-        this.d.getClass();
-        this.e.r(uVar, 1, -1, this.s, 0, null, 0L, this.n);
-    }
-
-    @Override // u2.e0
-    public final void n(d0 d0Var, long j10) {
-        d0Var.y(this);
-    }
-
-    @Override // u2.e0
-    public final long o() {
-        return -9223372036854775807L;
-    }
-
-    @Override // u2.f1
-    public final boolean p(i2.v0 v0Var) {
-        if (this.w) {
-            return false;
-        }
-        y2.l lVar = this.r;
-        if (lVar.c() || lVar.b()) {
-            return false;
-        }
-        g2.h createDataSource = this.b.createDataSource();
-        g2.c0 c0Var = this.c;
-        if (c0Var != null) {
-            createDataSource.addTransferListener(c0Var);
-        }
-        l1 l1Var = new l1(createDataSource, this.a);
-        this.d.getClass();
-        lVar.f(l1Var, this, 3);
-        return true;
-    }
-
-    @Override // u2.e0
-    public final long q(x2.p[] pVarArr, boolean[] zArr, d1[] d1VarArr, boolean[] zArr2, long j10) {
-        for (int i10 = 0; i10 < pVarArr.length; i10++) {
-            d1 d1Var = d1VarArr[i10];
-            ArrayList arrayList = this.h;
-            if (d1Var != null && (pVarArr[i10] == null || !zArr[i10])) {
-                arrayList.remove(d1Var);
-                d1VarArr[i10] = null;
-            }
-            if (d1VarArr[i10] == null && pVarArr[i10] != null) {
-                k1 k1Var = new k1(this);
-                arrayList.add(k1Var);
-                d1VarArr[i10] = k1Var;
-                zArr2[i10] = true;
-            }
-        }
-        return j10;
-    }
-
-    @Override // u2.e0
-    public final r1 r() {
-        return this.f;
-    }
-
-    @Override // u2.f1
-    public final long s() {
-        return this.w ? Long.MIN_VALUE : 0L;
     }
 
     @Override // u2.e0
@@ -191,11 +191,11 @@ public final class m1 implements e0, y2.g {
     }
 
     @Override // u2.f1
-    public final void u(long j10) {
+    public final void s(long j10) {
     }
 
     @Override // u2.e0
-    public final long t(long j10, i2.t1 t1Var) {
+    public final long r(long j10, i2.t1 t1Var) {
         return j10;
     }
 }

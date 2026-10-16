@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v5 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -79,19 +79,19 @@ public final /* synthetic */ class v5 implements DialogInterface.OnDismissListen
                     break;
                 }
             case 8:
-                mf0 mf0Var = (mf0) obj;
-                org.telegram.ui.Components.yj0 yj0Var2 = mf0Var.I;
-                pd pdVar = mf0Var.n;
-                if (!mf0Var.L.g()) {
+                lf0 lf0Var = (lf0) obj;
+                org.telegram.ui.Components.yj0 yj0Var2 = lf0Var.I;
+                pd pdVar = lf0Var.n;
+                if (!lf0Var.L.g()) {
                     pdVar.setAnimation(yj0Var2);
                     yj0Var2.P(86);
-                    pdVar.setOnAnimationEndListener(new zd0(mf0Var, 2));
+                    pdVar.setOnAnimationEndListener(new xd0(lf0Var, 2));
                     pdVar.d();
                     break;
                 } else {
                     pdVar.setAnimation(yj0Var2);
                     yj0Var2.N(0, false, false);
-                    mf0Var.K = true;
+                    lf0Var.K = true;
                     break;
                 }
             case 9:
@@ -162,7 +162,7 @@ public final /* synthetic */ class v5 implements DialogInterface.OnDismissListen
                 twoStepVerificationActivity.finishFragment();
                 break;
             default:
-                ((dj1) obj).u0.b();
+                ((cj1) obj).u0.b();
                 break;
         }
     }

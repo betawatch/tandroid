@@ -6,10 +6,10 @@ import android.graphics.Paint;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import java.util.ArrayList;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.v61;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
 public final class o1 {
     public final com.google.firebase.messaging.m a;
     public final com.google.firebase.messaging.m b;
@@ -116,7 +116,7 @@ public final class o1 {
             });
             ofFloat.setInterpolator(new LinearInterpolator());
             ofFloat.setDuration(80L);
-            ofFloat.addListener(new u61(this, 10));
+            ofFloat.addListener(new v61(this, 10));
             ofFloat.start();
             ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
             final int i11 = 1;

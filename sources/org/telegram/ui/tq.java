@@ -37,7 +37,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class tq extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public boolean A0;
@@ -708,7 +708,7 @@ public class tq extends org.telegram.ui.ActionBar.m2 implements NotificationCent
                 LinearLayout linearLayout2 = new LinearLayout(context);
                 linearLayout2.setOrientation(1);
                 int i14 = -2;
-                linearLayout.addView(linearLayout2, w7.a6.n(-1, -2));
+                linearLayout.addView(linearLayout2, w7.z5.n(-1, -2));
                 org.telegram.ui.ActionBar.x2[] x2VarArr = new org.telegram.ui.ActionBar.x2[5];
                 int i15 = 0;
                 for (int i16 = 5; i15 < i16; i16 = 5) {
@@ -718,7 +718,7 @@ public class tq extends org.telegram.ui.ActionBar.m2 implements NotificationCent
                     x2VarArr[i15].setTag(Integer.valueOf(i15));
                     x2VarArr[i15].setBackgroundDrawable(org.telegram.ui.ActionBar.g6.L0(false));
                     x2VarArr[i15].a(i15 != 0 ? i15 != 1 ? i15 != 2 ? i15 != 3 ? LocaleController.getString(R.string.UserRestrictionsCustom) : LocaleController.formatPluralString("Months", 1, new Object[0]) : LocaleController.formatPluralString("Weeks", 1, new Object[0]) : LocaleController.formatPluralString("Days", 1, new Object[0]) : LocaleController.getString(R.string.UserRestrictionsUntilForever), 0, null, false);
-                    linearLayout2.addView(x2VarArr[i15], w7.a6.n(-1, i14));
+                    linearLayout2.addView(x2VarArr[i15], w7.z5.n(-1, i14));
                     x2VarArr[i15].setOnClickListener(new xf(7, tqVar, z2Var));
                     i15++;
                     i14 = -2;
@@ -977,7 +977,7 @@ public class tq extends org.telegram.ui.ActionBar.m2 implements NotificationCent
                     org.telegram.ui.Components.s6 s6Var = tqVar.f;
                     if (s6Var != null) {
                         StringBuilder sb2 = new StringBuilder();
-                        org.telegram.ui.Cells.d0.n(R.string.AddBotButton, " ", sb2);
+                        org.telegram.ui.Cells.c1.l(R.string.AddBotButton, " ", sb2);
                         sb2.append(LocaleController.getString(tqVar.K ? R.string.AddBotButtonAsAdmin : R.string.AddBotButtonAsMember));
                         s6Var.c(sb2.toString(), true, tqVar.K);
                     }
@@ -1167,7 +1167,7 @@ public class tq extends org.telegram.ui.ActionBar.m2 implements NotificationCent
                 return;
             }
             if (tqVar.getParentActivity() == null || AccountInstance.getInstance(tqVar.currentAccount).getUserConfig().isPremium()) {
-                tqVar.presentFragment(new af1(1));
+                tqVar.presentFragment(new ze1(1));
                 return;
             } else {
                 tqVar.showDialog(new sg.j0(5, tqVar.currentAccount, tqVar.getParentActivity(), tqVar, null));
@@ -1195,10 +1195,10 @@ public class tq extends org.telegram.ui.ActionBar.m2 implements NotificationCent
         } else {
             textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("EditAdminTransferAlertText", R.string.EditAdminTransferAlertText, UserObject.getFirstName(user))));
         }
-        linearLayout.addView(textView, w7.a6.n(-1, -2));
+        linearLayout.addView(textView, w7.z5.n(-1, -2));
         LinearLayout linearLayout2 = new LinearLayout(tqVar.getParentActivity());
         linearLayout2.setOrientation(0);
-        linearLayout.addView(linearLayout2, w7.a6.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
+        linearLayout.addView(linearLayout2, w7.z5.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
         ImageView imageView = new ImageView(tqVar.getParentActivity());
         imageView.setImageResource(R.drawable.list_circle);
         imageView.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(11.0f) : 0, AndroidUtilities.dp(9.0f), LocaleController.isRTL ? 0 : AndroidUtilities.dp(11.0f), 0);
@@ -1209,17 +1209,17 @@ public class tq extends org.telegram.ui.ActionBar.m2 implements NotificationCent
         textView2.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i13, false));
         textView2.setTextSize(1, 16.0f);
         textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        org.telegram.messenger.q.o(R.string.EditAdminTransferAlertText1, textView2);
+        org.telegram.messenger.g0.n(R.string.EditAdminTransferAlertText1, textView2);
         if (LocaleController.isRTL) {
-            linearLayout2.addView(textView2, w7.a6.n(-1, -2));
-            linearLayout2.addView(imageView, w7.a6.q(-2, -2, 5));
+            linearLayout2.addView(textView2, w7.z5.n(-1, -2));
+            linearLayout2.addView(imageView, w7.z5.q(-2, -2, 5));
         } else {
-            linearLayout2.addView(imageView, w7.a6.n(-2, -2));
-            linearLayout2.addView(textView2, w7.a6.n(-1, -2));
+            linearLayout2.addView(imageView, w7.z5.n(-2, -2));
+            linearLayout2.addView(textView2, w7.z5.n(-1, -2));
         }
         LinearLayout linearLayout3 = new LinearLayout(tqVar.getParentActivity());
         linearLayout3.setOrientation(0);
-        linearLayout.addView(linearLayout3, w7.a6.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
+        linearLayout.addView(linearLayout3, w7.z5.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
         ImageView imageView2 = new ImageView(tqVar.getParentActivity());
         imageView2.setImageResource(R.drawable.list_circle);
         imageView2.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(11.0f) : 0, AndroidUtilities.dp(9.0f), LocaleController.isRTL ? 0 : AndroidUtilities.dp(11.0f), 0);
@@ -1228,15 +1228,15 @@ public class tq extends org.telegram.ui.ActionBar.m2 implements NotificationCent
         textView3.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i13, false));
         textView3.setTextSize(1, 16.0f);
         textView3.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        org.telegram.messenger.q.o(R.string.EditAdminTransferAlertText2, textView3);
+        org.telegram.messenger.g0.n(R.string.EditAdminTransferAlertText2, textView3);
         if (LocaleController.isRTL) {
-            linearLayout3.addView(textView3, w7.a6.n(-1, -2));
+            linearLayout3.addView(textView3, w7.z5.n(-1, -2));
             i10 = 5;
-            linearLayout3.addView(imageView2, w7.a6.q(-2, -2, 5));
+            linearLayout3.addView(imageView2, w7.z5.q(-2, -2, 5));
         } else {
             i10 = 5;
-            linearLayout3.addView(imageView2, w7.a6.n(-2, -2));
-            linearLayout3.addView(textView3, w7.a6.n(-1, -2));
+            linearLayout3.addView(imageView2, w7.z5.n(-2, -2));
+            linearLayout3.addView(textView3, w7.z5.n(-1, -2));
         }
         if ("PASSWORD_MISSING".equals(tL_error.text)) {
             alertDialog$Builder2.k(LocaleController.getString(R.string.EditAdminTransferSetPassword), new iq(tqVar, 6));
@@ -1247,7 +1247,7 @@ public class tq extends org.telegram.ui.ActionBar.m2 implements NotificationCent
             textView4.setTextSize(1, 16.0f);
             textView4.setGravity((LocaleController.isRTL ? i10 : 3) | 48);
             textView4.setText(LocaleController.getString(R.string.EditAdminTransferAlertText3));
-            linearLayout.addView(textView4, w7.a6.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
+            linearLayout.addView(textView4, w7.z5.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
             alertDialog$Builder2.h(LocaleController.getString(R.string.OK), null);
         }
         tqVar.showDialog(a2Var2);
@@ -1394,7 +1394,7 @@ public class tq extends org.telegram.ui.ActionBar.m2 implements NotificationCent
         kVar.n(350L);
         this.b.setItemAnimator(kVar);
         this.b.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
-        frameLayout.addView(this.b, w7.a6.d(-1.0f, -1));
+        frameLayout.addView(this.b, w7.z5.d(-1.0f, -1));
         this.b.p1();
         this.actionBar.setAdaptiveBackground(this.b);
         this.b.setOnScrollListener(new k3(this, 6));

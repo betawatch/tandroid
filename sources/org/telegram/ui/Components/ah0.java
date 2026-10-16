@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ah0 implements Runnable {
     public final /* synthetic */ int a;
@@ -44,18 +44,18 @@ public final /* synthetic */ class ah0 implements Runnable {
                 PhotoViewer photoViewer2 = fh0Var2.V;
                 if (photoViewer2 != null) {
                     if ((photoViewer2.F2 != null || fh0Var2.r != null) && !fh0Var2.c0 && !fh0Var2.Y && !fh0Var2.w && !fh0Var2.s.isInProgress() && fh0Var2.f0) {
-                        h81 h81Var = fh0Var2.V.F2;
+                        i81 i81Var = fh0Var2.V.F2;
                         boolean z10 = fh0Var2.g0[0] >= (((float) fh0Var2.t()) * fh0Var2.J) * 0.5f;
                         long l4 = fh0Var2.l();
                         long m11 = fh0Var2.m();
                         if (l4 != -9223372036854775807L && m11 >= 15000) {
-                            qg0 qg0Var = fh0Var2.r;
-                            if (qg0Var != null) {
+                            rg0 rg0Var = fh0Var2.r;
+                            if (rg0Var != null) {
                                 PhotoViewer photoViewer3 = fh0Var2.V;
-                                photoViewer3.c4.startRewind(qg0Var, z10, fh0Var2.g0[0], photoViewer3.t1, fh0Var2.R);
+                                photoViewer3.c4.startRewind(rg0Var, z10, fh0Var2.g0[0], photoViewer3.t1, fh0Var2.R);
                             } else {
                                 PhotoViewer photoViewer4 = fh0Var2.V;
-                                photoViewer4.c4.startRewind(h81Var, z10, fh0Var2.g0[0], photoViewer4.t1, fh0Var2.R);
+                                photoViewer4.c4.startRewind(i81Var, z10, fh0Var2.g0[0], photoViewer4.t1, fh0Var2.R);
                             }
                             if (!fh0Var2.E) {
                                 fh0Var2.E = true;

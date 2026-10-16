@@ -5,17 +5,17 @@ import android.widget.ImageView;
 import bi.o1;
 import bi.z5;
 import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.db;
 import org.telegram.ui.Components.lm0;
 import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.z61;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class x extends db {
     public final int X;
     public final CharSequence Y;
-    public z61 Z;
+    public a71 Z;
 
     public x(m2 m2Var, String str, o1 o1Var) {
         super(m2Var, true, false, m2Var.getResourceProvider());
@@ -36,15 +36,15 @@ public final class x extends db {
     }
 
     @Override // org.telegram.ui.Components.db
-    public final CharSequence A() {
+    public final CharSequence B() {
         return this.Y;
     }
 
     @Override // org.telegram.ui.Components.db
     public final lm0 x(mm0 mm0Var) {
-        z61 z61Var = new z61(mm0Var, getContext(), this.X, 0, false, new u(this, 0), this.resourcesProvider);
-        this.Z = z61Var;
-        z61Var.r = false;
-        return z61Var;
+        a71 a71Var = new a71(mm0Var, getContext(), this.X, 0, false, new u(this, 0), this.resourcesProvider);
+        this.Z = a71Var;
+        a71Var.r = false;
+        return a71Var;
     }
 }

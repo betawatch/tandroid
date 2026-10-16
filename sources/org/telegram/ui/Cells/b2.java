@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class b2 extends FrameLayout {
     public final org.telegram.ui.Components.s6 a;
@@ -29,13 +29,13 @@ public final class b2 extends FrameLayout {
         s6Var.setGravity(LocaleController.isRTL ? 5 : 3);
         s6Var.setImportantForAccessibility(2);
         s6Var.setOnWidthUpdatedListener(new g(this, 2));
-        addView(s6Var, w7.a6.i(-2.0f, -2.0f, 8388627, 21.0f, 0.0f, 38.0f, 3.0f));
+        addView(s6Var, w7.z5.i(-2.0f, -2.0f, 8388627, 21.0f, 0.0f, 38.0f, 3.0f));
         View view = new View(context);
         this.b = view;
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.arrow_more).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(i10, c6Var), PorterDuff.Mode.MULTIPLY));
         view.setBackground(mutate);
-        addView(view, w7.a6.i(14.0f, 14.0f, 8388627, 21.0f, 1.0f, 0.0f, 3.0f));
+        addView(view, w7.z5.i(14.0f, 14.0f, 8388627, 21.0f, 1.0f, 0.0f, 3.0f));
     }
 
     public final void a() {

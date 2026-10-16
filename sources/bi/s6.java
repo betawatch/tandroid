@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s6 implements ToIntFunction {
     public final /* synthetic */ int a;
@@ -25,34 +25,34 @@ public final /* synthetic */ class s6 implements ToIntFunction {
             case 1:
                 return ((TL_stories.StoryItem) obj).date;
             case 2:
-                return -((TL_stories.StoryItem) i2.d.g(1, ((TL_stories.PeerStories) obj).stories)).date;
+                return -((TL_stories.StoryItem) i2.d.h(1, ((TL_stories.PeerStories) obj).stories)).date;
             case 3:
                 return ((Integer) ((Object[]) obj)[1]).intValue();
             case 4:
-                return ((MessageObject) obj).getId();
+                return ((String) ((Map.Entry) obj).getKey()).hashCode();
             case 5:
-                return -((TLRPC.TL_forumTopic) obj).top_message;
+                return ((MessageObject) obj).getId();
             case 6:
-                return ((TLRPC.Message) obj).id;
+                return -((TLRPC.TL_forumTopic) obj).top_message;
             case 7:
                 return ((TLRPC.Message) obj).id;
             case 8:
-                return ((org.telegram.ui.Components.h6) obj).d;
+                return ((TLRPC.Message) obj).id;
             case 9:
-                return ((org.telegram.ui.Components.h6) obj).e;
+                return ((org.telegram.ui.Components.h6) obj).d;
             case 10:
+                return ((org.telegram.ui.Components.h6) obj).e;
+            case 11:
                 cd.c cVar = (cd.c) obj;
                 return cVar.d - cVar.b;
-            case 11:
+            case 12:
                 TLRPC.MessagePeerReaction messagePeerReaction = (TLRPC.MessagePeerReaction) obj;
                 int i10 = messagePeerReaction.date;
                 return (i10 <= 0 || messagePeerReaction.reaction != null) ? TLObject.FLAG_31 : -i10;
-            case 12:
+            case 13:
                 TLRPC.MessagePeerReaction messagePeerReaction2 = (TLRPC.MessagePeerReaction) obj;
                 int i11 = messagePeerReaction2.date;
                 return (i11 <= 0 || messagePeerReaction2.reaction != null) ? TLObject.FLAG_31 : -i11;
-            case 13:
-                return ((String) ((Map.Entry) obj).getKey()).hashCode();
             case 14:
                 return ((zf.e) obj).a;
             case 15:

@@ -6,7 +6,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class c6 implements org.telegram.ui.ActionBar.c6 {
     public PorterDuffColorFilter a;
@@ -17,7 +17,7 @@ public final class c6 implements org.telegram.ui.ActionBar.c6 {
     }
 
     @Override // org.telegram.ui.ActionBar.c6
-    public final int F0(int i10) {
+    public final int E0(int i10) {
         if (i10 == org.telegram.ui.ActionBar.g6.G8) {
             return -14145495;
         }
@@ -68,12 +68,12 @@ public final class c6 implements org.telegram.ui.ActionBar.c6 {
             return -15921907;
         }
         org.telegram.ui.ActionBar.c6 c6Var = this.b;
-        return c6Var != null ? c6Var.F0(i10) : org.telegram.ui.ActionBar.g6.x0(null, i10, false);
+        return c6Var != null ? c6Var.E0(i10) : org.telegram.ui.ActionBar.g6.x0(null, i10, false);
     }
 
     @Override // org.telegram.ui.ActionBar.c6
-    public final Paint G(String str) {
-        return this.b.G(str);
+    public final Paint F(String str) {
+        return this.b.F(str);
     }
 
     @Override // org.telegram.ui.ActionBar.c6
@@ -83,12 +83,12 @@ public final class c6 implements org.telegram.ui.ActionBar.c6 {
 
     @Override // org.telegram.ui.ActionBar.c6
     public final int b0(int i10) {
-        return F0(i10);
+        return E0(i10);
     }
 
     @Override // org.telegram.ui.ActionBar.c6
-    public final int g1(int i10) {
-        return F0(i10);
+    public final int f1(int i10) {
+        return E0(i10);
     }
 
     @Override // org.telegram.ui.ActionBar.c6
@@ -107,7 +107,7 @@ public final class c6 implements org.telegram.ui.ActionBar.c6 {
     }
 
     @Override // org.telegram.ui.ActionBar.c6
-    public final ColorFilter x() {
+    public final ColorFilter w() {
         if (this.a == null) {
             this.a = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
         }
@@ -115,6 +115,6 @@ public final class c6 implements org.telegram.ui.ActionBar.c6 {
     }
 
     @Override // org.telegram.ui.ActionBar.c6
-    public final /* synthetic */ void N0(int i10, int i11) {
+    public final /* synthetic */ void M0(int i10, int i11) {
     }
 }

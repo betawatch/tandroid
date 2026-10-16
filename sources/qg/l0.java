@@ -1,9 +1,9 @@
 package qg;
 
 import android.animation.ValueAnimator;
-import ji.h5;
+import ji.w4;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -28,9 +28,9 @@ public final /* synthetic */ class l0 implements ValueAnimator.AnimatorUpdateLis
                                 q0 q0Var2 = q0Var;
                                 q0Var2.getClass();
                                 q0Var2.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                h5 h5Var = q0Var2.a;
-                                if (h5Var != null) {
-                                    h5Var.Q0();
+                                w4 w4Var = q0Var2.a;
+                                if (w4Var != null) {
+                                    w4Var.Y0();
                                     break;
                                 }
                                 break;
@@ -38,9 +38,9 @@ public final /* synthetic */ class l0 implements ValueAnimator.AnimatorUpdateLis
                                 q0 q0Var3 = q0Var;
                                 q0Var3.getClass();
                                 q0Var3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                h5 h5Var2 = q0Var3.a;
-                                if (h5Var2 != null) {
-                                    h5Var2.Q0();
+                                w4 w4Var2 = q0Var3.a;
+                                if (w4Var2 != null) {
+                                    w4Var2.Y0();
                                     break;
                                 }
                                 break;
@@ -59,9 +59,9 @@ public final /* synthetic */ class l0 implements ValueAnimator.AnimatorUpdateLis
                                 q0 q0Var22 = q0Var2;
                                 q0Var22.getClass();
                                 q0Var22.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                h5 h5Var = q0Var22.a;
-                                if (h5Var != null) {
-                                    h5Var.Q0();
+                                w4 w4Var = q0Var22.a;
+                                if (w4Var != null) {
+                                    w4Var.Y0();
                                     break;
                                 }
                                 break;
@@ -69,9 +69,9 @@ public final /* synthetic */ class l0 implements ValueAnimator.AnimatorUpdateLis
                                 q0 q0Var3 = q0Var2;
                                 q0Var3.getClass();
                                 q0Var3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                h5 h5Var2 = q0Var3.a;
-                                if (h5Var2 != null) {
-                                    h5Var2.Q0();
+                                w4 w4Var2 = q0Var3.a;
+                                if (w4Var2 != null) {
+                                    w4Var2.Y0();
                                     break;
                                 }
                                 break;

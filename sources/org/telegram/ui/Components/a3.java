@@ -17,7 +17,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class a3 implements Utilities.Callback {
                 gVar.w(charSequence.length(), charSequence.length());
                 break;
             case 2:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((vm) this.b).v;
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((um) this.b).v;
                 chatAttachAlertPhotoLayout.r0(null, null, ((Long) obj).longValue());
                 chatAttachAlertPhotoLayout.b.dismiss();
                 break;
@@ -60,7 +60,7 @@ public final /* synthetic */ class a3 implements Utilities.Callback {
                 }
                 break;
             case 6:
-                ((cb0) this.b).V.Y0(((Integer) obj).intValue() + 8);
+                ((cb0) this.b).V.Z0(((Integer) obj).intValue() + 8);
                 break;
             case 7:
                 vc0 vc0Var = (vc0) this.b;
@@ -112,9 +112,9 @@ public final /* synthetic */ class a3 implements Utilities.Callback {
                 }
                 break;
             case 10:
-                of0 of0Var = (of0) this.b;
-                of0Var.K.b(of0Var.N, true, 0, ((Long) obj).longValue());
-                of0Var.dismiss();
+                pf0 pf0Var = (pf0) this.b;
+                pf0Var.K.b(pf0Var.N, true, 0, ((Long) obj).longValue());
+                pf0Var.dismiss();
                 break;
             case 11:
                 Utilities.Callback2 callback2 = (Utilities.Callback2) this.b;
@@ -135,12 +135,12 @@ public final /* synthetic */ class a3 implements Utilities.Callback {
                 callback2.run(applyColorMatrix, applyColorMatrix2);
                 break;
             case 12:
-                ez0 ez0Var = (ez0) this.b;
+                fz0 fz0Var = (fz0) this.b;
                 TL_account.TL_birthday tL_birthday = (TL_account.TL_birthday) obj;
                 TL_account.updateBirthday updatebirthday = new TL_account.updateBirthday();
                 updatebirthday.flags |= 1;
                 updatebirthday.birthday = tL_birthday;
-                int i12 = ez0Var.a;
+                int i12 = fz0Var.a;
                 TLRPC.UserFull userFull = MessagesController.getInstance(i12).getUserFull(UserConfig.getInstance(i12).getClientUserId());
                 TL_account.TL_birthday tL_birthday2 = userFull != null ? userFull.birthday : null;
                 if (userFull != null) {
@@ -148,14 +148,14 @@ public final /* synthetic */ class a3 implements Utilities.Callback {
                     userFull.birthday = tL_birthday;
                     MessagesStorage.getInstance(i12).updateUserInfo(userFull, false);
                 }
-                ConnectionsManager.getInstance(i12).sendRequest(updatebirthday, new bi.e5(ez0Var, userFull, tL_birthday2, 13), 1024);
+                ConnectionsManager.getInstance(i12).sendRequest(updatebirthday, new bi.e5(fz0Var, userFull, tL_birthday2, 13), 1024);
                 MessagesController.getInstance(i12).invalidateContentSettings();
                 MessagesController.getInstance(i12).removeSuggestion(0L, "BIRTHDAY_SETUP");
                 NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.newSuggestionsAvailable, new Object[0]);
                 break;
             default:
-                h71 h71Var = (h71) this.b;
-                h71Var.W2.Q(h71Var.T((View) obj), h71Var.a3);
+                i71 i71Var = (i71) this.b;
+                i71Var.W2.Q(i71Var.T((View) obj), i71Var.a3);
                 break;
         }
     }

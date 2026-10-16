@@ -1,6 +1,6 @@
 package v7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class u6 {
     public static String a(int i10, int i11, String str) {
@@ -10,7 +10,7 @@ public abstract class u6 {
         if (i11 >= 0) {
             return v6.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
         }
-        throw new IllegalArgumentException(i2.d.i(i11, "negative size: "));
+        throw new IllegalArgumentException(i2.d.j(i11, "negative size: "));
     }
 
     public static void b(int i10, String str, boolean z10) {
@@ -68,7 +68,7 @@ public abstract class u6 {
                 a2 = v6.a("%s (%s) must not be negative", "index", Integer.valueOf(i10));
             } else {
                 if (i11 < 0) {
-                    throw new IllegalArgumentException(i2.d.i(i11, "negative size: "));
+                    throw new IllegalArgumentException(i2.d.j(i11, "negative size: "));
                 }
                 a2 = v6.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
             }

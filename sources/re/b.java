@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.concurrent.Semaphore;
-import w7.m7;
+import w7.l7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class b implements Iterable {
     public final boolean a;
@@ -50,7 +50,7 @@ public final class b implements Iterable {
                     arrayList.add(new WeakReference(obj));
                     z10 = true;
                 }
-                m7.a(this.c, obj);
+                l7.a(this.c, obj);
                 return z10;
             } catch (Throwable th2) {
                 throw th2;
@@ -72,7 +72,7 @@ public final class b implements Iterable {
                         if (!this.c.contains(reference)) {
                             this.c.add(reference);
                         }
-                        m7.a(this.d, reference.get());
+                        l7.a(this.d, reference.get());
                     }
                 } else {
                     this.b.clear();
@@ -164,7 +164,7 @@ public final class b implements Iterable {
                     if (!this.c.contains(reference)) {
                         this.c.add(reference);
                     }
-                    m7.a(this.d, reference.get());
+                    l7.a(this.d, reference.get());
                 } else {
                     this.b.remove(indexOf);
                 }

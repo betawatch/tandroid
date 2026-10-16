@@ -21,14 +21,14 @@ import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.fa;
 import org.telegram.ui.fo;
-import org.telegram.ui.kg0;
-import org.telegram.ui.lg1;
+import org.telegram.ui.jg0;
+import org.telegram.ui.kg1;
 import org.telegram.ui.sy;
 import org.telegram.ui.yy;
 import zh.e7;
 import zh.n5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b1 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -118,7 +118,7 @@ public final /* synthetic */ class b1 implements View.OnClickListener {
                         }
 
                         @Override // org.telegram.ui.sy
-                        public final boolean w(yy yyVar, ArrayList arrayList2, CharSequence charSequence, boolean z11, boolean z12, int i12, int i13, lg1 lg1Var) {
+                        public final boolean w(yy yyVar, ArrayList arrayList2, CharSequence charSequence, boolean z11, boolean z12, int i12, int i13, kg1 kg1Var) {
                             TLRPC.TL_forumTopic findTopic;
                             TLRPC.Message message;
                             ArrayList arrayList3 = new ArrayList();
@@ -166,11 +166,11 @@ public final /* synthetic */ class b1 implements View.OnClickListener {
                                 o1Var2.c0 = true;
                                 eVar.run(arrayList3.size() <= 0 ? "USER_DECLINED" : null, arrayList3);
                             }
-                            if (lg1Var == null) {
+                            if (kg1Var == null) {
                                 yyVar.finishFragment();
                                 return true;
                             }
-                            lg1Var.finishFragment();
+                            kg1Var.finishFragment();
                             yyVar.removeSelfFromStack();
                             return true;
                         }
@@ -182,11 +182,11 @@ public final /* synthetic */ class b1 implements View.OnClickListener {
                 }
                 break;
             case 1:
-                kg0 kg0Var = (kg0) this.d;
+                jg0 jg0Var = (jg0) this.d;
                 String str = (String) this.e;
                 String str2 = (String) this.f;
                 String str3 = (String) this.h;
-                di.d dVar = kg0Var.b;
+                di.d dVar = jg0Var.b;
                 if (!dVar.N) {
                     dVar.setLoading(true);
                     TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = new TLRPC.TL_inputStorePaymentAuthCode();
@@ -209,7 +209,7 @@ public final /* synthetic */ class b1 implements View.OnClickListener {
                         tL_dataJSON.data = q6.toString();
                         tL_payments_getPaymentForm.flags |= 1;
                     }
-                    kg0Var.v.getConnectionsManager().sendRequest(tL_payments_getPaymentForm, new fa(kg0Var, tL_inputInvoicePremiumAuthCode, tL_inputStorePaymentAuthCode, 23), 74);
+                    jg0Var.v.getConnectionsManager().sendRequest(tL_payments_getPaymentForm, new fa(jg0Var, tL_inputInvoicePremiumAuthCode, tL_inputStorePaymentAuthCode, 23), 74);
                     break;
                 }
                 break;
@@ -251,8 +251,8 @@ public final /* synthetic */ class b1 implements View.OnClickListener {
         }
     }
 
-    public /* synthetic */ b1(kg0 kg0Var, String str, long j10, String str2, String str3, int i10) {
-        this.d = kg0Var;
+    public /* synthetic */ b1(jg0 jg0Var, String str, long j10, String str2, String str3, int i10) {
+        this.d = jg0Var;
         this.e = str;
         this.b = j10;
         this.f = str2;

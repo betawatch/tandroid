@@ -6,7 +6,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class bw implements NotificationCenter.NotificationCenterDelegate {
     public final ArrayList a;
@@ -79,7 +79,7 @@ public abstract class bw implements NotificationCenter.NotificationCenterDelegat
                         org.telegram.ui.ActionBar.m2 m2Var2 = ewVar.c;
                         org.telegram.ui.sk skVar = m2Var2 instanceof org.telegram.ui.fo ? ((org.telegram.ui.fo) m2Var2).Y : null;
                         c6Var = ((org.telegram.ui.ActionBar.e3) ewVar).resourcesProvider;
-                        new ty0(context, m2Var, inputStickerSet, null, skVar, c6Var).show();
+                        new uy0(context, m2Var, inputStickerSet, null, skVar, c6Var).show();
                         return;
                     }
                     this.b.set(i12, stickerSet2);

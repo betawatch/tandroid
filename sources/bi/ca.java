@@ -14,9 +14,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ad;
 import org.telegram.ui.Components.br;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.h11;
+import org.telegram.ui.Components.i11;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class ca {
     public static CharSequence[] y;
@@ -29,8 +29,8 @@ public final class ca {
     public SpannableStringBuilder k;
     public String l;
     public boolean m;
-    public h11 n;
-    public h11 o;
+    public i11 n;
+    public i11 o;
     public boolean p;
     public boolean q;
     public View r;
@@ -68,11 +68,11 @@ public final class ca {
                 charSequence = "";
             }
             TLRPC.Document document = this.g;
-            this.n = new h11(charSequence, document != null ? 12.0f : 14.0f, document != null ? null : AndroidUtilities.bold());
+            this.n = new i11(charSequence, document != null ? 12.0f : 14.0f, document != null ? null : AndroidUtilities.bold());
         }
         if (this.o == null || this.m) {
             String str = this.l;
-            this.o = new h11(str != null ? str : "", 14.0f, null);
+            this.o = new i11(str != null ? str : "", 14.0f, null);
         }
         float e = this.h.e(this.f);
         Paint paint = this.t;
@@ -111,13 +111,13 @@ public final class ca {
         if (f10 < f7) {
             dp = (int) Math.min(AndroidUtilities.dp(12.0f) + dp, f7 - AndroidUtilities.dp(20.0f));
         }
-        h11 h11Var = this.n;
+        i11 i11Var = this.n;
         float f12 = dp;
-        h11Var.p = f12;
-        h11Var.c(AndroidUtilities.lerp(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(7.0f), e), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(11.0f), e), 1.0f, -1, canvas);
-        h11 h11Var2 = this.o;
-        h11Var2.p = f12;
-        h11Var2.c(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(30.0f), f11, -1, canvas);
+        i11Var.p = f12;
+        i11Var.c(AndroidUtilities.lerp(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(7.0f), e), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(11.0f), e), 1.0f, -1, canvas);
+        i11 i11Var2 = this.o;
+        i11Var2.p = f12;
+        i11Var2.c(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(30.0f), f11, -1, canvas);
         canvas.restore();
     }
 

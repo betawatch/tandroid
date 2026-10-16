@@ -8,7 +8,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class xw implements org.telegram.ui.Components.q00 {
     public final /* synthetic */ Context a;
@@ -37,7 +37,7 @@ public final class xw implements org.telegram.ui.Components.q00 {
     public final void b(float f7) {
         yy yyVar = this.b;
         if (f7 != 1.0f || yyVar.e0[1].getVisibility() == 0 || yyVar.j2) {
-            if (yyVar.h3) {
+            if (yyVar.i3) {
                 yyVar.e0[0].setTranslationX((-f7) * r3.getMeasuredWidth());
                 yyVar.e0[1].setTranslationX(r3[0].getMeasuredWidth() - (f7 * yyVar.e0[0].getMeasuredWidth()));
             } else {
@@ -51,9 +51,9 @@ public final class xw implements org.telegram.ui.Components.q00 {
                 xyVarArr[1] = xyVar;
                 xyVar.setVisibility(8);
                 yy.c1(yyVar, true);
-                yyVar.Q4(false);
+                yyVar.R4(false);
                 yyVar.z0.O = false;
-                yyVar.o3(yyVar.e0[0]);
+                yyVar.p3(yyVar.e0[0]);
                 yyVar.e0[0].d.getClass();
                 yyVar.e0[1].d.getClass();
             }
@@ -82,8 +82,8 @@ public final class xw implements org.telegram.ui.Components.q00 {
             xyVar.setVisibility(0);
             yyVar.e0[1].setTranslationX(r7[0].getMeasuredWidth());
             yy.c1(yyVar, false);
-            yyVar.O4(true);
-            yyVar.h3 = z10;
+            yyVar.P4(true);
+            yyVar.i3 = z10;
         }
     }
 
@@ -98,7 +98,7 @@ public final class xw implements org.telegram.ui.Components.q00 {
         alertDialog$Builder.a.R = LocaleController.getString(R.string.FilterDelete);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.FilterDeleteAlert);
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new gw(3, this, dialogFilter));
+        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new qw(2, this, dialogFilter));
         org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
         yyVar.showDialog(a2Var);
         TextView textView = (TextView) a2Var.d(-1);

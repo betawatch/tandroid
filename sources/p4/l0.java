@@ -1,8 +1,38 @@
 package p4;
 
-import com.google.android.gms.internal.vision.g3;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public abstract class l0 extends g3 {
+public final class l0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m0 b;
+
+    public /* synthetic */ l0(m0 m0Var, int i10) {
+        this.a = i10;
+        this.b = m0Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                SparseArray sparseArray = this.b.h;
+                int size = sparseArray.size();
+                for (int i10 = 0; i10 < size; i10++) {
+                    ((o0) sparseArray.valueAt(i10)).getClass();
+                    o0.a(null, null);
+                }
+                sparseArray.clear();
+                break;
+            default:
+                m0 m0Var = this.b;
+                r0 r0Var = m0Var.i;
+                if (r0Var.y == m0Var) {
+                    r0Var.p();
+                    break;
+                }
+                break;
+        }
+    }
 }

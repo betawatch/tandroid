@@ -9,7 +9,7 @@ import android.os.Build;
 import android.util.Log;
 import android.view.KeyEvent;
 import com.google.firebase.messaging.FirebaseMessaging;
-import di.x6;
+import di.y6;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -18,7 +18,7 @@ import org.telegram.ui.Components.pk;
 import org.telegram.ui.Components.qg;
 import p4.t0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class f extends BroadcastReceiver {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final class f extends BroadcastReceiver {
                 }
                 return;
             case 2:
-                ((Executor) ((e2.w) this.b).c).execute(new x6(21, this, context));
+                ((Executor) ((e2.w) this.b).c).execute(new y6(21, this, context));
                 return;
             case 3:
                 ((g.o) this.b).k();
@@ -81,7 +81,7 @@ public final class f extends BroadcastReceiver {
                 return;
             case 7:
                 if (Objects.equals(intent.getAction(), "android.intent.action.MEDIA_BUTTON") && (keyEvent = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT")) != null) {
-                    ((n4.f) ((n4.w) ((m4.q0) this.b).m.c).a).a.dispatchMediaButtonEvent(keyEvent);
+                    ((n4.f) ((n4.w) ((m4.p0) this.b).m.c).a).a.dispatchMediaButtonEvent(keyEvent);
                     return;
                 }
                 return;

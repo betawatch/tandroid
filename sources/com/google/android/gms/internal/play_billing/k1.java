@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class k1 extends l1 {
     public final int d;
@@ -18,7 +18,7 @@ public final class k1 extends l1 {
             return this.b[i10];
         }
         if (i10 < 0) {
-            throw new ArrayIndexOutOfBoundsException(i2.d.i(i10, "Index < 0: "));
+            throw new ArrayIndexOutOfBoundsException(i2.d.j(i10, "Index < 0: "));
         }
         throw new ArrayIndexOutOfBoundsException(a1.g.l(i10, i11, "Index > length: ", ", "));
     }

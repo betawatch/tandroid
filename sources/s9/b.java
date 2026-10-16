@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicBoolean;
-import ji.d4;
 import ji.p1;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
@@ -48,7 +47,7 @@ import org.telegram.ui.Components.sc;
 import org.telegram.ui.Components.z9;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.Wallet.y6;
+import org.telegram.ui.Wallet.z6;
 import org.telegram.ui.fo;
 import org.telegram.ui.mt;
 import s4.b0;
@@ -65,7 +64,7 @@ import ug.v;
 import yh.b1;
 import yh.h1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -88,7 +87,7 @@ public final /* synthetic */ class b implements Runnable {
         switch (this.a) {
             case 0:
                 Callable callable = (Callable) this.b;
-                i iVar = (i) ((d4) this.c).b;
+                i iVar = (i) ((m.h) this.c).b;
                 try {
                     iVar.k(callable.call());
                     return;
@@ -171,7 +170,7 @@ public final /* synthetic */ class b implements Runnable {
                 ((e2.j) this.b).accept(this.c);
                 return;
             case 8:
-                ((w0) this.b).A((c3.b0) this.c);
+                ((w0) this.b).z((c3.b0) this.c);
                 return;
             case 9:
                 com.google.android.gms.internal.cast.p pVar2 = (com.google.android.gms.internal.cast.p) this.b;
@@ -384,7 +383,7 @@ public final /* synthetic */ class b implements Runnable {
             case 27:
                 ns0 ns0Var = (ns0) this.b;
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) this.c;
-                ns0Var.h(tL_starGiftCollection.title, new y6(10, ns0Var, tL_starGiftCollection));
+                ns0Var.h(tL_starGiftCollection.title, new z6(10, ns0Var, tL_starGiftCollection));
                 return;
             case 28:
                 yh.m2 m2Var2 = (yh.m2) this.b;

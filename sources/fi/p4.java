@@ -12,12 +12,13 @@ import android.view.ViewConfiguration;
 import android.widget.FrameLayout;
 import di.ra;
 import di.x8;
+import ji.h5;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.ui.Components.hw0;
 import org.telegram.ui.Components.sc;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public abstract class p4 extends FrameLayout {
     public static final hw0 b0 = new hw0(new c2(4), new c2(5));
@@ -42,7 +43,7 @@ public abstract class p4 extends FrameLayout {
     public float W;
     public Object a;
     public float a0;
-    public final ji.d4 b;
+    public final h5 b;
     public boolean c;
     public boolean d;
     public float e;
@@ -53,7 +54,7 @@ public abstract class p4 extends FrameLayout {
     public boolean s;
     public o1.k v;
     public boolean w;
-    public org.telegram.ui.web.y0 x;
+    public org.telegram.ui.web.z0 x;
     public Runnable y;
 
     public p4(Context context) {
@@ -68,7 +69,7 @@ public abstract class p4 extends FrameLayout {
         this.S = false;
         this.T = AndroidUtilities.dp(60.0f);
         this.U = true;
-        this.b = new ji.d4(context, new n4(this, ViewConfiguration.get(context).getScaledTouchSlop(), 0));
+        this.b = new h5(context, new n4(this, ViewConfiguration.get(context).getScaledTouchSlop(), 0));
         Point point = AndroidUtilities.displaySize;
         this.H = AndroidUtilities.dp(point.x > point.y ? 8.0f : 64.0f);
     }
@@ -79,8 +80,8 @@ public abstract class p4 extends FrameLayout {
     }
 
     public final boolean b(boolean z10) {
-        org.telegram.ui.web.y0 y0Var = this.x;
-        if (y0Var == null || !y0Var.N) {
+        org.telegram.ui.web.z0 z0Var = this.x;
+        if (z0Var == null || !z0Var.N) {
             return true;
         }
         return z10 ? this.O : this.P;
@@ -88,8 +89,9 @@ public abstract class p4 extends FrameLayout {
 
     public final void c() {
         setTranslationY(Math.max(this.e, this.f + this.r));
-        AndroidUtilities.cancelRunOnUIThread(new x8(this, 21));
-        AndroidUtilities.runOnUIThread(new x8(this, 21));
+        int i10 = 21;
+        AndroidUtilities.cancelRunOnUIThread(new x8(this, i10));
+        AndroidUtilities.runOnUIThread(new x8(this, i10));
         Runnable runnable = this.y;
         if (runnable != null) {
             runnable.run();
@@ -219,7 +221,7 @@ public abstract class p4 extends FrameLayout {
             kVar3.c();
         }
         o1.k kVar4 = new o1.k(this, b0, f7);
-        kVar4.u = org.telegram.ui.Cells.d0.k(f7, 1200.0f, 1.0f);
+        kVar4.u = org.telegram.ui.Cells.c1.j(f7, 1200.0f, 1.0f);
         kVar4.a(new m4(0, this, runnable));
         this.G = kVar4;
         kVar4.h();
@@ -309,7 +311,7 @@ public abstract class p4 extends FrameLayout {
         if (this.s) {
             this.f = f7;
             if (z10) {
-                this.r = w7.s.a(this.r - Math.max(0.0f, f11), (-this.f) + this.e, (getHeight() - this.f) + this.e);
+                this.r = w7.r.a(this.r - Math.max(0.0f, f11), (-this.f) + this.e, (getHeight() - this.f) + this.e);
             }
             c();
             return;
@@ -319,7 +321,7 @@ public abstract class p4 extends FrameLayout {
             kVar2.c();
         }
         o1.k kVar3 = new o1.k(new o1.j(f10));
-        kVar3.u = org.telegram.ui.Cells.d0.k(f7, 1400.0f, 1.0f);
+        kVar3.u = org.telegram.ui.Cells.c1.j(f7, 1400.0f, 1.0f);
         kVar3.b(new o1.g() { // from class: fi.l4
             @Override // o1.g
             public final void a(o1.h hVar, float f12, float f13) {
@@ -329,7 +331,7 @@ public abstract class p4 extends FrameLayout {
                 float f15 = f10;
                 float f16 = f14 == 0.0f ? 1.0f : (f12 - f15) / f14;
                 if (z10) {
-                    p4Var.r = w7.s.a(p4Var.r - (Math.max(0.0f, f14) * f16), (-p4Var.f) + p4Var.e, (p4Var.getHeight() - p4Var.f) + p4Var.e);
+                    p4Var.r = w7.r.a(p4Var.r - (Math.max(0.0f, f14) * f16), (-p4Var.f) + p4Var.e, (p4Var.getHeight() - p4Var.f) + p4Var.e);
                 }
                 o1.k kVar4 = p4Var.G;
                 if (kVar4 != null) {
@@ -377,7 +379,7 @@ public abstract class p4 extends FrameLayout {
         super.setTranslationY(f7);
     }
 
-    public void setWebView(org.telegram.ui.web.y0 y0Var) {
-        this.x = y0Var;
+    public void setWebView(org.telegram.ui.web.z0 z0Var) {
+        this.x = z0Var;
     }
 }

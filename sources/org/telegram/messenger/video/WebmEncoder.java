@@ -27,7 +27,6 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.messenger.q;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RLottieNative;
@@ -36,11 +35,11 @@ import org.telegram.ui.Components.c6;
 import org.telegram.ui.Components.f6;
 import qg.j0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class WebmEncoder {
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class FrameDrawer {
         private final int H;
         private final int W;
@@ -310,7 +309,7 @@ public class WebmEncoder {
                                 double d10 = paddingLeft - f12;
                                 double d11 = (paddingTop - f13) / f14;
                                 paddingLeft = ((float) ((Math.cos(-mediaEntity.rotation) * d10) - (Math.sin(-mediaEntity.rotation) * d11))) + f12;
-                                paddingTop = (((float) q.a(-mediaEntity.rotation, d11, Math.sin(-mediaEntity.rotation) * d10)) * f14) + f13;
+                                paddingTop = (((float) i2.d.f(-mediaEntity.rotation, d11, Math.sin(-mediaEntity.rotation) * d10)) * f14) + f13;
                             }
                             VideoEditedInfo.MediaEntity mediaEntity5 = emojiEntity.entity;
                             int i17 = this.measuredSize;

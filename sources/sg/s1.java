@@ -11,31 +11,31 @@ import org.telegram.ui.Cells.r8;
 import org.telegram.ui.Components.bk0;
 import zh.b8;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class s1 extends r8 {
     public final b8 R;
     public final int S;
-    public final rh.j T;
+    public final ri.h0 T;
 
     public s1(Context context, int i10, c6 c6Var) {
         super(context, c6Var);
         this.R = new b8(1, 15);
-        this.T = new rh.j(this, 6);
+        this.T = new ri.h0(this, 6);
         this.S = i10 == 1 ? g6.fk : g6.Mj;
     }
 
     @Override // org.telegram.ui.Cells.r8, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         boolean isEnabled = LiteMode.isEnabled(131072);
-        rh.j jVar = this.T;
+        ri.h0 h0Var = this.T;
         if (isEnabled) {
             b8 b8Var = this.R;
             b8Var.d();
             b8Var.a(canvas, g6.x0(null, this.S, false));
-            zf.i.d().a(15, jVar);
+            zf.i.d().a(15, h0Var);
         } else {
-            zf.i.d().f(jVar);
+            zf.i.d().f(h0Var);
         }
         super.dispatchDraw(canvas);
     }

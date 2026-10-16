@@ -22,7 +22,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.n9;
 import org.telegram.ui.Cells.o9;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class r4 extends a0 implements org.telegram.ui.ActionBar.x5, n9, l0 {
     public static final /* synthetic */ int M = 0;
@@ -60,10 +60,10 @@ public final class r4 extends a0 implements org.telegram.ui.ActionBar.x5, n9, l0
         View view = new View(context);
         this.F = view;
         view.setOnClickListener(new o4(this, 0));
-        addView(view, w7.a6.e(-1, -2, 51));
-        k0 k0Var = new k0(context, c6Var, new qb.c(this, 28));
+        addView(view, w7.z5.e(-1, -2, 51));
+        k0 k0Var = new k0(context, c6Var, new a6.m(this, 27));
         this.L = k0Var;
-        addView(k0Var.a, w7.a6.e(-2, -2, 51));
+        addView(k0Var.a, w7.z5.e(-2, -2, 51));
         d();
     }
 
@@ -203,9 +203,9 @@ public final class r4 extends a0 implements org.telegram.ui.ActionBar.x5, n9, l0
             int centerY = (int) imageReceiver.getCenterY();
             Drawable drawable = this.E;
             if (drawable != null) {
-                int u10 = org.telegram.ui.Cells.d0.u(2, centerX, drawable);
-                int d = org.telegram.ui.Cells.d0.d(2, centerY, drawable);
-                drawable.setBounds(u10, d, drawable.getIntrinsicWidth() + u10, drawable.getIntrinsicHeight() + d);
+                int r10 = org.telegram.ui.Cells.c1.r(2, centerX, drawable);
+                int c10 = org.telegram.ui.Cells.c1.c(2, centerY, drawable);
+                drawable.setBounds(r10, c10, drawable.getIntrinsicWidth() + r10, drawable.getIntrinsicHeight() + c10);
                 drawable.draw(canvas2);
             }
             TL_iv.pageBlockMap map = getMap();

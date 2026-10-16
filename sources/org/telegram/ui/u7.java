@@ -8,7 +8,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class u7 extends k7 {
     public final /* synthetic */ w7 n;
@@ -22,7 +22,7 @@ public final class u7 extends k7 {
     @Override // s4.g0
     public final void v(s4.b1 b1Var, int i10) {
         o7 o7Var = (o7) b1Var.a;
-        org.telegram.ui.Cells.j7 j7Var = (org.telegram.ui.Cells.j7) o7Var.b.getChildAt(0);
+        org.telegram.ui.Cells.i7 i7Var = (org.telegram.ui.Cells.i7) o7Var.b.getChildAt(0);
         ai.b bVar = ((q7) this.e.get(i10)).d;
         boolean z10 = bVar == o7Var.getTag();
         boolean z11 = i10 != this.e.size() - 1;
@@ -77,15 +77,15 @@ public final class u7 extends k7 {
             bVar.f = messageObject;
             messageObject.mediaExists = true;
         }
-        j7Var.f(bVar.f, z11);
+        i7Var.f(bVar.f, z11);
         boolean z12 = bVar.e.a;
         boolean z13 = !z12;
         if (!z10) {
-            j7Var.g0 = !z12 ? 1.0f : 0.0f;
+            i7Var.g0 = !z12 ? 1.0f : 0.0f;
         }
-        if (j7Var.f0 != z13) {
-            j7Var.f0 = z13;
-            j7Var.invalidate();
+        if (i7Var.f0 != z13) {
+            i7Var.f0 = z13;
+            i7Var.invalidate();
         }
         o7Var.d = z11;
         o7Var.c.setText(AndroidUtilities.formatFileSize(bVar.c));

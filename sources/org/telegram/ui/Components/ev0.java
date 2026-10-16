@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ev0 extends lm0 {
     public final Context c;
@@ -102,7 +102,7 @@ public final class ev0 extends lm0 {
             if (i11 == 0) {
                 ((org.telegram.ui.Cells.u1) view).X3(messageObject, null, false, false, false, false);
             } else {
-                ((org.telegram.ui.Cells.x0) view).setMessageObject(messageObject);
+                ((org.telegram.ui.Cells.w0) view).setMessageObject(messageObject);
             }
         }
     }
@@ -110,7 +110,7 @@ public final class ev0 extends lm0 {
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
         if (i10 != 0) {
-            return new wl0(new org.telegram.ui.Cells.x0(this.c, this.e, false));
+            return new wl0(new org.telegram.ui.Cells.w0(this.c, this.e, false));
         }
         org.telegram.ui.ActionBar.c6 c6Var = this.e;
         dv0 dv0Var = new dv0(this.c, this.d, false, null, c6Var);

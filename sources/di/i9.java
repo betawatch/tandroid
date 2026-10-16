@@ -14,13 +14,13 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.kf;
 import org.telegram.ui.Components.ne0;
 import org.telegram.ui.Components.re0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class i9 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -47,7 +47,7 @@ public final class i9 extends FrameLayout {
             textView.setAlpha(0.0f);
             textView.setPivotX(AndroidUtilities.dp(25.0f));
             textView.setPivotY(AndroidUtilities.dp(25.0f));
-            addView(textView, w7.a6.e(50, 50, 51));
+            addView(textView, w7.z5.e(50, 50, 51));
             ((ArrayList) this.b).add(textView);
             TextView textView2 = new TextView(context);
             textView2.setTextColor(-1);
@@ -58,7 +58,7 @@ public final class i9 extends FrameLayout {
             textView2.setText("•");
             textView2.setPivotX(AndroidUtilities.dp(25.0f));
             textView2.setPivotY(AndroidUtilities.dp(25.0f));
-            addView(textView2, w7.a6.e(50, 50, 51));
+            addView(textView2, w7.z5.e(50, 50, 51));
             ((ArrayList) this.c).add(textView2);
         }
     }
@@ -199,14 +199,14 @@ public final class i9 extends FrameLayout {
     }
 
     public int c(int i10) {
-        return yh.y(30.0f, i10, (getMeasuredWidth() - (AndroidUtilities.dp(30.0f) * ((StringBuilder) this.d).length())) / 2) - AndroidUtilities.dp(10.0f);
+        return org.telegram.messenger.g0.D(30.0f, i10, (getMeasuredWidth() - (AndroidUtilities.dp(30.0f) * ((StringBuilder) this.d).length())) / 2) - AndroidUtilities.dp(10.0f);
     }
 
     public void d(boolean z10) {
         ((ImageView) this.c).setVisibility(z10 ? 0 : 8);
         TextView textView = (TextView) this.d;
         boolean z11 = LocaleController.isRTL;
-        textView.setLayoutParams(w7.a6.a(-2.0f, (z11 || !z10) ? 22.0f : 53.0f, 0.0f, (z11 && z10) ? 53.0f : 22.0f, 0.0f, -1, 23));
+        textView.setLayoutParams(w7.z5.a(-2.0f, (z11 || !z10) ? 22.0f : 53.0f, 0.0f, (z11 && z10) ? 53.0f : 22.0f, 0.0f, -1, 23));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -289,11 +289,11 @@ public final class i9 extends FrameLayout {
         this.b = c6Var;
         TextView textView = new TextView(context);
         this.d = textView;
-        yh.k(20.0f, 1, textView);
+        sk.k(20.0f, 1, textView);
         textView.setGravity(LocaleController.isRTL ? 5 : 3);
         textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.j5, c6Var));
         boolean z10 = LocaleController.isRTL;
-        addView(textView, w7.a6.a(-2.0f, z10 ? 16.0f : 53.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f, -1, 23));
+        addView(textView, w7.z5.a(-2.0f, z10 ? 16.0f : 53.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f, -1, 23));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         org.telegram.ui.ActionBar.f2 f2Var = new org.telegram.ui.ActionBar.f2(false);
@@ -302,7 +302,7 @@ public final class i9 extends FrameLayout {
         f2Var.a(-1);
         f2Var.b(-1);
         f2Var.k = 220.0f;
-        addView(imageView, w7.a6.a(24.0f, 16.0f, 0.0f, 16.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
+        addView(imageView, w7.z5.a(24.0f, 16.0f, 0.0f, 16.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
         imageView.setOnClickListener(new ah.g0(this, 13));
     }
 }

@@ -27,9 +27,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-import r0.k0;
+import r0.j0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class k implements Menu {
     public static final int[] y = {1, 4, 5, 3, 2, 0};
@@ -72,7 +72,7 @@ public class k implements Menu {
         this.k = true;
         if (resources.getConfiguration().keyboard != 1) {
             ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
-            Method method = k0.a;
+            Method method = j0.a;
             if (Build.VERSION.SDK_INT >= 28) {
                 z10 = b5.d.B(viewConfiguration);
             } else {
@@ -223,7 +223,7 @@ public class k implements Menu {
 
     public boolean e(k kVar, MenuItem menuItem) {
         i iVar = this.e;
-        return iVar != null && iVar.p(kVar, menuItem);
+        return iVar != null && iVar.o(kVar, menuItem);
     }
 
     public boolean f(m mVar) {

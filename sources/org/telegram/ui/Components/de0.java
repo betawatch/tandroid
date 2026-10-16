@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class de0 extends HorizontalScrollView {
     public int E;
@@ -91,10 +91,10 @@ public final class de0 extends HorizontalScrollView {
         ce0Var.setFocusable(true);
         ce0Var.setGravity(17);
         ce0Var.setText(charSequence);
-        w7.c6.b(ce0Var, 0.025f, 1.2f);
+        w7.b6.b(ce0Var, 0.025f, 1.2f);
         ce0Var.setOnClickListener(new di.m4(this, i10, 11));
         ce0Var.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-        this.d.addView(ce0Var, w7.a6.k(10.0f, 0.0f, 10.0f, 0.0f, -2, -2));
+        this.d.addView(ce0Var, w7.z5.k(10.0f, 0.0f, 10.0f, 0.0f, -2, -2));
         ce0Var.setSelected(i10 == this.h);
     }
 

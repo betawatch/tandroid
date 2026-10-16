@@ -18,7 +18,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class CheckBoxBase {
     public static Paint I;
@@ -66,7 +66,7 @@ public class CheckBoxBase {
         this.v = 0.0f;
         this.w = 1.0f;
         this.z = true;
-        this.G = new l2(14);
+        this.G = new n2(12);
         this.H = 200L;
         this.F = c6Var;
         this.a = view;

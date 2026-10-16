@@ -12,9 +12,9 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class pd1 extends av0 {
+public final class pd1 extends zu0 {
     public final /* synthetic */ MediaController.PhotoEntry a;
     public final /* synthetic */ qd1 b;
 
@@ -23,7 +23,7 @@ public final class pd1 extends av0 {
         this.a = photoEntry;
     }
 
-    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
+    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
     public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
         ce1 ce1Var = this.b.a;
         MediaController.PhotoEntry photoEntry = this.a;
@@ -37,7 +37,7 @@ public final class pd1 extends av0 {
                 e.printStackTrace();
             }
             File file2 = new File(photoEntry.imagePath);
-            ce1Var.B1 = new qj1(file2, file2, "");
+            ce1Var.B1 = new pj1(file2, file2, "");
             ce1Var.C1 = loadBitmap;
             ce1Var.b2 = 0;
             ce1Var.x0.requestLayout();
@@ -47,7 +47,7 @@ public final class pd1 extends av0 {
         }
     }
 
-    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
+    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
     public final boolean z() {
         return false;
     }

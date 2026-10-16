@@ -16,7 +16,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class db extends org.telegram.ui.ActionBar.e3 {
     public boolean E;
@@ -65,9 +65,9 @@ public abstract class db extends org.telegram.ui.ActionBar.e3 {
         cbVar.g = m2Var.getResourceProvider();
     }
 
-    public abstract CharSequence A();
+    public abstract CharSequence B();
 
-    public final boolean B() {
+    public final boolean C() {
         return i0.a.f(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.h5, this.resourcesProvider)) > 0.699999988079071d;
     }
 
@@ -279,7 +279,7 @@ public abstract class db extends org.telegram.ui.ActionBar.e3 {
         }
         za zaVar = this.e;
         if (zaVar != null && zaVar.getTag() != null) {
-            AndroidUtilities.setLightStatusBar(this, B());
+            AndroidUtilities.setLightStatusBar(this, C());
             return;
         }
         org.telegram.ui.ActionBar.m2 m2Var = this.n;
@@ -291,16 +291,16 @@ public abstract class db extends org.telegram.ui.ActionBar.e3 {
     public final void O() {
         za zaVar = this.e;
         if (zaVar != null) {
-            zaVar.setTitle(A());
+            zaVar.setTitle(B());
         }
     }
 
     public final void P() {
         za zaVar = this.e;
-        if (zaVar == null || TextUtils.equals(A(), zaVar.getTitle())) {
+        if (zaVar == null || TextUtils.equals(B(), zaVar.getTitle())) {
             return;
         }
-        zaVar.J(A(), false, 350L, es.h);
+        zaVar.J(B(), false, 350L, es.h);
     }
 
     @Override // org.telegram.ui.ActionBar.e3
@@ -312,10 +312,10 @@ public abstract class db extends org.telegram.ui.ActionBar.e3 {
     public final boolean isAttachedLightStatusBar() {
         za zaVar = this.e;
         if (zaVar != null && zaVar.getTag() != null) {
-            return B();
+            return C();
         }
         org.telegram.ui.ActionBar.m2 m2Var = this.n;
-        return m2Var != null ? m2Var.isLightStatusBar() : B();
+        return m2Var != null ? m2Var.isLightStatusBar() : C();
     }
 
     @Override // org.telegram.ui.ActionBar.e3
@@ -498,7 +498,7 @@ public abstract class db extends org.telegram.ui.ActionBar.e3 {
             y3.setHasFixedSize(true);
             y3.setAdapter(x(y3));
             setCustomView(ow0Var);
-            ow0Var.addView(y3, w7.a6.d(-2.0f, -1));
+            ow0Var.addView(y3, w7.z5.d(-2.0f, -1));
         } else {
             y3.setAdapter(new bb(this, x(y3), context));
             this.containerView = ow0Var;
@@ -506,14 +506,14 @@ public abstract class db extends org.telegram.ui.ActionBar.e3 {
             this.e = zaVar;
             zaVar.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.g6.h5));
             zaVar.setTitleColor(getThemedColor(org.telegram.ui.ActionBar.g6.G6));
-            zaVar.B(getThemedColor(org.telegram.ui.ActionBar.g6.z8), false);
+            zaVar.C(getThemedColor(org.telegram.ui.ActionBar.g6.z8), false);
             zaVar.setBackButtonImage(R.drawable.ic_ab_back);
             zaVar.D(getThemedColor(org.telegram.ui.ActionBar.g6.y8), false);
             zaVar.setCastShadows(true);
-            zaVar.setTitle(A());
+            zaVar.setTitle(B());
             zaVar.setActionBarMenuOnItemClick(new org.telegram.ui.nb(this, 9));
             ow0Var.addView(y3);
-            ow0Var.addView(zaVar, w7.a6.a(-2.0f, 6.0f, 0.0f, 6.0f, 0.0f, -1, 0));
+            ow0Var.addView(zaVar, w7.z5.a(-2.0f, 6.0f, 0.0f, 6.0f, 0.0f, -1, 0));
             y3.j(new ah.d0(ow0Var, 16));
         }
         if (i10 == 2) {

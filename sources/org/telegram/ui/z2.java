@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class z2 extends FrameLayout implements DownloadController.FileDownloadProgressListener, org.telegram.ui.Cells.n9 {
     public static final /* synthetic */ int V = 0;
@@ -89,10 +89,10 @@ public final class z2 extends FrameLayout implements DownloadController.FileDown
         textureView.setOpaque(false);
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.f = frameLayout;
-        n4Var.addView(textureView, w7.a6.e(-1, -2, 1));
-        frameLayout.addView(n4Var, w7.a6.e(-1, -1, 17));
-        addView(frameLayout, w7.a6.d(-2.0f, -1));
-        addView(f1Var, w7.a6.d(-2.0f, -1));
+        n4Var.addView(textureView, w7.z5.e(-1, -2, 1));
+        frameLayout.addView(n4Var, w7.z5.e(-1, -1, 17));
+        addView(frameLayout, w7.z5.d(-2.0f, -1));
+        addView(f1Var, w7.z5.d(-2.0f, -1));
     }
 
     private int getIconForCurrentState() {
@@ -436,7 +436,7 @@ public final class z2 extends FrameLayout implements DownloadController.FileDown
                     } else {
                         i15 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(i20 * 14);
                         this.x = i15;
-                        i14 = org.telegram.messenger.yh.A(18.0f, i15, i12);
+                        i14 = org.telegram.messenger.sk.z(18.0f, i15, i12);
                         dp = i14;
                     }
                     TLRPC.Document document = this.O;
@@ -563,7 +563,7 @@ public final class z2 extends FrameLayout implements DownloadController.FileDown
                         if (q6 != null) {
                             int height = this.c.d.getHeight() + AndroidUtilities.dp(4.0f);
                             this.E = height;
-                            i16 = org.telegram.messenger.yh.c(4.0f, height, i16);
+                            i16 = org.telegram.messenger.g0.C(4.0f, height, i16);
                             d3 d3Var = this.c;
                             d3Var.s = this.x;
                             d3Var.v = this.y;

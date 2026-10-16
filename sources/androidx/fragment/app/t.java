@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.view.View;
 import android.view.Window;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class t extends v7.x implements androidx.lifecycle.u0, androidx.lifecycle.t, t4.e, m0 {
     public final u a;
@@ -39,8 +39,8 @@ public final class t extends v7.x implements androidx.lifecycle.u0, androidx.lif
     }
 
     @Override // t4.e
-    public final m.p g() {
-        return (m.p) this.e.e.c;
+    public final m.r g() {
+        return (m.r) this.e.e.c;
     }
 
     @Override // androidx.lifecycle.t

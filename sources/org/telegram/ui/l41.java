@@ -25,7 +25,7 @@ import org.telegram.messenger.TranslateController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class l41 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public static boolean s;
@@ -397,7 +397,7 @@ public final class l41 extends org.telegram.ui.ActionBar.m2 implements Notificat
         yzVar.setText(LocaleController.getString(R.string.NoResult));
         this.d.c();
         this.d.setShowAtCenter(true);
-        frameLayout2.addView(this.d, w7.a6.d(-1.0f, -1));
+        frameLayout2.addView(this.d, w7.z5.d(-1.0f, -1));
         org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(context, null);
         this.b = mm0Var;
         mm0Var.p1();
@@ -405,7 +405,7 @@ public final class l41 extends org.telegram.ui.ActionBar.m2 implements Notificat
         this.b.setLayoutManager(new s4.b0(1, false));
         this.b.setVerticalScrollBarEnabled(false);
         this.b.setAdapter(this.a);
-        frameLayout2.addView(this.b, w7.a6.d(-1.0f, -1));
+        frameLayout2.addView(this.b, w7.z5.d(-1.0f, -1));
         this.actionBar.setAdaptiveBackground(this.b);
         this.b.setOnItemClickListener(new i21(this, 3));
         this.b.setOnScrollListener(new k3(this, 27));

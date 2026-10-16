@@ -15,22 +15,22 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.am0;
 import org.telegram.ui.Components.db0;
-import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.ms0;
 import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.z61;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.fo;
 import org.telegram.ui.fx;
-import org.telegram.ui.hu0;
+import org.telegram.ui.gu0;
 import org.telegram.ui.ky;
 import org.telegram.ui.px;
 import org.telegram.ui.xy;
 import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements am0 {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class d implements am0 {
         org.telegram.ui.Components.s5 s5Var;
         org.telegram.ui.ActionBar.k kVar;
         Object O;
-        l61 G;
+        m61 G;
         switch (this.a) {
             case 0:
                 ((px) this.b).i((u) view, false);
@@ -158,9 +158,9 @@ public final /* synthetic */ class d implements am0 {
                 ei.i.y0((ei.i) this.b, i10);
                 break;
             case 7:
-                z61 z61Var = ((ei.h) this.b).b0;
-                if (z61Var != null) {
-                    z61Var.G(i10 - 1);
+                a71 a71Var = ((ei.h) this.b).b0;
+                if (a71Var != null) {
+                    a71Var.G(i10 - 1);
                     break;
                 }
                 break;
@@ -174,7 +174,7 @@ public final /* synthetic */ class d implements am0 {
                     if (n4Var.E) {
                         ky kyVar = h0Var.U;
                         if (kyVar != null) {
-                            kyVar.a.K4(n4Var.getDialogId(), view);
+                            kyVar.a.L4(n4Var.getDialogId(), view);
                             break;
                         }
                     }
@@ -190,7 +190,7 @@ public final /* synthetic */ class d implements am0 {
                         } else {
                             bundle.putLong("chat_id", -longValue2);
                         }
-                        yyVar.G3();
+                        yyVar.H3();
                         if (AndroidUtilities.isTablet() && yyVar.e0 != null) {
                             int i12 = 0;
                             while (true) {
@@ -201,7 +201,7 @@ public final /* synthetic */ class d implements am0 {
                                     fxVar.s = longValue2;
                                     i12++;
                                 } else {
-                                    yyVar.d5(MessagesController.UPDATE_MASK_SELECT_DIALOG, true);
+                                    yyVar.e5(MessagesController.UPDATE_MASK_SELECT_DIALOG, true);
                                 }
                             }
                         }
@@ -215,15 +215,15 @@ public final /* synthetic */ class d implements am0 {
                             yyVar.presentFragment(new fo(bundle));
                             break;
                         }
-                    } else if (yyVar.e5(longValue2)) {
+                    } else if (yyVar.f5(longValue2)) {
                         if (!yyVar.I2.isEmpty()) {
-                            yyVar.M3(longValue2, yyVar.f3(longValue2, null));
-                            yyVar.X4();
+                            yyVar.N3(longValue2, yyVar.f3(longValue2, null));
+                            yyVar.Y4();
                             kVar = ((org.telegram.ui.ActionBar.m2) yyVar).actionBar;
                             kVar.h(true);
                             break;
                         } else {
-                            yyVar.L3(longValue2, 0L, true, null);
+                            yyVar.M3(longValue2, 0L, true, null);
                             break;
                         }
                     }
@@ -261,7 +261,7 @@ public final /* synthetic */ class d implements am0 {
                 break;
             case 11:
                 ig.k0 k0Var = (ig.k0) this.b;
-                l61 G2 = k0Var.d0.G(i10 - 1);
+                m61 G2 = k0Var.d0.G(i10 - 1);
                 if (G2 != null) {
                     ig.a0 a0Var = k0Var.Z;
                     if (!a0Var.h(G2)) {
@@ -309,18 +309,18 @@ public final /* synthetic */ class d implements am0 {
                 }
                 break;
             case 14:
-                hu0 hu0Var = (hu0) this.b;
+                gu0 gu0Var = (gu0) this.b;
                 qg.j0 j0Var2 = (qg.j0) qg.j0.c().get(i10);
-                hu0Var.u1.setTypeface(j0Var2.a);
-                qg.s0 e7 = qg.s0.e(hu0Var.P1);
+                gu0Var.u1.setTypeface(j0Var2.a);
+                qg.s0 e7 = qg.s0.e(gu0Var.P1);
                 String str2 = j0Var2.a;
                 e7.j = str2;
                 e7.a.edit().putString("typeface", str2).apply();
-                rg.j jVar2 = hu0Var.S0;
+                rg.j jVar2 = gu0Var.S0;
                 if (jVar2 instanceof rg.x2) {
                     ((rg.x2) jVar2).setTypeface(j0Var2);
                 }
-                hu0Var.A0(false);
+                gu0Var.A0(false);
                 break;
             case 15:
                 rg.k1 k1Var = (rg.k1) this.b;
@@ -351,8 +351,8 @@ public final /* synthetic */ class d implements am0 {
                 yh.k4 k4Var = (yh.k4) this.b;
                 di.d dVar = k4Var.c0;
                 HashSet hashSet = k4Var.Z;
-                z61 z61Var2 = k4Var.e0;
-                if (z61Var2 != null && (G = z61Var2.G(i10 - 1)) != null) {
+                a71 a71Var2 = k4Var.e0;
+                if (a71Var2 != null && (G = a71Var2.G(i10 - 1)) != null) {
                     Object obj = G.G;
                     if (obj instanceof TL_stars.SavedStarGift) {
                         TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;

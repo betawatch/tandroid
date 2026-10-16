@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class k extends l6.a {
     public final /* synthetic */ int d;
@@ -34,7 +34,7 @@ public final class k extends l6.a {
                     dataHolder.c(i11, "event_type");
                     str = dataHolder.d[this.c].getInt(i11, dataHolder.c.getInt("event_type")) == 2 ? "deleted" : "unknown";
                 }
-                return org.telegram.ui.Cells.d0.j("DataEventRef{ type=", str, ", dataitem=", new k(dataHolder, this.b, this.e, 1).toString(), " }");
+                return org.telegram.ui.Cells.c1.i("DataEventRef{ type=", str, ", dataitem=", new k(dataHolder, this.b, this.e, 1).toString(), " }");
             default:
                 boolean isLoggable = Log.isLoggable("DataItem", 3);
                 DataHolder dataHolder2 = this.a;

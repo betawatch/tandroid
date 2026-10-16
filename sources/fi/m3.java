@@ -27,13 +27,13 @@ import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.Components.as;
 import org.telegram.ui.Components.at;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.rk0;
 import org.telegram.ui.Components.ud0;
 import org.telegram.ui.c90;
 import org.telegram.ui.ia;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -86,7 +86,7 @@ public final /* synthetic */ class m3 implements View.OnClickListener {
                     arrayList.addAll(arrayList3);
                 }
                 arrayList.add(0, UserConfig.getInstance(i11).getCurrentUser());
-                m80 F = m80.F(e3Var.getContainerView(), c6Var, linearLayout);
+                l80 F = l80.F(e3Var.getContainerView(), c6Var, linearLayout);
                 int size = arrayList.size();
                 int i13 = 0;
                 while (i13 < size) {
@@ -160,7 +160,7 @@ public final /* synthetic */ class m3 implements View.OnClickListener {
                 c6 c6Var2 = (c6) obj4;
                 TL_wallet.walletTransaction[] wallettransactionArr = (TL_wallet.walletTransaction[]) obj2;
                 Context context = (Context) obj;
-                m80 F2 = m80.F(((org.telegram.ui.Wallet.i2[]) obj5)[0].getContainer(), c6Var2, (ImageView) obj3);
+                l80 F2 = l80.F(((org.telegram.ui.Wallet.j2[]) obj5)[0].getContainer(), c6Var2, (ImageView) obj3);
                 if (!TextUtils.isEmpty(wallettransactionArr[0].tx_hash)) {
                     F2.c(R.drawable.msg_search, LocaleController.getString(R.string.WalletViewInExplorer), new c90(context, i11, wallettransactionArr, 14), false);
                 }

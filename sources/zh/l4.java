@@ -12,9 +12,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.jb0;
+import org.telegram.ui.ib0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l4 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -46,8 +46,8 @@ public final /* synthetic */ class l4 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        jb0 jb0Var;
-        jb0 jb0Var2;
+        ib0 ib0Var;
+        ib0 ib0Var2;
         switch (this.a) {
             case 0:
                 n5 n5Var = this.b;
@@ -81,7 +81,7 @@ public final /* synthetic */ class l4 implements Runnable {
                         break;
                     } else {
                         callback2.run(Boolean.FALSE, null);
-                        i2.d.q(R.string.UnknownErrorCode, new Object[]{tL_error != null ? tL_error.text : "FAILED_SEND_STARS"}, X, R.raw.error, 36);
+                        i2.d.s(R.string.UnknownErrorCode, new Object[]{tL_error != null ? tL_error.text : "FAILED_SEND_STARS"}, X, R.raw.error, 36);
                         break;
                     }
                 } else {
@@ -98,8 +98,8 @@ public final /* synthetic */ class l4 implements Runnable {
                     }
                     MessagesController.getInstance(n5Var.a).getMainSettings().edit().putBoolean("show_gift_for_" + j11, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j11, true).apply();
                     LaunchActivity launchActivity = LaunchActivity.G1;
-                    if (launchActivity != null && (jb0Var = launchActivity.x0) != null) {
-                        jb0Var.c(true);
+                    if (launchActivity != null && (ib0Var = launchActivity.x0) != null) {
+                        ib0Var.c(true);
                         break;
                     }
                 }
@@ -136,7 +136,7 @@ public final /* synthetic */ class l4 implements Runnable {
                         break;
                     } else {
                         callback22.run(Boolean.FALSE, null);
-                        i2.d.q(R.string.UnknownErrorCode, new Object[]{tL_error2 != null ? tL_error2.text : "FAILED_SEND_STARS"}, X2, R.raw.error, 36);
+                        i2.d.s(R.string.UnknownErrorCode, new Object[]{tL_error2 != null ? tL_error2.text : "FAILED_SEND_STARS"}, X2, R.raw.error, 36);
                         break;
                     }
                 } else {
@@ -148,8 +148,8 @@ public final /* synthetic */ class l4 implements Runnable {
                     }
                     MessagesController.getInstance(n5Var2.a).getMainSettings().edit().putBoolean("show_gift_for_" + j13, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j13, true).apply();
                     LaunchActivity launchActivity2 = LaunchActivity.G1;
-                    if (launchActivity2 != null && (jb0Var2 = launchActivity2.x0) != null) {
-                        jb0Var2.c(true);
+                    if (launchActivity2 != null && (ib0Var2 = launchActivity2.x0) != null) {
+                        ib0Var2.c(true);
                         break;
                     }
                 }

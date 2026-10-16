@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class g5 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int F = 0;
@@ -55,10 +55,10 @@ public abstract class g5 extends FrameLayout implements NotificationCenter.Notif
         View view = new View(context);
         this.v = view;
         view.setOnClickListener(new a(this, 4));
-        addView(view, w7.a6.d(-1.0f, -1));
+        addView(view, w7.z5.d(-1.0f, -1));
         l0 l0Var = new l0(this, context, 2);
         this.b = l0Var;
-        addView(l0Var, w7.a6.d(-1.0f, -1));
+        addView(l0Var, w7.z5.d(-1.0f, -1));
         y4 y4Var = new y4(context, c6Var);
         this.c = y4Var;
         float dp = AndroidUtilities.dp(12.0f);
@@ -66,7 +66,7 @@ public abstract class g5 extends FrameLayout implements NotificationCenter.Notif
         y4Var.setOutlineProvider(new zf.i0(0, dp));
         y4Var.setElevation(AndroidUtilities.dp(4.0f));
         y4Var.setClipToOutline(true);
-        l0Var.addView(y4Var, w7.a6.e(0, 0, 1));
+        l0Var.addView(y4Var, w7.z5.e(0, 0, 1));
         if (Build.VERSION.SDK_INT >= 28) {
             y4Var.setOutlineSpotShadowColor(TLObject.FLAG_31);
             y4Var.setOutlineAmbientShadowColor(TLObject.FLAG_31);
@@ -79,7 +79,7 @@ public abstract class g5 extends FrameLayout implements NotificationCenter.Notif
         c10.j.e = true;
         c10.q(AndroidUtilities.dp(12.0f));
         actionBarPopupWindow$ActionBarPopupWindowLayout.setBackground(c10);
-        l0Var.addView(actionBarPopupWindow$ActionBarPopupWindowLayout, w7.a6.h(-2.0f, -2.0f, 8388611));
+        l0Var.addView(actionBarPopupWindow$ActionBarPopupWindowLayout, w7.z5.h(-2.0f, -2.0f, 8388611));
     }
 
     public final void a(b5 b5Var) {
@@ -165,7 +165,7 @@ public abstract class g5 extends FrameLayout implements NotificationCenter.Notif
                         if (!z10) {
                             floatValue = 1.0f - floatValue;
                         }
-                        float a2 = w7.s.a(floatValue, 0.0f, 1.0f);
+                        float a2 = w7.r.a(floatValue, 0.0f, 1.0f);
                         float f7 = (0.3f * floatValue) + 0.7f;
                         l0Var.setScaleX(f7);
                         l0Var.setScaleY(f7);
@@ -209,7 +209,7 @@ public abstract class g5 extends FrameLayout implements NotificationCenter.Notif
                         if (!z10) {
                             floatValue = 1.0f - floatValue;
                         }
-                        float a2 = w7.s.a(floatValue, 0.0f, 1.0f);
+                        float a2 = w7.r.a(floatValue, 0.0f, 1.0f);
                         float f7 = (0.3f * floatValue) + 0.7f;
                         l0Var.setScaleX(f7);
                         l0Var.setScaleY(f7);
@@ -303,7 +303,7 @@ public abstract class g5 extends FrameLayout implements NotificationCenter.Notif
     public final void onSizeChanged(int i10, int i11, int i12, int i13) {
         if (i10 != 0 && i11 != 0 && this.r) {
             this.v.setBackground(null);
-            AndroidUtilities.runOnUIThread(new tu0(this, 12));
+            AndroidUtilities.runOnUIThread(new su0(this, 12));
         }
         hh.d.c(this.h, this);
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = this.d;

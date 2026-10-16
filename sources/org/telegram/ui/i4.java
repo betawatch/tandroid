@@ -20,7 +20,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class i4 extends org.telegram.ui.Components.lm0 {
     public TLRPC.WebPage E;
@@ -42,7 +42,7 @@ public final class i4 extends org.telegram.ui.Components.lm0 {
     public final HashMap w = new HashMap();
     public final ArrayList x = new ArrayList();
     public final HashMap y = new HashMap();
-    public final tu0 K = new tu0(this, 11);
+    public final su0 K = new su0(this, 11);
 
     public i4(k4 k4Var, Context context, boolean z10) {
         this.L = k4Var;
@@ -336,9 +336,9 @@ public final class i4 extends org.telegram.ui.Components.lm0 {
                                 u1Var4.loadDataWithBaseURL("https://telegram.org/embed", str2, "text/html", "UTF-8", null);
                                 v1Var.a.setVisibility(0);
                             }
-                            org.telegram.ui.Components.ca1 ca1Var = v1Var.b;
-                            if (ca1Var != null) {
-                                ca1Var.setVisibility(4);
+                            org.telegram.ui.Components.da1 da1Var = v1Var.b;
+                            if (da1Var != null) {
+                                da1Var.setVisibility(4);
                                 v1Var.b.g(null, null, null, null, false);
                             }
                         } else {
@@ -350,9 +350,9 @@ public final class i4 extends org.telegram.ui.Components.lm0 {
                                     v1Var.a.stopLoading();
                                     v1Var.a.loadUrl("about:blank");
                                 }
-                                org.telegram.ui.Components.ca1 ca1Var2 = v1Var.b;
-                                if (ca1Var2 != null) {
-                                    ca1Var2.setVisibility(0);
+                                org.telegram.ui.Components.da1 da1Var2 = v1Var.b;
+                                if (da1Var2 != null) {
+                                    da1Var2.setVisibility(0);
                                 }
                             } else {
                                 u1 u1Var6 = v1Var.a;
@@ -362,9 +362,9 @@ public final class i4 extends org.telegram.ui.Components.lm0 {
                                     hashMap.put("Referer", ApplicationLoader.applicationContext.getPackageName());
                                     v1Var.a.loadUrl(v1Var.v.url, hashMap);
                                 }
-                                org.telegram.ui.Components.ca1 ca1Var3 = v1Var.b;
-                                if (ca1Var3 != null) {
-                                    ca1Var3.setVisibility(4);
+                                org.telegram.ui.Components.da1 da1Var3 = v1Var.b;
+                                if (da1Var3 != null) {
+                                    da1Var3.setVisibility(4);
                                     v1Var.b.g(null, null, null, null, false);
                                 }
                             }

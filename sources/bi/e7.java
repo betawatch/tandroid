@@ -17,7 +17,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class e7 extends FrameLayout {
     public final y6 E;
@@ -60,8 +60,8 @@ public final class e7 extends FrameLayout {
         b7 b7Var = new b7(context, this, sbVar);
         this.a = b7Var;
         y6Var.setAdapter(b7Var);
-        c7Var.addView(y6Var, w7.a6.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 0));
-        addView(x6Var, w7.a6.d(-1.0f, -1));
+        c7Var.addView(y6Var, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 0));
+        addView(x6Var, w7.z5.d(-1.0f, -1));
         addView(c7Var);
         setVisibility(4);
     }

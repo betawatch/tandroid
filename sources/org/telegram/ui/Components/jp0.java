@@ -13,7 +13,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class jp0 {
     public static Paint N;
@@ -60,11 +60,11 @@ public final class jp0 {
 
     public final void a(Path path, float f7, float f10) {
         float dpf2 = AndroidUtilities.dpf2(2.0f);
-        int B = org.telegram.messenger.yh.B(14.0f, this.h, 2);
+        int A = org.telegram.messenger.sk.A(14.0f, this.h, 2);
         float f11 = f10 * this.w;
         RectF rectF = AndroidUtilities.rectTmp;
         float f12 = dpf2 / 2.0f;
-        rectF.set((AndroidUtilities.dpf2(1.0f) + f7) - f12, ((-f11) - f12) + AndroidUtilities.dp(7.0f) + B, AndroidUtilities.dpf2(1.0f) + f7 + f12, f11 + f12 + AndroidUtilities.dp(7.0f) + B);
+        rectF.set((AndroidUtilities.dpf2(1.0f) + f7) - f12, ((-f11) - f12) + AndroidUtilities.dp(7.0f) + A, AndroidUtilities.dpf2(1.0f) + f7 + f12, f11 + f12 + AndroidUtilities.dp(7.0f) + A);
         path.addRoundRect(rectF, dpf2, dpf2, Path.Direction.CW);
     }
 
@@ -186,7 +186,7 @@ public final class jp0 {
                         break;
                     }
                     float dpf22 = AndroidUtilities.dpf2(3.0f) * f15;
-                    float a2 = w7.s.a((d * f7) - f15, 0.0f, 1.0f);
+                    float a2 = w7.r.a((d * f7) - f15, 0.0f, 1.0f);
                     a(this.x, dpf22, com.google.android.gms.internal.play_billing.k3.D(1.0f, a2, AndroidUtilities.dpf2(1.0f), AndroidUtilities.dpf2(this.G[z10 ? (r3.length - 1) - i13 : i13]) * a2));
                     i13++;
                 }
@@ -213,7 +213,7 @@ public final class jp0 {
             while (i17 < max) {
                 float f17 = i17;
                 float f18 = dpf2;
-                int b10 = w7.s.b((int) Math.floor((f17 / max) * min), 0, min - 1);
+                int b10 = w7.r.b((int) Math.floor((f17 / max) * min), 0, min - 1);
                 if (i16 < b10) {
                     a(this.x, AndroidUtilities.dpf2(3.0f) * AndroidUtilities.lerp(b10, f17, f16), AndroidUtilities.dpf2(AndroidUtilities.lerp(fArr6[z10 ? (fArr6.length - 1) - b10 : b10], fArr7[z10 ? (fArr7.length - 1) - i17 : i17], f16)));
                     i16 = b10;
@@ -261,14 +261,14 @@ public final class jp0 {
                 i18 = (int) ((f7 - 1.0f) - i18);
             }
             if (i18 >= 0 && i18 < fArr.length) {
-                float dpf24 = AndroidUtilities.dpf2(this.G[i18]) * w7.s.a((d * f7) - i18, 0.0f, 1.0f);
+                float dpf24 = AndroidUtilities.dpf2(this.G[i18]) * w7.r.a((d * f7) - i18, 0.0f, 1.0f);
                 rectF = AndroidUtilities.rectTmp;
                 float dpf25 = AndroidUtilities.dpf2(f10) * (1.0f - this.K) * f7;
                 float dpf26 = AndroidUtilities.dpf2(2.0f);
-                int B = org.telegram.messenger.yh.B(14.0f, this.h, 2);
+                int A = org.telegram.messenger.sk.A(14.0f, this.h, 2);
                 float f20 = dpf24 * this.w;
                 float f21 = dpf26 / 2.0f;
-                rectF.set((AndroidUtilities.dpf2(1.0f) + dpf25) - f21, ((-f20) - f21) + AndroidUtilities.dp(7.0f) + B, AndroidUtilities.dpf2(1.0f) + dpf25 + f21, f20 + f21 + AndroidUtilities.dp(7.0f) + B);
+                rectF.set((AndroidUtilities.dpf2(1.0f) + dpf25) - f21, ((-f20) - f21) + AndroidUtilities.dp(7.0f) + A, AndroidUtilities.dpf2(1.0f) + dpf25 + f21, f20 + f21 + AndroidUtilities.dp(7.0f) + A);
                 ip0Var = this.M;
                 ((Paint) ip0Var.f).setColor(this.q);
                 ip0Var.g = rectF;

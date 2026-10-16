@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class dp extends FrameLayout implements org.telegram.ui.ActionBar.x5 {
     public final org.telegram.ui.ActionBar.c6 a;
@@ -29,27 +29,27 @@ public final class dp extends FrameLayout implements org.telegram.ui.ActionBar.x
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, w7.a6.e(52, 46, 51));
+        addView(imageView, w7.z5.e(52, 46, 51));
         org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(context);
         this.c = h5Var;
         h5Var.setTextSize(14);
         h5Var.setTypeface(AndroidUtilities.bold());
-        addView(h5Var, w7.a6.a(18.0f, 52.0f, 6.0f, 0.0f, 0.0f, -1, 51));
+        addView(h5Var, w7.z5.a(18.0f, 52.0f, 6.0f, 0.0f, 0.0f, -1, 51));
         org.telegram.ui.ActionBar.h5 h5Var2 = new org.telegram.ui.ActionBar.h5(context);
         this.d = h5Var2;
         h5Var2.setTextSize(14);
         NotificationCenter.listenEmojiLoading(h5Var2);
-        addView(h5Var2, w7.a6.a(18.0f, 52.0f, 24.0f, 0.0f, 0.0f, -1, 51));
+        addView(h5Var2, w7.z5.a(18.0f, 52.0f, 24.0f, 0.0f, 0.0f, -1, 51));
         org.telegram.ui.ActionBar.h5 h5Var3 = new org.telegram.ui.ActionBar.h5(context);
         this.e = h5Var3;
         h5Var3.setTextSize(14);
         h5Var3.l(LocaleController.getString(R.string.TapForForwardingOptions), false);
         h5Var3.setAlpha(0.0f);
-        addView(h5Var3, w7.a6.a(18.0f, 52.0f, 24.0f, 0.0f, 0.0f, -1, 51));
+        addView(h5Var3, w7.z5.a(18.0f, 52.0f, 24.0f, 0.0f, 0.0f, -1, 51));
         org.telegram.ui.rl rlVar = new org.telegram.ui.rl(this, context, new wh.g());
         this.f = rlVar;
         rlVar.setRoundRadius(AndroidUtilities.dp(6.0f));
-        addView(rlVar, w7.a6.a(34.0f, 52.0f, 6.0f, 0.0f, 0.0f, 34, 51));
+        addView(rlVar, w7.z5.a(34.0f, 52.0f, 6.0f, 0.0f, 0.0f, 34, 51));
         d();
     }
 

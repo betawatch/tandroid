@@ -18,9 +18,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s implements org.telegram.ui.ActionBar.z1, bm0, qd0, rd0, sd0, ne.f, ImageReceiver.ImageReceiverDelegate, f5, r0.o, vh.a, t0.f, cm0, CameraController.VideoTakeCallback, org.telegram.ui.Cells.r5, bi.ob, org.telegram.ui.ActionBar.q0, org.telegram.ui.ActionBar.k1, wh.k {
+public final /* synthetic */ class s implements org.telegram.ui.ActionBar.z1, bm0, qd0, rd0, sd0, ne.f, ImageReceiver.ImageReceiverDelegate, f5, r0.n, vh.a, t0.f, cm0, CameraController.VideoTakeCallback, org.telegram.ui.Cells.r5, bi.ob, org.telegram.ui.ActionBar.q0, org.telegram.ui.ActionBar.k1, wh.k {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -30,7 +30,7 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.z1, bm
     }
 
     @Override // bi.ob
-    public boolean H0(long j10, int i10, int i11, int i12, bi.pb pbVar) {
+    public boolean G0(long j10, int i10, int i11, int i12, bi.pb pbVar) {
         no noVar = (no) ((org.telegram.ui.Cells.m6) this.b).T;
         ImageReceiver imageReceiver = noVar.a;
         pbVar.c = imageReceiver;
@@ -52,7 +52,7 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.z1, bm
         ((r8) this.b).X0(i10 * 60, i10 == 0 ? 71 : 70);
     }
 
-    @Override // r0.o
+    @Override // r0.n
     public r0.l1 Q0(View view, r0.l1 l1Var) {
         nb nbVar = (nb) this.b;
         i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
@@ -121,6 +121,34 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.z1, bm
         return ((String[]) this.b)[i10];
     }
 
+    @Override // t0.f
+    public boolean f(t0.j jVar, int i10, Bundle bundle) {
+        og ogVar = (og) this.b;
+        ChatActivityEnterView chatActivityEnterView = ogVar.d;
+        if (chatActivityEnterView.l5) {
+            return true;
+        }
+        int i11 = n0.a.a;
+        if (Build.VERSION.SDK_INT >= 25 && (i10 & 1) != 0) {
+            try {
+                jVar.a.d();
+            } catch (Exception unused) {
+                return false;
+            }
+        }
+        t0.i iVar = jVar.a;
+        if (!iVar.getDescription().hasMimeType("image/gif") && !SendMessagesHelper.shouldSendWebPAsSticker(null, iVar.c())) {
+            ogVar.m(iVar.c(), iVar.getDescription().getMimeType(0));
+            return true;
+        }
+        if (chatActivityEnterView.c()) {
+            g5.L(chatActivityEnterView.O2, chatActivityEnterView.P2.a(), new u2(5, ogVar, jVar), chatActivityEnterView.W3);
+            return true;
+        }
+        ogVar.o(jVar, true, 0, 0);
+        return true;
+    }
+
     @Override // org.telegram.ui.ActionBar.z1
     public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
         switch (this.a) {
@@ -149,7 +177,7 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.z1, bm
                 ((ig) this.b).a.U0.s();
                 break;
             case 19:
-                ((org.telegram.ui.rp) this.b).run();
+                ((org.telegram.ui.vp) this.b).run();
                 MessagesController.getGlobalMainSettings().edit().putBoolean("trimvoicehint", false).apply();
                 break;
             case 23:
@@ -165,58 +193,30 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.z1, bm
     }
 
     @Override // ne.f
-    public /* synthetic */ boolean h() {
+    public /* synthetic */ boolean i() {
         return false;
     }
 
     @Override // ne.f
-    public /* synthetic */ boolean i(float f7) {
+    public /* synthetic */ boolean j(float f7) {
         return false;
     }
 
-    @Override // t0.f
-    public boolean j(t0.j jVar, int i10, Bundle bundle) {
-        og ogVar = (og) this.b;
-        ChatActivityEnterView chatActivityEnterView = ogVar.d;
-        if (chatActivityEnterView.l5) {
-            return true;
-        }
-        int i11 = n0.a.a;
-        if (Build.VERSION.SDK_INT >= 25 && (i10 & 1) != 0) {
-            try {
-                jVar.a.d();
-            } catch (Exception unused) {
-                return false;
-            }
-        }
-        t0.i iVar = jVar.a;
-        if (!iVar.getDescription().hasMimeType("image/gif") && !SendMessagesHelper.shouldSendWebPAsSticker(null, iVar.c())) {
-            ogVar.m(iVar.c(), iVar.getDescription().getMimeType(0));
-            return true;
-        }
-        if (chatActivityEnterView.c()) {
-            g5.L(chatActivityEnterView.O2, chatActivityEnterView.P2.a(), new t2(6, ogVar, jVar), chatActivityEnterView.W3);
-            return true;
-        }
-        ogVar.o(jVar, true, 0, 0);
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.rd0
-    public void k(int i10) {
-        z2 z2Var = (z2) this.b;
-        if (i10 == 0) {
-            z2Var.run();
-        }
-    }
-
     @Override // org.telegram.ui.ActionBar.q0
-    public void l(int i10) {
+    public void k(int i10) {
         yq yqVar = ((zq) this.b).a;
         if (i10 == 1 || i10 == 2) {
             yqVar.k(i10 == 2);
         } else if (i10 == 3) {
             yqVar.y();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.rd0
+    public void l(int i10) {
+        z2 z2Var = (z2) this.b;
+        if (i10 == 0) {
+            z2Var.run();
         }
     }
 
@@ -244,10 +244,10 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.z1, bm
         int i10;
         int i11;
         MediaController.PhotoEntry photoEntry;
-        fm fmVar = (fm) this.b;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = fmVar.e;
+        em emVar = (em) this.b;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = emVar.e;
         vi viVar = chatAttachAlertPhotoLayout.b;
-        if (fmVar.a == null || viVar.V || chatAttachAlertPhotoLayout.P == null) {
+        if (emVar.a == null || viVar.V || chatAttachAlertPhotoLayout.P == null) {
             return;
         }
         ChatAttachAlertPhotoLayout.q1 = false;
@@ -263,7 +263,7 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.z1, bm
                 int i12 = i10;
                 int i13 = ChatAttachAlertPhotoLayout.u1;
                 ChatAttachAlertPhotoLayout.u1 = i13 - 1;
-                photoEntry = new MediaController.PhotoEntry(0, i13, 0L, fmVar.a.getAbsolutePath(), 0, true, i12, i11, 0L);
+                photoEntry = new MediaController.PhotoEntry(0, i13, 0L, emVar.a.getAbsolutePath(), 0, true, i12, i11, 0L);
                 photoEntry.duration = (int) (j10 / 1000.0f);
                 photoEntry.thumbPath = str;
                 if (viVar.T0 != 0) {
@@ -281,7 +281,7 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.z1, bm
         int i122 = i10;
         int i132 = ChatAttachAlertPhotoLayout.u1;
         ChatAttachAlertPhotoLayout.u1 = i132 - 1;
-        photoEntry = new MediaController.PhotoEntry(0, i132, 0L, fmVar.a.getAbsolutePath(), 0, true, i122, i11, 0L);
+        photoEntry = new MediaController.PhotoEntry(0, i132, 0L, emVar.a.getAbsolutePath(), 0, true, i122, i11, 0L);
         photoEntry.duration = (int) (j10 / 1000.0f);
         photoEntry.thumbPath = str;
         if (viVar.T0 != 0 && chatAttachAlertPhotoLayout.P.isFrontface()) {
@@ -333,7 +333,7 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.z1, bm
     }
 
     @Override // ne.f
-    public /* synthetic */ void f(boolean z10) {
+    public /* synthetic */ void h(boolean z10) {
     }
 
     @Override // ne.f

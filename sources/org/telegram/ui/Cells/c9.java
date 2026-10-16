@@ -17,7 +17,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ca0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class c9 extends FrameLayout {
     public final wh.n a;
@@ -106,11 +106,11 @@ public class c9 extends FrameLayout {
     public final void onDraw(Canvas canvas) {
         if (this.e) {
             org.telegram.ui.ActionBar.c6 c6Var = this.n;
-            Paint G = c6Var != null ? c6Var.G("paintDivider") : org.telegram.ui.ActionBar.g6.k0;
-            if (G == null) {
-                G = org.telegram.ui.ActionBar.g6.k0;
+            Paint F = c6Var != null ? c6Var.F("paintDivider") : org.telegram.ui.ActionBar.g6.k0;
+            if (F == null) {
+                F = org.telegram.ui.ActionBar.g6.k0;
             }
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, G);
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, F);
         }
     }
 
@@ -242,7 +242,7 @@ public class c9 extends FrameLayout {
         nVar.setImportantForAccessibility(2);
         nVar.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(5.0f));
         float f7 = i10 - 6;
-        addView(nVar, w7.a6.a(-2.0f, f7, 6.0f, f7, z10 ? 27.0f : 0.0f, -2, LocaleController.isRTL ? 5 : 3));
+        addView(nVar, w7.z5.a(-2.0f, f7, 6.0f, f7, z10 ? 27.0f : 0.0f, -2, LocaleController.isRTL ? 5 : 3));
         b9 b9Var = new b9(this, context, c6Var, 0);
         this.b = b9Var;
         final int i12 = 1;
@@ -306,10 +306,10 @@ public class c9 extends FrameLayout {
         b9Var.setPadding(0, AndroidUtilities.dp(1.0f), 0, AndroidUtilities.dp(6.0f));
         if (z10) {
             float f10 = i10;
-            addView(b9Var, w7.a6.a(-2.0f, f10, 32.0f, f10, 4.0f, -1, (LocaleController.isRTL ? 5 : 3) | 80));
+            addView(b9Var, w7.z5.a(-2.0f, f10, 32.0f, f10, 4.0f, -1, (LocaleController.isRTL ? 5 : 3) | 80));
         } else {
             float f11 = i10;
-            addView(b9Var, w7.a6.a(-2.0f, f11, 32.0f, f11, 4.0f, -1, LocaleController.isRTL ? 5 : 3));
+            addView(b9Var, w7.z5.a(-2.0f, f11, 32.0f, f11, 4.0f, -1, LocaleController.isRTL ? 5 : 3));
         }
         b9 b9Var2 = new b9(this, context, c6Var, 1);
         this.c = b9Var2;
@@ -375,17 +375,17 @@ public class c9 extends FrameLayout {
         b9Var2.setPadding(0, AndroidUtilities.dp(1.0f), 0, AndroidUtilities.dp(6.0f));
         if (z10) {
             float f12 = i10;
-            addView(b9Var2, w7.a6.a(-2.0f, f12, 32.0f, f12, 4.0f, -1, (LocaleController.isRTL ? 5 : 3) | 80));
+            addView(b9Var2, w7.z5.a(-2.0f, f12, 32.0f, f12, 4.0f, -1, (LocaleController.isRTL ? 5 : 3) | 80));
         } else {
             float f13 = i10;
-            addView(b9Var2, w7.a6.a(-2.0f, f13, 32.0f, f13, 4.0f, -1, LocaleController.isRTL ? 5 : 3));
+            addView(b9Var2, w7.z5.a(-2.0f, f13, 32.0f, f13, 4.0f, -1, LocaleController.isRTL ? 5 : 3));
         }
         e();
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setImportantForAccessibility(2);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, w7.a6.i(48.0f, 48.0f, 8388629, 0.0f, 0.0f, 12.0f, 0.0f));
+        addView(imageView, w7.z5.i(48.0f, 48.0f, 8388629, 0.0f, 0.0f, 12.0f, 0.0f));
     }
 
     public int a(int i10) {

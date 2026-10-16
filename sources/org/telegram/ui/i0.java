@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class i0 extends org.telegram.ui.ActionBar.e5 {
     public final /* synthetic */ int f;
@@ -26,7 +26,7 @@ public final class i0 extends org.telegram.ui.ActionBar.e5 {
             default:
                 return super.h();
             case 2:
-                return !((org.telegram.ui.Wallet.z1) this.h).m;
+                return !((org.telegram.ui.Wallet.a2) this.h).m;
         }
     }
 
@@ -34,7 +34,7 @@ public final class i0 extends org.telegram.ui.ActionBar.e5 {
     public void onOpenAnimationEnd() {
         switch (this.f) {
             case 1:
-                ((org.telegram.ui.Components.jr0) this.h).Y = true;
+                ((org.telegram.ui.Components.ir0) this.h).Y = true;
                 break;
         }
     }

@@ -18,7 +18,7 @@ import org.telegram.ui.Components.yj0;
 import org.telegram.ui.ak;
 import org.telegram.ui.fo;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class a1 extends FrameLayout {
     public final /* synthetic */ m2 a;
@@ -63,7 +63,7 @@ public final class a1 extends FrameLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:191:0x0540, code lost:
     
-        if (((int) org.telegram.messenger.yh.b(r23.x.b.getImageReceiver().getLottieAnimation().a0, r23.x.b.getImageReceiver().getLottieAnimation().e[0], r8, r8)) < r6.b) goto L262;
+        if (((int) org.telegram.messenger.sk.b(r23.x.b.getImageReceiver().getLottieAnimation().a0, r23.x.b.getImageReceiver().getLottieAnimation().e[0], r8, r8)) < r6.b) goto L262;
      */
     /* JADX WARN: Code restructure failed: missing block: B:234:0x03bc, code lost:
     
@@ -100,7 +100,7 @@ public final class a1 extends FrameLayout {
         float f18;
         float f19;
         float f20;
-        float y3;
+        float x10;
         float f21;
         g1 g1Var;
         int paddingTop;
@@ -164,8 +164,8 @@ public final class a1 extends FrameLayout {
                     view = foVar2.x0.getChildAt(i13);
                     if (view instanceof u1) {
                         messageObject = ((u1) view).getMessageObject();
-                    } else if (view instanceof org.telegram.ui.Cells.x0) {
-                        messageObject = ((org.telegram.ui.Cells.x0) view).getMessageObject();
+                    } else if (view instanceof org.telegram.ui.Cells.w0) {
+                        messageObject = ((org.telegram.ui.Cells.w0) view).getMessageObject();
                     } else {
                         continue;
                     }
@@ -201,8 +201,8 @@ public final class a1 extends FrameLayout {
                 paddingTop = u1Var.getPaddingTop();
             } else {
                 f7 = 0.10666667f;
-                if (view instanceof org.telegram.ui.Cells.x0) {
-                    g1Var = ((org.telegram.ui.Cells.x0) view).E0.l(d1Var2.p);
+                if (view instanceof org.telegram.ui.Cells.w0) {
+                    g1Var = ((org.telegram.ui.Cells.w0) view).E0.l(d1Var2.p);
                     paddingTop = view.getPaddingTop();
                 } else {
                     if (view instanceof mh.c) {
@@ -385,15 +385,15 @@ public final class a1 extends FrameLayout {
                                     }
                                 }
                                 if (f36 < 0.5f) {
-                                    y3 = f36 / 0.5f;
+                                    x10 = f36 / 0.5f;
                                     f20 = 1.0f;
                                 } else {
                                     f20 = 1.0f;
-                                    y3 = org.telegram.messenger.q.y(f36, 0.5f, 0.5f, 1.0f);
+                                    x10 = org.telegram.messenger.g0.x(f36, 0.5f, 0.5f, 1.0f);
                                 }
                                 float f39 = (f20 - f36) * 0.5f;
                                 float f40 = (c1Var.f * f36) + f39;
-                                float f41 = ((c1Var.g * f36) + f39) - (c1Var.e * y3);
+                                float f41 = ((c1Var.g * f36) + f39) - (c1Var.e * x10);
                                 float f42 = (1.0f - c1Var.d) * c1Var.h * f36;
                                 float scaleX = (this.x.b.getScaleX() * this.x.b.getWidth() * f40) + this.x.b.getX();
                                 float scaleY = (this.x.b.getScaleY() * this.x.b.getHeight() * f41) + this.x.b.getY();
@@ -480,8 +480,8 @@ public final class a1 extends FrameLayout {
                         View view2 = this.b;
                         if (view2 instanceof u1) {
                             ((u1) view2).N.b(d1Var9.p);
-                        } else if (view2 instanceof org.telegram.ui.Cells.x0) {
-                            ((org.telegram.ui.Cells.x0) view2).E0.b(d1Var9.p);
+                        } else if (view2 instanceof org.telegram.ui.Cells.w0) {
+                            ((org.telegram.ui.Cells.w0) view2).E0.b(d1Var9.p);
                         }
                     }
                     this.x.h = 1.0f;

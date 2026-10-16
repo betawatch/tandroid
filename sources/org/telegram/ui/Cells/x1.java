@@ -8,12 +8,12 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.n71;
+import org.telegram.ui.Components.o71;
 import org.telegram.ui.Components.oh0;
 import org.telegram.ui.Components.qh0;
-import org.telegram.ui.pc0;
+import org.telegram.ui.oc0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class x1 extends org.telegram.ui.Components.s6 {
     public final /* synthetic */ int s;
@@ -59,7 +59,7 @@ public final class x1 extends org.telegram.ui.Components.s6 {
                 canvas.translate(AndroidUtilities.dp(15.0f), 0.0f);
                 super.onDraw(canvas);
                 canvas.translate(((getMeasuredWidth() - d()) / 2.0f) - AndroidUtilities.dp(30.0f), AndroidUtilities.dp(11.0f));
-                ((n71) this.v).b.draw(canvas);
+                ((o71) this.v).b.draw(canvas);
                 canvas.restore();
                 break;
             case 3:
@@ -75,12 +75,12 @@ public final class x1 extends org.telegram.ui.Components.s6 {
     public void onMeasure(int i10, int i11) {
         switch (this.s) {
             case 4:
-                pc0 pc0Var = (pc0) this.v;
+                oc0 oc0Var = (oc0) this.v;
                 int size = View.MeasureSpec.getSize(i10);
                 if (size <= 0) {
                     size = AndroidUtilities.displaySize.x - AndroidUtilities.dp(20.0f);
                 }
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) ((size - pc0Var.d.getPaint().measureText(pc0Var.d.getText().toString())) - pc0Var.f.getPaint().measureText(pc0Var.f.getText().toString())), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) ((size - oc0Var.d.getPaint().measureText(oc0Var.d.getText().toString())) - oc0Var.f.getPaint().measureText(oc0Var.f.getText().toString())), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i10, i11);
@@ -120,16 +120,16 @@ public final class x1 extends org.telegram.ui.Components.s6 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x1(n71 n71Var, Context context) {
+    public x1(o71 o71Var, Context context) {
         super(context, true, true, true);
         this.s = 2;
-        this.v = n71Var;
+        this.v = o71Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x1(pc0 pc0Var, Context context) {
+    public x1(oc0 oc0Var, Context context) {
         super(context, false, true, true);
         this.s = 4;
-        this.v = pc0Var;
+        this.v = oc0Var;
     }
 }

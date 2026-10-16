@@ -33,10 +33,10 @@ import org.telegram.ui.bz0;
 import s4.b1;
 import s4.o0;
 import ug.c1;
-import w7.a6;
+import w7.z5;
 import yg.l;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class h extends pg.b {
     public final c6 d;
@@ -158,7 +158,7 @@ public final class h extends pg.b {
                             return;
                         }
                         AndroidUtilities.removeFromParent(gVar.q);
-                        frameLayout.addView(gVar.q, a6.d(-2.0f, -1));
+                        frameLayout.addView(gVar.q, z5.d(-2.0f, -1));
                         return;
                     }
                     return;

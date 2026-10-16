@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class p60 {
     public static void a(org.telegram.ui.ActionBar.a2 a2Var, pf.c cVar, TLObject tLObject, final int i10, Context context, TLRPC.TL_inputGroupCallSlug tL_inputGroupCallSlug, TLRPC.TL_error tL_error) {
@@ -53,7 +53,7 @@ public abstract class p60 {
             }
             org.telegram.ui.ActionBar.m2 U2 = LaunchActivity.U();
             if (U2 != null) {
-                org.telegram.messenger.q.r(R.string.LinkIsNoActive, org.telegram.ui.Components.zc.a0(U2), R.raw.error, 36);
+                org.telegram.messenger.g0.q(R.string.LinkIsNoActive, org.telegram.ui.Components.zc.a0(U2), R.raw.error, 36);
                 return;
             }
             return;
@@ -69,20 +69,20 @@ public abstract class p60 {
         bi.b bVar = new bi.b();
         org.telegram.ui.ActionBar.e3 e3Var = new org.telegram.ui.ActionBar.e3(1, context, (org.telegram.ui.ActionBar.c6) bVar, false);
         e3Var.fixNavigationBar();
-        LinearLayout e = org.telegram.messenger.yh.e(context, 1);
+        LinearLayout e = org.telegram.messenger.sk.e(context, 1);
         float f10 = 8.0f;
         e.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(8.0f));
         FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.setBackground(org.telegram.ui.ActionBar.g6.K(AndroidUtilities.dp(80.0f), bVar.F0(org.telegram.ui.ActionBar.g6.Oh)));
+        frameLayout.setBackground(org.telegram.ui.ActionBar.g6.K(AndroidUtilities.dp(80.0f), bVar.E0(org.telegram.ui.ActionBar.g6.Oh)));
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.filled_calls_users);
-        frameLayout.addView(imageView, w7.a6.e(56, 56, 17));
-        e.addView(frameLayout, w7.a6.t(80, 80, 1, 2, 21, 2, 13));
+        frameLayout.addView(imageView, w7.z5.e(56, 56, 17));
+        e.addView(frameLayout, w7.z5.t(80, 80, 1, 2, 21, 2, 13));
         int i11 = org.telegram.ui.ActionBar.g6.G6;
-        org.telegram.ui.Components.da0 a2 = w7.e6.a(context, 20.0f, i11, true, bVar);
+        org.telegram.ui.Components.da0 a2 = w7.d6.a(context, 20.0f, i11, true, bVar);
         a2.setText(LocaleController.getString(R.string.GroupCallLinkTitle));
         a2.setGravity(17);
-        e.addView(a2, w7.a6.t(-1, -2, 1, 2, 0, 2, 4));
+        e.addView(a2, w7.z5.t(-1, -2, 1, 2, 0, 2, 4));
         List list = (List) Collection.-EL.stream(arrayList).map(new k2.f(6)).filter(new Predicate() { // from class: org.telegram.ui.o60
             public /* synthetic */ Predicate and(Predicate predicate) {
                 return Predicate$-CC.$default$and(this, predicate);
@@ -103,17 +103,17 @@ public abstract class p60 {
             }
         }).collect(Collectors.toList());
         boolean isEmpty = list.isEmpty();
-        org.telegram.ui.Components.da0 a10 = w7.e6.a(context, 14.0f, i11, false, bVar);
+        org.telegram.ui.Components.da0 a10 = w7.d6.a(context, 14.0f, i11, false, bVar);
         a10.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.GroupCallLinkText)));
         a10.setGravity(17);
         a10.setMaxWidth(di.d4.a(a10.getText(), a10.getPaint()));
-        e.addView(a10, w7.a6.t(-1, -2, 1, 2, 0, 2, 23));
+        e.addView(a10, w7.z5.t(-1, -2, 1, 2, 0, 2, 23));
         if (isEmpty) {
             f7 = 8.0f;
         } else {
             View view = new View(context);
             view.setBackgroundColor(-14012362);
-            e.addView(view, w7.a6.s(-1, 7, 0, 0, 0, 0.66f, 0));
+            e.addView(view, w7.z5.s(-1, 7, 0, 0, 0, 0.66f, 0));
             org.telegram.ui.Components.n9 n9Var = new org.telegram.ui.Components.n9(context, false);
             n9Var.setCentered(true);
             n9Var.setSize(AndroidUtilities.dp(38.0f));
@@ -127,8 +127,8 @@ public abstract class p60 {
             }
             f7 = f10;
             n9Var.a(false);
-            e.addView(n9Var, w7.a6.k(2.0f, 11.0f, 5.0f, 0.0f, -1, 58));
-            org.telegram.ui.Components.da0 a11 = w7.e6.a(context, 14.0f, org.telegram.ui.ActionBar.g6.G6, false, bVar);
+            e.addView(n9Var, w7.z5.k(2.0f, 11.0f, 5.0f, 0.0f, -1, 58));
+            org.telegram.ui.Components.da0 a11 = w7.d6.a(context, 14.0f, org.telegram.ui.ActionBar.g6.G6, false, bVar);
             a11.setGravity(17);
             if (list.size() == 1) {
                 a11.setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GroupCallLinkText2One, DialogObject.getShortName(i10, ((Long) list.get(0)).longValue()))));
@@ -138,31 +138,31 @@ public abstract class p60 {
                 a11.setText(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("GroupCallLinkText2Many", arrayList.size() - 2, DialogObject.getShortName(i10, ((Long) list.get(0)).longValue()), DialogObject.getShortName(i10, ((Long) list.get(1)).longValue()))));
             }
             a11.setMaxWidth(di.d4.a(a11.getText(), a11.getPaint()));
-            e.addView(a11, w7.a6.t(-1, -2, 1, 2, 0, 2, 25));
+            e.addView(a11, w7.z5.t(-1, -2, 1, 2, 0, 2, 25));
         }
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(f7), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(f7));
         linearLayout.setClipToPadding(false);
         linearLayout.setOrientation(0);
-        linearLayout.setBackground(org.telegram.ui.ActionBar.g6.Z(bVar.F0(org.telegram.ui.ActionBar.g6.i6), 20, 20));
+        linearLayout.setBackground(org.telegram.ui.ActionBar.g6.Z(bVar.E0(org.telegram.ui.ActionBar.g6.i6), 20, 20));
         org.telegram.ui.Components.aq aqVar = new org.telegram.ui.Components.aq(context, 24, bVar);
         aqVar.b(org.telegram.ui.ActionBar.g6.h7, org.telegram.ui.ActionBar.g6.j7, org.telegram.ui.ActionBar.g6.k7);
         aqVar.setDrawUnchecked(true);
         aqVar.a(MessagesController.getGlobalMainSettings().getBoolean("callmiconstart", true), false);
         aqVar.setDrawBackgroundAsArc(10);
-        linearLayout.addView(aqVar, w7.a6.t(26, 26, 16, 0, 0, 0, 0));
+        linearLayout.addView(aqVar, w7.z5.t(26, 26, 16, 0, 0, 0, 0));
         TextView textView = new TextView(context);
-        textView.setTextColor(bVar.F0(org.telegram.ui.ActionBar.g6.j5));
+        textView.setTextColor(bVar.E0(org.telegram.ui.ActionBar.g6.j5));
         textView.setTextSize(1, 14.0f);
         textView.setText(LocaleController.getString(R.string.GroupCallLinkMicrophone));
-        linearLayout.addView(textView, w7.a6.t(-2, -2, 16, 9, 0, 0, 0));
-        e.addView(linearLayout, w7.a6.t(-2, 38, 1, 0, 4, 0, 12));
-        w7.c6.b(linearLayout, 0.025f, 1.5f);
+        linearLayout.addView(textView, w7.z5.t(-2, -2, 16, 9, 0, 0, 0));
+        e.addView(linearLayout, w7.z5.t(-2, 38, 1, 0, 4, 0, 12));
+        w7.b6.b(linearLayout, 0.025f, 1.5f);
         linearLayout.setOnClickListener(new a(aqVar, 29));
         di.d dVar = new di.d(context, bVar, true);
         dVar.setRoundRadius(24);
         dVar.g(LocaleController.getString(R.string.GroupCallLinkJoin), false, true);
-        e.addView(dVar, w7.a6.k(2.0f, 0.0f, 2.0f, 0.0f, -1, 48));
+        e.addView(dVar, w7.z5.k(2.0f, 0.0f, 2.0f, 0.0f, -1, 48));
         e3Var.customView = e;
         dVar.setOnClickListener(new org.telegram.ui.Components.zo(e3Var, context, aqVar, i10, tL_inputGroupCallSlug, 1));
         e3Var.fixNavigationBar();

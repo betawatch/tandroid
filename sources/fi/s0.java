@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Cells.c6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s0 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -74,15 +74,15 @@ public final /* synthetic */ class s0 implements DialogInterface.OnDismissListen
                 callback2.run(Integer.valueOf(u3Var.getValue() + (s3Var.getValue() * 60)));
                 break;
             case 4:
-                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) this.c;
+                org.telegram.ui.web.c1 c1Var = (org.telegram.ui.web.c1) this.c;
                 AtomicBoolean atomicBoolean = (AtomicBoolean) this.b;
                 n9 n9Var = (n9) this.d;
-                b1Var.getClass();
+                c1Var.getClass();
                 if (!atomicBoolean.get()) {
-                    b1Var.x(n9Var, "popup_closed", new JSONObject());
+                    c1Var.x(n9Var, "popup_closed", new JSONObject());
                 }
-                b1Var.c0 = null;
-                b1Var.e0 = System.currentTimeMillis();
+                c1Var.c0 = null;
+                c1Var.e0 = System.currentTimeMillis();
                 break;
             case 5:
                 c6 c6Var = (c6) this.c;

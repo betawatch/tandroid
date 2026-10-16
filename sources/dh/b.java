@@ -12,13 +12,13 @@ import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.p60;
 import org.telegram.ui.Components.pc0;
 import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.voip.r2;
+import org.telegram.ui.Components.voip.q2;
 import org.telegram.ui.Components.voip.s1;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.Wallet.b5;
-import w7.j6;
+import org.telegram.ui.Wallet.c5;
+import w7.i6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class b extends ViewOutlineProvider {
     public final /* synthetic */ int a;
@@ -97,12 +97,12 @@ public final class b extends ViewOutlineProvider {
                     break;
                 }
             case 5:
-                r2 r2Var = (r2) obj;
-                if (r2Var.b >= 1.0f) {
-                    outline.setRoundRect((int) r2Var.O, (int) r2Var.N, (int) (view.getMeasuredWidth() - r2Var.O), (int) (view.getMeasuredHeight() - r2Var.N), r2Var.b);
+                q2 q2Var = (q2) obj;
+                if (q2Var.b >= 1.0f) {
+                    outline.setRoundRect((int) q2Var.O, (int) q2Var.N, (int) (view.getMeasuredWidth() - q2Var.O), (int) (view.getMeasuredHeight() - q2Var.N), q2Var.b);
                     break;
                 } else {
-                    outline.setRect((int) r2Var.O, (int) r2Var.N, (int) (view.getMeasuredWidth() - r2Var.O), (int) (view.getMeasuredHeight() - r2Var.N));
+                    outline.setRect((int) q2Var.O, (int) q2Var.N, (int) (view.getMeasuredWidth() - q2Var.O), (int) (view.getMeasuredHeight() - q2Var.N));
                     break;
                 }
             case 6:
@@ -111,9 +111,9 @@ public final class b extends ViewOutlineProvider {
                 outline.setRoundRect(dp2, AndroidUtilities.dp(12.0f) + kVar.getBottom(), view.getWidth() - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f) + view.getMeasuredHeight(), AndroidUtilities.dp(16.0f));
                 break;
             default:
-                b5 b5Var = (b5) obj;
-                j6.a(b5Var.c, view.getWidth(), view.getHeight());
-                outline.setConvexPath(b5Var.c);
+                c5 c5Var = (c5) obj;
+                i6.a(c5Var.c, view.getWidth(), view.getHeight());
+                outline.setConvexPath(c5Var.c);
                 break;
         }
     }

@@ -1,24 +1,110 @@
 package m;
 
-import android.view.ViewTreeObserver;
-import android.widget.PopupWindow;
+import android.database.DataSetObserver;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListAdapter;
+import android.widget.SpinnerAdapter;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class l0 implements PopupWindow.OnDismissListener {
-    public final /* synthetic */ androidx.mediarouter.app.i a;
-    public final /* synthetic */ m0 b;
+public final class l0 implements ListAdapter, SpinnerAdapter {
+    public SpinnerAdapter a;
+    public ListAdapter b;
 
-    public l0(m0 m0Var, androidx.mediarouter.app.i iVar) {
-        this.b = m0Var;
-        this.a = iVar;
+    @Override // android.widget.ListAdapter
+    public final boolean areAllItemsEnabled() {
+        ListAdapter listAdapter = this.b;
+        if (listAdapter != null) {
+            return listAdapter.areAllItemsEnabled();
+        }
+        return true;
     }
 
-    @Override // android.widget.PopupWindow.OnDismissListener
-    public final void onDismiss() {
-        ViewTreeObserver viewTreeObserver = this.b.W.getViewTreeObserver();
-        if (viewTreeObserver != null) {
-            viewTreeObserver.removeGlobalOnLayoutListener(this.a);
+    @Override // android.widget.Adapter
+    public final int getCount() {
+        SpinnerAdapter spinnerAdapter = this.a;
+        if (spinnerAdapter == null) {
+            return 0;
+        }
+        return spinnerAdapter.getCount();
+    }
+
+    @Override // android.widget.SpinnerAdapter
+    public final View getDropDownView(int i10, View view, ViewGroup viewGroup) {
+        SpinnerAdapter spinnerAdapter = this.a;
+        if (spinnerAdapter == null) {
+            return null;
+        }
+        return spinnerAdapter.getDropDownView(i10, view, viewGroup);
+    }
+
+    @Override // android.widget.Adapter
+    public final Object getItem(int i10) {
+        SpinnerAdapter spinnerAdapter = this.a;
+        if (spinnerAdapter == null) {
+            return null;
+        }
+        return spinnerAdapter.getItem(i10);
+    }
+
+    @Override // android.widget.Adapter
+    public final long getItemId(int i10) {
+        SpinnerAdapter spinnerAdapter = this.a;
+        if (spinnerAdapter == null) {
+            return -1L;
+        }
+        return spinnerAdapter.getItemId(i10);
+    }
+
+    @Override // android.widget.Adapter
+    public final int getItemViewType(int i10) {
+        return 0;
+    }
+
+    @Override // android.widget.Adapter
+    public final View getView(int i10, View view, ViewGroup viewGroup) {
+        return getDropDownView(i10, view, viewGroup);
+    }
+
+    @Override // android.widget.Adapter
+    public final int getViewTypeCount() {
+        return 1;
+    }
+
+    @Override // android.widget.Adapter
+    public final boolean hasStableIds() {
+        SpinnerAdapter spinnerAdapter = this.a;
+        return spinnerAdapter != null && spinnerAdapter.hasStableIds();
+    }
+
+    @Override // android.widget.Adapter
+    public final boolean isEmpty() {
+        return getCount() == 0;
+    }
+
+    @Override // android.widget.ListAdapter
+    public final boolean isEnabled(int i10) {
+        ListAdapter listAdapter = this.b;
+        if (listAdapter != null) {
+            return listAdapter.isEnabled(i10);
+        }
+        return true;
+    }
+
+    @Override // android.widget.Adapter
+    public final void registerDataSetObserver(DataSetObserver dataSetObserver) {
+        SpinnerAdapter spinnerAdapter = this.a;
+        if (spinnerAdapter != null) {
+            spinnerAdapter.registerDataSetObserver(dataSetObserver);
+        }
+    }
+
+    @Override // android.widget.Adapter
+    public final void unregisterDataSetObserver(DataSetObserver dataSetObserver) {
+        SpinnerAdapter spinnerAdapter = this.a;
+        if (spinnerAdapter != null) {
+            spinnerAdapter.unregisterDataSetObserver(dataSetObserver);
         }
     }
 }

@@ -10,7 +10,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class k3 extends FrameLayout {
     public final EditTextBoldCursor a;
@@ -31,7 +31,7 @@ public final class k3 extends FrameLayout {
         editTextBoldCursor.setBackgroundDrawable(null);
         editTextBoldCursor.setPadding(0, 0, 0, 0);
         editTextBoldCursor.setInputType(editTextBoldCursor.getInputType() | 16384);
-        addView(editTextBoldCursor, w7.a6.a(-1.0f, 21.0f, 0.0f, 21.0f, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
+        addView(editTextBoldCursor, w7.z5.a(-1.0f, 21.0f, 0.0f, 21.0f, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
     }
 
     public String getText() {

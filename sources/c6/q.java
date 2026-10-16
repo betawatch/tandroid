@@ -15,9 +15,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import v7.r7;
-import w7.g0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class q extends o6.a {
     public static final Parcelable.Creator<q> CREATOR;
@@ -891,9 +890,9 @@ public final class q extends o6.a {
                             } else if (num.intValue() != this.c || (mediaInfo = this.a) == null) {
                                 arrayList7.add(new o(jSONObject6));
                             } else {
-                                o M = new qb.c(mediaInfo).M();
-                                M.b(jSONObject6);
-                                arrayList7.add(M);
+                                o E = new a6.m(mediaInfo).E();
+                                E.b(jSONObject6);
+                                arrayList7.add(E);
                             }
                             i13 = i41;
                             i40++;
@@ -1104,54 +1103,54 @@ public final class q extends o6.a {
     public final void writeToParcel(Parcel parcel, int i10) {
         JSONObject jSONObject = this.E;
         this.y = jSONObject == null ? null : jSONObject.toString();
-        int q6 = g0.q(parcel, 20293);
-        g0.k(parcel, 2, this.a, i10);
+        int q6 = w7.f0.q(parcel, 20293);
+        w7.f0.k(parcel, 2, this.a, i10);
         long j10 = this.b;
-        g0.s(parcel, 3, 8);
+        w7.f0.s(parcel, 3, 8);
         parcel.writeLong(j10);
         int i11 = this.c;
-        g0.s(parcel, 4, 4);
+        w7.f0.s(parcel, 4, 4);
         parcel.writeInt(i11);
         double d = this.d;
-        g0.s(parcel, 5, 8);
+        w7.f0.s(parcel, 5, 8);
         parcel.writeDouble(d);
         int i12 = this.e;
-        g0.s(parcel, 6, 4);
+        w7.f0.s(parcel, 6, 4);
         parcel.writeInt(i12);
         int i13 = this.f;
-        g0.s(parcel, 7, 4);
+        w7.f0.s(parcel, 7, 4);
         parcel.writeInt(i13);
         long j11 = this.h;
-        g0.s(parcel, 8, 8);
+        w7.f0.s(parcel, 8, 8);
         parcel.writeLong(j11);
         long j12 = this.n;
-        g0.s(parcel, 9, 8);
+        w7.f0.s(parcel, 9, 8);
         parcel.writeLong(j12);
         double d10 = this.r;
-        g0.s(parcel, 10, 8);
+        w7.f0.s(parcel, 10, 8);
         parcel.writeDouble(d10);
         boolean z10 = this.s;
-        g0.s(parcel, 11, 4);
+        w7.f0.s(parcel, 11, 4);
         parcel.writeInt(z10 ? 1 : 0);
-        g0.j(parcel, 12, this.v);
+        w7.f0.j(parcel, 12, this.v);
         int i14 = this.w;
-        g0.s(parcel, 13, 4);
+        w7.f0.s(parcel, 13, 4);
         parcel.writeInt(i14);
         int i15 = this.x;
-        g0.s(parcel, 14, 4);
+        w7.f0.s(parcel, 14, 4);
         parcel.writeInt(i15);
-        g0.l(parcel, 15, this.y);
+        w7.f0.l(parcel, 15, this.y);
         int i16 = this.F;
-        g0.s(parcel, 16, 4);
+        w7.f0.s(parcel, 16, 4);
         parcel.writeInt(i16);
-        g0.p(parcel, 17, this.G);
+        w7.f0.p(parcel, 17, this.G);
         boolean z11 = this.H;
-        g0.s(parcel, 18, 4);
+        w7.f0.s(parcel, 18, 4);
         parcel.writeInt(z11 ? 1 : 0);
-        g0.k(parcel, 19, this.I, i10);
-        g0.k(parcel, 20, this.J, i10);
-        g0.k(parcel, 21, this.K, i10);
-        g0.k(parcel, 22, this.L, i10);
-        g0.r(parcel, q6);
+        w7.f0.k(parcel, 19, this.I, i10);
+        w7.f0.k(parcel, 20, this.J, i10);
+        w7.f0.k(parcel, 21, this.K, i10);
+        w7.f0.k(parcel, 22, this.L, i10);
+        w7.f0.r(parcel, q6);
     }
 }

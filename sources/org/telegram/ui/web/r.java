@@ -4,16 +4,16 @@ import bi.n9;
 import org.json.JSONObject;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ b1 b;
+    public final /* synthetic */ c1 b;
     public final /* synthetic */ n9 c;
 
-    public /* synthetic */ r(b1 b1Var, n9 n9Var, int i10) {
+    public /* synthetic */ r(c1 c1Var, n9 n9Var, int i10) {
         this.a = i10;
-        this.b = b1Var;
+        this.b = c1Var;
         this.c = n9Var;
     }
 
@@ -27,15 +27,15 @@ public final /* synthetic */ class r implements Utilities.Callback {
                 this.b.x(this.c, "location_requested", (JSONObject) obj);
                 break;
             default:
-                b1 b1Var = this.b;
-                b1Var.getClass();
+                c1 c1Var = this.b;
+                c1Var.getClass();
                 boolean booleanValue = ((Boolean) obj).booleanValue();
                 n9 n9Var = this.c;
                 if (!booleanValue) {
-                    b1Var.x(n9Var, "home_screen_failed", b1.A("UNSUPPORTED", "error"));
+                    c1Var.x(n9Var, "home_screen_failed", c1.A("UNSUPPORTED", "error"));
                     break;
                 } else {
-                    b1Var.x(n9Var, "home_screen_added", null);
+                    c1Var.x(n9Var, "home_screen_added", null);
                     break;
                 }
         }

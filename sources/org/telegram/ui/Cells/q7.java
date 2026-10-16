@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.aq;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class q7 extends FrameLayout {
     public final org.telegram.ui.Components.z9 a;
@@ -46,39 +46,39 @@ public final class q7 extends FrameLayout {
         setWillNotDraw(false);
         FrameLayout frameLayout = new FrameLayout(context);
         this.f = frameLayout;
-        addView(frameLayout, w7.a6.d(-1.0f, -1));
+        addView(frameLayout, w7.z5.d(-1.0f, -1));
         org.telegram.ui.Components.z9 z9Var = new org.telegram.ui.Components.z9(context);
         this.a = z9Var;
         z9Var.getImageReceiver().setNeedsQualityThumb(true);
         z9Var.getImageReceiver().setShouldGenerateQualityThumb(true);
-        frameLayout.addView(z9Var, w7.a6.d(-1.0f, -1));
+        frameLayout.addView(z9Var, w7.z5.d(-1.0f, -1));
         q5 q5Var = new q5(context, 1);
         q5Var.b = new RectF();
         this.c = q5Var;
         q5Var.setWillNotDraw(false);
         q5Var.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), 0);
-        frameLayout.addView(q5Var, w7.a6.a(17.0f, 4.0f, 0.0f, 0.0f, 4.0f, -2, 83));
+        frameLayout.addView(q5Var, w7.z5.a(17.0f, 4.0f, 0.0f, 0.0f, 4.0f, -2, 83));
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.play_mini_video);
-        q5Var.addView(imageView, w7.a6.e(-2, -2, 19));
+        q5Var.addView(imageView, w7.z5.e(-2, -2, 19));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextColor(-1);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 12.0f);
         textView.setImportantForAccessibility(2);
-        q5Var.addView(textView, w7.a6.a(-2.0f, 13.0f, -0.7f, 0.0f, 0.0f, -2, 19));
+        q5Var.addView(textView, w7.z5.a(-2.0f, 13.0f, -0.7f, 0.0f, 0.0f, -2, 19));
         View view = new View(context);
         this.d = view;
         view.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.L0(false));
-        addView(view, w7.a6.d(-1.0f, -1));
+        addView(view, w7.z5.d(-1.0f, -1));
         aq aqVar = new aq(context, 21, null);
         this.e = aqVar;
         aqVar.setVisibility(4);
         aqVar.b(-1, org.telegram.ui.ActionBar.g6.Lh, org.telegram.ui.ActionBar.g6.k7);
         aqVar.setDrawUnchecked(false);
         aqVar.setDrawBackgroundAsArc(1);
-        addView(aqVar, w7.a6.a(24.0f, 0.0f, 1.0f, 1.0f, 0.0f, 24, 53));
+        addView(aqVar, w7.z5.a(24.0f, 0.0f, 1.0f, 1.0f, 0.0f, 24, 53));
     }
 
     @Override // android.view.View
@@ -109,7 +109,7 @@ public final class q7 extends FrameLayout {
             accessibilityNodeInfo.setText(LocaleController.getString(R.string.AttachLivePhoto));
         } else if (this.n.isVideo()) {
             StringBuilder sb2 = new StringBuilder();
-            d0.n(R.string.AttachVideo, ", ", sb2);
+            c1.l(R.string.AttachVideo, ", ", sb2);
             sb2.append(LocaleController.formatDuration((int) this.n.getDuration()));
             accessibilityNodeInfo.setText(sb2.toString());
         } else {

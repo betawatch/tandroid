@@ -25,7 +25,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class fd extends View {
     public static final int[] W;
@@ -399,14 +399,14 @@ public abstract class fd extends View {
                                 f18 = f31;
                                 double d15 = width6;
                                 float f34 = f30 + width4;
-                                double a2 = org.telegram.messenger.q.a(a(f34), d15, rectF12.centerX());
+                                double f35 = i2.d.f(a(f34), d15, rectF12.centerX());
                                 z11 = z15;
                                 i12 = i15;
                                 f19 = abs;
                                 double sin = (Math.sin(a(f34)) * d15) + rectF12.centerY();
-                                float f35 = (float) a2;
-                                float f36 = (float) sin;
-                                rectF11.set(f35 - min3, f36 - min3, f35 + min3, f36 + min3);
+                                float f36 = (float) f35;
+                                float f37 = (float) sin;
+                                rectF11.set(f36 - min3, f37 - min3, f36 + min3, f37 + min3);
                                 path.arcTo(rectF11, f34 - 90.0f, 90.0f);
                             } else {
                                 f18 = f31;
@@ -417,27 +417,27 @@ public abstract class fd extends View {
                             path.arcTo(rectF12, f30 + width4, f33 - (width4 * 2.0f));
                             if (z11) {
                                 double d16 = width6;
-                                float a10 = (float) org.telegram.messenger.q.a(a(r4), d16, rectF12.centerX());
+                                float f38 = (float) i2.d.f(a(r4), d16, rectF12.centerX());
                                 float sin2 = (float) ((Math.sin(a(r4)) * d16) + rectF12.centerY());
-                                rectF11.set(a10 - min3, sin2 - min3, a10 + min3, sin2 + min3);
+                                rectF11.set(f38 - min3, sin2 - min3, f38 + min3, sin2 + min3);
                                 path.arcTo(rectF11, f18 - width4, 90.0f);
                                 double d17 = width7;
-                                float a11 = (float) org.telegram.messenger.q.a(a(r4), d17, rectF2.centerX());
+                                float f39 = (float) i2.d.f(a(r4), d17, rectF2.centerX());
                                 float sin3 = (float) ((Math.sin(a(r4)) * d17) + rectF2.centerY());
-                                rectF11.set(a11 - min3, sin3 - min3, a11 + min3, sin3 + min3);
+                                rectF11.set(f39 - min3, sin3 - min3, f39 + min3, sin3 + min3);
                                 path.arcTo(rectF11, (f18 - width5) + 90.0f, 90.0f);
                             }
                             rectF5 = rectF2;
                             path.arcTo(rectF5, f18 - width5, -(f33 - (width5 * 2.0f)));
                             if (z11) {
                                 double d18 = width7;
-                                float f37 = f30 + width5;
-                                double a12 = org.telegram.messenger.q.a(a(f37), d18, rectF5.centerX());
-                                double sin4 = (Math.sin(a(f37)) * d18) + rectF5.centerY();
-                                float f38 = (float) a12;
-                                float f39 = (float) sin4;
-                                rectF11.set(f38 - min3, f39 - min3, f38 + min3, f39 + min3);
-                                path.arcTo(rectF11, f37 + 180.0f, 90.0f);
+                                float f40 = f30 + width5;
+                                double f41 = i2.d.f(a(f40), d18, rectF5.centerX());
+                                double sin4 = (Math.sin(a(f40)) * d18) + rectF5.centerY();
+                                float f42 = (float) f41;
+                                float f43 = (float) sin4;
+                                rectF11.set(f42 - min3, f43 - min3, f42 + min3, f43 + min3);
+                                path.arcTo(rectF11, f40 + 180.0f, 90.0f);
                             }
                             path.close();
                             path.computeBounds(ddVar2.r, false);
@@ -534,41 +534,41 @@ public abstract class fd extends View {
             f10 = 0.0f;
             i11 = 0;
         }
-        float f40 = d;
+        float f44 = d;
         RectF rectF13 = rectF7;
         RectF rectF14 = rectF8;
-        float f41 = lerp2;
-        float f42 = f7;
+        float f45 = lerp2;
+        float f46 = f7;
         r6 r6Var3 = this.N;
         r6 r6Var4 = this.M;
         int i17 = this.d;
         if (i17 == 0) {
-            float f43 = (f11 - f42) * (f11 - f40);
-            if (b(canvas2, r6Var4, rectF13.centerX(), rectF13.centerY() - AndroidUtilities.dpf2(5.0f), 1.0f, f43) || i14 != 0) {
+            float f47 = (f11 - f46) * (f11 - f44);
+            if (b(canvas2, r6Var4, rectF13.centerX(), rectF13.centerY() - AndroidUtilities.dpf2(5.0f), 1.0f, f47) || i14 != 0) {
             }
-            b(canvas, r6Var3, rectF13.centerX(), AndroidUtilities.dpf2(22.0f) + rectF13.centerY(), 1.0f, f43);
+            b(canvas, r6Var3, rectF13.centerX(), AndroidUtilities.dpf2(22.0f) + rectF13.centerY(), 1.0f, f47);
             z10 = true;
         } else {
             z10 = true;
             if (i17 == 1) {
-                float f44 = f11 - f40;
-                float centerX3 = rectF13.centerX() - AndroidUtilities.lerp(0.0f, AndroidUtilities.dpf2(4.0f), f42);
-                float centerY3 = rectF13.centerY() - AndroidUtilities.lerp(AndroidUtilities.dpf2(5.0f), 0.0f, f42);
-                float f45 = f11;
-                float lerp4 = AndroidUtilities.lerp(f45, 2.25f, f42);
-                float f46 = f44 * f42;
-                boolean z16 = b(canvas, this.O, centerX3, centerY3, lerp4, f46) || i14 != 0;
-                float f47 = (f45 - f42) * f44;
-                boolean z17 = b(canvas, r6Var4, centerX3, centerY3, lerp4, f47) || z16;
-                float lerp5 = AndroidUtilities.lerp(0.0f, AndroidUtilities.dpf2(26.0f), f42) + rectF13.centerX();
-                float lerp6 = AndroidUtilities.lerp(AndroidUtilities.dpf2(22.0f), -AndroidUtilities.dpf2(18.0f), f42) + rectF13.centerY();
-                float lerp7 = AndroidUtilities.lerp(1.0f, 1.4f, f42);
-                if (b(canvas, this.P, lerp5, lerp6, lerp7, f46) || z17) {
+                float f48 = f11 - f44;
+                float centerX3 = rectF13.centerX() - AndroidUtilities.lerp(0.0f, AndroidUtilities.dpf2(4.0f), f46);
+                float centerY3 = rectF13.centerY() - AndroidUtilities.lerp(AndroidUtilities.dpf2(5.0f), 0.0f, f46);
+                float f49 = f11;
+                float lerp4 = AndroidUtilities.lerp(f49, 2.25f, f46);
+                float f50 = f48 * f46;
+                boolean z16 = b(canvas, this.O, centerX3, centerY3, lerp4, f50) || i14 != 0;
+                float f51 = (f49 - f46) * f48;
+                boolean z17 = b(canvas, r6Var4, centerX3, centerY3, lerp4, f51) || z16;
+                float lerp5 = AndroidUtilities.lerp(0.0f, AndroidUtilities.dpf2(26.0f), f46) + rectF13.centerX();
+                float lerp6 = AndroidUtilities.lerp(AndroidUtilities.dpf2(22.0f), -AndroidUtilities.dpf2(18.0f), f46) + rectF13.centerY();
+                float lerp7 = AndroidUtilities.lerp(1.0f, 1.4f, f46);
+                if (b(canvas, this.P, lerp5, lerp6, lerp7, f50) || z17) {
                 }
-                b(canvas, r6Var3, lerp5, lerp6, lerp7, f47);
+                b(canvas, r6Var3, lerp5, lerp6, lerp7, f51);
             }
         }
-        if (f42 > 0.0f) {
+        if (f46 > 0.0f) {
             if (this.Q == null) {
                 sg.w1 w1Var = new sg.w1(25);
                 this.Q = w1Var;
@@ -598,16 +598,16 @@ public abstract class fd extends View {
             this.Q.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
             this.Q.f();
             canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-            this.Q.e(canvas, f42);
-            int i18 = (int) (f42 * 255.0f);
+            this.Q.e(canvas, f46);
+            int i18 = (int) (f46 * 255.0f);
             Paint paint4 = this.H;
             paint4.setAlpha(i18);
             canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint4);
             canvas.restore();
             Paint paint5 = this.G;
-            paint5.setStrokeWidth(f41);
+            paint5.setStrokeWidth(f45);
             paint5.setAlpha(i18);
-            canvas.drawCircle(rectF13.centerX(), rectF13.centerY(), (rectF13.width() - f41) / 2.0f, paint5);
+            canvas.drawCircle(rectF13.centerX(), rectF13.centerY(), (rectF13.width() - f45) / 2.0f, paint5);
             RectF rectF16 = this.E;
             Path path2 = this.F;
             if (rectF16 == null || !rectF16.equals(rectF)) {

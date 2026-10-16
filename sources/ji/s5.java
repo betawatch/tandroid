@@ -8,26 +8,26 @@ import java.util.LinkedHashSet;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.i71;
 import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.z61;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class s5 extends k61 {
+public final class s5 extends l61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        k61.setup(new s5());
+        l61.setup(new s5());
     }
 
-    @Override // org.telegram.ui.Components.k61
-    public final void bindView(View view, l61 l61Var, boolean z10, z61 z61Var, h71 h71Var) {
+    @Override // org.telegram.ui.Components.l61
+    public final void bindView(View view, m61 m61Var, boolean z10, a71 a71Var, i71 i71Var) {
         u5 u5Var = (u5) view;
-        a aVar = (a) l61Var.G;
-        d3 d3Var = (d3) l61Var.H;
+        a aVar = (a) m61Var.G;
+        d3 d3Var = (d3) m61Var.H;
         w5 w5Var = u5Var.v;
         boolean z11 = true;
         boolean z12 = u5Var.a != aVar;
@@ -75,14 +75,14 @@ public final class s5 extends k61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.k61
+    @Override // org.telegram.ui.Components.l61
     public final View createView(Context context, mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
         u5 u5Var = new u5(context, c6Var);
         u5Var.setBackground(new a2(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.d6, c6Var)));
         return u5Var;
     }
 
-    @Override // org.telegram.ui.Components.k61
+    @Override // org.telegram.ui.Components.l61
     public final boolean isClickable() {
         return false;
     }

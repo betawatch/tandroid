@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotchInfoUtils;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class qi0 implements si0 {
     public Bitmap a;
@@ -50,7 +50,7 @@ public final class qi0 implements si0 {
         if (bitmap == null || bitmap.isRecycled()) {
             return;
         }
-        int a2 = (int) ((1.0f - ((w7.s.a(ti0Var2.f, 0.2f, 0.3f) - 0.2f) / 0.10000001f)) * 255.0f);
+        int a2 = (int) ((1.0f - ((w7.r.a(ti0Var2.f, 0.2f, 0.3f) - 0.2f) / 0.10000001f)) * 255.0f);
         float width = (ti0Var2.getWidth() - this.f) / 2.0f;
         canvas.save();
         canvas.translate(0.0f, -AndroidUtilities.dp(32.0f));

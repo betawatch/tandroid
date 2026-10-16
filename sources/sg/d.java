@@ -11,16 +11,16 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Cells.t3;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.lm0;
 import org.telegram.ui.d61;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class d extends lm0 {
     public final c6 c;
@@ -109,18 +109,18 @@ public final class d extends lm0 {
             }
         } else if (this.s) {
             ?? d61Var = new d61(context, 10);
-            LinearLayout e = yh.e(context, 0);
+            LinearLayout e = sk.e(context, 0);
             ImageView imageView = new ImageView(context);
             imageView.setImageDrawable(b1.c(context.getDrawable(R.drawable.other_2x_large), b1.d().a));
-            e.addView(imageView, a6.a(28.0f, 0.0f, 0.0f, 8.0f, 0.0f, 40, 16));
+            e.addView(imageView, z5.a(28.0f, 0.0f, 0.0f, 8.0f, 0.0f, 40, 16));
             TextView textView = new TextView(context);
             textView.setText(LocaleController.getString(R.string.DoubledLimits));
             textView.setGravity(17);
             textView.setTextSize(1, 20.0f);
             textView.setTextColor(g6.w0(g6.G6, c6Var));
             textView.setTypeface(AndroidUtilities.bold());
-            e.addView(textView, a6.e(-2, -2, 16));
-            d61Var.addView(e, a6.e(-2, -2, 17));
+            e.addView(textView, z5.e(-2, -2, 16));
+            d61Var.addView(e, z5.e(-2, -2, 17));
             t3Var = d61Var;
         } else {
             t3Var = new t3(context, 64);

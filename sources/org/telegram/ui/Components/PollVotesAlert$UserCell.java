@@ -12,7 +12,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class PollVotesAlert$UserCell extends LinearLayout {
     public ArrayList E;
@@ -46,7 +46,7 @@ public class PollVotesAlert$UserCell extends LinearLayout {
         z9 z9Var = new z9(context);
         this.a = z9Var;
         z9Var.setRoundRadius(AndroidUtilities.dp(18.0f));
-        addView(z9Var, w7.a6.t(34, 34, 16, 0, 0, 11, 0));
+        addView(z9Var, w7.z5.t(34, 34, 16, 0, 0, 11, 0));
         org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(context);
         this.b = h5Var;
         int i10 = org.telegram.ui.ActionBar.g6.j5;
@@ -54,17 +54,17 @@ public class PollVotesAlert$UserCell extends LinearLayout {
         h5Var.setTypeface(AndroidUtilities.bold());
         h5Var.setTextSize(16);
         h5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        addView(h5Var, w7.a6.p(0, 24, 1.0f, 16, 0, 0, 0, 0));
+        addView(h5Var, w7.z5.p(0, 24, 1.0f, 16, 0, 0, 0, 0));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.r5, false));
         textView.setTextSize(1, 13.0f);
-        addView(textView, w7.a6.p(-2, -2, 0.0f, 21, 4, 0, 2, 0));
+        addView(textView, w7.z5.p(-2, -2, 0.0f, 21, 4, 0, 2, 0));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i10, false));
         textView2.setTextSize(1, 13.0f);
-        addView(textView2, w7.a6.p(-2, -2, 0.0f, 21, 2, 0, 4, 0));
+        addView(textView2, w7.z5.p(-2, -2, 0.0f, 21, 2, 0, 4, 0));
         this.f = new jx0(20, h5Var);
     }
 

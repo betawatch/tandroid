@@ -10,7 +10,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class fu extends org.telegram.ui.ActionBar.m2 {
     public org.telegram.ui.Components.mm0 a;
@@ -61,7 +61,7 @@ public final class fu extends org.telegram.ui.ActionBar.m2 {
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
         int i10 = org.telegram.ui.ActionBar.g6.G6;
         kVar.D(org.telegram.ui.ActionBar.g6.x0(null, i10, false), false);
-        this.actionBar.B(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.u8, false), false);
+        this.actionBar.C(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.u8, false), false);
         this.actionBar.setTitleColor(org.telegram.ui.ActionBar.g6.x0(null, i10, false));
         this.actionBar.setActionBarMenuOnItemClick(new nb(this, 18));
         org.telegram.ui.ActionBar.u0 a2 = this.actionBar.n().a(0, R.drawable.outline_header_search);
@@ -83,7 +83,7 @@ public final class fu extends org.telegram.ui.ActionBar.m2 {
         yzVar.c();
         this.b.setShowAtCenter(true);
         this.b.setText(LocaleController.getString(R.string.NoResult));
-        frameLayout.addView(this.b, w7.a6.d(-1.0f, -1));
+        frameLayout.addView(this.b, w7.z5.d(-1.0f, -1));
         org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(context, null);
         this.a = mm0Var;
         mm0Var.setSectionsType(3);
@@ -94,7 +94,7 @@ public final class fu extends org.telegram.ui.ActionBar.m2 {
         this.a.setLayoutManager(new s4.b0(1, false));
         this.a.setAdapter(this.c);
         this.a.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
-        frameLayout.addView(this.a, w7.a6.d(-1.0f, -1));
+        frameLayout.addView(this.a, w7.z5.d(-1.0f, -1));
         this.a.setOnItemClickListener(new i(this, 7));
         this.a.setOnScrollListener(new k3(this, 8));
         return this.fragmentView;

@@ -1,64 +1,91 @@
 package w7;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.telegram.messenger.BuildConfig;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class b7 {
-    public static String a(String str, Object... objArr) {
-        int length;
-        int length2;
-        int indexOf;
-        String sb2;
+    public static void a(ArrayList arrayList) {
+        HashMap hashMap = new HashMap(arrayList.size());
+        int size = arrayList.size();
         int i10 = 0;
         int i11 = 0;
-        while (true) {
-            length = objArr.length;
-            if (i11 >= length) {
-                break;
+        while (i11 < size) {
+            Object obj = arrayList.get(i11);
+            i11++;
+            r9.a aVar = (r9.a) obj;
+            r9.h hVar = new r9.h(aVar);
+            for (r9.r rVar : aVar.b) {
+                boolean z10 = aVar.e == 0;
+                r9.i iVar = new r9.i(rVar, !z10);
+                if (!hashMap.containsKey(iVar)) {
+                    hashMap.put(iVar, new HashSet());
+                }
+                Set set = (Set) hashMap.get(iVar);
+                if (!set.isEmpty() && z10) {
+                    throw new IllegalArgumentException("Multiple components provide " + rVar + ".");
+                }
+                set.add(hVar);
             }
-            Object obj = objArr[i11];
-            if (obj == null) {
-                sb2 = BuildConfig.BETA_URL;
-            } else {
-                try {
-                    sb2 = obj.toString();
-                } catch (Exception e) {
-                    String str2 = obj.getClass().getName() + '@' + Integer.toHexString(System.identityHashCode(obj));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(str2), (Throwable) e);
-                    StringBuilder v = a1.g.v("<", str2, " threw ");
-                    v.append(e.getClass().getName());
-                    v.append(">");
-                    sb2 = v.toString();
+        }
+        Iterator it = hashMap.values().iterator();
+        while (it.hasNext()) {
+            for (r9.h hVar2 : (Set) it.next()) {
+                for (r9.j jVar : hVar2.a.c) {
+                    if (jVar.c == 0) {
+                        Set<r9.h> set2 = (Set) hashMap.get(new r9.i(jVar.a, jVar.b == 2));
+                        if (set2 != null) {
+                            for (r9.h hVar3 : set2) {
+                                hVar2.b.add(hVar3);
+                                hVar3.c.add(hVar2);
+                            }
+                        }
+                    }
                 }
             }
-            objArr[i11] = sb2;
-            i11++;
         }
-        StringBuilder sb3 = new StringBuilder((length * 16) + str.length());
-        int i12 = 0;
-        while (true) {
-            length2 = objArr.length;
-            if (i10 >= length2 || (indexOf = str.indexOf("%s", i12)) == -1) {
-                break;
+        HashSet hashSet = new HashSet();
+        Iterator it2 = hashMap.values().iterator();
+        while (it2.hasNext()) {
+            hashSet.addAll((Set) it2.next());
+        }
+        HashSet hashSet2 = new HashSet();
+        Iterator it3 = hashSet.iterator();
+        while (it3.hasNext()) {
+            r9.h hVar4 = (r9.h) it3.next();
+            if (hVar4.c.isEmpty()) {
+                hashSet2.add(hVar4);
             }
-            sb3.append((CharSequence) str, i12, indexOf);
-            sb3.append(objArr[i10]);
+        }
+        while (!hashSet2.isEmpty()) {
+            r9.h hVar5 = (r9.h) hashSet2.iterator().next();
+            hashSet2.remove(hVar5);
             i10++;
-            i12 = indexOf + 2;
-        }
-        sb3.append((CharSequence) str, i12, str.length());
-        if (i10 < length2) {
-            sb3.append(" [");
-            sb3.append(objArr[i10]);
-            for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
-                sb3.append(", ");
-                sb3.append(objArr[i13]);
+            Iterator it4 = hVar5.b.iterator();
+            while (it4.hasNext()) {
+                r9.h hVar6 = (r9.h) it4.next();
+                hVar6.c.remove(hVar5);
+                if (hVar6.c.isEmpty()) {
+                    hashSet2.add(hVar6);
+                }
             }
-            sb3.append(']');
         }
-        return sb3.toString();
+        if (i10 == arrayList.size()) {
+            return;
+        }
+        ArrayList arrayList2 = new ArrayList();
+        Iterator it5 = hashSet.iterator();
+        while (it5.hasNext()) {
+            r9.h hVar7 = (r9.h) it5.next();
+            if (!hVar7.c.isEmpty() && !hVar7.b.isEmpty()) {
+                arrayList2.add(hVar7.a);
+            }
+        }
+        throw new r9.k("Dependency cycle detected: " + Arrays.toString(arrayList2.toArray()));
     }
 }

@@ -39,24 +39,24 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.q;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.Cells.d0;
 import org.telegram.ui.Components.b30;
 import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.g6;
 import org.telegram.ui.Components.r6;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.s01;
-import org.telegram.ui.yz0;
+import org.telegram.ui.r01;
+import org.telegram.ui.xz0;
 import v7.f7;
 import ya.c;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public class ProfileStoriesView extends View implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int s0 = 0;
@@ -92,7 +92,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
     public final View f;
     public float f0;
     public float g0;
-    public final s01 h;
+    public final r01 h;
     public float h0;
     public float i0;
     public float j0;
@@ -113,7 +113,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
     public ck0 y;
 
     /* JADX WARN: Type inference failed for: r0v12, types: [bi.r5] */
-    public ProfileStoriesView(Context context, int i10, long j10, boolean z10, View view, s01 s01Var, c6 c6Var) {
+    public ProfileStoriesView(Context context, int i10, long j10, boolean z10, View view, r01 r01Var, c6 c6Var) {
         super(context);
         Paint paint = new Paint(1);
         this.a = paint;
@@ -143,21 +143,21 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
         this.e0 = new Path();
         this.l0 = new g6(this, 0L, 350L, esVar);
         this.m0 = new g6(this, 0L, 350L, esVar);
-        final yz0 yz0Var = (yz0) this;
-        this.n0 = new c(yz0Var, 8);
+        final xz0 xz0Var = (xz0) this;
+        this.n0 = new c(xz0Var, 8);
         final int i11 = 0;
         this.o0 = new Runnable() { // from class: bi.r5
             @Override // java.lang.Runnable
             public final void run() {
                 int i12 = i11;
-                yz0 yz0Var2 = yz0Var;
+                xz0 xz0Var2 = xz0Var;
                 switch (i12) {
                     case 0:
                         int i13 = ProfileStoriesView.s0;
-                        yz0Var2.u0.w4(false);
+                        xz0Var2.u0.w4(false);
                         break;
                     default:
-                        yz0Var2.invalidate();
+                        xz0Var2.invalidate();
                         break;
                 }
             }
@@ -166,20 +166,20 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
         this.d = j10;
         this.e = z10;
         this.f = view;
-        this.h = s01Var;
+        this.h = r01Var;
         final int i12 = 1;
-        s01Var.getImageReceiver().setVisibleInvalidate(new Runnable() { // from class: bi.r5
+        r01Var.getImageReceiver().setVisibleInvalidate(new Runnable() { // from class: bi.r5
             @Override // java.lang.Runnable
             public final void run() {
                 int i122 = i12;
-                yz0 yz0Var2 = yz0Var;
+                xz0 xz0Var2 = xz0Var;
                 switch (i122) {
                     case 0:
                         int i13 = ProfileStoriesView.s0;
-                        yz0Var2.u0.w4(false);
+                        xz0Var2.u0.w4(false);
                         break;
                     default:
-                        yz0Var2.invalidate();
+                        xz0Var2.invalidate();
                         break;
                 }
             }
@@ -408,7 +408,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
         RectF rectF6;
         o9 o9Var4;
         Paint a2;
-        s01 s01Var;
+        r01 r01Var;
         ArrayList arrayList4;
         float f21;
         w8 w8Var;
@@ -473,7 +473,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
         profileStoriesView4.K = null;
         g6 g6Var2 = profileStoriesView4.U;
         g6 g6Var3 = profileStoriesView4.T;
-        s01 s01Var2 = profileStoriesView4.h;
+        r01 r01Var2 = profileStoriesView4.h;
         o9 o9Var5 = profileStoriesView4.L;
         RectF rectF8 = profileStoriesView4.Q;
         if (lerp2 > 0.0f) {
@@ -521,7 +521,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
             j10 = j11;
             ck0Var2.f((int) rectF8.left, (int) rectF8.top, (int) rectF8.right, (int) rectF8.bottom);
             profileStoriesView4.y.e(Utilities.clamp(f21, 1.0f, 0.0f), true);
-            if (s01Var2.Q) {
+            if (r01Var2.Q) {
                 profileStoriesView4.y.a(canvas2);
             }
             paint.setAlpha(alpha);
@@ -619,19 +619,19 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
                     while (i14 < min) {
                         if (i14 < arrayList2.size()) {
                             arrayList4 = arrayList2;
-                            s01Var = s01Var2;
+                            r01Var = r01Var2;
                             if (((t5) arrayList4.get(i14)).l) {
                                 z12 = true;
                             }
                         } else {
-                            s01Var = s01Var2;
+                            r01Var = r01Var2;
                             arrayList4 = arrayList2;
                         }
                         i14++;
                         arrayList2 = arrayList4;
-                        s01Var2 = s01Var;
+                        r01Var2 = r01Var;
                     }
-                    s01 s01Var3 = s01Var2;
+                    r01 r01Var3 = r01Var2;
                     arrayList3 = arrayList2;
                     if (z12) {
                         RectF rectF10 = AndroidUtilities.rectTmp;
@@ -703,7 +703,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
                                     f19 = lerp5;
                                     int alpha3 = a2.getAlpha();
                                     o9 o9Var6 = o9Var4;
-                                    a2.setAlpha((int) q.B(1.0f, clamp3, alpha3, f15));
+                                    a2.setAlpha((int) g0.z(1.0f, clamp3, alpha3, f15));
                                     a2.setStrokeWidth(AndroidUtilities.dpf2(z15 ? 3.0f : 2.33f));
                                     f17 = clamp3;
                                     f18 = f31;
@@ -768,7 +768,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
                         paint = paint8;
                     }
                     if (z12) {
-                        s9.k(canvas2, rectF, f15, s01Var3.getImageReceiver().getVisible(), profileStoriesView4.I);
+                        s9.k(canvas2, rectF, f15, r01Var3.getImageReceiver().getVisible(), profileStoriesView4.I);
                         canvas2.restore();
                     }
                 }
@@ -1206,7 +1206,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
             this.a0 = ofFloat;
             ofFloat.addUpdateListener(new l0(2, this, zArr));
             this.a0.addListener(new t(1, this, zArr));
-            d0.l(3.0f, this.a0);
+            sk.l(3.0f, this.a0);
             this.a0.setDuration(400L);
             this.a0.setStartDelay(120L);
             this.a0.start();

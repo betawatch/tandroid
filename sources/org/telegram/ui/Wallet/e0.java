@@ -1,19 +1,24 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.tgnet.tl.TL_wallet;
-
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class e0 implements AutoCloseable {
-    public TL_wallet.sendTransfer a;
-    public g0 b;
+public final class e0 {
+    public String a;
+    public h0 b;
     public byte[] c;
+    public final /* synthetic */ k0 d;
 
-    @Override // java.lang.AutoCloseable
-    public final void close() {
-        g0 g0Var = this.b;
-        if (g0Var != null) {
-            g0Var.close();
+    public e0(k0 k0Var) {
+        this.d = k0Var;
+    }
+
+    public final void a() {
+        h0 h0Var = this.b;
+        this.b = null;
+        try {
+            this.d.R(h0Var, false, new d0(this, 0));
+        } finally {
+            h0Var.close();
         }
     }
 }

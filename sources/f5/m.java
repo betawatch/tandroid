@@ -4,9 +4,9 @@ import com.google.android.gms.internal.play_billing.k3;
 import java.nio.ByteBuffer;
 import java.util.Date;
 import ji.w4;
-import w7.h7;
+import w7.g7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class m extends com.googlecode.mp4parser.c {
     public static final /* synthetic */ w4 I;
@@ -75,13 +75,13 @@ public final class m extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         if (e() == 1) {
-            this.e = h7.b(e5.b.j(byteBuffer));
-            this.f = h7.b(e5.b.j(byteBuffer));
+            this.e = g7.b(e5.b.j(byteBuffer));
+            this.f = g7.b(e5.b.j(byteBuffer));
             this.h = e5.b.i(byteBuffer);
             this.n = e5.b.j(byteBuffer);
         } else {
-            this.e = h7.b(e5.b.i(byteBuffer));
-            this.f = h7.b(e5.b.i(byteBuffer));
+            this.e = g7.b(e5.b.i(byteBuffer));
+            this.f = g7.b(e5.b.i(byteBuffer));
             this.h = e5.b.i(byteBuffer);
             this.n = e5.b.i(byteBuffer);
         }
@@ -104,13 +104,13 @@ public final class m extends com.googlecode.mp4parser.c {
     public final void getContent(ByteBuffer byteBuffer) {
         i(byteBuffer);
         if (e() == 1) {
-            byteBuffer.putLong(h7.a(this.e));
-            byteBuffer.putLong(h7.a(this.f));
+            byteBuffer.putLong(g7.a(this.e));
+            byteBuffer.putLong(g7.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putLong(this.n);
         } else {
-            byteBuffer.putInt((int) h7.a(this.e));
-            byteBuffer.putInt((int) h7.a(this.f));
+            byteBuffer.putInt((int) g7.a(this.e));
+            byteBuffer.putInt((int) g7.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) this.n);
         }

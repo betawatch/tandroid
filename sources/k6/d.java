@@ -17,16 +17,16 @@ import android.util.TypedValue;
 import androidx.fragment.app.j0;
 import androidx.fragment.app.u;
 import com.google.android.gms.common.api.GoogleApiActivity;
+import n6.q;
 import n6.r;
-import n6.s;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class d extends e {
     public static final Object c = new Object();
     public static final d d = new d();
 
-    public static AlertDialog f(Activity activity, int i10, s sVar, DialogInterface.OnCancelListener onCancelListener) {
+    public static AlertDialog f(Activity activity, int i10, r rVar, DialogInterface.OnCancelListener onCancelListener) {
         if (i10 == 0) {
             return null;
         }
@@ -36,17 +36,17 @@ public final class d extends e {
         if (builder == null) {
             builder = new AlertDialog.Builder(activity);
         }
-        builder.setMessage(r.c(activity, i10));
+        builder.setMessage(q.c(activity, i10));
         builder.setOnCancelListener(onCancelListener);
-        String b10 = r.b(activity, i10);
+        String b10 = q.b(activity, i10);
         if (b10 != null) {
-            builder.setPositiveButton(b10, sVar);
+            builder.setPositiveButton(b10, rVar);
         }
-        String d10 = r.d(activity, i10);
+        String d10 = q.d(activity, i10);
         if (d10 != null) {
             builder.setTitle(d10);
         }
-        Log.w("GoogleApiAvailability", i2.d.i(i10, "Creating dialog for Google Play services availability issue. ConnectionResult="), new IllegalArgumentException());
+        Log.w("GoogleApiAvailability", i2.d.j(i10, "Creating dialog for Google Play services availability issue. ConnectionResult="), new IllegalArgumentException());
         return builder.create();
     }
 
@@ -87,7 +87,7 @@ public final class d extends e {
     }
 
     public final void e(GoogleApiActivity googleApiActivity, int i10, GoogleApiActivity googleApiActivity2) {
-        AlertDialog f7 = f(googleApiActivity, i10, new s(super.b(googleApiActivity, "d", i10), googleApiActivity, 0), googleApiActivity2);
+        AlertDialog f7 = f(googleApiActivity, i10, new r(super.b(googleApiActivity, "d", i10), googleApiActivity, 0), googleApiActivity2);
         if (f7 == null) {
             return;
         }
@@ -96,7 +96,7 @@ public final class d extends e {
 
     public final void h(Context context, int i10, PendingIntent pendingIntent) {
         int i11;
-        Log.w("GoogleApiAvailability", i2.d.j(i10, "GMS core API Availability. ConnectionResult=", ", tag=null"), new IllegalArgumentException());
+        Log.w("GoogleApiAvailability", i2.d.k(i10, "GMS core API Availability. ConnectionResult=", ", tag=null"), new IllegalArgumentException());
         if (i10 == 18) {
             new j(this, context).sendEmptyMessageDelayed(1, 120000L);
             return;
@@ -108,11 +108,11 @@ public final class d extends e {
             }
             return;
         }
-        String f7 = i10 == 6 ? r.f(context, "common_google_play_services_resolution_required_title") : r.d(context, i10);
+        String f7 = i10 == 6 ? q.f(context, "common_google_play_services_resolution_required_title") : q.d(context, i10);
         if (f7 == null) {
             f7 = context.getResources().getString(org.telegram.messenger.beta.R.string.common_google_play_services_notification_ticker);
         }
-        String e = (i10 == 6 || i10 == 19) ? r.e(context, "common_google_play_services_resolution_required_text", r.a(context)) : r.c(context, i10);
+        String e = (i10 == 6 || i10 == 19) ? q.e(context, "common_google_play_services_resolution_required_text", q.a(context)) : q.c(context, i10);
         Resources resources = context.getResources();
         Object systemService = context.getSystemService("notification");
         n6.l.h(systemService);
@@ -168,7 +168,7 @@ public final class d extends e {
     }
 
     public final void i(Activity activity, com.google.android.gms.common.api.internal.m mVar, int i10, DialogInterface.OnCancelListener onCancelListener) {
-        AlertDialog f7 = f(activity, i10, new s(super.b(activity, "d", i10), mVar, 1), onCancelListener);
+        AlertDialog f7 = f(activity, i10, new r(super.b(activity, "d", i10), mVar, 1), onCancelListener);
         if (f7 == null) {
             return;
         }

@@ -20,11 +20,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.yh;
-import org.telegram.ui.Components.cf0;
+import org.telegram.ui.Components.df0;
 import org.telegram.ui.Components.ia0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class p2 extends View {
     public final Paint a;
@@ -80,7 +79,7 @@ public final class p2 extends View {
             if (MessagesController.getInstance(i10).storyWeatherPreload) {
                 charSequence = replaceEmoji;
                 charSequence = replaceEmoji;
-                if (cf0.d("android.permission.ACCESS_COARSE_LOCATION") && idVar == null) {
+                if (df0.d("android.permission.ACCESS_COARSE_LOCATION") && idVar == null) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("___");
                     spannableStringBuilder.setSpan(new ia0(AndroidUtilities.dp(68.0f), this), 0, spannableStringBuilder.length(), 33);
                     m2VarArr[0] = new m2(this, spannableStringBuilder);
@@ -139,7 +138,7 @@ public final class p2 extends View {
             Object obj2 = arrayList.get(i10);
             i10++;
             l2 l2Var2 = (l2) obj2;
-            l2Var2.a(canvas, com.google.android.gms.internal.play_billing.k3.z((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight(), this.d[l2Var2.e - 1], 2.0f, getPaddingLeft()) + l2Var2.d, yh.y(48.0f, l2Var2.e - 1, AndroidUtilities.dp(12.0f)));
+            l2Var2.a(canvas, com.google.android.gms.internal.play_billing.k3.z((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight(), this.d[l2Var2.e - 1], 2.0f, getPaddingLeft()) + l2Var2.d, org.telegram.messenger.g0.D(48.0f, l2Var2.e - 1, AndroidUtilities.dp(12.0f)));
         }
     }
 
@@ -214,7 +213,7 @@ public final class p2 extends View {
             float[] fArr3 = this.d;
             fArr3[i15] = fArr3[i15] + l2Var2.b;
         }
-        setMeasuredDimension(size, yh.y(12.0f, i13 - 1, yh.y(36.0f, i13, AndroidUtilities.dp(24.0f))));
+        setMeasuredDimension(size, org.telegram.messenger.g0.D(12.0f, i13 - 1, org.telegram.messenger.g0.D(36.0f, i13, AndroidUtilities.dp(24.0f))));
     }
 
     @Override // android.view.View

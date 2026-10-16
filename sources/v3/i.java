@@ -4,7 +4,7 @@ import c3.a0;
 import c3.c0;
 import e2.m0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class i implements h {
     public final long[] a;
@@ -24,13 +24,13 @@ public final class i implements h {
     }
 
     @Override // v3.h
-    public final long a() {
-        return this.e;
+    public final long a(long j10) {
+        return this.a[m0.f(this.b, j10, true)];
     }
 
     @Override // v3.h
-    public final long b(long j10) {
-        return this.a[m0.f(this.b, j10, true)];
+    public final long b() {
+        return this.e;
     }
 
     @Override // v3.h

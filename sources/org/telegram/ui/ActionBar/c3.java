@@ -22,9 +22,9 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.j80;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class c3 extends FrameLayout {
     public boolean E;
@@ -839,7 +839,7 @@ public abstract class c3 extends FrameLayout {
                 for (int i18 = 0; i18 < childCount; i18++) {
                     View childAt = getChildAt(i18);
                     if (childAt.getVisibility() != 8 && childAt != e3Var.containerView) {
-                        if (childAt instanceof k80) {
+                        if (childAt instanceof j80) {
                             measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(i17, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30), 0);
                         } else if (!e3Var.onCustomMeasure(childAt, i17, i16)) {
                             measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(i17, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(i16, TLObject.FLAG_30), 0);

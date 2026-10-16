@@ -56,8 +56,8 @@ import org.telegram.ui.Components.ir;
 import org.telegram.ui.Components.jr;
 import org.telegram.ui.Components.k9;
 import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.m21;
 import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.n21;
 import org.telegram.ui.Components.nz;
 import org.telegram.ui.Components.ow0;
 import org.telegram.ui.Components.rl0;
@@ -69,13 +69,14 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bz0;
 import org.telegram.ui.fo;
-import org.telegram.ui.hd;
+import org.telegram.ui.gd;
 import org.telegram.ui.x50;
 import org.telegram.ui.yy;
 import org.telegram.ui.zo;
-import w7.a6;
+import w7.b6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class j0 extends db implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int V0 = 0;
@@ -173,7 +174,7 @@ public class j0 extends db implements NotificationCenter.NotificationCenterDeleg
         if (i10 == 32 || x1()) {
             d10 d10Var = new d10(getContext());
             this.P0 = d10Var;
-            this.container.addView(d10Var, a6.d(-1.0f, -1));
+            this.container.addView(d10Var, z5.d(-1.0f, -1));
         }
         if (i10 == 18 || i10 == 20 || i10 == 24 || i10 == 25 || i10 == 26 || i10 == 29 || i10 == 22 || i10 == 23 || i10 == 21 || i10 == 27 || i10 == 28 || i10 == 30 || i10 == 35 || i10 == 31) {
             ((ViewGroup) this.E0.getParent()).removeView(this.E0);
@@ -204,7 +205,7 @@ public class j0 extends db implements NotificationCenter.NotificationCenterDeleg
             dVar.k();
             dVar.g(LocaleController.getString(R.string.BoostGroup), false, true);
             dVar.setOnClickListener(new u(this, 1));
-            this.containerView.addView(dVar, a6.a(48.0f, 16.0f, 2.0f, 16.0f, 12.0f, -1, 80));
+            this.containerView.addView(dVar, z5.a(48.0f, 16.0f, 2.0f, 16.0f, 12.0f, -1, 80));
             this.containerView.post(new w(this, 3));
         }
         if (i10 == 19 || i10 == 18) {
@@ -417,7 +418,7 @@ public class j0 extends db implements NotificationCenter.NotificationCenterDeleg
                     arrayList.add(LocaleController.formatString("InactiveChatSignature", R.string.InactiveChatSignature, LocaleController.formatPluralString("Members", chat.participants_count, new Object[0]), formatPluralString));
                 }
             }
-            AndroidUtilities.runOnUIThread(new m21(j0Var, arrayList, min, tL_messages_inactiveChats, 20));
+            AndroidUtilities.runOnUIThread(new n21(j0Var, arrayList, min, tL_messages_inactiveChats, 20));
         }
     }
 
@@ -463,7 +464,7 @@ public class j0 extends db implements NotificationCenter.NotificationCenterDeleg
             a2Var.R = string;
             a2Var.T = AndroidUtilities.replaceTags(LocaleController.getString(j0Var.y1() ? R.string.PremiumNeededForBoostingGroup : R.string.PremiumNeededForBoosting));
             alertDialog$Builder.k(LocaleController.getString(R.string.CheckPhoneNumberYes), new x(j0Var, i13));
-            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new r0.h(i12));
+            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new r0.s0(i12));
             alertDialog$Builder.o();
             return;
         }
@@ -494,26 +495,26 @@ public class j0 extends db implements NotificationCenter.NotificationCenterDeleg
         FrameLayout frameLayout = new FrameLayout(j0Var.getContext());
         z9 z9Var = new z9(j0Var.getContext());
         z9Var.setRoundRadius(AndroidUtilities.dp(30.0f));
-        frameLayout.addView(z9Var, a6.d(60.0f, 60));
+        frameLayout.addView(z9Var, z5.d(60.0f, 60));
         frameLayout.setClipChildren(false);
         Paint paint = new Paint(1);
         paint.setColor(g6.x0(null, g6.h5, false));
-        frameLayout.addView(new p6(j0Var.getContext(), paint, j0Var.getContext().getDrawable(R.drawable.filled_limit_boost)), a6.a(28.0f, 34.0f, 34.0f, 0.0f, 0.0f, 28, 0));
+        frameLayout.addView(new p6(j0Var.getContext(), paint, j0Var.getContext().getDrawable(R.drawable.filled_limit_boost)), z5.a(28.0f, 34.0f, 34.0f, 0.0f, 0.0f, 28, 0));
         ImageView imageView = new ImageView(j0Var.getContext());
         imageView.setImageResource(R.drawable.msg_arrow_avatar);
         imageView.setColorFilter(g6.x0(null, g6.m6, false));
-        frameLayout.addView(imageView, a6.e(24, 24, 17));
+        frameLayout.addView(imageView, z5.e(24, 24, 17));
         z9 z9Var2 = new z9(j0Var.getContext());
         z9Var2.setRoundRadius(AndroidUtilities.dp(30.0f));
-        frameLayout.addView(z9Var2, a6.a(60.0f, 96.0f, 0.0f, 0.0f, 0.0f, 60, 0));
+        frameLayout.addView(z9Var2, z5.a(60.0f, 96.0f, 0.0f, 0.0f, 0.0f, 60, 0));
         FrameLayout frameLayout2 = new FrameLayout(j0Var.getContext());
-        frameLayout2.addView(frameLayout, a6.e(-2, 60, 1));
+        frameLayout2.addView(frameLayout, z5.e(-2, 60, 1));
         frameLayout2.setClipChildren(false);
         TextView textView = new TextView(context);
         textView.setLetterSpacing(0.025f);
         textView.setTextColor(g6.x0(null, g6.j5, false));
         textView.setTextSize(1, 16.0f);
-        frameLayout2.addView(textView, a6.t(-1, -2, 0, 24, 80, 24, 0));
+        frameLayout2.addView(textView, z5.t(-1, -2, 0, 24, 80, 24, 0));
         k9 k9Var = new k9((c6) null);
         TLRPC.Chat chat = MessagesController.getInstance(j0Var.currentAccount).getChat(Long.valueOf(-j0Var.c0.replaceDialogId));
         k9Var.k(j0Var.currentAccount, chat);
@@ -526,7 +527,7 @@ public class j0 extends db implements NotificationCenter.NotificationCenterDeleg
         alertDialog$Builder2.n(frameLayout2);
         textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("ReplaceBoostChannelDescription", R.string.ReplaceBoostChannelDescription, chat.title, chat2.title)));
         alertDialog$Builder2.k(LocaleController.getString(R.string.Replace), new x(j0Var, i14));
-        alertDialog$Builder2.h(LocaleController.getString(R.string.Cancel), new r0.h(i11));
+        alertDialog$Builder2.h(LocaleController.getString(R.string.Cancel), new r0.s0(i11));
         alertDialog$Builder2.o();
     }
 
@@ -722,8 +723,22 @@ public class j0 extends db implements NotificationCenter.NotificationCenterDeleg
         return i10 == 0 || i10 == 33 || i10 == 3 || i10 == 4 || i10 == 6 || i10 == 7 || i10 == 12 || i10 == 13 || i10 == 14 || i10 == 15 || i10 == 16;
     }
 
+    public final void A1() {
+        h0 h0Var = this.x0;
+        TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = this.b0;
+        int i10 = tL_premium_boostsStatus.boosts;
+        int i11 = tL_premium_boostsStatus.next_level_boosts - tL_premium_boostsStatus.current_level_boosts;
+        h0Var.b++;
+        h0Var.a = w7.r.a((i10 - r3) / i11, 0.0f, 1.0f);
+        h0Var.W = true;
+        h0Var.a0 = h0Var.n;
+        h0Var.g(i10, true);
+        h0Var.I.requestLayout();
+        h0Var.requestLayout();
+    }
+
     @Override // org.telegram.ui.Components.db
-    public final CharSequence A() {
+    public final CharSequence B() {
         int i10 = this.h0;
         if (i10 == 11) {
             return LocaleController.getString(R.string.ChannelInviteViaLink2);
@@ -759,20 +774,6 @@ public class j0 extends db implements NotificationCenter.NotificationCenterDeleg
         }
     }
 
-    public final void A1() {
-        h0 h0Var = this.x0;
-        TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = this.b0;
-        int i10 = tL_premium_boostsStatus.boosts;
-        int i11 = tL_premium_boostsStatus.next_level_boosts - tL_premium_boostsStatus.current_level_boosts;
-        h0Var.b++;
-        h0Var.a = w7.s.a((i10 - r3) / i11, 0.0f, 1.0f);
-        h0Var.W = true;
-        h0Var.a0 = h0Var.n;
-        h0Var.g(i10, true);
-        h0Var.I.requestLayout();
-        h0Var.requestLayout();
-    }
-
     public final boolean C1() {
         String str;
         NotificationCenter.getInstance(this.currentAccount).postNotificationNameOnUIThread(NotificationCenter.chatWasBoostedByUser, this.b0, this.c0.copy(), Long.valueOf(this.a0));
@@ -804,9 +805,9 @@ public class j0 extends db implements NotificationCenter.NotificationCenterDeleg
             i0Var.d = linearLayout;
             linearLayout.setOrientation(0);
             i0Var.d.setWeightSum(1.0f);
-            i0Var.d.addView(i0Var.a, a6.o(-2, -2, 1.0f, 0));
-            i0Var.d.addView(bVar, a6.t(-2, -2, 48, 0, 2, 0, 0));
-            i0Var.addView(i0Var.d, indexOfChild2, a6.t(-2, -2, 1, 25, 22, 12, 9));
+            i0Var.d.addView(i0Var.a, z5.o(-2, -2, 1.0f, 0));
+            i0Var.d.addView(bVar, z5.t(-2, -2, 48, 0, 2, 0, 0));
+            i0Var.addView(i0Var.d, indexOfChild2, z5.t(-2, -2, 1, 25, 22, 12, 9));
         } else {
             int indexOfChild3 = i0Var.indexOfChild(i0Var.a);
             i0Var.removeView(i0Var.a);
@@ -816,7 +817,7 @@ public class j0 extends db implements NotificationCenter.NotificationCenterDeleg
             i0Var.a.setTextSize(1, 20.0f);
             i0Var.a.setTextColor(g6.w0(g6.G6, j0Var.resourcesProvider));
             i0Var.a.setGravity(17);
-            i0Var.addView(i0Var.a, indexOfChild3, a6.t(-2, -2, 1, 0, 22, 0, 0));
+            i0Var.addView(i0Var.a, indexOfChild3, z5.t(-2, -2, 1, 0, 22, 0, 0));
         }
         i0Var.removeView(i0Var.b);
         TextView textView2 = new TextView(i0Var.getContext());
@@ -826,7 +827,7 @@ public class j0 extends db implements NotificationCenter.NotificationCenterDeleg
         textView3.setLineSpacing(textView3.getLineSpacingExtra(), i0Var.b.getLineSpacingMultiplier() * 1.1f);
         i0Var.b.setGravity(1);
         i0Var.b.setTextColor(g6.w0(g6.G6, j0Var.resourcesProvider));
-        i0Var.addView(i0Var.b, indexOfChild, a6.t(-2, -2, 1, 24, -2, 24, 17));
+        i0Var.addView(i0Var.b, indexOfChild, z5.t(-2, -2, 1, 24, -2, 24, 17));
         this.d0.a.setText(s1());
         TextView textView4 = this.d0.b;
         MessagesController messagesController = MessagesController.getInstance(this.currentAccount);
@@ -894,7 +895,7 @@ public class j0 extends db implements NotificationCenter.NotificationCenterDeleg
             a2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("RevokeLinksAlert", R.string.RevokeLinksAlert, new Object[0]));
         }
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new org.telegram.ui.web.c0(8, this, arrayList));
+        alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new org.telegram.ui.web.o0(8, this, arrayList));
         a2Var.show();
         TextView textView = (TextView) a2Var.d(-1);
         if (textView != null) {
@@ -990,16 +991,16 @@ public class j0 extends db implements NotificationCenter.NotificationCenterDeleg
         this.G0.setOnClickListener(new u(this, 2));
         z zVar = new z(this, context, this.resourcesProvider);
         this.E0 = zVar;
-        w7.c6.b(zVar, 0.02f, 1.2f);
+        b6.b(zVar, 0.02f, 1.2f);
         if (!this.r && (i10 = this.h0) != 18 && i10 != 20 && i10 != 24 && i10 != 25 && i10 != 26 && i10 != 29 && i10 != 22 && i10 != 23 && i10 != 21 && i10 != 27 && i10 != 28 && i10 != 30 && i10 != 35) {
             x50 x50Var = new x50(this, context, 11);
             this.L0 = x50Var;
             x50Var.setBackgroundColor(g6.w0(g6.h5, this.resourcesProvider));
-            ow0Var.addView(this.L0, a6.a(72.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 80));
+            ow0Var.addView(this.L0, z5.a(72.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 80));
         }
         z zVar2 = this.E0;
         float f7 = (this.backgroundPaddingLeft / AndroidUtilities.density) + 16.0f;
-        ow0Var.addView(zVar2, a6.a(48.0f, f7, 0.0f, f7, 12.0f, -1, 80));
+        ow0Var.addView(zVar2, z5.a(48.0f, f7, 0.0f, f7, 12.0f, -1, 80));
         int dp = AndroidUtilities.dp(72.0f);
         mm0 mm0Var = this.d;
         mm0Var.setPadding(0, 0, 0, dp);
@@ -1198,7 +1199,7 @@ public class j0 extends db implements NotificationCenter.NotificationCenterDeleg
                 irVar.w = i12;
                 irVar.b = 0.8f;
                 zVar2.setClipChildren(false);
-                zVar2.addView(zVar2.G, a6.e(-1, 24, 16));
+                zVar2.addView(zVar2.G, z5.e(-1, 24, 16));
             }
             if (!this.Y) {
                 this.E0.b(LocaleController.getString(R.string.Close), true, true);
@@ -1474,7 +1475,7 @@ public class j0 extends db implements NotificationCenter.NotificationCenterDeleg
             ug.j.f(lastFragment, chat, true);
             return;
         }
-        if ((lastFragment instanceof hd) && booleanValue) {
+        if ((lastFragment instanceof gd) && booleanValue) {
             List fragmentStack2 = m2Var.getParentLayout().getFragmentStack();
             ArrayList arrayList = new ArrayList();
             for (int size = fragmentStack2.size() - 2; size >= 0; size--) {

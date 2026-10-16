@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class tt implements Runnable {
     public final /* synthetic */ xt a;
@@ -166,7 +166,7 @@ public final class tt implements Runnable {
         View view5;
         View view6;
         ah.v vVar28;
-        org.telegram.ui.Components.m80 u10;
+        org.telegram.ui.Components.l80 u10;
         TLRPC.Document unused;
         xt xtVar = this.a;
         bh.b bVar10 = xtVar.t;
@@ -282,13 +282,13 @@ public final class tt implements Runnable {
                     if (vtVar28 == null || !vtVar28.B()) {
                         if (xtVar.l.y()) {
                             arrayList.add(LocaleController.getString(R.string.SendStickerPreview));
-                            org.telegram.ui.Cells.d0.o(R.drawable.msg_send, arrayList3, arrayList2, 0);
+                            org.telegram.ui.Cells.c1.m(R.drawable.msg_send, arrayList3, arrayList2, 0);
                         }
                         arrayList.add(LocaleController.getString(R.string.AddToFavorites));
-                        org.telegram.ui.Cells.d0.o(R.drawable.msg_fave, arrayList3, arrayList2, 1);
+                        org.telegram.ui.Cells.c1.m(R.drawable.msg_fave, arrayList3, arrayList2, 1);
                     } else {
                         arrayList.add(LocaleController.getString(R.string.SetIntroSticker));
-                        org.telegram.ui.Cells.d0.o(R.drawable.menu_sticker_add, arrayList3, arrayList2, 0);
+                        org.telegram.ui.Cells.c1.m(R.drawable.menu_sticker_add, arrayList3, arrayList2, 0);
                     }
                 }
                 vt vtVar29 = xtVar.l;
@@ -296,7 +296,7 @@ public final class tt implements Runnable {
                     vt vtVar30 = xtVar.l;
                     arrayList.add(LocaleController.getString((vtVar30 == null || !vtVar30.J()) ? R.string.AddToStickerPack : R.string.StickersReplaceSticker));
                     vt vtVar31 = xtVar.l;
-                    org.telegram.ui.Cells.d0.o((vtVar31 == null || !vtVar31.J()) ? R.drawable.menu_sticker_add : R.drawable.msg_replace, arrayList3, arrayList2, 2);
+                    org.telegram.ui.Cells.c1.m((vtVar31 == null || !vtVar31.J()) ? R.drawable.menu_sticker_add : R.drawable.msg_replace, arrayList3, arrayList2, 2);
                 }
                 org.telegram.ui.ActionBar.e1 e1Var = new org.telegram.ui.ActionBar.e1(0, xtVar.w, xtVar.c0, true, false);
                 e1Var.setItemHeight(44);
@@ -322,7 +322,7 @@ public final class tt implements Runnable {
                 kc1Var.setOnItemClickListener(new i(this, i30));
                 frameLayout.addView(e1Var);
                 linearLayout.addView(frameLayout);
-                linearLayout.addView(new org.telegram.ui.ActionBar.j1(xtVar.z.getContext(), xtVar.c0), w7.a6.n(-1, 8));
+                linearLayout.addView(new org.telegram.ui.ActionBar.j1(xtVar.z.getContext(), xtVar.c0), w7.z5.n(-1, 8));
                 kc1 kc1Var2 = kc1Var;
                 bi.l0 l0Var = new bi.l0(this, arrayList2, kc1Var2, linearLayout, actionBarPopupWindow$ActionBarPopupWindowLayout2, 13);
                 for (int i32 = 0; i32 < arrayList.size(); i32++) {
@@ -338,7 +338,7 @@ public final class tt implements Runnable {
                 i0.b bVar12 = xtVar.q;
                 int i33 = bVar12.d + bVar12.b;
                 int min3 = ((int) (Math.min(xtVar.z.getWidth(), xtVar.z.getHeight() - i33) / 1.8f)) / 2;
-                xtVar.z.addView(actionBarPopupWindow$ActionBarPopupWindowLayout2, w7.a6.a(-2.0f, 0.0f, (AndroidUtilities.dp(84.0f) + ((int) ((xtVar.e + Math.max(r0 + min3, ((xtVar.z.getHeight() - i33) - xtVar.I) / 2)) + min3))) / AndroidUtilities.density, 0.0f, 0.0f, -2, 49));
+                xtVar.z.addView(actionBarPopupWindow$ActionBarPopupWindowLayout2, w7.z5.a(-2.0f, 0.0f, (AndroidUtilities.dp(84.0f) + ((int) ((xtVar.e + Math.max(r0 + min3, ((xtVar.z.getHeight() - i33) - xtVar.I) / 2)) + min3))) / AndroidUtilities.density, 0.0f, 0.0f, -2, 49));
                 xtVar.L = actionBarPopupWindow$ActionBarPopupWindowLayout2;
                 actionBarPopupWindow$ActionBarPopupWindowLayout2.setTranslationY(-AndroidUtilities.dp(12.0f));
                 xtVar.L.setAlpha(0.0f);
@@ -366,8 +366,8 @@ public final class tt implements Runnable {
                     xtVar.P.setMiniBubblesOffset(-AndroidUtilities.dp(14.0f));
                     FrameLayout frameLayout2 = new FrameLayout(xtVar.z.getContext());
                     xtVar.Q = frameLayout2;
-                    frameLayout2.addView(xtVar.P, w7.a6.a(116.0f, 0.0f, 0.0f, 0.0f, 0.0f, -2, 1));
-                    xtVar.z.addView(xtVar.Q, w7.a6.a(-2.0f, 0.0f, 100.0f, 0.0f, 0.0f, -2, 1));
+                    frameLayout2.addView(xtVar.P, w7.z5.a(116.0f, 0.0f, 0.0f, 0.0f, 0.0f, -2, 1));
+                    xtVar.z.addView(xtVar.Q, w7.z5.a(-2.0f, 0.0f, 100.0f, 0.0f, 0.0f, -2, 1));
                 }
                 xtVar.P.setSelectedEmojis(xtVar.o);
                 xtVar.P.setDelegate(new kt(xtVar));
@@ -394,7 +394,7 @@ public final class tt implements Runnable {
                             i17 = xtVar.V;
                             if (vtVar9.l(i17)) {
                                 arrayList5.add(LocaleController.getString(R.string.SendEmojiPreview));
-                                org.telegram.ui.Cells.d0.o(R.drawable.msg_send, arrayList7, arrayList6, 0);
+                                org.telegram.ui.Cells.c1.m(R.drawable.msg_send, arrayList7, arrayList6, 0);
                             }
                             vtVar10 = xtVar.l;
                             document5 = xtVar.W;
@@ -402,23 +402,23 @@ public final class tt implements Runnable {
                             if (P != null) {
                                 if (P.booleanValue()) {
                                     arrayList5.add(LocaleController.getString(R.string.SetAsEmojiStatus));
-                                    org.telegram.ui.Cells.d0.o(R.drawable.msg_smile_status, arrayList7, arrayList6, 1);
+                                    org.telegram.ui.Cells.c1.m(R.drawable.msg_smile_status, arrayList7, arrayList6, 1);
                                 } else {
                                     arrayList5.add(LocaleController.getString(R.string.RemoveStatus));
-                                    org.telegram.ui.Cells.d0.o(R.drawable.msg_smile_status, arrayList7, arrayList6, 2);
+                                    org.telegram.ui.Cells.c1.m(R.drawable.msg_smile_status, arrayList7, arrayList6, 2);
                                 }
                             }
                             vtVar11 = xtVar.l;
                             document6 = xtVar.W;
                             if (vtVar11.E(document6)) {
                                 arrayList5.add(LocaleController.getString(R.string.CopyEmojiPreview));
-                                org.telegram.ui.Cells.d0.o(R.drawable.msg_copy, arrayList7, arrayList6, 3);
+                                org.telegram.ui.Cells.c1.m(R.drawable.msg_copy, arrayList7, arrayList6, 3);
                             }
                             vtVar12 = xtVar.l;
                             document7 = xtVar.W;
                             if (vtVar12.N(document7)) {
                                 arrayList5.add(LocaleController.getString(R.string.RemoveFromRecent));
-                                org.telegram.ui.Cells.d0.o(R.drawable.msg_delete, arrayList7, arrayList6, 4);
+                                org.telegram.ui.Cells.c1.m(R.drawable.msg_delete, arrayList7, arrayList6, 4);
                             }
                             i18 = xtVar.r;
                             MediaDataController mediaDataController = MediaDataController.getInstance(i18);
@@ -435,7 +435,7 @@ public final class tt implements Runnable {
                                         }
                                     }
                                     arrayList5.add(LocaleController.getString(isStickerInFavorites ? R.string.DeleteFromFavorites : R.string.AddToFavorites));
-                                    org.telegram.ui.Cells.d0.o(isStickerInFavorites ? R.drawable.msg_unfave : R.drawable.msg_fave, arrayList7, arrayList6, 5);
+                                    org.telegram.ui.Cells.c1.m(isStickerInFavorites ? R.drawable.msg_unfave : R.drawable.msg_fave, arrayList7, arrayList6, 5);
                                 }
                             }
                             if (arrayList5.isEmpty()) {
@@ -580,7 +580,7 @@ public final class tt implements Runnable {
                             vtVar7 = xtVar.l;
                             if (!vtVar7.c()) {
                                 arrayList8.add(LocaleController.getString(R.string.SendGifPreview));
-                                org.telegram.ui.Cells.d0.o(R.drawable.msg_send, arrayList10, arrayList9, 0);
+                                org.telegram.ui.Cells.c1.m(R.drawable.msg_send, arrayList10, arrayList9, 0);
                             }
                         }
                         vtVar3 = xtVar.l;
@@ -589,13 +589,13 @@ public final class tt implements Runnable {
                             vtVar6 = xtVar.l;
                             if (!vtVar6.c()) {
                                 arrayList8.add(LocaleController.getString(R.string.SendWithoutSound));
-                                org.telegram.ui.Cells.d0.o(R.drawable.input_notify_off, arrayList10, arrayList9, 4);
+                                org.telegram.ui.Cells.c1.m(R.drawable.input_notify_off, arrayList10, arrayList9, 4);
                             }
                         }
                         vtVar4 = xtVar.l;
                         if (vtVar4.b()) {
                             arrayList8.add(LocaleController.getString(R.string.Schedule));
-                            org.telegram.ui.Cells.d0.o(R.drawable.msg_autodelete, arrayList10, arrayList9, 3);
+                            org.telegram.ui.Cells.c1.m(R.drawable.msg_autodelete, arrayList10, arrayList9, 3);
                         }
                         document = xtVar.W;
                         if (document != null) {
@@ -603,7 +603,7 @@ public final class tt implements Runnable {
                             document4 = xtVar.W;
                             if (vtVar5.e(document4)) {
                                 arrayList8.add(LocaleController.getString(R.string.AddACaption));
-                                org.telegram.ui.Cells.d0.m(R.drawable.outline_caption_24, 11, arrayList10, arrayList9);
+                                org.telegram.ui.Cells.c1.k(R.drawable.outline_caption_24, 11, arrayList10, arrayList9);
                             }
                         }
                         document2 = xtVar.W;
@@ -614,10 +614,10 @@ public final class tt implements Runnable {
                             z10 = mediaDataController2.hasRecentGif(document3);
                             if (z10) {
                                 arrayList8.add(LocaleController.formatString("Delete", R.string.Delete, new Object[0]));
-                                org.telegram.ui.Cells.d0.o(R.drawable.msg_delete, arrayList10, arrayList9, 1);
+                                org.telegram.ui.Cells.c1.m(R.drawable.msg_delete, arrayList10, arrayList9, 1);
                             } else {
                                 arrayList8.add(LocaleController.formatString("SaveToGIFs", R.string.SaveToGIFs, new Object[0]));
-                                org.telegram.ui.Cells.d0.o(R.drawable.msg_gif_add, arrayList10, arrayList9, 2);
+                                org.telegram.ui.Cells.c1.m(R.drawable.msg_gif_add, arrayList10, arrayList9, 2);
                             }
                         } else {
                             z10 = false;
@@ -748,7 +748,7 @@ public final class tt implements Runnable {
                         if (xtVar.O == null) {
                             ph1 ph1Var = new ph1(xtVar.z.getContext(), xtVar.c0);
                             xtVar.O = ph1Var;
-                            xtVar.z.addView(ph1Var, w7.a6.d(-1.0f, -1));
+                            xtVar.z.addView(ph1Var, w7.z5.d(-1.0f, -1));
                             xtVar.O.setOnClickListener(new lt(xtVar, i34));
                             z11 = true;
                             xtVar.O.a.r.setOnClickListener(new lt(xtVar, 1 == true ? 1 : 0));
@@ -785,7 +785,7 @@ public final class tt implements Runnable {
                         vtVar25 = xtVar.l;
                         if (!vtVar25.c()) {
                             arrayList11.add(LocaleController.getString(R.string.SendStickerPreview));
-                            org.telegram.ui.Cells.d0.o(R.drawable.msg_send, arrayList13, arrayList12, 0);
+                            org.telegram.ui.Cells.c1.m(R.drawable.msg_send, arrayList13, arrayList12, 0);
                         }
                     }
                     vtVar21 = xtVar.l;
@@ -794,18 +794,18 @@ public final class tt implements Runnable {
                         vtVar24 = xtVar.l;
                         if (!vtVar24.c()) {
                             arrayList11.add(LocaleController.getString(R.string.SendWithoutSound));
-                            org.telegram.ui.Cells.d0.m(R.drawable.input_notify_off, 6, arrayList13, arrayList12);
+                            org.telegram.ui.Cells.c1.k(R.drawable.input_notify_off, 6, arrayList13, arrayList12);
                         }
                     }
                     vtVar22 = xtVar.l;
                     if (vtVar22.b()) {
                         arrayList11.add(LocaleController.getString(R.string.Schedule));
-                        org.telegram.ui.Cells.d0.o(R.drawable.msg_autodelete, arrayList13, arrayList12, 3);
+                        org.telegram.ui.Cells.c1.m(R.drawable.msg_autodelete, arrayList13, arrayList12, 3);
                     }
                     vtVar23 = xtVar.l;
                     if (vtVar23.g()) {
                         arrayList11.add(LocaleController.getString(R.string.ImportStickersRemoveMenu));
-                        org.telegram.ui.Cells.d0.o(R.drawable.msg_delete, arrayList13, arrayList12, 5);
+                        org.telegram.ui.Cells.c1.m(R.drawable.msg_delete, arrayList13, arrayList12, 5);
                     }
                 }
                 document14 = xtVar.W;
@@ -817,19 +817,19 @@ public final class tt implements Runnable {
                         }
                     }
                     arrayList11.add(LocaleController.getString(isStickerInFavorites2 ? R.string.DeleteFromFavorites : R.string.AddToFavorites));
-                    org.telegram.ui.Cells.d0.o(isStickerInFavorites2 ? R.drawable.msg_unfave : R.drawable.msg_fave, arrayList13, arrayList12, 2);
+                    org.telegram.ui.Cells.c1.m(isStickerInFavorites2 ? R.drawable.msg_unfave : R.drawable.msg_fave, arrayList13, arrayList12, 2);
                 }
                 vtVar14 = xtVar.l;
                 if (vtVar14 != null && (inputStickerSet = xtVar.a0) != null && !(inputStickerSet instanceof TLRPC.TL_inputStickerSetEmpty)) {
                     vtVar19 = xtVar.l;
                     if (vtVar19.Q()) {
                         arrayList11.add(LocaleController.formatString(R.string.ViewPackPreview, new Object[0]));
-                        org.telegram.ui.Cells.d0.o(R.drawable.msg_media, arrayList13, arrayList12, 1);
+                        org.telegram.ui.Cells.c1.m(R.drawable.msg_media, arrayList13, arrayList12, 1);
                     }
                 }
                 if (xtVar.p) {
                     arrayList11.add(LocaleController.getString(R.string.DeleteFromRecent));
-                    org.telegram.ui.Cells.d0.o(R.drawable.msg_delete, arrayList13, arrayList12, 4);
+                    org.telegram.ui.Cells.c1.m(R.drawable.msg_delete, arrayList13, arrayList12, 4);
                 }
                 if (xtVar.a0 != null) {
                     document15 = xtVar.W;
@@ -844,7 +844,7 @@ public final class tt implements Runnable {
                                     TLRPC.StickerSet stickerSet2 = stickerSet.set;
                                     if (!stickerSet2.emojis && !stickerSet2.masks) {
                                         arrayList11.add(LocaleController.getString(R.string.EditSticker));
-                                        org.telegram.ui.Cells.d0.m(R.drawable.msg_edit, 7, arrayList13, arrayList12);
+                                        org.telegram.ui.Cells.c1.k(R.drawable.msg_edit, 7, arrayList13, arrayList12);
                                     }
                                 }
                             }
@@ -856,7 +856,7 @@ public final class tt implements Runnable {
                                 unused = xtVar.W;
                                 if (vtVar16.I()) {
                                     arrayList11.add(LocaleController.getString(R.string.DeleteSticker));
-                                    org.telegram.ui.Cells.d0.m(R.drawable.msg_delete, 8, arrayList13, arrayList12);
+                                    org.telegram.ui.Cells.c1.k(R.drawable.msg_delete, 8, arrayList13, arrayList12);
                                 }
                             }
                         }

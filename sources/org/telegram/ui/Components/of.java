@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class of extends org.telegram.ui.hj0 {
+public final class of extends org.telegram.ui.gj0 {
     public final /* synthetic */ int A0;
     public final /* synthetic */ Object B0;
 
@@ -15,7 +15,7 @@ public final class of extends org.telegram.ui.hj0 {
         this.B0 = obj;
     }
 
-    @Override // org.telegram.ui.hj0
+    @Override // org.telegram.ui.gj0
     public final void m(long j10) {
         switch (this.A0) {
             case 0:

@@ -16,9 +16,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.ui.Components.xz;
-import org.telegram.ui.ak0;
+import org.telegram.ui.zj0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class t1 {
     public boolean A;
@@ -295,7 +295,7 @@ public final class t1 {
         int i13;
         MessageObject messageObject3;
         StaticLayout staticLayout;
-        p0 p0Var;
+        o0 o0Var;
         RichMessageLayout richMessageLayout;
         org.telegram.ui.Components.z5 z5Var;
         u1 u1Var = this.m3;
@@ -365,8 +365,8 @@ public final class t1 {
         }
         this.K0 = false;
         if (richMessageLayout2 != this.M0) {
-            ak0 ak0Var = u1Var.ie;
-            boolean z17 = ak0Var != null && ak0Var.h;
+            zj0 zj0Var = u1Var.ie;
+            boolean z17 = zj0Var != null && zj0Var.h;
             RichMessageLayout richMessageLayout3 = this.L0;
             if (richMessageLayout3 != null) {
                 richMessageLayout3.detach(u1Var);
@@ -501,7 +501,7 @@ public final class t1 {
             z10 = true;
         }
         this.L2 = false;
-        if ((u1Var.y7.type == 27 && (p0Var = u1Var.v) != null && p0Var.d()) != this.K2) {
+        if ((u1Var.y7.type == 27 && (o0Var = u1Var.v) != null && o0Var.d()) != this.K2) {
             this.L2 = true;
             z10 = true;
         }
@@ -583,9 +583,9 @@ public final class t1 {
             }
             if (!this.D2) {
                 for (int i27 = 0; i27 < arrayList.size(); i27++) {
-                    f0 f0Var = (f0) arrayList.get(i27);
-                    f0 f0Var2 = (f0) arrayList6.get(i27);
-                    if (!f0Var.b && !f0Var2.b && (Math.abs(f0Var.c - f0Var2.c) > 0.01f || Math.abs(f0Var.e - f0Var2.e) > 0.01f || !TextUtils.equals(f0Var.h.k(), f0Var2.h.k()))) {
+                    e0 e0Var = (e0) arrayList.get(i27);
+                    e0 e0Var2 = (e0) arrayList6.get(i27);
+                    if (!e0Var.b && !e0Var2.b && (Math.abs(e0Var.c - e0Var2.c) > 0.01f || Math.abs(e0Var.e - e0Var2.e) > 0.01f || !TextUtils.equals(e0Var.h.k(), e0Var2.h.k()))) {
                         this.D2 = true;
                         break;
                     }
@@ -894,7 +894,7 @@ public final class t1 {
     }
 
     public final void h() {
-        p0 p0Var;
+        o0 o0Var;
         this.v0 = true;
         u1 u1Var = this.m3;
         ArrayList arrayList = u1Var.o7;
@@ -933,7 +933,7 @@ public final class t1 {
         this.C1 = u1Var.t1;
         this.E1 = u1Var.u1;
         MessageObject messageObject2 = u1Var.y7;
-        this.K2 = messageObject2 != null && messageObject2.type == 27 && (p0Var = u1Var.v) != null && p0Var.d();
+        this.K2 = messageObject2 != null && messageObject2.type == 27 && (o0Var = u1Var.v) != null && o0Var.d();
         if (u1Var.Z8 != null) {
             this.M = u1Var.getRepliesCount();
             this.N = u1Var.h9;

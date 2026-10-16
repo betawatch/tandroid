@@ -2,14 +2,14 @@ package b2;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class y implements e1 {
-    public final m4.n1 a;
+    public final m4.m1 a;
     public final e1 b;
 
-    public y(m4.n1 n1Var, e1 e1Var) {
-        this.a = n1Var;
+    public y(m4.m1 m1Var, e1 e1Var) {
+        this.a = m1Var;
         this.b = e1Var;
     }
 

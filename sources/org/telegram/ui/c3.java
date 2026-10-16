@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class c3 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final class c3 implements Runnable {
                             articleViewer$WindowView.performHapticFeedback(0, 2);
                         } catch (Exception unused) {
                         }
-                        k4Var.Z(((org.telegram.ui.Components.l11) k4Var.b.i).b);
+                        k4Var.Z(((org.telegram.ui.Components.m11) k4Var.b.i).b);
                         k4Var.b = null;
                         k4Var.d = null;
                         View view = k4Var.f;
@@ -94,7 +94,7 @@ public final class c3 implements Runnable {
                                     k4Var.B0.setTypeface(AndroidUtilities.bold());
                                     k4Var.B0.setText(LocaleController.getString(R.string.Copy).toUpperCase());
                                     k4Var.B0.setOnClickListener(new s(k4Var, 5));
-                                    k4Var.A0.addView(k4Var.B0, w7.a6.d(48.0f, -2));
+                                    k4Var.A0.addView(k4Var.B0, w7.z5.d(48.0f, -2));
                                     org.telegram.ui.ActionBar.m1 m1Var2 = new org.telegram.ui.ActionBar.m1(k4Var.A0, -2, -2);
                                     k4Var.H = m1Var2;
                                     m1Var2.b = false;

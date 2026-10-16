@@ -1,15 +1,17 @@
 package w7;
 
-import java.util.Date;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class h7 {
-    public static long a(Date date) {
-        return (date.getTime() / 1000) + 2082844800;
-    }
-
-    public static Date b(long j10) {
-        return new Date((j10 - 2082844800) * 1000);
+    public static void a(InputStream inputStream, ByteArrayOutputStream byteArrayOutputStream) {
+        byte[] bArr = new byte[8192];
+        int read = inputStream.read(bArr);
+        while (read >= 0) {
+            byteArrayOutputStream.write(bArr, 0, read);
+            read = inputStream.read(bArr);
+        }
     }
 }

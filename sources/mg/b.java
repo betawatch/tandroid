@@ -7,14 +7,14 @@ import bi.v1;
 import ig.t0;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.q;
+import org.telegram.messenger.g0;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.fh0;
 import org.telegram.ui.Components.voip.h1;
 import org.telegram.ui.Components.yc0;
-import w7.s;
+import w7.r;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class b implements ScaleGestureDetector.OnScaleGestureListener {
     public final /* synthetic */ int a;
@@ -74,7 +74,7 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
                         if (f7 * scaleFactor > 30.0f) {
                             scaleFactor = 30.0f / f7;
                         }
-                        n.g(pVar.L, scaleFactor, n.a(pVar.L) * ((focusX - (imageView.getWidth() / 2)) / cropAreaView.getCropWidth()), n.b(pVar.L) * (q.y((imageView.getHeight() - pVar.y) - (!pVar.r ? AndroidUtilities.statusBarHeight : 0), pVar.E, 2.0f, focusY) / cropAreaView.getCropHeight()));
+                        n.g(pVar.L, scaleFactor, n.a(pVar.L) * ((focusX - (imageView.getWidth() / 2)) / cropAreaView.getCropWidth()), n.b(pVar.L) * (g0.x((imageView.getHeight() - pVar.y) - (!pVar.r ? AndroidUtilities.statusBarHeight : 0), pVar.E, 2.0f, focusY) / cropAreaView.getCropHeight()));
                         pVar.r(false);
                         break;
                     }
@@ -82,7 +82,7 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
                 break;
             case 1:
                 fh0 fh0Var = (fh0) this.b;
-                fh0Var.J = s.a(scaleGestureDetector.getScaleFactor() * fh0Var.J, 0.75f, fh0Var.a);
+                fh0Var.J = r.a(scaleGestureDetector.getScaleFactor() * fh0Var.J, 0.75f, fh0Var.a);
                 fh0Var.H = (int) (fh0Var.t() * fh0Var.J);
                 fh0Var.I = (int) (fh0Var.r() * fh0Var.J);
                 AndroidUtilities.runOnUIThread(new yc0(this, 13));
@@ -96,7 +96,7 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
                     kVar.u.i = dp;
                 }
                 kVar.h();
-                float a2 = s.a(scaleGestureDetector.getFocusY() - (fh0Var.I / 2.0f), AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - fh0Var.I) - AndroidUtilities.dp(16.0f));
+                float a2 = r.a(scaleGestureDetector.getFocusY() - (fh0Var.I / 2.0f), AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - fh0Var.I) - AndroidUtilities.dp(16.0f));
                 o1.k kVar2 = fh0Var.N;
                 if (kVar2.f) {
                     kVar2.u.i = a2;
@@ -109,10 +109,10 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
                 break;
             default:
                 h1 h1Var = (h1) this.b;
-                h1Var.P = s.a(scaleGestureDetector.getScaleFactor() * h1Var.P, 0.6f, h1Var.a);
+                h1Var.P = r.a(scaleGestureDetector.getScaleFactor() * h1Var.P, 0.6f, h1Var.a);
                 h1Var.M = (int) (h1Var.m() * h1Var.P);
                 h1Var.N = (int) (h1Var.l() * h1Var.P);
-                AndroidUtilities.runOnUIThread(new t0(this, 26));
+                AndroidUtilities.runOnUIThread(new t0(this, 25));
                 o1.k kVar3 = h1Var.S;
                 kVar3.b = h1Var.Q;
                 kVar3.c = true;
@@ -124,7 +124,7 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
                 o1.k kVar5 = h1Var.T;
                 kVar5.b = h1Var.R;
                 kVar5.c = true;
-                kVar5.u.i = s.a(scaleGestureDetector.getFocusY() - (h1Var.N / 2.0f), AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - h1Var.N) - AndroidUtilities.dp(16.0f));
+                kVar5.u.i = r.a(scaleGestureDetector.getFocusY() - (h1Var.N / 2.0f), AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - h1Var.N) - AndroidUtilities.dp(16.0f));
                 o1.k kVar6 = h1Var.T;
                 if (!kVar6.f) {
                     kVar6.h();

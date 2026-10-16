@@ -16,10 +16,10 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.TreeMap;
 import org.telegram.ui.Components.nz;
-import org.telegram.ui.es0;
+import org.telegram.ui.ds0;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class x0 {
     public final Object a;
@@ -111,7 +111,7 @@ public final class x0 {
         b();
         this.o = tVar;
         c();
-        long q6 = this.a.q(tVar.c, this.i, this.c, zArr, j10);
+        long n10 = this.a.n(tVar.c, this.i, this.c, zArr, j10);
         for (int i12 = 0; i12 < bVarArr.length; i12++) {
             if (bVarArr[i12].b == -2 && this.o.b(i12)) {
                 d1VarArr[i12] = new u2.r();
@@ -128,7 +128,7 @@ public final class x0 {
                 u6.p(tVar.c[i13] == null);
             }
         }
-        return q6;
+        return n10;
     }
 
     public final void b() {
@@ -174,8 +174,8 @@ public final class x0 {
         if (!this.e) {
             return this.g.b;
         }
-        long s10 = this.f ? this.a.s() : Long.MIN_VALUE;
-        return s10 == Long.MIN_VALUE ? this.g.f : s10;
+        long p5 = this.f ? this.a.p() : Long.MIN_VALUE;
+        return p5 == Long.MIN_VALUE ? this.g.f : p5;
     }
 
     public final long e() {
@@ -185,7 +185,7 @@ public final class x0 {
     /* JADX WARN: Type inference failed for: r0v1, types: [java.lang.Object, u2.e0] */
     public final void f(float f7, b2.p1 p1Var, boolean z10) {
         this.e = true;
-        this.n = this.a.r();
+        this.n = this.a.o();
         x2.t j10 = j(f7, p1Var, z10);
         y0 y0Var = this.g;
         long j11 = y0Var.b;
@@ -203,7 +203,7 @@ public final class x0 {
     /* JADX WARN: Type inference failed for: r0v4, types: [java.lang.Object, u2.f1] */
     public final boolean g() {
         if (this.e) {
-            return !this.f || this.a.s() == Long.MIN_VALUE;
+            return !this.f || this.a.p() == Long.MIN_VALUE;
         }
         return false;
     }
@@ -351,7 +351,7 @@ public final class x0 {
             nVar2.k = Boolean.valueOf(e2.m0.P(context));
         }
         if (iVar.A0 && Build.VERSION.SDK_INT >= 32 && nVar2.i == null) {
-            nVar2.i = new z2.d(nVar2.e, new rh.j(nVar2, 20), nVar2.k);
+            nVar2.i = new z2.d(nVar2.e, new ri.h0(nVar2, 20), nVar2.k);
         }
         int i32 = rVar.a;
         x2.o[] oVarArr = new x2.o[i32];
@@ -377,7 +377,7 @@ public final class x0 {
             da.b bVar4 = new da.b(nVar2, iVar, z12, iArr8, 7);
             nVar = nVar2;
             iVar2 = iVar;
-            h = x2.n.p(1, rVar, iArr7, bVar4, new es0(18));
+            h = x2.n.p(1, rVar, iArr7, bVar4, new ds0(18));
             if (h != null) {
                 oVarArr[((Integer) h.second).intValue()] = (x2.o) h.first;
             }
@@ -400,11 +400,11 @@ public final class x0 {
             } else {
                 a1.d dVar = new a1.d(iVar2, str, iArr8, (!iVar2.k || context2 == null) ? null : e2.m0.y(context2), 20);
                 str2 = str;
-                p9 = x2.n.p(2, rVar, iArr7, dVar, new es0(17));
+                p9 = x2.n.p(2, rVar, iArr7, dVar, new ds0(17));
             }
             if ((iVar2.E || p9 == null) && iVar2.w.a != 2) {
                 int i35 = 16;
-                p10 = x2.n.p(4, rVar, iArr7, new rg.b0(iVar2, i35), new es0(i35));
+                p10 = x2.n.p(4, rVar, iArr7, new rg.b0(iVar2, i35), new ds0(i35));
             } else {
                 p10 = null;
             }
@@ -426,7 +426,7 @@ public final class x0 {
                     String str4 = e2.m0.a;
                     str3 = locale.toLanguageTag();
                 }
-                p5 = x2.n.p(3, rVar, iArr7, new nz(iVar2, str2, str3, 12), new es0(19));
+                p5 = x2.n.p(3, rVar, iArr7, new nz(iVar2, str2, str3, 12), new ds0(19));
             }
             if (p5 != null) {
                 oVarArr[((Integer) p5.second).intValue()] = (x2.o) p5.first;

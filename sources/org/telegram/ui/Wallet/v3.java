@@ -1,17 +1,51 @@
 package org.telegram.ui.Wallet;
 
-import android.view.View;
-import org.telegram.ui.Components.h71;
+import android.content.DialogInterface;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class v3 extends h71 {
-    @Override // org.telegram.ui.Components.mm0
-    public final boolean t1(View view) {
-        if (!(view instanceof x2)) {
-            return true;
+public final /* synthetic */ class v3 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ v3(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
+    }
+
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                TLRPC.User user = (TLRPC.User) this.b;
+                org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
+                if (U != null) {
+                    U.presentFragment(new j8(user));
+                    break;
+                }
+                break;
+            case 1:
+                TL_wallet.WalletTransactionPeer walletTransactionPeer = (TL_wallet.WalletTransactionPeer) this.b;
+                org.telegram.ui.ActionBar.m2 U2 = LaunchActivity.U();
+                if (U2 != null) {
+                    U2.presentFragment(new j8(walletTransactionPeer.address));
+                    break;
+                }
+                break;
+            default:
+                j8 j8Var = (j8) this.b;
+                EditTextBoldCursor editTextBoldCursor = j8Var.E;
+                if (editTextBoldCursor != null) {
+                    editTextBoldCursor.requestFocus();
+                    AndroidUtilities.showKeyboard(j8Var.E);
+                    break;
+                }
+                break;
         }
-        x2 x2Var = (x2) view;
-        return x2Var.F <= 0.0f && !x2Var.I.d();
     }
 }

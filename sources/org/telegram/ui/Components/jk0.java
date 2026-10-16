@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class jk0 extends s4.g0 {
     public final /* synthetic */ int c;
@@ -57,8 +57,8 @@ public final class jk0 extends s4.g0 {
             o6Var = new FrameLayout(context);
             View view = new View(context);
             view.setBackgroundColor(org.telegram.ui.ActionBar.g6.m1(0.06f, org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.E8, this.e)));
-            o6Var.addView(view, w7.a6.d(8.0f, -1));
-            o6Var.addView(qk0Var.J, w7.a6.a(-1.0f, 0.0f, 8.0f, 0.0f, 0.0f, -1, 0));
+            o6Var.addView(view, w7.z5.d(8.0f, -1));
+            o6Var.addView(qk0Var.J, w7.z5.a(-1.0f, 0.0f, 8.0f, 0.0f, 0.0f, -1, 0));
         } else {
             o6Var = new org.telegram.ui.Cells.o6(0, this.c, this.d, this.e, true, this.f);
         }

@@ -21,7 +21,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class r extends c {
     public final boolean a;
@@ -48,7 +48,7 @@ public final class r extends c {
         this.f = new n4.s(17);
     }
 
-    public final void b() {
+    public final void a() {
         HttpURLConnection httpURLConnection = this.n;
         if (httpURLConnection != null) {
             try {
@@ -93,7 +93,7 @@ public final class r extends c {
             }
         } finally {
             this.r = null;
-            b();
+            a();
             if (this.s) {
                 this.s = false;
                 transferEnded();
@@ -105,7 +105,7 @@ public final class r extends c {
     }
 
     public final HttpURLConnection e(m mVar) {
-        HttpURLConnection h;
+        HttpURLConnection f7;
         URL url = new URL(mVar.a.toString());
         int i10 = mVar.b;
         byte[] bArr = mVar.c;
@@ -115,24 +115,24 @@ public final class r extends c {
         int i12 = 0;
         boolean z10 = (mVar.h & 1) == 1;
         if (!this.a) {
-            return h(url, i10, bArr, j10, j11, z10, true, mVar.d);
+            return f(url, i10, bArr, j10, j11, z10, true, mVar.d);
         }
         while (true) {
             int i13 = i12 + 1;
             if (i12 > 20) {
-                throw new v(new NoRouteToHostException(i2.d.i(i13, "Too many redirects: ")), 2001, 1);
+                throw new v(new NoRouteToHostException(i2.d.j(i13, "Too many redirects: ")), 2001, 1);
             }
-            h = h(url, i10, bArr, j10, j11, z10, false, mVar.d);
-            int responseCode = h.getResponseCode();
-            String headerField = h.getHeaderField("Location");
+            f7 = f(url, i10, bArr, j10, j11, z10, false, mVar.d);
+            int responseCode = f7.getResponseCode();
+            String headerField = f7.getHeaderField("Location");
             if ((i10 == i11 || i10 == 3) && (responseCode == 300 || responseCode == 301 || responseCode == 302 || responseCode == 303 || responseCode == 307 || responseCode == 308)) {
-                h.disconnect();
+                f7.disconnect();
                 url = c(url, headerField);
             } else {
                 if (i10 != 2 || (responseCode != 300 && responseCode != 301 && responseCode != 302 && responseCode != 303)) {
                     break;
                 }
-                h.disconnect();
+                f7.disconnect();
                 url = c(url, headerField);
                 bArr = null;
                 i10 = 1;
@@ -140,29 +140,10 @@ public final class r extends c {
             i12 = i13;
             i11 = 1;
         }
-        return h;
+        return f7;
     }
 
-    @Override // g2.c, g2.h
-    public final Map getResponseHeaders() {
-        HttpURLConnection httpURLConnection = this.n;
-        return httpURLConnection == null ? c2.h : new q(httpURLConnection.getHeaderFields());
-    }
-
-    @Override // g2.h
-    public final Uri getUri() {
-        HttpURLConnection httpURLConnection = this.n;
-        if (httpURLConnection != null) {
-            return Uri.parse(httpURLConnection.getURL().toString());
-        }
-        m mVar = this.h;
-        if (mVar != null) {
-            return mVar.a;
-        }
-        return null;
-    }
-
-    public final HttpURLConnection h(URL url, int i10, byte[] bArr, long j10, long j11, boolean z10, boolean z11, Map map) {
+    public final HttpURLConnection f(URL url, int i10, byte[] bArr, long j10, long j11, boolean z10, boolean z11, Map map) {
         String sb2;
         String str;
         HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
@@ -171,9 +152,9 @@ public final class r extends c {
         HashMap hashMap = new HashMap();
         n4.s sVar = this.e;
         if (sVar != null) {
-            hashMap.putAll(sVar.o());
+            hashMap.putAll(sVar.s());
         }
-        hashMap.putAll(this.f.o());
+        hashMap.putAll(this.f.s());
         hashMap.putAll(map);
         for (Map.Entry entry : hashMap.entrySet()) {
             httpURLConnection.setRequestProperty((String) entry.getKey(), (String) entry.getValue());
@@ -222,7 +203,26 @@ public final class r extends c {
         return httpURLConnection;
     }
 
-    public final void i(long j10) {
+    @Override // g2.c, g2.h
+    public final Map getResponseHeaders() {
+        HttpURLConnection httpURLConnection = this.n;
+        return httpURLConnection == null ? c2.h : new q(httpURLConnection.getHeaderFields());
+    }
+
+    @Override // g2.h
+    public final Uri getUri() {
+        HttpURLConnection httpURLConnection = this.n;
+        if (httpURLConnection != null) {
+            return Uri.parse(httpURLConnection.getURL().toString());
+        }
+        m mVar = this.h;
+        if (mVar != null) {
+            return mVar.a;
+        }
+        return null;
+    }
+
+    public final void h(long j10) {
         if (j10 == 0) {
             return;
         }
@@ -309,7 +309,7 @@ public final class r extends c {
                 } catch (IOException unused) {
                     String str2 = m0.a;
                 }
-                b();
+                a();
                 throw new x(this.v, this.v == 416 ? new j(2008) : null, headerFields);
             }
             e.getContentType();
@@ -359,7 +359,7 @@ public final class r extends c {
                                         }
                                         this.s = true;
                                         transferStarted(mVar);
-                                        i(j12);
+                                        h(j12);
                                         return this.w;
                                     }
                                 }
@@ -386,21 +386,21 @@ public final class r extends c {
                 this.s = true;
                 transferStarted(mVar);
                 try {
-                    i(j12);
+                    h(j12);
                     return this.w;
                 } catch (IOException e7) {
-                    b();
+                    a();
                     if (e7 instanceof v) {
                         throw ((v) e7);
                     }
                     throw new v(e7, 2000, 1);
                 }
             } catch (IOException e10) {
-                b();
+                a();
                 throw new v(e10, 2000, 1);
             }
         } catch (IOException e11) {
-            b();
+            a();
             throw v.a(e11, 1);
         }
     }

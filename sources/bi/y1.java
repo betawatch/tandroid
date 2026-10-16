@@ -10,7 +10,7 @@ import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class y1 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final class y1 extends FrameLayout {
             case 1:
                 int save = canvas.save();
                 Path path = this.b;
-                w7.j6.a(path, getWidth(), getHeight());
+                w7.i6.a(path, getWidth(), getHeight());
                 canvas.clipPath(path);
                 super.dispatchDraw(canvas);
                 canvas.restoreToCount(save);
@@ -85,7 +85,7 @@ public final class y1 extends FrameLayout {
                     if (!kVar2.f) {
                         kVar2.b = b2Var.O;
                         kVar2.c = true;
-                        kVar2.u.i = w7.s.a(r2, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - b2Var.K) - AndroidUtilities.dp(16.0f));
+                        kVar2.u.i = w7.r.a(r2, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - b2Var.K) - AndroidUtilities.dp(16.0f));
                         b2Var.Q.h();
                     }
                 }

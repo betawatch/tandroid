@@ -11,14 +11,14 @@ import g6.s;
 import g6.v;
 import g6.w;
 import kotlin.jvm.internal.i;
-import m.q3;
-import n6.q;
-import n7.l1;
+import m.t3;
+import n6.p;
+import n7.m1;
 import s6.h;
 import v8.o;
 import y8.y0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class d {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final class d {
         this.a = i10;
     }
 
-    public com.google.android.gms.common.api.c a(Context context, Looper looper, q3 commonSettings, Object obj, k kVar, l lVar) {
+    public com.google.android.gms.common.api.c a(Context context, Looper looper, t3 commonSettings, Object obj, k kVar, l lVar) {
         switch (this.a) {
             case 1:
                 c6.e eVar = (c6.e) obj;
@@ -64,7 +64,7 @@ public final class d {
                     case 6:
                         return new i7.c(context, looper, kVar, lVar, commonSettings);
                     case 11:
-                        return new p6.c(context, looper, commonSettings, (q) obj, kVar, lVar);
+                        return new p6.c(context, looper, commonSettings, (p) obj, kVar, lVar);
                     case 12:
                         return new p7.b(context, looper, 19, commonSettings, kVar, lVar, 0);
                     case 13:
@@ -81,7 +81,7 @@ public final class d {
             case 7:
                 return new b8.a(context, looper, kVar, lVar, commonSettings);
             case 8:
-                return new l1(context, looper, 148, commonSettings, kVar, lVar, 0);
+                return new m1(context, looper, 148, commonSettings, kVar, lVar, 0);
             case 9:
                 commonSettings.getClass();
                 Integer num = (Integer) commonSettings.h;

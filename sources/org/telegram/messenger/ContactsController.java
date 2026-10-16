@@ -34,7 +34,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class ContactsController extends BaseController {
     public static final int PRIVACY_RULES_TYPE_ADDED_BY_PHONE = 7;
@@ -108,7 +108,7 @@ public class ContactsController extends BaseController {
     private static final String[] projectionNames = {"lookup", "data2", "data3", "data5"};
     private static volatile ContactsController[] Instance = new ContactsController[4];
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class Contact {
         public int contact_id;
         public String first_name;
@@ -133,7 +133,7 @@ public class ContactsController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public class MyContentObserver extends ContentObserver {
         private Runnable checkRunnable;
 
@@ -174,7 +174,7 @@ public class ContactsController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public class PhoneBookContact {
         String id;
         String lookup_key;
@@ -1391,7 +1391,7 @@ public class ContactsController extends BaseController {
             }
             zArr[0] = true;
             if (BuildVars.LOGS_ENABLED) {
-                i2.d.t(tL_error.text, new StringBuilder("import contacts error "));
+                i2.d.v(tL_error.text, new StringBuilder("import contacts error "));
             }
         }
         if (this.completedRequestsCount == i10) {
@@ -1888,9 +1888,9 @@ public class ContactsController extends BaseController {
                 i14 = 2;
             }
             if (BuildVars.LOGS_ENABLED) {
-                StringBuilder l4 = i2.d.l("new phone book contacts ", i12, " serverContactsInPhonebook ", i11, " totalContacts ");
-                l4.append(this.contactsByPhone.size());
-                FileLog.d(l4.toString());
+                StringBuilder m10 = i2.d.m("new phone book contacts ", i12, " serverContactsInPhonebook ", i11, " totalContacts ");
+                m10.append(this.contactsByPhone.size());
+                FileLog.d(m10.toString());
             }
             if (i14 == 0) {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.x1

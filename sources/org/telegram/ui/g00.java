@@ -14,7 +14,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class g00 extends org.telegram.ui.Components.lm0 {
     public final /* synthetic */ h00 c;
@@ -231,14 +231,14 @@ public final class g00 extends org.telegram.ui.Components.lm0 {
         bk0Var.setScaleType(ImageView.ScaleType.CENTER);
         bk0Var.d();
         bk0Var.setImportantForAccessibility(2);
-        xzVar.addView(bk0Var, w7.a6.a(90.0f, 0.0f, 14.0f, 0.0f, 0.0f, 90, 49));
+        xzVar.addView(bk0Var, w7.z5.a(90.0f, 0.0f, 14.0f, 0.0f, 0.0f, 90, 49));
         wh.n nVar = new wh.n(parentActivity);
         xzVar.a = nVar;
         nVar.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.B6, false));
         nVar.setTextSize(1, 14.0f);
         nVar.setGravity(17);
         nVar.setLines(2);
-        xzVar.addView(nVar, w7.a6.a(-2.0f, 40.0f, 121.0f, 40.0f, 24.0f, -1, 49));
+        xzVar.addView(nVar, w7.z5.a(-2.0f, 40.0f, 121.0f, 40.0f, 24.0f, -1, 49));
         view = xzVar;
         view2 = view;
         return new org.telegram.ui.Components.wl0(view2);

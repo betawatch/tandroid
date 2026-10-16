@@ -5,18 +5,18 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class lb extends av0 {
+public final class lb extends zu0 {
     public final /* synthetic */ ac a;
 
     public lb(ac acVar) {
         this.a = acVar;
     }
 
-    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
-    public final kv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        org.telegram.ui.Cells.x0 x0Var;
+    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
+    public final jv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        org.telegram.ui.Cells.w0 w0Var;
         MessageObject messageObject2;
         org.telegram.ui.Cells.u1 u1Var;
         MessageObject messageObject3;
@@ -33,10 +33,10 @@ public final class lb extends av0 {
                 if (messageObject != null && (messageObject3 = (u1Var = (org.telegram.ui.Cells.u1) childAt).getMessageObject()) != null && messageObject3.getId() == messageObject.getId()) {
                     imageReceiver = u1Var.getPhotoImage();
                 }
-            } else if ((childAt instanceof org.telegram.ui.Cells.x0) && (messageObject2 = (x0Var = (org.telegram.ui.Cells.x0) childAt).getMessageObject()) != null) {
+            } else if ((childAt instanceof org.telegram.ui.Cells.w0) && (messageObject2 = (w0Var = (org.telegram.ui.Cells.w0) childAt).getMessageObject()) != null) {
                 if (messageObject != null) {
                     if (messageObject2.getId() == messageObject.getId()) {
-                        imageReceiver = x0Var.getPhotoImage();
+                        imageReceiver = w0Var.getPhotoImage();
                     }
                 } else if (fileLocation != null && messageObject2.photoThumbs != null) {
                     int i12 = 0;
@@ -46,7 +46,7 @@ public final class lb extends av0 {
                         }
                         TLRPC.FileLocation fileLocation2 = messageObject2.photoThumbs.get(i12).location;
                         if (fileLocation2.volume_id == fileLocation.volume_id && fileLocation2.local_id == fileLocation.local_id) {
-                            imageReceiver = x0Var.getPhotoImage();
+                            imageReceiver = w0Var.getPhotoImage();
                             break;
                         }
                         i12++;
@@ -56,15 +56,15 @@ public final class lb extends av0 {
             if (imageReceiver != null) {
                 int[] iArr = new int[2];
                 childAt.getLocationInWindow(iArr);
-                kv0 kv0Var = new kv0();
-                kv0Var.b = iArr[0];
-                kv0Var.c = iArr[1];
-                kv0Var.d = acVar.v;
-                kv0Var.a = imageReceiver;
-                kv0Var.e = imageReceiver.getBitmapSafe();
-                kv0Var.h = imageReceiver.getRoundRadius(true);
-                kv0Var.l = true;
-                return kv0Var;
+                jv0 jv0Var = new jv0();
+                jv0Var.b = iArr[0];
+                jv0Var.c = iArr[1];
+                jv0Var.d = acVar.v;
+                jv0Var.a = imageReceiver;
+                jv0Var.e = imageReceiver.getBitmapSafe();
+                jv0Var.h = imageReceiver.getRoundRadius(true);
+                jv0Var.l = true;
+                return jv0Var;
             }
             i11++;
         }

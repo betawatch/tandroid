@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class cv extends WebViewClient {
     public final /* synthetic */ hv a;
@@ -61,7 +61,7 @@ public final class cv extends WebViewClient {
         if (!this.a.y) {
             return super.shouldOverrideUrlLoading(webView, str);
         }
-        pf.d.s(webView.getContext(), str);
+        pf.d.r(webView.getContext(), str);
         return true;
     }
 }

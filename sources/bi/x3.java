@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.hh;
 import org.telegram.ui.Components.ti;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class x3 implements ti {
     public final /* synthetic */ q5 a;
@@ -21,7 +21,7 @@ public final class x3 implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void H() {
+    public final void F() {
         this.a.b2.N();
     }
 
@@ -34,7 +34,7 @@ public final class x3 implements ti {
     /* JADX WARN: Type inference failed for: r7v2, types: [int] */
     /* JADX WARN: Type inference failed for: r7v3 */
     @Override // org.telegram.ui.Components.ti
-    public final void g0(int i10, boolean z10, boolean z11, int i11, int i12, long j10, boolean z12, boolean z13, long j11) {
+    public final void b0(int i10, boolean z10, boolean z11, int i11, int i12, long j10, boolean z12, boolean z13, long j11) {
         TL_stories.StoryItem storyItem;
         AccountInstance accountInstance;
         boolean z14;
@@ -124,12 +124,12 @@ public final class x3 implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ boolean p0() {
+    public final /* synthetic */ boolean r0() {
         return false;
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void r0(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j10, boolean z11, long j11) {
+    public final void s0(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j10, boolean z11, long j11) {
         AccountInstance accountInstance;
         q5 q5Var = this.a;
         TL_stories.StoryItem storyItem = q5Var.O1.a;
@@ -147,19 +147,19 @@ public final class x3 implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final boolean x() {
+    public final boolean w() {
         return this.a.N0();
     }
 
     @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void J(Object obj) {
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void U(TLRPC.User user) {
+    }
+
+    @Override // org.telegram.ui.Components.ti
     public final /* synthetic */ void z() {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void U(Object obj) {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void W(TLRPC.User user) {
     }
 }

@@ -19,7 +19,7 @@ import org.telegram.ui.Components.cr;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.z9;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class t0 extends FrameLayout implements ne.d {
     public final ne.b a;
@@ -42,17 +42,17 @@ public class t0 extends FrameLayout implements ne.d {
         this.n = c6Var;
         z9 z9Var = new z9(context);
         this.c = z9Var;
-        addView(z9Var, w7.a6.d(32.0f, 32));
+        addView(z9Var, w7.z5.d(32.0f, 32));
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setImageResource(R.drawable.ic_close_white);
-        addView(imageView, w7.a6.a(24.0f, 8.0f, 0.0f, 0.0f, 0.0f, 24, 16));
+        addView(imageView, w7.z5.a(24.0f, 8.0f, 0.0f, 0.0f, 0.0f, 24, 16));
         TextView textView = new TextView(context);
         this.e = textView;
         textView.setSingleLine();
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setTextSize(1, 14.0f);
-        addView(textView, w7.a6.a(-2.0f, 38.0f, 0.0f, 12.0f, 0.0f, -2, 16));
+        addView(textView, w7.z5.a(-2.0f, 38.0f, 0.0f, 12.0f, 0.0f, -2, 16));
         this.w = AndroidUtilities.dp(28.0f);
         a();
     }
@@ -205,6 +205,6 @@ public class t0 extends FrameLayout implements ne.d {
     }
 
     @Override // ne.d
-    public final /* synthetic */ void C(float f7, int i10) {
+    public final /* synthetic */ void A(float f7, int i10) {
     }
 }

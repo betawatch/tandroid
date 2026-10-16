@@ -6,9 +6,9 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.ui.Components.cf0;
+import org.telegram.ui.Components.df0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k1 implements Runnable {
     public final /* synthetic */ int a;
@@ -82,7 +82,7 @@ public final /* synthetic */ class k1 implements Runnable {
             default:
                 t1 t1Var4 = this.b;
                 if (!t1Var4.n) {
-                    cf0.b(R.raw.permission_request_camera, R.string.PermissionNoCameraMicVideo, new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"}, new o1(t1Var4, i10));
+                    df0.b(R.raw.permission_request_camera, R.string.PermissionNoCameraMicVideo, new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"}, new o1(t1Var4, i10));
                     break;
                 }
                 break;

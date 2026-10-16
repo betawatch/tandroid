@@ -1,140 +1,67 @@
 package gb;
 
-import j$.util.Objects;
-import java.util.AbstractSet;
+import java.util.ConcurrentModificationException;
 import java.util.Iterator;
-import java.util.Map;
+import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class l extends AbstractSet {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n b;
+public final class l implements Iterator {
+    public n a;
+    public n b = null;
+    public int c;
+    public final /* synthetic */ o d;
+    public final /* synthetic */ int e;
 
-    public /* synthetic */ l(n nVar, int i10) {
-        this.a = i10;
+    public l(o oVar, int i10) {
+        this.e = i10;
+        this.d = oVar;
+        this.a = oVar.f.d;
+        this.c = oVar.e;
+    }
+
+    public final Object a() {
+        return b();
+    }
+
+    public final n b() {
+        n nVar = this.a;
+        o oVar = this.d;
+        if (nVar == oVar.f) {
+            throw new NoSuchElementException();
+        }
+        if (oVar.e != this.c) {
+            throw new ConcurrentModificationException();
+        }
+        this.a = nVar.d;
         this.b = nVar;
+        return nVar;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final void clear() {
-        switch (this.a) {
-            case 0:
-                this.b.clear();
-                break;
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return this.a != this.d.f;
+    }
+
+    @Override // java.util.Iterator
+    public Object next() {
+        switch (this.e) {
+            case 1:
+                return b().f;
             default:
-                this.b.clear();
-                break;
+                return a();
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0033 A[ORIG_RETURN, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:17:? A[RETURN, SYNTHETIC] */
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean contains(Object obj) {
-        m a2;
-        switch (this.a) {
-            case 0:
-                if (!(obj instanceof Map.Entry)) {
-                    return false;
-                }
-                n nVar = this.b;
-                Map.Entry entry = (Map.Entry) obj;
-                Object key = entry.getKey();
-                m mVar = null;
-                if (key != null) {
-                    try {
-                        a2 = nVar.a(key, false);
-                    } catch (ClassCastException unused) {
-                    }
-                    if (a2 != null && Objects.equals(a2.n, entry.getValue())) {
-                        mVar = a2;
-                    }
-                    return mVar == null;
-                }
-                a2 = null;
-                if (a2 != null) {
-                    mVar = a2;
-                }
-                if (mVar == null) {
-                }
-            default:
-                return this.b.containsKey(obj);
+    @Override // java.util.Iterator
+    public final void remove() {
+        n nVar = this.b;
+        if (nVar == null) {
+            throw new IllegalStateException();
         }
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        switch (this.a) {
-            case 0:
-                return new k(this.b, 0);
-            default:
-                return new k(this.b, 1);
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0042  */
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean remove(Object obj) {
-        m a2;
-        switch (this.a) {
-            case 0:
-                if (obj instanceof Map.Entry) {
-                    Map.Entry entry = (Map.Entry) obj;
-                    Object key = entry.getKey();
-                    n nVar = this.b;
-                    m mVar = null;
-                    if (key != null) {
-                        try {
-                            a2 = nVar.a(key, false);
-                        } catch (ClassCastException unused) {
-                        }
-                        if (a2 != null && Objects.equals(a2.n, entry.getValue())) {
-                            mVar = a2;
-                        }
-                        if (mVar == null) {
-                            nVar.c(mVar, true);
-                            break;
-                        }
-                    }
-                    a2 = null;
-                    if (a2 != null) {
-                        mVar = a2;
-                    }
-                    if (mVar == null) {
-                    }
-                }
-                break;
-            default:
-                n nVar2 = this.b;
-                m mVar2 = null;
-                if (obj != null) {
-                    try {
-                        mVar2 = nVar2.a(obj, false);
-                    } catch (ClassCastException unused2) {
-                    }
-                }
-                if (mVar2 != null) {
-                    nVar2.c(mVar2, true);
-                }
-                if (mVar2 != null) {
-                    break;
-                }
-                break;
-        }
-        return true;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        switch (this.a) {
-        }
-        return this.b.d;
+        o oVar = this.d;
+        oVar.c(nVar, true);
+        this.b = null;
+        this.c = oVar.e;
     }
 }

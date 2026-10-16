@@ -23,14 +23,14 @@ import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.jc0;
+import org.telegram.ui.ic0;
+import org.telegram.ui.l01;
 import org.telegram.ui.m01;
-import org.telegram.ui.n01;
 import org.telegram.ui.n60;
 import org.telegram.ui.tq;
 import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x2 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -69,9 +69,9 @@ public final /* synthetic */ class x2 implements Runnable {
                 final long j11 = this.c;
                 final boolean z11 = this.b;
                 storiesController.i0(j11, z11, false);
-                n6.o oVar = new n6.o(5, false);
+                n3.b bVar = new n3.b(6, false);
                 final int i11 = 0;
-                oVar.b = new Runnable() { // from class: bi.b3
+                bVar.b = new Runnable() { // from class: bi.b3
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i11) {
@@ -85,7 +85,7 @@ public final /* synthetic */ class x2 implements Runnable {
                     }
                 };
                 final int i12 = 1;
-                oVar.c = new Runnable() { // from class: bi.b3
+                bVar.c = new Runnable() { // from class: bi.b3
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i12) {
@@ -98,7 +98,7 @@ public final /* synthetic */ class x2 implements Runnable {
                         }
                     }
                 };
-                sc V = new zc(q5Var.d1, q5Var.B0).V(Arrays.asList(tLObject), !z11 ? AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoriesMovedToDialogs, ContactsController.formatName(str, null, 10))) : AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoriesMovedToContacts, ContactsController.formatName(str, null, 10))), null, oVar);
+                sc V = new zc(q5Var.d1, q5Var.B0).V(Arrays.asList(tLObject), !z11 ? AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoriesMovedToDialogs, ContactsController.formatName(str, null, 10))) : AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoriesMovedToContacts, ContactsController.formatName(str, null, 10))), null, bVar);
                 V.a = 2;
                 V.k(true);
                 return;
@@ -130,7 +130,7 @@ public final /* synthetic */ class x2 implements Runnable {
                         org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
                         a2Var.R = string;
                         a2Var.T = LocaleController.getString(R.string.LiveStoryAlreadyStreaming);
-                        org.telegram.messenger.q.A(R.string.OK, alertDialog$Builder, null);
+                        org.telegram.messenger.g0.p(R.string.OK, alertDialog$Builder, null);
                     }
                     callback.run(Boolean.FALSE);
                     return;
@@ -186,18 +186,18 @@ public final /* synthetic */ class x2 implements Runnable {
                     throw th2;
                 }
             case 3:
-                n60.A((n60) obj4, (org.telegram.ui.ActionBar.a2[]) obj3, this.b, (TLRPC.TL_error) obj, this.c, (TL_phone.inviteToGroupCall) obj2);
+                n60.B((n60) obj4, (org.telegram.ui.ActionBar.a2[]) obj3, this.b, (TLRPC.TL_error) obj, this.c, (TL_phone.inviteToGroupCall) obj2);
                 return;
             case 4:
-                jc0 jc0Var = (jc0) obj4;
+                ic0 ic0Var = (ic0) obj4;
                 TLObject tLObject2 = (TLObject) obj2;
                 String str3 = (String) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj3;
-                int i13 = jc0Var.b;
-                jc0Var.c();
+                int i13 = ic0Var.b;
+                ic0Var.c();
                 if (!(tLObject2 instanceof TLRPC.TL_contacts_resolvedPeer)) {
                     if (tL_error2 != null) {
-                        jc0.d().f0(tL_error2, false);
+                        ic0.d().f0(tL_error2, false);
                         return;
                     }
                     return;
@@ -207,20 +207,20 @@ public final /* synthetic */ class x2 implements Runnable {
                 MessagesController.getInstance(i13).putChats(tL_contacts_resolvedPeer.chats, false);
                 TLRPC.User user = MessagesController.getInstance(i13).getUser(Long.valueOf(tL_contacts_resolvedPeer.peer.user_id));
                 if (user != null) {
-                    org.telegram.ui.Wallet.i8 i8Var = new org.telegram.ui.Wallet.i8(user);
-                    i8Var.r = j10;
-                    i8Var.d0 = str3;
-                    i8Var.e0 = z10;
-                    i8Var.c0 = true;
-                    jc0Var.u(i8Var, false);
+                    org.telegram.ui.Wallet.j8 j8Var = new org.telegram.ui.Wallet.j8(user);
+                    j8Var.r = j10;
+                    j8Var.d0 = str3;
+                    j8Var.e0 = z10;
+                    j8Var.c0 = true;
+                    ic0Var.u(j8Var, false);
                     return;
                 }
                 return;
             case 5:
-                n01 n01Var = (n01) obj4;
-                ProfileActivity profileActivity = n01Var.b;
+                m01 m01Var = (m01) obj4;
+                ProfileActivity profileActivity = m01Var.b;
                 tq tqVar = new tq(profileActivity.e1, -j10, (TLRPC.TL_chatAdminRights) obj3, null, null, (String) obj, 2, true, !z10, null);
-                tqVar.X0 = new m01(n01Var, (yy) obj2);
+                tqVar.X0 = new l01(m01Var, (yy) obj2);
                 profileActivity.presentFragment(tqVar);
                 return;
             default:
@@ -265,8 +265,8 @@ public final /* synthetic */ class x2 implements Runnable {
         this.h = invitetogroupcall;
     }
 
-    public /* synthetic */ x2(jc0 jc0Var, TLObject tLObject, long j10, String str, boolean z10, TLRPC.TL_error tL_error) {
-        this.d = jc0Var;
+    public /* synthetic */ x2(ic0 ic0Var, TLObject tLObject, long j10, String str, boolean z10, TLRPC.TL_error tL_error) {
+        this.d = ic0Var;
         this.h = tLObject;
         this.c = j10;
         this.f = str;
@@ -274,8 +274,8 @@ public final /* synthetic */ class x2 implements Runnable {
         this.e = tL_error;
     }
 
-    public /* synthetic */ x2(n01 n01Var, long j10, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str, boolean z10, yy yyVar) {
-        this.d = n01Var;
+    public /* synthetic */ x2(m01 m01Var, long j10, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str, boolean z10, yy yyVar) {
+        this.d = m01Var;
         this.c = j10;
         this.e = tL_chatAdminRights;
         this.f = str;

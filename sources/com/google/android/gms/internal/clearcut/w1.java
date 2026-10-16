@@ -30,8 +30,8 @@ public final class w1 extends n1 implements Cloneable {
         byte[] bArr = this.e;
         long j10 = this.a;
         if (j10 != 0) {
-            iVar.B(1, 0);
-            iVar.G(j10);
+            iVar.C(1, 0);
+            iVar.E(j10);
         }
         x1[] x1VarArr = this.d;
         if (x1VarArr != null && x1VarArr.length > 0) {
@@ -47,41 +47,41 @@ public final class w1 extends n1 implements Cloneable {
         }
         byte[] bArr2 = m1.d;
         if (!Arrays.equals(bArr, bArr2)) {
-            iVar.v(4, bArr);
+            iVar.x(4, bArr);
         }
         if (!Arrays.equals(this.f, bArr2)) {
-            iVar.v(6, this.f);
+            iVar.x(6, this.f);
         }
         if (str4 != null && !str4.equals("")) {
-            iVar.u(8, str4);
+            iVar.w(8, str4);
         }
         int i11 = this.c;
         if (i11 != 0) {
-            iVar.B(11, 0);
+            iVar.C(11, 0);
             if (i11 >= 0) {
-                iVar.z(i11);
+                iVar.A(i11);
             } else {
-                iVar.G(i11);
+                iVar.E(i11);
             }
         }
         if (str3 != null && !str3.equals("")) {
-            iVar.u(13, str3);
+            iVar.w(13, str3);
         }
         if (str2 != null && !str2.equals("")) {
-            iVar.u(14, str2);
+            iVar.w(14, str2);
         }
         long j11 = this.s;
         if (j11 != 180000) {
-            iVar.B(15, 0);
-            iVar.G((j11 >> 63) ^ (j11 << 1));
+            iVar.C(15, 0);
+            iVar.E((j11 >> 63) ^ (j11 << 1));
         }
         long j12 = this.b;
         if (j12 != 0) {
-            iVar.B(17, 0);
-            iVar.G(j12);
+            iVar.C(17, 0);
+            iVar.E(j12);
         }
         if (!Arrays.equals(this.v, bArr2)) {
-            iVar.v(18, this.v);
+            iVar.x(18, this.v);
         }
         int[] iArr = this.x;
         if (iArr != null && iArr.length > 0) {
@@ -92,21 +92,21 @@ public final class w1 extends n1 implements Cloneable {
                     break;
                 }
                 int i13 = iArr2[i12];
-                iVar.B(20, 0);
+                iVar.C(20, 0);
                 if (i13 >= 0) {
-                    iVar.z(i13);
+                    iVar.A(i13);
                 } else {
-                    iVar.G(i13);
+                    iVar.E(i13);
                 }
                 i12++;
             }
         }
         if (str != null && !str.equals("")) {
-            iVar.u(24, str);
+            iVar.w(24, str);
         }
         boolean z10 = this.y;
         if (z10) {
-            iVar.B(25, 0);
+            iVar.C(25, 0);
             byte b10 = z10 ? (byte) 1 : (byte) 0;
             ByteBuffer byteBuffer = (ByteBuffer) iVar.b;
             if (!byteBuffer.hasRemaining()) {

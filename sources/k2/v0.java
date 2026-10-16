@@ -21,7 +21,7 @@ import java.util.List;
 import ji.v2;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class v0 extends r2.r implements i2.w0 {
     public final Context Z0;
@@ -139,7 +139,7 @@ public final class v0 extends r2.r implements i2.w0 {
         }
         HashMap hashMap = r2.w.a;
         ArrayList arrayList = new ArrayList(g10);
-        Collections.sort(arrayList, new q7(new org.telegram.ui.web.c0(2, this.Z0, xVar), 3));
+        Collections.sort(arrayList, new q7(new org.telegram.ui.web.o0(1, this.Z0, xVar), 3));
         return arrayList;
     }
 
@@ -654,13 +654,13 @@ public final class v0 extends r2.r implements i2.w0 {
         this.p1 = -9223372036854775807L;
         if (this.h1 != null && (i11 & 2) != 0) {
             lVar.getClass();
-            lVar.f(i10);
+            lVar.e(i10);
             return true;
         }
         z zVar = this.b1;
         if (z10) {
             if (lVar != null) {
-                lVar.f(i10);
+                lVar.e(i10);
             }
             this.O0.f += i12;
             ((s0) zVar).E = true;
@@ -672,7 +672,7 @@ public final class v0 extends r2.r implements i2.w0 {
                 return false;
             }
             if (lVar != null) {
-                lVar.f(i10);
+                lVar.e(i10);
             }
             this.O0.e += i12;
             return true;
@@ -763,7 +763,7 @@ public final class v0 extends r2.r implements i2.w0 {
         e2.g0 g0Var = this.h;
         g0Var.getClass();
         ((j0) s0Var3.r).g = g0Var;
-        s0Var3.n = new qb.c(this, 29);
+        s0Var3.n = new a6.m(this, 28);
     }
 
     @Override // r2.r
@@ -812,7 +812,7 @@ public final class v0 extends r2.r implements i2.w0 {
                 p0();
                 n0();
             } finally {
-                i2.d.A(this.X, null);
+                i2.d.D(this.X, null);
                 this.X = null;
             }
         } finally {

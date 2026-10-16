@@ -4,7 +4,7 @@ import com.google.android.gms.internal.cast.x4;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class e implements Iterator {
     public final /* synthetic */ int a = 0;
@@ -94,7 +94,7 @@ public final class e implements Iterator {
                     throw new NoSuchElementException();
                 }
                 this.b = i15 + 1;
-                return Byte.valueOf(((n7.s0) this.d).m(i15));
+                return Byte.valueOf(((n7.t0) this.d).m(i15));
         }
     }
 
@@ -131,9 +131,9 @@ public final class e implements Iterator {
         this.c = q0Var.m();
     }
 
-    public e(n7.s0 s0Var) {
-        this.d = s0Var;
-        this.c = s0Var.o();
+    public e(n7.t0 t0Var) {
+        this.d = t0Var;
+        this.c = t0Var.o();
     }
 
     public e(g gVar) {

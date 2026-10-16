@@ -1,13 +1,13 @@
 package h3;
 
 import a4.g;
+import a4.l;
 import b2.u0;
 import b2.w;
 import b2.w0;
 import b2.x0;
 import c3.b0;
 import c3.i0;
-import c3.l;
 import c3.o;
 import c3.p;
 import c3.q;
@@ -22,9 +22,9 @@ import e9.x1;
 import i2.d;
 import java.util.Arrays;
 import java.util.List;
-import k6.h;
+import q3.h;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class b implements o {
     public q e;
@@ -44,19 +44,19 @@ public final class b implements o {
 
     @Override // c3.o
     public final boolean a(p pVar) {
-        u0 r10 = new h(10).r(pVar, q3.h.b, 0);
-        if (r10 != null) {
-            int length = r10.a.length;
+        u0 P = new l(9).P(pVar, h.b, 0);
+        if (P != null) {
+            int length = P.a.length;
         }
         x xVar = new x(4);
-        ((l) pVar).j(xVar.a, 0, 4, false);
+        ((c3.l) pVar).j(xVar.a, 0, 4, false);
         return xVar.C() == 1716281667;
     }
 
     @Override // c3.o
     public final void c(q qVar) {
         this.e = qVar;
-        this.f = qVar.a0(0, 1);
+        this.f = qVar.W(0, 1);
         qVar.D();
     }
 
@@ -101,9 +101,9 @@ public final class b implements o {
         if (i11 == 0) {
             pVar.q();
             long k10 = pVar.k();
-            u0 r10 = new h(10).r(pVar, !this.c ? null : q3.h.b, 0);
-            if (r10 != null && r10.a.length != 0) {
-                u0Var = r10;
+            u0 P = new l(9).P(pVar, !this.c ? null : h.b, 0);
+            if (P != null && P.a.length != 0) {
+                u0Var = P;
             }
             pVar.r((int) (pVar.k() - k10));
             this.h = u0Var;
@@ -112,7 +112,7 @@ public final class b implements o {
         }
         byte[] bArr = this.a;
         if (i11 == 1) {
-            pVar.a(0, bArr.length, bArr);
+            pVar.b(0, bArr.length, bArr);
             pVar.q();
             this.g = 2;
             return 0;
@@ -138,7 +138,7 @@ public final class b implements o {
                 byte[] bArr2 = new byte[i12];
                 g gVar = new g(bArr2, i12);
                 int i16 = i15;
-                pVar.a(i16, i12, bArr2);
+                pVar.b(i16, i12, bArr2);
                 boolean f7 = gVar.f();
                 int g10 = gVar.g(r10);
                 int g11 = gVar.g(24) + i12;
@@ -160,11 +160,11 @@ public final class b implements o {
                             x xVar3 = new x(g11);
                             pVar.readFully(xVar3.a, 0, g11);
                             xVar3.O(i12);
-                            u0 r11 = c3.b.r(Arrays.asList(c3.b.u(xVar3, false, false).a));
+                            u0 r10 = c3.b.r(Arrays.asList(c3.b.u(xVar3, false, false).a));
                             if (u0Var2 != null) {
-                                r11 = u0Var2.b(r11);
+                                r10 = u0Var2.b(r10);
                             }
-                            uVar = new u(uVar2.a, uVar2.b, uVar2.c, uVar2.d, uVar2.e, uVar2.g, uVar2.h, uVar2.j, uVar2.k, r11);
+                            uVar = new u(uVar2.a, uVar2.b, uVar2.c, uVar2.d, uVar2.e, uVar2.g, uVar2.h, uVar2.j, uVar2.k, r10);
                         } else if (g10 == i14) {
                             x xVar4 = new x(g11);
                             pVar.readFully(xVar4.a, 0, g11);
@@ -195,7 +195,7 @@ public final class b implements o {
             i0 i0Var = this.f;
             w a2 = c10.a();
             a2.q = w0.n("audio/flac");
-            d.s(a2, i0Var);
+            d.u(a2, i0Var);
             this.f.e(this.i.b());
             this.g = 4;
             return 0;
@@ -204,7 +204,7 @@ public final class b implements o {
         if (i11 == 4) {
             pVar.q();
             x xVar5 = new x(2);
-            pVar.a(0, 2, xVar5.a);
+            pVar.b(0, 2, xVar5.a);
             int H = xVar5.H();
             if ((H >> 2) != 16382) {
                 pVar.q();
@@ -263,7 +263,7 @@ public final class b implements o {
             pVar.q();
             pVar.l(1);
             byte[] bArr4 = new byte[1];
-            pVar.a(0, 1, bArr4);
+            pVar.b(0, 1, bArr4);
             boolean z12 = (bArr4[0] & 1) == 1;
             pVar.l(2);
             r10 = z12 ? 7 : 6;
@@ -271,11 +271,11 @@ public final class b implements o {
             byte[] bArr5 = xVar6.a;
             int i21 = 0;
             while (i21 < r10) {
-                int f10 = pVar.f(i21, r10 - i21, bArr5);
-                if (f10 == -1) {
+                int g12 = pVar.g(i21, r10 - i21, bArr5);
+                if (g12 == -1) {
                     break;
                 }
-                i21 += f10;
+                i21 += g12;
             }
             xVar6.M(i21);
             pVar.q();

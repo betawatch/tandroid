@@ -12,19 +12,19 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class pi implements View.OnClickListener {
-    public final /* synthetic */ li0 a;
+    public final /* synthetic */ ki0 a;
     public final /* synthetic */ org.telegram.ui.Components.mm0 b;
     public final /* synthetic */ LinearLayout c;
     public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout d;
     public final /* synthetic */ int[] e;
     public final /* synthetic */ fo f;
 
-    public pi(fo foVar, li0 li0Var, org.telegram.ui.Components.mm0 mm0Var, LinearLayout linearLayout, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
+    public pi(fo foVar, ki0 ki0Var, org.telegram.ui.Components.mm0 mm0Var, LinearLayout linearLayout, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
         this.f = foVar;
-        this.a = li0Var;
+        this.a = ki0Var;
         this.b = mm0Var;
         this.c = linearLayout;
         this.d = actionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -33,9 +33,9 @@ public final class pi implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        li0 li0Var = this.a;
-        ArrayList arrayList = li0Var.b;
-        ArrayList arrayList2 = li0Var.c;
+        ki0 ki0Var = this.a;
+        ArrayList arrayList = ki0Var.b;
+        ArrayList arrayList2 = ki0Var.c;
         fo foVar = this.f;
         if (foVar.Q8 == null || arrayList2.isEmpty()) {
             return;

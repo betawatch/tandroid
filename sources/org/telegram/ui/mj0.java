@@ -1,49 +1,90 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class mj0 extends org.telegram.ui.Components.ro {
-    public final /* synthetic */ qj0 v0;
+public final class mj0 extends ra1 {
+    public final /* synthetic */ nj0 v;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mj0(qj0 qj0Var, Context context) {
-        super(context, null, false, null);
-        this.v0 = qj0Var;
+    public mj0(nj0 nj0Var, Context context, int i10, jg.f fVar, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context, i10, fVar, c6Var);
+        this.v = nj0Var;
     }
 
-    @Override // org.telegram.ui.Components.ro, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        qj0 qj0Var = this.v0;
-        qj0Var.W.setImageCoords(qj0Var.b0.getAvatarImageView().getX(), qj0Var.b0.getAvatarImageView().getY(), qj0Var.b0.getAvatarImageView().getWidth(), qj0Var.b0.getAvatarImageView().getHeight());
-        if (qj0Var.Y) {
-            canvas.save();
-            canvas.scale(0.9f, 0.9f, qj0Var.W.getCenterX(), qj0Var.W.getCenterY());
-            qj0Var.W.draw(canvas);
-            canvas.restore();
+    @Override // org.telegram.ui.ra1
+    public final void c() {
+        int i10;
+        int i11;
+        int i12;
+        pj0 pj0Var = this.v.d;
+        if (this.r.c > 0) {
+            return;
         }
-        if (qj0Var.X) {
-            int centerX = (int) (qj0Var.W.getCenterX() - (org.telegram.ui.ActionBar.g6.U0.getIntrinsicWidth() / 2));
-            int centerY = (int) (qj0Var.W.getCenterY() - (org.telegram.ui.ActionBar.g6.U0.getIntrinsicHeight() / 2));
-            Drawable drawable = org.telegram.ui.ActionBar.g6.U0;
-            drawable.setBounds(centerX, centerY, drawable.getIntrinsicWidth() + centerX, org.telegram.ui.ActionBar.g6.U0.getIntrinsicHeight() + centerY);
-            org.telegram.ui.ActionBar.g6.U0.draw(canvas);
+        performClick();
+        jg.g gVar = this.b;
+        if (gVar.t0.G) {
+            long selectedDate = gVar.getSelectedDate();
+            if (this.s == 4) {
+                ta1 ta1Var = this.r;
+                ta1Var.e = new kg.e(ta1Var.d, selectedDate);
+                g(false);
+                return;
+            }
+            if (this.r.g == null) {
+                return;
+            }
+            f();
+            String str = this.r.g + "_" + selectedDate;
+            kg.b bVar = (kg.b) pj0Var.v.get(str);
+            if (bVar != null) {
+                this.r.e = bVar;
+                g(false);
+                return;
+            }
+            TL_stats.TL_loadAsyncGraph tL_loadAsyncGraph = new TL_stats.TL_loadAsyncGraph();
+            tL_loadAsyncGraph.token = this.r.g;
+            if (selectedDate != 0) {
+                tL_loadAsyncGraph.x = selectedDate;
+                tL_loadAsyncGraph.flags |= 1;
+            }
+            gb1 gb1Var = new gb1();
+            pj0Var.w = gb1Var;
+            pj0Var.f.getClass();
+            gb1Var.a = RecyclerView.R(this);
+            gVar.t0.d(true, false);
+            i10 = ((org.telegram.ui.ActionBar.m2) pj0Var).currentAccount;
+            int sendRequest = ConnectionsManager.getInstance(i10).sendRequest(tL_loadAsyncGraph, new fa(this, str, gb1Var, 25), null, null, 0, pj0Var.a.stats_dc, 1, true);
+            i11 = ((org.telegram.ui.ActionBar.m2) pj0Var).currentAccount;
+            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i11);
+            i12 = ((org.telegram.ui.ActionBar.m2) pj0Var).classGuid;
+            connectionsManager.bindRequestToGuid(sendRequest, i12);
         }
     }
 
-    @Override // org.telegram.ui.Components.ro, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.v0.W.onAttachedToWindow();
+    @Override // org.telegram.ui.ra1
+    public final void f() {
+        nj0 nj0Var = this.v;
+        pj0 pj0Var = nj0Var.d;
+        gb1 gb1Var = pj0Var.w;
+        if (gb1Var != null) {
+            gb1Var.b = true;
+        }
+        int childCount = pj0Var.f.getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = nj0Var.d.f.getChildAt(i10);
+            if (childAt instanceof ra1) {
+                ((ra1) childAt).b.t0.d(false, true);
+            }
+        }
     }
 
-    @Override // org.telegram.ui.Components.ro, android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.v0.W.onDetachedFromWindow();
+    @Override // org.telegram.ui.ra1
+    public final void b(ta1 ta1Var) {
     }
 }

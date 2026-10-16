@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 import org.telegram.ui.ic1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ic1 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -46,11 +46,11 @@ public final class ic1 extends LinearLayout {
             case 12:
                 int width = getWidth() / 2;
                 int height = getHeight() / 2;
-                wi1 wi1Var = (wi1) this.b;
-                Camera camera = wi1Var.L;
+                vi1 vi1Var = (vi1) this.b;
+                Camera camera = vi1Var.L;
                 camera.save();
                 camera.rotateY(7.0f);
-                Matrix matrix = wi1Var.M;
+                Matrix matrix = vi1Var.M;
                 camera.getMatrix(matrix);
                 camera.restore();
                 float f7 = -width;
@@ -66,7 +66,7 @@ public final class ic1 extends LinearLayout {
                 canvas.restore();
                 camera.save();
                 camera.rotateY(-7.0f);
-                Matrix matrix2 = wi1Var.N;
+                Matrix matrix2 = vi1Var.N;
                 camera.getMatrix(matrix2);
                 camera.restore();
                 matrix2.preTranslate(f7, f10);
@@ -326,11 +326,11 @@ public final class ic1 extends LinearLayout {
                 super.invalidate();
                 int i10 = 0;
                 while (true) {
-                    org.telegram.ui.Cells.z0[] z0VarArr = (org.telegram.ui.Cells.z0[]) this.b;
-                    if (i10 >= z0VarArr.length) {
+                    org.telegram.ui.Cells.y0[] y0VarArr = (org.telegram.ui.Cells.y0[]) this.b;
+                    if (i10 >= y0VarArr.length) {
                         break;
                     } else {
-                        z0VarArr[i10].invalidate();
+                        y0VarArr[i10].invalidate();
                         i10++;
                     }
                 }
@@ -345,7 +345,7 @@ public final class ic1 extends LinearLayout {
         switch (this.a) {
             case 16:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setVisibleToUser(((dj1) this.b).B0);
+                accessibilityNodeInfo.setVisibleToUser(((cj1) this.b).B0);
                 break;
             default:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
@@ -373,7 +373,7 @@ public final class ic1 extends LinearLayout {
                     View childAt = getChildAt(i15);
                     if (childAt != ((org.telegram.ui.Components.mw) this.b).s.F && childAt != null) {
                         childAt.layout(paddingLeft, i14 - (childAt.getMeasuredHeight() / 2), childAt.getMeasuredWidth() + paddingLeft, (childAt.getMeasuredHeight() / 2) + i14);
-                        paddingLeft = org.telegram.messenger.yh.c(2.0f, childAt.getMeasuredWidth(), paddingLeft);
+                        paddingLeft = org.telegram.messenger.g0.C(2.0f, childAt.getMeasuredWidth(), paddingLeft);
                     }
                 }
                 break;

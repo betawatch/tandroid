@@ -1,8 +1,8 @@
 package k2;
 
-import m4.n1;
+import m4.m1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e0 implements e2.o, e2.j {
     public final /* synthetic */ long a;
@@ -13,7 +13,7 @@ public final /* synthetic */ class e0 implements e2.o, e2.j {
 
     @Override // e2.j
     public void accept(Object obj) {
-        ((n1) obj).g(this.a);
+        ((m1) obj).g(this.a);
     }
 
     @Override // e2.o

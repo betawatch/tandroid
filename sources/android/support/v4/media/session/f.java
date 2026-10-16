@@ -12,10 +12,10 @@ import com.google.android.gms.internal.cast.z4;
 import e9.k0;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import ji.d4;
+import ji.h5;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class f extends Handler {
     public final /* synthetic */ int a = 0;
@@ -28,7 +28,7 @@ public final class f extends Handler {
         this.c = bVar;
     }
 
-    public boolean a(Message message, n2.x xVar) {
+    public boolean a(Message message, n2.w wVar) {
         long min;
         n2.a aVar = (n2.a) message.obj;
         if (aVar.b) {
@@ -36,11 +36,11 @@ public final class f extends Handler {
             aVar.e = i10;
             ((n2.b) this.c).i.getClass();
             if (i10 <= 3) {
-                u2.u uVar = new u2.u(xVar.a, xVar.b, xVar.c, SystemClock.elapsedRealtime(), SystemClock.elapsedRealtime() - aVar.c, xVar.d);
+                u2.u uVar = new u2.u(wVar.a, wVar.b, wVar.c, SystemClock.elapsedRealtime(), SystemClock.elapsedRealtime() - aVar.c, wVar.d);
                 oa.d dVar = ((n2.b) this.c).i;
                 int i11 = aVar.e;
                 dVar.getClass();
-                for (Throwable z4Var = xVar.getCause() instanceof IOException ? (IOException) xVar.getCause() : new z4(xVar.getCause()); z4Var != null; z4Var = z4Var.getCause()) {
+                for (Throwable z4Var = wVar.getCause() instanceof IOException ? (IOException) wVar.getCause() : new z4(wVar.getCause()); z4Var != null; z4Var = z4Var.getCause()) {
                     if ((z4Var instanceof x0) || (z4Var instanceof FileNotFoundException) || (z4Var instanceof g2.u) || (z4Var instanceof y2.k) || ((z4Var instanceof g2.j) && ((g2.j) z4Var).a == 2008)) {
                         min = -9223372036854775807L;
                         break;
@@ -51,9 +51,9 @@ public final class f extends Handler {
                     return false;
                 }
                 synchronized (((n2.b) this.c).o) {
-                    d4 d4Var = ((n2.b) this.c).y;
-                    if (d4Var != null) {
-                        ((k0) d4Var.b).c(uVar);
+                    h5 h5Var = ((n2.b) this.c).y;
+                    if (h5Var != null) {
+                        ((k0) h5Var.b).c(uVar);
                     }
                 }
                 synchronized (this) {
@@ -127,25 +127,25 @@ public final class f extends Handler {
                 try {
                     int i10 = message.what;
                     if (i10 == 1) {
-                        obj = ((n2.b) this.c).k.l((n2.q) aVar.d);
+                        obj = ((n2.b) this.c).k.l((n2.p) aVar.d);
                     } else {
                         if (i10 != 2) {
                             throw new RuntimeException();
                         }
                         n2.b bVar = (n2.b) this.c;
-                        n2.w k10 = bVar.k.k(bVar.l, (n2.p) aVar.d);
+                        n2.v k10 = bVar.k.k(bVar.l, (n2.o) aVar.d);
                         synchronized (((n2.b) this.c).o) {
                             try {
-                                d4 d4Var = ((n2.b) this.c).y;
-                                if (d4Var != null && (uVar = k10.b) != null) {
-                                    ((k0) d4Var.b).c(new u2.u(uVar.a, uVar.b, uVar.c, uVar.d, SystemClock.elapsedRealtime() - aVar.c, uVar.f));
+                                h5 h5Var = ((n2.b) this.c).y;
+                                if (h5Var != null && (uVar = k10.b) != null) {
+                                    ((k0) h5Var.b).c(new u2.u(uVar.a, uVar.b, uVar.c, uVar.d, SystemClock.elapsedRealtime() - aVar.c, uVar.f));
                                 }
                             } finally {
                             }
                         }
                         obj = k10;
                     }
-                } catch (n2.x e) {
+                } catch (n2.w e) {
                     boolean a2 = a(message, e);
                     obj = e;
                     if (a2) {

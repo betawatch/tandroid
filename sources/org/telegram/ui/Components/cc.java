@@ -9,7 +9,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class cc implements fl0 {
     public final /* synthetic */ dc a;
@@ -19,22 +19,17 @@ public final class cc implements fl0 {
     }
 
     @Override // org.telegram.ui.Components.fl0
-    public final /* synthetic */ boolean D() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.fl0
-    public final /* synthetic */ boolean i() {
+    public final /* synthetic */ boolean j() {
         return true;
     }
 
     @Override // org.telegram.ui.Components.fl0
-    public final /* synthetic */ boolean n() {
+    public final /* synthetic */ boolean m() {
         return false;
     }
 
     @Override // org.telegram.ui.Components.fl0
-    public final void r(View view, ah.i1 i1Var, boolean z10, boolean z11) {
+    public final void n(View view, ah.i1 i1Var, boolean z10, boolean z11) {
         dc dcVar = this.a;
         org.telegram.ui.ActionBar.m2 m2Var = dcVar.f;
         if (dcVar.e == null) {
@@ -59,10 +54,15 @@ public final class cc implements fl0 {
     }
 
     @Override // org.telegram.ui.Components.fl0
+    public final /* synthetic */ boolean z() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.fl0
     public final /* synthetic */ void y() {
     }
 
     @Override // org.telegram.ui.Components.fl0
-    public final /* synthetic */ void w(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+    public final /* synthetic */ void r(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

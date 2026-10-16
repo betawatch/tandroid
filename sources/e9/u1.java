@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import v7.t6;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class u1 {
     public transient Object[] a;
@@ -69,7 +69,7 @@ public final class u1 {
     public final void e(int i10, Object obj) {
         long j10;
         if (i10 <= 0) {
-            throw new IllegalArgumentException(i2.d.i(i10, "count must be positive but was: "));
+            throw new IllegalArgumentException(i2.d.j(i10, "count must be positive but was: "));
         }
         long[] jArr = this.e;
         Object[] objArr = this.a;

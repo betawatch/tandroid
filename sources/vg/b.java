@@ -30,7 +30,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.h5;
-import org.telegram.ui.Cells.b7;
+import org.telegram.ui.Cells.a7;
 import org.telegram.ui.Cells.m4;
 import org.telegram.ui.Cells.r8;
 import org.telegram.ui.Components.es;
@@ -50,7 +50,7 @@ import wg.x;
 import wg.y;
 import zh.y6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class b extends pg.b {
     public final c6 d;
@@ -361,7 +361,7 @@ public final class b extends pg.b {
                 view = new View(context);
                 break;
             case 4:
-                view = new b7(context, g6.w0(g6.a7, c6Var), 0);
+                view = new a7(context, g6.w0(g6.a7, c6Var), 0);
                 break;
             case 5:
                 view = new v(context, c6Var);

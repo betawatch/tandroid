@@ -1,52 +1,71 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import android.app.Activity;
+import android.webkit.WebView;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class tn0 extends FrameLayout {
-    public TextView a;
-    public TextView b;
-    public ImageView c;
-    public boolean d;
+public final /* synthetic */ class tn0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ap0 b;
+    public final /* synthetic */ TLObject c;
 
-    public final void a(String str, boolean z10) {
-        this.a.setText(str);
-        this.b.setText("");
-        this.d = z10;
-        setWillNotDraw(!z10);
+    public /* synthetic */ tn0(ap0 ap0Var, TLObject tLObject, int i10) {
+        this.a = i10;
+        this.b = ap0Var;
+        this.c = tLObject;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.d) {
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.g6.k0);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ap0.e0(this.b, this.c);
+                break;
+            case 1:
+                ap0 ap0Var = this.b;
+                Utilities.Callback callback = ap0Var.d1;
+                TLObject tLObject = this.c;
+                if (callback != null) {
+                    callback.run((TLRPC.TL_payments_paymentVerificationNeeded) tLObject);
+                }
+                ap0Var.D0(false);
+                ap0Var.z0 = true;
+                ap0Var.H0(true, true);
+                org.telegram.ui.Components.gr grVar = ap0Var.r;
+                if (grVar != null) {
+                    grVar.setVisibility(0);
+                }
+                org.telegram.ui.ActionBar.u0 u0Var = ap0Var.n;
+                if (u0Var != null) {
+                    u0Var.setEnabled(false);
+                    ap0Var.n.getContentView().setVisibility(4);
+                }
+                org.telegram.ui.ActionBar.b5 parentLayout = ap0Var.getParentLayout();
+                Activity parentActivity = ap0Var.getParentActivity();
+                ap0Var.getMessagesController().newMessageCallback = new f7(ap0Var, parentLayout, parentActivity, 17);
+                WebView webView = ap0Var.w;
+                if (webView != null) {
+                    webView.setVisibility(0);
+                    WebView webView2 = ap0Var.w;
+                    String str = ((TLRPC.TL_payments_paymentVerificationNeeded) tLObject).url;
+                    ap0Var.x = str;
+                    webView2.loadUrl(str);
+                }
+                ap0Var.a1 = true;
+                ap0Var.f1 = 3;
+                zo0 zo0Var = ap0Var.Z0;
+                if (zo0Var != null) {
+                    zo0Var.a(3);
+                    break;
+                }
+                break;
+            default:
+                ap0.c0(this.b, this.c);
+                break;
         }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.d ? 1 : 0), TLObject.FLAG_30));
-    }
-
-    public void setChecked(boolean z10) {
-        this.c.setVisibility(z10 ? 0 : 4);
-    }
-
-    public void setNeedDivider(boolean z10) {
-        this.d = z10;
-        setWillNotDraw(!z10);
-        invalidate();
-    }
-
-    public void setValue(CharSequence charSequence) {
-        this.b.setText(charSequence);
     }
 }

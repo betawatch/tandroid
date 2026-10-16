@@ -8,7 +8,7 @@ import org.telegram.messenger.camera.CameraController;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class kg implements Runnable {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -27,7 +27,7 @@ public final class kg implements Runnable {
         if (pgVar == null || activity == null) {
             return;
         }
-        pgVar.G();
+        pgVar.H();
         chatActivityEnterView.J3 = true;
         chatActivityEnterView.I3 = false;
         ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.k1;
@@ -42,10 +42,10 @@ public final class kg implements Runnable {
                 activity.requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 3);
                 return;
             }
-            chatActivityEnterView.Z2.X0(1);
+            chatActivityEnterView.Z2.Y0(1);
             chatActivityEnterView.D2 = -1.0f;
             pg pgVar2 = chatActivityEnterView.Z2;
-            TL_stories.StoryItem a12 = pgVar2 != null ? pgVar2.a1() : null;
+            TL_stories.StoryItem b12 = pgVar2 != null ? pgVar2.b1() : null;
             MediaController mediaController = MediaController.getInstance();
             int i10 = chatActivityEnterView.Q;
             long j10 = chatActivityEnterView.Q2;
@@ -53,9 +53,9 @@ public final class kg implements Runnable {
             threadMessage = chatActivityEnterView.getThreadMessage();
             int i11 = chatActivityEnterView.G2;
             org.telegram.ui.fo foVar = chatActivityEnterView.P2;
-            mediaController.startRecording(i10, j10, messageObject, threadMessage, a12, i11, true, foVar != null ? foVar.H8() : null, chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
+            mediaController.startRecording(i10, j10, messageObject, threadMessage, b12, i11, true, foVar != null ? foVar.H8() : null, chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
             chatActivityEnterView.F2 = true;
-            chatActivityEnterView.J1(0, true);
+            chatActivityEnterView.I1(0, true);
             yg ygVar = chatActivityEnterView.Y0;
             if (ygVar != null) {
                 ygVar.a(0L);
@@ -97,7 +97,7 @@ public final class kg implements Runnable {
             return;
         }
         chatActivityEnterView.F2 = true;
-        chatActivityEnterView.J1(0, true);
+        chatActivityEnterView.I1(0, true);
         ChatActivityEnterView.RecordCircle recordCircle2 = chatActivityEnterView.N1;
         if (recordCircle2 != null) {
             recordCircle2.H = 0.5f;

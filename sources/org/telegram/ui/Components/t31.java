@@ -16,7 +16,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class t31 extends FrameLayout {
     public org.telegram.ui.k5 E;
@@ -58,11 +58,11 @@ public final class t31 extends FrameLayout {
         this.d = da0Var;
         da0Var.setTextSize(1, 14.0f);
         da0Var.setTypeface(AndroidUtilities.bold());
-        addView(da0Var, w7.a6.a(-2.0f, 11.0f, 0.0f, 11.0f, 0.0f, -2, 19));
-        w7.c6.a(da0Var);
+        addView(da0Var, w7.z5.a(-2.0f, 11.0f, 0.0f, 11.0f, 0.0f, -2, 19));
+        w7.b6.a(da0Var);
         ImageView imageView = new ImageView(context);
         this.h = imageView;
-        addView(imageView, w7.a6.e(34, 34, 17));
+        addView(imageView, w7.z5.e(34, 34, 17));
         r6 r6Var = new r6(false, false, false);
         this.e = r6Var;
         r6Var.w(AndroidUtilities.dp(11.0f));
@@ -71,8 +71,8 @@ public final class t31 extends FrameLayout {
         r6Var.b = 17;
         bi.d4 d4Var = new bi.d4(this, context, c6Var);
         this.f = d4Var;
-        addView(d4Var, w7.a6.a(-2.0f, 4.66f, 0.0f, 11.0f, 0.0f, -2, 21));
-        w7.c6.a(d4Var);
+        addView(d4Var, w7.z5.a(-2.0f, 4.66f, 0.0f, 11.0f, 0.0f, -2, 21));
+        w7.b6.a(d4Var);
         h();
     }
 
@@ -210,7 +210,7 @@ public final class t31 extends FrameLayout {
             this.K = ofFloat;
             ofFloat.addUpdateListener(new r31(this, 0));
             this.K.addListener(new k90(this, 27));
-            org.telegram.ui.Cells.d0.l(2.0f, this.K);
+            org.telegram.messenger.sk.l(2.0f, this.K);
             this.K.setDuration(200L);
             this.K.start();
         }

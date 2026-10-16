@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ad1 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -42,9 +42,9 @@ public final class ad1 extends FrameLayout {
                 rd1 rd1Var = ce1Var.x0;
                 cd1 cd1Var = ce1Var.a;
                 org.telegram.ui.ActionBar.g6.s(ad1Var, rd1Var, cd1Var);
-                canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, cd1Var.G("paintChatActionBackground"));
+                canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, cd1Var.F("paintChatActionBackground"));
                 if (org.telegram.ui.ActionBar.g6.b1()) {
-                    canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, cd1Var.G("paintChatActionBackgroundDarken"));
+                    canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, cd1Var.F("paintChatActionBackgroundDarken"));
                     break;
                 }
                 break;
@@ -58,9 +58,9 @@ public final class ad1 extends FrameLayout {
                 rd1 rd1Var2 = ce1Var2.x0;
                 cd1 cd1Var2 = ce1Var2.a;
                 org.telegram.ui.ActionBar.g6.s(ad1Var2, rd1Var2, cd1Var2);
-                canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, cd1Var2.G("paintChatActionBackground"));
+                canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, cd1Var2.F("paintChatActionBackground"));
                 if (org.telegram.ui.ActionBar.g6.b1()) {
-                    canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, cd1Var2.G("paintChatActionBackgroundDarken"));
+                    canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, cd1Var2.F("paintChatActionBackgroundDarken"));
                     break;
                 }
                 break;

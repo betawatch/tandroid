@@ -15,7 +15,7 @@ import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xa implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -66,15 +66,15 @@ public final /* synthetic */ class xa implements Utilities.Callback {
                 CharacterStyle characterStyle = (CharacterStyle) this.f;
                 final TLRPC.User user = (TLRPC.User) obj;
                 final TLRPC.UserFull userFull = user != null ? foVar2.getMessagesController().getUserFull(user.id) : null;
-                org.telegram.ui.Components.m80 I = org.telegram.ui.Components.m80.I(foVar2, u1Var);
+                org.telegram.ui.Components.l80 I = org.telegram.ui.Components.l80.I(foVar2, u1Var);
                 org.telegram.ui.Components.cn0 cn0Var = new org.telegram.ui.Components.cn0(foVar2.getParentActivity(), foVar2.ea);
                 I.p = new ye(cn0Var, 1);
                 z zVar = new z(foVar2, user, str2, 2);
-                org.telegram.ui.Components.m80 J = I.J();
-                J.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new tu0(I, 26), false);
+                org.telegram.ui.Components.l80 J = I.J();
+                J.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new su0(I, 26), false);
                 J.k();
                 J.c(R.drawable.msg_addbot, LocaleController.getString(R.string.CreateNewContact), new t1(foVar2, I, str2), false);
-                J.c(R.drawable.menu_contact_existing, LocaleController.getString(R.string.AddToExistingContact), new tu0(zVar, 27), false);
+                J.c(R.drawable.menu_contact_existing, LocaleController.getString(R.string.AddToExistingContact), new su0(zVar, 27), false);
                 if (tL_contact == null && (user == null || !foVar2.getContactsController().contactsDict.containsKey(Long.valueOf(user.id)))) {
                     I.c(R.drawable.msg_contact_add, LocaleController.getString(R.string.AddToContacts), new fi.m2(I, J, 4), false);
                     I.k();
@@ -175,8 +175,8 @@ public final /* synthetic */ class xa implements Utilities.Callback {
                     I.n(user, LocaleController.getString(R.string.ViewProfile), new t1(foVar2, cn0Var, user, 17));
                 }
                 cn0Var.e(I);
-                if (characterStyle instanceof org.telegram.ui.Components.r61) {
-                    String url = ((org.telegram.ui.Components.r61) characterStyle).getURL();
+                if (characterStyle instanceof org.telegram.ui.Components.s61) {
+                    String url = ((org.telegram.ui.Components.s61) characterStyle).getURL();
                     if (url == null) {
                         url = "";
                     }

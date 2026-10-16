@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bw implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class bw implements Utilities.Callback {
             case 0:
                 yy yyVar = this.b;
                 yyVar.O1 = (Long) obj;
-                yyVar.R4();
+                yyVar.S4();
                 break;
             default:
                 yy.a0(this.b, (TL_account.TL_birthday) obj);

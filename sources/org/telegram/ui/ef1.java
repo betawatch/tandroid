@@ -1,24 +1,57 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
+import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.widget.FrameLayout;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class ef1 extends org.telegram.ui.Components.ow0 {
-    public boolean w0;
+public final class ef1 extends FrameLayout {
+    public ValueAnimator a;
+    public boolean b;
+    public float c;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        R();
-        if (getKeyboardHeight() != 0 || this.w0) {
-            this.w0 = true;
-            setPadding(0, 0, 0, 0);
-        } else {
-            int i12 = MessagesController.getGlobalEmojiSettings().getInt("kbd_height", AndroidUtilities.dp(200.0f));
-            this.f = i12;
-            setPadding(0, 0, 0, i12);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float f7 = ((1.0f - this.c) * 0.2f) + 0.8f;
+        canvas.save();
+        canvas.scale(f7, f7, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f);
+        super.dispatchDraw(canvas);
+        canvas.restore();
+        if (isPressed()) {
+            float f10 = this.c;
+            if (f10 != 1.0f) {
+                this.c = Utilities.clamp(f10 + 0.16f, 1.0f, 0.0f);
+                invalidate();
+            }
         }
-        super.onMeasure(i10, i11);
+    }
+
+    @Override // android.view.View
+    public final void setPressed(boolean z10) {
+        ValueAnimator valueAnimator;
+        super.setPressed(z10);
+        if (this.b != z10) {
+            this.b = z10;
+            invalidate();
+            if (z10 && (valueAnimator = this.a) != null) {
+                valueAnimator.removeAllListeners();
+                this.a.cancel();
+            }
+            if (z10) {
+                return;
+            }
+            float f7 = this.c;
+            if (f7 != 0.0f) {
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
+                this.a = ofFloat;
+                ofFloat.addUpdateListener(new f21(this, 16));
+                this.a.addListener(new kj0(this, 27));
+                org.telegram.messenger.sk.l(5.0f, this.a);
+                this.a.setDuration(350L);
+                this.a.start();
+            }
+        }
     }
 }

@@ -24,16 +24,16 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.rt;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.v61;
 import org.telegram.ui.Components.yj0;
 import org.telegram.ui.n60;
 import org.telegram.ui.nb;
 import org.telegram.ui.y40;
 import org.webrtc.RendererCommon;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
 public abstract class v0 extends FrameLayout implements VoIPService.StateListener {
     public boolean a;
     public final z4.g b;
@@ -41,7 +41,7 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
     public final LinearLayout d;
     public final bk0 e;
     public final TextView[] f;
-    public final r2 h;
+    public final q2 h;
     public int n;
     public int r;
     public boolean s;
@@ -62,19 +62,19 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
         gVar.setAdapter(new u0(this));
         gVar.setPageMargin(0);
         gVar.setOffscreenPageLimit(1);
-        addView(gVar, a6.d(-1.0f, -1));
+        addView(gVar, z5.d(-1.0f, -1));
         gVar.b(new s0(this));
-        r2 r2Var = new r2(context, false, false);
-        this.h = r2Var;
+        q2 q2Var = new q2(context, false, false);
+        this.h = q2Var;
         RendererCommon.ScalingType scalingType = RendererCommon.ScalingType.SCALE_ASPECT_FILL;
-        q2 q2Var = r2Var.d;
-        q2Var.setScalingType(scalingType);
-        r2Var.a0 = 1;
-        r2Var.c0 = true;
-        q2Var.setAlpha(0.0f);
-        q2Var.setRotateTextureWithScreen(true);
-        q2Var.setUseCameraRotation(true);
-        addView(r2Var, a6.d(-1.0f, -1));
+        p2 p2Var = q2Var.d;
+        p2Var.setScalingType(scalingType);
+        q2Var.a0 = 1;
+        q2Var.c0 = true;
+        p2Var.setAlpha(0.0f);
+        p2Var.setRotateTextureWithScreen(true);
+        p2Var.setUseCameraRotation(true);
+        addView(q2Var, z5.d(-1.0f, -1));
         org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, null);
         kVar.setBackButtonDrawable(new org.telegram.ui.ActionBar.f2(false));
         kVar.setBackgroundColor(0);
@@ -97,10 +97,10 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
         nVar.setForeground(g6.j0(dp, dp, dp, dp, 0, k10, k10));
         nVar.setPadding(0, AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f));
         nVar.setOnClickListener(new o4(this, 2));
-        addView(nVar, a6.a(48.0f, 0.0f, 0.0f, 0.0f, 64.0f, -1, 80));
+        addView(nVar, z5.a(48.0f, 0.0f, 0.0f, 0.0f, 64.0f, -1, 80));
         LinearLayout linearLayout = new LinearLayout(context);
         this.d = linearLayout;
-        addView(linearLayout, a6.e(-2, 64, 80));
+        addView(linearLayout, z5.e(-2, 64, 80));
         int i11 = 0;
         while (true) {
             TextView[] textViewArr = this.f;
@@ -114,7 +114,7 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
             this.f[i11].setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
             this.f[i11].setGravity(16);
             this.f[i11].setSingleLine(true);
-            this.d.addView(this.f[i11], a6.n(-2, -1));
+            this.d.addView(this.f[i11], z5.n(-2, -1));
             if (i11 == 0 && this.y) {
                 this.f[i11].setText(LocaleController.getString(R.string.VoipPhoneScreen));
             } else if (i11 == 0 || (i11 == 1 && this.y)) {
@@ -146,7 +146,7 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
         this.v = true;
         yj0Var.M(69);
         bk0Var.setOnClickListener(new rt(24, this, yj0Var));
-        addView(bk0Var, a6.a(48.0f, 24.0f, 0.0f, 0.0f, 136.0f, 48, 83));
+        addView(bk0Var, z5.a(48.0f, 24.0f, 0.0f, 0.0f, 136.0f, 48, 83));
     }
 
     public static void a(v0 v0Var) {
@@ -189,17 +189,17 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
         } else if (sharedInstance != null) {
             sharedInstance.setVideoState(false, 0);
         }
-        animate().alpha(0.0f).translationX(AndroidUtilities.dp(32.0f)).setDuration(150L).setListener(new u61(this, 8));
+        animate().alpha(0.0f).translationX(AndroidUtilities.dp(32.0f)).setDuration(150L).setListener(new v61(this, 8));
         invalidate();
     }
 
     public final void c() {
-        r2 r2Var = this.h;
+        q2 q2Var = this.h;
         if (this.s) {
             try {
-                Bitmap bitmap = r2Var.d.getBitmap();
+                Bitmap bitmap = q2Var.d.getBitmap();
                 if (bitmap != null) {
-                    Bitmap createBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), r2Var.d.getMatrix(), true);
+                    Bitmap createBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), q2Var.d.getMatrix(), true);
                     bitmap.recycle();
                     Bitmap createScaledBitmap = Bitmap.createScaledBitmap(createBitmap, 80, (int) (createBitmap.getHeight() / (createBitmap.getWidth() / 80.0f)), true);
                     if (createScaledBitmap != null) {
@@ -252,16 +252,16 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
         this.d.setTranslationX(measuredWidth2);
         this.c.invalidate();
         boolean z10 = this.y;
-        r2 r2Var = this.h;
+        q2 q2Var = this.h;
         if (z10 && this.x == 0 && this.w <= 0.0f) {
-            r2Var.setVisibility(4);
+            q2Var.setVisibility(4);
             return;
         }
-        r2Var.setVisibility(0);
+        q2Var.setVisibility(0);
         if (this.x + (!z10 ? 1 : 0) == this.n) {
-            r2Var.setTranslationX((-this.w) * getMeasuredWidth());
+            q2Var.setTranslationX((-this.w) * getMeasuredWidth());
         } else {
-            r2Var.setTranslationX((1.0f - this.w) * getMeasuredWidth());
+            q2Var.setTranslationX((1.0f - this.w) * getMeasuredWidth());
         }
     }
 

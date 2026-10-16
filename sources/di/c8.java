@@ -26,19 +26,18 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.yh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.l61;
 import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.o20;
 import org.telegram.ui.Components.ui;
-import org.telegram.ui.Components.z61;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class c8 extends org.telegram.ui.Components.db implements NotificationCenter.NotificationCenterDelegate, DownloadController.FileDownloadProgressListener, ne.d {
     public String A0;
@@ -75,7 +74,7 @@ public final class c8 extends org.telegram.ui.Components.db implements Notificat
     public final gh.d n0;
     public final bh.b o0;
     public final v7 p0;
-    public z61 q0;
+    public a71 q0;
     public MessageObject r0;
     public String s0;
     public int t0;
@@ -165,10 +164,10 @@ public final class c8 extends org.telegram.ui.Components.db implements Notificat
             this.l0 = new bh.f(false);
             gh.d dVar = new gh.d(null);
             this.n0 = dVar;
-            dVar.j(new x7(this));
+            dVar.k(new x7(this));
             gh.d dVar2 = new gh.d(null);
             this.m0 = dVar2;
-            dVar2.j(new y7(this));
+            dVar2.k(new y7(this));
             bh.b bVar = new bh.b(dVar);
             this.o0 = bVar;
             bVar.i = LiteMode.isEnabled(262144);
@@ -194,11 +193,11 @@ public final class c8 extends org.telegram.ui.Components.db implements Notificat
         o20Var.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
         o20Var.r.addTextChangedListener(new a8(this));
         o20Var.r.setHint(LocaleController.getString(R.string.Search));
-        frameLayout.addView(uiVar, w7.a6.g());
-        frameLayout.addView(o20Var, w7.a6.a(48.0f, 0.0f, 8.0f, 0.0f, 4.0f, -1, 51));
+        frameLayout.addView(uiVar, w7.z5.g());
+        frameLayout.addView(o20Var, w7.z5.a(48.0f, 0.0f, 8.0f, 0.0f, 4.0f, -1, 51));
         o20Var.setupBlurredBackground(this.o0.c(o20Var, fh.b.n(c6Var), false));
         frameLayout.setPadding(AndroidUtilities.dp(8.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(8.0f) + this.backgroundPaddingLeft, 0);
-        this.containerView.addView(frameLayout, w7.a6.e(-1, -2, 55));
+        this.containerView.addView(frameLayout, w7.z5.e(-1, -2, 55));
         setBackgroundColor(getThemedColor(i12));
         mm0 mm0Var = this.d;
         int i13 = this.backgroundPaddingLeft;
@@ -302,8 +301,8 @@ public final class c8 extends org.telegram.ui.Components.db implements Notificat
     }
 
     public static void R(c8 c8Var, Utilities.Callback callback, org.telegram.ui.ActionBar.c6 c6Var, View view, int i10) {
-        if (!(view instanceof org.telegram.ui.Cells.j7)) {
-            l61 G = c8Var.q0.G(i10 - 1);
+        if (!(view instanceof org.telegram.ui.Cells.i7)) {
+            m61 G = c8Var.q0.G(i10 - 1);
             if (G != null && G.d == 1) {
                 new c8(c8Var.getContext(), true, c8Var, callback, c6Var).show();
                 return;
@@ -323,7 +322,7 @@ public final class c8 extends org.telegram.ui.Components.db implements Notificat
                 return;
             }
         }
-        MessageObject message = ((org.telegram.ui.Cells.j7) view).getMessage();
+        MessageObject message = ((org.telegram.ui.Cells.i7) view).getMessage();
         if (message == null) {
             return;
         }
@@ -458,7 +457,7 @@ public final class c8 extends org.telegram.ui.Components.db implements Notificat
         } catch (Exception e) {
             FileLog.e(e);
         }
-        AndroidUtilities.runOnUIThread(new x6(6, c8Var, arrayList));
+        AndroidUtilities.runOnUIThread(new y6(6, c8Var, arrayList));
     }
 
     public static boolean d0(String str, String str2, String str3) {
@@ -466,15 +465,15 @@ public final class c8 extends org.telegram.ui.Components.db implements Notificat
             return false;
         }
         String lowerCase = str3.toLowerCase();
-        if (lowerCase.startsWith(str) || yh.v(" ", str, lowerCase)) {
+        if (lowerCase.startsWith(str) || org.telegram.messenger.g0.w(" ", str, lowerCase)) {
             return true;
         }
         String translitSafe = AndroidUtilities.translitSafe(lowerCase);
-        return translitSafe.startsWith(str2) || yh.v(" ", str2, translitSafe);
+        return translitSafe.startsWith(str2) || org.telegram.messenger.g0.w(" ", str2, translitSafe);
     }
 
     @Override // org.telegram.ui.Components.db
-    public final CharSequence A() {
+    public final CharSequence B() {
         return LocaleController.getString(R.string.StoryMusicTitle2);
     }
 
@@ -484,12 +483,12 @@ public final class c8 extends org.telegram.ui.Components.db implements Notificat
             Y();
             gh.d dVar = this.m0;
             if (dVar != null) {
-                dVar.i(this.containerView.getMeasuredWidth(), this.containerView.getMeasuredHeight());
+                dVar.j(this.containerView.getMeasuredWidth(), this.containerView.getMeasuredHeight());
                 dVar.l();
             }
             gh.d dVar2 = this.n0;
             if (dVar2 != null) {
-                dVar2.i(this.containerView.getMeasuredWidth(), this.containerView.getMeasuredHeight());
+                dVar2.j(this.containerView.getMeasuredWidth(), this.containerView.getMeasuredHeight());
                 dVar2.l();
             }
         }
@@ -530,32 +529,32 @@ public final class c8 extends org.telegram.ui.Components.db implements Notificat
                 if (arrayList.isEmpty() || arrayList.size() <= 1) {
                     i11 = 0;
                 } else {
-                    arrayList.add(l61.B(null));
+                    arrayList.add(m61.B(null));
                     i11 = AndroidUtilities.dp(12.0f);
                 }
                 this.q0.U();
-                arrayList.add(l61.t(str));
+                arrayList.add(m61.t(str));
                 int size2 = arrayList3.size();
                 int i14 = 0;
                 while (i14 < size2) {
                     Object obj2 = arrayList3.get(i14);
                     i14++;
                     w7 w7Var = new w7(this, i12);
-                    int i15 = org.telegram.ui.Cells.i7.a;
-                    l61 J = l61.J(org.telegram.ui.Cells.i7.class);
+                    int i15 = org.telegram.ui.Cells.h7.a;
+                    m61 J = m61.J(org.telegram.ui.Cells.h7.class);
                     J.G = (MessageObject) obj2;
                     J.H = w7Var;
                     arrayList.add(J);
                     i11 += AndroidUtilities.dp(56.0f);
                 }
                 if (z11) {
-                    arrayList.add(l61.n(4));
-                    arrayList.add(l61.n(4));
-                    arrayList.add(l61.n(4));
+                    arrayList.add(m61.n(4));
+                    arrayList.add(m61.n(4));
+                    arrayList.add(m61.n(4));
                     i11 += AndroidUtilities.dp(56.0f) * 3;
                 }
                 if (z12 && !z11) {
-                    l61 c10 = l61.c(i10, R.drawable.arrow_more, LocaleController.getString(R.string.ShowMore));
+                    m61 c10 = m61.c(i10, R.drawable.arrow_more, LocaleController.getString(R.string.ShowMore));
                     c10.q = true;
                     arrayList.add(c10);
                     i11 += AndroidUtilities.dp(50.0f);
@@ -676,7 +675,7 @@ public final class c8 extends org.telegram.ui.Components.db implements Notificat
             tL_messages_searchGlobal.q = str4;
             tL_messages_searchGlobal.limit = 20;
             if (arrayList.size() > 0) {
-                MessageObject messageObject = (MessageObject) i2.d.g(1, arrayList);
+                MessageObject messageObject = (MessageObject) i2.d.h(1, arrayList);
                 tL_messages_searchGlobal.offset_id = messageObject.getId();
                 tL_messages_searchGlobal.offset_rate = this.t0;
                 tL_messages_searchGlobal.offset_peer = MessagesController.getInstance(this.currentAccount).getInputPeer(MessageObject.getPeerId(messageObject.messageOwner.peer_id));
@@ -766,14 +765,14 @@ public final class c8 extends org.telegram.ui.Components.db implements Notificat
 
     @Override // org.telegram.ui.Components.db
     public final lm0 x(mm0 mm0Var) {
-        z61 z61Var = new z61(mm0Var, getContext(), this.currentAccount, 0, false, new t7(this, 0), this.resourcesProvider);
-        this.q0 = z61Var;
-        z61Var.r = false;
-        return z61Var;
+        a71 a71Var = new a71(mm0Var, getContext(), this.currentAccount, 0, false, new t7(this, 0), this.resourcesProvider);
+        this.q0 = a71Var;
+        a71Var.r = false;
+        return a71Var;
     }
 
     @Override // ne.d
-    public final /* synthetic */ void C(float f7, int i10) {
+    public final /* synthetic */ void A(float f7, int i10) {
     }
 
     @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener

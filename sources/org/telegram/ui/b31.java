@@ -22,7 +22,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b31 implements Runnable {
     public final /* synthetic */ int a;
@@ -74,7 +74,7 @@ public final /* synthetic */ class b31 implements Runnable {
                 }
                 break;
             case 7:
-                CopyOnWriteArrayList copyOnWriteArrayList = org.telegram.ui.Wallet.o0.i;
+                CopyOnWriteArrayList copyOnWriteArrayList = org.telegram.ui.Wallet.p0.i;
                 Iterator it = copyOnWriteArrayList.iterator();
                 while (it.hasNext()) {
                     WeakReference weakReference = (WeakReference) it.next();
@@ -102,16 +102,16 @@ public final /* synthetic */ class b31 implements Runnable {
                         SerializedData serializedData = new SerializedData(file);
                         long readInt64 = serializedData.readInt64(true);
                         for (long j10 = 0; j10 < readInt64; j10++) {
-                            org.telegram.ui.web.c1 c1Var = new org.telegram.ui.web.c1();
-                            c1Var.readParams(serializedData, true);
-                            arrayList.add(c1Var);
-                            longSparseArray.put(c1Var.a, c1Var);
+                            org.telegram.ui.web.d1 d1Var = new org.telegram.ui.web.d1();
+                            d1Var.readParams(serializedData, true);
+                            arrayList.add(d1Var);
+                            longSparseArray.put(d1Var.a, d1Var);
                         }
                     }
                 } catch (Exception e) {
                     FileLog.e(e);
                 }
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.t8(7, arrayList, longSparseArray));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.v(2, arrayList, longSparseArray));
                 break;
             case 11:
                 try {
@@ -119,25 +119,25 @@ public final /* synthetic */ class b31 implements Runnable {
                     if (!file2.exists()) {
                         file2.createNewFile();
                     }
-                    long size = org.telegram.ui.web.d1.c.size();
+                    long size = org.telegram.ui.web.e1.c.size();
                     SerializedData serializedData2 = new SerializedData(true);
                     serializedData2.writeInt64(size);
-                    ArrayList arrayList2 = org.telegram.ui.web.d1.c;
+                    ArrayList arrayList2 = org.telegram.ui.web.e1.c;
                     int size2 = arrayList2.size();
                     int i12 = 0;
                     while (i12 < size2) {
                         Object obj = arrayList2.get(i12);
                         i12++;
-                        ((org.telegram.ui.web.c1) obj).serializeToStream(serializedData2);
+                        ((org.telegram.ui.web.d1) obj).serializeToStream(serializedData2);
                     }
                     SerializedData serializedData3 = new SerializedData(serializedData2.length());
                     serializedData3.writeInt64(size);
-                    ArrayList arrayList3 = org.telegram.ui.web.d1.c;
+                    ArrayList arrayList3 = org.telegram.ui.web.e1.c;
                     int size3 = arrayList3.size();
                     while (i10 < size3) {
                         Object obj2 = arrayList3.get(i10);
                         i10++;
-                        ((org.telegram.ui.web.c1) obj2).serializeToStream(serializedData3);
+                        ((org.telegram.ui.web.d1) obj2).serializeToStream(serializedData3);
                     }
                     try {
                         FileOutputStream fileOutputStream = new FileOutputStream(file2);

@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
@@ -18,9 +18,9 @@ import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.sc;
 import org.telegram.ui.yy;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class g0 extends sg.m1 {
     public static g0 S0;
@@ -44,7 +44,7 @@ public final class g0 extends sg.m1 {
             dVar.setEnabled(true);
             dVar.g(LocaleController.getString(R.string.GiftPremiumActivateForFree), false, true);
             aVar2.b.setBackgroundColor(g6.w0(g6.h5, aVar2.c));
-            this.containerView.addView(this.Q0, a6.a(68.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 80));
+            this.containerView.addView(this.Q0, z5.a(68.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 80));
         }
         fixNavigationBar();
     }
@@ -64,8 +64,8 @@ public final class g0 extends sg.m1 {
 
     public static void f0(g0 g0Var) {
         String str = "https://t.me/giftcode/" + g0Var.R0;
-        yy yyVar = new yy(yh.d(3, "onlySelect", "dialogsType", true));
-        yyVar.C2 = new org.telegram.ui.web.c0(15, g0Var, str);
+        yy yyVar = new yy(sk.d(3, "onlySelect", "dialogsType", true));
+        yyVar.C2 = new org.telegram.ui.web.o0(15, g0Var, str);
         g0Var.n.presentFragment(yyVar);
         g0Var.dismiss();
     }

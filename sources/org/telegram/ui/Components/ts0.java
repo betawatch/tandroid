@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ts0 extends qu0 {
     public final /* synthetic */ xv0 M;
@@ -21,7 +21,7 @@ public final class ts0 extends qu0 {
         qu0[] qu0VarArr = xv0Var.k0;
         if (xv0Var.g1 && (qu0Var = qu0VarArr[0]) == this) {
             float abs = Math.abs(qu0Var.getTranslationX()) / qu0VarArr[0].getMeasuredWidth();
-            xv0Var.Z0(abs, qu0VarArr[1].F);
+            xv0Var.a1(abs, qu0VarArr[1].F);
             if (xv0Var.D()) {
                 int i10 = xv0Var.x0;
                 if (i10 == 2) {
@@ -29,14 +29,14 @@ public final class ts0 extends qu0 {
                 } else if (i10 == 1) {
                     xv0Var.o0 = abs;
                 }
-                xv0Var.s1(abs);
+                xv0Var.t1(abs);
                 float a02 = xv0Var.a0(abs);
                 xv0Var.p0 = a02;
                 xv0Var.r0.setVisibility((a02 == 0.0f || !xv0Var.D() || xv0Var.q0()) ? 4 : 0);
             } else {
                 xv0Var.o0 = 0.0f;
             }
-            xv0Var.q1(false);
+            xv0Var.r1(false);
         }
         xv0Var.I();
         xv0Var.K();

@@ -11,9 +11,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class eh implements pl, org.telegram.ui.ActionBar.z1, ne.k, cm0, eh.d, org.telegram.ui.ActionBar.q0, ho, AndroidUtilities.IntColorCallback, f5, ej {
+public final /* synthetic */ class eh implements ol, org.telegram.ui.ActionBar.z1, ne.k, cm0, eh.d, org.telegram.ui.ActionBar.q0, ho, AndroidUtilities.IntColorCallback, f5, ej {
     public final /* synthetic */ int a;
     public final /* synthetic */ vi b;
 
@@ -81,7 +81,7 @@ public final /* synthetic */ class eh implements pl, org.telegram.ui.ActionBar.z
         return true;
     }
 
-    @Override // org.telegram.ui.Components.pl
+    @Override // org.telegram.ui.Components.ol
     public void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j10) {
         switch (this.a) {
             case 0:
@@ -195,7 +195,7 @@ public final /* synthetic */ class eh implements pl, org.telegram.ui.ActionBar.z
         if (m2Var == null || !(m2Var instanceof org.telegram.ui.fo)) {
             ti tiVar = viVar.c2;
             if (tiVar != null) {
-                tiVar.r0(arrayList, charSequence, z10, i10, i11, j10, z11, j11);
+                tiVar.s0(arrayList, charSequence, z10, i10, i11, j10, z11, j11);
                 return;
             }
             return;
@@ -209,7 +209,7 @@ public final /* synthetic */ class eh implements pl, org.telegram.ui.ActionBar.z
     }
 
     @Override // org.telegram.ui.ActionBar.q0
-    public void l(int i10) {
+    public void k(int i10) {
         this.b.a1.getActionBarMenuOnItemClick().b(i10);
     }
 

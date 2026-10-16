@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class sq extends Drawable {
     public final Paint a;
@@ -43,7 +43,7 @@ public abstract class sq extends Drawable {
         float f10;
         float f11;
         float f12;
-        float y3;
+        float x10;
         Paint paint;
         float f13;
         long currentTimeMillis = System.currentTimeMillis();
@@ -80,15 +80,15 @@ public abstract class sq extends Drawable {
         float f15 = this.d;
         if (f15 < 0.0f || f15 >= 90.0f) {
             if (f15 >= 90.0f && f15 < 180.0f) {
-                f12 = org.telegram.messenger.q.y(f15, 90.0f, 90.0f, 1.0f);
+                f12 = org.telegram.messenger.g0.x(f15, 90.0f, 90.0f, 1.0f);
                 f10 = 0.0f;
                 f7 = 0.0f;
                 f11 = 1.0f;
             } else if (f15 < 180.0f || f15 >= 270.0f) {
                 if (f15 >= 270.0f && f15 < 360.0f) {
-                    y3 = (f15 - 270.0f) / 90.0f;
+                    x10 = (f15 - 270.0f) / 90.0f;
                 } else if (f15 >= 360.0f && f15 < 450.0f) {
-                    y3 = org.telegram.messenger.q.y(f15, 360.0f, 90.0f, 1.0f);
+                    x10 = org.telegram.messenger.g0.x(f15, 360.0f, 90.0f, 1.0f);
                 } else if (f15 >= 450.0f && f15 < 540.0f) {
                     f10 = (f15 - 450.0f) / 90.0f;
                     f12 = 0.0f;
@@ -109,11 +109,11 @@ public abstract class sq extends Drawable {
                     f10 = 1.0f;
                     f12 = 1.0f;
                 }
-                f7 = y3;
+                f7 = x10;
                 f10 = 0.0f;
                 f12 = f10;
             } else {
-                f11 = org.telegram.messenger.q.y(f15, 180.0f, 90.0f, 1.0f);
+                f11 = org.telegram.messenger.g0.x(f15, 180.0f, 90.0f, 1.0f);
                 f10 = 0.0f;
                 f12 = 0.0f;
                 f7 = 0.0f;

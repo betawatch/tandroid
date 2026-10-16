@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.view.animation.Interpolator;
 import android.view.animation.OvershootInterpolator;
-import b2.v0;
 import bi.l4;
 import com.google.android.gms.internal.play_billing.k3;
 import hg.j0;
@@ -31,28 +30,29 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.Cells.i0;
+import org.telegram.ui.Cells.h0;
 import org.telegram.ui.Cells.t1;
 import org.telegram.ui.Cells.u1;
+import org.telegram.ui.Cells.v0;
 import org.telegram.ui.Cells.w0;
-import org.telegram.ui.Cells.x0;
 import org.telegram.ui.Cells.za;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.of;
-import org.telegram.ui.Components.w11;
 import org.telegram.ui.Components.wo;
 import org.telegram.ui.Components.x11;
 import org.telegram.ui.Components.y11;
+import org.telegram.ui.Components.z11;
 import org.telegram.ui.eh;
+import org.telegram.ui.fj1;
 import org.telegram.ui.fo;
-import org.telegram.ui.gj1;
 import org.telegram.ui.rb1;
 import org.telegram.ui.sk;
+import r0.i0;
 import s4.b1;
 import s4.y0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public abstract class n extends s4.k {
     public static final es V = new es(0.19919472913616398d, 0.010644531250000006d, 0.27920937042459737d, 0.91025390625d);
@@ -114,7 +114,7 @@ public abstract class n extends s4.k {
 
     @Override // s4.k
     public final boolean J(s4.i iVar, b1 b1Var) {
-        y11 y11Var;
+        z11 z11Var;
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("end change if necessary");
         }
@@ -123,8 +123,8 @@ public abstract class n extends s4.k {
             animator.cancel();
         }
         View view = b1Var.a;
-        if (this.K.contains(view) && (y11Var = (y11) this.U.run()) != null) {
-            y11Var.a(view);
+        if (this.K.contains(view) && (z11Var = (z11) this.U.run()) != null) {
+            z11Var.a(view);
         }
         if (iVar.b == b1Var) {
             iVar.b = null;
@@ -193,11 +193,11 @@ public abstract class n extends s4.k {
         this.z.add(b1Var);
         final m mVar2 = (m) jVar;
         fo foVar = this.F;
-        if (foVar != null && (view instanceof i0)) {
-            i0 i0Var = (i0) view;
-            float translationY = i0Var.getTranslationY();
+        if (foVar != null && (view instanceof h0)) {
+            h0 h0Var = (h0) view;
+            float translationY = h0Var.getTranslationY();
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            ofFloat.addUpdateListener(new h(this, i0Var, translationY, i15));
+            ofFloat.addUpdateListener(new h(this, h0Var, translationY, i15));
             animatorSet.playTogether(ofFloat);
         } else {
             if (foVar == null || !(view instanceof za)) {
@@ -405,13 +405,13 @@ public abstract class n extends s4.k {
                     }
                 } else {
                     b1Var2 = b1Var;
-                    if (view instanceof x0) {
-                        x0 x0Var = (x0) view;
-                        w0 transitionParams3 = x0Var.getTransitionParams();
+                    if (view instanceof w0) {
+                        w0 w0Var = (w0) view;
+                        v0 transitionParams3 = w0Var.getTransitionParams();
                         if (mVar2.m) {
                             ValueAnimator ofFloat7 = ValueAnimator.ofFloat(0.0f, 1.0f);
                             transitionParams3.b = true;
-                            ofFloat7.addUpdateListener(new l0(8, transitionParams3, x0Var));
+                            ofFloat7.addUpdateListener(new l0(8, transitionParams3, w0Var));
                             animatorSet.playTogether(ofFloat7);
                         }
                     }
@@ -445,7 +445,7 @@ public abstract class n extends s4.k {
     }
 
     public final void U() {
-        y11 y11Var;
+        z11 z11Var;
         HashMap hashMap = this.J;
         ArrayList arrayList = new ArrayList(hashMap.values());
         hashMap.clear();
@@ -460,34 +460,34 @@ public abstract class n extends s4.k {
                 animator.cancel();
             }
         }
-        if (this.K.isEmpty() || (y11Var = (y11) this.U.run()) == null) {
+        if (this.K.isEmpty() || (z11Var = (z11) this.U.run()) == null) {
             return;
         }
-        ArrayList arrayList2 = y11Var.c;
-        if (y11Var.e) {
+        ArrayList arrayList2 = z11Var.c;
+        if (z11Var.e) {
             return;
         }
-        y11Var.e = true;
+        z11Var.e = true;
         int size2 = arrayList2.size();
         while (i10 < size2) {
             Object obj2 = arrayList2.get(i10);
             i10++;
-            x11 x11Var = (x11) obj2;
-            Runnable runnable = x11Var.d;
+            y11 y11Var = (y11) obj2;
+            Runnable runnable = y11Var.d;
             if (runnable != null) {
-                y11.b(runnable);
-                x11Var.d = null;
+                z11.b(runnable);
+                y11Var.d = null;
             }
         }
         arrayList2.clear();
-        w11 w11Var = y11Var.a;
-        if (w11Var != null) {
-            w11Var.i();
+        x11 x11Var = z11Var.a;
+        if (x11Var != null) {
+            x11Var.i();
         }
-        Runnable runnable2 = y11Var.d;
+        Runnable runnable2 = z11Var.d;
         if (runnable2 != null) {
-            y11Var.d = null;
-            y11.b(runnable2);
+            z11Var.d = null;
+            z11.b(runnable2);
         }
     }
 
@@ -537,11 +537,11 @@ public abstract class n extends s4.k {
         view.setScaleX(1.0f);
         view.setScaleY(1.0f);
         view.setTranslationY(0.0f);
-        boolean z10 = view instanceof i0;
+        boolean z10 = view instanceof h0;
         mm0 mm0Var = this.G;
         if (z10) {
             int measuredHeight = (mm0Var.getMeasuredHeight() / 2) - (view.getMeasuredHeight() / 2);
-            ((i0) view).setAnimating(false);
+            ((h0) view).setAnimating(false);
             if (view.getTop() > measuredHeight) {
                 view.setTranslationY(measuredHeight - view.getTop());
                 return;
@@ -566,11 +566,11 @@ public abstract class n extends s4.k {
             u1Var.getTransitionParams().j();
             u1Var.setAnimationOffsetX(0.0f);
         } else {
-            if (!(view instanceof x0)) {
+            if (!(view instanceof w0)) {
                 view.setTranslationX(0.0f);
                 return;
             }
-            w0 transitionParams = ((x0) view).getTransitionParams();
+            v0 transitionParams = ((w0) view).getTransitionParams();
             transitionParams.b = false;
             transitionParams.c = 1.0f;
         }
@@ -590,7 +590,7 @@ public abstract class n extends s4.k {
     }
 
     @Override // s4.e1, s4.l0
-    public final boolean a(b1 b1Var, v0 v0Var, v0 v0Var2) {
+    public final boolean a(b1 b1Var, b2.v0 v0Var, b2.v0 v0Var2) {
         ArrayList arrayList;
         int i10;
         boolean a2 = super.a(b1Var, v0Var, v0Var2);
@@ -632,14 +632,14 @@ public abstract class n extends s4.k {
 
     @Override // s4.k, s4.l0
     public final void f(b1 b1Var) {
-        y11 y11Var;
+        z11 z11Var;
         Animator animator = (Animator) this.J.remove(b1Var);
         if (animator != null) {
             animator.cancel();
         }
         View view = b1Var.a;
-        if (this.K.contains(view) && (y11Var = (y11) this.U.run()) != null) {
-            y11Var.a(view);
+        if (this.K.contains(view) && (z11Var = (z11) this.U.run()) != null) {
+            z11Var.a(view);
         }
         super.f(b1Var);
         X(view);
@@ -748,8 +748,8 @@ public abstract class n extends s4.k {
     }
 
     @Override // s4.l0
-    public final v0 l(y0 y0Var, b1 b1Var, int i10, List list) {
-        v0 l4 = super.l(y0Var, b1Var, i10, list);
+    public final b2.v0 l(y0 y0Var, b1 b1Var, int i10, List list) {
+        b2.v0 l4 = super.l(y0Var, b1Var, i10, list);
         View view = b1Var.a;
         if (!(view instanceof u1)) {
             return l4;
@@ -929,7 +929,7 @@ public abstract class n extends s4.k {
                                         if (z18) {
                                             if (u1Var2.getMessageObject().isVoice()) {
                                                 if (Math.abs(view2.getTranslationY()) < view2.getMeasuredHeight() * 3.0f) {
-                                                    new gj1(u1Var2, foVar2.Y, nVar.G, foVar2.M9, nVar.R).f.start();
+                                                    new fj1(u1Var2, foVar2.Y, nVar.G, foVar2.M9, nVar.R).f.start();
                                                 }
                                             } else if (SharedConfig.getDevicePerformanceClass() != 0 && Math.abs(view2.getTranslationY()) < mm0Var4.getMeasuredHeight()) {
                                                 foVar = foVar2;
@@ -1042,7 +1042,7 @@ public abstract class n extends s4.k {
                                         FileLog.d("animate remove group impl with thanos");
                                     }
                                     arrayList14.addAll(arrayList18);
-                                    y11 y11Var = (y11) nVar.U.run();
+                                    z11 z11Var = (z11) nVar.U.run();
                                     for (int i25 = 0; i25 < arrayList18.size(); i25++) {
                                     }
                                     ArrayList arrayList19 = new ArrayList();
@@ -1051,12 +1051,12 @@ public abstract class n extends s4.k {
                                         arrayList19.add(((b1) arrayList18.get(i26)).a);
                                     }
                                     t tVar = new t(nVar, arrayList19, arrayList18, 22);
-                                    w11 w11Var = y11Var.a;
-                                    if (w11Var != null) {
-                                        w11Var.f(arrayList19, tVar);
-                                        Choreographer.getInstance().postFrameCallback(y11Var.b);
+                                    x11 x11Var = z11Var.a;
+                                    if (x11Var != null) {
+                                        x11Var.f(arrayList19, tVar);
+                                        Choreographer.getInstance().postFrameCallback(z11Var.b);
                                     } else {
-                                        y11Var.c.add(new x11(arrayList19, tVar));
+                                        z11Var.c.add(new y11(arrayList19, tVar));
                                     }
                                     arrayList13.add((View) arrayList19.get(0));
                                     mm0Var.B0();
@@ -1105,15 +1105,15 @@ public abstract class n extends s4.k {
                                 hashMap.put(b1Var3, ofFloat);
                                 ofFloat.start();
                             } else {
-                                y11 y11Var2 = (y11) ehVar.run();
+                                z11 z11Var2 = (z11) ehVar.run();
                                 i13 = size;
                                 t tVar2 = new t(nVar, view6, b1Var3, 23);
-                                w11 w11Var2 = y11Var2.a;
-                                if (w11Var2 != null) {
-                                    w11Var2.d(view6, 1.0f, tVar2);
-                                    Choreographer.getInstance().postFrameCallback(y11Var2.b);
+                                x11 x11Var2 = z11Var2.a;
+                                if (x11Var2 != null) {
+                                    x11Var2.d(view6, 1.0f, tVar2);
+                                    Choreographer.getInstance().postFrameCallback(z11Var2.b);
                                 } else {
-                                    y11Var2.c.add(new x11(view6, tVar2));
+                                    z11Var2.c.add(new y11(view6, tVar2));
                                 }
                                 arrayList13.add(view6);
                                 i14 = i27;
@@ -1143,7 +1143,7 @@ public abstract class n extends s4.k {
                                 kVar.run();
                             } else {
                                 View view7 = ((s4.j) arrayList20.get(0)).a.a;
-                                WeakHashMap weakHashMap = r0.j0.a;
+                                WeakHashMap weakHashMap = i0.a;
                                 view7.postOnAnimationDelayed(kVar, 0L);
                             }
                         }
@@ -1157,7 +1157,7 @@ public abstract class n extends s4.k {
                                 uVar.run();
                             } else {
                                 View view8 = ((s4.i) arrayList21.get(0)).a.a;
-                                WeakHashMap weakHashMap2 = r0.j0.a;
+                                WeakHashMap weakHashMap2 = i0.a;
                                 view8.postOnAnimationDelayed(uVar, 0L);
                             }
                         }
@@ -1358,7 +1358,7 @@ public abstract class n extends s4.k {
     }
 
     @Override // s4.k, s4.e1
-    public final boolean q(b1 b1Var, b1 b1Var2, v0 v0Var, int i10, int i11, int i12, int i13) {
+    public final boolean q(b1 b1Var, b1 b1Var2, b2.v0 v0Var, int i10, int i11, int i12, int i13) {
         if (b1Var == b1Var2) {
             return r(b1Var, v0Var, i10, i11, i12, i13);
         }
@@ -1391,11 +1391,11 @@ public abstract class n extends s4.k {
     }
 
     @Override // s4.k, s4.e1
-    public final boolean r(b1 b1Var, v0 v0Var, int i10, int i11, int i12, int i13) {
+    public final boolean r(b1 b1Var, b2.v0 v0Var, int i10, int i11, int i12, int i13) {
         int translationX;
         int i14;
         u1 u1Var;
-        x0 x0Var;
+        w0 w0Var;
         float f7;
         float f10;
         float f11;
@@ -1414,17 +1414,17 @@ public abstract class n extends s4.k {
             translationX = i10 + ((int) u1Var2.getAnimationOffsetX());
             i14 = u1Var2.getTransitionParams().s2 != u1Var2.getTopMediaOffset() ? (u1Var2.getTransitionParams().s2 - u1Var2.getTopMediaOffset()) + i11 : i11;
             u1Var = u1Var2;
-            x0Var = null;
-        } else if (view2 instanceof x0) {
+            w0Var = null;
+        } else if (view2 instanceof w0) {
             translationX = i10 + ((int) view2.getTranslationX());
             i14 = i11;
-            x0Var = (x0) view2;
+            w0Var = (w0) view2;
             u1Var = null;
         } else {
             translationX = i10 + ((int) view2.getTranslationX());
             i14 = i11;
             u1Var = null;
-            x0Var = null;
+            w0Var = null;
         }
         int i17 = translationX;
         int translationY = i14 + ((int) view2.getTranslationY());
@@ -1455,7 +1455,7 @@ public abstract class n extends s4.k {
             view2.setTranslationY(-i20);
         }
         float f15 = f10;
-        x0 x0Var2 = x0Var;
+        w0 w0Var2 = w0Var;
         float f16 = f11;
         m mVar = new m(b1Var, i17, translationY, i12, i13);
         if (u1Var != null) {
@@ -1681,8 +1681,8 @@ public abstract class n extends s4.k {
                 v(b1Var);
                 return false;
             }
-        } else if (x0Var2 != null) {
-            w0 transitionParams5 = x0Var2.getTransitionParams();
+        } else if (w0Var2 != null) {
+            v0 transitionParams5 = w0Var2.getTransitionParams();
             transitionParams5.getClass();
             if (i19 != 0) {
                 view2.setTranslationX(-i19);
@@ -1697,8 +1697,8 @@ public abstract class n extends s4.k {
                 v(b1Var);
                 return false;
             }
-        } else if (view2 instanceof i0) {
-            ((i0) view2).setAnimating(true);
+        } else if (view2 instanceof h0) {
+            ((h0) view2).setAnimating(true);
         } else if (view2 instanceof za) {
             ((za) view2).setAnimating(true);
         } else {
@@ -1716,7 +1716,7 @@ public abstract class n extends s4.k {
     }
 
     @Override // s4.k, s4.e1
-    public final void s(b1 b1Var, v0 v0Var) {
+    public final void s(b1 b1Var, b2.v0 v0Var) {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("animate remove");
         }

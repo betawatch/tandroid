@@ -1,66 +1,47 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class sz0 extends s4.r0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ProfileActivity b;
+public final class sz0 implements qq {
+    public final /* synthetic */ TLRPC.Chat a;
+    public final /* synthetic */ tq b;
+    public final /* synthetic */ ProfileActivity c;
 
-    public /* synthetic */ sz0(ProfileActivity profileActivity, int i10) {
-        this.a = i10;
-        this.b = profileActivity;
+    public sz0(ProfileActivity profileActivity, TLRPC.Chat chat, tq tqVar) {
+        this.c = profileActivity;
+        this.a = chat;
+        this.b = tqVar;
     }
 
-    @Override // s4.r0
-    public final void a(RecyclerView recyclerView, int i10) {
-        switch (this.a) {
-            case 0:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
-            default:
-                ProfileActivity profileActivity = this.b;
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(profileActivity.getParentActivity().getCurrentFocus());
-                }
-                if (profileActivity.F0 && i10 != 2) {
-                    profileActivity.F0 = false;
-                }
-                org.telegram.ui.ActionBar.u0 u0Var = profileActivity.U0;
-                if (u0Var != null) {
-                    boolean z10 = i10 != 0;
-                    profileActivity.z1 = z10;
-                    u0Var.setEnabled((z10 || profileActivity.p2) ? false : true);
-                }
-                r01 r01Var = profileActivity.O;
-                boolean z11 = profileActivity.a.I1;
-                r01Var.getClass();
-                break;
+    @Override // org.telegram.ui.qq
+    public final void a(TLRPC.User user) {
+        ProfileActivity profileActivity = this.c;
+        profileActivity.M.m(-profileActivity.f1, user, profileActivity.E2.megagroup ? 10 : 9);
+    }
+
+    @Override // org.telegram.ui.qq
+    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLRPC.Chat chat;
+        ProfileActivity profileActivity = this.c;
+        profileActivity.removeSelfFromStack();
+        TLRPC.User user = profileActivity.getMessagesController().getUser(Long.valueOf(profileActivity.e1));
+        if (user == null || (chat = this.a) == null || profileActivity.e1 == 0) {
+            return;
         }
-    }
-
-    @Override // s4.r0
-    public void b(RecyclerView recyclerView, int i10, int i11) {
-        switch (this.a) {
-            case 1:
-                ProfileActivity profileActivity = this.b;
-                org.telegram.ui.Components.v40 v40Var = profileActivity.X;
-                if (v40Var != null) {
-                    v40Var.b(true);
-                }
-                profileActivity.A3();
-                if (profileActivity.C1 != null && !profileActivity.D1 && profileActivity.c.N0() > profileActivity.v4 - 8) {
-                    profileActivity.R3(false);
-                }
-                r01 r01Var = profileActivity.O;
-                r01Var.setPinnedToTop(r01Var.getY() <= 0.0f);
-                profileActivity.U4();
-                break;
+        tq tqVar = this.b;
+        if (!tqVar.Q || tqVar.getParentLayout() == null) {
+            return;
+        }
+        for (org.telegram.ui.ActionBar.m2 m2Var : tqVar.getParentLayout().getFragmentStack()) {
+            if (m2Var instanceof ac) {
+                ac acVar = (ac) m2Var;
+                acVar.V0();
+                AndroidUtilities.runOnUIThread(new tf0(acVar, user, chat, 25));
+                return;
+            }
         }
     }
 }

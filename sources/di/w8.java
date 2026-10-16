@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public abstract class w8 extends FrameLayout implements v2 {
     public final v8 a;
@@ -42,8 +42,8 @@ public abstract class w8 extends FrameLayout implements v2 {
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextColor(-1);
         textView.setText(LocaleController.getString(R.string.StoryLive));
-        frameLayout.addView(textView, w7.a6.a(-2.0f, 16.0f, 0.0f, 16.0f, 7.0f, -2, 80));
-        v8Var.addView(frameLayout, w7.a6.r(-2, -1, 112, 0.0f, 0.0f, 6.66f, 0.0f));
+        frameLayout.addView(textView, w7.z5.a(-2.0f, 16.0f, 0.0f, 16.0f, 7.0f, -2, 80));
+        v8Var.addView(frameLayout, w7.z5.r(-2, -1, 112, 0.0f, 0.0f, 6.66f, 0.0f));
         final int i10 = 0;
         frameLayout.setOnClickListener(new View.OnClickListener(this) { // from class: di.u8
             public final /* synthetic */ w8 b;
@@ -67,7 +67,7 @@ public abstract class w8 extends FrameLayout implements v2 {
                 }
             }
         });
-        w7.c6.a(frameLayout);
+        w7.b6.a(frameLayout);
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.d = frameLayout2;
         TextView textView2 = new TextView(context);
@@ -76,8 +76,8 @@ public abstract class w8 extends FrameLayout implements v2 {
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setTextColor(-1);
         textView2.setText(LocaleController.getString(R.string.StoryPhoto));
-        frameLayout2.addView(textView2, w7.a6.a(-2.0f, 16.0f, 0.0f, 16.0f, 7.0f, -2, 80));
-        v8Var.addView(frameLayout2, w7.a6.r(-2, -1, 112, 0.0f, 0.0f, 6.66f, 0.0f));
+        frameLayout2.addView(textView2, w7.z5.a(-2.0f, 16.0f, 0.0f, 16.0f, 7.0f, -2, 80));
+        v8Var.addView(frameLayout2, w7.z5.r(-2, -1, 112, 0.0f, 0.0f, 6.66f, 0.0f));
         final int i11 = 1;
         frameLayout2.setOnClickListener(new View.OnClickListener(this) { // from class: di.u8
             public final /* synthetic */ w8 b;
@@ -101,7 +101,7 @@ public abstract class w8 extends FrameLayout implements v2 {
                 }
             }
         });
-        w7.c6.a(frameLayout2);
+        w7.b6.a(frameLayout2);
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.f = frameLayout3;
         TextView textView3 = new TextView(context);
@@ -110,8 +110,8 @@ public abstract class w8 extends FrameLayout implements v2 {
         textView3.setTypeface(AndroidUtilities.bold());
         textView3.setTextColor(-1);
         textView3.setText(LocaleController.getString(R.string.StoryVideo));
-        frameLayout3.addView(textView3, w7.a6.a(-2.0f, 16.0f, 0.0f, 16.0f, 7.0f, -2, 80));
-        v8Var.addView(frameLayout3, w7.a6.t(-2, -1, 112, 0, 0, 0, 0));
+        frameLayout3.addView(textView3, w7.z5.a(-2.0f, 16.0f, 0.0f, 16.0f, 7.0f, -2, 80));
+        v8Var.addView(frameLayout3, w7.z5.t(-2, -1, 112, 0, 0, 0, 0));
         final int i12 = 2;
         frameLayout3.setOnClickListener(new View.OnClickListener(this) { // from class: di.u8
             public final /* synthetic */ w8 b;
@@ -135,8 +135,8 @@ public abstract class w8 extends FrameLayout implements v2 {
                 }
             }
         });
-        w7.c6.a(frameLayout3);
-        addView(v8Var, w7.a6.e(-2, -1, 113));
+        w7.b6.a(frameLayout3);
+        addView(v8Var, w7.z5.e(-2, -1, 113));
     }
 
     public final void a(int i10) {

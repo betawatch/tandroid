@@ -29,7 +29,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class v21 extends org.telegram.ui.ActionBar.m2 {
     public float[] E;
@@ -44,27 +44,27 @@ public final class v21 extends org.telegram.ui.ActionBar.m2 {
     public s21 b;
     public r21 c;
     public LinearLayout d;
-    public org.telegram.ui.Cells.b7[] e;
+    public org.telegram.ui.Cells.a7[] e;
     public org.telegram.ui.Cells.e9[] f;
     public org.telegram.ui.Cells.ca h;
     public org.telegram.ui.Cells.ca n;
     public org.telegram.ui.ActionBar.u0 r;
     public org.telegram.ui.Cells.k6[] s;
     public int v;
-    public qi.a w;
+    public pi.a w;
     public String x;
     public float y;
 
     public v21() {
         super(null);
-        this.e = new org.telegram.ui.Cells.b7[3];
+        this.e = new org.telegram.ui.Cells.a7[3];
         this.f = new org.telegram.ui.Cells.e9[2];
         this.s = new org.telegram.ui.Cells.k6[3];
         this.y = 1.0f;
         this.E = new float[2];
         this.F = true;
         this.L = new o21(this);
-        this.J = new SharedConfig.ProxyInfo(qi.a.i);
+        this.J = new SharedConfig.ProxyInfo(pi.a.i);
         this.I = true;
     }
 
@@ -74,7 +74,7 @@ public final class v21 extends org.telegram.ui.ActionBar.m2 {
         if (this.h == null || this.r == null || (editTextBoldCursor = (editTextBoldCursorArr = this.a)[0]) == null || editTextBoldCursorArr[1] == null) {
             return;
         }
-        boolean z11 = this.v != 3 ? !(editTextBoldCursor.length() == 0 || Utilities.parseInt((CharSequence) this.a[1].getText().toString()).intValue() == 0) : !(TextUtils.isEmpty(qi.i.j(editTextBoldCursor.getText().toString())) || qi.i.d(this.a[4].getText().toString()) == null);
+        boolean z11 = this.v != 3 ? !(editTextBoldCursor.length() == 0 || Utilities.parseInt((CharSequence) this.a[1].getText().toString()).intValue() == 0) : !(TextUtils.isEmpty(pi.j.j(editTextBoldCursor.getText().toString())) || pi.j.d(this.a[4].getText().toString()) == null);
         if (this.F != z11) {
             ValueAnimator valueAnimator = this.G;
             if (valueAnimator != null) {
@@ -127,7 +127,7 @@ public final class v21 extends org.telegram.ui.ActionBar.m2 {
                 e9VarArr[1].setVisibility(0);
                 org.telegram.ui.Cells.e9 e9Var = e9VarArr[1];
                 StringBuilder sb2 = new StringBuilder();
-                org.telegram.ui.Cells.d0.n(R.string.UseProxyTelegramInfo, "\n\n", sb2);
+                org.telegram.ui.Cells.c1.l(R.string.UseProxyTelegramInfo, "\n\n", sb2);
                 sb2.append(LocaleController.getString(R.string.UseProxyTelegramInfo2));
                 e9Var.setText(sb2.toString());
                 ((View) this.a[4].getParent()).setVisibility(0);
@@ -159,9 +159,9 @@ public final class v21 extends org.telegram.ui.ActionBar.m2 {
     */
     public final void W() {
         String str;
-        org.telegram.ui.Cells.b7[] b7VarArr = this.e;
+        org.telegram.ui.Cells.a7[] a7VarArr = this.e;
         ClipData primaryClip = this.H.getPrimaryClip();
-        qi.a aVar = null;
+        pi.a aVar = null;
         if (primaryClip != null && primaryClip.getItemCount() > 0) {
             try {
                 str = primaryClip.getItemAt(0).coerceToText(this.fragmentView.getContext()).toString();
@@ -172,7 +172,7 @@ public final class v21 extends org.telegram.ui.ActionBar.m2 {
                 this.x = str;
                 if (str != null) {
                     try {
-                        aVar = qi.a.d(Uri.parse(str));
+                        aVar = pi.a.d(Uri.parse(str));
                     } catch (Exception unused2) {
                     }
                     if (aVar != null && aVar.f()) {
@@ -182,14 +182,14 @@ public final class v21 extends org.telegram.ui.ActionBar.m2 {
                 if (this.w != null) {
                     if (this.n.getVisibility() != 0) {
                         this.n.setVisibility(0);
-                        b7VarArr[2].setVisibility(0);
+                        a7VarArr[2].setVisibility(0);
                         return;
                     }
                     return;
                 }
                 if (this.n.getVisibility() != 8) {
                     this.n.setVisibility(8);
-                    b7VarArr[2].setVisibility(8);
+                    a7VarArr[2].setVisibility(8);
                     return;
                 }
                 return;
@@ -205,7 +205,7 @@ public final class v21 extends org.telegram.ui.ActionBar.m2 {
     public final View createView(Context context) {
         org.telegram.ui.Cells.e9[] e9VarArr = this.f;
         SharedConfig.ProxyInfo proxyInfo = this.J;
-        org.telegram.ui.Cells.b7[] b7VarArr = this.e;
+        org.telegram.ui.Cells.a7[] a7VarArr = this.e;
         org.telegram.ui.Cells.k6[] k6VarArr = this.s;
         this.actionBar.setTitle(LocaleController.getString(R.string.ProxyDetails));
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
@@ -228,7 +228,7 @@ public final class v21 extends org.telegram.ui.ActionBar.m2 {
         this.b.setFillViewport(true);
         AndroidUtilities.setScrollViewEdgeEffectColor(this.b, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.s8, false));
         int i10 = -1;
-        frameLayout.addView(this.b, w7.a6.d(-1.0f, -1));
+        frameLayout.addView(this.b, w7.z5.d(-1.0f, -1));
         this.c.setOrientation(1);
         this.b.addView(this.c, new FrameLayout.LayoutParams(-1, -2));
         final int i11 = 0;
@@ -244,11 +244,11 @@ public final class v21 extends org.telegram.ui.ActionBar.m2 {
                 String str;
                 switch (i11) {
                     case 0:
-                        this.b.V(qi.a.e(((Integer) view.getTag()).intValue()), true, null);
+                        this.b.V(pi.a.e(((Integer) view.getTag()).intValue()), true, null);
                         break;
                     default:
                         v21 v21Var = this.b;
-                        qi.a aVar = v21Var.w;
+                        pi.a aVar = v21Var.w;
                         if (aVar != null) {
                             int i12 = aVar.a;
                             int i13 = 0;
@@ -257,7 +257,7 @@ public final class v21 extends org.telegram.ui.ActionBar.m2 {
                                 if (i13 >= editTextBoldCursorArr.length) {
                                     EditTextBoldCursor editTextBoldCursor = editTextBoldCursorArr[0];
                                     editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                                    v21Var.V(i12, true, new org.telegram.ui.Components.o8(v21Var, i12, 27));
+                                    v21Var.V(i12, true, new org.telegram.ui.Components.o8(v21Var, i12, 26));
                                     break;
                                 } else {
                                     if ((i12 != 1 || i13 != 4) && (i12 != 2 || (i13 != 2 && i13 != 3))) {
@@ -298,7 +298,7 @@ public final class v21 extends org.telegram.ui.ActionBar.m2 {
             }
         };
         for (int i12 = 0; i12 < 3; i12++) {
-            int e = qi.a.e(i12);
+            int e = pi.a.e(i12);
             org.telegram.ui.Cells.k6 k6Var = new org.telegram.ui.Cells.k6(context, null);
             k6VarArr[i12] = k6Var;
             k6Var.setBackground(org.telegram.ui.ActionBar.g6.L0(true));
@@ -310,24 +310,24 @@ public final class v21 extends org.telegram.ui.ActionBar.m2 {
             } else {
                 k6VarArr[i12].c(LocaleController.getString(R.string.UseProxyWeb), e == this.v, false);
             }
-            this.c.addView(k6VarArr[i12], w7.a6.n(-1, 50));
+            this.c.addView(k6VarArr[i12], w7.z5.n(-1, 50));
             k6VarArr[i12].setOnClickListener(onClickListener);
         }
-        org.telegram.ui.Cells.b7 b7Var = new org.telegram.ui.Cells.b7(context, (org.telegram.ui.Cells.d0) null);
-        b7VarArr[0] = b7Var;
-        this.c.addView(b7Var, w7.a6.n(-1, -2));
+        org.telegram.ui.Cells.a7 a7Var = new org.telegram.ui.Cells.a7(context, (org.telegram.ui.Cells.c1) null);
+        a7VarArr[0] = a7Var;
+        this.c.addView(a7Var, w7.z5.n(-1, -2));
         LinearLayout linearLayout = new LinearLayout(context);
         this.d = linearLayout;
         linearLayout.setOrientation(1);
         this.d.setElevation(AndroidUtilities.dp(1.0f));
         this.d.setOutlineProvider(null);
-        this.c.addView(this.d, w7.a6.n(-1, -2));
+        this.c.addView(this.d, w7.z5.n(-1, -2));
         int i13 = 5;
         this.a = new EditTextBoldCursor[5];
         int i14 = 0;
         while (i14 < i13) {
             FrameLayout frameLayout2 = new FrameLayout(context);
-            this.d.addView(frameLayout2, w7.a6.n(i10, 64));
+            this.d.addView(frameLayout2, w7.z5.n(i10, 64));
             this.a[i14] = new EditTextBoldCursor(context);
             this.a[i14].setTag(Integer.valueOf(i14));
             this.a[i14].setTextSize(1, 16.0f);
@@ -380,7 +380,7 @@ public final class v21 extends org.telegram.ui.ActionBar.m2 {
             EditTextBoldCursor editTextBoldCursor2 = this.a[i14];
             editTextBoldCursor2.setSelection(editTextBoldCursor2.length());
             this.a[i14].setPadding(0, 0, 0, 0);
-            frameLayout2.addView(this.a[i14], w7.a6.a(-1.0f, 17.0f, i14 == 0 ? 12.0f : 0.0f, 17.0f, 0.0f, -1, 51));
+            frameLayout2.addView(this.a[i14], w7.z5.a(-1.0f, 17.0f, i14 == 0 ? 12.0f : 0.0f, 17.0f, 0.0f, -1, 51));
             this.a[i14].setOnEditorActionListener(new na(this, 10));
             i14++;
             i13 = 5;
@@ -393,12 +393,12 @@ public final class v21 extends org.telegram.ui.ActionBar.m2 {
                 e9Var.setText(LocaleController.getString(R.string.UseProxyInfo));
             } else {
                 StringBuilder sb2 = new StringBuilder();
-                org.telegram.ui.Cells.d0.n(R.string.UseProxyTelegramInfo, "\n\n", sb2);
+                org.telegram.ui.Cells.c1.l(R.string.UseProxyTelegramInfo, "\n\n", sb2);
                 sb2.append(LocaleController.getString(R.string.UseProxyTelegramInfo2));
                 e9Var.setText(sb2.toString());
                 e9VarArr[i16].setVisibility(8);
             }
-            this.c.addView(e9VarArr[i16], w7.a6.n(-1, -2));
+            this.c.addView(e9VarArr[i16], w7.z5.n(-1, -2));
         }
         org.telegram.ui.Cells.ca caVar = new org.telegram.ui.Cells.ca(this.fragmentView.getContext());
         this.n = caVar;
@@ -420,11 +420,11 @@ public final class v21 extends org.telegram.ui.ActionBar.m2 {
                 String str;
                 switch (i18) {
                     case 0:
-                        this.b.V(qi.a.e(((Integer) view.getTag()).intValue()), true, null);
+                        this.b.V(pi.a.e(((Integer) view.getTag()).intValue()), true, null);
                         break;
                     default:
                         v21 v21Var = this.b;
-                        qi.a aVar = v21Var.w;
+                        pi.a aVar = v21Var.w;
                         if (aVar != null) {
                             int i122 = aVar.a;
                             int i132 = 0;
@@ -433,7 +433,7 @@ public final class v21 extends org.telegram.ui.ActionBar.m2 {
                                 if (i132 >= editTextBoldCursorArr.length) {
                                     EditTextBoldCursor editTextBoldCursor3 = editTextBoldCursorArr[0];
                                     editTextBoldCursor3.setSelection(editTextBoldCursor3.length());
-                                    v21Var.V(i122, true, new org.telegram.ui.Components.o8(v21Var, i122, 27));
+                                    v21Var.V(i122, true, new org.telegram.ui.Components.o8(v21Var, i122, 26));
                                     break;
                                 } else {
                                     if ((i122 != 1 || i132 != 4) && (i122 != 2 || (i132 != 2 && i132 != 3))) {
@@ -473,22 +473,22 @@ public final class v21 extends org.telegram.ui.ActionBar.m2 {
                 }
             }
         });
-        this.c.addView(this.n, 0, w7.a6.n(-1, -2));
+        this.c.addView(this.n, 0, w7.z5.n(-1, -2));
         this.n.setVisibility(8);
-        org.telegram.ui.Cells.b7 b7Var2 = new org.telegram.ui.Cells.b7(this.fragmentView.getContext(), (org.telegram.ui.Cells.d0) null);
-        b7VarArr[2] = b7Var2;
-        this.c.addView(b7Var2, 1, w7.a6.n(-1, -2));
-        b7VarArr[2].setVisibility(8);
+        org.telegram.ui.Cells.a7 a7Var2 = new org.telegram.ui.Cells.a7(this.fragmentView.getContext(), (org.telegram.ui.Cells.c1) null);
+        a7VarArr[2] = a7Var2;
+        this.c.addView(a7Var2, 1, w7.z5.n(-1, -2));
+        a7VarArr[2].setVisibility(8);
         org.telegram.ui.Cells.ca caVar3 = new org.telegram.ui.Cells.ca(context);
         this.h = caVar3;
         caVar3.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.L0(true));
         this.h.b(LocaleController.getString(R.string.ShareFile), false);
         this.h.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i17, false));
-        this.c.addView(this.h, w7.a6.n(-1, -2));
+        this.c.addView(this.h, w7.z5.n(-1, -2));
         this.h.setOnClickListener(new bz0(1, this, context));
-        org.telegram.ui.Cells.b7 b7Var3 = new org.telegram.ui.Cells.b7(context, (org.telegram.ui.Cells.d0) null);
-        b7VarArr[1] = b7Var3;
-        this.c.addView(b7Var3, w7.a6.n(-1, -2));
+        org.telegram.ui.Cells.a7 a7Var3 = new org.telegram.ui.Cells.a7(context, (org.telegram.ui.Cells.c1) null);
+        a7VarArr[1] = a7Var3;
+        this.c.addView(a7Var3, w7.z5.n(-1, -2));
         this.H = (ClipboardManager) context.getSystemService("clipboard");
         this.F = true;
         this.y = 1.0f;
@@ -564,13 +564,13 @@ public final class v21 extends org.telegram.ui.ActionBar.m2 {
         arrayList.add(new org.telegram.ui.ActionBar.i6(null, 0, new Class[]{org.telegram.ui.Cells.m4.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.L6));
         int i17 = 0;
         while (true) {
-            org.telegram.ui.Cells.b7[] b7VarArr = this.e;
-            if (i17 >= b7VarArr.length) {
+            org.telegram.ui.Cells.a7[] a7VarArr = this.e;
+            if (i17 >= a7VarArr.length) {
                 break;
             }
-            org.telegram.ui.Cells.b7 b7Var = b7VarArr[i17];
-            if (b7Var != null) {
-                arrayList.add(new org.telegram.ui.ActionBar.i6(b7Var, 32, new Class[]{org.telegram.ui.Cells.b7.class}, null, null, null, org.telegram.ui.ActionBar.g6.b7));
+            org.telegram.ui.Cells.a7 a7Var = a7VarArr[i17];
+            if (a7Var != null) {
+                arrayList.add(new org.telegram.ui.ActionBar.i6(a7Var, 32, new Class[]{org.telegram.ui.Cells.a7.class}, null, null, null, org.telegram.ui.ActionBar.g6.b7));
             }
             i17++;
         }

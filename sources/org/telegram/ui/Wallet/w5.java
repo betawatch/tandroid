@@ -1,27 +1,26 @@
 package org.telegram.ui.Wallet;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class w5 implements o1.f {
+public final /* synthetic */ class w5 implements o1.g {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ c6 b;
 
-    public /* synthetic */ w5(Object obj, int i10) {
+    public /* synthetic */ w5(c6 c6Var, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = c6Var;
     }
 
-    @Override // o1.f
-    public final void a(o1.h hVar, boolean z10, float f7, float f10) {
+    @Override // o1.g
+    public final void a(o1.h hVar, float f7, float f10) {
         switch (this.a) {
             case 0:
-                b6.b((b6) this.b, z10, f7);
+                c6 c6Var = this.b;
+                c6Var.c.setScaleX(f7);
+                c6Var.c.setScaleY(f7);
                 break;
             default:
-                i8 i8Var = (i8) this.b;
-                i8Var.X = null;
-                i8Var.Y = 1.0f;
-                i8Var.A0();
+                this.b.P = f10;
                 break;
         }
     }

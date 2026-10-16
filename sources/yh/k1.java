@@ -15,14 +15,14 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.g6;
-import org.telegram.ui.Components.h11;
+import org.telegram.ui.Components.i11;
 import zh.b8;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public class k1 extends er {
-    public h11 c;
-    public h11 d;
+    public i11 c;
+    public i11 d;
     public final g6 e;
     public final Path f;
     public final Path h;
@@ -35,7 +35,7 @@ public class k1 extends er {
 
     public k1(View view) {
         super(view);
-        this.e = new g6(new rh.j(this, 27), 320L, es.h, 0);
+        this.e = new g6(new ri.h0(this, 27), 320L, es.h, 0);
         Path path = new Path();
         this.f = path;
         this.h = new Path();
@@ -81,15 +81,15 @@ public class k1 extends er {
         path.close();
     }
 
-    public final void c(Canvas canvas, h11 h11Var, float f7) {
+    public final void c(Canvas canvas, i11 i11Var, float f7) {
         canvas.save();
         canvas.translate(f7, f7);
         float width = (getBounds().width() / 2.0f) + AndroidUtilities.dp(this.w ? -7.0f : 6.0f);
         float height = (getBounds().height() / 2.0f) - AndroidUtilities.dp(this.w ? 5.0f : 6.0f);
         canvas.rotate(this.w ? -45.0f : 45.0f, width, height);
-        float min = Math.min(1.0f, AndroidUtilities.dp(40.0f) / h11Var.c);
+        float min = Math.min(1.0f, AndroidUtilities.dp(40.0f) / i11Var.c);
         canvas.scale(min, min, width, height);
-        h11Var.c(width - (h11Var.l() / 2.0f), height + AndroidUtilities.dp(1.0f), 1.0f, this.x, canvas);
+        i11Var.c(width - (i11Var.l() / 2.0f), height + AndroidUtilities.dp(1.0f), 1.0f, this.x, canvas);
         canvas.restore();
     }
 
@@ -157,7 +157,7 @@ public class k1 extends er {
     public final void f(int i10, CharSequence charSequence, boolean z10) {
         this.d = null;
         this.e.d(1.0f, true);
-        this.c = new h11(charSequence, i10, z10 ? AndroidUtilities.bold() : null);
+        this.c = new i11(charSequence, i10, z10 ? AndroidUtilities.bold() : null);
         invalidateSelf();
     }
 }

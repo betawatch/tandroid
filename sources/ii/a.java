@@ -29,19 +29,20 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.ns0;
-import org.telegram.ui.Components.voip.m2;
-import org.telegram.ui.Components.z61;
-import org.telegram.ui.es0;
+import org.telegram.ui.Components.voip.r2;
+import org.telegram.ui.ds0;
 import org.telegram.ui.ta1;
-import org.telegram.ui.vc;
+import org.telegram.ui.uc;
 import org.telegram.ui.web.d;
 import org.telegram.ui.web.g;
 import org.telegram.ui.web.i;
 import org.telegram.ui.web.j;
 import org.telegram.ui.web.k;
+import ri.h0;
 import ug.z0;
 import uh.e;
 import uh.f;
@@ -51,6 +52,7 @@ import yh.f4;
 import yh.g1;
 import yh.g4;
 import yh.k4;
+import yh.m2;
 import yh.n;
 import yh.n2;
 import yh.p1;
@@ -69,7 +71,7 @@ import zh.r0;
 import zh.t;
 import zh.z;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -108,23 +110,23 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
             case 0:
                 b bVar = (b) this.b;
                 ArrayList arrayList3 = (ArrayList) obj;
-                arrayList3.add(l61.D(0, AndroidUtilities.dp(12.0f)));
-                arrayList3.add(l61.j(1, bVar.Z));
-                arrayList3.add(l61.D(2, AndroidUtilities.dp(12.0f)));
-                arrayList3.add(l61.s(3, LocaleController.getString(R.string.CommunityChatVisibilitySection)));
+                arrayList3.add(m61.D(0, AndroidUtilities.dp(12.0f)));
+                arrayList3.add(m61.j(1, bVar.Z));
+                arrayList3.add(m61.D(2, AndroidUtilities.dp(12.0f)));
+                arrayList3.add(m61.s(3, LocaleController.getString(R.string.CommunityChatVisibilitySection)));
                 bVar.c0 = arrayList3.size();
                 String string = LocaleController.getString(R.string.CommunityChatVisibilityVisible);
                 boolean z12 = bVar.b0;
-                l61 x10 = l61.x(151, string, LocaleController.getString(z12 ? R.string.CommunityChatVisibilityVisibleBotInfo : R.string.CommunityChatVisibilityVisibleInfo));
+                m61 x10 = m61.x(151, string, LocaleController.getString(z12 ? R.string.CommunityChatVisibilityVisibleBotInfo : R.string.CommunityChatVisibilityVisibleInfo));
                 x10.K(!bVar.Y);
                 arrayList3.add(x10);
-                l61 x11 = l61.x(ImageReceiver.DEFAULT_CROSSFADE_DURATION, LocaleController.getString(R.string.CommunityChatVisibilityHidden), LocaleController.getString(z12 ? R.string.CommunityChatVisibilityHiddenBotInfo : R.string.CommunityChatVisibilityHiddenInfo));
+                m61 x11 = m61.x(ImageReceiver.DEFAULT_CROSSFADE_DURATION, LocaleController.getString(R.string.CommunityChatVisibilityHidden), LocaleController.getString(z12 ? R.string.CommunityChatVisibilityHiddenBotInfo : R.string.CommunityChatVisibilityHiddenInfo));
                 x11.K(bVar.Y);
                 arrayList3.add(x11);
-                arrayList3.add(l61.A(6, LocaleController.getString(R.string.CommunityChatVisibilityCannotChange)));
+                arrayList3.add(m61.A(6, LocaleController.getString(R.string.CommunityChatVisibilityCannotChange)));
                 break;
             case 1:
-                ((ArrayList) obj).add(l61.j(0, ((c) this.b).X));
+                ((ArrayList) obj).add(m61.j(0, ((c) this.b).X));
                 break;
             case 2:
                 Utilities.themeQueue.postRunnable(new q3(26, (String[]) this.b, (Utilities.Callback2) obj2));
@@ -132,15 +134,15 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
             case 3:
                 x xVar = (x) this.b;
                 ArrayList arrayList4 = (ArrayList) obj;
-                arrayList4.add(l61.j(1, xVar.a0));
-                arrayList4.add(l61.j(3, xVar.d0));
+                arrayList4.add(m61.j(1, xVar.a0));
+                arrayList4.add(m61.j(3, xVar.d0));
                 if (xVar.i0 != null) {
-                    arrayList4.add(l61.j(2, xVar.b0));
+                    arrayList4.add(m61.j(2, xVar.b0));
                     break;
                 }
                 break;
             case 4:
-                x3.J1((x3[]) this.b, (ArrayList) obj, (z61) obj2);
+                x3.J1((x3[]) this.b, (ArrayList) obj, (a71) obj2);
                 break;
             case 5:
                 x3 x3Var = (x3) this.b;
@@ -153,7 +155,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                 while (i17 < size2) {
                     Object obj3 = arrayList5.get(i17);
                     i17++;
-                    Object obj4 = ((l61) obj3).G;
+                    Object obj4 = ((m61) obj3).G;
                     if (obj4 instanceof ji.a) {
                         arrayList7.add((ji.a) obj4);
                     }
@@ -290,7 +292,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                 i iVar = kVar.y;
                 ArrayList arrayList14 = kVar.x;
                 if (!kVar.b && arrayList14.isEmpty()) {
-                    arrayList13.add(l61.k(kVar.d));
+                    arrayList13.add(m61.k(kVar.d));
                 }
                 SharedPreferences sharedPreferences = kVar.getContext().getSharedPreferences("webhistory", 0);
                 ArrayList arrayList15 = new ArrayList();
@@ -313,7 +315,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                             }
                         }
                         arrayList2 = arrayList14;
-                        Collections.sort(arrayList, new es0(9));
+                        Collections.sort(arrayList, new ds0(9));
                         size = arrayList.size();
                         i11 = 0;
                     } catch (Exception unused2) {
@@ -326,7 +328,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                             arrayList2.size();
                             arrayList15.size();
                             if (!arrayList2.isEmpty()) {
-                                arrayList13.add(l61.k(kVar.v));
+                                arrayList13.add(m61.k(kVar.v));
                             }
                             i12 = 0;
                             while (i12 < arrayList2.size()) {
@@ -356,7 +358,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                                     }
                                 };
                                 int i28 = d.a;
-                                l61 J = l61.J(d.class);
+                                m61 J = m61.J(d.class);
                                 J.z = 1;
                                 J.l = str;
                                 J.D = onClickListener;
@@ -369,7 +371,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                                 arrayList2 = arrayList16;
                             }
                             if (!arrayList15.isEmpty()) {
-                                arrayList13.add(l61.r(LocaleController.getString(R.string.WebSectionRecent), LocaleController.getString(R.string.WebRecentClear), new o4(kVar, 5)));
+                                arrayList13.add(m61.r(LocaleController.getString(R.string.WebSectionRecent), LocaleController.getString(R.string.WebRecentClear), new o4(kVar, 5)));
                                 int i29 = 0;
                                 while (i29 < arrayList15.size()) {
                                     final String str2 = (String) arrayList15.get(i29);
@@ -398,7 +400,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                                         }
                                     };
                                     int i31 = d.a;
-                                    l61 J2 = l61.J(d.class);
+                                    m61 J2 = m61.J(d.class);
                                     J2.z = 0;
                                     J2.l = str2;
                                     J2.D = onClickListener2;
@@ -413,12 +415,12 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                             if (iVar != null) {
                                 ArrayList arrayList17 = iVar.a;
                                 if (!arrayList17.isEmpty()) {
-                                    arrayList13.add(l61.q(LocaleController.getString(R.string.WebSectionBookmarks)));
+                                    arrayList13.add(m61.q(LocaleController.getString(R.string.WebSectionBookmarks)));
                                     while (i16 < arrayList17.size()) {
                                         MessageObject messageObject = (MessageObject) arrayList17.get(i16);
                                         if (!TextUtils.isEmpty(k.a(messageObject))) {
                                             int i32 = g.a;
-                                            l61 J3 = l61.J(g.class);
+                                            m61 J3 = m61.J(g.class);
                                             J3.z = 3;
                                             J3.q = true;
                                             J3.H = messageObject;
@@ -427,9 +429,9 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                                         i16++;
                                     }
                                     if (!iVar.f) {
-                                        arrayList13.add(l61.o(arrayList13.size(), 32));
-                                        arrayList13.add(l61.o(arrayList13.size(), 32));
-                                        arrayList13.add(l61.o(arrayList13.size(), 32));
+                                        arrayList13.add(m61.o(arrayList13.size(), 32));
+                                        arrayList13.add(m61.o(arrayList13.size(), 32));
+                                        arrayList13.add(m61.o(arrayList13.size(), 32));
                                         break;
                                     }
                                 }
@@ -467,7 +469,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                 a6 a6Var = (a6) this.b;
                 a6Var.y0 = ((Integer) obj).intValue();
                 a6Var.z0 = ((Integer) obj2).intValue();
-                AndroidUtilities.runOnUIThread(new m2(a6Var, 23), 60L);
+                AndroidUtilities.runOnUIThread(new r2(a6Var, 22), 60L);
                 break;
             case 8:
                 f fVar = (f) this.b;
@@ -476,7 +478,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                 if (arrayList19 != null && !arrayList19.isEmpty()) {
                     int dp = AndroidUtilities.dp(13.0f) + ((AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.dp(68.0f));
                     int dp2 = AndroidUtilities.dp(88.0f) + fVar.l0;
-                    arrayList18.add(l61.D(0, dp2));
+                    arrayList18.add(m61.D(0, dp2));
                     int i33 = dp - dp2;
                     int size5 = arrayList19.size();
                     int i34 = 0;
@@ -488,7 +490,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                                 i33 -= AndroidUtilities.dp(44.0f);
                                 boolean containsKey = fVar.j0.containsKey(tL_help_country.iso2);
                                 int i35 = e.a;
-                                l61 J4 = l61.J(e.class);
+                                m61 J4 = m61.J(e.class);
                                 J4.l = tL_help_country.iso2;
                                 J4.G = tL_help_country;
                                 J4.e = containsKey;
@@ -496,7 +498,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                             }
                         }
                     }
-                    arrayList18.add(l61.D(1, Math.max(0, i33)));
+                    arrayList18.add(m61.D(1, Math.max(0, i33)));
                     break;
                 }
                 break;
@@ -504,13 +506,13 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                 ArrayList arrayList20 = (ArrayList) obj;
                 ta1 ta1Var = ((uh.g) this.b).Y;
                 if (ta1Var != null) {
-                    arrayList20.add(l61.C(AndroidUtilities.dp(12.0f)));
-                    arrayList20.add(l61.h(0, 0, ta1Var));
+                    arrayList20.add(m61.C(AndroidUtilities.dp(12.0f)));
+                    arrayList20.add(m61.h(0, 0, ta1Var));
                     break;
                 }
                 break;
             case 10:
-                ((vc) this.b).run((TL_stats.TL_statsPollStats) obj);
+                ((uc) this.b).run((TL_stats.TL_statsPollStats) obj);
                 break;
             case 11:
                 yh.d dVar = (yh.d) this.b;
@@ -521,13 +523,13 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                         GiftAuctionController.Auction auction = dVar.Y;
                         yh.a aVar5 = new yh.a(i16, dVar, tL_StarGiftAuctionAcquiredGift);
                         int i36 = yh.b.a;
-                        l61 J5 = l61.J(yh.b.class);
+                        m61 J5 = m61.J(yh.b.class);
                         J5.G = tL_StarGiftAuctionAcquiredGift;
                         J5.H = auction;
                         J5.D = aVar5;
                         arrayList21.add(J5);
                     }
-                    arrayList21.add(l61.C(AndroidUtilities.dp(16.0f)));
+                    arrayList21.add(m61.C(AndroidUtilities.dp(16.0f)));
                     break;
                 }
                 break;
@@ -537,19 +539,19 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
             case 13:
                 ArrayList arrayList22 = (ArrayList) obj;
                 arrayList22.add(((n) this.b).Y);
-                arrayList22.add(l61.C(AndroidUtilities.dp(16.0f)));
+                arrayList22.add(m61.C(AndroidUtilities.dp(16.0f)));
                 break;
             case 14:
-                ((ArrayList) obj).add(l61.j(-1, ((w) this.b).Z));
+                ((ArrayList) obj).add(m61.j(-1, ((w) this.b).Z));
                 break;
             case 15:
-                ((ArrayList) obj).add(l61.j(-1, ((d0) this.b).Z));
+                ((ArrayList) obj).add(m61.j(-1, ((d0) this.b).Z));
                 break;
             case 16:
-                ((p1) this.b).V((ArrayList) obj, (z61) obj2);
+                ((p1) this.b).V((ArrayList) obj, (a71) obj2);
                 break;
             case 17:
-                yh.m2 m2Var = (yh.m2) this.b;
+                m2 m2Var = (m2) this.b;
                 ArrayList arrayList23 = (ArrayList) obj;
                 ns0 ns0Var = m2Var.a;
                 f5 f5Var = m2Var.e;
@@ -574,7 +576,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj9;
                                 boolean z17 = m2Var.d;
                                 int i39 = g1.a;
-                                l61 J6 = l61.J(g1.class);
+                                m61 J6 = m61.J(g1.class);
                                 J6.u = 1;
                                 J6.z = 0;
                                 J6.G = savedStarGift;
@@ -594,7 +596,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                                 while (true) {
                                     if (i40 < (i38 <= 0 ? 3 : i38)) {
                                         i40++;
-                                        l61 o10 = l61.o(i40, 34);
+                                        m61 o10 = m61.o(i40, 34);
                                         o10.u = 1;
                                         arrayList23.add(o10);
                                     }
@@ -603,13 +605,13 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                         }
                     }
                     if (ns0Var.d == m2Var.e) {
-                        arrayList23.add(l61.C(AndroidUtilities.dp(20.0f)));
+                        arrayList23.add(m61.C(AndroidUtilities.dp(20.0f)));
                         if (ns0Var.c == UserConfig.getInstance(m2Var.b).getClientUserId()) {
                             int w02 = g6.w0(g6.z6, m2Var.c);
                             String string3 = LocaleController.getString(R.string.ProfileGiftsInfo);
                             int dp3 = AndroidUtilities.dp(24.0f);
                             int i41 = n2.a;
-                            l61 J7 = l61.J(n2.class);
+                            m61 J7 = m61.J(n2.class);
                             J7.l = string3;
                             J7.z = 17;
                             J7.B = w02;
@@ -619,18 +621,18 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                             J7.q = false;
                             arrayList23.add(J7);
                         }
-                        arrayList23.add(l61.C(AndroidUtilities.dp(82.0f)));
+                        arrayList23.add(m61.C(AndroidUtilities.dp(82.0f)));
                     } else if (!arrayList23.isEmpty()) {
-                        arrayList23.add(l61.C(AndroidUtilities.dp(82.0f)));
+                        arrayList23.add(m61.C(AndroidUtilities.dp(82.0f)));
                     }
                     if (!arrayList23.isEmpty()) {
-                        arrayList23.add(0, l61.C(AndroidUtilities.dp(m2Var.I ? 42.0f : 12.0f)));
+                        arrayList23.add(0, m61.C(AndroidUtilities.dp(m2Var.I ? 42.0f : 12.0f)));
                     }
                     if (m2Var.f.getSpanCount() != max2) {
                         AndroidUtilities.runOnUIThread(new t1(m2Var, max2, 1));
                     }
                     ns0Var.o();
-                    ns0Var.post(new rh.j(ns0Var, 29));
+                    ns0Var.post(new h0(ns0Var, 29));
                     break;
                 }
                 break;
@@ -647,50 +649,50 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                     arrayList25.add(g1.a(0, (TL_stars.TL_starGiftUnique) obj10, false, false, false, true, false));
                 }
                 if (t3Var.t || !t3Var.u) {
-                    l61 o11 = l61.o(-1, 34);
+                    m61 o11 = m61.o(-1, 34);
                     o11.u = 1;
                     arrayList25.add(o11);
-                    l61 o12 = l61.o(-2, 34);
+                    m61 o12 = m61.o(-2, 34);
                     o12.u = 1;
                     arrayList25.add(o12);
-                    l61 o13 = l61.o(-3, 34);
+                    m61 o13 = m61.o(-3, 34);
                     o13.u = 1;
                     arrayList25.add(o13);
                     if (t3Var.d.isEmpty()) {
-                        l61 o14 = l61.o(-4, 34);
+                        m61 o14 = m61.o(-4, 34);
                         o14.u = 1;
                         arrayList25.add(o14);
-                        l61 o15 = l61.o(-5, 34);
+                        m61 o15 = m61.o(-5, 34);
                         o15.u = 1;
                         arrayList25.add(o15);
-                        l61 o16 = l61.o(-6, 34);
+                        m61 o16 = m61.o(-6, 34);
                         o16.u = 1;
                         arrayList25.add(o16);
-                        l61 o17 = l61.o(-7, 34);
+                        m61 o17 = m61.o(-7, 34);
                         o17.u = 1;
                         arrayList25.add(o17);
-                        l61 o18 = l61.o(-8, 34);
+                        m61 o18 = m61.o(-8, 34);
                         o18.u = 1;
                         arrayList25.add(o18);
-                        l61 o19 = l61.o(-9, 34);
+                        m61 o19 = m61.o(-9, 34);
                         o19.u = 1;
                         arrayList25.add(o19);
-                        l61 o20 = l61.o(-10, 34);
+                        m61 o20 = m61.o(-10, 34);
                         o20.u = 1;
                         arrayList25.add(o20);
-                        l61 o21 = l61.o(-11, 34);
+                        m61 o21 = m61.o(-11, 34);
                         o21.u = 1;
                         arrayList25.add(o21);
-                        l61 o22 = l61.o(-12, 34);
+                        m61 o22 = m61.o(-12, 34);
                         o22.u = 1;
                         arrayList25.add(o22);
-                        l61 o23 = l61.o(-13, 34);
+                        m61 o23 = m61.o(-13, 34);
                         o23.u = 1;
                         arrayList25.add(o23);
-                        l61 o24 = l61.o(-14, 34);
+                        m61 o24 = m61.o(-14, 34);
                         o24.u = 1;
                         arrayList25.add(o24);
-                        l61 o25 = l61.o(-15, 34);
+                        m61 o25 = m61.o(-15, 34);
                         o25.u = 1;
                         arrayList25.add(o25);
                     }
@@ -712,33 +714,33 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                 f5 f5Var6 = k4Var.Y;
                 if (f5Var6 != null) {
                     ArrayList arrayList28 = f5Var6.l;
-                    arrayList27.add(l61.C(AndroidUtilities.dp(16.0f)));
+                    arrayList27.add(m61.C(AndroidUtilities.dp(16.0f)));
                     if (f5Var6.i && arrayList28.isEmpty()) {
-                        l61 o26 = l61.o(1, 34);
+                        m61 o26 = m61.o(1, 34);
                         o26.u = 1;
                         arrayList27.add(o26);
-                        l61 o27 = l61.o(2, 34);
+                        m61 o27 = m61.o(2, 34);
                         o27.u = 1;
                         arrayList27.add(o27);
-                        l61 o28 = l61.o(3, 34);
+                        m61 o28 = m61.o(3, 34);
                         o28.u = 1;
                         arrayList27.add(o28);
-                        l61 o29 = l61.o(4, 34);
+                        m61 o29 = m61.o(4, 34);
                         o29.u = 1;
                         arrayList27.add(o29);
-                        l61 o30 = l61.o(5, 34);
+                        m61 o30 = m61.o(5, 34);
                         o30.u = 1;
                         arrayList27.add(o30);
-                        l61 o31 = l61.o(6, 34);
+                        m61 o31 = m61.o(6, 34);
                         o31.u = 1;
                         arrayList27.add(o31);
-                        l61 o32 = l61.o(7, 34);
+                        m61 o32 = m61.o(7, 34);
                         o32.u = 1;
                         arrayList27.add(o32);
-                        l61 o33 = l61.o(8, 34);
+                        m61 o33 = m61.o(8, 34);
                         o33.u = 1;
                         arrayList27.add(o33);
-                        l61 o34 = l61.o(9, 34);
+                        m61 o34 = m61.o(9, 34);
                         o34.u = 1;
                         arrayList27.add(o34);
                     } else {
@@ -751,7 +753,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                             TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) obj11;
                             if (!savedStarGift2.collection_id.contains(Integer.valueOf(k4Var.X))) {
                                 int i45 = g1.a;
-                                l61 J8 = l61.J(g1.class);
+                                m61 J8 = m61.J(g1.class);
                                 J8.u = z11 ? 1 : 0;
                                 J8.z = 0;
                                 J8.G = savedStarGift2;
@@ -776,14 +778,14 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                             while (true) {
                                 if (i16 < (i43 <= 0 ? 3 : i43)) {
                                     i16++;
-                                    l61 o35 = l61.o(i16, 34);
+                                    m61 o35 = m61.o(i16, 34);
                                     o35.u = 1;
                                     arrayList27.add(o35);
                                 }
                             }
                         }
                     }
-                    arrayList27.add(l61.C(AndroidUtilities.dp(68.0f)));
+                    arrayList27.add(m61.C(AndroidUtilities.dp(68.0f)));
                     break;
                 }
                 break;
@@ -793,18 +795,18 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
             case 22:
                 t tVar = (t) this.b;
                 ArrayList arrayList30 = (ArrayList) obj;
-                arrayList30.add(l61.k(tVar.Y));
+                arrayList30.add(m61.k(tVar.Y));
                 arrayList30.add(r.a(LocaleController.getString(R.string.ExplainStarsFeature1Title), LocaleController.getString(R.string.ExplainStarsFeature1Text), R.drawable.msg_gift_premium));
                 arrayList30.add(r.a(LocaleController.getString(R.string.ExplainStarsFeature2Title), AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ExplainStarsFeature2Text), new zf.c(tVar, i14)), true), R.drawable.msg_bot));
                 arrayList30.add(r.a(LocaleController.getString(R.string.ExplainStarsFeature3Title), LocaleController.getString(R.string.ExplainStarsFeature3Text), R.drawable.menu_unlock));
                 arrayList30.add(r.a(LocaleController.getString(R.string.ExplainStarsFeature4Title), LocaleController.getString(R.string.ExplainStarsFeature4Text), R.drawable.menu_feature_paid));
-                arrayList30.add(l61.C(AndroidUtilities.dp(68.0f)));
+                arrayList30.add(m61.C(AndroidUtilities.dp(68.0f)));
                 break;
             case 23:
                 ArrayList arrayList31 = (ArrayList) obj;
-                l61 l61Var = ((z) this.b).v0;
-                if (l61Var != null) {
-                    arrayList31.add(l61Var);
+                m61 m61Var = ((z) this.b).v0;
+                if (m61Var != null) {
+                    arrayList31.add(m61Var);
                     break;
                 }
                 break;
@@ -820,7 +822,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                 com.google.android.gms.common.api.internal.r rVar3 = r0Var.e0;
                 ArrayList arrayList36 = r0Var.c0;
                 if (arrayList36 != null && arrayList35 != null && arrayList34 != null) {
-                    arrayList32.add(l61.C(AndroidUtilities.dp(315.0f)));
+                    arrayList32.add(m61.C(AndroidUtilities.dp(315.0f)));
                     rVar3.a = 0;
                     rVar3.c();
                     rVar2.a = 0;
@@ -829,7 +831,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                     rVar.c();
                     int i47 = r0Var.j0.r;
                     if (i47 == 0) {
-                        arrayList32.add(l61.g(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma(z19 ? "GiftPreviewCountModelsCrafting" : "GiftPreviewCountModels", arrayList36.size()))));
+                        arrayList32.add(m61.g(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma(z19 ? "GiftPreviewCountModelsCrafting" : "GiftPreviewCountModels", arrayList36.size()))));
                         int size9 = arrayList36.size();
                         int i48 = 0;
                         while (i48 < size9) {
@@ -838,7 +840,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                             arrayList32.add(o0.a(i47, new n0((TL_stars.starGiftAttributeBackdrop) rVar3.c(), (TL_stars.starGiftAttributePattern) rVar2.c(), (TL_stars.starGiftAttributeModel) obj12)));
                         }
                         if (!arrayList33.isEmpty()) {
-                            arrayList32.add(l61.g(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma(z19 ? "GiftPreviewCountModelsCrafting2" : "GiftPreviewCountModels", arrayList36.size()))));
+                            arrayList32.add(m61.g(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma(z19 ? "GiftPreviewCountModelsCrafting2" : "GiftPreviewCountModels", arrayList36.size()))));
                             int size10 = arrayList33.size();
                             while (i16 < size10) {
                                 Object obj13 = arrayList33.get(i16);
@@ -848,7 +850,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                             break;
                         }
                     } else if (i47 == 1) {
-                        arrayList32.add(l61.g(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("GiftPreviewCountBackdrops", arrayList35.size()))));
+                        arrayList32.add(m61.g(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("GiftPreviewCountBackdrops", arrayList35.size()))));
                         int size11 = arrayList35.size();
                         while (i16 < size11) {
                             Object obj14 = arrayList35.get(i16);
@@ -857,7 +859,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                         }
                         break;
                     } else if (i47 == 2) {
-                        arrayList32.add(l61.g(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("GiftPreviewCountSymbols", arrayList34.size()))));
+                        arrayList32.add(m61.g(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("GiftPreviewCountSymbols", arrayList34.size()))));
                         int size12 = arrayList34.size();
                         while (i16 < size12) {
                             Object obj15 = arrayList34.get(i16);
@@ -878,16 +880,16 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                 }
                 break;
             case 26:
-                ((p7) this.b).I0((ArrayList) obj, (z61) obj2);
+                ((p7) this.b).I0((ArrayList) obj, (a71) obj2);
                 break;
             case 27:
-                ((a7) this.b).S((ArrayList) obj, (z61) obj2);
+                ((a7) this.b).S((ArrayList) obj, (a71) obj2);
                 break;
             case 28:
-                ((e7) this.b).S((ArrayList) obj, (z61) obj2);
+                ((e7) this.b).S((ArrayList) obj, (a71) obj2);
                 break;
             default:
-                ((f7) this.b).S((ArrayList) obj, (z61) obj2);
+                ((f7) this.b).S((ArrayList) obj, (a71) obj2);
                 break;
         }
     }

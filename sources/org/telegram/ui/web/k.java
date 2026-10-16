@@ -30,11 +30,13 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.voip.r2;
 import org.telegram.ui.Components.xn;
-import org.telegram.ui.es0;
-import w7.a6;
+import org.telegram.ui.ds0;
+import w7.b6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class k extends FrameLayout {
     public int E;
@@ -48,7 +50,7 @@ public final class k extends FrameLayout {
     public org.telegram.ui.r M;
     public org.telegram.ui.r N;
     public AsyncTask O;
-    public final m4.c a;
+    public final m2.t a;
     public boolean b;
     public final org.telegram.ui.Cells.z c;
     public final FrameLayout d;
@@ -72,14 +74,14 @@ public final class k extends FrameLayout {
         int i11 = UserConfig.selectedAccount;
         ii.a aVar = new ii.a(this, 6);
         a aVar2 = new a(this);
-        m4.c cVar = new m4.c((c6) null);
-        this.a = cVar;
-        c cVar2 = new c(this, activity, i11, aVar, aVar2, cVar);
-        this.w = cVar2;
-        cVar2.W2.r = false;
-        cVar2.setOverScrollMode(2);
-        cVar2.setPadding(0, 0, 0, 0);
-        addView(cVar2, a6.e(-1, -1, 119));
+        m2.t tVar = new m2.t((c6) null);
+        this.a = tVar;
+        c cVar = new c(this, activity, i11, aVar, aVar2, tVar);
+        this.w = cVar;
+        cVar.W2.r = false;
+        cVar.setOverScrollMode(2);
+        cVar.setPadding(0, 0, 0, 0);
+        addView(cVar, z5.e(-1, -1, 119));
         FrameLayout frameLayout = new FrameLayout(activity);
         this.d = frameLayout;
         FrameLayout frameLayout2 = new FrameLayout(activity);
@@ -87,37 +89,37 @@ public final class k extends FrameLayout {
         org.telegram.ui.Cells.z a02 = g6.a0(this.G, this.I, 15, 15);
         this.c = a02;
         frameLayout2.setBackground(a02);
-        w7.c6.b(frameLayout2, 0.04f, 1.25f);
-        frameLayout.addView(frameLayout2, a6.a(-2.0f, 12.0f, 0.0f, 12.0f, 15.0f, -1, 7));
+        b6.b(frameLayout2, 0.04f, 1.25f);
+        frameLayout.addView(frameLayout2, z5.a(-2.0f, 12.0f, 0.0f, 12.0f, 15.0f, -1, 7));
         ImageView imageView = new ImageView(activity);
         this.f = imageView;
-        frameLayout2.addView(imageView, a6.a(24.0f, 16.0f, 16.0f, 16.0f, 16.0f, 24, 19));
+        frameLayout2.addView(imageView, z5.a(24.0f, 16.0f, 16.0f, 16.0f, 16.0f, 24, 19));
         ImageView imageView2 = new ImageView(activity);
         this.n = imageView2;
-        w7.c6.a(imageView2);
+        b6.a(imageView2);
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
         imageView2.setImageResource(R.drawable.msg_copy);
         org.telegram.ui.Cells.z a03 = g6.a0(0, 0, 6, 6);
         this.h = a03;
         imageView2.setBackground(a03);
-        frameLayout2.addView(imageView2, a6.a(32.0f, 14.0f, 14.0f, 14.0f, 14.0f, 32, 53));
+        frameLayout2.addView(imageView2, z5.a(32.0f, 14.0f, 14.0f, 14.0f, 14.0f, 32, 53));
         LinearLayout linearLayout = new LinearLayout(activity);
         linearLayout.setOrientation(1);
-        frameLayout2.addView(linearLayout, a6.a(-2.0f, 54.0f, 9.0f, 54.0f, 9.0f, -1, 16));
+        frameLayout2.addView(linearLayout, z5.a(-2.0f, 54.0f, 9.0f, 54.0f, 9.0f, -1, 16));
         TextView textView = new TextView(activity);
         this.r = textView;
         textView.setTextSize(1, 16.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setMaxLines(4);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        linearLayout.addView(textView, a6.t(-1, -2, 55, 0, 0, 0, 2));
+        linearLayout.addView(textView, z5.t(-1, -2, 55, 0, 0, 0, 2));
         TextView textView2 = new TextView(activity);
         this.s = textView2;
         textView2.setTextSize(1, 14.0f);
         textView2.setMaxLines(3);
         textView2.setEllipsize(TextUtils.TruncateAt.MIDDLE);
-        linearLayout.addView(textView2, a6.t(-1, -2, 55, 0, 0, 0, 0));
-        this.y = new i(null, i10, new org.telegram.ui.Components.voip.m2(this, 3));
+        linearLayout.addView(textView2, z5.t(-1, -2, 55, 0, 0, 0, 0));
+        this.y = new i(null, i10, new r2(this, 2));
         this.v = new xn(activity, 28);
         int i12 = g6.Pk;
         c(g6.x0(null, i12, false), AndroidUtilities.computePerceivedBrightness(g6.x0(null, i12, false)) >= 0.721f ? -16777216 : -1);
@@ -161,7 +163,7 @@ public final class k extends FrameLayout {
                     jVar2.c = jSONObject.optDouble("rank", 0.0d);
                     arrayList.add(jVar2);
                 }
-                Collections.sort(arrayList, new es0(10));
+                Collections.sort(arrayList, new ds0(10));
             } catch (Exception e) {
                 FileLog.e(e);
             }
@@ -228,9 +230,9 @@ public final class k extends FrameLayout {
         g6.C1(this.h, g6.m1(1.5f, this.I), true);
         int v = g6.v(i10, g6.m1(0.05f, i11));
         int v10 = g6.v(i10, g6.m1(0.55f, i11));
-        m4.c cVar = this.a;
-        SparseIntArray sparseIntArray = (SparseIntArray) cVar.b;
-        SparseIntArray sparseIntArray2 = (SparseIntArray) cVar.b;
+        m2.t tVar = this.a;
+        SparseIntArray sparseIntArray = (SparseIntArray) tVar.b;
+        SparseIntArray sparseIntArray2 = (SparseIntArray) tVar.b;
         sparseIntArray.put(g6.d6, this.F);
         sparseIntArray2.put(g6.G6, i11);
         sparseIntArray2.put(g6.e7, v);
@@ -295,14 +297,14 @@ public final class k extends FrameLayout {
             }
             return;
         }
-        i1 i1Var = new i1(new y2(8, this, z10));
-        String str3 = n1.a().c;
+        j1 j1Var = new j1(new y2(8, this, z10));
+        String str3 = o1.a().c;
         if (str3 != null) {
             StringBuilder u10 = a1.g.u(str3);
             u10.append(URLEncoder.encode(str));
             str2 = u10.toString();
         }
-        this.O = i1Var.execute(str2);
+        this.O = j1Var.execute(str2);
     }
 
     public void setOpenProgress(float f7) {

@@ -1,5 +1,6 @@
 package v3;
 
+import a4.l;
 import b2.t0;
 import b2.u0;
 import b2.w0;
@@ -21,11 +22,10 @@ import e9.x1;
 import java.io.EOFException;
 import java.math.RoundingMode;
 import java.util.List;
-import q3.l;
 import v7.b8;
 import v7.n7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class d implements o {
     public final int a;
@@ -33,7 +33,7 @@ public final class d implements o {
     public final x c;
     public final z d;
     public final w e;
-    public final k6.h f;
+    public final l f;
     public final n g;
     public q h;
     public i0 i;
@@ -63,9 +63,9 @@ public final class d implements o {
     @Override // c3.o
     public final void c(q qVar) {
         this.h = qVar;
-        i0 a02 = qVar.a0(0, 1);
-        this.i = a02;
-        this.j = a02;
+        i0 W = qVar.W(0, 1);
+        this.i = W;
+        this.j = W;
         this.h.D();
     }
 
@@ -172,7 +172,7 @@ public final class d implements o {
         }
         if (this.s == null) {
             x xVar2 = new x(zVar.b);
-            pVar.a(0, zVar.b, xVar2.a);
+            pVar.b(0, zVar.b, xVar2.a);
             int i18 = 21;
             th2 = null;
             if ((zVar.a & 1) != 0) {
@@ -275,8 +275,8 @@ public final class d implements o {
                                 break;
                             }
                             t0 t0Var3 = t0VarArr[i20];
-                            if (l.class.isAssignableFrom(t0Var3.getClass())) {
-                                t0Var = (t0) l.class.cast(t0Var3);
+                            if (q3.l.class.isAssignableFrom(t0Var3.getClass())) {
+                                t0Var = (t0) q3.l.class.cast(t0Var3);
                             }
                             t0Var = null;
                             if (t0Var != null) {
@@ -284,7 +284,7 @@ public final class d implements o {
                             }
                             i20++;
                         }
-                        l lVar = (l) t0Var;
+                        q3.l lVar = (q3.l) t0Var;
                         if (lVar != null) {
                             int[] iArr = lVar.e;
                             t0[] t0VarArr2 = u0Var.a;
@@ -345,10 +345,10 @@ public final class d implements o {
                                 hVar = aVar;
                                 boolean d = hVar.d();
                                 int i26 = this.a;
-                                if (!d && !(hVar instanceof a) && (i26 & 1) != 0 && hVar.h() != -9223372036854775807L && (hVar.a() != -1 || pVar.getLength() != -1)) {
+                                if (!d && !(hVar instanceof a) && (i26 & 1) != 0 && hVar.h() != -9223372036854775807L && (hVar.b() != -1 || pVar.getLength() != -1)) {
                                     long c10 = hVar.c() != -1 ? hVar.c() : 0L;
-                                    long a2 = hVar.a() != -1 ? hVar.a() : pVar.getLength();
-                                    hVar = new a(a2, c10, b8.e(m0.a0(a2 - c10, 8000000L, hVar.h(), RoundingMode.HALF_UP)), -1, false, true);
+                                    long b10 = hVar.b() != -1 ? hVar.b() : pVar.getLength();
+                                    hVar = new a(b10, c10, b8.e(m0.a0(b10 - c10, 8000000L, hVar.h(), RoundingMode.HALF_UP)), -1, false, true);
                                 } else if (!hVar.d() && !(hVar instanceof a) && (i26 & 1) != 0) {
                                     hVar = g(pVar, false);
                                 }
@@ -430,9 +430,9 @@ public final class d implements o {
                     float intBitsToFloat = Float.intBitsToFloat(xVar.m());
                     int H4 = xVar.H();
                     int H5 = xVar.H();
-                    e a10 = e.a(H4);
-                    e a11 = e.a(H5);
-                    fVar = (intBitsToFloat <= 0.0f && a10 == null && a11 == null) ? null : new f(intBitsToFloat, a10, a11);
+                    e a2 = e.a(H4);
+                    e a10 = e.a(H5);
+                    fVar = (intBitsToFloat <= 0.0f && a2 == null && a10 == null) ? null : new f(intBitsToFloat, a2, a10);
                     xVar.O(2);
                     int D = xVar.D();
                     i15 = (16773120 & D) >> 12;
@@ -701,10 +701,10 @@ public final class d implements o {
                 }
                 zVar.a(m13);
                 if (this.n == -9223372036854775807L) {
-                    this.n = this.s.b(pVar.getPosition());
+                    this.n = this.s.a(pVar.getPosition());
                     long j24 = this.b;
                     if (j24 != -9223372036854775807L) {
-                        this.n = (j24 - this.s.b(j11)) + this.n;
+                        this.n = (j24 - this.s.a(j11)) + this.n;
                     }
                 }
                 this.r = zVar.b;
@@ -720,9 +720,9 @@ public final class d implements o {
             }
             return i10;
         }
-        int a12 = this.j.a(pVar, this.r, true);
-        if (a12 != -1) {
-            int i32 = this.r - a12;
+        int a11 = this.j.a(pVar, this.r, true);
+        if (a11 != -1) {
+            int i32 = this.r - a11;
             this.r = i32;
             if (i32 <= 0) {
                 this.j.c(((this.o * j10) / zVar.c) + this.n, 1, zVar.b, 0, null);
@@ -749,7 +749,7 @@ public final class d implements o {
 
     public final a g(p pVar, boolean z10) {
         x xVar = this.c;
-        pVar.a(0, 4, xVar.a);
+        pVar.b(0, 4, xVar.a);
         xVar.N(0);
         int m10 = xVar.m();
         z zVar = this.d;
@@ -761,7 +761,7 @@ public final class d implements o {
         b0 b0Var = this.s;
         if ((b0Var instanceof a) && ((k) b0Var).d()) {
             long j10 = this.q;
-            if (j10 == -1 || j10 == this.s.a()) {
+            if (j10 == -1 || j10 == this.s.b()) {
                 return;
             }
             a aVar = (a) this.s;
@@ -785,8 +785,8 @@ public final class d implements o {
     public final boolean i(p pVar) {
         h hVar = this.s;
         if (hVar != null) {
-            long a2 = hVar.a();
-            if (a2 != -1) {
+            long b10 = hVar.b();
+            if (b10 != -1) {
             }
         }
         try {
@@ -802,10 +802,10 @@ public final class d implements o {
         int h;
         pVar.q();
         if (pVar.getPosition() == 0) {
-            u0 r10 = this.f.r(pVar, null, 131072);
-            this.l = r10;
-            if (r10 != null) {
-                this.e.b(r10);
+            u0 P = this.f.P(pVar, null, 131072);
+            this.l = P;
+            if (P != null) {
+                this.e.b(P);
             }
             i10 = (int) pVar.k();
             if (!z10) {
@@ -874,7 +874,7 @@ public final class d implements o {
         this.d = new z();
         this.e = new w();
         this.n = -9223372036854775807L;
-        this.f = new k6.h(10);
+        this.f = new l(9);
         n nVar = new n();
         this.g = nVar;
         this.j = nVar;

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f70 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -36,11 +36,11 @@ public final /* synthetic */ class f70 implements View.OnClickListener {
                 i10 = ((org.telegram.ui.ActionBar.e3) p70Var).currentAccount;
                 long j10 = -p70Var.g0;
                 c6Var = ((org.telegram.ui.ActionBar.e3) p70Var).resourcesProvider;
-                z01.b(context, i10, j10, this.b, this.c, this.d, this.e, this.f, c6Var);
+                a11.b(context, i10, j10, this.b, this.c, this.d, this.e, this.f, c6Var);
                 break;
             default:
                 xv0 xv0Var = ((hu0) this.h).f;
-                z01.b(xv0Var.getContext(), xv0Var.v1.getCurrentAccount(), xv0Var.j1, this.b, this.c, this.d, this.e, this.f, xv0Var.F1);
+                a11.b(xv0Var.getContext(), xv0Var.v1.getCurrentAccount(), xv0Var.j1, this.b, this.c, this.d, this.e, this.f, xv0Var.F1);
                 break;
         }
     }

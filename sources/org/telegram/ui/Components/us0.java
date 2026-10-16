@@ -8,7 +8,7 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class us0 extends zz {
     public final iw0 X;
@@ -66,9 +66,9 @@ public final class us0 extends zz {
         super.U(eVar, y0Var, view, cVar);
         AccessibilityNodeInfo accessibilityNodeInfo = cVar.a;
         AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo = accessibilityNodeInfo.getCollectionItemInfo();
-        n5.c cVar2 = collectionItemInfo != null ? new n5.c(collectionItemInfo) : null;
-        if (cVar2 != null) {
-            Object obj = cVar2.a;
+        n7.b bVar = collectionItemInfo != null ? new n7.b(collectionItemInfo) : null;
+        if (bVar != null) {
+            Object obj = bVar.a;
             if (((AccessibilityNodeInfo.CollectionItemInfo) obj).isHeading()) {
                 accessibilityNodeInfo.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowSpan(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnSpan(), false));
             }

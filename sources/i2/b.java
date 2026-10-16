@@ -2,7 +2,7 @@ package i2;
 
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class b implements m1 {
     public boolean E;
@@ -31,7 +31,7 @@ public abstract class b implements m1 {
     public final int B(long j10) {
         u2.d1 d1Var = this.r;
         d1Var.getClass();
-        return d1Var.m(j10 - this.v);
+        return d1Var.j(j10 - this.v);
     }
 
     public abstract int C(b2.x xVar);

@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class eh0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final class eh0 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         PhotoViewer photoViewer;
-        org.telegram.ui.rt0 rt0Var;
+        org.telegram.ui.qt0 qt0Var;
         switch (this.a) {
             case 0:
                 int actionMasked = motionEvent.getActionMasked();
@@ -65,8 +65,8 @@ public final class eh0 extends FrameLayout {
                     fh0Var.f0 = false;
                     fh0Var.i();
                     AndroidUtilities.cancelRunOnUIThread(fh0Var.h0);
-                } else if (actionMasked == 2 && (photoViewer = fh0Var.V) != null && (rt0Var = photoViewer.c4) != null && rt0Var.rewinding) {
-                    rt0Var.setX(motionEvent.getX());
+                } else if (actionMasked == 2 && (photoViewer = fh0Var.V) != null && (qt0Var = photoViewer.c4) != null && qt0Var.rewinding) {
+                    qt0Var.setX(motionEvent.getX());
                 }
                 if (fh0Var.y != null) {
                     MotionEvent obtain = MotionEvent.obtain(motionEvent);
@@ -84,7 +84,7 @@ public final class eh0 extends FrameLayout {
                 obtain2.offsetLocation(motionEvent.getRawX() - motionEvent.getX(), motionEvent.getRawY() - motionEvent.getY());
                 boolean onTouchEvent = fh0Var.s.onTouchEvent(obtain2);
                 obtain2.recycle();
-                boolean z10 = !fh0Var.s.isInProgress() && fh0Var.v.Y0(motionEvent);
+                boolean z10 = !fh0Var.s.isInProgress() && fh0Var.v.j1(motionEvent);
                 if (actionMasked == 1 || actionMasked == 3 || actionMasked == 6) {
                     fh0Var.w = false;
                     fh0Var.x = false;
@@ -115,7 +115,7 @@ public final class eh0 extends FrameLayout {
                         if (!kVar2.f) {
                             kVar2.b = fh0Var.L;
                             kVar2.c = true;
-                            kVar2.u.i = w7.s.a(r1, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - fh0Var.I) - AndroidUtilities.dp(16.0f));
+                            kVar2.u.i = w7.r.a(r1, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - fh0Var.I) - AndroidUtilities.dp(16.0f));
                             fh0Var.N.h();
                         }
                     }
@@ -153,7 +153,7 @@ public final class eh0 extends FrameLayout {
                     o1.k kVar2 = fh0Var.N;
                     kVar2.b = fh0Var.L;
                     kVar2.c = true;
-                    kVar2.u.i = w7.s.a(r1, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - (fh0Var.r() * fh0Var.J)) - AndroidUtilities.dp(16.0f));
+                    kVar2.u.i = w7.r.a(r1, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - (fh0Var.r() * fh0Var.J)) - AndroidUtilities.dp(16.0f));
                     fh0Var.N.h();
                     break;
                 }
@@ -169,9 +169,9 @@ public final class eh0 extends FrameLayout {
         switch (this.a) {
             case 1:
                 fh0 fh0Var = this.b;
-                z71 z71Var = fh0Var.Q;
-                if (z71Var.j) {
-                    z71Var.setBounds(getLeft(), getTop(), getRight(), getBottom());
+                a81 a81Var = fh0Var.Q;
+                if (a81Var.j) {
+                    a81Var.setBounds(getLeft(), getTop(), getRight(), getBottom());
                     fh0Var.Q.draw(canvas);
                 }
                 PhotoViewer photoViewer = fh0Var.V;

@@ -7,7 +7,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class xc1 extends org.telegram.ui.Components.mm0 {
     public boolean V2;
@@ -109,7 +109,7 @@ public final class xc1 extends org.telegram.ui.Components.mm0 {
         int action = motionEvent.getAction();
         ce1 ce1Var = this.X2;
         if (action == 1) {
-            if (!ce1Var.r0 && (ce1Var.B1 instanceof pj1) && ce1Var.L0[0].getVisibility() == 0) {
+            if (!ce1Var.r0 && (ce1Var.B1 instanceof oj1) && ce1Var.L0[0].getVisibility() == 0) {
                 ce1Var.f1(0, false, true);
             }
             ce1Var.r0 = false;
@@ -148,21 +148,21 @@ public final class xc1 extends org.telegram.ui.Components.mm0 {
         if (ce1Var.J0 != null) {
             int i11 = 0;
             while (true) {
-                org.telegram.ui.Components.l91[] l91VarArr = ce1Var.J0;
-                if (i11 >= l91VarArr.length) {
+                org.telegram.ui.Components.m91[] m91VarArr = ce1Var.J0;
+                if (i11 >= m91VarArr.length) {
                     break;
                 }
-                l91VarArr[i11].invalidate();
+                m91VarArr[i11].invalidate();
                 i11++;
             }
         }
         if (ce1Var.K0 != null) {
             while (true) {
-                org.telegram.ui.Components.l91[] l91VarArr2 = ce1Var.K0;
-                if (i10 >= l91VarArr2.length) {
+                org.telegram.ui.Components.m91[] m91VarArr2 = ce1Var.K0;
+                if (i10 >= m91VarArr2.length) {
                     break;
                 }
-                l91VarArr2[i10].invalidate();
+                m91VarArr2[i10].invalidate();
                 i10++;
             }
         }

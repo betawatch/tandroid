@@ -10,7 +10,7 @@ import org.telegram.messenger.CacheByChatsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class e6 extends org.telegram.ui.ActionBar.m2 {
     public c6 a;
@@ -66,7 +66,7 @@ public class e6 extends org.telegram.ui.ActionBar.m2 {
     public final View createView(Context context) {
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        i2.d.v(false, this.actionBar);
+        i2.d.y(false, this.actionBar);
         this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, 23));
         this.actionBar.setTitle(LocaleController.getString(R.string.NotificationsExceptions));
         this.b = new org.telegram.ui.Components.mm0(context, null);

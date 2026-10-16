@@ -6,7 +6,7 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class xu0 implements org.telegram.ui.vt {
     public final /* synthetic */ TLRPC.TL_messageMediaPoll a;
@@ -73,10 +73,10 @@ public final class xu0 implements org.telegram.ui.vt {
         TLRPC.TL_inputStickerSetID tL_inputStickerSetID = new TLRPC.TL_inputStickerSetID();
         tL_inputStickerSetID.access_hash = inputStickerSet.access_hash;
         tL_inputStickerSetID.id = inputStickerSet.id;
-        ty0 ty0Var = new ty0(ev0Var.s.getContext(), ev0Var.s.v1, tL_inputStickerSetID, null, null, cv0Var.b);
-        ty0Var.setCalcMandatoryInsets(true);
-        ty0Var.i0 = z10;
-        ty0Var.show();
+        uy0 uy0Var = new uy0(ev0Var.s.getContext(), ev0Var.s.v1, tL_inputStickerSetID, null, null, cv0Var.b);
+        uy0Var.setCalcMandatoryInsets(true);
+        uy0Var.i0 = z10;
+        uy0Var.show();
     }
 
     @Override // org.telegram.ui.vt
@@ -155,7 +155,7 @@ public final class xu0 implements org.telegram.ui.vt {
     }
 
     @Override // org.telegram.ui.vt
-    public final /* synthetic */ m80 u(ah.v vVar) {
+    public final /* synthetic */ l80 u(ah.v vVar) {
         return null;
     }
 

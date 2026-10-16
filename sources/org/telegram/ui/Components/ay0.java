@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ay0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final class ay0 implements ValueAnimator.AnimatorUpdateListener {
                 ((kn0) this.b).invalidate();
                 break;
             default:
-                ((k91) this.c).E(this.b, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                ((l91) this.c).E(this.b, ((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }

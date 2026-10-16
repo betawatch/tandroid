@@ -1,12 +1,13 @@
 package j8;
 
+import a6.m;
 import android.os.Parcel;
 import android.os.RemoteException;
 import androidx.car.app.j;
 import n6.l;
 import s7.i;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class f {
     public final s7.a a;
@@ -16,10 +17,10 @@ public final class f {
         this.a = aVar;
     }
 
-    public final void a(qb.c cVar) {
+    public final void a(m mVar) {
         s7.a aVar = this.a;
         try {
-            x6.a aVar2 = (x6.a) cVar.b;
+            x6.a aVar2 = (x6.a) mVar.b;
             i iVar = (i) aVar;
             Parcel N0 = iVar.N0();
             s7.b.c(N0, aVar2);

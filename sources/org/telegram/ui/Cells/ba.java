@@ -26,13 +26,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.hr;
 import org.telegram.ui.Components.mm0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class ba {
     public final m9 A;
     public final Rect B;
     public aa C;
-    public w7.w5 D;
+    public w7.j0 D;
     public mm0 E;
     public ViewGroup F;
     public Magnifier G;
@@ -444,9 +444,9 @@ public abstract class ba {
             this.C.c();
         }
         this.V = 0.0f;
-        w7.w5 w5Var = this.D;
-        if (w5Var != null) {
-            w5Var.a(false);
+        w7.j0 j0Var = this.D;
+        if (j0Var != null) {
+            j0Var.a(false);
         }
         this.s = -1;
         this.t = -1;

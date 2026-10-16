@@ -9,10 +9,10 @@ import com.google.android.gms.internal.vision.f3;
 import com.google.android.gms.internal.vision.t2;
 import java.nio.ByteBuffer;
 import java.util.HashSet;
-import li.k;
+import m.h3;
 import n6.l;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class c extends h {
     public final q8.a b;
@@ -43,10 +43,10 @@ public final class c extends h {
         }
     }
 
-    public final SparseArray e1(k kVar) {
+    public final SparseArray e1(h3 h3Var) {
         ByteBuffer I;
         a[] n10;
-        Bitmap bitmap = (Bitmap) kVar.d;
+        Bitmap bitmap = (Bitmap) h3Var.d;
         if (bitmap != null) {
             int width = bitmap.getWidth();
             int height = bitmap.getHeight();
@@ -71,7 +71,7 @@ public final class c extends h {
                 }
             }
         } else {
-            I = kVar.I();
+            I = h3Var.I();
         }
         synchronized (this.d) {
             if (!this.e) {
@@ -79,7 +79,7 @@ public final class c extends h {
             }
             t2 t2Var = this.c;
             l.h(I);
-            n10 = t2Var.n(I, f3.b(kVar));
+            n10 = t2Var.n(I, f3.b(h3Var));
         }
         HashSet hashSet = new HashSet();
         SparseArray sparseArray = new SparseArray(n10.length);

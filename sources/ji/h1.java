@@ -19,11 +19,11 @@ import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.nu;
-import org.telegram.ui.Components.q11;
-import org.telegram.ui.Components.r61;
+import org.telegram.ui.Components.r11;
+import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.x90;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class h1 extends nu {
     public boolean E;
@@ -70,7 +70,7 @@ public final class h1 extends nu {
                 }
                 g1 g1Var = h1Var.c;
                 if (g1Var != null && charSequence != null && i11 > i10 && i12 == i13) {
-                    g1Var.g0(charSequence.subSequence(i10, i11));
+                    g1Var.y(charSequence.subSequence(i10, i11));
                 }
                 return spanned.subSequence(i12, i13);
             }
@@ -110,7 +110,7 @@ public final class h1 extends nu {
     }
 
     @Override // org.telegram.ui.Components.nu
-    public final r61 createUrlSpan(String str) {
+    public final s61 createUrlSpan(String str) {
         return k6.k(str);
     }
 
@@ -128,10 +128,10 @@ public final class h1 extends nu {
                     p();
                     return true;
                 }
-                this.c.p0(this);
+                this.c.z(this);
             }
         } else if (keyEvent.getAction() == 0 && (g1Var = this.c) != null) {
-            g1Var.F0(keyEvent.isShiftPressed());
+            g1Var.E(keyEvent.isShiftPressed());
             return true;
         }
         return true;
@@ -248,15 +248,15 @@ public final class h1 extends nu {
                 this.F = null;
                 if (text instanceof Spanned) {
                     Spanned spanned = (Spanned) text;
-                    q11[] q11VarArr = (q11[]) spanned.getSpans(0, spanned.length(), q11.class);
-                    int length = q11VarArr.length;
+                    r11[] r11VarArr = (r11[]) spanned.getSpans(0, spanned.length(), r11.class);
+                    int length = r11VarArr.length;
                     int i11 = 0;
                     while (i11 < length) {
-                        q11 q11Var = q11VarArr[i11];
-                        int i12 = q11Var.b.a;
+                        r11 r11Var = r11VarArr[i11];
+                        int i12 = r11Var.b.a;
                         if ((65536 & i12) != 0) {
-                            int spanStart = spanned.getSpanStart(q11Var);
-                            int spanEnd = spanned.getSpanEnd(q11Var);
+                            int spanStart = spanned.getSpanStart(r11Var);
+                            int spanEnd = spanned.getSpanEnd(r11Var);
                             x90Var = x90Var;
                             if (spanStart >= 0 && spanEnd > spanStart) {
                                 if (x90Var == null) {
@@ -304,10 +304,10 @@ public final class h1 extends nu {
     public final boolean onKeyDown(int i10, KeyEvent keyEvent) {
         if (i10 == 67 && this.c != null) {
             if (length() == 0) {
-                this.c.W();
+                this.c.r();
                 return true;
             }
-            if (getSelectionStart() == 0 && getSelectionEnd() == 0 && this.c.l(this)) {
+            if (getSelectionStart() == 0 && getSelectionEnd() == 0 && this.c.e(this)) {
                 return true;
             }
         }
@@ -319,7 +319,7 @@ public final class h1 extends nu {
         super.onSelectionChanged(i10, i11);
         g1 g1Var = this.c;
         if (g1Var != null) {
-            g1Var.U(this, i10, i11);
+            g1Var.q(this, i10, i11);
         }
     }
 
@@ -333,10 +333,10 @@ public final class h1 extends nu {
     public final boolean onTextContextMenuItem(int i10) {
         g1 g1Var;
         g1 g1Var2;
-        if (i10 == 16908319 && (g1Var2 = this.c) != null && g1Var2.h()) {
+        if (i10 == 16908319 && (g1Var2 = this.c) != null && g1Var2.d()) {
             return true;
         }
-        if (i10 == 16908322 && (g1Var = this.c) != null && g1Var.C(this)) {
+        if (i10 == 16908322 && (g1Var = this.c) != null && g1Var.m(this)) {
             return true;
         }
         return super.onTextContextMenuItem(i10);

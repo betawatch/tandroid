@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -140,7 +140,7 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                 MessageObject messageObject2 = (MessageObject) obj2;
                 PhotoViewer photoViewer = ((as) obj3).c.a;
                 Drawable[] drawableArr = PhotoViewer.U8;
-                ArrayList arrayList = ((org.telegram.ui.Components.d81) obj).d;
+                ArrayList arrayList = ((org.telegram.ui.Components.e81) obj).d;
                 if (arrayList.isEmpty()) {
                     document = null;
                 } else {
@@ -150,21 +150,21 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                         if (i13 < size) {
                             Object obj4 = arrayList.get(i13);
                             i13++;
-                            org.telegram.ui.Components.f81 f81Var = (org.telegram.ui.Components.f81) obj4;
-                            if (f81Var.b()) {
-                                document = f81Var.g;
+                            org.telegram.ui.Components.g81 g81Var = (org.telegram.ui.Components.g81) obj4;
+                            if (g81Var.b()) {
+                                document = g81Var.g;
                             }
                         } else {
                             long j11 = Long.MAX_VALUE;
-                            org.telegram.ui.Components.f81 f81Var2 = null;
+                            org.telegram.ui.Components.g81 g81Var2 = null;
                             for (int i14 = 0; i14 < arrayList.size(); i14++) {
-                                org.telegram.ui.Components.f81 f81Var3 = (org.telegram.ui.Components.f81) arrayList.get(i14);
-                                if (f81Var3.k < j11 && org.telegram.ui.Components.h81.Y(f81Var3.m)) {
-                                    j11 = f81Var3.k;
-                                    f81Var2 = f81Var3;
+                                org.telegram.ui.Components.g81 g81Var3 = (org.telegram.ui.Components.g81) arrayList.get(i14);
+                                if (g81Var3.k < j11 && org.telegram.ui.Components.i81.Y(g81Var3.m)) {
+                                    j11 = g81Var3.k;
+                                    g81Var2 = g81Var3;
                                 }
                             }
-                            document = f81Var2 != null ? f81Var2.g : ((org.telegram.ui.Components.f81) arrayList.get(0)).g;
+                            document = g81Var2 != null ? g81Var2.g : ((org.telegram.ui.Components.g81) arrayList.get(0)).g;
                         }
                     }
                 }
@@ -179,7 +179,7 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                         arrayList2.add(messageObject2);
                         MediaController.saveFilesFromMessages(photoViewer.y, AccountInstance.getInstance(photoViewer.T), arrayList2, new za(photoViewer, i11));
                     } else {
-                        MediaController.saveFile(pathToAttach.toString(), photoViewer.y, 1, null, null, new ur0(photoViewer, i12));
+                        MediaController.saveFile(pathToAttach.toString(), photoViewer.y, 1, null, null, new tr0(photoViewer, i12));
                     }
                     photoViewer.o0.M(null, null);
                     break;
@@ -191,19 +191,19 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                 org.telegram.ui.Components.g5.N((Context) obj2, LocaleController.getString(R.string.ResetToOriginalPhotoTitle), LocaleController.formatString(R.string.ResetToOriginalPhotoMessage, user.first_name), LocaleController.getString(R.string.Reset), new ns(wsVar, user, i12), wsVar.r).o();
                 break;
             case 11:
-                kh0 kh0Var = (kh0) obj3;
-                ((org.telegram.ui.Components.m80) obj2).u();
+                jh0 jh0Var = (jh0) obj3;
+                ((org.telegram.ui.Components.l80) obj2).u();
                 int i15 = ((MessagesController.DialogFilter) obj).id;
-                if (kh0Var.c.getCurrentPosition() != 0 || (yyVar = kh0Var.J) == null) {
-                    if (kh0Var.J == null) {
-                        kh0Var.l0(null);
+                if (jh0Var.c.getCurrentPosition() != 0 || (yyVar = jh0Var.J) == null) {
+                    if (jh0Var.J == null) {
+                        jh0Var.l0(null);
                     }
-                    kh0Var.I = Integer.valueOf(i15);
-                    kh0Var.m0(0, true);
-                    kh0Var.c.D(0);
+                    jh0Var.I = Integer.valueOf(i15);
+                    jh0Var.m0(0, true);
+                    jh0Var.c.D(0);
                     break;
                 } else {
-                    yyVar.t4(i15);
+                    yyVar.u4(i15);
                     break;
                 }
             case 12:

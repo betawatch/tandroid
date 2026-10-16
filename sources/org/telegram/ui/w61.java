@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class w61 extends FrameLayout {
     public final TextView a;
@@ -28,15 +28,15 @@ public final class w61 extends FrameLayout {
     public w61(r71 r71Var, Context context, boolean z10) {
         super(context);
         this.f = r71Var;
-        LinearLayout e = org.telegram.messenger.yh.e(context, 0);
-        addView(e, w7.a6.e(-2, -2, z10 ? 3 : 17));
+        LinearLayout e = org.telegram.messenger.sk.e(context, 0);
+        addView(e, w7.z5.e(-2, -2, z10 ? 3 : 17));
         org.telegram.ui.Components.bk0 bk0Var = new org.telegram.ui.Components.bk0(context);
         this.b = bk0Var;
         bk0Var.f(R.raw.unlock_icon, 20, 20, null);
         int i10 = org.telegram.ui.ActionBar.g6.Te;
         org.telegram.ui.ActionBar.c6 c6Var = r71Var.Z0;
         bk0Var.setColorFilter(org.telegram.ui.ActionBar.g6.w0(i10, c6Var));
-        e.addView(bk0Var, w7.a6.n(20, 20));
+        e.addView(bk0Var, w7.z5.n(20, 20));
         TextView textView = new TextView(context);
         this.a = textView;
         textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(i10, c6Var));
@@ -46,13 +46,13 @@ public final class w61 extends FrameLayout {
         textView.setLines(1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
-        e.addView(textView, w7.a6.q(-2, -2, 17));
+        e.addView(textView, w7.z5.q(-2, -2, 17));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setImageResource(R.drawable.msg_close);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Ve, c6Var), PorterDuff.Mode.MULTIPLY));
-        addView(imageView, w7.a6.e(24, 24, 21));
+        addView(imageView, w7.z5.e(24, 24, 21));
     }
 
     public final void a(String str, boolean z10) {

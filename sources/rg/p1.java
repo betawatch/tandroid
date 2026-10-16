@@ -10,10 +10,10 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.ui.ActionBar.w5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class p1 extends TextView {
     public boolean a;
@@ -35,11 +35,11 @@ public final class p1 extends TextView {
         super.onDraw(canvas);
         canvas.restore();
         if (this.a) {
-            int B = yh.B(16.0f, getHeight(), 2);
+            int A = sk.A(16.0f, getHeight(), 2);
             if (LocaleController.isRTL) {
-                this.b.setBounds(AndroidUtilities.dp(7.0f), B, AndroidUtilities.dp(23.0f), AndroidUtilities.dp(16.0f) + B);
+                this.b.setBounds(AndroidUtilities.dp(7.0f), A, AndroidUtilities.dp(23.0f), AndroidUtilities.dp(16.0f) + A);
             } else {
-                this.b.setBounds(getWidth() - AndroidUtilities.dp(23.0f), B, getWidth() - AndroidUtilities.dp(7.0f), AndroidUtilities.dp(16.0f) + B);
+                this.b.setBounds(getWidth() - AndroidUtilities.dp(23.0f), A, getWidth() - AndroidUtilities.dp(7.0f), AndroidUtilities.dp(16.0f) + A);
             }
             this.b.draw(canvas);
         }

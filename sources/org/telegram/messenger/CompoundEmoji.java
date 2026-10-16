@@ -17,13 +17,13 @@ import java.util.List;
 import org.telegram.messenger.Emoji;
 import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class CompoundEmoji {
     public static List<String> skinTones = Arrays.asList("🏻", "🏼", "🏽", "🏾", "🏿");
     private static Paint placeholderPaint = new Paint(2);
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class DrawableInfo {
         private static final SparseArray<Bitmap> bitmaps = new SparseArray<>();
         private static final ArrayList<Integer> loading = new ArrayList<>();
@@ -171,7 +171,7 @@ public class CompoundEmoji {
         return compoundEmojiDrawable;
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class CompoundEmojiDrawable extends Emoji.EmojiDrawable {
         private static Paint paint = new Paint(2);
         private static Rect rect = new Rect();

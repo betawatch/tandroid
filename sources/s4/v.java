@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Cells.m2;
 import org.telegram.ui.fz;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class v {
     public static final m2 b = new m2(1);
@@ -42,8 +42,8 @@ public abstract class v {
         Object tag = view.getTag();
         if (tag instanceof Float) {
             float floatValue = ((Float) tag).floatValue();
-            WeakHashMap weakHashMap = r0.j0.a;
-            r0.b0.h(view, floatValue);
+            WeakHashMap weakHashMap = r0.i0.a;
+            r0.a0.h(view, floatValue);
         }
         view.setTag(null);
         view.setTranslationX(0.0f);
@@ -97,21 +97,21 @@ public abstract class v {
     public void m(Canvas canvas, RecyclerView recyclerView, b1 b1Var, float f7, float f10, int i10, boolean z10) {
         View view = b1Var.a;
         if (z10 && view.getTag() == null) {
-            WeakHashMap weakHashMap = r0.j0.a;
-            Float valueOf = Float.valueOf(r0.b0.e(view));
+            WeakHashMap weakHashMap = r0.i0.a;
+            Float valueOf = Float.valueOf(r0.a0.e(view));
             int childCount = recyclerView.getChildCount();
             float f11 = 0.0f;
             for (int i11 = 0; i11 < childCount; i11++) {
                 View childAt = recyclerView.getChildAt(i11);
                 if (childAt != view) {
-                    WeakHashMap weakHashMap2 = r0.j0.a;
-                    float e = r0.b0.e(childAt);
+                    WeakHashMap weakHashMap2 = r0.i0.a;
+                    float e = r0.a0.e(childAt);
                     if (e > f11) {
                         f11 = e;
                     }
                 }
             }
-            r0.b0.h(view, f11 + 1.0f);
+            r0.a0.h(view, f11 + 1.0f);
             view.setTag(valueOf);
         }
         view.setTranslationX(f7);

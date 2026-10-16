@@ -31,6 +31,7 @@ import java.util.List;
 import java.util.Stack;
 import java.util.WeakHashMap;
 import java.util.concurrent.atomic.AtomicReference;
+import m2.t;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.ImageReceiver;
@@ -43,12 +44,12 @@ import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Cells.a0;
 import org.telegram.ui.Components.id;
 import org.telegram.ui.Components.mw0;
-import org.telegram.ui.Components.q11;
+import org.telegram.ui.Components.r11;
 import org.telegram.ui.fi1;
-import w7.s;
+import w7.r;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
 public final class g extends Drawable {
     public static final int A;
     public static final int B;
@@ -129,11 +130,11 @@ public final class g extends Drawable {
         if (layout == null) {
             return;
         }
-        q11[] q11VarArr = (q11[]) spanned.getSpans(0, layout.getText().length(), q11.class);
-        for (int i14 = 0; i14 < Math.min(100, q11VarArr.length); i14++) {
-            if (q11VarArr[i14].c()) {
-                int spanStart = spanned.getSpanStart(q11VarArr[i14]);
-                int spanEnd = spanned.getSpanEnd(q11VarArr[i14]);
+        r11[] r11VarArr = (r11[]) spanned.getSpans(0, layout.getText().length(), r11.class);
+        for (int i14 = 0; i14 < Math.min(100, r11VarArr.length); i14++) {
+            if (r11VarArr[i14].c()) {
+                int spanStart = spanned.getSpanStart(r11VarArr[i14]);
+                int spanEnd = spanned.getSpanEnd(r11VarArr[i14]);
                 if (i10 == -1 && i11 == -1) {
                     int lineForOffset = layout.getLineForOffset(spanEnd);
                     int i15 = ConnectionsManager.DEFAULT_DATACENTER_ID;
@@ -210,7 +211,7 @@ public final class g extends Drawable {
     public static void g(View view, boolean z10, int i10, int i11, AtomicReference atomicReference, int i12, Layout layout, List list, Canvas canvas, boolean z11) {
         StaticLayout staticLayout;
         AtomicReference atomicReference2;
-        q11[] q11VarArr;
+        r11[] r11VarArr;
         int i13;
         if (list == null || list.isEmpty()) {
             f(canvas, layout);
@@ -222,36 +223,36 @@ public final class g extends Drawable {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(layout.getText());
             if (layout.getText() instanceof Spanned) {
                 Spanned spanned = (Spanned) layout.getText();
-                q11[] q11VarArr2 = (q11[]) spanned.getSpans(0, spanned.length(), q11.class);
+                r11[] r11VarArr2 = (r11[]) spanned.getSpans(0, spanned.length(), r11.class);
                 int i15 = 0;
-                while (i15 < Math.min(100, q11VarArr2.length)) {
-                    q11 q11Var = q11VarArr2[i15];
-                    if (q11Var.c()) {
-                        int spanStart = spanned.getSpanStart(q11Var);
-                        int spanEnd = spanned.getSpanEnd(q11Var);
+                while (i15 < Math.min(100, r11VarArr2.length)) {
+                    r11 r11Var = r11VarArr2[i15];
+                    if (r11Var.c()) {
+                        int spanStart = spanned.getSpanStart(r11Var);
+                        int spanEnd = spanned.getSpanEnd(r11Var);
                         Emoji.EmojiSpan[] emojiSpanArr = (Emoji.EmojiSpan[]) spanned.getSpans(spanStart, spanEnd, Emoji.EmojiSpan.class);
                         int length = emojiSpanArr.length;
                         while (i14 < length) {
-                            q11[] q11VarArr3 = q11VarArr2;
+                            r11[] r11VarArr3 = r11VarArr2;
                             Emoji.EmojiSpan emojiSpan = emojiSpanArr[i14];
-                            spannableStringBuilder.setSpan(new b(emojiSpan), spanned.getSpanStart(emojiSpan), spanned.getSpanEnd(emojiSpan), spanned.getSpanFlags(q11Var));
+                            spannableStringBuilder.setSpan(new b(emojiSpan), spanned.getSpanStart(emojiSpan), spanned.getSpanEnd(emojiSpan), spanned.getSpanFlags(r11Var));
                             spannableStringBuilder.removeSpan(emojiSpan);
                             i14++;
-                            q11VarArr2 = q11VarArr3;
+                            r11VarArr2 = r11VarArr3;
                             i15 = i15;
                             length = length;
                             emojiSpanArr = emojiSpanArr;
                         }
-                        q11VarArr = q11VarArr2;
+                        r11VarArr = r11VarArr2;
                         i13 = i15;
-                        spannableStringBuilder.setSpan(new ForegroundColorSpan(0), spanStart, spanEnd, spanned.getSpanFlags(q11Var));
-                        spannableStringBuilder.removeSpan(q11Var);
+                        spannableStringBuilder.setSpan(new ForegroundColorSpan(0), spanStart, spanEnd, spanned.getSpanFlags(r11Var));
+                        spannableStringBuilder.removeSpan(r11Var);
                     } else {
-                        q11VarArr = q11VarArr2;
+                        r11VarArr = r11VarArr2;
                         i13 = i15;
                     }
                     i15 = i13 + 1;
-                    q11VarArr2 = q11VarArr;
+                    r11VarArr2 = r11VarArr;
                     i14 = 0;
                 }
             }
@@ -353,9 +354,9 @@ public final class g extends Drawable {
         }
         i iVar = i.q;
         int i11 = iVar.k;
-        m4.c[] cVarArr = iVar.c;
-        if (cVarArr[0] == null) {
-            cVarArr[0] = new m4.c(i11);
+        t[] tVarArr = iVar.c;
+        if (tVarArr[0] == null) {
+            tVarArr[0] = new t(i11);
             iVar.g = new Paint();
             iVar.i = new ArrayList(100);
             float f7 = i11;
@@ -388,15 +389,15 @@ public final class g extends Drawable {
                 i13++;
             }
             i10 = 128;
-            iVar.a(new Canvas((Bitmap) cVarArr[0].b), new Rect(0, 0, i11, i11));
-            iVar.g.setShader((BitmapShader) cVarArr[0].c);
+            iVar.a(new Canvas((Bitmap) tVarArr[0].b), new Rect(0, 0, i11, i11));
+            iVar.g.setShader((BitmapShader) tVarArr[0].c);
             iVar.h = System.currentTimeMillis();
         } else {
             i10 = 128;
             if (iVar.p && !LiteMode.isEnabled(128)) {
                 iVar.d = 0;
-                iVar.a(new Canvas((Bitmap) cVarArr[0].b), new Rect(0, 0, i11, i11));
-                iVar.g.setShader((BitmapShader) cVarArr[0].c);
+                iVar.a(new Canvas((Bitmap) tVarArr[0].b), new Rect(0, 0, i11, i11));
+                iVar.g.setShader((BitmapShader) tVarArr[0].c);
                 iVar.h = System.currentTimeMillis();
                 iVar.p = false;
             }
@@ -440,7 +441,7 @@ public final class g extends Drawable {
     }
 
     public final void e(Path path) {
-        path.addCircle(this.k, this.l, s.a(this.n, 0.0f, 1.0f) * this.m, Path.Direction.CW);
+        path.addCircle(this.k, this.l, r.a(this.n, 0.0f, 1.0f) * this.m, Path.Direction.CW);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -507,7 +508,7 @@ public final class g extends Drawable {
             valueAnimator.cancel();
         }
         int alpha = this.o ? 255 : this.a[C.length - 1].getAlpha();
-        ValueAnimator duration = ValueAnimator.ofFloat(this.n, z10 ? 0.0f : 1.0f).setDuration((long) s.a(this.m * 0.3f, 250.0f, 550.0f));
+        ValueAnimator duration = ValueAnimator.ofFloat(this.n, z10 ? 0.0f : 1.0f).setDuration((long) r.a(this.m * 0.3f, 250.0f, 550.0f));
         this.r = duration;
         duration.setInterpolator(this.t);
         this.r.addUpdateListener(new p2(this, alpha, 7));

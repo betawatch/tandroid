@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kd implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class kd implements View.OnClickListener {
                 break;
             case 1:
                 sd sdVar = this.b;
-                sdVar.v.n(sdVar.x != null, new jd(sdVar, 1), new v5(sdVar, 2), 0);
+                sdVar.v.n(sdVar.x != null, new id(sdVar, 1), new v5(sdVar, 2), 0);
                 sdVar.J.M(0);
                 sdVar.J.P(43);
                 sdVar.h.d();

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y81 implements Runnable {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class y81 implements Runnable {
                 String str = z81Var.b.text;
                 if (str == null || !str.equals("AUTH_TOKEN_EXCEPTION")) {
                     StringBuilder sb3 = new StringBuilder();
-                    org.telegram.ui.Cells.d0.n(R.string.ErrorOccurred, "\n", sb3);
+                    org.telegram.ui.Cells.c1.l(R.string.ErrorOccurred, "\n", sb3);
                     sb3.append(z81Var.b.text);
                     sb2 = sb3.toString();
                 } else {

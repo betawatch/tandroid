@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class w5 extends ViewGroup {
     public final RectF E;
@@ -812,9 +812,9 @@ public final class w5 extends ViewGroup {
         this.d = new int[i18];
         int dp5 = AndroidUtilities.dp(m6Var2.a.compact ? 20.0f : 50.0f);
         int i20 = this.a.a.compact ? 5 : 12;
-        int c10 = i19 == 2 ? org.telegram.messenger.q.c(i20 * 4, size / 2, 0) : Math.max(0, Math.round(size / 1.5f));
+        int b10 = i19 == 2 ? org.telegram.messenger.g0.b(i20 * 4, size / 2, 0) : Math.max(0, Math.round(size / 1.5f));
         float f7 = i20 * 2;
-        int z10 = org.telegram.messenger.q.z(f7, c10, dp5);
+        int y3 = org.telegram.messenger.g0.y(f7, b10, dp5);
         for (int i21 = 0; i21 < i19; i21++) {
             this.c[i21] = dp5;
         }
@@ -831,7 +831,7 @@ public final class w5 extends ViewGroup {
                 if (m6.n(x5Var.b) == 1 && (a2 = this.a.a(x5Var.b)) >= 0 && a2 < i19) {
                     int dp6 = AndroidUtilities.dp(f7) + Math.round(Layout.getDesiredWidth(h1Var.getText(), h1Var.getPaint()));
                     int[] iArr = this.c;
-                    iArr[a2] = Math.max(iArr[a2], Math.min(z10, dp6));
+                    iArr[a2] = Math.max(iArr[a2], Math.min(y3, dp6));
                 }
             }
             i22++;
@@ -852,7 +852,7 @@ public final class w5 extends ViewGroup {
                         for (int i25 = a10; i25 < min; i25++) {
                             i24 += this.c[i25];
                         }
-                        int min2 = Math.min((min - a10) * z10, AndroidUtilities.dp(f7) + Math.round(Layout.getDesiredWidth(h1Var2.getText(), h1Var2.getPaint()))) - i24;
+                        int min2 = Math.min((min - a10) * y3, AndroidUtilities.dp(f7) + Math.round(Layout.getDesiredWidth(h1Var2.getText(), h1Var2.getPaint()))) - i24;
                         while (a10 < min && min2 > 0) {
                             int i26 = ((min2 + r14) - 1) / (min - a10);
                             int[] iArr2 = this.c;
@@ -895,7 +895,7 @@ public final class w5 extends ViewGroup {
             View childAt3 = getChildAt(i33);
             if (childAt3 instanceof x5) {
                 x5 x5Var3 = (x5) childAt3;
-                int b10 = this.a.b(x5Var3.b);
+                int b11 = this.a.b(x5Var3.b);
                 int a11 = this.a.a(x5Var3.b);
                 int n11 = m6.n(x5Var3.b);
                 i15 = i33;
@@ -907,8 +907,8 @@ public final class w5 extends ViewGroup {
                 if (m6.o(x5Var3.b) == i27) {
                     int measuredHeight = x5Var3.getMeasuredHeight();
                     int[] iArr4 = this.d;
-                    if (measuredHeight > iArr4[b10]) {
-                        iArr4[b10] = x5Var3.getMeasuredHeight();
+                    if (measuredHeight > iArr4[b11]) {
+                        iArr4[b11] = x5Var3.getMeasuredHeight();
                     }
                 }
             } else {
@@ -921,13 +921,13 @@ public final class w5 extends ViewGroup {
             View childAt4 = getChildAt(i36);
             if (childAt4 instanceof x5) {
                 x5 x5Var4 = (x5) childAt4;
-                int b11 = this.a.b(x5Var4.b);
+                int b12 = this.a.b(x5Var4.b);
                 int o10 = m6.o(x5Var4.b);
                 if (o10 > 1) {
-                    int i37 = b11;
+                    int i37 = b12;
                     int i38 = 0;
                     while (true) {
-                        i14 = b11 + o10;
+                        i14 = b12 + o10;
                         if (i37 >= i14 || i37 >= i18) {
                             break;
                         }
@@ -939,13 +939,13 @@ public final class w5 extends ViewGroup {
                         int i39 = measuredHeight2 - i38;
                         int max = i39 / Math.max(o10, 1);
                         int max2 = i39 % Math.max(o10, 1);
-                        while (b11 < i14 && b11 < i18) {
+                        while (b12 < i14 && b12 < i18) {
                             int[] iArr5 = this.d;
-                            iArr5[b11] = max + (max2 > 0 ? 1 : 0) + iArr5[b11];
+                            iArr5[b12] = max + (max2 > 0 ? 1 : 0) + iArr5[b12];
                             if (max2 > 0) {
                                 max2--;
                             }
-                            b11++;
+                            b12++;
                         }
                     }
                 }
@@ -956,7 +956,7 @@ public final class w5 extends ViewGroup {
             View childAt5 = getChildAt(i40);
             if (childAt5 instanceof x5) {
                 x5 x5Var5 = (x5) childAt5;
-                int b12 = this.a.b(x5Var5.b);
+                int b13 = this.a.b(x5Var5.b);
                 int a12 = this.a.a(x5Var5.b);
                 int n12 = m6.n(x5Var5.b);
                 int o11 = m6.o(x5Var5.b);
@@ -966,7 +966,7 @@ public final class w5 extends ViewGroup {
                     i41 += this.c[i42];
                 }
                 int i43 = 0;
-                for (int i44 = b12; i44 < b12 + o11 && i44 < i18; i44++) {
+                for (int i44 = b13; i44 < b13 + o11 && i44 < i18; i44++) {
                     i43 += this.d[i44];
                 }
                 x5Var5.measure(View.MeasureSpec.makeMeasureSpec(i41, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i43, TLObject.FLAG_30));

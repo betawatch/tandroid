@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class k90 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -135,12 +135,12 @@ public final class k90 extends AnimatorListenerAdapter {
                 }
                 break;
             case 16:
-                ((ir0) this.b).f = null;
+                ((hr0) this.b).f = null;
                 break;
             case 17:
-                qr0 qr0Var = (qr0) this.b;
-                if (qr0Var.getParent() != null) {
-                    ((ViewGroup) qr0Var.getParent()).removeView(qr0Var);
+                pr0 pr0Var = (pr0) this.b;
+                if (pr0Var.getParent() != null) {
+                    ((ViewGroup) pr0Var.getParent()).removeView(pr0Var);
                     break;
                 }
                 break;
@@ -164,36 +164,36 @@ public final class k90 extends AnimatorListenerAdapter {
                 ux0Var.n3 = null;
                 break;
             case 21:
-                ty0 ty0Var = (ty0) this.b;
-                ty0Var.x.setVisibility(8);
-                ty0Var.F.setImageDrawable(null);
+                uy0 uy0Var = (uy0) this.b;
+                uy0Var.x.setVisibility(8);
+                uy0Var.F.setImageDrawable(null);
                 break;
             case 22:
                 int i10 = 0;
                 while (true) {
-                    zy0[] zy0VarArr = (zy0[]) this.b;
-                    if (i10 >= zy0VarArr.length) {
+                    az0[] az0VarArr = (az0[]) this.b;
+                    if (i10 >= az0VarArr.length) {
                         break;
                     } else {
-                        zy0 zy0Var = zy0VarArr[i10];
-                        if (zy0Var != null) {
-                            zy0Var.d = false;
+                        az0 az0Var = az0VarArr[i10];
+                        if (az0Var != null) {
+                            az0Var.d = false;
                         }
                         i10++;
                     }
                 }
             case 23:
                 super.onAnimationEnd(animator);
-                ((az0) this.b).H = null;
+                ((bz0) this.b).H = null;
                 break;
             case 24:
-                ((dz0) this.b).e = false;
+                ((ez0) this.b).e = false;
                 break;
             case 25:
-                ((o11) this.b).setVisibility(4);
+                ((p11) this.b).setVisibility(4);
                 break;
             case 26:
-                ((z21) this.b).setVisibility(8);
+                ((a31) this.b).setVisibility(8);
                 break;
             case 27:
                 bi.d4 d4Var = ((t31) this.b).f;
@@ -207,7 +207,7 @@ public final class k90 extends AnimatorListenerAdapter {
                 x31Var.h.invalidate();
                 break;
             default:
-                ((h61) this.b).L = null;
+                ((i61) this.b).L = null;
                 break;
         }
     }

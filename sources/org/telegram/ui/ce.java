@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ce implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -76,22 +76,22 @@ public final /* synthetic */ class ce implements TextView.OnEditorActionListener
                 }
                 break;
             default:
-                ew0 ew0Var = (ew0) this.b;
-                dw0 dw0Var = (dw0) this.c;
-                gw0 gw0Var = ew0Var.d;
+                dw0 dw0Var = (dw0) this.b;
+                cw0 cw0Var = (cw0) this.c;
+                fw0 fw0Var = dw0Var.d;
                 if (i10 == 5) {
-                    kc1 kc1Var2 = gw0Var.c;
-                    View F2 = kc1Var2.F(dw0Var);
+                    kc1 kc1Var2 = fw0Var.c;
+                    View F2 = kc1Var2.F(cw0Var);
                     s4.b1 T2 = F2 == null ? null : kc1Var2.T(F2);
                     if (T2 != null && (b11 = T2.b()) != -1) {
-                        int i14 = b11 - gw0Var.n0;
-                        int i15 = gw0Var.y;
+                        int i14 = b11 - fw0Var.n0;
+                        int i15 = fw0Var.y;
                         int i16 = i15 - 1;
-                        if (i14 == i16 && i15 < gw0Var.n) {
-                            gw0Var.f0();
+                        if (i14 == i16 && i15 < fw0Var.n) {
+                            fw0Var.f0();
                             break;
                         } else if (i14 != i16) {
-                            s4.b1 K2 = gw0Var.c.K(b11 + 1);
+                            s4.b1 K2 = fw0Var.c.K(b11 + 1);
                             if (K2 != null) {
                                 View view2 = K2.a;
                                 if (view2 instanceof org.telegram.ui.Cells.d6) {
@@ -100,7 +100,7 @@ public final /* synthetic */ class ce implements TextView.OnEditorActionListener
                                 }
                             }
                         } else {
-                            AndroidUtilities.hideKeyboard(dw0Var.getTextView());
+                            AndroidUtilities.hideKeyboard(cw0Var.getTextView());
                             break;
                         }
                     }

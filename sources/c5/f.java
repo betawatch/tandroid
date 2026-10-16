@@ -16,11 +16,11 @@ import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.ow0;
 import org.telegram.ui.Components.pg;
 import org.telegram.ui.Components.rf;
-import r0.n0;
+import r0.m0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class f implements n0, cy {
+public final class f implements m0, cy {
     public int a;
     public boolean b;
     public Object c;
@@ -29,18 +29,18 @@ public final class f implements n0, cy {
         this.c = frameLayout;
     }
 
-    @Override // r0.n0
+    @Override // r0.m0
     public void a() {
         this.b = true;
     }
 
-    @Override // r0.n0
+    @Override // r0.m0
     public void b() {
         super/*android.view.ViewGroup*/.setVisibility(0);
         this.b = false;
     }
 
-    @Override // r0.n0
+    @Override // r0.m0
     public void c() {
         if (this.b) {
             return;
@@ -90,7 +90,7 @@ public final class f implements n0, cy {
             this.a = (int) chatActivityEnterView.getTranslationY();
             pg pgVar = chatActivityEnterView.Z2;
             if (pgVar != null) {
-                pgVar.n1();
+                pgVar.o1();
             }
         }
     }

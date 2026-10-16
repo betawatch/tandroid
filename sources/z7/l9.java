@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Set;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class l9 extends e9.j2 {
     public final /* synthetic */ e9.e b;
@@ -53,7 +53,7 @@ public final class l9 extends e9.j2 {
         Map.Entry entry = (Map.Entry) obj;
         entry.getClass();
         Object key = entry.getKey();
-        d dVar = ((lg) this.b.e).c;
+        d dVar = ((mg) this.b.e).c;
         dVar.getClass();
         try {
             obj2 = dVar.remove(key);
@@ -100,7 +100,7 @@ public final class l9 extends e9.j2 {
                 ceil = size < 1073741824 ? (int) Math.ceil(size / 0.75d) : ConnectionsManager.DEFAULT_DATACENTER_ID;
             } else {
                 if (size < 0) {
-                    throw new IllegalArgumentException(i2.d.i(size, "expectedSize cannot be negative but was: "));
+                    throw new IllegalArgumentException(i2.d.j(size, "expectedSize cannot be negative but was: "));
                 }
                 ceil = size + 1;
             }
@@ -110,11 +110,11 @@ public final class l9 extends e9.j2 {
                     hashSet.add(((Map.Entry) obj).getKey());
                 }
             }
-            lg lgVar = (lg) this.b.e;
-            ed edVar = lgVar.a;
+            mg mgVar = (mg) this.b.e;
+            ed edVar = mgVar.a;
             if (edVar == null) {
-                edVar = new ed(lgVar, lgVar.c);
-                lgVar.a = edVar;
+                edVar = new ed(mgVar, mgVar.c);
+                mgVar.a = edVar;
             }
             return edVar.retainAll(hashSet);
         }

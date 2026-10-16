@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class MusicPlayerService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private static final int ID_NOTIFICATION = 5;
@@ -621,7 +621,7 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         }
         ImageReceiver imageReceiver = new ImageReceiver(null);
         this.imageReceiver = imageReceiver;
-        imageReceiver.setDelegate(new e0(this, 9));
+        imageReceiver.setDelegate(new d0(this, 9));
         this.mediaSession = new android.support.v4.media.session.b0(this, "telegramAudioPlayer", null, null);
         this.playbackState = new android.support.v4.media.session.e0();
         this.albumArtPlaceholder = Bitmap.createBitmap(AndroidUtilities.dp(102.0f), AndroidUtilities.dp(102.0f), Bitmap.Config.ARGB_8888);

@@ -10,9 +10,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.x5;
 import org.telegram.ui.Components.z9;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class n extends FrameLayout implements x5 {
     public final z9 a;
@@ -22,7 +22,7 @@ public final class n extends FrameLayout implements x5 {
         z9 z9Var = new z9(context);
         this.a = z9Var;
         z9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-        addView(z9Var, a6.a(72.0f, 0.0f, 0.0f, 0.0f, 28.0f, 72, 81));
+        addView(z9Var, z5.a(72.0f, 0.0f, 0.0f, 0.0f, 28.0f, 72, 81));
     }
 
     @Override // android.view.ViewGroup, android.view.View

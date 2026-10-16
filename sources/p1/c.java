@@ -4,9 +4,9 @@ import android.os.Build;
 import android.view.View;
 import java.nio.ByteBuffer;
 import oa.d;
-import r0.j0;
+import r0.i0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class c {
     public int a;
@@ -46,14 +46,14 @@ public abstract class c {
             }
         }
         if (e(tag, obj)) {
-            View.AccessibilityDelegate d = j0.d(view);
+            View.AccessibilityDelegate d = i0.d(view);
             r0.b bVar = d == null ? null : d instanceof r0.a ? ((r0.a) d).a : new r0.b(d);
             if (bVar == null) {
                 bVar = new r0.b();
             }
-            j0.j(view, bVar);
+            i0.j(view, bVar);
             view.setTag(this.a, obj);
-            j0.f(this.c, view);
+            i0.f(this.c, view);
         }
     }
 

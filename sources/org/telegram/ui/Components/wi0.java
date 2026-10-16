@@ -23,7 +23,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class wi0 extends View {
     public int E;
@@ -37,8 +37,8 @@ public final class wi0 extends View {
     public final org.telegram.ui.ActionBar.c6 a;
     public final PorterDuffColorFilter b;
     public final PorterDuffColorFilter c;
-    public h11 d;
-    public h11 e;
+    public i11 d;
+    public i11 e;
     public final Paint f;
     public final Paint h;
     public final Path n;
@@ -94,8 +94,8 @@ public final class wi0 extends View {
     }
 
     public final void c(String str, String str2) {
-        this.d = new h11(str, 11.0f, AndroidUtilities.bold());
-        this.e = new h11(str2, 11.0f, null);
+        this.d = new i11(str, 11.0f, AndroidUtilities.bold());
+        this.e = new i11(str2, 11.0f, null);
         setContentDescription(LocaleController.getString(R.string.AccDescrProfileMusic) + " " + ((Object) str) + " — " + ((Object) str2));
     }
 
@@ -263,7 +263,7 @@ public final class wi0 extends View {
         if (TextUtils.isEmpty(str)) {
             if (TextUtils.isEmpty(str2)) {
                 str = LocaleController.getString(R.string.AudioUnknownArtist);
-                str2 = org.telegram.messenger.q.h(R.string.AudioUnknownTitle, new StringBuilder(" - "));
+                str2 = org.telegram.messenger.g0.g(R.string.AudioUnknownTitle, new StringBuilder(" - "));
             } else {
                 str = "";
             }

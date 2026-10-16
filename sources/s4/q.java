@@ -8,11 +8,11 @@ import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class q implements Runnable {
     public static final ThreadLocal e = new ThreadLocal();
-    public static final gb.j f = new gb.j(5);
+    public static final gb.k f = new gb.k(5);
     public ArrayList a;
     public long b;
     public long c;
@@ -42,7 +42,7 @@ public final class q implements Runnable {
                 return j11;
             } catch (Exception e7) {
                 FileLog.e(e7);
-                AndroidUtilities.runOnUIThread(new rh.j(recyclerView, 1));
+                AndroidUtilities.runOnUIThread(new ri.h0(recyclerView, 1));
                 recyclerView.h0(false);
                 return null;
             }

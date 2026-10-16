@@ -29,7 +29,7 @@ import w7.sa;
 import w7.ua;
 import y8.k0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w implements Runnable {
     public final /* synthetic */ int a;
@@ -64,10 +64,10 @@ public final /* synthetic */ class w implements Runnable {
         String str;
         ua uaVar;
         la laVar = (la) this.b;
-        n6.o oVar = (n6.o) this.c;
+        n3.b bVar = (n3.b) this.c;
         j7 j7Var = j7.b;
         String str2 = (String) this.d;
-        u2.c cVar = (u2.c) oVar.b;
+        u2.c cVar = (u2.c) bVar.b;
         cVar.c = j7Var;
         l9 l9Var = (l9) cVar.b;
         if (l9Var != null) {
@@ -83,7 +83,7 @@ public final /* synthetic */ class w implements Runnable {
         synchronized (la.class) {
             uaVar = la.j;
             if (uaVar == null) {
-                n0.c a2 = w7.a0.a(Resources.getSystem().getConfiguration());
+                n0.c a2 = w7.z.a(Resources.getSystem().getConfiguration());
                 Object[] objArr = new Object[4];
                 int i11 = 0;
                 int i12 = 0;
@@ -121,8 +121,8 @@ public final /* synthetic */ class w implements Runnable {
         d8Var.e = laVar.f.isSuccessful() ? (String) laVar.f.getResult() : laVar.d.a();
         d8Var.i = 10;
         d8Var.j = Integer.valueOf(laVar.h);
-        oVar.c = d8Var;
-        laVar.c.a(oVar);
+        bVar.c = d8Var;
+        laVar.c.a(bVar);
     }
 
     @Override // java.lang.Runnable
@@ -139,7 +139,7 @@ public final /* synthetic */ class w implements Runnable {
                 kVar.a(iVar, jVar.a);
                 return;
             case 1:
-                super/*c5.c*/.c((qb.c) this.c, (org.telegram.messenger.e0) this.d);
+                super/*c5.c*/.c((a6.m) this.c, (org.telegram.messenger.d0) this.d);
                 return;
             case 2:
                 super/*c5.c*/.a((j) this.d, (k) this.c);
@@ -266,7 +266,7 @@ public final /* synthetic */ class w implements Runnable {
                     x8.m.L0(e0Var, false, null);
                     return;
                 } else {
-                    onRequest.addOnCompleteListener(new l2.f(e0Var, 22));
+                    onRequest.addOnCompleteListener(new m.l(e0Var));
                     return;
                 }
         }
@@ -293,10 +293,10 @@ public final /* synthetic */ class w implements Runnable {
         this.d = obj;
     }
 
-    public /* synthetic */ w(la laVar, n6.o oVar, String str) {
+    public /* synthetic */ w(la laVar, n3.b bVar, String str) {
         this.a = 11;
         this.b = laVar;
-        this.c = oVar;
+        this.c = bVar;
         this.d = str;
     }
 }

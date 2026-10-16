@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class nd extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ sd a;
@@ -25,7 +25,7 @@ public final class nd extends org.telegram.ui.ActionBar.j {
         int i12;
         sd sdVar = this.a;
         long j10 = sdVar.i0;
-        jd jdVar = sdVar.v0;
+        id idVar = sdVar.v0;
         if (i10 == -1) {
             if (sdVar.r0) {
                 sd.Y(sdVar);
@@ -54,7 +54,7 @@ public final class nd extends org.telegram.ui.ActionBar.j {
                     return;
                 }
                 sdVar.r0 = true;
-                AndroidUtilities.runOnUIThread(jdVar, 200L);
+                AndroidUtilities.runOnUIThread(idVar, 200L);
                 if (sdVar.v.g()) {
                     sdVar.q0 = true;
                     return;
@@ -87,7 +87,7 @@ public final class nd extends org.telegram.ui.ActionBar.j {
                         AndroidUtilities.shakeView(sdVar.U);
                         return;
                     }
-                    AndroidUtilities.runOnUIThread(jdVar, 200L);
+                    AndroidUtilities.runOnUIThread(idVar, 200L);
                     i11 = ((org.telegram.ui.ActionBar.m2) sdVar).currentAccount;
                     MessagesController messagesController = MessagesController.getInstance(i11);
                     long j11 = sdVar.i0;

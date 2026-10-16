@@ -1,77 +1,80 @@
 package li;
 
-import android.os.Handler;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
+import java.util.HashMap;
+import org.telegram.ui.ActionBar.g6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l b;
-    public final /* synthetic */ o c;
+public final class d extends CharacterStyle {
+    public final int a;
 
-    public /* synthetic */ d(l lVar, o oVar, int i10) {
+    public d(int i10) {
         this.a = i10;
-        this.b = lVar;
-        this.c = oVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        u uVar;
-        switch (this.a) {
-            case 0:
-                l lVar = this.b;
-                d dVar = new d(lVar, this.c, 2);
-                Handler handler = lVar.n;
-                if (handler != null) {
-                    handler.post(dVar);
-                    return;
-                }
-                return;
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int i10;
+        HashMap hashMap = s.b;
+        int i11 = this.a & 255;
+        switch (i11) {
+            case 8:
+            case 18:
+                i11 = 1;
+                break;
+            case 9:
+            case 10:
+            case 14:
+            case 15:
+                i11 = 3;
+                break;
+            case 11:
+            case 13:
+                i11 = 7;
+                break;
+            case 12:
+            case 16:
+            case 17:
+            case 19:
+                i11 = 4;
+                break;
+            case 20:
+                i11 = 6;
+                break;
+            case 21:
+                i11 = 2;
+                break;
+        }
+        switch (i11) {
             case 1:
-                l lVar2 = this.b;
-                d dVar2 = new d(lVar2, this.c, 3);
-                Handler handler2 = lVar2.n;
-                if (handler2 != null) {
-                    handler2.post(dVar2);
-                    return;
-                }
-                return;
+                i10 = g6.Ik;
+                break;
             case 2:
-                l lVar3 = this.b;
-                o oVar = this.c;
-                if (!lVar3.V || lVar3.b0 || lVar3.x != oVar || lVar3.A == null || (uVar = lVar3.w) == null) {
-                    return;
-                }
-                try {
-                    long j10 = oVar.A;
-                    if (j10 <= 0) {
-                        throw new IllegalArgumentException("Invalid recording time origin");
-                    }
-                    uVar.p = j10;
-                    uVar.Q = -1L;
-                    uVar.R = 0L;
-                    uVar.S = -1L;
-                    uVar.q = Long.MAX_VALUE;
-                    uVar.s0 = true;
-                    lVar3.j.b("common A/V start armed; waiting for next camera frame: segmentElapsedMs=" + l.z(lVar3.E0));
-                    return;
-                } catch (RuntimeException e) {
-                    lVar3.k();
-                    lVar3.N(e);
-                    return;
-                }
+                i10 = g6.Jk;
+                break;
+            case 3:
+                i10 = g6.Kk;
+                break;
+            case 4:
+                i10 = g6.Lk;
+                break;
+            case 5:
+                i10 = g6.Mk;
+                break;
+            case 6:
+                i10 = g6.Nk;
+                break;
+            case 7:
+                i10 = g6.Ok;
+                break;
             default:
-                l lVar4 = this.b;
-                o oVar2 = this.c;
-                if (lVar4.V && !lVar4.b0 && lVar4.x == oVar2) {
-                    lVar4.k();
-                    lVar4.j.b("common A/V start completed: segmentElapsedMs=" + l.z(lVar4.E0));
-                    u0 u0Var = (u0) lVar4.k.b;
-                    u0Var.i.post(new f0(u0Var, 2));
-                    return;
-                }
-                return;
+                i10 = -1;
+                break;
+        }
+        if (i10 >= 0) {
+            textPaint.setColor(g6.x0(null, i10, false));
         }
     }
 }

@@ -33,20 +33,20 @@ import org.telegram.ui.Components.zc;
 import org.telegram.ui.Components.zu;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ac0;
 import org.telegram.ui.ah0;
-import org.telegram.ui.bh0;
-import org.telegram.ui.bv0;
+import org.telegram.ui.av0;
 import org.telegram.ui.fo;
-import org.telegram.ui.hr0;
+import org.telegram.ui.fr0;
 import org.telegram.ui.ic1;
-import org.telegram.ui.kv0;
-import org.telegram.ui.lr0;
-import org.telegram.ui.mr0;
-import org.telegram.ui.ot0;
-import org.telegram.ui.pu0;
+import org.telegram.ui.jr0;
+import org.telegram.ui.jv0;
+import org.telegram.ui.kr0;
+import org.telegram.ui.nt0;
+import org.telegram.ui.ou0;
+import org.telegram.ui.zb0;
+import org.telegram.ui.zg0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -111,7 +111,7 @@ public final /* synthetic */ class z2 implements View.OnClickListener {
                 } else {
                     org.telegram.ui.ActionBar.q0 q0Var = u0Var.P;
                     if (q0Var != null) {
-                        q0Var.l(((Integer) view.getTag()).intValue());
+                        q0Var.k(((Integer) view.getTag()).intValue());
                         break;
                     }
                 }
@@ -120,8 +120,8 @@ public final /* synthetic */ class z2 implements View.OnClickListener {
                 ic1 ic1Var = (ic1) this.c;
                 boolean z14 = this.b;
                 for (int i10 = 0; i10 < 2; i10++) {
-                    org.telegram.ui.Cells.z0 z0Var = ((org.telegram.ui.Cells.z0[]) ic1Var.b)[i10];
-                    z0Var.a.a(z0Var == view, true);
+                    org.telegram.ui.Cells.y0 y0Var = ((org.telegram.ui.Cells.y0[]) ic1Var.b)[i10];
+                    y0Var.a.a(y0Var == view, true);
                 }
                 SharedConfig.setUseThreeLinesLayout(z14);
                 break;
@@ -152,22 +152,22 @@ public final /* synthetic */ class z2 implements View.OnClickListener {
                 } else {
                     HashMap hashMap = new HashMap();
                     ArrayList arrayList = new ArrayList();
-                    mr0 mr0Var = new mr0(hashMap, arrayList, 0, true, (fo) m2Var);
+                    kr0 kr0Var = new kr0(hashMap, arrayList, 0, true, (fo) m2Var);
                     uh uhVar = new uh(viVar, hashMap, arrayList);
-                    hr0 hr0Var = mr0Var.a;
-                    hr0Var.s0 = uhVar;
-                    hr0 hr0Var2 = mr0Var.b;
-                    hr0Var2.s0 = uhVar;
-                    hr0Var.t0 = new lr0(mr0Var, 0);
-                    hr0Var2.t0 = new lr0(mr0Var, 1);
+                    fr0 fr0Var = kr0Var.a;
+                    fr0Var.s0 = uhVar;
+                    fr0 fr0Var2 = kr0Var.b;
+                    fr0Var2.s0 = uhVar;
+                    fr0Var.t0 = new jr0(kr0Var, 0);
+                    fr0Var2.t0 = new jr0(kr0Var, 1);
                     int i11 = viVar.V1;
                     boolean z17 = viVar.W1;
-                    hr0Var.f0(i11, z17);
-                    mr0Var.b.f0(i11, z17);
+                    fr0Var.f0(i11, z17);
+                    kr0Var.b.f0(i11, z17);
                     if (z16) {
-                        m2Var.showAsSheet(mr0Var);
+                        m2Var.showAsSheet(kr0Var);
                     } else {
-                        m2Var.presentFragment(mr0Var);
+                        m2Var.presentFragment(kr0Var);
                     }
                     viVar.dismiss();
                     break;
@@ -196,21 +196,21 @@ public final /* synthetic */ class z2 implements View.OnClickListener {
                             if (PhotoViewer.a9 != null) {
                                 PhotoViewer.a9.G0(false, true);
                             }
-                            pu0 pu0Var = photoViewer.f0;
-                            if (pu0Var != null && pu0Var.f != null) {
+                            ou0 ou0Var = photoViewer.f0;
+                            if (ou0Var != null && ou0Var.f != null) {
                                 if (ApplicationLoader.mainInterfacePaused) {
                                     try {
-                                        pu0Var.getContext().startService(new Intent(ApplicationLoader.applicationContext, (Class<?>) BringAppForegroundService.class));
+                                        ou0Var.getContext().startService(new Intent(ApplicationLoader.applicationContext, (Class<?>) BringAppForegroundService.class));
                                     } catch (Throwable th2) {
                                         FileLog.e(th2);
                                     }
                                 }
-                                pu0Var.h.setVisibility(0);
-                                ViewGroup viewGroup = (ViewGroup) pu0Var.f.getParent();
+                                ou0Var.h.setVisibility(0);
+                                ViewGroup viewGroup = (ViewGroup) ou0Var.f.getParent();
                                 if (viewGroup != null) {
-                                    viewGroup.removeView(pu0Var.f);
+                                    viewGroup.removeView(ou0Var.f);
                                 }
-                                pu0Var.addView(pu0Var.f, 0, w7.a6.e(-1, -1, 51));
+                                ou0Var.addView(ou0Var.f, 0, w7.z5.e(-1, -1, 51));
                                 fh0.j(false);
                             }
                             PhotoViewer.a9 = PhotoViewer.b9;
@@ -252,22 +252,22 @@ public final /* synthetic */ class z2 implements View.OnClickListener {
                                 view2.setScaleY(f7);
                                 view2.setTranslationX(o10.a - photoViewer.y2.getX());
                                 view2.setTranslationY(o10.b - photoViewer.y2.getY());
-                                bv0 bv0Var = photoViewer.E2;
-                                if (bv0Var != null) {
-                                    bv0Var.setScaleX(f7);
+                                av0 av0Var = photoViewer.E2;
+                                if (av0Var != null) {
+                                    av0Var.setScaleX(f7);
                                     photoViewer.E2.setScaleY(f7);
                                     photoViewer.E2.setTranslationX(view2.getTranslationX());
                                     photoViewer.E2.setTranslationY(view2.getTranslationY());
                                 }
                                 photoViewer.W = 0.0f;
-                                ot0 ot0Var = new ot0(photoViewer, f7, 1);
-                                view2.setOutlineProvider(ot0Var);
+                                nt0 nt0Var = new nt0(photoViewer, f7, 1);
+                                view2.setOutlineProvider(nt0Var);
                                 view2.setClipToOutline(true);
-                                photoViewer.x3.setOutlineProvider(ot0Var);
+                                photoViewer.x3.setOutlineProvider(nt0Var);
                                 photoViewer.x3.setClipToOutline(true);
-                                bv0 bv0Var2 = photoViewer.E2;
-                                if (bv0Var2 != null) {
-                                    bv0Var2.setOutlineProvider(ot0Var);
+                                av0 av0Var2 = photoViewer.E2;
+                                if (av0Var2 != null) {
+                                    av0Var2.setOutlineProvider(nt0Var);
                                     photoViewer.E2.setClipToOutline(true);
                                 }
                             } else {
@@ -281,9 +281,9 @@ public final /* synthetic */ class z2 implements View.OnClickListener {
                                 if (activity instanceof LaunchActivity) {
                                     ((LaunchActivity) activity).a1.add(photoViewer.s1);
                                 }
-                                kv0 kv0Var = photoViewer.d5;
-                                if (kv0Var != null && !kv0Var.s) {
-                                    kv0Var.a.setVisible(false, false);
+                                jv0 jv0Var = photoViewer.d5;
+                                if (jv0Var != null && !jv0Var.s) {
+                                    jv0Var.a.setVisible(false, false);
                                 }
                             } catch (Exception e) {
                                 FileLog.e(e);
@@ -309,46 +309,46 @@ public final /* synthetic */ class z2 implements View.OnClickListener {
                 }
                 break;
             case 7:
-                ac0 ac0Var = (ac0) this.c;
+                zb0 zb0Var = (zb0) this.c;
                 if (!this.b) {
-                    org.telegram.ui.Cells.w8 w8Var = ac0Var.n;
+                    org.telegram.ui.Cells.w8 w8Var = zb0Var.n;
                     if (w8Var == null || !w8Var.e.h) {
                         org.telegram.ui.Cells.w8 w8Var2 = (org.telegram.ui.Cells.w8) view;
                         boolean z20 = w8Var2.e.h;
                         w8Var2.setChecked(!z20);
-                        ac0Var.Z(z20);
-                        org.telegram.ui.Cells.w8 w8Var3 = ac0Var.n;
+                        zb0Var.Z(z20);
+                        org.telegram.ui.Cells.w8 w8Var3 = zb0Var.n;
                         if (w8Var3 != null) {
                             if (w8Var2.e.h) {
                                 w8Var3.setChecked(false);
-                                ac0Var.n.setCheckBoxIcon(R.drawable.permission_locked);
-                                ac0Var.r.setVisibility(8);
+                                zb0Var.n.setCheckBoxIcon(R.drawable.permission_locked);
+                                zb0Var.r.setVisibility(8);
                                 break;
-                            } else if (ac0Var.e == null) {
+                            } else if (zb0Var.e == null) {
                                 w8Var3.setCheckBoxIcon(0);
                                 break;
                             }
                         }
                     } else {
-                        int i12 = -ac0Var.N;
-                        ac0Var.N = i12;
+                        int i12 = -zb0Var.N;
+                        zb0Var.N = i12;
                         AndroidUtilities.shakeViewSpring(w8Var, i12);
                         break;
                     }
                 }
                 break;
             default:
-                ah0 ah0Var = (ah0) this.c;
+                zg0 zg0Var = (zg0) this.c;
                 boolean z21 = this.b;
-                bh0 bh0Var = ah0Var.V;
-                if (bh0Var.getParentActivity() != null) {
-                    boolean z22 = !bh0Var.E;
-                    bh0Var.E = z22;
+                ah0 ah0Var = zg0Var.V;
+                if (ah0Var.getParentActivity() != null) {
+                    boolean z22 = !ah0Var.E;
+                    ah0Var.E = z22;
                     ((org.telegram.ui.Cells.a2) view).c(z22, true);
-                    if ((z21 && bh0Var.getConnectionsManager().isTestBackend()) != bh0Var.E) {
-                        bh0Var.getConnectionsManager().switchBackend(false);
+                    if ((z21 && ah0Var.getConnectionsManager().isTestBackend()) != ah0Var.E) {
+                        ah0Var.getConnectionsManager().switchBackend(false);
                     }
-                    ah0Var.r();
+                    zg0Var.r();
                     break;
                 }
                 break;

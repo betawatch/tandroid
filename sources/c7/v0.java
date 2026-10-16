@@ -7,16 +7,16 @@ import java.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class v0 extends o6.a {
     public static final Parcelable.Creator<v0> CREATOR = new r0(14);
     public final boolean a;
-    public final n7.s0 b;
+    public final n7.t0 b;
 
-    public v0(boolean z10, n7.s0 s0Var) {
+    public v0(boolean z10, n7.t0 t0Var) {
         this.a = z10;
-        this.b = s0Var;
+        this.b = t0Var;
     }
 
     public final JSONObject b() {
@@ -25,8 +25,8 @@ public final class v0 extends o6.a {
             if (this.a) {
                 jSONObject.put("enabled", true);
             }
-            n7.s0 s0Var = this.b;
-            byte[] t10 = s0Var == null ? null : s0Var.t();
+            n7.t0 t0Var = this.b;
+            byte[] t10 = t0Var == null ? null : t0Var.t();
             if (t10 != null) {
                 JSONObject jSONObject2 = new JSONObject();
                 jSONObject2.put("first", Base64.encodeToString(Arrays.copyOf(t10, 32), 11));
@@ -59,11 +59,11 @@ public final class v0 extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.g0.q(parcel, 20293);
-        w7.g0.s(parcel, 1, 4);
+        int q6 = w7.f0.q(parcel, 20293);
+        w7.f0.s(parcel, 1, 4);
         parcel.writeInt(this.a ? 1 : 0);
-        n7.s0 s0Var = this.b;
-        w7.g0.c(parcel, 2, s0Var == null ? null : s0Var.t());
-        w7.g0.r(parcel, q6);
+        n7.t0 t0Var = this.b;
+        w7.f0.c(parcel, 2, t0Var == null ? null : t0Var.t());
+        w7.f0.r(parcel, q6);
     }
 }

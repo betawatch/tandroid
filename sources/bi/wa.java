@@ -42,7 +42,7 @@ import org.telegram.ui.fo;
 import org.telegram.ui.jz;
 import org.telegram.ui.kz;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public abstract class wa extends FrameLayout implements View.OnClickListener {
     public final Path E;
@@ -147,7 +147,7 @@ public abstract class wa extends FrameLayout implements View.OnClickListener {
                     if (storyItem != null) {
                         zaVar.c(storyItem.views, false);
                     }
-                    w7.c6.a(zaVar);
+                    w7.b6.a(zaVar);
                     view = zaVar;
                 } else if (mediaArea instanceof TL_stories.TL_mediaAreaWeather) {
                     TL_stories.TL_mediaAreaWeather tL_mediaAreaWeather = (TL_stories.TL_mediaAreaWeather) mediaArea;
@@ -369,7 +369,7 @@ public abstract class wa extends FrameLayout implements View.OnClickListener {
                         if (arrayList.isEmpty()) {
                             return;
                         }
-                        jz jzVar = (jz) i2.d.g(1, arrayList);
+                        jz jzVar = (jz) i2.d.h(1, arrayList);
                         jzVar.getClass();
                         jzVar.e = f12;
                         jzVar.d = f11;
@@ -445,14 +445,14 @@ public abstract class wa extends FrameLayout implements View.OnClickListener {
                     return;
                 }
                 if (mediaArea2 instanceof TL_stories.TL_mediaAreaUrl) {
-                    pf.d.s(getContext(), ((TL_stories.TL_mediaAreaUrl) this.b.b).url);
+                    pf.d.r(getContext(), ((TL_stories.TL_mediaAreaUrl) this.b.b).url);
                     this.b = null;
                     invalidate();
                     return;
                 }
                 if (mediaArea2 instanceof TL_stories.TL_mediaAreaStarGift) {
                     String str2 = ((TL_stories.TL_mediaAreaStarGift) mediaArea2).slug;
-                    pf.d.s(getContext(), "https://" + MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix + "/nft/" + str2);
+                    pf.d.r(getContext(), "https://" + MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix + "/nft/" + str2);
                     this.b = null;
                     invalidate();
                     return;
@@ -556,7 +556,7 @@ public abstract class wa extends FrameLayout implements View.OnClickListener {
                     }
                     d4Var2.setOnClickListener(new ah.g0(this, 5));
                     d4Var2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-                    this.d.addView(d4Var2, w7.a6.d(f18, -1));
+                    this.d.addView(d4Var2, w7.z5.d(f18, -1));
                     d4Var2.u();
                     b(true);
                 }
@@ -588,7 +588,7 @@ public abstract class wa extends FrameLayout implements View.OnClickListener {
             }
             d4Var2.setOnClickListener(new ah.g0(this, 5));
             d4Var2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-            this.d.addView(d4Var2, w7.a6.d(f182, -1));
+            this.d.addView(d4Var2, w7.z5.d(f182, -1));
             d4Var2.u();
             b(true);
         }

@@ -16,10 +16,11 @@ import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
+import m2.t;
 import n6.l;
 import r9.n;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class h {
     public static final Object k = new Object();
@@ -49,7 +50,7 @@ public final class h {
         a aVar = FirebaseInitProvider.a;
         Trace.beginSection("Firebase");
         Trace.beginSection("ComponentDiscovery");
-        ArrayList A = new m4.c(21, context, new l2.f(ComponentDiscoveryService.class, 16)).A();
+        ArrayList A = new t(21, context, new gb.e(ComponentDiscoveryService.class)).A();
         Trace.endSection();
         Trace.beginSection("Runtime");
         s9.l lVar = s9.l.a;
@@ -178,7 +179,7 @@ public final class h {
             sb2.append(str);
             Log.i("FirebaseApp", sb2.toString());
             a();
-            this.d.d("[DEFAULT]".equals(str));
+            this.d.h("[DEFAULT]".equals(str));
             ((oa.c) this.h.get()).c();
             return;
         }
@@ -222,9 +223,9 @@ public final class h {
     }
 
     public final String toString() {
-        m4.c cVar = new m4.c(this);
-        cVar.u(this.b, "name");
-        cVar.u(this.c, "options");
-        return cVar.toString();
+        t tVar = new t(this);
+        tVar.q(this.b, "name");
+        tVar.q(this.c, "options");
+        return tVar.toString();
     }
 }

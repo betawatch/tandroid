@@ -34,7 +34,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mt implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -52,11 +52,12 @@ public final /* synthetic */ class mt implements Utilities.Callback {
         TLRPC.Document document;
         s4.b1 K;
         int i10 = this.a;
-        int i11 = 7;
-        int i12 = 3;
+        int i11 = 15;
+        int i12 = 7;
+        int i13 = 3;
         Object obj2 = null;
-        int i13 = 1;
-        int i14 = 0;
+        int i14 = 1;
+        int i15 = 0;
         Object obj3 = this.c;
         Object obj4 = this.b;
         switch (i10) {
@@ -90,24 +91,24 @@ public final /* synthetic */ class mt implements Utilities.Callback {
                 if (((Boolean) obj).booleanValue()) {
                     return;
                 }
-                yyVar.showDialog(new lk0(activity, !org.telegram.ui.Components.cf0.a(), new lw(activity, 0)));
+                yyVar.showDialog(new kk0(activity, !org.telegram.ui.Components.df0.a(), new kw(activity, 0)));
                 return;
             case 3:
-                dq0 dq0Var = (dq0) obj3;
+                bq0 bq0Var = (bq0) obj3;
                 Integer num = (Integer) obj;
-                l10 l10Var = ((i10) obj4).e;
-                if (!l10Var.getUserConfig().isPremium()) {
-                    l10Var.showDialog(new sg.y0((org.telegram.ui.ActionBar.m2) l10Var, 35, true));
+                k10 k10Var = ((h10) obj4).e;
+                if (!k10Var.getUserConfig().isPremium()) {
+                    k10Var.showDialog(new sg.y0((org.telegram.ui.ActionBar.m2) k10Var, 35, true));
                     return;
                 }
                 int intValue = num.intValue();
-                l10Var.E = intValue;
-                dq0Var.a(intValue, true);
-                z00 z00Var = l10Var.I;
-                if (z00Var != null) {
-                    z00Var.d(!l10Var.getUserConfig().isPremium() ? -1 : l10Var.E, true);
+                k10Var.E = intValue;
+                bq0Var.a(intValue, true);
+                y00 y00Var = k10Var.I;
+                if (y00Var != null) {
+                    y00Var.d(!k10Var.getUserConfig().isPremium() ? -1 : k10Var.E, true);
                 }
-                l10Var.i0(true);
+                k10Var.i0(true);
                 return;
             case 4:
                 w50 w50Var = (w50) obj4;
@@ -131,83 +132,83 @@ public final /* synthetic */ class mt implements Utilities.Callback {
                 w50Var.d.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
                 return;
             case 5:
-                jc0 jc0Var = (jc0) obj4;
+                ic0 ic0Var = (ic0) obj4;
                 TLRPC.User[] userArr = (TLRPC.User[]) obj3;
                 TLRPC.User user = (TLRPC.User) obj;
-                jc0Var.c();
+                ic0Var.c();
                 if (user == null) {
                     return;
                 }
                 long j10 = userArr[0].id;
                 Bundle bundle2 = new Bundle();
                 bundle2.putLong("user_id", user.id);
-                jc0Var.u(new ic0(bundle2, user, userArr, j10), false);
+                ic0Var.u(new hc0(bundle2, user, userArr, j10), false);
                 return;
             case 6:
-                xj0 xj0Var = (xj0) obj4;
+                wj0 wj0Var = (wj0) obj4;
                 String str = (String) obj3;
                 List<TLRPC.User> list = (List) obj;
                 HashSet hashSet = new HashSet();
-                ArrayList arrayList = xj0Var.f0;
+                ArrayList arrayList = wj0Var.f0;
                 arrayList.clear();
                 if (list != null) {
                     for (TLRPC.User user2 : list) {
-                        if (user2 != null && !hashSet.contains(Long.valueOf(user2.id)) && xj0Var.S(user2)) {
+                        if (user2 != null && !hashSet.contains(Long.valueOf(user2.id)) && wj0Var.S(user2)) {
                             arrayList.add(user2);
                             hashSet.add(Long.valueOf(user2.id));
                         }
                     }
                 }
-                Boolean bool2 = xj0Var.r0;
+                Boolean bool2 = wj0Var.r0;
                 if (bool2 == null || !bool2.booleanValue()) {
-                    xj0Var.V(true, true);
+                    wj0Var.V(true, true);
                     return;
                 }
-                mt mtVar = new mt(i11, xj0Var, hashSet);
+                mt mtVar = new mt(i12, wj0Var, hashSet);
                 MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
                 ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
                 if (str == null || str.isEmpty()) {
-                    AndroidUtilities.runOnUIThread(new rh.j(mtVar, 15));
+                    AndroidUtilities.runOnUIThread(new ri.h0(mtVar, 15));
                 } else {
                     TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
                     tL_contacts_search.q = str;
                     tL_contacts_search.limit = 50;
-                    i14 = connectionsManager.sendRequest(tL_contacts_search, new lj1(i12, messagesController, mtVar));
+                    i15 = connectionsManager.sendRequest(tL_contacts_search, new kj1(i13, messagesController, mtVar));
                 }
-                xj0Var.m0 = i14;
+                wj0Var.m0 = i15;
                 return;
             case 7:
-                xj0 xj0Var2 = (xj0) obj4;
+                wj0 wj0Var2 = (wj0) obj4;
                 HashSet hashSet2 = (HashSet) obj3;
                 List<TLRPC.User> list2 = (List) obj;
                 if (list2 != null) {
                     for (TLRPC.User user3 : list2) {
-                        if (user3 != null && !hashSet2.contains(Long.valueOf(user3.id)) && xj0Var2.S(user3)) {
-                            xj0Var2.f0.add(user3);
+                        if (user3 != null && !hashSet2.contains(Long.valueOf(user3.id)) && wj0Var2.S(user3)) {
+                            wj0Var2.f0.add(user3);
                             hashSet2.add(Long.valueOf(user3.id));
                         }
                     }
                 }
-                xj0Var2.V(true, true);
+                wj0Var2.V(true, true);
                 return;
             case 8:
-                ik0 ik0Var = (ik0) obj4;
+                hk0 hk0Var = (hk0) obj4;
                 String str2 = (String) obj3;
                 TLRPC.User user4 = (TLRPC.User) obj;
                 if (user4 == null) {
-                    ik0Var.R.setImageDrawable(null);
-                    ik0Var.v.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag("This phone number is not on Telegram. **Invite >**", new wc0(19, ik0Var, str2)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
+                    hk0Var.R.setImageDrawable(null);
+                    hk0Var.v.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag("This phone number is not on Telegram. **Invite >**", new se0(14, hk0Var, str2)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
                 } else {
-                    Drawable mutate = ik0Var.getContext().getResources().getDrawable(R.drawable.msg_text_check).mutate();
-                    mutate.setColorFilter(new PorterDuffColorFilter(ik0Var.getThemedColor(org.telegram.ui.ActionBar.g6.v6), PorterDuff.Mode.SRC_IN));
-                    ik0Var.R.setImageDrawable(mutate);
+                    Drawable mutate = hk0Var.getContext().getResources().getDrawable(R.drawable.msg_text_check).mutate();
+                    mutate.setColorFilter(new PorterDuffColorFilter(hk0Var.getThemedColor(org.telegram.ui.ActionBar.g6.v6), PorterDuff.Mode.SRC_IN));
+                    hk0Var.R.setImageDrawable(mutate);
                     if (user4.contact) {
-                        ik0Var.v.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag("This phone number is already in your contacts. **View >**", new wc0(20, ik0Var, user4)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
+                        hk0Var.v.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag("This phone number is already in your contacts. **View >**", new se0(i11, hk0Var, user4)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
                     } else {
-                        ik0Var.v.setText("This phone number is on Telegram.");
+                        hk0Var.v.setText("This phone number is on Telegram.");
                     }
                 }
-                ik0Var.y(false);
+                hk0Var.y(false);
                 return;
             case 9:
                 ArrayList arrayList2 = (ArrayList) obj4;
@@ -216,18 +217,18 @@ public final /* synthetic */ class mt implements Utilities.Callback {
                 if (tL_messages_stickerSet == null || tL_messages_stickerSet.set == null) {
                     return;
                 }
-                for (int i15 = 0; i15 < arrayList2.size(); i15++) {
-                    String str3 = (String) arrayList2.get(i15);
-                    int i16 = 0;
+                for (int i16 = 0; i16 < arrayList2.size(); i16++) {
+                    String str3 = (String) arrayList2.get(i16);
+                    int i17 = 0;
                     while (true) {
-                        if (i16 < tL_messages_stickerSet.packs.size()) {
-                            if (tL_messages_stickerSet.packs.get(i16).documents.isEmpty() || !TextUtils.equals(tL_messages_stickerSet.packs.get(i16).emoticon, str3)) {
-                                i16++;
+                        if (i17 < tL_messages_stickerSet.packs.size()) {
+                            if (tL_messages_stickerSet.packs.get(i17).documents.isEmpty() || !TextUtils.equals(tL_messages_stickerSet.packs.get(i17).emoticon, str3)) {
+                                i17++;
                             } else {
-                                long longValue = tL_messages_stickerSet.packs.get(i16).documents.get(0).longValue();
-                                for (int i17 = 0; i17 < tL_messages_stickerSet.documents.size(); i17++) {
-                                    if (tL_messages_stickerSet.documents.get(i17).id == longValue) {
-                                        document = tL_messages_stickerSet.documents.get(i17);
+                                long longValue = tL_messages_stickerSet.packs.get(i17).documents.get(0).longValue();
+                                for (int i18 = 0; i18 < tL_messages_stickerSet.documents.size(); i18++) {
+                                    if (tL_messages_stickerSet.documents.get(i18).id == longValue) {
+                                        document = tL_messages_stickerSet.documents.get(i18);
                                     }
                                 }
                             }
@@ -235,19 +236,19 @@ public final /* synthetic */ class mt implements Utilities.Callback {
                     }
                     document = null;
                     if (document != null) {
-                        z9VarArr[i15].l(ImageLocation.getForDocument(document), "40_40", ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 40), document), "40_40", Emoji.getEmojiBigDrawable(str3), null);
+                        z9VarArr[i16].l(ImageLocation.getForDocument(document), "40_40", ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 40), document), "40_40", Emoji.getEmojiBigDrawable(str3), null);
                     }
                 }
                 return;
             case 10:
                 ((String[]) obj4)[0] = (String) obj;
-                ((ol0) obj3).run();
+                ((nl0) obj3).run();
                 return;
             case 11:
-                sw0 sw0Var = (sw0) obj4;
+                rw0 rw0Var = (rw0) obj4;
                 org.telegram.ui.ActionBar.m2 m2Var2 = (org.telegram.ui.ActionBar.m2) obj3;
                 Long l10 = (Long) obj;
-                sw0Var.getClass();
+                rw0Var.getClass();
                 Bundle bundle3 = new Bundle();
                 if (l10.longValue() >= 0) {
                     bundle3.putLong("user_id", l10.longValue());
@@ -255,7 +256,7 @@ public final /* synthetic */ class mt implements Utilities.Callback {
                     bundle3.putLong("chat_id", -l10.longValue());
                 }
                 m2Var2.presentFragment(new ProfileActivity(bundle3, null));
-                sw0Var.c(false);
+                rw0Var.c(false);
                 return;
             case 12:
                 ProfileActivity profileActivity = (ProfileActivity) obj4;
@@ -268,7 +269,7 @@ public final /* synthetic */ class mt implements Utilities.Callback {
                 userFull.flags2 |= 32;
                 userFull.birthday = tL_birthday;
                 profileActivity.getMessagesController().invalidateContentSettings();
-                profileActivity.getConnectionsManager().sendRequest(updatebirthday, new us0(profileActivity, userFull, tL_birthday2, i12), 1024);
+                profileActivity.getConnectionsManager().sendRequest(updatebirthday, new ts0(profileActivity, userFull, tL_birthday2, i13), 1024);
                 return;
             case 13:
                 ProfileActivity profileActivity2 = (ProfileActivity) obj4;
@@ -303,9 +304,9 @@ public final /* synthetic */ class mt implements Utilities.Callback {
                 t11Var.c.setAutoRepeat(0);
                 v11 v11Var2 = t11Var.c;
                 String str5 = f7 + "_" + f7 + "_precache";
-                uz0 uz0Var = new uz0(t11Var, 5);
+                tz0 tz0Var = new tz0(t11Var, 5);
                 v11Var2.getClass();
-                v11Var2.setDelegate(new u11(new Runnable[]{uz0Var}));
+                v11Var2.setDelegate(new u11(new Runnable[]{tz0Var}));
                 v11Var2.setImage(ImageLocation.getForDocument(k10), str5, null, null, tL_messages_stickerSet2, 0);
                 t11Var.c.onAttachedToWindow();
                 t11Var.g[1] = true;
@@ -357,101 +358,101 @@ public final /* synthetic */ class mt implements Utilities.Callback {
                 return;
             case 19:
                 ThemeActivity themeActivity2 = (ThemeActivity) obj4;
-                hz0 hz0Var = (hz0) obj3;
+                i11 i11Var = (i11) obj3;
                 if (((Boolean) obj).booleanValue()) {
-                    hz0Var.run();
+                    i11Var.run();
                     return;
                 } else {
                     org.telegram.ui.Components.zc.a0(themeActivity2).M(LocaleController.getString(R.string.AgeVerificationFailedTitle), LocaleController.getString(R.string.AgeVerificationFailedText), R.raw.error).j();
                     return;
                 }
             case 20:
-                org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) obj4;
-                org.telegram.ui.Wallet.g7 g7Var = (org.telegram.ui.Wallet.g7) obj3;
+                org.telegram.ui.Wallet.k0 k0Var = (org.telegram.ui.Wallet.k0) obj4;
+                org.telegram.ui.Wallet.h7 h7Var = (org.telegram.ui.Wallet.h7) obj3;
                 String str6 = (String) obj;
                 if (str6 != null) {
-                    org.telegram.ui.Wallet.j0.i("disableBackupWithoutUpdatingPhrase: ".concat(str6));
-                    g7Var.run(str6);
+                    org.telegram.ui.Wallet.k0.i("disableBackupWithoutUpdatingPhrase: ".concat(str6));
+                    h7Var.run(str6);
                     return;
                 } else {
-                    org.telegram.ui.Wallet.j0.E("sending disableBackup to server");
-                    org.telegram.ui.Wallet.q2.a(j0Var.a, new fi.c(9), null, null, null, new bi.j0(i12, j0Var, g7Var), true, true, new nb0(obj2, i13));
+                    org.telegram.ui.Wallet.k0.E("sending disableBackup to server");
+                    org.telegram.ui.Wallet.r2.a(k0Var.a, new fi.c(9), null, null, null, new bi.j0(i13, k0Var, h7Var), true, true, new mb0(obj2, i14));
                     return;
                 }
             case 21:
-                org.telegram.ui.Wallet.g0 g0Var = (org.telegram.ui.Wallet.g0) obj4;
+                org.telegram.ui.Wallet.h0 h0Var = (org.telegram.ui.Wallet.h0) obj4;
                 try {
                     ((Utilities.Callback) obj3).run((String) obj);
-                    if (g0Var != null) {
+                    if (h0Var != null) {
                         return;
                     } else {
                         return;
                     }
                 } finally {
-                    if (g0Var != null) {
-                        g0Var.close();
+                    if (h0Var != null) {
+                        h0Var.close();
                     }
                 }
             case 22:
-                ((org.telegram.ui.Wallet.g0) obj4).close();
-                ((org.telegram.ui.Wallet.a7) obj3).run((String) obj);
+                ((org.telegram.ui.Wallet.h0) obj4).close();
+                ((org.telegram.ui.Wallet.b7) obj3).run((String) obj);
                 return;
             case 23:
-                org.telegram.ui.Wallet.e0 e0Var = (org.telegram.ui.Wallet.e0) obj4;
-                org.telegram.ui.Wallet.c7 c7Var = (org.telegram.ui.Wallet.c7) obj3;
+                org.telegram.ui.Wallet.f0 f0Var = (org.telegram.ui.Wallet.f0) obj4;
+                org.telegram.ui.Wallet.d7 d7Var = (org.telegram.ui.Wallet.d7) obj3;
                 String str7 = (String) obj;
                 if (str7 == null) {
-                    org.telegram.ui.Wallet.j0.E("prepare disable backup: done!");
-                    c7Var.run(e0Var, null);
+                    org.telegram.ui.Wallet.k0.E("prepare disable backup: done!");
+                    d7Var.run(f0Var, null);
                     return;
                 } else {
-                    e0Var.close();
-                    org.telegram.ui.Wallet.j0.i("prepare disable backup, failed to save secret phrase to local storage: ".concat(str7));
-                    c7Var.run(null, str7);
+                    f0Var.close();
+                    org.telegram.ui.Wallet.k0.i("prepare disable backup, failed to save secret phrase to local storage: ".concat(str7));
+                    d7Var.run(null, str7);
                     return;
                 }
             case 24:
-                ((org.telegram.ui.Wallet.d2) obj4).h = false;
+                ((org.telegram.ui.Wallet.e2) obj4).h = false;
                 ((org.telegram.messenger.mh) obj3).run(null, (String) obj);
                 return;
             case 25:
-                ((org.telegram.ui.Wallet.g0) obj4).close();
-                ((org.telegram.ui.Wallet.o) obj3).run((String) obj);
+                ((org.telegram.ui.Wallet.h0) obj4).close();
+                ((org.telegram.ui.Wallet.p) obj3).run((String) obj);
                 return;
             case 26:
-                ((org.telegram.ui.Wallet.g0) obj4).close();
-                ((org.telegram.ui.Wallet.o) obj3).run((String) obj);
+                ((org.telegram.ui.Wallet.h0) obj4).close();
+                ((org.telegram.ui.Wallet.p) obj3).run((String) obj);
                 return;
             case 27:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.k(7, (org.telegram.ui.Wallet.y1) obj4, (org.telegram.ui.Wallet.j) obj3, (String) obj));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.l(7, (org.telegram.ui.Wallet.z1) obj4, (org.telegram.ui.Wallet.k) obj3, (String) obj));
                 return;
             case 28:
-                ((org.telegram.ui.Wallet.g0) obj4).close();
+                ((org.telegram.ui.Wallet.h0) obj4).close();
                 ((mt) obj3).run((String) obj);
                 return;
             default:
-                org.telegram.ui.Wallet.z4 z4Var = (org.telegram.ui.Wallet.z4) obj4;
-                org.telegram.ui.Wallet.j0 j0Var2 = (org.telegram.ui.Wallet.j0) obj3;
+                org.telegram.ui.Wallet.a5 a5Var = (org.telegram.ui.Wallet.a5) obj4;
+                org.telegram.ui.Wallet.k0 k0Var2 = (org.telegram.ui.Wallet.k0) obj3;
                 String str8 = (String) obj;
-                z4Var.y0.setLoading(false);
+                a5Var.y0.setLoading(false);
                 if ("NO_LOCAL_BACKUP".equalsIgnoreCase(str8)) {
-                    org.telegram.ui.Wallet.z6 z6Var = new org.telegram.ui.Wallet.z6();
-                    z6Var.s = j0Var2.w();
-                    z4Var.presentFragment(z6Var);
+                    org.telegram.ui.Wallet.a7 a7Var = new org.telegram.ui.Wallet.a7();
+                    a7Var.s = k0Var2.w();
+                    a5Var.presentFragment(a7Var);
                     return;
                 } else if (str8 != null) {
-                    org.telegram.ui.Components.zc.a0(z4Var).e0(str8, false);
+                    org.telegram.ui.Components.zc.a0(a5Var).e0(str8, false);
                     return;
                 } else {
-                    z4Var.presentFragment(new org.telegram.ui.Wallet.r8());
+                    a5Var.presentFragment(new org.telegram.ui.Wallet.s8());
                     return;
                 }
         }
     }
 
-    public /* synthetic */ mt(org.telegram.ui.Wallet.j0 j0Var, org.telegram.ui.Wallet.e0 e0Var, org.telegram.ui.Wallet.c7 c7Var) {
+    public /* synthetic */ mt(org.telegram.ui.Wallet.k0 k0Var, org.telegram.ui.Wallet.f0 f0Var, org.telegram.ui.Wallet.d7 d7Var) {
         this.a = 23;
-        this.b = e0Var;
-        this.c = c7Var;
+        this.b = f0Var;
+        this.c = d7Var;
     }
 }

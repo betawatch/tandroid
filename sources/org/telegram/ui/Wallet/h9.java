@@ -22,14 +22,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class h9 extends FrameLayout {
     public final Rect E;
     public final int[] F;
     public final int[] G;
-    public final n1 H;
-    public final m1 I;
+    public final o1 H;
+    public final n1 I;
     public int J;
     public int K;
     public int L;
@@ -56,8 +56,8 @@ public final class h9 extends FrameLayout {
         this.E = new Rect();
         this.F = new int[2];
         this.G = new int[2];
-        this.H = new n1(this, 1);
-        this.I = new m1(this, 1);
+        this.H = new o1(this, 1);
+        this.I = new n1(this, 1);
         this.N = new TextView[3];
         this.e = c6Var;
         setBackground(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(16.0f), org.telegram.ui.ActionBar.g6.m1(0.5f, org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.a7, c6Var))));
@@ -69,7 +69,7 @@ public final class h9 extends FrameLayout {
         textView.setIncludeFontPadding(false);
         textView.setText((i10 + 1) + ".");
         textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.A6, c6Var));
-        addView(textView, w7.a6.a(-2.0f, 0.0f, 0.0f, 8.0f, 0.0f, 22, 16));
+        addView(textView, w7.z5.a(-2.0f, 0.0f, 0.0f, 8.0f, 0.0f, 22, 16));
         setClipChildren(false);
         EditText editText = new EditText(context);
         this.a = editText;
@@ -107,10 +107,10 @@ public final class h9 extends FrameLayout {
             }
         });
         editText.addTextChangedListener(new di.h2(this, 17));
-        addView(editText, w7.a6.a(-1.0f, 30.0f, 0.0f, z10 ? 64.0f : 8.0f, 0.0f, -1, 16));
-        editText.setOnEditorActionListener(new p7(this, 1));
+        addView(editText, w7.z5.a(-1.0f, 30.0f, 0.0f, z10 ? 64.0f : 8.0f, 0.0f, -1, 16));
+        editText.setOnEditorActionListener(new q7(this, 1));
         FrameLayout frameLayout = new FrameLayout(context);
-        addView(frameLayout, w7.a6.e(-2, -2, 21));
+        addView(frameLayout, w7.z5.e(-2, -2, 21));
         if (z10) {
             TextView textView2 = new TextView(context);
             this.c = textView2;
@@ -118,7 +118,7 @@ public final class h9 extends FrameLayout {
             textView2.setTypeface(AndroidUtilities.bold());
             textView2.setGravity(17);
             textView2.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.q6, c6Var));
-            textView2.setPadding(org.telegram.ui.Cells.d0.c(12.0f, R.string.WalletPaste, textView2), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(6.0f));
+            textView2.setPadding(org.telegram.ui.Cells.c1.b(12.0f, R.string.WalletPaste, textView2), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(6.0f));
             textView2.setBackground(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(28.0f), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.d6, c6Var)));
             final int i11 = 0;
             textView2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Wallet.f9
@@ -158,7 +158,7 @@ public final class h9 extends FrameLayout {
                     }
                 }
             });
-            frameLayout.addView(textView2, w7.a6.e(-2, -2, 17));
+            frameLayout.addView(textView2, w7.z5.e(-2, -2, 17));
         } else {
             this.c = null;
         }
@@ -208,7 +208,7 @@ public final class h9 extends FrameLayout {
                 }
             }
         });
-        frameLayout.addView(imageView, w7.a6.e(28, 28, 17));
+        frameLayout.addView(imageView, w7.z5.e(28, 28, 17));
         e();
         d();
     }
@@ -357,7 +357,7 @@ public final class h9 extends FrameLayout {
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             this.x.setColorFilter(new PorterDuffColorFilter(-872415232, PorterDuff.Mode.SRC_IN));
             this.x.setImageResource(R.drawable.wallet_tooltip_arrow);
-            linearLayout.addView(this.x, w7.a6.t(18, 9, 1, 0, 0, 0, 0));
+            linearLayout.addView(this.x, w7.z5.t(18, 9, 1, 0, 0, 0, 0));
             LinearLayout linearLayout2 = new LinearLayout(context);
             this.w = linearLayout2;
             linearLayout2.setOrientation(0);
@@ -382,10 +382,10 @@ public final class h9 extends FrameLayout {
                 textView.setVisibility(8);
                 textView.setOnClickListener(new di.m4(this, i10, 26));
                 textViewArr[i10] = textView;
-                this.w.addView(textView, w7.a6.t(-2, -2, 16, i10 == 0 ? 0 : 12, 0, 0, 0));
+                this.w.addView(textView, w7.z5.t(-2, -2, 16, i10 == 0 ? 0 : 12, 0, 0, 0));
                 i10++;
             }
-            linearLayout.addView(this.w, w7.a6.n(-2, -2));
+            linearLayout.addView(this.w, w7.z5.n(-2, -2));
             this.s.setContentView(linearLayout);
             this.s.setWidth(-2);
             this.s.setHeight(-2);

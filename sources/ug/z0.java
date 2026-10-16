@@ -31,7 +31,6 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.yh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -48,12 +47,11 @@ import org.telegram.ui.Components.kc0;
 import org.telegram.ui.Components.lm0;
 import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.zc;
-import org.telegram.ui.Wallet.m5;
-import org.telegram.ui.lj1;
+import org.telegram.ui.kj1;
 import org.telegram.ui.s20;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class z0 extends db {
     public final di.d X;
@@ -80,7 +78,7 @@ public final class z0 extends db {
     public k s0;
     public int t0;
     public m u0;
-    public final m5 v0;
+    public final p4.s0 v0;
 
     public z0(m2 m2Var, long j10) {
         super(m2Var, false);
@@ -97,7 +95,7 @@ public final class z0 extends db {
         this.k0 = new ArrayList();
         this.l0 = new LinkedHashMap();
         this.p0 = AndroidUtilities.dp(134.0f);
-        this.v0 = new m5(this, 8);
+        this.v0 = new p4.s0(this, 8);
         this.backgroundPaddingLeft = 0;
         this.q0 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j10));
         ((ViewGroup) this.e.getParent()).removeView(this.e);
@@ -107,7 +105,7 @@ public final class z0 extends db {
         yg.c cVar = new yg.c(getContext(), this.resourcesProvider);
         this.a0 = cVar;
         cVar.setOnCloseClickListener(new t0(this, 7));
-        cVar.setText(A());
+        cVar.setText(B());
         cVar.setCloseImageVisible(true);
         cVar.e.c(0.0f, false);
         y0 y0Var = new y0(this, getContext(), this.resourcesProvider);
@@ -119,10 +117,10 @@ public final class z0 extends db {
         d0();
         ViewGroup viewGroup2 = this.containerView;
         int i11 = this.backgroundPaddingLeft;
-        viewGroup2.addView(cVar, a6.f(-2.0f, 55, i11, 0, i11, 0));
+        viewGroup2.addView(cVar, z5.f(-2.0f, 55, i11, 0, i11, 0));
         ViewGroup viewGroup3 = this.containerView;
         int i12 = this.backgroundPaddingLeft;
-        viewGroup3.addView(y0Var, a6.f(-2.0f, 55, i12, 0, i12, 0));
+        viewGroup3.addView(y0Var, z5.f(-2.0f, 55, i12, 0, i12, 0));
         s20 s20Var = new s20(getContext(), this.resourcesProvider, (mm0) null);
         s20Var.setClickable(true);
         s20Var.setOrientation(1);
@@ -131,10 +129,10 @@ public final class z0 extends db {
         di.d dVar = new di.d(getContext(), this.resourcesProvider, true);
         this.X = dVar;
         dVar.setOnClickListener(new v0(this, 1));
-        s20Var.addView(dVar, a6.q(-1, 48, 87));
+        s20Var.addView(dVar, z5.q(-1, 48, 87));
         ViewGroup viewGroup4 = this.containerView;
         int i13 = this.backgroundPaddingLeft;
-        viewGroup4.addView(s20Var, a6.f(-2.0f, 87, i13, 0, i13, 0));
+        viewGroup4.addView(s20Var, z5.f(-2.0f, 87, i13, 0, i13, 0));
         vg.h hVar = this.o0;
         mm0 mm0Var = this.d;
         hVar.n = arrayList;
@@ -207,7 +205,7 @@ public final class z0 extends db {
                 boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
                 alertDialog$Builder.a.R = LocaleController.getString(isChannelAndNotMegaGroup ? R.string.BoostingGiveawayPrivateChannel : R.string.BoostingGiveawayPrivateGroup);
                 alertDialog$Builder.a.T = LocaleController.getString(isChannelAndNotMegaGroup ? R.string.BoostingGiveawayPrivateChannelWarning : R.string.BoostingGiveawayPrivateGroupWarning);
-                alertDialog$Builder.k(LocaleController.getString("Add", R.string.Add), new org.telegram.ui.web.c0(11, atomicBoolean, t0Var));
+                alertDialog$Builder.k(LocaleController.getString("Add", R.string.Add), new org.telegram.ui.web.o0(11, atomicBoolean, t0Var));
                 alertDialog$Builder.h(LocaleController.getString("Cancel", R.string.Cancel), new t0.a(8));
                 alertDialog$Builder.j(new fi.d0(16, atomicBoolean, e0Var));
                 alertDialog$Builder.o();
@@ -247,15 +245,15 @@ public final class z0 extends db {
             return false;
         }
         String lowerCase = AndroidUtilities.translitSafe(tL_help_country.default_name).toLowerCase();
-        if (lowerCase.startsWith(str) || yh.v(" ", str, lowerCase)) {
+        if (lowerCase.startsWith(str) || org.telegram.messenger.g0.w(" ", str, lowerCase)) {
             return true;
         }
         String lowerCase2 = AndroidUtilities.translitSafe(tL_help_country.iso2).toLowerCase();
-        return lowerCase2.startsWith(str) || yh.v(" ", str, lowerCase2);
+        return lowerCase2.startsWith(str) || org.telegram.messenger.g0.w(" ", str, lowerCase2);
     }
 
     @Override // org.telegram.ui.Components.db
-    public final CharSequence A() {
+    public final CharSequence B() {
         int i10 = this.r0;
         return i10 != 1 ? i10 != 2 ? i10 != 3 ? "" : LocaleController.getString(R.string.BoostingSelectCountry) : LocaleController.getString(R.string.BoostingAddChannelOrGroup) : LocaleController.getString(R.string.GiftPremium);
     }
@@ -334,7 +332,7 @@ public final class z0 extends db {
             tL_channelParticipantsRecent.q = str;
             tL_channels_getParticipants.offset = 0;
             tL_channels_getParticipants.limit = 50;
-            connectionsManager.sendRequest(tL_channels_getParticipants, new lj1(2, messagesController, x0Var));
+            connectionsManager.sendRequest(tL_channels_getParticipants, new kj1(2, messagesController, x0Var));
             return;
         }
         if (i10 != 2) {
@@ -402,7 +400,7 @@ public final class z0 extends db {
         y0Var.b(false, hashSet2, new t0(this, 4), this.k0);
         d0();
         c0(false, true);
-        this.a0.setText(A());
+        this.a0.setText(B());
         a0(false);
         Y(false);
     }

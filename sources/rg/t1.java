@@ -18,9 +18,9 @@ import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.yj0;
 import org.telegram.ui.fi1;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class t1 extends LinearLayout {
     public final bk0[] a;
@@ -61,7 +61,7 @@ public final class t1 extends LinearLayout {
             Object[] objArr2 = i10 == list2.size() + 1;
             bk0 bk0Var = new bk0(getContext());
             bk0Var.setPadding(AndroidUtilities.dp(objArr != false ? 0.0f : 8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(objArr2 != false ? 0.0f : 8.0f), AndroidUtilities.dp(8.0f));
-            bk0Var.setLayoutParams(a6.l(1.0f, 0, 40));
+            bk0Var.setLayoutParams(z5.l(1.0f, 0, 40));
             bk0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
             bk0VarArr[i11] = bk0Var;
             if (i10 == 0) {
@@ -177,12 +177,12 @@ public final class t1 extends LinearLayout {
                     if (this.r != null) {
                         if (this.h != i10) {
                             a(i10);
-                            post(new org.telegram.ui.Components.voip.m2(childAt, 24));
+                            post(new org.telegram.ui.Components.voip.r2(childAt, 23));
                             return true;
                         }
                     } else if (this.f != i10) {
                         a(i10);
-                        post(new org.telegram.ui.Components.voip.m2(childAt, 24));
+                        post(new org.telegram.ui.Components.voip.r2(childAt, 23));
                         return true;
                     }
                 }
@@ -203,7 +203,7 @@ public final class t1 extends LinearLayout {
         float f10 = bk0Var2 != null ? this.n : 0.0f;
         float f11 = 1.0f;
         if (f10 > 0.25f && f10 < 0.75f) {
-            f11 = (f10 <= 0.25f || f10 >= 0.5f) ? org.telegram.messenger.q.y(0.75f, f10, 0.25f, 1.0f) : (0.5f - f10) / 0.25f;
+            f11 = (f10 <= 0.25f || f10 >= 0.5f) ? org.telegram.messenger.g0.x(0.75f, f10, 0.25f, 1.0f) : (0.5f - f10) / 0.25f;
         }
         float dp = (AndroidUtilities.dp(3.0f) * f11) + (Math.min((bk0Var.getWidth() - bk0Var.getPaddingLeft()) - bk0Var.getPaddingRight(), (bk0Var.getHeight() - bk0Var.getPaddingTop()) - bk0Var.getPaddingBottom()) / 2.0f) + AndroidUtilities.dp(3.0f);
         float width = (bk0Var.getWidth() / 2.0f) + bk0Var.getX();

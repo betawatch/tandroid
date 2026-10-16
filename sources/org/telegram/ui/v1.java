@@ -18,11 +18,11 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class v1 extends FrameLayout implements org.telegram.ui.Cells.n9 {
     public final u1 a;
-    public final org.telegram.ui.Components.ca1 b;
+    public final org.telegram.ui.Components.da1 b;
     public d3 c;
     public d3 d;
     public int e;
@@ -46,9 +46,9 @@ public final class v1 extends FrameLayout implements org.telegram.ui.Cells.n9 {
             this.a = null;
             return;
         }
-        org.telegram.ui.Components.ca1 ca1Var = new org.telegram.ui.Components.ca1(context, false, new q1(this));
-        this.b = ca1Var;
-        addView(ca1Var);
+        org.telegram.ui.Components.da1 da1Var = new org.telegram.ui.Components.da1(context, false, new q1(this));
+        this.b = da1Var;
+        addView(da1Var);
         k4Var.N.add(this);
         u1 u1Var = new u1(this, context);
         this.a = u1Var;
@@ -78,9 +78,9 @@ public final class v1 extends FrameLayout implements org.telegram.ui.Cells.n9 {
             }
         }
         this.v = null;
-        org.telegram.ui.Components.ca1 ca1Var = this.b;
-        if (ca1Var != null) {
-            ca1Var.b();
+        org.telegram.ui.Components.da1 da1Var = this.b;
+        if (da1Var != null) {
+            da1Var.b();
         }
     }
 
@@ -173,12 +173,12 @@ public final class v1 extends FrameLayout implements org.telegram.ui.Cells.n9 {
             int i14 = this.n;
             u1Var.layout(i14, 0, u1Var.getMeasuredWidth() + i14, u1Var.getMeasuredHeight());
         }
-        org.telegram.ui.Components.ca1 ca1Var = this.b;
-        if (ca1Var == null || ca1Var.getParent() != this) {
+        org.telegram.ui.Components.da1 da1Var = this.b;
+        if (da1Var == null || da1Var.getParent() != this) {
             return;
         }
         int i15 = this.n;
-        ca1Var.layout(i15, 0, ca1Var.getMeasuredWidth() + i15, ca1Var.getMeasuredHeight());
+        da1Var.layout(i15, 0, da1Var.getMeasuredWidth() + i15, da1Var.getMeasuredHeight());
     }
 
     /* JADX WARN: Removed duplicated region for block: B:40:0x013a  */
@@ -200,7 +200,7 @@ public final class v1 extends FrameLayout implements org.telegram.ui.Cells.n9 {
                 int dp2 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(r15 * 14);
                 this.n = dp2;
                 this.e = dp2;
-                i13 = org.telegram.messenger.yh.A(18.0f, dp2, size);
+                i13 = org.telegram.messenger.sk.z(18.0f, dp2, size);
                 i14 = i13;
             } else {
                 this.n = 0;
@@ -235,9 +235,9 @@ public final class v1 extends FrameLayout implements org.telegram.ui.Cells.n9 {
             if (u1Var != null) {
                 u1Var.measure(View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i18, TLObject.FLAG_30));
             }
-            org.telegram.ui.Components.ca1 ca1Var = this.b;
-            if (ca1Var != null && ca1Var.getParent() == this) {
-                ca1Var.measure(View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(10.0f) + i18, TLObject.FLAG_30));
+            org.telegram.ui.Components.da1 da1Var = this.b;
+            if (da1Var != null && da1Var.getParent() == this) {
+                da1Var.measure(View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(10.0f) + i18, TLObject.FLAG_30));
             }
             int dp4 = AndroidUtilities.dp(8.0f) + i18;
             this.f = dp4;
@@ -251,7 +251,7 @@ public final class v1 extends FrameLayout implements org.telegram.ui.Cells.n9 {
             if (p5 != null) {
                 int height = this.c.d.getHeight() + AndroidUtilities.dp(4.0f);
                 this.h = height;
-                i18 = org.telegram.messenger.yh.c(4.0f, height, i18);
+                i18 = org.telegram.messenger.g0.C(4.0f, height, i18);
             } else {
                 this.h = 0;
             }

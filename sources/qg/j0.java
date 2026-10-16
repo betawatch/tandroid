@@ -18,9 +18,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.b31;
-import org.telegram.ui.ul0;
+import org.telegram.ui.ps0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class j0 {
     public static final j0 e;
@@ -31,20 +31,20 @@ public final class j0 {
     public final String a;
     public final String b;
     public final String c;
-    public final n6.o d;
+    public final n3.b d;
 
     static {
-        j0 j0Var = new j0("roboto", "PhotoEditorTypefaceRoboto", new n6.o(new ul0(23)));
+        j0 j0Var = new j0("roboto", "PhotoEditorTypefaceRoboto", new n3.b(new ps0(21)));
         e = j0Var;
-        f = Arrays.asList(j0Var, new j0("italic", "PhotoEditorTypefaceItalic", new n6.o(new ul0(24))), new j0("serif", "PhotoEditorTypefaceSerif", new n6.o(new ul0(25))), new j0("condensed", "PhotoEditorTypefaceCondensed", new n6.o(new ul0(26))), new j0("mono", "PhotoEditorTypefaceMono", new n6.o(new ul0(27))), new j0("mw_bold", "PhotoEditorTypefaceMerriweather", new n6.o(new ul0(28))));
+        f = Arrays.asList(j0Var, new j0("italic", "PhotoEditorTypefaceItalic", new n3.b(new ps0(22))), new j0("serif", "PhotoEditorTypefaceSerif", new n3.b(new ps0(23))), new j0("condensed", "PhotoEditorTypefaceCondensed", new n3.b(new ps0(24))), new j0("mono", "PhotoEditorTypefaceMono", new n3.b(new ps0(25))), new j0("mw_bold", "PhotoEditorTypefaceMerriweather", new n3.b(new ps0(26))));
         g = Arrays.asList("Google Sans", "Dancing Script", "Carrois Gothic SC", "Cutive Mono", "Droid Sans Mono", "Coming Soon");
     }
 
-    public j0(String str, String str2, n6.o oVar) {
+    public j0(String str, String str2, n3.b bVar) {
         this.a = str;
         this.b = str2;
         this.c = null;
-        this.d = oVar;
+        this.d = bVar;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:52:0x00dd, code lost:
@@ -220,17 +220,17 @@ public final class j0 {
     }
 
     public final Typeface d() {
-        n6.o oVar = this.d;
-        if (((Typeface) oVar.c) == null) {
-            oVar.c = ((h0) oVar.b).a();
+        n3.b bVar = this.d;
+        if (((Typeface) bVar.c) == null) {
+            bVar.c = ((h0) bVar.b).a();
         }
-        return (Typeface) oVar.c;
+        return (Typeface) bVar.c;
     }
 
     public j0(Font font, String str) {
         this.a = str;
         this.c = str;
         this.b = null;
-        this.d = new n6.o(new m5(font, 21));
+        this.d = new n3.b(new m5(font, 22));
     }
 }

@@ -3,19 +3,19 @@ package k2;
 import android.os.Handler;
 import java.nio.ByteBuffer;
 import org.telegram.messenger.FourierTransform;
-import org.telegram.ui.Components.a81;
-import org.telegram.ui.Components.g81;
+import org.telegram.ui.Components.b81;
 import org.telegram.ui.Components.h81;
-import org.telegram.ui.Components.k31;
-import org.telegram.ui.Components.v71;
+import org.telegram.ui.Components.i81;
+import org.telegram.ui.Components.n51;
+import org.telegram.ui.Components.w71;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class a1 extends c2.o {
-    public final g81 i;
+    public final h81 i;
 
-    public a1(g81 g81Var) {
-        this.i = g81Var;
+    public a1(h81 h81Var) {
+        this.i = h81Var;
     }
 
     @Override // c2.n
@@ -26,33 +26,33 @@ public final class a1 extends c2.o {
         }
         String str = e2.m0.a;
         ByteBuffer order = byteBuffer.asReadOnlyBuffer().order(byteBuffer.order());
-        g81 g81Var = this.i;
-        float[] fArr = g81Var.b;
-        ByteBuffer byteBuffer2 = g81Var.c;
-        FourierTransform.FFT fft = g81Var.a;
-        h81 h81Var = g81Var.f;
-        a81 a81Var = h81Var.K;
-        Handler handler = h81Var.a0;
-        if (a81Var != null) {
-            if (order == c2.n.a || !h81Var.I) {
-                handler.postDelayed(new v71(g81Var, 2), 80L);
-            } else if (a81Var.needUpdate()) {
+        h81 h81Var = this.i;
+        float[] fArr = h81Var.b;
+        ByteBuffer byteBuffer2 = h81Var.c;
+        FourierTransform.FFT fft = h81Var.a;
+        i81 i81Var = h81Var.f;
+        b81 b81Var = i81Var.K;
+        Handler handler = i81Var.a0;
+        if (b81Var != null) {
+            if (order == c2.n.a || !i81Var.I) {
+                handler.postDelayed(new w71(h81Var, 2), 80L);
+            } else if (b81Var.needUpdate()) {
                 int limit = order.limit();
                 int i10 = 0;
                 if (limit > 8192) {
                     handler.removeCallbacksAndMessages(null);
-                    h81Var.K.onVisualizerUpdate(false, true, null);
+                    i81Var.K.onVisualizerUpdate(false, true, null);
                 } else {
                     byteBuffer2.put(order);
-                    int i11 = g81Var.d + limit;
-                    g81Var.d = i11;
+                    int i11 = h81Var.d + limit;
+                    h81Var.d = i11;
                     if (i11 >= 1024) {
                         byteBuffer2.position(0);
                         for (int i12 = 0; i12 < 1024; i12++) {
                             fArr[i12] = byteBuffer2.getShort() / 32768.0f;
                         }
                         byteBuffer2.rewind();
-                        g81Var.d = 0;
+                        h81Var.d = 0;
                         fft.forward(fArr);
                         float f7 = 0.0f;
                         int i13 = 0;
@@ -93,9 +93,9 @@ public final class a1 extends c2.o {
                                 i10++;
                             }
                         }
-                        if (System.currentTimeMillis() - g81Var.e >= 64) {
-                            g81Var.e = System.currentTimeMillis();
-                            handler.postDelayed(new k31(9, g81Var, fArr2), 130L);
+                        if (System.currentTimeMillis() - h81Var.e >= 64) {
+                            h81Var.e = System.currentTimeMillis();
+                            handler.postDelayed(new n51(4, h81Var, fArr2), 130L);
                         }
                     }
                 }

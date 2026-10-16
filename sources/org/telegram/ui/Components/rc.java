@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class rc extends pb {
     public final n9 a;
@@ -22,12 +22,12 @@ public final class rc extends pb {
         this.a = n9Var;
         n9Var.setStyle(11);
         n9Var.setAvatarsTextSize(AndroidUtilities.dp(18.0f));
-        addView(n9Var, w7.a6.i(56.0f, 48.0f, 8388627, 12.0f, 0.0f, 0.0f, 0.0f));
+        addView(n9Var, w7.z5.i(56.0f, 48.0f, 8388627, 12.0f, 0.0f, 0.0f, 0.0f));
         if (z10) {
             LinearLayout linearLayout = new LinearLayout(getContext());
             this.d = linearLayout;
             linearLayout.setOrientation(1);
-            addView(linearLayout, w7.a6.i(-1.0f, -2.0f, 8388627, 76.0f, 6.0f, 12.0f, 6.0f));
+            addView(linearLayout, w7.z5.i(-1.0f, -2.0f, 8388627, 76.0f, 6.0f, 12.0f, 6.0f));
             zb zbVar = new zb(context, 2, null);
             this.b = zbVar;
             NotificationCenter.listenEmojiLoading(zbVar);
@@ -47,7 +47,7 @@ public final class rc extends pb {
             da0Var.setSingleLine(false);
             da0Var.setMaxLines(3);
             da0Var.setLinkTextColor(getThemedColor(org.telegram.ui.ActionBar.g6.Gi));
-            linearLayout.addView(da0Var, w7.a6.t(-2, -2, 0, 0, 0, 0, 0));
+            linearLayout.addView(da0Var, w7.z5.t(-2, -2, 0, 0, 0, 0, 0));
         } else {
             zb zbVar2 = new zb(context, 1, null);
             this.b = zbVar2;
@@ -57,7 +57,7 @@ public final class rc extends pb {
             zbVar2.setEllipsize(TextUtils.TruncateAt.END);
             zbVar2.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
             zbVar2.setGravity(LocaleController.isRTL ? 5 : 3);
-            addView(zbVar2, w7.a6.i(-2.0f, -2.0f, 8388627, 70.0f, 0.0f, 12.0f, 0.0f));
+            addView(zbVar2, w7.z5.i(-2.0f, -2.0f, 8388627, 70.0f, 0.0f, 12.0f, 0.0f));
         }
         this.b.setLinkTextColor(getThemedColor(org.telegram.ui.ActionBar.g6.Gi));
         setTextColor(getThemedColor(org.telegram.ui.ActionBar.g6.Hi));

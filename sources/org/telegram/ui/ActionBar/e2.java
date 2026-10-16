@@ -16,7 +16,7 @@ import android.widget.FrameLayout;
 import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class e2 extends a2 {
     public static final int[] n1 = {R.attr.windowEnterAnimation, R.attr.windowExitAnimation};
@@ -119,9 +119,9 @@ public final class e2 extends a2 {
         this.f1 = frameLayout;
         s().addView(this.f1);
         FrameLayout frameLayout3 = this.f1;
-        WeakHashMap weakHashMap = r0.j0.a;
-        r0.z.c(frameLayout3);
-        r0.b0.i(this.f1, new n(frameLayout2, 4));
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.y.c(frameLayout3);
+        r0.a0.i(this.f1, new n(frameLayout2, 4));
         this.f1.setVisibility(4);
         long j10 = this.l1;
         p pVar = this.m1;

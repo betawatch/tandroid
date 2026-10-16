@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xg implements Runnable {
     public final /* synthetic */ int a;
@@ -36,8 +36,8 @@ public final /* synthetic */ class xg implements Runnable {
                         foVar.Cc.b.a.a(false, true);
                         break;
                     } else {
-                        foVar.Y.T0(false, false, false);
-                        foVar.Y.q1();
+                        foVar.Y.S0(false, false, false);
+                        foVar.Y.p1();
                         foVar.Cc.b.a.a(true, true);
                         break;
                     }
@@ -140,7 +140,7 @@ public final /* synthetic */ class xg implements Runnable {
                 break;
             case 17:
                 foVar.D7(true);
-                org.telegram.messenger.q.r(R.string.TranscriptionReportSent, org.telegram.ui.Components.zc.a0(foVar), R.raw.chats_infotip, 36);
+                org.telegram.messenger.g0.q(R.string.TranscriptionReportSent, org.telegram.ui.Components.zc.a0(foVar), R.raw.chats_infotip, 36);
                 break;
             case 18:
                 foVar.A0.M.clear();
@@ -187,7 +187,7 @@ public final /* synthetic */ class xg implements Runnable {
                 foVar.d7(false);
                 break;
             case 28:
-                FrameLayout.LayoutParams e = w7.a6.e(-1, -2, 87);
+                FrameLayout.LayoutParams e = w7.z5.e(-1, -2, 87);
                 e.bottomMargin = foVar.Y.getMeasuredHeight();
                 foVar.X0.addView(foVar.y1, e);
                 foVar.y1.setTranslationY(-AndroidUtilities.navigationBarHeight);

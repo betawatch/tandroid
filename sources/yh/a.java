@@ -19,13 +19,13 @@ import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.g5;
 import org.telegram.ui.Components.ud0;
-import org.telegram.ui.Wallet.y6;
-import w7.a6;
+import org.telegram.ui.Wallet.z6;
+import w7.z5;
 import zh.d7;
 import zh.f5;
 import zh.p7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -141,7 +141,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                             ud0Var.setMinValue(0);
                             ud0Var.setMaxValue(5);
                             ud0Var.setValue(i14);
-                            linearLayout.addView(ud0Var, a6.l(1.0f, 0, 432));
+                            linearLayout.addView(ud0Var, z5.l(1.0f, 0, 432));
                             int i15 = 7;
                             ud0Var.setFormatter(new org.telegram.ui.Components.s(strArr, i15));
                             org.telegram.ui.Components.y4 y4Var = new org.telegram.ui.Components.y4(context, ud0Var);
@@ -152,14 +152,14 @@ public final /* synthetic */ class a implements View.OnClickListener {
                             textView.setTextColor(x02);
                             textView.setTextSize(1, 20.0f);
                             textView.setTypeface(AndroidUtilities.bold());
-                            frameLayout.addView(textView, a6.a(-2.0f, 0.0f, 12.0f, 0.0f, 0.0f, -2, 51));
+                            frameLayout.addView(textView, z5.a(-2.0f, 0.0f, 12.0f, 0.0f, 0.0f, -2, 51));
                             textView.setOnTouchListener(new ci.d(10));
-                            y4Var.addView(frameLayout, a6.t(-1, -2, 51, 22, 0, 0, 4));
-                            y4Var.addView(linearLayout, a6.p(-1, -2, 1.0f, 0, 0, 12, 0, 12));
+                            y4Var.addView(frameLayout, z5.t(-1, -2, 51, 22, 0, 0, 4));
+                            y4Var.addView(linearLayout, z5.p(-1, -2, 1.0f, 0, 0, 12, 0, 12));
                             di.d dVar = new di.d(context, null, true);
                             dVar.g(LocaleController.getString(R.string.Select), false, true);
-                            dVar.setOnClickListener(new org.telegram.ui.Components.m2(r3, 1));
-                            y4Var.addView(dVar, a6.t(-1, 48, 0, 16, 12, 16, 12));
+                            dVar.setOnClickListener(new org.telegram.ui.Components.l2(r3, 1));
+                            y4Var.addView(dVar, z5.t(-1, 48, 0, 16, 12, 16, 12));
                             e3Var.customView = y4Var;
                             e3Var.show();
                             e3Var.setOnDismissListener(new fi.d0(i15, p1Var, ud0Var));
@@ -179,12 +179,12 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 break;
             case 7:
                 zh.h0 h0Var = (zh.h0) obj2;
-                y6 y6Var = (y6) obj;
+                z6 z6Var = (z6) obj;
                 di.d dVar2 = h0Var.f;
                 if (dVar2.W && !dVar2.N) {
                     AndroidUtilities.hideKeyboard(h0Var.c);
                     dVar2.setLoading(true);
-                    y6Var.run(h0Var.E);
+                    z6Var.run(h0Var.E);
                     break;
                 }
                 break;
@@ -235,7 +235,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 r0Var2.V();
                 break;
             case 10:
-                pf.d.u(((zh.r3) obj2).getContext(), ((TL_stars.UniqueStarGiftValueInfo) obj).fragment_listed_url);
+                pf.d.t(((zh.r3) obj2).getContext(), ((TL_stars.UniqueStarGiftValueInfo) obj).fragment_listed_url);
                 break;
             case 11:
                 ((zh.r3) obj2).p2((CharSequence) obj);
@@ -249,7 +249,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 }
                 break;
             default:
-                pf.d.s((Context) obj2, ((TL_stars.StarsTransaction) obj).transaction_url);
+                pf.d.r((Context) obj2, ((TL_stars.StarsTransaction) obj).transaction_url);
                 break;
         }
     }

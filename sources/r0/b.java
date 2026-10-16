@@ -14,7 +14,7 @@ import java.util.List;
 import ji.w4;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class b {
     public static final View.AccessibilityDelegate c = new View.AccessibilityDelegate();
@@ -28,7 +28,7 @@ public class b {
     public w4 a(View view) {
         AccessibilityNodeProvider accessibilityNodeProvider = this.a.getAccessibilityNodeProvider(view);
         if (accessibilityNodeProvider != null) {
-            return new w4(accessibilityNodeProvider, 25);
+            return new w4(accessibilityNodeProvider, 24);
         }
         return null;
     }

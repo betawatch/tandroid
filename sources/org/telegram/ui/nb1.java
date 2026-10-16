@@ -3,16 +3,16 @@ package org.telegram.ui;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class nb1 extends org.telegram.ui.Components.e61 {
+public final class nb1 extends org.telegram.ui.Components.f61 {
     public final /* synthetic */ StickersActivity b;
 
     public nb1(StickersActivity stickersActivity) {
         this.b = stickersActivity;
     }
 
-    @Override // org.telegram.ui.Components.e61
+    @Override // org.telegram.ui.Components.f61
     public final void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10) {
         int i10;
         StickersActivity stickersActivity = this.b;
@@ -20,7 +20,7 @@ public final class nb1 extends org.telegram.ui.Components.e61 {
         MediaDataController.getInstance(i10).toggleStickerSet(stickersActivity.getParentActivity(), stickerSetCovered, 2, stickersActivity, false, false);
     }
 
-    @Override // org.telegram.ui.Components.e61
+    @Override // org.telegram.ui.Components.f61
     public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
         int i10;
         StickersActivity stickersActivity = this.b;

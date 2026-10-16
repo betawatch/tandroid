@@ -1,46 +1,78 @@
 package rh;
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.text.TextUtils;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.voip.m2;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.Components.i71;
+import org.telegram.ui.Components.p9;
+import org.telegram.ui.Components.voip.r2;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes3.dex */
-public final class q {
-    public final int a;
-    public final TLRPC.InputPeer b;
-    public final int c;
-    public final byte[] d;
-    public final m2 e;
-    public final Utilities.Callback f;
-    public String g;
-    public boolean h;
-    public boolean i;
-    public final ArrayList j = new ArrayList();
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
+public final class q extends FrameLayout {
+    public final p9 a;
+    public final TextView b;
+    public k c;
 
-    public q(int i10, TLRPC.InputPeer inputPeer, int i11, byte[] bArr, m2 m2Var, Utilities.Callback callback) {
-        this.a = i10;
-        this.b = inputPeer;
-        this.c = i11;
-        this.d = bArr;
-        this.e = m2Var;
-        this.f = callback;
+    public q(Context context, int i10, c6 c6Var) {
+        super(context);
+        this.a = new p9(i10, this, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dpf2(1.0f));
+        TextView textView = new TextView(context);
+        this.b = textView;
+        textView.setTextColor(g6.w0(g6.E8, c6Var));
+        textView.setLines(1);
+        textView.setSingleLine(true);
+        textView.setGravity(19);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setTextSize(1, 16.0f);
+        setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(68.0f), 0);
+        addView(textView, z5.g());
     }
 
-    public final void a() {
-        if (this.h || this.i) {
-            return;
+    public final i71 a(m2 m2Var, long j10, int i10, byte[] bArr, int i11, Utilities.Callback callback) {
+        k kVar = this.c;
+        if (kVar != null) {
+            return kVar;
         }
-        this.i = true;
-        TLRPC.TL_messages_getPollVotes tL_messages_getPollVotes = new TLRPC.TL_messages_getPollVotes();
-        String str = this.g;
-        tL_messages_getPollVotes.limit = str != null ? 10 : 15;
-        tL_messages_getPollVotes.peer = this.b;
-        tL_messages_getPollVotes.id = this.c;
-        tL_messages_getPollVotes.option = this.d;
-        tL_messages_getPollVotes.offset = str;
-        ConnectionsManager.getInstance(this.a).sendRequestTyped(tL_messages_getPollVotes, new org.telegram.messenger.a(), new k(this, 1));
+        p pVar = new p(m2Var.getCurrentAccount(), m2Var.getMessagesController().getInputPeer(j10), i10, bArr, new r2(this, 28), callback);
+        AndroidUtilities.runOnUIThread(new r2(pVar, 29), 1000L);
+        k kVar2 = new k(m2Var, new j(pVar, 0), i11);
+        this.c = kVar2;
+        kVar2.W2.r = false;
+        kVar2.j(new l(this, pVar));
+        return this.c;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        int width = getWidth() - AndroidUtilities.dp(11.0f);
+        p9 p9Var = this.a;
+        p9Var.setBounds(width - ((int) p9Var.c.d.f.a), AndroidUtilities.dp(12.0f), getWidth() - AndroidUtilities.dp(11.0f), AndroidUtilities.dp(24.0f) + AndroidUtilities.dp(12.0f));
+        p9Var.c(canvas);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.a();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.b();
+    }
+
+    public void setText(String str) {
+        this.b.setText(str);
     }
 }

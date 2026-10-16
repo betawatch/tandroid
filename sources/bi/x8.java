@@ -36,7 +36,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class x8 {
     public static final Comparator X = Comparator$-CC.comparingInt(new s6(1));
@@ -381,7 +381,7 @@ public final class x8 {
         if (arrayList == null || arrayList.isEmpty()) {
             return false;
         }
-        return ((w8) i2.d.g(1, arrayList)).I;
+        return ((w8) i2.d.h(1, arrayList)).I;
     }
 
     public final void O(long j10) {
@@ -860,7 +860,7 @@ public final class x8 {
             this.d = 0;
         }
         if (arrayList == null) {
-            arrayList = org.telegram.messenger.q.k(j10, hVar);
+            arrayList = org.telegram.messenger.g0.j(j10, hVar);
         }
         arrayList.add(w8Var);
     }
@@ -1293,7 +1293,7 @@ public final class x8 {
                         if (storyItem.firstFramePath == null) {
                             storyItem.firstFramePath = storyItem2.firstFramePath;
                         }
-                        org.telegram.messenger.q.p(storyItem.id, new StringBuilder("StoriesController update story for full peer storyId="));
+                        org.telegram.messenger.g0.o(storyItem.id, new StringBuilder("StoriesController update story for full peer storyId="));
                     }
                 } else {
                     i12++;
@@ -1301,9 +1301,9 @@ public final class x8 {
             }
             if (!z11) {
                 if (storyItem instanceof TL_stories.TL_storyItemDeleted) {
-                    org.telegram.messenger.q.p(storyItem.id, new StringBuilder("StoriesController story is not found, but already deleted storyId="));
+                    org.telegram.messenger.g0.o(storyItem.id, new StringBuilder("StoriesController story is not found, but already deleted storyId="));
                 } else if (z10) {
-                    org.telegram.messenger.q.p(storyItem.id, new StringBuilder("StoriesController add new story for full peer storyId="));
+                    org.telegram.messenger.g0.o(storyItem.id, new StringBuilder("StoriesController add new story for full peer storyId="));
                     peerStories.stories.add(storyItem);
                     peerStories.checkedExpired = false;
                 }

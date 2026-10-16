@@ -10,7 +10,7 @@ import org.telegram.ui.fo;
 import org.telegram.ui.sk;
 import org.telegram.ui.xm;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class w3 extends vi {
     public final /* synthetic */ int S2;
@@ -53,8 +53,8 @@ public final class w3 extends vi {
                 foVar.Y9(false, true);
                 xm xmVar = foVar.X0;
                 if (xmVar != null) {
-                    WeakHashMap weakHashMap = r0.j0.a;
-                    r0.z.c(xmVar);
+                    WeakHashMap weakHashMap = r0.i0.a;
+                    r0.y.c(xmVar);
                     break;
                 }
                 break;

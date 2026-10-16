@@ -19,7 +19,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class x31 extends FrameLayout {
     public int E;
@@ -67,8 +67,8 @@ public final class x31 extends FrameLayout {
         this.d = v5Var;
         v5Var.setWillNotDraw(false);
         v5Var.setOrientation(1);
-        addView(v5Var, w7.a6.a(-1.0f, 1.0f, 0.0f, 0.0f, 0.0f, -1, 119));
-        w7.c6.a(v5Var);
+        addView(v5Var, w7.z5.a(-1.0f, 1.0f, 0.0f, 0.0f, 0.0f, -1, 119));
+        w7.b6.a(v5Var);
         r6 r6Var = new r6(false, false, false);
         this.f = r6Var;
         r6Var.w(AndroidUtilities.dp(11.0f));
@@ -80,10 +80,10 @@ public final class x31 extends FrameLayout {
         this.h = i7Var;
         i7Var.setWillNotDraw(false);
         i7Var.setPadding(0, AndroidUtilities.dp(4.0f), 0, 0);
-        v5Var.addView(i7Var, w7.a6.q(-1, -2, 17));
+        v5Var.addView(i7Var, w7.z5.q(-1, -2, 17));
         z9 z9Var = new z9(context);
         this.n = z9Var;
-        FrameLayout.LayoutParams e = w7.a6.e(34, 34, 17);
+        FrameLayout.LayoutParams e = w7.z5.e(34, 34, 17);
         this.e = e;
         i7Var.addView(z9Var, e);
         this.r = new k9((org.telegram.ui.ActionBar.c6) null);
@@ -97,12 +97,12 @@ public final class x31 extends FrameLayout {
         textView.setTypeface(AndroidUtilities.bold());
         textView.setMaxLines(3);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        v5Var.addView(textView, w7.a6.t(-1, -2, 17, 4, 0, 4, 0));
+        v5Var.addView(textView, w7.z5.t(-1, -2, 17, 4, 0, 4, 0));
         v5Var.setPadding(0, 0, 0, AndroidUtilities.dp(4.0f));
         ImageView imageView = new ImageView(context);
         this.v = imageView;
         imageView.setBackground(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(2.33f), org.telegram.ui.ActionBar.g6.w0(i11, c6Var)));
-        addView(imageView, w7.a6.a(-1.0f, -3.0f, 3.0f, 0.0f, 3.0f, 6, 115));
+        addView(imageView, w7.z5.a(-1.0f, -3.0f, 3.0f, 0.0f, 3.0f, 6, 115));
         imageView.setTranslationX(-AndroidUtilities.dp(3.0f));
         imageView.setVisibility(8);
     }
@@ -259,7 +259,7 @@ public final class x31 extends FrameLayout {
             this.L = ofFloat;
             ofFloat.addUpdateListener(new v31(this, i11));
             this.L.addListener(new k90(this, 28));
-            org.telegram.ui.Cells.d0.l(2.0f, this.L);
+            org.telegram.messenger.sk.l(2.0f, this.L);
             this.L.setDuration(200L);
             this.L.start();
         }

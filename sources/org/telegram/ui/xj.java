@@ -5,7 +5,7 @@ import android.os.Bundle;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationsController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class xj implements org.telegram.ui.Components.bp {
     public final /* synthetic */ fo a;
@@ -20,7 +20,7 @@ public final class xj implements org.telegram.ui.Components.bp {
     }
 
     @Override // org.telegram.ui.Components.bp
-    public final void n() {
+    public final void o() {
         fo foVar = this.a;
         foVar.fc(true);
         org.telegram.ui.Components.zc.A(foVar, foVar.getMessagesController().isDialogMuted(foVar.T5, foVar.d()), foVar.ea).j();
@@ -44,7 +44,7 @@ public final class xj implements org.telegram.ui.Components.bp {
     }
 
     @Override // org.telegram.ui.Components.bp
-    public final void s() {
+    public final void t() {
         int i10;
         fo foVar = this.a;
         i10 = ((org.telegram.ui.ActionBar.m2) foVar).currentAccount;

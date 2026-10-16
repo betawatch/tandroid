@@ -1,23 +1,30 @@
 package m;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public abstract class g0 {
-    public static int a(View view) {
-        return view.getTextAlignment();
+public final class g0 extends w1 {
+    public final /* synthetic */ o0 s;
+    public final /* synthetic */ r0 v;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g0(r0 r0Var, r0 r0Var2, o0 o0Var) {
+        super(r0Var2);
+        this.v = r0Var;
+        this.s = o0Var;
     }
 
-    public static int b(View view) {
-        return view.getTextDirection();
+    @Override // m.w1
+    public final l.b0 b() {
+        return this.s;
     }
 
-    public static void c(View view, int i10) {
-        view.setTextAlignment(i10);
-    }
-
-    public static void d(View view, int i10) {
-        view.setTextDirection(i10);
+    @Override // m.w1
+    public final boolean c() {
+        r0 r0Var = this.v;
+        if (r0Var.getInternalPopup().a()) {
+            return true;
+        }
+        r0Var.f.l(i0.b(r0Var), i0.a(r0Var));
+        return true;
     }
 }

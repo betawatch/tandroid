@@ -1,11 +1,206 @@
 package m;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+import android.content.Context;
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.os.Parcelable;
+import android.util.AttributeSet;
+import android.widget.CompoundButton;
+import android.widget.TextView;
+import java.util.Iterator;
+import java.util.Map;
+import v7.q7;
+
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class r {
-    public final /* synthetic */ s a;
+    public Parcelable a;
+    public Object b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public final Object f;
 
-    public r(s sVar) {
-        this.a = sVar;
+    public /* synthetic */ r(TextView textView) {
+        this.a = null;
+        this.b = null;
+        this.c = false;
+        this.d = false;
+        this.f = textView;
+    }
+
+    public void a() {
+        CompoundButton compoundButton = (CompoundButton) this.f;
+        Drawable buttonDrawable = compoundButton.getButtonDrawable();
+        if (buttonDrawable != null) {
+            if (this.c || this.d) {
+                Drawable mutate = buttonDrawable.mutate();
+                if (this.c) {
+                    mutate.setTintList((ColorStateList) this.a);
+                }
+                if (this.d) {
+                    mutate.setTintMode((PorterDuff.Mode) this.b);
+                }
+                if (mutate.isStateful()) {
+                    mutate.setState(compoundButton.getDrawableState());
+                }
+                compoundButton.setButtonDrawable(mutate);
+            }
+        }
+    }
+
+    public void b() {
+        q qVar = (q) this.f;
+        Drawable checkMarkDrawable = qVar.getCheckMarkDrawable();
+        if (checkMarkDrawable != null) {
+            if (this.c || this.d) {
+                Drawable mutate = checkMarkDrawable.mutate();
+                if (this.c) {
+                    mutate.setTintList((ColorStateList) this.a);
+                }
+                if (this.d) {
+                    mutate.setTintMode((PorterDuff.Mode) this.b);
+                }
+                if (mutate.isStateful()) {
+                    mutate.setState(qVar.getDrawableState());
+                }
+                qVar.setCheckMarkDrawable(mutate);
+            }
+        }
+    }
+
+    public Bundle c(String str) {
+        if (!this.d) {
+            throw new IllegalStateException("You can consumeRestoredStateForKey only after super.onCreate of corresponding component");
+        }
+        Bundle bundle = (Bundle) this.a;
+        if (bundle == null) {
+            return null;
+        }
+        Bundle bundle2 = bundle.getBundle(str);
+        Bundle bundle3 = (Bundle) this.a;
+        if (bundle3 != null) {
+            bundle3.remove(str);
+        }
+        Bundle bundle4 = (Bundle) this.a;
+        if (bundle4 != null && !bundle4.isEmpty()) {
+            return bundle2;
+        }
+        this.a = null;
+        return bundle2;
+    }
+
+    public t4.d d() {
+        String str;
+        t4.d dVar;
+        Iterator it = ((o.f) this.f).iterator();
+        do {
+            o.b bVar = (o.b) it;
+            if (!bVar.hasNext()) {
+                return null;
+            }
+            Map.Entry components = (Map.Entry) bVar.next();
+            kotlin.jvm.internal.i.d(components, "components");
+            str = (String) components.getKey();
+            dVar = (t4.d) components.getValue();
+        } while (!kotlin.jvm.internal.i.a(str, "androidx.lifecycle.internal.SavedStateHandlesProvider"));
+        return dVar;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:11:0x005c A[Catch: all -> 0x003b, TryCatch #1 {all -> 0x003b, blocks: (B:3:0x0022, B:5:0x0029, B:8:0x002f, B:9:0x0055, B:11:0x005c, B:12:0x0063, B:14:0x006a, B:21:0x003e, B:23:0x0044, B:25:0x004a), top: B:2:0x0022 }] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x006a A[Catch: all -> 0x003b, TRY_LEAVE, TryCatch #1 {all -> 0x003b, blocks: (B:3:0x0022, B:5:0x0029, B:8:0x002f, B:9:0x0055, B:11:0x005c, B:12:0x0063, B:14:0x006a, B:21:0x003e, B:23:0x0044, B:25:0x004a), top: B:2:0x0022 }] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void e(AttributeSet attributeSet, int i10) {
+        int resourceId;
+        int resourceId2;
+        CompoundButton compoundButton = (CompoundButton) this.f;
+        Context context = compoundButton.getContext();
+        int[] iArr = f.a.m;
+        h3 P = h3.P(context, attributeSet, iArr, i10);
+        TypedArray typedArray = (TypedArray) P.c;
+        r0.i0.i(compoundButton, compoundButton.getContext(), iArr, attributeSet, (TypedArray) P.c, i10);
+        try {
+            if (typedArray.hasValue(1) && (resourceId2 = typedArray.getResourceId(1, 0)) != 0) {
+                try {
+                    compoundButton.setButtonDrawable(q7.b(compoundButton.getContext(), resourceId2));
+                } catch (Resources.NotFoundException unused) {
+                }
+                if (typedArray.hasValue(2)) {
+                    compoundButton.setButtonTintList(P.E(2));
+                }
+                if (typedArray.hasValue(3)) {
+                    compoundButton.setButtonTintMode(n1.b(typedArray.getInt(3, -1), null));
+                }
+                P.Q();
+            }
+            if (typedArray.hasValue(0) && (resourceId = typedArray.getResourceId(0, 0)) != 0) {
+                compoundButton.setButtonDrawable(q7.b(compoundButton.getContext(), resourceId));
+            }
+            if (typedArray.hasValue(2)) {
+            }
+            if (typedArray.hasValue(3)) {
+            }
+            P.Q();
+        } catch (Throwable th2) {
+            P.Q();
+            throw th2;
+        }
+    }
+
+    public void f(String str, t4.d provider) {
+        Object obj;
+        kotlin.jvm.internal.i.e(provider, "provider");
+        o.f fVar = (o.f) this.f;
+        o.c h = fVar.h(str);
+        if (h != null) {
+            obj = h.b;
+        } else {
+            o.c cVar = new o.c(str, provider);
+            fVar.d++;
+            o.c cVar2 = fVar.b;
+            if (cVar2 == null) {
+                fVar.a = cVar;
+                fVar.b = cVar;
+            } else {
+                cVar2.c = cVar;
+                cVar.d = cVar2;
+                fVar.b = cVar;
+            }
+            obj = null;
+        }
+        if (((t4.d) obj) != null) {
+            throw new IllegalArgumentException("SavedStateProvider with the given key is already registered");
+        }
+    }
+
+    public void g() {
+        if (!this.e) {
+            throw new IllegalStateException("Can not perform this action after onSaveInstanceState");
+        }
+        t4.a aVar = (t4.a) this.b;
+        if (aVar == null) {
+            aVar = new t4.a(this);
+        }
+        this.b = aVar;
+        try {
+            androidx.lifecycle.j.class.getDeclaredConstructor(null);
+            t4.a aVar2 = (t4.a) this.b;
+            if (aVar2 != null) {
+                aVar2.a.add(androidx.lifecycle.j.class.getName());
+            }
+        } catch (NoSuchMethodException e) {
+            throw new IllegalArgumentException("Class " + androidx.lifecycle.j.class.getSimpleName() + " must have default constructor in order to be automatically recreated", e);
+        }
+    }
+
+    public r() {
+        this.f = new o.f();
+        this.e = true;
     }
 }

@@ -1,11 +1,12 @@
 package l5;
 
 import java.util.HashMap;
+import m.h3;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class n {
-    public static final li.k a;
+    public static final h3 a;
 
     static {
         HashMap hashMap = new HashMap();
@@ -24,6 +25,6 @@ public abstract class n {
         hashMap2.remove(o5.b.class);
         hashMap.put(o5.f.class, f.a);
         hashMap2.remove(o5.f.class);
-        a = new li.k(new HashMap(hashMap), new HashMap(hashMap2), ma.g.a, 5);
+        a = new h3(new HashMap(hashMap), new HashMap(hashMap2), ma.g.a, 4);
     }
 }

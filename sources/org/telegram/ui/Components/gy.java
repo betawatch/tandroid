@@ -11,7 +11,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class gy extends vt {
     public int M;
@@ -121,9 +121,9 @@ public final class gy extends vt {
                                     float max = Math.max(600L, Math.min(55, r7 - i12) * 40);
                                     s5Var2 = s5Var;
                                     f10 = 0.0f;
-                                    float a2 = w7.s.a(com.google.android.gms.internal.play_billing.k3.c(max, 0.45f, SystemClock.elapsedRealtime() - wzVar.u2, Math.max(400L, Math.min(45, wzVar.t2 - wzVar.s2) * 35)), 0.0f, 1.0f);
+                                    float a2 = w7.r.a(com.google.android.gms.internal.play_billing.k3.c(max, 0.45f, SystemClock.elapsedRealtime() - wzVar.u2, Math.max(400L, Math.min(45, wzVar.t2 - wzVar.s2) * 35)), 0.0f, 1.0f);
                                     float f17 = f16;
-                                    float interpolation = es.g.getInterpolation(w7.s.a((SystemClock.elapsedRealtime() - wzVar.u2) / max, 0.0f, 1.0f));
+                                    float interpolation = es.g.getInterpolation(w7.r.a((SystemClock.elapsedRealtime() - wzVar.u2) / max, 0.0f, 1.0f));
                                     float f18 = i13;
                                     float f19 = i14;
                                     AndroidUtilities.cascade(a2, f18, f19, f19 / 5.0f);

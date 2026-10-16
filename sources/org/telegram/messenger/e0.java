@@ -1,133 +1,24 @@
 package org.telegram.messenger;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
-import android.service.media.MediaBrowserService;
-import android.util.Pair;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import java.util.List;
 import org.telegram.messenger.BillingController;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LanguageDetector;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.PushListenerController;
-import org.telegram.messenger.RichMessageLayout;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.TelegramMediaSession;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestTimeDelegate;
-import org.telegram.tgnet.ResultCallback;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.WriteToSocketDelegate;
-import org.telegram.ui.Components.bp0;
-import org.telegram.ui.fo;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e0 implements ResultCallback, WriteToSocketDelegate, OnSuccessListener, OnFailureListener, di.i8, TelegramMediaSession.BrowseChildrenCallback, ImageReceiver.ImageReceiverDelegate, RequestTimeDelegate, OnCompleteListener, bp0, org.telegram.ui.ActionBar.z1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final /* synthetic */ class e0 implements BillingController.ProductDetailsResponseListenerLegacy, c5.q {
+    public final /* synthetic */ BillingController a;
 
-    public /* synthetic */ e0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ e0(BillingController billingController) {
+        this.a = billingController;
     }
 
-    public void a(c5.i iVar, c5.t tVar) {
-        BillingController.lambda$queryProductDetails$0((BillingController.ProductDetailsResponseListenerLegacy) this.b, iVar, tVar);
+    @Override // c5.q
+    public void b(c5.i iVar, List list) {
+        this.a.onPurchasesUpdated(iVar, list);
     }
 
-    @Override // org.telegram.ui.Components.bp0
-    public void b(float f7) {
-        ((RichMessageLayout.RichAudioBlock) this.b).lambda$new$0(f7);
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        ((MusicPlayerService) this.b).lambda$onCreate$0(imageReceiver, z10, z11, z12);
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        l5.a(this, i10, str, drawable);
-    }
-
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        SendMessagesHelper.lambda$sendCallback$45((fo) this.b, a2Var, i10);
-    }
-
-    @Override // di.i8
-    public Bitmap i(BitmapFactory.Options options) {
-        Bitmap lambda$rebuildPhoto$0;
-        lambda$rebuildPhoto$0 = ((MediaController.PhotoEntry) this.b).lambda$rebuildPhoto$0(options);
-        return lambda$rebuildPhoto$0;
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        l5.b(this, imageReceiver);
-    }
-
-    @Override // com.google.android.gms.tasks.OnCompleteListener
-    public void onComplete(Task task) {
-        ((PushListenerController.GooglePushListenerServiceProvider) this.b).lambda$onRequestPushToken$0(task);
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public /* synthetic */ void onError(Throwable th2) {
-        int i10 = this.a;
-        org.telegram.tgnet.l.a(this, th2);
-    }
-
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public void onFailure(Exception exc) {
-        LanguageDetector.lambda$detectLanguage$1((LanguageDetector.ExceptionCallback) this.b, exc);
-    }
-
-    @Override // org.telegram.messenger.TelegramMediaSession.BrowseChildrenCallback
-    public void onResult(List list) {
-        ((MediaBrowserService.Result) this.b).sendResult(list);
-    }
-
-    @Override // com.google.android.gms.tasks.OnSuccessListener
-    public void onSuccess(Object obj) {
-        LanguageDetector.lambda$detectLanguage$0((LanguageDetector.StringCallback) this.b, (String) obj);
-    }
-
-    @Override // org.telegram.tgnet.WriteToSocketDelegate
-    public void run() {
-        ((FileUploadOperation) this.b).lambda$startUploadRequest$8();
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public void onComplete(Object obj) {
-        switch (this.a) {
-            case 1:
-                ChatThemeController.lambda$loadWallpaperBitmap$9((Utilities.Callback) this.b, (Bitmap) obj);
-                break;
-            default:
-                ((ChatThemeController) this.b).lambda$preloadAllWallpaperThumbs$5((Pair) obj);
-                break;
-        }
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public /* synthetic */ void onError(TLRPC.TL_error tL_error) {
-        int i10 = this.a;
-        org.telegram.tgnet.l.b(this, tL_error);
-    }
-
-    @Override // org.telegram.tgnet.RequestTimeDelegate
-    public void run(long j10) {
-        ProxyRotationController.lambda$new$1((SharedConfig.ProxyInfo) this.b, j10);
-    }
-
-    @Override // org.telegram.ui.Components.bp0
-    public /* synthetic */ void c(float f7) {
+    @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
+    public void onProductDetailsResponse(c5.i iVar, List list) {
+        this.a.onQueriedPremiumProductDetails(iVar, list);
     }
 }

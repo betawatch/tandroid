@@ -27,7 +27,7 @@ import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -159,9 +159,9 @@ public final /* synthetic */ class n implements Runnable {
                 ((ConnectionsManager) this.d).lambda$discardConnection$0(this.b, this.c);
                 break;
             case 5:
-                org.telegram.ui.web.y0 y0Var = (org.telegram.ui.web.y0) this.d;
+                org.telegram.ui.web.z0 z0Var = (org.telegram.ui.web.z0) this.d;
                 for (int i17 = 0; i17 < this.b - this.c; i17++) {
-                    y0Var.goBack();
+                    z0Var.goBack();
                 }
                 break;
             case 6:

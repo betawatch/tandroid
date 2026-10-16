@@ -7,7 +7,7 @@ import androidx.appcompat.widget.ActionBarContextView;
 import java.lang.ref.WeakReference;
 import n4.s;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class d extends a implements l.i {
     public Context c;
@@ -23,7 +23,7 @@ public final class d extends a implements l.i {
             return;
         }
         this.h = true;
-        this.e.r(this);
+        this.e.t(this);
     }
 
     @Override // k.a
@@ -57,7 +57,7 @@ public final class d extends a implements l.i {
 
     @Override // k.a
     public final void g() {
-        this.e.s(this, this.n);
+        this.e.v(this, this.n);
     }
 
     @Override // k.a
@@ -81,33 +81,33 @@ public final class d extends a implements l.i {
         this.d.setSubtitle(charSequence);
     }
 
-    @Override // k.a
-    public final void l(int i10) {
-        m(this.c.getString(i10));
-    }
-
-    @Override // k.a
-    public final void m(CharSequence charSequence) {
-        this.d.setTitle(charSequence);
-    }
-
     @Override // l.i
-    public final void n(l.k kVar) {
+    public final void l(l.k kVar) {
         g();
-        m.h hVar = this.d.d;
-        if (hVar != null) {
-            hVar.l();
+        m.i iVar = this.d.d;
+        if (iVar != null) {
+            iVar.l();
         }
     }
 
     @Override // k.a
-    public final void o(boolean z10) {
-        this.b = z10;
-        this.d.setTitleOptional(z10);
+    public final void m(int i10) {
+        n(this.c.getString(i10));
+    }
+
+    @Override // k.a
+    public final void n(CharSequence charSequence) {
+        this.d.setTitle(charSequence);
     }
 
     @Override // l.i
-    public final boolean p(l.k kVar, MenuItem menuItem) {
-        return ((qi.e) this.e.b).y(this, menuItem);
+    public final boolean o(l.k kVar, MenuItem menuItem) {
+        return ((pi.e) this.e.b).y(this, menuItem);
+    }
+
+    @Override // k.a
+    public final void p(boolean z10) {
+        this.b = z10;
+        this.d.setTitleOptional(z10);
     }
 }

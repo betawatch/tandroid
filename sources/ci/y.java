@@ -22,6 +22,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.g0;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
@@ -32,13 +33,13 @@ import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Cells.t7;
 import org.telegram.ui.Components.br;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.j91;
+import org.telegram.ui.Components.k91;
 import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.ms0;
 import org.telegram.ui.Components.vi;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public abstract class y extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static LongSparseArray E;
@@ -51,7 +52,7 @@ public abstract class y extends FrameLayout implements NotificationCenter.Notifi
     public final ArrayList f;
     public final ArrayList h;
     public final a n;
-    public final j91 r;
+    public final k91 r;
     public Boolean s;
     public int v;
     public float w;
@@ -95,12 +96,12 @@ public abstract class y extends FrameLayout implements NotificationCenter.Notifi
         this.n = aVar;
         aVar.setAllowDisallowInterceptTouch(true);
         aVar.setAdapter(new b(ms0Var, context));
-        addView(aVar, a6.e(-1, -1, 119));
-        j91 n10 = aVar.n(9, true);
+        addView(aVar, z5.e(-1, -1, 119));
+        k91 n10 = aVar.n(9, true);
         this.r = n10;
         n10.r = 12;
         n10.setPreTabClick(new a1.c(ms0Var, 13));
-        addView(n10, a6.e(-1, 42, 48));
+        addView(n10, z5.e(-1, 42, 48));
         i(false);
     }
 
@@ -409,14 +410,14 @@ public abstract class y extends FrameLayout implements NotificationCenter.Notifi
         }
         a aVar = this.n;
         aVar.o(true);
-        SpannableString spannableString = new SpannableString(org.telegram.messenger.q.h(R.string.ProfileBotLanguageAdd, new StringBuilder("+ ")));
+        SpannableString spannableString = new SpannableString(g0.g(R.string.ProfileBotLanguageAdd, new StringBuilder("+ ")));
         br brVar = new br(R.drawable.msg_filled_plus, 0);
         brVar.setScale(0.9f, 0.9f);
         brVar.spaceScaleX = 0.85f;
         spannableString.setSpan(brVar, 0, 1, 33);
-        j91 j91Var = this.r;
-        j91Var.a(-1, spannableString);
-        j91Var.x.l();
+        k91 k91Var = this.r;
+        k91Var.a(-1, spannableString);
+        k91Var.x.l();
         boolean z11 = arrayList3.size() + 1 > 1;
         Boolean bool = this.s;
         if (bool == null || bool.booleanValue() != z11) {
@@ -427,7 +428,7 @@ public abstract class y extends FrameLayout implements NotificationCenter.Notifi
             this.s = Boolean.valueOf(z11);
             if (!z10) {
                 this.w = z11 ? 1.0f : 0.0f;
-                j91Var.setTranslationY(AndroidUtilities.dp(z11 ? 0.0f : -42.0f));
+                k91Var.setTranslationY(AndroidUtilities.dp(z11 ? 0.0f : -42.0f));
                 aVar.setTranslationY(AndroidUtilities.dp(z11 ? 42.0f : 0.0f));
                 return;
             }

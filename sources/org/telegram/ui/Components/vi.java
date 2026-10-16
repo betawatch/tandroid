@@ -78,9 +78,9 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.vj1;
+import org.telegram.ui.uj1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.y2, ne.d {
     public static final /* synthetic */ int R2 = 0;
@@ -224,7 +224,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
     public io n0;
     public final org.telegram.ui.ActionBar.u0 n1;
     public final Rect n2;
-    public ul o0;
+    public tl o0;
     public final LinearLayout o1;
     public float o2;
     public pk p0;
@@ -252,9 +252,9 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
     public boolean v1;
     public boolean v2;
     public final ImageView w;
-    public dl w0;
+    public cl w0;
     public Object w1;
-    public pl w2;
+    public ol w2;
     public final i0 x;
     public boolean x0;
     public boolean x1;
@@ -347,10 +347,11 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             this.F2 = new bh.f(false);
             gh.d dVar = new gh.d(null);
             this.H2 = dVar;
-            dVar.j(new ji.h5(this, 12));
+            int i12 = 12;
+            dVar.k(new ji.w4(this, i12));
             gh.d dVar2 = new gh.d(null);
             this.G2 = dVar2;
-            dVar2.j(new ji.d4(this, 11));
+            dVar2.k(new ji.h5(this, i12));
             bh.b bVar = new bh.b(dVar);
             this.J2 = bVar;
             bVar.i = LiteMode.isEnabled(262144);
@@ -385,27 +386,27 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         this.containerView.setClipChildren(false);
         this.containerView.setClipToPadding(false);
         ViewGroup viewGroup = this.containerView;
-        int i12 = this.backgroundPaddingLeft;
-        viewGroup.setPadding(i12, 0, i12, 0);
+        int i13 = this.backgroundPaddingLeft;
+        viewGroup.setPadding(i13, 0, i13, 0);
         b8 b8Var2 = new b8(this, context, c6Var, 1);
         this.a1 = b8Var2;
         b8Var2.S0 = true;
         b8Var2.setForcedMenuWidth(AndroidUtilities.dp(46.0f));
         b8Var2.setBackButtonDrawable(new org.telegram.ui.ActionBar.f2(false));
-        int i13 = org.telegram.ui.ActionBar.g6.j5;
-        b8Var2.D(getThemedColor(i13), false);
-        int i14 = org.telegram.ui.ActionBar.g6.I5;
-        b8Var2.B(getThemedColor(i14), false);
-        b8Var2.setTitleColor(getThemedColor(i13));
+        int i14 = org.telegram.ui.ActionBar.g6.j5;
+        b8Var2.D(getThemedColor(i14), false);
+        int i15 = org.telegram.ui.ActionBar.g6.I5;
+        b8Var2.C(getThemedColor(i15), false);
+        b8Var2.setTitleColor(getThemedColor(i14));
         b8Var2.setOccupyStatusBar(true);
         b8Var2.setAlpha(0.0f);
         b8Var2.setActionBarMenuOnItemClick(new org.telegram.ui.nb(this, 10));
-        org.telegram.ui.ActionBar.u0 u0Var2 = new org.telegram.ui.ActionBar.u0(context, null, 0, getThemedColor(i13), false, c6Var);
+        org.telegram.ui.ActionBar.u0 u0Var2 = new org.telegram.ui.ActionBar.u0(context, null, 0, getThemedColor(i14), false, c6Var);
         this.d1 = u0Var2;
         u0Var2.setLongClickEnabled(false);
         u0Var2.setIcon(R.drawable.ic_ab_other);
         u0Var2.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
-        final int i15 = 4;
+        final int i16 = 4;
         u0Var2.setVisibility(4);
         u0Var2.setAlpha(0.0f);
         u0Var2.setScaleX(0.6f);
@@ -414,7 +415,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         u0Var2.setDelegate(new eh(this, 8));
         u0Var2.setAdditionalYOffset(AndroidUtilities.dp(72.0f));
         u0Var2.setTranslationX(AndroidUtilities.dp(1.0f));
-        u0Var2.setBackground(org.telegram.ui.ActionBar.g6.g0(getThemedColor(i14), 6, -1));
+        u0Var2.setBackground(org.telegram.ui.ActionBar.g6.g0(getThemedColor(i15), 6, -1));
         u0Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.ih
             public final /* synthetic */ vi b;
 
@@ -425,12 +426,12 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 fi.q4 q4Var;
-                switch (i15) {
+                switch (i16) {
                     case 0:
                         vi viVar = this.b;
                         long j10 = viVar.Z0;
                         if (j10 < 0 && (q4Var = (fi.q4) viVar.A0.get(-j10)) != null) {
-                            org.telegram.ui.web.b1 webViewContainer = q4Var.getWebViewContainer();
+                            org.telegram.ui.web.c1 webViewContainer = q4Var.getWebViewContainer();
                             webViewContainer.getClass();
                             webViewContainer.P = System.currentTimeMillis();
                             webViewContainer.y("main_button_pressed", null);
@@ -479,7 +480,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                 }
             }
         });
-        org.telegram.ui.ActionBar.u0 u0Var3 = new org.telegram.ui.ActionBar.u0(context, null, 0, getThemedColor(i13), false, c6Var);
+        org.telegram.ui.ActionBar.u0 u0Var3 = new org.telegram.ui.ActionBar.u0(context, null, 0, getThemedColor(i14), false, c6Var);
         this.f1 = u0Var3;
         u0Var3.setLongClickEnabled(false);
         di.u uVar = new di.u();
@@ -492,10 +493,10 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         u0Var3.setScaleY(0.6f);
         u0Var3.setAdditionalYOffset(AndroidUtilities.dp(72.0f));
         u0Var3.setTranslationX(-AndroidUtilities.dp(3.0f));
-        int themedColor = getThemedColor(i14);
-        final int i16 = 6;
+        int themedColor = getThemedColor(i15);
+        final int i17 = 6;
         u0Var3.setBackground(org.telegram.ui.ActionBar.g6.g0(themedColor, 6, -1));
-        final int i17 = 5;
+        final int i18 = 5;
         u0Var3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.ih
             public final /* synthetic */ vi b;
 
@@ -506,12 +507,12 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 fi.q4 q4Var;
-                switch (i17) {
+                switch (i18) {
                     case 0:
                         vi viVar = this.b;
                         long j10 = viVar.Z0;
                         if (j10 < 0 && (q4Var = (fi.q4) viVar.A0.get(-j10)) != null) {
-                            org.telegram.ui.web.b1 webViewContainer = q4Var.getWebViewContainer();
+                            org.telegram.ui.web.c1 webViewContainer = q4Var.getWebViewContainer();
                             webViewContainer.getClass();
                             webViewContainer.P = System.currentTimeMillis();
                             webViewContainer.y("main_button_pressed", null);
@@ -580,12 +581,12 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 fi.q4 q4Var;
-                switch (i16) {
+                switch (i17) {
                     case 0:
                         vi viVar = this.b;
                         long j10 = viVar.Z0;
                         if (j10 < 0 && (q4Var = (fi.q4) viVar.A0.get(-j10)) != null) {
-                            org.telegram.ui.web.b1 webViewContainer = q4Var.getWebViewContainer();
+                            org.telegram.ui.web.c1 webViewContainer = q4Var.getWebViewContainer();
                             webViewContainer.getClass();
                             webViewContainer.P = System.currentTimeMillis();
                             webViewContainer.y("main_button_pressed", null);
@@ -634,14 +635,14 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                 }
             }
         });
-        w7.c6.a(nVar2);
+        w7.b6.a(nVar2);
         this.i1 = nVar2;
         a2();
         if (m2Var != null) {
             nVar = nVar2;
             u0Var = u0Var3;
             f7 = 14.0f;
-            org.telegram.ui.ActionBar.u0 u0Var4 = new org.telegram.ui.ActionBar.u0(context, null, 0, getThemedColor(i13), false, c6Var);
+            org.telegram.ui.ActionBar.u0 u0Var4 = new org.telegram.ui.ActionBar.u0(context, null, 0, getThemedColor(i14), false, c6Var);
             this.h1 = u0Var4;
             u0Var4.setLongClickEnabled(false);
             u0Var4.setIcon(R.drawable.outline_header_search);
@@ -650,7 +651,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             u0Var4.setAlpha(0.0f);
             u0Var4.setTranslationX(-AndroidUtilities.dp(42.0f));
             i10 = -1;
-            u0Var4.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.g0(getThemedColor(i14), 6, -1));
+            u0Var4.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.g0(getThemedColor(i15), 6, -1));
             u0Var4.setOnClickListener(new bi.z2(5, this, z11));
         } else {
             u0Var = u0Var3;
@@ -658,14 +659,14 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             i10 = -1;
             f7 = 14.0f;
         }
-        org.telegram.ui.ActionBar.u0 u0Var5 = new org.telegram.ui.ActionBar.u0(context, null, 0, getThemedColor(i13), false, c6Var);
+        org.telegram.ui.ActionBar.u0 u0Var5 = new org.telegram.ui.ActionBar.u0(context, null, 0, getThemedColor(i14), false, c6Var);
         this.n1 = u0Var5;
         u0Var5.setLongClickEnabled(false);
         u0Var5.setIcon(R.drawable.ic_ab_other);
         u0Var5.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
         u0Var5.setVisibility(8);
-        u0Var5.setBackground(org.telegram.ui.ActionBar.g6.g0(getThemedColor(i14), 3, i10));
-        final int i18 = 2;
+        u0Var5.setBackground(org.telegram.ui.ActionBar.g6.g0(getThemedColor(i15), 3, i10));
+        final int i19 = 2;
         u0Var5.e(1, R.drawable.msg_addbot, LocaleController.getString(R.string.StickerCreateEmpty)).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.jh
             public final /* synthetic */ vi b;
 
@@ -675,7 +676,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                switch (i18) {
+                switch (i19) {
                     case 0:
                         final vi viVar = this.b;
                         ai aiVar = viVar.H0;
@@ -683,12 +684,12 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                             MessagesController.getGlobalMainSettings().edit().putInt("aihintshown", 3).apply();
                             e0 e0Var = new e0(viVar.getContext(), c6Var);
                             e0Var.n0(aiVar.getText());
-                            final int i19 = 0;
+                            final int i20 = 0;
                             e0Var.j0 = new Utilities.Callback() { // from class: org.telegram.ui.Components.mh
                                 @Override // org.telegram.messenger.Utilities.Callback
                                 public final void run(Object obj) {
                                     CharSequence charSequence = (CharSequence) obj;
-                                    switch (i19) {
+                                    switch (i20) {
                                         case 0:
                                             ai aiVar2 = viVar.H0;
                                             aiVar2.setText(charSequence);
@@ -719,12 +720,12 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                             MessagesController.getGlobalMainSettings().edit().putInt("aihintshown", 3).apply();
                             e0 e0Var2 = new e0(viVar2.getContext(), c6Var);
                             e0Var2.n0(diVar.getText());
-                            final int i20 = 1;
+                            final int i21 = 1;
                             e0Var2.j0 = new Utilities.Callback() { // from class: org.telegram.ui.Components.mh
                                 @Override // org.telegram.messenger.Utilities.Callback
                                 public final void run(Object obj) {
                                     CharSequence charSequence = (CharSequence) obj;
-                                    switch (i20) {
+                                    switch (i21) {
                                         case 0:
                                             ai aiVar2 = viVar2.H0;
                                             aiVar2.setText(charSequence);
@@ -756,24 +757,24 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                         t12.K2(null, m2Var2, c6Var);
                         PhotoViewer.t1().L2(viVar3);
                         PhotoViewer t13 = PhotoViewer.t1();
-                        int i21 = viVar3.V1;
+                        int i22 = viVar3.V1;
                         boolean z15 = viVar3.W1;
-                        t13.h = i21;
+                        t13.h = i22;
                         t13.n = z15;
-                        if (!viVar3.c2.x()) {
+                        if (!viVar3.c2.w()) {
                             AndroidUtilities.hideKeyboard(m2Var2.getFragmentView().findFocus());
                             AndroidUtilities.hideKeyboard(viVar3.getContainer().findFocus());
                         }
                         File w9 = di.k8.w(viVar3.M1, "webp");
                         Point point = AndroidUtilities.displaySize;
-                        int i22 = point.x;
-                        int i23 = point.y;
-                        if (i22 > 1080 || i23 > 1080) {
-                            float min = Math.min(i22, i23) / 1080.0f;
-                            i22 = (int) (i22 * min);
+                        int i23 = point.x;
+                        int i24 = point.y;
+                        if (i23 > 1080 || i24 > 1080) {
+                            float min = Math.min(i23, i24) / 1080.0f;
                             i23 = (int) (i23 * min);
+                            i24 = (int) (i24 * min);
                         }
-                        Bitmap createBitmap = Bitmap.createBitmap(i22, i23, Bitmap.Config.ARGB_8888);
+                        Bitmap createBitmap = Bitmap.createBitmap(i23, i24, Bitmap.Config.ARGB_8888);
                         try {
                             createBitmap.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(w9));
                         } catch (Throwable th2) {
@@ -794,7 +795,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         });
         u0Var5.setMenuYOffset(AndroidUtilities.dp(-12.0f));
         u0Var5.setAdditionalXOffset(AndroidUtilities.dp(12.0f));
-        final int i19 = 7;
+        final int i20 = 7;
         u0Var5.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.ih
             public final /* synthetic */ vi b;
 
@@ -805,12 +806,12 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 fi.q4 q4Var;
-                switch (i19) {
+                switch (i20) {
                     case 0:
                         vi viVar = this.b;
                         long j10 = viVar.Z0;
                         if (j10 < 0 && (q4Var = (fi.q4) viVar.A0.get(-j10)) != null) {
-                            org.telegram.ui.web.b1 webViewContainer = q4Var.getWebViewContainer();
+                            org.telegram.ui.web.c1 webViewContainer = q4Var.getWebViewContainer();
                             webViewContainer.getClass();
                             webViewContainer.P = System.currentTimeMillis();
                             webViewContainer.y("main_button_pressed", null);
@@ -861,7 +862,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         });
         xh xhVar = new xh(this, context, 0);
         this.l1 = xhVar;
-        final int i20 = 8;
+        final int i21 = 8;
         xhVar.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.ih
             public final /* synthetic */ vi b;
 
@@ -872,12 +873,12 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 fi.q4 q4Var;
-                switch (i20) {
+                switch (i21) {
                     case 0:
                         vi viVar = this.b;
                         long j10 = viVar.Z0;
                         if (j10 < 0 && (q4Var = (fi.q4) viVar.A0.get(-j10)) != null) {
-                            org.telegram.ui.web.b1 webViewContainer = q4Var.getWebViewContainer();
+                            org.telegram.ui.web.c1 webViewContainer = q4Var.getWebViewContainer();
                             webViewContainer.getClass();
                             webViewContainer.P = System.currentTimeMillis();
                             webViewContainer.y("main_button_pressed", null);
@@ -934,50 +935,50 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         linearLayout.setGravity(16);
         TextView textView = new TextView(context);
         this.m1 = textView;
-        textView.setTextColor(getThemedColor(i13));
+        textView.setTextColor(getThemedColor(i14));
         textView.setTextSize(1, 16.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(19);
         textView.setMaxLines(1);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        linearLayout.addView(textView, w7.a6.q(-2, -2, 16));
+        linearLayout.addView(textView, w7.z5.q(-2, -2, 16));
         ImageView imageView = new ImageView(context);
         this.p1 = imageView;
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.attach_arrow_right).mutate();
-        int themedColor2 = getThemedColor(i13);
+        int themedColor2 = getThemedColor(i14);
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         mutate.setColorFilter(new PorterDuffColorFilter(themedColor2, mode));
         imageView.setImageDrawable(mutate);
         imageView.setVisibility(8);
-        linearLayout.addView(imageView, w7.a6.t(-2, -2, 16, 4, 1, 0, 0));
+        linearLayout.addView(imageView, w7.z5.t(-2, -2, 16, 4, 1, 0, 0));
         linearLayout.setAlpha(1.0f);
-        xhVar.addView(linearLayout, w7.a6.d(-1.0f, -2));
+        xhVar.addView(linearLayout, w7.z5.d(-1.0f, -2));
         LinearLayout linearLayout2 = new LinearLayout(context);
         this.q1 = linearLayout2;
         linearLayout2.setOrientation(0);
         linearLayout2.setGravity(16);
         ImageView imageView2 = new ImageView(context);
         Drawable mutate2 = getContext().getResources().getDrawable(R.drawable.attach_arrow_left).mutate();
-        mutate2.setColorFilter(new PorterDuffColorFilter(getThemedColor(i13), mode));
+        mutate2.setColorFilter(new PorterDuffColorFilter(getThemedColor(i14), mode));
         imageView2.setImageDrawable(mutate2);
-        linearLayout2.addView(imageView2, w7.a6.t(-2, -2, 16, 0, 1, 4, 0));
+        linearLayout2.addView(imageView2, w7.z5.t(-2, -2, 16, 0, 1, 4, 0));
         TextView textView2 = new TextView(context);
         this.r1 = textView2;
-        textView2.setTextColor(getThemedColor(i13));
+        textView2.setTextColor(getThemedColor(i14));
         textView2.setTextSize(1, 16.0f);
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setGravity(19);
         textView2.setText(LocaleController.getString("AttachMediaPreview", R.string.AttachMediaPreview));
         linearLayout2.setAlpha(0.0f);
-        linearLayout2.addView(textView2, w7.a6.q(-2, -2, 16));
-        xhVar.addView(linearLayout2, w7.a6.d(-1.0f, -2));
+        linearLayout2.addView(textView2, w7.z5.q(-2, -2, 16));
+        xhVar.addView(linearLayout2, w7.z5.d(-1.0f, -2));
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = new ChatAttachAlertPhotoLayout(this, context, z10, z12, c6Var);
         this.j0 = chatAttachAlertPhotoLayout;
         niVarArr[0] = chatAttachAlertPhotoLayout;
         chatAttachAlertPhotoLayout.setTranslationX(0.0f);
         this.B0 = chatAttachAlertPhotoLayout;
         this.Z0 = 1L;
-        this.containerView.addView(chatAttachAlertPhotoLayout, w7.a6.d(-1.0f, -1));
+        this.containerView.addView(chatAttachAlertPhotoLayout, w7.z5.d(-1.0f, -1));
         kh.f fVar = new kh.f(context);
         this.y1 = fVar;
         fVar.setup(bVar3);
@@ -985,23 +986,23 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         fVar.setFadeHeightTop(AndroidUtilities.dp(48.0f));
         fVar.setFadeHeightBottom(AndroidUtilities.dp(48.0f));
         fVar.setFadeZoneTop(AndroidUtilities.dp(5.0f) + org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight);
-        this.containerView.addView(fVar, w7.a6.g());
-        this.containerView.addView(xhVar, w7.a6.a(-2.0f, 23.0f, 0.0f, 21.0f, 0.0f, -1, 51));
+        this.containerView.addView(fVar, w7.z5.g());
+        this.containerView.addView(xhVar, w7.z5.a(-2.0f, 23.0f, 0.0f, 21.0f, 0.0f, -1, 51));
         ah.v vVar = new ah.v(context, 10);
         this.R0 = vVar;
-        this.containerView.addView(vVar, w7.a6.e(-1, -2, 55));
-        this.containerView.addView(b8Var2, w7.a6.d(-2.0f, -1));
-        this.containerView.addView(u0Var2, w7.a6.e(48, 48, 53));
-        this.containerView.addView(u0Var, w7.a6.a(48.0f, 0.0f, 0.0f, 48.0f, 0.0f, 48, 53));
+        this.containerView.addView(vVar, w7.z5.e(-1, -2, 55));
+        this.containerView.addView(b8Var2, w7.z5.d(-2.0f, -1));
+        this.containerView.addView(u0Var2, w7.z5.e(48, 48, 53));
+        this.containerView.addView(u0Var, w7.z5.a(48.0f, 0.0f, 0.0f, 48.0f, 0.0f, 48, 53));
         org.telegram.ui.ActionBar.u0 u0Var6 = this.h1;
         if (u0Var6 != null) {
             b8Var = b8Var2;
-            this.containerView.addView(u0Var6, w7.a6.e(48, 48, 53));
+            this.containerView.addView(u0Var6, w7.z5.e(48, 48, 53));
         } else {
             b8Var = b8Var2;
         }
-        xhVar.addView(u0Var5, w7.a6.a(32.0f, 0.0f, 0.0f, 0.0f, 8.0f, 32, 21));
-        this.containerView.addView(nVar, w7.a6.e(-2, 48, 53));
+        xhVar.addView(u0Var5, w7.z5.a(32.0f, 0.0f, 0.0f, 0.0f, 8.0f, 32, 21));
+        this.containerView.addView(nVar, w7.z5.e(-2, 48, 53));
         xh xhVar2 = new xh(this, context, 1);
         this.A1 = xhVar2;
         yh yhVar = new yh(context, 0);
@@ -1043,7 +1044,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             LiteMode.isEnabled(262144);
         }
         cVar2.b(AndroidUtilities.dp(72.0f), true);
-        this.containerView.addView(zhVar, w7.a6.g());
+        this.containerView.addView(zhVar, w7.z5.g());
         dh.d c10 = this.J2.c(xhVar2, fh.b.f(c6Var), false);
         c10.q(AndroidUtilities.dp(28.0f));
         c10.p(AndroidUtilities.dp(7.0f));
@@ -1055,11 +1056,11 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         bi.a2 a2Var = zf.j0.a;
         yhVar.setOutlineProvider(new zf.i0(dp, dp2));
         yhVar.setImportantForAccessibility(1);
-        xhVar2.addView(yhVar, w7.a6.g());
-        this.containerView.addView(xhVar2, w7.a6.e(-1, 70, 81));
+        xhVar2.addView(yhVar, w7.z5.g());
+        this.containerView.addView(xhVar2, w7.z5.e(-1, 70, 81));
         yhVar.setOnItemClickListener(new bi.z5(9, this, c6Var));
         yhVar.setOnItemLongClickListener(new eh(this, 3));
-        final int i21 = 0;
+        final int i22 = 0;
         s6 s6Var = new s6(context, true, false, true);
         this.H1 = s6Var;
         s6Var.setVisibility(8);
@@ -1079,12 +1080,12 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 fi.q4 q4Var;
-                switch (i21) {
+                switch (i22) {
                     case 0:
                         vi viVar = this.b;
                         long j10 = viVar.Z0;
                         if (j10 < 0 && (q4Var = (fi.q4) viVar.A0.get(-j10)) != null) {
-                            org.telegram.ui.web.b1 webViewContainer = q4Var.getWebViewContainer();
+                            org.telegram.ui.web.c1 webViewContainer = q4Var.getWebViewContainer();
                             webViewContainer.getClass();
                             webViewContainer.P = System.currentTimeMillis();
                             webViewContainer.y("main_button_pressed", null);
@@ -1133,7 +1134,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                 }
             }
         });
-        this.containerView.addView(s6Var, w7.a6.e(-1, 48, 83));
+        this.containerView.addView(s6Var, w7.z5.e(-1, 48, 83));
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         this.F1 = radialProgressView;
         radialProgressView.setSize(AndroidUtilities.dp(18.0f));
@@ -1141,7 +1142,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         radialProgressView.setScaleX(0.1f);
         radialProgressView.setScaleY(0.1f);
         radialProgressView.setVisibility(8);
-        this.containerView.addView(radialProgressView, w7.a6.a(28.0f, 0.0f, 0.0f, 10.0f, 10.0f, 28, 85));
+        this.containerView.addView(radialProgressView, w7.z5.a(28.0f, 0.0f, 0.0f, 10.0f, 10.0f, 28, 85));
         ImageView imageView3 = new ImageView(context);
         this.I0 = imageView3;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
@@ -1151,7 +1152,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         imageView3.setColorFilter(new PorterDuffColorFilter(themedColor3, mode2));
         imageView3.setImageResource(R.drawable.menu_link_above);
         imageView3.setVisibility(8);
-        final int i22 = 1;
+        final int i23 = 1;
         imageView3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.ih
             public final /* synthetic */ vi b;
 
@@ -1162,12 +1163,12 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 fi.q4 q4Var;
-                switch (i22) {
+                switch (i23) {
                     case 0:
                         vi viVar = this.b;
                         long j10 = viVar.Z0;
                         if (j10 < 0 && (q4Var = (fi.q4) viVar.A0.get(-j10)) != null) {
-                            org.telegram.ui.web.b1 webViewContainer = q4Var.getWebViewContainer();
+                            org.telegram.ui.web.c1 webViewContainer = q4Var.getWebViewContainer();
                             webViewContainer.getClass();
                             webViewContainer.P = System.currentTimeMillis();
                             webViewContainer.y("main_button_pressed", null);
@@ -1220,7 +1221,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         this.G0 = xhVar3;
         ig.j jVar4 = new ig.j(this, context);
         this.F0 = jVar4;
-        xhVar3.addView(jVar4, w7.a6.e(-1, -1, 119));
+        xhVar3.addView(jVar4, w7.z5.e(-1, -1, 119));
         dh.d c11 = this.K2.c(liVar, fh.b.n(c6Var), false);
         this.D0 = c11;
         c11.m = true;
@@ -1236,7 +1237,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         xhVar3.setWillNotDraw(false);
         xhVar3.setVisibility(4);
         xhVar3.setAlpha(0.0f);
-        this.containerView.addView(xhVar3, w7.a6.e(-1, -2, 83));
+        this.containerView.addView(xhVar3, w7.z5.e(-1, -2, 83));
         xhVar3.setOnTouchListener(new ci.d(13));
         s6 s6Var2 = new s6(context, false, false, false);
         this.s = s6Var2;
@@ -1244,25 +1245,25 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         s6Var2.setScaleProperty(0.6f);
         s6Var2.setVisibility(8);
         s6Var2.setTextSize(AndroidUtilities.dp(15.0f));
-        int i23 = org.telegram.ui.ActionBar.g6.y6;
-        s6Var2.setTextColor(getThemedColor(i23));
+        int i24 = org.telegram.ui.ActionBar.g6.y6;
+        s6Var2.setTextColor(getThemedColor(i24));
         s6Var2.setTypeface(AndroidUtilities.bold());
         s6Var2.setGravity(17);
-        jVar4.addView(s6Var2, w7.a6.a(20.0f, 3.0f, 0.0f, 3.0f, 50.0f, 56, 85));
+        jVar4.addView(s6Var2, w7.z5.a(20.0f, 3.0f, 0.0f, 3.0f, 50.0f, 56, 85));
         ImageView imageView4 = new ImageView(context);
         this.w = imageView4;
         i0 i0Var = new i0(context);
         this.x = i0Var;
         imageView4.setImageDrawable(i0Var);
         imageView4.setScaleType(scaleType);
-        int i24 = org.telegram.ui.ActionBar.g6.Wk;
-        imageView4.setColorFilter(new PorterDuffColorFilter(getThemedColor(i24), mode));
-        int i25 = org.telegram.ui.ActionBar.g6.i6;
-        imageView4.setBackground(org.telegram.ui.ActionBar.g6.g0(getThemedColor(i25), 1, AndroidUtilities.dp(16.0f)));
-        jVar4.addView(imageView4, w7.a6.a(44.0f, 0.0f, 1.0f, 0.0f, 0.0f, 44, 53));
+        int i25 = org.telegram.ui.ActionBar.g6.Wk;
+        imageView4.setColorFilter(new PorterDuffColorFilter(getThemedColor(i25), mode));
+        int i26 = org.telegram.ui.ActionBar.g6.i6;
+        imageView4.setBackground(org.telegram.ui.ActionBar.g6.g0(getThemedColor(i26), 1, AndroidUtilities.dp(16.0f)));
+        jVar4.addView(imageView4, w7.z5.a(44.0f, 0.0f, 1.0f, 0.0f, 0.0f, 44, 53));
         imageView4.setContentDescription(LocaleController.getString(R.string.AIEditor));
-        w7.c6.a(imageView4);
-        final int i26 = 0;
+        w7.b6.a(imageView4);
+        final int i27 = 0;
         imageView4.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.jh
             public final /* synthetic */ vi b;
 
@@ -1272,7 +1273,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                switch (i26) {
+                switch (i27) {
                     case 0:
                         final vi viVar = this.b;
                         ai aiVar = viVar.H0;
@@ -1280,12 +1281,12 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                             MessagesController.getGlobalMainSettings().edit().putInt("aihintshown", 3).apply();
                             e0 e0Var = new e0(viVar.getContext(), c6Var);
                             e0Var.n0(aiVar.getText());
-                            final int i192 = 0;
+                            final int i202 = 0;
                             e0Var.j0 = new Utilities.Callback() { // from class: org.telegram.ui.Components.mh
                                 @Override // org.telegram.messenger.Utilities.Callback
                                 public final void run(Object obj) {
                                     CharSequence charSequence = (CharSequence) obj;
-                                    switch (i192) {
+                                    switch (i202) {
                                         case 0:
                                             ai aiVar2 = viVar.H0;
                                             aiVar2.setText(charSequence);
@@ -1316,12 +1317,12 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                             MessagesController.getGlobalMainSettings().edit().putInt("aihintshown", 3).apply();
                             e0 e0Var2 = new e0(viVar2.getContext(), c6Var);
                             e0Var2.n0(diVar.getText());
-                            final int i202 = 1;
+                            final int i212 = 1;
                             e0Var2.j0 = new Utilities.Callback() { // from class: org.telegram.ui.Components.mh
                                 @Override // org.telegram.messenger.Utilities.Callback
                                 public final void run(Object obj) {
                                     CharSequence charSequence = (CharSequence) obj;
-                                    switch (i202) {
+                                    switch (i212) {
                                         case 0:
                                             ai aiVar2 = viVar2.H0;
                                             aiVar2.setText(charSequence);
@@ -1353,24 +1354,24 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                         t12.K2(null, m2Var2, c6Var);
                         PhotoViewer.t1().L2(viVar3);
                         PhotoViewer t13 = PhotoViewer.t1();
-                        int i212 = viVar3.V1;
+                        int i222 = viVar3.V1;
                         boolean z15 = viVar3.W1;
-                        t13.h = i212;
+                        t13.h = i222;
                         t13.n = z15;
-                        if (!viVar3.c2.x()) {
+                        if (!viVar3.c2.w()) {
                             AndroidUtilities.hideKeyboard(m2Var2.getFragmentView().findFocus());
                             AndroidUtilities.hideKeyboard(viVar3.getContainer().findFocus());
                         }
                         File w9 = di.k8.w(viVar3.M1, "webp");
                         Point point = AndroidUtilities.displaySize;
-                        int i222 = point.x;
-                        int i232 = point.y;
-                        if (i222 > 1080 || i232 > 1080) {
-                            float min = Math.min(i222, i232) / 1080.0f;
-                            i222 = (int) (i222 * min);
+                        int i232 = point.x;
+                        int i242 = point.y;
+                        if (i232 > 1080 || i242 > 1080) {
+                            float min = Math.min(i232, i242) / 1080.0f;
                             i232 = (int) (i232 * min);
+                            i242 = (int) (i242 * min);
                         }
-                        Bitmap createBitmap = Bitmap.createBitmap(i222, i232, Bitmap.Config.ARGB_8888);
+                        Bitmap createBitmap = Bitmap.createBitmap(i232, i242, Bitmap.Config.ARGB_8888);
                         try {
                             createBitmap.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(w9));
                         } catch (Throwable th2) {
@@ -1399,9 +1400,9 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         aiVar.J = true;
         aiVar.setHint(LocaleController.getString("AddCaption", R.string.AddCaption));
         aiVar.s();
-        aiVar.getEditText().setLayoutParams(w7.a6.a(-1.0f, 48.0f, 0.0f, 36.0f, 0.0f, -1, 19));
+        aiVar.getEditText().setLayoutParams(w7.z5.a(-1.0f, 48.0f, 0.0f, 36.0f, 0.0f, -1, 19));
         aiVar.getEditText().addTextChangedListener(new ci(this, 0));
-        jVar4.addView(aiVar, w7.a6.a(-2.0f, 0.0f, 0.0f, 84.0f, 0.0f, -1, 83));
+        jVar4.addView(aiVar, w7.z5.a(-2.0f, 0.0f, 0.0f, 84.0f, 0.0f, -1, 83));
         jVar4.setClipChildren(false);
         xhVar3.setClipChildren(false);
         aiVar.setClipChildren(false);
@@ -1412,14 +1413,14 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         diVar.J = true;
         diVar.getEditText().addTextChangedListener(new ei(this, m2Var));
         diVar.getEditText().setPadding(0, AndroidUtilities.dp(9.0f), 0, AndroidUtilities.dp(9.0f));
-        diVar.getEditText().setLayoutParams(w7.a6.a(-1.0f, 48.0f, 0.0f, 96.0f, 0.0f, -1, 19));
+        diVar.getEditText().setLayoutParams(w7.z5.a(-1.0f, 48.0f, 0.0f, 96.0f, 0.0f, -1, 19));
         diVar.getEditText().setTextSize(1, 17.0f);
-        diVar.getEmojiButton().setLayoutParams(w7.a6.a(40.0f, 0.0f, 0.0f, 0.0f, 0.0f, 40, 83));
+        diVar.getEmojiButton().setLayoutParams(w7.z5.a(40.0f, 0.0f, 0.0f, 0.0f, 0.0f, 40, 83));
         diVar.setHint(LocaleController.getString("AddCaption", R.string.AddCaption));
-        vVar.addView(diVar, w7.a6.e(-1, -2, 119));
+        vVar.addView(diVar, w7.z5.e(-1, -2, 119));
         vVar.setAlpha(0.0f);
         vVar.setVisibility(8);
-        aiVar.addView(imageView3, w7.a6.a(40.0f, 0.0f, 0.0f, 0.0f, 4.0f, 40, 85));
+        aiVar.addView(imageView3, w7.z5.a(40.0f, 0.0f, 0.0f, 0.0f, 4.0f, 40, 85));
         dh.d c13 = this.J2.c(vVar, fh.b.n(c6Var), false);
         c13.q(AndroidUtilities.dp(22.0f));
         c13.p(AndroidUtilities.dp(7.0f));
@@ -1430,17 +1431,17 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         s6Var3.setScaleProperty(0.6f);
         s6Var3.setVisibility(8);
         s6Var3.setTextSize(AndroidUtilities.dp(15.0f));
-        s6Var3.setTextColor(getThemedColor(i23));
+        s6Var3.setTextColor(getThemedColor(i24));
         s6Var3.setTypeface(AndroidUtilities.bold());
         s6Var3.setGravity(17);
         s6Var3.setAllowCancel(true);
-        vVar.addView(s6Var3, w7.a6.a(20.0f, 3.0f, 45.0f, 3.0f, 0.0f, 56, 53));
+        vVar.addView(s6Var3, w7.z5.a(20.0f, 3.0f, 45.0f, 3.0f, 0.0f, 56, 53));
         ImageView imageView5 = new ImageView(context);
         imageView5.setScaleType(scaleType);
         imageView5.setImageResource(R.drawable.menu_link_below);
         imageView5.setColorFilter(new PorterDuffColorFilter(getThemedColor(org.telegram.ui.ActionBar.g6.Xd), mode2));
-        diVar.addView(imageView5, w7.a6.a(40.0f, 0.0f, 0.0f, 60.0f, 0.0f, 40, 85));
-        final int i27 = 2;
+        diVar.addView(imageView5, w7.z5.a(40.0f, 0.0f, 0.0f, 60.0f, 0.0f, 40, 85));
+        final int i28 = 2;
         imageView5.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.ih
             public final /* synthetic */ vi b;
 
@@ -1451,12 +1452,12 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 fi.q4 q4Var;
-                switch (i27) {
+                switch (i28) {
                     case 0:
                         vi viVar = this.b;
                         long j10 = viVar.Z0;
                         if (j10 < 0 && (q4Var = (fi.q4) viVar.A0.get(-j10)) != null) {
-                            org.telegram.ui.web.b1 webViewContainer = q4Var.getWebViewContainer();
+                            org.telegram.ui.web.c1 webViewContainer = q4Var.getWebViewContainer();
                             webViewContainer.getClass();
                             webViewContainer.P = System.currentTimeMillis();
                             webViewContainer.y("main_button_pressed", null);
@@ -1511,12 +1512,12 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         this.E = i0Var2;
         imageView6.setImageDrawable(i0Var2);
         imageView6.setScaleType(scaleType);
-        imageView6.setColorFilter(new PorterDuffColorFilter(getThemedColor(i24), mode));
-        imageView6.setBackground(org.telegram.ui.ActionBar.g6.g0(getThemedColor(i25), 1, AndroidUtilities.dp(16.0f)));
-        vVar.addView(imageView6, w7.a6.a(44.0f, 0.0f, 1.0f, 0.0f, 0.0f, 44, 85));
+        imageView6.setColorFilter(new PorterDuffColorFilter(getThemedColor(i25), mode));
+        imageView6.setBackground(org.telegram.ui.ActionBar.g6.g0(getThemedColor(i26), 1, AndroidUtilities.dp(16.0f)));
+        vVar.addView(imageView6, w7.z5.a(44.0f, 0.0f, 1.0f, 0.0f, 0.0f, 44, 85));
         imageView6.setContentDescription(LocaleController.getString(R.string.AIEditor));
-        w7.c6.a(imageView6);
-        final int i28 = 1;
+        w7.b6.a(imageView6);
+        final int i29 = 1;
         imageView6.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.jh
             public final /* synthetic */ vi b;
 
@@ -1526,7 +1527,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                switch (i28) {
+                switch (i29) {
                     case 0:
                         final vi viVar = this.b;
                         ai aiVar2 = viVar.H0;
@@ -1534,12 +1535,12 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                             MessagesController.getGlobalMainSettings().edit().putInt("aihintshown", 3).apply();
                             e0 e0Var = new e0(viVar.getContext(), c6Var);
                             e0Var.n0(aiVar2.getText());
-                            final int i192 = 0;
+                            final int i202 = 0;
                             e0Var.j0 = new Utilities.Callback() { // from class: org.telegram.ui.Components.mh
                                 @Override // org.telegram.messenger.Utilities.Callback
                                 public final void run(Object obj) {
                                     CharSequence charSequence = (CharSequence) obj;
-                                    switch (i192) {
+                                    switch (i202) {
                                         case 0:
                                             ai aiVar22 = viVar.H0;
                                             aiVar22.setText(charSequence);
@@ -1570,12 +1571,12 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                             MessagesController.getGlobalMainSettings().edit().putInt("aihintshown", 3).apply();
                             e0 e0Var2 = new e0(viVar2.getContext(), c6Var);
                             e0Var2.n0(diVar2.getText());
-                            final int i202 = 1;
+                            final int i212 = 1;
                             e0Var2.j0 = new Utilities.Callback() { // from class: org.telegram.ui.Components.mh
                                 @Override // org.telegram.messenger.Utilities.Callback
                                 public final void run(Object obj) {
                                     CharSequence charSequence = (CharSequence) obj;
-                                    switch (i202) {
+                                    switch (i212) {
                                         case 0:
                                             ai aiVar22 = viVar2.H0;
                                             aiVar22.setText(charSequence);
@@ -1607,24 +1608,24 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                         t12.K2(null, m2Var2, c6Var);
                         PhotoViewer.t1().L2(viVar3);
                         PhotoViewer t13 = PhotoViewer.t1();
-                        int i212 = viVar3.V1;
+                        int i222 = viVar3.V1;
                         boolean z15 = viVar3.W1;
-                        t13.h = i212;
+                        t13.h = i222;
                         t13.n = z15;
-                        if (!viVar3.c2.x()) {
+                        if (!viVar3.c2.w()) {
                             AndroidUtilities.hideKeyboard(m2Var2.getFragmentView().findFocus());
                             AndroidUtilities.hideKeyboard(viVar3.getContainer().findFocus());
                         }
                         File w9 = di.k8.w(viVar3.M1, "webp");
                         Point point = AndroidUtilities.displaySize;
-                        int i222 = point.x;
-                        int i232 = point.y;
-                        if (i222 > 1080 || i232 > 1080) {
-                            float min = Math.min(i222, i232) / 1080.0f;
-                            i222 = (int) (i222 * min);
+                        int i232 = point.x;
+                        int i242 = point.y;
+                        if (i232 > 1080 || i242 > 1080) {
+                            float min = Math.min(i232, i242) / 1080.0f;
                             i232 = (int) (i232 * min);
+                            i242 = (int) (i242 * min);
                         }
-                        Bitmap createBitmap = Bitmap.createBitmap(i222, i232, Bitmap.Config.ARGB_8888);
+                        Bitmap createBitmap = Bitmap.createBitmap(i232, i242, Bitmap.Config.ARGB_8888);
                         try {
                             createBitmap.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(w9));
                         } catch (Throwable th2) {
@@ -1657,11 +1658,11 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         xhVar4.setAlpha(0.0f);
         xhVar4.setClipChildren(false);
         xhVar4.setClipToPadding(false);
-        this.containerView.addView(xhVar4, w7.a6.e(110, 50, 85));
+        this.containerView.addView(xhVar4, w7.z5.e(110, 50, 85));
         fi fiVar = new fi(R.drawable.send_plane_24, context, c6Var, this);
         this.L0 = fiVar;
         fiVar.setImportantForAccessibility(2);
-        xhVar4.addView(fiVar, w7.a6.e(-1, -1, 119));
+        xhVar4.addView(fiVar, w7.z5.e(-1, -1, 119));
         fiVar.setTranslationX(this.backgroundPaddingLeft);
         int dp4 = AndroidUtilities.dp(52.0f);
         int dp5 = AndroidUtilities.dp(38.0f);
@@ -1672,7 +1673,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         fiVar.M = dp6;
         fiVar.N = dp7;
         fiVar.h0 = true;
-        final int i29 = 3;
+        final int i30 = 3;
         fiVar.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.ih
             public final /* synthetic */ vi b;
 
@@ -1683,12 +1684,12 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 fi.q4 q4Var;
-                switch (i29) {
+                switch (i30) {
                     case 0:
                         vi viVar = this.b;
                         long j10 = viVar.Z0;
                         if (j10 < 0 && (q4Var = (fi.q4) viVar.A0.get(-j10)) != null) {
-                            org.telegram.ui.web.b1 webViewContainer = q4Var.getWebViewContainer();
+                            org.telegram.ui.web.c1 webViewContainer = q4Var.getWebViewContainer();
                             webViewContainer.getClass();
                             webViewContainer.P = System.currentTimeMillis();
                             webViewContainer.y("main_button_pressed", null);
@@ -1763,7 +1764,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         fastScroll.f0.q(AndroidUtilities.dp(f7));
         re0 re0Var = new re0(context);
         this.S = re0Var;
-        this.containerView.addView(re0Var, w7.a6.d(-1.0f, -1));
+        this.containerView.addView(re0Var, w7.z5.d(-1.0f, -1));
         eh.e eVar = new eh.e(c6Var);
         eVar.e = new eh(this, 4);
         eVar.c = new eh(this, 5);
@@ -1792,7 +1793,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             niVar = viVar.B0;
         }
         int i10 = 0;
-        boolean z10 = niVar != null && (niVar instanceof dl);
+        boolean z10 = niVar != null && (niVar instanceof cl);
         org.telegram.ui.ActionBar.c6 c6Var = viVar.resourcesProvider;
         boolean a2 = c6Var != null ? c6Var.a() : org.telegram.ui.ActionBar.g6.I.q();
         if (!z10 && b8Var.getVisibility() == 0) {
@@ -1804,9 +1805,9 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
     public static void S(vi viVar) {
         di.i iVar = new di.i(viVar, viVar.getContext(), viVar.Z, LaunchActivity.R(), viVar.resourcesProvider, 1);
         viVar.E2 = iVar;
-        iVar.p(new ji.w4(viVar, 14));
+        iVar.p(new m.l(viVar));
         ViewGroup viewGroup = viVar.containerView;
-        viewGroup.addView(viVar.E2, viewGroup.indexOfChild(viVar.G0), w7.a6.e(-1, -1, 83));
+        viewGroup.addView(viVar.E2, viewGroup.indexOfChild(viVar.G0), w7.z5.e(-1, -1, 83));
         di.i iVar2 = viVar.E2;
         iVar2.getAdapter().c = false;
         iVar2.getAdapter().d = false;
@@ -2397,7 +2398,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             if (arrayList2.isEmpty()) {
                 return false;
             }
-            m80 F = m80.F(viVar.containerView, c6Var, fiVar);
+            l80 F = l80.F(viVar.containerView, c6Var, fiVar);
             if (messageObject4 != null) {
                 ni niVar2 = viVar.B0;
                 chatAttachAlertPhotoLayout2 = chatAttachAlertPhotoLayout;
@@ -2485,12 +2486,12 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         viVar.s2.h();
     }
 
-    public static /* synthetic */ void t(vi viVar, n2.h hVar) {
+    public static /* synthetic */ void t(vi viVar, org.telegram.messenger.video.f fVar) {
         AnimatorSet animatorSet = viVar.currentSheetAnimation;
         if (animatorSet == null || animatorSet.isRunning()) {
             return;
         }
-        hVar.run();
+        fVar.run();
     }
 
     public static /* synthetic */ void u(vi viVar, int i10) {
@@ -2554,8 +2555,8 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         viVar.g1.m(1.0f, -((viVar.containerView.getWidth() - ((u0Var.getWidth() / 2.0f) + u0Var.getX())) - AndroidUtilities.dp(14.0f)));
         viVar.g1.setTranslationY(viVar.d1.getTranslationY());
         di.d4 d4Var3 = viVar.g1;
-        d4Var3.l0 = new org.telegram.ui.rp(19, viVar, d4Var2);
-        viVar.containerView.addView(d4Var3, w7.a6.a(60.0f, 0.0f, 46.0f, 0.0f, 0.0f, -1, 48));
+        d4Var3.l0 = new org.telegram.ui.vp(14, viVar, d4Var2);
+        viVar.containerView.addView(d4Var3, w7.z5.a(60.0f, 0.0f, 46.0f, 0.0f, 0.0f, -1, 48));
         viVar.g1.u();
     }
 
@@ -2594,9 +2595,9 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                 if (viVar.w0 == null && (m2Var instanceof org.telegram.ui.fo)) {
                     TLRPC.User i10 = ((org.telegram.ui.fo) m2Var).i();
                     if (v1(i10)) {
-                        dl dlVar = new dl(viVar, viVar.getContext(), viVar.M1, i10, c6Var);
-                        viVar.w0 = dlVar;
-                        niVarArr[11] = dlVar;
+                        cl clVar = new cl(viVar, viVar.getContext(), viVar.M1, i10, c6Var);
+                        viVar.w0 = clVar;
+                        niVarArr[11] = clVar;
                     }
                 }
                 ni niVar = viVar.w0;
@@ -2646,14 +2647,14 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                 }
                 if (viVar.T1) {
                     if (viVar.o0 == null) {
-                        ul ulVar = new ul(viVar, viVar.getContext(), c6Var, (viVar.H || viVar.U1) ? false : true);
-                        viVar.o0 = ulVar;
-                        niVarArr[5] = ulVar;
-                        pl plVar = viVar.w2;
-                        if (plVar != null) {
-                            ulVar.setDelegate(plVar);
+                        tl tlVar = new tl(viVar, viVar.getContext(), c6Var, (viVar.H || viVar.U1) ? false : true);
+                        viVar.o0 = tlVar;
+                        niVarArr[5] = tlVar;
+                        ol olVar = viVar.w2;
+                        if (olVar != null) {
+                            tlVar.setDelegate(olVar);
                         } else {
-                            ulVar.setDelegate(new eh(viVar, 9));
+                            tlVar.setDelegate(new eh(viVar, 9));
                         }
                     }
                     viVar.U1(viVar.o0);
@@ -2722,16 +2723,16 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                 }
                 viVar.U1(viVar.v0);
             } else if (view.getTag() instanceof Integer) {
-                viVar.c2.g0(((Integer) view.getTag()).intValue(), true, true, 0, 0, 0L, viVar.u1(), false, 0L);
+                viVar.c2.b0(((Integer) view.getTag()).intValue(), true, true, 0, 0, 0L, viVar.u1(), false, 0L);
             }
         } else if (view instanceof oi) {
             oi oiVar = (oi) view;
             TLRPC.TL_attachMenuBot tL_attachMenuBot = oiVar.c;
             if (tL_attachMenuBot == null) {
-                viVar.c2.W(oiVar.b);
+                viVar.c2.U(oiVar.b);
                 viVar.dismiss();
             } else if (tL_attachMenuBot.inactive) {
-                vj1.a(viVar.getContext(), new org.telegram.ui.vc(16, viVar, oiVar), null);
+                uj1.a(viVar.getContext(), new org.telegram.ui.uc(16, viVar, oiVar), null);
             } else {
                 viVar.R1(tL_attachMenuBot.bot_id, null, false, true);
             }
@@ -2779,7 +2780,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             }
             ni niVar = niVarArr[i10];
             if (niVar != null) {
-                niVar.A();
+                niVar.B();
             }
             i10++;
         }
@@ -2800,7 +2801,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             i10++;
         }
         if (isShowing()) {
-            this.c2.x();
+            this.c2.w();
         }
         si siVar = this.D1;
         if (siVar != null) {
@@ -2878,14 +2879,14 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         }
         if (i10 == 6 && AndroidUtilities.isMapsInstalled(m2Var)) {
             if (this.o0 == null) {
-                ul ulVar = new ul(this, getContext(), this.resourcesProvider, (this.H || this.U1) ? false : true);
-                this.o0 = ulVar;
-                this.z0[5] = ulVar;
-                pl plVar = this.w2;
-                if (plVar != null) {
-                    ulVar.setDelegate(plVar);
+                tl tlVar = new tl(this, getContext(), this.resourcesProvider, (this.H || this.U1) ? false : true);
+                this.o0 = tlVar;
+                this.z0[5] = tlVar;
+                ol olVar = this.w2;
+                if (olVar != null) {
+                    tlVar.setDelegate(olVar);
                 } else if (m2Var instanceof org.telegram.ui.fo) {
-                    ulVar.setDelegate(new eh(this, 16));
+                    tlVar.setDelegate(new eh(this, 16));
                 }
             }
             U1(this.o0);
@@ -2940,7 +2941,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             o0Var.setLayoutAnimation(null);
             o0Var.setVerticalScrollBarEnabled(false);
             o0Var.setGlowColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.A5, kjVar.a));
-            kjVar.addView(o0Var, w7.a6.d(-1.0f, -1));
+            kjVar.addView(o0Var, w7.z5.d(-1.0f, -1));
             o0Var.setOnScrollListener(new ah.d0(kjVar, 18));
             ci.k kVar = new ci.k(kjVar, kjVar.r, 1);
             kjVar.s = kVar;
@@ -3055,8 +3056,8 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                 return;
             }
             View fragmentView = m2Var.getFragmentView();
-            WeakHashMap weakHashMap = r0.j0.a;
-            r0.z.c(fragmentView);
+            WeakHashMap weakHashMap = r0.i0.a;
+            r0.y.c(fragmentView);
         }
     }
 
@@ -3078,7 +3079,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         a1();
         if (this.h.f) {
             this.L1 = true;
-            this.c2.g0(7, true, z10, i10, i11, j10, z11, false, 0L);
+            this.c2.b0(7, true, z10, i10, i11, j10, z11, false, 0L);
             return true;
         }
         long p12 = p1();
@@ -3088,7 +3089,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             public final void run(Object obj) {
                 vi viVar = vi.this;
                 viVar.L1 = true;
-                viVar.c2.g0(7, true, z10, i10, i11, j10, z11, false, ((Long) obj).longValue());
+                viVar.c2.b0(7, true, z10, i10, i11, j10, z11, false, ((Long) obj).longValue());
             }
         }, 0L);
     }
@@ -3212,9 +3213,9 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         float translationY = this.containerView.getTranslationY() - this.y0;
         this.y0 = this.containerView.getHeight() * f7;
         this.containerView.setTranslationY(translationY);
-        dl dlVar = this.w0;
-        if (dlVar != null) {
-            dlVar.setSendTransitionProgress(f7);
+        cl clVar = this.w0;
+        if (clVar != null) {
+            clVar.setSendTransitionProgress(f7);
         }
         org.telegram.ui.ActionBar.d3 d3Var = this.backDrawable;
         if (this.dimBehind) {
@@ -3375,15 +3376,15 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             fi.a3 a3Var = new fi.a3(q4Var3, context, i11);
             q4Var3.J = a3Var;
             z12 = true;
-            a3Var.addView(b3Var, w7.a6.d(-1.0f, -1));
+            a3Var.addView(b3Var, w7.z5.d(-1.0f, -1));
             a3Var.setScrollListener(new fi.h4(q4Var3, 3));
             a3Var.setScrollEndListener(new fi.h4(q4Var3, 4));
             a3Var.setDelegate(new fi.j4(q4Var3));
             a3Var.setIsKeyboardVisible(new fi.j4(q4Var3));
-            q4Var3.addView(a3Var, w7.a6.d(-1.0f, -1));
+            q4Var3.addView(a3Var, w7.z5.d(-1.0f, -1));
             fi.k4 k4Var = new fi.k4(context, c6Var);
             q4Var3.I = k4Var;
-            q4Var3.addView(k4Var, w7.a6.a(-2.0f, 0.0f, 0.0f, 0.0f, 84.0f, -1, 80));
+            q4Var3.addView(k4Var, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 84.0f, -1, 80));
             b3Var.setWebViewProgressListener(new di.c5(q4Var3, i10));
             NotificationCenter.getGlobalInstance().addObserver(q4Var3, NotificationCenter.didSetNewTheme);
             longSparseArray.put(j10, q4Var3);
@@ -3458,7 +3459,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
 
     public final void S1(org.telegram.ui.ActionBar.m2 m2Var) {
         if ((m2Var instanceof org.telegram.ui.fo) && ChatObject.isChannelAndNotMegaGroup(((org.telegram.ui.fo) m2Var).e)) {
-            new zc(this.u1, this.resourcesProvider).f(MessagesController.getInstance(this.M1).captionLengthLimitPremium, new org.telegram.ui.rp(20, this, m2Var)).j();
+            new zc(this.u1, this.resourcesProvider).f(MessagesController.getInstance(this.M1).captionLengthLimitPremium, new org.telegram.ui.vp(15, this, m2Var)).j();
         }
     }
 
@@ -3623,8 +3624,8 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
 
     public final void V1(ni niVar, long j10, boolean z10) {
         int i10;
-        rm rmVar;
-        rm rmVar2;
+        qm qmVar;
+        qm qmVar2;
         int i11;
         Float f7;
         int i12;
@@ -3723,7 +3724,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                     indexOfChild++;
                 }
                 i10 = 0;
-                viewGroup.addView(niVar4, indexOfChild, w7.a6.d(-1.0f, -1));
+                viewGroup.addView(niVar4, indexOfChild, w7.z5.d(-1.0f, -1));
             } else {
                 i10 = 0;
             }
@@ -3737,14 +3738,14 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                 if (niVar6 instanceof en) {
                     niVar6.setTranslationX(max);
                     ni niVar7 = this.B0;
-                    if ((niVar7 instanceof ChatAttachAlertPhotoLayout) && (rmVar2 = ((ChatAttachAlertPhotoLayout) niVar7).P) != null) {
-                        rmVar2.setVisibility(4);
+                    if ((niVar7 instanceof ChatAttachAlertPhotoLayout) && (qmVar2 = ((ChatAttachAlertPhotoLayout) niVar7).P) != null) {
+                        qmVar2.setVisibility(4);
                     }
                 } else {
                     this.B0.setTranslationX(-max);
                     ni niVar8 = this.C0;
-                    if (niVar8 == chatAttachAlertPhotoLayout && (rmVar = ((ChatAttachAlertPhotoLayout) niVar8).P) != null) {
-                        rmVar.setVisibility(0);
+                    if (niVar8 == chatAttachAlertPhotoLayout && (qmVar = ((ChatAttachAlertPhotoLayout) niVar8).P) != null) {
+                        qmVar.setVisibility(0);
                     }
                 }
                 this.C0.setAlpha(1.0f);
@@ -3753,7 +3754,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                     ni niVar9 = this.B0;
                     jiVar.getClass();
                     jiVar.a(niVar9, f10);
-                    AndroidUtilities.runOnUIThread(new n2.h(this, niVar, hhVar, 19));
+                    AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.f(this, niVar, hhVar, 16));
                 } else {
                     boolean z12 = this.C0.getCurrentItemTop() <= niVar.getButtonsHideOffset();
                     this.B0.v(1.0f);
@@ -4105,9 +4106,9 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         ni niVar = this.B0;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.j0;
         if (niVar == chatAttachAlertPhotoLayout && chatAttachAlertPhotoLayout != null) {
-            hm hmVar = chatAttachAlertPhotoLayout.E;
-            if (hmVar.getFastScroll() != null) {
-                tl0 fastScroll = hmVar.getFastScroll();
+            gm gmVar = chatAttachAlertPhotoLayout.E;
+            if (gmVar.getFastScroll() != null) {
+                tl0 fastScroll = gmVar.getFastScroll();
                 dh.d dVar = fastScroll.e0;
                 RectF rectF3 = this.P2;
                 if (dVar != null || fastScroll.f0 != null) {
@@ -4116,7 +4117,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                     rectF4.set(fastScroll.e0.getBounds());
                     rectF3.union(rectF4);
                 }
-                tl0 fastScroll2 = hmVar.getFastScroll();
+                tl0 fastScroll2 = gmVar.getFastScroll();
                 ViewGroup viewGroup2 = this.containerView;
                 RectF rectF5 = AndroidUtilities.rectTmp;
                 ih.j.c(fastScroll2, viewGroup2, rectF5);
@@ -4161,7 +4162,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             X1(z11, true);
         }
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) niVar.getLayoutParams();
-        int b10 = org.telegram.ui.Cells.d0.b(11.0f, layoutParams == null ? 0 : layoutParams.topMargin, currentItemTop);
+        int D = org.telegram.messenger.sk.D(11.0f, layoutParams == null ? 0 : layoutParams.topMargin, currentItemTop);
         ni niVar2 = this.B0;
         int i11 = niVar2 == niVar ? 0 : 1;
         if ((niVar2 instanceof en) || (this.C0 instanceof en)) {
@@ -4172,13 +4173,13 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         }
         int[] iArr = this.e2;
         int i12 = iArr[i11];
-        if (i12 == b10 && !z10) {
+        if (i12 == D && !z10) {
             if (i10 != 0) {
                 this.f2 = i12;
             }
         } else {
             this.f2 = i12;
-            iArr[i11] = b10;
+            iArr[i11] = D;
             e2(i11);
             this.containerView.invalidate();
         }
@@ -4284,8 +4285,8 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                 TextView textView = new TextView(context);
                 enVar.x = textView;
                 org.telegram.ui.ActionBar.c6 c6Var2 = enVar.a;
-                mm mmVar = new mm(enVar, context, n10, c6Var2, 1);
-                enVar.b.a1.addView(mmVar, 0, w7.a6.a(-1.0f, AndroidUtilities.isTablet() ? 64.0f : 56.0f, 0.0f, 40.0f, 0.0f, -2, 51));
+                lm lmVar = new lm(enVar, context, n10, c6Var2, 1);
+                enVar.b.a1.addView(lmVar, 0, w7.z5.a(-1.0f, AndroidUtilities.isTablet() ? 64.0f : 56.0f, 0.0f, 40.0f, 0.0f, -2, 51));
                 textView.setImportantForAccessibility(2);
                 textView.setGravity(3);
                 textView.setSingleLine(true);
@@ -4298,7 +4299,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                 textView.setCompoundDrawablePadding(AndroidUtilities.dp(4.0f));
                 textView.setPadding(0, 0, AndroidUtilities.dp(10.0f), 0);
                 textView.setAlpha(0.0f);
-                mmVar.addView(textView, w7.a6.a(-2.0f, 16.0f, 0.0f, 0.0f, 0.0f, -2, 16));
+                lmVar.addView(textView, w7.z5.a(-2.0f, 16.0f, 0.0f, 0.0f, 0.0f, -2, 16));
                 bi.o0 o0Var = new bi.o0(enVar, context, c6Var2, 14);
                 enVar.r = o0Var;
                 o0Var.setAdapter(new org.telegram.ui.a8(enVar, 3));
@@ -4313,7 +4314,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                 enVar.v = dnVar;
                 dnVar.setClipToPadding(true);
                 dnVar.setClipChildren(true);
-                enVar.addView(o0Var, w7.a6.d(-1.0f, -1));
+                enVar.addView(o0Var, w7.z5.d(-1.0f, -1));
                 enVar.P = enVar.b.j0;
                 dnVar.c.clear();
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = enVar.P;
@@ -4323,7 +4324,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                 UndoView undoView = new UndoView(context, null, false, enVar.b.r);
                 enVar.w = undoView;
                 undoView.setEnterOffsetMargin(AndroidUtilities.dp(32.0f));
-                enVar.addView(undoView, w7.a6.a(-2.0f, 8.0f, 0.0f, 8.0f, 52.0f, -1, 83));
+                enVar.addView(undoView, w7.z5.a(-2.0f, 8.0f, 0.0f, 8.0f, 52.0f, -1, 83));
                 enVar.N = context.getResources().getDrawable(R.drawable.play_mini_video);
                 this.q0 = enVar;
                 enVar.bringToFront();
@@ -4434,7 +4435,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         int themedColor2 = getThemedColor(z10 ? org.telegram.ui.ActionBar.g6.hg : org.telegram.ui.ActionBar.g6.j5);
         b8 b8Var = this.a1;
         b8Var.D(themedColor2, false);
-        b8Var.B(getThemedColor(z10 ? org.telegram.ui.ActionBar.g6.ig : org.telegram.ui.ActionBar.g6.I5), false);
+        b8Var.C(getThemedColor(z10 ? org.telegram.ui.ActionBar.g6.ig : org.telegram.ui.ActionBar.g6.I5), false);
         b8Var.setTitleColor(getThemedColor(z10 ? org.telegram.ui.ActionBar.g6.hg : org.telegram.ui.ActionBar.g6.j5));
         int s12 = s1(false);
         org.telegram.ui.ActionBar.g6.x1(s12, this.shadowDrawable);
@@ -4715,16 +4716,16 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         vVar.invalidate();
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.j0;
         if (chatAttachAlertPhotoLayout != null) {
-            hm hmVar = chatAttachAlertPhotoLayout.E;
+            gm gmVar = chatAttachAlertPhotoLayout.E;
             chatAttachAlertPhotoLayout.V();
-            if (hmVar != null && hmVar.getFastScroll() != null) {
-                tl0 fastScroll = hmVar.getFastScroll();
+            if (gmVar != null && gmVar.getFastScroll() != null) {
+                tl0 fastScroll = gmVar.getFastScroll();
                 int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + chatAttachAlertPhotoLayout.p1;
                 if (this.c0) {
                     i10 = (int) (vVar.getAlpha() * vVar.getMeasuredHeight());
                 }
                 fastScroll.h0 = currentActionBarHeight + i10;
-                hmVar.getFastScroll().invalidate();
+                gmVar.getFastScroll().invalidate();
             }
         }
         Y1();
@@ -4881,32 +4882,32 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
     @Override // org.telegram.ui.ActionBar.e3
     public final boolean onCustomCloseAnimation() {
         TL_wallet.walletTransaction wallettransaction;
-        final dl dlVar = this.w0;
-        if (dlVar != null && this.B0 == dlVar) {
+        final cl clVar = this.w0;
+        if (clVar != null && this.B0 == clVar) {
             final hh hhVar = new hh(this, 1);
-            int i10 = dlVar.n;
-            org.telegram.ui.Wallet.h8 h8Var = dlVar.O;
-            vi viVar = dlVar.b;
+            int i10 = clVar.n;
+            org.telegram.ui.Wallet.i8 i8Var = clVar.O;
+            vi viVar = clVar.b;
             AnimatorSet animatorSet = null;
-            if (!dlVar.H && (wallettransaction = dlVar.M0) != null && dlVar.N0 == null && dlVar.O0 == null) {
-                if (dlVar.P0) {
-                    org.telegram.ui.Wallet.z4 z4Var = new org.telegram.ui.Wallet.z4();
-                    z4Var.setCurrentAccount(i10);
+            if (!clVar.H && (wallettransaction = clVar.M0) != null && clVar.N0 == null && clVar.O0 == null) {
+                if (clVar.P0) {
+                    org.telegram.ui.Wallet.a5 a5Var = new org.telegram.ui.Wallet.a5();
+                    a5Var.setCurrentAccount(i10);
                     org.telegram.ui.ActionBar.m2 m2Var = viVar.f0;
-                    if (m2Var != null && m2Var.presentFragment(z4Var, false, true)) {
+                    if (m2Var != null && m2Var.presentFragment(a5Var, false, true)) {
                         final int i11 = 0;
-                        org.telegram.ui.Wallet.w8 w8Var = new org.telegram.ui.Wallet.w8(viVar.getContainer(), viVar.getSheetContainer(), h8Var.getDiamondView(), z4Var, dlVar.M0, new Runnable() { // from class: org.telegram.ui.Components.vk
+                        org.telegram.ui.Wallet.w8 w8Var = new org.telegram.ui.Wallet.w8(viVar.getContainer(), viVar.getSheetContainer(), i8Var.getDiamondView(), a5Var, clVar.M0, new Runnable() { // from class: org.telegram.ui.Components.uk
                             @Override // java.lang.Runnable
                             public final void run() {
                                 switch (i11) {
                                     case 0:
-                                        if (!dlVar.H) {
+                                        if (!clVar.H) {
                                             hhVar.run();
                                             break;
                                         }
                                         break;
                                     default:
-                                        if (!dlVar.H) {
+                                        if (!clVar.H) {
                                             hhVar.run();
                                             break;
                                         }
@@ -4914,29 +4915,29 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                                 }
                             }
                         }, viVar);
-                        dlVar.O0 = w8Var;
+                        clVar.O0 = w8Var;
                         animatorSet = w8Var.m;
                     }
                 } else if (wallettransaction.localMessageId != 0) {
-                    org.telegram.ui.Wallet.b6 diamondView = h8Var.getDiamondView();
+                    org.telegram.ui.Wallet.c6 diamondView = i8Var.getDiamondView();
                     if (diamondView.f != null && diamondView.isShown() && diamondView.getAlpha() > 0.01f) {
                         org.telegram.ui.ActionBar.m2 m2Var2 = viVar.f0;
                         if (m2Var2 instanceof org.telegram.ui.fo) {
                             org.telegram.ui.fo foVar = (org.telegram.ui.fo) m2Var2;
-                            if (foVar.getCurrentAccount() == i10 && foVar.a() == dlVar.r.id && foVar.R3 == 0 && foVar.getFragmentView() != null && foVar.getFragmentView().isAttachedToWindow()) {
+                            if (foVar.getCurrentAccount() == i10 && foVar.a() == clVar.r.id && foVar.R3 == 0 && foVar.getFragmentView() != null && foVar.getFragmentView().isAttachedToWindow()) {
                                 final int i12 = 1;
-                                org.telegram.ui.Wallet.u5 u5Var = new org.telegram.ui.Wallet.u5(viVar.getContainer(), viVar.getSheetContainer(), h8Var.getDiamondView(), foVar, dlVar.M0, new Runnable() { // from class: org.telegram.ui.Components.vk
+                                org.telegram.ui.Wallet.v5 v5Var = new org.telegram.ui.Wallet.v5(viVar.getContainer(), viVar.getSheetContainer(), i8Var.getDiamondView(), foVar, clVar.M0, new Runnable() { // from class: org.telegram.ui.Components.uk
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i12) {
                                             case 0:
-                                                if (!dlVar.H) {
+                                                if (!clVar.H) {
                                                     hhVar.run();
                                                     break;
                                                 }
                                                 break;
                                             default:
-                                                if (!dlVar.H) {
+                                                if (!clVar.H) {
                                                     hhVar.run();
                                                     break;
                                                 }
@@ -4944,8 +4945,8 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                                         }
                                     }
                                 }, viVar);
-                                dlVar.N0 = u5Var;
-                                animatorSet = u5Var.m;
+                                clVar.N0 = v5Var;
+                                animatorSet = v5Var.m;
                             }
                         }
                     }
@@ -4965,53 +4966,53 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         int dp;
         int measuredWidth;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.j0;
-        ea1 ea1Var = chatAttachAlertPhotoLayout.l0;
+        fa1 fa1Var = chatAttachAlertPhotoLayout.l0;
         ah.x xVar = chatAttachAlertPhotoLayout.j0;
         TextView textView = chatAttachAlertPhotoLayout.p0;
-        hm hmVar = chatAttachAlertPhotoLayout.r;
+        gm gmVar = chatAttachAlertPhotoLayout.r;
         int i14 = i12 - i10;
         int i15 = i13 - i11;
         boolean z10 = i14 < i15;
         int i16 = AndroidUtilities.navigationBarHeight;
         if (view == xVar) {
             if (z10) {
-                if (hmVar.getVisibility() == 0) {
-                    xVar.layout(0, org.telegram.messenger.q.D(222.0f, i13, i16), i14, org.telegram.messenger.q.D(96.0f, i13, i16));
+                if (gmVar.getVisibility() == 0) {
+                    xVar.layout(0, org.telegram.messenger.g0.B(222.0f, i13, i16), i14, org.telegram.messenger.g0.B(96.0f, i13, i16));
                     return true;
                 }
-                xVar.layout(0, org.telegram.messenger.q.D(126.0f, i13, i16), i14, i13 - i16);
+                xVar.layout(0, org.telegram.messenger.g0.B(126.0f, i13, i16), i14, i13 - i16);
                 return true;
             }
-            if (hmVar.getVisibility() == 0) {
-                xVar.layout(org.telegram.messenger.q.D(222.0f, i12, i16), 0, i12 - AndroidUtilities.dp(96.0f), i15 - i16);
+            if (gmVar.getVisibility() == 0) {
+                xVar.layout(org.telegram.messenger.g0.B(222.0f, i12, i16), 0, i12 - AndroidUtilities.dp(96.0f), i15 - i16);
                 return true;
             }
-            xVar.layout(org.telegram.messenger.q.D(126.0f, i12, i16), 0, i12, i15 - i16);
+            xVar.layout(org.telegram.messenger.g0.B(126.0f, i12, i16), 0, i12, i15 - i16);
             return true;
         }
-        if (view == ea1Var) {
+        if (view == fa1Var) {
             if (z10) {
-                if (hmVar.getVisibility() == 0) {
-                    ea1Var.layout(0, org.telegram.messenger.q.D(310.0f, i13, i16), i14, org.telegram.messenger.q.D(260.0f, i13, i16));
+                if (gmVar.getVisibility() == 0) {
+                    fa1Var.layout(0, org.telegram.messenger.g0.B(310.0f, i13, i16), i14, org.telegram.messenger.g0.B(260.0f, i13, i16));
                     return true;
                 }
-                ea1Var.layout(0, org.telegram.messenger.q.D(176.0f, i13, i16), i14, org.telegram.messenger.q.D(126.0f, i13, i16));
+                fa1Var.layout(0, org.telegram.messenger.g0.B(176.0f, i13, i16), i14, org.telegram.messenger.g0.B(126.0f, i13, i16));
                 return true;
             }
-            if (hmVar.getVisibility() == 0) {
-                ea1Var.layout(org.telegram.messenger.q.D(310.0f, i12, i16), 0, i12 - AndroidUtilities.dp(260.0f), i15 - i16);
+            if (gmVar.getVisibility() == 0) {
+                fa1Var.layout(org.telegram.messenger.g0.B(310.0f, i12, i16), 0, i12 - AndroidUtilities.dp(260.0f), i15 - i16);
                 return true;
             }
-            ea1Var.layout(org.telegram.messenger.q.D(176.0f, i12, i16), 0, i12 - AndroidUtilities.dp(126.0f), i15 - i16);
+            fa1Var.layout(org.telegram.messenger.g0.B(176.0f, i12, i16), 0, i12 - AndroidUtilities.dp(126.0f), i15 - i16);
             return true;
         }
         if (view != textView) {
-            if (view != hmVar) {
+            if (view != gmVar) {
                 return false;
             }
             if (z10) {
-                int D = org.telegram.messenger.q.D(88.0f, i15, i16);
-                view.layout(0, D, view.getMeasuredWidth(), view.getMeasuredHeight() + D);
+                int B = org.telegram.messenger.g0.B(88.0f, i15, i16);
+                view.layout(0, B, view.getMeasuredWidth(), view.getMeasuredHeight() + B);
                 return true;
             }
             int dp2 = (i10 + i14) - AndroidUtilities.dp(88.0f);
@@ -5022,7 +5023,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             dp = (i14 - textView.getMeasuredWidth()) / 2;
             int dp3 = i13 - AndroidUtilities.dp(167.0f);
             textView.setRotation(0.0f);
-            if (hmVar.getVisibility() == 0) {
+            if (gmVar.getVisibility() == 0) {
                 dp3 -= AndroidUtilities.dp(96.0f);
             }
             measuredWidth = dp3 - i16;
@@ -5030,7 +5031,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             dp = i12 - AndroidUtilities.dp(167.0f);
             measuredWidth = (textView.getMeasuredWidth() / 2) + (i15 / 2);
             textView.setRotation(-90.0f);
-            if (hmVar.getVisibility() == 0) {
+            if (gmVar.getVisibility() == 0) {
                 dp -= AndroidUtilities.dp(96.0f);
             }
         }
@@ -5041,12 +5042,12 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
     @Override // org.telegram.ui.ActionBar.e3
     public final boolean onCustomMeasure(View view, int i10, int i11) {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.j0;
-        vm vmVar = chatAttachAlertPhotoLayout.v;
-        hm hmVar = chatAttachAlertPhotoLayout.r;
+        um umVar = chatAttachAlertPhotoLayout.v;
+        gm gmVar = chatAttachAlertPhotoLayout.r;
         hg.a0 a0Var = chatAttachAlertPhotoLayout.s;
         boolean z10 = i10 < i11;
-        rm rmVar = chatAttachAlertPhotoLayout.P;
-        if (view != rmVar) {
+        qm qmVar = chatAttachAlertPhotoLayout.P;
+        if (view != qmVar) {
             ah.x xVar = chatAttachAlertPhotoLayout.j0;
             if (view == xVar) {
                 if (z10) {
@@ -5056,37 +5057,37 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                 xVar.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(126.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30));
                 return true;
             }
-            ea1 ea1Var = chatAttachAlertPhotoLayout.l0;
-            if (view == ea1Var) {
+            fa1 fa1Var = chatAttachAlertPhotoLayout.l0;
+            if (view == fa1Var) {
                 if (z10) {
-                    ea1Var.measure(View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
+                    fa1Var.measure(View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
                     return true;
                 }
-                ea1Var.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30));
+                fa1Var.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30));
                 return true;
             }
-            if (view == hmVar) {
+            if (view == gmVar) {
                 chatAttachAlertPhotoLayout.J0 = true;
                 if (z10) {
-                    hmVar.measure(View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
+                    gmVar.measure(View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
                     if (a0Var.o != 0) {
-                        hmVar.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
+                        gmVar.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
                         a0Var.j1(0);
-                        vmVar.l();
+                        umVar.l();
                     }
                 } else {
-                    hmVar.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30));
+                    gmVar.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30));
                     if (a0Var.o != 1) {
-                        hmVar.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
+                        gmVar.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
                         a0Var.j1(1);
-                        vmVar.l();
+                        umVar.l();
                     }
                 }
                 chatAttachAlertPhotoLayout.J0 = false;
                 return true;
             }
         } else if (chatAttachAlertPhotoLayout.b0 && !chatAttachAlertPhotoLayout.d0) {
-            rmVar.measure(View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30));
+            qmVar.measure(View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30));
             return true;
         }
         return false;
@@ -5141,9 +5142,9 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         this.currentSheetAnimation.setStartDelay(20L);
         this.currentSheetAnimation.setInterpolator(this.openInterpolator);
         AnimationNotificationsLocker animationNotificationsLocker = new AnimationNotificationsLocker();
-        n2.h hVar = new n2.h(this, animationNotificationsLocker, this.delegate, 20);
-        this.s2.a(new fi.m4(i10, this, hVar));
-        this.currentSheetAnimation.addListener(new bi.t(22, this, hVar));
+        org.telegram.messenger.video.f fVar = new org.telegram.messenger.video.f(this, animationNotificationsLocker, this.delegate, 17);
+        this.s2.a(new fi.m4(i10, this, fVar));
+        this.currentSheetAnimation.addListener(new bi.t(22, this, fVar));
         animationNotificationsLocker.lock();
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
         this.currentSheetAnimation.start();
@@ -5296,7 +5297,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                 f7 += gVar.c();
             }
         }
-        float a10 = w7.s.a(f7, 0.0f, 1.0f);
+        float a10 = w7.r.a(f7, 0.0f, 1.0f);
         if (z10 && (b8Var = this.a1) != null && b8Var.getVisibility() == 0) {
             a10 *= 1.0f - b8Var.getAlpha();
         }
@@ -5369,7 +5370,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         boolean z10;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout;
         vi viVar;
-        rm rmVar;
+        qm qmVar;
         MediaController.AlbumEntry albumEntry;
         ni niVar;
         this.Q0 = 0L;
@@ -5448,9 +5449,9 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             chatAttachAlertPhotoLayout.w0 = z11;
             chatAttachAlertPhotoLayout.x0 = z12;
             chatAttachAlertPhotoLayout.z0 = z13;
-            rmVar = chatAttachAlertPhotoLayout.P;
-            if (rmVar != null) {
-                rmVar.setAlpha(z14 ? 1.0f : 0.2f);
+            qmVar = chatAttachAlertPhotoLayout.P;
+            if (qmVar != null) {
+                qmVar.setAlpha(z14 ? 1.0f : 0.2f);
                 chatAttachAlertPhotoLayout.P.setEnabled(chatAttachAlertPhotoLayout.v0);
             }
             if (!((viVar.f0 instanceof org.telegram.ui.fo) && viVar.m1() == null) && viVar.T0 == 0) {
@@ -5500,14 +5501,14 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             setFocusable(false);
             if (!this.O || this.P) {
                 if (this.o0 == null) {
-                    ul ulVar = new ul(this, getContext(), this.resourcesProvider, (this.H || this.P || this.U1) ? false : true);
-                    this.o0 = ulVar;
-                    this.z0[5] = ulVar;
-                    pl plVar = this.w2;
-                    if (plVar != null) {
-                        ulVar.setDelegate(plVar);
+                    tl tlVar = new tl(this, getContext(), this.resourcesProvider, (this.H || this.P || this.U1) ? false : true);
+                    this.o0 = tlVar;
+                    this.z0[5] = tlVar;
+                    ol olVar = this.w2;
+                    if (olVar != null) {
+                        tlVar.setDelegate(olVar);
                     } else {
-                        ulVar.setDelegate(new eh(this, i10));
+                        tlVar.setDelegate(new eh(this, i10));
                     }
                 }
                 this.Z0 = 5L;
@@ -5567,7 +5568,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
                 this.B0 = niVar;
                 this.allowNestedScroll = true;
                 if (niVar.getParent() == null) {
-                    this.containerView.addView(this.B0, 0, w7.a6.d(-1.0f, -1));
+                    this.containerView.addView(this.B0, 0, w7.z5.d(-1.0f, -1));
                 }
                 niVar.setAlpha(1.0f);
                 niVar.setVisibility(0);
@@ -5609,8 +5610,8 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             chatAttachAlertPhotoLayout.w0 = z112;
             chatAttachAlertPhotoLayout.x0 = z122;
             chatAttachAlertPhotoLayout.z0 = z132;
-            rmVar = chatAttachAlertPhotoLayout.P;
-            if (rmVar != null) {
+            qmVar = chatAttachAlertPhotoLayout.P;
+            if (qmVar != null) {
             }
             if (viVar.f0 instanceof org.telegram.ui.fo) {
             }
@@ -5670,8 +5671,8 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         chatAttachAlertPhotoLayout.w0 = z1122;
         chatAttachAlertPhotoLayout.x0 = z1222;
         chatAttachAlertPhotoLayout.z0 = z1322;
-        rmVar = chatAttachAlertPhotoLayout.P;
-        if (rmVar != null) {
+        qmVar = chatAttachAlertPhotoLayout.P;
+        if (qmVar != null) {
         }
         if (viVar.f0 instanceof org.telegram.ui.fo) {
         }
@@ -5725,9 +5726,9 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
         if (tiVar == null || this.x1) {
             return;
         }
-        boolean x10 = tiVar.x();
+        boolean w9 = tiVar.w();
         this.x1 = true;
-        AndroidUtilities.runOnUIThread(new di.x0(this, editTextBoldCursor, z10, 19), x10 ? 200L : 0L);
+        AndroidUtilities.runOnUIThread(new di.x0(this, editTextBoldCursor, z10, 17), w9 ? 200L : 0L);
     }
 
     public final void x1() {
@@ -5815,8 +5816,8 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
             return;
         }
         ni niVar = this.B0;
-        dl dlVar = this.w0;
-        boolean z10 = (niVar != dlVar || dlVar == null || dlVar.H || dlVar.M0 == null) ? false : true;
+        cl clVar = this.w0;
+        boolean z10 = (niVar != clVar || clVar == null || clVar.H || clVar.M0 == null) ? false : true;
         this.x0 = z10;
         if (!z10 && (aiVar = this.H0) != null) {
             AndroidUtilities.hideKeyboard(aiVar.getEditText());
@@ -5873,7 +5874,7 @@ public class vi extends org.telegram.ui.ActionBar.e3 implements NotificationCent
     }
 
     @Override // ne.d
-    public final /* synthetic */ void C(float f7, int i10) {
+    public final /* synthetic */ void A(float f7, int i10) {
     }
 
     public vi(Activity activity, org.telegram.ui.ActionBar.m2 m2Var, boolean z10, boolean z11) {

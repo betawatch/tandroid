@@ -9,13 +9,13 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.sk;
+import org.telegram.ui.Components.vm;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.he1;
 import org.telegram.ui.hp;
-import org.telegram.ui.je1;
+import org.telegram.ui.wg1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class i extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -36,9 +36,9 @@ public final class i extends ClickableSpan {
                 jVar.d((ClickableSpan) this.b, jVar.a, 0.0f);
                 break;
             case 1:
-                x0 x0Var = (x0) this.c;
-                if (x0Var.f1 != null) {
-                    x0Var.T((CharacterStyle) this.b);
+                w0 w0Var = (w0) this.c;
+                if (w0Var.f1 != null) {
+                    w0Var.T((CharacterStyle) this.b);
                     break;
                 }
                 break;
@@ -48,7 +48,7 @@ public final class i extends ClickableSpan {
                     u1 u1Var = ((r1) this.c).d;
                     l1 l1Var = u1Var.Jc;
                     if (l1Var != null) {
-                        l1Var.R0(u1Var, characterStyle, false);
+                        l1Var.S0(u1Var, characterStyle, false);
                         break;
                     }
                 } else {
@@ -69,13 +69,13 @@ public final class i extends ClickableSpan {
                 }
                 break;
             case 4:
-                pf.d.s(((y1) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
+                pf.d.r(((y1) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
                 break;
             case 5:
-                pf.d.s(((hp) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
+                pf.d.r(((hp) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
                 break;
             case 6:
-                ((sk) this.c).run();
+                ((vm) this.c).run();
                 break;
             case 7:
                 AndroidUtilities.addToClipboard((CharSequence) this.b);
@@ -95,7 +95,7 @@ public final class i extends ClickableSpan {
                 break;
             default:
                 AndroidUtilities.addToClipboard((String) this.b);
-                ((je1) this.c).run();
+                ((wg1) this.c).run();
                 break;
         }
     }

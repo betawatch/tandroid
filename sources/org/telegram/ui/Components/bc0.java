@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagePreviewParams;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bc0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -67,7 +67,7 @@ public final /* synthetic */ class bc0 implements View.OnClickListener {
             default:
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj3;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj2;
-                m80 m80Var = (m80) obj;
+                l80 l80Var = (l80) obj;
                 ns0 ns0Var = ((yh.m2) frameLayout).a;
                 if (z10) {
                     ns0Var.e.k(tL_starGiftCollection.collection_id, savedStarGift);
@@ -81,7 +81,7 @@ public final /* synthetic */ class bc0 implements View.OnClickListener {
                     e5Var.a(i12, arrayList);
                     zc.a0(ns0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, zh.r3.E1(savedStarGift.gift), tL_starGiftCollection.title))).j();
                 }
-                m80Var.u();
+                l80Var.u();
                 ns0Var.n();
                 break;
         }

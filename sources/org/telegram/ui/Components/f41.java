@@ -31,7 +31,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class f41 {
     public static final int[] N = {R.attr.state_enabled, R.attr.state_pressed};
@@ -174,8 +174,8 @@ public abstract class f41 {
     }
 
     public static void a(Path path, int i10, int i11, int i12, int i13, float f7, float f10) {
-        float a2 = w7.s.a(f7, 0.0f, 1.0f);
-        float a10 = w7.s.a(f10, 0.0f, 1.0f) - a2;
+        float a2 = w7.r.a(f7, 0.0f, 1.0f);
+        float a10 = w7.r.a(f10, 0.0f, 1.0f) - a2;
         if (a10 <= 0.0f) {
             return;
         }
@@ -206,8 +206,8 @@ public abstract class f41 {
         if (i10 == i12 && i11 == i13) {
             return;
         }
-        float a2 = w7.s.a(f7, 0.0f, 1.0f);
-        if (w7.s.a(f10, 0.0f, 1.0f) - a2 <= 0.0f) {
+        float a2 = w7.r.a(f7, 0.0f, 1.0f);
+        if (w7.r.a(f10, 0.0f, 1.0f) - a2 <= 0.0f) {
             return;
         }
         path.moveTo(AndroidUtilities.lerp(i10, i12, a2), AndroidUtilities.lerp(i11, i13, a2));
@@ -324,7 +324,7 @@ public abstract class f41 {
         message.voiceTranscriptionForce = true;
         MessagesStorage.getInstance(messageObject.currentAccount).updateMessageVoiceTranscriptionOpen(messageObject.getDialogId(), messageObject.getId(), messageObject.messageOwner);
         if (z10) {
-            AndroidUtilities.runOnUIThread(new lr0(messageObject, 21));
+            AndroidUtilities.runOnUIThread(new kr0(messageObject, 21));
         }
     }
 
@@ -437,7 +437,7 @@ public abstract class f41 {
                     if ((tL_messages_transcribedAudio.flags & 2) != 0) {
                         MessagesController.getInstance(i14).updateTranscribeAudioTrialCurrentNumber(tL_messages_transcribedAudio.trial_remains_num);
                         MessagesController.getInstance(i14).updateTranscribeAudioTrialCooldownUntil(tL_messages_transcribedAudio.trial_remains_until_date);
-                        AndroidUtilities.runOnUIThread(new k31(2, l1Var2, tL_messages_transcribedAudio));
+                        AndroidUtilities.runOnUIThread(new g90(27, l1Var2, tL_messages_transcribedAudio));
                     }
                     if (f41.O == null) {
                         f41.O = new HashMap();

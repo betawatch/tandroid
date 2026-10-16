@@ -33,14 +33,14 @@ import org.telegram.ui.Components.bm0;
 import org.telegram.ui.Components.f5;
 import org.telegram.ui.Components.yj0;
 import org.telegram.ui.LaunchActivity;
-import w7.s6;
+import w7.r6;
 import zh.g3;
 import zh.n5;
 import zh.t3;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.z1, i8, OnSuccessListener, ImageReceiver.ImageReceiverDelegate, ne.d, t0.f, qa.a, bm0, vh.a, x2.k, Continuation, zf.n, r0.o, BillingController.ProductDetailsResponseListenerLegacy, e2.j, f5, Utilities.Callback5 {
+public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.z1, i8, OnSuccessListener, ImageReceiver.ImageReceiverDelegate, ne.d, t0.f, qa.a, bm0, vh.a, x2.k, Continuation, zf.n, r0.n, BillingController.ProductDetailsResponseListenerLegacy, e2.j, f5, Utilities.Callback5 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -50,7 +50,7 @@ public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.z1, i
     }
 
     @Override // ne.d
-    public /* synthetic */ void C(float f7, int i10) {
+    public /* synthetic */ void A(float f7, int i10) {
         int i11 = this.a;
     }
 
@@ -67,7 +67,7 @@ public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.z1, i
         }
     }
 
-    @Override // r0.o
+    @Override // r0.n
     public r0.l1 Q0(View view, r0.l1 l1Var) {
         ((yh.k0) this.b).h.j(l1Var);
         return r0.l1.b;
@@ -89,7 +89,7 @@ public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.z1, i
             case 22:
                 z3.i iVar = (z3.i) this.b;
                 z3.b bVar = (z3.b) obj;
-                z3.h hVar = new z3.h(bVar.b, sb.a.s2(bVar.a, bVar.c));
+                z3.h hVar = new z3.h(bVar.b, sb.a.v2(bVar.a, bVar.c));
                 iVar.c.add(hVar);
                 long j10 = iVar.j;
                 if (j10 == -9223372036854775807L || bVar.d >= j10) {
@@ -140,13 +140,35 @@ public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.z1, i
         }
     }
 
-    @Override // qa.a
-    public void f(qa.b bVar) {
-        u9.a aVar = (u9.a) this.b;
-        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-            Log.d("FirebaseCrashlytics", "Crashlytics native component now available.", null);
+    @Override // t0.f
+    public boolean f(t0.j jVar, int i10, Bundle bundle) {
+        r0.d dVar;
+        m.u uVar = (m.u) this.b;
+        int i11 = Build.VERSION.SDK_INT;
+        if (i11 >= 25 && (i10 & 1) != 0) {
+            try {
+                jVar.a.d();
+                Parcelable parcelable = (Parcelable) jVar.a.i();
+                bundle = bundle == null ? new Bundle() : new Bundle(bundle);
+                bundle.putParcelable("androidx.core.view.extra.INPUT_CONTENT_INFO", parcelable);
+            } catch (Exception e) {
+                Log.w("InputConnectionCompat", "Can't insert content from IME; requestPermission() failed", e);
+                return false;
+            }
         }
-        aVar.b.set((u9.a) bVar.get());
+        t0.i iVar = jVar.a;
+        ClipData clipData = new ClipData(iVar.getDescription(), new ClipData.Item(iVar.c()));
+        if (i11 >= 31) {
+            dVar = new j2.j(clipData, 2);
+        } else {
+            r0.e eVar = new r0.e();
+            eVar.b = clipData;
+            eVar.c = 2;
+            dVar = eVar;
+        }
+        dVar.b(iVar.f());
+        dVar.setExtras(bundle);
+        return r0.i0.h(uVar, dVar.build()) == null;
     }
 
     @Override // org.telegram.ui.ActionBar.z1
@@ -181,40 +203,18 @@ public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.z1, i
         }
     }
 
+    @Override // qa.a
+    public void h(qa.b bVar) {
+        u9.a aVar = (u9.a) this.b;
+        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+            Log.d("FirebaseCrashlytics", "Crashlytics native component now available.", null);
+        }
+        aVar.b.set((u9.a) bVar.get());
+    }
+
     @Override // di.i8
     public Bitmap i(BitmapFactory.Options options) {
         return BitmapFactory.decodeFile((String) this.b, options);
-    }
-
-    @Override // t0.f
-    public boolean j(t0.j jVar, int i10, Bundle bundle) {
-        r0.d dVar;
-        m.s sVar = (m.s) this.b;
-        int i11 = Build.VERSION.SDK_INT;
-        if (i11 >= 25 && (i10 & 1) != 0) {
-            try {
-                jVar.a.d();
-                Parcelable parcelable = (Parcelable) jVar.a.j();
-                bundle = bundle == null ? new Bundle() : new Bundle(bundle);
-                bundle.putParcelable("androidx.core.view.extra.INPUT_CONTENT_INFO", parcelable);
-            } catch (Exception e) {
-                Log.w("InputConnectionCompat", "Can't insert content from IME; requestPermission() failed", e);
-                return false;
-            }
-        }
-        t0.i iVar = jVar.a;
-        ClipData clipData = new ClipData(iVar.getDescription(), new ClipData.Item(iVar.c()));
-        if (i11 >= 31) {
-            dVar = new j2.j(clipData, 2);
-        } else {
-            r0.e eVar = new r0.e();
-            eVar.b = clipData;
-            eVar.c = 2;
-            dVar = eVar;
-        }
-        dVar.b(iVar.f());
-        dVar.setExtras(bundle);
-        return r0.j0.h(sVar, dVar.build()) == null;
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
@@ -256,7 +256,7 @@ public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.z1, i
             i10++;
             ((sg.k) obj2).g = j10;
         }
-        AndroidUtilities.runOnUIThread(new rh.j(p1Var, 25));
+        AndroidUtilities.runOnUIThread(new ri.h0(p1Var, 25));
     }
 
     @Override // com.google.android.gms.tasks.OnSuccessListener
@@ -295,11 +295,11 @@ public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.z1, i
                 } else {
                     int i12 = ((yb.a) list.get(0)).c;
                     String str = null;
-                    if (s6.a == null) {
-                        s6.a = new String[]{"👥", "🔥", "📚", "🏔", "🧊", "🍱", null, "🚰", "🧸", "🗿", "🍔", "🚜", "🛷", "🐠", "🎪", null, "🪑", "🧔", "🌉", "🩰", "🐦", "🚣", "🏞", null, "🏭", "🎓", "🍶", "🌿", "🌸", "🛋", "😎", "🏗", "🎡", "🐠", "🤿", "🐶", "⛵", "🎨", "🏆", "🧗", "🏸", "🦁", "🚲", "🏟", null, "⛵", "🙂", "🏄", "🍟", "🌇", "🌭", "🩳", "🚌", "🐂", "🌌", "🐹", "🪨", "👥", "👗", "👣", null, "🐻", "🍽", "🗼", "🧱", "🗑", "👤", "🏄", "👙", "🎢", "🏕", "🎠", "🚽", "😆", "🎈", "🎤", "👗", "🚧", "📦", "🐠", "🧺", "🌼", "🛒", "🥊", "💍", "💎", "🎰", "🚗", "🪜", "💻", "🍳", "📽️", "🪑", "🖼", "🍷", "🚢", "🛳", "👥", "🧗", "🕳", "👔", "🛠", "🌊", "🤡", "🎉", "🚴", "☄️", "🎓", "🏟", "🎄", "⛪", "🕰", "👨", "🐄", "🌴", "🖥", "🥌", "🍲", "🐱", "🧃", "🍚", null, "👥", "🏙", null, "🧸", "🍪", "🟩", "🕎", "🧶", "🛹", "✂️", "💅", "🥤", "🍴", "📜", null, "👘", "🧸", "📱", "🚦", "❄️", "🇵🇷", "⛓", "💃", "🏜", "🎅", "🦃", "🤵", "👄", "🏜", "🦕", "👳\u200d♂️", "🔥", "🛏", "🥽", "🐉", "🛋", "🛷", "🧢", "📋", "🎩", "🍨", "🐎", "🧶", "👕", "🧣", "🏖", "⚽", "🖤", "🎧", "🏛", "🚘", "🛹", "🦢", "🍖", "🥅", "🧁", "🐕", "🚤", "🌳", "☕", "⚽", "🧸", "🍲", "🧍", "📖", "🍉", "🍜", "✨", "💼", "🌳", "🐕", "🌲", "🚩", "⛵", "🦶", "🧥", null, "🛏", null, "🛁", "🗻", "🤸\u200d♀️", "👂", "🌸", "🐚", "👵", "🏛", "👁️", "🛏", "⚖️", "🎒", "🐎", "✨", "🛸", "💇", "🧸", "👥", "🪟", "🌟", "🐱", "🐄", "🐞", "❄️", "💍", "🚪", "💎", "🧶", "🏺", "🧥", "❤️", "💪", "🏍", "💰", "🕌", "🍽", "💃", "🛶", "🏖", "🧾", "🏞", "🚨", "🐴", "🧥", "📯", "⌚", "🧱", "🤿", "👖", "🏊", "🎸", "🎭", "🤘", "🌕", "🧥", "💍", "📱", "🪖", "🍽", "🎉", "🌌", "📰", "🗞", null, "🎹", "🪴", "🛂", "🐧", "🐕", "🏰", "🏵", "🏇", "📝", "🎶", "⛵", "🍕", "🐾", "🧵", "🐦", "🛹", "🏄", "🏉", "💄", "🏞", "🏁", "🚣", "🛣", "🏃", "🛋", "🏠", "⭐", "🏅", "👟", "🚤", "🪐", "😴", "🤲", "🏊", "🏫", "🍣", "🛋", "🦸", "😎", "⛷", "🚢", "🎵", "📚", "🏙", "🌋", "📺", "🐎", "💉", "🚆", "🚪", "🥤", "🚗", "👜", "💡", "🎫", "🍷", "🍗", "🎡", "🏄", "💻", null, null, "🏡", "🎣", "❤️", "🌱", "☕", "🍞", "🏖", null, "🏛", "🚁", "⛰", "🦆", "🌱", "🐢", "🐊", "🎶", "👟", "🧶", "💍", "🎤", "🎡", "🏂", "🚤", "🧱", "🚀", "🏠", "🏖", "🌈", "🌿", "👨", "🌷", "👗", "🏞", "🐶", "🦸", "🌸", "🍽", "🔊", "⛪", "🏢", "✈️", "🐾", "🐂", "🪑", "🛕", "🦋", "👠", "🏃", "🪡", "🍳", "🏰", "🌌", "🐛", "🏎", null, "✈️", "🚣", "🧵", "🤵", "🎢", "🍲", "🥦", "🚲", "👖", "🪴", "🗄", "🎂", "💺", "✈️", null, "🌫", "🎆", "🚜", "🦭", "📚", "💇", "⚡", "🚐", "🐱", "🚗", "👖", "🌾", "🤿", "☔", "🛣", "⛵", "🐶", "🔳", "🍽", "👰", "💧", null, "🍴", "🚙", "👶", "👓", "🚗", "✈️", "✋", "🐎", "🏞", "🍽", "⚾", "🍷", "👰", "🌿", "🥧", "🎒", "🃏", "🦹", "🪖", "🛶", "🤳", "🛺", "🏚", "🏹", "🚀", null, "⛈", "⛑"};
+                    if (r6.a == null) {
+                        r6.a = new String[]{"👥", "🔥", "📚", "🏔", "🧊", "🍱", null, "🚰", "🧸", "🗿", "🍔", "🚜", "🛷", "🐠", "🎪", null, "🪑", "🧔", "🌉", "🩰", "🐦", "🚣", "🏞", null, "🏭", "🎓", "🍶", "🌿", "🌸", "🛋", "😎", "🏗", "🎡", "🐠", "🤿", "🐶", "⛵", "🎨", "🏆", "🧗", "🏸", "🦁", "🚲", "🏟", null, "⛵", "🙂", "🏄", "🍟", "🌇", "🌭", "🩳", "🚌", "🐂", "🌌", "🐹", "🪨", "👥", "👗", "👣", null, "🐻", "🍽", "🗼", "🧱", "🗑", "👤", "🏄", "👙", "🎢", "🏕", "🎠", "🚽", "😆", "🎈", "🎤", "👗", "🚧", "📦", "🐠", "🧺", "🌼", "🛒", "🥊", "💍", "💎", "🎰", "🚗", "🪜", "💻", "🍳", "📽️", "🪑", "🖼", "🍷", "🚢", "🛳", "👥", "🧗", "🕳", "👔", "🛠", "🌊", "🤡", "🎉", "🚴", "☄️", "🎓", "🏟", "🎄", "⛪", "🕰", "👨", "🐄", "🌴", "🖥", "🥌", "🍲", "🐱", "🧃", "🍚", null, "👥", "🏙", null, "🧸", "🍪", "🟩", "🕎", "🧶", "🛹", "✂️", "💅", "🥤", "🍴", "📜", null, "👘", "🧸", "📱", "🚦", "❄️", "🇵🇷", "⛓", "💃", "🏜", "🎅", "🦃", "🤵", "👄", "🏜", "🦕", "👳\u200d♂️", "🔥", "🛏", "🥽", "🐉", "🛋", "🛷", "🧢", "📋", "🎩", "🍨", "🐎", "🧶", "👕", "🧣", "🏖", "⚽", "🖤", "🎧", "🏛", "🚘", "🛹", "🦢", "🍖", "🥅", "🧁", "🐕", "🚤", "🌳", "☕", "⚽", "🧸", "🍲", "🧍", "📖", "🍉", "🍜", "✨", "💼", "🌳", "🐕", "🌲", "🚩", "⛵", "🦶", "🧥", null, "🛏", null, "🛁", "🗻", "🤸\u200d♀️", "👂", "🌸", "🐚", "👵", "🏛", "👁️", "🛏", "⚖️", "🎒", "🐎", "✨", "🛸", "💇", "🧸", "👥", "🪟", "🌟", "🐱", "🐄", "🐞", "❄️", "💍", "🚪", "💎", "🧶", "🏺", "🧥", "❤️", "💪", "🏍", "💰", "🕌", "🍽", "💃", "🛶", "🏖", "🧾", "🏞", "🚨", "🐴", "🧥", "📯", "⌚", "🧱", "🤿", "👖", "🏊", "🎸", "🎭", "🤘", "🌕", "🧥", "💍", "📱", "🪖", "🍽", "🎉", "🌌", "📰", "🗞", null, "🎹", "🪴", "🛂", "🐧", "🐕", "🏰", "🏵", "🏇", "📝", "🎶", "⛵", "🍕", "🐾", "🧵", "🐦", "🛹", "🏄", "🏉", "💄", "🏞", "🏁", "🚣", "🛣", "🏃", "🛋", "🏠", "⭐", "🏅", "👟", "🚤", "🪐", "😴", "🤲", "🏊", "🏫", "🍣", "🛋", "🦸", "😎", "⛷", "🚢", "🎵", "📚", "🏙", "🌋", "📺", "🐎", "💉", "🚆", "🚪", "🥤", "🚗", "👜", "💡", "🎫", "🍷", "🍗", "🎡", "🏄", "💻", null, null, "🏡", "🎣", "❤️", "🌱", "☕", "🍞", "🏖", null, "🏛", "🚁", "⛰", "🦆", "🌱", "🐢", "🐊", "🎶", "👟", "🧶", "💍", "🎤", "🎡", "🏂", "🚤", "🧱", "🚀", "🏠", "🏖", "🌈", "🌿", "👨", "🌷", "👗", "🏞", "🐶", "🦸", "🌸", "🍽", "🔊", "⛪", "🏢", "✈️", "🐾", "🐂", "🪑", "🛕", "🦋", "👠", "🏃", "🪡", "🍳", "🏰", "🌌", "🐛", "🏎", null, "✈️", "🚣", "🧵", "🤵", "🎢", "🍲", "🥦", "🚲", "👖", "🪴", "🗄", "🎂", "💺", "✈️", null, "🌫", "🎆", "🚜", "🦭", "📚", "💇", "⚡", "🚐", "🐱", "🚗", "👖", "🌾", "🤿", "☔", "🛣", "⛵", "🐶", "🔳", "🍽", "👰", "💧", null, "🍴", "🚙", "👶", "👓", "🚗", "✈️", "✋", "🐎", "🏞", "🍽", "⚾", "🍷", "👰", "🌿", "🥧", "🎒", "🃏", "🦹", "🪖", "🛶", "🤳", "🛺", "🏚", "🏹", "🚀", null, "⛈", "⛑"};
                     }
                     if (i12 >= 0) {
-                        String[] strArr = s6.a;
+                        String[] strArr = r6.a;
                         if (i12 < strArr.length) {
                             str = strArr[i12];
                         }
@@ -310,7 +310,7 @@ public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.z1, i
                     sb2.append(" ");
                     sb2.append(p2Var.c0);
                     sb2.append(" ");
-                    i2.d.t(((yb.a) list.get(0)).a, sb2);
+                    i2.d.v(((yb.a) list.get(0)).a, sb2);
                     Emoji.getEmojiDrawable(p2Var.c0);
                     break;
                 }
@@ -325,11 +325,11 @@ public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.z1, i
                 break;
             default:
                 View view = ((t3) this.b).b;
-                if (!(view instanceof org.telegram.ui.Cells.x0)) {
+                if (!(view instanceof org.telegram.ui.Cells.w0)) {
                     view.invalidate();
                     break;
                 } else {
-                    ((org.telegram.ui.Cells.x0) view).N();
+                    ((org.telegram.ui.Cells.w0) view).N();
                     break;
                 }
         }

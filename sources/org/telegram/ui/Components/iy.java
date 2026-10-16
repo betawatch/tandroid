@@ -19,7 +19,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.CompoundEmoji;
 import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class iy extends mm0 {
     public boolean V2;
@@ -89,14 +89,14 @@ public final class iy extends mm0 {
                     int top = childAt.getTop() + ((int) childAt.getTranslationY());
                     ArrayList arrayList4 = (ArrayList) sparseArray.get(top);
                     if (arrayList4 == null) {
-                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) i2.d.x(i13, arrayList) : new ArrayList();
+                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) i2.d.A(i13, arrayList) : new ArrayList();
                         sparseArray.put(top, arrayList4);
                     }
                     arrayList4.add((ez) childAt);
                 }
                 if (z11 && childAt != null && RecyclerView.R(childAt) == wzVar.s2 - i13) {
                     z10 = z11;
-                    float interpolation = es.g.getInterpolation(w7.s.a((SystemClock.elapsedRealtime() - wzVar.u2) / 140.0f, f7, 1.0f));
+                    float interpolation = es.g.getInterpolation(w7.r.a((SystemClock.elapsedRealtime() - wzVar.u2) / 140.0f, f7, 1.0f));
                     if (interpolation >= 1.0f || (Build.VERSION.SDK_INT >= 30 && canvas2.quickReject(childAt.getLeft(), childAt.getTop(), childAt.getRight(), childAt.getBottom()))) {
                         i10 = i14;
                     } else {
@@ -149,7 +149,7 @@ public final class iy extends mm0 {
                 i17++;
             }
             if (gyVar == null) {
-                gyVar = !arrayList2.isEmpty() ? (gy) i2.d.x(1, arrayList2) : new gy(this);
+                gyVar = !arrayList2.isEmpty() ? (gy) i2.d.A(1, arrayList2) : new gy(this);
                 gyVar.M = i16;
                 gyVar.e();
             }
@@ -220,13 +220,13 @@ public final class iy extends mm0 {
                     int top = childAt.getTop() + ((int) childAt.getTranslationY());
                     ArrayList arrayList4 = (ArrayList) sparseArray.get(top);
                     if (arrayList4 == null) {
-                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) i2.d.x(1, arrayList) : new ArrayList();
+                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) i2.d.A(1, arrayList) : new ArrayList();
                         sparseArray.put(top, arrayList4);
                     }
                     arrayList4.add((ez) childAt);
                 }
                 if (z10 && childAt != null && RecyclerView.R(childAt) == wzVar.s2 - 1) {
-                    float interpolation = es.g.getInterpolation(w7.s.a((SystemClock.elapsedRealtime() - wzVar.u2) / 140.0f, 0.0f, 1.0f));
+                    float interpolation = es.g.getInterpolation(w7.r.a((SystemClock.elapsedRealtime() - wzVar.u2) / 140.0f, 0.0f, 1.0f));
                     if (interpolation < 1.0f) {
                         float f7 = 1.0f - interpolation;
                         canvas.saveLayerAlpha(childAt.getLeft(), childAt.getTop(), childAt.getRight(), childAt.getBottom(), (int) (255.0f * f7), 31);
@@ -270,7 +270,7 @@ public final class iy extends mm0 {
                 i15++;
             }
             if (gyVar == null) {
-                gyVar = !arrayList2.isEmpty() ? (gy) i2.d.x(1, arrayList2) : new gy(this);
+                gyVar = !arrayList2.isEmpty() ? (gy) i2.d.A(1, arrayList2) : new gy(this);
                 gyVar.M = i14;
                 gyVar.e();
             }

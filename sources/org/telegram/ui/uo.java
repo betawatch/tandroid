@@ -1,11 +1,11 @@
 package org.telegram.ui;
 
 import org.telegram.messenger.MessagesController;
-import org.webrtc.i;
-import ri.k;
-import ri.q;
+import pi.g;
+import qi.k;
+import qi.q;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class uo implements Runnable {
     public final /* synthetic */ int a;
@@ -22,32 +22,32 @@ public final /* synthetic */ class uo implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Components.z61 z61Var;
+        org.telegram.ui.Components.a71 a71Var;
         switch (this.a) {
             case 0:
                 MessagesController.getInstance(r0.currentAccount).unlinkCommunity(this.b, this.c, new f5((zo) this.d, 4));
                 break;
             case 1:
-                org.telegram.ui.web.y1 y1Var = (org.telegram.ui.web.y1) this.d;
+                org.telegram.ui.web.z1 z1Var = (org.telegram.ui.web.z1) this.d;
                 long j10 = this.b;
                 long j11 = this.c;
-                y1Var.f = j10;
-                y1Var.h = j11;
-                org.telegram.ui.Components.b71 b71Var = y1Var.a;
-                if (b71Var != null && (z61Var = b71Var.W2) != null && b71Var.G) {
-                    z61Var.N(true);
+                z1Var.f = j10;
+                z1Var.h = j11;
+                org.telegram.ui.Components.c71 c71Var = z1Var.a;
+                if (c71Var != null && (a71Var = c71Var.W2) != null && c71Var.G) {
+                    a71Var.N(true);
                     break;
                 }
                 break;
             case 2:
-                ri.q qVar = (ri.q) this.d;
+                qi.q qVar = (qi.q) this.d;
                 long j12 = this.b;
                 long j13 = this.c;
-                if (qVar.m == ri.o.h) {
+                if (qVar.m == qi.o.h) {
                     long j14 = ((j12 - j13) * 48000) / 1000;
                     qVar.p = j14;
                     qVar.r = 0L;
-                    qVar.s = ri.q.q(j14);
+                    qVar.s = qi.q.q(j14);
                     qVar.i();
                     break;
                 }
@@ -56,18 +56,18 @@ public final /* synthetic */ class uo implements Runnable {
                 cc.e eVar = (cc.e) this.d;
                 long j15 = this.b;
                 long j16 = this.c;
-                final ri.q qVar2 = (ri.q) eVar.c;
+                final qi.q qVar2 = (qi.q) eVar.c;
                 if (j15 == qVar2.o) {
                     qVar2.n = null;
                     qVar2.p += j16;
                     qVar2.q = 0L;
                     qVar2.h.removeCallbacks(qVar2.D);
-                    ri.o oVar = qVar2.m;
-                    if (oVar != ri.o.s) {
-                        if (oVar != ri.o.r) {
+                    qi.o oVar = qVar2.m;
+                    if (oVar != qi.o.s) {
+                        if (oVar != qi.o.r) {
                             if (!qVar2.v) {
-                                if (oVar == ri.o.d) {
-                                    final ri.k kVar = qVar2.z;
+                                if (oVar == qi.o.d) {
+                                    final qi.k kVar = qVar2.z;
                                     if (kVar != null) {
                                         long j17 = qVar2.j();
                                         qVar2.r = 0L;
@@ -84,7 +84,7 @@ public final /* synthetic */ class uo implements Runnable {
                                                     qVar3.g.a("waveform extraction failed", th2);
                                                     bArr = null;
                                                 }
-                                                qVar3.h.post(new i(qVar3, kVar2, bArr, 4));
+                                                qVar3.h.post(new g(qVar3, kVar2, bArr, 1));
                                             }
                                         });
                                         break;

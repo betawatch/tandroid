@@ -1,41 +1,19 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public abstract class c71 extends org.telegram.ui.ActionBar.m2 {
-    public b71 a;
-    public int b;
-    public int c;
+public final class c71 extends i71 {
+    public final /* synthetic */ d71 d3;
 
-    public c71() {
-        super(null);
-        this.b = -1;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c71(d71 d71Var, d71 d71Var2, d dVar, b71 b71Var, b71 b71Var2) {
+        super(d71Var2, dVar, b71Var, b71Var2);
+        this.d3 = d71Var;
     }
 
-    public abstract void U(ArrayList arrayList, z61 z61Var);
-
-    public abstract CharSequence V();
-
-    public abstract void W(l61 l61Var, View view);
-
-    public abstract boolean X(l61 l61Var, View view);
-
-    @Override // org.telegram.ui.ActionBar.m2
-    public View createView(Context context) {
-        i2.d.v(false, this.actionBar);
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(V());
-        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.nb(this, 15));
-        ig.q1 q1Var = new ig.q1(context, null, 1);
-        q1Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.a7, false));
-        b71 b71Var = new b71(this, this, new d(this, 22), new a71(this), new a71(this));
-        this.a = b71Var;
-        q1Var.addView(b71Var, w7.a6.d(-1.0f, -1));
-        this.fragmentView = q1Var;
-        return q1Var;
+    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        this.d3.b = -1;
     }
 }

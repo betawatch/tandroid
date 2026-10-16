@@ -9,7 +9,7 @@ import java.util.Date;
 import ji.h5;
 import org.telegram.messenger.BuildVars;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class b {
     public static boolean i = true;
@@ -135,7 +135,7 @@ public final class b {
                 a j10 = j(i16, o10, aVar.c, i14);
                 f(j10, i12);
                 j10.c = null;
-                c0Var.u(j10);
+                c0Var.q(j10);
                 if (aVar.a == 4) {
                     i12 += i14;
                 }
@@ -147,12 +147,12 @@ public final class b {
         }
         Object obj = aVar.c;
         aVar.c = null;
-        c0Var.u(aVar);
+        c0Var.q(aVar);
         if (i14 > 0) {
             a j11 = j(aVar.a, o10, obj, i14);
             f(j11, i12);
             j11.c = null;
-            c0Var.u(j11);
+            c0Var.q(j11);
         }
     }
 
@@ -248,7 +248,7 @@ public final class b {
     }
 
     public a j(int i10, int i11, Object obj, int i12) {
-        a aVar = (a) ((c5.c0) this.c).b();
+        a aVar = (a) ((c5.c0) this.c).a();
         if (aVar != null) {
             aVar.a = i10;
             aVar.b = i11;
@@ -332,9 +332,9 @@ public final class b {
         a aVar;
         c5.c0 c0Var = (c5.c0) this.c;
         ih.g gVar = (ih.g) this.g;
-        l2.f fVar = (l2.f) this.h;
+        m.l lVar = (m.l) this.h;
         ArrayList arrayList = (ArrayList) this.d;
-        fVar.getClass();
+        lVar.getClass();
         while (true) {
             int size = arrayList.size() - 1;
             boolean z13 = false;
@@ -356,7 +356,7 @@ public final class b {
                 break;
             }
             int i18 = size + 1;
-            b bVar = (b) fVar.b;
+            b bVar = (b) lVar.a;
             c5.c0 c0Var2 = (c5.c0) bVar.c;
             a aVar2 = (a) arrayList.get(size);
             a aVar3 = (a) arrayList.get(i18);
@@ -412,7 +412,7 @@ public final class b {
                                 if (aVar3.d == 0) {
                                     arrayList.remove(i18);
                                     aVar3.c = null;
-                                    c0Var2.u(aVar3);
+                                    c0Var2.q(aVar3);
                                 }
                             }
                         }
@@ -431,7 +431,7 @@ public final class b {
                                     arrayList.set(size, aVar3);
                                     arrayList.remove(i18);
                                     aVar2.c = obj;
-                                    c0Var2.u(aVar2);
+                                    c0Var2.q(aVar2);
                                 } else {
                                     if (z11) {
                                         if (aVar != null) {
@@ -544,7 +544,7 @@ public final class b {
                                 } else {
                                     arrayList.remove(size);
                                     aVar3.c = null;
-                                    c0Var2.u(aVar3);
+                                    c0Var2.q(aVar3);
                                 }
                                 if (j10 != null) {
                                     arrayList.add(size, j10);
@@ -628,7 +628,7 @@ public final class b {
                 }
                 if (i47 != aVar4.d) {
                     aVar4.c = null;
-                    c0Var.u(aVar4);
+                    c0Var.q(aVar4);
                     i12 = 2;
                     aVar4 = j(2, i44, null, i47);
                 } else {
@@ -677,7 +677,7 @@ public final class b {
                 if (i51 != aVar4.d) {
                     Object obj2 = aVar4.c;
                     aVar4.c = null;
-                    c0Var.u(aVar4);
+                    c0Var.q(aVar4);
                     aVar4 = j(4, i50, obj2, i51);
                 }
                 if (c12 == 0) {
@@ -699,13 +699,13 @@ public final class b {
         for (int i10 = 0; i10 < size; i10++) {
             a aVar = (a) arrayList.get(i10);
             aVar.c = null;
-            ((c5.c0) this.c).u(aVar);
+            ((c5.c0) this.c).q(aVar);
         }
         arrayList.clear();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0106  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0039  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0107  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x003a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -716,7 +716,7 @@ public final class b {
             h5 h5Var = (h5) this.f;
             if (h5Var == null) {
                 try {
-                    h5 h5Var2 = new h5(28);
+                    h5 h5Var2 = new h5(28, false);
                     h5Var2.b = new SoftReference(new String[3]);
                     this.f = h5Var2;
                 } catch (Throwable unused) {
@@ -862,12 +862,12 @@ public final class b {
                 if (i18 == aVar2.b || i18 < 0) {
                     arrayList.remove(size2);
                     aVar2.c = null;
-                    c0Var.u(aVar2);
+                    c0Var.q(aVar2);
                 }
             } else if (aVar2.d <= 0) {
                 arrayList.remove(size2);
                 aVar2.c = null;
-                c0Var.u(aVar2);
+                c0Var.q(aVar2);
             }
         }
         return i10;
@@ -891,6 +891,6 @@ public final class b {
         this.b = 0;
         this.f = BuildVars.DEBUG_VERSION ? new ArrayList() : null;
         this.g = gVar;
-        this.h = new l2.f(this, 17);
+        this.h = new m.l(this);
     }
 }

@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class gs extends ImageView {
     public final /* synthetic */ int a = 1;
@@ -14,10 +14,10 @@ public final class gs extends ImageView {
     public final /* synthetic */ ViewGroup c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gs(is isVar, Context context, ji.d4 d4Var) {
+    public gs(is isVar, Context context, ji.h5 h5Var) {
         super(context);
         this.c = isVar;
-        this.b = d4Var;
+        this.b = h5Var;
     }
 
     @Override // android.view.View
@@ -32,7 +32,7 @@ public final class gs extends ImageView {
                     removeCallbacks(isVar.h);
                 }
                 super.onTouchEvent(motionEvent);
-                return ((GestureDetector) ((ji.d4) this.b).b).onTouchEvent(motionEvent);
+                return ((GestureDetector) ((ji.h5) this.b).b).onTouchEvent(motionEvent);
             default:
                 return super.onTouchEvent(motionEvent);
         }

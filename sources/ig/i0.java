@@ -24,9 +24,9 @@ import org.telegram.ui.Components.ui;
 import org.telegram.ui.Components.vi;
 import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.yz;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class i0 extends ni implements NotificationCenter.NotificationCenterDelegate, ne.d {
     public final yz E;
@@ -55,14 +55,14 @@ public final class i0 extends ni implements NotificationCenter.NotificationCente
         g2 g2Var = riVar.r;
         g2Var.addTextChangedListener(c0Var);
         g2Var.setHint(LocaleController.getString(R.string.BusinessRepliesSearch));
-        frameLayout.addView(uiVar, a6.g());
-        FrameLayout.LayoutParams a2 = a6.a(48.0f, 7.0f, 8.0f, 7.0f, 4.0f, -1, 51);
+        frameLayout.addView(uiVar, z5.g());
+        FrameLayout.LayoutParams a2 = z5.a(48.0f, 7.0f, 8.0f, 7.0f, 4.0f, -1, 51);
         ((ViewGroup.MarginLayoutParams) a2).topMargin += AndroidUtilities.statusBarHeight;
         frameLayout.addView(riVar, a2);
         yz yzVar = new yz(context, c6Var);
         this.E = yzVar;
         yzVar.c();
-        addView(yzVar, a6.a(-1.0f, 0.0f, 52.0f, 0.0f, 0.0f, -1, 51));
+        addView(yzVar, z5.a(-1.0f, 0.0f, 52.0f, 0.0f, 0.0f, -1, 51));
         bi.o0 o0Var = new bi.o0(this, context, c6Var, 3);
         this.s = o0Var;
         o0Var.p1();
@@ -80,7 +80,7 @@ public final class i0 extends ni implements NotificationCenter.NotificationCente
         o0Var.setHorizontalScrollBarEnabled(false);
         o0Var.setVerticalScrollBarEnabled(false);
         o0Var.setClipToPadding(false);
-        addView(o0Var, a6.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+        addView(o0Var, z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 51));
         f0 f0Var = new f0(this, context);
         this.x = f0Var;
         o0Var.setAdapter(f0Var);
@@ -88,7 +88,7 @@ public final class i0 extends ni implements NotificationCenter.NotificationCente
         int i10 = 10;
         o0Var.setOnItemClickListener(new bi.d(this, i10));
         o0Var.setOnScrollListener(new ah.d0(this, i10));
-        FrameLayout.LayoutParams e = a6.e(-1, 60, 51);
+        FrameLayout.LayoutParams e = z5.e(-1, 60, 51);
         ((ViewGroup.MarginLayoutParams) e).height += AndroidUtilities.statusBarHeight;
         addView(frameLayout, e);
         O();
@@ -114,7 +114,7 @@ public final class i0 extends ni implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.Components.ni
-    public final void B(int i10, int i11) {
+    public final void C(int i10, int i11) {
         int i12;
         vi viVar = this.b;
         if (viVar.u1.R() > AndroidUtilities.dp(20.0f)) {
@@ -257,7 +257,7 @@ public final class i0 extends ni implements NotificationCenter.NotificationCente
     }
 
     @Override // ne.d
-    public final /* synthetic */ void C(float f7, int i10) {
+    public final /* synthetic */ void A(float f7, int i10) {
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate

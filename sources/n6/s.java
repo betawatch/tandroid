@@ -1,54 +1,62 @@
 package n6;
 
-import android.content.ActivityNotFoundException;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.util.Log;
-import com.google.android.gms.common.api.GoogleApiActivity;
+import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class s implements DialogInterface.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Intent b;
-    public final /* synthetic */ Object c;
+public final class s implements Handler.Callback {
+    public final ya.c a;
+    public final com.google.android.gms.internal.cast.a0 n;
+    public final ArrayList b = new ArrayList();
+    public final ArrayList c = new ArrayList();
+    public final ArrayList d = new ArrayList();
+    public volatile boolean e = false;
+    public final AtomicInteger f = new AtomicInteger(0);
+    public boolean h = false;
+    public final Object r = new Object();
 
-    public /* synthetic */ s(Intent intent, Object obj, int i10) {
-        this.a = i10;
-        this.b = intent;
-        this.c = obj;
+    public s(Looper looper, ya.c cVar) {
+        this.a = cVar;
+        this.n = new com.google.android.gms.internal.cast.a0(looper, this);
     }
 
-    public final void a() {
-        switch (this.a) {
-            case 0:
-                Intent intent = this.b;
-                if (intent != null) {
-                    ((GoogleApiActivity) this.c).startActivityForResult(intent, 2);
-                    break;
-                }
-                break;
-            default:
-                Intent intent2 = this.b;
-                if (intent2 != null) {
-                    ((com.google.android.gms.common.api.internal.m) this.c).startActivityForResult(intent2, 2);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i10) {
-        try {
+    public final void a(com.google.android.gms.common.api.l lVar) {
+        l.h(lVar);
+        synchronized (this.r) {
             try {
-                a();
-            } catch (ActivityNotFoundException e) {
-                Log.e("DialogRedirect", true == Build.FINGERPRINT.contains("generic") ? "Failed to start resolution intent. This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store." : "Failed to start resolution intent.", e);
+                if (this.d.contains(lVar)) {
+                    Log.w("GmsClientEvents", "registerConnectionFailedListener(): listener " + String.valueOf(lVar) + " is already registered");
+                } else {
+                    this.d.add(lVar);
+                }
+            } catch (Throwable th2) {
+                throw th2;
             }
-        } finally {
-            dialogInterface.dismiss();
         }
+    }
+
+    @Override // android.os.Handler.Callback
+    public final boolean handleMessage(Message message) {
+        int i10 = message.what;
+        if (i10 != 1) {
+            Log.wtf("GmsClientEvents", i2.d.j(i10, "Don't know how to handle message: "), new Exception());
+            return false;
+        }
+        com.google.android.gms.common.api.k kVar = (com.google.android.gms.common.api.k) message.obj;
+        synchronized (this.r) {
+            try {
+                if (this.e && this.a.y0() && this.b.contains(kVar)) {
+                    kVar.onConnected(null);
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return true;
     }
 }

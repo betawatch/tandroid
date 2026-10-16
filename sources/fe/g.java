@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import td.q;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class g extends md.c implements ee.c {
     public final ee.c a;
@@ -107,7 +107,7 @@ public final class g extends md.c implements ee.c {
                     } else {
                         kotlin.jvm.internal.i.e(str4, "<this>");
                         if (intValue < 0) {
-                            throw new IllegalArgumentException(i2.d.j(intValue, "Requested character count ", " is less than zero.").toString());
+                            throw new IllegalArgumentException(i2.d.k(intValue, "Requested character count ", " is less than zero.").toString());
                         }
                         int length3 = str4.length();
                         if (intValue <= length3) {

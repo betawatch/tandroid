@@ -12,11 +12,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class me extends LinearLayout {
     public final int a;
-    public final org.telegram.ui.Components.k91 b;
+    public final org.telegram.ui.Components.l91 b;
     public final le c;
     public final long d;
     public final ud e;
@@ -40,17 +40,17 @@ public final class me extends LinearLayout {
         this.d = j10;
         this.e = udVar;
         setOrientation(1);
-        org.telegram.ui.Components.k91 k91Var = new org.telegram.ui.Components.k91(context, null);
-        this.b = k91Var;
+        org.telegram.ui.Components.l91 l91Var = new org.telegram.ui.Components.l91(context, null);
+        this.b = l91Var;
         le leVar = new le(this, context, i10, j10, i11, c6Var);
         this.c = leVar;
-        k91Var.setAdapter(leVar);
-        View n10 = k91Var.n(3, true);
+        l91Var.setAdapter(leVar);
+        View n10 = l91Var.n(3, true);
         View view = new View(context);
         view.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.d7, c6Var));
-        addView(n10, w7.a6.n(-1, 48));
-        addView(view, new LinearLayout.LayoutParams(w7.a6.z(-1.0f), w7.a6.z(1.0f / AndroidUtilities.density)));
-        addView(k91Var, w7.a6.n(-1, -1));
+        addView(n10, w7.z5.n(-1, 48));
+        addView(view, new LinearLayout.LayoutParams(w7.z5.z(-1.0f), w7.z5.z(1.0f / AndroidUtilities.density)));
+        addView(l91Var, w7.z5.n(-1, -1));
         setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.h5, c6Var));
         c(1);
         c(0);
@@ -424,18 +424,18 @@ public final class me extends LinearLayout {
     public final void d() {
         int i10 = 0;
         while (true) {
-            org.telegram.ui.Components.k91 k91Var = this.b;
-            if (i10 >= k91Var.getViewPages().length) {
+            org.telegram.ui.Components.l91 l91Var = this.b;
+            if (i10 >= l91Var.getViewPages().length) {
                 return;
             }
-            View view = k91Var.getViewPages()[i10];
+            View view = l91Var.getViewPages()[i10];
             if (view instanceof ke) {
                 ke keVar = (ke) view;
-                org.telegram.ui.Components.h71 h71Var = keVar.a;
-                h71Var.W2.N(true);
-                if (h71Var.canScrollVertically(1)) {
-                    for (int i11 = 0; i11 < h71Var.getChildCount(); i11++) {
-                        if (!(h71Var.getChildAt(i11) instanceof org.telegram.ui.Components.f10)) {
+                org.telegram.ui.Components.i71 i71Var = keVar.a;
+                i71Var.W2.N(true);
+                if (i71Var.canScrollVertically(1)) {
+                    for (int i11 = 0; i11 < i71Var.getChildCount(); i11++) {
+                        if (!(i71Var.getChildAt(i11) instanceof org.telegram.ui.Components.f10)) {
                         }
                     }
                 }
@@ -448,16 +448,16 @@ public final class me extends LinearLayout {
 
     public final void e() {
         this.c.i();
-        org.telegram.ui.Components.k91 k91Var = this.b;
-        k91Var.o(false);
-        View[] viewArr = k91Var.e;
-        int[] iArr = k91Var.f;
-        if (iArr[0] != k91Var.L.h(k91Var.b)) {
-            k91Var.I(0);
+        org.telegram.ui.Components.l91 l91Var = this.b;
+        l91Var.o(false);
+        View[] viewArr = l91Var.e;
+        int[] iArr = l91Var.f;
+        if (iArr[0] != l91Var.L.h(l91Var.b)) {
+            l91Var.I(0);
             View view = viewArr[1];
             if (view != null) {
-                k91Var.h.put(iArr[1], view);
-                k91Var.removeView(viewArr[1]);
+                l91Var.h.put(iArr[1], view);
+                l91Var.removeView(viewArr[1]);
                 viewArr[1] = null;
             }
             viewArr[0].setTranslationX(0.0f);

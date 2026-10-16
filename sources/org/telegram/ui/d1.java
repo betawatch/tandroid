@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class d1 extends View implements org.telegram.ui.Cells.n9, g3 {
     public final z70 a;
@@ -76,7 +76,7 @@ public final class d1 extends View implements org.telegram.ui.Cells.n9, g3 {
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.yh.a(this);
+        return org.telegram.messenger.sk.a(this);
     }
 
     @Override // android.view.View

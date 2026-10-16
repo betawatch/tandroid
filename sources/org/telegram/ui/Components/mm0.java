@@ -39,7 +39,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class mm0 extends RecyclerView implements ch.a {
     public static int[] O2;
@@ -52,7 +52,7 @@ public class mm0 extends RecyclerView implements ch.a {
     public int A1;
     public boolean A2;
     public org.telegram.ui.Cells.z B1;
-    public final org.telegram.ui.Cells.t6 B2;
+    public final org.telegram.ui.Cells.l7 B2;
     public int C1;
     public final bu C2;
     public View D1;
@@ -69,7 +69,7 @@ public class mm0 extends RecyclerView implements ch.a {
     public ArrayList I2;
     public boolean J1;
     public float J2;
-    public ji.h5 K1;
+    public ji.w4 K1;
     public float[] K2;
     public View L1;
     public float[] L2;
@@ -245,7 +245,7 @@ public class mm0 extends RecyclerView implements ch.a {
         while (i10 < 2) {
             for (int i11 = childCount - 1; i11 >= 0; i11--) {
                 View childAt = getChildAt(i11);
-                if ((!(childAt instanceof org.telegram.ui.Cells.u1) && !(childAt instanceof org.telegram.ui.Cells.x0)) || childAt.getVisibility() != 4) {
+                if ((!(childAt instanceof org.telegram.ui.Cells.u1) && !(childAt instanceof org.telegram.ui.Cells.w0)) || childAt.getVisibility() != 4) {
                     float translationX = i10 == 0 ? childAt.getTranslationX() : 0.0f;
                     float translationY = i10 == 0 ? childAt.getTranslationY() : 0.0f;
                     if (f7 >= childAt.getLeft() + translationX && f7 <= childAt.getRight() + translationX && f10 >= childAt.getTop() + translationY && f10 <= childAt.getBottom() + translationY) {
@@ -1127,8 +1127,8 @@ public class mm0 extends RecyclerView implements ch.a {
 
     public final Paint X0(String str) {
         org.telegram.ui.ActionBar.c6 c6Var = this.n2;
-        Paint G = c6Var != null ? c6Var.G(str) : null;
-        return G != null ? G : org.telegram.ui.ActionBar.g6.T0(str);
+        Paint F = c6Var != null ? c6Var.F(str) : null;
+        return F != null ? F : org.telegram.ui.ActionBar.g6.T0(str);
     }
 
     public final boolean Y0(int i10, View view) {
@@ -1650,9 +1650,9 @@ public class mm0 extends RecyclerView implements ch.a {
 
     public final void n1(dm0 dm0Var, long j10) {
         this.W0 = dm0Var;
-        ji.h5 h5Var = this.K1;
+        ji.w4 w4Var = this.K1;
         boolean z10 = dm0Var != null;
-        x20 x20Var = (x20) h5Var.b;
+        x20 x20Var = (x20) w4Var.b;
         x20Var.t = z10;
         x20Var.u = j10;
     }
@@ -1779,7 +1779,7 @@ public class mm0 extends RecyclerView implements ch.a {
             return false;
         }
         boolean z10 = this.b2;
-        org.telegram.ui.Cells.t6 t6Var = this.B2;
+        org.telegram.ui.Cells.l7 l7Var = this.B2;
         if (!z10 || motionEvent.getAction() == 0 || motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
             this.i2 = Float.MAX_VALUE;
             this.j2 = Float.MAX_VALUE;
@@ -1787,7 +1787,7 @@ public class mm0 extends RecyclerView implements ch.a {
             this.c2 = false;
             l1(this, false);
             this.g2 = false;
-            AndroidUtilities.cancelRunOnUIThread(t6Var);
+            AndroidUtilities.cancelRunOnUIThread(l7Var);
             return super.onTouchEvent(motionEvent);
         }
         if (this.i2 == Float.MAX_VALUE && this.j2 == Float.MAX_VALUE) {
@@ -1809,19 +1809,19 @@ public class mm0 extends RecyclerView implements ch.a {
                 this.h2 = false;
                 if (!this.g2) {
                     this.g2 = true;
-                    AndroidUtilities.cancelRunOnUIThread(t6Var);
-                    AndroidUtilities.runOnUIThread(t6Var);
+                    AndroidUtilities.cancelRunOnUIThread(l7Var);
+                    AndroidUtilities.runOnUIThread(l7Var);
                     return true;
                 }
             } else if (motionEvent.getY() >= AndroidUtilities.dp(56.0f) + this.k2[0] || (this.e2 > this.d2 && this.f2.a)) {
                 this.g2 = false;
-                AndroidUtilities.cancelRunOnUIThread(t6Var);
+                AndroidUtilities.cancelRunOnUIThread(l7Var);
             } else {
                 this.h2 = true;
                 if (!this.g2) {
                     this.g2 = true;
-                    AndroidUtilities.cancelRunOnUIThread(t6Var);
-                    AndroidUtilities.runOnUIThread(t6Var);
+                    AndroidUtilities.cancelRunOnUIThread(l7Var);
+                    AndroidUtilities.runOnUIThread(l7Var);
                     return true;
                 }
             }
@@ -2011,9 +2011,9 @@ public class mm0 extends RecyclerView implements ch.a {
     public void setOnItemLongClickListener(cm0 cm0Var) {
         long longPressTimeout = ViewConfiguration.getLongPressTimeout();
         this.V0 = cm0Var;
-        ji.h5 h5Var = this.K1;
+        ji.w4 w4Var = this.K1;
         boolean z10 = cm0Var != null;
-        x20 x20Var = (x20) h5Var.b;
+        x20 x20Var = (x20) w4Var.b;
         x20Var.t = z10;
         x20Var.u = longPressTimeout;
     }
@@ -2197,7 +2197,7 @@ public class mm0 extends RecyclerView implements ch.a {
         this.p2 = new qe(1);
         this.q2 = true;
         this.r2 = new hg.o1(this, 1);
-        this.B2 = new org.telegram.ui.Cells.t6(this, 19);
+        this.B2 = new org.telegram.ui.Cells.l7(this, 18);
         this.N2 = new Path();
         this.n2 = c6Var;
         bu buVar = new bu();

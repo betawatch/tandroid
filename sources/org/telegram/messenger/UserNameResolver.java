@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class UserNameResolver {
     private static final long CACHE_TIME = 3600000;
@@ -17,7 +17,7 @@ public class UserNameResolver {
     android.util.LruCache<String, CachedPeer> resolvedCache = new android.util.LruCache<>(100);
     HashMap<String, ArrayList<Utilities.Callback<Long>>> resolvingConsumers = new HashMap<>();
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public class CachedPeer {
         final long peerId;
         final long time = System.currentTimeMillis();
@@ -68,7 +68,7 @@ public class UserNameResolver {
         if (str3 == null || !str3.contains("FLOOD_WAIT") || (R = LaunchActivity.R()) == null) {
             return;
         }
-        yh.p(R.string.FloodWait, org.telegram.ui.Components.zc.a0(R), null);
+        sk.q(R.string.FloodWait, org.telegram.ui.Components.zc.a0(R), null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -112,7 +112,7 @@ public class UserNameResolver {
                 StringBuilder sb2 = new StringBuilder("resolve username from cache ");
                 sb2.append(str);
                 sb2.append(" ");
-                q.s(sb2, cachedPeer.peerId);
+                i2.d.x(sb2, cachedPeer.peerId);
                 return null;
             }
             this.resolvedCache.remove(str);

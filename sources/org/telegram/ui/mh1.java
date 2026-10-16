@@ -6,7 +6,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class mh1 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ oh1 a;
@@ -39,7 +39,7 @@ public final class mh1 extends org.telegram.ui.ActionBar.j {
             org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
             a2Var.T = string;
             a2Var.R = string2;
-            alertDialog$Builder.k(string3, new nq0(this, 23));
+            alertDialog$Builder.k(string3, new lq0(this, 23));
             alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
             org.telegram.ui.ActionBar.a2 a2Var2 = alertDialog$Builder.a;
             oh1Var.showDialog(a2Var2);

@@ -23,13 +23,13 @@ import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.da0;
 import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.i71;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.rc;
 import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class t0 implements hi.e {
     public final Context a;
@@ -79,8 +79,8 @@ public final class t0 implements hi.e {
         }
     }
 
-    public final void b(h71 h71Var) {
-        if (this.m || this.n || h71Var.V2.N0() + 10 <= h71Var.W2.x.size()) {
+    public final void b(i71 i71Var) {
+        if (this.m || this.n || i71Var.V2.N0() + 10 <= i71Var.W2.x.size()) {
             return;
         }
         d();
@@ -104,7 +104,7 @@ public final class t0 implements hi.e {
                     boolean z10 = !communityPeerRequest.visible;
                     boolean z11 = i10 < size + (-1);
                     int i11 = hi.g.a;
-                    l61 J = l61.J(hi.g.class);
+                    m61 J = m61.J(hi.g.class);
                     J.G = new hi.f(peerDialogId, user, z10);
                     J.H = this;
                     J.j = !z11;
@@ -116,7 +116,7 @@ public final class t0 implements hi.e {
         if (this.n) {
             return;
         }
-        arrayList.add(l61.n(29));
+        arrayList.add(m61.n(29));
     }
 
     public final void d() {
@@ -167,7 +167,7 @@ public final class t0 implements hi.e {
         a();
         s0 s0Var = this.h;
         if (s0Var != null) {
-            s0Var.b();
+            s0Var.p();
         }
         int i11 = z10 ? R.string.CommunityRequestApprovedToast : R.string.CommunityRequestDeclinedToast;
         int i12 = this.d;

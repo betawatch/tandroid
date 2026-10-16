@@ -3,7 +3,7 @@ package q4;
 import a0.f;
 import android.graphics.Color;
 import android.util.SparseBooleanArray;
-import gb.j;
+import gb.k;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -11,10 +11,10 @@ import java.util.List;
 import java.util.PriorityQueue;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class b {
-    public static final j f = new j(3);
+    public static final k f = new k(3);
     public static final c g = new c();
     public final Object a;
     public final Object b;

@@ -12,9 +12,9 @@ import java.util.HashMap;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.o9;
-import org.telegram.ui.Components.z61;
+import org.telegram.ui.Components.a71;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class c6 implements g1 {
     public final /* synthetic */ i6 a;
@@ -24,7 +24,108 @@ public final class c6 implements g1 {
     }
 
     @Override // ji.g1
-    public final boolean C(h1 h1Var) {
+    public final void C(Editable editable) {
+        a aVar;
+        i6 i6Var = this.a;
+        if (i6Var.x == null) {
+            return;
+        }
+        i6Var.E(editable);
+        i6Var.J();
+        i6.e(i6Var.x.b, editable);
+        i6Var.C();
+        i6Var.G();
+        int i10 = 0;
+        if (i6Var.o() && !i6Var.l()) {
+            ((TL_iv.pageBlockBlockquote) i6Var.x.b).collapsed = false;
+        }
+        i6Var.H();
+        f6 f6Var = i6Var.y;
+        if (f6Var != null) {
+            x3 x3Var = ((f3) f6Var).a;
+            h2 h2Var = x3Var.H3;
+            if (h2Var != null) {
+                h2Var.g();
+            }
+            x3Var.f3.onContentChanged();
+        }
+        f6 f6Var2 = i6Var.y;
+        if (f6Var2 != null) {
+            ((f3) f6Var2).a.f3.i0(i6Var, i6.b(editable.toString()));
+        }
+        String obj = editable.toString();
+        a aVar2 = i6Var.x;
+        if (aVar2 != null && obj != null && aVar2.c == 0 && (aVar2.b instanceof TL_iv.pageBlockParagraph) && obj.equals("> ")) {
+            i10 = 6;
+        }
+        if (i10 == 0 || i6Var.y == null) {
+            h6 s10 = i6.s(editable.toString(), i6Var.x);
+            if (s10 != null && i6Var.y != null) {
+                i6Var.post(new hg.t(this, i6Var.x, s10, 19));
+            }
+        } else {
+            i6Var.post(new ah.o(this, i6Var.x, i10, 16));
+        }
+        if (i6Var.T || ((aVar = i6Var.x) != null && (aVar.b instanceof TL_iv.pageBlockPullquote))) {
+            i6Var.invalidate();
+        }
+    }
+
+    @Override // ji.g1
+    public final boolean E(boolean z10) {
+        a aVar;
+        i6 i6Var = this.a;
+        f6 f6Var = i6Var.y;
+        if (f6Var == null || (aVar = i6Var.x) == null) {
+            return false;
+        }
+        return ((f3) f6Var).a.X3(aVar, z10);
+    }
+
+    @Override // ji.g1
+    public final void a(h1 h1Var) {
+        f6 f6Var = this.a.y;
+        if (f6Var != null) {
+            x3 x3Var = ((f3) f6Var).a;
+            x3.N1(x3Var, h1Var);
+            x3Var.f3.V(h1Var, true);
+        }
+    }
+
+    @Override // ji.g1
+    public final boolean d() {
+        i6 i6Var = this.a;
+        f6 f6Var = i6Var.y;
+        if (f6Var == null || i6Var.x == null) {
+            return false;
+        }
+        return ((f3) f6Var).a.T4();
+    }
+
+    @Override // ji.g1
+    public final boolean e(h1 h1Var) {
+        a aVar;
+        i6 i6Var = this.a;
+        f6 f6Var = i6Var.y;
+        if (f6Var == null || (aVar = i6Var.x) == null) {
+            return false;
+        }
+        return x3.R1(((f3) f6Var).a, aVar, false);
+    }
+
+    @Override // ji.g1
+    public final void f(int i10, int i11) {
+        h2 h2Var;
+        i6 i6Var = this.a;
+        f6 f6Var = i6Var.y;
+        if (f6Var == null || i6Var.x == null || (h2Var = ((f3) f6Var).a.H3) == null) {
+            return;
+        }
+        h2Var.f(i10, i11);
+    }
+
+    @Override // ji.g1
+    public final boolean m(h1 h1Var) {
         a aVar;
         ClipData primaryClip;
         int indexOf;
@@ -60,18 +161,7 @@ public final class c6 implements g1 {
     }
 
     @Override // ji.g1
-    public final boolean F0(boolean z10) {
-        a aVar;
-        i6 i6Var = this.a;
-        f6 f6Var = i6Var.y;
-        if (f6Var == null || (aVar = i6Var.x) == null) {
-            return false;
-        }
-        return ((f3) f6Var).a.X3(aVar, z10);
-    }
-
-    @Override // ji.g1
-    public final void U(h1 h1Var, int i10, int i11) {
+    public final void q(h1 h1Var, int i10, int i11) {
         f6 f6Var;
         o9 textSelectionHelper;
         i6 i6Var = this.a;
@@ -82,7 +172,7 @@ public final class c6 implements g1 {
     }
 
     @Override // ji.g1
-    public final void W() {
+    public final void r() {
         a aVar;
         i6 i6Var = this.a;
         f6 f6Var = i6Var.y;
@@ -93,17 +183,7 @@ public final class c6 implements g1 {
     }
 
     @Override // ji.g1
-    public final void a(h1 h1Var) {
-        f6 f6Var = this.a.y;
-        if (f6Var != null) {
-            x3 x3Var = ((f3) f6Var).a;
-            x3.N1(x3Var, h1Var);
-            x3Var.f3.c0(h1Var, true);
-        }
-    }
-
-    @Override // ji.g1
-    public final void g0(CharSequence charSequence) {
+    public final void y(CharSequence charSequence) {
         f6 f6Var = this.a.y;
         if (f6Var != null) {
             f3 f3Var = (f3) f6Var;
@@ -115,39 +195,7 @@ public final class c6 implements g1 {
     }
 
     @Override // ji.g1
-    public final boolean h() {
-        i6 i6Var = this.a;
-        f6 f6Var = i6Var.y;
-        if (f6Var == null || i6Var.x == null) {
-            return false;
-        }
-        return ((f3) f6Var).a.T4();
-    }
-
-    @Override // ji.g1
-    public final boolean l(h1 h1Var) {
-        a aVar;
-        i6 i6Var = this.a;
-        f6 f6Var = i6Var.y;
-        if (f6Var == null || (aVar = i6Var.x) == null) {
-            return false;
-        }
-        return x3.R1(((f3) f6Var).a, aVar, false);
-    }
-
-    @Override // ji.g1
-    public final void p(int i10, int i11) {
-        h2 h2Var;
-        i6 i6Var = this.a;
-        f6 f6Var = i6Var.y;
-        if (f6Var == null || i6Var.x == null || (h2Var = ((f3) f6Var).a.H3) == null) {
-            return;
-        }
-        h2Var.f(i10, i11);
-    }
-
-    @Override // ji.g1
-    public final void p0(h1 h1Var) {
+    public final void z(h1 h1Var) {
         int length;
         Spanned spanned;
         boolean z10;
@@ -160,7 +208,7 @@ public final class c6 implements g1 {
             return;
         }
         String obj = h1Var.getText().toString();
-        ((f3) i6Var.y).a.f3.m0(i6Var, null);
+        ((f3) i6Var.y).a.f3.i0(i6Var, null);
         String b10 = i6.b(obj);
         if (b10 != null) {
             ArrayList a2 = n0.a(b10);
@@ -187,7 +235,7 @@ public final class c6 implements g1 {
         a aVar = i6Var.x;
         x3 x3Var = ((f3) f6Var).a;
         ArrayList arrayList = x3Var.n4;
-        z61 z61Var = x3Var.W2;
+        a71 a71Var = x3Var.W2;
         ArrayList arrayList2 = x3Var.j3;
         int indexOf = arrayList2.indexOf(aVar);
         if (indexOf < 0) {
@@ -217,7 +265,7 @@ public final class c6 implements g1 {
                 ArrayList arrayList3 = aVar.k;
                 arrayList3.remove(arrayList3.size() - 1);
                 x3Var.t4();
-                z61Var.N(false);
+                a71Var.N(false);
                 h2 h2Var2 = x3Var.H3;
                 if (h2Var2 != null) {
                     h2Var2.h();
@@ -228,7 +276,7 @@ public final class c6 implements g1 {
             if (aVar.c > 0) {
                 x3Var.u2(indexOf);
                 x3Var.t4();
-                z61Var.N(false);
+                a71Var.N(false);
                 h2 h2Var3 = x3Var.H3;
                 if (h2Var3 != null) {
                     h2Var3.h();
@@ -269,7 +317,7 @@ public final class c6 implements g1 {
         arrayList2.add(i12, aVar2);
         x3Var.t4();
         if (z11) {
-            z61Var.N(false);
+            a71Var.N(false);
             h2 h2Var4 = x3Var.H3;
             if (h2Var4 != null) {
                 h2Var4.h();
@@ -282,17 +330,17 @@ public final class c6 implements g1 {
             text.delete(length, text.length());
             editText.h = false;
         }
-        z61Var.S();
+        a71Var.S();
         x3Var.q4(i12);
         int indexOf2 = arrayList.indexOf(aVar2);
         if (indexOf2 < 0) {
-            z61Var.l();
+            a71Var.l();
         } else {
             s4.l0 itemAnimator = x3Var.getItemAnimator();
             x3Var.setItemAnimator(null);
-            z61Var.o(indexOf2);
+            a71Var.o(indexOf2);
             if (aVar.d > 0 && (i10 = indexOf2 + 1) < arrayList.size()) {
-                z61Var.q(i10, (arrayList.size() - indexOf2) - 1);
+                a71Var.q(i10, (arrayList.size() - indexOf2) - 1);
             }
             x3Var.post(new z2(x3Var, itemAnimator, 0));
         }
@@ -301,53 +349,5 @@ public final class c6 implements g1 {
             h2Var5.h();
         }
         x3Var.post(new a3(x3Var, aVar2, 0));
-    }
-
-    @Override // ji.g1
-    public final void s0(Editable editable) {
-        a aVar;
-        i6 i6Var = this.a;
-        if (i6Var.x == null) {
-            return;
-        }
-        i6Var.E(editable);
-        i6Var.J();
-        i6.e(i6Var.x.b, editable);
-        i6Var.C();
-        i6Var.G();
-        int i10 = 0;
-        if (i6Var.o() && !i6Var.l()) {
-            ((TL_iv.pageBlockBlockquote) i6Var.x.b).collapsed = false;
-        }
-        i6Var.H();
-        f6 f6Var = i6Var.y;
-        if (f6Var != null) {
-            x3 x3Var = ((f3) f6Var).a;
-            h2 h2Var = x3Var.H3;
-            if (h2Var != null) {
-                h2Var.g();
-            }
-            x3Var.f3.onContentChanged();
-        }
-        f6 f6Var2 = i6Var.y;
-        if (f6Var2 != null) {
-            ((f3) f6Var2).a.f3.m0(i6Var, i6.b(editable.toString()));
-        }
-        String obj = editable.toString();
-        a aVar2 = i6Var.x;
-        if (aVar2 != null && obj != null && aVar2.c == 0 && (aVar2.b instanceof TL_iv.pageBlockParagraph) && obj.equals("> ")) {
-            i10 = 6;
-        }
-        if (i10 == 0 || i6Var.y == null) {
-            h6 s10 = i6.s(editable.toString(), i6Var.x);
-            if (s10 != null && i6Var.y != null) {
-                i6Var.post(new hg.t(this, i6Var.x, s10, 19));
-            }
-        } else {
-            i6Var.post(new ah.o(this, i6Var.x, i10, 16));
-        }
-        if (i6Var.T || ((aVar = i6Var.x) != null && (aVar.b instanceof TL_iv.pageBlockPullquote))) {
-            i6Var.invalidate();
-        }
     }
 }

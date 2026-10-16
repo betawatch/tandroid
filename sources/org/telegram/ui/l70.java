@@ -7,16 +7,16 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l70 implements org.telegram.ui.Components.bm0, id0 {
+public final /* synthetic */ class l70 implements org.telegram.ui.Components.bm0, gd0 {
     public final /* synthetic */ p70 a;
 
     public /* synthetic */ l70(p70 p70Var) {
         this.a = p70Var;
     }
 
-    @Override // org.telegram.ui.id0
+    @Override // org.telegram.ui.gd0
     public void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j10) {
         p70 p70Var = this.a;
         Location location = p70Var.U;
@@ -38,10 +38,10 @@ public final /* synthetic */ class l70 implements org.telegram.ui.Components.bm0
             if (!AndroidUtilities.isMapsInstalled(p70Var)) {
                 return;
             }
-            nd0 nd0Var = new nd0(4);
-            nd0Var.e0 = 0L;
-            nd0Var.F0 = new l70(p70Var);
-            p70Var.presentFragment(nd0Var);
+            ld0 ld0Var = new ld0(4);
+            ld0Var.e0 = 0L;
+            ld0Var.F0 = new l70(p70Var);
+            p70Var.presentFragment(ld0Var);
         }
         if (!(view instanceof org.telegram.ui.Cells.r8) || p70Var.P == 5) {
             return;

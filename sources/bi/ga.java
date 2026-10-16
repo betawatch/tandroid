@@ -29,7 +29,7 @@ import org.telegram.ui.Components.aa0;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.ix0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class ga extends View implements org.telegram.ui.Cells.x9 {
     public int E;
@@ -712,7 +712,7 @@ public final class ga extends View implements org.telegram.ui.Cells.x9 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:75:0x00f4, code lost:
     
-        r9 = (android.text.style.CharacterStyle[]) r5.getSpans(r11, r11, org.telegram.ui.Components.o61.class);
+        r9 = (android.text.style.CharacterStyle[]) r5.getSpans(r11, r11, org.telegram.ui.Components.p61.class);
      */
     /* JADX WARN: Code restructure failed: missing block: B:76:0x0198, code lost:
     

@@ -9,12 +9,12 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import com.google.android.gms.internal.play_billing.k3;
-import ji.d4;
+import ji.h5;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.g6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class y1 extends View {
     public qg.c1 E;
@@ -27,7 +27,7 @@ public final class y1 extends View {
     public final Paint a;
     public final Paint b;
     public final Path c;
-    public final d4 d;
+    public final h5 d;
     public final RectF e;
     public boolean f;
     public boolean h;
@@ -53,7 +53,7 @@ public final class y1 extends View {
         this.y = new g6(this);
         this.H = new qg.q1(1.0f, 0.016773745f, -1);
         this.J = true;
-        this.d = new d4(context, new w1(this));
+        this.d = new h5(context, new w1(this));
         paint2.setColor(-1);
         paint2.setShadowLayer(AndroidUtilities.dp(4.0f), 0.0f, AndroidUtilities.dp(2.0f), 1342177280);
         paint.setColor(1090519039);
@@ -142,7 +142,7 @@ public final class y1 extends View {
                         canvas.restore();
                         float f12 = (d - d10) / (d11 - d10);
                         float f13 = dp2 * 1.5f;
-                        a(esVar.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.s.a(k3.y(1.0f, f12, rectF.height(), rectF.top), rectF.top + f11, rectF.bottom - Math.min(f13, f11)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f13, f11), f11, f12), this.r), canvas, false);
+                        a(esVar.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.r.a(k3.y(1.0f, f12, rectF.height(), rectF.top), rectF.top + f11, rectF.bottom - Math.min(f13, f11)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f13, f11), f11, f12), this.r), canvas, false);
                         if (this.J && this.r != 0.0f && this.v && this.E != null) {
                             qg.c1 c1Var = this.E;
                             float f14 = c1Var.c.g.a;
@@ -193,7 +193,7 @@ public final class y1 extends View {
                 canvas.restore();
                 float f122 = (d - d10) / (d11 - d10);
                 float f132 = dp22 * 1.5f;
-                a(esVar2.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.s.a(k3.y(1.0f, f122, rectF3.height(), rectF3.top), rectF3.top + f112, rectF3.bottom - Math.min(f132, f112)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f132, f112), f112, f122), this.r), canvas, false);
+                a(esVar2.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.r.a(k3.y(1.0f, f122, rectF3.height(), rectF3.top), rectF3.top + f112, rectF3.bottom - Math.min(f132, f112)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f132, f112), f112, f122), this.r), canvas, false);
                 if (this.J) {
                     qg.c1 c1Var2 = this.E;
                     float f142 = c1Var2.c.g.a;
@@ -246,7 +246,7 @@ public final class y1 extends View {
         canvas.restore();
         float f1222 = (d - d10) / (d11 - d10);
         float f1322 = dp222 * 1.5f;
-        a(esVar22.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.s.a(k3.y(1.0f, f1222, rectF32.height(), rectF32.top), rectF32.top + f1122, rectF32.bottom - Math.min(f1322, f1122)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f1322, f1122), f1122, f1222), this.r), canvas, false);
+        a(esVar22.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.r.a(k3.y(1.0f, f1222, rectF32.height(), rectF32.top), rectF32.top + f1122, rectF32.bottom - Math.min(f1322, f1122)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f1322, f1122), f1122, f1222), this.r), canvas, false);
         if (this.J) {
         }
         if (this.n != 0.0f) {

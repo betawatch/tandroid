@@ -1,40 +1,58 @@
 package gb;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes.dex */
-public abstract class h {
-    public static final int a;
+import eb.v;
+import java.lang.reflect.Modifier;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import v7.r8;
 
-    static {
-        int i10;
-        String property = System.getProperty("java.version");
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes.dex */
+public final class h implements v, Cloneable {
+    public static final h c = new h();
+    public List a;
+    public final List b;
+
+    public h() {
+        List list = Collections.EMPTY_LIST;
+        this.a = list;
+        this.b = list;
+    }
+
+    /* renamed from: a, reason: merged with bridge method [inline-methods] */
+    public final h clone() {
         try {
-            String[] split = property.split("[._]", 3);
-            i10 = Integer.parseInt(split[0]);
-            if (i10 == 1 && split.length > 1) {
-                i10 = Integer.parseInt(split[1]);
-            }
-        } catch (NumberFormatException unused) {
-            i10 = -1;
+            return (h) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError(e);
         }
-        if (i10 == -1) {
-            try {
-                StringBuilder sb2 = new StringBuilder();
-                for (int i11 = 0; i11 < property.length(); i11++) {
-                    char charAt = property.charAt(i11);
-                    if (!Character.isDigit(charAt)) {
-                        break;
-                    }
-                    sb2.append(charAt);
-                }
-                i10 = Integer.parseInt(sb2.toString());
-            } catch (NumberFormatException unused2) {
-                i10 = -1;
+    }
+
+    public final boolean b(Class cls, boolean z10) {
+        if (!z10 && !Enum.class.isAssignableFrom(cls)) {
+            r8 r8Var = jb.c.a;
+            if (!Modifier.isStatic(cls.getModifiers()) && (cls.isAnonymousClass() || cls.isLocalClass())) {
+                return true;
             }
         }
-        if (i10 == -1) {
-            i10 = 6;
+        Iterator it = (z10 ? this.a : this.b).iterator();
+        while (it.hasNext()) {
+            if (((eb.a) it.next()).shouldSkipClass(cls)) {
+                return true;
+            }
         }
-        a = i10;
+        return false;
+    }
+
+    @Override // eb.v
+    public final eb.u create(eb.g gVar, lb.a aVar) {
+        Class cls = aVar.a;
+        boolean b10 = b(cls, true);
+        boolean b11 = b(cls, false);
+        if (b10 || b11) {
+            return new g(this, b11, b10, gVar, aVar);
+        }
+        return null;
     }
 }

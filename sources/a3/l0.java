@@ -59,7 +59,7 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ThreadPoolExecutor;
 import ji.v2;
-import m4.t1;
+import m4.s1;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.ImageLocation;
@@ -89,10 +89,10 @@ import org.telegram.ui.Components.AnimatedFileNative;
 import org.telegram.ui.Components.g5;
 import org.telegram.ui.Components.s5;
 import org.telegram.ui.Components.zc;
-import org.telegram.ui.web.b1;
-import w7.a6;
+import org.telegram.ui.web.c1;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -216,7 +216,7 @@ public final /* synthetic */ class l0 implements Runnable {
                 c9 c9Var2 = new c9(q5Var.getContext(), q5Var.x1);
                 q5Var.E0 = c9Var2;
                 c9Var2.setPadding(dp, dp, dp, dp);
-                q5Var.D0.addView(q5Var.E0, a6.e(40, 40, 3));
+                q5Var.D0.addView(q5Var.E0, z5.e(40, 40, 3));
                 s5 s5Var2 = q5Var.o3;
                 if (s5Var2 != null) {
                     s5Var2.o(q5Var);
@@ -722,13 +722,13 @@ public final /* synthetic */ class l0 implements Runnable {
             case 23:
                 j9.e0 e0Var2 = (j9.e0) this.b;
                 v2 v2Var = (v2) this.c;
-                t1 t1Var = (t1) this.d;
+                s1 s1Var = (s1) this.d;
                 try {
                     if (e0Var2.a instanceof j9.a) {
                         return;
                     }
                     v2Var.run();
-                    e0Var2.m(t1Var);
+                    e0Var2.m(s1Var);
                     return;
                 } catch (Throwable th4) {
                     e0Var2.n(th4);
@@ -771,7 +771,7 @@ public final /* synthetic */ class l0 implements Runnable {
                 }
                 b3 b3Var = k3Var.x;
                 b3Var.getClass();
-                b3Var.y("emoji_status_access_requested", b1.A("cancelled", "status"));
+                b3Var.y("emoji_status_access_requested", c1.A("cancelled", "status"));
                 return;
             case 27:
                 f4 f4Var = (f4) this.b;

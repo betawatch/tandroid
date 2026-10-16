@@ -19,7 +19,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class y4 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -37,7 +37,7 @@ public final class y4 extends FrameLayout {
         this.d = z9Var;
         z9Var.setAspectFit(true);
         z9Var.setRoundRadius(AndroidUtilities.dp(12.0f));
-        addView(z9Var, w7.a6.d(-1.0f, -1));
+        addView(z9Var, w7.z5.d(-1.0f, -1));
         RadialProgress2 radialProgress2 = new RadialProgress2(this, c6Var);
         this.e = radialProgress2;
         radialProgress2.E = 0.0f;
@@ -142,18 +142,18 @@ public final class y4 extends FrameLayout {
                     rectF.set(0.0f, 0.0f, getWidth(), getHeight());
                     canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
                     org.telegram.ui.ActionBar.g6.s(this, ce1Var.x0, cd1Var);
-                    Paint G = cd1Var.G("paintChatActionBackground");
-                    ColorFilter colorFilter = G.getColorFilter();
-                    G.setColorFilter((ColorMatrixColorFilter) this.f);
+                    Paint F = cd1Var.F("paintChatActionBackground");
+                    ColorFilter colorFilter = F.getColorFilter();
+                    F.setColorFilter((ColorMatrixColorFilter) this.f);
                     rd1 rd1Var = ce1Var.x0;
                     if (rd1Var != null && (rd1Var.getBackground() instanceof org.telegram.ui.Components.cd0) && ce1Var.l1 < 0.0f) {
                         f7 = 0.33f;
                     }
-                    int alpha = G.getAlpha();
-                    G.setAlpha((int) (alpha * f7));
-                    canvas.drawRect(rectF, G);
-                    G.setAlpha(alpha);
-                    G.setColorFilter(colorFilter);
+                    int alpha = F.getAlpha();
+                    F.setAlpha((int) (alpha * f7));
+                    canvas.drawRect(rectF, F);
+                    F.setAlpha(alpha);
+                    F.setColorFilter(colorFilter);
                     if (ce1Var.M1) {
                         float f10 = ce1Var.n1;
                         if (f10 > 0.0f) {

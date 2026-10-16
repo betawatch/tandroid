@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.BuildVars;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class b1 {
     public static final List u = Collections.EMPTY_LIST;
@@ -85,7 +85,7 @@ public abstract class b1 {
         if ((this.l & 16) != 0) {
             return false;
         }
-        WeakHashMap weakHashMap = r0.j0.a;
+        WeakHashMap weakHashMap = r0.i0.a;
         return !this.a.hasTransientState();
     }
 

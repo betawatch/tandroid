@@ -7,7 +7,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cy0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final /* synthetic */ class cy0 implements Utilities.Callback {
                     privacyControlActivity2.getMessagesStorage().updateUserInfo(userFull, false);
                 }
                 privacyControlActivity2.getMessagesController().invalidateContentSettings();
-                privacyControlActivity2.getConnectionsManager().sendRequest(updatebirthday, new us0(ey0Var, userFull, tL_birthday2, 1), 1024);
+                privacyControlActivity2.getConnectionsManager().sendRequest(updatebirthday, new ts0(ey0Var, userFull, tL_birthday2, 1), 1024);
                 i10 = ((org.telegram.ui.ActionBar.m2) privacyControlActivity2).currentAccount;
                 MessagesController.getInstance(i10).removeSuggestion(0L, "BIRTHDAY_SETUP");
                 i11 = ((org.telegram.ui.ActionBar.m2) privacyControlActivity2).currentAccount;

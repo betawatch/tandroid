@@ -90,7 +90,7 @@ import z9.z;
 import z9.z0;
 import z9.z1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class b {
     public static final w4 a;
@@ -211,7 +211,7 @@ public final class b {
             }
         }
         jsonReader.endObject();
-        return z5Var.m();
+        return z5Var.k();
     }
 
     public static d0 b(JsonReader jsonReader) {
@@ -416,7 +416,7 @@ public final class b {
                     obj = new f0(str4, bArr);
                     break;
                 case 2:
-                    qi.e eVar = new qi.e();
+                    pi.e eVar = new pi.e();
                     jsonReader.beginObject();
                     while (jsonReader.hasNext()) {
                         String nextName3 = jsonReader.nextName();

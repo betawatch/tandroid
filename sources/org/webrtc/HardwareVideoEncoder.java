@@ -20,7 +20,7 @@ import org.webrtc.ThreadUtils;
 import org.webrtc.VideoEncoder;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 class HardwareVideoEncoder implements VideoEncoder {
     private static final int DEQUEUE_OUTPUT_BUFFER_TIMEOUT_US = 100000;
@@ -66,7 +66,7 @@ class HardwareVideoEncoder implements VideoEncoder {
     private final VideoFrameDrawer videoFrameDrawer = new VideoFrameDrawer();
     private final BlockingDeque<EncodedImage.Builder> outputBuilders = new LinkedBlockingDeque();
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class BusyCount {
         private int count;
         private final Object countLock;
@@ -376,7 +376,7 @@ class HardwareVideoEncoder implements VideoEncoder {
 
     @Override // org.webrtc.VideoEncoder
     public final /* synthetic */ long createNativeVideoEncoder() {
-        return y.a(this);
+        return x.a(this);
     }
 
     public void deliverEncodedImage() {
@@ -422,12 +422,12 @@ class HardwareVideoEncoder implements VideoEncoder {
             if (z10) {
                 Logging.d(TAG, "Sync frame generated");
             }
-            j jVar = null;
+            i iVar = null;
             Integer valueOf = (this.isEncodingStatisticsEnabled && (outputFormat = this.codec.getOutputFormat(dequeueOutputBuffer)) != null && outputFormat.containsKey("video-qp-average")) ? Integer.valueOf(outputFormat.getInteger("video-qp-average")) : null;
             if (!z10 || this.configBuffer == null) {
                 slice = outputBuffer.slice();
                 this.outputBuffersBusyCount.increment();
-                jVar = new j(this, dequeueOutputBuffer, 0);
+                iVar = new i(this, dequeueOutputBuffer, 0);
             } else {
                 Logging.d(TAG, "Prepending config buffer of size " + this.configBuffer.capacity() + " to output buffer with offset " + bufferInfo.offset + ", size " + bufferInfo.size);
                 slice = ByteBuffer.allocateDirect(bufferInfo.size + this.configBuffer.capacity());
@@ -439,7 +439,7 @@ class HardwareVideoEncoder implements VideoEncoder {
             }
             EncodedImage.FrameType frameType = z10 ? EncodedImage.FrameType.VideoFrameKey : EncodedImage.FrameType.VideoFrameDelta;
             EncodedImage.Builder poll = this.outputBuilders.poll();
-            poll.setBuffer(slice, jVar);
+            poll.setBuffer(slice, iVar);
             poll.setFrameType(frameType);
             poll.setQp(valueOf);
             EncodedImage createEncodedImage = poll.createEncodedImage();
@@ -511,7 +511,7 @@ class HardwareVideoEncoder implements VideoEncoder {
 
     @Override // org.webrtc.VideoEncoder
     public final /* synthetic */ VideoEncoder.ResolutionBitrateLimits[] getResolutionBitrateLimits() {
-        return y.c(this);
+        return x.c(this);
     }
 
     @Override // org.webrtc.VideoEncoder
@@ -558,7 +558,7 @@ class HardwareVideoEncoder implements VideoEncoder {
 
     @Override // org.webrtc.VideoEncoder
     public final /* synthetic */ boolean isHardwareEncoder() {
-        return y.d(this);
+        return x.d(this);
     }
 
     public boolean isSemiPlanar(int i10) {
@@ -568,7 +568,7 @@ class HardwareVideoEncoder implements VideoEncoder {
         if (i10 == 21 || i10 == 2141391872 || i10 == 2141391876) {
             return true;
         }
-        throw new IllegalArgumentException(i2.d.i(i10, "Unsupported colorFormat: "));
+        throw new IllegalArgumentException(i2.d.j(i10, "Unsupported colorFormat: "));
     }
 
     @Override // org.webrtc.VideoEncoder

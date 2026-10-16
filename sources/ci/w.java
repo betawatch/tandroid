@@ -9,9 +9,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.g6;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class w extends LinearLayout {
     public final TextView a;
@@ -27,13 +27,13 @@ public final class w extends LinearLayout {
         textView.setTextSize(1, 16.0f);
         textView.setTextColor(g6.x0(null, g6.j5, false));
         textView.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(textView, a6.t(-1, -2, 51, 0, 7, 0, 0));
+        addView(textView, z5.t(-1, -2, 51, 0, 7, 0, 0));
         TextView textView2 = new TextView(context);
         this.b = textView2;
         textView2.setTextSize(1, 13.0f);
         textView2.setTextColor(g6.x0(null, g6.q5, false));
         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(textView2, a6.t(-1, -2, 51, 0, 4, 0, 0));
+        addView(textView2, z5.t(-1, -2, 51, 0, 4, 0, 0));
     }
 
     @Override // android.widget.LinearLayout, android.view.View

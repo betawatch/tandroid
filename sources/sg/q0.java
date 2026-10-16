@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import bi.w5;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.es;
@@ -24,9 +24,10 @@ import org.telegram.ui.Components.jr;
 import org.telegram.ui.Components.s6;
 import org.telegram.ui.fi1;
 import org.telegram.ui.i50;
-import w7.a6;
+import w7.b6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class q0 extends FrameLayout implements ga0 {
     public boolean E;
@@ -237,7 +238,7 @@ public class q0 extends FrameLayout implements ga0 {
         bk0Var.f(i10, 24, 24, null);
         org.telegram.ui.Components.voip.h hVar = this.w;
         hVar.g = 2.0f;
-        hVar.p = new rh.j(this, 3);
+        hVar.p = new ri.h0(this, 3);
         invalidate();
         bk0Var.setVisibility(0);
     }
@@ -277,7 +278,7 @@ public class q0 extends FrameLayout implements ga0 {
         hVar.n = 1.2f;
         hVar.k = false;
         hVar.m = 4.0f;
-        LinearLayout e = yh.e(context, 0);
+        LinearLayout e = sk.e(context, 0);
         o0 o0Var = new o0(this, context, 0);
         this.d = o0Var;
         o0Var.b(0.35f, 350L, es.h);
@@ -291,15 +292,15 @@ public class q0 extends FrameLayout implements ga0 {
         bk0Var.setVisibility(8);
         p0 p0Var = new p0(this, context, 0);
         this.r = p0Var;
-        p0Var.addView(e, a6.e(-2, -2, 17));
+        p0Var.addView(e, z5.e(-2, -2, 17));
         int k10 = i0.a.k(-1, 120);
         p0Var.setBackground(org.telegram.ui.ActionBar.g6.j0(i10, i10, i10, i10, 0, k10, k10));
-        e.addView(o0Var, a6.q(-2, -2, 16));
-        e.addView(bk0Var, a6.p(24, 24, 0.0f, 16, 4, 0, 0, 0));
+        e.addView(o0Var, z5.q(-2, -2, 16));
+        e.addView(bk0Var, z5.p(24, 24, 0.0f, 16, 4, 0, 0, 0));
         addView(p0Var);
         setOutlineProvider(zf.j0.b);
         setClipToOutline(true);
-        w7.c6.b(this, 0.02f, 1.2f);
+        b6.b(this, 0.02f, 1.2f);
         if (z10) {
             o0 o0Var2 = new o0(this, context, 1);
             this.e = o0Var2;

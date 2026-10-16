@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class r20 extends ViewGroup {
     public AnimatorSet a;
@@ -46,7 +46,7 @@ public final class r20 extends ViewGroup {
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
         ArrayList arrayList;
-        int B;
+        int A;
         int i12;
         int i13;
         int childCount = getChildCount();
@@ -76,12 +76,12 @@ public final class r20 extends ViewGroup {
                 } else {
                     i13 = i14;
                     if (childAt.getMeasuredWidth() + i16 > dp) {
-                        dp2 = org.telegram.messenger.yh.c(8.0f, childAt.getMeasuredHeight(), dp2);
+                        dp2 = org.telegram.messenger.g0.C(8.0f, childAt.getMeasuredHeight(), dp2);
                         i16 = i13;
                     }
                 }
                 if (childAt.getMeasuredWidth() + i17 > dp) {
-                    dp3 = org.telegram.messenger.yh.c(8.0f, childAt.getMeasuredHeight(), dp3);
+                    dp3 = org.telegram.messenger.g0.C(8.0f, childAt.getMeasuredHeight(), dp3);
                     i17 = i13;
                 }
                 int dp4 = AndroidUtilities.dp(13.0f) + i16;
@@ -110,9 +110,9 @@ public final class r20 extends ViewGroup {
                     }
                 }
                 if (!contains) {
-                    i16 = org.telegram.messenger.yh.c(9.0f, childAt.getMeasuredWidth(), i16);
+                    i16 = org.telegram.messenger.g0.C(9.0f, childAt.getMeasuredWidth(), i16);
                 }
-                i17 = org.telegram.messenger.yh.c(9.0f, childAt.getMeasuredWidth(), i17);
+                i17 = org.telegram.messenger.g0.C(9.0f, childAt.getMeasuredWidth(), i17);
             } else {
                 i13 = i14;
             }
@@ -121,15 +121,15 @@ public final class r20 extends ViewGroup {
         }
         int i18 = i14;
         if (AndroidUtilities.isTablet()) {
-            B = AndroidUtilities.dp(372.0f) / 3;
+            A = AndroidUtilities.dp(372.0f) / 3;
         } else {
             Point point = AndroidUtilities.displaySize;
-            B = org.telegram.messenger.yh.B(158.0f, Math.min(point.x, point.y), 3);
+            A = org.telegram.messenger.sk.A(158.0f, Math.min(point.x, point.y), 3);
         }
-        if (dp - i16 < B) {
+        if (dp - i16 < A) {
             dp2 += AndroidUtilities.dp(40.0f);
         }
-        if (dp - i17 < B) {
+        if (dp - i17 < A) {
             dp3 += AndroidUtilities.dp(40.0f);
         }
         boolean z10 = this.b;

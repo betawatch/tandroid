@@ -10,7 +10,7 @@ import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class y90 extends org.telegram.ui.ActionBar.h5 {
     public final aa0 M0;
@@ -58,7 +58,7 @@ public class y90 extends org.telegram.ui.ActionBar.h5 {
                 x90 b10 = this.O0.b();
                 b10.e(null, 0, 0.0f, 0.0f);
                 b10.addRect(0.0f, 0.0f, getPaddingRight() + getTextWidth() + getPaddingLeft(), getHeight(), Path.Direction.CW);
-                AndroidUtilities.runOnUIThread(new f60(6, this, ea0Var), ViewConfiguration.getLongPressTimeout());
+                AndroidUtilities.runOnUIThread(new g90(1, this, ea0Var), ViewConfiguration.getLongPressTimeout());
                 return true;
             }
             if (motionEvent.getAction() == 1) {

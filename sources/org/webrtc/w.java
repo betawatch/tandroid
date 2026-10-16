@@ -1,9 +1,24 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+import org.webrtc.VideoDecoder;
+import org.webrtc.VideoEncoder;
+
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public abstract /* synthetic */ class w {
-    public static VideoCodecInfo[] a(VideoDecoderFactory videoDecoderFactory) {
-        return new VideoCodecInfo[0];
+public final /* synthetic */ class w implements VideoDecoder.Callback, VideoEncoder.Callback {
+    public final /* synthetic */ long a;
+
+    public /* synthetic */ w(long j10) {
+        this.a = j10;
+    }
+
+    @Override // org.webrtc.VideoDecoder.Callback
+    public void onDecodedFrame(VideoFrame videoFrame, Integer num, Integer num2) {
+        VideoDecoderWrapper.nativeOnDecodedFrame(this.a, videoFrame, num, num2);
+    }
+
+    @Override // org.webrtc.VideoEncoder.Callback
+    public void onEncodedFrame(EncodedImage encodedImage, VideoEncoder.CodecSpecificInfo codecSpecificInfo) {
+        VideoEncoderWrapper.nativeOnEncodedFrame(this.a, encodedImage);
     }
 }

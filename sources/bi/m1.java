@@ -24,14 +24,14 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.fc;
-import org.telegram.ui.fd;
+import org.telegram.ui.ed;
 import org.telegram.ui.fo;
 import org.telegram.ui.hm;
+import org.telegram.ui.jd;
 import org.telegram.ui.of;
 import org.telegram.ui.qe;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -135,7 +135,7 @@ public final /* synthetic */ class m1 implements RequestDelegate {
                     while (true) {
                         boolean z10 = true;
                         if (i10 >= size) {
-                            AndroidUtilities.runOnUIThread(new di.x0(b6Var, arrayList4, z10, 12));
+                            AndroidUtilities.runOnUIThread(new di.x0(b6Var, arrayList4, z10, 10));
                             break;
                         } else {
                             TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) vector.objects.get(i10);
@@ -199,13 +199,13 @@ public final /* synthetic */ class m1 implements RequestDelegate {
                 }
                 break;
             case 21:
-                AndroidUtilities.runOnUIThread(new n2.h((org.telegram.ui.ActionBar.f6) this.b, tLObject, (org.telegram.ui.ActionBar.f6) this.c, 10));
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.f((org.telegram.ui.ActionBar.f6) this.b, tLObject, (org.telegram.ui.ActionBar.f6) this.c, 7));
                 break;
             case 22:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.p6((org.telegram.ui.l8) this.b, tL_error, tLObject, (Calendar) this.c, 2));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.p6((org.telegram.ui.l8) this.b, tL_error, tLObject, (Calendar) this.c, 1));
                 break;
             case 23:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.t1((fd) this.b, tLObject, (org.telegram.ui.ActionBar.f6) this.c, 10));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.t1((ed) this.b, tLObject, (org.telegram.ui.ActionBar.f6) this.c, 10));
                 break;
             case 24:
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.t1((qe) this.b, tLObject, (Context) this.c, 12));
@@ -223,19 +223,19 @@ public final /* synthetic */ class m1 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.t1((fo) this.b, tLObject, (TLRPC.User) this.c, 21));
                 break;
             case 27:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.p6((fo) this.b, tLObject, tL_error, (MessagesStorage) this.c, 8));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.p6((fo) this.b, tLObject, tL_error, (MessagesStorage) this.c, 7));
                 break;
             case 28:
                 fo foVar2 = (fo) this.b;
                 TLRPC.TL_messages_sendScheduledMessages tL_messages_sendScheduledMessages = (TLRPC.TL_messages_sendScheduledMessages) this.c;
                 if (tL_error != null) {
                     if (tL_error.text != null) {
-                        AndroidUtilities.runOnUIThread(new fc(18, foVar2, tL_error));
+                        AndroidUtilities.runOnUIThread(new jd(13, foVar2, tL_error));
                         break;
                     }
                 } else {
                     foVar2.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
-                    AndroidUtilities.runOnUIThread(new fc(17, foVar2, tL_messages_sendScheduledMessages));
+                    AndroidUtilities.runOnUIThread(new jd(12, foVar2, tL_messages_sendScheduledMessages));
                     break;
                 }
                 break;

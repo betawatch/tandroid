@@ -1,13 +1,22 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.tgnet.tl.TL_wallet;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
+import android.graphics.drawable.ShapeDrawable;
+import org.telegram.ui.Components.z40;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class u2 extends TL_wallet.walletTransaction {
-    public final TL_wallet.walletTransaction a;
+public final class u2 extends ShapeDrawable.ShaderFactory {
+    public final /* synthetic */ z40 a;
 
-    public u2(TL_wallet.walletTransaction wallettransaction) {
-        this.a = wallettransaction;
+    public u2(z40 z40Var) {
+        this.a = z40Var;
+    }
+
+    @Override // android.graphics.drawable.ShapeDrawable.ShaderFactory
+    public final Shader resize(int i10, int i11) {
+        z40 z40Var = this.a;
+        return new LinearGradient(0.0f, 0.0f, 0.0f, i11, z40Var.a, z40Var.b, Shader.TileMode.CLAMP);
     }
 }

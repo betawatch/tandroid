@@ -6,7 +6,7 @@ import android.text.style.ReplacementSpan;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ia0 extends ReplacementSpan {
     public final int a;
@@ -46,9 +46,9 @@ public final class ia0 extends ReplacementSpan {
             ha0Var.setBounds(i16, (int) (f11 - f12), i15 + i16, (int) (f12 + f11));
         } else {
             int i17 = (int) f7;
-            float y3 = com.google.android.gms.internal.play_billing.k3.y(1.0f, this.e, org.telegram.messenger.q.D(2.0f, i14, i12) / 2.0f, i12);
+            float y3 = com.google.android.gms.internal.play_billing.k3.y(1.0f, this.e, org.telegram.messenger.g0.B(2.0f, i14, i12) / 2.0f, i12);
             float f13 = this.d;
-            ha0Var.setBounds(i17, (int) (y3 + f13), i15 + i17, (int) (((i14 - AndroidUtilities.dp(2.0f)) - ((1.0f - this.e) * (org.telegram.messenger.q.D(2.0f, i14, i12) / 2.0f))) + f13));
+            ha0Var.setBounds(i17, (int) (y3 + f13), i15 + i17, (int) (((i14 - AndroidUtilities.dp(2.0f)) - ((1.0f - this.e) * (org.telegram.messenger.g0.B(2.0f, i14, i12) / 2.0f))) + f13));
         }
         ha0Var.setAlpha((int) ((paint == null ? 255 : paint.getAlpha()) * this.h));
         ha0Var.draw(canvas);

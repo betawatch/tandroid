@@ -22,7 +22,6 @@ import i2.e;
 import i2.q1;
 import i2.w0;
 import j2.k;
-import ji.d4;
 import ji.v2;
 import k2.j0;
 import k2.p;
@@ -38,7 +37,7 @@ import n2.g;
 import org.telegram.tgnet.TLObject;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class FfmpegAudioRenderer extends b implements w0 {
     public final qf.b I;
@@ -248,7 +247,7 @@ public final class FfmpegAudioRenderer extends b implements w0 {
                 return false;
             }
             qf.b bVar = this.c;
-            bVar.y();
+            bVar.x();
             int w9 = w(bVar, this.R, 0);
             if (w9 == -5) {
                 J(bVar);
@@ -273,7 +272,7 @@ public final class FfmpegAudioRenderer extends b implements w0 {
                 if (k() || this.R.isLastSample()) {
                     this.j0 = this.i0;
                 }
-                this.R.e();
+                this.R.d();
                 h hVar4 = this.R;
                 hVar4.a = this.M;
                 FfmpegAudioDecoder ffmpegAudioDecoder4 = this.Q;
@@ -301,7 +300,7 @@ public final class FfmpegAudioRenderer extends b implements w0 {
             return;
         }
         g gVar = this.U;
-        d.A(this.T, gVar);
+        d.D(this.T, gVar);
         this.T = gVar;
         if (gVar != null && gVar.h() == null && this.T.g() == null) {
             return;
@@ -337,7 +336,7 @@ public final class FfmpegAudioRenderer extends b implements w0 {
         x xVar = (x) bVar.c;
         xVar.getClass();
         g gVar = (g) bVar.b;
-        d.A(this.U, gVar);
+        d.D(this.U, gVar);
         this.U = gVar;
         x xVar2 = this.M;
         this.M = xVar;
@@ -391,7 +390,7 @@ public final class FfmpegAudioRenderer extends b implements w0 {
             }
             this.Q = null;
         }
-        d.A(this.T, null);
+        d.D(this.T, null);
         this.T = null;
     }
 
@@ -568,7 +567,7 @@ public final class FfmpegAudioRenderer extends b implements w0 {
         this.g0 = false;
         this.k0 = -9223372036854775807L;
         try {
-            d.A(this.U, null);
+            d.D(this.U, null);
             this.U = null;
             K();
             ((s0) this.J).w();
@@ -611,7 +610,7 @@ public final class FfmpegAudioRenderer extends b implements w0 {
         g0 g0Var = this.h;
         g0Var.getClass();
         ((j0) s0Var3.r).g = g0Var;
-        s0Var3.n = new d4(this, 2);
+        s0Var3.n = new a4.l(this, 29);
     }
 
     @Override // i2.b
@@ -688,7 +687,7 @@ public final class FfmpegAudioRenderer extends b implements w0 {
         }
         if (this.M == null) {
             qf.b bVar = this.c;
-            bVar.y();
+            bVar.x();
             this.K.clear();
             int w9 = w(bVar, this.K, 2);
             if (w9 != -5) {

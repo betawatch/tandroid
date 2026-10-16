@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class v9 extends ViewGroup {
     public final /* synthetic */ int a = 1;
@@ -179,8 +179,8 @@ public final class v9 extends ViewGroup {
                     int i18 = measuredHeight - dp;
                     z9Var.a.layout(AndroidUtilities.dp(36.0f), i18, z9Var.a.getMeasuredWidth() + AndroidUtilities.dp(36.0f), z9Var.a.getMeasuredHeight() + i18);
                     if (i16 == 3) {
-                        int c10 = org.telegram.messenger.yh.c(8.0f, z9Var.a.getMeasuredHeight(), i18);
-                        z9Var.b.layout(AndroidUtilities.dp(36.0f), c10, z9Var.b.getMeasuredWidth() + AndroidUtilities.dp(36.0f), z9Var.b.getMeasuredHeight() + c10);
+                        int C = org.telegram.messenger.g0.C(8.0f, z9Var.a.getMeasuredHeight(), i18);
+                        z9Var.b.layout(AndroidUtilities.dp(36.0f), C, z9Var.b.getMeasuredWidth() + AndroidUtilities.dp(36.0f), z9Var.b.getMeasuredHeight() + C);
                     }
                     z9Var.f.layout(0, getMeasuredHeight() - z9Var.f.getMeasuredHeight(), getMeasuredWidth(), getMeasuredHeight());
                     if (z9Var.W) {
@@ -188,7 +188,7 @@ public final class v9 extends ViewGroup {
                     } else {
                         measuredWidth = (i14 / 2) - (z9Var.s.getMeasuredWidth() / 2);
                     }
-                    int dp2 = AndroidUtilities.dp(80.0f) + i2.d.z(i15, min, 2, min);
+                    int dp2 = AndroidUtilities.dp(80.0f) + i2.d.C(i15, min, 2, min);
                     ImageView imageView = z9Var.s;
                     imageView.layout(measuredWidth, dp2, imageView.getMeasuredWidth() + measuredWidth, z9Var.s.getMeasuredHeight() + dp2);
                     if (z9Var.r != null) {
@@ -250,9 +250,9 @@ public final class v9 extends ViewGroup {
                     }
                     z9Var.s.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLObject.FLAG_30));
                 }
-                z9Var.a.measure(org.telegram.messenger.yh.z(72.0f, size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                z9Var.a.measure(org.telegram.messenger.sk.c(72.0f, size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                 if (i12 == 3) {
-                    z9Var.b.measure(org.telegram.messenger.yh.z(72.0f, size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                    z9Var.b.measure(org.telegram.messenger.sk.c(72.0f, size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                 } else {
                     z9Var.b.measure(View.MeasureSpec.makeMeasureSpec((int) (size * 0.9f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                 }

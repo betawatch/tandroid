@@ -24,7 +24,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ig implements wy {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -57,7 +57,7 @@ public final class ig implements wy {
         }
         pg pgVar = chatActivityEnterView.Z2;
         if (pgVar != null) {
-            pgVar.o1(view != null ? view : xgVar, xgVar.a.getText(), true);
+            pgVar.p1(view != null ? view : xgVar, xgVar.a.getText(), true);
         }
     }
 
@@ -99,10 +99,10 @@ public final class ig implements wy {
             inputStickerSet.access_hash = stickerSet.access_hash;
             inputStickerSet.id = stickerSet.id;
         }
-        ty0 ty0Var = new ty0(chatActivityEnterView.O2, m2Var2, inputStickerSet, null, chatActivityEnterView, chatActivityEnterView.W3);
-        m2Var2.showDialog(ty0Var);
+        uy0 uy0Var = new uy0(chatActivityEnterView.O2, m2Var2, inputStickerSet, null, chatActivityEnterView, chatActivityEnterView.W3);
+        m2Var2.showDialog(uy0Var);
         if (z10) {
-            ty0Var.q0();
+            uy0Var.q0();
         }
     }
 
@@ -157,9 +157,9 @@ public final class ig implements wy {
     public final void i(int i10) {
         int i11 = ChatActivityEnterView.n5;
         ChatActivityEnterView chatActivityEnterView = this.a;
-        chatActivityEnterView.k1(i10, true);
+        chatActivityEnterView.j1(i10, true);
         if (i10 != 0) {
-            chatActivityEnterView.l1(true, true, false, i10 == 1);
+            chatActivityEnterView.k1(true, true, false, i10 == 1);
         }
         if (chatActivityEnterView.y3 && chatActivityEnterView.R1 == 2) {
             chatActivityEnterView.J();
@@ -230,18 +230,18 @@ public final class ig implements wy {
                 if (view == null) {
                     view = xgVar;
                 }
-                pgVar.o1(view, xgVar.a.getText(), true);
+                pgVar.p1(view, xgVar.a.getText(), true);
                 return;
             }
             return;
         }
         if (chatActivityEnterView.z3) {
             if (chatActivityEnterView.R1 != 0) {
-                chatActivityEnterView.k1(0, true);
+                chatActivityEnterView.j1(0, true);
                 chatActivityEnterView.U0.t(MessageObject.getStickerSetId(document), true);
-                chatActivityEnterView.U0.B();
+                chatActivityEnterView.U0.C();
             }
-            chatActivityEnterView.l1(false, true, false, true);
+            chatActivityEnterView.k1(false, true, false, true);
         }
         chatActivityEnterView.a(document, str, obj, sendAnimationData, false, z10, i10, 0);
         if (DialogObject.isEncryptedDialog(chatActivityEnterView.Q2) && MessageObject.isGifDocument(document)) {
@@ -266,7 +266,7 @@ public final class ig implements wy {
     }
 
     @Override // org.telegram.ui.Components.wy
-    public final void o(h61 h61Var) {
+    public final void o(i61 i61Var) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         org.telegram.ui.ActionBar.m2 m2Var = chatActivityEnterView.P2;
         if (m2Var == null) {
@@ -274,10 +274,10 @@ public final class ig implements wy {
         }
         org.telegram.ui.ActionBar.m2 m2Var2 = m2Var;
         if (m2Var2 != null) {
-            chatActivityEnterView.a3 = new hg(this, chatActivityEnterView.getContext(), m2Var2, h61Var, chatActivityEnterView.W3);
+            chatActivityEnterView.a3 = new hg(this, chatActivityEnterView.getContext(), m2Var2, i61Var, chatActivityEnterView.W3);
             pg pgVar = chatActivityEnterView.Z2;
             if (pgVar != null) {
-                pgVar.C(true);
+                pgVar.D(true);
             }
             m2Var2.showDialog(chatActivityEnterView.a3);
         }
@@ -307,7 +307,7 @@ public final class ig implements wy {
     public final void s(int i10) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         chatActivityEnterView.Z2.X();
-        chatActivityEnterView.Z2.Z1(i10 == 3);
+        chatActivityEnterView.Z2.c2(i10 == 3);
         chatActivityEnterView.post(chatActivityEnterView.s3);
     }
 

@@ -15,9 +15,9 @@ import org.telegram.ui.Components.g6;
 import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.iw0;
 import org.telegram.ui.Components.yj0;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class q2 extends j {
     public final TLRPC.Document q0;
@@ -56,7 +56,7 @@ public class q2 extends j {
         }
         ah.x xVar = new ah.x(this, context);
         this.w0 = xVar;
-        addView(xVar, a6.d(-1.0f, -1));
+        addView(xVar, z5.d(-1.0f, -1));
         this.u0 = new g6(xVar, 0L, 500L, es.h);
         this.x0.setAspectFit(true);
         this.x0.setInvalidateAll(true);

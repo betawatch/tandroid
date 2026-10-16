@@ -9,7 +9,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.vi;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w7 implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -26,12 +26,12 @@ public final /* synthetic */ class w7 implements Utilities.CallbackReturn {
             case 0:
                 MessageObject messageObject = (MessageObject) obj;
                 ((c8) this.b).r0 = messageObject;
-                return Boolean.valueOf(MediaController.getInstance().setPlaylist(org.telegram.messenger.q.l(messageObject), messageObject, 0L));
+                return Boolean.valueOf(MediaController.getInstance().setPlaylist(org.telegram.messenger.g0.k(messageObject), messageObject, 0L));
             case 1:
                 ei.d dVar = (ei.d) this.b;
                 return dVar.n[((Integer) obj).intValue() % dVar.n.length];
             case 2:
-                return new org.telegram.ui.Wallet.t8(10, (org.telegram.ui.m0) this.b, (Integer) obj);
+                return new org.telegram.ui.web.v(5, (org.telegram.ui.m0) this.b, (Integer) obj);
             case 3:
                 rg.o0 o0Var = (rg.o0) this.b;
                 if (((Integer) obj).intValue() == 2) {

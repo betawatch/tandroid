@@ -6,10 +6,10 @@ import android.content.Intent;
 import android.os.RemoteException;
 import android.util.Log;
 import j$.util.Objects;
-import ji.d4;
-import w7.p6;
+import ji.h5;
+import w7.o6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class g3 {
     public final Context a;
@@ -53,7 +53,7 @@ public abstract class g3 {
     public abstract void f(p4.n nVar);
 
     public void g(b2.u uVar) {
-        p4.y.b();
+        p4.x.b();
         if (((b2.u) this.n) != uVar) {
             this.n = uVar;
             if (this.c) {
@@ -65,7 +65,7 @@ public abstract class g3 {
     }
 
     public void h(p4.n nVar) {
-        p4.y.b();
+        p4.x.b();
         if (Objects.equals((p4.n) this.h, nVar)) {
             return;
         }
@@ -115,7 +115,7 @@ public abstract class g3 {
                 try {
                     eVar = y6.e.c(this.a, y6.e.b, str);
                 } catch (y6.b e) {
-                    p6.a(e, "Error loading optional module %s", str);
+                    o6.a(e, "Error loading optional module %s", str);
                     if (!this.b) {
                         String str2 = (String) this.n;
                         if (Log.isLoggable("Vision", 3)) {
@@ -150,15 +150,15 @@ public abstract class g3 {
         }
     }
 
-    public g3(Context context, d4 d4Var) {
+    public g3(Context context, h5 h5Var) {
         this.e = new ab.o0(this, 11);
         if (context != null) {
             this.a = context;
-            if (d4Var == null) {
-                this.d = new d4(new ComponentName(context, getClass()), 17);
+            if (h5Var == null) {
+                this.d = new h5(new ComponentName(context, getClass()), 18);
                 return;
             } else {
-                this.d = d4Var;
+                this.d = h5Var;
                 return;
             }
         }

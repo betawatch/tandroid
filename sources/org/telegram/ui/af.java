@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class af implements Runnable {
     public final /* synthetic */ int a;
@@ -51,26 +51,26 @@ public final /* synthetic */ class af implements Runnable {
                 this.b.ia(this.c, false);
                 break;
             case 6:
-                pf.d.s(this.b.getParentActivity(), "tel:" + this.c);
+                pf.d.r(this.b.getParentActivity(), "tel:" + this.c);
                 break;
             case 7:
                 AndroidUtilities.addToClipboard(this.c);
-                org.telegram.messenger.yh.o(R.string.PhoneCopied, org.telegram.ui.Components.zc.a0(this.b));
+                org.telegram.messenger.sk.p(R.string.PhoneCopied, org.telegram.ui.Components.zc.a0(this.b));
                 break;
             case 8:
                 fo.d1(this.b, this.c);
                 break;
             case 9:
-                pf.d.s(this.b.getParentActivity(), "tel:" + this.c);
+                pf.d.r(this.b.getParentActivity(), "tel:" + this.c);
                 break;
             case 10:
                 AndroidUtilities.addToClipboard(this.c);
-                org.telegram.messenger.yh.o(R.string.PhoneCopied, org.telegram.ui.Components.zc.a0(this.b));
+                org.telegram.messenger.sk.p(R.string.PhoneCopied, org.telegram.ui.Components.zc.a0(this.b));
                 break;
             case 11:
                 fo foVar2 = this.b;
                 foVar2.getClass();
-                foVar2.presentFragment(new org.telegram.ui.Wallet.i8(this.c));
+                foVar2.presentFragment(new org.telegram.ui.Wallet.j8(this.c));
                 break;
             case 12:
                 fo foVar3 = this.b;
@@ -83,10 +83,10 @@ public final /* synthetic */ class af implements Runnable {
                 Activity parentActivity = foVar3.getParentActivity();
                 StringBuilder u10 = a1.g.u(str2);
                 u10.append(Uri.encode(this.c));
-                pf.d.u(parentActivity, u10.toString());
+                pf.d.t(parentActivity, u10.toString());
                 break;
             default:
-                pf.d.s(this.b.getParentActivity(), "https://fragment.com/username/" + this.c);
+                pf.d.r(this.b.getParentActivity(), "https://fragment.com/username/" + this.c);
                 break;
         }
     }

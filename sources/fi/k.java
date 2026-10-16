@@ -8,12 +8,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class k extends FrameLayout {
     public final ImageView a;
@@ -27,19 +27,19 @@ public final class k extends FrameLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         int i10 = g6.G6;
         imageView.setColorFilter(new PorterDuffColorFilter(g6.w0(i10, c6Var), PorterDuff.Mode.SRC_IN));
-        addView(imageView, a6.a(24.0f, 20.0f, 11.46f, 0.0f, 0.0f, 24, 51));
+        addView(imageView, z5.a(24.0f, 20.0f, 11.46f, 0.0f, 0.0f, 24, 51));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        addView(linearLayout, a6.a(-2.0f, 64.0f, z10 ? 2.0f : 9.8f, 24.0f, z10 ? 4.0f : 9.8f, -1, 23));
+        addView(linearLayout, z5.a(-2.0f, 64.0f, z10 ? 2.0f : 9.8f, 24.0f, z10 ? 4.0f : 9.8f, -1, 23));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextColor(g6.w0(i10, c6Var));
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 14.0f);
-        TextView i11 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, a6.t(-1, -2, 55, 0, 0, 0, 1), context);
+        TextView i11 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, z5.t(-1, -2, 55, 0, 0, 0, 1), context);
         this.c = i11;
-        yh.n(g6.z6, c6Var, i11, 1, 14.0f);
-        linearLayout.addView(i11, a6.t(-1, -2, 55, 0, 0, 0, 0));
+        sk.o(g6.z6, c6Var, i11, 1, 14.0f);
+        linearLayout.addView(i11, z5.t(-1, -2, 55, 0, 0, 0, 0));
     }
 
     public final void a(CharSequence charSequence, CharSequence charSequence2, int i10) {

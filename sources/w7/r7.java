@@ -4,55 +4,55 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class r7 {
     public static String a(String str, Object... objArr) {
         int length;
         int length2;
         int indexOf;
-        String j10;
-        int i10 = 0;
+        String i10;
         int i11 = 0;
+        int i12 = 0;
         while (true) {
             length = objArr.length;
-            if (i11 >= length) {
+            if (i12 >= length) {
                 break;
             }
-            Object obj = objArr[i11];
+            Object obj = objArr[i12];
             if (obj == null) {
-                j10 = BuildConfig.BETA_URL;
+                i10 = BuildConfig.BETA_URL;
             } else {
                 try {
-                    j10 = obj.toString();
+                    i10 = obj.toString();
                 } catch (Exception e) {
                     String D = a1.g.D(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
                     Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(D), (Throwable) e);
-                    j10 = org.telegram.ui.Cells.d0.j("<", D, " threw ", e.getClass().getName(), ">");
+                    i10 = org.telegram.ui.Cells.c1.i("<", D, " threw ", e.getClass().getName(), ">");
                 }
             }
-            objArr[i11] = j10;
-            i11++;
+            objArr[i12] = i10;
+            i12++;
         }
         StringBuilder sb2 = new StringBuilder(str.length() + (length * 16));
-        int i12 = 0;
+        int i13 = 0;
         while (true) {
             length2 = objArr.length;
-            if (i10 >= length2 || (indexOf = str.indexOf("%s", i12)) == -1) {
+            if (i11 >= length2 || (indexOf = str.indexOf("%s", i13)) == -1) {
                 break;
             }
-            sb2.append((CharSequence) str, i12, indexOf);
-            sb2.append(objArr[i10]);
-            i10++;
-            i12 = indexOf + 2;
+            sb2.append((CharSequence) str, i13, indexOf);
+            sb2.append(objArr[i11]);
+            i11++;
+            i13 = indexOf + 2;
         }
-        sb2.append((CharSequence) str, i12, str.length());
-        if (i10 < length2) {
+        sb2.append((CharSequence) str, i13, str.length());
+        if (i11 < length2) {
             sb2.append(" [");
-            sb2.append(objArr[i10]);
-            for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
+            sb2.append(objArr[i11]);
+            for (int i14 = i11 + 1; i14 < objArr.length; i14++) {
                 sb2.append(", ");
-                sb2.append(objArr[i13]);
+                sb2.append(objArr[i14]);
             }
             sb2.append(']');
         }

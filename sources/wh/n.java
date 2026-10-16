@@ -34,8 +34,8 @@ import org.telegram.ui.Components.ha0;
 import org.telegram.ui.Components.x5;
 import org.telegram.ui.Components.x90;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
 public class n extends TextView implements x9 {
     public static Field R;
     public static Class S;
@@ -166,7 +166,7 @@ public class n extends TextView implements x9 {
                 x90 b10 = this.H.b();
                 b10.d(layout, spanStart, this.J ? 0.0f : getPaddingTop());
                 layout.getSelectionPath(spanStart, spanEnd, b10);
-                AndroidUtilities.runOnUIThread(new org.webrtc.i(this, ea0Var, a2, 13), ViewConfiguration.getLongPressTimeout());
+                AndroidUtilities.runOnUIThread(new pi.g(this, ea0Var, a2, 13), ViewConfiguration.getLongPressTimeout());
                 return true;
             }
             if (motionEvent.getAction() == 1) {

@@ -1,16 +1,19 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class vp0 extends org.telegram.ui.Cells.ga {
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        if (canvas.isHardwareAccelerated()) {
-            super.draw(canvas);
-        } else {
-            zf.j0.a(canvas, this, new v3(this, 15));
-        }
+public final class vp0 extends i71 {
+    public final /* synthetic */ yp0 e;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vp0(yp0 yp0Var, up0 up0Var) {
+        super(up0Var);
+        this.e = yp0Var;
+    }
+
+    @Override // org.telegram.ui.i71, android.widget.PopupWindow
+    public final void dismiss() {
+        super.dismiss();
+        this.e.o0 = null;
     }
 }

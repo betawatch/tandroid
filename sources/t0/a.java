@@ -1,5 +1,7 @@
 package t0;
 
+import a4.l;
+import a6.m;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
@@ -17,7 +19,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.crashlytics.CrashlyticsRegistrar;
-import com.google.firebase.messaging.m;
 import d9.k;
 import e9.l0;
 import e9.n0;
@@ -30,7 +31,9 @@ import java.util.Locale;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.atomic.AtomicReference;
-import m.q3;
+import ji.w4;
+import m.t3;
+import m2.t;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.z1;
@@ -40,7 +43,7 @@ import t7.u;
 import u2.a1;
 import u2.e0;
 import u2.r1;
-import x9.l;
+import w3.q;
 import x9.n;
 import x9.o;
 import x9.r;
@@ -50,7 +53,7 @@ import x9.w;
 import x9.x;
 import yh.f4;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements qa.a, r9.d, k, e2.j, z1, qd0, q3.g, Continuation, GenericProvider {
     public final /* synthetic */ int a;
@@ -155,12 +158,12 @@ public final /* synthetic */ class a implements qa.a, r9.d, k, e2.j, z1, qd0, q3
             str = null;
             a10.a.e(null);
         }
-        u9.d dVar3 = new u9.d(s12);
+        w4 w4Var = new w4(s12, 29);
         t9.a aVar3 = new t9.a(fVar);
         v vVar3 = vVar2;
         t9.a aVar4 = new t9.a(fVar);
         String str3 = str;
-        x9.p pVar = new x9.p(hVar, vVar3, aVar2, sVar, aVar3, aVar4, cVar, a2, jVar, dVar3);
+        x9.p pVar = new x9.p(hVar, vVar3, aVar2, sVar, aVar3, aVar4, cVar, a2, jVar, w4Var);
         hVar.a();
         String str4 = hVar.c.b;
         int e = x9.h.e(context, "com.google.firebase.crashlytics.mapping_file_id", "string");
@@ -232,7 +235,7 @@ public final /* synthetic */ class a implements qa.a, r9.d, k, e2.j, z1, qd0, q3
         int i17 = 3;
         v vVar4 = vVar;
         try {
-            x9.a a11 = x9.a.a(context, vVar4, str4, string, arrayList, new m4.c(context, 25));
+            x9.a a11 = x9.a.a(context, vVar4, str4, string, arrayList, new t(context));
             String str8 = "Installer package name is: " + a11.d;
             if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                 Log.v("FirebaseCrashlytics", str8, null);
@@ -243,8 +246,8 @@ public final /* synthetic */ class a implements qa.a, r9.d, k, e2.j, z1, qd0, q3
             String str10 = a11.g;
             String c11 = vVar4.c();
             u uVar = new u(26);
-            k6.h hVar2 = new k6.h(uVar, 21);
-            qb.c cVar4 = new qb.c(cVar);
+            l lVar = new l(uVar, 20);
+            m mVar = new m(cVar);
             Locale locale = Locale.US;
             String p5 = a1.g.p("https://firebase-settings.crashlytics.com/spi/v2/platforms/android/gmp/", str4, "/settings");
             c5.j jVar2 = new c5.j();
@@ -284,19 +287,19 @@ public final /* synthetic */ class a implements qa.a, r9.d, k, e2.j, z1, qd0, q3
                 arrayList2 = arrayList2;
             }
             String sb4 = sb3.toString();
-            ea.d dVar4 = new ea.d(str4, D, replaceAll, replaceAll2, vVar4, sb4.length() > 0 ? x9.h.i(sb4) : null, str10, str9, t8.b.b(c11 != null ? 4 : i10));
+            ea.d dVar3 = new ea.d(str4, D, replaceAll, replaceAll2, vVar4, sb4.length() > 0 ? x9.h.i(sb4) : null, str10, str9, t8.b.b(c11 != null ? 4 : i10));
             ea.b bVar2 = new ea.b();
             AtomicReference atomicReference = new AtomicReference();
             bVar2.h = atomicReference;
             bVar2.i = new AtomicReference(new TaskCompletionSource());
             bVar2.a = context;
-            bVar2.b = dVar4;
+            bVar2.b = dVar3;
             bVar2.d = uVar;
-            bVar2.c = hVar2;
-            bVar2.e = cVar4;
+            bVar2.c = lVar;
+            bVar2.e = mVar;
             bVar2.f = jVar2;
             bVar2.g = sVar;
-            atomicReference.set(u.F0(uVar));
+            atomicReference.set(u.E0(uVar));
             AtomicReference atomicReference2 = (AtomicReference) bVar2.i;
             AtomicReference atomicReference3 = (AtomicReference) bVar2.h;
             if (!((Context) bVar2.a).getSharedPreferences("com.google.firebase.crashlytics", 0).getString("existing_instance_identifier", "").equals(((ea.d) bVar2.b).f) || (c10 = bVar2.c(i10)) == null) {
@@ -323,7 +326,7 @@ public final /* synthetic */ class a implements qa.a, r9.d, k, e2.j, z1, qd0, q3
             }
             onSuccessTask.continueWith(a12, new pb.a(23));
             com.google.firebase.messaging.s sVar3 = pVar.l;
-            ca.c cVar5 = pVar.h;
+            ca.c cVar4 = pVar.h;
             Context context2 = pVar.a;
             if (context2 != null && (resources = context2.getResources()) != null) {
                 int e13 = x9.h.e(context2, "com.crashlytics.RequireBuildId", "bool");
@@ -369,24 +372,24 @@ public final /* synthetic */ class a implements qa.a, r9.d, k, e2.j, z1, qd0, q3
                 }
                 new x9.f(pVar.g);
                 String str15 = x9.f.b;
-                pVar.e = new l("crash_marker", cVar5);
-                pVar.d = new l("initialization_marker", cVar5);
-                q3 q3Var = new q3(str15, cVar5, sVar3);
-                y9.e eVar2 = new y9.e(cVar5);
+                pVar.e = new x9.l("crash_marker", cVar4);
+                pVar.d = new x9.l("initialization_marker", cVar4);
+                t3 t3Var = new t3(str15, cVar4, sVar3);
+                y9.e eVar2 = new y9.e(cVar4);
                 fa.a[] aVarArr = new fa.a[1];
                 boolean z12 = false;
                 aVarArr[0] = new sb.a(8);
                 qf.b bVar3 = new qf.b(aVarArr);
-                ((p) pVar.o.a).a(new a(7));
+                ((p) pVar.o.b).a(new a(7));
                 x9.a aVar5 = aVar;
-                m k10 = m.k(pVar.a, pVar.g, pVar.h, aVar5, eVar2, q3Var, bVar3, bVar2, pVar.c, pVar.m);
+                com.google.firebase.messaging.m k10 = com.google.firebase.messaging.m.k(pVar.a, pVar.g, pVar.h, aVar5, eVar2, t3Var, bVar3, bVar2, pVar.c, pVar.m);
                 bVar = bVar2;
-                pVar.f = new n(pVar.a, pVar.l, pVar.g, pVar.b, pVar.h, pVar.e, aVar5, q3Var, eVar2, k10, pVar.n, pVar.j, pVar.m);
-                l lVar = pVar.d;
-                ca.c cVar6 = (ca.c) lVar.b;
-                String str16 = (String) lVar.a;
-                cVar6.getClass();
-                exists = new File(cVar6.b, str16).exists();
+                pVar.f = new n(pVar.a, pVar.l, pVar.g, pVar.b, pVar.h, pVar.e, aVar5, t3Var, eVar2, k10, pVar.n, pVar.j, pVar.m);
+                x9.l lVar2 = pVar.d;
+                ca.c cVar5 = (ca.c) lVar2.b;
+                String str16 = (String) lVar2.a;
+                cVar5.getClass();
+                exists = new File(cVar5.b, str16).exists();
                 z11 = true;
                 z11 = true;
                 Boolean.TRUE.equals((Boolean) x.a(sVar3.v(new o(pVar, z11 ? 1 : 0))));
@@ -418,24 +421,24 @@ public final /* synthetic */ class a implements qa.a, r9.d, k, e2.j, z1, qd0, q3
             }
             new x9.f(pVar.g);
             String str152 = x9.f.b;
-            pVar.e = new l("crash_marker", cVar5);
-            pVar.d = new l("initialization_marker", cVar5);
-            q3 q3Var2 = new q3(str152, cVar5, sVar3);
-            y9.e eVar22 = new y9.e(cVar5);
+            pVar.e = new x9.l("crash_marker", cVar4);
+            pVar.d = new x9.l("initialization_marker", cVar4);
+            t3 t3Var2 = new t3(str152, cVar4, sVar3);
+            y9.e eVar22 = new y9.e(cVar4);
             fa.a[] aVarArr2 = new fa.a[1];
             boolean z122 = false;
             aVarArr2[0] = new sb.a(8);
             qf.b bVar32 = new qf.b(aVarArr2);
-            ((p) pVar.o.a).a(new a(7));
+            ((p) pVar.o.b).a(new a(7));
             x9.a aVar52 = aVar;
-            m k102 = m.k(pVar.a, pVar.g, pVar.h, aVar52, eVar22, q3Var2, bVar32, bVar2, pVar.c, pVar.m);
+            com.google.firebase.messaging.m k102 = com.google.firebase.messaging.m.k(pVar.a, pVar.g, pVar.h, aVar52, eVar22, t3Var2, bVar32, bVar2, pVar.c, pVar.m);
             bVar = bVar2;
-            pVar.f = new n(pVar.a, pVar.l, pVar.g, pVar.b, pVar.h, pVar.e, aVar52, q3Var2, eVar22, k102, pVar.n, pVar.j, pVar.m);
-            l lVar2 = pVar.d;
-            ca.c cVar62 = (ca.c) lVar2.b;
-            String str162 = (String) lVar2.a;
-            cVar62.getClass();
-            exists = new File(cVar62.b, str162).exists();
+            pVar.f = new n(pVar.a, pVar.l, pVar.g, pVar.b, pVar.h, pVar.e, aVar52, t3Var2, eVar22, k102, pVar.n, pVar.j, pVar.m);
+            x9.l lVar22 = pVar.d;
+            ca.c cVar52 = (ca.c) lVar22.b;
+            String str162 = (String) lVar22.a;
+            cVar52.getClass();
+            exists = new File(cVar52.b, str162).exists();
             z11 = true;
             z11 = true;
             Boolean.TRUE.equals((Boolean) x.a(sVar3.v(new o(pVar, z11 ? 1 : 0))));
@@ -475,7 +478,7 @@ public final /* synthetic */ class a implements qa.a, r9.d, k, e2.j, z1, qd0, q3
             case 3:
                 return ((c3.o) obj).b().getClass().getSimpleName();
             case 4:
-                return n0.u(e9.s.x(((e0) obj).r().b, new a(6)));
+                return n0.u(e9.s.x(((e0) obj).o().b, new a(6)));
             case 6:
                 return Integer.valueOf(((q1) obj).c);
             case 19:
@@ -483,7 +486,7 @@ public final /* synthetic */ class a implements qa.a, r9.d, k, e2.j, z1, qd0, q3
             case 20:
                 return Long.valueOf(((z3.b) obj).c);
             case 21:
-                return (w3.r) obj;
+                return (q) obj;
             default:
                 r1 r1Var = (r1) obj;
                 r1Var.getClass();
@@ -521,21 +524,6 @@ public final /* synthetic */ class a implements qa.a, r9.d, k, e2.j, z1, qd0, q3
         }
     }
 
-    @Override // qa.a
-    public void f(qa.b bVar) {
-        switch (this.a) {
-            case 1:
-                if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                    Log.d("FirebaseCrashlytics", "AnalyticsConnector now available.", null);
-                }
-                bVar.get().getClass();
-                throw new ClassCastException();
-            default:
-                bVar.get().getClass();
-                throw new ClassCastException();
-        }
-    }
-
     @Override // org.telegram.ui.ActionBar.z1
     public void g(a2 a2Var, int i10) {
         switch (this.a) {
@@ -556,13 +544,28 @@ public final /* synthetic */ class a implements qa.a, r9.d, k, e2.j, z1, qd0, q3
         }
     }
 
+    @Override // qa.a
+    public void h(qa.b bVar) {
+        switch (this.a) {
+            case 1:
+                if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                    Log.d("FirebaseCrashlytics", "AnalyticsConnector now available.", null);
+                }
+                bVar.get().getClass();
+                throw new ClassCastException();
+            default:
+                bVar.get().getClass();
+                throw new ClassCastException();
+        }
+    }
+
     @Override // r9.d
-    public Object j2(z5 z5Var) {
+    public Object n2(z5 z5Var) {
         switch (this.a) {
             case 2:
                 return a(z5Var);
             default:
-                Set v = z5Var.v(ya.a.class);
+                Set w9 = z5Var.w(ya.a.class);
                 ya.c cVar = ya.c.c;
                 if (cVar == null) {
                     synchronized (ya.c.class) {
@@ -576,7 +579,7 @@ public final /* synthetic */ class a implements qa.a, r9.d, k, e2.j, z1, qd0, q3
                         }
                     }
                 }
-                return new ya.b(v, cVar);
+                return new ya.b(w9, cVar);
         }
     }
 

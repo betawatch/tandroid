@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t implements tv0, org.telegram.ui.Components.cm0, org.telegram.ui.ActionBar.k1 {
+public final /* synthetic */ class t implements sv0, org.telegram.ui.Components.cm0, org.telegram.ui.ActionBar.k1 {
     public final /* synthetic */ k4 a;
 
     public /* synthetic */ t(k4 k4Var) {
@@ -24,7 +24,7 @@ public final /* synthetic */ class t implements tv0, org.telegram.ui.Components.
         return true;
     }
 
-    @Override // org.telegram.ui.tv0
+    @Override // org.telegram.ui.sv0
     public void b(float[] fArr) {
         k4 k4Var = this.a;
         fArr[0] = k4Var.I0;

@@ -9,24 +9,24 @@ import android.text.method.PasswordTransformationMethod;
 import android.view.ActionMode;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class w7 {
-    public static p0.c a(m.z0 z0Var) {
+    public static p0.c a(m.b1 b1Var) {
         int i10 = Build.VERSION.SDK_INT;
         if (i10 >= 28) {
-            return new p0.c(b5.d.p(z0Var));
+            return new p0.c(b5.d.p(b1Var));
         }
-        TextPaint textPaint = new TextPaint(z0Var.getPaint());
+        TextPaint textPaint = new TextPaint(b1Var.getPaint());
         TextDirectionHeuristic textDirectionHeuristic = TextDirectionHeuristics.FIRSTSTRONG_LTR;
-        int breakStrategy = z0Var.getBreakStrategy();
-        int hyphenationFrequency = z0Var.getHyphenationFrequency();
-        if (z0Var.getTransformationMethod() instanceof PasswordTransformationMethod) {
+        int breakStrategy = b1Var.getBreakStrategy();
+        int hyphenationFrequency = b1Var.getHyphenationFrequency();
+        if (b1Var.getTransformationMethod() instanceof PasswordTransformationMethod) {
             textDirectionHeuristic = TextDirectionHeuristics.LTR;
         } else {
-            if (i10 < 28 || (z0Var.getInputType() & 15) != 3) {
-                boolean z10 = z0Var.getLayoutDirection() == 1;
-                switch (z0Var.getTextDirection()) {
+            if (i10 < 28 || (b1Var.getInputType() & 15) != 3) {
+                boolean z10 = b1Var.getLayoutDirection() == 1;
+                switch (b1Var.getTextDirection()) {
                     case 2:
                         textDirectionHeuristic = TextDirectionHeuristics.ANYRTL_LTR;
                         break;
@@ -52,7 +52,7 @@ public abstract class w7 {
                         break;
                 }
             } else {
-                byte directionality = Character.getDirectionality(b5.d.h(androidx.emoji2.text.w.e(z0Var.getTextLocale()))[0].codePointAt(0));
+                byte directionality = Character.getDirectionality(b5.d.h(androidx.emoji2.text.w.e(b1Var.getTextLocale()))[0].codePointAt(0));
                 textDirectionHeuristic = (directionality == 1 || directionality == 2) ? TextDirectionHeuristics.RTL : TextDirectionHeuristics.LTR;
             }
         }

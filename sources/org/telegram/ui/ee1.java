@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ee1 implements Runnable {
     public final /* synthetic */ int a;
@@ -56,9 +56,9 @@ public final /* synthetic */ class ee1 implements Runnable {
                 he1.W((he1) obj3, (TLRPC.TL_error) obj, (TL_account.updateTheme) obj2);
                 break;
             case 2:
-                se1 se1Var = (se1) obj3;
+                re1 re1Var = (re1) obj3;
                 fo foVar = (fo) obj2;
-                MessageObject messageObject = se1Var.G;
+                MessageObject messageObject = re1Var.G;
                 int i12 = ((TLRPC.TodoItem) obj).id;
                 if (messageObject != null && (message = messageObject.messageOwner) != null && (message.media instanceof TLRPC.TL_messageMediaToDo)) {
                     messageObject.getDialogId();
@@ -71,67 +71,67 @@ public final /* synthetic */ class ee1 implements Runnable {
                     unVar.e();
                 }
                 foVar.Gb(messageObject, unVar);
-                se1Var.c(false);
+                re1Var.c(false);
                 break;
             case 3:
-                af1 af1Var = (af1) obj3;
-                ArrayList arrayList = af1Var.h;
+                ze1 ze1Var = (ze1) obj3;
+                ArrayList arrayList = ze1Var.h;
                 arrayList.clear();
-                ArrayList arrayList2 = af1Var.f;
+                ArrayList arrayList2 = ze1Var.f;
                 arrayList2.clear();
                 arrayList.addAll((ArrayList) obj2);
                 arrayList2.addAll(((TLRPC.TL_messages_inactiveChats) obj).chats);
-                af1Var.d.l();
-                if (af1Var.a.getMeasuredHeight() > 0) {
+                ze1Var.d.l();
+                if (ze1Var.a.getMeasuredHeight() > 0) {
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    af1Var.y = ofFloat;
-                    ofFloat.addUpdateListener(new f21(af1Var, 15));
-                    af1Var.y.setDuration(100L);
-                    af1Var.y.start();
+                    ze1Var.y = ofFloat;
+                    ofFloat.addUpdateListener(new f21(ze1Var, 15));
+                    ze1Var.y.setDuration(100L);
+                    ze1Var.y.start();
                 } else {
-                    af1Var.E = 1.0f;
+                    ze1Var.E = 1.0f;
                 }
-                AndroidUtilities.cancelRunOnUIThread(af1Var.I);
-                if (af1Var.F.getVisibility() == 0) {
-                    af1Var.F.animate().alpha(0.0f).setListener(new we1(af1Var, 2)).start();
+                AndroidUtilities.cancelRunOnUIThread(ze1Var.I);
+                if (ze1Var.F.getVisibility() == 0) {
+                    ze1Var.F.animate().alpha(0.0f).setListener(new ve1(ze1Var, 2)).start();
                     break;
                 }
                 break;
             case 4:
-                lg1 lg1Var = (lg1) obj3;
-                lg1Var.s.deleteTopics(lg1Var.a, (ArrayList) obj2);
+                kg1 kg1Var = (kg1) obj3;
+                kg1Var.s.deleteTopics(kg1Var.a, (ArrayList) obj2);
                 ((Runnable) obj).run();
                 break;
             case 5:
-                hg1 hg1Var = (hg1) obj3;
+                gg1 gg1Var = (gg1) obj3;
                 String str3 = (String) obj2;
                 TLObject tLObject = (TLObject) obj;
-                ArrayList arrayList3 = hg1Var.d0;
-                if (str3.equals(hg1Var.b0)) {
-                    int i13 = hg1Var.k0;
-                    hg1Var.p0 = false;
-                    hg1Var.l0 = false;
+                ArrayList arrayList3 = gg1Var.d0;
+                if (str3.equals(gg1Var.b0)) {
+                    int i13 = gg1Var.k0;
+                    gg1Var.p0 = false;
+                    gg1Var.l0 = false;
                     if (tLObject instanceof TLRPC.messages_Messages) {
                         TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                         for (int i14 = 0; i14 < messages_messages.messages.size(); i14++) {
                             TLRPC.Message message2 = messages_messages.messages.get(i14);
-                            i10 = ((org.telegram.ui.ActionBar.m2) hg1Var.t0).currentAccount;
+                            i10 = ((org.telegram.ui.ActionBar.m2) gg1Var.t0).currentAccount;
                             MessageObject messageObject2 = new MessageObject(i10, message2, false, false);
                             messageObject2.setQuery(str3);
                             arrayList3.add(messageObject2);
                         }
-                        hg1Var.L();
+                        gg1Var.L();
                         if (arrayList3.size() < messages_messages.count && !messages_messages.messages.isEmpty()) {
                             z10 = true;
                         }
-                        hg1Var.m0 = z10;
+                        gg1Var.m0 = z10;
                     } else {
-                        hg1Var.m0 = false;
+                        gg1Var.m0 = false;
                     }
-                    if (hg1Var.k0 == 0) {
-                        hg1Var.n0.e(hg1Var.l0, true);
+                    if (gg1Var.k0 == 0) {
+                        gg1Var.n0.e(gg1Var.l0, true);
                     }
-                    hg1Var.o0.b(i13);
+                    gg1Var.o0.b(i13);
                     break;
                 }
                 break;

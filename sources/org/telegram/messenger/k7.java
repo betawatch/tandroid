@@ -14,7 +14,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.fo;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k7 implements Runnable {
     public final /* synthetic */ int a;
@@ -100,47 +100,47 @@ public final /* synthetic */ class k7 implements Runnable {
                 break;
             case 15:
                 tc.u uVar = (tc.u) obj;
-                org.telegram.ui.Wallet.y0 y0Var = ((org.telegram.ui.Wallet.x0) obj2).c;
-                if (!y0Var.c(uVar, i11)) {
-                    y0Var.d("closing stale connected websocket; attempt=" + i11);
+                org.telegram.ui.Wallet.z0 z0Var = ((org.telegram.ui.Wallet.y0) obj2).c;
+                if (!z0Var.c(uVar, i11)) {
+                    z0Var.d("closing stale connected websocket; attempt=" + i11);
                     uVar.c();
                     break;
                 } else {
-                    y0Var.d("websocket connected after " + (SystemClock.elapsedRealtime() - j10) + " ms");
-                    org.telegram.ui.Wallet.v0 v0Var = y0Var.o;
+                    z0Var.d("websocket connected after " + (SystemClock.elapsedRealtime() - j10) + " ms");
+                    org.telegram.ui.Wallet.w0 w0Var = z0Var.o;
                     try {
-                        JSONArray put = new JSONArray().put(y0Var.b);
+                        JSONArray put = new JSONArray().put(z0Var.b);
                         StringBuilder sb2 = new StringBuilder("wallet-");
-                        int i12 = y0Var.g + 1;
-                        y0Var.g = i12;
+                        int i12 = z0Var.g + 1;
+                        z0Var.g = i12;
                         sb2.append(i12);
-                        y0Var.f = sb2.toString();
-                        JSONObject put2 = new JSONObject().put("operation", "subscribe").put("id", y0Var.f).put("types", new JSONArray().put("transactions").put("account_state_change")).put("include_address_book", true).put("addresses", put).put("min_finality", "pending");
-                        AndroidUtilities.cancelRunOnUIThread(v0Var);
-                        AndroidUtilities.runOnUIThread(v0Var, 30000L);
-                        y0Var.g(put2.toString());
+                        z0Var.f = sb2.toString();
+                        JSONObject put2 = new JSONObject().put("operation", "subscribe").put("id", z0Var.f).put("types", new JSONArray().put("transactions").put("account_state_change")).put("include_address_book", true).put("addresses", put).put("min_finality", "pending");
+                        AndroidUtilities.cancelRunOnUIThread(w0Var);
+                        AndroidUtilities.runOnUIThread(w0Var, 30000L);
+                        z0Var.g(put2.toString());
                         break;
                     } catch (JSONException unused) {
-                        y0Var.f("could not encode subscription");
+                        z0Var.f("could not encode subscription");
                         return;
                     }
                 }
             case 16:
-                org.telegram.ui.Wallet.d2 d2Var = (org.telegram.ui.Wallet.d2) obj2;
+                org.telegram.ui.Wallet.e2 e2Var = (org.telegram.ui.Wallet.e2) obj2;
                 mh mhVar = (mh) obj;
-                d2Var.getClass();
+                e2Var.getClass();
                 TL_wallet.tonConnectGetPending tonconnectgetpending = new TL_wallet.tonConnectGetPending();
                 long j11 = this.c;
                 tonconnectgetpending.session_id = Long.valueOf(j11);
-                d2Var.f.sendRequestTyped(tonconnectgetpending, new a(), new org.telegram.ui.Wallet.q1(d2Var, mhVar, j11, this.d, 0));
+                e2Var.f.sendRequestTyped(tonconnectgetpending, new a(), new org.telegram.ui.Wallet.r1(e2Var, mhVar, j11, this.d, 0));
                 break;
             case 17:
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder((Context) obj2, 0, (org.telegram.ui.ActionBar.c6) obj);
                 String string = LocaleController.getString(R.string.WalletNetworkFee);
                 org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
                 a2Var.R = string;
-                a2Var.T = AndroidUtilities.replaceTags(LocaleController.formatSpannable(R.string.WalletNetworkFeeInfo, org.telegram.ui.Wallet.j0.v(i11).l(j10, true)));
-                q.A(R.string.WalletOK, alertDialog$Builder, null);
+                a2Var.T = AndroidUtilities.replaceTags(LocaleController.formatSpannable(R.string.WalletNetworkFeeInfo, org.telegram.ui.Wallet.k0.v(i11).l(j10, true)));
+                g0.p(R.string.WalletOK, alertDialog$Builder, null);
                 break;
             default:
                 ((di.d) obj2).setLoading(false);

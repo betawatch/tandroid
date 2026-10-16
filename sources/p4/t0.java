@@ -17,11 +17,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
+import ji.m5;
 import org.telegram.messenger.MessageObject;
-import org.telegram.ui.Wallet.m5;
 import org.telegram.ui.c90;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class t0 {
     public boolean a;
@@ -36,7 +36,7 @@ public final class t0 {
     public t0(Context context, e eVar) {
         this.f = new ArrayList();
         this.g = new androidx.mediarouter.app.f(this, 9);
-        this.h = new m5(this, 1);
+        this.h = new s0(this, 0);
         this.b = context;
         this.c = eVar;
         this.d = new Handler();
@@ -51,7 +51,7 @@ public final class t0 {
             if (message == null || !message.contains("compressed")) {
                 return null;
             }
-            ((r4.c) this.c).y();
+            ((r4.c) this.c).h();
             return null;
         }
     }
@@ -85,7 +85,7 @@ public final class t0 {
                 }
                 ServiceInfo serviceInfo = it2.next().serviceInfo;
                 if (serviceInfo != null) {
-                    if ((y.c == null ? false : y.c().f()) && !arrayList2.isEmpty()) {
+                    if ((x.c == null ? false : x.c().f()) && !arrayList2.isEmpty()) {
                         int size = arrayList2.size();
                         int i12 = 0;
                         while (i12 < size) {
@@ -105,7 +105,7 @@ public final class t0 {
                             i13 = -1;
                             break;
                         }
-                        ComponentName componentName = ((s0) arrayList.get(i13)).r;
+                        ComponentName componentName = ((r0) arrayList.get(i13)).r;
                         if (componentName.getPackageName().equals(str) && componentName.getClassName().equals(str2)) {
                             break;
                         } else {
@@ -113,28 +113,28 @@ public final class t0 {
                         }
                     }
                     if (i13 < 0) {
-                        s0 s0Var = new s0((Context) this.b, new ComponentName(serviceInfo.packageName, serviceInfo.name));
-                        s0Var.F = new ji.m5(this, s0Var);
-                        if (!s0Var.w) {
-                            s0Var.w = true;
-                            s0Var.r();
+                        r0 r0Var = new r0((Context) this.b, new ComponentName(serviceInfo.packageName, serviceInfo.name));
+                        r0Var.F = new m5(this, r0Var);
+                        if (!r0Var.w) {
+                            r0Var.w = true;
+                            r0Var.r();
                         }
                         i10 = i11 + 1;
-                        arrayList.add(i11, s0Var);
-                        eVar.a(s0Var, false);
+                        arrayList.add(i11, r0Var);
+                        eVar.a(r0Var, false);
                     } else if (i13 >= i11) {
-                        s0 s0Var2 = (s0) arrayList.get(i13);
-                        if (!s0Var2.w) {
-                            s0Var2.w = true;
-                            s0Var2.r();
+                        r0 r0Var2 = (r0) arrayList.get(i13);
+                        if (!r0Var2.w) {
+                            r0Var2.w = true;
+                            r0Var2.r();
                         }
-                        if (s0Var2.y == null) {
-                            if (!s0Var2.w || (((n) s0Var2.h) == null && s0Var2.v.isEmpty())) {
+                        if (r0Var2.y == null) {
+                            if (!r0Var2.w || (((n) r0Var2.h) == null && r0Var2.v.isEmpty())) {
                                 z10 = false;
                             }
                             if (z10) {
-                                s0Var2.q();
-                                s0Var2.n();
+                                r0Var2.q();
+                                r0Var2.n();
                             }
                         }
                         i10 = i11 + 1;
@@ -145,22 +145,22 @@ public final class t0 {
             }
             if (i11 < arrayList.size()) {
                 for (int size3 = arrayList.size() - 1; size3 >= i11; size3--) {
-                    s0 s0Var3 = (s0) arrayList.get(size3);
-                    v d = eVar.d(s0Var3);
+                    r0 r0Var3 = (r0) arrayList.get(size3);
+                    u d = eVar.d(r0Var3);
                     if (d != null) {
-                        s0Var3.getClass();
-                        y.b();
-                        s0Var3.f = null;
-                        s0Var3.h(null);
+                        r0Var3.getClass();
+                        x.b();
+                        r0Var3.f = null;
+                        r0Var3.h(null);
                         eVar.m(d, null);
                         eVar.a.b(514, d);
                         eVar.l.remove(d);
                     }
-                    arrayList.remove(s0Var3);
-                    s0Var3.F = null;
-                    if (s0Var3.w) {
-                        s0Var3.w = false;
-                        s0Var3.r();
+                    arrayList.remove(r0Var3);
+                    r0Var3.F = null;
+                    if (r0Var3.w) {
+                        r0Var3.w = false;
+                        r0Var3.r();
                     }
                 }
             }

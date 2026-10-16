@@ -1,24 +1,49 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.ha0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class c3 extends tg.s {
-    public final /* synthetic */ d3 x;
+public final class c3 extends ha0 {
+    public final Paint M;
+    public final /* synthetic */ e3 N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c3(d3 d3Var, Context context, z2 z2Var) {
-        super(context, z2Var);
-        this.x = d3Var;
+    public c3(e3 e3Var, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(c6Var);
+        this.N = e3Var;
+        Paint paint = new Paint(1);
+        this.M = paint;
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
     }
 
-    @Override // tg.s
-    public final void a() {
-        d3 d3Var = this.x;
-        d3Var.o = true;
-        setPaused(true);
-        setVisibility(8);
-        d3Var.a.invalidate();
+    @Override // org.telegram.ui.Components.ha0
+    public final void b(Canvas canvas, Path path) {
+        super.b(canvas, path);
+        e3 e3Var = this.N;
+        RectF rectF = e3Var.f;
+        if (e3Var.o0 != null) {
+            canvas.saveLayer(rectF, null);
+            e3Var.o0.c((AndroidUtilities.dp(206.0f) - e3Var.o0.l()) / 2.0f, (rectF.bottom - AndroidUtilities.dp(7.0f)) - e3Var.o0.j(), 1.0f, -1, canvas);
+            Shader shader = this.x.getShader();
+            Paint paint = this.M;
+            paint.setShader(shader);
+            canvas.drawRect(rectF, paint);
+            canvas.restore();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void invalidateSelf() {
+        super.invalidateSelf();
+        this.N.a.invalidate();
     }
 }

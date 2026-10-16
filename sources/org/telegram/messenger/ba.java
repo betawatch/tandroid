@@ -4,11 +4,11 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.g90;
+import org.telegram.ui.Components.f90;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.jc0;
+import org.telegram.ui.ic0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ba implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -35,10 +35,10 @@ public final /* synthetic */ class ba implements RequestDelegate {
                 ((MessagesController) this.b).lambda$checkChatInviter$374((TLRPC.Chat) this.e, this.c, this.d, tLObject, tL_error);
                 break;
             case 2:
-                g90.u((g90) this.b, this.d, this.c, (TLRPC.TL_messages_importChatInvite) this.e, tLObject, tL_error);
+                f90.u((f90) this.b, this.d, this.c, (TLRPC.TL_messages_importChatInvite) this.e, tLObject, tL_error);
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new bi.x2((jc0) this.b, tLObject, this.d, (String) this.e, this.c, tL_error));
+                AndroidUtilities.runOnUIThread(new bi.x2((ic0) this.b, tLObject, this.d, (String) this.e, this.c, tL_error));
                 break;
             default:
                 AndroidUtilities.runOnUIThread(new bi.x2((zh.g) this.b, tL_error, tLObject, (TwoStepVerificationActivity) this.e, this.c, this.d));
@@ -54,17 +54,17 @@ public final /* synthetic */ class ba implements RequestDelegate {
         this.d = j10;
     }
 
-    public /* synthetic */ ba(g90 g90Var, long j10, boolean z10, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
+    public /* synthetic */ ba(f90 f90Var, long j10, boolean z10, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
         this.a = 2;
-        this.b = g90Var;
+        this.b = f90Var;
         this.d = j10;
         this.c = z10;
         this.e = tL_messages_importChatInvite;
     }
 
-    public /* synthetic */ ba(jc0 jc0Var, long j10, String str, boolean z10) {
+    public /* synthetic */ ba(ic0 ic0Var, long j10, String str, boolean z10) {
         this.a = 3;
-        this.b = jc0Var;
+        this.b = ic0Var;
         this.d = j10;
         this.e = str;
         this.c = z10;

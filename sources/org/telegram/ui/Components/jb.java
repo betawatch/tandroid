@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jb implements o1.f {
     public final /* synthetic */ int a;
@@ -29,10 +29,10 @@ public final /* synthetic */ class jb implements o1.f {
                 }
                 break;
             case 2:
-                dl dlVar = (dl) this.b;
-                dlVar.i0 = null;
-                dlVar.j0 = 1.0f;
-                dlVar.k0();
+                cl clVar = (cl) this.b;
+                clVar.i0 = null;
+                clVar.j0 = 1.0f;
+                clVar.k0();
                 break;
             case 3:
                 wp0 wp0Var = (wp0) this.b;
@@ -52,21 +52,21 @@ public final /* synthetic */ class jb implements o1.f {
                 }
                 break;
             case 5:
-                jr0 jr0Var = (jr0) this.b;
-                jr0Var.E.setVisibility(8);
-                jr0Var.z0.setVisibility(8);
-                gr0 gr0Var = jr0Var.L;
-                gr0Var.f = null;
-                gr0Var.l();
-                jr0Var.B0 = null;
-                jr0Var.M0 = false;
+                ir0 ir0Var = (ir0) this.b;
+                ir0Var.E.setVisibility(8);
+                ir0Var.z0.setVisibility(8);
+                fr0 fr0Var = ir0Var.L;
+                fr0Var.f = null;
+                fr0Var.l();
+                ir0Var.B0 = null;
+                ir0Var.M0 = false;
                 break;
             default:
-                jr0 jr0Var2 = ((qq0) this.b).d;
-                jr0Var2.F.setVisibility(8);
-                jr0Var2.G.setVisibility(8);
-                jr0Var2.y0.setVisibility(8);
-                jr0Var2.B0 = null;
+                ir0 ir0Var2 = ((pq0) this.b).d;
+                ir0Var2.F.setVisibility(8);
+                ir0Var2.G.setVisibility(8);
+                ir0Var2.y0.setVisibility(8);
+                ir0Var2.B0 = null;
                 break;
         }
     }

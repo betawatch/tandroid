@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class bg extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
@@ -42,7 +42,7 @@ public final class bg extends AnimatorListenerAdapter {
         }
         chatActivityEnterView.Q0.setTranslationX(f7);
         chatActivityEnterView.G = f7;
-        chatActivityEnterView.H1();
+        chatActivityEnterView.G1();
         chatActivityEnterView.requestLayout();
     }
 
@@ -58,7 +58,7 @@ public final class bg extends AnimatorListenerAdapter {
         }
         chatActivityEnterView.Q0.setTranslationX(0.0f);
         chatActivityEnterView.G = 0.0f;
-        chatActivityEnterView.H1();
+        chatActivityEnterView.G1();
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -81,7 +81,7 @@ public final class bg extends AnimatorListenerAdapter {
         }
         chatActivityEnterView.Q0.setTranslationX(f7);
         chatActivityEnterView.G = f7;
-        chatActivityEnterView.H1();
+        chatActivityEnterView.G1();
         fi.b0 b0Var = chatActivityEnterView.l0;
         if (b0Var == null || b0Var.getTag() != null) {
             return;

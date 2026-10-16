@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j90 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -66,8 +66,8 @@ public final /* synthetic */ class j90 implements Utilities.Callback {
                     cVar.b();
                 }
                 org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
-                if (R instanceof kh0) {
-                    R = ((kh0) R).X();
+                if (R instanceof jh0) {
+                    R = ((jh0) R).X();
                 }
                 org.telegram.ui.ActionBar.m2 m2Var = R;
                 if (m2Var != null) {
@@ -80,7 +80,7 @@ public final /* synthetic */ class j90 implements Utilities.Callback {
                     if (m2Var instanceof fo) {
                         break;
                     } else if (m2Var instanceof yy) {
-                        sx sxVar = ((yy) m2Var).F3;
+                        sx sxVar = ((yy) m2Var).G3;
                         if (sxVar != null) {
                             break;
                         }
@@ -131,14 +131,14 @@ public final /* synthetic */ class j90 implements Utilities.Callback {
                 bi.ma maVar = (bi.ma) obj2;
                 TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession = (TL_wallet.inputTonConnectOauthSession) obj;
                 ((org.telegram.ui.ActionBar.e3[]) obj7)[0] = null;
-                rl0.a = null;
+                ql0.a = null;
                 if (!((boolean[]) obj6)[0]) {
                     inputtonconnectoauthsessionArr[0] = inputtonconnectoauthsession;
                     if (!tL_urlAuthResultRequest.request_write_access && !tL_urlAuthResultRequest.request_phone_number) {
                         maVar.run();
                         break;
                     } else {
-                        rl0.a = e3Var;
+                        ql0.a = e3Var;
                         e3Var.show();
                         break;
                     }
@@ -148,7 +148,7 @@ public final /* synthetic */ class j90 implements Utilities.Callback {
                 }
                 break;
             case 3:
-                org.telegram.ui.Wallet.i2 i2Var = (org.telegram.ui.Wallet.i2) obj4;
+                org.telegram.ui.Wallet.j2 j2Var = (org.telegram.ui.Wallet.j2) obj4;
                 org.telegram.ui.ActionBar.c6 c6Var = (org.telegram.ui.ActionBar.c6) obj3;
                 hg.x0 x0Var = (hg.x0) obj2;
                 String str = (String) obj;
@@ -156,29 +156,29 @@ public final /* synthetic */ class j90 implements Utilities.Callback {
                 ((di.d) obj6).setEnabled(true);
                 ((ImageView) obj5).setEnabled(true);
                 if (str != null) {
-                    org.telegram.ui.Components.zc.c0(str, i2Var.topBulletinContainer, c6Var);
+                    org.telegram.ui.Components.zc.c0(str, j2Var.topBulletinContainer, c6Var);
                     x0Var.run();
                     break;
                 } else {
-                    i2Var.dismiss();
+                    j2Var.dismiss();
                     break;
                 }
             default:
                 di.d dVar = (di.d) obj6;
-                org.telegram.ui.Wallet.h2 h2Var = (org.telegram.ui.Wallet.h2) obj5;
+                org.telegram.ui.Wallet.i2 i2Var = (org.telegram.ui.Wallet.i2) obj5;
                 org.telegram.ui.ActionBar.c6 c6Var2 = (org.telegram.ui.ActionBar.c6) obj4;
-                org.telegram.ui.Wallet.k kVar = (org.telegram.ui.Wallet.k) obj3;
-                org.telegram.ui.Wallet.z1 z1Var = (org.telegram.ui.Wallet.z1) obj2;
+                org.telegram.ui.Wallet.l lVar = (org.telegram.ui.Wallet.l) obj3;
+                org.telegram.ui.Wallet.a2 a2Var = (org.telegram.ui.Wallet.a2) obj2;
                 String str2 = (String) obj;
                 ((di.d) obj7).setLoading(false);
                 dVar.setLoading(false);
                 if (str2 != null) {
-                    org.telegram.ui.Components.zc.c0(str2, h2Var.topBulletinContainer, c6Var2);
-                    kVar.run();
-                    dVar.setEnabled((z1Var.n || z1Var.o) ? false : true);
+                    org.telegram.ui.Components.zc.c0(str2, i2Var.topBulletinContainer, c6Var2);
+                    lVar.run();
+                    dVar.setEnabled((a2Var.n || a2Var.o) ? false : true);
                     break;
                 } else {
-                    h2Var.dismiss();
+                    i2Var.dismiss();
                     break;
                 }
                 break;

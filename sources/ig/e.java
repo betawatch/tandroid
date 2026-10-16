@@ -19,9 +19,9 @@ import org.telegram.ui.Components.qq;
 import org.telegram.ui.Components.s6;
 import org.telegram.ui.Components.z9;
 import org.telegram.ui.fo;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class e extends FrameLayout {
     public final int a;
@@ -51,7 +51,7 @@ public final class e extends FrameLayout {
         k9Var.r(user);
         z9Var.setRoundRadius(AndroidUtilities.dp(16.0f));
         z9Var.e(user, k9Var);
-        addView(z9Var, a6.a(32.0f, 10.0f, 0.0f, 10.0f, 0.0f, 32, 19));
+        addView(z9Var, z5.a(32.0f, 10.0f, 0.0f, 10.0f, 0.0f, 32, 19));
         LinearLayout linearLayout = new LinearLayout(activity);
         this.d = linearLayout;
         linearLayout.setOrientation(1);
@@ -64,7 +64,7 @@ public final class e extends FrameLayout {
         s6Var.setText(UserObject.getUserName(user));
         s6Var.setTextColor(g6.w0(g6.G6, c6Var));
         s6Var.setEllipsizeByGradient(true);
-        linearLayout.addView(s6Var, a6.k(0.0f, 0.0f, 0.0f, 1.0f, -1, 17));
+        linearLayout.addView(s6Var, z5.k(0.0f, 0.0f, 0.0f, 1.0f, -1, 17));
         s6 s6Var2 = new s6(activity, false, false, false);
         this.f = s6Var2;
         s6Var2.n = false;
@@ -73,8 +73,8 @@ public final class e extends FrameLayout {
         s6Var2.setText(LocaleController.getString(R.string.BizBotStatusManages));
         s6Var2.setTextColor(g6.w0(g6.ge, c6Var));
         s6Var2.setEllipsizeByGradient(true);
-        linearLayout.addView(s6Var2, a6.n(-1, 17));
-        addView(linearLayout, a6.a(-2.0f, 52.0f, 0.0f, 49.0f, 0.0f, -2, 16));
+        linearLayout.addView(s6Var2, z5.n(-1, 17));
+        addView(linearLayout, z5.a(-2.0f, 52.0f, 0.0f, 49.0f, 0.0f, -2, 16));
         qq qqVar = new qq(activity);
         this.h = qqVar;
         qqVar.getDrawable().r(true, true);
@@ -93,7 +93,7 @@ public final class e extends FrameLayout {
         qqVar.setOnClickListener(new ah.g0(this, 25));
         qqVar.setOnWidthUpdatedListener(new d(this, 0));
         qqVar.setText(LocaleController.getString(this.r ? R.string.BizBotStart : R.string.BizBotStop));
-        addView(qqVar, a6.a(28.0f, 0.0f, 0.0f, 46.0f, 0.0f, 64, 21));
+        addView(qqVar, z5.a(28.0f, 0.0f, 0.0f, 46.0f, 0.0f, 64, 21));
         ImageView imageView = new ImageView(activity);
         this.n = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -101,7 +101,7 @@ public final class e extends FrameLayout {
         imageView.setBackground(g6.N(g6.w0(g6.i6, c6Var), 0, 0));
         imageView.setColorFilter(new PorterDuffColorFilter(g6.w0(g6.de, c6Var), PorterDuff.Mode.MULTIPLY));
         imageView.setOnClickListener(new bi.x(this, foVar, c6Var, 7));
-        addView(imageView, a6.a(32.0f, 8.0f, 0.0f, 6.0f, 0.0f, 32, 21));
+        addView(imageView, z5.a(32.0f, 8.0f, 0.0f, 6.0f, 0.0f, 32, 21));
     }
 
     public final void a() {

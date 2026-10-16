@@ -18,12 +18,11 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.t8;
-import org.telegram.ui.ss0;
-import org.telegram.ui.ur0;
+import org.telegram.ui.tr0;
+import org.telegram.ui.yw0;
 import zh.n5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g2 implements Runnable {
     public final /* synthetic */ int a;
@@ -53,7 +52,7 @@ public final /* synthetic */ class g2 implements Runnable {
                 int i10 = this.b;
                 List list = (List) this.d;
                 ArrayList arrayList = (ArrayList) this.e;
-                ur0 ur0Var = (ur0) this.f;
+                tr0 tr0Var = (tr0) this.f;
                 if (p2Var.I != null && !p2Var.y) {
                     Matrix matrix = new Matrix();
                     matrix.postScale(1.0f / p2Var.I.getWidth(), 1.0f / p2Var.I.getHeight());
@@ -89,7 +88,7 @@ public final /* synthetic */ class g2 implements Runnable {
                         p2Var.E = m2Var;
                         p2Var.y = true;
                         p2Var.x = false;
-                        AndroidUtilities.runOnUIThread(new t8(28, p2Var, arrayList));
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.web.v(23, p2Var, arrayList));
                         break;
                     } else {
                         m2 m2Var3 = new m2(p2Var);
@@ -105,7 +104,7 @@ public final /* synthetic */ class g2 implements Runnable {
                             p2Var.O = m2Var3.j;
                             p2Var.P = m2Var3.k;
                             arrayList.add(m2Var3);
-                            AndroidUtilities.runOnUIThread(new ss0(p2Var, arrayList, ur0Var, m2Var3, 23));
+                            AndroidUtilities.runOnUIThread(new yw0(p2Var, arrayList, tr0Var, m2Var3, 22));
                             p2Var.E = m2Var3;
                             p2Var.y = true;
                             p2Var.x = false;
@@ -149,12 +148,12 @@ public final /* synthetic */ class g2 implements Runnable {
         }
     }
 
-    public /* synthetic */ g2(p2 p2Var, int i10, List list, ArrayList arrayList, ur0 ur0Var) {
+    public /* synthetic */ g2(p2 p2Var, int i10, List list, ArrayList arrayList, tr0 tr0Var) {
         this.a = 0;
         this.c = p2Var;
         this.b = i10;
         this.d = list;
         this.e = arrayList;
-        this.f = ur0Var;
+        this.f = tr0Var;
     }
 }

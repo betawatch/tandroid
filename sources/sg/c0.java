@@ -30,20 +30,20 @@ import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.h5;
 import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Cells.b7;
+import org.telegram.ui.Cells.a7;
 import org.telegram.ui.Cells.g4;
 import org.telegram.ui.Cells.m4;
 import org.telegram.ui.Components.br;
 import org.telegram.ui.Components.da0;
 import org.telegram.ui.Components.f10;
-import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.j61;
 import org.telegram.ui.Components.ka0;
 import org.telegram.ui.Components.lm0;
 import org.telegram.ui.Components.xn;
 import org.telegram.ui.x5;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class c0 extends lm0 {
     public final /* synthetic */ j0 c;
@@ -212,7 +212,7 @@ public final class c0 extends lm0 {
                 if (indexOf >= 0) {
                     spannableStringBuilder = new SpannableStringBuilder(string);
                     SpannableString spannableString = new SpannableString(a1.g.n(f0Var.e.e, "", new StringBuilder()));
-                    spannableString.setSpan(new i61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
+                    spannableString.setSpan(new j61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
                     spannableStringBuilder.replace(indexOf, indexOf + 2, (CharSequence) spannableString);
                 }
                 h5Var.l(spannableStringBuilder, false);
@@ -225,7 +225,7 @@ public final class c0 extends lm0 {
                     if (indexOf2 >= 0) {
                         spannableStringBuilder2 = new SpannableStringBuilder(str);
                         SpannableString spannableString2 = new SpannableString(f0Var.e.c);
-                        spannableString2.setSpan(new i61(AndroidUtilities.bold()), 0, spannableString2.length(), 33);
+                        spannableString2.setSpan(new j61(AndroidUtilities.bold()), 0, spannableString2.length(), 33);
                         spannableStringBuilder2.replace(indexOf2, indexOf2 + 2, (CharSequence) spannableString2);
                     }
                     h5Var.l(spannableStringBuilder2, false);
@@ -269,7 +269,7 @@ public final class c0 extends lm0 {
             case 2:
                 int i19 = g6.a7;
                 c6Var = ((e3) j0Var).resourcesProvider;
-                view = new b7(context, g6.w0(i19, c6Var), 0);
+                view = new a7(context, g6.w0(i19, c6Var), 0);
                 break;
             case 3:
                 View m4Var = new m4(context);
@@ -303,13 +303,13 @@ public final class c0 extends lm0 {
                 frameLayout.setPadding(dp, 0, AndroidUtilities.dp(6.0f) + i14, 0);
                 TextView textView = new TextView(context);
                 if (j0Var.Q0 == null && ChatObject.hasAdminRights(j0Var.t1())) {
-                    j0Var.Q0 = new rh.j(this, 2);
+                    j0Var.Q0 = new ri.h0(this, 2);
                 }
                 textView.setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(j0Var.Q0 == null ? 18.0f : 50.0f), AndroidUtilities.dp(13.0f));
                 textView.setTextSize(1, 16.0f);
                 textView.setEllipsize(TextUtils.TruncateAt.MIDDLE);
                 textView.setSingleLine(true);
-                frameLayout.addView(textView, a6.a(-2.0f, 11.0f, 0.0f, 11.0f, 0.0f, -1, 0));
+                frameLayout.addView(textView, z5.a(-2.0f, 11.0f, 0.0f, 11.0f, 0.0f, -1, 0));
                 int dp2 = AndroidUtilities.dp(8.0f);
                 int i20 = g6.e7;
                 c6Var3 = ((e3) j0Var).resourcesProvider;
@@ -367,7 +367,7 @@ public final class c0 extends lm0 {
                     c6Var7 = ((e3) j0Var).resourcesProvider;
                     int k11 = i0.a.k(g6.w0(i21, c6Var7), 76);
                     imageView.setBackground(g6.j0(dp3, dp3, dp3, dp3, 0, k11, k11));
-                    frameLayout.addView(imageView, a6.a(40.0f, 15.0f, 0.0f, 15.0f, 0.0f, 40, 21));
+                    frameLayout.addView(imageView, z5.a(40.0f, 15.0f, 0.0f, 15.0f, 0.0f, 40, 21));
                     final int i25 = 3;
                     imageView.setOnClickListener(new View.OnClickListener(this) { // from class: sg.a0
                         public final /* synthetic */ c0 b;
@@ -519,14 +519,14 @@ public final class c0 extends lm0 {
                         }
                     });
                     LinearLayout linearLayout2 = new LinearLayout(context);
-                    linearLayout2.addView(j0Var.G0, a6.p(-1, 44, 1.0f, 0, 0, 0, 4, 0));
-                    linearLayout2.addView(dVar, a6.p(-1, 44, 1.0f, 0, 4, 0, 0, 0));
-                    linearLayout.addView(linearLayout2, a6.k(12.0f, 12.0f, 12.0f, 8.0f, -1, 44));
+                    linearLayout2.addView(j0Var.G0, z5.p(-1, 44, 1.0f, 0, 0, 0, 4, 0));
+                    linearLayout2.addView(dVar, z5.p(-1, 44, 1.0f, 0, 4, 0, 0, 0));
+                    linearLayout.addView(linearLayout2, z5.k(12.0f, 12.0f, 12.0f, 8.0f, -1, 44));
                 } else {
-                    linearLayout.addView(j0Var.F0, a6.k(12.0f, 12.0f, 12.0f, 8.0f, -1, 48));
+                    linearLayout.addView(j0Var.F0, z5.k(12.0f, 12.0f, 12.0f, 8.0f, -1, 48));
                 }
-                linearLayout.addView(ka0Var, a6.k(0.0f, -5.0f, 0.0f, 0.0f, -1, 48));
-                linearLayout.addView(da0Var, a6.k(12.0f, -6.0f, 12.0f, 17.0f, -1, -2));
+                linearLayout.addView(ka0Var, z5.k(0.0f, -5.0f, 0.0f, 0.0f, -1, 48));
+                linearLayout.addView(da0Var, z5.k(12.0f, -6.0f, 12.0f, 17.0f, -1, -2));
                 view = linearLayout;
                 break;
             case 9:

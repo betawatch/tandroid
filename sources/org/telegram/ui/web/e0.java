@@ -9,7 +9,7 @@ import org.telegram.ui.fo;
 import org.telegram.ui.hb1;
 import zh.p7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class e0 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        ri.o oVar;
+        qi.o oVar;
         switch (this.a) {
             case 0:
                 f0 f0Var = (f0) this.c;
@@ -32,13 +32,13 @@ public final /* synthetic */ class e0 implements Runnable {
                 f0Var.presentFragment(fo.W9(this.b));
                 break;
             case 1:
-                ri.q qVar = (ri.q) ((cc.e) this.c).c;
-                if (this.b == qVar.o && (oVar = qVar.m) != ri.o.r && oVar != ri.o.s && oVar != ri.o.n) {
+                qi.q qVar = (qi.q) ((cc.e) this.c).c;
+                if (this.b == qVar.o && (oVar = qVar.m) != qi.o.r && oVar != qi.o.s && oVar != qi.o.n) {
                     SystemClock.elapsedRealtime();
                     qVar.w = false;
-                    qVar.r(ri.o.c);
+                    qVar.r(qi.o.c);
                     qVar.h.removeCallbacks(qVar.D);
-                    qVar.g.b("recording started: retainedDurationMs=" + ri.q.q(qVar.p));
+                    qVar.g.b("recording started: retainedDurationMs=" + qi.q.q(qVar.p));
                     break;
                 }
                 break;

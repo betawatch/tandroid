@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.SparseArray;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class l40 extends xv0 {
     public final /* synthetic */ o40 f2;
@@ -33,28 +33,28 @@ public final class l40 extends xv0 {
     }
 
     @Override // org.telegram.ui.Components.xv0
-    public final boolean t0() {
+    public final boolean u0() {
         return true;
     }
 
     @Override // org.telegram.ui.Components.xv0
-    public final void D0(SparseArray sparseArray) {
+    public final void E0(SparseArray sparseArray) {
     }
 
     @Override // org.telegram.ui.Components.xv0
-    public final void K0(boolean z10) {
+    public final void L0(boolean z10) {
     }
 
     @Override // org.telegram.ui.Components.xv0
-    public final void M0(float f7) {
+    public final void N0(float f7) {
     }
 
     @Override // org.telegram.ui.Components.xv0
-    public final void N0(boolean z10) {
+    public final void O0(boolean z10) {
     }
 
     @Override // org.telegram.ui.Components.xv0
-    public final void b1(boolean z10) {
+    public final void c1(boolean z10) {
     }
 
     @Override // org.telegram.ui.Components.xv0

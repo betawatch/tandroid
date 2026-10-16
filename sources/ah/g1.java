@@ -43,7 +43,7 @@ import org.telegram.ui.Components.s5;
 import org.telegram.ui.Components.yj0;
 import zh.b8;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class g1 {
     public int A;
@@ -350,7 +350,7 @@ public abstract class g1 {
             } else {
                 this.J = g6.w0(m() ? g6.Sb : g6.Cj, c6Var);
                 this.K = g6.w0(m() ? g6.Gj : g6.Fj, c6Var);
-                if (view instanceof org.telegram.ui.Cells.x0) {
+                if (view instanceof org.telegram.ui.Cells.w0) {
                     this.M = g6.w0(g6.Ij, c6Var);
                     this.L = g6.w0(g6.Hj, c6Var);
                 } else {

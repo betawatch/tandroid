@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x21 implements Runnable {
     public final /* synthetic */ int a;
@@ -42,12 +42,12 @@ public final /* synthetic */ class x21 implements Runnable {
             case 2:
                 int i10 = R.raw.default_pattern;
                 l31 l31Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new hz0(9, l31Var2, SvgHelper.getBitmap(i10, l31Var2.w.getWidth(), l31Var2.w.getHeight(), -16777216)));
+                AndroidUtilities.runOnUIThread(new i11(4, l31Var2, SvgHelper.getBitmap(i10, l31Var2.w.getWidth(), l31Var2.w.getHeight(), -16777216)));
                 break;
             case 3:
                 l31 l31Var3 = this.b;
-                m4.c cVar = l31Var3.a;
-                cVar.b = l31Var3.J.b(((org.telegram.ui.ActionBar.m2) ((l31) cVar.c)).currentAccount, l31Var3.K ? 1 : 0);
+                m2.t tVar = l31Var3.a;
+                tVar.b = l31Var3.J.b(((org.telegram.ui.ActionBar.m2) ((l31) tVar.c)).currentAccount, l31Var3.K ? 1 : 0);
                 break;
             case 4:
                 l31.W(this.b);

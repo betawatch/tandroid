@@ -30,7 +30,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class gp0 extends FrameLayout {
     public static float[] j0;
@@ -478,7 +478,7 @@ public class gp0 extends FrameLayout {
             }
             Spanned spanned = (Spanned) charSequence;
             try {
-                p61[] p61VarArr = (p61[]) spanned.getSpans(0, spanned.length(), p61.class);
+                q61[] q61VarArr = (q61[]) spanned.getSpans(0, spanned.length(), q61.class);
                 this.S = new ArrayList();
                 if (z10) {
                     this.V = 0.0f;
@@ -489,9 +489,9 @@ public class gp0 extends FrameLayout {
                     textPaint.setTextSize(AndroidUtilities.dp(12.0f));
                     this.b0.setColor(-1);
                 }
-                for (p61 p61Var : p61VarArr) {
-                    if (p61Var != null && p61Var.getURL() != null && p61Var.d != null && p61Var.getURL().startsWith("audio?") && (parseInt = Utilities.parseInt((CharSequence) p61Var.getURL().substring(6))) != null && parseInt.intValue() >= 0) {
-                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(p61Var.d);
+                for (q61 q61Var : q61VarArr) {
+                    if (q61Var != null && q61Var.getURL() != null && q61Var.d != null && q61Var.getURL().startsWith("audio?") && (parseInt = Utilities.parseInt((CharSequence) q61Var.getURL().substring(6))) != null && parseInt.intValue() >= 0) {
+                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(q61Var.d);
                         Emoji.replaceEmoji(spannableStringBuilder, this.b0.getFontMetricsInt(), false);
                         this.S.add(new Pair(Float.valueOf((parseInt.intValue() * 1000) / valueOf.longValue()), spannableStringBuilder));
                     }
@@ -613,7 +613,7 @@ public class gp0 extends FrameLayout {
                 }
             } else {
                 f11 = 8.0f;
-                float b10 = org.telegram.messenger.yh.b(elapsedRealtime, 60.0f, AndroidUtilities.dp(1.0f), f17);
+                float b10 = org.telegram.messenger.sk.b(elapsedRealtime, 60.0f, AndroidUtilities.dp(1.0f), f17);
                 this.F = b10;
                 if (b10 < f18) {
                     this.F = f18;
@@ -875,7 +875,7 @@ public class gp0 extends FrameLayout {
         ep0 ep0Var = new ep0(this, context, context, 0);
         this.N = ep0Var;
         ep0Var.x = true;
-        addView(ep0Var, w7.a6.d(-2.0f, -1));
+        addView(ep0Var, w7.z5.d(-2.0f, -1));
         setImportantForAccessibility(1);
         org.telegram.ui.Cells.g1 g1Var = new org.telegram.ui.Cells.g1(this, z10);
         this.a = g1Var;

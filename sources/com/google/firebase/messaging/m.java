@@ -57,24 +57,23 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import java.util.concurrent.atomic.AtomicReference;
-import m.b3;
-import m.l1;
-import m.m2;
-import m.q3;
-import m4.f0;
+import m.d3;
+import m.n1;
+import m.o2;
+import m.t3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.d5;
 import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.sy0;
+import org.telegram.ui.Components.ty0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.es0;
+import org.telegram.ui.ds0;
 import u2.g0;
 import v7.d8;
 import v7.q7;
 import v7.u6;
-import w7.q6;
+import w7.p6;
 import z9.a2;
 import z9.l0;
 import z9.m0;
@@ -93,7 +92,7 @@ import z9.x0;
 import z9.y0;
 import z9.z1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class m implements c6 {
     public Object a;
@@ -114,28 +113,28 @@ public final class m implements c6 {
 
     public static void C(Drawable drawable, int i10, PorterDuff.Mode mode) {
         PorterDuffColorFilter h;
-        int[] iArr = l1.a;
+        int[] iArr = n1.a;
         Drawable mutate = drawable.mutate();
         if (mode == null) {
-            mode = m.q.b;
+            mode = m.s.b;
         }
-        PorterDuff.Mode mode2 = m.q.b;
-        synchronized (m.q.class) {
-            h = m2.h(i10, mode);
+        PorterDuff.Mode mode2 = m.s.b;
+        synchronized (m.s.class) {
+            h = o2.h(i10, mode);
         }
         mutate.setColorFilter(h);
     }
 
-    public static l0 b(l0 l0Var, y9.e eVar, q3 q3Var) {
+    public static l0 b(l0 l0Var, y9.e eVar, t3 t3Var) {
         m a2 = l0Var.a();
-        String e = ((y9.c) eVar.b).e();
-        if (e != null) {
-            a2.e = new v0(e);
+        String f7 = ((y9.c) eVar.b).f();
+        if (f7 != null) {
+            a2.e = new v0(f7);
         } else if (Log.isLoggable("FirebaseCrashlytics", 2)) {
             Log.v("FirebaseCrashlytics", "No log data to include with this event.", null);
         }
-        List s10 = s(((y9.d) ((AtomicMarkableReference) ((c2.b) q3Var.d).b).getReference()).a());
-        List s11 = s(((y9.d) ((AtomicMarkableReference) ((c2.b) q3Var.e).b).getReference()).a());
+        List s10 = s(((y9.d) ((AtomicMarkableReference) ((c2.b) t3Var.d).b).getReference()).a());
+        List s11 = s(((y9.d) ((AtomicMarkableReference) ((c2.b) t3Var.e).b).getReference()).a());
         if (!s10.isEmpty() || !s11.isEmpty()) {
             m0 m0Var = (m0) l0Var.c;
             s1 s1Var = m0Var.a;
@@ -152,13 +151,13 @@ public final class m implements c6 {
         return a2.i();
     }
 
-    public static a2 d(l0 l0Var, q3 q3Var) {
-        List o10 = ((c5.c0) q3Var.f).o();
+    public static a2 d(l0 l0Var, t3 t3Var) {
+        List j10 = ((c5.c0) t3Var.f).j();
         ArrayList arrayList = new ArrayList();
-        for (int i10 = 0; i10 < o10.size(); i10++) {
-            y9.l lVar = (y9.l) o10.get(i10);
+        for (int i10 = 0; i10 < j10.size(); i10++) {
+            y9.l lVar = (y9.l) j10.get(i10);
             lVar.getClass();
-            qi.e eVar = new qi.e();
+            pi.e eVar = new pi.e();
             y9.b bVar = (y9.b) lVar;
             String str = bVar.e;
             if (str == null) {
@@ -199,17 +198,17 @@ public final class m implements c6 {
         return false;
     }
 
-    public static m k(Context context, x9.v vVar, ca.c cVar, x9.a aVar, y9.e eVar, q3 q3Var, qf.b bVar, ea.b bVar2, n6.o oVar, x9.j jVar) {
+    public static m k(Context context, x9.v vVar, ca.c cVar, x9.a aVar, y9.e eVar, t3 t3Var, qf.b bVar, ea.b bVar2, n3.b bVar3, x9.j jVar) {
         x9.q qVar = new x9.q(context, vVar, aVar, bVar, bVar2);
-        ca.b bVar3 = new ca.b(cVar, bVar2, jVar);
-        aa.b bVar4 = da.a.b;
+        ca.b bVar4 = new ca.b(cVar, bVar2, jVar);
+        aa.b bVar5 = da.a.b;
         l5.s.b(context);
-        return new m(qVar, bVar3, new da.a(new da.c(l5.s.a().c(new j5.a(da.a.c, da.a.d)).a("FIREBASE_CRASHLYTICS_REPORT", new i5.c("json"), da.a.e), bVar2.d(), oVar)), eVar, q3Var, vVar);
+        return new m(qVar, bVar4, new da.a(new da.c(l5.s.a().c(new j5.a(da.a.c, da.a.d)).a("FIREBASE_CRASHLYTICS_REPORT", new i5.c("json"), da.a.e), bVar2.d(), bVar3)), eVar, t3Var, vVar);
     }
 
     public static ColorStateList m(Context context, int i10) {
-        int c10 = b3.c(context, R.attr.colorControlHighlight);
-        return new ColorStateList(new int[][]{b3.b, b3.d, b3.c, b3.f}, new int[]{b3.b(context, R.attr.colorButtonNormal), i0.a.h(c10, i10), i0.a.h(c10, i10), i10});
+        int c10 = d3.c(context, R.attr.colorControlHighlight);
+        return new ColorStateList(new int[][]{d3.b, d3.d, d3.c, d3.f}, new int[]{d3.b(context, R.attr.colorButtonNormal), i0.a.h(c10, i10), i0.a.h(c10, i10), i10});
     }
 
     public static g0 p(g1 g1Var, n0 n0Var, g0 g0Var, m1 m1Var) {
@@ -229,13 +228,13 @@ public final class m implements c6 {
         return null;
     }
 
-    public static LayerDrawable r(m2 m2Var, Context context, int i10) {
+    public static LayerDrawable r(o2 o2Var, Context context, int i10) {
         BitmapDrawable bitmapDrawable;
         BitmapDrawable bitmapDrawable2;
         BitmapDrawable bitmapDrawable3;
         int dimensionPixelSize = context.getResources().getDimensionPixelSize(i10);
-        Drawable g10 = m2Var.g(context, R.drawable.abc_star_black_48dp);
-        Drawable g11 = m2Var.g(context, R.drawable.abc_star_half_black_48dp);
+        Drawable g10 = o2Var.g(context, R.drawable.abc_star_black_48dp);
+        Drawable g11 = o2Var.g(context, R.drawable.abc_star_half_black_48dp);
         if ((g10 instanceof BitmapDrawable) && g10.getIntrinsicWidth() == dimensionPixelSize && g10.getIntrinsicHeight() == dimensionPixelSize) {
             bitmapDrawable = (BitmapDrawable) g10;
             bitmapDrawable2 = new BitmapDrawable(bitmapDrawable.getBitmap());
@@ -278,7 +277,7 @@ public final class m implements c6 {
             }
             arrayList.add(new z9.d0(str, str2));
         }
-        Collections.sort(arrayList, new es0(23));
+        Collections.sort(arrayList, new ds0(23));
         return DesugarCollections.unmodifiableList(arrayList);
     }
 
@@ -412,7 +411,7 @@ public final class m implements c6 {
             ((ValueAnimator) arrayList3.get(i10)).cancel();
             if (z10) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(((Float) ((ArrayList) this.d).get(i10)).floatValue(), 0.0f);
-                ofFloat.addUpdateListener(new sy0(this, i10, 0));
+                ofFloat.addUpdateListener(new ty0(this, i10, 0));
                 ofFloat.setDuration(100L);
                 ofFloat.start();
             }
@@ -421,7 +420,7 @@ public final class m implements c6 {
             ((ValueAnimator) arrayList2.get(i11)).cancel();
             if (z10) {
                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.e).get(i11)).floatValue(), 0.0f);
-                ofFloat2.addUpdateListener(new sy0(this, i11, 1));
+                ofFloat2.addUpdateListener(new ty0(this, i11, 1));
                 ofFloat2.setDuration(100L);
                 ofFloat2.start();
             }
@@ -430,7 +429,7 @@ public final class m implements c6 {
             ((ValueAnimator) arrayList.get(i12)).cancel();
             if (z10) {
                 ValueAnimator ofFloat3 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.f).get(i12)).floatValue(), 0.0f);
-                ofFloat3.addUpdateListener(new sy0(this, i12, 2));
+                ofFloat3.addUpdateListener(new ty0(this, i12, 2));
                 ofFloat3.setDuration(100L);
                 ofFloat3.start();
             }
@@ -440,29 +439,13 @@ public final class m implements c6 {
         arrayList3.clear();
     }
 
-    public void F() {
-        Bitmap bitmap = (Bitmap) this.c;
-        RectF rectF = (RectF) this.d;
-        Matrix matrix = (Matrix) this.f;
-        BitmapShader bitmapShader = (BitmapShader) this.e;
-        if (bitmapShader == null) {
-            return;
-        }
-        float width = rectF.width() / bitmap.getWidth();
-        float height = rectF.height() / bitmap.getHeight();
-        matrix.reset();
-        matrix.postTranslate(rectF.left, rectF.top);
-        matrix.preScale(width, height);
-        bitmapShader.setLocalMatrix(matrix);
-    }
-
     @Override // org.telegram.ui.ActionBar.c6
-    public int F0(int i10) {
+    public int E0(int i10) {
         return ((a6) this.f).C0.get(i10, g6.x0(null, i10, false));
     }
 
     @Override // org.telegram.ui.ActionBar.c6
-    public Paint G(String str) {
+    public Paint F(String str) {
         str.getClass();
         switch (str) {
             case "paintChatActionText2":
@@ -478,6 +461,22 @@ public final class m implements c6 {
             default:
                 return g6.T0(str);
         }
+    }
+
+    public void G() {
+        Bitmap bitmap = (Bitmap) this.c;
+        RectF rectF = (RectF) this.d;
+        Matrix matrix = (Matrix) this.f;
+        BitmapShader bitmapShader = (BitmapShader) this.e;
+        if (bitmapShader == null) {
+            return;
+        }
+        float width = rectF.width() / bitmap.getWidth();
+        float height = rectF.height() / bitmap.getHeight();
+        matrix.reset();
+        matrix.postTranslate(rectF.left, rectF.top);
+        matrix.preScale(width, height);
+        bitmapShader.setLocalMatrix(matrix);
     }
 
     public void H(p1 p1Var) {
@@ -517,7 +516,6 @@ public final class m implements c6 {
             sb2.append(dVar2 != null ? dVar2.c : null);
             Log.i("PIP_DEBUG", sb2.toString());
             LaunchActivity launchActivity = (LaunchActivity) this.d;
-            int i10 = 26;
             if (Build.VERSION.SDK_INT >= 26) {
                 if (dVar2 != null) {
                     AndroidUtilities.setPictureInPictureParams(launchActivity, dVar2.a());
@@ -525,32 +523,34 @@ public final class m implements c6 {
                     AndroidUtilities.resetPictureInPictureParams(launchActivity);
                 }
             }
-            int i11 = 0;
+            boolean z10 = false;
+            int i10 = 1;
             if ((dVar != null && dVar.f) != (dVar2 != null && dVar2.f)) {
-                m4.y yVar = (m4.y) this.f;
-                if (yVar != null) {
+                m4.x xVar = (m4.x) this.f;
+                if (xVar != null) {
                     try {
-                        synchronized (m4.y.b) {
-                            m4.y.c.remove(yVar.a.i);
+                        synchronized (m4.x.b) {
+                            m4.x.c.remove(xVar.a.i);
                         }
-                        yVar.a.r();
+                        xVar.a.r();
                     } catch (Exception unused) {
                     }
                     this.f = null;
                 }
                 if (dVar2 != null) {
-                    m4.s sVar = new m4.s((LaunchActivity) this.d, dVar2.l);
-                    sVar.c = "pip-media-session";
-                    u6.p(!sVar.m);
-                    sVar.m = true;
-                    Context context = sVar.a;
-                    Object obj = m4.y.b;
-                    int intValue = ((Integer) f0.C.get()).intValue();
-                    int i12 = Build.VERSION.SDK_INT;
-                    if (i12 < 27) {
+                    m4.r rVar = new m4.r((LaunchActivity) this.d, dVar2.l);
+                    rVar.c = "pip-media-session";
+                    u6.p(!rVar.m);
+                    rVar.m = true;
+                    Context context = rVar.a;
+                    Object obj = m4.x.b;
+                    int intValue = ((Integer) m4.e0.C.get()).intValue();
+                    int i11 = Build.VERSION.SDK_INT;
+                    int i12 = 27;
+                    if (i11 < 27) {
                         intValue = Math.max(intValue, (int) TypedValue.applyDimension(1, 320.0f, context.getResources().getDisplayMetrics()));
                     }
-                    e2.d dVar4 = sVar.g;
+                    e2.d dVar4 = rVar.g;
                     int i13 = 6;
                     if (dVar4 == null) {
                         c5.f fVar = new c5.f();
@@ -558,13 +558,13 @@ public final class m implements c6 {
                         fVar.a = -1;
                         fVar.a = intValue;
                         fVar.b = true;
-                        sVar.g = new g2.i(fVar);
+                        rVar.g = new g2.i(fVar);
                     } else {
-                        sVar.g = new c5.c0(dVar4, intValue, i13);
+                        rVar.g = new c5.c0(dVar4, intValue, i13);
                     }
-                    if (i12 == 29) {
-                        e2.d dVar5 = sVar.g;
-                        AtomicReference atomicReference = m4.s.n;
+                    if (i11 == 29) {
+                        e2.d dVar5 = rVar.g;
+                        AtomicReference atomicReference = m4.r.n;
                         i9.a aVar = (i9.a) atomicReference.get();
                         if (aVar == null) {
                             Display defaultDisplay = ((WindowManager) context.getSystemService(WindowManager.class)).getDefaultDisplay();
@@ -575,14 +575,13 @@ public final class m implements c6 {
                             int i14 = point2.y;
                             int i15 = point2.x;
                             Point point3 = new Point(i14 - (i15 - point.x), i15 - (i14 - point.y));
-                            i9.a aVar2 = new i9.a(new int[]{Math.max(point.x / 6, point.y / 6), Math.max(point3.x / 6, point3.y / 6)});
-                            atomicReference.set(aVar2);
-                            aVar = aVar2;
+                            aVar = new i9.a(new int[]{Math.max(point.x / 6, point.y / 6), Math.max(point3.x / 6, point3.y / 6)});
+                            atomicReference.set(aVar);
                         }
-                        sVar.g = new n4.s(i10, dVar5, aVar);
+                        rVar.g = new m2.t(i10, dVar5, aVar);
                     }
-                    sVar.g = new m4.c(sVar.g, i11);
-                    this.f = new m4.y(sVar.a, sVar.c, sVar.b, sVar.i, sVar.j, sVar.k, sVar.d, sVar.e, sVar.f, sVar.g, sVar.h, sVar.l);
+                    rVar.g = new n4.s(i12, rVar.g, z10);
+                    this.f = new m4.x(rVar.a, rVar.c, rVar.b, rVar.i, rVar.j, rVar.k, rVar.d, rVar.e, rVar.f, rVar.g, rVar.h, rVar.l);
                 }
             }
             if (dVar != null) {
@@ -604,12 +603,12 @@ public final class m implements c6 {
                 }
             }
             if (dVar2 != null) {
-                m4.y yVar2 = (m4.y) this.f;
-                if (yVar2 != null) {
-                    g1 g1Var = yVar2.a.t.a;
+                m4.x xVar2 = (m4.x) this.f;
+                if (xVar2 != null) {
+                    g1 g1Var = xVar2.a.t.a;
                     h0 h0Var = dVar2.l;
                     if (g1Var != h0Var) {
-                        yVar2.a(h0Var);
+                        xVar2.a(h0Var);
                     }
                 }
                 ((rf.a) this.c).bringToFront();
@@ -640,7 +639,7 @@ public final class m implements c6 {
 
     @Override // org.telegram.ui.ActionBar.c6
     public int b0(int i10) {
-        return F0(i10);
+        return E0(i10);
     }
 
     public void c(String str, String str2) {
@@ -665,6 +664,11 @@ public final class m implements c6 {
         }
     }
 
+    @Override // org.telegram.ui.ActionBar.c6
+    public int f1(int i10) {
+        return E0(i10);
+    }
+
     public l5.h g() {
         String str = ((String) this.a) == null ? " transportName" : "";
         if (((l5.l) this.c) == null) {
@@ -683,11 +687,6 @@ public final class m implements c6 {
             return new l5.h((String) this.a, (Integer) this.b, (l5.l) this.c, ((Long) this.d).longValue(), ((Long) this.e).longValue(), (HashMap) this.f);
         }
         throw new IllegalStateException("Missing required properties:".concat(str));
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public int g1(int i10) {
-        return F0(i10);
     }
 
     @Override // org.telegram.ui.ActionBar.c6
@@ -749,11 +748,11 @@ public final class m implements c6 {
     public q9.b h() {
         n6.l.i((String) this.f, "setActionToken is required before calling build().");
         new String((String) this.e);
-        w("actionToken", (String) this.f);
+        x("actionToken", (String) this.f);
         String str = (String) this.c;
         if ((str == null ? null : new String(str)) == null) {
             this.c = "AssistAction";
-            w("name", "AssistAction");
+            x("name", "AssistAction");
         }
         String str2 = (String) this.d;
         if ((str2 != null ? new String(str2) : null) == null) {
@@ -761,7 +760,7 @@ public final class m implements c6 {
             String concat = valueOf.length() != 0 ? "https://developers.google.com/actions?invocation=".concat(valueOf) : new String("https://developers.google.com/actions?invocation=");
             n6.l.h(concat);
             this.d = concat;
-            w("url", concat);
+            x("url", concat);
         }
         n6.l.i((String) this.c, "setObject is required before calling build().");
         n6.l.i((String) this.d, "setObject is required before calling build().");
@@ -825,12 +824,12 @@ public final class m implements c6 {
                     AndroidUtilities.resetPictureInPictureParams(launchActivity);
                 }
             }
-            m4.y yVar = (m4.y) this.f;
-            if (yVar != null) {
-                g1 g1Var = yVar.a.t.a;
+            m4.x xVar = (m4.x) this.f;
+            if (xVar != null) {
+                g1 g1Var = xVar.a.t.a;
                 h0 h0Var = dVar.l;
                 if (g1Var != h0Var) {
-                    yVar.a(h0Var);
+                    xVar.a(h0Var);
                 }
             }
         }
@@ -857,19 +856,19 @@ public final class m implements c6 {
         }
         if (i10 != R.drawable.abc_switch_thumb_material) {
             if (i10 == R.drawable.abc_btn_default_mtrl_shape) {
-                return m(context, b3.c(context, R.attr.colorButtonNormal));
+                return m(context, d3.c(context, R.attr.colorButtonNormal));
             }
             if (i10 == R.drawable.abc_btn_borderless_material) {
                 return m(context, 0);
             }
             if (i10 == R.drawable.abc_btn_colored_material) {
-                return m(context, b3.c(context, R.attr.colorAccent));
+                return m(context, d3.c(context, R.attr.colorAccent));
             }
             if (i10 == R.drawable.abc_spinner_mtrl_am_alpha || i10 == R.drawable.abc_spinner_textfield_background_material) {
                 return q7.a(context, R.color.abc_tint_spinner);
             }
             if (f(i10, (int[]) this.b)) {
-                return b3.d(context, R.attr.colorControlNormal);
+                return d3.d(context, R.attr.colorControlNormal);
             }
             if (f(i10, (int[]) this.e)) {
                 return q7.a(context, R.color.abc_tint_default);
@@ -884,21 +883,21 @@ public final class m implements c6 {
         }
         int[][] iArr = new int[3][];
         int[] iArr2 = new int[3];
-        ColorStateList d = b3.d(context, R.attr.colorSwitchThumbNormal);
+        ColorStateList d = d3.d(context, R.attr.colorSwitchThumbNormal);
         if (d == null || !d.isStateful()) {
-            iArr[0] = b3.b;
-            iArr2[0] = b3.b(context, R.attr.colorSwitchThumbNormal);
-            iArr[1] = b3.e;
-            iArr2[1] = b3.c(context, R.attr.colorControlActivated);
-            iArr[2] = b3.f;
-            iArr2[2] = b3.c(context, R.attr.colorSwitchThumbNormal);
+            iArr[0] = d3.b;
+            iArr2[0] = d3.b(context, R.attr.colorSwitchThumbNormal);
+            iArr[1] = d3.e;
+            iArr2[1] = d3.c(context, R.attr.colorControlActivated);
+            iArr[2] = d3.f;
+            iArr2[2] = d3.c(context, R.attr.colorSwitchThumbNormal);
         } else {
-            int[] iArr3 = b3.b;
+            int[] iArr3 = d3.b;
             iArr[0] = iArr3;
             iArr2[0] = d.getColorForState(iArr3, 0);
-            iArr[1] = b3.e;
-            iArr2[1] = b3.c(context, R.attr.colorControlActivated);
-            iArr[2] = b3.f;
+            iArr[1] = d3.e;
+            iArr2[1] = d3.c(context, R.attr.colorControlActivated);
+            iArr[2] = d3.f;
             iArr2[2] = d.getDefaultColor();
         }
         return new ColorStateList(iArr, iArr2);
@@ -978,15 +977,20 @@ public final class m implements c6 {
         l0 i12 = mVar.i();
         ca.b bVar3 = (ca.b) this.b;
         y9.e eVar = (y9.e) this.d;
-        q3 q3Var = (q3) this.e;
-        bVar3.d(d(b(i12, eVar, q3Var), q3Var), str, equals);
+        t3 t3Var = (t3) this.e;
+        bVar3.d(d(b(i12, eVar, t3Var), t3Var), str, equals);
     }
 
-    public void w(String str, String... strArr) {
+    @Override // org.telegram.ui.ActionBar.c6
+    public ColorFilter w() {
+        return g6.v3;
+    }
+
+    public void x(String str, String... strArr) {
         Bundle bundle = (Bundle) this.a;
         String[] strArr2 = (String[]) Arrays.copyOf(strArr, strArr.length);
         if (strArr2.length <= 0) {
-            q6.a("String array is empty and is ignored by put method.");
+            p6.a("String array is empty and is ignored by put method.");
             return;
         }
         int i10 = 0;
@@ -998,7 +1002,7 @@ public final class m implements c6 {
                 sb2.append("String at ");
                 sb2.append(i11);
                 sb2.append(" is null and is ignored by put method.");
-                q6.a(sb2.toString());
+                p6.a(sb2.toString());
             } else {
                 int i12 = 20000;
                 if (str2.length() > 20000) {
@@ -1006,7 +1010,7 @@ public final class m implements c6 {
                     sb3.append("String at ");
                     sb3.append(i11);
                     sb3.append(" is too long, truncating string.");
-                    q6.a(sb3.toString());
+                    p6.a(sb3.toString());
                     String str3 = strArr2[i10];
                     if (str3.length() > 20000) {
                         if (Character.isHighSurrogate(str3.charAt(19999)) && Character.isLowSurrogate(str3.charAt(20000))) {
@@ -1022,16 +1026,11 @@ public final class m implements c6 {
         if (i10 > 0) {
             Object[] objArr = (String[]) Arrays.copyOfRange(strArr2, 0, i10);
             if (objArr.length >= 100) {
-                q6.a("Input Array of elements is too big, cutting off.");
+                p6.a("Input Array of elements is too big, cutting off.");
                 objArr = Arrays.copyOf(objArr, 100);
             }
             bundle.putStringArray(str, (String[]) objArr);
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public ColorFilter x() {
-        return g6.v3;
     }
 
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:48:? -> B:43:0x0137). Please report as a decompilation issue!!! */
@@ -1141,7 +1140,7 @@ public final class m implements c6 {
             return;
         }
         rectF2.set(rectF);
-        F();
+        G();
     }
 
     public m(int i10, int i11) {
@@ -1156,7 +1155,7 @@ public final class m implements c6 {
         BitmapShader bitmapShader = new BitmapShader(createBitmap, tileMode, tileMode);
         this.e = bitmapShader;
         paint.setShader(bitmapShader);
-        F();
+        G();
     }
 
     public m(int i10) {
@@ -1173,7 +1172,7 @@ public final class m implements c6 {
                 BitmapShader bitmapShader = new BitmapShader(createBitmap, tileMode, tileMode);
                 this.e = bitmapShader;
                 paint.setShader(bitmapShader);
-                F();
+                G();
                 break;
             case 5:
                 this.a = new ArrayList();
@@ -1199,6 +1198,6 @@ public final class m implements c6 {
     }
 
     @Override // org.telegram.ui.ActionBar.c6
-    public /* synthetic */ void N0(int i10, int i11) {
+    public /* synthetic */ void M0(int i10, int i11) {
     }
 }

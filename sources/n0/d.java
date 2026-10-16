@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class d implements e {
     public static final Locale[] c = new Locale[0];
@@ -39,7 +39,7 @@ public final class d implements e {
         for (int i10 = 0; i10 < localeArr.length; i10++) {
             Locale locale = localeArr[i10];
             if (locale == null) {
-                throw new NullPointerException(i2.d.j(i10, "list[", "] is null"));
+                throw new NullPointerException(i2.d.k(i10, "list[", "] is null"));
             }
             if (!hashSet.contains(locale)) {
                 Locale locale2 = (Locale) locale.clone();

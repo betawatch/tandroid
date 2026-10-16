@@ -10,10 +10,10 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.o00;
+import org.telegram.ui.d20;
 import org.telegram.ui.s90;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k1 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -65,14 +65,14 @@ public final /* synthetic */ class k1 implements RequestDelegate {
             default:
                 Pattern pattern = LaunchActivity.B1;
                 boolean z10 = this.b;
-                AndroidUtilities.runOnUIThread(new s90((LaunchActivity) obj6, (o00) obj5, tLObject, z10, (Long) serializable3, (pf.c) obj4, (Long) serializable2, (Integer) serializable, (Integer) obj3, (byte[]) obj2, (org.telegram.ui.ActionBar.m2) obj, this.c, (Bundle) cloneable));
+                AndroidUtilities.runOnUIThread(new s90((LaunchActivity) obj6, (d20) obj5, tLObject, z10, (Long) serializable3, (pf.c) obj4, (Long) serializable2, (Integer) serializable, (Integer) obj3, (byte[]) obj2, (org.telegram.ui.ActionBar.m2) obj, this.c, (Bundle) cloneable));
                 break;
         }
     }
 
-    public /* synthetic */ k1(LaunchActivity launchActivity, o00 o00Var, boolean z10, Long l4, pf.c cVar, Long l10, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.m2 m2Var, int i10, Bundle bundle) {
+    public /* synthetic */ k1(LaunchActivity launchActivity, d20 d20Var, boolean z10, Long l4, pf.c cVar, Long l10, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.m2 m2Var, int i10, Bundle bundle) {
         this.d = launchActivity;
-        this.e = o00Var;
+        this.e = d20Var;
         this.b = z10;
         this.f = l4;
         this.g = cVar;

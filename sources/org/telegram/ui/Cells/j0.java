@@ -1,26 +1,57 @@
 package org.telegram.ui.Cells;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import android.view.MotionEvent;
+import org.telegram.ui.Components.gp0;
+import org.telegram.ui.cd1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class j0 extends FrameLayout {
-    public TextView a;
+public final class j0 extends gp0 {
+    public final /* synthetic */ int l0;
 
-    public TextView getTextView() {
-        return this.a;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ j0(int i10, Context context, org.telegram.ui.ActionBar.c6 c6Var, boolean z10) {
+        super(context, c6Var, z10);
+        this.l0 = i10;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(36.0f), TLObject.FLAG_30));
+    @Override // org.telegram.ui.Components.gp0, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.l0) {
+            case 0:
+                if (motionEvent.getAction() == 0) {
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                }
+                break;
+            case 1:
+                if (motionEvent.getAction() == 0) {
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                }
+                break;
+            case 2:
+                if (motionEvent.getAction() == 0) {
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                }
+                break;
+            default:
+                if (motionEvent.getAction() == 0) {
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                }
+                break;
+        }
+        return d(motionEvent);
     }
 
-    public void setText(String str) {
-        this.a.setText(str);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ j0(Context context) {
+        super(context);
+        this.l0 = 1;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j0(Context context, cd1 cd1Var) {
+        super(context, cd1Var, false);
+        this.l0 = 3;
     }
 }

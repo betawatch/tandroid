@@ -6,9 +6,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.da0;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class e4 extends org.telegram.ui.Cells.m4 {
     public final da0 r;
@@ -21,6 +21,6 @@ public final class e4 extends org.telegram.ui.Cells.m4 {
         da0Var.setTextColor(g6.w0(g6.z6, c6Var));
         da0Var.setLinkTextColor(g6.w0(g6.L6, c6Var));
         da0Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        addView(da0Var, a6.a(-2.0f, 10.0f, 14.0f, 10.0f, 0.0f, -2, (LocaleController.isRTL ? 3 : 5) | 48));
+        addView(da0Var, z5.a(-2.0f, 10.0f, 14.0f, 10.0f, 0.0f, -2, (LocaleController.isRTL ? 3 : 5) | 48));
     }
 }

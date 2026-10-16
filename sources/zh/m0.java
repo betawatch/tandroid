@@ -2,12 +2,12 @@ package zh;
 
 import android.content.Context;
 import android.view.View;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.z61;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class m0 extends z61 {
+public final class m0 extends a71 {
     public final /* synthetic */ r0 N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -16,7 +16,7 @@ public final class m0 extends z61 {
         this.N = r0Var;
     }
 
-    @Override // org.telegram.ui.Components.z61, s4.g0
+    @Override // org.telegram.ui.Components.a71, s4.g0
     public final void v(s4.b1 b1Var, int i10) {
         super.v(b1Var, i10);
         View view = b1Var.a;

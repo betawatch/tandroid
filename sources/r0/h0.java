@@ -1,23 +1,41 @@
 package r0;
 
-import android.view.ContentInfo;
+import android.util.SparseArray;
 import android.view.View;
-import j$.util.Objects;
+import android.view.ViewGroup;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.WeakHashMap;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public abstract class h0 {
-    public static String[] a(View view) {
-        return view.getReceiveContentMimeTypes();
-    }
+public final class h0 {
+    public static final ArrayList d = new ArrayList();
+    public WeakHashMap a;
+    public SparseArray b;
+    public WeakReference c;
 
-    public static g b(View view, g gVar) {
-        ContentInfo d = gVar.a.d();
-        Objects.requireNonNull(d);
-        ContentInfo performReceiveContent = view.performReceiveContent(d);
-        if (performReceiveContent == null) {
+    public final View a(View view) {
+        int size;
+        WeakHashMap weakHashMap = this.a;
+        if (weakHashMap == null || !weakHashMap.containsKey(view)) {
             return null;
         }
-        return performReceiveContent == d ? gVar : new g(new j2.j(performReceiveContent));
+        if (view instanceof ViewGroup) {
+            ViewGroup viewGroup = (ViewGroup) view;
+            for (int childCount = viewGroup.getChildCount() - 1; childCount >= 0; childCount--) {
+                View a2 = a(viewGroup.getChildAt(childCount));
+                if (a2 != null) {
+                    return a2;
+                }
+            }
+        }
+        ArrayList arrayList = (ArrayList) view.getTag(R.id.tag_unhandled_key_listeners);
+        if (arrayList == null || arrayList.size() - 1 < 0) {
+            return null;
+        }
+        arrayList.get(size).getClass();
+        throw new ClassCastException();
     }
 }

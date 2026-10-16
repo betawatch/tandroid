@@ -28,10 +28,11 @@ import java.util.LinkedHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicInteger;
+import m.h3;
 import org.telegram.messenger.beta.R;
 import w7.d8;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class m extends e0.f implements u0, androidx.lifecycle.i, t4.e {
     public final CopyOnWriteArrayList E;
@@ -40,7 +41,7 @@ public abstract class m extends e0.f implements u0, androidx.lifecycle.i, t4.e {
     public boolean H;
     public boolean I;
     public final d0 b;
-    public final li.k c;
+    public final h3 c;
     public final androidx.lifecycle.v d;
     public final o e;
     public t0 f;
@@ -56,7 +57,7 @@ public abstract class m extends e0.f implements u0, androidx.lifecycle.i, t4.e {
     public m() {
         d0 d0Var = new d0(1);
         this.b = d0Var;
-        this.c = new li.k(new a3.d(this, 6));
+        this.c = new h3(new a3.d(this, 6));
         androidx.lifecycle.v vVar = new androidx.lifecycle.v(this);
         this.d = vVar;
         o oVar = new o(this);
@@ -134,7 +135,7 @@ public abstract class m extends e0.f implements u0, androidx.lifecycle.i, t4.e {
             immLeaksCleaner.a = this;
             vVar.a(immLeaksCleaner);
         }
-        ((m.p) oVar.c).f("android:support:activity-result", new e(this, 0));
+        ((m.r) oVar.c).f("android:support:activity-result", new e(this, 0));
         f fVar = new f(this, 0);
         if (((m) d0Var.c) != null) {
             fVar.a();
@@ -190,8 +191,8 @@ public abstract class m extends e0.f implements u0, androidx.lifecycle.i, t4.e {
     }
 
     @Override // t4.e
-    public final m.p g() {
-        return (m.p) this.e.c;
+    public final m.r g() {
+        return (m.r) this.e.c;
     }
 
     @Override // androidx.lifecycle.t

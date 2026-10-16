@@ -1,20 +1,27 @@
 package org.telegram.ui;
 
-import android.util.FloatProperty;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class os0 extends FloatProperty {
-    public os0() {
-        super("progress");
+public final /* synthetic */ class os0 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ys0 b;
+
+    public /* synthetic */ os0(ys0 ys0Var, int i10) {
+        this.a = i10;
+        this.b = ys0Var;
     }
 
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        return Float.valueOf(((rv0) obj).a);
-    }
-
-    public final void setValue(Object obj, float f7) {
-        ((rv0) obj).b(f7);
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                new org.telegram.ui.Components.zc(this.b.b.e0, null).m(org.telegram.ui.Components.yc.r, 1, -115203550, -1, null).j();
+                break;
+            default:
+                new org.telegram.ui.Components.zc(this.b.b.e0, null).m(org.telegram.ui.Components.yc.r, 1, -115203550, -1, null).j();
+                break;
+        }
     }
 }

@@ -20,7 +20,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class sv extends org.telegram.ui.ActionBar.m2 {
     public static final org.telegram.ui.Components.js0 x = new org.telegram.ui.Components.js0(2);
@@ -88,7 +88,7 @@ public final class sv extends org.telegram.ui.ActionBar.m2 {
         ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = new ScrollSlidingTextTabStrip(context, null);
         this.e = scrollSlidingTextTabStrip;
         scrollSlidingTextTabStrip.setUseSameWidth(true);
-        this.actionBar.addView(this.e, w7.a6.e(-1, 44, 83));
+        this.actionBar.addView(this.e, w7.z5.e(-1, 44, 83));
         this.e.setDelegate(new g(this, 14));
         this.v = ViewConfiguration.get(context).getScaledMaximumFlingVelocity();
         qv qvVar = new qv(this, context);
@@ -100,13 +100,13 @@ public final class sv extends org.telegram.ui.ActionBar.m2 {
         while (i10 < rvVarArr.length) {
             rv rvVar = new rv(this, context);
             rvVarArr[i10] = rvVar;
-            qvVar.addView(rvVar, w7.a6.d(-1.0f, -1));
+            qvVar.addView(rvVar, w7.z5.d(-1.0f, -1));
             if (i10 == 0) {
                 rv rvVar2 = rvVarArr[i10];
                 rvVar2.a = yyVar;
                 f7 = f10;
                 rvVar2.d = yyVar.e0[0].a;
-                yyVar.J3();
+                yyVar.K3();
                 iy iyVar = yyVar.C0;
                 rvVar2.e = iyVar != null ? iyVar.V : null;
             } else {
@@ -124,10 +124,10 @@ public final class sv extends org.telegram.ui.ActionBar.m2 {
             rv rvVar5 = rvVarArr[i10];
             rvVar5.c = rvVar5.a.getActionBar();
             rv rvVar6 = rvVarArr[i10];
-            rvVar6.addView(rvVar6.b, w7.a6.d(-1.0f, -1));
+            rvVar6.addView(rvVar6.b, w7.z5.d(-1.0f, -1));
             AndroidUtilities.removeFromParent(rvVarArr[i10].c);
             rv rvVar7 = rvVarArr[i10];
-            rvVar7.addView(rvVar7.c, w7.a6.d(-2.0f, -1));
+            rvVar7.addView(rvVar7.c, w7.z5.d(-2.0f, -1));
             rvVarArr[i10].c.setVisibility(8);
             int i11 = 0;
             while (i11 < 2) {
@@ -142,7 +142,7 @@ public final class sv extends org.telegram.ui.ActionBar.m2 {
             f10 = f7;
         }
         float f11 = f10;
-        qvVar.addView(this.actionBar, w7.a6.d(-2.0f, -1));
+        qvVar.addView(this.actionBar, w7.z5.d(-2.0f, -1));
         ScrollSlidingTextTabStrip scrollSlidingTextTabStrip2 = this.e;
         if (scrollSlidingTextTabStrip2 != null) {
             scrollSlidingTextTabStrip2.a(0, LocaleController.getString(R.string.BlockUserChatsTitle), null);
@@ -191,7 +191,7 @@ public final class sv extends org.telegram.ui.ActionBar.m2 {
         org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
         a2Var.R = string;
         a2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("AreYouSureBlockContact2", R.string.AreYouSureBlockContact2, ContactsController.formatName(user.first_name, user.last_name)));
-        alertDialog$Builder.k(LocaleController.getString(R.string.BlockContact), new org.telegram.ui.Components.t2(29, this, user));
+        alertDialog$Builder.k(LocaleController.getString(R.string.BlockContact), new org.telegram.ui.Components.u2(28, this, user));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
         showDialog(a2Var);
         TextView textView = (TextView) a2Var.d(-1);

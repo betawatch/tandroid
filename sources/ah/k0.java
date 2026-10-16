@@ -19,11 +19,11 @@ import org.telegram.ui.Components.p60;
 import org.telegram.ui.Components.ub0;
 import org.telegram.ui.Components.voip.u2;
 import org.telegram.ui.Components.z9;
-import org.telegram.ui.hj0;
+import org.telegram.ui.gj0;
 import org.telegram.ui.p51;
 import org.telegram.ui.r51;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -149,16 +149,16 @@ public final /* synthetic */ class k0 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 10:
-                hj0 hj0Var = (hj0) this.c;
+                gj0 gj0Var = (gj0) this.c;
                 float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                hj0Var.E = floatValue4;
-                hj0Var.H.setAlpha(floatValue4);
-                hj0Var.K.setAlpha(hj0Var.E);
-                if (!this.b && (viewGroup = hj0Var.Z) != null) {
-                    viewGroup.setAlpha(hj0Var.E);
+                gj0Var.E = floatValue4;
+                gj0Var.H.setAlpha(floatValue4);
+                gj0Var.K.setAlpha(gj0Var.E);
+                if (!this.b && (viewGroup = gj0Var.Z) != null) {
+                    viewGroup.setAlpha(gj0Var.E);
                 }
-                hj0Var.F.invalidate();
-                hj0Var.G.invalidate();
+                gj0Var.F.invalidate();
+                gj0Var.G.invalidate();
                 break;
             case 11:
                 r51 r51Var = (r51) this.c;

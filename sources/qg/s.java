@@ -14,7 +14,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class s extends View {
     public final Paint a;
@@ -78,9 +78,9 @@ public final class s extends View {
         int width = (getWidth() - getPaddingLeft()) - getPaddingRight();
         int height = (getHeight() - getPaddingTop()) - getPaddingBottom();
         float f7 = width;
-        float a2 = w7.s.a(this.d * f7, dp2, f7 - dp2) + getPaddingLeft();
+        float a2 = w7.r.a(this.d * f7, dp2, f7 - dp2) + getPaddingLeft();
         float f10 = height;
-        float a10 = w7.s.a(this.e * f10, dp2, f10 - dp2) + getPaddingTop();
+        float a10 = w7.r.a(this.e * f10, dp2, f10 - dp2) + getPaddingTop();
         Rect rect = AndroidUtilities.rectTmp2;
         Drawable drawable = this.f;
         drawable.getPadding(rect);

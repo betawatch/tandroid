@@ -11,14 +11,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.kw;
-import org.telegram.ui.mf0;
+import org.telegram.ui.lf0;
+import org.telegram.ui.oj1;
 import org.telegram.ui.p70;
 import org.telegram.ui.pj1;
-import org.telegram.ui.qj1;
 import org.telegram.ui.sd;
 import org.telegram.ui.zo;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class k5 extends org.telegram.ui.Components.z9 {
     public final /* synthetic */ int G;
@@ -67,11 +67,11 @@ public final class k5 extends org.telegram.ui.Components.z9 {
                 super.onDraw(canvas);
                 break;
             case 2:
-                org.telegram.ui.Cells.k7 k7Var = (org.telegram.ui.Cells.k7) this.H;
-                k5 k5Var = k7Var.b;
+                org.telegram.ui.Cells.j7 j7Var = (org.telegram.ui.Cells.j7) this.H;
+                k5 k5Var = j7Var.b;
                 float currentAlpha = k5Var.getImageReceiver().hasBitmapImage() ? 1.0f - k5Var.getImageReceiver().getCurrentAlpha() : 1.0f;
-                k7Var.d.setAlpha(currentAlpha);
-                k7Var.a.setAlpha(currentAlpha);
+                j7Var.d.setAlpha(currentAlpha);
+                j7Var.a.setAlpha(currentAlpha);
                 super.onDraw(canvas);
                 break;
             case 3:
@@ -89,7 +89,7 @@ public final class k5 extends org.telegram.ui.Components.z9 {
                 super.onDraw(canvas);
                 org.telegram.ui.Cells.bb bbVar = (org.telegram.ui.Cells.bb) this.H;
                 Object obj = bbVar.h;
-                if ((obj instanceof pj1) || (obj instanceof qj1)) {
+                if ((obj instanceof oj1) || (obj instanceof pj1)) {
                     canvas.drawLine(1.0f, 0.0f, getMeasuredWidth() - 1, 0.0f, bbVar.n.n);
                     canvas2 = canvas;
                     canvas2.drawLine(0.0f, 0.0f, 0.0f, getMeasuredHeight(), bbVar.n.n);
@@ -104,13 +104,13 @@ public final class k5 extends org.telegram.ui.Components.z9 {
                     int measuredHeight = getMeasuredHeight() / 2;
                     canvas2.drawCircle(measuredWidth, measuredHeight, AndroidUtilities.dp(20.0f), bbVar.n.r);
                     Drawable drawable = bbVar.n.v;
-                    drawable.setBounds(org.telegram.ui.Cells.d0.u(2, measuredWidth, drawable), org.telegram.ui.Cells.d0.d(2, measuredHeight, bbVar.n.v), org.telegram.ui.Cells.d0.y(2, measuredWidth, bbVar.n.v), org.telegram.ui.Cells.d0.x(2, measuredHeight, bbVar.n.v));
+                    drawable.setBounds(org.telegram.ui.Cells.c1.r(2, measuredWidth, drawable), org.telegram.ui.Cells.c1.c(2, measuredHeight, bbVar.n.v), org.telegram.ui.Cells.c1.v(2, measuredWidth, bbVar.n.v), org.telegram.ui.Cells.c1.u(2, measuredHeight, bbVar.n.v));
                     bbVar.n.v.draw(canvas2);
                     break;
                 }
                 break;
             case 11:
-                if (!((org.telegram.ui.web.b1) this.H).v) {
+                if (!((org.telegram.ui.web.c1) this.H).v) {
                     if (this.a.getDrawable() != null) {
                         this.a.setImageCoords(0.0f, 0.0f, getWidth(), (getWidth() / r0.getIntrinsicWidth()) * r0.getIntrinsicHeight());
                         this.a.draw(canvas);
@@ -162,10 +162,10 @@ public final class k5 extends org.telegram.ui.Components.z9 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k5(org.telegram.ui.web.b1 b1Var, Context context) {
+    public k5(org.telegram.ui.web.c1 c1Var, Context context) {
         super(context);
         this.G = 11;
-        this.H = b1Var;
+        this.H = c1Var;
         this.a = new b4(this, this, 6);
     }
 
@@ -205,7 +205,7 @@ public final class k5 extends org.telegram.ui.Components.z9 {
                 super.invalidate();
                 break;
             case 10:
-                di.p6 p6Var4 = ((mf0) this.H).h;
+                di.p6 p6Var4 = ((lf0) this.H).h;
                 if (p6Var4 != null) {
                     p6Var4.invalidate();
                 }
@@ -252,7 +252,7 @@ public final class k5 extends org.telegram.ui.Components.z9 {
                 super.invalidate(i10, i11, i12, i13);
                 break;
             case 10:
-                di.p6 p6Var4 = ((mf0) this.H).h;
+                di.p6 p6Var4 = ((lf0) this.H).h;
                 if (p6Var4 != null) {
                     p6Var4.invalidate();
                 }

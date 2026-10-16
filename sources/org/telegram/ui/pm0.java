@@ -1,113 +1,81 @@
 package org.telegram.ui;
 
-import android.text.Editable;
 import android.text.TextUtils;
-import android.text.TextWatcher;
-import j$.util.Objects;
-import java.util.regex.Pattern;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import java.util.Locale;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MrzRecognizer;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class pm0 implements TextWatcher {
-    public final /* synthetic */ int a;
-    public final Object b;
-    public String c;
-    public final /* synthetic */ Object d;
+public final class pm0 implements y9 {
+    public final /* synthetic */ sn0 a;
 
-    public /* synthetic */ pm0(un0 un0Var, EditTextBoldCursor editTextBoldCursor, String str, int i10) {
-        this.a = i10;
-        this.d = un0Var;
-        this.b = editTextBoldCursor;
-        this.c = str;
+    public pm0(sn0 sn0Var) {
+        this.a = sn0Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00bc  */
-    @Override // android.text.TextWatcher
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void afterTextChanged(Editable editable) {
-        long parseLong;
-        int i10;
-        switch (this.a) {
-            case 0:
-                un0.I0((un0) this.d, (EditTextBoldCursor) this.b, this.c, editable, false);
-                break;
-            case 1:
-                un0.I0((un0) this.d, (EditTextBoldCursor) this.b, this.c, editable, false);
-                break;
-            default:
-                qg.w wVar = (qg.w) this.d;
-                qg.x xVar = wVar.f;
-                EditTextBoldCursor editTextBoldCursor = wVar.d;
-                if (!wVar.e && this.c != null && editable != null && !TextUtils.isEmpty(editable) && !Objects.equals(this.c.toString(), editable.toString())) {
-                    String obj = editable.toString();
-                    if (obj.length() > 8) {
-                        editTextBoldCursor.setText(obj.substring(2, 8).toUpperCase());
-                        editTextBoldCursor.setSelection(8);
-                        break;
-                    } else if (((Pattern) this.b).matcher(editable).find()) {
-                        int length = obj.length();
-                        if (length != 3) {
-                            if (length == 6) {
-                                i10 = ((int) Long.parseLong(obj, 16)) - 16777216;
-                            } else if (length != 8) {
-                                i10 = xVar.f;
-                            } else {
-                                parseLong = Long.parseLong(obj, 16);
-                            }
-                            if (i10 == xVar.f) {
-                                xVar.n(i10, 5);
-                                break;
-                            }
-                        } else {
-                            parseLong = Long.parseLong("FF" + obj.charAt(0) + obj.charAt(0) + obj.charAt(1) + obj.charAt(1) + obj.charAt(2) + obj.charAt(2), 16);
-                        }
-                        i10 = (int) parseLong;
-                        if (i10 == xVar.f) {
-                        }
-                    }
-                }
-                break;
+    @Override // org.telegram.ui.y9
+    public final /* synthetic */ String I0() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.y9
+    public final void V0(MrzRecognizer.Result result) {
+        boolean isEmpty = TextUtils.isEmpty(result.firstName);
+        sn0 sn0Var = this.a;
+        if (!isEmpty) {
+            sn0Var.Y[0].setText(result.firstName);
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 0:
-            case 1:
-                break;
-            default:
-                this.c = charSequence.toString();
-                break;
+        if (!TextUtils.isEmpty(result.middleName)) {
+            sn0Var.Y[1].setText(result.middleName);
         }
+        if (!TextUtils.isEmpty(result.lastName)) {
+            sn0Var.Y[2].setText(result.lastName);
+        }
+        int i10 = result.gender;
+        if (i10 != 0) {
+            if (i10 == 1) {
+                sn0Var.w = "male";
+                sn0Var.Y[4].setText(LocaleController.getString(R.string.PassportMale));
+            } else if (i10 == 2) {
+                sn0Var.w = "female";
+                sn0Var.Y[4].setText(LocaleController.getString(R.string.PassportFemale));
+            }
+        }
+        if (!TextUtils.isEmpty(result.nationality)) {
+            String str = result.nationality;
+            sn0Var.s = str;
+            String str2 = (String) sn0Var.Y0.get(str);
+            if (str2 != null) {
+                sn0Var.Y[5].setText(str2);
+            }
+        }
+        if (!TextUtils.isEmpty(result.issuingCountry)) {
+            String str3 = result.issuingCountry;
+            sn0Var.v = str3;
+            String str4 = (String) sn0Var.Y0.get(str3);
+            if (str4 != null) {
+                sn0Var.Y[6].setText(str4);
+            }
+        }
+        int i11 = result.birthDay;
+        if (i11 <= 0 || result.birthMonth <= 0 || result.birthYear <= 0) {
+            return;
+        }
+        sn0Var.Y[3].setText(String.format(Locale.US, "%02d.%02d.%d", Integer.valueOf(i11), Integer.valueOf(result.birthMonth), Integer.valueOf(result.birthYear)));
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
+    @Override // org.telegram.ui.y9
+    public final /* synthetic */ boolean d1(String str, o9 o9Var) {
+        return false;
     }
 
-    public pm0(qg.w wVar) {
-        this.a = 2;
-        this.d = wVar;
-        this.b = Pattern.compile("^[0-9a-fA-F]*$");
+    @Override // org.telegram.ui.y9
+    public final /* synthetic */ void K(String str) {
     }
 
-    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void e(int i10, int i11, int i12, CharSequence charSequence) {
+    @Override // org.telegram.ui.y9
+    public final /* synthetic */ void onDismiss() {
     }
 }

@@ -29,20 +29,20 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.q;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.sk;
 import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.messenger.yh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.j61;
 import org.telegram.ui.Components.k9;
 import org.telegram.ui.Components.s5;
 import org.telegram.ui.l40;
 import wh.n;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class c extends ViewGroup implements oe.a, NotificationCenter.NotificationCenterDelegate, ne.d {
     public static final Rect L = new Rect();
@@ -80,7 +80,7 @@ public final class c extends ViewGroup implements oe.a, NotificationCenter.Notif
         this.f = paint2;
         org.telegram.ui.Components.voip.h hVar = new org.telegram.ui.Components.voip.h();
         this.h = hVar;
-        this.y = new t0(this, 17);
+        this.y = new t0(this, 16);
         this.J = new zb(this, 1);
         this.K = new RectF();
         n nVar = new n(context);
@@ -301,10 +301,10 @@ public final class c extends ViewGroup implements oe.a, NotificationCenter.Notif
             int paddingLeft = getPaddingLeft();
             int paddingRight = getPaddingRight();
             i1 i1Var = this.s;
-            int z10 = yh.z(44.0f, (size - paddingLeft) - paddingRight, TLObject.FLAG_31);
+            int c10 = sk.c(44.0f, (size - paddingLeft) - paddingRight, TLObject.FLAG_31);
             int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
             n nVar = this.v;
-            nVar.measure(z10, makeMeasureSpec);
+            nVar.measure(c10, makeMeasureSpec);
             float measuredWidth = nVar.getMeasuredWidth();
             if (i1Var == null) {
                 ceil = (int) Math.ceil(measuredWidth);
@@ -314,7 +314,7 @@ public final class c extends ViewGroup implements oe.a, NotificationCenter.Notif
                 dp = AndroidUtilities.dp(70.0f);
             }
             int i12 = dp + ceil;
-            int z11 = q.z(8.0f, nVar.getMeasuredHeight(), AndroidUtilities.dp(28.0f));
+            int y3 = g0.y(8.0f, nVar.getMeasuredHeight(), AndroidUtilities.dp(28.0f));
             n0 n0Var2 = new n0();
             n0Var2.c = new RectF();
             n0Var2.d = new Path();
@@ -326,13 +326,13 @@ public final class c extends ViewGroup implements oe.a, NotificationCenter.Notif
             RectF rectF2 = (RectF) n0Var2.f;
             RectF rectF3 = (RectF) n0Var2.c;
             n0Var2.a = size;
-            n0Var2.b = z11;
-            rectF3.set(0.0f, 0.0f, i12, z11);
+            n0Var2.b = y3;
+            rectF3.set(0.0f, 0.0f, i12, y3);
             rectF3.offset((size - i12) / 2.0f, 0.0f);
             ((Path) n0Var2.d).addRoundRect(rectF3, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), Path.Direction.CW);
-            boolean z12 = nVar.getLayout().getParagraphDirection(0) == -1;
+            boolean z10 = nVar.getLayout().getParagraphDirection(0) == -1;
             rectF.set(0.0f, 0.0f, AndroidUtilities.dp(22.0f), AndroidUtilities.dp(22.0f));
-            if (z12) {
+            if (z10) {
                 f7 = 28.0f;
                 rectF.offset(rectF3.right, rectF3.top);
                 rectF.offset((-AndroidUtilities.dp(4.0f)) - rectF.width(), AndroidUtilities.dp(3.0f));
@@ -342,14 +342,14 @@ public final class c extends ViewGroup implements oe.a, NotificationCenter.Notif
                 rectF.offset(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(3.0f));
             }
             rectF2.set(0.0f, 0.0f, AndroidUtilities.dp(f7), AndroidUtilities.dp(f7));
-            if (z12) {
+            if (z10) {
                 rectF2.offset(rectF3.left + AndroidUtilities.dp(5.0f), 0.0f);
             } else {
                 rectF2.offset(rectF3.right - AndroidUtilities.dp(33.0f), 0.0f);
             }
             rectF2.inset(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f));
             pointF.set(0.0f, (rectF3.top + AndroidUtilities.dp(19.0f)) - nVar.getLayout().getLineBaseline(0));
-            if (z12) {
+            if (z10) {
                 pointF.offset((rectF3.right - AndroidUtilities.dp(32.0f)) - measuredWidth, 0.0f);
             } else {
                 pointF.offset(rectF3.left + AndroidUtilities.dp(32.0f), 0.0f);
@@ -412,7 +412,7 @@ public final class c extends ViewGroup implements oe.a, NotificationCenter.Notif
         }
         this.r = null;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(name);
-        spannableStringBuilder.setSpan(new i61(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new j61(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
         spannableStringBuilder.setSpan(this.J, 0, spannableStringBuilder.length(), 33);
         i1 i1Var = groupCallMessage.visibleReaction;
         n nVar = this.v;
@@ -460,7 +460,7 @@ public final class c extends ViewGroup implements oe.a, NotificationCenter.Notif
     }
 
     @Override // ne.d
-    public final /* synthetic */ void C(float f7, int i10) {
+    public final /* synthetic */ void A(float f7, int i10) {
     }
 
     @Override // oe.a

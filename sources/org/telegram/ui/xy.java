@@ -4,7 +4,7 @@ import android.content.Context;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class xy extends FrameLayout {
     public static final /* synthetic */ int L = 0;
@@ -76,7 +76,7 @@ public final class xy extends FrameLayout {
         if (getTranslationX() != f7) {
             super.setTranslationX(f7);
             yy yyVar = this.K;
-            if (yyVar.g3 && (xyVar = yyVar.e0[0]) == this) {
+            if (yyVar.h3 && (xyVar = yyVar.e0[0]) == this) {
                 yyVar.z0.g(Math.abs(xyVar.getTranslationX()) / yyVar.e0[0].getMeasuredWidth(), yyVar.e0[1].h);
             }
             yyVar.j3();

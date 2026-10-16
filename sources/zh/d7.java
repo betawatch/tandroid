@@ -13,20 +13,20 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.br;
 import org.telegram.ui.Components.ia0;
 import org.telegram.ui.fi1;
-import org.telegram.ui.y00;
+import org.telegram.ui.x00;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class d7 extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
     public long a;
     public final int b;
-    public final y00 c;
+    public final x00 c;
     public boolean d;
     public SpannableString e;
     public long f;
@@ -45,21 +45,21 @@ public final class d7 extends LinearLayout implements NotificationCenter.Notific
         setGravity(21);
         TextView textView = new TextView(context);
         int i11 = org.telegram.ui.ActionBar.g6.G6;
-        yh.n(i11, c6Var, textView, 1, 13.0f);
+        sk.o(i11, c6Var, textView, 1, 13.0f);
         textView.setText(LocaleController.getString(R.string.StarsBalance));
         textView.setGravity(5);
         textView.setTypeface(AndroidUtilities.bold());
-        addView(textView, w7.a6.q(-2, -2, 5));
-        y00 y00Var = new y00(this, context, context.getResources().getDrawable(R.drawable.star_small_inner).mutate());
-        this.c = y00Var;
-        y00Var.n = true;
-        y00Var.getDrawable().r(false, true);
-        y00Var.setTypeface(AndroidUtilities.bold());
-        y00Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(i11, c6Var));
-        y00Var.setTextSize(AndroidUtilities.dp(13.0f));
-        y00Var.setGravity(5);
-        y00Var.setPadding(AndroidUtilities.dp(19.0f), 0, 0, 0);
-        addView(y00Var, w7.a6.t(-2, 20, 5, 0, -2, 0, 0));
+        addView(textView, w7.z5.q(-2, -2, 5));
+        x00 x00Var = new x00(this, context, context.getResources().getDrawable(R.drawable.star_small_inner).mutate());
+        this.c = x00Var;
+        x00Var.n = true;
+        x00Var.getDrawable().r(false, true);
+        x00Var.setTypeface(AndroidUtilities.bold());
+        x00Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(i11, c6Var));
+        x00Var.setTextSize(AndroidUtilities.dp(13.0f));
+        x00Var.setGravity(5);
+        x00Var.setPadding(AndroidUtilities.dp(19.0f), 0, 0, 0);
+        addView(x00Var, w7.z5.t(-2, 20, 5, 0, -2, 0, 0));
         a(false);
         setPadding(AndroidUtilities.dp(15.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(15.0f), AndroidUtilities.dp(4.0f));
     }
@@ -72,8 +72,8 @@ public final class d7 extends LinearLayout implements NotificationCenter.Notific
         n5 y10 = this.d ? n5.y(i10, true) : null;
         long j10 = 0;
         ag.a i11 = ag.a.i(0L, ag.b.b);
-        y00 y00Var = this.c;
-        y00Var.a();
+        x00 x00Var = this.c;
+        x00Var.a();
         if (this.a == UserConfig.getInstance(i10).getClientUserId()) {
             z11 = !y3.e;
             j10 = y3.p().amount;
@@ -107,9 +107,9 @@ public final class d7 extends LinearLayout implements NotificationCenter.Notific
             if (this.e == null) {
                 SpannableString spannableString = new SpannableString("x");
                 this.e = spannableString;
-                spannableString.setSpan(new ia0(AndroidUtilities.dp(48.0f), y00Var), 0, this.e.length(), 33);
+                spannableString.setSpan(new ia0(AndroidUtilities.dp(48.0f), x00Var), 0, this.e.length(), 33);
             }
-            y00Var.c(this.e, z10, true);
+            x00Var.c(this.e, z10, true);
             this.f = -1L;
             return;
         }
@@ -125,10 +125,10 @@ public final class d7 extends LinearLayout implements NotificationCenter.Notific
                 }
                 spannableStringBuilder.append((CharSequence) "  ");
             }
-            spannableStringBuilder.append((CharSequence) p7.Y0(false, org.telegram.messenger.q.i(j10, ' ', new StringBuilder("⭐️")), 0.62f, this.h));
-            y00Var.setText(spannableStringBuilder);
+            spannableStringBuilder.append((CharSequence) p7.Y0(false, org.telegram.messenger.g0.h(j10, ' ', new StringBuilder("⭐️")), 0.62f, this.h));
+            x00Var.setText(spannableStringBuilder);
         } else {
-            y00Var.setText(LocaleController.formatNumber(j10, ' '));
+            x00Var.setText(LocaleController.formatNumber(j10, ' '));
         }
         this.f = j10;
     }

@@ -1,56 +1,54 @@
 package org.telegram.ui.Wallet;
 
 import android.content.Context;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.InsetDrawable;
+import android.graphics.drawable.ShapeDrawable;
 import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.ui.Components.k91;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Components.d91;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class c4 extends i2 {
-    public final /* synthetic */ ViewGroup b0;
-    public final /* synthetic */ View[] c0;
-    public final /* synthetic */ Context d0;
+public final class c4 extends d91 {
+    public final /* synthetic */ ArrayList a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.c6 c;
+    public final /* synthetic */ Rect d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ j2[] f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c4(Context context, ViewGroup viewGroup, org.telegram.ui.ActionBar.c6 c6Var, ViewGroup viewGroup2, View[] viewArr, Context context2) {
-        super(context, viewGroup, c6Var);
-        this.b0 = viewGroup2;
-        this.c0 = viewArr;
-        this.d0 = context2;
+    public c4(ArrayList arrayList, Context context, org.telegram.ui.ActionBar.c6 c6Var, Rect rect, int i10, j2[] j2VarArr) {
+        this.a = arrayList;
+        this.b = context;
+        this.c = c6Var;
+        this.d = rect;
+        this.e = i10;
+        this.f = j2VarArr;
     }
 
-    @Override // org.telegram.ui.Wallet.i2, org.telegram.ui.Components.db
-    public final void G(float f7) {
-        super.G(f7);
-        if (this.b0 instanceof k91) {
-            this.shadowDrawable.setBounds(0, (int) f7, this.containerView.getWidth(), this.containerView.getHeight());
-        }
+    @Override // org.telegram.ui.Components.d91
+    public final void b(View view, int i10, int i11) {
+        FrameLayout frameLayout = (FrameLayout) view;
+        frameLayout.removeAllViews();
+        frameLayout.addView(a5.i0(this.b, this.e, (TL_wallet.walletTransaction) this.a.get(i10), null, null, null, null, this.c, this.f), w7.z5.d(-2.0f, -1));
     }
 
-    @Override // org.telegram.ui.Components.db
-    public final boolean M() {
-        return !(this.b0 instanceof k91);
+    @Override // org.telegram.ui.Components.d91
+    public final View d(int i10) {
+        FrameLayout frameLayout = new FrameLayout(this.b);
+        ShapeDrawable d02 = org.telegram.ui.ActionBar.g6.d0(AndroidUtilities.dp(20.0f), 0, org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.d6, this.c));
+        Rect rect = this.d;
+        frameLayout.setBackground(new InsetDrawable((Drawable) d02, rect.left, 0, rect.right, 0));
+        return frameLayout;
     }
 
-    @Override // org.telegram.ui.Wallet.i2
-    public final int Q() {
-        return getThemedColor(org.telegram.ui.ActionBar.g6.d6);
-    }
-
-    @Override // org.telegram.ui.Wallet.i2, org.telegram.ui.ActionBar.e3, android.app.Dialog
-    public final void show() {
-        super.show();
-        if (this.b0 instanceof k91) {
-            View[] viewArr = this.c0;
-            if (viewArr[0] == null) {
-                hi.a aVar = new hi.a(this, this.d0);
-                viewArr[0] = aVar;
-                this.containerView.addView(aVar, 0, w7.a6.e(-1, 50, 80));
-            }
-            this.containerView.setBackground(null);
-            this.containerView.setPadding(0, 0, 0, 0);
-            this.d.setPadding(0, 0, 0, 0);
-        }
+    @Override // org.telegram.ui.Components.d91
+    public final int e() {
+        return this.a.size();
     }
 }

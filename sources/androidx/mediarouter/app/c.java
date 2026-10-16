@@ -2,11 +2,10 @@ package androidx.mediarouter.app;
 
 import android.widget.SeekBar;
 import j$.util.DesugarCollections;
-import ji.w4;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class c extends p4.t {
+public final class c extends p4.s {
     public final /* synthetic */ int a;
     public final /* synthetic */ g.t b;
 
@@ -15,8 +14,8 @@ public final class c extends p4.t {
         this.b = tVar;
     }
 
-    @Override // p4.t
-    public void d(p4.w wVar) {
+    @Override // p4.s
+    public void d(p4.v vVar) {
         switch (this.a) {
             case 0:
                 ((g) this.b).f();
@@ -30,9 +29,9 @@ public final class c extends p4.t {
         }
     }
 
-    @Override // p4.t
-    public final void e(p4.w wVar) {
-        w4 b10;
+    @Override // p4.s
+    public final void e(p4.v vVar) {
+        m.l b10;
         p4.o oVar;
         switch (this.a) {
             case 0:
@@ -46,12 +45,12 @@ public final class c extends p4.t {
                 break;
             default:
                 n0 n0Var = (n0) this.b;
-                if (wVar == n0Var.r && p4.w.a() != null) {
-                    p4.v vVar = wVar.a;
-                    vVar.getClass();
-                    p4.y.b();
-                    for (p4.w wVar2 : DesugarCollections.unmodifiableList(vVar.b)) {
-                        if (!DesugarCollections.unmodifiableList(n0Var.r.v).contains(wVar2) && (b10 = n0Var.r.b(wVar2)) != null && (oVar = (p4.o) b10.b) != null && oVar.d && !n0Var.v.contains(wVar2)) {
+                if (vVar == n0Var.r && p4.v.a() != null) {
+                    p4.u uVar = vVar.a;
+                    uVar.getClass();
+                    p4.x.b();
+                    for (p4.v vVar2 : DesugarCollections.unmodifiableList(uVar.b)) {
+                        if (!DesugarCollections.unmodifiableList(n0Var.r.v).contains(vVar2) && (b10 = n0Var.r.b(vVar2)) != null && (oVar = (p4.o) b10.a) != null && oVar.d && !n0Var.v.contains(vVar2)) {
                             n0Var.o();
                             n0Var.l();
                             break;
@@ -63,8 +62,8 @@ public final class c extends p4.t {
         }
     }
 
-    @Override // p4.t
-    public void f(p4.w wVar) {
+    @Override // p4.s
+    public void f(p4.v vVar) {
         switch (this.a) {
             case 0:
                 ((g) this.b).f();
@@ -78,8 +77,8 @@ public final class c extends p4.t {
         }
     }
 
-    @Override // p4.t
-    public void g(p4.w wVar) {
+    @Override // p4.s
+    public void g(p4.v vVar) {
         switch (this.a) {
             case 0:
                 ((g) this.b).dismiss();
@@ -89,14 +88,14 @@ public final class c extends p4.t {
                 break;
             case 3:
                 n0 n0Var = (n0) this.b;
-                n0Var.r = wVar;
+                n0Var.r = vVar;
                 n0Var.o();
                 n0Var.l();
                 break;
         }
     }
 
-    @Override // p4.t
+    @Override // p4.s
     public void i() {
         switch (this.a) {
             case 1:
@@ -108,18 +107,18 @@ public final class c extends p4.t {
         }
     }
 
-    @Override // p4.t
-    public void k(p4.w wVar) {
+    @Override // p4.s
+    public void k(p4.v vVar) {
         f0 f0Var;
         int i10 = this.a;
         g.t tVar = this.b;
         switch (i10) {
             case 1:
                 t tVar2 = (t) tVar;
-                SeekBar seekBar = (SeekBar) tVar2.h0.get(wVar);
-                int i11 = wVar.p;
+                SeekBar seekBar = (SeekBar) tVar2.h0.get(vVar);
+                int i11 = vVar.p;
                 int i12 = t.F0;
-                if (seekBar != null && tVar2.c0 != wVar) {
+                if (seekBar != null && tVar2.c0 != vVar) {
                     seekBar.setProgress(i11);
                     break;
                 }
@@ -127,7 +126,7 @@ public final class c extends p4.t {
             case 3:
                 int i13 = n0.j0;
                 n0 n0Var = (n0) tVar;
-                if (n0Var.M != wVar && (f0Var = (f0) n0Var.L.get(wVar.c)) != null) {
+                if (n0Var.M != vVar && (f0Var = (f0) n0Var.L.get(vVar.c)) != null) {
                     int i14 = f0Var.v.p;
                     f0Var.u(i14 == 0);
                     f0Var.x.setProgress(i14);

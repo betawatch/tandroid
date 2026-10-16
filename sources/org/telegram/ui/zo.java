@@ -50,7 +50,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.Components.h50, NotificationCenter.NotificationCenterDelegate {
     public TLRPC.TL_chatBannedRights A0;
@@ -61,7 +61,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
     public TLRPC.UserFull E0;
     public LinearLayout F;
     public boolean F0;
-    public org.telegram.ui.Cells.b7 G;
+    public org.telegram.ui.Cells.a7 G;
     public boolean G0;
     public org.telegram.ui.Cells.r8 H;
     public boolean H0;
@@ -71,7 +71,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
     public boolean J0;
     public org.telegram.ui.Cells.r8 K;
     public TLRPC.ChatReactions K0;
-    public lp0 L;
+    public jp0 L;
     public TL_stories.TL_premium_boostsStatus L0;
     public org.telegram.ui.Cells.r8 M;
     public boolean M0;
@@ -103,7 +103,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
     public LinearLayout d;
     public org.telegram.ui.Cells.ca d0;
     public bi.k5 e;
-    public org.telegram.ui.Cells.b7 e0;
+    public org.telegram.ui.Cells.a7 e0;
     public di.p6 f;
     public org.telegram.ui.Cells.r8 f0;
     public org.telegram.ui.Cells.r8 g0;
@@ -201,16 +201,16 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
     public static void X(zo zoVar) {
         int i10 = zoVar.currentAccount;
         long j10 = zoVar.C0;
-        TL_bots.botVerifierSettings botverifiersettings = zoVar.E0.bot_info.verifier_settings;
+        TL_bots.BotVerifierSettings botVerifierSettings = zoVar.E0.bot_info.verifier_settings;
         org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
         if (U == null) {
             return;
         }
-        Bundle d = org.telegram.messenger.yh.d(16, "onlySelect", "dialogsType", true);
+        Bundle d = org.telegram.messenger.sk.d(16, "onlySelect", "dialogsType", true);
         d.putBoolean("resetDelegate", false);
         yy yyVar = new yy(d);
         yyVar.setCurrentAccount(i10);
-        yyVar.C2 = new fi.t1(yyVar, i10, j10, botverifiersettings);
+        yyVar.C2 = new fi.t1(yyVar, i10, j10, botVerifierSettings);
         U.presentFragment(yyVar);
     }
 
@@ -225,15 +225,15 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
         j0Var.I1(j10);
         TLRPC.Chat chat = zoVar.getMessagesController().getChat(Long.valueOf(-j10));
         if (chat != null) {
-            j0Var.Q0 = new fc(27, zoVar, chat);
+            j0Var.Q0 = new jd(22, zoVar, chat);
         }
         zoVar.showDialog(j0Var);
     }
 
     public static void Z(zo zoVar) {
-        hd hdVar = new hd(-zoVar.x0.id);
-        hdVar.l0 = zoVar;
-        zoVar.presentFragment(hdVar);
+        gd gdVar = new gd(-zoVar.x0.id);
+        gdVar.l0 = zoVar;
+        zoVar.presentFragment(gdVar);
         MessagesController.getInstance(zoVar.currentAccount).getMainSettings().edit().putInt("boostingappearance", MessagesController.getInstance(zoVar.currentAccount).getMainSettings().getInt("boostingappearance", 0) + 1).apply();
     }
 
@@ -245,10 +245,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
     public static SpannableStringBuilder d0(String str) {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
         spannableStringBuilder.append((CharSequence) "  d");
-        j10 j10Var = new j10(10);
-        j10Var.a.setTypeface(AndroidUtilities.getTypeface("fonts/num.otf"));
-        j10Var.f = org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Lj, false);
-        spannableStringBuilder.setSpan(j10Var, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
+        i10 i10Var = new i10(10);
+        i10Var.a.setTypeface(AndroidUtilities.getTypeface("fonts/num.otf"));
+        i10Var.f = org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Lj, false);
+        spannableStringBuilder.setSpan(i10Var, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
         return spannableStringBuilder;
     }
 
@@ -360,7 +360,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
         org.telegram.ui.Components.ap0 ap0Var = new org.telegram.ui.Components.ap0(context, this.w, this.resourceProvider, false);
         this.x = ap0Var;
         ap0Var.setFillViewport(true);
-        odVar2.addView(this.x, w7.a6.d(-1.0f, -1));
+        odVar2.addView(this.x, w7.z5.d(-1.0f, -1));
         this.actionBar.setAdaptiveBackground(this.x);
         this.x.addView(eeVar3, new FrameLayout.LayoutParams(-1, -2));
         eeVar3.setOrientation(1);
@@ -369,9 +369,9 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
         this.d = linearLayout;
         linearLayout.setOrientation(1);
         this.d.setBackgroundColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.d6));
-        eeVar3.addView(this.d, w7.a6.n(-1, -2));
+        eeVar3.addView(this.d, w7.z5.n(-1, -2));
         FrameLayout frameLayout2 = new FrameLayout(context);
-        this.d.addView(frameLayout2, w7.a6.n(-1, -2));
+        this.d.addView(frameLayout2, w7.z5.n(-1, -2));
         bi.k5 k5Var = new bi.k5(this, context, 6);
         this.e = k5Var;
         k5Var.setRoundRadius(this.F0 ? AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(32.0f));
@@ -379,13 +379,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
         if (this.D0 != null || ChatObject.canChangeChatInfo(this.x0)) {
             bi.k5 k5Var2 = this.e;
             boolean z12 = LocaleController.isRTL;
-            frameLayout2.addView(k5Var2, w7.a6.a(64.0f, z12 ? 0.0f : 16.0f, 12.0f, z12 ? 16.0f : 0.0f, 8.0f, 64, (z12 ? 5 : 3) | 48));
+            frameLayout2.addView(k5Var2, w7.z5.a(64.0f, z12 ? 0.0f : 16.0f, 12.0f, z12 ? 16.0f : 0.0f, 8.0f, 64, (z12 ? 5 : 3) | 48));
             Paint paint = new Paint(1);
             paint.setColor(1426063360);
             di.p6 p6Var = new di.p6(this, context, paint, i15);
             this.f = p6Var;
             boolean z13 = LocaleController.isRTL;
-            frameLayout2.addView(p6Var, w7.a6.a(64.0f, z13 ? 0.0f : 16.0f, 12.0f, z13 ? 16.0f : 0.0f, 8.0f, 64, (z13 ? 5 : 3) | 48));
+            frameLayout2.addView(p6Var, w7.z5.a(64.0f, z13 ? 0.0f : 16.0f, 12.0f, z13 ? 16.0f : 0.0f, 8.0f, 64, (z13 ? 5 : 3) | 48));
             RadialProgressView radialProgressView = new RadialProgressView(context);
             this.n = radialProgressView;
             radialProgressView.setSize(AndroidUtilities.dp(30.0f));
@@ -393,7 +393,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
             this.n.setNoProgress(false);
             RadialProgressView radialProgressView2 = this.n;
             boolean z14 = LocaleController.isRTL;
-            frameLayout2.addView(radialProgressView2, w7.a6.a(64.0f, z14 ? 0.0f : 16.0f, 12.0f, z14 ? 16.0f : 0.0f, 8.0f, 64, (z14 ? 5 : 3) | 48));
+            frameLayout2.addView(radialProgressView2, w7.z5.a(64.0f, z14 ? 0.0f : 16.0f, 12.0f, z14 ? 16.0f : 0.0f, 8.0f, 64, (z14 ? 5 : 3) | 48));
             n0(false, false);
             this.d.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.jo
                 public final /* synthetic */ zo b;
@@ -469,7 +469,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 3:
                             zo zoVar6 = this.b;
-                            zoVar6.presentFragment(new fi0(zoVar6.w0));
+                            zoVar6.presentFragment(new ei0(zoVar6.w0));
                             break;
                         case 4:
                             zo zoVar7 = this.b;
@@ -496,13 +496,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             zoVar11.presentFragment(new fi.l(zoVar11.C0));
                             break;
                         case 9:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                             break;
                         case 10:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                             break;
                         case 11:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                             break;
                         case 12:
                             this.b.i0();
@@ -517,17 +517,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                         case 15:
                             zo zoVar13 = this.b;
                             if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                nd0 nd0Var = new nd0(4);
-                                nd0Var.e0 = -zoVar13.w0;
+                                ld0 ld0Var = new ld0(4);
+                                ld0Var.e0 = -zoVar13.w0;
                                 TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                 if (chatFull5 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                nd0Var.F0 = new qo(zoVar13, 6);
-                                zoVar13.presentFragment(nd0Var);
+                                ld0Var.F0 = new qo(zoVar13, 6);
+                                zoVar13.presentFragment(ld0Var);
                                 break;
                             }
                             break;
@@ -605,10 +605,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 22:
                             zo zoVar19 = this.b;
-                            ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                            di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                            ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                            zoVar19.presentFragment(ei0Var);
+                            di0Var.g0(chatFull7, chatFull7.exported_invite);
+                            zoVar19.presentFragment(di0Var);
                             break;
                         case 23:
                             zo zoVar20 = this.b;
@@ -665,7 +665,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
         } else {
             bi.k5 k5Var3 = this.e;
             boolean z15 = LocaleController.isRTL;
-            frameLayout2.addView(k5Var3, w7.a6.a(64.0f, z15 ? 0.0f : 16.0f, 12.0f, z15 ? 16.0f : 0.0f, 12.0f, 64, (z15 ? 5 : 3) | 48));
+            frameLayout2.addView(k5Var3, w7.z5.a(64.0f, z15 ? 0.0f : 16.0f, 12.0f, z15 ? 16.0f : 0.0f, 12.0f, 64, (z15 ? 5 : 3) | 48));
         }
         org.telegram.ui.Components.vu vuVar2 = new org.telegram.ui.Components.vu(context, odVar2, this);
         this.v = vuVar2;
@@ -691,11 +691,11 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
         this.v.setFilters(inputFilterArr);
         org.telegram.ui.Components.vu vuVar5 = this.v;
         boolean z16 = LocaleController.isRTL;
-        frameLayout2.addView(vuVar5, w7.a6.a(-2.0f, z16 ? 5.0f : 96.0f, 0.0f, z16 ? 96.0f : 5.0f, 0.0f, -1, 16));
+        frameLayout2.addView(vuVar5, w7.z5.a(-2.0f, z16 ? 5.0f : 96.0f, 0.0f, z16 ? 96.0f : 5.0f, 0.0f, -1, 16));
         LinearLayout linearLayout2 = new LinearLayout(context);
         this.y = linearLayout2;
         linearLayout2.setOrientation(1);
-        eeVar3.addView(this.y, w7.a6.n(-1, -2));
+        eeVar3.addView(this.y, w7.z5.n(-1, -2));
         final int i16 = 12;
         if (this.D0 != null || ChatObject.canChangeChatInfo(this.x0)) {
             xo xoVar = new xo(context);
@@ -776,7 +776,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 3:
                             zo zoVar6 = this.b;
-                            zoVar6.presentFragment(new fi0(zoVar6.w0));
+                            zoVar6.presentFragment(new ei0(zoVar6.w0));
                             break;
                         case 4:
                             zo zoVar7 = this.b;
@@ -803,13 +803,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             zoVar11.presentFragment(new fi.l(zoVar11.C0));
                             break;
                         case 9:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                             break;
                         case 10:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                             break;
                         case 11:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                             break;
                         case 12:
                             this.b.i0();
@@ -824,17 +824,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                         case 15:
                             zo zoVar13 = this.b;
                             if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                nd0 nd0Var = new nd0(4);
-                                nd0Var.e0 = -zoVar13.w0;
+                                ld0 ld0Var = new ld0(4);
+                                ld0Var.e0 = -zoVar13.w0;
                                 TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                 if (chatFull5 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                nd0Var.F0 = new qo(zoVar13, 6);
-                                zoVar13.presentFragment(nd0Var);
+                                ld0Var.F0 = new qo(zoVar13, 6);
+                                zoVar13.presentFragment(ld0Var);
                                 break;
                             }
                             break;
@@ -912,10 +912,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 22:
                             zo zoVar19 = this.b;
-                            ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                            di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                            ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                            zoVar19.presentFragment(ei0Var);
+                            di0Var.g0(chatFull7, chatFull7.exported_invite);
+                            zoVar19.presentFragment(di0Var);
                             break;
                         case 23:
                             zo zoVar20 = this.b;
@@ -969,7 +969,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                     }
                 }
             });
-            this.y.addView(this.b0, w7.a6.n(-1, -2));
+            this.y.addView(this.b0, w7.z5.n(-1, -2));
         }
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
         this.E = editTextBoldCursor;
@@ -993,26 +993,26 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
         this.E.setCursorSize(AndroidUtilities.dp(20.0f));
         this.E.setCursorWidth(1.5f);
         if (this.E.isEnabled()) {
-            this.y.addView(this.E, w7.a6.k(23.0f, 15.0f, 23.0f, 9.0f, -1, -2));
+            this.y.addView(this.E, w7.z5.k(23.0f, 15.0f, 23.0f, 9.0f, -1, -2));
         } else {
-            this.y.addView(this.E, w7.a6.k(23.0f, 12.0f, 23.0f, 6.0f, -1, -2));
+            this.y.addView(this.E, w7.z5.k(23.0f, 12.0f, 23.0f, 6.0f, -1, -2));
         }
         this.E.setOnEditorActionListener(new na(this, 2));
         this.E.addTextChangedListener(new rd(1));
-        org.telegram.ui.Cells.b7 b7Var = new org.telegram.ui.Cells.b7(context);
-        this.G = b7Var;
-        eeVar3.addView(b7Var, w7.a6.n(-1, -2));
+        org.telegram.ui.Cells.a7 a7Var = new org.telegram.ui.Cells.a7(context);
+        this.G = a7Var;
+        eeVar3.addView(a7Var, w7.z5.n(-1, -2));
         LinearLayout linearLayout3 = new LinearLayout(context);
         this.F = linearLayout3;
         linearLayout3.setOrientation(1);
-        eeVar3.addView(this.F, w7.a6.n(-1, -2));
+        eeVar3.addView(this.F, w7.z5.n(-1, -2));
         TLRPC.Chat chat2 = this.x0;
         if (chat2 != null) {
             if (chat2.megagroup && ((chatFull3 = this.y0) == null || chatFull3.can_set_location)) {
                 org.telegram.ui.Cells.r8 r8Var7 = new org.telegram.ui.Cells.r8(context);
                 this.H = r8Var7;
                 r8Var7.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.L0(true));
-                this.F.addView(this.H, w7.a6.n(-1, -2));
+                this.F.addView(this.H, w7.z5.n(-1, -2));
                 final int i19 = 15;
                 this.H.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.jo
                     public final /* synthetic */ zo b;
@@ -1088,7 +1088,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                 break;
                             case 3:
                                 zo zoVar6 = this.b;
-                                zoVar6.presentFragment(new fi0(zoVar6.w0));
+                                zoVar6.presentFragment(new ei0(zoVar6.w0));
                                 break;
                             case 4:
                                 zo zoVar7 = this.b;
@@ -1115,13 +1115,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                 zoVar11.presentFragment(new fi.l(zoVar11.C0));
                                 break;
                             case 9:
-                                pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                                pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                                 break;
                             case 10:
-                                pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                                pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                                 break;
                             case 11:
-                                pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                                pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                                 break;
                             case 12:
                                 this.b.i0();
@@ -1136,17 +1136,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             case 15:
                                 zo zoVar13 = this.b;
                                 if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                    nd0 nd0Var = new nd0(4);
-                                    nd0Var.e0 = -zoVar13.w0;
+                                    ld0 ld0Var = new ld0(4);
+                                    ld0Var.e0 = -zoVar13.w0;
                                     TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                     if (chatFull5 != null) {
                                         TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                         if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                            nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                            ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                         }
                                     }
-                                    nd0Var.F0 = new qo(zoVar13, 6);
-                                    zoVar13.presentFragment(nd0Var);
+                                    ld0Var.F0 = new qo(zoVar13, 6);
+                                    zoVar13.presentFragment(ld0Var);
                                     break;
                                 }
                                 break;
@@ -1224,10 +1224,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                 break;
                             case 22:
                                 zo zoVar19 = this.b;
-                                ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                                di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                                 TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                                ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                                zoVar19.presentFragment(ei0Var);
+                                di0Var.g0(chatFull7, chatFull7.exported_invite);
+                                zoVar19.presentFragment(di0Var);
                                 break;
                             case 23:
                                 zo zoVar20 = this.b;
@@ -1286,7 +1286,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                 org.telegram.ui.Cells.r8 r8Var8 = new org.telegram.ui.Cells.r8(context);
                 this.I = r8Var8;
                 r8Var8.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.L0(true));
-                this.F.addView(this.I, w7.a6.n(-1, -2));
+                this.F.addView(this.I, w7.z5.n(-1, -2));
                 final int i20 = 16;
                 this.I.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.jo
                     public final /* synthetic */ zo b;
@@ -1362,7 +1362,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                 break;
                             case 3:
                                 zo zoVar6 = this.b;
-                                zoVar6.presentFragment(new fi0(zoVar6.w0));
+                                zoVar6.presentFragment(new ei0(zoVar6.w0));
                                 break;
                             case 4:
                                 zo zoVar7 = this.b;
@@ -1389,13 +1389,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                 zoVar11.presentFragment(new fi.l(zoVar11.C0));
                                 break;
                             case 9:
-                                pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                                pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                                 break;
                             case 10:
-                                pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                                pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                                 break;
                             case 11:
-                                pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                                pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                                 break;
                             case 12:
                                 this.b.i0();
@@ -1410,17 +1410,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             case 15:
                                 zo zoVar13 = this.b;
                                 if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                    nd0 nd0Var = new nd0(4);
-                                    nd0Var.e0 = -zoVar13.w0;
+                                    ld0 ld0Var = new ld0(4);
+                                    ld0Var.e0 = -zoVar13.w0;
                                     TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                     if (chatFull5 != null) {
                                         TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                         if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                            nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                            ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                         }
                                     }
-                                    nd0Var.F0 = new qo(zoVar13, 6);
-                                    zoVar13.presentFragment(nd0Var);
+                                    ld0Var.F0 = new qo(zoVar13, 6);
+                                    zoVar13.presentFragment(ld0Var);
                                     break;
                                 }
                                 break;
@@ -1498,10 +1498,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                 break;
                             case 22:
                                 zo zoVar19 = this.b;
-                                ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                                di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                                 TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                                ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                                zoVar19.presentFragment(ei0Var);
+                                di0Var.g0(chatFull7, chatFull7.exported_invite);
+                                zoVar19.presentFragment(di0Var);
                                 break;
                             case 23:
                                 zo zoVar20 = this.b;
@@ -1560,7 +1560,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                 org.telegram.ui.Cells.r8 r8Var9 = new org.telegram.ui.Cells.r8(context);
                 this.J = r8Var9;
                 r8Var9.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.L0(true));
-                this.F.addView(this.J, w7.a6.n(-1, -2));
+                this.F.addView(this.J, w7.z5.n(-1, -2));
                 final int i21 = 17;
                 this.J.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.jo
                     public final /* synthetic */ zo b;
@@ -1636,7 +1636,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                 break;
                             case 3:
                                 zo zoVar6 = this.b;
-                                zoVar6.presentFragment(new fi0(zoVar6.w0));
+                                zoVar6.presentFragment(new ei0(zoVar6.w0));
                                 break;
                             case 4:
                                 zo zoVar7 = this.b;
@@ -1663,13 +1663,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                 zoVar11.presentFragment(new fi.l(zoVar11.C0));
                                 break;
                             case 9:
-                                pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                                pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                                 break;
                             case 10:
-                                pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                                pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                                 break;
                             case 11:
-                                pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                                pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                                 break;
                             case 12:
                                 this.b.i0();
@@ -1684,17 +1684,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             case 15:
                                 zo zoVar13 = this.b;
                                 if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                    nd0 nd0Var = new nd0(4);
-                                    nd0Var.e0 = -zoVar13.w0;
+                                    ld0 ld0Var = new ld0(4);
+                                    ld0Var.e0 = -zoVar13.w0;
                                     TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                     if (chatFull5 != null) {
                                         TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                         if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                            nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                            ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                         }
                                     }
-                                    nd0Var.F0 = new qo(zoVar13, 6);
-                                    zoVar13.presentFragment(nd0Var);
+                                    ld0Var.F0 = new qo(zoVar13, 6);
+                                    zoVar13.presentFragment(ld0Var);
                                     break;
                                 }
                                 break;
@@ -1772,10 +1772,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                 break;
                             case 22:
                                 zo zoVar19 = this.b;
-                                ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                                di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                                 TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                                ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                                zoVar19.presentFragment(ei0Var);
+                                di0Var.g0(chatFull7, chatFull7.exported_invite);
+                                zoVar19.presentFragment(di0Var);
                                 break;
                             case 23:
                                 zo zoVar20 = this.b;
@@ -1835,7 +1835,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                 this.K = r8Var10;
                 r8Var10.setBackground(org.telegram.ui.ActionBar.g6.L0(true));
                 this.K.q(LocaleController.getString(R.string.PostSuggestions), "", R.drawable.msg_markunread, true);
-                this.F.addView(this.K, w7.a6.n(-1, -2));
+                this.F.addView(this.K, w7.z5.n(-1, -2));
                 final int i22 = 18;
                 this.K.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.jo
                     public final /* synthetic */ zo b;
@@ -1911,7 +1911,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                 break;
                             case 3:
                                 zo zoVar6 = this.b;
-                                zoVar6.presentFragment(new fi0(zoVar6.w0));
+                                zoVar6.presentFragment(new ei0(zoVar6.w0));
                                 break;
                             case 4:
                                 zo zoVar7 = this.b;
@@ -1938,13 +1938,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                 zoVar11.presentFragment(new fi.l(zoVar11.C0));
                                 break;
                             case 9:
-                                pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                                pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                                 break;
                             case 10:
-                                pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                                pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                                 break;
                             case 11:
-                                pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                                pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                                 break;
                             case 12:
                                 this.b.i0();
@@ -1959,17 +1959,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             case 15:
                                 zo zoVar13 = this.b;
                                 if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                    nd0 nd0Var = new nd0(4);
-                                    nd0Var.e0 = -zoVar13.w0;
+                                    ld0 ld0Var = new ld0(4);
+                                    ld0Var.e0 = -zoVar13.w0;
                                     TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                     if (chatFull5 != null) {
                                         TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                         if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                            nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                            ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                         }
                                     }
-                                    nd0Var.F0 = new qo(zoVar13, 6);
-                                    zoVar13.presentFragment(nd0Var);
+                                    ld0Var.F0 = new qo(zoVar13, 6);
+                                    zoVar13.presentFragment(ld0Var);
                                     break;
                                 }
                                 break;
@@ -2047,10 +2047,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                 break;
                             case 22:
                                 zo zoVar19 = this.b;
-                                ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                                di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                                 TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                                ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                                zoVar19.presentFragment(ei0Var);
+                                di0Var.g0(chatFull7, chatFull7.exported_invite);
+                                zoVar19.presentFragment(di0Var);
                                 break;
                             case 23:
                                 zo zoVar20 = this.b;
@@ -2110,10 +2110,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                 j10 = j11;
                 i11 = -2;
                 i10 = 5;
-                lp0 lp0Var = new lp0(this.currentAccount, -this.x0.id, context, getResourceProvider());
-                this.L = lp0Var;
-                lp0Var.setBackground(org.telegram.ui.ActionBar.g6.L0(true));
-                this.F.addView(this.L, w7.a6.n(-1, -2));
+                jp0 jp0Var = new jp0(this.currentAccount, -this.x0.id, context, getResourceProvider());
+                this.L = jp0Var;
+                jp0Var.setBackground(org.telegram.ui.ActionBar.g6.L0(true));
+                this.F.addView(this.L, w7.z5.n(-1, -2));
                 final int i23 = 19;
                 this.L.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.jo
                     public final /* synthetic */ zo b;
@@ -2189,7 +2189,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                 break;
                             case 3:
                                 zo zoVar6 = this.b;
-                                zoVar6.presentFragment(new fi0(zoVar6.w0));
+                                zoVar6.presentFragment(new ei0(zoVar6.w0));
                                 break;
                             case 4:
                                 zo zoVar7 = this.b;
@@ -2216,13 +2216,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                 zoVar11.presentFragment(new fi.l(zoVar11.C0));
                                 break;
                             case 9:
-                                pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                                pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                                 break;
                             case 10:
-                                pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                                pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                                 break;
                             case 11:
-                                pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                                pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                                 break;
                             case 12:
                                 this.b.i0();
@@ -2237,17 +2237,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             case 15:
                                 zo zoVar13 = this.b;
                                 if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                    nd0 nd0Var = new nd0(4);
-                                    nd0Var.e0 = -zoVar13.w0;
+                                    ld0 ld0Var = new ld0(4);
+                                    ld0Var.e0 = -zoVar13.w0;
                                     TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                     if (chatFull5 != null) {
                                         TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                         if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                            nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                            ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                         }
                                     }
-                                    nd0Var.F0 = new qo(zoVar13, 6);
-                                    zoVar13.presentFragment(nd0Var);
+                                    ld0Var.F0 = new qo(zoVar13, 6);
+                                    zoVar13.presentFragment(ld0Var);
                                     break;
                                 }
                                 break;
@@ -2325,10 +2325,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                 break;
                             case 22:
                                 zo zoVar19 = this.b;
-                                ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                                di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                                 TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                                ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                                zoVar19.presentFragment(ei0Var);
+                                di0Var.g0(chatFull7, chatFull7.exported_invite);
+                                zoVar19.presentFragment(di0Var);
                                 break;
                             case 23:
                                 zo zoVar20 = this.b;
@@ -2428,7 +2428,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                         }
                     }
                 });
-                this.F.addView(this.M, w7.a6.n(-1, i11));
+                this.F.addView(this.M, w7.z5.n(-1, i11));
                 frameLayout = frameLayout2;
                 zoVar = this;
                 this.M.setOnClickListener(new ko(this, new boolean[]{false}, j12, 0));
@@ -2437,7 +2437,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                 org.telegram.ui.Cells.r8 r8Var12 = new org.telegram.ui.Cells.r8(context3);
                 zoVar.N = r8Var12;
                 r8Var12.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.L0(true));
-                zoVar.F.addView(zoVar.N, w7.a6.n(-1, i11));
+                zoVar.F.addView(zoVar.N, w7.z5.n(-1, i11));
                 zoVar.N.setOnClickListener(new xf(i10, zoVar, context3));
             }
             if (ChatObject.isMegagroup(zoVar.x0) && ChatObject.hasAdminRights(zoVar.x0) && !ChatObject.isCommunity(zoVar.x0)) {
@@ -2467,10 +2467,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                         }
                     }
                 });
-                lp0 lp0Var2 = new lp0(zoVar.currentAccount, -zoVar.x0.id, context3, zoVar.getResourceProvider());
-                zoVar.L = lp0Var2;
-                lp0Var2.setBackground(org.telegram.ui.ActionBar.g6.L0(true));
-                zoVar.F.addView(zoVar.L, w7.a6.n(-1, i11));
+                jp0 jp0Var2 = new jp0(zoVar.currentAccount, -zoVar.x0.id, context3, zoVar.getResourceProvider());
+                zoVar.L = jp0Var2;
+                jp0Var2.setBackground(org.telegram.ui.ActionBar.g6.L0(true));
+                zoVar.F.addView(zoVar.L, w7.z5.n(-1, i11));
                 final int i25 = 20;
                 zoVar.L.setOnClickListener(new View.OnClickListener(zoVar) { // from class: org.telegram.ui.jo
                     public final /* synthetic */ zo b;
@@ -2546,7 +2546,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                 break;
                             case 3:
                                 zo zoVar6 = this.b;
-                                zoVar6.presentFragment(new fi0(zoVar6.w0));
+                                zoVar6.presentFragment(new ei0(zoVar6.w0));
                                 break;
                             case 4:
                                 zo zoVar7 = this.b;
@@ -2573,13 +2573,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                 zoVar11.presentFragment(new fi.l(zoVar11.C0));
                                 break;
                             case 9:
-                                pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                                pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                                 break;
                             case 10:
-                                pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                                pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                                 break;
                             case 11:
-                                pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                                pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                                 break;
                             case 12:
                                 this.b.i0();
@@ -2594,17 +2594,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             case 15:
                                 zo zoVar13 = this.b;
                                 if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                    nd0 nd0Var = new nd0(4);
-                                    nd0Var.e0 = -zoVar13.w0;
+                                    ld0 ld0Var = new ld0(4);
+                                    ld0Var.e0 = -zoVar13.w0;
                                     TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                     if (chatFull5 != null) {
                                         TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                         if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                            nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                            ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                         }
                                     }
-                                    nd0Var.F0 = new qo(zoVar13, 6);
-                                    zoVar13.presentFragment(nd0Var);
+                                    ld0Var.F0 = new qo(zoVar13, 6);
+                                    zoVar13.presentFragment(ld0Var);
                                     break;
                                 }
                                 break;
@@ -2682,10 +2682,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                 break;
                             case 22:
                                 zo zoVar19 = this.b;
-                                ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                                di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                                 TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                                ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                                zoVar19.presentFragment(ei0Var);
+                                di0Var.g0(chatFull7, chatFull7.exported_invite);
+                                zoVar19.presentFragment(di0Var);
                                 break;
                             case 23:
                                 zo zoVar20 = this.b;
@@ -2747,7 +2747,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                 r8Var13.setBackground(org.telegram.ui.ActionBar.g6.L0(true));
                 zoVar.Q.l(R.drawable.msg_topics, LocaleController.getString(R.string.ChannelTopics), zoVar.F0);
                 zoVar.Q.getCheckBox().setIcon(zoVar.G0 ? 0 : R.drawable.permission_locked);
-                zoVar.F.addView(zoVar.Q, w7.a6.d(-2.0f, -1));
+                zoVar.F.addView(zoVar.Q, w7.z5.d(-2.0f, -1));
                 zoVar.Q.setOnClickListener(new xf(6, zoVar, frameLayout));
             } else {
                 context2 = context;
@@ -2779,12 +2779,12 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                 e9Var.setFixedSize(12);
             }
             eeVar2 = eeVar;
-            eeVar2.addView(zoVar.P, w7.a6.n(-1, i11));
+            eeVar2.addView(zoVar.P, w7.z5.n(-1, i11));
         }
         LinearLayout linearLayout4 = new LinearLayout(context2);
         zoVar.R = linearLayout4;
         linearLayout4.setOrientation(1);
-        eeVar2.addView(zoVar.R, w7.a6.n(-1, i11));
+        eeVar2.addView(zoVar.R, w7.z5.n(-1, i11));
         final int i26 = 8;
         if (zoVar.x0 != null) {
             org.telegram.ui.Cells.r8 r8Var14 = new org.telegram.ui.Cells.r8(context2);
@@ -2871,7 +2871,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     break;
                                 case 3:
                                     zo zoVar6 = this.b;
-                                    zoVar6.presentFragment(new fi0(zoVar6.w0));
+                                    zoVar6.presentFragment(new ei0(zoVar6.w0));
                                     break;
                                 case 4:
                                     zo zoVar7 = this.b;
@@ -2898,13 +2898,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     zoVar11.presentFragment(new fi.l(zoVar11.C0));
                                     break;
                                 case 9:
-                                    pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                                    pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                                     break;
                                 case 10:
-                                    pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                                    pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                                     break;
                                 case 11:
-                                    pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                                    pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                                     break;
                                 case 12:
                                     this.b.i0();
@@ -2919,17 +2919,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                 case 15:
                                     zo zoVar13 = this.b;
                                     if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                        nd0 nd0Var = new nd0(4);
-                                        nd0Var.e0 = -zoVar13.w0;
+                                        ld0 ld0Var = new ld0(4);
+                                        ld0Var.e0 = -zoVar13.w0;
                                         TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                         if (chatFull5 != null) {
                                             TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                             if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                                nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                                ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                             }
                                         }
-                                        nd0Var.F0 = new qo(zoVar13, 6);
-                                        zoVar13.presentFragment(nd0Var);
+                                        ld0Var.F0 = new qo(zoVar13, 6);
+                                        zoVar13.presentFragment(ld0Var);
                                         break;
                                     }
                                     break;
@@ -3007,10 +3007,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     break;
                                 case 22:
                                     zo zoVar19 = this.b;
-                                    ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                                    di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                                     TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                                    ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                                    zoVar19.presentFragment(ei0Var);
+                                    di0Var.g0(chatFull7, chatFull7.exported_invite);
+                                    zoVar19.presentFragment(di0Var);
                                     break;
                                 case 23:
                                     zo zoVar20 = this.b;
@@ -3142,7 +3142,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     break;
                                 case 3:
                                     zo zoVar6 = this.b;
-                                    zoVar6.presentFragment(new fi0(zoVar6.w0));
+                                    zoVar6.presentFragment(new ei0(zoVar6.w0));
                                     break;
                                 case 4:
                                     zo zoVar7 = this.b;
@@ -3169,13 +3169,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     zoVar11.presentFragment(new fi.l(zoVar11.C0));
                                     break;
                                 case 9:
-                                    pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                                    pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                                     break;
                                 case 10:
-                                    pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                                    pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                                     break;
                                 case 11:
-                                    pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                                    pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                                     break;
                                 case 12:
                                     this.b.i0();
@@ -3190,17 +3190,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                 case 15:
                                     zo zoVar13 = this.b;
                                     if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                        nd0 nd0Var = new nd0(4);
-                                        nd0Var.e0 = -zoVar13.w0;
+                                        ld0 ld0Var = new ld0(4);
+                                        ld0Var.e0 = -zoVar13.w0;
                                         TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                         if (chatFull5 != null) {
                                             TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                             if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                                nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                                ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                             }
                                         }
-                                        nd0Var.F0 = new qo(zoVar13, 6);
-                                        zoVar13.presentFragment(nd0Var);
+                                        ld0Var.F0 = new qo(zoVar13, 6);
+                                        zoVar13.presentFragment(ld0Var);
                                         break;
                                     }
                                     break;
@@ -3278,10 +3278,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     break;
                                 case 22:
                                     zo zoVar19 = this.b;
-                                    ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                                    di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                                     TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                                    ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                                    zoVar19.presentFragment(ei0Var);
+                                    di0Var.g0(chatFull7, chatFull7.exported_invite);
+                                    zoVar19.presentFragment(di0Var);
                                     break;
                                 case 23:
                                     zo zoVar20 = this.b;
@@ -3413,7 +3413,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     break;
                                 case 3:
                                     zo zoVar6 = this.b;
-                                    zoVar6.presentFragment(new fi0(zoVar6.w0));
+                                    zoVar6.presentFragment(new ei0(zoVar6.w0));
                                     break;
                                 case 4:
                                     zo zoVar7 = this.b;
@@ -3440,13 +3440,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     zoVar11.presentFragment(new fi.l(zoVar11.C0));
                                     break;
                                 case 9:
-                                    pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                                    pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                                     break;
                                 case 10:
-                                    pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                                    pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                                     break;
                                 case 11:
-                                    pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                                    pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                                     break;
                                 case 12:
                                     this.b.i0();
@@ -3461,17 +3461,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                 case 15:
                                     zo zoVar13 = this.b;
                                     if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                        nd0 nd0Var = new nd0(4);
-                                        nd0Var.e0 = -zoVar13.w0;
+                                        ld0 ld0Var = new ld0(4);
+                                        ld0Var.e0 = -zoVar13.w0;
                                         TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                         if (chatFull5 != null) {
                                             TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                             if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                                nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                                ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                             }
                                         }
-                                        nd0Var.F0 = new qo(zoVar13, 6);
-                                        zoVar13.presentFragment(nd0Var);
+                                        ld0Var.F0 = new qo(zoVar13, 6);
+                                        zoVar13.presentFragment(ld0Var);
                                         break;
                                     }
                                     break;
@@ -3549,10 +3549,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     break;
                                 case 22:
                                     zo zoVar19 = this.b;
-                                    ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                                    di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                                     TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                                    ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                                    zoVar19.presentFragment(ei0Var);
+                                    di0Var.g0(chatFull7, chatFull7.exported_invite);
+                                    zoVar19.presentFragment(di0Var);
                                     break;
                                 case 23:
                                     zo zoVar20 = this.b;
@@ -3685,7 +3685,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                         break;
                                     case 3:
                                         zo zoVar6 = this.b;
-                                        zoVar6.presentFragment(new fi0(zoVar6.w0));
+                                        zoVar6.presentFragment(new ei0(zoVar6.w0));
                                         break;
                                     case 4:
                                         zo zoVar7 = this.b;
@@ -3712,13 +3712,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                         zoVar11.presentFragment(new fi.l(zoVar11.C0));
                                         break;
                                     case 9:
-                                        pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                                        pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                                         break;
                                     case 10:
-                                        pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                                        pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                                         break;
                                     case 11:
-                                        pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                                        pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                                         break;
                                     case 12:
                                         this.b.i0();
@@ -3733,17 +3733,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     case 15:
                                         zo zoVar13 = this.b;
                                         if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                            nd0 nd0Var = new nd0(4);
-                                            nd0Var.e0 = -zoVar13.w0;
+                                            ld0 ld0Var = new ld0(4);
+                                            ld0Var.e0 = -zoVar13.w0;
                                             TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                             if (chatFull5 != null) {
                                                 TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                                 if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                                    nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                                    ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                                 }
                                             }
-                                            nd0Var.F0 = new qo(zoVar13, 6);
-                                            zoVar13.presentFragment(nd0Var);
+                                            ld0Var.F0 = new qo(zoVar13, 6);
+                                            zoVar13.presentFragment(ld0Var);
                                             break;
                                         }
                                         break;
@@ -3821,10 +3821,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                         break;
                                     case 22:
                                         zo zoVar19 = this.b;
-                                        ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                                        di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                                         TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                                        ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                                        zoVar19.presentFragment(ei0Var);
+                                        di0Var.g0(chatFull7, chatFull7.exported_invite);
+                                        zoVar19.presentFragment(di0Var);
                                         break;
                                     case 23:
                                         zo zoVar20 = this.b;
@@ -3958,7 +3958,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     break;
                                 case 3:
                                     zo zoVar6 = this.b;
-                                    zoVar6.presentFragment(new fi0(zoVar6.w0));
+                                    zoVar6.presentFragment(new ei0(zoVar6.w0));
                                     break;
                                 case 4:
                                     zo zoVar7 = this.b;
@@ -3985,13 +3985,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     zoVar11.presentFragment(new fi.l(zoVar11.C0));
                                     break;
                                 case 9:
-                                    pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                                    pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                                     break;
                                 case 10:
-                                    pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                                    pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                                     break;
                                 case 11:
-                                    pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                                    pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                                     break;
                                 case 12:
                                     this.b.i0();
@@ -4006,17 +4006,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                 case 15:
                                     zo zoVar13 = this.b;
                                     if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                        nd0 nd0Var = new nd0(4);
-                                        nd0Var.e0 = -zoVar13.w0;
+                                        ld0 ld0Var = new ld0(4);
+                                        ld0Var.e0 = -zoVar13.w0;
                                         TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                         if (chatFull5 != null) {
                                             TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                             if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                                nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                                ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                             }
                                         }
-                                        nd0Var.F0 = new qo(zoVar13, 6);
-                                        zoVar13.presentFragment(nd0Var);
+                                        ld0Var.F0 = new qo(zoVar13, 6);
+                                        zoVar13.presentFragment(ld0Var);
                                         break;
                                     }
                                     break;
@@ -4094,10 +4094,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     break;
                                 case 22:
                                     zo zoVar19 = this.b;
-                                    ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                                    di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                                     TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                                    ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                                    zoVar19.presentFragment(ei0Var);
+                                    di0Var.g0(chatFull7, chatFull7.exported_invite);
+                                    zoVar19.presentFragment(di0Var);
                                     break;
                                 case 23:
                                     zo zoVar20 = this.b;
@@ -4229,7 +4229,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     break;
                                 case 3:
                                     zo zoVar6 = this.b;
-                                    zoVar6.presentFragment(new fi0(zoVar6.w0));
+                                    zoVar6.presentFragment(new ei0(zoVar6.w0));
                                     break;
                                 case 4:
                                     zo zoVar7 = this.b;
@@ -4256,13 +4256,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     zoVar11.presentFragment(new fi.l(zoVar11.C0));
                                     break;
                                 case 9:
-                                    pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                                    pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                                     break;
                                 case 10:
-                                    pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                                    pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                                     break;
                                 case 11:
-                                    pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                                    pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                                     break;
                                 case 12:
                                     this.b.i0();
@@ -4277,17 +4277,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                 case 15:
                                     zo zoVar13 = this.b;
                                     if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                        nd0 nd0Var = new nd0(4);
-                                        nd0Var.e0 = -zoVar13.w0;
+                                        ld0 ld0Var = new ld0(4);
+                                        ld0Var.e0 = -zoVar13.w0;
                                         TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                         if (chatFull5 != null) {
                                             TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                             if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                                nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                                ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                             }
                                         }
-                                        nd0Var.F0 = new qo(zoVar13, 6);
-                                        zoVar13.presentFragment(nd0Var);
+                                        ld0Var.F0 = new qo(zoVar13, 6);
+                                        zoVar13.presentFragment(ld0Var);
                                         break;
                                     }
                                     break;
@@ -4365,10 +4365,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     break;
                                 case 22:
                                     zo zoVar19 = this.b;
-                                    ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                                    di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                                     TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                                    ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                                    zoVar19.presentFragment(ei0Var);
+                                    di0Var.g0(chatFull7, chatFull7.exported_invite);
+                                    zoVar19.presentFragment(di0Var);
                                     break;
                                 case 23:
                                     zo zoVar20 = this.b;
@@ -4501,7 +4501,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                         break;
                                     case 3:
                                         zo zoVar6 = this.b;
-                                        zoVar6.presentFragment(new fi0(zoVar6.w0));
+                                        zoVar6.presentFragment(new ei0(zoVar6.w0));
                                         break;
                                     case 4:
                                         zo zoVar7 = this.b;
@@ -4528,13 +4528,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                         zoVar11.presentFragment(new fi.l(zoVar11.C0));
                                         break;
                                     case 9:
-                                        pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                                        pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                                         break;
                                     case 10:
-                                        pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                                        pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                                         break;
                                     case 11:
-                                        pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                                        pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                                         break;
                                     case 12:
                                         this.b.i0();
@@ -4549,17 +4549,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     case 15:
                                         zo zoVar13 = this.b;
                                         if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                            nd0 nd0Var = new nd0(4);
-                                            nd0Var.e0 = -zoVar13.w0;
+                                            ld0 ld0Var = new ld0(4);
+                                            ld0Var.e0 = -zoVar13.w0;
                                             TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                             if (chatFull5 != null) {
                                                 TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                                 if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                                    nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                                    ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                                 }
                                             }
-                                            nd0Var.F0 = new qo(zoVar13, 6);
-                                            zoVar13.presentFragment(nd0Var);
+                                            ld0Var.F0 = new qo(zoVar13, 6);
+                                            zoVar13.presentFragment(ld0Var);
                                             break;
                                         }
                                         break;
@@ -4637,10 +4637,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                         break;
                                     case 22:
                                         zo zoVar19 = this.b;
-                                        ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                                        di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                                         TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                                        ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                                        zoVar19.presentFragment(ei0Var);
+                                        di0Var.g0(chatFull7, chatFull7.exported_invite);
+                                        zoVar19.presentFragment(di0Var);
                                         break;
                                     case 23:
                                         zo zoVar20 = this.b;
@@ -4774,7 +4774,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     break;
                                 case 3:
                                     zo zoVar6 = this.b;
-                                    zoVar6.presentFragment(new fi0(zoVar6.w0));
+                                    zoVar6.presentFragment(new ei0(zoVar6.w0));
                                     break;
                                 case 4:
                                     zo zoVar7 = this.b;
@@ -4801,13 +4801,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     zoVar11.presentFragment(new fi.l(zoVar11.C0));
                                     break;
                                 case 9:
-                                    pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                                    pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                                     break;
                                 case 10:
-                                    pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                                    pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                                     break;
                                 case 11:
-                                    pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                                    pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                                     break;
                                 case 12:
                                     this.b.i0();
@@ -4822,17 +4822,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                 case 15:
                                     zo zoVar13 = this.b;
                                     if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                        nd0 nd0Var = new nd0(4);
-                                        nd0Var.e0 = -zoVar13.w0;
+                                        ld0 ld0Var = new ld0(4);
+                                        ld0Var.e0 = -zoVar13.w0;
                                         TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                         if (chatFull5 != null) {
                                             TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                             if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                                nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                                ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                             }
                                         }
-                                        nd0Var.F0 = new qo(zoVar13, 6);
-                                        zoVar13.presentFragment(nd0Var);
+                                        ld0Var.F0 = new qo(zoVar13, 6);
+                                        zoVar13.presentFragment(ld0Var);
                                         break;
                                     }
                                     break;
@@ -4910,10 +4910,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     break;
                                 case 22:
                                     zo zoVar19 = this.b;
-                                    ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                                    di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                                     TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                                    ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                                    zoVar19.presentFragment(ei0Var);
+                                    di0Var.g0(chatFull7, chatFull7.exported_invite);
+                                    zoVar19.presentFragment(di0Var);
                                     break;
                                 case 23:
                                     zo zoVar20 = this.b;
@@ -5047,7 +5047,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                         break;
                                     case 3:
                                         zo zoVar6 = this.b;
-                                        zoVar6.presentFragment(new fi0(zoVar6.w0));
+                                        zoVar6.presentFragment(new ei0(zoVar6.w0));
                                         break;
                                     case 4:
                                         zo zoVar7 = this.b;
@@ -5074,13 +5074,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                         zoVar11.presentFragment(new fi.l(zoVar11.C0));
                                         break;
                                     case 9:
-                                        pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                                        pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                                         break;
                                     case 10:
-                                        pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                                        pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                                         break;
                                     case 11:
-                                        pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                                        pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                                         break;
                                     case 12:
                                         this.b.i0();
@@ -5095,17 +5095,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     case 15:
                                         zo zoVar13 = this.b;
                                         if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                            nd0 nd0Var = new nd0(4);
-                                            nd0Var.e0 = -zoVar13.w0;
+                                            ld0 ld0Var = new ld0(4);
+                                            ld0Var.e0 = -zoVar13.w0;
                                             TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                             if (chatFull5 != null) {
                                                 TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                                 if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                                    nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                                    ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                                 }
                                             }
-                                            nd0Var.F0 = new qo(zoVar13, 6);
-                                            zoVar13.presentFragment(nd0Var);
+                                            ld0Var.F0 = new qo(zoVar13, 6);
+                                            zoVar13.presentFragment(ld0Var);
                                             break;
                                         }
                                         break;
@@ -5183,10 +5183,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                         break;
                                     case 22:
                                         zo zoVar19 = this.b;
-                                        ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                                        di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                                         TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                                        ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                                        zoVar19.presentFragment(ei0Var);
+                                        di0Var.g0(chatFull7, chatFull7.exported_invite);
+                                        zoVar19.presentFragment(di0Var);
                                         break;
                                     case 23:
                                         zo zoVar20 = this.b;
@@ -5321,7 +5321,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                         break;
                                     case 3:
                                         zo zoVar6 = this.b;
-                                        zoVar6.presentFragment(new fi0(zoVar6.w0));
+                                        zoVar6.presentFragment(new ei0(zoVar6.w0));
                                         break;
                                     case 4:
                                         zo zoVar7 = this.b;
@@ -5348,13 +5348,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                         zoVar11.presentFragment(new fi.l(zoVar11.C0));
                                         break;
                                     case 9:
-                                        pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                                        pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                                         break;
                                     case 10:
-                                        pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                                        pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                                         break;
                                     case 11:
-                                        pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                                        pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                                         break;
                                     case 12:
                                         this.b.i0();
@@ -5369,17 +5369,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                     case 15:
                                         zo zoVar13 = this.b;
                                         if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                            nd0 nd0Var = new nd0(4);
-                                            nd0Var.e0 = -zoVar13.w0;
+                                            ld0 ld0Var = new ld0(4);
+                                            ld0Var.e0 = -zoVar13.w0;
                                             TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                             if (chatFull5 != null) {
                                                 TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                                 if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                                    nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                                    ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                                 }
                                             }
-                                            nd0Var.F0 = new qo(zoVar13, 6);
-                                            zoVar13.presentFragment(nd0Var);
+                                            ld0Var.F0 = new qo(zoVar13, 6);
+                                            zoVar13.presentFragment(ld0Var);
                                             break;
                                         }
                                         break;
@@ -5457,10 +5457,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                                         break;
                                     case 22:
                                         zo zoVar19 = this.b;
-                                        ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                                        di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                                         TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                                        ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                                        zoVar19.presentFragment(ei0Var);
+                                        di0Var.g0(chatFull7, chatFull7.exported_invite);
+                                        zoVar19.presentFragment(di0Var);
                                         break;
                                     case 23:
                                         zo zoVar20 = this.b;
@@ -5515,40 +5515,40 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             }
                         });
                     }
-                    zoVar.R.addView(zoVar.O, w7.a6.n(-1, i11));
+                    zoVar.R.addView(zoVar.O, w7.z5.n(-1, i11));
                     r8Var = zoVar.f0;
                     if (r8Var != null) {
-                        zoVar.R.addView(r8Var, w7.a6.n(-1, i11));
+                        zoVar.R.addView(r8Var, w7.z5.n(-1, i11));
                     }
                     if (!zoVar.I0 && !zoVar.x0.gigagroup) {
-                        zoVar.R.addView(zoVar.X, w7.a6.n(-1, i11));
+                        zoVar.R.addView(zoVar.X, w7.z5.n(-1, i11));
                     }
                     if (!zoVar.I0) {
-                        zoVar.R.addView(zoVar.V, w7.a6.n(-1, i11));
+                        zoVar.R.addView(zoVar.V, w7.z5.n(-1, i11));
                     }
-                    zoVar.R.addView(zoVar.W, w7.a6.n(-1, i11));
-                    zoVar.R.addView(zoVar.T, w7.a6.n(-1, i11));
+                    zoVar.R.addView(zoVar.W, w7.z5.n(-1, i11));
+                    zoVar.R.addView(zoVar.T, w7.z5.n(-1, i11));
                     r8Var2 = zoVar.U;
                     if (r8Var2 != null && (chatFull = zoVar.y0) != null && chatFull.requests_pending > 0) {
-                        zoVar.R.addView(r8Var2, w7.a6.n(-1, i11));
+                        zoVar.R.addView(r8Var2, w7.z5.n(-1, i11));
                     }
                     if (zoVar.I0) {
-                        zoVar.R.addView(zoVar.V, w7.a6.n(-1, i11));
+                        zoVar.R.addView(zoVar.V, w7.z5.n(-1, i11));
                     }
                     if (!zoVar.I0 || zoVar.x0.gigagroup) {
-                        zoVar.R.addView(zoVar.X, w7.a6.n(-1, i11));
+                        zoVar.R.addView(zoVar.X, w7.z5.n(-1, i11));
                     }
                     r8Var3 = zoVar.a0;
                     if (r8Var3 != null) {
-                        zoVar.R.addView(r8Var3, w7.a6.n(-1, i11));
+                        zoVar.R.addView(r8Var3, w7.z5.n(-1, i11));
                     }
                     r8Var4 = zoVar.Y;
                     if (r8Var4 != null) {
-                        zoVar.R.addView(r8Var4, w7.a6.n(-1, i11));
+                        zoVar.R.addView(r8Var4, w7.z5.n(-1, i11));
                     }
                     r8Var5 = zoVar.Z;
                     if (r8Var5 != null) {
-                        zoVar.R.addView(r8Var5, w7.a6.n(-1, i11));
+                        zoVar.R.addView(r8Var5, w7.z5.n(-1, i11));
                     }
                     if (zoVar.Z != null && zoVar.getMessagesController().starrefConnectAllowed && ChatObject.isChannelAndNotMegaGroup(zoVar.x0)) {
                         zoVar.Z.setVisibility(0);
@@ -5637,7 +5637,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 3:
                             zo zoVar6 = this.b;
-                            zoVar6.presentFragment(new fi0(zoVar6.w0));
+                            zoVar6.presentFragment(new ei0(zoVar6.w0));
                             break;
                         case 4:
                             zo zoVar7 = this.b;
@@ -5664,13 +5664,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             zoVar11.presentFragment(new fi.l(zoVar11.C0));
                             break;
                         case 9:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                             break;
                         case 10:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                             break;
                         case 11:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                             break;
                         case 12:
                             this.b.i0();
@@ -5685,17 +5685,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                         case 15:
                             zo zoVar13 = this.b;
                             if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                nd0 nd0Var = new nd0(4);
-                                nd0Var.e0 = -zoVar13.w0;
+                                ld0 ld0Var = new ld0(4);
+                                ld0Var.e0 = -zoVar13.w0;
                                 TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                 if (chatFull5 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                nd0Var.F0 = new qo(zoVar13, 6);
-                                zoVar13.presentFragment(nd0Var);
+                                ld0Var.F0 = new qo(zoVar13, 6);
+                                zoVar13.presentFragment(ld0Var);
                                 break;
                             }
                             break;
@@ -5773,10 +5773,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 22:
                             zo zoVar19 = this.b;
-                            ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                            di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                            ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                            zoVar19.presentFragment(ei0Var);
+                            di0Var.g0(chatFull7, chatFull7.exported_invite);
+                            zoVar19.presentFragment(di0Var);
                             break;
                         case 23:
                             zo zoVar20 = this.b;
@@ -5908,7 +5908,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 3:
                             zo zoVar6 = this.b;
-                            zoVar6.presentFragment(new fi0(zoVar6.w0));
+                            zoVar6.presentFragment(new ei0(zoVar6.w0));
                             break;
                         case 4:
                             zo zoVar7 = this.b;
@@ -5935,13 +5935,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             zoVar11.presentFragment(new fi.l(zoVar11.C0));
                             break;
                         case 9:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                             break;
                         case 10:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                             break;
                         case 11:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                             break;
                         case 12:
                             this.b.i0();
@@ -5956,17 +5956,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                         case 15:
                             zo zoVar13 = this.b;
                             if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                nd0 nd0Var = new nd0(4);
-                                nd0Var.e0 = -zoVar13.w0;
+                                ld0 ld0Var = new ld0(4);
+                                ld0Var.e0 = -zoVar13.w0;
                                 TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                 if (chatFull5 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                nd0Var.F0 = new qo(zoVar13, 6);
-                                zoVar13.presentFragment(nd0Var);
+                                ld0Var.F0 = new qo(zoVar13, 6);
+                                zoVar13.presentFragment(ld0Var);
                                 break;
                             }
                             break;
@@ -6044,10 +6044,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 22:
                             zo zoVar19 = this.b;
-                            ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                            di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                            ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                            zoVar19.presentFragment(ei0Var);
+                            di0Var.g0(chatFull7, chatFull7.exported_invite);
+                            zoVar19.presentFragment(di0Var);
                             break;
                         case 23:
                             zo zoVar20 = this.b;
@@ -6179,7 +6179,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 3:
                             zo zoVar6 = this.b;
-                            zoVar6.presentFragment(new fi0(zoVar6.w0));
+                            zoVar6.presentFragment(new ei0(zoVar6.w0));
                             break;
                         case 4:
                             zo zoVar7 = this.b;
@@ -6206,13 +6206,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             zoVar11.presentFragment(new fi.l(zoVar11.C0));
                             break;
                         case 9:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                             break;
                         case 10:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                             break;
                         case 11:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                             break;
                         case 12:
                             this.b.i0();
@@ -6227,17 +6227,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                         case 15:
                             zo zoVar13 = this.b;
                             if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                nd0 nd0Var = new nd0(4);
-                                nd0Var.e0 = -zoVar13.w0;
+                                ld0 ld0Var = new ld0(4);
+                                ld0Var.e0 = -zoVar13.w0;
                                 TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                 if (chatFull5 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                nd0Var.F0 = new qo(zoVar13, 6);
-                                zoVar13.presentFragment(nd0Var);
+                                ld0Var.F0 = new qo(zoVar13, 6);
+                                zoVar13.presentFragment(ld0Var);
                                 break;
                             }
                             break;
@@ -6315,10 +6315,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 22:
                             zo zoVar19 = this.b;
-                            ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                            di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                            ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                            zoVar19.presentFragment(ei0Var);
+                            di0Var.g0(chatFull7, chatFull7.exported_invite);
+                            zoVar19.presentFragment(di0Var);
                             break;
                         case 23:
                             zo zoVar20 = this.b;
@@ -6452,7 +6452,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 3:
                             zo zoVar6 = this.b;
-                            zoVar6.presentFragment(new fi0(zoVar6.w0));
+                            zoVar6.presentFragment(new ei0(zoVar6.w0));
                             break;
                         case 4:
                             zo zoVar7 = this.b;
@@ -6479,13 +6479,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             zoVar11.presentFragment(new fi.l(zoVar11.C0));
                             break;
                         case 9:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                             break;
                         case 10:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                             break;
                         case 11:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                             break;
                         case 12:
                             this.b.i0();
@@ -6500,17 +6500,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                         case 15:
                             zo zoVar13 = this.b;
                             if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                nd0 nd0Var = new nd0(4);
-                                nd0Var.e0 = -zoVar13.w0;
+                                ld0 ld0Var = new ld0(4);
+                                ld0Var.e0 = -zoVar13.w0;
                                 TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                 if (chatFull5 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                nd0Var.F0 = new qo(zoVar13, 6);
-                                zoVar13.presentFragment(nd0Var);
+                                ld0Var.F0 = new qo(zoVar13, 6);
+                                zoVar13.presentFragment(ld0Var);
                                 break;
                             }
                             break;
@@ -6588,10 +6588,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 22:
                             zo zoVar19 = this.b;
-                            ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                            di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                            ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                            zoVar19.presentFragment(ei0Var);
+                            di0Var.g0(chatFull7, chatFull7.exported_invite);
+                            zoVar19.presentFragment(di0Var);
                             break;
                         case 23:
                             zo zoVar20 = this.b;
@@ -6723,7 +6723,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 3:
                             zo zoVar6 = this.b;
-                            zoVar6.presentFragment(new fi0(zoVar6.w0));
+                            zoVar6.presentFragment(new ei0(zoVar6.w0));
                             break;
                         case 4:
                             zo zoVar7 = this.b;
@@ -6750,13 +6750,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             zoVar11.presentFragment(new fi.l(zoVar11.C0));
                             break;
                         case 9:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                             break;
                         case 10:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                             break;
                         case 11:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                             break;
                         case 12:
                             this.b.i0();
@@ -6771,17 +6771,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                         case 15:
                             zo zoVar13 = this.b;
                             if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                nd0 nd0Var = new nd0(4);
-                                nd0Var.e0 = -zoVar13.w0;
+                                ld0 ld0Var = new ld0(4);
+                                ld0Var.e0 = -zoVar13.w0;
                                 TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                 if (chatFull5 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                nd0Var.F0 = new qo(zoVar13, 6);
-                                zoVar13.presentFragment(nd0Var);
+                                ld0Var.F0 = new qo(zoVar13, 6);
+                                zoVar13.presentFragment(ld0Var);
                                 break;
                             }
                             break;
@@ -6859,10 +6859,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 22:
                             zo zoVar19 = this.b;
-                            ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                            di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                            ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                            zoVar19.presentFragment(ei0Var);
+                            di0Var.g0(chatFull7, chatFull7.exported_invite);
+                            zoVar19.presentFragment(di0Var);
                             break;
                         case 23:
                             zo zoVar20 = this.b;
@@ -6997,7 +6997,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 3:
                             zo zoVar6 = this.b;
-                            zoVar6.presentFragment(new fi0(zoVar6.w0));
+                            zoVar6.presentFragment(new ei0(zoVar6.w0));
                             break;
                         case 4:
                             zo zoVar7 = this.b;
@@ -7024,13 +7024,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             zoVar11.presentFragment(new fi.l(zoVar11.C0));
                             break;
                         case 9:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                             break;
                         case 10:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                             break;
                         case 11:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                             break;
                         case 12:
                             this.b.i0();
@@ -7045,17 +7045,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                         case 15:
                             zo zoVar13 = this.b;
                             if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                nd0 nd0Var = new nd0(4);
-                                nd0Var.e0 = -zoVar13.w0;
+                                ld0 ld0Var = new ld0(4);
+                                ld0Var.e0 = -zoVar13.w0;
                                 TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                 if (chatFull5 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                nd0Var.F0 = new qo(zoVar13, 6);
-                                zoVar13.presentFragment(nd0Var);
+                                ld0Var.F0 = new qo(zoVar13, 6);
+                                zoVar13.presentFragment(ld0Var);
                                 break;
                             }
                             break;
@@ -7133,10 +7133,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 22:
                             zo zoVar19 = this.b;
-                            ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                            di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                            ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                            zoVar19.presentFragment(ei0Var);
+                            di0Var.g0(chatFull7, chatFull7.exported_invite);
+                            zoVar19.presentFragment(di0Var);
                             break;
                         case 23:
                             zo zoVar20 = this.b;
@@ -7271,7 +7271,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 3:
                             zo zoVar6 = this.b;
-                            zoVar6.presentFragment(new fi0(zoVar6.w0));
+                            zoVar6.presentFragment(new ei0(zoVar6.w0));
                             break;
                         case 4:
                             zo zoVar7 = this.b;
@@ -7298,13 +7298,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             zoVar11.presentFragment(new fi.l(zoVar11.C0));
                             break;
                         case 9:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                             break;
                         case 10:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                             break;
                         case 11:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                             break;
                         case 12:
                             this.b.i0();
@@ -7319,17 +7319,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                         case 15:
                             zo zoVar13 = this.b;
                             if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                nd0 nd0Var = new nd0(4);
-                                nd0Var.e0 = -zoVar13.w0;
+                                ld0 ld0Var = new ld0(4);
+                                ld0Var.e0 = -zoVar13.w0;
                                 TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                 if (chatFull5 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                nd0Var.F0 = new qo(zoVar13, 6);
-                                zoVar13.presentFragment(nd0Var);
+                                ld0Var.F0 = new qo(zoVar13, 6);
+                                zoVar13.presentFragment(ld0Var);
                                 break;
                             }
                             break;
@@ -7407,10 +7407,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 22:
                             zo zoVar19 = this.b;
-                            ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                            di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                            ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                            zoVar19.presentFragment(ei0Var);
+                            di0Var.g0(chatFull7, chatFull7.exported_invite);
+                            zoVar19.presentFragment(di0Var);
                             break;
                         case 23:
                             zo zoVar20 = this.b;
@@ -7466,26 +7466,26 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
             });
             if (ChatObject.isBoostSupported(zoVar.x0)) {
             }
-            zoVar.R.addView(zoVar.O, w7.a6.n(-1, i11));
+            zoVar.R.addView(zoVar.O, w7.z5.n(-1, i11));
             r8Var = zoVar.f0;
             if (r8Var != null) {
             }
             if (!zoVar.I0) {
-                zoVar.R.addView(zoVar.X, w7.a6.n(-1, i11));
+                zoVar.R.addView(zoVar.X, w7.z5.n(-1, i11));
             }
             if (!zoVar.I0) {
             }
-            zoVar.R.addView(zoVar.W, w7.a6.n(-1, i11));
-            zoVar.R.addView(zoVar.T, w7.a6.n(-1, i11));
+            zoVar.R.addView(zoVar.W, w7.z5.n(-1, i11));
+            zoVar.R.addView(zoVar.T, w7.z5.n(-1, i11));
             r8Var2 = zoVar.U;
             if (r8Var2 != null) {
-                zoVar.R.addView(r8Var2, w7.a6.n(-1, i11));
+                zoVar.R.addView(r8Var2, w7.z5.n(-1, i11));
             }
             if (zoVar.I0) {
             }
             if (!zoVar.I0) {
             }
-            zoVar.R.addView(zoVar.X, w7.a6.n(-1, i11));
+            zoVar.R.addView(zoVar.X, w7.z5.n(-1, i11));
             r8Var3 = zoVar.a0;
             if (r8Var3 != null) {
             }
@@ -7507,7 +7507,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
             zoVar.l0 = r8Var26;
             r8Var26.setBackground(org.telegram.ui.ActionBar.g6.L0(false));
             zoVar.l0.setPrioritizeTitleOverValue(true);
-            zoVar.R.addView(zoVar.l0, w7.a6.n(-1, i11));
+            zoVar.R.addView(zoVar.l0, w7.z5.n(-1, i11));
             final int i36 = 7;
             zoVar.l0.setOnClickListener(new View.OnClickListener(zoVar) { // from class: org.telegram.ui.jo
                 public final /* synthetic */ zo b;
@@ -7583,7 +7583,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 3:
                             zo zoVar6 = this.b;
-                            zoVar6.presentFragment(new fi0(zoVar6.w0));
+                            zoVar6.presentFragment(new ei0(zoVar6.w0));
                             break;
                         case 4:
                             zo zoVar7 = this.b;
@@ -7610,13 +7610,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             zoVar11.presentFragment(new fi.l(zoVar11.C0));
                             break;
                         case 9:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                             break;
                         case 10:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                             break;
                         case 11:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                             break;
                         case 12:
                             this.b.i0();
@@ -7631,17 +7631,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                         case 15:
                             zo zoVar13 = this.b;
                             if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                nd0 nd0Var = new nd0(4);
-                                nd0Var.e0 = -zoVar13.w0;
+                                ld0 ld0Var = new ld0(4);
+                                ld0Var.e0 = -zoVar13.w0;
                                 TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                 if (chatFull5 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                nd0Var.F0 = new qo(zoVar13, 6);
-                                zoVar13.presentFragment(nd0Var);
+                                ld0Var.F0 = new qo(zoVar13, 6);
+                                zoVar13.presentFragment(ld0Var);
                                 break;
                             }
                             break;
@@ -7719,10 +7719,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 22:
                             zo zoVar19 = this.b;
-                            ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                            di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                            ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                            zoVar19.presentFragment(ei0Var);
+                            di0Var.g0(chatFull7, chatFull7.exported_invite);
+                            zoVar19.presentFragment(di0Var);
                             break;
                         case 23:
                             zo zoVar20 = this.b;
@@ -7781,7 +7781,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
             zoVar.o0 = r8Var27;
             r8Var27.setBackground(org.telegram.ui.ActionBar.g6.L0(false));
             zoVar.o0.q(d0(LocaleController.getString(R.string.AffiliateProgramBot)), "", R.drawable.msg_shareout, true);
-            zoVar.R.addView(zoVar.o0, w7.a6.n(-1, i11));
+            zoVar.R.addView(zoVar.o0, w7.z5.n(-1, i11));
             zoVar.o0.setOnClickListener(new View.OnClickListener(zoVar) { // from class: org.telegram.ui.jo
                 public final /* synthetic */ zo b;
 
@@ -7856,7 +7856,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 3:
                             zo zoVar6 = this.b;
-                            zoVar6.presentFragment(new fi0(zoVar6.w0));
+                            zoVar6.presentFragment(new ei0(zoVar6.w0));
                             break;
                         case 4:
                             zo zoVar7 = this.b;
@@ -7883,13 +7883,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             zoVar11.presentFragment(new fi.l(zoVar11.C0));
                             break;
                         case 9:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                             break;
                         case 10:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                             break;
                         case 11:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                             break;
                         case 12:
                             this.b.i0();
@@ -7904,17 +7904,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                         case 15:
                             zo zoVar13 = this.b;
                             if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                nd0 nd0Var = new nd0(4);
-                                nd0Var.e0 = -zoVar13.w0;
+                                ld0 ld0Var = new ld0(4);
+                                ld0Var.e0 = -zoVar13.w0;
                                 TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                 if (chatFull5 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                nd0Var.F0 = new qo(zoVar13, 6);
-                                zoVar13.presentFragment(nd0Var);
+                                ld0Var.F0 = new qo(zoVar13, 6);
+                                zoVar13.presentFragment(ld0Var);
                                 break;
                             }
                             break;
@@ -7992,10 +7992,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 22:
                             zo zoVar19 = this.b;
-                            ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                            di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                            ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                            zoVar19.presentFragment(ei0Var);
+                            di0Var.g0(chatFull7, chatFull7.exported_invite);
+                            zoVar19.presentFragment(di0Var);
                             break;
                         case 23:
                             zo zoVar20 = this.b;
@@ -8069,7 +8069,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
             zoVar.p0 = r8Var29;
             r8Var29.setBackground(org.telegram.ui.ActionBar.g6.L0(false));
             zoVar.p0.m(R.drawable.msg_log, LocaleController.getString(R.string.BotEditIntro), true);
-            zoVar.R.addView(zoVar.p0, w7.a6.n(-1, i11));
+            zoVar.R.addView(zoVar.p0, w7.z5.n(-1, i11));
             final int i37 = 9;
             zoVar.p0.setOnClickListener(new View.OnClickListener(zoVar) { // from class: org.telegram.ui.jo
                 public final /* synthetic */ zo b;
@@ -8145,7 +8145,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 3:
                             zo zoVar6 = this.b;
-                            zoVar6.presentFragment(new fi0(zoVar6.w0));
+                            zoVar6.presentFragment(new ei0(zoVar6.w0));
                             break;
                         case 4:
                             zo zoVar7 = this.b;
@@ -8172,13 +8172,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             zoVar11.presentFragment(new fi.l(zoVar11.C0));
                             break;
                         case 9:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                             break;
                         case 10:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                             break;
                         case 11:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                             break;
                         case 12:
                             this.b.i0();
@@ -8193,17 +8193,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                         case 15:
                             zo zoVar13 = this.b;
                             if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                nd0 nd0Var = new nd0(4);
-                                nd0Var.e0 = -zoVar13.w0;
+                                ld0 ld0Var = new ld0(4);
+                                ld0Var.e0 = -zoVar13.w0;
                                 TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                 if (chatFull5 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                nd0Var.F0 = new qo(zoVar13, 6);
-                                zoVar13.presentFragment(nd0Var);
+                                ld0Var.F0 = new qo(zoVar13, 6);
+                                zoVar13.presentFragment(ld0Var);
                                 break;
                             }
                             break;
@@ -8281,10 +8281,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 22:
                             zo zoVar19 = this.b;
-                            ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                            di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                            ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                            zoVar19.presentFragment(ei0Var);
+                            di0Var.g0(chatFull7, chatFull7.exported_invite);
+                            zoVar19.presentFragment(di0Var);
                             break;
                         case 23:
                             zo zoVar20 = this.b;
@@ -8342,7 +8342,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
             zoVar.q0 = r8Var30;
             r8Var30.setBackground(org.telegram.ui.ActionBar.g6.L0(false));
             zoVar.q0.m(R.drawable.msg_media, LocaleController.getString(R.string.BotEditCommands), true);
-            zoVar.R.addView(zoVar.q0, w7.a6.n(-1, i11));
+            zoVar.R.addView(zoVar.q0, w7.z5.n(-1, i11));
             final int i38 = 10;
             zoVar.q0.setOnClickListener(new View.OnClickListener(zoVar) { // from class: org.telegram.ui.jo
                 public final /* synthetic */ zo b;
@@ -8418,7 +8418,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 3:
                             zo zoVar6 = this.b;
-                            zoVar6.presentFragment(new fi0(zoVar6.w0));
+                            zoVar6.presentFragment(new ei0(zoVar6.w0));
                             break;
                         case 4:
                             zo zoVar7 = this.b;
@@ -8445,13 +8445,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             zoVar11.presentFragment(new fi.l(zoVar11.C0));
                             break;
                         case 9:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                             break;
                         case 10:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                             break;
                         case 11:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                             break;
                         case 12:
                             this.b.i0();
@@ -8466,17 +8466,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                         case 15:
                             zo zoVar13 = this.b;
                             if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                nd0 nd0Var = new nd0(4);
-                                nd0Var.e0 = -zoVar13.w0;
+                                ld0 ld0Var = new ld0(4);
+                                ld0Var.e0 = -zoVar13.w0;
                                 TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                 if (chatFull5 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                nd0Var.F0 = new qo(zoVar13, 6);
-                                zoVar13.presentFragment(nd0Var);
+                                ld0Var.F0 = new qo(zoVar13, 6);
+                                zoVar13.presentFragment(ld0Var);
                                 break;
                             }
                             break;
@@ -8554,10 +8554,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 22:
                             zo zoVar19 = this.b;
-                            ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                            di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                            ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                            zoVar19.presentFragment(ei0Var);
+                            di0Var.g0(chatFull7, chatFull7.exported_invite);
+                            zoVar19.presentFragment(di0Var);
                             break;
                         case 23:
                             zo zoVar20 = this.b;
@@ -8615,7 +8615,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
             zoVar.r0 = r8Var31;
             r8Var31.setBackground(org.telegram.ui.ActionBar.g6.L0(false));
             zoVar.r0.m(R.drawable.msg_bot, LocaleController.getString(R.string.BotChangeSettings), true);
-            zoVar.R.addView(zoVar.r0, w7.a6.n(-1, i11));
+            zoVar.R.addView(zoVar.r0, w7.z5.n(-1, i11));
             final int i39 = 11;
             zoVar.r0.setOnClickListener(new View.OnClickListener(zoVar) { // from class: org.telegram.ui.jo
                 public final /* synthetic */ zo b;
@@ -8691,7 +8691,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 3:
                             zo zoVar6 = this.b;
-                            zoVar6.presentFragment(new fi0(zoVar6.w0));
+                            zoVar6.presentFragment(new ei0(zoVar6.w0));
                             break;
                         case 4:
                             zo zoVar7 = this.b;
@@ -8718,13 +8718,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             zoVar11.presentFragment(new fi.l(zoVar11.C0));
                             break;
                         case 9:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                             break;
                         case 10:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                             break;
                         case 11:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                             break;
                         case 12:
                             this.b.i0();
@@ -8739,17 +8739,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                         case 15:
                             zo zoVar13 = this.b;
                             if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                nd0 nd0Var = new nd0(4);
-                                nd0Var.e0 = -zoVar13.w0;
+                                ld0 ld0Var = new ld0(4);
+                                ld0Var.e0 = -zoVar13.w0;
                                 TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                 if (chatFull5 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                nd0Var.F0 = new qo(zoVar13, 6);
-                                zoVar13.presentFragment(nd0Var);
+                                ld0Var.F0 = new qo(zoVar13, 6);
+                                zoVar13.presentFragment(ld0Var);
                                 break;
                             }
                             break;
@@ -8827,10 +8827,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 22:
                             zo zoVar19 = this.b;
-                            ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                            di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                            ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                            zoVar19.presentFragment(ei0Var);
+                            di0Var.g0(chatFull7, chatFull7.exported_invite);
+                            zoVar19.presentFragment(di0Var);
                             break;
                         case 23:
                             zo zoVar20 = this.b;
@@ -8891,7 +8891,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                 zoVar.R.setVisibility(8);
                 zoVar.G.setVisibility(8);
             }
-            eeVar2.addView(new org.telegram.ui.Cells.b7(context2), w7.a6.n(-1, i11));
+            eeVar2.addView(new org.telegram.ui.Cells.a7(context2), w7.z5.n(-1, i11));
         } else if (zoVar.D0 != null) {
             zoVar.s0 = new org.telegram.ui.Cells.e9(context2, 12, zoVar.resourceProvider);
             String string = LocaleController.getString(R.string.BotManageInfo);
@@ -8901,7 +8901,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                 valueOf.setSpan(new yo(0), indexOf, indexOf + 10, 33);
             }
             zoVar.s0.setText(valueOf);
-            eeVar2.addView(zoVar.s0, w7.a6.n(-1, i11));
+            eeVar2.addView(zoVar.s0, w7.z5.n(-1, i11));
             org.telegram.ui.Cells.r8 r8Var32 = new org.telegram.ui.Cells.r8(context2);
             zoVar.u0 = r8Var32;
             r8Var32.setBackground(org.telegram.ui.ActionBar.g6.L0(true));
@@ -8909,7 +8909,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
             org.telegram.ui.Cells.r8 r8Var33 = zoVar.u0;
             int i40 = org.telegram.ui.ActionBar.g6.q6;
             r8Var33.e(i40, i40);
-            eeVar2.addView(zoVar.u0, w7.a6.n(-1, i11));
+            eeVar2.addView(zoVar.u0, w7.z5.n(-1, i11));
             final int i41 = 13;
             zoVar.u0.setOnClickListener(new View.OnClickListener(zoVar) { // from class: org.telegram.ui.jo
                 public final /* synthetic */ zo b;
@@ -8985,7 +8985,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 3:
                             zo zoVar6 = this.b;
-                            zoVar6.presentFragment(new fi0(zoVar6.w0));
+                            zoVar6.presentFragment(new ei0(zoVar6.w0));
                             break;
                         case 4:
                             zo zoVar7 = this.b;
@@ -9012,13 +9012,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             zoVar11.presentFragment(new fi.l(zoVar11.C0));
                             break;
                         case 9:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                             break;
                         case 10:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                             break;
                         case 11:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                             break;
                         case 12:
                             this.b.i0();
@@ -9033,17 +9033,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                         case 15:
                             zo zoVar13 = this.b;
                             if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                nd0 nd0Var = new nd0(4);
-                                nd0Var.e0 = -zoVar13.w0;
+                                ld0 ld0Var = new ld0(4);
+                                ld0Var.e0 = -zoVar13.w0;
                                 TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                 if (chatFull5 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                nd0Var.F0 = new qo(zoVar13, 6);
-                                zoVar13.presentFragment(nd0Var);
+                                ld0Var.F0 = new qo(zoVar13, 6);
+                                zoVar13.presentFragment(ld0Var);
                                 break;
                             }
                             break;
@@ -9121,10 +9121,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 22:
                             zo zoVar19 = this.b;
-                            ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                            di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                            ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                            zoVar19.presentFragment(ei0Var);
+                            di0Var.g0(chatFull7, chatFull7.exported_invite);
+                            zoVar19.presentFragment(di0Var);
                             break;
                         case 23:
                             zo zoVar20 = this.b;
@@ -9181,7 +9181,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
             org.telegram.ui.Cells.e9 e9Var2 = new org.telegram.ui.Cells.e9(context2, 12, zoVar.resourceProvider);
             zoVar.t0 = e9Var2;
             e9Var2.setFixedSize(12);
-            eeVar2.addView(zoVar.t0, w7.a6.n(-1, i11));
+            eeVar2.addView(zoVar.t0, w7.z5.n(-1, i11));
             org.telegram.ui.Cells.r8 r8Var34 = zoVar.u0;
             TLRPC.UserFull userFull2 = zoVar.E0;
             r8Var34.setVisibility((userFull2 == null || (botInfo2 = userFull2.bot_info) == null || botInfo2.verifier_settings == null) ? 8 : 0);
@@ -9193,15 +9193,15 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                 LinearLayout linearLayout5 = new LinearLayout(context2);
                 zoVar.S = linearLayout5;
                 linearLayout5.setOrientation(1);
-                eeVar2.addView(zoVar.S, w7.a6.n(-1, i11));
+                eeVar2.addView(zoVar.S, w7.z5.n(-1, i11));
                 org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(context2);
                 m4Var.setText(LocaleController.getString(R.string.BotBalance));
-                zoVar.S.addView(m4Var, w7.a6.n(-1, i11));
+                zoVar.S.addView(m4Var, w7.z5.n(-1, i11));
                 org.telegram.ui.Cells.r8 r8Var35 = new org.telegram.ui.Cells.r8(context2);
                 zoVar.m0 = r8Var35;
                 r8Var35.setBackground(org.telegram.ui.ActionBar.g6.L0(false));
                 zoVar.m0.setPrioritizeTitleOverValue(true);
-                zoVar.S.addView(zoVar.m0, w7.a6.n(-1, i11));
+                zoVar.S.addView(zoVar.m0, w7.z5.n(-1, i11));
                 final zh.p g11 = zh.p.g(zoVar.currentAccount);
                 final int i42 = 0;
                 zoVar.m0.setOnClickListener(new View.OnClickListener(zoVar) { // from class: org.telegram.ui.lo
@@ -9263,7 +9263,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                 r8Var36.setBackground(org.telegram.ui.ActionBar.g6.L0(false));
                 final int i44 = 1;
                 zoVar.n0.setPrioritizeTitleOverValue(true);
-                zoVar.S.addView(zoVar.n0, w7.a6.n(-1, -2));
+                zoVar.S.addView(zoVar.n0, w7.z5.n(-1, -2));
                 zoVar.n0.setOnClickListener(new View.OnClickListener(zoVar) { // from class: org.telegram.ui.lo
                     public final /* synthetic */ zo b;
 
@@ -9313,7 +9313,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                 org.telegram.ui.Cells.e9 e9Var4 = new org.telegram.ui.Cells.e9(context2, 12, zoVar.getResourceProvider());
                 e9Var4.setFixedSize(12);
                 e9Var4.setTag(R.id.fit_width_tag, 1);
-                eeVar2.addView(e9Var4, w7.a6.n(-1, 12));
+                eeVar2.addView(e9Var4, w7.z5.n(-1, 12));
                 zoVar.S.setVisibility((zoVar.n0.getVisibility() == 0 || zoVar.m0.getVisibility() == 0) ? 0 : 8);
             }
         }
@@ -9362,7 +9362,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                         }
                     }
                 });
-                eeVar2.addView(zoVar.h0, w7.a6.n(-1, -2));
+                eeVar2.addView(zoVar.h0, w7.z5.n(-1, -2));
                 org.telegram.ui.Cells.r8 r8Var38 = new org.telegram.ui.Cells.r8(context2);
                 zoVar.j0 = r8Var38;
                 r8Var38.m(R.drawable.outline_community_remove_24, LocaleController.getString(z17 ? R.string.CommunityRemoveBotFromCommunity : zoVar.I0 ? R.string.CommunityRemoveChannelFromCommunity : R.string.CommunityRemoveGroupFromCommunity), false);
@@ -9379,12 +9379,12 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                         org.telegram.ui.Components.g5.u0(zoVar3, string3, LocaleController.getString(z17 ? R.string.CommunityMenuRemoveBotFromCommunityConfirm : zoVar3.I0 ? R.string.CommunityMenuRemoveChannelFromCommunityConfirm : R.string.CommunityMenuRemoveGroupFromCommunityConfirm), LocaleController.getString(R.string.Remove), true, new uo(zoVar3, j15, j14, 0));
                     }
                 });
-                eeVar2.addView(zoVar2.j0, w7.a6.n(-1, -2));
+                eeVar2.addView(zoVar2.j0, w7.z5.n(-1, -2));
                 org.telegram.ui.Cells.e9 e9Var5 = new org.telegram.ui.Cells.e9(context2, 12, zoVar2.getResourceProvider());
                 zoVar2.k0 = e9Var5;
                 e9Var5.setFixedSize(14);
                 zoVar2.k0.setTag(R.id.fit_width_tag, 1);
-                eeVar2.addView(zoVar2.k0, w7.a6.n(-1, 14));
+                eeVar2.addView(zoVar2.k0, w7.z5.n(-1, 14));
             } else {
                 zoVar2 = zoVar;
                 org.telegram.ui.Cells.r8 r8Var40 = new org.telegram.ui.Cells.r8(context2);
@@ -9428,15 +9428,15 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                 org.telegram.ui.Cells.e9 e9Var6 = new org.telegram.ui.Cells.e9(context2, 12, zoVar2.resourceProvider);
                 zoVar2.i0 = e9Var6;
                 e9Var6.setText(LocaleController.getString(z17 ? R.string.CommunityAddBotToCommunityInfo : zoVar2.I0 ? R.string.CommunityAddChannelToCommunityInfo : R.string.CommunityAddGroupToCommunityInfo));
-                eeVar2.addView(zoVar2.g0, w7.a6.n(-1, -2));
-                eeVar2.addView(zoVar2.i0, w7.a6.n(-1, -2));
+                eeVar2.addView(zoVar2.g0, w7.z5.n(-1, -2));
+                eeVar2.addView(zoVar2.i0, w7.z5.n(-1, -2));
             }
         }
         TLRPC.Chat chat6 = zoVar2.x0;
         if (chat6 != null && chat6.creator) {
             FrameLayout frameLayout3 = new FrameLayout(context2);
             zoVar2.c0 = frameLayout3;
-            eeVar2.addView(frameLayout3, w7.a6.n(-1, -2));
+            eeVar2.addView(frameLayout3, w7.z5.n(-1, -2));
             org.telegram.ui.Cells.ca caVar = new org.telegram.ui.Cells.ca(context2);
             zoVar2.d0 = caVar;
             caVar.setTextColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.p7));
@@ -9448,7 +9448,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
             } else {
                 zoVar2.d0.b(LocaleController.getString(R.string.DeleteAndExitButton), false);
             }
-            zoVar2.c0.addView(zoVar2.d0, w7.a6.d(-2.0f, -1));
+            zoVar2.c0.addView(zoVar2.d0, w7.z5.d(-2.0f, -1));
             zoVar2.d0.setOnClickListener(new View.OnClickListener(zoVar2) { // from class: org.telegram.ui.jo
                 public final /* synthetic */ zo b;
 
@@ -9523,7 +9523,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 3:
                             zo zoVar6 = this.b;
-                            zoVar6.presentFragment(new fi0(zoVar6.w0));
+                            zoVar6.presentFragment(new ei0(zoVar6.w0));
                             break;
                         case 4:
                             zo zoVar7 = this.b;
@@ -9550,13 +9550,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             zoVar11.presentFragment(new fi.l(zoVar11.C0));
                             break;
                         case 9:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-intro");
                             break;
                         case 10:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0) + "-commands");
                             break;
                         case 11:
-                            pf.d.s(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
+                            pf.d.r(view.getContext(), "https://t.me/BotFather?start=" + zo.g0(this.b.D0));
                             break;
                         case 12:
                             this.b.i0();
@@ -9571,17 +9571,17 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                         case 15:
                             zo zoVar13 = this.b;
                             if (AndroidUtilities.isMapsInstalled(zoVar13)) {
-                                nd0 nd0Var = new nd0(4);
-                                nd0Var.e0 = -zoVar13.w0;
+                                ld0 ld0Var = new ld0(4);
+                                ld0Var.e0 = -zoVar13.w0;
                                 TLRPC.ChatFull chatFull5 = zoVar13.y0;
                                 if (chatFull5 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull5.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        nd0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        ld0Var.A0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                nd0Var.F0 = new qo(zoVar13, 6);
-                                zoVar13.presentFragment(nd0Var);
+                                ld0Var.F0 = new qo(zoVar13, 6);
+                                zoVar13.presentFragment(ld0Var);
                                 break;
                             }
                             break;
@@ -9659,10 +9659,10 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                             break;
                         case 22:
                             zo zoVar19 = this.b;
-                            ei0 ei0Var = new ei0(zoVar19.w0, 0L, 0);
+                            di0 di0Var = new di0(zoVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull7 = zoVar19.y0;
-                            ei0Var.g0(chatFull7, chatFull7.exported_invite);
-                            zoVar19.presentFragment(ei0Var);
+                            di0Var.g0(chatFull7, chatFull7.exported_invite);
+                            zoVar19.presentFragment(di0Var);
                             break;
                         case 23:
                             zo zoVar20 = this.b;
@@ -9716,13 +9716,13 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                     }
                 }
             });
-            org.telegram.ui.Cells.b7 b7Var2 = new org.telegram.ui.Cells.b7(context2);
-            zoVar2.e0 = b7Var2;
-            eeVar2.addView(b7Var2, w7.a6.n(-1, -2));
+            org.telegram.ui.Cells.a7 a7Var2 = new org.telegram.ui.Cells.a7(context2);
+            zoVar2.e0 = a7Var2;
+            eeVar2.addView(a7Var2, w7.z5.n(-1, -2));
         }
         UndoView undoView = new UndoView(context2);
         zoVar2.c = undoView;
-        odVar.addView(undoView, w7.a6.a(-2.0f, 8.0f, 0.0f, 8.0f, 8.0f, -1, 83));
+        odVar.addView(undoView, w7.z5.a(-2.0f, 8.0f, 0.0f, 8.0f, 8.0f, -1, 83));
         org.telegram.ui.Components.vu vuVar6 = zoVar2.v;
         TLRPC.User user3 = zoVar2.D0;
         vuVar6.setText(Emoji.replaceEmoji(user3 != null ? ContactsController.formatName(user3) : zoVar2.x0.title, zoVar2.v.getEditText().getPaint().getFontMetricsInt(), true));
@@ -10014,7 +10014,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
     }
 
     @Override // org.telegram.ui.Components.h50
-    public final /* synthetic */ kv0 getCloseIntoObject() {
+    public final /* synthetic */ jv0 getCloseIntoObject() {
         return null;
     }
 
@@ -10086,9 +10086,9 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
         arrayList.add(new org.telegram.ui.ActionBar.i6(null, 1, null, null, null, null, i15));
         arrayList.add(new org.telegram.ui.ActionBar.i6(this.R, 1, null, null, null, null, i15));
         int i16 = org.telegram.ui.ActionBar.g6.b7;
-        arrayList.add(new org.telegram.ui.ActionBar.i6(this.G, 32, new Class[]{org.telegram.ui.Cells.b7.class}, null, null, null, i16));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(this.P, 32, new Class[]{org.telegram.ui.Cells.b7.class}, null, null, null, i16));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(this.e0, 32, new Class[]{org.telegram.ui.Cells.b7.class}, null, null, null, i16));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.G, 32, new Class[]{org.telegram.ui.Cells.a7.class}, null, null, null, i16));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.P, 32, new Class[]{org.telegram.ui.Cells.a7.class}, null, null, null, i16));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(this.e0, 32, new Class[]{org.telegram.ui.Cells.a7.class}, null, null, null, i16));
         arrayList.add(new org.telegram.ui.ActionBar.i6(this.d0, 4096, null, null, null, null, i10));
         arrayList.add(new org.telegram.ui.ActionBar.i6(this.d0, 4, new Class[]{org.telegram.ui.Cells.ca.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.p7));
         arrayList.add(new org.telegram.ui.ActionBar.i6(null, 4096, null, null, null, null, i10));
@@ -10236,8 +10236,8 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                         Bundle bundle = new Bundle();
                         bundle.putLong("chat_id", this.w0);
                         org.telegram.ui.ActionBar.b5 parentLayout = getParentLayout();
-                        HashSet hashSet = lg1.n1;
-                        ((ActionBarLayout) parentLayout).c(i10, lg1.E0(getMessagesController(), getMessagesStorage(), bundle));
+                        HashSet hashSet = kg1.n1;
+                        ((ActionBarLayout) parentLayout).c(i10, kg1.E0(getMessagesController(), getMessagesStorage(), bundle));
                     }
                     i10++;
                 }
@@ -10439,45 +10439,45 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
     public final void o0() {
         org.telegram.ui.Cells.r8 r8Var;
         org.telegram.ui.Cells.r8 r8Var2;
-        bq0 bq0Var;
+        zp0 zp0Var;
         int w02;
         ArrayList<Integer> arrayList;
-        lp0 lp0Var = this.L;
-        if (lp0Var != null) {
+        jp0 jp0Var = this.L;
+        if (jp0Var != null) {
             TLRPC.Chat chat = this.x0;
             org.telegram.ui.Cells.r8 r8Var3 = this.N;
             boolean z10 = (r8Var3 != null && r8Var3.getVisibility() == 0) || ((r8Var = this.Q) != null && r8Var.getVisibility() == 0) || ((ChatObject.isMegagroup(this.x0) && ChatObject.hasAdminRights(this.x0)) || ((r8Var2 = this.M) != null && r8Var2.getVisibility() == 0));
-            Paint paint = lp0Var.n;
-            int i10 = lp0Var.a;
-            org.telegram.ui.ActionBar.c6 c6Var = lp0Var.d;
+            Paint paint = jp0Var.n;
+            int i10 = jp0Var.a;
+            org.telegram.ui.ActionBar.c6 c6Var = jp0Var.d;
             if (chat == null) {
                 return;
             }
-            lp0Var.v = z10;
-            lp0Var.r = new org.telegram.ui.Components.h11(Emoji.replaceEmoji(chat.title, org.telegram.ui.ActionBar.g6.o2.getFontMetricsInt(), false), 13.0f, AndroidUtilities.bold());
-            bq0 bq0Var2 = lp0Var.w;
-            if (bq0Var2 != null) {
-                bq0Var2.e(null);
+            jp0Var.v = z10;
+            jp0Var.r = new org.telegram.ui.Components.i11(Emoji.replaceEmoji(chat.title, org.telegram.ui.ActionBar.g6.o2.getFontMetricsInt(), false), 13.0f, AndroidUtilities.bold());
+            zp0 zp0Var2 = jp0Var.w;
+            if (zp0Var2 != null) {
+                zp0Var2.e(null);
             }
             TLRPC.EmojiStatus emojiStatus = chat.emoji_status;
             if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
                 TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible = (TLRPC.TL_emojiStatusCollectible) emojiStatus;
-                int i11 = bq0.j;
+                int i11 = zp0.j;
                 int i12 = tL_emojiStatusCollectible.center_color | (-16777216);
-                lp0Var.w = new bq0(tL_emojiStatusCollectible.document_id, i12, i12, i12);
+                jp0Var.w = new zp0(tL_emojiStatusCollectible.document_id, i12, i12, i12);
             } else {
                 if (ChatObject.getProfileColorId(chat) >= 0) {
-                    bq0Var = bq0.c(i10, ChatObject.getProfileColorId(chat));
-                    bq0Var.a = AndroidUtilities.dp(11.0f);
-                    bq0Var.d();
+                    zp0Var = zp0.c(i10, ChatObject.getProfileColorId(chat));
+                    zp0Var.a = AndroidUtilities.dp(11.0f);
+                    zp0Var.d();
                 } else {
-                    bq0Var = null;
+                    zp0Var = null;
                 }
-                lp0Var.w = bq0Var;
+                jp0Var.w = zp0Var;
             }
-            bq0 bq0Var3 = lp0Var.w;
-            if (bq0Var3 != null) {
-                bq0Var3.e(lp0Var);
+            zp0 zp0Var3 = jp0Var.w;
+            if (zp0Var3 != null) {
+                zp0Var3.e(jp0Var);
             }
             TLRPC.PeerColor peerColor = chat.color;
             if (peerColor instanceof TLRPC.TL_peerColorCollectible) {
@@ -10490,39 +10490,39 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                 int intValue = arrayList.get(0).intValue() | (-16777216);
                 int intValue2 = arrayList.size() >= 2 ? arrayList.get(1).intValue() | (-16777216) : intValue;
                 int intValue3 = arrayList.size() >= 3 ? arrayList.get(2).intValue() | (-16777216) : intValue;
-                lp0Var.r.o(i13);
+                jp0Var.r.o(i13);
                 paint.setColor(org.telegram.ui.ActionBar.g6.m1(0.1f, i13));
-                bq0 bq0Var4 = new bq0(tL_peerColorCollectible.gift_emoji_id, intValue, intValue2, intValue3);
-                bq0Var4.a = AndroidUtilities.dp(11.0f);
-                bq0Var4.d();
-                lp0Var.x = bq0Var4;
-                bq0Var4.e(lp0Var);
+                zp0 zp0Var4 = new zp0(tL_peerColorCollectible.gift_emoji_id, intValue, intValue2, intValue3);
+                zp0Var4.a = AndroidUtilities.dp(11.0f);
+                zp0Var4.d();
+                jp0Var.x = zp0Var4;
+                zp0Var4.e(jp0Var);
                 return;
             }
             int colorId = ChatObject.getColorId(chat);
             if (colorId < 7) {
                 int i14 = org.telegram.ui.ActionBar.g6.r8[colorId];
-                lp0Var.s = i14;
+                jp0Var.s = i14;
                 w02 = org.telegram.ui.ActionBar.g6.w0(i14, c6Var);
             } else {
                 MessagesController.PeerColors peerColors = MessagesController.getInstance(UserConfig.selectedAccount).peerColors;
                 MessagesController.PeerColor color = peerColors != null ? peerColors.getColor(colorId) : null;
                 if (color != null) {
-                    lp0Var.s = -1;
+                    jp0Var.s = -1;
                     w02 = color.getColor1();
                 } else {
                     int i15 = org.telegram.ui.ActionBar.g6.r8[0];
-                    lp0Var.s = i15;
+                    jp0Var.s = i15;
                     w02 = org.telegram.ui.ActionBar.g6.w0(i15, c6Var);
                 }
             }
-            lp0Var.r.o(w02);
+            jp0Var.r.o(w02);
             paint.setColor(org.telegram.ui.ActionBar.g6.m1(0.1f, w02));
-            bq0 a10 = bq0.a(i10, colorId);
+            zp0 a10 = zp0.a(i10, colorId);
             a10.a = AndroidUtilities.dp(11.0f);
             a10.d();
-            lp0Var.x = a10;
-            a10.e(lp0Var);
+            jp0Var.x = a10;
+            a10.e(jp0Var);
         }
     }
 
@@ -10975,7 +10975,7 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                 org.telegram.ui.Cells.r8 r8Var23 = this.U;
                 if (r8Var23 != null) {
                     if (r8Var23.getParent() == null) {
-                        this.R.addView(this.U, this.R.indexOfChild(this.T) + 1, w7.a6.n(-1, -2));
+                        this.R.addView(this.U, this.R.indexOfChild(this.T) + 1, w7.z5.n(-1, -2));
                     }
                     this.U.setVisibility(this.y0.requests_pending > 0 ? 0 : 8);
                 }
@@ -11125,18 +11125,18 @@ public class zo extends org.telegram.ui.ActionBar.m2 implements org.telegram.ui.
                     if (!this.H0) {
                         Bundle bundle = new Bundle();
                         bundle.putLong("chat_id", this.w0);
-                        ((ActionBarLayout) getParentLayout()).c(i10, new lg1(bundle));
+                        ((ActionBarLayout) getParentLayout()).c(i10, new kg1(bundle));
                         i10++;
                     }
                 }
-            } else if (this.H0 && (fragmentStack.get(i10) instanceof lg1)) {
-                lg1 lg1Var = (lg1) fragmentStack.get(i10);
-                if (lg1Var.g() != null && lg1Var.g().id == this.w0) {
-                    ((ActionBarLayout) getParentLayout()).a0(lg1Var, false);
+            } else if (this.H0 && (fragmentStack.get(i10) instanceof kg1)) {
+                kg1 kg1Var = (kg1) fragmentStack.get(i10);
+                if (kg1Var.g() != null && kg1Var.g().id == this.w0) {
+                    ((ActionBarLayout) getParentLayout()).a0(kg1Var, false);
                     i10--;
                 }
-            } else if (this.H0 && (fragmentStack.get(i10) instanceof yy) && (yyVar = (yy) fragmentStack.get(i10)) != null && (sxVar = yyVar.F3) != null && sxVar.c()) {
-                yyVar.F3.a();
+            } else if (this.H0 && (fragmentStack.get(i10) instanceof yy) && (yyVar = (yy) fragmentStack.get(i10)) != null && (sxVar = yyVar.G3) != null && sxVar.c()) {
+                yyVar.G3.a();
             }
             i10++;
         }

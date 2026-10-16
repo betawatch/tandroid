@@ -36,7 +36,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicMarkableReference;
-import m.q3;
+import m.t3;
 import v7.d8;
 import z9.a0;
 import z9.a1;
@@ -56,14 +56,14 @@ import z9.n0;
 import z9.q0;
 import z9.t0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class n {
     public static final ca.a r = new ca.a(3);
     public final Context a;
     public final s b;
     public final l c;
-    public final q3 d;
+    public final t3 d;
     public final com.google.firebase.messaging.s e;
     public final v f;
     public final ca.c g;
@@ -78,7 +78,7 @@ public final class n {
     public final TaskCompletionSource p = new TaskCompletionSource();
     public final TaskCompletionSource q = new TaskCompletionSource();
 
-    public n(Context context, com.google.firebase.messaging.s sVar, v vVar, s sVar2, ca.c cVar, l lVar, a aVar, q3 q3Var, y9.e eVar, com.google.firebase.messaging.m mVar, u9.a aVar2, v9.a aVar3, j jVar) {
+    public n(Context context, com.google.firebase.messaging.s sVar, v vVar, s sVar2, ca.c cVar, l lVar, a aVar, t3 t3Var, y9.e eVar, com.google.firebase.messaging.m mVar, u9.a aVar2, v9.a aVar3, j jVar) {
         new AtomicBoolean(false);
         this.a = context;
         this.e = sVar;
@@ -87,7 +87,7 @@ public final class n {
         this.g = cVar;
         this.c = lVar;
         this.h = aVar;
-        this.d = q3Var;
+        this.d = t3Var;
         this.i = eVar;
         this.j = aVar2;
         this.k = aVar3;
@@ -141,23 +141,23 @@ public final class n {
         if (!bool.booleanValue() || str == null) {
             j10 = currentTimeMillis;
         } else {
-            q3 q3Var = nVar.d;
-            synchronized (((String) q3Var.c)) {
+            t3 t3Var = nVar.d;
+            synchronized (((String) t3Var.c)) {
                 try {
-                    q3Var.c = str;
-                    Map a2 = ((y9.d) ((AtomicMarkableReference) ((c2.b) q3Var.d).b).getReference()).a();
-                    List o10 = ((c0) q3Var.f).o();
-                    if (((String) ((AtomicMarkableReference) q3Var.h).getReference()) != null) {
+                    t3Var.c = str;
+                    Map a2 = ((y9.d) ((AtomicMarkableReference) ((c2.b) t3Var.d).b).getReference()).a();
+                    List j11 = ((c0) t3Var.f).j();
+                    if (((String) ((AtomicMarkableReference) t3Var.h).getReference()) != null) {
                         j10 = currentTimeMillis;
-                        ((y9.f) q3Var.a).i(str, (String) ((AtomicMarkableReference) q3Var.h).getReference());
+                        ((y9.f) t3Var.a).i(str, (String) ((AtomicMarkableReference) t3Var.h).getReference());
                     } else {
                         j10 = currentTimeMillis;
                     }
                     if (!a2.isEmpty()) {
-                        ((y9.f) q3Var.a).g(str, a2, false);
+                        ((y9.f) t3Var.a).g(str, a2, false);
                     }
-                    if (!o10.isEmpty()) {
-                        ((y9.f) q3Var.a).h(str, o10);
+                    if (!j11.isEmpty()) {
+                        ((y9.f) t3Var.a).h(str, j11);
                     }
                 } finally {
                 }
@@ -216,16 +216,16 @@ public final class n {
             throw new NullPointerException("Null identifier");
         }
         String str14 = vVar2.b().a;
-        m4.c cVar = aVar2.h;
-        if (((c5.a) cVar.c) == null) {
-            cVar.c = new c5.a(cVar);
+        m2.t tVar = aVar2.h;
+        if (((c5.a) tVar.c) == null) {
+            tVar.c = new c5.a(tVar);
         }
-        c5.a aVar3 = (c5.a) cVar.c;
-        String str15 = aVar3.b;
+        c5.a aVar3 = (c5.a) tVar.c;
+        String str15 = aVar3.a;
         if (aVar3 == null) {
-            cVar.c = new c5.a(cVar);
+            tVar.c = new c5.a(tVar);
         }
-        g0Var.g = new i0(str13, str10, str11, str14, str15, ((c5.a) cVar.c).c);
+        g0Var.g = new i0(str13, str10, str11, str14, str15, ((c5.a) tVar.c).b);
         com.google.firebase.messaging.s sVar = new com.google.firebase.messaging.s(14, false);
         Integer valueOf = Integer.valueOf(i10);
         sVar.d = valueOf;
@@ -272,7 +272,7 @@ public final class n {
         g0Var.l = valueOf;
         d8Var.g = g0Var.a();
         a0 a10 = d8Var.a();
-        ca.c cVar2 = ((ca.b) mVar.b).b;
+        ca.c cVar = ((ca.b) mVar.b).b;
         d2 d2Var = a10.j;
         if (d2Var == null) {
             if (Log.isLoggable("FirebaseCrashlytics", i10)) {
@@ -284,13 +284,13 @@ public final class n {
         String str16 = ((h0) d2Var).b;
         try {
             ca.b.g.getClass();
-            ca.b.f(cVar2.b(str16, "report"), aa.b.a.N(a10));
-            File b12 = cVar2.b(str16, "start-time");
-            long j11 = ((h0) d2Var).d;
+            ca.b.f(cVar.b(str16, "report"), aa.b.a.b1(a10));
+            File b12 = cVar.b(str16, "start-time");
+            long j12 = ((h0) d2Var).d;
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(b12), ca.b.e);
             try {
                 outputStreamWriter.write("");
-                b12.setLastModified(j11 * 1000);
+                b12.setLastModified(j12 * 1000);
                 outputStreamWriter.close();
             } finally {
             }
@@ -415,12 +415,12 @@ public final class n {
                     ca.c cVar2 = this.g;
                     com.google.firebase.messaging.s sVar = this.e;
                     y9.f fVar = new y9.f(cVar2);
-                    q3 q3Var = new q3(str4, cVar2, sVar);
+                    t3 t3Var = new t3(str4, cVar2, sVar);
                     i10 = 4;
-                    ((y9.d) ((AtomicMarkableReference) ((c2.b) q3Var.d).b).getReference()).d(fVar.c(str4, false));
-                    ((y9.d) ((AtomicMarkableReference) ((c2.b) q3Var.e).b).getReference()).d(fVar.c(str4, true));
-                    ((AtomicMarkableReference) q3Var.h).set(fVar.d(str4), false);
-                    c0 c0Var = (c0) q3Var.f;
+                    ((y9.d) ((AtomicMarkableReference) ((c2.b) t3Var.d).b).getReference()).d(fVar.c(str4, false));
+                    ((y9.d) ((AtomicMarkableReference) ((c2.b) t3Var.e).b).getReference()).d(fVar.c(str4, true));
+                    ((AtomicMarkableReference) t3Var.h).set(fVar.d(str4), false);
+                    c0 c0Var = (c0) t3Var.f;
                     File b10 = cVar2.b(str4, "rollouts-state");
                     if (!b10.exists() || b10.length() == 0) {
                         y9.f.f(b10);
@@ -605,7 +605,7 @@ public final class n {
                             if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                                 Log.d("FirebaseCrashlytics", h10, null);
                             }
-                            bVar2.d(com.google.firebase.messaging.m.d(com.google.firebase.messaging.m.b(i19, eVar, q3Var), q3Var), str4, true);
+                            bVar2.d(com.google.firebase.messaging.m.d(com.google.firebase.messaging.m.b(i19, eVar, t3Var), t3Var), str4, true);
                         }
                         str3 = null;
                         ea.b bVar32 = new ea.b();
@@ -623,9 +623,9 @@ public final class n {
                 }
             } else {
                 i10 = 4;
-                String i20 = i2.d.i(i12, "ANR feature enabled, but device is API ");
+                String j12 = i2.d.j(i12, "ANR feature enabled, but device is API ");
                 if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-                    Log.v("FirebaseCrashlytics", i20, null);
+                    Log.v("FirebaseCrashlytics", j12, null);
                 }
             }
         } else {
@@ -740,9 +740,9 @@ public final class n {
                     try {
                         String e16 = ca.b.e(b11);
                         bVar6.getClass();
-                        a0 i21 = aa.b.i(e16);
-                        d8 a13 = i21.a();
-                        d2 d2Var = i21.j;
+                        a0 i20 = aa.b.i(e16);
+                        d8 a13 = i20.a();
+                        d2 d2Var = i20.j;
                         if (d2Var != null) {
                             g0 a14 = d2Var.a();
                             a14.e = Long.valueOf(currentTimeMillis);
@@ -782,7 +782,7 @@ public final class n {
                                         e = e17;
                                     }
                                 }
-                                ca.b.f(z13 ? new File(cVar3.e, ((h0) d2Var4).b) : new File(cVar3.d, ((h0) d2Var4).b), aa.b.a.N(a21));
+                                ca.b.f(z13 ? new File(cVar3.e, ((h0) d2Var4).b) : new File(cVar3.d, ((h0) d2Var4).b), aa.b.a.b1(a21));
                             } catch (IOException e18) {
                                 e = e18;
                                 Log.w("FirebaseCrashlytics", "Could not synthesize final report file for " + b11, e);
@@ -805,11 +805,11 @@ public final class n {
         com.google.android.gms.internal.cast.a aVar3 = bVar5.c.d().a;
         ArrayList b12 = bVar5.b();
         int size2 = b12.size();
-        int i22 = i10;
-        if (size2 <= i22) {
+        int i21 = i10;
+        if (size2 <= i21) {
             return;
         }
-        Iterator it2 = b12.subList(i22, size2).iterator();
+        Iterator it2 = b12.subList(i21, size2).iterator();
         while (it2.hasNext()) {
             ((File) it2.next()).delete();
         }
@@ -884,6 +884,7 @@ public final class n {
         u9.b bVar = u9.b.a;
         bVar.c("Crash reports are available to be sent.");
         s sVar = this.b;
+        int i10 = 26;
         if (sVar.a()) {
             if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                 Log.d("FirebaseCrashlytics", "Automatic data collection is enabled. Allowing upload.", null);
@@ -897,7 +898,7 @@ public final class n {
             synchronized (sVar.c) {
                 task2 = sVar.d.getTask();
             }
-            Task onSuccessTask = task2.onSuccessTask(new sb.a(26));
+            Task onSuccessTask = task2.onSuccessTask(new sb.a(i10));
             bVar.b("Waiting for send/deleteUnsentReports to be called.");
             Task task4 = this.p.getTask();
             ExecutorService executorService = x.a;
@@ -907,6 +908,6 @@ public final class n {
             task4.continueWith(wVar);
             task3 = taskCompletionSource2.getTask();
         }
-        return task3.onSuccessTask(new n6.o(this, task, false, 25));
+        return task3.onSuccessTask(new n3.b(this, task, false, i10));
     }
 }

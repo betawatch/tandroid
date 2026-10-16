@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class wb extends FrameLayout {
     public static final o1.i IN_OUT_OFFSET_Y = new sb(0);
@@ -53,7 +53,7 @@ public abstract class wb extends FrameLayout {
         b();
         setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
         setWillNotDraw(false);
-        w7.c6.b(this, 0.02f, 1.5f);
+        w7.b6.b(this, 0.02f, 1.5f);
     }
 
     public static boolean a() {
@@ -124,7 +124,7 @@ public abstract class wb extends FrameLayout {
         } else if (this.top) {
             r2 = 48;
         }
-        setLayoutParams(w7.a6.e(i10, -2, r2));
+        setLayoutParams(w7.z5.e(i10, -2, r2));
     }
 
     public vb createTransition() {
@@ -145,7 +145,7 @@ public abstract class wb extends FrameLayout {
         if (bVar.c == null) {
             bVar.a(getMeasuredWidth(), getMeasuredHeight(), 6.0f, AndroidUtilities.dp(10.0f));
         }
-        this.blurVisibilityDrawable.i = w7.s.b((int) org.telegram.messenger.yh.x(this.inOutOffset, getMeasuredHeight(), 1.0f, 255.0f), 0, 255);
+        this.blurVisibilityDrawable.i = w7.r.b((int) org.telegram.messenger.sk.y(this.inOutOffset, getMeasuredHeight(), 1.0f, 255.0f), 0, 255);
         this.blurVisibilityDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
         this.blurVisibilityDrawable.draw(canvas);
     }

@@ -9,7 +9,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class v7 {
     public static NinePatchDrawable a(Bitmap bitmap, Rect rect, int i10, int i11) {
@@ -22,11 +22,11 @@ public abstract class v7 {
         if (i10 >= 0 && i10 < bitmap.getWidth() && i11 >= 0 && i11 < bitmap.getHeight()) {
             return new NinePatchDrawable(ApplicationLoader.applicationContext.getResources(), bitmap, c(i10, i10 + 1, i11, i11 + 1, rect.left, rect.top, rect.right, rect.bottom, bitmap.getPixel(i10, i11)).array(), rect, null);
         }
-        StringBuilder l4 = i2.d.l("center pixel is outside bitmap: (", i10, ", ", i11, ") for ");
-        l4.append(bitmap.getWidth());
-        l4.append("x");
-        l4.append(bitmap.getHeight());
-        throw new IllegalArgumentException(l4.toString());
+        StringBuilder m10 = i2.d.m("center pixel is outside bitmap: (", i10, ", ", i11, ") for ");
+        m10.append(bitmap.getWidth());
+        m10.append("x");
+        m10.append(bitmap.getHeight());
+        throw new IllegalArgumentException(m10.toString());
     }
 
     /* JADX WARN: Removed duplicated region for block: B:25:0x0102  */
@@ -94,10 +94,10 @@ public abstract class v7 {
                     float max13 = Math.max(max2, max4);
                     float max14 = Math.max(max8, max6);
                     int i16 = i11;
-                    int b10 = w7.s.b(((int) Math.ceil(max11)) + ceil2, i16, i13 - 2);
-                    int b11 = w7.s.b((i13 - ceil3) - ((int) Math.ceil(max12)), b10 + 1, i13 - i16);
-                    int b12 = w7.s.b(((int) Math.ceil(max13)) + ceil4, i16, i15 - 2);
-                    return new NinePatchDrawable(ApplicationLoader.applicationContext.getResources(), bitmap, c(b10, b11, b12, w7.s.b((i15 - ceil5) - ((int) Math.ceil(max14)), b12 + 1, i15 - 1), ceil2, ceil4, ceil3, ceil5, i10).array(), new Rect(ceil2, ceil4, ceil3, ceil5), null);
+                    int b10 = w7.r.b(((int) Math.ceil(max11)) + ceil2, i16, i13 - 2);
+                    int b11 = w7.r.b((i13 - ceil3) - ((int) Math.ceil(max12)), b10 + 1, i13 - i16);
+                    int b12 = w7.r.b(((int) Math.ceil(max13)) + ceil4, i16, i15 - 2);
+                    return new NinePatchDrawable(ApplicationLoader.applicationContext.getResources(), bitmap, c(b10, b11, b12, w7.r.b((i15 - ceil5) - ((int) Math.ceil(max14)), b12 + 1, i15 - 1), ceil2, ceil4, ceil3, ceil5, i10).array(), new Rect(ceil2, ceil4, ceil3, ceil5), null);
                 }
             } else {
                 f11 = max5;
@@ -130,10 +130,10 @@ public abstract class v7 {
         float max132 = Math.max(max2, max4);
         float max142 = Math.max(max8, max6);
         int i162 = i11;
-        int b102 = w7.s.b(((int) Math.ceil(max112)) + ceil2, i162, i13 - 2);
-        int b112 = w7.s.b((i13 - ceil3) - ((int) Math.ceil(max122)), b102 + 1, i13 - i162);
-        int b122 = w7.s.b(((int) Math.ceil(max132)) + ceil4, i162, i152 - 2);
-        return new NinePatchDrawable(ApplicationLoader.applicationContext.getResources(), bitmap, c(b102, b112, b122, w7.s.b((i152 - ceil5) - ((int) Math.ceil(max142)), b122 + 1, i152 - 1), ceil2, ceil4, ceil3, ceil5, i10).array(), new Rect(ceil2, ceil4, ceil3, ceil5), null);
+        int b102 = w7.r.b(((int) Math.ceil(max112)) + ceil2, i162, i13 - 2);
+        int b112 = w7.r.b((i13 - ceil3) - ((int) Math.ceil(max122)), b102 + 1, i13 - i162);
+        int b122 = w7.r.b(((int) Math.ceil(max132)) + ceil4, i162, i152 - 2);
+        return new NinePatchDrawable(ApplicationLoader.applicationContext.getResources(), bitmap, c(b102, b112, b122, w7.r.b((i152 - ceil5) - ((int) Math.ceil(max142)), b122 + 1, i152 - 1), ceil2, ceil4, ceil3, ceil5, i10).array(), new Rect(ceil2, ceil4, ceil3, ceil5), null);
     }
 
     public static ByteBuffer c(int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18) {

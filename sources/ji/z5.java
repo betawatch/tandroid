@@ -11,9 +11,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.l80;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z5 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -56,28 +56,28 @@ public final /* synthetic */ class z5 implements View.OnClickListener {
                 if (f6Var2 != null) {
                     a aVar3 = i6Var2.x;
                     x3 x3Var2 = ((f3) f6Var2).a;
-                    if (aVar3 != null && (aVar3.b instanceof TL_iv.pageBlockPreformatted) && (set = mi.k.a.x) != null) {
+                    if (aVar3 != null && (aVar3.b instanceof TL_iv.pageBlockPreformatted) && (set = li.k.a.x) != null) {
                         ArrayList arrayList = new ArrayList(set);
                         Collections.sort(arrayList);
                         TL_iv.pageBlockPreformatted pageblockpreformatted = (TL_iv.pageBlockPreformatted) aVar3.b;
-                        m80 Y = x3Var2.f3.Y(view);
-                        Y.W(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(3.0f), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.d6, x3Var2.e3)));
-                        Y.Z = true;
-                        Y.X = AndroidUtilities.dp(350.0f);
-                        Y.i(new o2(x3Var2, aVar3, 25), LocaleController.getString(R.string.ArticleNone), TextUtils.isEmpty(pageblockpreformatted.language));
+                        l80 R = x3Var2.f3.R(view);
+                        R.W(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(3.0f), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.d6, x3Var2.e3)));
+                        R.Z = true;
+                        R.X = AndroidUtilities.dp(350.0f);
+                        R.i(new o2(x3Var2, aVar3, 25), LocaleController.getString(R.string.ArticleNone), TextUtils.isEmpty(pageblockpreformatted.language));
                         if (!TextUtils.isEmpty(pageblockpreformatted.language)) {
-                            Y.i(null, MessageObject.TextLayoutBlock.capitalizeLanguage(pageblockpreformatted.language), true);
+                            R.i(null, MessageObject.TextLayoutBlock.capitalizeLanguage(pageblockpreformatted.language), true);
                         }
-                        Y.k();
+                        R.k();
                         int size = arrayList.size();
                         int i10 = 0;
                         while (i10 < size) {
                             Object obj = arrayList.get(i10);
                             i10++;
                             String str = (String) obj;
-                            Y.i(new hg.t(x3Var2, aVar3, str, 18), MessageObject.TextLayoutBlock.capitalizeLanguage(str), TextUtils.equals(str, pageblockpreformatted.language));
+                            R.i(new hg.t(x3Var2, aVar3, str, 18), MessageObject.TextLayoutBlock.capitalizeLanguage(str), TextUtils.equals(str, pageblockpreformatted.language));
                         }
-                        Y.Z();
+                        R.Z();
                         break;
                     }
                 }

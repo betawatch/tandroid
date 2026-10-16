@@ -5,20 +5,20 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class o4 extends p61 {
+public final class o4 extends q61 {
     public final /* synthetic */ int e;
     public Object f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ o4(Object obj, int i10) {
-        super("@stickers", (p11) null);
+        super("@stickers", (q11) null);
         this.e = i10;
         this.f = obj;
     }
 
-    @Override // org.telegram.ui.Components.p61, android.text.style.URLSpan, android.text.style.ClickableSpan
+    @Override // org.telegram.ui.Components.q61, android.text.style.URLSpan, android.text.style.ClickableSpan
     public final void onClick(View view) {
         int i10;
         int i11;
@@ -29,10 +29,10 @@ public final class o4 extends p61 {
                 super.onClick(view);
                 break;
             case 1:
-                ty0 ty0Var = (ty0) this.f;
-                i10 = ((org.telegram.ui.ActionBar.e3) ty0Var).currentAccount;
-                MessagesController.getInstance(i10).openByUserName(getURL(), ty0Var.L, 1);
-                ty0Var.dismiss();
+                uy0 uy0Var = (uy0) this.f;
+                i10 = ((org.telegram.ui.ActionBar.e3) uy0Var).currentAccount;
+                MessagesController.getInstance(i10).openByUserName(getURL(), uy0Var.L, 1);
+                uy0Var.dismiss();
                 break;
             case 2:
                 AndroidUtilities.addToClipboard(getURL());
@@ -44,7 +44,7 @@ public final class o4 extends p61 {
                 MessagesController.getInstance(i11).openByUserName("stickers", y70Var, 1);
                 break;
             case 4:
-                ((org.telegram.ui.bn0) this.f).a.dismissCurrentDialog();
+                ((org.telegram.ui.an0) this.f).a.dismissCurrentDialog();
                 super.onClick(view);
                 break;
             default:
@@ -57,20 +57,20 @@ public final class o4 extends p61 {
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ o4(String str, int i10, Object obj) {
-        super(str, (p11) null);
+        super(str, (q11) null);
         this.e = i10;
         this.f = obj;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ o4(String str, p11 p11Var) {
-        super(str, p11Var);
+    public /* synthetic */ o4(String str, q11 q11Var) {
+        super(str, q11Var);
         this.e = 2;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public o4(org.telegram.ui.ActionBar.m2 m2Var, String str) {
-        super(str, (p11) null);
+        super(str, (q11) null);
         this.e = 0;
         this.f = m2Var;
     }

@@ -9,7 +9,7 @@ import java.util.List;
 import org.webrtc.CameraSession;
 import org.webrtc.CameraVideoCapturer;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 abstract class CameraCapturer implements CameraVideoCapturer {
     private static final int MAX_OPEN_CAMERA_ATTEMPTS = 3;
@@ -201,7 +201,7 @@ abstract class CameraCapturer implements CameraVideoCapturer {
     private final Object stateLock = new Object();
     private SwitchState switchState = SwitchState.IDLE;
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public enum SwitchState {
         IDLE,
         PENDING,
@@ -210,18 +210,6 @@ abstract class CameraCapturer implements CameraVideoCapturer {
 
     public CameraCapturer(String str, CameraVideoCapturer.CameraEventsHandler cameraEventsHandler, CameraEnumerator cameraEnumerator) {
         this.eventsHandler = cameraEventsHandler == null ? new CameraVideoCapturer.CameraEventsHandler() { // from class: org.webrtc.CameraCapturer.4
-            @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
-            public void onCameraClosed() {
-            }
-
-            @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
-            public void onCameraDisconnected() {
-            }
-
-            @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
-            public void onFirstFrameAvailable() {
-            }
-
             @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
             public void onCameraError(String str2) {
             }
@@ -232,6 +220,18 @@ abstract class CameraCapturer implements CameraVideoCapturer {
 
             @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
             public void onCameraOpening(String str2) {
+            }
+
+            @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
+            public void onCameraClosed() {
+            }
+
+            @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
+            public void onCameraDisconnected() {
+            }
+
+            @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
+            public void onFirstFrameAvailable() {
             }
         } : cameraEventsHandler;
         this.cameraEnumerator = cameraEnumerator;
@@ -335,9 +335,9 @@ abstract class CameraCapturer implements CameraVideoCapturer {
 
     @Override // org.webrtc.VideoCapturer
     public void changeCaptureFormat(int i10, int i11, int i12) {
-        StringBuilder l4 = i2.d.l("changeCaptureFormat: ", i10, "x", i11, "@");
-        l4.append(i12);
-        Logging.d(TAG, l4.toString());
+        StringBuilder m10 = i2.d.m("changeCaptureFormat: ", i10, "x", i11, "@");
+        m10.append(i12);
+        Logging.d(TAG, m10.toString());
         synchronized (this.stateLock) {
             stopCapture();
             startCapture(i10, i11, i12);
@@ -394,9 +394,9 @@ abstract class CameraCapturer implements CameraVideoCapturer {
 
     @Override // org.webrtc.VideoCapturer
     public void startCapture(int i10, int i11, int i12) {
-        StringBuilder l4 = i2.d.l("startCapture: ", i10, "x", i11, "@");
-        l4.append(i12);
-        Logging.d(TAG, l4.toString());
+        StringBuilder m10 = i2.d.m("startCapture: ", i10, "x", i11, "@");
+        m10.append(i12);
+        Logging.d(TAG, m10.toString());
         if (this.applicationContext == null) {
             throw new RuntimeException("CameraCapturer must be initialized before calling startCapture.");
         }

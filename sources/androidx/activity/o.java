@@ -14,17 +14,17 @@ import androidx.savedstate.Recreator;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import e2.m0;
 import java.util.Map;
-import ji.h5;
+import ji.w4;
 import kotlin.jvm.internal.i;
-import m.p;
-import m4.f0;
+import m.r;
+import m4.e0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class o implements j9.t, r2.k, com.google.android.gms.common.api.internal.s {
     public boolean a;
     public Object b;
-    public Object c = new m.p();
+    public Object c = new m.r();
 
     public o(t4.e eVar) {
         this.b = eVar;
@@ -32,7 +32,7 @@ public final class o implements j9.t, r2.k, com.google.android.gms.common.api.in
 
     @Override // r2.k
     /* renamed from: a, reason: merged with bridge method [inline-methods] */
-    public r2.c H(com.google.firebase.messaging.m mVar) {
+    public r2.c h(com.google.firebase.messaging.m mVar) {
         MediaCodec mediaCodec;
         r2.m eVar;
         int i10;
@@ -47,7 +47,7 @@ public final class o implements j9.t, r2.k, com.google.android.gms.common.api.in
                     eVar = new r2.e(mediaCodec, (HandlerThread) ((r2.b) this.c).get());
                     i10 = 0;
                 } else {
-                    eVar = new h5(mediaCodec, 21);
+                    eVar = new w4(mediaCodec, 21);
                     i10 = 4;
                 }
                 cVar = new r2.c(mediaCodec, (HandlerThread) ((r2.b) this.b).get(), eVar, (r2.j) mVar.f);
@@ -105,15 +105,15 @@ public final class o implements j9.t, r2.k, com.google.android.gms.common.api.in
             throw new IllegalStateException("Restarter must be created only during owner's initialization stage");
         }
         m10.a(new Recreator(eVar));
-        final m.p pVar = (m.p) this.c;
-        pVar.getClass();
-        if (pVar.c) {
+        final m.r rVar = (m.r) this.c;
+        rVar.getClass();
+        if (rVar.c) {
             throw new IllegalStateException("SavedStateRegistry was already attached.");
         }
         m10.a(new androidx.lifecycle.r() { // from class: t4.b
             @Override // androidx.lifecycle.r
             public final void d(t tVar, m mVar) {
-                p this$0 = p.this;
+                r this$0 = r.this;
                 i.e(this$0, "this$0");
                 if (mVar == m.ON_START) {
                     this$0.e = true;
@@ -122,7 +122,7 @@ public final class o implements j9.t, r2.k, com.google.android.gms.common.api.in
                 }
             }
         });
-        pVar.c = true;
+        rVar.c = true;
         this.a = true;
     }
 
@@ -134,26 +134,26 @@ public final class o implements j9.t, r2.k, com.google.android.gms.common.api.in
         if (vVar.c.compareTo(androidx.lifecycle.n.d) >= 0) {
             throw new IllegalStateException(("performRestore cannot be called when owner is " + vVar.c).toString());
         }
-        m.p pVar = (m.p) this.c;
-        if (!pVar.c) {
+        m.r rVar = (m.r) this.c;
+        if (!rVar.c) {
             throw new IllegalStateException("You must call performAttach() before calling performRestore(Bundle).");
         }
-        if (pVar.d) {
+        if (rVar.d) {
             throw new IllegalStateException("SavedStateRegistry was already restored.");
         }
-        pVar.a = bundle != null ? bundle.getBundle("androidx.lifecycle.BundlableSavedStateRegistry.key") : null;
-        pVar.d = true;
+        rVar.a = bundle != null ? bundle.getBundle("androidx.lifecycle.BundlableSavedStateRegistry.key") : null;
+        rVar.d = true;
     }
 
     public void d(Bundle bundle) {
-        m.p pVar = (m.p) this.c;
-        pVar.getClass();
+        m.r rVar = (m.r) this.c;
+        rVar.getClass();
         Bundle bundle2 = new Bundle();
-        Bundle bundle3 = (Bundle) pVar.a;
+        Bundle bundle3 = (Bundle) rVar.a;
         if (bundle3 != null) {
             bundle2.putAll(bundle3);
         }
-        o.f fVar = (o.f) pVar.f;
+        o.f fVar = (o.f) rVar.f;
         fVar.getClass();
         o.d dVar = new o.d(fVar);
         fVar.c.put(dVar, Boolean.FALSE);
@@ -173,27 +173,27 @@ public final class o implements j9.t, r2.k, com.google.android.gms.common.api.in
 
     @Override // j9.t
     public void i(Throwable th2) {
-        f0 f0Var = (f0) this.c;
+        e0 e0Var = (e0) this.c;
         if (th2 instanceof UnsupportedOperationException) {
             e2.a.m("MediaSessionImpl", "UnsupportedOperationException: Make sure to implement MediaSession.Callback.onPlaybackResumption() if you add a media button receiver to your manifest or if you implement the recent media item contract with your MediaLibraryService.", th2);
         } else {
             e2.a.d("MediaSessionImpl", "Failure calling MediaSession.Callback.onPlaybackResumption(): " + th2.getMessage(), th2);
         }
-        m0.J(f0Var.t);
+        m0.J(e0Var.t);
         if (this.a) {
-            f0Var.p((m4.w) this.b);
+            e0Var.p((m4.v) this.b);
         }
     }
 
     @Override // j9.t
     public void onSuccess(Object obj) {
-        f0 f0Var = (f0) this.c;
-        m4.w wVar = (m4.w) this.b;
+        e0 e0Var = (e0) this.c;
+        m4.v vVar = (m4.v) this.b;
         boolean z10 = this.a;
-        w7.w.b(f0Var.t, (m4.x) obj);
-        m0.J(f0Var.t);
+        w7.v.b(e0Var.t, (m4.w) obj);
+        m0.J(e0Var.t);
         if (z10) {
-            f0Var.p(wVar);
+            e0Var.p(vVar);
         }
     }
 }

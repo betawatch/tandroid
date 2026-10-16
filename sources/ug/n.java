@@ -13,9 +13,9 @@ import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.sc;
-import org.telegram.ui.ow0;
+import org.telegram.ui.nw0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class n extends e3 {
     public static n e;
@@ -37,11 +37,11 @@ public final class n extends e3 {
         this.b = lVar;
         lVar.setOverScrollMode(2);
         lVar.setClipToPadding(false);
-        lVar.setAdapter(new ow0(a0Var, z0Var));
+        lVar.setAdapter(new nw0(a0Var, z0Var));
         lVar.setPosition(0);
         setCustomView(lVar);
         a0Var.t0 = new k(this, 0);
-        a0Var.r0 = new n6.o(this, z0Var, false, 18);
+        a0Var.r0 = new n3.b(this, z0Var, false, 19);
         z0Var.u0 = new m(this, a0Var, c6Var);
         z0Var.s0 = new k(this, 1);
         if (!z10) {

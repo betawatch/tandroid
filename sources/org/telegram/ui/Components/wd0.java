@@ -20,7 +20,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class wd0 extends jl0 implements DownloadController.FileDownloadProgressListener {
     public static final Paint H;
@@ -149,14 +149,14 @@ public final class wd0 extends jl0 implements DownloadController.FileDownloadPro
         canvas.save();
         canvas.translate(bounds.left, bounds.top);
         canvas.drawRect(0.0f, 0.0f, width, height, H);
-        int B = org.telegram.messenger.yh.B(240.0f, height, 2);
-        int B2 = org.telegram.messenger.yh.B(48.0f, width, 2);
+        int A = org.telegram.messenger.sk.A(240.0f, height, 2);
+        int A2 = org.telegram.messenger.sk.A(48.0f, width, 2);
         Drawable drawable = this.x;
-        drawable.setBounds(B2, B, AndroidUtilities.dp(48.0f) + B2, AndroidUtilities.dp(48.0f) + B);
+        drawable.setBounds(A2, A, AndroidUtilities.dp(48.0f) + A2, AndroidUtilities.dp(48.0f) + A);
         drawable.draw(canvas);
-        canvas.drawText(this.y, (width - ((int) Math.ceil(r4.measureText(r3)))) / 2, AndroidUtilities.dp(31.0f) + B, J);
-        canvas.drawText(this.E, (width - ((int) Math.ceil(r4.measureText(r3)))) / 2, AndroidUtilities.dp(96.0f) + B, K);
-        canvas.drawText(this.F, (width - ((int) Math.ceil(r4.measureText(r3)))) / 2, AndroidUtilities.dp(125.0f) + B, L);
+        canvas.drawText(this.y, (width - ((int) Math.ceil(r4.measureText(r3)))) / 2, AndroidUtilities.dp(31.0f) + A, J);
+        canvas.drawText(this.E, (width - ((int) Math.ceil(r4.measureText(r3)))) / 2, AndroidUtilities.dp(96.0f) + A, K);
+        canvas.drawText(this.F, (width - ((int) Math.ceil(r4.measureText(r3)))) / 2, AndroidUtilities.dp(125.0f) + A, L);
         if (this.w) {
             upperCase = LocaleController.getString(R.string.OpenFile);
             textPaint = O;
@@ -166,21 +166,21 @@ public final class wd0 extends jl0 implements DownloadController.FileDownloadPro
             dp = AndroidUtilities.dp(28.0f);
             textPaint = M;
         }
-        canvas.drawText(upperCase, (width - ((int) Math.ceil(textPaint.measureText(upperCase)))) / 2, org.telegram.messenger.yh.c(235.0f, B, dp), textPaint);
+        canvas.drawText(upperCase, (width - ((int) Math.ceil(textPaint.measureText(upperCase)))) / 2, org.telegram.messenger.g0.C(235.0f, A, dp), textPaint);
         if (this.h) {
             if (this.G != null) {
-                canvas.drawText(this.G, (width - ((int) Math.ceil(r4.measureText(r3)))) / 2, AndroidUtilities.dp(210.0f) + B, N);
+                canvas.drawText(this.G, (width - ((int) Math.ceil(r4.measureText(r3)))) / 2, AndroidUtilities.dp(210.0f) + A, N);
             }
-            int B3 = org.telegram.messenger.yh.B(240.0f, width, 2);
-            int dp2 = AndroidUtilities.dp(232.0f) + B;
+            int A3 = org.telegram.messenger.sk.A(240.0f, width, 2);
+            int dp2 = AndroidUtilities.dp(232.0f) + A;
             Paint paint = I;
             paint.setColor(-10327179);
             paint.setAlpha((int) (this.f * 255.0f));
             float f7 = dp2;
-            canvas.drawRect(((int) (AndroidUtilities.dp(240.0f) * this.e)) + B3, f7, AndroidUtilities.dp(240.0f) + B3, AndroidUtilities.dp(2.0f) + dp2, paint);
+            canvas.drawRect(((int) (AndroidUtilities.dp(240.0f) * this.e)) + A3, f7, AndroidUtilities.dp(240.0f) + A3, AndroidUtilities.dp(2.0f) + dp2, paint);
             paint.setColor(-1);
             paint.setAlpha((int) (this.f * 255.0f));
-            float f10 = B3;
+            float f10 = A3;
             canvas.drawRect(f10, f7, (AndroidUtilities.dp(240.0f) * this.e) + f10, AndroidUtilities.dp(2.0f) + dp2, paint);
             long currentTimeMillis = System.currentTimeMillis();
             long j10 = currentTimeMillis - this.a;

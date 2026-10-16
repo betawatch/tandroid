@@ -16,9 +16,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class c extends FrameLayout {
     public final TextView a;
@@ -44,25 +44,25 @@ public class c extends FrameLayout {
         TextView textView = new TextView(context);
         this.a = textView;
         k3.m(15.0f, 1, textView);
-        addView(textView, a6.a(-2.0f, 16.0f, 0.0f, measureText, 0.0f, -2, 8388627));
+        addView(textView, z5.a(-2.0f, 16.0f, 0.0f, measureText, 0.0f, -2, 8388627));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setTextSize(1, 15.0f);
         textView2.setTypeface(Typeface.DEFAULT_BOLD);
         textView2.setGravity(8388627);
-        addView(textView2, a6.a(-2.0f, 8.0f, 0.0f, 8.0f, 0.0f, -2, 8388627));
+        addView(textView2, z5.a(-2.0f, 8.0f, 0.0f, 8.0f, 0.0f, -2, 8388627));
         TextView textView3 = new TextView(context);
         this.b = textView3;
         textView3.setTextSize(1, 13.0f);
         textView3.setTypeface(AndroidUtilities.bold());
         textView3.setGravity(8388629);
-        addView(textView3, a6.a(-2.0f, 16.0f, 0.0f, 16.0f, 0.0f, -2, 8388629));
+        addView(textView3, z5.a(-2.0f, 16.0f, 0.0f, 16.0f, 0.0f, -2, 8388629));
         TextView textView4 = new TextView(context);
         this.c = textView4;
         textView4.setTextSize(1, 13.0f);
         textView4.setTypeface(AndroidUtilities.bold());
         textView4.setGravity(8388629);
-        addView(textView4, a6.a(-2.0f, 16.0f, 0.0f, 16.0f, 0.0f, -2, 8388629));
+        addView(textView4, z5.a(-2.0f, 16.0f, 0.0f, 16.0f, 0.0f, -2, 8388629));
         textView4.setVisibility(8);
         textView2.setVisibility(8);
         textView2.setText(LocaleController.getString(R.string.ZoomOut));
@@ -112,12 +112,12 @@ public class c extends FrameLayout {
         this.e = z10;
         TextView textView = this.a;
         if (z10) {
-            textView.setLayoutParams(a6.a(-2.0f, 16.0f, 0.0f, this.n, 0.0f, -2, 8388627));
+            textView.setLayoutParams(z5.a(-2.0f, 16.0f, 0.0f, this.n, 0.0f, -2, 8388627));
             return;
         }
         this.c.setVisibility(8);
         this.b.setVisibility(8);
-        textView.setLayoutParams(a6.a(-2.0f, 16.0f, 0.0f, 16.0f, 0.0f, -2, 8388627));
+        textView.setLayoutParams(z5.a(-2.0f, 16.0f, 0.0f, 16.0f, 0.0f, -2, 8388627));
         textView.requestLayout();
     }
 

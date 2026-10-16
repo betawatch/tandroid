@@ -19,7 +19,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class li extends ow0 {
     public final ki A0;
@@ -79,14 +79,14 @@ public final class li extends ow0 {
                 viewGroup3 = ((org.telegram.ui.ActionBar.e3) viVar).containerView;
                 int measuredWidth = viewGroup3.getMeasuredWidth();
                 viewGroup4 = ((org.telegram.ui.ActionBar.e3) viVar).containerView;
-                dVar2.i(measuredWidth, viewGroup4.getMeasuredHeight());
+                dVar2.j(measuredWidth, viewGroup4.getMeasuredHeight());
                 dVar2.l();
             }
             if (dVar != null) {
                 viewGroup = ((org.telegram.ui.ActionBar.e3) viVar).containerView;
                 int measuredWidth2 = viewGroup.getMeasuredWidth();
                 viewGroup2 = ((org.telegram.ui.ActionBar.e3) viVar).containerView;
-                dVar.i(measuredWidth2, viewGroup2.getMeasuredHeight());
+                dVar.j(measuredWidth2, viewGroup2.getMeasuredHeight());
                 dVar.l();
             }
         }
@@ -548,7 +548,7 @@ public final class li extends ow0 {
     */
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         boolean z11;
-        hm hmVar;
+        gm gmVar;
         int i14;
         int i15;
         int i16;
@@ -581,8 +581,8 @@ public final class li extends ow0 {
             viVar.n2.set(i10, i11, i12, i13);
             liVar.setSystemGestureExclusionRects(viVar.m2);
         }
-        WeakHashMap weakHashMap = r0.j0.a;
-        r0.l1 a2 = r0.c0.a(liVar);
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.l1 a2 = r0.b0.a(liVar);
         int i22 = 8;
         int i23 = a2 != null ? a2.a.f(8).d : 0;
         int paddingBottom = liVar.getPaddingBottom();
@@ -726,7 +726,7 @@ public final class li extends ow0 {
         if (viVar.c0) {
             viVar.Y1();
         }
-        if (chatAttachAlertPhotoLayout == null || (hmVar = chatAttachAlertPhotoLayout.E) == null || hmVar.getFastScroll() == null) {
+        if (chatAttachAlertPhotoLayout == null || (gmVar = chatAttachAlertPhotoLayout.E) == null || gmVar.getFastScroll() == null) {
             return;
         }
         chatAttachAlertPhotoLayout.E.getFastScroll().h0 = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + chatAttachAlertPhotoLayout.p1 + (viVar.c0 ? (int) (vVar.getAlpha() * vVar.getMeasuredHeight()) : 0);
@@ -825,29 +825,29 @@ public final class li extends ow0 {
             } else {
                 q12 = viVar.q1();
             }
-            WeakHashMap weakHashMap = r0.j0.a;
-            r0.l1 a2 = r0.c0.a(liVar);
+            WeakHashMap weakHashMap = r0.i0.a;
+            r0.l1 a2 = r0.b0.a(liVar);
             int i19 = a2 != null ? a2.a.f(8).d : 0;
-            r0.l1 a10 = r0.c0.a(liVar);
+            r0.l1 a10 = r0.b0.a(liVar);
             Math.max(a10 != null ? a10.a.f(527).d : 0, q12);
             int max = Math.max(i19 > 0 ? 0 : AndroidUtilities.navigationBarHeight, q12);
             liVar.y0 = true;
             ni niVar2 = viVar.B0;
             if (niVar2.f) {
                 niVar2.e = AndroidUtilities.dp(62.0f) + max;
-                viVar.B0.B(i18, size4);
+                viVar.B0.C(i18, size4);
             } else {
                 niVar2.e = AndroidUtilities.navigationBarHeight;
-                niVar2.B(i18, size4 - q12);
+                niVar2.C(i18, size4 - q12);
             }
             ni niVar3 = viVar.C0;
             if (niVar3 != null) {
                 if (niVar3.f) {
                     niVar3.e = AndroidUtilities.dp(62.0f) + max;
-                    viVar.C0.B(i18, size4);
+                    viVar.C0.C(i18, size4);
                 } else {
                     niVar3.e = AndroidUtilities.navigationBarHeight;
-                    niVar3.B(i18, size4 - q12);
+                    niVar3.C(i18, size4 - q12);
                 }
             }
             liVar.y0 = false;

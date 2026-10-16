@@ -7,7 +7,7 @@ import org.telegram.messenger.MessageSuggestionParams;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jf implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class jf implements Utilities.Callback {
                 fo foVar2 = this.b;
                 foVar2.g5 = messageSuggestionParams;
                 foVar2.p5.messageOwner.suggested_post = messageSuggestionParams.toTl();
-                foVar2.Cb(true, null, foVar2.p5, null, null, true, 0, null, false, 0L, null, true);
+                foVar2.Cb(true, null, foVar2.p5, null, null, null, false);
                 break;
             case 1:
                 foVar.zb(true, false);
@@ -57,10 +57,10 @@ public final /* synthetic */ class jf implements Utilities.Callback {
             case 6:
                 View view = (View) obj;
                 if (!(view instanceof org.telegram.ui.Cells.u1)) {
-                    if (!(view instanceof org.telegram.ui.Cells.x0)) {
+                    if (!(view instanceof org.telegram.ui.Cells.w0)) {
                         if (!(view instanceof org.telegram.ui.Cells.w1)) {
                             if (!(view instanceof org.telegram.ui.Cells.b0)) {
-                                if (view instanceof org.telegram.ui.Cells.i0) {
+                                if (view instanceof org.telegram.ui.Cells.h0) {
                                     view.invalidate();
                                     break;
                                 }
@@ -73,15 +73,15 @@ public final /* synthetic */ class jf implements Utilities.Callback {
                             break;
                         }
                     } else {
-                        org.telegram.ui.Cells.x0 x0Var = (org.telegram.ui.Cells.x0) view;
-                        x0Var.e0 = foVar.y9();
-                        x0Var.i0 = foVar.H9();
+                        org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) view;
+                        w0Var.e0 = foVar.y9();
+                        w0Var.i0 = foVar.H9();
                         foVar.G9();
                         foVar.V8();
                         int W8 = foVar.W8();
-                        if (x0Var.j0 != W8) {
-                            x0Var.j0 = W8;
-                            x0Var.invalidate();
+                        if (w0Var.j0 != W8) {
+                            w0Var.j0 = W8;
+                            w0Var.invalidate();
                             break;
                         }
                     }

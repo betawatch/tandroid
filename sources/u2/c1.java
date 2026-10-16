@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ip0;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class c1 implements c3.i0 {
     public boolean B;
@@ -19,8 +19,8 @@ public class c1 implements c3.i0 {
     public long H;
     public boolean I;
     public final ip0 a;
-    public final n2.n d;
-    public final n2.k e;
+    public final n2.m d;
+    public final n2.j e;
     public Object f;
     public b2.x g;
     public n2.g h;
@@ -47,9 +47,9 @@ public class c1 implements c3.i0 {
     public long u = Long.MIN_VALUE;
     public int x = -1;
 
-    public c1(androidx.biometric.e eVar, n2.n nVar, n2.k kVar) {
-        this.d = nVar;
-        this.e = kVar;
+    public c1(androidx.biometric.e eVar, n2.m mVar, n2.j jVar) {
+        this.d = mVar;
+        this.e = jVar;
         this.a = new ip0(eVar);
     }
 
@@ -98,28 +98,28 @@ public class c1 implements c3.i0 {
         b2.t tVar = xVar3 == null ? null : xVar3.w;
         this.g = xVar;
         b2.t tVar2 = xVar.w;
-        n2.n nVar = this.d;
-        if (nVar != null) {
-            int I0 = nVar.I0(xVar);
+        n2.m mVar = this.d;
+        if (mVar != null) {
+            int J0 = mVar.J0(xVar);
             b2.w a2 = xVar.a();
-            a2.S = I0;
+            a2.S = J0;
             xVar2 = new b2.x(a2);
         } else {
             xVar2 = xVar;
         }
         bVar.c = xVar2;
         bVar.b = this.h;
-        if (nVar == null) {
+        if (mVar == null) {
             return;
         }
         if (z10 || !Objects.equals(tVar, tVar2)) {
             n2.g gVar = this.h;
-            n2.k kVar = this.e;
-            n2.g U0 = nVar.U0(kVar, xVar);
-            this.h = U0;
-            bVar.b = U0;
+            n2.j jVar = this.e;
+            n2.g V0 = mVar.V0(jVar, xVar);
+            this.h = V0;
+            bVar.b = V0;
             if (gVar != null) {
-                gVar.a(kVar);
+                gVar.a(jVar);
             }
         }
     }
@@ -227,7 +227,7 @@ public class c1 implements c3.i0 {
                 while (z0Var2 != null) {
                     y2.a aVar = (y2.a) z0Var2.c;
                     aVar.getClass();
-                    eVar.u(aVar);
+                    eVar.t(aVar);
                     z0Var2 = (z0) z0Var2.d;
                     if (z0Var2 == null || ((y2.a) z0Var2.c) == null) {
                         z0Var2 = null;
@@ -456,7 +456,7 @@ public class c1 implements c3.i0 {
         if (r62 == 0 || !z10) {
             return;
         }
-        r62.d();
+        r62.b();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:24:0x0052  */
@@ -600,8 +600,8 @@ public class c1 implements c3.i0 {
             }
             b2.x xVar = this.D;
             xVar.getClass();
-            n2.n nVar = this.d;
-            n2.m j02 = nVar != null ? nVar.j0(this.e, xVar) : n2.m.u;
+            n2.m mVar = this.d;
+            n2.l j02 = mVar != null ? mVar.j0(this.e, xVar) : n2.l.u;
             a5.a aVar = this.c;
             int i13 = this.q + this.p;
             a1 a1Var = new a1(xVar, j02);
@@ -828,7 +828,7 @@ public class c1 implements c3.i0 {
                         while (z0Var3 != null) {
                             y2.a aVar = (y2.a) z0Var3.c;
                             aVar.getClass();
-                            eVar.u(aVar);
+                            eVar.t(aVar);
                             z0Var3 = (z0) z0Var3.d;
                             if (z0Var3 == null || ((y2.a) z0Var3.c) == null) {
                                 z0Var3 = null;

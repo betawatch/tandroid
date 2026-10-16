@@ -1,45 +1,262 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Point;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import java.util.HashSet;
+import java.util.Iterator;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class t71 implements View.OnLayoutChangeListener {
-    public Boolean a;
-    public boolean b;
-    public final /* synthetic */ li.k c;
+public final class t71 extends Drawable implements y5, a7, NotificationCenter.NotificationCenterDelegate {
+    public final b30 a;
+    public final int b;
+    public float c;
+    public final boolean d;
+    public ImageReceiver e;
+    public final HashSet f;
+    public final s5 h;
+    public final s71 n;
+    public final ImageReceiver r;
+    public final int s;
+    public boolean v;
+    public final TLRPC.TL_videoSizeStickerMarkup w;
 
-    public t71(li.k kVar, View view) {
-        this.c = kVar;
-        o1.k kVar2 = new o1.k(view, o1.h.n, 0.0f);
-        kVar.c = kVar2;
-        kVar2.u.a(1.0f);
-        ((o1.k) kVar.c).u.b(350.0f);
+    public t71(TLRPC.VideoSize videoSize, boolean z10, int i10) {
+        b30 b30Var = new b30();
+        this.a = b30Var;
+        this.f = new HashSet();
+        this.r = new ImageReceiver();
+        this.s = UserConfig.selectedAccount;
+        this.b = i10;
+        this.d = z10;
+        b30Var.d(i0.a.k(videoSize.background_colors.get(0).intValue(), 255), videoSize.background_colors.size() > 1 ? i0.a.k(videoSize.background_colors.get(1).intValue(), 255) : 0, videoSize.background_colors.size() > 2 ? i0.a.k(videoSize.background_colors.get(2).intValue(), 255) : 0, videoSize.background_colors.size() > 3 ? i0.a.k(videoSize.background_colors.get(3).intValue(), 255) : 0);
+        if (videoSize instanceof TLRPC.TL_videoSizeEmojiMarkup) {
+            s5 s5Var = new s5((i10 == 1 && z10) ? 7 : i10 == 2 ? 15 : 8, UserConfig.selectedAccount, ((TLRPC.TL_videoSizeEmojiMarkup) videoSize).emoji_id);
+            this.h = s5Var;
+            s5Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+            return;
+        }
+        if (videoSize instanceof TLRPC.TL_videoSizeStickerMarkup) {
+            this.w = (TLRPC.TL_videoSizeStickerMarkup) videoSize;
+            s71 s71Var = new s71(this);
+            this.n = s71Var;
+            s71Var.setInvalidateAll(true);
+            if (i10 == 1) {
+                s71Var.setAutoRepeatCount(2);
+            }
+            d();
+        }
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
-        Point point = AndroidUtilities.displaySize;
-        boolean z10 = point.x > point.y;
-        Boolean bool = this.a;
-        if (bool == null || bool.booleanValue() != z10) {
-            this.a = Boolean.valueOf(z10);
-            this.b = true;
+    @Override // org.telegram.ui.Components.a7
+    public final void b(ImageReceiver imageReceiver) {
+        HashSet hashSet = this.f;
+        hashSet.remove(imageReceiver);
+        if (hashSet.isEmpty()) {
+            s5 s5Var = this.h;
+            if (s5Var != null) {
+                s5Var.p(this);
+            }
+            s71 s71Var = this.n;
+            if (s71Var != null) {
+                s71Var.onDetachedFromWindow();
+            }
+            ImageReceiver imageReceiver2 = this.r;
+            if (imageReceiver2 != null) {
+                imageReceiver2.onDetachedFromWindow();
+            }
         }
-        if (i15 == 0 || i15 == i11 || this.b) {
-            this.b = false;
+        if (this.w != null) {
+            NotificationCenter.getInstance(this.s).removeObserver(this, NotificationCenter.groupStickersDidLoad);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.a7
+    public final void c(ImageReceiver imageReceiver) {
+        if (imageReceiver == null) {
             return;
         }
-        li.k kVar = this.c;
-        ((o1.k) kVar.c).c();
-        if (view.getVisibility() != 0) {
-            view.setTranslationY(0.0f);
+        this.c = imageReceiver.getRoundRadius()[0];
+        HashSet hashSet = this.f;
+        if (hashSet.isEmpty()) {
+            s5 s5Var = this.h;
+            if (s5Var != null) {
+                s5Var.b(this);
+            }
+            s71 s71Var = this.n;
+            if (s71Var != null) {
+                s71Var.onAttachedToWindow();
+            }
+            ImageReceiver imageReceiver2 = this.r;
+            if (imageReceiver2 != null) {
+                imageReceiver2.onAttachedToWindow();
+            }
+        }
+        hashSet.add(imageReceiver);
+        if (this.w != null) {
+            NotificationCenter.getInstance(this.s).addObserver(this, NotificationCenter.groupStickersDidLoad);
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0071  */
+    /* JADX WARN: Removed duplicated region for block: B:20:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void d() {
+        TLRPC.Document document;
+        String str;
+        String str2;
+        String str3;
+        MediaDataController mediaDataController = MediaDataController.getInstance(this.s);
+        TLRPC.TL_videoSizeStickerMarkup tL_videoSizeStickerMarkup = this.w;
+        TLRPC.TL_messages_stickerSet stickerSet = mediaDataController.getStickerSet(tL_videoSizeStickerMarkup.stickerset, false);
+        if (stickerSet != null) {
+            this.v = true;
+            for (int i10 = 0; i10 < stickerSet.documents.size(); i10++) {
+                if (stickerSet.documents.get(i10).id == tL_videoSizeStickerMarkup.sticker_id) {
+                    TLRPC.Document document2 = stickerSet.documents.get(i10);
+                    boolean z10 = this.d;
+                    int i11 = this.b;
+                    if (z10 && i11 == 1) {
+                        str3 = "50_50";
+                    } else {
+                        if (i11 != 2) {
+                            document = null;
+                            str = null;
+                            str2 = "50_50_firstframe";
+                            this.n.setImage(ImageLocation.getForDocument(document2), str2, ImageLocation.getForDocument(document), str, null, null, DocumentObject.getSvgThumb(document2, org.telegram.ui.ActionBar.g6.m6, 0.2f), 0L, "tgs", document2, 0);
+                            if (i11 != 3) {
+                                this.r.setImage(ImageLocation.getForDocument(document2), "100_100", null, null, null, 0L, "tgs", document2, 0);
+                                return;
+                            }
+                            return;
+                        }
+                        str3 = "100_100";
+                    }
+                    str2 = str3;
+                    str = "50_50_firstframe";
+                    document = document2;
+                    this.n.setImage(ImageLocation.getForDocument(document2), str2, ImageLocation.getForDocument(document), str, null, null, DocumentObject.getSvgThumb(document2, org.telegram.ui.ActionBar.g6.m6, 0.2f), 0L, "tgs", document2, 0);
+                    if (i11 != 3) {
+                    }
+                }
+            }
+        }
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 != NotificationCenter.groupStickersDidLoad || this.v) {
             return;
         }
-        ((o1.k) kVar.c).u.i = 0.0f;
-        view.setTranslationY((i15 - i11) + 0.0f);
-        ((o1.k) kVar.c).h();
+        d();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        float f7 = getBounds().left;
+        float f10 = getBounds().top;
+        float f11 = getBounds().right;
+        float f12 = getBounds().bottom;
+        b30 b30Var = this.a;
+        b30Var.b(f7, f10, f11, f12);
+        Paint paint = b30Var.c;
+        if (this.e != null) {
+            this.c = r1.getRoundRadius()[0];
+        }
+        float f13 = this.c;
+        if (f13 == 0.0f) {
+            canvas.drawRect(getBounds(), paint);
+        } else {
+            canvas.drawRoundRect(b30Var.h, f13, f13, paint);
+        }
+        int centerX = getBounds().centerX();
+        int centerY = getBounds().centerY();
+        int width = ((int) (getBounds().width() * 0.7f)) >> 1;
+        s5 s5Var = this.h;
+        if (s5Var != null) {
+            bi.b4 b4Var = s5Var.k;
+            if (b4Var != null) {
+                b4Var.setRoundRadius((int) (width * 2 * 0.13f));
+            }
+            s5Var.setBounds(centerX - width, centerY - width, centerX + width, centerY + width);
+            s5Var.draw(canvas);
+        }
+        s71 s71Var = this.n;
+        if (s71Var != null) {
+            float f14 = width * 2;
+            s71Var.setRoundRadius((int) (0.13f * f14));
+            s71Var.setImageCoords(centerX - width, centerY - width, f14, f14);
+            s71Var.draw(canvas);
+        }
+    }
+
+    public final boolean equals(Object obj) {
+        TLRPC.TL_videoSizeStickerMarkup tL_videoSizeStickerMarkup;
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && t71.class == obj.getClass()) {
+            t71 t71Var = (t71) obj;
+            s5 s5Var = t71Var.h;
+            if (this.b == t71Var.b) {
+                b30 b30Var = this.a;
+                int i10 = b30Var.d;
+                b30 b30Var2 = t71Var.a;
+                if (i10 == b30Var2.d && b30Var.e == b30Var2.e && b30Var.f == b30Var2.f && b30Var.g == b30Var2.g) {
+                    s5 s5Var2 = this.h;
+                    if (s5Var2 != null && s5Var != null) {
+                        return s5Var2.i() == s5Var.i();
+                    }
+                    TLRPC.TL_videoSizeStickerMarkup tL_videoSizeStickerMarkup2 = this.w;
+                    if (tL_videoSizeStickerMarkup2 != null && (tL_videoSizeStickerMarkup = t71Var.w) != null && tL_videoSizeStickerMarkup2.stickerset.id == tL_videoSizeStickerMarkup.stickerset.id && tL_videoSizeStickerMarkup2.sticker_id == tL_videoSizeStickerMarkup.sticker_id) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.y5
+    public final void invalidate() {
+        Iterator it = this.f.iterator();
+        while (it.hasNext()) {
+            ((ImageReceiver) it.next()).invalidate();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.a.c.setAlpha(i10);
+        s5 s5Var = this.h;
+        if (s5Var != null) {
+            s5Var.setAlpha(i10);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.a7
+    public final /* synthetic */ void a(bk0 bk0Var) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

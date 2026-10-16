@@ -17,7 +17,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kf implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -37,8 +37,8 @@ public final /* synthetic */ class kf implements Utilities.Callback2 {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:65:0x013e  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x014c  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x0162  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x014b  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0161  */
     @Override // org.telegram.messenger.Utilities.Callback2
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -98,7 +98,7 @@ public final /* synthetic */ class kf implements Utilities.Callback2 {
                     z11 = false;
                     j10 = 0;
                 }
-                org.telegram.ui.Components.m80 I = org.telegram.ui.Components.m80.I(foVar2, u1Var);
+                org.telegram.ui.Components.l80 I = org.telegram.ui.Components.l80.I(foVar2, u1Var);
                 org.telegram.ui.Components.cn0 cn0Var = new org.telegram.ui.Components.cn0(foVar2.getParentActivity(), foVar2.ea);
                 I.p = new ye(cn0Var, 0);
                 if (j10 != 0) {
@@ -162,75 +162,75 @@ public final /* synthetic */ class kf implements Utilities.Callback2 {
                 }
                 break;
             case 3:
-                org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) this.b;
-                org.telegram.ui.Wallet.l6 l6Var = (org.telegram.ui.Wallet.l6) this.d;
-                org.telegram.ui.Wallet.e0 e0Var = (org.telegram.ui.Wallet.e0) this.c;
-                org.telegram.ui.Wallet.g0 g0Var = (org.telegram.ui.Wallet.g0) this.e;
+                org.telegram.ui.Wallet.k0 k0Var = (org.telegram.ui.Wallet.k0) this.b;
+                org.telegram.ui.Wallet.m6 m6Var = (org.telegram.ui.Wallet.m6) this.d;
+                org.telegram.ui.Wallet.f0 f0Var = (org.telegram.ui.Wallet.f0) this.c;
+                org.telegram.ui.Wallet.h0 h0Var = (org.telegram.ui.Wallet.h0) this.e;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) this.f;
                 TLRPC.Updates updates = (TLRPC.Updates) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                TL_update.TL_updateSentWalletTransaction y3 = org.telegram.ui.Wallet.j0.y(updates);
+                TL_update.TL_updateSentWalletTransaction y3 = org.telegram.ui.Wallet.k0.y(updates);
                 if (updates != null) {
-                    Utilities.stageQueue.postRunnable(new je1(12, j0Var, updates));
+                    Utilities.stageQueue.postRunnable(new wg1(7, k0Var, updates));
                 }
                 if (y3 != null) {
                     String str4 = y3.msg_hash;
                     if (!TextUtils.isEmpty(str4)) {
                         try {
-                            org.telegram.ui.Wallet.j0.c0(str4);
-                            org.telegram.ui.Wallet.j0.E("disable backup: transfer is sent, msg_hash=" + y3.msg_hash + ", gasless=" + y3.gasless);
-                            org.telegram.ui.Wallet.d0 d0Var = new org.telegram.ui.Wallet.d0(j0Var);
-                            d0Var.a = y3.msg_hash;
-                            d0Var.c = e0Var.c;
-                            d0Var.b = g0Var;
+                            org.telegram.ui.Wallet.k0.c0(str4);
+                            org.telegram.ui.Wallet.k0.E("disable backup: transfer is sent, msg_hash=" + y3.msg_hash + ", gasless=" + y3.gasless);
+                            org.telegram.ui.Wallet.e0 e0Var = new org.telegram.ui.Wallet.e0(k0Var);
+                            e0Var.a = y3.msg_hash;
+                            e0Var.c = f0Var.c;
+                            e0Var.b = h0Var;
                             if (y3.transaction != null) {
-                                d0Var.a();
+                                e0Var.a();
                             } else {
-                                j0Var.q.add(d0Var);
+                                k0Var.q.add(e0Var);
                             }
-                            j0Var.d(wallettransaction, y3);
+                            k0Var.d(wallettransaction, y3);
                             break;
                         } catch (IllegalArgumentException unused) {
                         }
                     }
                 }
-                l6Var.run();
+                m6Var.run();
                 if (tL_error == null || (str = tL_error.text) == null) {
                     str = "NULL_ERROR";
                 }
-                org.telegram.ui.Wallet.j0.i("disable backup: sendTransfer: ".concat(str));
+                org.telegram.ui.Wallet.k0.i("disable backup: sendTransfer: ".concat(str));
                 break;
             case 4:
-                org.telegram.ui.Wallet.j0 j0Var2 = (org.telegram.ui.Wallet.j0) this.b;
+                org.telegram.ui.Wallet.k0 k0Var2 = (org.telegram.ui.Wallet.k0) this.b;
                 TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) this.d;
                 SendMessagesHelper sendMessagesHelper = (SendMessagesHelper) this.c;
                 MessageObject messageObject2 = (MessageObject) this.e;
-                org.telegram.ui.Wallet.l6 l6Var2 = (org.telegram.ui.Wallet.l6) this.f;
+                org.telegram.ui.Wallet.m6 m6Var2 = (org.telegram.ui.Wallet.m6) this.f;
                 TLRPC.Updates updates2 = (TLRPC.Updates) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                TL_update.TL_updateSentWalletTransaction y10 = org.telegram.ui.Wallet.j0.y(updates2);
+                TL_update.TL_updateSentWalletTransaction y10 = org.telegram.ui.Wallet.k0.y(updates2);
                 if (tL_error2 == null && y10 != null) {
                     String str5 = y10.msg_hash;
                     if (!TextUtils.isEmpty(str5)) {
                         try {
-                            org.telegram.ui.Wallet.j0.c0(str5);
+                            org.telegram.ui.Wallet.k0.c0(str5);
                             z14 = true;
                         } catch (IllegalArgumentException unused2) {
                         }
                         sendMessagesHelper.completeSendingGramTransfer(messageObject2, updates2, !z14 || (wallettransaction2.pending && !wallettransaction2.failed && !TextUtils.isEmpty(wallettransaction2.id)));
                         if (updates2 != null) {
-                            Utilities.stageQueue.postRunnable(new je1(12, j0Var2, updates2));
+                            Utilities.stageQueue.postRunnable(new wg1(7, k0Var2, updates2));
                         }
                         if (!z14) {
-                            org.telegram.ui.Wallet.j0.E("transfer is sent, msg_hash=" + y10.msg_hash + ", gasless=" + y10.gasless);
-                            j0Var2.d(wallettransaction2, y10);
+                            org.telegram.ui.Wallet.k0.E("transfer is sent, msg_hash=" + y10.msg_hash + ", gasless=" + y10.gasless);
+                            k0Var2.d(wallettransaction2, y10);
                             break;
                         } else {
-                            l6Var2.run();
+                            m6Var2.run();
                             if (tL_error2 == null || (str2 = tL_error2.text) == null) {
                                 str2 = "NULL_ERROR";
                             }
-                            org.telegram.ui.Wallet.j0.i("sendTransfer: ".concat(str2));
+                            org.telegram.ui.Wallet.k0.i("sendTransfer: ".concat(str2));
                             break;
                         }
                     }
@@ -243,10 +243,10 @@ public final /* synthetic */ class kf implements Utilities.Callback2 {
                 }
                 break;
             case 5:
-                org.telegram.ui.Wallet.d2 d2Var = (org.telegram.ui.Wallet.d2) this.b;
+                org.telegram.ui.Wallet.e2 e2Var = (org.telegram.ui.Wallet.e2) this.b;
                 Utilities.Callback callback = (Utilities.Callback) this.d;
-                org.telegram.ui.Wallet.z1 z1Var = (org.telegram.ui.Wallet.z1) this.c;
-                org.telegram.ui.Wallet.g0 g0Var2 = (org.telegram.ui.Wallet.g0) this.e;
+                org.telegram.ui.Wallet.a2 a2Var = (org.telegram.ui.Wallet.a2) this.c;
+                org.telegram.ui.Wallet.h0 h0Var2 = (org.telegram.ui.Wallet.h0) this.e;
                 TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) this.f;
                 TLRPC.Updates updates3 = (TLRPC.Updates) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
@@ -260,42 +260,42 @@ public final /* synthetic */ class kf implements Utilities.Callback2 {
                         i12++;
                         z15 |= update instanceof TL_update.TL_updateSentWalletTransaction;
                     }
-                    Utilities.stageQueue.postRunnable(new je1(16, d2Var, updates3));
+                    Utilities.stageQueue.postRunnable(new wg1(11, e2Var, updates3));
                 } else {
                     z15 = false;
                 }
                 if (tL_error3 != null && "WALLET_KEY_MISMATCH".equals(tL_error3.text)) {
-                    d2Var.b.B();
+                    e2Var.b.B();
                 }
                 if ((tL_error3 == null && !z15) || (tL_error3 != null && ((i10 = tL_error3.code) < 0 || i10 >= 500))) {
-                    callback.run(org.telegram.ui.Wallet.d2.x(tL_error3, "sendTransfer"));
+                    callback.run(org.telegram.ui.Wallet.e2.x(tL_error3, "sendTransfer"));
                     break;
                 } else {
-                    d2Var.w(z1Var, g0Var2, tL_error3 == null ? Base64.encodeToString(sendtransfer.data_normal, 2) : null, tL_error3 == null ? -1 : 0, tL_error3 != null ? org.telegram.ui.Wallet.d2.x(tL_error3, "sendTransfer") : null, callback);
+                    e2Var.w(a2Var, h0Var2, tL_error3 == null ? Base64.encodeToString(sendtransfer.data_normal, 2) : null, tL_error3 == null ? -1 : 0, tL_error3 != null ? org.telegram.ui.Wallet.e2.x(tL_error3, "sendTransfer") : null, callback);
                     break;
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.d2 d2Var2 = (org.telegram.ui.Wallet.d2) this.b;
-                org.telegram.ui.Wallet.o oVar = (org.telegram.ui.Wallet.o) this.d;
+                org.telegram.ui.Wallet.e2 e2Var2 = (org.telegram.ui.Wallet.e2) this.b;
+                org.telegram.ui.Wallet.p pVar = (org.telegram.ui.Wallet.p) this.d;
                 TL_wallet.tonConnectSession tonconnectsession = (TL_wallet.tonConnectSession) this.c;
                 String str6 = (String) this.e;
                 byte[] bArr = (byte[]) this.f;
-                org.telegram.ui.Wallet.g0 g0Var3 = (org.telegram.ui.Wallet.g0) obj;
+                org.telegram.ui.Wallet.h0 h0Var3 = (org.telegram.ui.Wallet.h0) obj;
                 String str7 = (String) obj2;
-                d2Var2.getClass();
-                if (str7 == null && g0Var3 != null) {
-                    org.telegram.ui.Wallet.g0 b10 = g0Var3.b();
-                    mt mtVar = new mt(25, b10, oVar);
+                e2Var2.getClass();
+                if (str7 == null && h0Var3 != null) {
+                    org.telegram.ui.Wallet.h0 b10 = h0Var3.b();
+                    mt mtVar = new mt(25, b10, pVar);
                     TL_wallet.tonConnectGetNextEventId tonconnectgetnexteventid = new TL_wallet.tonConnectGetNextEventId();
                     tonconnectgetnexteventid.session_id = tonconnectsession.id;
-                    d2Var2.f.sendRequestTyped(tonconnectgetnexteventid, new org.telegram.messenger.a(), new org.telegram.ui.Wallet.g1(d2Var2, mtVar, b10, tonconnectsession, str6, bArr));
+                    e2Var2.f.sendRequestTyped(tonconnectgetnexteventid, new org.telegram.messenger.a(), new org.telegram.ui.Wallet.h1(e2Var2, mtVar, b10, tonconnectsession, str6, bArr));
                     break;
                 } else {
                     if (str7 == null) {
                         str7 = "Recovery phrase is unavailable";
                     }
-                    oVar.run(str7);
+                    pVar.run(str7);
                     break;
                 }
         }

@@ -4,6 +4,7 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.graphics.RectF;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Property;
@@ -22,21 +23,23 @@ import bi.q5;
 import bi.sb;
 import bi.y9;
 import c5.c0;
+import c5.h0;
 import com.google.android.gms.common.api.internal.d1;
 import com.google.android.gms.common.api.internal.m1;
 import com.google.android.gms.common.api.internal.p0;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import di.mb;
-import i2.h0;
 import java.io.IOException;
-import li.u0;
-import m.r1;
+import m.t1;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Cells.a0;
+import org.telegram.ui.Cells.t6;
 import org.telegram.ui.Cells.v5;
+import org.telegram.ui.u0;
 import rg.x2;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class i implements Runnable {
     public final /* synthetic */ int a;
@@ -63,8 +66,7 @@ public final class i implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         Object obj;
-        h0 h0Var;
-        m.h hVar;
+        m.i iVar;
         int i10 = 0;
         switch (this.a) {
             case 0:
@@ -152,9 +154,9 @@ public final class i implements Runnable {
                 c5.z zVar = (c5.z) this.b;
                 c5.c cVar = zVar.d;
                 cVar.k(0);
-                c5.i iVar = c5.h0.i;
-                cVar.j(24, iVar);
-                zVar.c(iVar);
+                c5.i iVar2 = h0.i;
+                cVar.j(24, iVar2);
+                zVar.c(iVar2);
                 return;
             case 12:
                 com.google.android.gms.common.api.internal.g0 g0Var2 = (com.google.android.gms.common.api.internal.g0) this.b;
@@ -231,34 +233,21 @@ public final class i implements Runnable {
                 eVar3.h.animate().setDuration(120L).alpha(1.0f).start();
                 return;
             case 24:
-                u0 u0Var = (u0) this.b;
-                if (u0Var.W == 5 && (h0Var = u0Var.S) != null && u0Var.x) {
-                    long M0 = h0Var.M0();
-                    long j10 = u0Var.G;
-                    if (M0 < j10 || M0 >= u0Var.H) {
-                        u0Var.S.Z0(5, j10);
-                    }
-                    u0Var.d.getClass();
-                    u0Var.i.postDelayed(this, 33L);
-                    return;
-                }
+                t1 t1Var = (t1) this.b;
+                t1Var.w = null;
+                t1Var.drawableStateChanged();
                 return;
             case 25:
-                r1 r1Var = (r1) this.b;
-                r1Var.w = null;
-                r1Var.drawableStateChanged();
-                return;
-            case 26:
                 ActionMenuView actionMenuView = ((Toolbar) this.b).a;
-                if (actionMenuView == null || (hVar = actionMenuView.J) == null) {
+                if (actionMenuView == null || (iVar = actionMenuView.J) == null) {
                     return;
                 }
-                hVar.l();
+                iVar.l();
                 return;
-            case 27:
+            case 26:
                 Object obj2 = ((a6.i) this.b).b;
                 return;
-            case 28:
+            case 27:
                 a0 a0Var = (a0) this.b;
                 if (a0Var.b == null) {
                     a0Var.b = new androidx.emoji2.text.j(a0Var, 3);
@@ -269,7 +258,7 @@ public final class i implements Runnable {
                 jVar2.b = i11;
                 a0Var.postDelayed(jVar2, ViewConfiguration.getLongPressTimeout() - ViewConfiguration.getTapTimeout());
                 return;
-            default:
+            case 28:
                 v5 v5Var = (v5) this.b;
                 TextView textView = v5Var.b;
                 textView.setTag(null);
@@ -279,8 +268,15 @@ public final class i implements Runnable {
                 animatorSet.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(v5Var.a, (Property<TextView, Float>) property, 1.0f));
                 v5Var.d.setDuration(250L);
                 v5Var.d.setInterpolator(new DecelerateInterpolator());
-                v5Var.d.addListener(new org.telegram.ui.u0(this, 12));
+                v5Var.d.addListener(new u0(this, 12));
                 v5Var.d.start();
+                return;
+            default:
+                t6 t6Var = (t6) this.b;
+                t6Var.a();
+                RectF rectF = t6Var.f;
+                t6Var.invalidate(((int) rectF.left) - 5, ((int) rectF.top) - 5, ((int) rectF.right) + 5, ((int) rectF.bottom) + 5);
+                AndroidUtilities.runOnUIThread(t6Var.v, 1000L);
                 return;
         }
     }
@@ -291,7 +287,7 @@ public final class i implements Runnable {
     }
 
     public i(a6.i iVar, int i10) {
-        this.a = 27;
+        this.a = 26;
         this.b = iVar;
     }
 }

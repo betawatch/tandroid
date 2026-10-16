@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class py extends org.telegram.ui.ActionBar.e5 {
     public final /* synthetic */ yy f;
@@ -36,7 +36,7 @@ public final class py extends org.telegram.ui.ActionBar.e5 {
         org.telegram.ui.ActionBar.k kVar;
         yy yyVar = this.f;
         kVar = ((org.telegram.ui.ActionBar.m2) yyVar).actionBar;
-        return !kVar.t() && yyVar.Q3 == null;
+        return !kVar.t() && yyVar.R3 == null;
     }
 
     @Override // org.telegram.ui.ActionBar.e5
@@ -57,14 +57,14 @@ public final class py extends org.telegram.ui.ActionBar.e5 {
         yyVar.k2 = false;
         xy xyVar = yyVar.e0[0];
         if (xyVar != null) {
-            xyVar.a.setEmptyView(yyVar.V2 == 0 ? xyVar.w : null);
-            yyVar.L4(false, false, true, false);
+            xyVar.a.setEmptyView(yyVar.W2 == 0 ? xyVar.w : null);
+            yyVar.M4(false, false, true, false);
         }
-        yyVar.W4(false, false);
+        yyVar.X4(false, false);
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, Boolean.TRUE);
         yyVar.X.setCloseButtonVisible(false);
-        yyVar.V4(true);
-        yyVar.y3();
+        yyVar.W4(true);
+        yyVar.z3();
         yyVar.j3();
     }
 
@@ -79,7 +79,7 @@ public final class py extends org.telegram.ui.ActionBar.e5 {
         if (u0Var != null) {
             u0Var.setVisibility(8);
         }
-        yyVar.J3();
+        yyVar.K3();
         xy xyVar = yyVar.e0[0];
         if (xyVar != null) {
             if (yyVar.n2 != null) {
@@ -109,9 +109,9 @@ public final class py extends org.telegram.ui.ActionBar.e5 {
             yyVar.E0.getPremiumHint().e(true);
         }
         if (!yyVar.K) {
-            yyVar.z4(0.0f);
+            yyVar.A4(0.0f);
         }
-        yyVar.W4(false, false);
+        yyVar.X4(false, false);
         kVar = ((org.telegram.ui.ActionBar.m2) yyVar).actionBar;
         kVar.setBackButtonContentDescription(LocaleController.getString(R.string.AccDescrGoBack));
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
@@ -120,15 +120,15 @@ public final class py extends org.telegram.ui.ActionBar.e5 {
         if (iyVar2 != null && (so0Var2 = iyVar2.b0) != null) {
             so0Var2.c = hg.e0.d;
         }
-        if ((iyVar2 != null && (so0Var = iyVar2.b0) != null && so0Var.N()) || yyVar.getMessagesController().getTotalDialogsCount() > 10 || yyVar.s3 || yyVar.K) {
+        if ((iyVar2 != null && (so0Var = iyVar2.b0) != null && so0Var.N()) || yyVar.getMessagesController().getTotalDialogsCount() > 10 || yyVar.t3 || yyVar.K) {
             yyVar.k2 = true;
-            if (!yyVar.p3) {
-                yyVar.L4(true, false, true, false);
+            if (!yyVar.q3) {
+                yyVar.M4(true, false, true, false);
             }
         }
         yyVar.X.setCloseButtonVisible(true);
-        yyVar.V4(true);
-        yyVar.y3();
+        yyVar.W4(true);
+        yyVar.z3();
     }
 
     @Override // org.telegram.ui.ActionBar.e5
@@ -138,10 +138,10 @@ public final class py extends org.telegram.ui.ActionBar.e5 {
         String obj = editText.getText().toString();
         boolean isEmpty = obj.isEmpty();
         yy yyVar = this.f;
-        if (!isEmpty || (((iyVar = yyVar.C0) != null && (so0Var = iyVar.b0) != null && so0Var.N()) || yyVar.s3 || yyVar.K)) {
+        if (!isEmpty || (((iyVar = yyVar.C0) != null && (so0Var = iyVar.b0) != null && so0Var.N()) || yyVar.t3 || yyVar.K)) {
             yyVar.k2 = true;
-            if (!yyVar.p3) {
-                yyVar.L4(true, false, true, false);
+            if (!yyVar.q3) {
+                yyVar.M4(true, false, true, false);
             }
         }
         iy iyVar2 = yyVar.C0;

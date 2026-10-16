@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class hh0 extends kx0 {
     public boolean a = false;
@@ -54,7 +54,7 @@ public final class hh0 extends kx0 {
         rectF.set(0.0f, i10, dp, i10 + dp);
         float f7 = this.g;
         float f10 = 0.5f;
-        int x10 = (int) (f7 < 0.5f ? org.telegram.messenger.yh.x(f7, 0.5f, 1.0f, 35.0f) : ((f7 - 0.5f) * 35.0f) / 0.5f);
+        int y3 = (int) (f7 < 0.5f ? org.telegram.messenger.sk.y(f7, 0.5f, 1.0f, 35.0f) : ((f7 - 0.5f) * 35.0f) / 0.5f);
         int i11 = 0;
         while (i11 < 3) {
             float dp3 = AndroidUtilities.dp(9.2f) + (AndroidUtilities.dp(5.0f) * i11);
@@ -76,7 +76,7 @@ public final class hh0 extends kx0 {
             f10 = f11;
         }
         paint.setAlpha(255);
-        canvas.drawArc(rectF, x10, 360 - (x10 * 2), true, paint);
+        canvas.drawArc(rectF, y3, 360 - (y3 * 2), true, paint);
         paint.setColor(org.telegram.ui.ActionBar.g6.x0(null, z10 ? org.telegram.ui.ActionBar.g6.d6 : org.telegram.ui.ActionBar.g6.s8, false));
         canvas.drawCircle(AndroidUtilities.dp(4.0f), ((dp / 2) + i10) - AndroidUtilities.dp(2.0f), AndroidUtilities.dp(1.0f), paint);
         f();

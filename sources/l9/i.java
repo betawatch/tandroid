@@ -7,7 +7,7 @@ import com.google.android.gms.internal.cast.z5;
 import com.google.firebase.messaging.r;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class i implements r9.d, t {
     public static final i b = new i(0);
@@ -38,24 +38,24 @@ public final class i implements r9.d, t {
     }
 
     @Override // r9.d
-    public Object j2(z5 z5Var) {
+    public Object n2(z5 z5Var) {
         switch (this.a) {
             case 0:
-                Object e7 = z5Var.e(new r9.r(n9.a.class, Executor.class));
-                kotlin.jvm.internal.i.d(e7, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new z0((Executor) e7);
+                Object d10 = z5Var.d(new r9.r(n9.a.class, Executor.class));
+                kotlin.jvm.internal.i.d(d10, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new z0((Executor) d10);
             case 1:
-                Object e10 = z5Var.e(new r9.r(n9.c.class, Executor.class));
-                kotlin.jvm.internal.i.d(e10, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new z0((Executor) e10);
+                Object d11 = z5Var.d(new r9.r(n9.c.class, Executor.class));
+                kotlin.jvm.internal.i.d(d11, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new z0((Executor) d11);
             case 2:
-                Object e11 = z5Var.e(new r9.r(n9.b.class, Executor.class));
-                kotlin.jvm.internal.i.d(e11, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new z0((Executor) e11);
+                Object d12 = z5Var.d(new r9.r(n9.b.class, Executor.class));
+                kotlin.jvm.internal.i.d(d12, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new z0((Executor) d12);
             default:
-                Object e12 = z5Var.e(new r9.r(n9.d.class, Executor.class));
-                kotlin.jvm.internal.i.d(e12, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new z0((Executor) e12);
+                Object d13 = z5Var.d(new r9.r(n9.d.class, Executor.class));
+                kotlin.jvm.internal.i.d(d13, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new z0((Executor) d13);
         }
     }
 }

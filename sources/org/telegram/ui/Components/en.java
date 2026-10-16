@@ -18,7 +18,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class en extends ni {
     public static final HashMap U = new HashMap();
@@ -52,7 +52,7 @@ public final class en extends ni {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void B(int i10, int i11) {
+    public final void C(int i10, int i11) {
         int dp;
         float f7;
         bi.o0 o0Var = this.r;
@@ -125,7 +125,7 @@ public final class en extends ni {
             dnVar.c();
             dnVar.requestLayout();
             this.s.h1(0, 0);
-            this.r.post(new sk(5, this, niVar));
+            this.r.post(new vm(0, this, niVar));
             postDelayed(new qg(this, 25), 250L);
             dnVar.i(this.P, false);
         } else {

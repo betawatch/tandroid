@@ -32,7 +32,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class kz implements NotificationCenter.NotificationCenterDelegate {
     public static final HashSet L = new HashSet();
@@ -517,10 +517,10 @@ public class kz implements NotificationCenter.NotificationCenterDelegate {
                         org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) childAt;
                         messageObject = u1Var.getMessageObject();
                         imageReceiver = u1Var.getPhotoImage();
-                    } else if (childAt instanceof org.telegram.ui.Cells.x0) {
-                        org.telegram.ui.Cells.x0 x0Var = (org.telegram.ui.Cells.x0) childAt;
-                        messageObject = x0Var.getMessageObject();
-                        imageReceiver = x0Var.getPhotoImage();
+                    } else if (childAt instanceof org.telegram.ui.Cells.w0) {
+                        org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) childAt;
+                        messageObject = w0Var.getMessageObject();
+                        imageReceiver = w0Var.getPhotoImage();
                     } else {
                         messageObject = null;
                         imageReceiver = null;
@@ -807,7 +807,7 @@ public class kz implements NotificationCenter.NotificationCenterDelegate {
         yx0Var.c.setText(LocaleController.getString(R.string.PremiumStickerTooltip));
         org.telegram.ui.Components.qc qcVar = new org.telegram.ui.Components.qc(foVar.getParentActivity(), foVar.getResourceProvider(), true);
         yx0Var.setButton(qcVar);
-        qcVar.a = new org.telegram.ui.Components.k31(28, this, messageObject);
+        qcVar.a = new org.telegram.ui.Components.n51(23, this, messageObject);
         qcVar.e(LocaleController.getString(R.string.ViewAction));
         org.telegram.ui.Components.sc g10 = org.telegram.ui.Components.sc.g(foVar, yx0Var, 2750);
         g10.b = messageObject.getId();

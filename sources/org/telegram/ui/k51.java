@@ -11,13 +11,13 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class k51 extends FrameLayout {
     public final Paint a;
     public final Paint b;
     public final RectF c;
-    public final org.telegram.ui.Components.y21 d;
+    public final org.telegram.ui.Components.z21 d;
     public boolean e;
     public long f;
     public long h;
@@ -33,7 +33,7 @@ public final class k51 extends FrameLayout {
         super(activity);
         this.x = secretMediaViewer;
         this.c = new RectF();
-        this.d = new org.telegram.ui.Components.y21();
+        this.d = new org.telegram.ui.Components.z21();
         this.r = new TextPaint(1);
         setWillNotDraw(false);
         Paint paint = new Paint(1);

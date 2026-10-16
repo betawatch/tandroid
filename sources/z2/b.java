@@ -9,7 +9,7 @@ import java.net.SocketTimeoutException;
 import java.util.Arrays;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final Object a = new Object();
@@ -105,10 +105,10 @@ public abstract class b {
             throw new IOException("SNTP: Unsynchronized server");
         }
         if (b11 != 4 && b11 != 5) {
-            throw new IOException(i2.d.i(b11, "SNTP: Untrusted mode: "));
+            throw new IOException(i2.d.j(b11, "SNTP: Untrusted mode: "));
         }
         if (i10 == 0 || i10 > 15) {
-            throw new IOException(i2.d.i(i10, "SNTP: Untrusted stratum: "));
+            throw new IOException(i2.d.j(i10, "SNTP: Untrusted stratum: "));
         }
         if (j10 == 0) {
             throw new IOException("SNTP: Zero transmitTime");

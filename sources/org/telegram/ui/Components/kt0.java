@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class kt0 extends ko0 {
     public final /* synthetic */ xv0 I;
@@ -38,7 +38,7 @@ public final class kt0 extends ko0 {
         xv0Var.W0 = i1Var;
         String obj = u0Var.getSearchField().getText().toString();
         xv0Var.U0 = (obj.length() == 0 && xv0Var.W0 == null) ? false : true;
-        xv0Var.m1(false);
+        xv0Var.n1(false);
         int i10 = xv0Var.k0[0].F;
         if (i10 == 11) {
             iv0 iv0Var = xv0Var.S;

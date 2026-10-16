@@ -32,7 +32,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -44,11 +44,11 @@ import org.telegram.ui.Cells.qa;
 import org.telegram.ui.Cells.r8;
 import org.telegram.ui.Cells.s2;
 import org.telegram.ui.Cells.v3;
-import org.telegram.ui.Components.a91;
+import org.telegram.ui.Components.b91;
 import org.telegram.ui.Components.br;
 import org.telegram.ui.Components.f10;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.m80;
 import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.q10;
 import org.telegram.ui.Components.qo0;
@@ -60,14 +60,14 @@ import org.telegram.ui.aw;
 import org.telegram.ui.iy;
 import org.telegram.ui.kc1;
 import org.telegram.ui.ky;
-import org.telegram.ui.t10;
+import org.telegram.ui.s10;
 import org.telegram.ui.yy;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class h0 extends lm0 {
-    public t10 A0;
+    public s10 A0;
     public int B0;
     public int C0;
     public int D0;
@@ -153,7 +153,7 @@ public abstract class h0 extends lm0 {
         so0 so0Var = (so0) this;
         y yVar = new y(so0Var);
         this.j0 = yVar;
-        yVar.a = new qb.c(so0Var, 22);
+        yVar.a = new a6.m(so0Var, 21);
         yVar.p = z10;
         this.e = context;
         this.V = i10;
@@ -670,9 +670,9 @@ public abstract class h0 extends lm0 {
             l();
             this.y0.clear();
             this.z0 = false;
-            t10 t10Var = this.A0;
-            if (t10Var != null) {
-                ((aw) t10Var).i(false, null, this.y0, false);
+            s10 s10Var = this.A0;
+            if (s10Var != null) {
+                ((aw) s10Var).i(false, null, this.y0, false);
                 return;
             }
             return;
@@ -832,7 +832,7 @@ public abstract class h0 extends lm0 {
                     this.d = false;
                 }
                 if (str.equals(this.Z) && this.a0 == this.c.a && !arrayList.isEmpty() && this.g0 == this.d0) {
-                    MessageObject messageObject = (MessageObject) i2.d.g(1, arrayList);
+                    MessageObject messageObject = (MessageObject) i2.d.h(1, arrayList);
                     tL_messages_searchGlobal.offset_id = messageObject.getId();
                     tL_messages_searchGlobal.offset_rate = this.c0;
                     tL_messages_searchGlobal.offset_peer = MessagesController.getInstance(i12).getInputPeer(MessageObject.getPeerId(messageObject.messageOwner.peer_id));
@@ -1614,8 +1614,8 @@ public abstract class h0 extends lm0 {
                                     iyVar.q0 = true;
                                     iyVar.t0.h1(0, 0);
                                     iyVar.R();
-                                    a91 a91Var = iyVar.M;
-                                    if (a91Var != null && a91Var.getCurrentTabId() != 1) {
+                                    b91 b91Var = iyVar.M;
+                                    if (b91Var != null && b91Var.getCurrentTabId() != 1) {
                                         iyVar.M.d(1, 1);
                                     }
                                     qo0Var.Y(iyVar.K0);
@@ -1681,8 +1681,8 @@ public abstract class h0 extends lm0 {
                                         iyVar.q0 = true;
                                         iyVar.t0.h1(0, 0);
                                         iyVar.R();
-                                        a91 a91Var = iyVar.M;
-                                        if (a91Var != null && a91Var.getCurrentTabId() != 1) {
+                                        b91 b91Var = iyVar.M;
+                                        if (b91Var != null && b91Var.getCurrentTabId() != 1) {
                                             iyVar.M.d(1, 1);
                                         }
                                         qo0Var.Y(iyVar.K0);
@@ -1763,8 +1763,8 @@ public abstract class h0 extends lm0 {
                                                 iyVar.q0 = true;
                                                 iyVar.t0.h1(0, 0);
                                                 iyVar.R();
-                                                a91 a91Var = iyVar.M;
-                                                if (a91Var != null && a91Var.getCurrentTabId() != 1) {
+                                                b91 b91Var = iyVar.M;
+                                                if (b91Var != null && b91Var.getCurrentTabId() != 1) {
                                                     iyVar.M.d(1, 1);
                                                 }
                                                 qo0Var.Y(iyVar.K0);
@@ -1828,8 +1828,8 @@ public abstract class h0 extends lm0 {
                                                 iyVar.q0 = true;
                                                 iyVar.t0.h1(0, 0);
                                                 iyVar.R();
-                                                a91 a91Var = iyVar.M;
-                                                if (a91Var != null && a91Var.getCurrentTabId() != 1) {
+                                                b91 b91Var = iyVar.M;
+                                                if (b91Var != null && b91Var.getCurrentTabId() != 1) {
                                                     iyVar.M.d(1, 1);
                                                 }
                                                 qo0Var.Y(iyVar.K0);
@@ -1938,7 +1938,7 @@ public abstract class h0 extends lm0 {
                                                 h0 h0Var2 = this.b;
                                                 yy yyVar = h0Var2.r0;
                                                 v3 v3Var2 = v3Var;
-                                                m80 H2 = m80.H(yyVar, v3Var2);
+                                                l80 H2 = l80.H(yyVar, v3Var2);
                                                 for (e0 e0Var : e0.values()) {
                                                     boolean z19 = e0Var.a == h0Var2.c.a;
                                                     H2.i(new h4(h0Var2, z19, v3Var2, e0Var, 3), LocaleController.getString(e0Var.b), z19);
@@ -1993,7 +1993,7 @@ public abstract class h0 extends lm0 {
                                                 h0 h0Var2 = this.b;
                                                 yy yyVar = h0Var2.r0;
                                                 v3 v3Var2 = v3Var;
-                                                m80 H2 = m80.H(yyVar, v3Var2);
+                                                l80 H2 = l80.H(yyVar, v3Var2);
                                                 for (e0 e0Var : e0.values()) {
                                                     boolean z19 = e0Var.a == h0Var2.c.a;
                                                     H2.i(new h4(h0Var2, z19, v3Var2, e0Var, 3), LocaleController.getString(e0Var.b), z19);
@@ -2067,7 +2067,7 @@ public abstract class h0 extends lm0 {
             case 8:
                 i6 i6Var2 = (i6) view;
                 ContactsController.Contact contact = (ContactsController.Contact) J(i16);
-                i6Var2.u(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), yh.g(new StringBuilder("+"), contact.shortPhones.get(0), jf.b.c()), false, false);
+                i6Var2.u(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), sk.g(new StringBuilder("+"), contact.shortPhones.get(0), jf.b.c()), false, false);
                 break;
         }
     }
@@ -2141,21 +2141,21 @@ public abstract class h0 extends lm0 {
                 d0Var.setOrientation(1);
                 z9 z9Var = new z9(context);
                 z9Var.setImageDrawable(new yj0(R.raw.utyan_empty, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f)));
-                d0Var.addView(z9Var, a6.t(120, 120, 1, 0, 27, 0, 0));
+                d0Var.addView(z9Var, z5.t(120, 120, 1, 0, 27, 0, 0));
                 TextView textView = new TextView(context);
                 textView.setTextSize(1, 17.0f);
                 int i14 = g6.G6;
                 textView.setTextColor(g6.x0(null, i14, false));
                 textView.setTypeface(AndroidUtilities.bold());
-                yh.l(R.string.SearchMessagesFilterEmptyTitle, textView, 17);
-                d0Var.addView(textView, a6.t(-1, -2, 1, 0, 8, 0, 9));
+                sk.m(R.string.SearchMessagesFilterEmptyTitle, textView, 17);
+                d0Var.addView(textView, z5.t(-1, -2, 1, 0, 8, 0, 9));
                 TextView textView2 = new TextView(context);
                 d0Var.a = textView2;
                 textView2.setTextSize(1, 14.0f);
                 textView2.setTextColor(g6.x0(null, i14, false));
                 textView2.setText(LocaleController.formatString(R.string.SearchMessagesFilterEmptyText, ""));
                 textView2.setGravity(17);
-                d0Var.addView(textView2, a6.t(-1, -2, 1, 0, 0, 0, 14));
+                d0Var.addView(textView2, z5.t(-1, -2, 1, 0, 0, 0, 14));
                 TextView textView3 = new TextView(context);
                 textView3.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f));
                 textView3.setTextSize(1, 14.0f);
@@ -2165,7 +2165,7 @@ public abstract class h0 extends lm0 {
                 int m12 = g6.m1(0.15f, g6.x0(null, i15, false));
                 textView3.setBackground(g6.j0(6, 6, 6, 6, 0, m12, m12));
                 textView3.setOnClickListener(new ah.g0(vVar, 22));
-                d0Var.addView(textView3, a6.t(-2, -2, 1, 0, 0, 0, 38));
+                d0Var.addView(textView3, z5.t(-2, -2, 1, 0, 0, 0, 38));
                 this.E0 = d0Var;
                 textView2.setText(LocaleController.formatString(R.string.SearchMessagesFilterEmptyText, this.Z));
                 view2 = d0Var;

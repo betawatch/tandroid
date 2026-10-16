@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.da0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class s extends LinearLayout {
     public final ImageView a;
@@ -24,7 +24,7 @@ public final class s extends LinearLayout {
         int i11 = org.telegram.ui.ActionBar.g6.G6;
         imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.x0(null, i11, false), PorterDuff.Mode.SRC_IN));
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, w7.a6.t(24, 24, 51, 0, 6, 16, 0));
+        addView(imageView, w7.z5.t(24, 24, 51, 0, 6, 16, 0));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         da0 da0Var = new da0(context, null);
@@ -34,14 +34,14 @@ public final class s extends LinearLayout {
         da0Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(i11, c6Var));
         int i12 = org.telegram.ui.ActionBar.g6.gc;
         da0Var.setLinkTextColor(org.telegram.ui.ActionBar.g6.w0(i12, c6Var));
-        linearLayout.addView(da0Var, w7.a6.t(-1, -2, 7, 0, 0, 0, 3));
+        linearLayout.addView(da0Var, w7.z5.t(-1, -2, 7, 0, 0, 0, 3));
         da0 da0Var2 = new da0(context, null);
         this.c = da0Var2;
         da0Var2.setTextSize(1, 14.0f);
         da0Var2.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.z6, c6Var));
         da0Var2.setLinkTextColor(org.telegram.ui.ActionBar.g6.w0(i12, c6Var));
-        linearLayout.addView(da0Var2, w7.a6.q(-1, -2, 7));
-        addView(linearLayout, w7.a6.p(-1, -2, 1.0f, 55, 0, 0, 0, 0));
+        linearLayout.addView(da0Var2, w7.z5.q(-1, -2, 7));
+        addView(linearLayout, w7.z5.p(-1, -2, 1.0f, 55, 0, 0, 0, 0));
     }
 
     public final void a(CharSequence charSequence, CharSequence charSequence2, int i10) {

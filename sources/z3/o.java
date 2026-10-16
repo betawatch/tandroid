@@ -10,7 +10,7 @@ import e2.m0;
 import java.io.EOFException;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class o implements i0 {
     public final i0 a;
@@ -42,7 +42,7 @@ public final class o implements i0 {
         l lVar = this.b;
         if (!equals) {
             this.h = xVar;
-            this.g = lVar.b0(xVar) ? lVar.p(xVar) : null;
+            this.g = lVar.a0(xVar) ? lVar.y(xVar) : null;
         }
         n nVar = this.g;
         i0 i0Var = this.a;
@@ -54,8 +54,8 @@ public final class o implements i0 {
         a2.r = w0.n("application/x-media3-cues");
         a2.j = str;
         a2.w = Long.MAX_VALUE;
-        a2.P = lVar.J(xVar);
-        i2.d.s(a2, i0Var);
+        a2.P = lVar.H(xVar);
+        i2.d.u(a2, i0Var);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:21:0x005b  */
@@ -108,7 +108,7 @@ public final class o implements i0 {
             }
         }
         try {
-            nVar.u0(bArr, i13, i15, mVar, dVar);
+            nVar.m0(bArr, i13, i15, mVar, dVar);
             i15 = i15;
         } catch (RuntimeException e10) {
             e = e10;

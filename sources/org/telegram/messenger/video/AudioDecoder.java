@@ -8,7 +8,7 @@ import android.view.Surface;
 import java.nio.ByteBuffer;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class AudioDecoder {
     private static final int TIMEOUT_USEC = 0;
@@ -22,7 +22,7 @@ public class AudioDecoder {
     private long startTimeUs;
     private int trackIndex;
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class DecodedBufferData {
         public ByteBuffer byteBuffer = null;
         public int index = -1;

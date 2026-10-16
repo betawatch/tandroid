@@ -10,8 +10,9 @@ import java.util.Iterator;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
+import w7.r;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class LiteMode {
     private static int BATTERY_HIGH = 10;
@@ -54,7 +55,7 @@ public class LiteMode {
     private static int powerSaverLevel;
     private static int value;
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class BatteryReceiver extends BroadcastReceiver {
         @Override // android.content.BroadcastReceiver
         public void onReceive(Context context, Intent intent) {
@@ -268,7 +269,7 @@ public class LiteMode {
     }
 
     public static void setPowerSaverLevel(int i10) {
-        powerSaverLevel = w7.s.b(i10, 0, 100);
+        powerSaverLevel = r.b(i10, 0, 100);
         savePreference();
         getValue(false);
     }

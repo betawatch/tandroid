@@ -1,24 +1,45 @@
 package org.telegram.messenger.voip;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+import org.telegram.messenger.voip.VideoCapturerDevice;
+
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ VideoCapturerDevice b;
 
-    public /* synthetic */ k(VideoCapturerDevice videoCapturerDevice, int i10) {
+    public /* synthetic */ k(int i10) {
         this.a = i10;
-        this.b = videoCapturerDevice;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$onDestroy$8();
+                VideoCapturerDevice.1.lambda$onStop$0();
+                break;
+            case 1:
+                VideoCapturerDevice.2.lambda$onFirstFrameAvailable$0();
+                break;
+            case 2:
+                VoIPPreNotificationService.lambda$dismiss$5();
+                break;
+            case 3:
+                VoIPService.lambda$acceptIncomingCall$100();
+                break;
+            case 4:
+                VoIPService.lambda$configureDeviceForCall$110();
+                break;
+            case 5:
+                VoIPService.lambda$startConferenceGroupCall$35();
+                break;
+            case 6:
+                VoIPService.lambda$startOutgoingCall$6();
+                break;
+            case 7:
+                VoIPService.lambda$startGroupCall$24();
                 break;
             default:
-                this.b.lambda$onDestroy$9();
+                VoIPService.lambda$onDestroy$97();
                 break;
         }
     }

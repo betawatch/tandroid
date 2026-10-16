@@ -10,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.e3;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.ns0;
 import yh.e2;
 import yh.m2;
@@ -22,7 +22,7 @@ import zh.f7;
 import zh.q4;
 import zh.z;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -64,7 +64,7 @@ public final /* synthetic */ class e implements View.OnClickListener {
                 break;
             case 5:
                 m2 m2Var = (m2) obj3;
-                ((m80) obj2).u();
+                ((l80) obj2).u();
                 ns0 ns0Var = m2Var.a;
                 e2 e2Var = new e2(m2Var, (TL_stars.SavedStarGift) obj, i12);
                 HashMap hashMap = q2.T;

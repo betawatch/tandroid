@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.SystemClock;
 import android.view.TextureView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class l60 extends TextureView {
     public final /* synthetic */ int a;
@@ -19,11 +19,11 @@ public final class l60 extends TextureView {
 
     @Override // android.view.View
     public void invalidate() {
-        li.t0 t0Var;
+        ri.q0 q0Var;
         switch (this.a) {
             case 0:
                 o60 o60Var = (o60) this.b;
-                if (!o60Var.H0 && (t0Var = o60Var.R) != null && t0Var.a == 3) {
+                if (!o60Var.H0 && (q0Var = o60Var.R) != null && q0Var.a == 3) {
                     o60Var.H0 = true;
                     try {
                         o60Var.F0 = SystemClock.elapsedRealtimeNanos();

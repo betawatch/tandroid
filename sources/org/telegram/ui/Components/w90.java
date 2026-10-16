@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class w90 extends LinearLayout {
     public t90 E;
@@ -69,13 +69,13 @@ public class w90 extends LinearLayout {
         imageView.setImageDrawable(context.getDrawable(R.drawable.ic_ab_other));
         imageView.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        frameLayout.addView(imageView, w7.a6.e(40, 48, 21));
-        addView(frameLayout, w7.a6.t(-1, -2, 0, 4, 0, 4, 0));
+        frameLayout.addView(imageView, w7.z5.e(40, 48, 21));
+        addView(frameLayout, w7.z5.t(-1, -2, 0, 4, 0, 4, 0));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
         TextView textView2 = new TextView(context);
         this.e = textView2;
-        w7.c6.b(textView2, 0.025f, 1.2f);
+        w7.b6.b(textView2, 0.025f, 1.2f);
         textView2.setGravity(17);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) "..").setSpan(new br(0, context.getDrawable(R.drawable.msg_copy_filled)), 0, 1, 0);
@@ -87,9 +87,9 @@ public class w90 extends LinearLayout {
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setSingleLine(true);
-        TextView i10 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView2, w7.a6.p(0, 42, 1.0f, 0, 4, 0, 4, 0), context);
+        TextView i10 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView2, w7.z5.p(0, 42, 1.0f, 0, 4, 0, 4, 0), context);
         this.f = i10;
-        w7.c6.b(i10, 0.025f, 1.2f);
+        w7.b6.b(i10, 0.025f, 1.2f);
         i10.setGravity(17);
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
         spannableStringBuilder2.append((CharSequence) "..").setSpan(new br(0, context.getDrawable(R.drawable.msg_share_filled)), 0, 1, 0);
@@ -101,9 +101,9 @@ public class w90 extends LinearLayout {
         i10.setTextSize(1, 14.0f);
         i10.setTypeface(AndroidUtilities.bold());
         i10.setSingleLine(true);
-        TextView i11 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, i10, w7.a6.m(1.0f, 0, 42, 4, 4, 0), context);
+        TextView i11 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, i10, w7.z5.m(1.0f, 0, 42, 4, 4, 0), context);
         this.h = i11;
-        w7.c6.b(i11, 0.025f, 1.2f);
+        w7.b6.b(i11, 0.025f, 1.2f);
         i11.setGravity(17);
         SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
         spannableStringBuilder3.append((CharSequence) "..").setSpan(new br(0, context.getDrawable(R.drawable.msg_delete_filled)), 0, 1, 0);
@@ -115,14 +115,14 @@ public class w90 extends LinearLayout {
         i11.setTextSize(1, 14.0f);
         i11.setTypeface(AndroidUtilities.bold());
         i11.setSingleLine(true);
-        linearLayout.addView(i11, w7.a6.m(1.0f, 0, 42, 4, 4, 0));
+        linearLayout.addView(i11, w7.z5.m(1.0f, 0, 42, 4, 4, 0));
         linearLayout.setClickable(true);
         i11.setVisibility(8);
-        addView(linearLayout, w7.a6.k(0.0f, 12.0f, 0.0f, 0.0f, -1, -2));
+        addView(linearLayout, w7.z5.k(0.0f, 12.0f, 0.0f, 0.0f, -1, -2));
         bi.i7 i7Var = new bi.i7(this, context);
         this.v = i7Var;
         ((u90) i7Var.c).setAvatarsTextSize(AndroidUtilities.dp(18.0f));
-        addView(i7Var, w7.a6.k(0.0f, 12.0f, 0.0f, 0.0f, -1, 44));
+        addView(i7Var, w7.z5.k(0.0f, 12.0f, 0.0f, 0.0f, -1, 44));
         textView2.setOnClickListener(new bi.x(this, e3Var, m2Var));
         if (z10) {
             i7Var.setOnClickListener(new p90(this, 0));

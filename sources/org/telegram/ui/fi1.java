@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.widget.ImageView;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class fi1 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -30,51 +30,51 @@ public final class fi1 extends AnimatorListenerAdapter {
                 gi1Var.f.c.setAllowDrawCursor(true);
                 break;
             case 1:
-                ((org.telegram.ui.Wallet.x2) obj).K = null;
+                ((org.telegram.ui.Wallet.y2) obj).K = null;
                 break;
             case 2:
-                ((org.telegram.ui.Wallet.d3) obj).f();
+                ((org.telegram.ui.Wallet.e3) obj).f();
                 break;
             case 3:
-                org.telegram.ui.Wallet.x4 x4Var = (org.telegram.ui.Wallet.x4) obj;
-                x4Var.h = false;
-                x4Var.n = null;
-                x4Var.b.setLayerType(0, null);
+                org.telegram.ui.Wallet.y4 y4Var = (org.telegram.ui.Wallet.y4) obj;
+                y4Var.h = false;
+                y4Var.n = null;
+                y4Var.b.setLayerType(0, null);
                 break;
             case 4:
-                org.telegram.ui.Wallet.c5 c5Var = (org.telegram.ui.Wallet.c5) obj;
-                c5Var.J = 0.0f;
-                c5Var.K = 0.0f;
-                c5Var.R = null;
+                org.telegram.ui.Wallet.d5 d5Var = (org.telegram.ui.Wallet.d5) obj;
+                d5Var.J = 0.0f;
+                d5Var.K = 0.0f;
+                d5Var.R = null;
                 break;
             case 5:
-                org.telegram.ui.Wallet.o5 o5Var = (org.telegram.ui.Wallet.o5) obj;
-                org.telegram.ui.Wallet.j5 j5Var = o5Var.f0;
-                j5Var.d = 0.0f;
-                j5Var.i = 0.0f;
-                o5Var.o0 = null;
+                org.telegram.ui.Wallet.p5 p5Var = (org.telegram.ui.Wallet.p5) obj;
+                org.telegram.ui.Wallet.l5 l5Var = p5Var.f0;
+                l5Var.d = 0.0f;
+                l5Var.i = 0.0f;
+                p5Var.o0 = null;
                 break;
             case 6:
-                org.telegram.ui.Wallet.b6 b6Var = (org.telegram.ui.Wallet.b6) obj;
-                b6Var.I = null;
-                b6Var.i0 = 1.0f;
-                b6Var.h0 = 0.0f;
-                b6Var.g0 = 0.0f;
-                b6Var.e();
+                org.telegram.ui.Wallet.c6 c6Var = (org.telegram.ui.Wallet.c6) obj;
+                c6Var.I = null;
+                c6Var.i0 = 1.0f;
+                c6Var.h0 = 0.0f;
+                c6Var.g0 = 0.0f;
+                c6Var.e();
                 break;
             case 7:
-                org.telegram.ui.Wallet.h8 h8Var = (org.telegram.ui.Wallet.h8) obj;
-                h8Var.h = null;
-                h8Var.c.setVisibility(h8Var.v ? 4 : 0);
-                h8Var.e.setVisibility(h8Var.w ? 0 : 4);
+                org.telegram.ui.Wallet.i8 i8Var = (org.telegram.ui.Wallet.i8) obj;
+                i8Var.h = null;
+                i8Var.c.setVisibility(i8Var.v ? 4 : 0);
+                i8Var.e.setVisibility(i8Var.w ? 0 : 4);
                 break;
             case 8:
-                org.telegram.ui.Components.mg0 mg0Var = (org.telegram.ui.Components.mg0) obj;
-                ((yj1) mg0Var.b).getClass();
-                ((yj1) mg0Var.b).c.setVisibility(4);
+                org.telegram.ui.Components.ng0 ng0Var = (org.telegram.ui.Components.ng0) obj;
+                ((xj1) ng0Var.b).getClass();
+                ((xj1) ng0Var.b).c.setVisibility(4);
                 break;
             case 9:
-                ((org.telegram.ui.web.b1) obj).s.setVisibility(8);
+                ((org.telegram.ui.web.c1) obj).s.setVisibility(8);
                 break;
             case 10:
                 qg.d0 d0Var = (qg.d0) obj;
@@ -165,9 +165,9 @@ public final class fi1 extends AnimatorListenerAdapter {
                 l2Var.G = null;
                 break;
             default:
-                y00 y00Var = ((zh.d7) obj).c;
-                y00Var.setScaleX(1.0f);
-                y00Var.setScaleY(1.0f);
+                x00 x00Var = ((zh.d7) obj).c;
+                x00Var.setScaleX(1.0f);
+                x00Var.setScaleY(1.0f);
                 break;
         }
     }

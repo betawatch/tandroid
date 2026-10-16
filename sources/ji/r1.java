@@ -5,12 +5,12 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.ej;
-import org.telegram.ui.Components.pl;
+import org.telegram.ui.Components.ol;
 import org.telegram.ui.Components.vi;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class r1 implements pl, ej {
+public final /* synthetic */ class r1 implements ol, ej {
     public final /* synthetic */ d2 a;
     public final /* synthetic */ vi b;
 
@@ -19,7 +19,7 @@ public final /* synthetic */ class r1 implements pl, ej {
         this.b = viVar;
     }
 
-    @Override // org.telegram.ui.Components.pl
+    @Override // org.telegram.ui.Components.ol
     public void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j10) {
         d2 d2Var = this.a;
         d2Var.getClass();

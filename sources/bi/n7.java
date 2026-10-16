@@ -32,7 +32,7 @@ import org.telegram.ui.Components.iw0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.r71;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n7 implements Runnable {
     public final /* synthetic */ int a;
@@ -175,22 +175,22 @@ public final /* synthetic */ class n7 implements Runnable {
                 AndroidUtilities.runOnUIThread(jVar);
                 break;
             case 2:
-                m4.w wVar = (m4.w) obj;
-                m4.f0 f0Var = ((m4.q0) ((m.d3) obj3).d).g;
-                m4.n1 n1Var = f0Var.t;
-                w7.w.b(n1Var, (m4.x) obj2);
-                int d = n1Var.d();
+                m4.v vVar = (m4.v) obj;
+                m4.e0 e0Var = ((m4.p0) ((m.f3) obj3).d).g;
+                m4.m1 m1Var = e0Var.t;
+                w7.v.b(m1Var, (m4.w) obj2);
+                int d = m1Var.d();
                 if (z11) {
                     if (d == 1) {
-                        if (n1Var.o0(2)) {
-                            n1Var.b();
+                        if (m1Var.o0(2)) {
+                            m1Var.b();
                         }
-                    } else if (d == 4 && n1Var.o0(4)) {
-                        n1Var.G();
+                    } else if (d == 4 && m1Var.o0(4)) {
+                        m1Var.G();
                     }
                 }
-                if (z10 && n1Var.o0(1)) {
-                    n1Var.i();
+                if (z10 && m1Var.o0(1)) {
+                    m1Var.i();
                 }
                 SparseBooleanArray sparseBooleanArray = new SparseBooleanArray();
                 for (int i18 : new int[]{31, 2}) {
@@ -202,7 +202,7 @@ public final /* synthetic */ class n7 implements Runnable {
                     sparseBooleanArray.append(1, true);
                 }
                 v7.u6.p(!false);
-                f0Var.p(wVar);
+                e0Var.p(vVar);
                 break;
             case 3:
                 ProfileActivity.m0((ProfileActivity) obj3, (TLRPC.User) obj2, (String) obj, z11, z10);
@@ -335,7 +335,7 @@ public final /* synthetic */ class n7 implements Runnable {
                             Runnable runnable = (Runnable) obj4;
                             switch (i12) {
                                 case 0:
-                                    MediaDataController.getInstance(r71Var.V).getEmojiSuggestions(r71.a2, str, false, new cs0(11, linkedHashSet2, runnable), null, false, false, false, 0);
+                                    MediaDataController.getInstance(r71Var.V).getEmojiSuggestions(r71.a2, str, false, new bs0(10, linkedHashSet2, runnable), null, false, false, false, 0);
                                     break;
                                 default:
                                     MediaDataController.getInstance(r71Var.V).getAnimatedEmojiByKeywords(str, new a61(linkedHashSet2, runnable, 0));
@@ -415,7 +415,7 @@ public final /* synthetic */ class n7 implements Runnable {
                             Runnable runnable = (Runnable) obj4;
                             switch (i20) {
                                 case 0:
-                                    MediaDataController.getInstance(r71Var.V).getEmojiSuggestions(r71.a2, str, false, new cs0(11, linkedHashSet, runnable), null, false, false, false, 0);
+                                    MediaDataController.getInstance(r71Var.V).getEmojiSuggestions(r71.a2, str, false, new bs0(10, linkedHashSet, runnable), null, false, false, false, 0);
                                     break;
                                 default:
                                     MediaDataController.getInstance(r71Var.V).getAnimatedEmojiByKeywords(str, new a61(linkedHashSet, runnable, 0));
@@ -438,7 +438,7 @@ public final /* synthetic */ class n7 implements Runnable {
                 CountDownLatch countDownLatch = (CountDownLatch) obj;
                 qg.q0 q0Var = ((qg.a1) obj3).y.c;
                 iw0 iw0Var = q0Var.g;
-                m4.c h = q0Var.h(new RectF(0.0f, 0.0f, iw0Var.a, iw0Var.b), false, z11, z10);
+                m2.t h = q0Var.h(new RectF(0.0f, 0.0f, iw0Var.a, iw0Var.b), false, z11, z10);
                 if (h != null) {
                     bitmapArr[0] = (Bitmap) h.b;
                 }

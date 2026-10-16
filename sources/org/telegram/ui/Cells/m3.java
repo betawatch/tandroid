@@ -11,9 +11,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.j61;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class m3 {
     public boolean a;
@@ -50,7 +50,7 @@ public final class m3 {
                 String format = String.format(string2, str3);
                 if (indexOf >= 0) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(format);
-                    spannableStringBuilder.setSpan(new i61(AndroidUtilities.bold()), indexOf, str3.length() + indexOf, 33);
+                    spannableStringBuilder.setSpan(new j61(AndroidUtilities.bold()), indexOf, str3.length() + indexOf, 33);
                     str = spannableStringBuilder;
                 } else {
                     str = format;

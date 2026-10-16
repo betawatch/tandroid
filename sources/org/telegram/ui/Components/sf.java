@@ -5,7 +5,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class sf implements View.OnKeyListener {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -51,7 +51,7 @@ public final class sf implements View.OnKeyListener {
                         MessagesController.getMainSettings(chatActivityEnterView.Q).edit().putInt("hidekeyboard_" + chatActivityEnterView.Q2, chatActivityEnterView.m2.getId()).commit();
                     }
                     if (chatActivityEnterView.R1 != 0) {
-                        chatActivityEnterView.k1(0, true);
+                        chatActivityEnterView.j1(0, true);
                         fg fgVar = chatActivityEnterView.U0;
                         if (fgVar != null) {
                             fgVar.u(true);
@@ -60,15 +60,15 @@ public final class sf implements View.OnKeyListener {
                         return true;
                     }
                     if (chatActivityEnterView.z3) {
-                        chatActivityEnterView.l1(false, true, false, true);
+                        chatActivityEnterView.k1(false, true, false, true);
                         return true;
                     }
                     if (chatActivityEnterView.B3 == null) {
                         if (chatActivityEnterView.m2 != null && chatActivityEnterView.f2 != 1 && TextUtils.isEmpty(chatActivityEnterView.E0.getTextToUse())) {
-                            chatActivityEnterView.r1(1, 1, true, true);
+                            chatActivityEnterView.q1(1, 1, true, true);
                             return true;
                         }
-                        chatActivityEnterView.r1(0, 0, true, false);
+                        chatActivityEnterView.q1(0, 0, true, false);
                     }
                 }
                 return true;

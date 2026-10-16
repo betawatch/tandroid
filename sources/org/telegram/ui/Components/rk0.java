@@ -21,7 +21,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class rk0 extends FrameLayout {
     public final Paint a;
@@ -45,22 +45,22 @@ public final class rk0 extends FrameLayout {
         this.c = AndroidUtilities.dp(32.0f);
         View view = new View(context);
         this.h = view;
-        addView(view, w7.a6.d(-1.0f, -1));
+        addView(view, w7.z5.d(-1.0f, -1));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         Drawable mutate = context.getDrawable(R.drawable.msg_reactions_filled).mutate();
         this.r = mutate;
         imageView.setImageDrawable(mutate);
-        addView(imageView, w7.a6.i(24.0f, 24.0f, 8388627, 8.0f, 0.0f, 8.0f, 0.0f));
+        addView(imageView, w7.z5.i(24.0f, 24.0f, 8388627, 8.0f, 0.0f, 8.0f, 0.0f));
         z9 z9Var = new z9(context);
         this.d = z9Var;
-        addView(z9Var, w7.a6.i(24.0f, 24.0f, 8388627, 8.0f, 0.0f, 8.0f, 0.0f));
+        addView(z9Var, w7.z5.i(24.0f, 24.0f, 8388627, 8.0f, 0.0f, 8.0f, 0.0f));
         TextView textView = new TextView(context);
         this.f = textView;
         textView.setImportantForAccessibility(2);
         textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.n8, false));
         textView.setTypeface(AndroidUtilities.bold());
-        addView(textView, w7.a6.i(-1.0f, -2.0f, 8388627, 40.0f, 0.0f, 8.0f, 0.0f));
+        addView(textView, w7.z5.i(-1.0f, -2.0f, 8388627, 40.0f, 0.0f, 8.0f, 0.0f));
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
         setWillNotDraw(false);

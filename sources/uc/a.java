@@ -5,26 +5,26 @@ import d9.l;
 import java.util.Locale;
 import ji.h5;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.cp0;
-import org.telegram.ui.ro0;
-import org.telegram.ui.yk0;
+import org.telegram.ui.ap0;
+import org.telegram.ui.po0;
+import org.telegram.ui.xk0;
 import u2.c;
 import vc.g;
 import w7.n9;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class a extends AsyncTask {
     public final /* synthetic */ String a;
     public final /* synthetic */ wc.a b;
-    public final /* synthetic */ ro0 c;
+    public final /* synthetic */ po0 c;
     public final /* synthetic */ h5 d;
 
-    public a(h5 h5Var, String str, wc.a aVar, ro0 ro0Var) {
+    public a(h5 h5Var, String str, wc.a aVar, po0 po0Var) {
         this.d = h5Var;
         this.a = str;
         this.b = aVar;
-        this.c = ro0Var;
+        this.c = po0Var;
     }
 
     @Override // android.os.AsyncTask
@@ -45,21 +45,21 @@ public final class a extends AsyncTask {
         b bVar = (b) obj;
         Object obj2 = this.d.b;
         c cVar = bVar.a;
-        ro0 ro0Var = this.c;
+        po0 po0Var = this.c;
         if (cVar != null) {
-            cp0 cp0Var = ro0Var.a;
-            if (cp0Var.Q0) {
+            ap0 ap0Var = po0Var.a;
+            if (ap0Var.Q0) {
                 return;
             }
-            cp0Var.w0 = String.format(Locale.US, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}", (String) cVar.c, (String) cVar.b);
-            AndroidUtilities.runOnUIThread(new yk0(ro0Var, 9));
+            ap0Var.w0 = String.format(Locale.US, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}", (String) cVar.c, (String) cVar.b);
+            AndroidUtilities.runOnUIThread(new xk0(po0Var, 9));
             return;
         }
         Exception exc = bVar.b;
         if (exc != null) {
-            ro0Var.a(exc);
+            po0Var.a(exc);
         } else {
-            ro0Var.a(new RuntimeException("Somehow got neither a token response or an error response"));
+            po0Var.a(new RuntimeException("Somehow got neither a token response or an error response"));
         }
     }
 }

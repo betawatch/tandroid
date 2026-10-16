@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class t80 extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
     public final org.telegram.ui.Components.da0 T;
@@ -56,12 +56,12 @@ public final class t80 extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.H8, false));
         View view = new View(context);
         view.setBackground(org.telegram.ui.ActionBar.g6.V0(context, R.drawable.greydivider, org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.b7, null)));
-        frameLayout.addView(view, w7.a6.d(-1.0f, -1));
+        frameLayout.addView(view, w7.z5.d(-1.0f, -1));
         frameLayout.setTag(R.id.fit_width_tag, 1);
-        a(frameLayout, w7.a6.n(-1, 8));
+        a(frameLayout, w7.z5.n(-1, 8));
         org.telegram.ui.Components.x00 x00Var = new org.telegram.ui.Components.x00(this, context);
         this.b0 = x00Var;
-        a(x00Var, w7.a6.n(-1, 48));
+        a(x00Var, w7.z5.n(-1, 48));
         x00Var.setOnClickListener(new xv(12, this, m2Var));
         for (int i11 = 0; i11 < this.a0.size(); i11++) {
             ((s80) this.a0.get(i11)).a.setOnClickListener(new di.m4(this, ((s80) this.a0.get(i11)).b, 18));
@@ -75,7 +75,7 @@ public final class t80 extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
         da0Var.setMovementMethod(LinkMovementMethod.getInstance());
         da0Var.setLinkTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.J6, false));
         da0Var.setText(LocaleController.getString(R.string.KeepMediaPopupDescription));
-        a(da0Var, w7.a6.p(-1, -2, 0.0f, 0, 0, 8, 0, 0));
+        a(da0Var, w7.z5.p(-1, -2, 0.0f, 0, 0, 8, 0, 0));
     }
 
     public final void f() {

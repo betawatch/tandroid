@@ -1,23 +1,88 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class x80 extends FrameLayout {
-    public View a;
-    public TextView b;
+public abstract class x80 extends org.telegram.ui.ActionBar.e3 {
+    public boolean b;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
+    public x80(Context context, TLRPC.Chat chat) {
+        super(context, true);
+        setApplyBottomPadding(false);
+        setApplyTopPadding(false);
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        setCustomView(linearLayout);
+        z9 z9Var = new z9(context);
+        z9Var.setRoundRadius(AndroidUtilities.dp(45.0f));
+        linearLayout.addView(z9Var, w7.z5.t(90, 90, 49, 0, 29, 0, 0));
+        z9Var.e(chat, new k9(chat));
+        TextView textView = new TextView(context);
+        org.telegram.messenger.sk.k(18.0f, 1, textView);
+        com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.g6.j5, null, false, textView, 1);
+        TextView i10 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, w7.z5.t(-2, -2, 49, 17, 24, 17, 0), context);
+        i10.setTextSize(1, 14.0f);
+        com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.g6.r5, null, false, i10, 1);
+        linearLayout.addView(i10, w7.z5.t(-2, -2, 49, 30, 8, 30, 0));
+        ChatObject.Call groupCall = AccountInstance.getInstance(this.currentAccount).getMessagesController().getGroupCall(chat.id, false);
+        if (groupCall != null) {
+            if (TextUtils.isEmpty(groupCall.call.title)) {
+                textView.setText(chat.title);
+            } else {
+                textView.setText(groupCall.call.title);
+            }
+            int i11 = groupCall.call.participants_count;
+            if (i11 == 0) {
+                i10.setText(LocaleController.getString(R.string.NoOneJoinedYet));
+            } else {
+                i10.setText(LocaleController.formatPluralString("Participants", i11, new Object[0]));
+            }
+        } else {
+            textView.setText(chat.title);
+            i10.setText(LocaleController.getString(R.string.NoOneJoinedYet));
+        }
+        w80 w80Var = new w80(context);
+        View view = new View(context);
+        w80Var.a = view;
+        view.setBackground(org.telegram.ui.ActionBar.w5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.g6.Oh));
+        w80Var.addView(view, w7.z5.a(-1.0f, 16.0f, 16.0f, 16.0f, 16.0f, -1, 0));
+        TextView textView2 = new TextView(context);
+        w80Var.b = textView2;
+        textView2.setLines(1);
+        textView2.setSingleLine(true);
+        textView2.setGravity(1);
+        textView2.setEllipsize(TextUtils.TruncateAt.END);
+        textView2.setGravity(17);
+        org.telegram.messenger.g0.m(14.0f, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Sh, false), 1, textView2);
+        w80Var.addView(textView2, w7.z5.e(-2, -2, 17));
+        w80Var.setBackground(null);
+        if (ChatObject.isChannelOrGiga(chat)) {
+            w80Var.setText(LocaleController.getString(R.string.VoipChannelJoinVoiceChatUrl));
+        } else {
+            w80Var.setText(LocaleController.getString(R.string.VoipGroupJoinVoiceChatUrl));
+        }
+        view.setOnClickListener(new f0(this, 29));
+        linearLayout.addView(w80Var, w7.z5.t(-1, 50, 51, 0, 30, 0, 0));
     }
 
-    public void setText(CharSequence charSequence) {
-        this.b.setText(charSequence);
+    @Override // org.telegram.ui.ActionBar.e3
+    public final void dismissInternal() {
+        super.dismissInternal();
+        if (this.b) {
+            n();
+        }
     }
+
+    public abstract void n();
 }

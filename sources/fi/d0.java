@@ -24,12 +24,12 @@ import org.telegram.ui.Components.ud0;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.i8;
-import org.telegram.ui.dj1;
-import org.telegram.ui.ep0;
+import org.telegram.ui.Wallet.j8;
+import org.telegram.ui.cj1;
+import org.telegram.ui.cp0;
 import org.telegram.ui.g61;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d0 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class d0 implements DialogInterface.OnDismissListen
     @Override // android.content.DialogInterface.OnDismissListener
     public final void onDismiss(DialogInterface dialogInterface) {
         Runnable runnable;
-        i8 i8Var;
+        j8 j8Var;
         int i10 = this.a;
         Object obj = this.b;
         Object obj2 = this.c;
@@ -61,10 +61,10 @@ public final /* synthetic */ class d0 implements DialogInterface.OnDismissListen
                 break;
             case 1:
                 boolean[] zArr2 = (boolean[]) obj;
-                org.telegram.ui.web.z zVar = (org.telegram.ui.web.z) obj2;
+                org.telegram.ui.web.a0 a0Var = (org.telegram.ui.web.a0) obj2;
                 if (!zArr2[0]) {
                     zArr2[0] = true;
-                    zVar.run(null);
+                    a0Var.run(null);
                     break;
                 }
                 break;
@@ -153,9 +153,9 @@ public final /* synthetic */ class d0 implements DialogInterface.OnDismissListen
                 launchActivity.E0.remove(a2Var);
                 break;
             case 10:
-                ep0 ep0Var = (ep0) obj2;
+                cp0 cp0Var = (cp0) obj2;
                 if (!((boolean[]) obj)[0]) {
-                    ep0Var.run(Boolean.FALSE);
+                    cp0Var.run(Boolean.FALSE);
                     break;
                 }
                 break;
@@ -167,9 +167,9 @@ public final /* synthetic */ class d0 implements DialogInterface.OnDismissListen
                 g61Var.w = null;
                 break;
             case 12:
-                dj1 dj1Var = (dj1) obj2;
+                cj1 cj1Var = (cj1) obj2;
                 if (!((boolean[]) obj)[0]) {
-                    dj1Var.u0.b();
+                    cj1Var.u0.b();
                     break;
                 }
                 break;
@@ -179,23 +179,23 @@ public final /* synthetic */ class d0 implements DialogInterface.OnDismissListen
                 org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
                 if (U != null) {
                     if (user != null) {
-                        i8Var = new i8(user);
+                        j8Var = new j8(user);
                     } else {
-                        i8Var = new i8(wallettransactionpeeruser.address);
-                        i8Var.u0(wallettransactionpeeruser.domain);
+                        j8Var = new j8(wallettransactionpeeruser.address);
+                        j8Var.u0(wallettransactionpeeruser.domain);
                     }
-                    U.presentFragment(i8Var);
+                    U.presentFragment(j8Var);
                     break;
                 }
                 break;
             case 14:
-                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) obj;
+                org.telegram.ui.web.c1 c1Var = (org.telegram.ui.web.c1) obj;
                 Runnable runnable2 = (Runnable) obj2;
                 if (runnable2 != null) {
-                    b1Var.getClass();
+                    c1Var.getClass();
                     runnable2.run();
                 }
-                b1Var.c0 = null;
+                c1Var.c0 = null;
                 break;
             case 15:
                 boolean[] zArr3 = (boolean[]) obj;

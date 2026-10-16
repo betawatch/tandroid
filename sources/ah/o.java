@@ -50,7 +50,7 @@ import org.telegram.ui.i4;
 import org.telegram.ui.k4;
 import org.telegram.ui.oh;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -65,7 +65,7 @@ public final /* synthetic */ class o implements Runnable {
         this.d = obj2;
     }
 
-    /* JADX WARN: Type inference failed for: r1v47, types: [java.lang.Object, n2.l] */
+    /* JADX WARN: Type inference failed for: r1v47, types: [java.lang.Object, n2.k] */
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
@@ -242,8 +242,8 @@ public final /* synthetic */ class o implements Runnable {
                 }
                 break;
             case 17:
-                n2.k kVar = (n2.k) this.c;
-                this.d.a(kVar.a, kVar.b, this.b);
+                n2.j jVar = (n2.j) this.c;
+                this.d.a(jVar.a, jVar.b, this.b);
                 break;
             case 18:
                 ((View) this.d).postOnAnimation(new g((oh.a) this.c, this.b, 14));
@@ -265,7 +265,7 @@ public final /* synthetic */ class o implements Runnable {
                 if (!str2.startsWith("http://") && !str2.startsWith("https://")) {
                     str2 = "https://".concat(str2);
                 }
-                pf.d.s(context, str2);
+                pf.d.r(context, str2);
                 e3VarArr[0].dismiss();
                 break;
             case 23:

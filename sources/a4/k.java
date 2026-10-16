@@ -4,7 +4,7 @@ import e2.m0;
 import java.util.ArrayDeque;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class k implements z3.f {
     public final ArrayDeque a = new ArrayDeque();
@@ -76,7 +76,7 @@ public abstract class k implements z3.f {
         this.d = null;
     }
 
-    public abstract k6.h f();
+    public abstract l f();
 
     @Override // h2.e
     public void flush() {
@@ -134,7 +134,7 @@ public abstract class k implements z3.f {
             }
             g(iVar2);
             if (i()) {
-                k6.h f7 = f();
+                l f7 = f();
                 z3.k kVar2 = (z3.k) arrayDeque.pollFirst();
                 long j10 = iVar2.e;
                 kVar2.timeUs = j10;

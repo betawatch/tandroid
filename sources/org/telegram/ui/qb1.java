@@ -9,13 +9,13 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class qb1 extends View {
     public ImageReceiver a;
     public ImageReceiver b;
     public View c;
-    public org.telegram.ui.Components.tf0 d;
+    public org.telegram.ui.Components.uf0 d;
     public Path e;
     public Drawable f;
 
@@ -29,7 +29,7 @@ public final class qb1 extends View {
         imageReceiver.setImageCoords(dp - AndroidUtilities.dp(30.0f), measuredHeight - AndroidUtilities.dp(30.0f), AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f));
         this.b.setImageCoords(dp2 - AndroidUtilities.dp(30.0f), measuredHeight - AndroidUtilities.dp(30.0f), AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f));
         Drawable drawable = this.f;
-        drawable.setBounds(org.telegram.ui.Cells.d0.u(2, measuredWidth, drawable), org.telegram.ui.Cells.d0.d(2, measuredHeight, drawable), org.telegram.ui.Cells.d0.y(2, measuredWidth, drawable), org.telegram.ui.Cells.d0.x(2, measuredHeight, drawable));
+        drawable.setBounds(org.telegram.ui.Cells.c1.r(2, measuredWidth, drawable), org.telegram.ui.Cells.c1.c(2, measuredHeight, drawable), org.telegram.ui.Cells.c1.v(2, measuredWidth, drawable), org.telegram.ui.Cells.c1.u(2, measuredHeight, drawable));
         drawable.draw(canvas);
         Path path = this.e;
         path.reset();

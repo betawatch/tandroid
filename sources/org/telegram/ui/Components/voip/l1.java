@@ -11,15 +11,15 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.bk0;
 import org.telegram.ui.ki1;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
 public final class l1 extends FrameLayout {
     public final bk0 a;
     public final bk0 b;
     public final org.telegram.ui.Cells.z c;
-    public org.telegram.ui.Components.t2 d;
+    public org.telegram.ui.Components.u2 d;
     public k1 e;
     public int f;
 
@@ -34,8 +34,8 @@ public final class l1 extends FrameLayout {
         bk0Var.f(R.raw.star_stroke, 37, 37, null);
         bk0Var2.f(R.raw.star_fill, 37, 37, null);
         bk0Var2.setAlpha(0.0f);
-        addView(bk0Var, a6.d(37.0f, 37));
-        addView(bk0Var2, a6.d(37.0f, 37));
+        addView(bk0Var, z5.d(37.0f, 37));
+        addView(bk0Var2, z5.d(37.0f, 37));
         org.telegram.ui.Cells.z i02 = g6.i0(AndroidUtilities.dp(37.0f), 0, i0.a.k(-1, 76));
         this.c = i02;
         i02.setCallback(this);
@@ -89,12 +89,12 @@ public final class l1 extends FrameLayout {
                 getLocationOnScreen(iArr);
                 int i14 = iArr[0];
                 int i15 = iArr[1];
-                org.telegram.ui.Components.t2 t2Var = this.d;
+                org.telegram.ui.Components.u2 u2Var = this.d;
                 float width = (getWidth() / 2.0f) + i14;
                 float height = (getHeight() / 2.0f) + i15;
                 int i16 = this.f + 1;
-                m1 m1Var = (m1) t2Var.b;
-                Context context = (Context) t2Var.c;
+                m1 m1Var = (m1) u2Var.b;
+                Context context = (Context) u2Var.c;
                 if (i16 >= 4) {
                     bk0 bk0Var7 = new bk0(context);
                     int dp = AndroidUtilities.dp(133.0f);
@@ -103,7 +103,7 @@ public final class l1 extends FrameLayout {
                     m1Var.getLocationOnScreen(iArr2);
                     int i17 = iArr2[0];
                     int i18 = iArr2[1];
-                    m1Var.addView(bk0Var7, a6.d(133.0f, 133));
+                    m1Var.addView(bk0Var7, z5.d(133.0f, 133));
                     float f7 = width - i17;
                     float f10 = dp / 2.0f;
                     bk0Var7.setTranslationX(f7 - f10);

@@ -12,7 +12,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class n81 extends FrameLayout {
     public final ImageView a;
@@ -27,28 +27,28 @@ public final class n81 extends FrameLayout {
         ImageView imageView = new ImageView(activity);
         this.a = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, w7.a6.a(32.0f, 12.0f, 4.0f, 0.0f, 0.0f, 32, 0));
+        addView(imageView, w7.z5.a(32.0f, 12.0f, 4.0f, 0.0f, 0.0f, 32, 0));
         LinearLayout linearLayout = new LinearLayout(activity);
         linearLayout.setOrientation(1);
-        addView(linearLayout, w7.a6.a(-2.0f, 64.0f, 4.0f, 0.0f, 4.0f, -1, 0));
+        addView(linearLayout, w7.z5.a(-2.0f, 64.0f, 4.0f, 0.0f, 4.0f, -1, 0));
         TextView textView = new TextView(activity);
         this.b = textView;
         textView.setTextSize(2, 16.0f);
         textView.setGravity(3);
         textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.G6, false));
-        linearLayout.addView(textView, w7.a6.t(-1, -2, 0, 0, 0, z10 ? 64 : 0, 0));
+        linearLayout.addView(textView, w7.z5.t(-1, -2, 0, 0, 0, z10 ? 64 : 0, 0));
         TextView textView2 = new TextView(activity);
         this.c = textView2;
         textView2.setTextSize(2, 13.0f);
         textView2.setGravity(3);
         textView2.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.y6, false));
-        linearLayout.addView(textView2, w7.a6.t(-1, -2, 0, 0, 4, z10 ? 64 : 0, 0));
+        linearLayout.addView(textView2, w7.z5.t(-1, -2, 0, 0, 4, z10 ? 64 : 0, 0));
         setPadding(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
         if (z10) {
             Switch r22 = new Switch(activity, null);
             this.d = r22;
             r22.setDrawIconType(1);
-            addView(r22, w7.a6.a(40.0f, 21.0f, 0.0f, 21.0f, 0.0f, 37, 21));
+            addView(r22, w7.z5.a(40.0f, 21.0f, 0.0f, 21.0f, 0.0f, 37, 21));
         }
     }
 

@@ -40,19 +40,18 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.as;
-import org.telegram.ui.Components.ez0;
-import org.telegram.ui.Components.k91;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.fz0;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.l91;
 import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.sc;
-import org.telegram.ui.Components.ty0;
+import org.telegram.ui.Components.uy0;
 import org.telegram.ui.Components.y31;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.fo;
-import org.telegram.ui.hd;
-import org.telegram.ui.lc;
+import org.telegram.ui.gd;
 import org.telegram.ui.n60;
 import org.telegram.ui.np;
 import org.telegram.ui.qn;
@@ -64,7 +63,7 @@ import org.telegram.ui.yr;
 import org.telegram.ui.yy;
 import org.telegram.ui.zo;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c3 implements Runnable {
     public final /* synthetic */ int a;
@@ -88,7 +87,7 @@ public final /* synthetic */ class c3 implements Runnable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:367:0x0a22  */
+    /* JADX WARN: Removed duplicated region for block: B:367:0x0a1b  */
     /* JADX WARN: Type inference failed for: r7v36, types: [java.lang.Integer] */
     @Override // java.lang.Runnable
     /*
@@ -220,7 +219,7 @@ public final /* synthetic */ class c3 implements Runnable {
                     }
                     z10 = false;
                 } else {
-                    org.telegram.messenger.q.r(R.string.UnknownError, new zc(o4Var, c6Var2), R.raw.error, 36);
+                    org.telegram.messenger.g0.q(R.string.UnknownError, new zc(o4Var, c6Var2), R.raw.error, 36);
                     z10 = false;
                 }
                 q5Var2.f1(z10);
@@ -297,7 +296,7 @@ public final /* synthetic */ class c3 implements Runnable {
                 arrayList5.add(user);
                 w6 w6Var = e6Var.b;
                 ContactsController.getInstance(w6Var.v).deleteContact(arrayList5, false);
-                i2.d.q(R.string.DeletedFromYourContacts, new Object[]{str2}, new zc(w6Var, w6Var.s), R.raw.ic_ban, 36);
+                i2.d.s(R.string.DeletedFromYourContacts, new Object[]{str2}, new zc(w6Var, w6Var.s), R.raw.ic_ban, 36);
                 o6Var.a(w6Var.d(storyView) ? 1.0f : 0.5f, true);
                 break;
             case 4:
@@ -424,7 +423,7 @@ public final /* synthetic */ class c3 implements Runnable {
                     break;
                 }
             case 10:
-                ((m4.h) this.d).run().a(new androidx.car.app.utils.b((qi.e) this.c, (AtomicBoolean) this.e, (m4.i) this.f, (AtomicBoolean) this.b, 20), j9.r.a);
+                ((m4.g) this.d).run().a(new androidx.car.app.utils.b((pi.e) this.c, (AtomicBoolean) this.e, (m4.h) this.f, (AtomicBoolean) this.b, 19), j9.r.a);
                 break;
             case 11:
                 ((CameraController) this.c).lambda$open$10((CameraSession) this.d, (Runnable) this.b, (SurfaceTexture) this.e, (Runnable) this.f);
@@ -439,9 +438,9 @@ public final /* synthetic */ class c3 implements Runnable {
                 bVar.e.a = false;
                 tL_documentAttributeAudio.title = str4;
                 tL_documentAttributeAudio.performer = str5;
-                k91 k91Var = w7Var.h;
-                for (int i26 = 0; i26 < k91Var.getViewPages().length; i26++) {
-                    mm0 mm0Var = (mm0) k91Var.getViewPages()[i26];
+                l91 l91Var = w7Var.h;
+                for (int i26 = 0; i26 < l91Var.getViewPages().length; i26++) {
+                    mm0 mm0Var = (mm0) l91Var.getViewPages()[i26];
                     if (mm0Var != null && ((org.telegram.ui.j7) mm0Var.getAdapter()).d == 3) {
                         org.telegram.ui.j7 j7Var = (org.telegram.ui.j7) mm0Var.getAdapter();
                         int i27 = 0;
@@ -529,13 +528,13 @@ public final /* synthetic */ class c3 implements Runnable {
                         org.telegram.ui.ac.A0(acVar, tL_messages_exportedChatInvite, acVar.z0);
                         break;
                     } else {
-                        org.telegram.messenger.q.r(R.string.LinkHashExpired, zc.a0(acVar), R.raw.linkbroken, 36);
+                        org.telegram.messenger.g0.q(R.string.LinkHashExpired, zc.a0(acVar), R.raw.linkbroken, 36);
                         break;
                     }
                 }
                 break;
             case 15:
-                hd hdVar = (hd) this.c;
+                gd gdVar = (gd) this.c;
                 boolean[] zArr2 = (boolean[]) this.d;
                 int[] iArr = (int[]) this.e;
                 int[] iArr2 = (int[]) this.f;
@@ -544,27 +543,27 @@ public final /* synthetic */ class c3 implements Runnable {
                     if (tL_error5 != null) {
                         zArr2[0] = true;
                         if ("BOOSTS_REQUIRED".equals(tL_error5.text)) {
-                            hdVar.getMessagesController().getBoostsController().userCanBoostChannel(hdVar.a, hdVar.c, new lc(hdVar, i16));
+                            gdVar.getMessagesController().getBoostsController().userCanBoostChannel(gdVar.a, gdVar.c, new org.telegram.ui.kc(gdVar, i16));
                             break;
                         } else {
-                            hdVar.P.setLoading(false);
-                            i2.d.q(R.string.UnknownErrorCode, new Object[]{tL_error5.text}, zc.a0(hdVar), R.raw.error, 36);
+                            gdVar.P.setLoading(false);
+                            i2.d.s(R.string.UnknownErrorCode, new Object[]{tL_error5.text}, zc.a0(gdVar), R.raw.error, 36);
                             break;
                         }
                     } else {
                         int i32 = i13 + 1;
                         iArr[0] = i32;
                         if (i32 == iArr2[0]) {
-                            hdVar.finishFragment();
-                            org.telegram.ui.ActionBar.m2 m2Var = hdVar.l0;
+                            gdVar.finishFragment();
+                            org.telegram.ui.ActionBar.m2 m2Var = gdVar.l0;
                             if (m2Var != null) {
                                 if (m2Var instanceof zo) {
                                     ((zo) m2Var).o0();
                                 }
-                                org.telegram.messenger.q.r(hdVar.d ? R.string.GroupAppearanceUpdated : R.string.ChannelAppearanceUpdated, zc.a0(hdVar.l0), R.raw.contact_check, 36);
-                                hdVar.l0 = null;
+                                org.telegram.messenger.g0.q(gdVar.d ? R.string.GroupAppearanceUpdated : R.string.ChannelAppearanceUpdated, zc.a0(gdVar.l0), R.raw.contact_check, 36);
+                                gdVar.l0 = null;
                             }
-                            hdVar.P.setLoading(false);
+                            gdVar.P.setLoading(false);
                             break;
                         }
                     }
@@ -620,7 +619,7 @@ public final /* synthetic */ class c3 implements Runnable {
                 if (!zArr3[0]) {
                     zArr3[0] = true;
                     long[] jArr = {-1};
-                    org.telegram.ui.p6 p6Var = new org.telegram.ui.p6((Object) jArr, zArr4, (Object) imageView, (Object) imageView2, 6);
+                    org.telegram.ui.p6 p6Var = new org.telegram.ui.p6(jArr, zArr4, imageView, imageView2);
                     TLRPC.TL_messages_rateTranscribedAudio tL_messages_rateTranscribedAudio = new TLRPC.TL_messages_rateTranscribedAudio();
                     tL_messages_rateTranscribedAudio.msg_id = foVar.d5.getId();
                     tL_messages_rateTranscribedAudio.peer = foVar.getMessagesController().getInputPeer(foVar.d5.messageOwner.peer_id);
@@ -640,7 +639,7 @@ public final /* synthetic */ class c3 implements Runnable {
                 fo foVar2 = qnVar.a;
                 if (message2.suggested_post.schedule_date == 0) {
                     a2VarArr[0].setOnDismissListener(null);
-                    org.telegram.ui.ActionBar.e3 e3Var = org.telegram.ui.Components.g5.S(foVar2.getParentActivity(), 0L, new m4.z0(16, qnVar, messageObject2), foVar2.getResourceProvider(), 1).a;
+                    org.telegram.ui.ActionBar.e3 e3Var = org.telegram.ui.Components.g5.S(foVar2.getParentActivity(), 0L, new m4.y0(15, qnVar, messageObject2), foVar2.getResourceProvider(), 1).a;
                     e3Var.show();
                     e3Var.setOnDismissListener(v5Var);
                     break;
@@ -732,29 +731,29 @@ public final /* synthetic */ class c3 implements Runnable {
                 windowManager.removeView(view4);
                 break;
             case 23:
-                ty0 ty0Var = (ty0) this.c;
+                uy0 uy0Var = (uy0) this.c;
                 String str12 = (String) this.d;
                 TLRPC.TL_error tL_error8 = (TLRPC.TL_error) this.e;
                 TLObject tLObject7 = (TLObject) this.f;
                 TextView textView = (TextView) this.b;
-                ty0Var.p0 = 0;
-                String str13 = ty0Var.o0;
+                uy0Var.p0 = 0;
+                String str13 = uy0Var.o0;
                 if (str13 != null && str13.equals(str12)) {
                     if (tL_error8 != null || !(tLObject7 instanceof TLRPC.TL_boolTrue)) {
                         textView.setText(LocaleController.getString(R.string.ImportStickersLinkTaken));
-                        textView.setTextColor(ty0Var.getThemedColor(org.telegram.ui.ActionBar.g6.p7));
-                        ty0Var.q0 = false;
+                        textView.setTextColor(uy0Var.getThemedColor(org.telegram.ui.ActionBar.g6.p7));
+                        uy0Var.q0 = false;
                         break;
                     } else {
                         textView.setText(LocaleController.getString(R.string.ImportStickersLinkAvailable));
-                        textView.setTextColor(ty0Var.getThemedColor(org.telegram.ui.ActionBar.g6.w6));
-                        ty0Var.q0 = true;
+                        textView.setTextColor(uy0Var.getThemedColor(org.telegram.ui.ActionBar.g6.w6));
+                        uy0Var.q0 = true;
                         break;
                     }
                 }
                 break;
             case 24:
-                ez0 ez0Var = (ez0) this.c;
+                fz0 fz0Var = (fz0) this.c;
                 TLObject tLObject8 = (TLObject) this.d;
                 TLRPC.UserFull userFull = (TLRPC.UserFull) this.e;
                 TL_account.TL_birthday tL_birthday = (TL_account.TL_birthday) this.f;
@@ -774,16 +773,16 @@ public final /* synthetic */ class c3 implements Runnable {
                                 userFull.flags2 |= 32;
                             }
                             userFull.birthday = tL_birthday;
-                            MessagesStorage.getInstance(ez0Var.a).updateUserInfo(userFull, false);
+                            MessagesStorage.getInstance(fz0Var.a).updateUserInfo(userFull, false);
                         }
                         if (tL_error9 != null && (str = tL_error9.text) != null && str.startsWith("FLOOD_WAIT_")) {
-                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ez0Var.b.getContext());
+                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(fz0Var.b.getContext());
                             alertDialog$Builder.a.R = LocaleController.getString(R.string.PrivacyBirthdayTooOftenTitle);
                             alertDialog$Builder.a.T = LocaleController.getString(R.string.PrivacyBirthdayTooOftenMessage);
-                            org.telegram.messenger.q.A(R.string.OK, alertDialog$Builder, null);
+                            org.telegram.messenger.g0.p(R.string.OK, alertDialog$Builder, null);
                             break;
                         } else {
-                            org.telegram.messenger.q.r(R.string.UnknownError, zc.a0(U), R.raw.error, 36);
+                            org.telegram.messenger.g0.q(R.string.UnknownError, zc.a0(U), R.raw.error, 36);
                             break;
                         }
                     }
@@ -793,18 +792,18 @@ public final /* synthetic */ class c3 implements Runnable {
                 y31 y31Var = (y31) this.c;
                 MessagesController messagesController = (MessagesController) this.d;
                 TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) this.e;
-                m80 m80Var = (m80) this.f;
-                m80 m80Var2 = (m80) this.b;
+                l80 l80Var = (l80) this.f;
+                l80 l80Var2 = (l80) this.b;
                 fo foVar3 = y31Var.h;
                 if (messagesController.isDialogMuted(y31Var.c, tL_forumTopic.id)) {
-                    m80Var.u();
+                    l80Var.u();
                     NotificationsController.getInstance(y31Var.b).muteDialog(y31Var.c, tL_forumTopic.id, false);
                     if (zc.a(foVar3)) {
                         zc.z(foVar3, 4, 0, y31Var.d).j();
                         break;
                     }
                 } else {
-                    m80Var.K(m80Var2);
+                    l80Var.K(l80Var2);
                     break;
                 }
                 break;
@@ -833,14 +832,14 @@ public final /* synthetic */ class c3 implements Runnable {
                         }
                     }
                     if (tL_messages_myStickers.sets.size() == tL_messages_getMyStickers.limit) {
-                        tL_messages_getMyStickers.offset_id = ((TLRPC.StickerSetCovered) i2.d.g(1, tL_messages_myStickers.sets)).set.id;
+                        tL_messages_getMyStickers.offset_id = ((TLRPC.StickerSetCovered) i2.d.h(1, tL_messages_myStickers.sets)).set.id;
                         ConnectionsManager.getInstance(xtVar.r).sendRequest(tL_messages_getMyStickers, new org.telegram.ui.fa(xtVar, arrayList19, tL_messages_getMyStickers, 7));
                         break;
                     }
                 }
                 break;
             case 27:
-                yy.F0((yy) this.c, (TLObject) this.d, (TLRPC.UserFull) this.e, (TL_account.TL_birthday) this.f, (TLRPC.TL_error) this.b);
+                yy.E0((yy) this.c, (TLObject) this.d, (TLRPC.UserFull) this.e, (TL_account.TL_birthday) this.f, (TLRPC.TL_error) this.b);
                 break;
             case 28:
                 a();

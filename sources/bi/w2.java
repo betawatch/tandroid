@@ -16,7 +16,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w2 implements org.telegram.ui.ActionBar.z1, Continuation, r9.d, i5.e, d9.k, GenericProvider, Utilities.Callback2Return, eh.d {
     public final /* synthetic */ int a;
@@ -43,11 +43,11 @@ public final /* synthetic */ class w2 implements org.telegram.ui.ActionBar.z1, C
             case 9:
                 xa.e eVar = (xa.e) obj;
                 eVar.getClass();
-                li.k kVar = com.google.firebase.messaging.p.a;
-                kVar.getClass();
+                m.h3 h3Var = com.google.firebase.messaging.p.a;
+                h3Var.getClass();
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                 try {
-                    kVar.x(eVar, byteArrayOutputStream);
+                    h3Var.x(eVar, byteArrayOutputStream);
                 } catch (IOException unused) {
                 }
                 return byteArrayOutputStream.toByteArray();
@@ -55,7 +55,7 @@ public final /* synthetic */ class w2 implements org.telegram.ui.ActionBar.z1, C
                 return Integer.valueOf(((d2.b) obj).r);
             default:
                 da.a.b.getClass();
-                return aa.b.a.N((z9.e2) obj).getBytes(Charset.forName("UTF-8"));
+                return aa.b.a.b1((z9.e2) obj).getBytes(Charset.forName("UTF-8"));
         }
     }
 
@@ -105,7 +105,7 @@ public final /* synthetic */ class w2 implements org.telegram.ui.ActionBar.z1, C
     }
 
     @Override // r9.d
-    public Object j2(com.google.android.gms.internal.cast.z5 z5Var) {
+    public Object n2(com.google.android.gms.internal.cast.z5 z5Var) {
         FirebaseMessaging lambda$getComponents$0;
         lambda$getComponents$0 = FirebaseMessagingRegistrar.lambda$getComponents$0(z5Var);
         return lambda$getComponents$0;

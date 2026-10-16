@@ -10,7 +10,7 @@ import android.widget.HorizontalScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class vz extends s4.r0 {
     public final int a;
@@ -45,7 +45,7 @@ public class vz extends s4.r0 {
                     izVar = wzVar.V;
                 } else {
                     if (i11 != 2) {
-                        throw new IllegalArgumentException(i2.d.i(i11, "Unexpected argument: "));
+                        throw new IllegalArgumentException(i2.d.j(i11, "Unexpected argument: "));
                     }
                     izVar = wzVar.o0;
                 }

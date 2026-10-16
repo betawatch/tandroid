@@ -10,7 +10,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class h implements TextWatcher {
     public int a;
@@ -87,7 +87,7 @@ public final class h implements TextWatcher {
                 c10.o(fh.b.i(mVar.a));
                 iVar2.setBackgroundDrawable(c10);
             }
-            mVar.b.addView(mVar.M, w7.a6.e(-1, -1, 83));
+            mVar.b.addView(mVar.M, w7.z5.e(-1, -1, 83));
             mVar.w();
         }
         if (mVar.M.getAdapter() != null) {

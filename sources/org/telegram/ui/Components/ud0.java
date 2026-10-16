@@ -24,7 +24,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class ud0 extends LinearLayout {
     public static final es v0 = new es(0.0f, 0.5f, 0.5f, 1.0f);
@@ -98,7 +98,7 @@ public class ud0 extends LinearLayout {
                 return View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30);
             }
             if (mode != 1073741824) {
-                throw new IllegalArgumentException(i2.d.i(mode, "Unknown measure mode: "));
+                throw new IllegalArgumentException(i2.d.j(mode, "Unknown measure mode: "));
             }
         }
         return i10;
@@ -373,7 +373,7 @@ public class ud0 extends LinearLayout {
         this.k0 = i10;
         rd0 rd0Var = this.J;
         if (rd0Var != null) {
-            rd0Var.k(i10);
+            rd0Var.l(i10);
         }
         if (i10 == 0) {
             AccessibilityManager accessibilityManager = (AccessibilityManager) getContext().getSystemService("accessibility");
@@ -424,7 +424,7 @@ public class ud0 extends LinearLayout {
         if (this.k0 != 0 || (rd0Var = this.J) == null) {
             return;
         }
-        rd0Var.k(0);
+        rd0Var.l(0);
     }
 
     public final void m() {
@@ -885,7 +885,7 @@ public class ud0 extends LinearLayout {
         if (this.k0 != 0 || (rd0Var = this.J) == null) {
             return;
         }
-        rd0Var.k(0);
+        rd0Var.l(0);
     }
 
     public void setMinValue(int i10) {
@@ -914,7 +914,7 @@ public class ud0 extends LinearLayout {
         if (this.k0 != 0 || (rd0Var = this.J) == null) {
             return;
         }
-        rd0Var.k(0);
+        rd0Var.l(0);
     }
 
     public void setOnLongPressUpdateInterval(long j10) {

@@ -4,13 +4,13 @@ import android.os.Bundle;
 import android.view.View;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.g90;
+import org.telegram.ui.Components.f90;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class p2 implements View.OnClickListener {
                 q5Var.J0.H(new ProfileActivity(bundle, null));
                 break;
             case 1:
-                g90.s((g90) this.c, this.b);
+                f90.s((f90) this.c, this.b);
                 break;
             case 2:
                 yy yyVar = (yy) this.c;
@@ -55,7 +55,7 @@ public final /* synthetic */ class p2 implements View.OnClickListener {
                 yyVar.finishPreviewFragment();
                 break;
             case 3:
-                Utilities.Callback callback = ((rh.q) this.c).f;
+                Utilities.Callback callback = ((rh.p) this.c).f;
                 if (callback != null) {
                     callback.run(Long.valueOf(this.b));
                     break;

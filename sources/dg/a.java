@@ -4,7 +4,7 @@ import java.nio.ShortBuffer;
 import oa.d;
 import rb.b;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public interface a {
     public static final d q;
@@ -16,5 +16,5 @@ public interface a {
         t = new b(i10);
     }
 
-    void C(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11, int i12);
+    void A(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11, int i12);
 }

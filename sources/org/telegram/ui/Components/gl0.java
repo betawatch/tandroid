@@ -44,7 +44,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class gl0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final org.telegram.ui.Cells.d1 k1 = new org.telegram.ui.Cells.d1(Float.class, "transitionProgress", 2);
@@ -220,7 +220,7 @@ public class gl0 extends FrameLayout implements NotificationCenter.NotificationC
         o0Var.i(new tk0(this, 1));
         o0Var.setOnItemClickListener(new j(this, 11));
         o0Var.setOnItemLongClickListener((cm0) new i2.r(this, i10, 9));
-        addView(o0Var, w7.a6.d(-1.0f, -1));
+        addView(o0Var, w7.z5.d(-1.0f, -1));
         setClipChildren(false);
         setClipToPadding(false);
         k();
@@ -258,7 +258,7 @@ public class gl0 extends FrameLayout implements NotificationCenter.NotificationC
         }
         ah.t0 t0Var2 = gl0Var.x0;
         fl0 fl0Var = gl0Var.g0;
-        if (fl0Var != null && !fl0Var.i()) {
+        if (fl0Var != null && !fl0Var.j()) {
             z10 = false;
         }
         t0Var2.m.setLongPressEnabled(z10);
@@ -464,7 +464,7 @@ public class gl0 extends FrameLayout implements NotificationCenter.NotificationC
                 }
                 i1Var = this.l0;
                 i10 = this.M0;
-                if (i1Var != null && i10 != 5 && ((fl0Var = this.g0) == null || fl0Var.i())) {
+                if (i1Var != null && i10 != 5 && ((fl0Var = this.g0) == null || fl0Var.j())) {
                     f22 = this.n0;
                     if (f22 != 1.0f) {
                         float longPressTimeout = (16.0f / (this.l0.a ? ViewConfiguration.getLongPressTimeout() : 1500.0f)) + f22;
@@ -545,13 +545,13 @@ public class gl0 extends FrameLayout implements NotificationCenter.NotificationC
                     } else {
                         f14 = 2.0f;
                     }
-                    if (i10 == 1 || this.g0.D()) {
+                    if (i10 == 1 || this.g0.z()) {
                         i17 = save2;
                         i11 = i10;
                         rectF = rectF5;
                         f13 = f27;
                         i12 = 1;
-                        this.g0.w(canvas, rectF, this.y, getX(), getY(), 255, false);
+                        this.g0.r(canvas, rectF, this.y, getX(), getY(), 255, false);
                         canvas2 = canvas;
                     } else {
                         dh.d dVar = this.W0;
@@ -672,7 +672,7 @@ public class gl0 extends FrameLayout implements NotificationCenter.NotificationC
                                             if (System.currentTimeMillis() - this.s0 > 300) {
                                                 this.s0 = System.currentTimeMillis();
                                                 o0Var2 = o0Var3;
-                                                this.g0.r(el0Var, el0Var.e, true, false);
+                                                this.g0.n(el0Var, el0Var.e, true, false);
                                                 canvas2.save();
                                                 x10 = el0Var.getX() + o0Var2.getX();
                                                 scaleX = ((el0Var.getScaleX() * el0Var.getMeasuredWidth()) - el0Var.getMeasuredWidth()) / f14;
@@ -781,7 +781,7 @@ public class gl0 extends FrameLayout implements NotificationCenter.NotificationC
                                                         ValueAnimator ofFloat = ValueAnimator.ofFloat(gsVar3.getScaleX(), 1.0f);
                                                         gsVar3.b = ofFloat;
                                                         ofFloat.setInterpolator(AndroidUtilities.overshootInterpolator);
-                                                        ((ValueAnimator) gsVar3.b).addUpdateListener(new g80(gsVar3, 8));
+                                                        ((ValueAnimator) gsVar3.b).addUpdateListener(new f80(gsVar3, 8));
                                                         ((ValueAnimator) gsVar3.b).setStartDelay((long) (abs * ((gl0) gsVar3.c).c));
                                                         ((ValueAnimator) gsVar3.b).setDuration(300L);
                                                         ((ValueAnimator) gsVar3.b).start();
@@ -880,9 +880,9 @@ public class gl0 extends FrameLayout implements NotificationCenter.NotificationC
                             }
                         }
                         if (!this.c1 && this.x0 != null) {
-                            int B = (int) org.telegram.messenger.q.B(1.0f, this.w0, Utilities.clamp(1.0f - (this.w0 / 0.2f), 1.0f, 0.0f), f12);
+                            int z13 = (int) org.telegram.messenger.g0.z(1.0f, this.w0, Utilities.clamp(1.0f - (this.w0 / 0.2f), 1.0f, 0.0f), f12);
                             canvas.save();
-                            f(f24, max2, f16, B, canvas);
+                            f(f24, max2, f16, z13, canvas);
                             canvas.restore();
                             return;
                         }
@@ -1085,13 +1085,13 @@ public class gl0 extends FrameLayout implements NotificationCenter.NotificationC
         float f19 = paddingTop + f7;
         drawable.setBounds((int) (f14 - f16), (int) (f17 - f16), (int) (f18 + f16), (int) (f16 + f19));
         drawable.draw(canvas);
-        boolean D = this.g0.D();
+        boolean z11 = this.g0.z();
         float f20 = paddingTop;
         RectF rectF2 = this.b0;
-        if (D) {
+        if (z11) {
             rectF2.set(f14, f17, f18, f19);
             f12 = f7;
-            this.g0.w(canvas, rectF2, f12, getX(), getY(), i10, false);
+            this.g0.r(canvas, rectF2, f12, getX(), getY(), i10, false);
         } else {
             f12 = f7;
             if (this.X0 != null) {
@@ -1107,18 +1107,18 @@ public class gl0 extends FrameLayout implements NotificationCenter.NotificationC
                 canvas.drawCircle(width, f20, f12, paint);
             }
         }
-        boolean z11 = LocaleController.isRTL;
+        boolean z12 = LocaleController.isRTL;
         float f21 = this.E;
-        float width2 = this.U0 + this.V0 + ((z11 || this.M) ? this.G - f21 : (getWidth() - this.G) + f21);
-        boolean z12 = this.L;
+        float width2 = this.U0 + this.V0 + ((z12 || this.M) ? this.G - f21 : (getWidth() - this.G) + f21);
+        boolean z13 = this.L;
         float f22 = this.F;
-        float lerp = AndroidUtilities.lerp(z12 ? (getPaddingTop() - g()) - AndroidUtilities.dp(16.0f) : ((getHeight() - f22) - f15) + g(), (f22 + f15) - g(), es.f.getInterpolation(this.O));
+        float lerp = AndroidUtilities.lerp(z13 ? (getPaddingTop() - g()) - AndroidUtilities.dp(16.0f) : ((getHeight() - f22) - f15) + g(), (f22 + f15) - g(), es.f.getInterpolation(this.O));
         float f23 = (-AndroidUtilities.dp(1.0f)) * f10;
         drawable.setBounds((int) ((width2 - f12) - f23), (int) ((lerp - f12) - f23), (int) (width2 + f12 + f23), (int) (f12 + lerp + f23));
         drawable.draw(canvas);
-        if (this.g0.D()) {
+        if (this.g0.z()) {
             rectF2.set(width2 - f11, lerp - f11, width2 + f11, lerp + f11);
-            this.g0.w(canvas, rectF2, f11, getX(), getY(), i10, false);
+            this.g0.r(canvas, rectF2, f11, getX(), getY(), i10, false);
         } else if (this.Y0 != null) {
             RectF rectF4 = AndroidUtilities.rectTmp;
             rectF4.set(width2 - f11, lerp - f11, width2 + f11, lerp + f11);
@@ -1374,7 +1374,7 @@ public class gl0 extends FrameLayout implements NotificationCenter.NotificationC
     public final void l(View view, ah.i1 i1Var, boolean z10) {
         fl0 fl0Var = this.g0;
         if (fl0Var != null) {
-            fl0Var.r(view, i1Var, z10, true);
+            fl0Var.n(view, i1Var, z10, true);
         }
         if (this.M0 == 5) {
             try {
@@ -1734,7 +1734,7 @@ public class gl0 extends FrameLayout implements NotificationCenter.NotificationC
                 this.R0.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.z6, c6Var));
             }
             this.R0.setGravity(1);
-            addView(this.R0, w7.a6.a(-2.0f, 0.0f, 6.0f, 0.0f, 0.0f, -1, 0));
+            addView(this.R0, w7.z5.a(-2.0f, 0.0f, 6.0f, 0.0f, 0.0f, -1, 0));
         }
         this.R0.setText(charSequence);
         this.e1 = false;

@@ -15,7 +15,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ae1 extends org.telegram.ui.Components.lm0 {
     public final Context c;
@@ -61,7 +61,7 @@ public final class ae1 extends org.telegram.ui.Components.lm0 {
                 if (i12 != 0 || j10 == 0) {
                     i11 = i12 != 0 ? i12 : C0;
                 }
-            } else if (ce1Var.B1 instanceof pj1) {
+            } else if (ce1Var.B1 instanceof oj1) {
                 i11 = ce1Var.c1;
             }
             if (i11 == 0 || ce1Var.l1 < 0.0f) {

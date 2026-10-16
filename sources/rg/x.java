@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.fo;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class x extends fo {
     public final /* synthetic */ o0 Qc;
@@ -23,7 +23,7 @@ public final class x extends fo {
         return false;
     }
 
-    @Override // org.telegram.ui.fo, org.telegram.ui.Components.ch, org.telegram.ui.Components.b60
+    @Override // org.telegram.ui.fo, org.telegram.ui.Components.ch, org.telegram.ui.Components.c60
     public final long a() {
         return 0L;
     }

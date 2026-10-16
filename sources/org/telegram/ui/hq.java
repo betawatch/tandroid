@@ -14,7 +14,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class hq extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public org.telegram.ui.Cells.k6 E;
@@ -204,7 +204,7 @@ public final class hq extends org.telegram.ui.ActionBar.m2 implements Notificati
                     }
                 }
             });
-            linearLayout.addView(this.n, w7.a6.n(-1, -2));
+            linearLayout.addView(this.n, w7.z5.n(-1, -2));
         }
         org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(context);
         m4Var.setText(LocaleController.getString(R.string.AvailableReactions));
@@ -220,10 +220,10 @@ public final class hq extends org.telegram.ui.ActionBar.m2 implements Notificati
         org.telegram.ui.Cells.k6 k6Var3 = new org.telegram.ui.Cells.k6(context, null);
         this.E = k6Var3;
         k6Var3.c(LocaleController.getString(R.string.NoReactions), false, false);
-        this.s.addView(m4Var, w7.a6.n(-1, -2));
-        this.s.addView(this.x, w7.a6.n(-1, -2));
-        this.s.addView(this.y, w7.a6.n(-1, -2));
-        this.s.addView(this.E, w7.a6.n(-1, -2));
+        this.s.addView(m4Var, w7.z5.n(-1, -2));
+        this.s.addView(this.x, w7.z5.n(-1, -2));
+        this.s.addView(this.y, w7.z5.n(-1, -2));
+        this.s.addView(this.E, w7.z5.n(-1, -2));
         arrayList.clear();
         arrayList.add(this.x);
         arrayList.add(this.y);
@@ -479,7 +479,7 @@ public final class hq extends org.telegram.ui.ActionBar.m2 implements Notificati
         this.h = gqVar;
         mm0Var2.setAdapter(gqVar);
         this.f.setOnItemClickListener(new i(this, 5));
-        linearLayout.addView(this.f, w7.a6.l(1.0f, -1, 0));
+        linearLayout.addView(this.f, w7.z5.l(1.0f, -1, 0));
         this.f.p1();
         this.actionBar.setAdaptiveBackground(this.f);
         this.e = linearLayout;
@@ -510,7 +510,7 @@ public final class hq extends org.telegram.ui.ActionBar.m2 implements Notificati
 
     @Override // org.telegram.ui.ActionBar.m2
     public final ArrayList getThemeDescriptions() {
-        return w7.d6.a(new e(this, 8), org.telegram.ui.ActionBar.g6.d6, org.telegram.ui.ActionBar.g6.G6, org.telegram.ui.ActionBar.g6.z6, org.telegram.ui.ActionBar.g6.i6, org.telegram.ui.ActionBar.g6.a7, org.telegram.ui.ActionBar.g6.B6, org.telegram.ui.ActionBar.g6.p7, org.telegram.ui.ActionBar.g6.f6, org.telegram.ui.ActionBar.g6.g6, org.telegram.ui.ActionBar.g6.O6, org.telegram.ui.ActionBar.g6.P6, org.telegram.ui.ActionBar.g6.Q6, org.telegram.ui.ActionBar.g6.R6);
+        return w7.c6.a(new e(this, 8), org.telegram.ui.ActionBar.g6.d6, org.telegram.ui.ActionBar.g6.G6, org.telegram.ui.ActionBar.g6.z6, org.telegram.ui.ActionBar.g6.i6, org.telegram.ui.ActionBar.g6.a7, org.telegram.ui.ActionBar.g6.B6, org.telegram.ui.ActionBar.g6.p7, org.telegram.ui.ActionBar.g6.f6, org.telegram.ui.ActionBar.g6.g6, org.telegram.ui.ActionBar.g6.O6, org.telegram.ui.ActionBar.g6.P6, org.telegram.ui.ActionBar.g6.Q6, org.telegram.ui.ActionBar.g6.R6);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:8:0x004a, code lost:

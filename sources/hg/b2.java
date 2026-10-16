@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
+import m.h3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.MediaDataController;
@@ -39,15 +40,15 @@ import org.telegram.ui.PasscodeActivity;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.StickersActivity;
 import org.telegram.ui.fo;
+import org.telegram.ui.ld0;
 import org.telegram.ui.m50;
-import org.telegram.ui.nd0;
 import org.telegram.ui.q50;
 import org.telegram.ui.rh;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b2 implements MediaDataController.KeywordResultCallback, e2.o, org.telegram.ui.ActionBar.z1, m4.p0, e2.j, NativeInstance.PayloadCallback, Utilities.Callback3Return, t5.b {
+public final /* synthetic */ class b2 implements MediaDataController.KeywordResultCallback, e2.o, org.telegram.ui.ActionBar.z1, m4.o0, e2.j, NativeInstance.PayloadCallback, Utilities.Callback3Return, t5.b {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -67,37 +68,37 @@ public final /* synthetic */ class b2 implements MediaDataController.KeywordResu
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void accept(Object obj) {
-        m4.t1 t1Var;
-        m4.f0 f0Var = (m4.f0) this.c;
-        m4.w wVar = (m4.w) this.d;
+        m4.s1 s1Var;
+        m4.e0 e0Var = (m4.e0) this.c;
+        m4.v vVar = (m4.v) this.d;
         try {
-            t1Var = (m4.t1) ((j9.y) obj).get();
-            u6.l(t1Var, "SessionResult must not be null");
+            s1Var = (m4.s1) ((j9.y) obj).get();
+            u6.l(s1Var, "SessionResult must not be null");
         } catch (InterruptedException e) {
             e = e;
             e2.a.m("MediaSessionStub", "Session operation failed", e);
-            t1Var = new m4.t1(!(e.getCause() instanceof UnsupportedOperationException) ? -6 : -1);
+            s1Var = new m4.s1(!(e.getCause() instanceof UnsupportedOperationException) ? -6 : -1);
         } catch (CancellationException e7) {
             e2.a.m("MediaSessionStub", "Session operation cancelled", e7);
-            t1Var = new m4.t1(1);
+            s1Var = new m4.s1(1);
         } catch (ExecutionException e10) {
             e = e10;
             e2.a.m("MediaSessionStub", "Session operation failed", e);
-            t1Var = new m4.t1(!(e.getCause() instanceof UnsupportedOperationException) ? -6 : -1);
+            s1Var = new m4.s1(!(e.getCause() instanceof UnsupportedOperationException) ? -6 : -1);
         }
-        m4.j1.P0(f0Var, wVar, this.b, t1Var);
+        m4.i1.P0(e0Var, vVar, this.b, s1Var);
     }
 
-    @Override // m4.p0
-    public void f(m4.w wVar) {
+    @Override // m4.o0
+    public void e(m4.v vVar) {
         byte[] bArr;
-        m4.q0 q0Var = (m4.q0) this.c;
+        m4.p0 p0Var = (m4.p0) this.c;
         n4.h hVar = (n4.h) this.d;
         if (TextUtils.isEmpty(hVar.a)) {
             e2.a.l("MediaSessionLegacyStub", "onAddQueueItem(): Media ID shouldn't be empty");
             return;
         }
-        int i10 = m4.o.a;
+        int i10 = m4.n.a;
         String str = hVar.a;
         b2.d0 d0Var = new b2.d0();
         e9.l0 l0Var = e9.n0.b;
@@ -118,7 +119,7 @@ public final /* synthetic */ class b2 implements MediaDataController.KeywordResu
         r0Var.f = hVar.c;
         r0Var.g = hVar.d;
         r0Var.n = hVar.h;
-        r0Var.i = m4.o.c(null);
+        r0Var.i = m4.n.c(null);
         Bitmap bitmap = hVar.e;
         if (bitmap == null) {
             bArr = null;
@@ -187,8 +188,15 @@ public final /* synthetic */ class b2 implements MediaDataController.KeywordResu
             r0Var.I = bundle2;
         }
         r0Var.s = Boolean.TRUE;
-        j9.y l4 = q0Var.g.l(wVar, e9.n0.y(new b2.p0(str2, new b2.f0(d0Var), null, new b2.j0(i0Var), new b2.s0(r0Var), l0Var3)));
-        l4.a(new j9.u(0, l4, new a5.a(q0Var, wVar, this.b)), j9.r.a);
+        j9.y l4 = p0Var.g.l(vVar, e9.n0.y(new b2.p0(str2, new b2.f0(d0Var), null, new b2.j0(i0Var), new b2.s0(r0Var), l0Var3)));
+        l4.a(new j9.u(0, l4, new a5.a(p0Var, vVar, this.b)), j9.r.a);
+    }
+
+    @Override // t5.b
+    public Object f() {
+        ea.b bVar = (ea.b) this.c;
+        ((h3) bVar.d).U((l5.i) this.d, this.b + 1, false);
+        return null;
     }
 
     @Override // org.telegram.ui.ActionBar.z1
@@ -277,15 +285,15 @@ public final /* synthetic */ class b2 implements MediaDataController.KeywordResu
                 LaunchActivity launchActivity = (LaunchActivity) this.c;
                 HashMap hashMap = (HashMap) this.d;
                 ArrayList arrayList = launchActivity.d0;
-                if (!arrayList.isEmpty() && AndroidUtilities.isMapsInstalled((m2) i2.d.g(1, arrayList))) {
-                    nd0 nd0Var = new nd0(0);
-                    nd0Var.F0 = new i2.r(hashMap, this.b, 12);
-                    launchActivity.p0(nd0Var);
+                if (!arrayList.isEmpty() && AndroidUtilities.isMapsInstalled((m2) i2.d.h(1, arrayList))) {
+                    ld0 ld0Var = new ld0(0);
+                    ld0Var.F0 = new i2.r(hashMap, this.b, 12);
+                    launchActivity.p0(ld0Var);
                     break;
                 }
                 break;
             case 13:
-                ((nd0) this.c).v0(RichMessageLayout.PART_MAX_HEIGHT_DP, (TLRPC.User) this.d, this.b);
+                ((ld0) this.c).v0(RichMessageLayout.PART_MAX_HEIGHT_DP, (TLRPC.User) this.d, this.b);
                 break;
             case 14:
                 PasscodeActivity.U((PasscodeActivity) this.c, (ud0) this.d, this.b);
@@ -294,13 +302,6 @@ public final /* synthetic */ class b2 implements MediaDataController.KeywordResu
                 SessionsActivity.X((SessionsActivity) this.c, this.b, (boolean[]) this.d);
                 break;
         }
-    }
-
-    @Override // t5.b
-    public Object h() {
-        ea.b bVar = (ea.b) this.c;
-        ((li.k) bVar.d).U((l5.i) this.d, this.b + 1, false);
-        return null;
     }
 
     @Override // e2.o

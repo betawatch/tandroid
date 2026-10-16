@@ -3,16 +3,16 @@ package org.telegram.messenger;
 import android.content.Context;
 import com.google.android.gms.tasks.TaskExecutors;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class LanguageDetector {
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public interface ExceptionCallback {
         void run(Exception exc);
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public interface StringCallback {
         void run(String str);
     }
@@ -70,6 +70,6 @@ public class LanguageDetector {
                 return;
             }
         }
-        w7.t7.a().g(str).addOnSuccessListener(new e0(stringCallback, 5)).addOnFailureListener(new e0(exceptionCallback, 6));
+        w7.t7.a().g(str).addOnSuccessListener(new d0(stringCallback, 5)).addOnFailureListener(new d0(exceptionCallback, 6));
     }
 }

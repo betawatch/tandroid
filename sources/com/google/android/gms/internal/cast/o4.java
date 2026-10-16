@@ -2,7 +2,7 @@ package com.google.android.gms.internal.cast;
 
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class o4 implements d6.h {
     public final /* synthetic */ z5 a;
@@ -53,7 +53,7 @@ public final class o4 implements d6.h {
     }
 
     @Override // d6.h
-    public void i(d6.f fVar, int i10) {
+    public void h(d6.f fVar, int i10) {
         a5.a aVar = new a5.a(9, 2);
         aVar.c = Integer.valueOf(i10);
         z5 z5Var = this.a;
@@ -63,7 +63,7 @@ public final class o4 implements d6.h {
     }
 
     @Override // d6.h
-    public void k(d6.f fVar) {
+    public void j(d6.f fVar) {
         d6.c cVar = (d6.c) fVar;
         a5.a aVar = new a5.a(2, 2);
         z5 z5Var = this.a;
@@ -90,7 +90,7 @@ public final class o4 implements d6.h {
     }
 
     @Override // d6.h
-    public void q(d6.f fVar, String str) {
+    public void r(d6.f fVar, String str) {
         x6 x6Var = new x6(new a5.a(4, 2));
         z5 z5Var = this.a;
         z5.E(z5Var, x6Var);
@@ -111,7 +111,7 @@ public final class o4 implements d6.h {
     }
 
     @Override // d6.h
-    public void r(d6.f fVar, int i10) {
+    public void s(d6.f fVar, int i10) {
         a5.a aVar = new a5.a(6, 2);
         aVar.c = Integer.valueOf(i10);
         x6 x6Var = new x6(aVar);

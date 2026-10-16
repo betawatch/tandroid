@@ -21,9 +21,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public abstract class wg extends View implements l80 {
+public abstract class wg extends View implements k80 {
     public boolean E;
     public boolean F;
     public Drawable G;
@@ -117,7 +117,7 @@ public abstract class wg extends View implements l80 {
         r6Var.b = 17;
     }
 
-    @Override // org.telegram.ui.Components.l80
+    @Override // org.telegram.ui.Components.k80
     public final void a(RectF rectF) {
         float circleWidth = getCircleWidth();
         float circleHeight = getCircleHeight();
@@ -140,7 +140,7 @@ public abstract class wg extends View implements l80 {
         this.j0.start();
     }
 
-    @Override // org.telegram.ui.Components.l80
+    @Override // org.telegram.ui.Components.k80
     public final void c(Canvas canvas, float f7) {
         float lerp;
         float lerp2;
@@ -236,7 +236,7 @@ public abstract class wg extends View implements l80 {
     public abstract boolean f();
 
     public final void g(int i10, boolean z10) {
-        this.c0.t(i10 > 0 ? i2.d.i(i10, "") : "", z10, true);
+        this.c0.t(i10 > 0 ? i2.d.j(i10, "") : "", z10, true);
         invalidate();
     }
 
@@ -279,7 +279,7 @@ public abstract class wg extends View implements l80 {
         this.s = i10;
         r6 r6Var = this.w;
         if (j10 > 0) {
-            r6Var.t(zh.p7.W0(false, org.telegram.messenger.q.i(j10 * Math.max(1, this.s), ',', new StringBuilder("⭐️")), this.O), z10, true);
+            r6Var.t(zh.p7.W0(false, org.telegram.messenger.g0.h(j10 * Math.max(1, this.s), ',', new StringBuilder("⭐️")), this.O), z10, true);
         } else {
             r6Var.t("", z10, true);
         }
@@ -330,7 +330,7 @@ public abstract class wg extends View implements l80 {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         Canvas canvas2;
-        int u10;
+        int r10;
         int measuredHeight;
         float f7;
         float f10;
@@ -374,18 +374,18 @@ public abstract class wg extends View implements l80 {
         }
         Drawable drawable = e() ? this.d : this.c;
         if (this.E) {
-            u10 = Math.round((rectF.right - (rectF.height() / 2.0f)) - (drawable.getIntrinsicWidth() / 2.0f));
+            r10 = Math.round((rectF.right - (rectF.height() / 2.0f)) - (drawable.getIntrinsicWidth() / 2.0f));
             measuredHeight = Math.round(((rectF.height() / 2.0f) + rectF.top) - (drawable.getIntrinsicHeight() / 2.0f));
         } else {
-            u10 = org.telegram.ui.Cells.d0.u(2, getMeasuredWidth() - (getMeasuredHeight() / 2), drawable);
+            r10 = org.telegram.ui.Cells.c1.r(2, getMeasuredWidth() - (getMeasuredHeight() / 2), drawable);
             measuredHeight = (getMeasuredHeight() - drawable.getIntrinsicHeight()) / 2;
             if (d()) {
                 measuredHeight -= AndroidUtilities.dp(1.0f);
             } else {
-                u10 += AndroidUtilities.dp(2.0f);
+                r10 += AndroidUtilities.dp(2.0f);
             }
         }
-        int i13 = u10;
+        int i13 = r10;
         int i14 = measuredHeight;
         float e = this.V.e(this.T);
         float e7 = this.P.e(f());

@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class qk0 extends FrameLayout {
     public pk0 E;
@@ -73,13 +73,13 @@ public final class qk0 extends FrameLayout {
         ik0Var.j(new kk0(this, b0Var));
         ik0Var.setVerticalScrollBarEnabled(true);
         ik0Var.setAlpha(0.0f);
-        addView(ik0Var, w7.a6.d(-1.0f, -1));
+        addView(ik0Var, w7.z5.d(-1.0f, -1));
         lk0 lk0Var = new lk0(this, context, c6Var);
         this.h = lk0Var;
         lk0Var.f(org.telegram.ui.ActionBar.g6.G8, org.telegram.ui.ActionBar.g6.i6, -1);
         lk0Var.setIsSingleCell(true);
         lk0Var.setItemsCount(this.a);
-        addView(lk0Var, w7.a6.d(-1.0f, -1));
+        addView(lk0Var, w7.z5.d(-1.0f, -1));
         if (reaction != null && (reaction instanceof TLRPC.TL_reactionCustomEmoji) && !MessagesController.getInstance(i10).premiumFeaturesBlocked()) {
             arrayList.clear();
             arrayList.add(ah.i1.d(reaction));
@@ -128,12 +128,12 @@ public final class qk0 extends FrameLayout {
             arrayList.addAll(hashSet);
             qk0Var.i();
         }
-        Collections.sort(arrayList2, Comparator$-CC.comparingInt(new bi.s6(12)));
+        Collections.sort(arrayList2, Comparator$-CC.comparingInt(new bi.s6(13)));
         qk0Var.f.l();
         if (!qk0Var.w) {
             ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
             duration.setInterpolator(es.f);
-            duration.addUpdateListener(new g80(qk0Var, 6));
+            duration.addUpdateListener(new f80(qk0Var, 6));
             duration.addListener(new k90(qk0Var, 10));
             duration.start();
             qk0Var.j();
@@ -244,7 +244,7 @@ public final class qk0 extends FrameLayout {
         }
         arrayList.isEmpty();
         arrayList.addAll(arrayList2);
-        Collections.sort(arrayList, Comparator$-CC.comparingInt(new bi.s6(11)));
+        Collections.sort(arrayList, Comparator$-CC.comparingInt(new bi.s6(12)));
         this.f.l();
         j();
     }
@@ -288,7 +288,7 @@ public final class qk0 extends FrameLayout {
             int dp = AndroidUtilities.dp(size * 50);
             ub0 ub0Var = this.J;
             if (ub0Var != null) {
-                dp = org.telegram.messenger.yh.c(8.0f, ub0Var.getMeasuredHeight(), dp);
+                dp = org.telegram.messenger.g0.C(8.0f, ub0Var.getMeasuredHeight(), dp);
             }
             ik0 ik0Var = this.e;
             if (ik0Var.getMeasuredHeight() != 0) {

@@ -29,12 +29,12 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.br;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.i61;
-import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.k80;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class z0 extends FrameLayout implements l80 {
+public final class z0 extends FrameLayout implements k80 {
     public final TextView E;
     public final TextView F;
     public final br[] G;
@@ -71,57 +71,57 @@ public final class z0 extends FrameLayout implements l80 {
         v0 v0Var = new v0(this, context);
         this.h = v0Var;
         v0Var.setOrientation(0);
-        addView(v0Var, w7.a6.a(-2.0f, 0.0f, 0.5f, 0.0f, 0.5f, -2, 51));
+        addView(v0Var, w7.z5.a(-2.0f, 0.0f, 0.5f, 0.0f, 0.5f, -2, 51));
         this.x = new org.telegram.ui.Components.k9((org.telegram.ui.ActionBar.c6) null);
         org.telegram.ui.Components.z9 z9Var = new org.telegram.ui.Components.z9(context);
         this.w = z9Var;
         z9Var.setRoundRadius(AndroidUtilities.dp(11.0f));
-        v0Var.addView(z9Var, w7.a6.p(22, 22, 0.0f, 51, 3, 2, 3, 2));
+        v0Var.addView(z9Var, w7.z5.p(22, 22, 0.0f, 51, 3, 2, 3, 2));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        v0Var.addView(linearLayout, w7.a6.p(-2, -2, 1.0f, 51, 4, 3, 7, 3));
+        v0Var.addView(linearLayout, w7.z5.p(-2, -2, 1.0f, 51, 4, 3, 7, 3));
         LinearLayout linearLayout2 = new LinearLayout(context);
         this.n = linearLayout2;
         linearLayout2.setOrientation(0);
         linearLayout2.setVisibility(8);
-        linearLayout.addView(linearLayout2, w7.a6.n(-2, -2));
+        linearLayout.addView(linearLayout2, w7.z5.n(-2, -2));
         wh.n nVar = new wh.n(context);
         this.r = nVar;
         nVar.setTextColor(-1);
         nVar.setTextSize(1, 14.0f);
         nVar.setGravity(3);
         nVar.setTypeface(AndroidUtilities.bold());
-        linearLayout2.addView(nVar, w7.a6.p(-2, -2, 1.0f, 51, 0, 0, 16, 0));
+        linearLayout2.addView(nVar, w7.z5.p(-2, -2, 1.0f, 51, 0, 0, 16, 0));
         wh.n nVar2 = new wh.n(context);
         this.s = nVar2;
         nVar2.setTextColor(org.telegram.ui.ActionBar.g6.m1(0.55f, -1));
         nVar2.setTextSize(1, 12.0f);
         nVar2.setGravity(5);
-        linearLayout2.addView(nVar2, w7.a6.p(-2, -2, 0.0f, 53, 0, 0, 0, 0));
+        linearLayout2.addView(nVar2, w7.z5.p(-2, -2, 0.0f, 53, 0, 0, 0, 0));
         wh.n nVar3 = new wh.n(context);
         this.y = nVar3;
         nVar3.setTextColor(-1);
         nVar3.setTextSize(1, 14.0f);
         nVar3.setShadowLayer(AndroidUtilities.dp(2.5f), 0.0f, AndroidUtilities.dp(1.5f), org.telegram.ui.ActionBar.g6.m1(0.6f, -16777216));
         NotificationCenter.listenEmojiLoading(nVar3);
-        linearLayout.addView(nVar3, w7.a6.n(-2, -2));
+        linearLayout.addView(nVar3, w7.z5.n(-2, -2));
         TextView textView = new TextView(context);
         this.E = textView;
         textView.setTextColor(-1);
         textView.setTextSize(1, 11.0f);
         textView.setPadding(AndroidUtilities.dp(4.66f), 0, AndroidUtilities.dp(4.66f), 0);
         textView.setVisibility(8);
-        v0Var.addView(textView, w7.a6.p(-2, 16, 0.0f, 21, -3, 0, 6, 0));
+        v0Var.addView(textView, w7.z5.p(-2, 16, 0.0f, 21, -3, 0, 6, 0));
         TextView textView2 = new TextView(context);
         this.F = textView2;
         textView2.setTextColor(-1);
         textView2.setAlpha(0.65f);
         textView2.setTextSize(1, 11.0f);
         textView2.setVisibility(8);
-        v0Var.addView(textView2, w7.a6.p(-2, -2, 0.0f, 85, 0, 3, 10, 0));
+        v0Var.addView(textView2, w7.z5.p(-2, -2, 0.0f, 85, 0, 3, 10, 0));
     }
 
-    @Override // org.telegram.ui.Components.l80
+    @Override // org.telegram.ui.Components.k80
     public final void a(RectF rectF) {
         rectF.set(0.0f, 0.0f, getWidth(), getHeight());
     }
@@ -151,7 +151,7 @@ public final class z0 extends FrameLayout implements l80 {
         this.J.start();
     }
 
-    @Override // org.telegram.ui.Components.l80
+    @Override // org.telegram.ui.Components.k80
     public final void c(Canvas canvas, float f7) {
         v0 v0Var = this.h;
         if (v0Var.getBackground() == null) {
@@ -234,7 +234,7 @@ public final class z0 extends FrameLayout implements l80 {
             } else {
                 i10 = 33;
             }
-            spannableStringBuilder.setSpan(new i61(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), i10);
+            spannableStringBuilder.setSpan(new j61(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), i10);
             spannableStringBuilder.append((CharSequence) " ");
         } else {
             z10 = z13;
@@ -324,14 +324,14 @@ public final class z0 extends FrameLayout implements l80 {
                 textView.setText("");
                 textView2.setVisibility(0);
                 textView2.setBackground(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(13.0f), org.telegram.ui.ActionBar.g6.m1(0.25f, b12)));
-                textView2.setText(zh.p7.V0(false, org.telegram.messenger.q.i(e1Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.G, AndroidUtilities.dp(0.66f), 1.0f));
+                textView2.setText(zh.p7.V0(false, org.telegram.messenger.g0.h(e1Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.G, AndroidUtilities.dp(0.66f), 1.0f));
                 br brVar2 = this.G[0];
                 if (brVar2 != null) {
                     brVar2.draw = this.b;
                 }
             } else {
                 textView.setVisibility(0);
-                textView.setText(zh.p7.V0(false, org.telegram.messenger.q.i(e1Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.H, 0.0f, 1.0f));
+                textView.setText(zh.p7.V0(false, org.telegram.messenger.g0.h(e1Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.H, 0.0f, 1.0f));
                 textView2.setVisibility(8);
                 textView2.setText("");
             }

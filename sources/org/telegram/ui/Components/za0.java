@@ -16,7 +16,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class za0 extends xv0 {
     public AnimatorSet f2;
@@ -39,7 +39,7 @@ public final class za0 extends xv0 {
     }
 
     @Override // org.telegram.ui.Components.xv0
-    public final void D0(SparseArray sparseArray) {
+    public final void E0(SparseArray sparseArray) {
         int size = sparseArray.size();
         cb0 cb0Var = this.i2;
         cb0Var.I = sparseArray;
@@ -59,7 +59,7 @@ public final class za0 extends xv0 {
     }
 
     @Override // org.telegram.ui.Components.xv0
-    public final void K0(boolean z10) {
+    public final void L0(boolean z10) {
         int i10;
         cb0 cb0Var = this.i2;
         Activity parentActivity = cb0Var.getParentActivity();
@@ -69,13 +69,19 @@ public final class za0 extends xv0 {
     }
 
     @Override // org.telegram.ui.Components.xv0
-    public final void L0() {
-        super.L0();
+    public final void M0() {
+        super.M0();
         this.i2.a0();
     }
 
     @Override // org.telegram.ui.Components.xv0
-    public final void M0(float f7) {
+    public final boolean N() {
+        int i10 = this.i2.a;
+        return i10 == 1 || i10 == 2 || i10 == 3;
+    }
+
+    @Override // org.telegram.ui.Components.xv0
+    public final void N0(float f7) {
         cb0 cb0Var = this.i2;
         if (cb0Var.a != 1) {
             return;
@@ -93,13 +99,7 @@ public final class za0 extends xv0 {
     }
 
     @Override // org.telegram.ui.Components.xv0
-    public final boolean N() {
-        int i10 = this.i2.a;
-        return i10 == 1 || i10 == 2 || i10 == 3;
-    }
-
-    @Override // org.telegram.ui.Components.xv0
-    public final void N0(boolean z10) {
+    public final void O0(boolean z10) {
         bb0 bb0Var = this.i2.R;
         if (bb0Var != null) {
             bb0Var.setScrolling(z10);
@@ -112,10 +112,10 @@ public final class za0 extends xv0 {
     }
 
     @Override // org.telegram.ui.Components.xv0
-    public final void b1(boolean z10) {
+    public final void c1(boolean z10) {
         cb0 cb0Var = this.i2;
         if (cb0Var.a == 0) {
-            super.b1(z10);
+            super.c1(z10);
             return;
         }
         if (this.C1 == z10) {
@@ -129,7 +129,7 @@ public final class za0 extends xv0 {
         int i10 = cb0Var.a;
         if (i10 == 1 || i10 == 2) {
             if (z10) {
-                g1(null);
+                h1(null);
             }
             this.L1 = z10;
         }
@@ -220,7 +220,7 @@ public final class za0 extends xv0 {
     }
 
     @Override // org.telegram.ui.Components.xv0
-    public final boolean v0() {
+    public final boolean w0() {
         int i10 = this.i2.a;
         return i10 == 1 || i10 == 2;
     }

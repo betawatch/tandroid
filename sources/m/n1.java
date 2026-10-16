@@ -1,34 +1,55 @@
 package m;
 
-import android.view.View;
-import android.widget.AbsListView;
-import android.widget.AdapterView;
-import java.lang.reflect.Method;
+import android.R;
+import android.graphics.PorterDuff;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class n1 {
-    public static final Method a;
-    public static final Method b;
-    public static final Method c;
-    public static final boolean d;
+    public static final int[] a = {R.attr.state_checked};
+    public static final int[] b = new int[0];
 
     static {
-        try {
-            Class cls = Integer.TYPE;
-            Class cls2 = Float.TYPE;
-            Method declaredMethod = AbsListView.class.getDeclaredMethod("positionSelector", cls, View.class, Boolean.TYPE, cls2, cls2);
-            a = declaredMethod;
-            declaredMethod.setAccessible(true);
-            Method declaredMethod2 = AdapterView.class.getDeclaredMethod("setSelectedPositionInt", cls);
-            b = declaredMethod2;
-            declaredMethod2.setAccessible(true);
-            Method declaredMethod3 = AdapterView.class.getDeclaredMethod("setNextSelectedPositionInt", cls);
-            c = declaredMethod3;
-            declaredMethod3.setAccessible(true);
-            d = true;
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
+        new Rect();
+    }
+
+    public static void a(Drawable drawable) {
+        String name = drawable.getClass().getName();
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 < 29 || i10 >= 31 || !"android.graphics.drawable.ColorStateListDrawable".equals(name)) {
+            return;
+        }
+        int[] state = drawable.getState();
+        if (state == null || state.length == 0) {
+            drawable.setState(a);
+        } else {
+            drawable.setState(b);
+        }
+        drawable.setState(state);
+    }
+
+    public static PorterDuff.Mode b(int i10, PorterDuff.Mode mode) {
+        if (i10 == 3) {
+            return PorterDuff.Mode.SRC_OVER;
+        }
+        if (i10 == 5) {
+            return PorterDuff.Mode.SRC_IN;
+        }
+        if (i10 == 9) {
+            return PorterDuff.Mode.SRC_ATOP;
+        }
+        switch (i10) {
+            case 14:
+                return PorterDuff.Mode.MULTIPLY;
+            case 15:
+                return PorterDuff.Mode.SCREEN;
+            case 16:
+                return PorterDuff.Mode.ADD;
+            default:
+                return mode;
         }
     }
 }

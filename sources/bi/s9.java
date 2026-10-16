@@ -38,9 +38,9 @@ import org.telegram.ui.Components.ad;
 import org.telegram.ui.Components.b30;
 import org.telegram.ui.Components.br;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.h11;
+import org.telegram.ui.Components.i11;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public abstract class s9 {
     public static b30 b;
@@ -50,7 +50,7 @@ public abstract class s9 {
     public static RectF f;
     public static Paint g;
     public static Paint h;
-    public static h11 i;
+    public static i11 i;
     public static int j;
     public static BitmapDrawable m;
     public static final b30[] a = new b30[2];
@@ -734,7 +734,7 @@ public abstract class s9 {
     public static void k(Canvas canvas, RectF rectF, float f7, boolean z10, float f10) {
         Canvas canvas2;
         if (i == null) {
-            i = new h11(LocaleController.getString(R.string.LiveStoryBadge), 9.66f, AndroidUtilities.bold());
+            i = new i11(LocaleController.getString(R.string.LiveStoryBadge), 9.66f, AndroidUtilities.bold());
         }
         if (g == null) {
             Paint paint = new Paint(1);
@@ -766,10 +766,10 @@ public abstract class s9 {
             f.set(rectF.centerX() - f11, rectF.bottom - f12, rectF.centerX() + f11, rectF.bottom + f13);
             RectF rectF3 = f;
             canvas.drawRoundRect(rectF3, rectF3.height() / 2.0f, f.height() / 2.0f, h);
-            h11 h11Var = i;
+            i11 i11Var = i;
             RectF rectF4 = f;
             canvas2 = canvas;
-            h11Var.c(rectF4.left + lerp, rectF4.centerY(), f7, -1, canvas2);
+            i11Var.c(rectF4.left + lerp, rectF4.centerY(), f7, -1, canvas2);
         } else {
             canvas2 = canvas;
         }

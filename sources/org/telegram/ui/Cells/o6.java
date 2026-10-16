@@ -32,7 +32,7 @@ import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.jx0;
 import org.telegram.ui.Components.pt;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class o6 extends FrameLayout {
     public static final bd0 H;
@@ -86,7 +86,7 @@ public class o6 extends FrameLayout {
         this.c = n6Var;
         float f7 = i12;
         n6Var.setRoundRadius(AndroidUtilities.dp(f7));
-        addView(n6Var, w7.a6.i(f7, f7, 8388627, 10.0f, 0.0f, 0.0f, 0.0f));
+        addView(n6Var, w7.z5.i(f7, f7, 8388627, 10.0f, 0.0f, 0.0f, 0.0f));
         if (i10 == 1) {
             setClipChildren(false);
         }
@@ -102,7 +102,7 @@ public class o6 extends FrameLayout {
         l5Var.setRightDrawableOutside(true);
         float f10 = i10 == 1 ? 7.66f : 5.33f;
         float f11 = i10 == 1 ? 73.0f : 55.0f;
-        addView(l5Var, w7.a6.i(-1.0f, -2.0f, 55, f11, f10, 12.0f, 0.0f));
+        addView(l5Var, w7.z5.i(-1.0f, -2.0f, 55, f11, f10, 12.0f, 0.0f));
         jx0 jx0Var = new jx0(this);
         this.v = jx0Var;
         l5Var.setDrawablePadding(AndroidUtilities.dp(3.0f));
@@ -114,20 +114,20 @@ public class o6 extends FrameLayout {
         h5Var.setEllipsizeByGradient(true);
         h5Var.setImportantForAccessibility(2);
         h5Var.setTranslationX(LocaleController.isRTL ? AndroidUtilities.dp(30.0f) : 0.0f);
-        addView(h5Var, w7.a6.i(-1.0f, -2.0f, 55, f11, i10 == 1 ? 24.0f : 19.0f, 20.0f, 0.0f));
+        addView(h5Var, w7.z5.i(-1.0f, -2.0f, 55, f11, i10 == 1 ? 24.0f : 19.0f, 20.0f, 0.0f));
         if (z11) {
             org.telegram.ui.Components.z9 z9Var = new org.telegram.ui.Components.z9(context);
             this.f = z9Var;
-            addView(z9Var, w7.a6.i(24.0f, 24.0f, 8388629, 0.0f, 0.0f, 12.0f, 0.0f));
+            addView(z9Var, w7.z5.i(24.0f, 24.0f, 8388629, 0.0f, 0.0f, 12.0f, 0.0f));
             org.telegram.ui.Components.z9 z9Var2 = new org.telegram.ui.Components.z9(context);
             this.h = z9Var2;
-            addView(z9Var2, w7.a6.i(22.0f, 35.0f, 8388629, 0.0f, 0.0f, 12.0f, 0.0f));
+            addView(z9Var2, w7.z5.i(22.0f, 35.0f, 8388629, 0.0f, 0.0f, 12.0f, 0.0f));
         }
         if (z10) {
             View view = new View(context);
             this.s = view;
             view.setBackground(org.telegram.ui.ActionBar.g6.L0(false));
-            addView(view, w7.a6.d(-1.0f, -1));
+            addView(view, w7.z5.d(-1.0f, -1));
         }
     }
 

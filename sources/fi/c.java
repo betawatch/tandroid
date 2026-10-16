@@ -8,12 +8,12 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Cells.b7;
+import org.telegram.ui.Cells.a7;
 import org.telegram.ui.Cells.e9;
-import org.telegram.ui.Components.z61;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.f20;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -39,9 +39,9 @@ public final /* synthetic */ class c implements Utilities.CallbackReturn {
                 return LocaleController.formatPluralString("Minutes", ((Integer) obj).intValue(), new Object[0]);
             case 5:
                 View view = (View) obj;
-                return Boolean.valueOf(((view instanceof e9) || (view instanceof b7) || (view instanceof f20) || (view instanceof org.telegram.ui.Cells.v3) || (view instanceof org.telegram.ui.Cells.b2) || Objects.equals(view.getTag(), -33024)) ? false : true);
+                return Boolean.valueOf(((view instanceof e9) || (view instanceof a7) || (view instanceof f20) || (view instanceof org.telegram.ui.Cells.v3) || (view instanceof org.telegram.ui.Cells.b2) || Objects.equals(view.getTag(), -33024)) ? false : true);
             case 6:
-                return Boolean.valueOf(z61.K(((Integer) obj).intValue()));
+                return Boolean.valueOf(a71.K(((Integer) obj).intValue()));
             case 7:
                 TL_wallet.exportSecretPhrase exportsecretphrase = new TL_wallet.exportSecretPhrase();
                 exportsecretphrase.password = (TLRPC.InputCheckPasswordSRP) obj;

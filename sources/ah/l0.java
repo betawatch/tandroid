@@ -14,8 +14,8 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.ai;
-import org.telegram.ui.Components.am;
 import org.telegram.ui.Components.az0;
+import org.telegram.ui.Components.bz0;
 import org.telegram.ui.Components.cd0;
 import org.telegram.ui.Components.dh;
 import org.telegram.ui.Components.ib;
@@ -31,21 +31,21 @@ import org.telegram.ui.Components.voip.y2;
 import org.telegram.ui.Components.wb;
 import org.telegram.ui.Components.xu;
 import org.telegram.ui.Components.z9;
-import org.telegram.ui.Components.zy0;
+import org.telegram.ui.Components.zl;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.bv0;
+import org.telegram.ui.av0;
 import org.telegram.ui.bx;
+import org.telegram.ui.fj1;
 import org.telegram.ui.fo;
 import org.telegram.ui.g31;
-import org.telegram.ui.gj1;
 import org.telegram.ui.l31;
 import org.telegram.ui.xy;
 import org.telegram.ui.yy;
 import org.telegram.ui.zo;
 import rg.c2;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -156,10 +156,10 @@ public final /* synthetic */ class l0 implements ValueAnimator.AnimatorUpdateLis
                 aVar.c(intValue);
                 break;
             case 8:
-                org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) this.b;
-                org.telegram.ui.Cells.x0 x0Var = (org.telegram.ui.Cells.x0) this.c;
-                w0Var.c = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                x0Var.invalidate();
+                org.telegram.ui.Cells.v0 v0Var = (org.telegram.ui.Cells.v0) this.b;
+                org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) this.c;
+                v0Var.c = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                w0Var.invalidate();
                 break;
             case 9:
                 og.a aVar2 = (og.a) this.b;
@@ -234,7 +234,7 @@ public final /* synthetic */ class l0 implements ValueAnimator.AnimatorUpdateLis
                 ((ib) this.b).accept(Float.valueOf(((wb) this.c).getTranslationY()));
                 break;
             case 14:
-                ((am) this.b).accept(Float.valueOf(((wb) this.c).getTranslationY()));
+                ((zl) this.b).accept(Float.valueOf(((wb) this.c).getTranslationY()));
                 break;
             case 15:
                 ai aiVar = (ai) this.b;
@@ -263,15 +263,15 @@ public final /* synthetic */ class l0 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 17:
-                az0 az0Var = (az0) this.b;
-                zy0[] zy0VarArr = (zy0[]) this.c;
-                az0Var.getClass();
+                bz0 bz0Var = (bz0) this.b;
+                az0[] az0VarArr = (az0[]) this.c;
+                bz0Var.getClass();
                 float floatValue9 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                while (i10 < zy0VarArr.length) {
-                    az0Var.c[i10] = (az0Var.d[i10] * floatValue9) + ((1.0f - floatValue9) * az0Var.e[i10]);
+                while (i10 < az0VarArr.length) {
+                    bz0Var.c[i10] = (bz0Var.d[i10] * floatValue9) + ((1.0f - floatValue9) * bz0Var.e[i10]);
                     i10++;
                 }
-                az0Var.invalidate();
+                bz0Var.invalidate();
                 break;
             case 18:
                 org.telegram.ui.Components.voip.l0 l0Var = (org.telegram.ui.Components.voip.l0) this.b;
@@ -326,9 +326,9 @@ public final /* synthetic */ class l0 implements ValueAnimator.AnimatorUpdateLis
                 if (imageView != null) {
                     imageView.invalidateOutline();
                 }
-                bv0 bv0Var = photoViewer.E2;
-                if (bv0Var != null) {
-                    bv0Var.invalidateOutline();
+                av0 av0Var = photoViewer.E2;
+                if (av0Var != null) {
+                    av0Var.invalidateOutline();
                     break;
                 }
                 break;
@@ -368,14 +368,14 @@ public final /* synthetic */ class l0 implements ValueAnimator.AnimatorUpdateLis
                 aVar3.b = intValue2;
                 break;
             case 26:
-                gj1 gj1Var = (gj1) this.b;
+                fj1 fj1Var = (fj1) this.b;
                 ui uiVar = (ui) this.c;
-                gj1Var.getClass();
-                gj1Var.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                fj1Var.getClass();
+                fj1Var.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 uiVar.invalidate();
                 break;
             case 27:
-                ((View) ((g.a0) ((k6.h) this.b).b).d.getParent()).invalidate();
+                ((View) ((g.a0) ((a4.l) this.b).b).d.getParent()).invalidate();
                 break;
             case 28:
                 c2 c2Var = (c2) this.b;

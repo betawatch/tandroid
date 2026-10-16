@@ -7,7 +7,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.camera.CameraSession;
 import org.telegram.messenger.camera.Size;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r50 implements Runnable {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class r50 implements Runnable {
     */
     public final void run() {
         boolean z10;
-        a60 a60Var;
+        b60 b60Var;
         Handler handler;
         Camera.Size currentPictureSize;
         Camera.Size currentPreviewSize;
@@ -70,8 +70,8 @@ public final /* synthetic */ class r50 implements Runnable {
                                 FileLog.d("InstantCamera camera initied");
                             }
                             p60Var2.t0.setInitied();
-                            if (z10 && (a60Var = p60Var2.m0) != null && (handler = a60Var.getHandler()) != null) {
-                                a60Var.sendMessage(handler.obtainMessage(2), 0);
+                            if (z10 && (b60Var = p60Var2.m0) != null && (handler = b60Var.getHandler()) != null) {
+                                b60Var.sendMessage(handler.obtainMessage(2), 0);
                                 break;
                             }
                         }
@@ -101,12 +101,12 @@ public final /* synthetic */ class r50 implements Runnable {
                 break;
             default:
                 p60 p60Var3 = this.b;
-                a60 a60Var2 = p60Var3.m0;
-                if (a60Var2 != null) {
+                b60 b60Var2 = p60Var3.m0;
+                if (b60Var2 != null) {
                     CameraSession cameraSession = p60Var3.t0;
-                    Handler handler2 = a60Var2.getHandler();
+                    Handler handler2 = b60Var2.getHandler();
                     if (handler2 != null) {
-                        a60Var2.sendMessage(handler2.obtainMessage(3, cameraSession), 0);
+                        b60Var2.sendMessage(handler2.obtainMessage(3, cameraSession), 0);
                         break;
                     }
                 }

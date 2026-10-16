@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class dt0 implements dm0 {
     public final /* synthetic */ ts0 a;
@@ -67,25 +67,25 @@ public final class dt0 implements dm0 {
                                 }
                                 i12++;
                             }
-                            return xv0Var.I0(chatParticipant, true, view2);
+                            return xv0Var.J0(chatParticipant, true, view2);
                         }
                     } else {
-                        if (i13 == 1 && (view2 instanceof org.telegram.ui.Cells.k7)) {
-                            return xv0Var.H0(((org.telegram.ui.Cells.k7) view2).getMessage(), view2, 0, true);
+                        if (i13 == 1 && (view2 instanceof org.telegram.ui.Cells.j7)) {
+                            return xv0Var.I0(((org.telegram.ui.Cells.j7) view2).getMessage(), view2, 0, true);
                         }
                         if (i13 == 3 && (view2 instanceof org.telegram.ui.Cells.n7)) {
-                            return xv0Var.H0(((org.telegram.ui.Cells.n7) view2).getMessage(), view2, 0, true);
+                            return xv0Var.I0(((org.telegram.ui.Cells.n7) view2).getMessage(), view2, 0, true);
                         }
-                        if ((i13 == 2 || i13 == 4) && (view2 instanceof org.telegram.ui.Cells.j7)) {
-                            return xv0Var.H0(((org.telegram.ui.Cells.j7) view2).getMessage(), view2, 0, true);
+                        if ((i13 == 2 || i13 == 4) && (view2 instanceof org.telegram.ui.Cells.i7)) {
+                            return xv0Var.I0(((org.telegram.ui.Cells.i7) view2).getMessage(), view2, 0, true);
                         }
                         if (i13 == 5 && (view2 instanceof org.telegram.ui.Cells.f2)) {
-                            return xv0Var.H0((MessageObject) ((org.telegram.ui.Cells.f2) view2).getParentObject(), view2, 0, true);
+                            return xv0Var.I0((MessageObject) ((org.telegram.ui.Cells.f2) view2).getParentObject(), view2, 0, true);
                         }
                         if ((i13 == 0 || (xv0.p0(i13) && xv0Var.C())) && (view2 instanceof org.telegram.ui.Cells.t7)) {
                             MessageObject messageObject = ((org.telegram.ui.Cells.t7) view2).getMessageObject();
                             if (messageObject != null) {
-                                return xv0Var.H0(messageObject, view2, ts0Var.F, true);
+                                return xv0Var.I0(messageObject, view2, ts0Var.F, true);
                             }
                         } else {
                             int i14 = ts0Var.F;
@@ -136,7 +136,7 @@ public final class dt0 implements dm0 {
                                         org.telegram.ui.ActionBar.e1 e1Var = new org.telegram.ui.ActionBar.e1(xv0Var2.getContext(), false, false);
                                         e1Var.g(LocaleController.getString(R.string.OpenChannel2), R.drawable.msg_channel, null);
                                         e1Var.setMinimumWidth(160);
-                                        e1Var.setOnClickListener(new z80(gu0Var, 15));
+                                        e1Var.setOnClickListener(new y80(gu0Var, 15));
                                         actionBarPopupWindow$ActionBarPopupWindowLayout.addView(e1Var);
                                         org.telegram.ui.ActionBar.e1 e1Var2 = new org.telegram.ui.ActionBar.e1(xv0Var2.getContext(), false, false);
                                         e1Var2.g(LocaleController.getString(R.string.ProfileJoinChannel), R.drawable.msg_addbot, null);

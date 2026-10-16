@@ -10,7 +10,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
-import n6.o;
 import w7.ga;
 import w7.ha;
 import w7.oa;
@@ -20,7 +19,7 @@ import x9.n;
 import x9.p;
 import x9.s;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class f implements Callable {
     public final /* synthetic */ int a;
@@ -43,8 +42,8 @@ public final class f implements Callable {
             case 0:
                 return (g) ((ShortcutInfoCompatSaverImpl) obj).b.get((String) obj2);
             case 1:
-                o oVar = (o) obj;
-                n nVar = (n) oVar.c;
+                n3.b bVar = (n3.b) obj;
+                n nVar = (n) bVar.c;
                 Boolean bool = (Boolean) obj2;
                 if (!bool.booleanValue()) {
                     if (Log.isLoggable("FirebaseCrashlytics", 2)) {
@@ -72,7 +71,7 @@ public final class f implements Callable {
                 }
                 sVar.h.trySetResult(null);
                 Executor executor = (Executor) nVar.e.b;
-                Task task = (Task) oVar.b;
+                Task task = (Task) bVar.b;
                 l lVar = new l();
                 lVar.b = this;
                 lVar.a = executor;

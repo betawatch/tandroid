@@ -12,7 +12,7 @@ import java.util.Iterator;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class q0 extends o6.a {
     public static final Parcelable.Creator<q0> CREATOR = new w.a(23);
@@ -82,13 +82,13 @@ public final class q0 extends o6.a {
     */
     public static byte[] d(byte[] bArr) {
         c5.f fVar;
-        n7.e0 e0Var;
-        int i10 = n7.h0.a;
-        n7.i0 i0Var = n7.g0.a;
-        int i11 = i0Var.f;
-        MessageDigest messageDigest = i0Var.e;
+        n7.f0 f0Var;
+        int i10 = n7.i0.a;
+        n7.j0 j0Var = n7.h0.a;
+        int i11 = j0Var.f;
+        MessageDigest messageDigest = j0Var.e;
         try {
-            if (i0Var.h) {
+            if (j0Var.h) {
                 try {
                     fVar = new c5.f((MessageDigest) messageDigest.clone(), i11);
                 } catch (CloneNotSupportedException unused) {
@@ -114,14 +114,14 @@ public final class q0 extends o6.a {
                 int i12 = fVar.a;
                 if (i12 == messageDigest2.getDigestLength()) {
                     byte[] digest = messageDigest2.digest();
-                    char[] cArr = n7.f0.a;
-                    e0Var = new n7.e0(digest);
+                    char[] cArr = n7.g0.a;
+                    f0Var = new n7.f0(digest);
                 } else {
                     byte[] copyOf = Arrays.copyOf(messageDigest2.digest(), i12);
-                    char[] cArr2 = n7.f0.a;
-                    e0Var = new n7.e0(copyOf);
+                    char[] cArr2 = n7.g0.a;
+                    f0Var = new n7.f0(copyOf);
                 }
-                return (byte[]) e0Var.b.clone();
+                return (byte[]) f0Var.b.clone();
             }
             fVar = new c5.f(MessageDigest.getInstance(messageDigest.getAlgorithm()), i11);
             MessageDigest messageDigest22 = (MessageDigest) fVar.c;
@@ -196,8 +196,8 @@ public final class q0 extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.g0.q(parcel, 20293);
-        w7.g0.d(parcel, 1, this.a);
-        w7.g0.r(parcel, q6);
+        int q6 = w7.f0.q(parcel, 20293);
+        w7.f0.d(parcel, 1, this.a);
+        w7.f0.r(parcel, q6);
     }
 }

@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class uy extends org.telegram.ui.Components.ka implements bi.e9 {
     public static final /* synthetic */ int t3 = 0;
@@ -68,9 +68,9 @@ public final class uy extends org.telegram.ui.Components.ka implements bi.e9 {
     public final void A1(boolean z10, org.telegram.ui.Cells.s2 s2Var) {
         SharedConfig.toggleArchiveHidden();
         yy yyVar = this.s3;
-        UndoView V3 = yyVar.V3();
+        UndoView W3 = yyVar.W3();
         if (!SharedConfig.archiveHidden) {
-            V3.l(0L, 7, null, null);
+            W3.l(0L, 7, null, null);
             B1();
             if (!z10 || s2Var == null) {
                 return;
@@ -94,7 +94,7 @@ public final class uy extends org.telegram.ui.Components.ka implements bi.e9 {
                 B1();
             }
         }
-        V3.l(0L, 6, null, null);
+        W3.l(0L, 6, null, null);
     }
 
     public final void B1() {
@@ -122,7 +122,7 @@ public final class uy extends org.telegram.ui.Components.ka implements bi.e9 {
     @Override // android.view.ViewGroup
     public final void addView(View view, int i10, ViewGroup.LayoutParams layoutParams) {
         super.addView(view, i10, layoutParams);
-        view.setTranslationY(yy.z4);
+        view.setTranslationY(yy.A4);
         view.setTranslationX(0.0f);
         view.setAlpha(1.0f);
     }
@@ -239,7 +239,7 @@ public final class uy extends org.telegram.ui.Components.ka implements bi.e9 {
                 if (this.b3 && s2Var4.b0(0, true) && (R = RecyclerView.R(s2Var4)) >= 0) {
                     getAdapter().m(R);
                 }
-                if (s2Var4.getDialogId() == yyVar.F3.getCurrentFragmetDialogId()) {
+                if (s2Var4.getDialogId() == yyVar.G3.getCurrentFragmetDialogId()) {
                     s2Var3 = s2Var4;
                     s2Var = s2Var3;
                 } else {
@@ -450,7 +450,7 @@ public final class uy extends org.telegram.ui.Components.ka implements bi.e9 {
             Paint paint5 = ae0Var.a;
             int dp = AndroidUtilities.dp(110.0f);
             int dp2 = AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 78.0f : 72.0f);
-            float measuredWidth = ((view5.getMeasuredWidth() + r9) * ae0Var.h) - org.telegram.messenger.yh.y(62.0f, 3, dp);
+            float measuredWidth = ((view5.getMeasuredWidth() + r9) * ae0Var.h) - org.telegram.messenger.g0.D(62.0f, 3, dp);
             int i24 = dp / 2;
             int i25 = measuredHeight - i24;
             paint5.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
@@ -464,9 +464,9 @@ public final class uy extends org.telegram.ui.Components.ka implements bi.e9 {
             rectF4.set(measuredWidth, i25, f28, i25 + dp);
             float f29 = ae0Var.g;
             float f30 = 35.0f;
-            int x12 = (int) (f29 < 0.5f ? org.telegram.messenger.yh.x(f29, 0.5f, 1.0f, 35.0f) : ((f29 - 0.5f) * 35.0f) / 0.5f);
-            float f31 = x12;
-            float f32 = 360 - (x12 * 2);
+            int y11 = (int) (f29 < 0.5f ? org.telegram.messenger.sk.y(f29, 0.5f, 1.0f, 35.0f) : ((f29 - 0.5f) * 35.0f) / 0.5f);
+            float f31 = y11;
+            float f32 = 360 - (y11 * 2);
             canvas.drawArc(rectF4, f31, f32, true, paint4);
             canvas.drawArc(rectF4, f31, f32, true, paint5);
             paint5.setColor(-16777216);
@@ -623,13 +623,13 @@ public final class uy extends org.telegram.ui.Components.ka implements bi.e9 {
     }
 
     public float getViewOffset() {
-        return yy.z4;
+        return yy.A4;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onDraw(Canvas canvas) {
         xy xyVar = this.e3;
-        if (xyVar.n != null && yy.z4 != 0.0f) {
+        if (xyVar.n != null && yy.A4 != 0.0f) {
             int paddingTop = getPaddingTop();
             if (paddingTop != 0) {
                 canvas.save();
@@ -664,7 +664,7 @@ public final class uy extends org.telegram.ui.Components.ka implements bi.e9 {
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         this.f3 = getPaddingTop();
-        this.s3.x3 = 0.0f;
+        this.s3.y3 = 0.0f;
         this.e3.getClass();
     }
 
@@ -680,15 +680,15 @@ public final class uy extends org.telegram.ui.Components.ka implements bi.e9 {
             s4.b1 K = xyVar.a.K(L0);
             if (K != null) {
                 int top = K.a.getTop();
-                if (xyVar.s == 0 && yyVar.W3() && xyVar.v == 2) {
+                if (xyVar.s == 0 && yyVar.X3() && xyVar.v == 2) {
                     L0 = Math.max(1, L0);
                 }
                 this.d3 = true;
-                xyVar.c.h1(L0, (int) ((top - this.f3) + yyVar.x3 + 0));
+                xyVar.c.h1(L0, (int) ((top - this.f3) + yyVar.y3 + 0));
                 this.d3 = false;
             }
         } else if (L0 == -1 && this.c3) {
-            xyVar.c.h1((xyVar.s == 0 && yyVar.W3()) ? 1 : 0, (int) yyVar.N);
+            xyVar.c.h1((xyVar.s == 0 && yyVar.X3()) ? 1 : 0, (int) yyVar.N);
         }
         this.d3 = true;
         int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
@@ -701,19 +701,19 @@ public final class uy extends org.telegram.ui.Components.ka implements bi.e9 {
             i12 += AndroidUtilities.dp(48.0f);
         }
         this.r3 = 0;
-        float P3 = yyVar.P3(false);
+        float Q3 = yyVar.Q3(false);
         org.telegram.ui.Components.xs xsVar = yyVar.J1;
         float f7 = xsVar != null ? xsVar.getMetadata().c.a : 0.0f;
-        int dp = i12 + ((int) (AndroidUtilities.dp(50.0f) * P3));
-        this.r3 += (int) (AndroidUtilities.dp(50.0f) * P3);
+        int dp = i12 + ((int) (AndroidUtilities.dp(50.0f) * Q3));
+        this.r3 += (int) (AndroidUtilities.dp(50.0f) * Q3);
         org.telegram.ui.Components.xs xsVar2 = yyVar.J1;
         if (xsVar2 != null) {
-            int c10 = (int) xsVar2.c(AndroidUtilities.lerp(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(7.0f), P3));
+            int c10 = (int) xsVar2.c(AndroidUtilities.lerp(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(7.0f), Q3));
             dp += c10;
             this.r3 += c10;
         }
-        int dp2 = dp - AndroidUtilities.dp(Math.max(P3, f7) * 5.0f);
-        this.r3 -= AndroidUtilities.dp(Math.max(P3, f7) * 5.0f);
+        int dp2 = dp - AndroidUtilities.dp(Math.max(Q3, f7) * 5.0f);
+        this.r3 -= AndroidUtilities.dp(Math.max(Q3, f7) * 5.0f);
         int k32 = yyVar.k3();
         if (dp2 != this.W2 || k32 != getPaddingBottom()) {
             setTopGlowOffset(dp2);
@@ -731,7 +731,7 @@ public final class uy extends org.telegram.ui.Components.ka implements bi.e9 {
         }
         this.d3 = false;
         if (this.c3 && yyVar.getMessagesController().dialogsLoaded) {
-            if (xyVar.s == 0 && yyVar.W3()) {
+            if (xyVar.s == 0 && yyVar.X3()) {
                 this.d3 = true;
                 ((s4.b0) getLayoutManager()).h1(1, (int) yyVar.N);
                 this.d3 = false;
@@ -739,7 +739,7 @@ public final class uy extends org.telegram.ui.Components.ka implements bi.e9 {
             this.c3 = false;
         }
         super.onMeasure(i10, i11);
-        if (yyVar.l2 || dp2 == 0 || (xyVarArr = yyVar.e0) == null || xyVarArr.length <= 1 || yyVar.l3 || (animatorSet = yyVar.f3) == null) {
+        if (yyVar.l2 || dp2 == 0 || (xyVarArr = yyVar.e0) == null || xyVarArr.length <= 1 || yyVar.m3 || (animatorSet = yyVar.g3) == null) {
             return;
         }
         animatorSet.isRunning();
@@ -782,15 +782,15 @@ public final class uy extends org.telegram.ui.Components.ka implements bi.e9 {
                                                 ArrayList arrayList = new ArrayList();
                                                 arrayList.add(Long.valueOf(dialogId));
                                                 yyVar = yyVar;
-                                                yyVar.o4(arrayList, 111, true, false, null);
+                                                yyVar.p4(arrayList, 111, true, false, null);
                                             } else {
                                                 yyVar = yyVar;
                                                 i10 = ((org.telegram.ui.ActionBar.m2) yyVar).currentAccount;
                                                 if (SharedConfig.getChatSwipeAction(i10) == 1) {
                                                     ArrayList arrayList2 = new ArrayList();
                                                     arrayList2.add(Long.valueOf(dialogId));
-                                                    yyVar.M2 = (dialog.unread_count > 0 || dialog.unread_mark) ? 1 : 0;
-                                                    yyVar.o4(arrayList2, 101, true, false, null);
+                                                    yyVar.N2 = (dialog.unread_count > 0 || dialog.unread_mark) ? 1 : 0;
+                                                    yyVar.p4(arrayList2, 101, true, false, null);
                                                 } else {
                                                     i11 = ((org.telegram.ui.ActionBar.m2) yyVar).currentAccount;
                                                     if (SharedConfig.getChatSwipeAction(i11) != 3) {
@@ -798,23 +798,23 @@ public final class uy extends org.telegram.ui.Components.ka implements bi.e9 {
                                                         if (SharedConfig.getChatSwipeAction(i12) == 0) {
                                                             ArrayList arrayList3 = new ArrayList();
                                                             arrayList3.add(Long.valueOf(dialogId));
-                                                            yyVar.N2 = !yyVar.d4(dialog) ? 1 : 0;
-                                                            yyVar.o4(arrayList3, 100, true, false, null);
+                                                            yyVar.O2 = !yyVar.e4(dialog) ? 1 : 0;
+                                                            yyVar.p4(arrayList3, 100, true, false, null);
                                                         } else {
                                                             i13 = ((org.telegram.ui.ActionBar.m2) yyVar).currentAccount;
                                                             if (SharedConfig.getChatSwipeAction(i13) == 4) {
                                                                 ArrayList arrayList4 = new ArrayList();
                                                                 arrayList4.add(Long.valueOf(dialogId));
-                                                                yyVar.o4(arrayList4, 102, true, false, null);
+                                                                yyVar.p4(arrayList4, 102, true, false, null);
                                                             }
                                                         }
                                                     } else if (yyVar.getMessagesController().isDialogMuted(dialogId, 0L)) {
                                                         ArrayList arrayList5 = new ArrayList();
                                                         arrayList5.add(Long.valueOf(dialogId));
                                                         i14 = ((org.telegram.ui.ActionBar.m2) yyVar).currentAccount;
-                                                        yyVar.O2 = !MessagesController.getInstance(i14).isDialogMuted(dialogId, 0L) ? 1 : 0;
-                                                        yyVar.P2 = yyVar.O2 > 0 ? 0 : 1;
-                                                        yyVar.o4(arrayList5, 104, true, false, null);
+                                                        yyVar.P2 = !MessagesController.getInstance(i14).isDialogMuted(dialogId, 0L) ? 1 : 0;
+                                                        yyVar.Q2 = yyVar.P2 > 0 ? 0 : 1;
+                                                        yyVar.p4(arrayList5, 104, true, false, null);
                                                     } else {
                                                         NotificationsController.getInstance(UserConfig.selectedAccount).setDialogNotificationsSettings(dialogId, 0L, 3);
                                                         if (org.telegram.ui.Components.zc.a(yyVar)) {
@@ -831,13 +831,13 @@ public final class uy extends org.telegram.ui.Components.ka implements bi.e9 {
                     }
                 }
                 boolean onTouchEvent = super.onTouchEvent(motionEvent);
-                if (xyVar.s == 0 && ((action == 1 || action == 3) && xyVar.v == 2 && yyVar.W3() && ((s4.b0) getLayoutManager()).L0() == 0)) {
+                if (xyVar.s == 0 && ((action == 1 || action == 3) && xyVar.v == 2 && yyVar.X3() && ((s4.b0) getLayoutManager()).L0() == 0)) {
                     int paddingTop = getPaddingTop();
-                    org.telegram.ui.Cells.s2 N3 = yy.N3(xyVar);
-                    if (N3 != null) {
+                    org.telegram.ui.Cells.s2 O3 = yy.O3(xyVar);
+                    if (O3 != null) {
                         int dp = (int) (AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 76.0f : 70.0f) * 0.85f);
-                        int measuredHeight = N3.getMeasuredHeight() + (N3.getTop() - paddingTop);
-                        long currentTimeMillis = System.currentTimeMillis() - yyVar.c3;
+                        int measuredHeight = O3.getMeasuredHeight() + (O3.getTop() - paddingTop);
+                        long currentTimeMillis = System.currentTimeMillis() - yyVar.d3;
                         if (measuredHeight < dp || currentTimeMillis < 200) {
                             yyVar.e2 = true;
                             c10 = 0;
@@ -847,10 +847,10 @@ public final class uy extends org.telegram.ui.Components.ka implements bi.e9 {
                             if (xyVar.v != 1) {
                                 if (getViewOffset() == 0.0f) {
                                     yyVar.e2 = true;
-                                    v0(0, N3.getTop() - paddingTop, org.telegram.ui.Components.es.h);
+                                    v0(0, O3.getTop() - paddingTop, org.telegram.ui.Components.es.h);
                                 }
-                                if (!yyVar.e3) {
-                                    yyVar.e3 = true;
+                                if (!yyVar.f3) {
+                                    yyVar.f3 = true;
                                     try {
                                         performHapticFeedback(3, 2);
                                     } catch (Exception unused) {
@@ -860,7 +860,7 @@ public final class uy extends org.telegram.ui.Components.ka implements bi.e9 {
                                         exVar.a(true);
                                     }
                                 }
-                                N3.a0();
+                                O3.a0();
                                 xyVar.v = 1;
                                 if (AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
                                     AndroidUtilities.makeAccessibilityAnnouncement(LocaleController.getString(R.string.AccDescrArchivedChatsShown));
@@ -874,10 +874,10 @@ public final class uy extends org.telegram.ui.Components.ka implements bi.e9 {
                             fArr[1] = 0.0f;
                             ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
                             ofFloat.addUpdateListener(new e3(this, 10));
-                            ofFloat.setDuration(Math.max(100L, (long) org.telegram.messenger.yh.b(getViewOffset(), AndroidUtilities.dp(72.0f), 120.0f, 350.0f)));
+                            ofFloat.setDuration(Math.max(100L, (long) org.telegram.messenger.sk.b(getViewOffset(), AndroidUtilities.dp(72.0f), 120.0f, 350.0f)));
                             ofFloat.setInterpolator(org.telegram.ui.Components.es.h);
                             setScrollEnabled(false);
-                            ofFloat.addListener(new org.telegram.ui.Components.u61(this, 23));
+                            ofFloat.addListener(new org.telegram.ui.Components.v61(this, 23));
                             ofFloat.start();
                         }
                     }
@@ -917,7 +917,7 @@ public final class uy extends org.telegram.ui.Components.ka implements bi.e9 {
 
     public void setViewsOffset(float f7) {
         View m10;
-        yy.z4 = f7;
+        yy.A4 = f7;
         int childCount = getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
             getChildAt(i10).setTranslationY(f7);
@@ -972,7 +972,7 @@ public final class uy extends org.telegram.ui.Components.ka implements bi.e9 {
             View childAt = mm0Var.getChildAt(i10);
             if (childAt instanceof org.telegram.ui.Cells.s2) {
                 org.telegram.ui.Cells.s2 s2Var3 = (org.telegram.ui.Cells.s2) childAt;
-                if (s2Var3.getDialogId() == yyVar.F3.getCurrentFragmetDialogId()) {
+                if (s2Var3.getDialogId() == yyVar.G3.getCurrentFragmetDialogId()) {
                     s2Var = s2Var3;
                 }
                 if (childAt.getTop() >= 0 && s2Var3.getDialogId() != 0 && childAt.getTop() < i11) {
@@ -995,7 +995,7 @@ public final class uy extends org.telegram.ui.Components.ka implements bi.e9 {
                 int top = (int) ((s2Var.getTop() - mm0Var.getPaddingTop()) + f7);
                 if (F >= 0) {
                     xy xyVar = this.e3;
-                    if (xyVar.s == 0 && xyVar.v == 2 && yyVar.W3()) {
+                    if (xyVar.s == 0 && xyVar.v == 2 && yyVar.X3()) {
                         z11 = true;
                     }
                     int dp = AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 76.0f : 70.0f);

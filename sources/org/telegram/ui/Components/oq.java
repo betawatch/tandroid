@@ -8,7 +8,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class oq extends FrameLayout {
     public final View a;
@@ -22,7 +22,7 @@ public final class oq extends FrameLayout {
         int x02 = org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Oh, false);
         int x03 = org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Qh, false);
         view.setBackground(org.telegram.ui.ActionBar.g6.j0(dp, dp, dp, dp, x02, x03, x03));
-        addView(view, w7.a6.a(-1.0f, 16.0f, 16.0f, 16.0f, 16.0f, -1, 0));
+        addView(view, w7.z5.a(-1.0f, 16.0f, 16.0f, 16.0f, 16.0f, -1, 0));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setLines(1);
@@ -30,8 +30,8 @@ public final class oq extends FrameLayout {
         textView.setGravity(1);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity(17);
-        org.telegram.messenger.q.n(14.0f, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Sh, false), 1, textView);
-        addView(textView, w7.a6.e(-2, -2, 17));
+        org.telegram.messenger.g0.m(14.0f, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Sh, false), 1, textView);
+        addView(textView, w7.z5.e(-2, -2, 17));
     }
 
     @Override // android.widget.FrameLayout, android.view.View

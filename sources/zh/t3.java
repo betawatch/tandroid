@@ -32,16 +32,16 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.ad;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.h11;
+import org.telegram.ui.Components.i11;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class t3 {
     public float A;
     public float B;
-    public h11 C;
+    public i11 C;
     public final RectF D;
     public final Path E;
     public final Paint F;
@@ -70,9 +70,9 @@ public final class t3 {
     public TL_stars.starGiftAttributeModel m;
     public boolean p;
     public float q;
-    public h11 r;
+    public i11 r;
     public float s;
-    public h11 t;
+    public i11 t;
     public float u;
     public float v;
     public float x;
@@ -166,13 +166,13 @@ public final class t3 {
         }
         int i10 = m12;
         this.r.p = eVar.e - AndroidUtilities.dp(12.0f);
-        h11 h11Var = this.r;
-        h11Var.c(f10 - (h11Var.c / 2.0f), this.q, 1.0f, -1, canvas);
+        i11 i11Var = this.r;
+        i11Var.c(f10 - (i11Var.c / 2.0f), this.q, 1.0f, -1, canvas);
         this.t.p = eVar.e - AndroidUtilities.dp(12.0f);
-        h11 h11Var2 = this.t;
+        i11 i11Var2 = this.t;
         Canvas canvas2 = canvas;
         int i11 = i10;
-        h11Var2.c(f10 - (h11Var2.c / 2.0f), this.s, 1.0f, i11, canvas2);
+        i11Var2.c(f10 - (i11Var2.c / 2.0f), this.s, 1.0f, i11, canvas2);
         if (this.z) {
             yh.l0 l0Var = this.y;
             int i12 = l0Var.t;
@@ -190,9 +190,9 @@ public final class t3 {
             while (i16 < size) {
                 int i17 = i16 + 1;
                 s3 s3Var = (s3) arrayList.get(i16);
-                h11 h11Var3 = s3Var.b;
+                i11 i11Var3 = s3Var.b;
                 float f13 = f10 - (dp4 / 2.0f);
-                h11Var3.c((f13 + this.u) - h11Var3.c, s3Var.a, 1.0f, i11, canvas2);
+                i11Var3.c((f13 + this.u) - i11Var3.c, s3Var.a, 1.0f, i11, canvas2);
                 canvas2 = canvas;
                 s3Var.c.c(f13 + this.u + AndroidUtilities.dp(r18), s3Var.a, 1.0f, -1, canvas2);
                 i11 = i11;
@@ -204,10 +204,10 @@ public final class t3 {
         if (!this.p) {
             float dp5 = f10 - ((this.C.c + AndroidUtilities.dp(30.0f)) / 2.0f);
             float f14 = this.A;
-            float b10 = org.telegram.messenger.q.b(this.C.c, AndroidUtilities.dp(30.0f), 2.0f, f10);
+            float a10 = org.telegram.messenger.g0.a(this.C.c, AndroidUtilities.dp(30.0f), 2.0f, f10);
             float f15 = this.A + this.B;
             RectF rectF2 = this.D;
-            rectF2.set(dp5, f14, b10, f15);
+            rectF2.set(dp5, f14, a10, f15);
             Path path2 = this.E;
             path2.rewind();
             float f16 = this.B / 2.0f;
@@ -215,8 +215,8 @@ public final class t3 {
             int m13 = org.telegram.ui.ActionBar.g6.m1(0.13f, -16777216);
             Paint paint2 = this.F;
             paint2.setColor(m13);
-            float a10 = this.H.a(0.075f);
-            canvas2.scale(a10, a10, rectF2.centerX(), rectF2.centerY());
+            float a11 = this.H.a(0.075f);
+            canvas2.scale(a11, a11, rectF2.centerX(), rectF2.centerY());
             canvas2.drawPath(path2, paint2);
             canvas2.restore();
             int dp6 = ((int) rectF.right) - AndroidUtilities.dp(46.67f);
@@ -250,8 +250,8 @@ public final class t3 {
         this.C.c(rectF2.left + AndroidUtilities.dp(15.0f), rectF2.centerY(), 1.0f, -1, canvas);
         canvas.restore();
         View view = this.b;
-        if (view instanceof org.telegram.ui.Cells.x0) {
-            ((org.telegram.ui.Cells.x0) view).N();
+        if (view instanceof org.telegram.ui.Cells.w0) {
+            ((org.telegram.ui.Cells.w0) view).N();
         } else {
             view.invalidate();
         }
@@ -287,7 +287,7 @@ public final class t3 {
                 } else if (this.J) {
                     org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
                     if (U != null) {
-                        org.telegram.messenger.q.r(R.string.UniqueGiftNotFoundBurned, zc.a0(U), R.raw.fire_on, 36);
+                        org.telegram.messenger.g0.q(R.string.UniqueGiftNotFoundBurned, zc.a0(U), R.raw.fire_on, 36);
                     }
                 } else {
                     r3 r3Var = new r3(this.b.getContext(), this.a, this.O.getDialogId(), this.c, null);
@@ -438,24 +438,24 @@ public final class t3 {
         String shortName = DialogObject.getShortName(clientUserId);
         float dp2 = AndroidUtilities.dp(10.0f) + 0.0f + AndroidUtilities.dp(110.0f) + AndroidUtilities.dp(9.33f);
         if (this.p) {
-            this.r = new h11(tL_starGiftUnique.title, 14.0f, AndroidUtilities.bold());
+            this.r = new i11(tL_starGiftUnique.title, 14.0f, AndroidUtilities.bold());
         } else if (tL_messageActionStarGiftUnique.peer != null || UserObject.isService(messageObject.getDialogId())) {
-            this.r = new h11(LocaleController.getString(R.string.Gift2UniqueTitle2), 14.0f, AndroidUtilities.bold());
+            this.r = new i11(LocaleController.getString(R.string.Gift2UniqueTitle2), 14.0f, AndroidUtilities.bold());
         } else if (messageObject.getDialogId() != UserConfig.getInstance(i10).getClientUserId()) {
-            this.r = new h11(LocaleController.formatString(R.string.Gift2UniqueTitle, shortName), 14.0f, AndroidUtilities.bold());
+            this.r = new i11(LocaleController.formatString(R.string.Gift2UniqueTitle, shortName), 14.0f, AndroidUtilities.bold());
         } else if (tL_starGiftUnique.crafted) {
-            this.r = new h11(LocaleController.getString(R.string.Gift2ActionCraftedTitle), 14.0f, AndroidUtilities.bold());
+            this.r = new i11(LocaleController.getString(R.string.Gift2ActionCraftedTitle), 14.0f, AndroidUtilities.bold());
         } else if (tL_messageActionStarGiftUnique.resale_amount != null) {
-            this.r = new h11(LocaleController.getString(R.string.Gift2ActionPurchasedTitle), 14.0f, AndroidUtilities.bold());
+            this.r = new i11(LocaleController.getString(R.string.Gift2ActionPurchasedTitle), 14.0f, AndroidUtilities.bold());
         } else {
-            this.r = new h11(LocaleController.getString(R.string.Gift2ActionUpgradedTitle), 14.0f, AndroidUtilities.bold());
+            this.r = new i11(LocaleController.getString(R.string.Gift2ActionUpgradedTitle), 14.0f, AndroidUtilities.bold());
         }
         this.q = (this.r.j() / 2.0f) + dp2;
         float j10 = this.r.j() + dp2 + AndroidUtilities.dp(3.0f);
         if (this.p) {
             f7 = 10.0f;
             f10 = 3.0f;
-            this.t = new h11(LocaleController.formatPluralStringComma("Gift2CollectionNumber", tL_starGiftUnique.num), 12.0f, AndroidUtilities.bold());
+            this.t = new i11(LocaleController.formatPluralStringComma("Gift2CollectionNumber", tL_starGiftUnique.num), 12.0f, AndroidUtilities.bold());
             f11 = 2.0f;
         } else {
             f7 = 10.0f;
@@ -464,7 +464,7 @@ public final class t3 {
             sb2.append(tL_starGiftUnique.title);
             sb2.append(" #");
             f11 = 2.0f;
-            this.t = new h11(org.telegram.messenger.q.i(tL_starGiftUnique.num, ',', sb2), 12.0f, null);
+            this.t = new i11(org.telegram.messenger.g0.h(tL_starGiftUnique.num, ',', sb2), 12.0f, null);
         }
         this.s = (this.t.j() / f11) + j10;
         float j11 = this.t.j() + j10 + AndroidUtilities.dp(this.p ? 14.0f : 11.0f);
@@ -509,12 +509,12 @@ public final class t3 {
                 s3 s3Var = new s3(j11, LocaleController.getString(R.string.Gift2AttributeModel), this.m.name);
                 arrayList.add(s3Var);
                 float f13 = f12 * 0.5f;
-                h11 h11Var = s3Var.b;
-                h11Var.p = f13;
-                this.u = Math.max(this.u, h11Var.c);
-                h11 h11Var2 = s3Var.c;
-                h11Var2.p = f13;
-                this.v = Math.max(this.v, h11Var2.c);
+                i11 i11Var = s3Var.b;
+                i11Var.p = f13;
+                this.u = Math.max(this.u, i11Var.c);
+                i11 i11Var2 = s3Var.c;
+                i11Var2.p = f13;
+                this.v = Math.max(this.v, i11Var2.c);
                 j11 += s3Var.a();
             }
             if (this.k != null) {
@@ -524,12 +524,12 @@ public final class t3 {
                 s3 s3Var2 = new s3(j11, LocaleController.getString(R.string.Gift2AttributeBackdrop), this.k.name);
                 arrayList.add(s3Var2);
                 float f14 = f12 * 0.5f;
-                h11 h11Var3 = s3Var2.b;
-                h11Var3.p = f14;
-                this.u = Math.max(this.u, h11Var3.c);
-                h11 h11Var4 = s3Var2.c;
-                h11Var4.p = f14;
-                this.v = Math.max(this.v, h11Var4.c);
+                i11 i11Var3 = s3Var2.b;
+                i11Var3.p = f14;
+                this.u = Math.max(this.u, i11Var3.c);
+                i11 i11Var4 = s3Var2.c;
+                i11Var4.p = f14;
+                this.v = Math.max(this.v, i11Var4.c);
                 j11 = s3Var2.a() + j11;
             }
             if (this.l != null) {
@@ -539,12 +539,12 @@ public final class t3 {
                 s3 s3Var3 = new s3(j11, LocaleController.getString(R.string.Gift2AttributeSymbol), this.l.name);
                 arrayList.add(s3Var3);
                 float f15 = f12 * 0.5f;
-                h11 h11Var5 = s3Var3.b;
-                h11Var5.p = f15;
-                this.u = Math.max(this.u, h11Var5.c);
-                h11 h11Var6 = s3Var3.c;
-                h11Var6.p = f15;
-                this.v = Math.max(this.v, h11Var6.c);
+                i11 i11Var5 = s3Var3.b;
+                i11Var5.p = f15;
+                this.u = Math.max(this.u, i11Var5.c);
+                i11 i11Var6 = s3Var3.c;
+                i11Var6.p = f15;
+                this.v = Math.max(this.v, i11Var6.c);
                 j11 += s3Var3.a();
             }
         }
@@ -553,7 +553,7 @@ public final class t3 {
             dp = AndroidUtilities.dp(f7);
         } else {
             this.A = dp4;
-            this.C = new h11(LocaleController.getString(R.string.Gift2UniqueView), 14.0f, AndroidUtilities.bold());
+            this.C = new i11(LocaleController.getString(R.string.Gift2UniqueView), 14.0f, AndroidUtilities.bold());
             float dp5 = AndroidUtilities.dp(30.0f);
             this.B = dp5;
             dp4 += dp5;
@@ -566,16 +566,16 @@ public final class t3 {
         Spanned spanned;
         float f7 = this.L;
         float dp = AndroidUtilities.dp(10.0f) + 0.0f + AndroidUtilities.dp(110.0f) + AndroidUtilities.dp(9.33f);
-        h11 h11Var = new h11(LocaleController.formatString(R.string.Gift2UniqueTitle, DialogObject.getShortName(j10)), 14.0f, AndroidUtilities.bold());
-        this.r = h11Var;
-        this.q = (h11Var.j() / 2.0f) + dp;
+        i11 i11Var = new i11(LocaleController.formatString(R.string.Gift2UniqueTitle, DialogObject.getShortName(j10)), 14.0f, AndroidUtilities.bold());
+        this.r = i11Var;
+        this.q = (i11Var.j() / 2.0f) + dp;
         float j11 = this.r.j() + dp + AndroidUtilities.dp(3.0f);
         StringBuilder sb2 = new StringBuilder();
         sb2.append(tL_starGiftUnique.title);
         sb2.append(" #");
-        h11 h11Var2 = new h11(org.telegram.messenger.q.i(tL_starGiftUnique.num, ',', sb2), 12.0f, null);
-        this.t = h11Var2;
-        this.s = (h11Var2.j() / 2.0f) + j11;
+        i11 i11Var2 = new i11(org.telegram.messenger.g0.h(tL_starGiftUnique.num, ',', sb2), 12.0f, null);
+        this.t = i11Var2;
+        this.s = (i11Var2.j() / 2.0f) + j11;
         float j12 = this.t.j() + j11 + AndroidUtilities.dp(11.0f);
         this.w.clear();
         this.u = 0.0f;
@@ -610,7 +610,7 @@ public final class t3 {
         this.x = dp2;
         float dp3 = dp2 + l0Var.u + AndroidUtilities.dp(3.0f) + AndroidUtilities.dp(11.66f);
         this.A = dp3;
-        this.C = new h11(str, 14.0f, AndroidUtilities.bold());
+        this.C = new i11(str, 14.0f, AndroidUtilities.bold());
         float dp4 = AndroidUtilities.dp(30.0f);
         this.B = dp4;
         this.M = (int) (dp3 + dp4 + AndroidUtilities.dp(11.0f));

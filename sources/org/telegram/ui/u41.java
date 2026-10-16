@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SaveToGallerySettingsHelper;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u41 implements org.telegram.ui.Components.bm0, org.telegram.ui.Components.dm0, sy {
     public final /* synthetic */ SaveToGallerySettingsActivity a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class u41 implements org.telegram.ui.Components.bm0
                 return;
             }
             if (((z41) arrayList.get(i10)).a == 4) {
-                org.telegram.ui.ActionBar.a2 a2Var = org.telegram.ui.Components.g5.N(saveToGallerySettingsActivity.getParentActivity(), LocaleController.getString(R.string.NotificationsDeleteAllExceptionTitle), LocaleController.getString(R.string.NotificationsDeleteAllExceptionAlert), LocaleController.getString(R.string.Delete), new uz0(saveToGallerySettingsActivity, 10), null).a;
+                org.telegram.ui.ActionBar.a2 a2Var = org.telegram.ui.Components.g5.N(saveToGallerySettingsActivity.getParentActivity(), LocaleController.getString(R.string.NotificationsDeleteAllExceptionTitle), LocaleController.getString(R.string.NotificationsDeleteAllExceptionAlert), LocaleController.getString(R.string.Delete), new tz0(saveToGallerySettingsActivity, 10), null).a;
                 a2Var.show();
                 a2Var.h();
                 return;
@@ -84,7 +84,7 @@ public final /* synthetic */ class u41 implements org.telegram.ui.Components.bm0
     }
 
     @Override // org.telegram.ui.sy
-    public boolean w(yy yyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, lg1 lg1Var) {
+    public boolean w(yy yyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, kg1 kg1Var) {
         Bundle bundle = new Bundle();
         bundle.putLong("dialog_id", ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId);
         SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.a;

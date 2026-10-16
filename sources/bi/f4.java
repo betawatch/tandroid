@@ -8,10 +8,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class f4 extends TextView {
     public final /* synthetic */ int a;
@@ -161,7 +161,7 @@ public final class f4 extends TextView {
                 break;
             case 27:
                 if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE) {
-                    i10 = yh.z(52.0f, View.MeasureSpec.getSize(i10), TLObject.FLAG_31);
+                    i10 = sk.c(52.0f, View.MeasureSpec.getSize(i10), TLObject.FLAG_31);
                 }
                 super.onMeasure(i10, i11);
                 break;

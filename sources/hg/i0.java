@@ -4,11 +4,11 @@ import android.animation.ValueAnimator;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.e91;
+import org.telegram.ui.Components.f91;
 import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.j91;
+import org.telegram.ui.Components.k91;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.m31;
-import org.telegram.ui.Components.m80;
 import org.telegram.ui.Components.ob0;
 import org.telegram.ui.Components.p00;
 import org.telegram.ui.Components.w00;
@@ -16,7 +16,7 @@ import org.telegram.ui.StickersActivity;
 import org.telegram.ui.xw;
 import org.telegram.ui.yr;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class i0 extends s4.b0 {
     public final /* synthetic */ int I;
@@ -41,7 +41,7 @@ public final class i0 extends s4.b0 {
                 break;
             case 6:
                 super.S(eVar, y0Var, cVar);
-                if (((j91) this.J).V) {
+                if (((k91) this.J).V) {
                     cVar.p(false);
                     break;
                 }
@@ -82,8 +82,8 @@ public final class i0 extends s4.b0 {
     public int m0(int i10, qf.e eVar, s4.y0 y0Var) {
         switch (this.I) {
             case 2:
-                m80 m80Var = ((xw) ((w00) this.J).J).b.L0;
-                if (m80Var != null && m80Var.D()) {
+                l80 l80Var = ((xw) ((w00) this.J).J).b.L0;
+                if (l80Var != null && l80Var.D()) {
                     i10 = 0;
                 }
                 return super.m0(i10, eVar, y0Var);
@@ -162,9 +162,9 @@ public final class i0 extends s4.b0 {
                 w0(p00Var);
                 break;
             case 6:
-                e91 e91Var = new e91(this, recyclerView.getContext());
-                e91Var.a = i10;
-                w0(e91Var);
+                f91 f91Var = new f91(this, recyclerView.getContext());
+                f91Var.a = i10;
+                w0(f91Var);
                 break;
             default:
                 super.v0(recyclerView, y0Var, i10);

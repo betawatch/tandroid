@@ -10,20 +10,20 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.cb;
 import org.telegram.ui.Components.db;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.f10;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.m80;
 import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.z61;
 import org.telegram.ui.Components.zz;
-import w7.a6;
-import w7.c6;
+import w7.b6;
+import w7.z5;
 import zh.f5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class k4 extends db implements NotificationCenter.NotificationCenterDelegate {
     public final int X;
@@ -32,8 +32,8 @@ public final class k4 extends db implements NotificationCenter.NotificationCente
     public final zz a0;
     public final FrameLayout b0;
     public final di.d c0;
-    public m80 d0;
-    public z61 e0;
+    public l80 d0;
+    public a71 e0;
     public i0.b f0;
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -76,20 +76,20 @@ public final class k4 extends db implements NotificationCenter.NotificationCente
         frameLayout.setPadding(i12, 0, i12, 0);
         FrameLayout frameLayout2 = new FrameLayout(context);
         frameLayout2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        frameLayout2.addView(dVar, a6.d(-1.0f, -1));
+        frameLayout2.addView(dVar, z5.d(-1.0f, -1));
         frameLayout2.setOnClickListener(new a(3, this, r4Var));
         dh.d c10 = bVar.c(frameLayout2, null, false);
         c10.o(fh.b.j(this.resourcesProvider));
         c10.q(AndroidUtilities.dp(28.0f));
         c10.p(AndroidUtilities.dp(5.0f));
         frameLayout2.setBackground(c10);
-        c6.b(frameLayout2, 0.02f, 1.5f);
-        frameLayout.addView(frameLayout2, a6.a(64.0f, 4.0f, 0.0f, 4.0f, 0.0f, -1, 80));
+        b6.b(frameLayout2, 0.02f, 1.5f);
+        frameLayout.addView(frameLayout2, z5.a(64.0f, 4.0f, 0.0f, 4.0f, 0.0f, -1, 80));
         bh.c cVar3 = new bh.c(bVar2.c(frameLayout, null, false));
         cVar3.b(AndroidUtilities.dp(40.0f), true);
         cVar3.q = 220;
         frameLayout.setBackground(cVar3);
-        this.containerView.addView(frameLayout, a6.e(-1, -2, 80));
+        this.containerView.addView(frameLayout, z5.e(-1, -2, 80));
         getContext();
         zz zzVar = new zz(3, false);
         this.a0 = zzVar;
@@ -113,7 +113,7 @@ public final class k4 extends db implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.Components.db
-    public final CharSequence A() {
+    public final CharSequence B() {
         return LocaleController.getString(R.string.Gift2CollectionAddGiftsTitle);
     }
 
@@ -139,11 +139,11 @@ public final class k4 extends db implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        z61 z61Var;
-        if (i10 != NotificationCenter.starUserGiftsLoaded || (z61Var = this.e0) == null) {
+        a71 a71Var;
+        if (i10 != NotificationCenter.starUserGiftsLoaded || (a71Var = this.e0) == null) {
             return;
         }
-        z61Var.N(true);
+        a71Var.N(true);
         if (U()) {
             this.Y.a();
         }
@@ -164,9 +164,9 @@ public final class k4 extends db implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.ui.Components.db
     public final lm0 x(mm0 mm0Var) {
-        z61 z61Var = new z61(mm0Var, getContext(), this.currentAccount, 0, false, new ii.a(this, 20), this.resourcesProvider);
-        this.e0 = z61Var;
-        z61Var.r = false;
-        return z61Var;
+        a71 a71Var = new a71(mm0Var, getContext(), this.currentAccount, 0, false, new ii.a(this, 20), this.resourcesProvider);
+        this.e0 = a71Var;
+        a71Var.r = false;
+        return a71Var;
     }
 }

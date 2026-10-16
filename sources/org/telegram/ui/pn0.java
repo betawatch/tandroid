@@ -1,26 +1,20 @@
 package org.telegram.ui;
 
-import java.util.TimerTask;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class pn0 extends TimerTask {
-    public final /* synthetic */ qn0 a;
+public final class pn0 extends View {
+    public Paint a;
+    public Paint b;
+    public float c;
 
-    public pn0(qn0 qn0Var) {
-        this.a = qn0Var;
-    }
-
-    @Override // java.util.TimerTask, java.lang.Runnable
-    public final void run() {
-        qn0 qn0Var = this.a;
-        if (qn0Var.v == null) {
-            return;
-        }
-        double currentTimeMillis = System.currentTimeMillis();
-        qn0Var.y = (int) (qn0Var.y - (currentTimeMillis - qn0Var.F));
-        qn0Var.F = currentTimeMillis;
-        AndroidUtilities.runOnUIThread(new yk0(this, 7));
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float measuredWidth = (int) (getMeasuredWidth() * this.c);
+        canvas.drawRect(0.0f, 0.0f, measuredWidth, getMeasuredHeight(), this.b);
+        canvas.drawRect(measuredWidth, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.a);
     }
 }

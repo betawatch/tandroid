@@ -1,64 +1,17 @@
 package org.telegram.ui.Wallet;
 
 import android.view.View;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.c91;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.Components.p51;
+import org.telegram.ui.Components.i71;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class w3 extends c91 {
-    public final /* synthetic */ z4 a;
-
-    public w3(z4 z4Var) {
-        this.a = z4Var;
-    }
-
-    @Override // org.telegram.ui.Components.c91
-    public final void b(View view, int i10, int i11) {
-        h71 h71Var = (h71) view;
-        boolean canScrollVertically = h71Var.canScrollVertically(-1);
-        h71Var.W2.N(false);
-        h71Var.a0();
-        if (canScrollVertically) {
-            return;
+public final class w3 extends i71 {
+    @Override // org.telegram.ui.Components.mm0
+    public final boolean t1(View view) {
+        if (!(view instanceof y2)) {
+            return true;
         }
-        h71Var.V2.h1(0, 0);
-    }
-
-    @Override // org.telegram.ui.Components.c91
-    public final View d(int i10) {
-        z4 z4Var = this.a;
-        h71[] h71VarArr = z4Var.p0;
-        h71 h71Var = h71VarArr[i10];
-        if (h71Var != null) {
-            return h71Var;
-        }
-        v3 v3Var = new v3(z4Var, new org.telegram.ui.Components.o(this, i10, 2), new i3(z4Var), new i3(z4Var));
-        v3Var.setFocusableInTouchMode(false);
-        v3Var.setClipChildren(false);
-        v3Var.setClipToPadding(false);
-        v3Var.p1();
-        v3Var.W2.r = false;
-        v3Var.j(new p51(this, i10));
-        h71VarArr[i10] = v3Var;
-        return v3Var;
-    }
-
-    @Override // org.telegram.ui.Components.c91
-    public final int e() {
-        return this.a.g0 ? 2 : 1;
-    }
-
-    @Override // org.telegram.ui.Components.c91
-    public final CharSequence g(int i10) {
-        return LocaleController.getString(i10 == 0 ? R.string.WalletTransactions : R.string.WalletCollectibles);
-    }
-
-    @Override // org.telegram.ui.Components.c91
-    public final int h(int i10) {
-        return i10;
+        y2 y2Var = (y2) view;
+        return y2Var.F <= 0.0f && !y2Var.I.d();
     }
 }

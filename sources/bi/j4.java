@@ -6,7 +6,7 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.ui.Components.fl0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class j4 implements fl0 {
     public final /* synthetic */ q5 a;
@@ -16,22 +16,17 @@ public final class j4 implements fl0 {
     }
 
     @Override // org.telegram.ui.Components.fl0
-    public final /* synthetic */ boolean D() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.fl0
-    public final /* synthetic */ boolean i() {
+    public final /* synthetic */ boolean j() {
         return true;
     }
 
     @Override // org.telegram.ui.Components.fl0
-    public final boolean n() {
+    public final boolean m() {
         return this.a.N0();
     }
 
     @Override // org.telegram.ui.Components.fl0
-    public final void r(View view, ah.i1 i1Var, boolean z10, boolean z11) {
+    public final void n(View view, ah.i1 i1Var, boolean z10, boolean z11) {
         q5 q5Var = this.a;
         if (z10) {
             org.telegram.ui.Components.g5.Z(q5Var.C2, 1, q5Var.B1, new i4(this, z10, i1Var, view));
@@ -41,7 +36,7 @@ public final class j4 implements fl0 {
     }
 
     @Override // org.telegram.ui.Components.fl0
-    public final void w(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+    public final void r(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
         q5 q5Var = this.a;
         Paint paint = q5Var.n2;
         com.google.firebase.messaging.m mVar = q5Var.P1;
@@ -60,5 +55,10 @@ public final class j4 implements fl0 {
     @Override // org.telegram.ui.Components.fl0
     public final void y() {
         ((jb) this.a.Q1).b(false);
+    }
+
+    @Override // org.telegram.ui.Components.fl0
+    public final /* synthetic */ boolean z() {
+        return false;
     }
 }

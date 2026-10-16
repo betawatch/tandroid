@@ -22,7 +22,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class mz extends lm0 {
     public final Context c;
@@ -371,8 +371,8 @@ public final class mz extends lm0 {
                 l3Var.setHeight(AndroidUtilities.dp(8.0f));
                 return;
             } else {
-                int C = org.telegram.messenger.yh.C(82.0f, (int) Math.ceil(arrayList.size() / this.d), wzVar.h.getHeight());
-                l3Var.setHeight(C > 0 ? C : 1);
+                int B = org.telegram.messenger.sk.B(82.0f, (int) Math.ceil(arrayList.size() / this.d), wzVar.h.getHeight());
+                l3Var.setHeight(B > 0 ? B : 1);
                 return;
             }
         }
@@ -485,15 +485,15 @@ public final class mz extends lm0 {
                 textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.We, false));
                 textView.setTextSize(1, 14.0f);
                 textView.setText(LocaleController.getString(R.string.GroupStickersInfo));
-                n8Var.addView(textView, w7.a6.t(-1, -2, 51, 17, 4, 17, 0));
+                n8Var.addView(textView, w7.z5.t(-1, -2, 51, 17, 4, 17, 0));
                 TextView textView2 = new TextView(context);
                 n8Var.a = textView2;
                 textView2.setPadding(AndroidUtilities.dp(17.0f), 0, AndroidUtilities.dp(17.0f), 0);
                 textView2.setGravity(17);
-                org.telegram.messenger.q.n(14.0f, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Sh, false), 1, textView2);
+                org.telegram.messenger.g0.m(14.0f, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Sh, false), 1, textView2);
                 textView2.setBackground(org.telegram.ui.ActionBar.w5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.g6.Oh));
                 textView2.setText(LocaleController.getString(R.string.ChooseStickerSet).toUpperCase());
-                n8Var.addView(textView2, w7.a6.t(-2, 28, 51, 17, 10, 14, 8));
+                n8Var.addView(textView2, w7.z5.t(-2, 28, 51, 17, 10, 14, 8));
                 n8Var.setAddOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.kz
                     public final /* synthetic */ mz b;
 
@@ -606,8 +606,8 @@ public final class mz extends lm0 {
                 linearLayout.setGravity(17);
                 int dp = AndroidUtilities.dp(13.0f);
                 int i14 = org.telegram.ui.ActionBar.g6.Me;
-                linearLayout.setBackground(org.telegram.ui.ActionBar.g6.c0(dp, org.telegram.ui.ActionBar.g6.m1(0.12f, wzVar.A(i14))));
-                w7.c6.b(linearLayout, 0.1f, 1.5f);
+                linearLayout.setBackground(org.telegram.ui.ActionBar.g6.c0(dp, org.telegram.ui.ActionBar.g6.m1(0.12f, wzVar.B(i14))));
+                w7.b6.b(linearLayout, 0.1f, 1.5f);
                 linearLayout.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.kz
                     public final /* synthetic */ mz b;
 
@@ -651,16 +651,16 @@ public final class mz extends lm0 {
                 });
                 ImageView imageView = new ImageView(context);
                 imageView.setImageResource(R.drawable.menu_sticker_add);
-                imageView.setColorFilter(new PorterDuffColorFilter(wzVar.A(i14), PorterDuff.Mode.SRC_IN));
-                linearLayout.addView(imageView, w7.a6.t(24, 24, 17, 0, 0, 0, 0));
+                imageView.setColorFilter(new PorterDuffColorFilter(wzVar.B(i14), PorterDuff.Mode.SRC_IN));
+                linearLayout.addView(imageView, w7.z5.t(24, 24, 17, 0, 0, 0, 0));
                 TextView textView3 = new TextView(context);
                 textView3.setGravity(17);
-                textView3.setTextColor(wzVar.A(i14));
+                textView3.setTextColor(wzVar.B(i14));
                 textView3.setTextSize(1, 11.0f);
                 textView3.setTypeface(AndroidUtilities.bold());
                 textView3.setText(LocaleController.getString(R.string.Create));
-                linearLayout.addView(textView3, w7.a6.t(-1, -2, 17, 0, 3, 0, 0));
-                frameLayout.addView(linearLayout, w7.a6.a(-1.0f, 8.0f, 8.0f, 8.0f, 8.0f, -1, 119));
+                linearLayout.addView(textView3, w7.z5.t(-1, -2, 17, 0, 3, 0, 0));
+                frameLayout.addView(linearLayout, w7.z5.a(-1.0f, 8.0f, 8.0f, 8.0f, 8.0f, -1, 119));
                 view = frameLayout;
                 break;
         }

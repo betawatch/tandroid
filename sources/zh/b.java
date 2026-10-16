@@ -4,13 +4,13 @@ import android.text.SpannableStringBuilder;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.ui.Components.ac;
 import org.telegram.ui.Components.br;
 import org.telegram.ui.Components.sc;
 import org.telegram.ui.Components.wb;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class b implements Runnable {
                     if (scVar != null) {
                         wb wbVar = scVar.e;
                         if ((wbVar instanceof ac) && wbVar.isAttachedToWindow()) {
-                            yh.q(R.string.BotStarsWithdrawalToast, new Object[]{g.j0(gVar.G - currentTime)}, ((ac) gVar.a0.e).b);
+                            sk.r(R.string.BotStarsWithdrawalToast, new Object[]{g.j0(gVar.G - currentTime)}, ((ac) gVar.a0.e).b);
                         }
                     }
                     AndroidUtilities.cancelRunOnUIThread(bVar);
@@ -64,10 +64,10 @@ public final /* synthetic */ class b implements Runnable {
                 g.V(gVar);
                 break;
             case 3:
-                pf.d.s(gVar.getParentActivity(), LocaleController.getString(R.string.BotMonetizationBalanceInfoLink));
+                pf.d.r(gVar.getParentActivity(), LocaleController.getString(R.string.BotMonetizationBalanceInfoLink));
                 break;
             case 4:
-                pf.d.s(gVar.getParentActivity(), LocaleController.getString(R.string.BotStarsWithdrawInfoLink));
+                pf.d.r(gVar.getParentActivity(), LocaleController.getString(R.string.BotStarsWithdrawInfoLink));
                 break;
             default:
                 gVar.S.setLoading(false);

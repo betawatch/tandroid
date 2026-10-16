@@ -9,7 +9,7 @@ import u2.d1;
 import v7.b8;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class m implements d1 {
     public final int a;
@@ -44,13 +44,8 @@ public final class m implements d1 {
         this.c = i11;
     }
 
-    public final boolean b() {
-        int i10 = this.c;
-        return (i10 == -1 || i10 == -3 || i10 == -2) ? false : true;
-    }
-
     @Override // u2.d1
-    public final void d() {
+    public final void b() {
         int i10 = this.c;
         q qVar = this.b;
         if (i10 == -2) {
@@ -58,11 +53,16 @@ public final class m implements d1 {
             throw new z4(a1.g.p("Unable to bind a sample queue to TrackGroup with MIME type ", qVar.Y.a(this.a).d[0].s, "."));
         }
         if (i10 == -1) {
-            qVar.E();
+            qVar.C();
         } else if (i10 != -3) {
-            qVar.E();
+            qVar.C();
             qVar.L[i10].C();
         }
+    }
+
+    public final boolean c() {
+        int i10 = this.c;
+        return (i10 == -1 || i10 == -3 || i10 == -2) ? false : true;
     }
 
     @Override // u2.d1
@@ -70,12 +70,12 @@ public final class m implements d1 {
         if (this.c == -3) {
             return true;
         }
-        if (!b()) {
+        if (!c()) {
             return false;
         }
         int i10 = this.c;
         q qVar = this.b;
-        return !qVar.A() && qVar.L[i10].A(qVar.j0);
+        return !qVar.z() && qVar.L[i10].A(qVar.j0);
     }
 
     @Override // u2.d1
@@ -85,11 +85,11 @@ public final class m implements d1 {
             hVar.addFlag(4);
             return -4;
         }
-        if (b()) {
+        if (c()) {
             int i11 = this.c;
             q qVar = this.b;
             ArrayList arrayList = qVar.y;
-            if (!qVar.A()) {
+            if (!qVar.z()) {
                 int i12 = 0;
                 if (!arrayList.isEmpty()) {
                     int i13 = 0;
@@ -139,15 +139,15 @@ public final class m implements d1 {
     }
 
     @Override // u2.d1
-    public final int m(long j10) {
+    public final int j(long j10) {
         Object next;
         Object obj;
-        if (!b()) {
+        if (!c()) {
             return 0;
         }
         int i10 = this.c;
         q qVar = this.b;
-        if (qVar.A()) {
+        if (qVar.z()) {
             return 0;
         }
         p pVar = qVar.L[i10];
@@ -155,7 +155,7 @@ public final class m implements d1 {
         ArrayList arrayList = qVar.y;
         if (arrayList != null) {
             if (!arrayList.isEmpty()) {
-                obj = i2.d.g(1, arrayList);
+                obj = i2.d.h(1, arrayList);
             }
             obj = null;
         } else {

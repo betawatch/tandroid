@@ -27,9 +27,9 @@ import org.telegram.ui.Components.ms0;
 import org.telegram.ui.Components.pu0;
 import org.telegram.ui.Components.wx0;
 import org.telegram.ui.Components.x41;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class t extends FrameLayout {
     public static final /* synthetic */ int a0 = 0;
@@ -94,7 +94,7 @@ public final class t extends FrameLayout {
         iVar.setClipToPadding(false);
         iVar.setSectionsType(2);
         iVar.setLayoutManager(hVar);
-        addView(iVar, a6.d(-1.0f, -1));
+        addView(iVar, z5.d(-1.0f, -1));
         iVar.i(new j(this, 0));
         iVar.setOnItemClickListener(new bi.d(this, 1));
         iVar.setOnItemLongClickListener(new a1.c(this, 14));
@@ -106,7 +106,7 @@ public final class t extends FrameLayout {
         pu0Var.i(new j(this, 1));
         kVar2.y1(this.e);
         pu0Var.setVisibility(8);
-        addView(pu0Var, a6.d(-1.0f, -1));
+        addView(pu0Var, z5.d(-1.0f, -1));
         l lVar = new l(this, context);
         this.v = lVar;
         iVar.setAdapter(lVar);
@@ -121,7 +121,7 @@ public final class t extends FrameLayout {
         this.y = wx0Var;
         wx0Var.setVisibility(8);
         wx0Var.setAnimateLayoutChange(true);
-        addView(wx0Var, a6.d(-1.0f, -1));
+        addView(wx0Var, z5.d(-1.0f, -1));
         wx0Var.setOnTouchListener(new d(0));
         wx0Var.e(true, false);
         wx0Var.b.setVisibility(8);
@@ -142,12 +142,12 @@ public final class t extends FrameLayout {
         nVar.setTextAlignment(4);
         nVar.setGravity(17);
         nVar.setTypeface(AndroidUtilities.bold());
-        wx0Var.a.addView(nVar, a6.t(165, -2, 17, 0, 17, 0, 12));
+        wx0Var.a.addView(nVar, z5.t(165, -2, 17, 0, 17, 0, 12));
         di.d dVar2 = new di.d(context, c6Var, false);
         this.F = dVar2;
         dVar2.setMinWidth(AndroidUtilities.dp(200.0f));
-        wx0Var.a.addView(dVar2, a6.q(-2, 44, 17));
-        wx0Var.addView(mVar, 0, a6.d(-1.0f, -1));
+        wx0Var.a.addView(dVar2, z5.q(-2, 44, 17));
+        wx0Var.addView(mVar, 0, z5.d(-1.0f, -1));
         iVar.setEmptyView(wx0Var);
         iVar.W1 = true;
         iVar.X1 = 0;
@@ -158,7 +158,7 @@ public final class t extends FrameLayout {
         yVar.d(iVar);
         q qVar = new q(context, c6Var);
         this.J = qVar;
-        addView(qVar, a6.e(-1, -2, 48));
+        addView(qVar, z5.e(-1, -2, 48));
     }
 
     public final void a() {

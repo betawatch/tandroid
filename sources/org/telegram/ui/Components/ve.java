@@ -16,7 +16,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ve implements Runnable {
     public final /* synthetic */ int a;
@@ -70,16 +70,16 @@ public final /* synthetic */ class ve implements Runnable {
                 }
                 break;
             case 11:
-                int i12 = i11.f;
+                int i12 = j11.f;
                 break;
             case 12:
                 SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
-                y11.f = Boolean.TRUE;
+                z11.f = Boolean.TRUE;
                 edit.putBoolean("nothanos", true).apply();
                 break;
             case 13:
                 SharedPreferences.Editor edit2 = MessagesController.getGlobalMainSettings().edit();
-                y11.f = Boolean.TRUE;
+                z11.f = Boolean.TRUE;
                 edit2.putBoolean("nothanos", true).apply();
                 break;
             case 14:

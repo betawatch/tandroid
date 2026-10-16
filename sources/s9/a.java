@@ -5,9 +5,9 @@ import java.util.Locale;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicLong;
-import org.telegram.ui.Wallet.t8;
+import org.telegram.ui.web.v;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class a implements ThreadFactory {
     public static final ThreadFactory e = Executors.defaultThreadFactory();
@@ -24,7 +24,7 @@ public final class a implements ThreadFactory {
 
     @Override // java.util.concurrent.ThreadFactory
     public final Thread newThread(Runnable runnable) {
-        Thread newThread = e.newThread(new t8(29, this, runnable));
+        Thread newThread = e.newThread(new v(29, this, runnable));
         Locale locale = Locale.ROOT;
         newThread.setName(this.b + " Thread #" + this.a.getAndIncrement());
         return newThread;

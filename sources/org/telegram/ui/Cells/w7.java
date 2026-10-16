@@ -32,9 +32,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.cr;
 import org.telegram.ui.Components.ia0;
-import org.telegram.ui.hd0;
+import org.telegram.ui.fd0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class w7 extends FrameLayout {
     public boolean E;
@@ -53,18 +53,18 @@ public final class w7 extends FrameLayout {
     public final int h;
     public final RectF n;
     public LocationController.SharingLocationInfo r;
-    public hd0 s;
+    public fd0 s;
     public final Location v;
     public final org.telegram.ui.ActionBar.c6 w;
     public int x;
-    public final t6 y;
+    public final l7 y;
 
     public w7(int i10, Context context, org.telegram.ui.ActionBar.c6 c6Var, boolean z10) {
         super(context);
         this.n = new RectF();
         this.v = new Location("network");
         this.x = UserConfig.selectedAccount;
-        this.y = new t6(this, 2);
+        this.y = new l7(this, 1);
         this.I = "";
         this.w = c6Var;
         this.h = i10;
@@ -82,9 +82,9 @@ public final class w7 extends FrameLayout {
         h5Var.setScrollNonFitText(true);
         if (z10) {
             boolean z11 = LocaleController.isRTL;
-            addView(z9Var, w7.a6.a(42.0f, z11 ? 0.0f : 15.0f, 12.0f, z11 ? 15.0f : 0.0f, 0.0f, 42, (z11 ? 5 : 3) | 48));
+            addView(z9Var, w7.z5.a(42.0f, z11 ? 0.0f : 15.0f, 12.0f, z11 ? 15.0f : 0.0f, 0.0f, 42, (z11 ? 5 : 3) | 48));
             boolean z12 = LocaleController.isRTL;
-            addView(h5Var, w7.a6.a(20.0f, z12 ? i10 : 73.0f, 12.0f, z12 ? 73.0f : 16.0f, 0.0f, -1, (z12 ? 5 : 3) | 48));
+            addView(h5Var, w7.z5.a(20.0f, z12 ? i10 : 73.0f, 12.0f, z12 ? 73.0f : 16.0f, 0.0f, -1, (z12 ? 5 : 3) | 48));
             TextView textView = new TextView(context);
             this.d = textView;
             textView.setSingleLine();
@@ -93,12 +93,12 @@ public final class w7 extends FrameLayout {
             textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.A6, c6Var));
             textView.setGravity(LocaleController.isRTL ? 5 : 3);
             boolean z13 = LocaleController.isRTL;
-            addView(textView, w7.a6.a(-2.0f, z13 ? i10 : 73.0f, 33.0f, z13 ? 73.0f : i10, 0.0f, -1, (z13 ? 5 : 3) | 48));
+            addView(textView, w7.z5.a(-2.0f, z13 ? i10 : 73.0f, 33.0f, z13 ? 73.0f : i10, 0.0f, -1, (z13 ? 5 : 3) | 48));
         } else {
             boolean z14 = LocaleController.isRTL;
-            addView(z9Var, w7.a6.a(42.0f, z14 ? 0.0f : 15.0f, 6.0f, z14 ? 15.0f : 0.0f, 0.0f, 42, (z14 ? 5 : 3) | 48));
+            addView(z9Var, w7.z5.a(42.0f, z14 ? 0.0f : 15.0f, 6.0f, z14 ? 15.0f : 0.0f, 0.0f, 42, (z14 ? 5 : 3) | 48));
             boolean z15 = LocaleController.isRTL;
-            addView(h5Var, w7.a6.a(-2.0f, z15 ? i10 : 74.0f, 17.0f, z15 ? 74.0f : i10, 0.0f, -2, (z15 ? 5 : 3) | 48));
+            addView(h5Var, w7.z5.a(-2.0f, z15 ? i10 : 74.0f, 17.0f, z15 ? 74.0f : i10, 0.0f, -2, (z15 ? 5 : 3) | 48));
         }
         setWillNotDraw(false);
     }
@@ -310,7 +310,7 @@ public final class w7 extends FrameLayout {
                 this.K = color;
                 drawable.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN));
             }
-            this.J.setBounds(d0.u(2, (int) rectF.centerX(), this.J), d0.d(2, (int) rectF.centerY(), this.J), d0.y(2, (int) rectF.centerX(), this.J), d0.x(2, (int) rectF.centerY(), this.J));
+            this.J.setBounds(c1.r(2, (int) rectF.centerX(), this.J), c1.c(2, (int) rectF.centerY(), this.J), c1.v(2, (int) rectF.centerX(), this.J), c1.u(2, (int) rectF.centerY(), this.J));
             this.J.draw(canvas);
         }
     }

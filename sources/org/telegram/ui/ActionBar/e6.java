@@ -10,7 +10,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class e6 {
     public int a;
@@ -528,15 +528,15 @@ public final class e6 {
         if (fArr[1] > 0.0f) {
             float f10 = fArr[2];
             if (f10 < 1.0f && f10 > 0.0f) {
-                fArr[0] = w7.s.a(fArr[0] + 0.22f, 0.0f, 1.0f);
-                fArr[1] = w7.s.a(fArr[1] - 0.35f, 0.0f, 1.0f);
-                fArr[2] = w7.s.a(fArr[2] - 0.65f, 0.0f, 1.0f);
+                fArr[0] = w7.r.a(fArr[0] + 0.22f, 0.0f, 1.0f);
+                fArr[1] = w7.r.a(fArr[1] - 0.35f, 0.0f, 1.0f);
+                fArr[2] = w7.r.a(fArr[2] - 0.65f, 0.0f, 1.0f);
                 return Color.HSVToColor(90, fArr);
             }
         }
         fArr[0] = f7;
         fArr[1] = 0.2f;
-        fArr[2] = w7.s.a(fArr[2] - 0.65f, 0.0f, 1.0f);
+        fArr[2] = w7.r.a(fArr[2] - 0.65f, 0.0f, 1.0f);
         return Color.HSVToColor(90, fArr);
     }
 

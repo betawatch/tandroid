@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class c {
     public static final c b = new c(new HashMap());
@@ -18,9 +18,9 @@ public final class c {
         this.a = DesugarCollections.unmodifiableMap(hashMap);
     }
 
-    public static k6.h a(MediaFormat mediaFormat, Set set) {
-        k6.h hVar = new k6.h(27);
-        HashMap hashMap = (HashMap) hVar.b;
+    public static a4.l a(MediaFormat mediaFormat, Set set) {
+        a4.l lVar = new a4.l(25);
+        HashMap hashMap = (HashMap) lVar.b;
         Iterator it = set.iterator();
         while (it.hasNext()) {
             String str = (String) it.next();
@@ -47,7 +47,7 @@ public final class c {
                 }
             }
         }
-        return hVar;
+        return lVar;
     }
 
     public final boolean equals(Object obj) {

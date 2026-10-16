@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d51 implements Runnable {
     public final /* synthetic */ int a;
@@ -65,9 +65,9 @@ public final /* synthetic */ class d51 implements Runnable {
                         p5 = 0;
                     }
                     if (p5 > 0) {
-                        org.telegram.ui.Components.j81 j81Var = secretMediaViewer.Q;
-                        if (!j81Var.f) {
-                            j81Var.h(n10 / p5, false);
+                        org.telegram.ui.Components.k81 k81Var = secretMediaViewer.Q;
+                        if (!k81Var.f) {
+                            k81Var.h(n10 / p5, false);
                             secretMediaViewer.R.invalidate();
                         }
                     }
@@ -119,7 +119,7 @@ public final /* synthetic */ class d51 implements Runnable {
         }
     }
 
-    public /* synthetic */ d51(SecretMediaViewer secretMediaViewer, kv0 kv0Var, int i10) {
+    public /* synthetic */ d51(SecretMediaViewer secretMediaViewer, jv0 jv0Var, int i10) {
         this.a = i10;
         this.b = secretMediaViewer;
     }

@@ -15,7 +15,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class s61 extends org.telegram.ui.Components.vt {
     public int M;
@@ -48,7 +48,7 @@ public final class s61 extends org.telegram.ui.Components.vt {
         if (!arrayList.isEmpty()) {
             View view = (View) this.O.get(0);
             if (view.getY() > (this.T.getHeight() - this.T.getPaddingBottom()) - view.getHeight()) {
-                this.Q = (w7.s.a((-((view.getY() - this.T.getHeight()) + this.T.getPaddingBottom())) / view.getHeight(), 0.0f, 1.0f) * 0.75f) + 0.25f;
+                this.Q = (w7.r.a((-((view.getY() - this.T.getHeight()) + this.T.getPaddingBottom())) / view.getHeight(), 0.0f, 1.0f) * 0.75f) + 0.25f;
             }
         }
         t61 t61Var = this.T;
@@ -154,7 +154,7 @@ public final class s61 extends org.telegram.ui.Components.vt {
                         int i16 = R - i15;
                         int i17 = r71Var.O1 - i15;
                         if (i16 >= 0 && i16 < i17) {
-                            float a2 = w7.s.a((SystemClock.elapsedRealtime() - r71Var.P1) / r71Var.f(), 0.0f, 1.0f);
+                            float a2 = w7.r.a((SystemClock.elapsedRealtime() - r71Var.P1) / r71Var.f(), 0.0f, 1.0f);
                             float f12 = i16;
                             float f13 = i17;
                             float f14 = f13 / 4.0f;
@@ -318,7 +318,7 @@ public final class s61 extends org.telegram.ui.Components.vt {
                             } else {
                                 backgroundThreadDrawHolderArr = backgroundThreadDrawHolderArr2;
                                 i10 = i17;
-                                float a2 = w7.s.a((SystemClock.elapsedRealtime() - r71Var.P1) / r71Var.f(), 0.0f, 1.0f);
+                                float a2 = w7.r.a((SystemClock.elapsedRealtime() - r71Var.P1) / r71Var.f(), 0.0f, 1.0f);
                                 float f14 = i19;
                                 float f15 = i20;
                                 float f16 = f15 / 4.0f;

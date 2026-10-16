@@ -18,11 +18,10 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-import ji.w4;
 import org.telegram.messenger.beta.R;
 import s4.b1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class l0 extends s4.g0 {
     public final ArrayList c = new ArrayList();
@@ -62,8 +61,8 @@ public final class l0 extends s4.g0 {
         view.startAnimation(mVar);
     }
 
-    public final Drawable E(p4.w wVar) {
-        Uri uri = wVar.f;
+    public final Drawable E(p4.v vVar) {
+        Uri uri = vVar.f;
         if (uri != null) {
             try {
                 Drawable createFromStream = Drawable.createFromStream(this.w.y.getContentResolver().openInputStream(uri), null);
@@ -74,8 +73,8 @@ public final class l0 extends s4.g0 {
                 Log.w("MediaRouteCtrlDialog", "Failed to load " + uri, e);
             }
         }
-        int i10 = wVar.n;
-        return i10 != 1 ? i10 != 2 ? wVar.e() ? this.n : this.e : this.h : this.f;
+        int i10 = vVar.n;
+        return i10 != 1 ? i10 != 2 ? vVar.e() ? this.n : this.e : this.h : this.f;
     }
 
     public final void F() {
@@ -85,13 +84,13 @@ public final class l0 extends s4.g0 {
         arrayList.clear();
         ArrayList arrayList2 = n0Var.v;
         ArrayList arrayList3 = new ArrayList();
-        p4.v vVar = n0Var.r.a;
-        vVar.getClass();
-        p4.y.b();
-        for (p4.w wVar : DesugarCollections.unmodifiableList(vVar.b)) {
-            w4 b10 = n0Var.r.b(wVar);
-            if (b10 != null && (oVar = (p4.o) b10.b) != null && oVar.d) {
-                arrayList3.add(wVar);
+        p4.u uVar = n0Var.r.a;
+        uVar.getClass();
+        p4.x.b();
+        for (p4.v vVar : DesugarCollections.unmodifiableList(uVar.b)) {
+            m.l b10 = n0Var.r.b(vVar);
+            if (b10 != null && (oVar = (p4.o) b10.a) != null && oVar.d) {
+                arrayList3.add(vVar);
             }
         }
         HashSet hashSet = new HashSet(arrayList2);
@@ -118,7 +117,7 @@ public final class l0 extends s4.g0 {
             while (i10 < size) {
                 Object obj = arrayList4.get(i10);
                 i10++;
-                arrayList.add(new j0((p4.w) obj, 3));
+                arrayList.add(new j0((p4.v) obj, 3));
             }
         }
         if (!arrayList3.isEmpty()) {
@@ -128,11 +127,11 @@ public final class l0 extends s4.g0 {
             while (i11 < size2) {
                 Object obj2 = arrayList3.get(i11);
                 i11++;
-                p4.w wVar = (p4.w) obj2;
-                if (!arrayList4.contains(wVar)) {
+                p4.v vVar = (p4.v) obj2;
+                if (!arrayList4.contains(vVar)) {
                     if (!z11) {
                         n0Var.r.getClass();
-                        p4.p a2 = p4.w.a();
+                        p4.p a2 = p4.v.a();
                         String j10 = a2 != null ? a2.j() : null;
                         if (TextUtils.isEmpty(j10)) {
                             j10 = context.getString(R.string.mr_dialog_groupable_header);
@@ -140,7 +139,7 @@ public final class l0 extends s4.g0 {
                         arrayList.add(new j0(j10, 2));
                         z11 = true;
                     }
-                    arrayList.add(new j0(wVar, 3));
+                    arrayList.add(new j0(vVar, 3));
                 }
             }
         }
@@ -150,12 +149,12 @@ public final class l0 extends s4.g0 {
             while (i12 < size3) {
                 Object obj3 = arrayList2.get(i12);
                 i12++;
-                p4.w wVar2 = (p4.w) obj3;
-                p4.w wVar3 = n0Var.r;
-                if (wVar3 != wVar2) {
+                p4.v vVar2 = (p4.v) obj3;
+                p4.v vVar3 = n0Var.r;
+                if (vVar3 != vVar2) {
                     if (!z10) {
-                        wVar3.getClass();
-                        p4.p a10 = p4.w.a();
+                        vVar3.getClass();
+                        p4.p a10 = p4.v.a();
                         String k10 = a10 != null ? a10.k() : null;
                         if (TextUtils.isEmpty(k10)) {
                             k10 = context.getString(R.string.mr_dialog_transferable_header);
@@ -163,7 +162,7 @@ public final class l0 extends s4.g0 {
                         arrayList.add(new j0(k10, 2));
                         z10 = true;
                     }
-                    arrayList.add(new j0(wVar2, 4));
+                    arrayList.add(new j0(vVar2, 4));
                 }
             }
         }
@@ -188,7 +187,7 @@ public final class l0 extends s4.g0 {
 
     @Override // s4.g0
     public final void v(b1 b1Var, int i10) {
-        w4 b10;
+        m.l b10;
         p4.o oVar;
         ArrayList arrayList = this.c;
         int i11 = (i10 == 0 ? this.r : (j0) arrayList.get(i10 - 1)).b;
@@ -196,7 +195,7 @@ public final class l0 extends s4.g0 {
         n0 n0Var = this.w;
         int i12 = 0;
         if (i11 == 1) {
-            n0Var.L.put(((p4.w) j0Var.a).c, (f0) b1Var);
+            n0Var.L.put(((p4.v) j0Var.a).c, (f0) b1Var);
             h0 h0Var = (h0) b1Var;
             View view = h0Var.a;
             n0 n0Var2 = h0Var.B.w;
@@ -206,9 +205,9 @@ public final class l0 extends s4.g0 {
             ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
             layoutParams.height = i12;
             view.setLayoutParams(layoutParams);
-            p4.w wVar = (p4.w) j0Var.a;
-            h0Var.t(wVar);
-            h0Var.z.setText(wVar.d);
+            p4.v vVar = (p4.v) j0Var.a;
+            h0Var.t(vVar);
+            h0Var.z.setText(vVar.d);
             return;
         }
         if (i11 == 2) {
@@ -221,48 +220,48 @@ public final class l0 extends s4.g0 {
             }
             g0 g0Var = (g0) b1Var;
             View view2 = g0Var.v;
-            p4.w wVar2 = (p4.w) j0Var.a;
-            g0Var.A = wVar2;
+            p4.v vVar2 = (p4.v) j0Var.a;
+            g0Var.A = vVar2;
             ImageView imageView = g0Var.w;
             imageView.setVisibility(0);
             g0Var.x.setVisibility(4);
             l0 l0Var = g0Var.B;
             List unmodifiableList = DesugarCollections.unmodifiableList(l0Var.w.r.v);
-            view2.setAlpha((unmodifiableList.size() == 1 && unmodifiableList.get(0) == wVar2) ? g0Var.z : 1.0f);
+            view2.setAlpha((unmodifiableList.size() == 1 && unmodifiableList.get(0) == vVar2) ? g0Var.z : 1.0f);
             view2.setOnClickListener(new w(g0Var, 2));
-            imageView.setImageDrawable(l0Var.E(wVar2));
-            g0Var.y.setText(wVar2.d);
+            imageView.setImageDrawable(l0Var.E(vVar2));
+            g0Var.y.setText(vVar2.d);
             return;
         }
-        n0Var.L.put(((p4.w) j0Var.a).c, (f0) b1Var);
+        n0Var.L.put(((p4.v) j0Var.a).c, (f0) b1Var);
         k0 k0Var = (k0) b1Var;
         float f7 = k0Var.F;
-        w wVar3 = k0Var.H;
+        w wVar = k0Var.H;
         ImageView imageView2 = k0Var.A;
         View view3 = k0Var.z;
         CheckBox checkBox = k0Var.E;
-        p4.w wVar4 = (p4.w) j0Var.a;
+        p4.v vVar3 = (p4.v) j0Var.a;
         l0 l0Var2 = k0Var.I;
         n0 n0Var3 = l0Var2.w;
-        if (wVar4 == n0Var3.r && DesugarCollections.unmodifiableList(wVar4.v).size() > 0) {
-            Iterator it = DesugarCollections.unmodifiableList(wVar4.v).iterator();
+        if (vVar3 == n0Var3.r && DesugarCollections.unmodifiableList(vVar3.v).size() > 0) {
+            Iterator it = DesugarCollections.unmodifiableList(vVar3.v).iterator();
             while (true) {
                 if (!it.hasNext()) {
                     break;
                 }
-                p4.w wVar5 = (p4.w) it.next();
-                if (!n0Var3.v.contains(wVar5)) {
-                    wVar4 = wVar5;
+                p4.v vVar4 = (p4.v) it.next();
+                if (!n0Var3.v.contains(vVar4)) {
+                    vVar3 = vVar4;
                     break;
                 }
             }
         }
-        k0Var.t(wVar4);
-        imageView2.setImageDrawable(l0Var2.E(wVar4));
-        k0Var.C.setText(wVar4.d);
+        k0Var.t(vVar3);
+        imageView2.setImageDrawable(l0Var2.E(vVar3));
+        k0Var.C.setText(vVar3.d);
         checkBox.setVisibility(0);
-        boolean v = k0Var.v(wVar4);
-        boolean z10 = !n0Var3.x.contains(wVar4) && (!k0Var.v(wVar4) || DesugarCollections.unmodifiableList(n0Var3.r.v).size() >= 2) && (!k0Var.v(wVar4) || ((b10 = n0Var3.r.b(wVar4)) != null && ((oVar = (p4.o) b10.b) == null || oVar.c)));
+        boolean v = k0Var.v(vVar3);
+        boolean z10 = !n0Var3.x.contains(vVar3) && (!k0Var.v(vVar3) || DesugarCollections.unmodifiableList(n0Var3.r.v).size() >= 2) && (!k0Var.v(vVar3) || ((b10 = n0Var3.r.b(vVar3)) != null && ((oVar = (p4.o) b10.a) == null || oVar.c)));
         checkBox.setChecked(v);
         k0Var.B.setVisibility(4);
         imageView2.setVisibility(0);
@@ -270,8 +269,8 @@ public final class l0 extends s4.g0 {
         checkBox.setEnabled(z10);
         k0Var.w.setEnabled(z10 || v);
         k0Var.x.setEnabled(z10 || v);
-        view3.setOnClickListener(wVar3);
-        checkBox.setOnClickListener(wVar3);
+        view3.setOnClickListener(wVar);
+        checkBox.setOnClickListener(wVar);
         RelativeLayout relativeLayout = k0Var.D;
         if (v && !k0Var.v.e()) {
             i12 = k0Var.G;

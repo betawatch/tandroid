@@ -5,9 +5,9 @@ import android.graphics.BitmapFactory;
 import java.io.EOFException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import ji.d4;
+import ji.h5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class g extends lf.a {
     public static final Logger s = Logger.getLogger(g.class.getName());
@@ -33,7 +33,7 @@ public final class g extends lf.a {
     public static c5.a c(e eVar) {
         b b10 = eVar.b();
         eVar.c(3, b.c);
-        return new c5.a(4, eVar.d(200, b10), eVar.c((int) eVar.a.e(), b10));
+        return new c5.a(eVar.d(200, b10), eVar.c((int) eVar.a.e(), b10), false);
     }
 
     public static String e(e eVar) {
@@ -64,8 +64,8 @@ public final class g extends lf.a {
             case "COM":
             case "COMM":
                 c5.a c10 = c(eVar);
-                if (this.i == null || (str = c10.b) == null || "".equals(str)) {
-                    this.i = c10.c;
+                if (this.i == null || (str = c10.a) == null || "".equals(str)) {
+                    this.i = c10.b;
                     return;
                 }
                 return;
@@ -73,25 +73,25 @@ public final class g extends lf.a {
             case "APIC":
                 if (this.o == null || this.r != 3) {
                     b b10 = eVar.b();
-                    d4 d4Var = eVar.d;
+                    h5 h5Var = eVar.d;
                     if (eVar.b.a == 2) {
                         eVar.c(3, b.c).toUpperCase().getClass();
                     } else {
                         eVar.d(20, b.c);
                     }
-                    byte g10 = d4Var.g();
+                    byte c11 = h5Var.c();
                     eVar.d(200, b10);
                     int e = (int) eVar.a.e();
                     byte[] bArr = new byte[e];
                     int i13 = 0;
                     while (i13 < e) {
-                        int read = ((com.google.firebase.messaging.d) d4Var.b).read(bArr, i13, e - i13);
+                        int read = ((com.google.firebase.messaging.d) h5Var.b).read(bArr, i13, e - i13);
                         if (read <= 0) {
                             throw new EOFException();
                         }
                         i13 += read;
                     }
-                    if (this.o == null || g10 == 3 || g10 == 0) {
+                    if (this.o == null || c11 == 3 || c11 == 0) {
                         try {
                             options = new BitmapFactory.Options();
                             options.inJustDecodeBounds = true;
@@ -118,7 +118,7 @@ public final class g extends lf.a {
                                     this.p = this.o;
                                 }
                             }
-                            this.r = g10;
+                            this.r = c11;
                             return;
                         }
                         for (int max2 = Math.max(i11, options.outHeight); max2 > 800; max2 /= 2) {
@@ -129,7 +129,7 @@ public final class g extends lf.a {
                         this.o = decodeByteArray;
                         if (decodeByteArray != null) {
                         }
-                        this.r = g10;
+                        this.r = c11;
                         return;
                     }
                     return;
@@ -295,7 +295,7 @@ public final class g extends lf.a {
             case "ULT":
             case "USLT":
                 if (this.n == null) {
-                    this.n = c(eVar).c;
+                    this.n = c(eVar).b;
                     return;
                 }
                 return;

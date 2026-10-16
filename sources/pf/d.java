@@ -22,7 +22,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import n6.o;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
@@ -45,20 +44,19 @@ import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.ActionBar.m3;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.Wallet.i;
 import org.telegram.ui.b3;
 import org.telegram.ui.h0;
 import org.telegram.ui.k4;
-import org.telegram.ui.li1;
-import org.telegram.ui.lz;
 import org.telegram.ui.o3;
-import org.telegram.ui.web.y0;
+import org.telegram.ui.web.z0;
 import x9.l;
 import xf.e;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class d {
-    public static o a;
+    public static n3.b a;
     public static l b;
     public static a9.d c;
     public static String d;
@@ -119,23 +117,23 @@ public abstract class d {
         return null;
     }
 
-    public static o c() {
+    public static n3.b c() {
         l lVar = b;
-        o oVar = null;
+        n3.b bVar = null;
         if (lVar == null) {
             a = null;
         } else if (a == null) {
-            rb.b bVar = new rb.b(19);
+            rb.b bVar2 = new rb.b(19);
             e eVar = (e) lVar.a;
-            xf.b bVar2 = new xf.b(bVar);
+            xf.b bVar3 = new xf.b(bVar2);
             try {
-                if (((xf.c) eVar).F0(bVar2)) {
-                    oVar = new o(27, bVar2, (ComponentName) lVar.b);
+                if (((xf.c) eVar).F0(bVar3)) {
+                    bVar = new n3.b(28, bVar3, (ComponentName) lVar.b);
                 }
             } catch (RemoteException unused) {
             }
-            a = oVar;
-            new WeakReference(oVar);
+            a = bVar;
+            new WeakReference(bVar);
         }
         return a;
     }
@@ -216,16 +214,7 @@ public abstract class d {
         }
     }
 
-    public static boolean e() {
-        lz sheetFragment;
-        m2 U = LaunchActivity.U();
-        if (U == null || !(U.getParentLayout() instanceof ActionBarLayout) || (sheetFragment = ((ActionBarLayout) U.getParentLayout()).getSheetFragment()) == null || sheetFragment.getArticleViewer() == null) {
-            return (U == null || U.getArticleViewer() == null) ? false : true;
-        }
-        return true;
-    }
-
-    public static boolean f(Uri uri, boolean z10, boolean[] zArr) {
+    public static boolean e(Uri uri, boolean z10, boolean[] zArr) {
         String str;
         String str2;
         String hostAuthority = AndroidUtilities.getHostAuthority(uri);
@@ -300,7 +289,7 @@ public abstract class d {
         return false;
     }
 
-    public static boolean g(String str) {
+    public static boolean f(String str) {
         try {
             return TextUtils.equals(AndroidUtilities.getHostAuthority(str), MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix);
         } catch (Exception e7) {
@@ -309,7 +298,7 @@ public abstract class d {
         }
     }
 
-    public static boolean h(String str, boolean z10, boolean z11) {
+    public static boolean g(String str, boolean z10, boolean z11) {
         if (z10) {
             return str.equals("telegra.ph") || str.equals("te.legra.ph") || str.equals("graph.org");
         }
@@ -319,7 +308,7 @@ public abstract class d {
         return str.matches(sb2.toString());
     }
 
-    public static boolean i(String str) {
+    public static boolean h(String str) {
         String hostAuthority = AndroidUtilities.getHostAuthority(str, true);
         if (hostAuthority != null && (hostAuthority.endsWith(".ton") || hostAuthority.endsWith(".adnl"))) {
             return true;
@@ -328,7 +317,7 @@ public abstract class d {
         return parse.getScheme() != null && parse.getScheme().equalsIgnoreCase("tonsite");
     }
 
-    public static boolean j(String str) {
+    public static boolean i(String str) {
         boolean matches;
         if (f == null) {
             f = Pattern.compile("^[a-zA-Z0-9\\-\\_\\.]+\\.[a-zA-Z0-9\\-\\_]+$");
@@ -346,7 +335,7 @@ public abstract class d {
         return !matches;
     }
 
-    public static boolean k(Context context, String str, boolean z10, boolean z11, c cVar) {
+    public static boolean j(Context context, String str, boolean z10, boolean z11, c cVar) {
         LaunchActivity launchActivity;
         if (str == null) {
             return false;
@@ -377,15 +366,15 @@ public abstract class d {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static boolean l(Context context, String str, boolean z10) {
+    public static boolean k(Context context, String str, boolean z10) {
         boolean z11;
         if (str != null) {
             try {
-                if (!i(str) && !f(Uri.parse(str), false, null)) {
+                if (!h(str) && !e(Uri.parse(str), false, null)) {
                     Uri parse = Uri.parse(str);
-                    String v = v(parse, parse.getScheme() == null ? "https" : parse.getScheme(), null, parse.getHost() != null ? parse.getHost().toLowerCase() : parse.getHost(), TextUtils.isEmpty(parse.getPath()) ? "/" : parse.getPath());
-                    Uri parse2 = Uri.parse(v);
-                    if (!v.startsWith("intent://") && (parse2.getScheme() == null || !parse2.getScheme().equalsIgnoreCase("intent"))) {
+                    String u10 = u(parse, parse.getScheme() == null ? "https" : parse.getScheme(), null, parse.getHost() != null ? parse.getHost().toLowerCase() : parse.getHost(), TextUtils.isEmpty(parse.getPath()) ? "/" : parse.getPath());
+                    Uri parse2 = Uri.parse(u10);
+                    if (!u10.startsWith("intent://") && (parse2.getScheme() == null || !parse2.getScheme().equalsIgnoreCase("intent"))) {
                         z11 = false;
                         if (z11 || z10) {
                             Intent parseUri = !z11 ? Intent.parseUri(parse2.toString(), 1) : new Intent("android.intent.action.VIEW", parse2);
@@ -394,7 +383,7 @@ public abstract class d {
                                 parseUri.addCategory("android.intent.category.DEFAULT");
                                 parseUri.addFlags(TLObject.FLAG_28);
                                 parseUri.addFlags(1024);
-                            } else if (!z11 && !d(context, v)) {
+                            } else if (!z11 && !d(context, u10)) {
                             }
                             context.startActivity(parseUri);
                             return true;
@@ -421,7 +410,7 @@ public abstract class d {
         return false;
     }
 
-    public static boolean m(Context context, String str, boolean z10, String str2) {
+    public static boolean l(Context context, String str, boolean z10, String str2) {
         if (str != null) {
             try {
                 Uri parse = Uri.parse(str);
@@ -444,7 +433,7 @@ public abstract class d {
         return false;
     }
 
-    public static void n(String str) {
+    public static void m(String str) {
         m3 P;
         l3 l3Var;
         o3[] o3VarArr;
@@ -457,14 +446,14 @@ public abstract class d {
                     l3Var = tabs.get(i10);
                     k4 k4Var = l3Var.J;
                     if (k4Var != null && !k4Var.d0.isEmpty()) {
-                        Object g10 = i2.d.g(1, l3Var.J.d0);
-                        if (g10 instanceof b3) {
-                            y0 y0Var = ((b3) g10).b;
-                            if (y0Var == null && (o3VarArr = l3Var.J.u0) != null && (o3Var = o3VarArr[0]) != null) {
-                                y0Var = o3Var.getWebView();
+                        Object h = i2.d.h(1, l3Var.J.d0);
+                        if (h instanceof b3) {
+                            z0 z0Var = ((b3) h).b;
+                            if (z0Var == null && (o3VarArr = l3Var.J.u0) != null && (o3Var = o3VarArr[0]) != null) {
+                                z0Var = o3Var.getWebView();
                             }
-                            if (y0Var != null) {
-                                if (TextUtils.equals(m3.p(y0Var.canGoBack() ? y0Var.getUrl() : y0Var.getOpenURL()), m3.p(str))) {
+                            if (z0Var != null) {
+                                if (TextUtils.equals(m3.p(z0Var.canGoBack() ? z0Var.getUrl() : z0Var.getOpenURL()), m3.p(str))) {
                                     P.e(l3Var);
                                     break;
                                 }
@@ -496,95 +485,71 @@ public abstract class d {
         U.createArticleViewer(false).N(null, null, null, str);
     }
 
-    public static void o(Activity activity, String str, boolean z10) {
+    public static void n(Activity activity, String str, boolean z10) {
         if (activity == null || str == null) {
             return;
         }
-        p(activity, Uri.parse(str), z10, true);
+        o(activity, Uri.parse(str), z10, true);
     }
 
-    public static void p(Context context, Uri uri, boolean z10, boolean z11) {
-        r(context, uri, z10, z11, false, null, null, false, true, false);
+    public static void o(Context context, Uri uri, boolean z10, boolean z11) {
+        q(context, uri, z10, z11, false, null, null, false, true, false);
     }
 
-    public static void q(Context context, Uri uri, boolean z10, boolean z11, c cVar) {
-        r(context, uri, z10, z11, false, cVar, null, false, true, false);
+    public static void p(Context context, Uri uri, boolean z10, boolean z11, c cVar) {
+        q(context, uri, z10, z11, false, cVar, null, false, true, false);
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(31:4|(31:193|194|261|(1:8)(1:192)|(3:155|156|(7:158|(11:160|161|162|(2:164|(2:166|(2:168|(1:170))))|187|11|12|13|(2:151|152)(1:15)|16|(19:22|(1:24)|144|145|146|27|28|(1:30)|(3:(2:33|(1:35))|36|(5:45|(3:127|128|(10:133|(3:102|103|(2:(1:106)|118))|74|(5:101|77|78|(1:80)|(1:(2:87|(4:89|(2:93|(1:95))|96|97)(1:98))(2:99|100))(2:84|85))|76|77|78|(0)|(1:82)|(0)(0)))|47|48|(2:50|51)(16:52|53|54|55|56|(1:58)|59|(1:61)(1:124)|62|63|64|65|66|67|68|70)))|137|(0)|74|(0)|76|77|78|(0)|(0)|(0)(0))(1:20))(1:189)|171|172|173|174|(2:176|177)(5:178|179|180|181|182)))|10|11|12|13|(0)(0)|16|(1:18)|22|(0)|144|145|146|27|28|(0)|(0)|137|(0)|74|(0)|76|77|78|(0)|(0)|(0)(0))|6|(0)(0)|(0)|10|11|12|13|(0)(0)|16|(0)|22|(0)|144|145|146|27|28|(0)|(0)|137|(0)|74|(0)|76|77|78|(0)|(0)|(0)(0)) */
-    /* JADX WARN: Code restructure failed: missing block: B:107:0x042c, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(31:4|(31:189|190|257|(1:8)(1:188)|(3:151|152|(7:154|(11:156|157|158|(2:160|(2:162|(2:164|(1:166))))|183|11|12|13|(2:147|148)(1:15)|16|(19:22|(1:24)|140|141|142|27|28|(1:30)|(3:(2:33|(1:35))|36|(5:43|(3:123|124|(10:129|(3:100|101|(1:(2:104|(2:106|(7:108|(2:110|(2:112|(1:114)))|74|75|76|(1:78)|(1:(2:85|(4:87|(2:91|(1:93))|94|95)(1:96))(2:97|98))(2:82|83))))))|72|(6:99|75|76|(0)|(1:80)|(0)(0))|74|75|76|(0)|(0)|(0)(0)))|45|46|(2:48|49)(16:50|51|52|53|54|(1:56)|57|(1:59)(1:120)|60|61|62|63|64|65|66|68)))|133|(0)|72|(0)|74|75|76|(0)|(0)|(0)(0))(1:20))(1:185)|167|168|169|170|(2:172|173)(5:174|175|176|177|178)))|10|11|12|13|(0)(0)|16|(1:18)|22|(0)|140|141|142|27|28|(0)|(0)|133|(0)|72|(0)|74|75|76|(0)|(0)|(0)(0))|6|(0)(0)|(0)|10|11|12|13|(0)(0)|16|(0)|22|(0)|140|141|142|27|28|(0)|(0)|133|(0)|72|(0)|74|75|76|(0)|(0)|(0)(0)) */
+    /* JADX WARN: Code restructure failed: missing block: B:115:0x0453, code lost:
     
-        if (org.telegram.messenger.MessagesController.getInstance(r22).isWebBrowserOpenInApp(r3.toString()) != false) goto L236;
+        if ("tonsite".equals(r3.getScheme()) != false) goto L244;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:109:0x0438, code lost:
-    
-        if (android.text.TextUtils.isEmpty(r21) == false) goto L246;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:111:0x043e, code lost:
-    
-        if (r3.getScheme() != null) goto L240;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:113:0x0448, code lost:
-    
-        if ("https".equals(r3.getScheme()) == false) goto L242;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:115:0x0452, code lost:
-    
-        if ("http".equals(r3.getScheme()) == false) goto L244;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:117:0x045f, code lost:
-    
-        if ("tonsite".equals(r3.getScheme()) == false) goto L246;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:119:0x0432, code lost:
-    
-        if (e() != false) goto L236;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:138:0x02c0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:134:0x02c0, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:148:0x027d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:144:0x027d, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:149:0x027e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:145:0x027e, code lost:
     
         org.telegram.messenger.FileLog.e(r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:153:0x0410, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:149:0x040a, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:154:0x0411, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:150:0x040b, code lost:
     
         r2 = r17;
         r3 = r20;
      */
     /* JADX WARN: Code restructure failed: missing block: B:25:0x0275, code lost:
     
-        if ("https".equals(r2) != false) goto L281;
+        if ("https".equals(r2) != false) goto L275;
      */
     /* JADX WARN: Code restructure failed: missing block: B:26:0x0281, code lost:
     
         r3 = r20;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:101:0x046d  */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x041a A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x024b A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x0199 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0414 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x024b A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x0199 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:15:0x025c  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0261 A[Catch: Exception -> 0x0255, TRY_ENTER, TRY_LEAVE, TryCatch #8 {Exception -> 0x0255, blocks: (B:152:0x024b, B:18:0x0261, B:24:0x0271), top: B:151:0x024b }] */
-    /* JADX WARN: Removed duplicated region for block: B:192:0x0193  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0271 A[Catch: Exception -> 0x0255, TRY_ENTER, TRY_LEAVE, TryCatch #8 {Exception -> 0x0255, blocks: (B:152:0x024b, B:18:0x0261, B:24:0x0271), top: B:151:0x024b }] */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x029f A[Catch: Exception -> 0x02c0, TryCatch #0 {Exception -> 0x02c0, blocks: (B:28:0x0283, B:30:0x029f, B:33:0x02c6, B:36:0x02d9, B:38:0x02df, B:41:0x02eb, B:43:0x02f4, B:45:0x02fe), top: B:27:0x0283 }] */
+    /* JADX WARN: Removed duplicated region for block: B:188:0x0193  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0261 A[Catch: Exception -> 0x0255, TRY_ENTER, TRY_LEAVE, TryCatch #8 {Exception -> 0x0255, blocks: (B:148:0x024b, B:18:0x0261, B:24:0x0271), top: B:147:0x024b }] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0271 A[Catch: Exception -> 0x0255, TRY_ENTER, TRY_LEAVE, TryCatch #8 {Exception -> 0x0255, blocks: (B:148:0x024b, B:18:0x0261, B:24:0x0271), top: B:147:0x024b }] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x029f A[Catch: Exception -> 0x02c0, TryCatch #0 {Exception -> 0x02c0, blocks: (B:28:0x0283, B:30:0x029f, B:33:0x02c6, B:36:0x02d9, B:39:0x02e5, B:41:0x02ee, B:43:0x02f8), top: B:27:0x0283 }] */
     /* JADX WARN: Removed duplicated region for block: B:32:0x02c4  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x0476 A[Catch: Exception -> 0x04d7, TRY_ENTER, TryCatch #7 {Exception -> 0x04d7, blocks: (B:103:0x041a, B:106:0x0420, B:108:0x0434, B:110:0x043a, B:112:0x0440, B:114:0x044a, B:116:0x0454, B:77:0x046e, B:80:0x0476, B:82:0x0480, B:84:0x0484, B:87:0x0492, B:89:0x049c, B:91:0x04a2, B:93:0x04ac, B:95:0x04c1, B:96:0x04c5, B:99:0x04cd, B:118:0x042e, B:74:0x0461), top: B:102:0x041a }] */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0480 A[Catch: Exception -> 0x04d7, TryCatch #7 {Exception -> 0x04d7, blocks: (B:103:0x041a, B:106:0x0420, B:108:0x0434, B:110:0x043a, B:112:0x0440, B:114:0x044a, B:116:0x0454, B:77:0x046e, B:80:0x0476, B:82:0x0480, B:84:0x0484, B:87:0x0492, B:89:0x049c, B:91:0x04a2, B:93:0x04ac, B:95:0x04c1, B:96:0x04c5, B:99:0x04cd, B:118:0x042e, B:74:0x0461), top: B:102:0x041a }] */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0492 A[Catch: Exception -> 0x04d7, TryCatch #7 {Exception -> 0x04d7, blocks: (B:103:0x041a, B:106:0x0420, B:108:0x0434, B:110:0x043a, B:112:0x0440, B:114:0x044a, B:116:0x0454, B:77:0x046e, B:80:0x0476, B:82:0x0480, B:84:0x0484, B:87:0x0492, B:89:0x049c, B:91:0x04a2, B:93:0x04ac, B:95:0x04c1, B:96:0x04c5, B:99:0x04cd, B:118:0x042e, B:74:0x0461), top: B:102:0x041a }] */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x046a A[Catch: Exception -> 0x04cb, TRY_ENTER, TryCatch #2 {Exception -> 0x04cb, blocks: (B:101:0x0414, B:104:0x041a, B:106:0x0428, B:108:0x042e, B:110:0x0434, B:112:0x043e, B:114:0x0448, B:75:0x0462, B:78:0x046a, B:80:0x0474, B:82:0x0478, B:85:0x0486, B:87:0x0490, B:89:0x0496, B:91:0x04a0, B:93:0x04b5, B:94:0x04b9, B:97:0x04c1, B:72:0x0455), top: B:100:0x0414 }] */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x0474 A[Catch: Exception -> 0x04cb, TryCatch #2 {Exception -> 0x04cb, blocks: (B:101:0x0414, B:104:0x041a, B:106:0x0428, B:108:0x042e, B:110:0x0434, B:112:0x043e, B:114:0x0448, B:75:0x0462, B:78:0x046a, B:80:0x0474, B:82:0x0478, B:85:0x0486, B:87:0x0490, B:89:0x0496, B:91:0x04a0, B:93:0x04b5, B:94:0x04b9, B:97:0x04c1, B:72:0x0455), top: B:100:0x0414 }] */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x0486 A[Catch: Exception -> 0x04cb, TryCatch #2 {Exception -> 0x04cb, blocks: (B:101:0x0414, B:104:0x041a, B:106:0x0428, B:108:0x042e, B:110:0x0434, B:112:0x043e, B:114:0x0448, B:75:0x0462, B:78:0x046a, B:80:0x0474, B:82:0x0478, B:85:0x0486, B:87:0x0490, B:89:0x0496, B:91:0x04a0, B:93:0x04b5, B:94:0x04b9, B:97:0x04c1, B:72:0x0455), top: B:100:0x0414 }] */
     /* JADX WARN: Removed duplicated region for block: B:8:0x018f  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x04cd A[Catch: Exception -> 0x04d7, TRY_LEAVE, TryCatch #7 {Exception -> 0x04d7, blocks: (B:103:0x041a, B:106:0x0420, B:108:0x0434, B:110:0x043a, B:112:0x0440, B:114:0x044a, B:116:0x0454, B:77:0x046e, B:80:0x0476, B:82:0x0480, B:84:0x0484, B:87:0x0492, B:89:0x049c, B:91:0x04a2, B:93:0x04ac, B:95:0x04c1, B:96:0x04c5, B:99:0x04cd, B:118:0x042e, B:74:0x0461), top: B:102:0x041a }] */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x04c1 A[Catch: Exception -> 0x04cb, TRY_LEAVE, TryCatch #2 {Exception -> 0x04cb, blocks: (B:101:0x0414, B:104:0x041a, B:106:0x0428, B:108:0x042e, B:110:0x0434, B:112:0x043e, B:114:0x0448, B:75:0x0462, B:78:0x046a, B:80:0x0474, B:82:0x0478, B:85:0x0486, B:87:0x0490, B:89:0x0496, B:91:0x04a0, B:93:0x04b5, B:94:0x04b9, B:97:0x04c1, B:72:0x0455), top: B:100:0x0414 }] */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x0461  */
     /* JADX WARN: Type inference failed for: r17v10 */
     /* JADX WARN: Type inference failed for: r17v11 */
     /* JADX WARN: Type inference failed for: r17v13 */
@@ -600,7 +565,7 @@ public abstract class d {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void r(Context context, Uri uri, boolean z10, boolean z11, boolean z12, c cVar, String str, boolean z13, boolean z14, boolean z15) {
+    public static void q(Context context, Uri uri, boolean z10, boolean z11, boolean z12, c cVar, String str, boolean z13, boolean z14, boolean z15) {
         String str2;
         String str3;
         boolean z16;
@@ -627,8 +592,8 @@ public abstract class d {
         }
         int i11 = UserConfig.selectedAccount;
         boolean[] zArr = {false};
-        boolean f7 = f(uri, false, zArr);
-        int i12 = 6;
+        boolean e7 = e(uri, false, zArr);
+        int i12 = 5;
         if (str != null) {
             switch (str) {
                 case "brave-browser":
@@ -703,7 +668,7 @@ public abstract class d {
                 } catch (Exception unused) {
                 }
                 if (UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser() != null) {
-                    if (h(hostAuthority, true, false)) {
+                    if (g(hostAuthority, true, false)) {
                         z18 = 0;
                     } else {
                         z18 = 0;
@@ -729,19 +694,19 @@ public abstract class d {
                         if (uri.getScheme() != null) {
                             try {
                                 lowerCase = uri.getScheme().toLowerCase();
-                            } catch (Exception e7) {
-                                e = e7;
+                            } catch (Exception e10) {
+                                e = e10;
                                 uri2 = uri;
                                 z20 = z18;
                                 FileLog.e(e);
                                 if (z14) {
                                 }
-                                if (!i(uri2.toString())) {
+                                if (!h(uri2.toString())) {
                                 }
                                 z21 = true;
                                 if (uri2.getScheme() != null) {
                                 }
-                                if (!f7) {
+                                if (!e7) {
                                 }
                                 if (z21) {
                                 }
@@ -765,67 +730,84 @@ public abstract class d {
                                 if (!MessagesController.getInstance(i10).isWebBrowserOpenInApp(uri2.toString())) {
                                 }
                             }
-                            if (!e() && MessagesController.getInstance(i10).isWebBrowserUseCustomTabs() && !f7 && !str5.equals("tel") && !i(uri2.toString())) {
+                            if (MessagesController.getInstance(i10).isWebBrowserUseCustomTabs() && !e7 && !str5.equals("tel") && !h(uri2.toString())) {
                                 if (!zArr[z18]) {
                                     try {
-                                    } catch (Exception e10) {
-                                        e = e10;
+                                    } catch (Exception e11) {
+                                        e = e11;
                                         z20 = false;
                                         FileLog.e(e);
                                         if (z14) {
                                         }
-                                        if (!i(uri2.toString())) {
+                                        if (!h(uri2.toString())) {
                                         }
                                         z21 = true;
                                         if (uri2.getScheme() != null) {
                                         }
-                                        if (!f7) {
+                                        if (!e7) {
                                         }
                                         if (z21) {
                                         }
                                     }
-                                    if (l(context, uri2.toString(), z18) && d(context, uri2.toString())) {
+                                    if (k(context, uri2.toString(), z18) && d(context, uri2.toString())) {
                                         z20 = false;
                                         if (z14) {
                                             try {
                                                 if (BubbleActivity.a0 == null) {
                                                     if (uri2 != null) {
+                                                        if (MessagesController.getInstance(i10).isWebBrowserOpenInApp(uri2.toString())) {
+                                                            if (TextUtils.isEmpty(str4)) {
+                                                                if (uri2.getScheme() != null) {
+                                                                    if (!"https".equals(uri2.getScheme())) {
+                                                                        if (!"http".equals(uri2.getScheme())) {
+                                                                        }
+                                                                    }
+                                                                }
+                                                                z21 = true;
+                                                                if (uri2.getScheme() != null) {
+                                                                    uri2.getScheme().equalsIgnoreCase("intent");
+                                                                }
+                                                                if (!e7 && (launchActivity = LaunchActivity.G1) != null) {
+                                                                    j(launchActivity, uri2.toString(), z12, z15, cVar2);
+                                                                    return;
+                                                                }
+                                                                if (z21) {
+                                                                    l(context, uri2.toString(), z13, str4);
+                                                                    return;
+                                                                }
+                                                                if (k(context, uri2.toString(), z13)) {
+                                                                    return;
+                                                                }
+                                                                if (uri2.getScheme() != null && uri2.getScheme().equalsIgnoreCase("intent")) {
+                                                                    String stringExtra = Intent.parseUri(uri2.toString(), 1).getStringExtra("browser_fallback_url");
+                                                                    if (!TextUtils.isEmpty(stringExtra)) {
+                                                                        uri2 = Uri.parse(stringExtra);
+                                                                    }
+                                                                }
+                                                                m(uri2.toString());
+                                                                return;
+                                                            }
+                                                        }
                                                     }
                                                 }
-                                            } catch (Exception e11) {
-                                                FileLog.e(e11);
+                                            } catch (Exception e12) {
+                                                FileLog.e(e12);
                                                 return;
                                             }
                                         }
-                                        if (!i(uri2.toString())) {
+                                        if (!h(uri2.toString())) {
                                             z21 = z20;
                                             if (uri2.getScheme() != null) {
-                                                uri2.getScheme().equalsIgnoreCase("intent");
                                             }
-                                            if (!f7 && (launchActivity = LaunchActivity.G1) != null) {
-                                                k(launchActivity, uri2.toString(), z12, z15, cVar2);
-                                                return;
+                                            if (!e7) {
                                             }
                                             if (z21) {
-                                                m(context, uri2.toString(), z13, str4);
-                                                return;
                                             }
-                                            if (l(context, uri2.toString(), z13)) {
-                                                return;
-                                            }
-                                            if (uri2.getScheme() != null && uri2.getScheme().equalsIgnoreCase("intent")) {
-                                                String stringExtra = Intent.parseUri(uri2.toString(), 1).getStringExtra("browser_fallback_url");
-                                                if (!TextUtils.isEmpty(stringExtra)) {
-                                                    uri2 = Uri.parse(stringExtra);
-                                                }
-                                            }
-                                            n(uri2.toString());
-                                            return;
                                         }
                                         z21 = true;
                                         if (uri2.getScheme() != null) {
                                         }
-                                        if (!f7) {
+                                        if (!e7) {
                                         }
                                         if (z21) {
                                         }
@@ -842,7 +824,7 @@ public abstract class d {
                                 boolean z22 = false;
                                 try {
                                     PendingIntent broadcast = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, 0, new Intent(ApplicationLoader.applicationContext, (Class<?>) CustomTabsCopyReceiver.class), 167772160);
-                                    o c10 = c();
+                                    n3.b c10 = c();
                                     intent = new Intent("android.intent.action.VIEW");
                                     if (c10 != null) {
                                         intent.setPackage(((ComponentName) c10.c).getPackageName());
@@ -862,8 +844,8 @@ public abstract class d {
                                     decodeResource = BitmapFactory.decodeResource(context.getResources(), R.drawable.msg_filled_shareout);
                                     string = LocaleController.getString(R.string.ShareFile);
                                     z20 = false;
-                                } catch (Exception e12) {
-                                    e = e12;
+                                } catch (Exception e13) {
+                                    e = e13;
                                     z20 = z22;
                                 }
                                 try {
@@ -881,17 +863,17 @@ public abstract class d {
                                     intent.setData(uri2);
                                     context.startActivity(intent, null);
                                     return;
-                                } catch (Exception e13) {
-                                    e = e13;
+                                } catch (Exception e14) {
+                                    e = e14;
                                     FileLog.e(e);
                                     if (z14) {
                                     }
-                                    if (!i(uri2.toString())) {
+                                    if (!h(uri2.toString())) {
                                     }
                                     z21 = true;
                                     if (uri2.getScheme() != null) {
                                     }
-                                    if (!f7) {
+                                    if (!e7) {
                                     }
                                     if (z21) {
                                     }
@@ -901,12 +883,12 @@ public abstract class d {
                         z20 = z18;
                         if (z14) {
                         }
-                        if (!i(uri2.toString())) {
+                        if (!h(uri2.toString())) {
                         }
                         z21 = true;
                         if (uri2.getScheme() != null) {
                         }
-                        if (!f7) {
+                        if (!e7) {
                         }
                         if (z21) {
                         }
@@ -926,7 +908,7 @@ public abstract class d {
                         } else {
                             i10 = i11;
                             try {
-                                AndroidUtilities.runOnUIThread(new li1(a2VarArr, sendRequest, i12), 1000L);
+                                AndroidUtilities.runOnUIThread(new i(a2VarArr, sendRequest, i12), 1000L);
                                 return;
                             } catch (Exception unused3) {
                             }
@@ -957,12 +939,12 @@ public abstract class d {
             z20 = z18;
             if (z14) {
             }
-            if (!i(uri2.toString())) {
+            if (!h(uri2.toString())) {
             }
             z21 = true;
             if (uri2.getScheme() != null) {
             }
-            if (!f7) {
+            if (!e7) {
             }
             if (z21) {
             }
@@ -993,36 +975,36 @@ public abstract class d {
         z20 = z18;
         if (z14) {
         }
-        if (!i(uri2.toString())) {
+        if (!h(uri2.toString())) {
         }
         z21 = true;
         if (uri2.getScheme() != null) {
         }
-        if (!f7) {
+        if (!e7) {
         }
         if (z21) {
         }
     }
 
-    public static void s(Context context, String str) {
+    public static void r(Context context, String str) {
         if (str == null) {
             return;
         }
-        p(context, Uri.parse(str), true, true);
+        o(context, Uri.parse(str), true, true);
     }
 
-    public static void t(LaunchActivity launchActivity, Uri uri) {
-        p(launchActivity, uri, true, true);
+    public static void s(LaunchActivity launchActivity, Uri uri) {
+        o(launchActivity, uri, true, true);
     }
 
-    public static void u(Context context, String str) {
+    public static void t(Context context, String str) {
         if (str == null) {
             return;
         }
-        r(context, Uri.parse(str), false, true, false, null, null, false, false, false);
+        q(context, Uri.parse(str), false, true, false, null, null, false, false, false);
     }
 
-    public static String v(Uri uri, String str, String str2, String str3, String str4) {
+    public static String u(Uri uri, String str, String str2, String str3, String str4) {
         StringBuilder sb2 = new StringBuilder();
         if (str == null) {
             str = uri.getScheme();
@@ -1065,11 +1047,11 @@ public abstract class d {
         return sb2.toString();
     }
 
-    public static String w(Uri uri, String str) {
-        return v(uri, null, null, str, null);
+    public static String v(Uri uri, String str) {
+        return u(uri, null, null, str, null);
     }
 
-    public static void x(Activity activity) {
+    public static void w(Activity activity) {
         if (c == null) {
             return;
         }
@@ -1085,7 +1067,7 @@ public abstract class d {
         a = null;
     }
 
-    public static boolean y(String str) {
-        return h(str, false, true) || str.matches("^(https://)?t\\.me/iv\\??(/.*|$)") || str.matches("^(https://)?telegram\\.org/(blog|tour)(/.*|$)") || str.matches("^(https://)?fragment\\.com(/.*|$)");
+    public static boolean x(String str) {
+        return g(str, false, true) || str.matches("^(https://)?t\\.me/iv\\??(/.*|$)") || str.matches("^(https://)?telegram\\.org/(blog|tour)(/.*|$)") || str.matches("^(https://)?fragment\\.com(/.*|$)");
     }
 }

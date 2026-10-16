@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import java.lang.reflect.Method;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class h51 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -23,12 +23,12 @@ public final class h51 extends AnimatorListenerAdapter {
             case 0:
                 SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b.b;
                 secretMediaViewer.Z.getNextView().setText((CharSequence) null);
-                iu0 iu0Var = secretMediaViewer.a0;
-                iu0Var.l0 = false;
-                if (iu0Var.m0 >= 0) {
-                    ((ViewGroup.MarginLayoutParams) iu0Var.o0.getLayoutParams()).topMargin = iu0Var.m0;
-                    iu0Var.m0 = -1;
-                    iu0Var.requestLayout();
+                hu0 hu0Var = secretMediaViewer.a0;
+                hu0Var.l0 = false;
+                if (hu0Var.m0 >= 0) {
+                    ((ViewGroup.MarginLayoutParams) hu0Var.o0.getLayoutParams()).topMargin = hu0Var.m0;
+                    hu0Var.m0 = -1;
+                    hu0Var.requestLayout();
                     break;
                 }
                 break;
@@ -42,11 +42,11 @@ public final class h51 extends AnimatorListenerAdapter {
     public void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 0:
-                iu0 iu0Var = ((SecretMediaViewer) this.b.b).a0;
-                Method method = iu0Var.f0;
+                hu0 hu0Var = ((SecretMediaViewer) this.b.b).a0;
+                Method method = hu0Var.f0;
                 if (method != null) {
                     try {
-                        method.invoke(iu0Var, null);
+                        method.invoke(hu0Var, null);
                         break;
                     } catch (Exception e) {
                         FileLog.e(e);

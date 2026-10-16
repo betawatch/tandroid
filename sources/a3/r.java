@@ -12,7 +12,7 @@ import java.util.Locale;
 import java.util.concurrent.Executor;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class r implements p0 {
     public e9.n0 a;
@@ -207,7 +207,7 @@ public final class r implements p0 {
                 r2.l lVar = jVar.a;
                 int i11 = jVar.b;
                 Trace.beginSection("dropVideoBuffer");
-                lVar.f(i11);
+                lVar.e(i11);
                 Trace.endSection();
                 nVar.R0(0, 1);
                 return true;

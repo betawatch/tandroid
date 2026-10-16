@@ -11,10 +11,10 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.accessibility.AccessibilityNodeProvider;
 import android.widget.Button;
-import org.telegram.ui.bj1;
+import org.telegram.ui.aj1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
 public abstract class c extends AccessibilityNodeProvider {
     public final e a;
     public final AccessibilityManager d;
@@ -115,11 +115,11 @@ public abstract class c extends AccessibilityNodeProvider {
         d dVar = ((b) this).g.Q;
         if (dVar != null) {
             if (i10 == 0) {
-                ((bj1) dVar).a();
+                ((aj1) dVar).a();
                 return true;
             }
             if (i10 == 1) {
-                ((bj1) dVar).b();
+                ((aj1) dVar).b();
             }
         }
         return true;

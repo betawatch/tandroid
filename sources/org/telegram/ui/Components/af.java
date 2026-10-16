@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class af extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -167,7 +167,7 @@ public final class af extends AnimatorListenerAdapter {
                 chatActivityEnterView8.V0 = null;
                 pg pgVar = chatActivityEnterView8.Z2;
                 if (pgVar != null) {
-                    pgVar.z(0.0f);
+                    pgVar.A(0.0f);
                 }
                 chatActivityEnterView8.requestLayout();
                 chatActivityEnterView8.L3.unlock();

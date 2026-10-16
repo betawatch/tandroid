@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class w1 extends FrameLayout {
     public final TextView a;
@@ -30,25 +30,25 @@ public final class w1 extends FrameLayout {
         int a2 = a(org.telegram.ui.ActionBar.g6.Fe);
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         background.setColorFilter(new PorterDuffColorFilter(a2, mode));
-        addView(frameLayout, w7.a6.a(27.0f, 0.0f, 7.0f, 0.0f, 0.0f, -1, 51));
+        addView(frameLayout, w7.z5.a(27.0f, 0.0f, 7.0f, 0.0f, 0.0f, -1, 51));
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         imageView.setImageResource(R.drawable.ic_ab_new);
         imageView.setColorFilter(new PorterDuffColorFilter(a(org.telegram.ui.ActionBar.g6.De), mode));
         imageView.setPadding(0, AndroidUtilities.dp(2.0f), 0, 0);
-        frameLayout.addView(imageView, w7.a6.a(-2.0f, 0.0f, 0.0f, 10.0f, 0.0f, -2, 21));
+        frameLayout.addView(imageView, w7.z5.a(-2.0f, 0.0f, 0.0f, 10.0f, 0.0f, -2, 21));
         TextView textView = new TextView(context);
         this.a = textView;
         textView.setPadding(0, 0, 0, AndroidUtilities.dp(1.0f));
         textView.setTextSize(1, 14.0f);
         textView.setTextColor(a(org.telegram.ui.ActionBar.g6.Ee));
         textView.setTypeface(AndroidUtilities.bold());
-        addView(textView, w7.a6.a(-2.0f, 32.0f, 0.0f, 32.0f, 0.0f, -2, 17));
+        addView(textView, w7.z5.a(-2.0f, 32.0f, 0.0f, 32.0f, 0.0f, -2, 17));
     }
 
     public final int a(int i10) {
         org.telegram.ui.ActionBar.c6 c6Var = this.d;
-        Integer valueOf = c6Var != null ? Integer.valueOf(c6Var.F0(i10)) : null;
+        Integer valueOf = c6Var != null ? Integer.valueOf(c6Var.E0(i10)) : null;
         return valueOf != null ? valueOf.intValue() : org.telegram.ui.ActionBar.g6.x0(null, i10, false);
     }
 

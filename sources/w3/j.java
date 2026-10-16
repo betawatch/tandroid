@@ -1,22 +1,119 @@
 package w3;
 
-import c3.f0;
+import c3.a0;
+import c3.b0;
+import c3.c0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class j implements f0 {
-    public static final j b = new j(true);
-    public static final j c = new j(false);
-    public final boolean a;
+public final class j implements b0 {
+    public final long a;
+    public final k[] b;
+    public final int c;
 
-    public j(boolean z10) {
-        this.a = z10;
+    public j(long j10, k[] kVarArr, int i10) {
+        this.a = j10;
+        this.b = kVarArr;
+        this.c = i10;
     }
 
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("IncorrectFragmentation{expected=");
-        sb2.append(!this.a);
-        sb2.append("}");
-        return sb2.toString();
+    @Override // c3.b0
+    public final boolean d() {
+        return true;
+    }
+
+    @Override // c3.b0
+    public final /* synthetic */ boolean e() {
+        return false;
+    }
+
+    @Override // c3.b0
+    public final a0 f(long j10) {
+        long j11;
+        long j12;
+        long j13;
+        long j14;
+        long j15;
+        int b10;
+        long j16 = j10;
+        k[] kVarArr = this.b;
+        int length = kVarArr.length;
+        c0 c0Var = c0.c;
+        if (length == 0) {
+            return new a0(c0Var, c0Var);
+        }
+        int i10 = this.c;
+        int i11 = -1;
+        if (i10 != -1) {
+            t tVar = kVarArr[i10].b;
+            int a2 = tVar.a(j16);
+            if (a2 == -1) {
+                a2 = tVar.b(j16);
+            }
+            long[] jArr = tVar.c;
+            long[] jArr2 = tVar.f;
+            if (a2 == -1) {
+                return new a0(c0Var, c0Var);
+            }
+            long j17 = jArr2[a2];
+            j11 = jArr[a2];
+            if (j17 >= j16 || a2 >= tVar.b - 1 || (b10 = tVar.b(j16)) == -1 || b10 == a2) {
+                j15 = -1;
+                j13 = -9223372036854775807L;
+            } else {
+                j13 = jArr2[b10];
+                j15 = jArr[b10];
+            }
+            j12 = j15;
+            j16 = j17;
+        } else {
+            j11 = Long.MAX_VALUE;
+            j12 = -1;
+            j13 = -9223372036854775807L;
+        }
+        int i12 = 0;
+        long j18 = j11;
+        while (i12 < kVarArr.length) {
+            if (i12 != i10) {
+                t tVar2 = kVarArr[i12].b;
+                long[] jArr3 = tVar2.c;
+                int a10 = tVar2.a(j16);
+                if (a10 == i11) {
+                    a10 = tVar2.b(j16);
+                }
+                if (a10 == i11) {
+                    j14 = j13;
+                } else {
+                    j14 = j13;
+                    j18 = Math.min(jArr3[a10], j18);
+                }
+                if (j14 != -9223372036854775807L) {
+                    long j19 = j14;
+                    int a11 = tVar2.a(j19);
+                    if (a11 == -1) {
+                        a11 = tVar2.b(j19);
+                    }
+                    if (a11 == -1) {
+                        j14 = j19;
+                    } else {
+                        j14 = j19;
+                        j12 = Math.min(jArr3[a11], j12);
+                    }
+                }
+            } else {
+                j14 = j13;
+            }
+            i12++;
+            j13 = j14;
+            i11 = -1;
+        }
+        long j20 = j13;
+        c0 c0Var2 = new c0(j16, j18);
+        return j20 == -9223372036854775807L ? new a0(c0Var2, c0Var2) : new a0(c0Var2, new c0(j20, j12));
+    }
+
+    @Override // c3.b0
+    public final long h() {
+        return this.a;
     }
 }

@@ -21,17 +21,16 @@ import org.telegram.ui.Components.bd;
 import org.telegram.ui.Components.cd;
 import org.telegram.ui.Components.e0;
 import org.telegram.ui.Components.y;
-import org.telegram.ui.Wallet.t8;
 import org.telegram.ui.web.BotWebViewContainer$BotWebViewProxy;
-import org.telegram.ui.web.b1;
+import org.telegram.ui.web.c1;
 import org.telegram.ui.web.h0;
-import w7.a6;
+import w7.z5;
 import yh.f4;
 import zh.r3;
 import zh.v0;
 import zh.z;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -64,21 +63,21 @@ public final /* synthetic */ class e implements Utilities.Callback2 {
                 y.Q((y) this.b, (pf.c) this.c, (a2) this.d);
                 break;
             case 4:
-                b1 b1Var = (b1) this.b;
+                c1 c1Var = (c1) this.b;
                 n9 n9Var = (n9) this.c;
                 BotWebViewContainer$BotWebViewProxy botWebViewContainer$BotWebViewProxy = (BotWebViewContainer$BotWebViewProxy) this.d;
                 String str = (String) obj;
                 ArrayList arrayList = (ArrayList) obj2;
                 if (!TextUtils.isEmpty(str)) {
-                    b1Var.x(n9Var, "prepared_message_failed", b1.A(str, "error"));
+                    c1Var.x(n9Var, "prepared_message_failed", c1.A(str, "error"));
                     break;
                 } else {
-                    b1Var.x(n9Var, "prepared_message_sent", null);
-                    h0 h0Var = b1Var.c;
+                    c1Var.x(n9Var, "prepared_message_sent", null);
+                    h0 h0Var = c1Var.c;
                     if (h0Var != null) {
                         h0Var.c();
                     }
-                    AndroidUtilities.runOnUIThread(new t8(6, botWebViewContainer$BotWebViewProxy, arrayList), 500L);
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.web.v(1, botWebViewContainer$BotWebViewProxy, arrayList), 500L);
                     break;
                 }
             case 5:
@@ -117,7 +116,7 @@ public final /* synthetic */ class e implements Utilities.Callback2 {
                 d4Var2.h = AndroidUtilities.dp(300.0f);
                 d4Var2.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
                 d4Var2.m(0.0f, x10 - AndroidUtilities.dp(4.0f));
-                frameLayout.addView(d4Var2, a6.e(-1, 100, 55));
+                frameLayout.addView(d4Var2, z5.e(-1, 100, 55));
                 d4Var2.u();
                 break;
             case 6:
@@ -173,7 +172,7 @@ public final /* synthetic */ class e implements Utilities.Callback2 {
                 d4Var4.h = AndroidUtilities.dp(300.0f);
                 d4Var4.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
                 d4Var4.m(0.0f, x11 - AndroidUtilities.dp(4.0f));
-                frameLayout2.addView(d4Var4, a6.e(-1, 100, 55));
+                frameLayout2.addView(d4Var4, z5.e(-1, 100, 55));
                 d4Var4.u();
                 break;
         }

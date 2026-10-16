@@ -18,19 +18,18 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import ji.d4;
-import ji.w4;
-import li.a0;
+import ji.h5;
+import org.telegram.ui.Wallet.k5;
 import p2.w;
 import v7.b8;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class i {
     public final c a;
     public final g2.h b;
     public final g2.h c;
-    public final d4 d;
+    public final h5 d;
     public final w[] e;
     public final x[] f;
     public final p2.d g;
@@ -43,24 +42,24 @@ public final class i {
     public Uri p;
     public boolean q;
     public x2.p r;
-    public final w4 j = new w4(10);
+    public final m.l j = new m.l(4);
     public byte[] m = m0.b;
     public long s = -9223372036854775807L;
 
-    public i(c cVar, p2.d dVar, w[] wVarArr, x[] xVarArr, l2.f fVar, c0 c0Var, d4 d4Var, List list, j2.k kVar) {
+    public i(c cVar, p2.d dVar, w[] wVarArr, x[] xVarArr, m.h hVar, c0 c0Var, h5 h5Var, List list, j2.k kVar) {
         this.a = cVar;
         this.g = dVar;
         this.e = wVarArr;
         this.f = xVarArr;
-        this.d = d4Var;
+        this.d = h5Var;
         this.i = list;
         this.k = kVar;
-        g2.h createDataSource = ((g2.g) fVar.b).createDataSource();
+        g2.h createDataSource = ((g2.g) hVar.b).createDataSource();
         this.b = createDataSource;
         if (c0Var != null) {
             createDataSource.addTransferListener(c0Var);
         }
-        this.c = ((g2.g) fVar.b).createDataSource();
+        this.c = ((g2.g) hVar.b).createDataSource();
         this.h = new q1("", xVarArr);
         ArrayList arrayList = new ArrayList();
         for (int i10 = 0; i10 < wVarArr.length; i10++) {
@@ -106,7 +105,7 @@ public final class i {
         return new h((p2.k) n0Var.get(0), j10 + 1, 0);
     }
 
-    public final a0 a(Uri uri) {
+    public final k5 a(Uri uri) {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         p2.d dVar = this.g;
         p2.c cVar = (p2.c) dVar.d.get(uri);
@@ -120,14 +119,14 @@ public final class i {
             Uri uri2 = (Uri) it.next();
             p2.c cVar2 = (p2.c) dVar.d.get(uri2);
             if (cVar2 != null) {
-                p2.b bVar = (p2.b) i2.d.h(cVar2.b, uri2, uri2);
+                p2.b bVar = (p2.b) i2.d.i(cVar2.b, uri2, uri2);
                 bVar.getClass();
                 if (elapsedRealtime <= bVar.r) {
                     i10++;
                 }
             }
         }
-        return new a0(size, i10, this.r.length(), d(elapsedRealtime));
+        return new k5(size, i10, this.r.length(), d(elapsedRealtime));
     }
 
     public final v2.m[] b(j jVar, long j10) {
@@ -311,8 +310,8 @@ public final class i {
         if (uri == null) {
             return null;
         }
-        w4 w4Var = this.j;
-        byte[] bArr = (byte[]) ((d) w4Var.b).remove(uri);
+        m.l lVar = this.j;
+        byte[] bArr = (byte[]) ((d) lVar.a).remove(uri);
         if (bArr != null) {
             return null;
         }

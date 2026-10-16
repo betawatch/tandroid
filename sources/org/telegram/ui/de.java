@@ -4,7 +4,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class de implements org.telegram.ui.ActionBar.z1, Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ qe a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class de implements org.telegram.ui.ActionBar.z1, U
         ud udVar = qeVar.v1;
         int i10 = qeVar.y0;
         long j10 = qeVar.z0;
-        int i11 = ((org.telegram.ui.Components.l61) obj).d;
+        int i11 = ((org.telegram.ui.Components.m61) obj).d;
         if (i11 != 1) {
             if (i11 == 4) {
                 qeVar.w0.presentFragment(new fi.f4(j10));
@@ -55,7 +55,7 @@ public final /* synthetic */ class de implements org.telegram.ui.ActionBar.z1, U
             sg.j0 j0Var = new sg.j0(30, qeVar.y0, qeVar.getContext(), qeVar.w0, qeVar.x0);
             j0Var.I1(j10);
             j0Var.G1(qeVar.A0, true);
-            MessagesController.getInstance(i10).getBoostsController().userCanBoostChannel(j10, qeVar.A0, new vc(1, qeVar, j0Var));
+            MessagesController.getInstance(i10).getBoostsController().userCanBoostChannel(j10, qeVar.A0, new uc(1, qeVar, j0Var));
         }
     }
 }

@@ -1,26 +1,43 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.ui.oh1;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.bh1;
+import org.telegram.ui.mb0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class m2 implements org.telegram.ui.ActionBar.z1 {
+public final /* synthetic */ class m2 implements bh1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.m2 b;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Utilities.CallbackReturn c;
+    public final /* synthetic */ Utilities.Callback2 d;
+    public final /* synthetic */ q2 e;
+    public final /* synthetic */ Utilities.Callback3 f;
+    public final /* synthetic */ boolean h;
+    public final /* synthetic */ boolean n;
+    public final /* synthetic */ mb0 r;
 
-    public /* synthetic */ m2(int i10, org.telegram.ui.ActionBar.m2 m2Var) {
-        this.a = i10;
-        this.b = m2Var;
+    public /* synthetic */ m2(int i10, Utilities.CallbackReturn callbackReturn, Utilities.Callback2 callback2, q2 q2Var, Utilities.Callback3 callback3, boolean z10, boolean z11, mb0 mb0Var, int i11) {
+        this.a = i11;
+        this.b = i10;
+        this.c = callbackReturn;
+        this.d = callback2;
+        this.e = q2Var;
+        this.f = callback3;
+        this.h = z10;
+        this.n = z11;
+        this.r = mb0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public final void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+    @Override // org.telegram.ui.bh1
+    public final void i(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         switch (this.a) {
             case 0:
-                this.b.presentFragment(new oh1(6, null));
+                r2.a(this.b, this.c, this.d, tL_inputCheckPasswordSRP, this.e, this.f, this.h, this.n, this.r);
                 break;
             default:
-                k7.Z((k7) this.b, a2Var, i10);
+                r2.a(this.b, this.c, this.d, tL_inputCheckPasswordSRP, this.e, this.f, this.h, this.n, this.r);
                 break;
         }
     }

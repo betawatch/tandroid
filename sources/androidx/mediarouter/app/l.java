@@ -15,7 +15,7 @@ import java.util.HashSet;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class l implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ boolean a;
@@ -38,7 +38,7 @@ public final class l implements ViewTreeObserver.OnGlobalLayoutListener {
             tVar.w0 = true;
             return;
         }
-        p4.w wVar = tVar.r;
+        p4.v vVar = tVar.r;
         int i11 = tVar.Q.getLayoutParams().height;
         t.o(-1, tVar.Q);
         tVar.u(tVar.h());
@@ -53,7 +53,7 @@ public final class l implements ViewTreeObserver.OnGlobalLayoutListener {
         }
         int l4 = tVar.l(tVar.h());
         int size = tVar.W.size();
-        int size2 = tVar.n() ? DesugarCollections.unmodifiableList(wVar.v).size() * tVar.e0 : 0;
+        int size2 = tVar.n() ? DesugarCollections.unmodifiableList(vVar.v).size() * tVar.e0 : 0;
         if (size > 0) {
             size2 += tVar.g0;
         }
@@ -102,7 +102,7 @@ public final class l implements ViewTreeObserver.OnGlobalLayoutListener {
             t.o(height, tVar.J);
         }
         t.o(rect.height(), tVar.H);
-        List unmodifiableList = DesugarCollections.unmodifiableList(wVar.v);
+        List unmodifiableList = DesugarCollections.unmodifiableList(vVar.v);
         if (unmodifiableList.isEmpty()) {
             tVar.W.clear();
             tVar.V.notifyDataSetChanged();

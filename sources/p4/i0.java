@@ -2,15 +2,14 @@ package p4;
 
 import android.media.MediaRouter;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class i0 {
-    public final MediaRouter.RouteInfo a;
-    public final String b;
-    public m c;
+    public final v a;
+    public final MediaRouter.UserRouteInfo b;
 
-    public i0(MediaRouter.RouteInfo routeInfo, String str) {
-        this.a = routeInfo;
-        this.b = str;
+    public i0(v vVar, MediaRouter.UserRouteInfo userRouteInfo) {
+        this.a = vVar;
+        this.b = userRouteInfo;
     }
 }

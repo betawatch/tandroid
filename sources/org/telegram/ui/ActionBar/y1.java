@@ -15,14 +15,14 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.n90;
 import org.telegram.ui.Components.wu;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class y1 extends LinearLayout {
     public boolean a;
@@ -191,7 +191,7 @@ public final class y1 extends LinearLayout {
         }
         int paddingTop = (size2 - getPaddingTop()) - getPaddingBottom();
         int paddingLeft = (size - getPaddingLeft()) - getPaddingRight();
-        int z10 = yh.z(48.0f, paddingLeft, TLObject.FLAG_30);
+        int c10 = sk.c(48.0f, paddingLeft, TLObject.FLAG_30);
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30);
         ViewGroup viewGroup = a2Var.t0;
         if (viewGroup != null) {
@@ -199,7 +199,7 @@ public final class y1 extends LinearLayout {
             for (int i16 = 0; i16 < childCount; i16++) {
                 View childAt = a2Var.t0.getChildAt(i16);
                 if (childAt instanceof TextView) {
-                    ((TextView) childAt).setMaxWidth(AndroidUtilities.dp(yh.B(24.0f, paddingLeft, 2)));
+                    ((TextView) childAt).setMaxWidth(AndroidUtilities.dp(sk.A(24.0f, paddingLeft, 2)));
                 }
             }
             a2Var.t0.measure(makeMeasureSpec, i11);
@@ -210,17 +210,17 @@ public final class y1 extends LinearLayout {
         }
         wh.n nVar = a2Var.f;
         if (nVar != null) {
-            nVar.measure(z10, i11);
+            nVar.measure(c10, i11);
         }
         FrameLayout frameLayout = a2Var.s;
         if (frameLayout != null) {
-            frameLayout.measure(z10, i11);
+            frameLayout.measure(c10, i11);
             LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) a2Var.s.getLayoutParams();
             i12 -= (a2Var.s.getMeasuredHeight() + layoutParams2.bottomMargin) + layoutParams2.topMargin;
         }
         TextView textView = a2Var.h;
         if (textView != null) {
-            textView.measure(z10, i11);
+            textView.measure(c10, i11);
             LinearLayout.LayoutParams layoutParams3 = (LinearLayout.LayoutParams) a2Var.h.getLayoutParams();
             i12 -= (a2Var.h.getMeasuredHeight() + layoutParams3.bottomMargin) + layoutParams3.topMargin;
         }
@@ -265,14 +265,14 @@ public final class y1 extends LinearLayout {
         } else {
             FrameLayout frameLayout2 = a2Var.r;
             if (frameLayout2 != null) {
-                frameLayout2.measure(z10, View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_31));
+                frameLayout2.measure(c10, View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_31));
                 LinearLayout.LayoutParams layoutParams5 = (LinearLayout.LayoutParams) a2Var.r.getLayoutParams();
                 measuredHeight = a2Var.r.getMeasuredHeight() + layoutParams5.bottomMargin;
                 i13 = layoutParams5.topMargin;
             } else {
                 wu wuVar = a2Var.n;
                 if (wuVar != null) {
-                    wuVar.measure(z10, View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_31));
+                    wuVar.measure(c10, View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_31));
                     if (a2Var.n.getVisibility() != 8) {
                         LinearLayout.LayoutParams layoutParams6 = (LinearLayout.LayoutParams) a2Var.n.getLayoutParams();
                         measuredHeight = a2Var.n.getMeasuredHeight() + layoutParams6.bottomMargin;
@@ -281,10 +281,10 @@ public final class y1 extends LinearLayout {
                 }
                 n90Var = a2Var.u0;
                 if (n90Var != null) {
-                    n90Var.measure(z10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(4.0f), TLObject.FLAG_30));
+                    n90Var.measure(c10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(4.0f), TLObject.FLAG_30));
                     LinearLayout.LayoutParams layoutParams7 = (LinearLayout.LayoutParams) a2Var.u0.getLayoutParams();
                     int measuredHeight2 = i12 - ((a2Var.u0.getMeasuredHeight() + layoutParams7.bottomMargin) + layoutParams7.topMargin);
-                    a2Var.v0.measure(z10, View.MeasureSpec.makeMeasureSpec(measuredHeight2, TLObject.FLAG_31));
+                    a2Var.v0.measure(c10, View.MeasureSpec.makeMeasureSpec(measuredHeight2, TLObject.FLAG_31));
                     LinearLayout.LayoutParams layoutParams8 = (LinearLayout.LayoutParams) a2Var.v0.getLayoutParams();
                     i12 = measuredHeight2 - ((a2Var.v0.getMeasuredHeight() + layoutParams8.bottomMargin) + layoutParams8.topMargin);
                 }

@@ -8,7 +8,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class kp implements org.telegram.ui.Components.am0 {
     public final /* synthetic */ mp a;
@@ -38,7 +38,7 @@ public final class kp implements org.telegram.ui.Components.am0 {
         alertDialog$Builder.a.R = LocaleController.getString(tL_username.active ? R.string.UsernameDeactivateLink : R.string.UsernameActivateLink);
         alertDialog$Builder.a.T = LocaleController.getString(tL_username.active ? R.string.UsernameDeactivateLinkChannelMessage : R.string.UsernameActivateLinkChannelMessage);
         alertDialog$Builder.k(LocaleController.getString(tL_username.active ? R.string.Hide : R.string.Show), new f7(this, tL_username, view, 8));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new m4.w0(24));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new m4.v0(22));
         alertDialog$Builder.o();
     }
 }

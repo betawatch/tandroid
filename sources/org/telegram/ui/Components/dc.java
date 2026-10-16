@@ -7,7 +7,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.support.SparseLongArray;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class dc extends ac implements NotificationCenter.NotificationCenterDelegate {
     public final bc d;
@@ -20,8 +20,8 @@ public final class dc extends ac implements NotificationCenter.NotificationCente
         super(m2Var.getContext(), m2Var.getResourceProvider());
         this.f = m2Var;
         this.h = i10;
-        this.b.setLayoutParams(w7.a6.i(-2.0f, -2.0f, 8388659, 56.0f, 6.0f, 8.0f, 0.0f));
-        this.a.setLayoutParams(w7.a6.h(56.0f, 48.0f, 8388659));
+        this.b.setLayoutParams(w7.z5.i(-2.0f, -2.0f, 8388659, 56.0f, 6.0f, 8.0f, 0.0f));
+        this.a.setLayoutParams(w7.z5.h(56.0f, 48.0f, 8388659));
         bc bcVar = new bc(this, m2Var, getContext(), m2Var.getCurrentAccount(), m2Var.getResourceProvider());
         this.d = bcVar;
         bcVar.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(0.0f));
@@ -32,7 +32,7 @@ public final class dc extends ac implements NotificationCenter.NotificationCente
         this.d.setVisibility(0);
         this.d.setBubbleOffset(-AndroidUtilities.dp(80.0f));
         this.d.setHint(LocaleController.getString(R.string.SavedTagReactionsHint));
-        addView(this.d, w7.a6.a(92.5f, 0.0f, 36.0f, 0.0f, 0.0f, -2, 1));
+        addView(this.d, w7.z5.a(92.5f, 0.0f, 36.0f, 0.0f, 0.0f, -2, 1));
         this.d.p(null, null, true);
     }
 

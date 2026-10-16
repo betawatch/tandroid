@@ -8,17 +8,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.g11;
+import org.telegram.ui.Components.h11;
 import org.telegram.ui.Components.ix;
 import org.telegram.ui.Components.w00;
-import org.telegram.ui.cp0;
-import org.telegram.ui.eg0;
+import org.telegram.ui.ap0;
+import org.telegram.ui.dg0;
 import org.telegram.ui.mp;
 import org.telegram.ui.o81;
-import org.telegram.ui.qn0;
-import org.telegram.ui.yk0;
+import org.telegram.ui.on0;
+import org.telegram.ui.xk0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g7 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -78,19 +78,19 @@ public final /* synthetic */ class g7 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new ah.j(19));
                 break;
             case 16:
-                int i13 = g11.e;
+                int i13 = h11.e;
                 break;
             case 17:
-                int i14 = eg0.t0;
+                int i14 = dg0.t0;
                 break;
             case 18:
-                AndroidUtilities.runOnUIThread(new yk0(tLObject, 3));
+                AndroidUtilities.runOnUIThread(new xk0(tLObject, 3));
                 break;
             case 19:
-                int i15 = qn0.R;
+                int i15 = on0.R;
                 break;
             case 20:
-                List list = cp0.g1;
+                List list = ap0.g1;
                 break;
             default:
                 int i16 = o81.e;

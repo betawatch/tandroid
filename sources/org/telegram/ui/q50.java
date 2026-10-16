@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class q50 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ Activity a;
@@ -137,7 +137,7 @@ public final class q50 extends org.telegram.ui.ActionBar.j {
             if (m1Var == null || !m1Var.isShowing()) {
                 return;
             }
-            u0Var.b.measure(org.telegram.messenger.yh.z(40.0f, AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
+            u0Var.b.measure(org.telegram.messenger.sk.c(40.0f, AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
             u0Var.O(true, true);
             return;
         }
@@ -173,7 +173,7 @@ public final class q50 extends org.telegram.ui.ActionBar.j {
             editTextBoldCursor.setCursorSize(AndroidUtilities.dp(20.0f));
             editTextBoldCursor.setCursorWidth(1.5f);
             editTextBoldCursor.setPadding(0, AndroidUtilities.dp(4.0f), 0, 0);
-            linearLayout.addView(editTextBoldCursor, w7.a6.t(-1, 36, 51, 24, 6, 24, 0));
+            linearLayout.addView(editTextBoldCursor, w7.z5.t(-1, 36, 51, 24, 6, 24, 0));
             int i12 = 1;
             editTextBoldCursor.setOnEditorActionListener(new c00(alertDialog$Builder3, i12));
             editTextBoldCursor.addTextChangedListener(new e00(i12, editTextBoldCursor));
@@ -193,7 +193,7 @@ public final class q50 extends org.telegram.ui.ActionBar.j {
             return;
         }
         if (i10 == 8) {
-            org.telegram.ui.Components.w80.w(n60Var.getContext(), -n60Var.j1(), n60Var.d, null, 2, n60Var.A0, new k50(this));
+            org.telegram.ui.Components.v80.w(n60Var.getContext(), -n60Var.j1(), n60Var.d, null, 2, n60Var.A0, new k50(this));
             return;
         }
         if (i10 == 11) {
@@ -216,7 +216,7 @@ public final class q50 extends org.telegram.ui.ActionBar.j {
         arrayList3.add(0);
         if (sharedInstance.hasEarpiece()) {
             arrayList.add(LocaleController.getString(sharedInstance.isHeadsetPlugged() ? R.string.VoipAudioRoutingHeadset : R.string.VoipAudioRoutingPhone));
-            org.telegram.ui.Cells.d0.m(sharedInstance.isHeadsetPlugged() ? R.drawable.msg_voice_headphones : R.drawable.msg_voice_phone, 1, arrayList2, arrayList3);
+            org.telegram.ui.Cells.c1.k(sharedInstance.isHeadsetPlugged() ? R.drawable.msg_voice_headphones : R.drawable.msg_voice_phone, 1, arrayList2, arrayList3);
         }
         if (sharedInstance.isBluetoothHeadsetConnected()) {
             String str = sharedInstance.currentBluetoothDeviceName;
@@ -224,7 +224,7 @@ public final class q50 extends org.telegram.ui.ActionBar.j {
                 str = LocaleController.getString(R.string.VoipAudioRoutingBluetooth);
             }
             arrayList.add(str);
-            org.telegram.ui.Cells.d0.m(R.drawable.msg_voice_bluetooth, 2, arrayList2, arrayList3);
+            org.telegram.ui.Cells.c1.k(R.drawable.msg_voice_bluetooth, 2, arrayList2, arrayList3);
         }
         int size = arrayList.size();
         CharSequence[] charSequenceArr = new CharSequence[size];

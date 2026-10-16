@@ -12,14 +12,14 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.Components.b6;
-import org.telegram.ui.Components.c91;
+import org.telegram.ui.Components.d91;
 import org.telegram.ui.Components.ns0;
 import zh.e5;
 import zh.f5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class w1 extends c91 {
+public final class w1 extends d91 {
     public final /* synthetic */ int a;
     public final /* synthetic */ c6 b;
     public final /* synthetic */ ns0 c;
@@ -30,7 +30,7 @@ public final class w1 extends c91 {
         this.b = c6Var;
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final void a(ArrayList arrayList) {
         ns0 ns0Var = this.c;
         s1 s1Var = ns0Var.N;
@@ -83,7 +83,7 @@ public final class w1 extends c91 {
         AndroidUtilities.runOnUIThread(s1Var, 1000L);
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final void b(View view, int i10, int i11) {
         f5 f5Var;
         boolean z10;
@@ -118,12 +118,12 @@ public final class w1 extends c91 {
         m2Var.setHasTabs(!e5Var.d().isEmpty());
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final boolean c(int i10) {
         return i10 != 0;
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final View d(int i10) {
         if (i10 == -1) {
             return null;
@@ -131,12 +131,12 @@ public final class w1 extends c91 {
         return new m2(this.c, this.a, this.b);
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final int e() {
         return this.c.e.d().size() + 1;
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final int f(int i10) {
         if (i10 == 0) {
             return -2;
@@ -144,7 +144,7 @@ public final class w1 extends c91 {
         return ((TL_stars.TL_starGiftCollection) this.c.e.d().get(i10 - 1)).collection_id;
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final CharSequence g(int i10) {
         if (i10 == 0) {
             return LocaleController.getString(R.string.Gift2CollectionAll);
@@ -164,7 +164,7 @@ public final class w1 extends c91 {
         return spannableStringBuilder;
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final int h(int i10) {
         return i10 == 0 ? 0 : 1;
     }

@@ -15,12 +15,12 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.h11;
+import org.telegram.ui.Components.i11;
 import org.telegram.ui.Components.ud0;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.zp0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class v5 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final class v5 extends LinearLayout {
         switch (this.a) {
             case 4:
                 super.dispatchDraw(canvas);
-                ((h11) this.b).e(canvas, ((ud0) this.c).getX() - AndroidUtilities.dp(50.0f), getHeight() / 2.0f);
+                ((i11) this.b).e(canvas, ((ud0) this.c).getX() - AndroidUtilities.dp(50.0f), getHeight() / 2.0f);
                 break;
             case 5:
                 canvas.save();
@@ -131,8 +131,8 @@ public final class v5 extends LinearLayout {
         switch (this.a) {
             case 8:
                 super.onAttachedToWindow();
-                getViewTreeObserver().addOnPreDrawListener((org.telegram.ui.Wallet.l4) this.b);
-                getViewTreeObserver().addOnWindowFocusChangeListener(((org.telegram.ui.Wallet.i8) this.c).H);
+                getViewTreeObserver().addOnPreDrawListener((org.telegram.ui.Wallet.m4) this.b);
+                getViewTreeObserver().addOnWindowFocusChangeListener(((org.telegram.ui.Wallet.j8) this.c).H);
                 break;
             default:
                 super.onAttachedToWindow();
@@ -144,8 +144,8 @@ public final class v5 extends LinearLayout {
     public void onDetachedFromWindow() {
         switch (this.a) {
             case 8:
-                getViewTreeObserver().removeOnPreDrawListener((org.telegram.ui.Wallet.l4) this.b);
-                getViewTreeObserver().removeOnWindowFocusChangeListener(((org.telegram.ui.Wallet.i8) this.c).H);
+                getViewTreeObserver().removeOnPreDrawListener((org.telegram.ui.Wallet.m4) this.b);
+                getViewTreeObserver().removeOnWindowFocusChangeListener(((org.telegram.ui.Wallet.j8) this.c).H);
                 super.onDetachedFromWindow();
                 break;
             default:
@@ -262,11 +262,11 @@ public final class v5 extends LinearLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v5(org.telegram.ui.Wallet.i8 i8Var, Context context) {
+    public v5(org.telegram.ui.Wallet.j8 j8Var, Context context) {
         super(context);
         this.a = 8;
-        this.c = i8Var;
-        this.b = new org.telegram.ui.Wallet.l4(this, 2);
+        this.c = j8Var;
+        this.b = new org.telegram.ui.Wallet.m4(this, 2);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yz implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class yz implements View.OnClickListener {
                 String str = f00Var.s;
                 if (str != null) {
                     AndroidUtilities.addToClipboard(str);
-                    org.telegram.messenger.yh.o(R.string.LinkCopied, org.telegram.ui.Components.zc.a0(f00Var.r));
+                    org.telegram.messenger.sk.p(R.string.LinkCopied, org.telegram.ui.Components.zc.a0(f00Var.r));
                     break;
                 }
                 break;
@@ -51,11 +51,11 @@ public final /* synthetic */ class yz implements View.OnClickListener {
                     ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(f00Var2.getContext(), null);
                     org.telegram.ui.ActionBar.e1 e1Var = new org.telegram.ui.ActionBar.e1(f00Var2.getContext(), true, false);
                     e1Var.g(LocaleController.getString(R.string.EditName), R.drawable.msg_edit, null);
-                    actionBarPopupWindow$ActionBarPopupWindowLayout.a(e1Var, w7.a6.n(-1, 48));
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.a(e1Var, w7.z5.n(-1, 48));
                     e1Var.setOnClickListener(new yz(f00Var2, 4));
                     org.telegram.ui.ActionBar.e1 e1Var2 = new org.telegram.ui.ActionBar.e1(f00Var2.getContext(), false, false);
                     e1Var2.g(LocaleController.getString(R.string.GetQRCode), R.drawable.msg_qrcode, null);
-                    actionBarPopupWindow$ActionBarPopupWindowLayout.a(e1Var2, w7.a6.n(-1, 48));
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.a(e1Var2, w7.z5.n(-1, 48));
                     e1Var2.setOnClickListener(new yz(f00Var2, 5));
                     org.telegram.ui.ActionBar.e1 e1Var3 = new org.telegram.ui.ActionBar.e1(f00Var2.getContext(), false, true);
                     e1Var3.g(LocaleController.getString(R.string.DeleteLink), R.drawable.msg_delete, null);
@@ -63,7 +63,7 @@ public final /* synthetic */ class yz implements View.OnClickListener {
                     e1Var3.c(org.telegram.ui.ActionBar.g6.x0(null, i10, false), org.telegram.ui.ActionBar.g6.x0(null, i10, false));
                     e1Var3.setSelectorColor(org.telegram.ui.ActionBar.g6.m1(0.12f, org.telegram.ui.ActionBar.g6.x0(null, i10, false)));
                     e1Var3.setOnClickListener(new yz(f00Var2, 6));
-                    actionBarPopupWindow$ActionBarPopupWindowLayout.a(e1Var3, w7.a6.n(-1, 48));
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.a(e1Var3, w7.z5.n(-1, 48));
                     FrameLayout overlayContainerView = f00Var2.r.getParentLayout().getOverlayContainerView();
                     if (overlayContainerView != null) {
                         a00.a(frameLayout, overlayContainerView, fArr);
@@ -71,7 +71,7 @@ public final /* synthetic */ class yz implements View.OnClickListener {
                         di.p6 p6Var = new di.p6(f00Var2, f00Var2.getContext(), overlayContainerView, 9);
                         ii iiVar = new ii(p6Var, 1);
                         overlayContainerView.getViewTreeObserver().addOnPreDrawListener(iiVar);
-                        overlayContainerView.addView(p6Var, w7.a6.d(-1.0f, -1));
+                        overlayContainerView.addView(p6Var, w7.z5.d(-1.0f, -1));
                         float f10 = 0.0f;
                         p6Var.setAlpha(0.0f);
                         p6Var.animate().alpha(1.0f).setDuration(150L);
@@ -100,7 +100,7 @@ public final /* synthetic */ class yz implements View.OnClickListener {
                 String str2 = f00Var3.s;
                 if (str2 != null) {
                     AndroidUtilities.addToClipboard(str2);
-                    org.telegram.messenger.yh.o(R.string.LinkCopied, org.telegram.ui.Components.zc.a0(f00Var3.r));
+                    org.telegram.messenger.sk.p(R.string.LinkCopied, org.telegram.ui.Components.zc.a0(f00Var3.r));
                     break;
                 }
                 break;
@@ -152,7 +152,7 @@ public final /* synthetic */ class yz implements View.OnClickListener {
                     editTextBoldCursor.setCursorSize(AndroidUtilities.dp(20.0f));
                     editTextBoldCursor.setCursorWidth(1.5f);
                     editTextBoldCursor.setPadding(0, AndroidUtilities.dp(4.0f), 0, 0);
-                    linearLayout.addView(editTextBoldCursor, w7.a6.t(-1, 36, 51, 24, 6, 24, 0));
+                    linearLayout.addView(editTextBoldCursor, w7.z5.t(-1, 36, 51, 24, 6, 24, 0));
                     editTextBoldCursor.setOnEditorActionListener(new c00(alertDialog$Builder, 0));
                     editTextBoldCursor.addTextChangedListener(new e00(0, editTextBoldCursor));
                     if (!TextUtils.isEmpty(tL_exportedChatlistInvite.title)) {

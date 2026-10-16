@@ -15,8 +15,8 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.bk0;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.j80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.p60;
 import org.telegram.ui.Components.r50;
@@ -24,7 +24,7 @@ import org.telegram.ui.Components.wz;
 import org.telegram.ui.l90;
 import org.telegram.ui.r71;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class m4 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -111,7 +111,7 @@ public final class m4 extends AnimatorListenerAdapter {
                 chatActivityEnterView.h1.setAlpha(1.0f);
                 chatActivityEnterView.h = 0.0f;
                 chatActivityEnterView.n = 0.0f;
-                chatActivityEnterView.D1();
+                chatActivityEnterView.C1();
                 fi.b0 b0Var = chatActivityEnterView.l0;
                 if (b0Var != null) {
                     b0Var.setAlpha(0.0f);
@@ -130,7 +130,7 @@ public final class m4 extends AnimatorListenerAdapter {
                 break;
             case 4:
                 if (((c2.b) this.d).a) {
-                    ((View) this.c).postDelayed((org.telegram.ui.Cells.t6) this.b, 300L);
+                    ((View) this.c).postDelayed((org.telegram.ui.Cells.l7) this.b, 300L);
                     break;
                 }
                 break;
@@ -169,15 +169,15 @@ public final class m4 extends AnimatorListenerAdapter {
                 p60Var.invalidate();
                 break;
             case 7:
-                k80 k80Var = (k80) this.b;
-                k80Var.setProgress(0.0f);
-                k80Var.invalidate();
-                AndroidUtilities.removeFromParent(k80Var);
+                j80 j80Var = (j80) this.b;
+                j80Var.setProgress(0.0f);
+                j80Var.invalidate();
+                AndroidUtilities.removeFromParent(j80Var);
                 ViewTreeObserver viewTreeObserver = ((ViewGroup) this.c).getViewTreeObserver();
-                m80 m80Var = (m80) this.d;
-                View view2 = m80Var.f;
-                viewTreeObserver.removeOnPreDrawListener(m80Var.y);
-                if (m80Var.P) {
+                l80 l80Var = (l80) this.d;
+                View view2 = l80Var.f;
+                viewTreeObserver.removeOnPreDrawListener(l80Var.y);
+                if (l80Var.P) {
                     view2.setVisibility(0);
                     if (view2 instanceof yh.h1) {
                         yh.h1 h1Var = (yh.h1) view2;
@@ -206,6 +206,6 @@ public final class m4 extends AnimatorListenerAdapter {
         this.a = 4;
         this.d = bVar;
         this.c = view;
-        this.b = new org.telegram.ui.Cells.t6(this, 10);
+        this.b = new org.telegram.ui.Cells.l7(this, 9);
     }
 }

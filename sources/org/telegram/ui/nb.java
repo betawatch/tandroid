@@ -14,7 +14,7 @@ import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class nb extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -39,47 +39,47 @@ public final class nb extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 1:
-                hd hdVar = (hd) obj;
+                gd gdVar = (gd) obj;
                 if (i10 == -1) {
-                    if (hdVar.b < hdVar.S0() || !hdVar.Q0()) {
-                        hdVar.finishFragment();
+                    if (gdVar.b < gdVar.S0() || !gdVar.Q0()) {
+                        gdVar.finishFragment();
                         break;
                     } else {
-                        hdVar.V0();
+                        gdVar.V0();
                         break;
                     }
                 } else if (i10 == 1) {
-                    FrameLayout frameLayout = (FrameLayout) hdVar.getParentActivity().getWindow().getDecorView();
+                    FrameLayout frameLayout = (FrameLayout) gdVar.getParentActivity().getWindow().getDecorView();
                     Bitmap createBitmap = Bitmap.createBitmap(frameLayout.getWidth(), frameLayout.getHeight(), Bitmap.Config.ARGB_8888);
                     Canvas canvas = new Canvas(createBitmap);
-                    hdVar.L.setAlpha(0.0f);
+                    gdVar.L.setAlpha(0.0f);
                     frameLayout.draw(canvas);
-                    hdVar.L.setAlpha(1.0f);
+                    gdVar.L.setAlpha(1.0f);
                     Paint paint = new Paint(1);
                     paint.setColor(-16777216);
                     paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
                     Paint paint2 = new Paint(1);
                     paint2.setFilterBitmap(true);
                     int[] iArr = new int[2];
-                    hdVar.L.getLocationInWindow(iArr);
+                    gdVar.L.getLocationInWindow(iArr);
                     float f7 = iArr[0];
                     float f10 = iArr[1];
                     float max = Math.max(createBitmap.getHeight(), createBitmap.getWidth()) + AndroidUtilities.navigationBarHeight;
                     Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                     paint2.setShader(new BitmapShader(createBitmap, tileMode, tileMode));
-                    rc rcVar = new rc(hdVar, hdVar.getParentActivity(), canvas, (hdVar.L.getMeasuredWidth() / 2.0f) + f7, (hdVar.L.getMeasuredHeight() / 2.0f) + f10, max, paint, createBitmap, paint2, f7, f10, 0);
-                    hdVar.m0 = rcVar;
-                    rcVar.setOnTouchListener(new ci.d(2));
-                    hdVar.n0 = 0.0f;
+                    qc qcVar = new qc(gdVar, gdVar.getParentActivity(), canvas, (gdVar.L.getMeasuredWidth() / 2.0f) + f7, (gdVar.L.getMeasuredHeight() / 2.0f) + f10, max, paint, createBitmap, paint2, f7, f10, 0);
+                    gdVar.m0 = qcVar;
+                    qcVar.setOnTouchListener(new ci.d(2));
+                    gdVar.n0 = 0.0f;
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    hdVar.o0 = ofFloat;
-                    ofFloat.addUpdateListener(new di.tb(hdVar, i12));
-                    hdVar.o0.addListener(new u0(hdVar, 20));
-                    hdVar.o0.setDuration(400L);
-                    hdVar.o0.setInterpolator(org.telegram.ui.Components.xt.e);
-                    hdVar.o0.start();
-                    frameLayout.addView(hdVar.m0, new ViewGroup.LayoutParams(-1, -1));
-                    AndroidUtilities.runOnUIThread(new mc(hdVar, 0));
+                    gdVar.o0 = ofFloat;
+                    ofFloat.addUpdateListener(new di.tb(gdVar, i12));
+                    gdVar.o0.addListener(new u0(gdVar, 20));
+                    gdVar.o0.setDuration(400L);
+                    gdVar.o0.setInterpolator(org.telegram.ui.Components.xt.e);
+                    gdVar.o0.start();
+                    frameLayout.addView(gdVar.m0, new ViewGroup.LayoutParams(-1, -1));
+                    AndroidUtilities.runOnUIThread(new lc(gdVar, 0));
                     break;
                 }
                 break;
@@ -176,7 +176,7 @@ public final class nb extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 12:
-                if (i10 == -1 && (runnable = ((org.telegram.ui.Components.jg0) obj).r) != null) {
+                if (i10 == -1 && (runnable = ((org.telegram.ui.Components.kg0) obj).r) != null) {
                     AndroidUtilities.runOnUIThread(runnable);
                     break;
                 }
@@ -188,11 +188,11 @@ public final class nb extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 14:
-                ((org.telegram.ui.Components.jr0) obj).onBackPressed();
+                ((org.telegram.ui.Components.ir0) obj).onBackPressed();
                 break;
             case 15:
                 if (i10 == -1) {
-                    ((org.telegram.ui.Components.c71) obj).finishFragment();
+                    ((org.telegram.ui.Components.d71) obj).finishFragment();
                     break;
                 }
                 break;
@@ -204,7 +204,7 @@ public final class nb extends org.telegram.ui.ActionBar.j {
                 break;
             case 17:
                 if (i10 == -1) {
-                    ((wi1) obj).a(false, false);
+                    ((vi1) obj).a(false, false);
                     break;
                 }
                 break;
@@ -271,14 +271,14 @@ public final class nb extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 25:
-                l10 l10Var = (l10) obj;
+                k10 k10Var = (k10) obj;
                 if (i10 == -1) {
-                    if (l10Var.h0(true)) {
-                        l10Var.finishFragment();
+                    if (k10Var.h0(true)) {
+                        k10Var.finishFragment();
                         break;
                     }
                 } else if (i10 == 1) {
-                    l10Var.q0();
+                    k10Var.q0();
                     break;
                 }
                 break;

@@ -1,6 +1,6 @@
 package z7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class ib {
     public final we a;
@@ -11,13 +11,13 @@ public final class ib {
     public final ee f;
     public final j1 g;
 
-    public /* synthetic */ ib(m.q3 q3Var) {
-        this.a = (we) q3Var.a;
-        this.b = (hb) q3Var.b;
-        this.c = (fb) q3Var.c;
-        this.d = (ce) q3Var.d;
-        this.e = (fe) q3Var.e;
-        this.f = (ee) q3Var.f;
-        this.g = (j1) q3Var.h;
+    public /* synthetic */ ib(m.t3 t3Var) {
+        this.a = (we) t3Var.a;
+        this.b = (hb) t3Var.b;
+        this.c = (fb) t3Var.c;
+        this.d = (ce) t3Var.d;
+        this.e = (fe) t3Var.e;
+        this.f = (ee) t3Var.f;
+        this.g = (j1) t3Var.h;
     }
 }

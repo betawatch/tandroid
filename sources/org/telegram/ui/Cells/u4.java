@@ -18,14 +18,14 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.cr;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.f10;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class u4 extends FrameLayout {
     public static f10 x;
@@ -53,7 +53,7 @@ public final class u4 extends FrameLayout {
         z9Var.setBackground(K);
         z9Var.s(AndroidUtilities.dp(30.0f), AndroidUtilities.dp(30.0f));
         boolean z10 = LocaleController.isRTL;
-        addView(z9Var, w7.a6.a(42.0f, z10 ? 0.0f : 15.0f, 11.0f, z10 ? 15.0f : 0.0f, 0.0f, 42, (z10 ? 5 : 3) | 48));
+        addView(z9Var, w7.z5.a(42.0f, z10 ? 0.0f : 15.0f, 11.0f, z10 ? 15.0f : 0.0f, 0.0f, 42, (z10 ? 5 : 3) | 48));
         org.telegram.ui.Components.s6 s6Var = new org.telegram.ui.Components.s6(context, true, true, true);
         this.a = s6Var;
         es esVar = es.h;
@@ -67,7 +67,7 @@ public final class u4 extends FrameLayout {
         s6Var.getDrawable().M = AndroidUtilities.displaySize.x;
         NotificationCenter.listenEmojiLoading(s6Var);
         boolean z11 = LocaleController.isRTL;
-        addView(s6Var, w7.a6.a(22.0f, z11 ? 16 : 73, 10.0f, z11 ? 73 : 16, 0.0f, -1, (z11 ? 5 : 3) | 48));
+        addView(s6Var, w7.z5.a(22.0f, z11 ? 16 : 73, 10.0f, z11 ? 73 : 16, 0.0f, -1, (z11 ? 5 : 3) | 48));
         org.telegram.ui.Components.s6 s6Var2 = new org.telegram.ui.Components.s6(context, true, true, true);
         this.b = s6Var2;
         s6Var2.setScaleProperty(0.6f);
@@ -77,7 +77,7 @@ public final class u4 extends FrameLayout {
         s6Var2.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.A6, c6Var));
         s6Var2.setGravity(LocaleController.isRTL ? 5 : 3);
         boolean z12 = LocaleController.isRTL;
-        addView(s6Var2, w7.a6.a(20.0f, z12 ? 16 : 73, 35.0f, z12 ? 73 : 16, 0.0f, -1, (z12 ? 5 : 3) | 48));
+        addView(s6Var2, w7.z5.a(20.0f, z12 ? 16 : 73, 35.0f, z12 ? 73 : 16, 0.0f, -1, (z12 ? 5 : 3) | 48));
         z9Var.setAlpha(this.v);
         s6Var.setAlpha(this.v);
         s6Var2.setAlpha(this.v);
@@ -233,16 +233,16 @@ public final class u4 extends FrameLayout {
         x.d();
         x.h();
         canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - this.v) * 255.0f), 31);
-        canvas.translate(AndroidUtilities.dp(2.0f), yh.B(56.0f, getMeasuredHeight(), 2));
+        canvas.translate(AndroidUtilities.dp(2.0f), sk.A(56.0f, getMeasuredHeight(), 2));
         x.draw(canvas);
         canvas.restore();
         super.onDraw(canvas);
         if (this.e) {
-            Paint G = c6Var == null ? null : c6Var.G("paintDivider");
-            if (G == null) {
-                G = org.telegram.ui.ActionBar.g6.k0;
+            Paint F = c6Var == null ? null : c6Var.F("paintDivider");
+            if (F == null) {
+                F = org.telegram.ui.ActionBar.g6.k0;
             }
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(72.0f), getHeight() - 1, LocaleController.isRTL ? getWidth() - AndroidUtilities.dp(72.0f) : getWidth(), getHeight() - 1, G);
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(72.0f), getHeight() - 1, LocaleController.isRTL ? getWidth() - AndroidUtilities.dp(72.0f) : getWidth(), getHeight() - 1, F);
         }
     }
 

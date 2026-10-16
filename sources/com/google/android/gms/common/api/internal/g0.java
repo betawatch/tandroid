@@ -16,16 +16,16 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Future;
 import java.util.concurrent.locks.Lock;
-import m.q3;
+import m.t3;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class g0 implements k0 {
     public n6.h E;
     public boolean F;
     public boolean G;
-    public final q3 H;
+    public final t3 H;
     public final Map I;
     public final a8.d J;
     public final m0 a;
@@ -44,9 +44,9 @@ public final class g0 implements k0 {
     public final HashSet s = new HashSet();
     public final ArrayList K = new ArrayList();
 
-    public g0(m0 m0Var, q3 q3Var, Map map, k6.e eVar, a8.d dVar, Lock lock, Context context) {
+    public g0(m0 m0Var, t3 t3Var, Map map, k6.e eVar, a8.d dVar, Lock lock, Context context) {
         this.a = m0Var;
-        this.H = q3Var;
+        this.H = t3Var;
         this.I = map;
         this.d = eVar;
         this.J = dVar;
@@ -55,7 +55,7 @@ public final class g0 implements k0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final e G(e eVar) {
+    public final e C(e eVar) {
         throw new IllegalStateException("GoogleApiClient is not connected yet.");
     }
 
@@ -99,23 +99,33 @@ public final class g0 implements k0 {
 
     @Override // com.google.android.gms.common.api.internal.k0
     public final void c(Bundle bundle) {
-        if (i(1)) {
+        if (j(1)) {
             if (bundle != null) {
                 this.r.putAll(bundle);
             }
-            if (j()) {
-                d();
+            if (k()) {
+                f();
             }
         }
     }
 
-    public final void d() {
+    @Override // com.google.android.gms.common.api.internal.k0
+    public final void e(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
+        if (j(1)) {
+            h(aVar, eVar, z10);
+            if (k()) {
+                f();
+            }
+        }
+    }
+
+    public final void f() {
         m0 m0Var = this.a;
         m0Var.a.lock();
         try {
-            m0Var.o.i();
+            m0Var.o.h();
             m0Var.m = new a0(m0Var);
-            m0Var.m.u();
+            m0Var.m.q();
             m0Var.b.signalAll();
             m0Var.a.unlock();
             n0.a.execute(new androidx.activity.i(this, 12));
@@ -148,14 +158,14 @@ public final class g0 implements k0 {
                 n6.l.h(cVar);
                 cVar.disconnect();
             }
-            this.a.p.o(this.r.isEmpty() ? null : this.r);
+            this.a.p.v(this.r.isEmpty() ? null : this.r);
         } catch (Throwable th2) {
             m0Var.a.unlock();
             throw th2;
         }
     }
 
-    public final void e(k6.a aVar) {
+    public final void g(k6.a aVar) {
         ArrayList arrayList = this.K;
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
@@ -165,7 +175,7 @@ public final class g0 implements k0 {
         b(!aVar.b());
         m0 m0Var = this.a;
         m0Var.h();
-        m0Var.p.h(aVar);
+        m0Var.p.l(aVar);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:6:0x0017, code lost:
@@ -175,7 +185,7 @@ public final class g0 implements k0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void f(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
+    public final void h(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
         eVar.a.getClass();
         if (z10 && !aVar.b()) {
         }
@@ -186,7 +196,7 @@ public final class g0 implements k0 {
         this.a.i.put(eVar.b, aVar);
     }
 
-    public final void h() {
+    public final void i() {
         if (this.n != 0) {
             return;
         }
@@ -200,8 +210,8 @@ public final class g0 implements k0 {
             for (com.google.android.gms.common.api.d dVar : map2.keySet()) {
                 if (!m0Var.i.containsKey(dVar)) {
                     arrayList.add((com.google.android.gms.common.api.c) map2.get(dVar));
-                } else if (j()) {
-                    d();
+                } else if (k()) {
+                    f();
                 }
             }
             if (arrayList.isEmpty()) {
@@ -211,7 +221,7 @@ public final class g0 implements k0 {
         }
     }
 
-    public final boolean i(int i10) {
+    public final boolean j(int i10) {
         if (this.h == i10) {
             return true;
         }
@@ -233,11 +243,11 @@ public final class g0 implements k0 {
         StringBuilder v = a1.g.v("GoogleApiClient connecting is in step ", this.h != 0 ? "STEP_GETTING_REMOTE_SERVICE" : "STEP_SERVICE_BINDINGS_AND_SIGN_IN", " but received callback for step ");
         v.append(i10 != 0 ? "STEP_GETTING_REMOTE_SERVICE" : "STEP_SERVICE_BINDINGS_AND_SIGN_IN");
         Log.e("GACConnecting", v.toString(), new Exception());
-        e(new k6.a(8, null));
+        g(new k6.a(8, null));
         return false;
     }
 
-    public final boolean j() {
+    public final boolean k() {
         m0 m0Var = this.a;
         int i10 = this.n - 1;
         this.n = i10;
@@ -250,7 +260,7 @@ public final class g0 implements k0 {
                 return true;
             }
             m0Var.n = this.f;
-            e(aVar);
+            g(aVar);
             return false;
         }
         j0 j0Var = m0Var.o;
@@ -267,27 +277,17 @@ public final class g0 implements k0 {
         }
         Log.w("GACConnecting", stringWriter.toString());
         Log.wtf("GACConnecting", "GoogleApiClient received too many callbacks for the given step. Clients may be in an unexpected state; GoogleApiClient will now disconnect.", new Exception());
-        e(new k6.a(8, null));
+        g(new k6.a(8, null));
         return false;
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void p(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
-        if (i(1)) {
-            f(aVar, eVar, z10);
-            if (j()) {
-                d();
-            }
-        }
+    public final void o(int i10) {
+        g(new k6.a(8, null));
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void s(int i10) {
-        e(new k6.a(8, null));
-    }
-
-    @Override // com.google.android.gms.common.api.internal.k0
-    public final void u() {
+    public final void q() {
         m0 m0Var = this.a;
         HashMap hashMap = m0Var.i;
         j0 j0Var = m0Var.o;
@@ -318,19 +318,19 @@ public final class g0 implements k0 {
             hashMap2.put(cVar2, new b0(this, eVar, booleanValue));
         }
         if (this.x) {
-            q3 q3Var = this.H;
-            n6.l.h(q3Var);
+            t3 t3Var = this.H;
+            n6.l.h(t3Var);
             n6.l.h(this.J);
-            q3Var.h = Integer.valueOf(System.identityHashCode(j0Var));
+            t3Var.h = Integer.valueOf(System.identityHashCode(j0Var));
             f0 f0Var = new f0(this);
-            this.v = (o8.a) this.J.a(this.c, j0Var.h, q3Var, (n8.a) q3Var.f, f0Var, f0Var);
+            this.v = (o8.a) this.J.a(this.c, j0Var.h, t3Var, (n8.a) t3Var.f, f0Var, f0Var);
         }
         this.n = map.size();
         this.K.add(n0.a.submit(new d0(this, hashMap2, 0)));
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final boolean z() {
+    public final boolean u() {
         ArrayList arrayList = this.K;
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
@@ -343,6 +343,6 @@ public final class g0 implements k0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void g() {
+    public final void d() {
     }
 }

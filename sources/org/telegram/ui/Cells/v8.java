@@ -14,13 +14,13 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.xn;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class v8 extends FrameLayout {
     public int a;
@@ -37,7 +37,7 @@ public final class v8 extends FrameLayout {
         super(context);
         TextView textView = new TextView(context);
         this.b = textView;
-        yh.n(org.telegram.ui.ActionBar.g6.G6, null, textView, 1, 16.0f);
+        sk.o(org.telegram.ui.ActionBar.g6.G6, null, textView, 1, 16.0f);
         textView.setLines(1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
@@ -45,10 +45,10 @@ public final class v8 extends FrameLayout {
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
         boolean z10 = LocaleController.isRTL;
-        addView(textView, w7.a6.a(-1.0f, z10 ? 64.0f : 21.0f, 0.0f, z10 ? 21.0f : 64.0f, 0.0f, -2, (z10 ? 5 : 3) | 48));
+        addView(textView, w7.z5.a(-1.0f, z10 ? 64.0f : 21.0f, 0.0f, z10 ? 21.0f : 64.0f, 0.0f, -2, (z10 ? 5 : 3) | 48));
         TextView textView2 = new TextView(context);
         this.c = textView2;
-        yh.n(org.telegram.ui.ActionBar.g6.z6, null, textView2, 1, 13.0f);
+        sk.o(org.telegram.ui.ActionBar.g6.z6, null, textView2, 1, 13.0f);
         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
         textView2.setLines(1);
         textView2.setMaxLines(1);
@@ -56,11 +56,11 @@ public final class v8 extends FrameLayout {
         textView2.setPadding(0, 0, 0, 0);
         textView2.setEllipsize(truncateAt);
         boolean z11 = LocaleController.isRTL;
-        addView(textView2, w7.a6.a(-2.0f, z11 ? 64.0f : 21.0f, 35.0f, z11 ? 21.0f : 64.0f, 0.0f, -2, (z11 ? 5 : 3) | 48));
+        addView(textView2, w7.z5.a(-2.0f, z11 ? 64.0f : 21.0f, 35.0f, z11 ? 21.0f : 64.0f, 0.0f, -2, (z11 ? 5 : 3) | 48));
         Switch r22 = new Switch(context, null);
         this.d = r22;
         r22.setDrawIconType(1);
-        addView(r22, w7.a6.a(40.0f, 22.0f, 0.0f, 22.0f, 0.0f, 37, (LocaleController.isRTL ? 3 : 5) | 16));
+        addView(r22, w7.z5.a(40.0f, 22.0f, 0.0f, 22.0f, 0.0f, 37, (LocaleController.isRTL ? 3 : 5) | 16));
     }
 
     public final void a(Runnable runnable, String str, boolean z10) {
@@ -77,19 +77,19 @@ public final class v8 extends FrameLayout {
             s6Var2.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i10, false));
             this.h.setTypeface(AndroidUtilities.bold());
             this.h.b(0.4f, 320L, es.h);
-            this.f.addView(this.h, w7.a6.d(20.0f, -2));
+            this.f.addView(this.h, w7.z5.d(20.0f, -2));
             this.n = new View(getContext());
             Drawable mutate = getContext().getResources().getDrawable(R.drawable.arrow_more).mutate();
             mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.x0(null, i10, false), PorterDuff.Mode.MULTIPLY));
             this.n.setBackground(mutate);
-            this.f.addView(this.n, w7.a6.q(16, 16, 16));
+            this.f.addView(this.n, w7.z5.q(16, 16, 16));
             this.f.setClipChildren(false);
             setClipChildren(false);
-            addView(this.f, w7.a6.e(-2, -2, 16));
+            addView(this.f, w7.z5.e(-2, -2, 16));
             xn xnVar = new xn(getContext(), 9);
             this.r = xnVar;
             xnVar.setBackground(org.telegram.ui.ActionBar.g6.g0(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.i6, false), 2, -1));
-            addView(this.r, w7.a6.e(76, -1, LocaleController.isRTL ? 3 : 5));
+            addView(this.r, w7.z5.e(76, -1, LocaleController.isRTL ? 3 : 5));
         }
         this.h.setText(str);
         this.n.animate().cancel();

@@ -6,9 +6,9 @@ import android.view.MotionEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.lg1;
+import org.telegram.ui.kg1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class no extends z9 {
     public final org.telegram.ui.Cells.m6 G;
@@ -49,7 +49,7 @@ public final class no extends z9 {
             j10 = foVar.a();
         } else {
             org.telegram.ui.ActionBar.m2 m2Var = this.H;
-            j10 = m2Var instanceof lg1 ? -((lg1) m2Var).a : 0L;
+            j10 = m2Var instanceof kg1 ? -((kg1) m2Var).a : 0L;
         }
         bi.s9.h(j10, canvas, this.a, m6Var);
     }

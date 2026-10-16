@@ -16,10 +16,10 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.aq;
-import org.telegram.ui.Components.p11;
-import org.telegram.ui.Components.p61;
+import org.telegram.ui.Components.q11;
+import org.telegram.ui.Components.q61;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class n extends FrameLayout {
     public final org.telegram.ui.Components.z9 a;
@@ -40,7 +40,7 @@ public final class n extends FrameLayout {
         this.a = z9Var;
         z9Var.setRoundRadius(AndroidUtilities.dp(24.0f));
         boolean z11 = LocaleController.isRTL;
-        addView(z9Var, w7.a6.a(48.0f, z11 ? 0.0f : i10 + 12, 6.0f, z11 ? i10 + 12 : 0.0f, 6.0f, 48, (z11 ? 5 : 3) | 48));
+        addView(z9Var, w7.z5.a(48.0f, z11 ? 0.0f : i10 + 12, 6.0f, z11 ? i10 + 12 : 0.0f, 6.0f, 48, (z11 ? 5 : 3) | 48));
         if (z10) {
             aq aqVar = new aq(context, 21, null);
             this.r = aqVar;
@@ -48,7 +48,7 @@ public final class n extends FrameLayout {
             aqVar.setDrawUnchecked(false);
             aqVar.setDrawBackgroundAsArc(3);
             boolean z12 = LocaleController.isRTL;
-            addView(aqVar, w7.a6.a(24.0f, z12 ? 0.0f : i10 + 42, 32.0f, z12 ? i10 + 42 : 0.0f, 0.0f, 24, (z12 ? 5 : 3) | 48));
+            addView(aqVar, w7.z5.a(24.0f, z12 ? 0.0f : i10 + 42, 32.0f, z12 ? i10 + 42 : 0.0f, 0.0f, 24, (z12 ? 5 : 3) | 48));
         }
         org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(context);
         this.b = h5Var;
@@ -56,7 +56,7 @@ public final class n extends FrameLayout {
         h5Var.setTextSize(17);
         h5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z13 = LocaleController.isRTL;
-        addView(h5Var, w7.a6.a(20.0f, z13 ? 62 : i10 + 73, 9.5f, z13 ? i10 + 73 : 62, 0.0f, -1, (z13 ? 5 : 3) | 48));
+        addView(h5Var, w7.z5.a(20.0f, z13 ? 62 : i10 + 73, 9.5f, z13 ? i10 + 73 : 62, 0.0f, -1, (z13 ? 5 : 3) | 48));
         org.telegram.ui.ActionBar.h5 h5Var2 = new org.telegram.ui.ActionBar.h5(context);
         this.c = h5Var2;
         h5Var2.setTextSize(14);
@@ -65,7 +65,7 @@ public final class n extends FrameLayout {
         h5Var2.setLinkTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.J6, false));
         h5Var2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z14 = LocaleController.isRTL;
-        addView(h5Var2, w7.a6.a(20.0f, z14 ? 62 : i10 + 73, 32.5f, z14 ? i10 + 73 : 62, 6.0f, -1, (z14 ? 5 : 3) | 48));
+        addView(h5Var2, w7.z5.a(20.0f, z14 ? 62 : i10 + 73, 32.5f, z14 ? i10 + 73 : 62, 6.0f, -1, (z14 ? 5 : 3) | 48));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -74,7 +74,7 @@ public final class n extends FrameLayout {
         imageView.setBackground(org.telegram.ui.ActionBar.g6.g0(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.i6, false), 1, -1));
         imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.x0(null, i11, false), PorterDuff.Mode.MULTIPLY));
         boolean z15 = LocaleController.isRTL;
-        addView(imageView, w7.a6.a(48.0f, z15 ? 7.0f : 0.0f, 6.0f, z15 ? 0.0f : 7.0f, 0.0f, 48, (z15 ? 3 : 5) | 48));
+        addView(imageView, w7.z5.a(48.0f, z15 ? 7.0f : 0.0f, 6.0f, z15 ? 0.0f : 7.0f, 0.0f, 48, (z15 ? 3 : 5) | 48));
     }
 
     public final void a(TLRPC.Chat chat, boolean z10) {
@@ -88,7 +88,7 @@ public final class n extends FrameLayout {
         StringBuilder u10 = a1.g.u(s10);
         u10.append(ChatObject.getPublicUsername(chat));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(u10.toString());
-        spannableStringBuilder.setSpan(new p61("", (p11) null), s10.length(), spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new q61("", (q11) null), s10.length(), spannableStringBuilder.length(), 33);
         this.c.l(spannableStringBuilder, false);
         this.a.e(chat, k9Var);
         this.h = z10;

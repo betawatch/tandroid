@@ -31,7 +31,6 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.yh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.c6;
@@ -45,7 +44,7 @@ import org.telegram.ui.Components.r6;
 import org.telegram.ui.Components.s5;
 import org.telegram.ui.xm;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class j1 {
     public static int Z;
@@ -359,8 +358,8 @@ public final class j1 {
         org.telegram.ui.Cells.a0 a0Var = this.z;
         if (k3.s(a0Var)) {
             y3 -= a0Var.getPaddingTop();
-            if (a0Var instanceof org.telegram.ui.Cells.x0) {
-                x10 -= ((org.telegram.ui.Cells.x0) a0Var).j0 / 2.0f;
+            if (a0Var instanceof org.telegram.ui.Cells.w0) {
+                x10 -= ((org.telegram.ui.Cells.w0) a0Var).j0 / 2.0f;
             }
         }
         float f7 = x10 - this.c;
@@ -725,7 +724,7 @@ public final class j1 {
                 if (g1Var.u) {
                     g1Var.A = (int) (r6Var.d + AndroidUtilities.dp(8.0f) + g1Var.A);
                 } else if (irVar != null && g1Var.w > 1) {
-                    g1Var.A = yh.c(8.0f, (int) Math.ceil(irVar.m), g1Var.A);
+                    g1Var.A = org.telegram.messenger.g0.C(8.0f, (int) Math.ceil(irVar.m), g1Var.A);
                 }
             } else {
                 g1Var.A = AndroidUtilities.dp(g1Var.D != null ? 6.0f : 4.0f) + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(8.0f);
@@ -736,7 +735,7 @@ public final class j1 {
                 } else if (g1Var.u) {
                     g1Var.A = (int) (r6Var.d + AndroidUtilities.dp(8.0f) + g1Var.A);
                 } else if (((int) Math.ceil(irVar.m)) > 0) {
-                    g1Var.A = yh.c(8.0f, (int) Math.ceil(irVar.m), g1Var.A);
+                    g1Var.A = org.telegram.messenger.g0.C(8.0f, (int) Math.ceil(irVar.m), g1Var.A);
                 } else {
                     g1Var.A -= AndroidUtilities.dp(1.0f);
                 }
@@ -744,14 +743,14 @@ public final class j1 {
             }
             if (g1Var.A + i13 > i10) {
                 arrayList2.add(Integer.valueOf(i13));
-                i15 = yh.c(4.0f, g1Var.B, i15);
+                i15 = org.telegram.messenger.g0.C(4.0f, g1Var.B, i15);
                 i16++;
                 i13 = 0;
             }
             g1Var.x = i13;
             g1Var.y = i15;
             g1Var.z = i16;
-            i13 = yh.c(4.0f, g1Var.A, i13);
+            i13 = org.telegram.messenger.g0.C(4.0f, g1Var.A, i13);
             if (i13 > i14) {
                 i14 = i13;
             }

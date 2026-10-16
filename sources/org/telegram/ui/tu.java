@@ -15,7 +15,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class tu extends FrameLayout {
     public final ImageView a;
@@ -30,11 +30,11 @@ public final class tu extends FrameLayout {
         ImageView imageView = new ImageView(context);
         this.a = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, w7.a6.a(28.0f, 18.0f, 0.0f, 18.0f, 0.0f, 28, (LocaleController.isRTL ? 5 : 3) | 16));
+        addView(imageView, w7.z5.a(28.0f, 18.0f, 0.0f, 18.0f, 0.0f, 28, (LocaleController.isRTL ? 5 : 3) | 16));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
         linearLayout.setWeightSum(2.0f);
-        addView(linearLayout, w7.a6.i(-1.0f, -2.0f, (LocaleController.isRTL ? 5 : 3) | 16, 64.0f, 0.0f, 20.0f, 0.0f));
+        addView(linearLayout, w7.z5.i(-1.0f, -2.0f, (LocaleController.isRTL ? 5 : 3) | 16, 64.0f, 0.0f, 20.0f, 0.0f));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(0);
         if (LocaleController.isRTL) {
@@ -57,11 +57,11 @@ public final class tu extends FrameLayout {
         imageView2.setTranslationY(AndroidUtilities.dp(1.0f));
         imageView2.setVisibility(8);
         if (LocaleController.isRTL) {
-            linearLayout2.addView(imageView2, w7.a6.t(16, 16, 21, 3, 0, 0, 0));
-            linearLayout2.addView(textView, w7.a6.q(-2, -2, 21));
+            linearLayout2.addView(imageView2, w7.z5.t(16, 16, 21, 3, 0, 0, 0));
+            linearLayout2.addView(textView, w7.z5.q(-2, -2, 21));
         } else {
-            linearLayout2.addView(textView, w7.a6.q(-2, -2, 16));
-            linearLayout2.addView(imageView2, w7.a6.t(16, 16, 16, 3, 0, 0, 0));
+            linearLayout2.addView(textView, w7.z5.q(-2, -2, 16));
+            linearLayout2.addView(imageView2, w7.z5.t(16, 16, 16, 3, 0, 0, 0));
         }
         TextView textView2 = new TextView(context);
         this.d = textView2;
@@ -69,11 +69,11 @@ public final class tu extends FrameLayout {
         textView2.setTextColor(evVar.getThemedColor(org.telegram.ui.ActionBar.g6.o6));
         textView2.setGravity(LocaleController.isRTL ? 3 : 5);
         if (LocaleController.isRTL) {
-            linearLayout.addView(textView2, w7.a6.q(-2, -2, 19));
-            linearLayout.addView(linearLayout2, w7.a6.o(0, -2, 2.0f, 21));
+            linearLayout.addView(textView2, w7.z5.q(-2, -2, 19));
+            linearLayout.addView(linearLayout2, w7.z5.o(0, -2, 2.0f, 21));
         } else {
-            linearLayout.addView(linearLayout2, w7.a6.o(0, -2, 2.0f, 16));
-            linearLayout.addView(textView2, w7.a6.q(-2, -2, 21));
+            linearLayout.addView(linearLayout2, w7.z5.o(0, -2, 2.0f, 16));
+            linearLayout.addView(textView2, w7.z5.q(-2, -2, 21));
         }
     }
 

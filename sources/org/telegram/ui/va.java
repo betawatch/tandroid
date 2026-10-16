@@ -24,7 +24,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class va extends org.telegram.ui.ActionBar.m2 {
     public static final Paint H = new Paint(1);
@@ -39,7 +39,7 @@ public final class va extends org.telegram.ui.ActionBar.m2 {
     public boolean d;
     public int e;
     public String f;
-    public org.telegram.messenger.voip.j h;
+    public org.telegram.messenger.voip.p0 h;
     public boolean n;
     public String r;
     public final ArrayList s;
@@ -224,10 +224,10 @@ public final class va extends org.telegram.ui.ActionBar.m2 {
         mm0Var2.setAdapter(maVar);
         this.b.setSelectorDrawableColor(getThemedColor(org.telegram.ui.ActionBar.g6.i6));
         new s4.y(new qa(this)).d(this.b);
-        ((FrameLayout) this.fragmentView).addView(this.b, w7.a6.d(-1.0f, -1));
+        ((FrameLayout) this.fragmentView).addView(this.b, w7.z5.d(-1.0f, -1));
         this.fragmentView.setOnTouchListener(new ci.d(6));
         this.b.setOnItemClickListener(new ka(this));
-        AndroidUtilities.runOnUIThread(new tu0(this, 19), 40L);
+        AndroidUtilities.runOnUIThread(new su0(this, 19), 40L);
         return this.fragmentView;
     }
 
@@ -243,9 +243,9 @@ public final class va extends org.telegram.ui.ActionBar.m2 {
                 ua.a(uaVar);
             }
         }
-        org.telegram.messenger.voip.j jVar = this.h;
-        if (jVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(jVar);
+        org.telegram.messenger.voip.p0 p0Var = this.h;
+        if (p0Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(p0Var);
             this.h = null;
             this.f = null;
             if (this.e != 0) {
@@ -350,9 +350,9 @@ public final class va extends org.telegram.ui.ActionBar.m2 {
                     }
                 }
                 this.f = str;
-                org.telegram.messenger.voip.j jVar2 = new org.telegram.messenger.voip.j(27, this, str);
-                this.h = jVar2;
-                AndroidUtilities.runOnUIThread(jVar2, 300L);
+                org.telegram.messenger.voip.p0 p0Var2 = new org.telegram.messenger.voip.p0(22, this, str);
+                this.h = p0Var2;
+                AndroidUtilities.runOnUIThread(p0Var2, 300L);
                 return true;
             }
             org.telegram.ui.Cells.y1 y1Var14 = this.G;

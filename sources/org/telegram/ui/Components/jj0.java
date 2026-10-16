@@ -15,9 +15,9 @@ import android.view.animation.LinearInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
-import org.telegram.ui.ig1;
+import org.telegram.ui.hg1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class jj0 {
     public ValueAnimator A;
@@ -50,7 +50,7 @@ public abstract class jj0 {
     public final hj0 a0;
     public final hj0 b0;
     public int c0;
-    public final org.telegram.ui.Cells.t6 d0;
+    public final org.telegram.ui.Cells.l7 d0;
     public boolean e0;
     public final TextPaint k;
     public final ij0 l;
@@ -95,7 +95,7 @@ public abstract class jj0 {
         this.U = 1.0f;
         this.a0 = new hj0(this, 3);
         this.b0 = new hj0(this, 4);
-        this.d0 = new org.telegram.ui.Cells.t6(this, 18);
+        this.d0 = new org.telegram.ui.Cells.l7(this, 17);
         this.e0 = false;
         textPaint.setTypeface(AndroidUtilities.bold());
         textPaint.setTextSize(AndroidUtilities.dp(16.0f));
@@ -193,7 +193,7 @@ public abstract class jj0 {
         if (!this.X || this.Y || (s2Var = this.H) == null || this.I == null) {
             return;
         }
-        boolean z12 = s2Var instanceof ig1;
+        boolean z12 = s2Var instanceof hg1;
         int dp = AndroidUtilities.dp(z12 ? 15.0f : 28.0f);
         int dp2 = AndroidUtilities.dp(8.0f);
         int dp3 = AndroidUtilities.dp(9.0f);
@@ -457,9 +457,9 @@ public abstract class jj0 {
             if (Math.abs(this.a) >= this.Z * 0.5f) {
                 this.e0 = true;
                 org.telegram.ui.Cells.s2 s2Var2 = this.H;
-                org.telegram.ui.Cells.t6 t6Var = this.d0;
-                s2Var2.removeCallbacks(t6Var);
-                this.H.postDelayed(t6Var, 200L);
+                org.telegram.ui.Cells.l7 l7Var = this.d0;
+                s2Var2.removeCallbacks(l7Var);
+                this.H.postDelayed(l7Var, 200L);
             } else if (!this.e0) {
                 this.x = 1.0f;
                 this.y = true;
@@ -499,7 +499,7 @@ public abstract class jj0 {
                 float y10 = com.google.android.gms.internal.play_billing.k3.y(1.0f, this.o, 0.1f, 0.9f);
                 canvas.scale(y10, y10, width2, height2 - (AndroidUtilities.dp(8.0f) * this.o));
             }
-            canvas.saveLayerAlpha(0.0f, 0.0f, this.H.getMeasuredWidth(), this.H.getMeasuredHeight(), (int) (org.telegram.messenger.q.B(1.0f, this.o, f11, f12) * this.x), 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, this.H.getMeasuredWidth(), this.H.getMeasuredHeight(), (int) (org.telegram.messenger.g0.z(1.0f, this.o, f11, f12) * this.x), 31);
             canvas.translate((width2 - this.V) - (this.W / 2.0f), ((AndroidUtilities.dp(8.0f) * this.o) + height2) - this.T.getHeight());
             float f53 = this.U;
             canvas.scale(f53, f53, (this.W / 2.0f) + this.V, this.T.getHeight());

@@ -19,18 +19,18 @@ import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Cells.i6;
 import org.telegram.ui.Cells.j6;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.db;
 import org.telegram.ui.Components.g5;
 import org.telegram.ui.Components.lm0;
 import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.z61;
 import s4.o0;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class b extends db {
-    public z61 X;
+    public a71 X;
     public boolean Y;
     public final FrameLayout Z;
     public final boolean a0;
@@ -46,7 +46,7 @@ public final class b extends db {
         this.a0 = ChatObject.isChannelAndNotMegaGroup(chat2);
         this.L = false;
         this.K = AndroidUtilities.dp(12.0f);
-        this.e.setTitle(A());
+        this.e.setTitle(B());
         setBackgroundColor(g6.w0(g6.a7, this.resourcesProvider));
         FrameLayout frameLayout = new FrameLayout(context);
         this.Z = frameLayout;
@@ -62,7 +62,7 @@ public final class b extends db {
                 i6Var.u(user, null, DialogObject.getName(user), LocaleController.getString(R.string.Bot), false, false);
             }
         }
-        frameLayout.addView(i6Var, a6.d(-2.0f, i10));
+        frameLayout.addView(i6Var, z5.d(-2.0f, i10));
         mm0 mm0Var = this.d;
         int i11 = this.backgroundPaddingLeft;
         mm0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(64.0f) + AndroidUtilities.navigationBarHeight);
@@ -77,12 +77,12 @@ public final class b extends db {
         }
         dVar.e();
         dVar.setOnClickListener(new x(this, callback, chat, 9));
-        this.containerView.addView(dVar, a6.f(48.0f, 80, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(12.0f) + AndroidUtilities.navigationBarHeight));
+        this.containerView.addView(dVar, z5.f(48.0f, 80, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(12.0f) + AndroidUtilities.navigationBarHeight));
         this.X.N(false);
     }
 
     @Override // org.telegram.ui.Components.db
-    public final CharSequence A() {
+    public final CharSequence B() {
         return LocaleController.getString(this.b0 ? R.string.CommunityAddBotTitle : R.string.CommunityAddChatTitle);
     }
 
@@ -123,9 +123,9 @@ public final class b extends db {
 
     @Override // org.telegram.ui.Components.db
     public final lm0 x(mm0 mm0Var) {
-        z61 z61Var = new z61(this.d, getContext(), this.currentAccount, 0, false, new a(this, 0), this.resourcesProvider);
-        this.X = z61Var;
-        z61Var.r = false;
-        return z61Var;
+        a71 a71Var = new a71(this.d, getContext(), this.currentAccount, 0, false, new a(this, 0), this.resourcesProvider);
+        this.X = a71Var;
+        a71Var.r = false;
+        return a71Var;
     }
 }

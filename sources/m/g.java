@@ -4,29 +4,29 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class g extends v implements i {
-    public final /* synthetic */ h d;
+public final class g extends x implements j {
+    public final /* synthetic */ i d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(h hVar, Context context) {
+    public g(i iVar, Context context) {
         super(context, null, R.attr.actionOverflowButtonStyle);
-        this.d = hVar;
+        this.d = iVar;
         setClickable(true);
         setFocusable(true);
         setVisibility(0);
         setEnabled(true);
-        w7.r.a(this, getContentDescription());
+        w7.q.a(this, getContentDescription());
         setOnTouchListener(new l.b(this, this));
     }
 
-    @Override // m.i
+    @Override // m.j
     public final boolean a() {
         return false;
     }
 
-    @Override // m.i
+    @Override // m.j
     public final boolean c() {
         return false;
     }

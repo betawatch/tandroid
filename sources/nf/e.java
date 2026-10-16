@@ -3,21 +3,21 @@ package nf;
 import com.google.android.gms.common.api.internal.n1;
 import java.io.EOFException;
 import java.io.InputStream;
-import ji.d4;
+import ji.h5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class e {
     public static final n1 e = new n1(1);
     public final of.a a;
     public final h b;
     public final f c;
-    public final d4 d;
+    public final h5 d;
 
     public e(InputStream inputStream, long j10, int i10, h hVar, f fVar) {
         of.a aVar = new of.a(inputStream, j10, i10);
         this.a = aVar;
-        this.d = new d4(aVar, 7);
+        this.d = new h5(aVar, 8);
         this.b = hVar;
         this.c = fVar;
     }
@@ -47,25 +47,25 @@ public final class e {
     }
 
     public final b b() {
-        byte g10 = this.d.g();
-        if (g10 == 0) {
+        byte c10 = this.d.c();
+        if (c10 == 0) {
             return b.c;
         }
-        if (g10 == 1) {
+        if (c10 == 1) {
             return b.d;
         }
-        if (g10 == 2) {
+        if (c10 == 2) {
             return b.e;
         }
-        if (g10 == 3) {
+        if (c10 == 3) {
             return b.f;
         }
-        throw new c(i2.d.i(g10, "Invalid encoding: "));
+        throw new c(i2.d.j(c10, "Invalid encoding: "));
     }
 
     public final String c(int i10, b bVar) {
         if (i10 > this.a.e()) {
-            throw new c(i2.d.i(i10, "Could not read fixed-length string of length: "));
+            throw new c(i2.d.j(i10, "Could not read fixed-length string of length: "));
         }
         d dVar = (d) e.get();
         byte[] bArr = dVar.a;
@@ -79,12 +79,12 @@ public final class e {
         byte[] bArr2 = dVar.a;
         int i11 = 0;
         while (true) {
-            d4 d4Var = this.d;
+            h5 h5Var = this.d;
             if (i11 >= i10) {
-                d4Var.getClass();
+                h5Var.getClass();
                 return a(bArr2, i10, bVar, true);
             }
-            int read = ((com.google.firebase.messaging.d) d4Var.b).read(bArr2, i11, i10 - i11);
+            int read = ((com.google.firebase.messaging.d) h5Var.b).read(bArr2, i11, i10 - i11);
             if (read <= 0) {
                 throw new EOFException();
             }
@@ -106,9 +106,9 @@ public final class e {
         byte[] bArr2 = dVar.a;
         int i11 = 0;
         for (int i12 = 0; i12 < min; i12++) {
-            byte g10 = this.d.g();
-            bArr2[i12] = g10;
-            if (g10 != 0 || (bVar == b.d && i11 == 0 && i12 % 2 != 0)) {
+            byte c10 = this.d.c();
+            bArr2[i12] = c10;
+            if (c10 != 0 || (bVar == b.d && i11 == 0 && i12 % 2 != 0)) {
                 i11 = 0;
             } else {
                 i11++;

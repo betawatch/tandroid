@@ -10,9 +10,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class d extends FrameLayout {
     public final c6 a;
@@ -27,7 +27,7 @@ public final class d extends FrameLayout {
         k3.m(14.0f, 1, textView);
         textView.setTextColor(g6.w0(g6.f7, c6Var));
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        addView(textView, a6.a(-1.0f, 16.0f, 0.0f, 16.0f, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
+        addView(textView, z5.a(-1.0f, 16.0f, 0.0f, 16.0f, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
     }
 
     @Override // android.widget.FrameLayout, android.view.View

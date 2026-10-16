@@ -7,7 +7,7 @@ import i2.o0;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class n implements i {
     public static final float[] l = {1.0f, 1.0f, 1.0909091f, 0.90909094f, 1.4545455f, 1.2121212f, 1.0f};
@@ -175,7 +175,7 @@ public final class n implements i {
                                         wVar.z = g15;
                                         wVar.E = f7;
                                         wVar.u = Collections.singletonList(copyOf);
-                                        i2.d.s(wVar, i0Var);
+                                        i2.d.u(wVar, i0Var);
                                         this.j = true;
                                     } else {
                                         f7 = g11 / g12;
@@ -202,7 +202,7 @@ public final class n implements i {
                                         wVar2.z = g152;
                                         wVar2.E = f7;
                                         wVar2.u = Collections.singletonList(copyOf);
-                                        i2.d.s(wVar2, i0Var);
+                                        i2.d.u(wVar2, i0Var);
                                         this.j = true;
                                     }
                                 } else if (g10 < 7) {
@@ -230,7 +230,7 @@ public final class n implements i {
                                     wVar22.z = g1522;
                                     wVar22.E = f7;
                                     wVar22.u = Collections.singletonList(copyOf);
-                                    i2.d.s(wVar22, i0Var);
+                                    i2.d.u(wVar22, i0Var);
                                     this.j = true;
                                 } else {
                                     e2.a.l("H263Reader", "Invalid aspect ratio");
@@ -258,7 +258,7 @@ public final class n implements i {
                                     wVar222.z = g15222;
                                     wVar222.E = f7;
                                     wVar222.u = Collections.singletonList(copyOf);
-                                    i2.d.s(wVar222, i0Var);
+                                    i2.d.u(wVar222, i0Var);
                                     this.j = true;
                                 }
                             } else {
@@ -377,9 +377,9 @@ public final class n implements i {
         f0Var.c();
         this.h = (String) f0Var.e;
         f0Var.c();
-        i0 a02 = qVar.a0(f0Var.c, 2);
-        this.i = a02;
-        this.f = new m(a02);
+        i0 W = qVar.W(f0Var.c, 2);
+        this.i = W;
+        this.f = new m(W);
         this.a.b(qVar, f0Var);
     }
 

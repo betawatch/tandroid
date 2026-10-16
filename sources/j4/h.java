@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class h implements i {
     public final /* synthetic */ int a;
@@ -120,7 +120,7 @@ public final class h implements i {
                     e0 e0Var = (e0) ((List) this.f).get(i10);
                     f0Var.b();
                     f0Var.c();
-                    i0 a02 = qVar.a0(f0Var.c, 3);
+                    i0 W = qVar.W(f0Var.c, 3);
                     b2.w wVar = new b2.w();
                     f0Var.c();
                     wVar.a = (String) f0Var.e;
@@ -128,21 +128,21 @@ public final class h implements i {
                     wVar.r = w0.n("application/dvbsubs");
                     wVar.u = Collections.singletonList(e0Var.b);
                     wVar.d = e0Var.a;
-                    i2.d.s(wVar, a02);
-                    i0VarArr[i10] = a02;
+                    i2.d.u(wVar, W);
+                    i0VarArr[i10] = W;
                 }
                 break;
             default:
                 f0Var.b();
                 f0Var.c();
-                i0 a03 = qVar.a0(f0Var.c, 5);
-                this.g = a03;
+                i0 W2 = qVar.W(f0Var.c, 5);
+                this.g = W2;
                 b2.w wVar2 = new b2.w();
                 f0Var.c();
                 wVar2.a = (String) f0Var.e;
                 wVar2.q = w0.n("video/mp2t");
                 wVar2.r = w0.n("application/id3");
-                i2.d.s(wVar2, a03);
+                i2.d.u(wVar2, W2);
                 break;
         }
     }

@@ -12,11 +12,11 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.cm0;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.ub0;
 import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class e6 implements cm0 {
     public final /* synthetic */ sb a;
@@ -54,7 +54,7 @@ public final class e6 implements cm0 {
                 if (isUserSelf) {
                     return false;
                 }
-                m80 F = m80.F(sbVar.v, bVar, view);
+                l80 F = l80.F(sbVar.v, bVar, view);
                 F.i = 3;
                 F.j = true;
                 F.W(new ColorDrawable(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.h5, bVar)));
@@ -84,13 +84,13 @@ public final class e6 implements cm0 {
                             case 0:
                                 messagesController2.getStoriesController().j0(user2.id, true, true);
                                 w6 w6Var2 = e6Var.b;
-                                i2.d.q(R.string.StoryHidFromToast, new Object[]{str3}, new zc(w6Var2, w6Var2.s), R.raw.ic_ban, 36);
+                                i2.d.s(R.string.StoryHidFromToast, new Object[]{str3}, new zc(w6Var2, w6Var2.s), R.raw.ic_ban, 36);
                                 o6Var2.a(w6Var2.d(storyView2) ? 1.0f : 0.5f, true);
                                 break;
                             default:
                                 messagesController2.getStoriesController().j0(user2.id, false, true);
                                 w6 w6Var3 = e6Var.b;
-                                i2.d.q(R.string.StoryShownBackToToast, new Object[]{str3}, new zc(w6Var3, w6Var3.s), R.raw.contact_check, 36);
+                                i2.d.s(R.string.StoryShownBackToToast, new Object[]{str3}, new zc(w6Var3, w6Var3.s), R.raw.contact_check, 36);
                                 o6Var2.a(w6Var3.d(storyView2) ? 1.0f : 0.5f, true);
                                 break;
                         }
@@ -119,13 +119,13 @@ public final class e6 implements cm0 {
                             case 0:
                                 messagesController2.getStoriesController().j0(user2.id, true, true);
                                 w6 w6Var2 = e6Var.b;
-                                i2.d.q(R.string.StoryHidFromToast, new Object[]{str3}, new zc(w6Var2, w6Var2.s), R.raw.ic_ban, 36);
+                                i2.d.s(R.string.StoryHidFromToast, new Object[]{str3}, new zc(w6Var2, w6Var2.s), R.raw.ic_ban, 36);
                                 o6Var2.a(w6Var2.d(storyView2) ? 1.0f : 0.5f, true);
                                 break;
                             default:
                                 messagesController2.getStoriesController().j0(user2.id, false, true);
                                 w6 w6Var3 = e6Var.b;
-                                i2.d.q(R.string.StoryShownBackToToast, new Object[]{str3}, new zc(w6Var3, w6Var3.s), R.raw.contact_check, 36);
+                                i2.d.s(R.string.StoryShownBackToToast, new Object[]{str3}, new zc(w6Var3, w6Var3.s), R.raw.contact_check, 36);
                                 o6Var2.a(w6Var3.d(storyView2) ? 1.0f : 0.5f, true);
                                 break;
                         }

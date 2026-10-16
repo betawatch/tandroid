@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class f1 extends FrameLayout implements org.telegram.ui.Cells.n9 {
     public TL_iv.pageBlockChannel E;
@@ -57,17 +57,17 @@ public final class f1 extends FrameLayout implements org.telegram.ui.Cells.n9 {
         TextView textView = new TextView(context);
         this.d = textView;
         com.google.android.gms.internal.play_billing.k3.m(14.0f, 1, textView);
-        org.telegram.messenger.yh.l(R.string.ChannelJoin, textView, 19);
-        addView(textView, w7.a6.e(-2, 39, 53));
+        org.telegram.messenger.sk.m(R.string.ChannelJoin, textView, 19);
+        addView(textView, w7.z5.e(-2, 39, 53));
         textView.setOnClickListener(new bi.u1(23, this, z70Var));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setImageResource(R.drawable.list_check);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, w7.a6.e(39, 39, 53));
+        addView(imageView, w7.z5.e(39, 39, 53));
         org.telegram.ui.Components.gr grVar = new org.telegram.ui.Components.gr(context, 0);
         this.c = grVar;
-        addView(grVar, w7.a6.e(39, 39, 53));
+        addView(grVar, w7.z5.e(39, 39, 53));
     }
 
     public final void a(int i10, boolean z10) {

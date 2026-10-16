@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class fa0 extends View {
     public final Drawable a;
@@ -28,7 +28,7 @@ public final class fa0 extends View {
         Paint paint2 = new Paint(1);
         this.c = paint2;
         this.d = new g6(this, 0L, 320L, es.h);
-        w7.c6.a(this);
+        w7.b6.a(this);
         this.a = context.getResources().getDrawable(R.drawable.media_live_on).mutate();
         Paint.Style style = Paint.Style.STROKE;
         paint2.setStyle(style);

@@ -6,13 +6,14 @@ import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.av;
-import org.telegram.ui.Components.ca1;
+import org.telegram.ui.Components.da1;
 import org.telegram.ui.Components.m30;
 import org.telegram.ui.Components.q30;
 import org.telegram.ui.Components.s30;
-import org.telegram.ui.Components.v71;
+import org.telegram.ui.Components.w71;
+import org.telegram.ui.Components.x50;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class da implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -88,21 +89,21 @@ public final class da implements ViewTreeObserver.OnPreDrawListener {
                 ((di.p6) obj).invalidate();
                 break;
             default:
-                ca1 ca1Var = (ca1) ((li.e) obj).b;
-                ca1Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
-                ImageView imageView = ca1Var.e;
+                da1 da1Var = (da1) ((x50) obj).b;
+                da1Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
+                ImageView imageView = da1Var.e;
                 int i11 = 4;
                 if (imageView != null) {
                     imageView.setVisibility(4);
-                    ca1Var.e.setImageDrawable(null);
-                    Bitmap bitmap = ca1Var.h;
+                    da1Var.e.setImageDrawable(null);
+                    Bitmap bitmap = da1Var.h;
                     if (bitmap != null) {
                         bitmap.recycle();
-                        ca1Var.h = null;
+                        da1Var.h = null;
                     }
                 }
-                AndroidUtilities.runOnUIThread(new v71(this, i11));
-                ca1Var.r = 0;
+                AndroidUtilities.runOnUIThread(new w71(this, i11));
+                da1Var.r = 0;
                 break;
         }
         return true;

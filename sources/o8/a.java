@@ -12,23 +12,23 @@ import android.util.Log;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.common.api.k;
 import com.google.android.gms.common.api.l;
-import m.q3;
-import n6.v;
+import m.t3;
+import n6.u;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class a extends n6.g implements com.google.android.gms.common.api.c {
     public final boolean U;
-    public final q3 V;
+    public final t3 V;
     public final Bundle W;
     public final Integer X;
 
-    public a(Context context, Looper looper, q3 q3Var, Bundle bundle, k kVar, l lVar) {
-        super(context, looper, 44, q3Var, kVar, lVar, 0);
+    public a(Context context, Looper looper, t3 t3Var, Bundle bundle, k kVar, l lVar) {
+        super(context, looper, 44, t3Var, kVar, lVar, 0);
         this.U = true;
-        this.V = q3Var;
+        this.V = t3Var;
         this.W = bundle;
-        this.X = (Integer) q3Var.h;
+        this.X = (Integer) t3Var.h;
     }
 
     public final void G() {
@@ -42,9 +42,9 @@ public final class a extends n6.g implements com.google.android.gms.common.api.c
             GoogleSignInAccount b10 = "<<default account>>".equals(account.name) ? a6.b.a(this.n).b() : null;
             Integer num = this.X;
             n6.l.h(num);
-            v vVar = new v(2, account, num.intValue(), b10);
+            u uVar = new u(2, account, num.intValue(), b10);
             e eVar = (e) u();
-            g gVar = new g(1, vVar);
+            g gVar = new g(1, uVar);
             Parcel H0 = eVar.H0();
             k7.a.c(H0, gVar);
             k7.a.d(H0, cVar);
@@ -80,11 +80,11 @@ public final class a extends n6.g implements com.google.android.gms.common.api.c
 
     @Override // n6.g
     public final Bundle t() {
-        q3 q3Var = this.V;
-        boolean equals = this.n.getPackageName().equals((String) q3Var.d);
+        t3 t3Var = this.V;
+        boolean equals = this.n.getPackageName().equals((String) t3Var.d);
         Bundle bundle = this.W;
         if (!equals) {
-            bundle.putString("com.google.android.gms.signin.internal.realClientPackageName", (String) q3Var.d);
+            bundle.putString("com.google.android.gms.signin.internal.realClientPackageName", (String) t3Var.d);
         }
         return bundle;
     }

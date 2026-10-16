@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tv implements Runnable {
     public final /* synthetic */ int a;
@@ -34,25 +34,25 @@ public final /* synthetic */ class tv implements Runnable {
                 }
                 break;
             case 2:
-                pf.d.s(this.b, "https://promote.telegram.org/guidelines");
+                pf.d.r(this.b, "https://promote.telegram.org/guidelines");
                 break;
             case 3:
-                pf.d.s(this.b, "https://promote.telegram.org/guidelines");
+                pf.d.r(this.b, "https://promote.telegram.org/guidelines");
                 break;
             case 4:
-                pf.d.s(this.b, "https://promote.telegram.org/guidelines");
+                pf.d.r(this.b, "https://promote.telegram.org/guidelines");
                 break;
             case 5:
-                pf.d.s(this.b, "https://promote.telegram.org/guidelines");
+                pf.d.r(this.b, "https://promote.telegram.org/guidelines");
                 break;
             case 6:
-                pf.d.s(this.b, "https://promote.telegram.org/guidelines");
+                pf.d.r(this.b, "https://promote.telegram.org/guidelines");
                 break;
             case 7:
-                pf.d.s(this.b, "https://promote.telegram.org/guidelines");
+                pf.d.r(this.b, "https://promote.telegram.org/guidelines");
                 break;
             default:
-                pf.d.s(this.b, LocaleController.getString(R.string.WebAppDisclaimerUrl));
+                pf.d.r(this.b, LocaleController.getString(R.string.WebAppDisclaimerUrl));
                 break;
         }
     }

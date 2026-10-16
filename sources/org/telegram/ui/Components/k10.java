@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class k10 extends FrameLayout {
     public ValueAnimator E;
@@ -96,7 +96,7 @@ public final class k10 extends FrameLayout {
             float d = this.e.d(this.d, false);
             float c11 = ((r6Var.c() + AndroidUtilities.dp(15.66f)) * d) + c10;
             Rect rect = AndroidUtilities.rectTmp2;
-            rect.set((int) (((getMeasuredWidth() - c11) - getWidth()) / 2.0f), (int) (((getMeasuredHeight() - r6Var2.e) / 2.0f) - AndroidUtilities.dp(1.0f)), (int) org.telegram.messenger.q.b(getMeasuredWidth() - c11, getWidth(), 2.0f, c10), (int) (((getMeasuredHeight() + r6Var2.e) / 2.0f) - AndroidUtilities.dp(1.0f)));
+            rect.set((int) (((getMeasuredWidth() - c11) - getWidth()) / 2.0f), (int) (((getMeasuredHeight() - r6Var2.e) / 2.0f) - AndroidUtilities.dp(1.0f)), (int) org.telegram.messenger.g0.a(getMeasuredWidth() - c11, getWidth(), 2.0f, c10), (int) (((getMeasuredHeight() + r6Var2.e) / 2.0f) - AndroidUtilities.dp(1.0f)));
             r6Var2.B = (int) (AndroidUtilities.lerp(0.5f, 1.0f, this.x) * (1.0f - this.h) * 255.0f);
             r6Var2.setBounds(rect);
             r6Var2.draw(canvas);
@@ -111,7 +111,7 @@ public final class k10 extends FrameLayout {
             paint.setAlpha((int) ((1.0f - this.h) * 255.0f * d * d));
             canvas.drawRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), paint);
             rect.offset(-AndroidUtilities.dp(0.3f), -AndroidUtilities.dp(0.4f));
-            r6Var.B = (int) org.telegram.messenger.q.B(1.0f, this.h, 255.0f, d);
+            r6Var.B = (int) org.telegram.messenger.g0.z(1.0f, this.h, 255.0f, d);
             r6Var.setBounds(rect);
             r6Var.draw(canvas);
             if (this.s != 1.0f) {

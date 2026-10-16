@@ -10,11 +10,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.rf;
 import org.telegram.ui.Components.wg;
 import org.telegram.ui.Components.z9;
-import org.telegram.ui.aj0;
-import org.telegram.ui.hj0;
-import org.telegram.ui.ui0;
+import org.telegram.ui.gj0;
+import org.telegram.ui.ti0;
+import org.telegram.ui.zi0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class f extends AnimatorListenerAdapter {
     public final /* synthetic */ int a = 0;
@@ -35,7 +35,7 @@ public final class f extends AnimatorListenerAdapter {
         rf rfVar;
         org.telegram.ui.Cells.u1 u1Var;
         ViewGroup viewGroup;
-        ui0 ui0Var;
+        ti0 ti0Var;
         switch (this.a) {
             case 0:
                 ArrayList arrayList = (ArrayList) this.d;
@@ -74,46 +74,46 @@ public final class f extends AnimatorListenerAdapter {
                 break;
             default:
                 Runnable runnable = (Runnable) this.d;
-                hj0 hj0Var = (hj0) this.e;
-                aj0 aj0Var = hj0Var.K;
+                gj0 gj0Var = (gj0) this.e;
+                zi0 zi0Var = gj0Var.K;
                 boolean z11 = this.b;
                 float f7 = z11 ? 1.0f : 0.0f;
-                hj0Var.E = f7;
-                hj0Var.x = false;
-                hj0Var.y = false;
-                hj0Var.H.setAlpha(f7);
+                gj0Var.E = f7;
+                gj0Var.x = false;
+                gj0Var.y = false;
+                gj0Var.H.setAlpha(f7);
                 if (z11) {
-                    hj0Var.w = false;
-                    hj0Var.v = false;
+                    gj0Var.w = false;
+                    gj0Var.v = false;
                 }
-                rf rfVar2 = hj0Var.S;
+                rf rfVar2 = gj0Var.S;
                 if (rfVar2 != null) {
                     rfVar2.setAlpha(1.0f);
                 }
-                org.telegram.ui.Cells.u1 u1Var2 = hj0Var.r0;
+                org.telegram.ui.Cells.u1 u1Var2 = gj0Var.r0;
                 if (u1Var2 != null) {
                     u1Var2.setVisibility(0);
                 }
-                wg wgVar = hj0Var.W;
-                if (wgVar != null && !hj0Var.s) {
+                wg wgVar = gj0Var.W;
+                if (wgVar != null && !gj0Var.s) {
                     wgVar.setAlpha(1.0f);
                 }
-                if (!z11 && (ui0Var = hj0Var.X) != null) {
-                    ui0Var.setAlpha(0.0f);
+                if (!z11 && (ti0Var = gj0Var.X) != null) {
+                    ti0Var.setAlpha(0.0f);
                 }
-                if (!this.c && (viewGroup = hj0Var.Z) != null) {
-                    viewGroup.setAlpha(hj0Var.E);
+                if (!this.c && (viewGroup = gj0Var.Z) != null) {
+                    viewGroup.setAlpha(gj0Var.E);
                 }
-                aj0Var.invalidate();
-                aj0Var.setAlpha(hj0Var.E);
-                hj0Var.F.invalidate();
-                hj0Var.G.invalidate();
+                zi0Var.invalidate();
+                zi0Var.setAlpha(gj0Var.E);
+                gj0Var.F.invalidate();
+                gj0Var.G.invalidate();
                 if (runnable != null) {
-                    if (!z11 && (u1Var = hj0Var.r0) != null && u1Var.isAttachedToWindow()) {
-                        hj0Var.r0.post(runnable);
+                    if (!z11 && (u1Var = gj0Var.r0) != null && u1Var.isAttachedToWindow()) {
+                        gj0Var.r0.post(runnable);
                         break;
-                    } else if (!z11 && (rfVar = hj0Var.S) != null && rfVar.isAttachedToWindow()) {
-                        hj0Var.S.post(runnable);
+                    } else if (!z11 && (rfVar = gj0Var.S) != null && rfVar.isAttachedToWindow()) {
+                        gj0Var.S.post(runnable);
                         break;
                     } else {
                         AndroidUtilities.runOnUIThread(runnable);
@@ -124,8 +124,8 @@ public final class f extends AnimatorListenerAdapter {
         }
     }
 
-    public f(hj0 hj0Var, boolean z10, boolean z11, Runnable runnable) {
-        this.e = hj0Var;
+    public f(gj0 gj0Var, boolean z10, boolean z11, Runnable runnable) {
+        this.e = gj0Var;
         this.b = z10;
         this.c = z11;
         this.d = runnable;

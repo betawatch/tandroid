@@ -35,13 +35,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class yj0 extends BitmapDrawable implements Animatable, zf.d {
     public static final AtomicInteger P0 = new AtomicInteger();
     public static final AtomicInteger Q0 = new AtomicInteger();
-    public static final ExecutorService R0 = Executors.newFixedThreadPool(4, new e2.l0(4));
-    public static final ExecutorService S0 = Executors.newFixedThreadPool(2, new e2.l0(5));
+    public static final ExecutorService R0 = Executors.newFixedThreadPool(4, new e2.l0(2));
+    public static final ExecutorService S0 = Executors.newFixedThreadPool(2, new e2.l0(3));
     public static DispatchQueue T0;
     public Runnable A0;
     public zf.f B0;

@@ -15,12 +15,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.Components.f60;
+import org.telegram.ui.Components.g90;
 import org.telegram.ui.Components.gk0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.br;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -108,7 +108,7 @@ public final /* synthetic */ class l1 implements RequestDelegate {
                     arrayList3.add(Long.valueOf(j10));
                     arrayList4.add(0);
                     final ArrayList arrayList6 = new ArrayList();
-                    final f60 f60Var = new f60(16, gk0Var, arrayList6);
+                    final g90 g90Var = new g90(11, gk0Var, arrayList6);
                     if (ChatObject.isChannel(chat)) {
                         TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
                         tL_channels_getParticipants.limit = MessagesController.getInstance(i14).chatReadMarkSizeThreshold;
@@ -126,7 +126,7 @@ public final /* synthetic */ class l1 implements RequestDelegate {
                                         final ArrayList arrayList7 = arrayList3;
                                         final ArrayList arrayList8 = arrayList6;
                                         final ArrayList arrayList9 = arrayList4;
-                                        final f60 f60Var2 = f60Var;
+                                        final g90 g90Var2 = g90Var;
                                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ek0
                                             @Override // java.lang.Runnable
                                             public final void run() {
@@ -144,7 +144,7 @@ public final /* synthetic */ class l1 implements RequestDelegate {
                                                                 }
                                                             }
                                                         }
-                                                        f60Var2.run();
+                                                        g90Var2.run();
                                                         break;
                                                     default:
                                                         TLObject tLObject4 = tLObject2;
@@ -159,7 +159,7 @@ public final /* synthetic */ class l1 implements RequestDelegate {
                                                                 }
                                                             }
                                                         }
-                                                        f60Var2.run();
+                                                        g90Var2.run();
                                                         break;
                                                 }
                                             }
@@ -171,7 +171,7 @@ public final /* synthetic */ class l1 implements RequestDelegate {
                                         final ArrayList arrayList10 = arrayList3;
                                         final ArrayList arrayList11 = arrayList6;
                                         final ArrayList arrayList12 = arrayList4;
-                                        final f60 f60Var3 = f60Var;
+                                        final g90 g90Var3 = g90Var;
                                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ek0
                                             @Override // java.lang.Runnable
                                             public final void run() {
@@ -189,7 +189,7 @@ public final /* synthetic */ class l1 implements RequestDelegate {
                                                                 }
                                                             }
                                                         }
-                                                        f60Var3.run();
+                                                        g90Var3.run();
                                                         break;
                                                     default:
                                                         TLObject tLObject4 = tLObject2;
@@ -204,7 +204,7 @@ public final /* synthetic */ class l1 implements RequestDelegate {
                                                                 }
                                                             }
                                                         }
-                                                        f60Var3.run();
+                                                        g90Var3.run();
                                                         break;
                                                 }
                                             }
@@ -228,7 +228,7 @@ public final /* synthetic */ class l1 implements RequestDelegate {
                                         final ArrayList arrayList7 = arrayList3;
                                         final ArrayList arrayList8 = arrayList6;
                                         final ArrayList arrayList9 = arrayList4;
-                                        final f60 f60Var2 = f60Var;
+                                        final g90 g90Var2 = g90Var;
                                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ek0
                                             @Override // java.lang.Runnable
                                             public final void run() {
@@ -246,7 +246,7 @@ public final /* synthetic */ class l1 implements RequestDelegate {
                                                                 }
                                                             }
                                                         }
-                                                        f60Var2.run();
+                                                        g90Var2.run();
                                                         break;
                                                     default:
                                                         TLObject tLObject4 = tLObject2;
@@ -261,7 +261,7 @@ public final /* synthetic */ class l1 implements RequestDelegate {
                                                                 }
                                                             }
                                                         }
-                                                        f60Var2.run();
+                                                        g90Var2.run();
                                                         break;
                                                 }
                                             }
@@ -273,7 +273,7 @@ public final /* synthetic */ class l1 implements RequestDelegate {
                                         final ArrayList arrayList10 = arrayList3;
                                         final ArrayList arrayList11 = arrayList6;
                                         final ArrayList arrayList12 = arrayList4;
-                                        final f60 f60Var3 = f60Var;
+                                        final g90 g90Var3 = g90Var;
                                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ek0
                                             @Override // java.lang.Runnable
                                             public final void run() {
@@ -291,7 +291,7 @@ public final /* synthetic */ class l1 implements RequestDelegate {
                                                                 }
                                                             }
                                                         }
-                                                        f60Var3.run();
+                                                        g90Var3.run();
                                                         break;
                                                     default:
                                                         TLObject tLObject4 = tLObject2;
@@ -306,7 +306,7 @@ public final /* synthetic */ class l1 implements RequestDelegate {
                                                                 }
                                                             }
                                                         }
-                                                        f60Var3.run();
+                                                        g90Var3.run();
                                                         break;
                                                 }
                                             }

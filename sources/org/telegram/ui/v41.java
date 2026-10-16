@@ -8,7 +8,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SaveToGallerySettingsHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v41 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -76,17 +76,17 @@ public final /* synthetic */ class v41 implements View.OnClickListener {
                 }
                 break;
             case 5:
-                ((se1) this.b).c(true);
+                ((re1) this.b).c(true);
                 break;
             case 6:
-                ((se1) ((ow0) this.b).c).c(true);
+                ((re1) ((nw0) this.b).c).c(true);
                 break;
             case 7:
-                af1 af1Var = (af1) this.b;
-                ArrayList arrayList = af1Var.f;
-                HashSet hashSet = af1Var.w;
+                ze1 ze1Var = (ze1) this.b;
+                ArrayList arrayList = ze1Var.f;
+                HashSet hashSet = ze1Var.w;
                 if (!hashSet.isEmpty()) {
-                    TLRPC.User user = af1Var.getMessagesController().getUser(Long.valueOf(af1Var.getUserConfig().getClientUserId()));
+                    TLRPC.User user = ze1Var.getMessagesController().getUser(Long.valueOf(ze1Var.getUserConfig().getClientUserId()));
                     ArrayList arrayList2 = new ArrayList();
                     for (int i10 = 0; i10 < arrayList.size(); i10++) {
                         if (hashSet.contains(Long.valueOf(((TLRPC.Chat) arrayList.get(i10)).id))) {
@@ -95,18 +95,18 @@ public final /* synthetic */ class v41 implements View.OnClickListener {
                     }
                     for (int i11 = 0; i11 < arrayList2.size(); i11++) {
                         TLRPC.Chat chat = (TLRPC.Chat) arrayList2.get(i11);
-                        af1Var.getMessagesController().putChat(chat, false);
-                        af1Var.getMessagesController().deleteParticipantFromChat(chat.id, user);
+                        ze1Var.getMessagesController().putChat(chat, false);
+                        ze1Var.getMessagesController().deleteParticipantFromChat(chat.id, user);
                     }
-                    af1Var.finishFragment();
+                    ze1Var.finishFragment();
                     break;
                 }
                 break;
             default:
-                vj1 vj1Var = (vj1) this.b;
-                vj1Var.a.c(!r0.b(), true);
-                vj1Var.c.setEnabled(vj1Var.a.b());
-                vj1Var.c.animate().alpha(vj1Var.a.b() ? 1.0f : 0.5f).start();
+                uj1 uj1Var = (uj1) this.b;
+                uj1Var.a.c(!r0.b(), true);
+                uj1Var.c.setEnabled(uj1Var.a.b());
+                uj1Var.c.animate().alpha(uj1Var.a.b() ? 1.0f : 0.5f).start();
                 break;
         }
     }

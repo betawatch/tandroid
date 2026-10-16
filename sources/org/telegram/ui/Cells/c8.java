@@ -13,13 +13,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.cr;
 import org.telegram.ui.ab1;
 import org.telegram.ui.eb1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class c8 extends FrameLayout {
     public final a8 a;
@@ -47,10 +47,10 @@ public abstract class c8 extends FrameLayout {
         this.a = a8Var;
         setClipChildren(false);
         boolean z10 = LocaleController.isRTL;
-        addView(a8Var, w7.a6.a(46.0f, !z10 ? 12.0f : 16.0f, 0.0f, !z10 ? 16.0f : 12.0f, 0.0f, 46, (!z10 ? 8388611 : 8388613) | 16));
+        addView(a8Var, w7.z5.a(46.0f, !z10 ? 12.0f : 16.0f, 0.0f, !z10 ? 16.0f : 12.0f, 0.0f, 46, (!z10 ? 8388611 : 8388613) | 16));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        LinearLayout e = yh.e(context, 0);
+        LinearLayout e = sk.e(context, 0);
         b8 b8Var = new b8(context);
         this.b = b8Var;
         NotificationCenter.listenEmojiLoading(b8Var);
@@ -64,13 +64,13 @@ public abstract class c8 extends FrameLayout {
         textView.setTextSize(1, 14.0f);
         textView.setTextColor(-16777216);
         if (LocaleController.isRTL) {
-            e.addView(textView, w7.a6.q(-2, -2, 80));
-            e.addView(b8Var, w7.a6.p(0, -2, 1.0f, 0, 16, 0, 0, 0));
+            e.addView(textView, w7.z5.q(-2, -2, 80));
+            e.addView(b8Var, w7.z5.p(0, -2, 1.0f, 0, 16, 0, 0, 0));
         } else {
-            e.addView(b8Var, w7.a6.p(0, -2, 1.0f, 0, 0, 0, 16, 0));
-            e.addView(textView, w7.a6.q(-2, -2, 80));
+            e.addView(b8Var, w7.z5.p(0, -2, 1.0f, 0, 0, 0, 16, 0));
+            e.addView(textView, w7.z5.q(-2, -2, 80));
         }
-        linearLayout.addView(e, w7.a6.a(-2.0f, 0.0f, 7.0f, 0.0f, 0.0f, -1, 8388659));
+        linearLayout.addView(e, w7.z5.a(-2.0f, 0.0f, 7.0f, 0.0f, 0.0f, -1, 8388659));
         TextView textView2 = new TextView(context);
         this.e = textView2;
         textView2.setTextSize(1, 13.0f);
@@ -87,19 +87,19 @@ public abstract class c8 extends FrameLayout {
         textView4.setTextSize(1, 13.0f);
         textView4.setTextColor(-16777216);
         textView4.setGravity(16);
-        LinearLayout e7 = yh.e(context, 0);
+        LinearLayout e7 = sk.e(context, 0);
         if (LocaleController.isRTL) {
-            e7.addView(textView3, w7.a6.t(-2, -2, 16, 0, 0, 10, 0));
-            e7.addView(textView4, w7.a6.q(-2, -2, 16));
-            e7.addView(textView2, w7.a6.p(0, -2, 1.0f, 0, 8, 0, 0, 0));
+            e7.addView(textView3, w7.z5.t(-2, -2, 16, 0, 0, 10, 0));
+            e7.addView(textView4, w7.z5.q(-2, -2, 16));
+            e7.addView(textView2, w7.z5.p(0, -2, 1.0f, 0, 8, 0, 0, 0));
         } else {
-            e7.addView(textView2, w7.a6.p(0, -2, 1.0f, 0, 0, 0, 8, 0));
-            e7.addView(textView4, w7.a6.q(-2, -2, 16));
-            e7.addView(textView3, w7.a6.t(-2, -2, 16, 10, 0, 0, 0));
+            e7.addView(textView2, w7.z5.p(0, -2, 1.0f, 0, 0, 0, 8, 0));
+            e7.addView(textView4, w7.z5.q(-2, -2, 16));
+            e7.addView(textView3, w7.z5.t(-2, -2, 16, 10, 0, 0, 0));
         }
-        linearLayout.addView(e7, w7.a6.a(-2.0f, 0.0f, 3.0f, 0.0f, 9.0f, -1, 8388659));
+        linearLayout.addView(e7, w7.z5.a(-2.0f, 0.0f, 3.0f, 0.0f, 9.0f, -1, 8388659));
         boolean z11 = LocaleController.isRTL;
-        addView(linearLayout, w7.a6.a(-2.0f, !z11 ? 72.0f : 18.0f, 0.0f, !z11 ? 18.0f : 72.0f, 0.0f, -1, 0));
+        addView(linearLayout, w7.z5.a(-2.0f, !z11 ? 72.0f : 18.0f, 0.0f, !z11 ? 18.0f : 72.0f, 0.0f, -1, 0));
         int i10 = org.telegram.ui.ActionBar.g6.j5;
         b8Var.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i10, false));
         textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i10, false));

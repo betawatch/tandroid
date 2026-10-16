@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class jo extends ni {
     public final yz n;
@@ -28,7 +28,7 @@ public final class jo extends ni {
         yzVar.setText(LocaleController.getString(R.string.NoPhotos));
         yzVar.setOnTouchListener(null);
         yzVar.setTextSize(16);
-        addView(yzVar, w7.a6.d(-2.0f, -1));
+        addView(yzVar, w7.z5.d(-2.0f, -1));
         yzVar.a(R.raw.media_forbidden, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
         TLRPC.Chat m12 = this.b.m1();
         if (i10 == 1) {
@@ -52,7 +52,7 @@ public final class jo extends ni {
         mm0Var.setAdapter(a8Var);
         mm0Var.setPadding(0, 0, 0, AndroidUtilities.dp(48.0f));
         mm0Var.setOnScrollListener(new ah.d0(this, 24));
-        addView(mm0Var, w7.a6.d(-1.0f, -1));
+        addView(mm0Var, w7.z5.d(-1.0f, -1));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x0038  */
@@ -62,7 +62,7 @@ public final class jo extends ni {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void B(int i10, int i11) {
+    public final void C(int i10, int i11) {
         int i12;
         int i13;
         mm0 mm0Var;

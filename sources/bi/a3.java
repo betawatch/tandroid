@@ -18,7 +18,7 @@ import org.telegram.ui.mt;
 import org.telegram.ui.px;
 import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a3 implements Utilities.Callback4 {
     public final /* synthetic */ int a;
@@ -92,7 +92,7 @@ public final /* synthetic */ class a3 implements Utilities.Callback4 {
                             org.telegram.ui.ActionBar.m2 m2Var3 = (org.telegram.ui.ActionBar.m2) fragmentStack.get(size);
                             if (m2Var3 instanceof yy) {
                                 yy yyVar = (yy) m2Var3;
-                                yyVar.H3();
+                                yyVar.I3();
                                 pxVar = yyVar.E0;
                                 r3 = pxVar != null ? pxVar.e(l10.longValue()) : null;
                                 for (int i10 = 0; i10 < arrayList.size(); i10++) {
@@ -149,26 +149,26 @@ public final /* synthetic */ class a3 implements Utilities.Callback4 {
                 AndroidUtilities.runOnUIThread(gmVar, 540L);
                 break;
             default:
-                org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) this.b;
-                org.telegram.ui.Wallet.c7 c7Var = (org.telegram.ui.Wallet.c7) this.c;
+                org.telegram.ui.Wallet.k0 k0Var = (org.telegram.ui.Wallet.k0) this.b;
+                org.telegram.ui.Wallet.d7 d7Var = (org.telegram.ui.Wallet.d7) this.c;
                 TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj;
-                org.telegram.ui.Wallet.g0 g0Var = (org.telegram.ui.Wallet.g0) obj2;
+                org.telegram.ui.Wallet.h0 h0Var = (org.telegram.ui.Wallet.h0) obj2;
                 byte[] bArr = (byte[]) obj3;
                 String str = (String) obj4;
-                if (sendtransfer != null && g0Var != null && bArr != null) {
-                    org.telegram.ui.Wallet.j0.E("prepare disable backup: transfer ready, initing storage with new secret phrase!");
-                    org.telegram.ui.Wallet.e0 e0Var = new org.telegram.ui.Wallet.e0();
-                    e0Var.c = bArr;
-                    e0Var.b = g0Var.b();
-                    e0Var.a = sendtransfer;
-                    j0Var.c.p(UserConfig.getInstance(j0Var.a).getClientUserId(), bArr, g0Var, new mt(j0Var, e0Var, c7Var));
+                if (sendtransfer != null && h0Var != null && bArr != null) {
+                    org.telegram.ui.Wallet.k0.E("prepare disable backup: transfer ready, initing storage with new secret phrase!");
+                    org.telegram.ui.Wallet.f0 f0Var = new org.telegram.ui.Wallet.f0();
+                    f0Var.c = bArr;
+                    f0Var.b = h0Var.b();
+                    f0Var.a = sendtransfer;
+                    k0Var.c.p(UserConfig.getInstance(k0Var.a).getClientUserId(), bArr, h0Var, new mt(k0Var, f0Var, d7Var));
                     break;
                 } else {
-                    org.telegram.ui.Wallet.j0.i("prepare disable backup, failed to prepare transfer: ".concat(str == null ? "NULL_ERROR" : str));
+                    org.telegram.ui.Wallet.k0.i("prepare disable backup, failed to prepare transfer: ".concat(str == null ? "NULL_ERROR" : str));
                     if (str == null) {
                         str = "NULL_ERROR";
                     }
-                    c7Var.run(null, str);
+                    d7Var.run(null, str);
                     break;
                 }
         }

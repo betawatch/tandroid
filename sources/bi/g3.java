@@ -11,8 +11,8 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.e10;
 import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.k31;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.n51;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
@@ -20,7 +20,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.qa1;
 import org.telegram.ui.ra1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g3 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final /* synthetic */ class g3 implements View.OnLongClickListener {
                     gl0 gl0Var2 = new gl0(2, q5Var.C2, q5Var.getContext(), LaunchActivity.R(), new n3(4, q5Var.B0));
                     q5Var.r3 = gl0Var2;
                     gl0Var2.setPadding(0, 0, 0, AndroidUtilities.dp(22.0f));
-                    q5Var.addView(q5Var.r3, q5Var.getChildCount() - 1, w7.a6.a(74.0f, 0.0f, 0.0f, 12.0f, 64.0f, -2, 53));
+                    q5Var.addView(q5Var.r3, q5Var.getChildCount() - 1, w7.z5.a(74.0f, 0.0f, 0.0f, 12.0f, 64.0f, -2, 53));
                     q5Var.r3.setVisibility(8);
                     q5Var.r3.setDelegate(new n4(q5Var));
                     q5Var.r3.p(null, null, true);
@@ -88,12 +88,12 @@ public final /* synthetic */ class g3 implements View.OnLongClickListener {
                 MessagesController.getGlobalNotificationsSettings().edit().putInt("speedhint", -15).apply();
                 return true;
             case 3:
-                m80 m80Var = (m80) this.b;
-                ((k31) this.c).run();
-                if (!m80Var.J) {
+                l80 l80Var = (l80) this.b;
+                ((n51) this.c).run();
+                if (!l80Var.J) {
                     return true;
                 }
-                m80Var.u();
+                l80Var.u();
                 return true;
             case 4:
                 PhotoViewer photoViewer = (PhotoViewer) this.b;

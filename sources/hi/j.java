@@ -10,15 +10,15 @@ import android.widget.TextView;
 import com.google.android.gms.internal.play_billing.k3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.x5;
 import org.telegram.ui.Components.qc0;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class j extends LinearLayout implements x5 {
     public final c6 a;
@@ -43,25 +43,25 @@ public final class j extends LinearLayout implements x5 {
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        frameLayout.addView(imageView, a6.e(24, 24, 17));
-        LinearLayout e = yh.e(context, 1);
+        frameLayout.addView(imageView, z5.e(24, 24, 17));
+        LinearLayout e = sk.e(context, 1);
         TextView textView = new TextView(context);
         this.e = textView;
         textView.setTextSize(1, 16.0f);
-        TextView i10 = k3.i(e, textView, a6.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
+        TextView i10 = k3.i(e, textView, z5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
         this.f = i10;
         i10.setGravity(17);
         i10.setMinWidth(AndroidUtilities.dp(20.66f));
         i10.setPadding(AndroidUtilities.dp(6.33f), 0, AndroidUtilities.dp(6.33f), 0);
         i10.setTextSize(1, 16.0f);
         if (LocaleController.isRTL) {
-            addView(i10, a6.j(13.33f, 0.0f));
-            addView(e, a6.p(0, -2, 1.0f, 23, 20, 0, z10 ? 12 : 16, 0));
-            addView(frameLayout, a6.t(28, 28, 21, 0, 0, z10 ? 9 : 14, 0));
+            addView(i10, z5.j(13.33f, 0.0f));
+            addView(e, z5.p(0, -2, 1.0f, 23, 20, 0, z10 ? 12 : 16, 0));
+            addView(frameLayout, z5.t(28, 28, 21, 0, 0, z10 ? 9 : 14, 0));
         } else {
-            addView(frameLayout, a6.t(28, 28, 19, z10 ? 9 : 14, 0, 0, 0));
-            addView(e, a6.p(0, -2, 1.0f, 23, z10 ? 12 : 16, 0, 20, 0));
-            addView(i10, a6.j(0.0f, 13.33f));
+            addView(frameLayout, z5.t(28, 28, 19, z10 ? 9 : 14, 0, 0, 0));
+            addView(e, z5.p(0, -2, 1.0f, 23, z10 ? 12 : 16, 0, 20, 0));
+            addView(i10, z5.j(0.0f, 13.33f));
         }
         d();
         setUnreadMode(true);

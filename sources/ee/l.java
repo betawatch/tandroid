@@ -9,10 +9,10 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bp0;
-import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.k71;
 import v7.i8;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class l implements b, bp0, ne.d, oe.a {
     public final Object a;
@@ -22,7 +22,7 @@ public final class l implements b, bp0, ne.d, oe.a {
     }
 
     @Override // ne.d
-    public void C(float f7, int i10) {
+    public void A(float f7, int i10) {
         ((ne.j) this.a).h(f7);
     }
 
@@ -137,12 +137,12 @@ public final class l implements b, bp0, ne.d, oe.a {
     @Override // oe.a
     public boolean needClickAt(View view, float f7, float f10) {
         int dp = AndroidUtilities.dp(9.0f);
-        j71 j71Var = (j71) this.a;
+        k71 k71Var = (k71) this.a;
         float f11 = -dp;
-        j71Var.g.inset(f11, f11);
-        boolean contains = j71Var.g.contains(f7, f10);
+        k71Var.g.inset(f11, f11);
+        boolean contains = k71Var.g.contains(f7, f10);
         float f12 = dp;
-        j71Var.g.inset(f12, f12);
+        k71Var.g.inset(f12, f12);
         return contains;
     }
 
@@ -153,7 +153,7 @@ public final class l implements b, bp0, ne.d, oe.a {
 
     @Override // oe.a
     public void onClickAt(View view, float f7, float f10) {
-        Runnable runnable = ((j71) this.a).j;
+        Runnable runnable = ((k71) this.a).j;
         if (runnable != null) {
             runnable.run();
         }
@@ -161,12 +161,12 @@ public final class l implements b, bp0, ne.d, oe.a {
 
     @Override // oe.a
     public void onClickTouchDown(View view, float f7, float f10) {
-        ((j71) this.a).h.c(true);
+        ((k71) this.a).h.c(true);
     }
 
     @Override // oe.a
     public void onClickTouchUp(View view, float f7, float f10) {
-        ((j71) this.a).h.c(false);
+        ((k71) this.a).h.c(false);
     }
 
     @Override // oe.a

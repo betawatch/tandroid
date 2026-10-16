@@ -10,9 +10,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.pa;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class a1 extends org.telegram.ui.Cells.x0 {
+public final class a1 extends org.telegram.ui.Cells.w0 {
     public final pa t2;
     public final TextPaint u2;
     public final /* synthetic */ c1 v2;
@@ -29,7 +29,7 @@ public final class a1 extends org.telegram.ui.Cells.x0 {
         textPaint.setColor(-1);
     }
 
-    @Override // org.telegram.ui.Cells.x0
+    @Override // org.telegram.ui.Cells.w0
     public final Paint I(String str) {
         if ("paintChatActionText".equals(str) || "paintChatActionText2".equals(str)) {
             return this.u2;

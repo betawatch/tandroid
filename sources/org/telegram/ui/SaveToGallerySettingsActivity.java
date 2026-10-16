@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SaveToGallerySettingsHelper;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.m2 {
     public int a;
@@ -136,7 +136,7 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.m2 
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         int i10 = 0;
-        i2.d.v(false, this.actionBar);
+        i2.d.y(false, this.actionBar);
         this.actionBar.setActionBarMenuOnItemClick(new w41(this, i10));
         if (this.c == null) {
             int i11 = this.a;
@@ -180,9 +180,9 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.m2 
             textView.setGravity(17);
             textView.setTypeface(AndroidUtilities.bold());
             textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Sh, false));
-            frameLayout2.addView(textView, w7.a6.e(-2, -2, 17));
+            frameLayout2.addView(textView, w7.z5.e(-2, -2, 17));
             frameLayout2.setOnClickListener(new v41(this, i10));
-            frameLayout.addView(frameLayout2, w7.a6.a(48.0f, 16.0f, 16.0f, 16.0f, 16.0f, -1, 80));
+            frameLayout.addView(frameLayout2, w7.z5.a(48.0f, 16.0f, 16.0f, 16.0f, 16.0f, -1, 80));
         }
         Z();
         return this.fragmentView;

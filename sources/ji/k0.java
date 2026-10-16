@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.o9;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class k0 {
     public final h1 a;
@@ -64,12 +64,12 @@ public final class k0 {
 
     public final void b() {
         TL_iv.PageBlock pageBlock;
-        a O = this.c.O();
-        if (O == null || (pageBlock = O.b) == null) {
+        a j02 = this.c.j0();
+        if (j02 == null || (pageBlock = j02.b) == null) {
             return;
         }
         d(pageBlock);
-        TL_iv.RichText richText = O.b.caption.text;
+        TL_iv.RichText richText = j02.b.caption.text;
         String l4 = k6.l(richText);
         h1 h1Var = this.a;
         if (String.valueOf(h1Var.getText()).equals(l4)) {
@@ -81,14 +81,14 @@ public final class k0 {
 
     public final void c(Canvas canvas) {
         j0 j0Var = this.c;
-        o9 C = j0Var.C();
-        if (C != null) {
+        o9 W = j0Var.W();
+        if (W != null) {
             if (this.a.getLayout() == null) {
                 return;
             }
             canvas.save();
             canvas.translate(r2.getPaddingLeft() + r2.getLeft(), r2.getPaddingTop() + r2.getTop());
-            C.Z(canvas, j0Var.L(), 0);
+            W.Z(canvas, j0Var.g0(), 0);
             canvas.restore();
         }
     }
@@ -137,11 +137,11 @@ public final class k0 {
 
     public final void i() {
         TL_iv.PageBlock pageBlock;
-        a O = this.c.O();
-        if (O == null || (pageBlock = O.b) == null) {
+        a j02 = this.c.j0();
+        if (j02 == null || (pageBlock = j02.b) == null) {
             return;
         }
         d(pageBlock);
-        O.b.caption.text = k6.f(this.a.getText());
+        j02.b.caption.text = k6.f(this.a.getText());
     }
 }

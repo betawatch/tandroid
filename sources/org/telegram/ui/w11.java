@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class w11 extends View {
     public static final String[] s = {"🎉", "🎆", "🎈"};
@@ -113,7 +113,7 @@ public final class w11 extends View {
                 this.f = true;
                 if (!this.e) {
                     this.e = true;
-                    post(new uz0(this, 4));
+                    post(new tz0(this, 4));
                 }
             }
             if (this.r) {
@@ -121,20 +121,20 @@ public final class w11 extends View {
                 this.h = Utilities.clamp(this.h + (Utilities.clamp(currentTimeMillis - this.n, 20L, 0L) / 4200.0f), 1.0f, 0.0f);
                 this.n = currentTimeMillis;
                 ProfileActivity profileActivity = this.a;
-                lz0 lz0Var = profileActivity.a;
+                kz0 kz0Var = profileActivity.a;
                 int i11 = profileActivity.U2;
                 PointF pointF = this.d;
                 float f7 = 2.0f;
                 if (i11 >= 0) {
                     int i12 = 0;
                     while (true) {
-                        if (i12 >= lz0Var.getChildCount()) {
+                        if (i12 >= kz0Var.getChildCount()) {
                             break;
                         }
-                        View childAt = lz0Var.getChildAt(i12);
+                        View childAt = kz0Var.getChildAt(i12);
                         if (i11 == RecyclerView.R(childAt) && (childAt instanceof org.telegram.ui.Cells.c9)) {
                             wh.n nVar = ((org.telegram.ui.Cells.c9) childAt).a;
-                            pointF.set(nVar.getX() + childAt.getX() + lz0Var.getX() + AndroidUtilities.dp(12.0f), (nVar.getMeasuredHeight() / 2.0f) + nVar.getY() + childAt.getY() + lz0Var.getY());
+                            pointF.set(nVar.getX() + childAt.getX() + kz0Var.getX() + AndroidUtilities.dp(12.0f), (nVar.getMeasuredHeight() / 2.0f) + nVar.getY() + childAt.getY() + kz0Var.getY());
                             break;
                         }
                         i12++;

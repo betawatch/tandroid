@@ -6,15 +6,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.yj0;
 import org.telegram.ui.Components.z9;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class j3 extends LinearLayout {
     public final TextView a;
@@ -24,12 +24,12 @@ public final class j3 extends LinearLayout {
         setOrientation(1);
         z9 z9Var = new z9(context);
         z9Var.setImageDrawable(new yj0(R.raw.utyan_empty, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
-        addView(z9Var, a6.t(64, 64, 17, 0, 32, 0, 0));
+        addView(z9Var, z5.t(64, 64, 17, 0, 32, 0, 0));
         TextView textView = new TextView(context);
         this.a = textView;
-        yh.n(g6.A6, c6Var, textView, 1, 14.0f);
+        sk.o(g6.A6, c6Var, textView, 1, 14.0f);
         textView.setGravity(17);
-        addView(textView, a6.t(-1, -2, 7, 12, 12, 12, 24));
+        addView(textView, z5.t(-1, -2, 7, 12, 12, 12, 24));
     }
 
     @Override // android.widget.LinearLayout, android.view.View

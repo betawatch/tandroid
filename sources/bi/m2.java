@@ -15,7 +15,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.br;
 import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class m2 extends View {
     public float E;
@@ -50,7 +50,7 @@ public final class m2 extends View {
         this.F = new int[2];
         this.G = 1.0f;
         this.a = l2Var;
-        w7.c6.a(this);
+        w7.b6.a(this);
         this.s = context.getResources().getDrawable(R.drawable.star).mutate();
         bh.j jVar = new bh.j();
         this.v = jVar;

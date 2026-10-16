@@ -19,7 +19,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class uv extends FrameLayout {
     public final Paint a;
@@ -141,7 +141,7 @@ public final class uv extends FrameLayout {
                 AndroidUtilities.setLightStatusBar(ewVar, z11);
             }
             org.telegram.ui.ActionBar.g6.t0.setColor(ewVar.getThemedColor(org.telegram.ui.ActionBar.g6.Ii));
-            org.telegram.ui.ActionBar.g6.t0.setAlpha((int) (w7.s.a(lerp / AndroidUtilities.dp(f10), f7, 1.0f) * org.telegram.ui.ActionBar.g6.t0.getAlpha()));
+            org.telegram.ui.ActionBar.g6.t0.setAlpha((int) (w7.r.a(lerp / AndroidUtilities.dp(f10), f7, 1.0f) * org.telegram.ui.ActionBar.g6.t0.getAlpha()));
             int dp4 = AndroidUtilities.dp(36.0f);
             float dp5 = lerp + AndroidUtilities.dp(10.0f);
             rectF.set((getMeasuredWidth() - dp4) / 2, dp5, (getMeasuredWidth() + dp4) / 2, AndroidUtilities.dp(4.0f) + dp5);
@@ -193,7 +193,7 @@ public final class uv extends FrameLayout {
                                 s5Var.setColorFilter(ewVar.T);
                                 ArrayList arrayList4 = (ArrayList) sparseArray.get(childAt.getTop());
                                 if (arrayList4 == null) {
-                                    arrayList4 = !arrayList.isEmpty() ? (ArrayList) i2.d.x(1, arrayList) : new ArrayList();
+                                    arrayList4 = !arrayList.isEmpty() ? (ArrayList) i2.d.A(1, arrayList) : new ArrayList();
                                     sparseArray.put(childAt.getTop(), arrayList4);
                                 }
                                 arrayList4.add(vvVar);
@@ -249,7 +249,7 @@ public final class uv extends FrameLayout {
                             tvVar = new tv(this);
                             tvVar.l(7);
                         } else {
-                            tvVar = (tv) i2.d.x(1, arrayList2);
+                            tvVar = (tv) i2.d.A(1, arrayList2);
                         }
                         tvVar.M = R;
                         tvVar.e();

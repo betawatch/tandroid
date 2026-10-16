@@ -11,9 +11,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class zm implements ev0 {
+public final class zm implements dv0 {
     public final TL_iv.RichMessage a;
     public final ArrayList b;
     public final MessageObject c;
@@ -24,7 +24,7 @@ public final class zm implements ev0 {
         this.c = messageObject;
     }
 
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.dv0
     public final boolean a(int i10) {
         if (i10 < 0) {
             return false;
@@ -44,7 +44,7 @@ public final class zm implements ev0 {
         return false;
     }
 
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.dv0
     public final File b(int i10) {
         TLRPC.Document b10;
         TLRPC.PhotoSize closestPhotoSizeWithSize;
@@ -71,7 +71,7 @@ public final class zm implements ev0 {
         return h4.c(closestPhotoSizeWithSize);
     }
 
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.dv0
     public final String c(int i10) {
         TLObject d = d(i10);
         if (d instanceof TLRPC.Photo) {
@@ -80,7 +80,7 @@ public final class zm implements ev0 {
         return FileLoader.getAttachFileName(d);
     }
 
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.dv0
     public final TLObject d(int i10) {
         if (i10 < 0) {
             return null;
@@ -101,12 +101,12 @@ public final class zm implements ev0 {
         return null;
     }
 
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.dv0
     public final boolean e(int i10) {
         return false;
     }
 
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.dv0
     public final TLRPC.PhotoSize f(TLObject tLObject, int[] iArr) {
         if (tLObject instanceof TLRPC.Photo) {
             TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(((TLRPC.Photo) tLObject).sizes, AndroidUtilities.getPhotoSize());
@@ -140,23 +140,23 @@ public final class zm implements ev0 {
         return null;
     }
 
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.dv0
     public final Object g() {
         MessageObject messageObject = this.c;
         return messageObject != null ? messageObject : this.a;
     }
 
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.dv0
     public final TL_iv.PageBlock get(int i10) {
         return (TL_iv.PageBlock) this.b.get(i10);
     }
 
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.dv0
     public final List getAll() {
         return this.b;
     }
 
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.dv0
     public final void h(TL_iv.PageBlock pageBlock) {
         RichMessageLayout richMessageLayout;
         MessageObject messageObject = this.c;
@@ -166,12 +166,12 @@ public final class zm implements ev0 {
         richMessageLayout.setSlideshowPage(pageBlock);
     }
 
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.dv0
     public final CharSequence i(int i10) {
         return null;
     }
 
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.dv0
     public final int j() {
         return this.b.size();
     }

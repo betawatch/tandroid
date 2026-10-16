@@ -14,14 +14,14 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class z7 extends FrameLayout {
     public final org.telegram.ui.ActionBar.c6 a;
     public final org.telegram.ui.Components.s6 b;
     public final org.telegram.ui.Components.s6 c;
     public final org.telegram.ui.Components.s6 d;
-    public final k0 e;
+    public final j0 e;
     public int f;
     public int h;
     public Utilities.Callback n;
@@ -47,7 +47,7 @@ public final class z7 extends FrameLayout {
         s6Var.setEmojiCacheType(19);
         s6Var.setEmojiColor(-1);
         s6Var.setImportantForAccessibility(2);
-        addView(s6Var, w7.a6.a(25.0f, 22.0f, 13.0f, 22.0f, 0.0f, -1, 48));
+        addView(s6Var, w7.z5.a(25.0f, 22.0f, 13.0f, 22.0f, 0.0f, -1, 48));
         org.telegram.ui.Components.s6 s6Var2 = new org.telegram.ui.Components.s6(context, false, true, true);
         this.c = s6Var2;
         s6Var2.b(0.3f, 220L, esVar);
@@ -57,7 +57,7 @@ public final class z7 extends FrameLayout {
         s6Var2.setEmojiColor(-1);
         s6Var2.setEmojiCacheType(19);
         s6Var2.setImportantForAccessibility(2);
-        addView(s6Var2, w7.a6.a(25.0f, 22.0f, 13.0f, 22.0f, 0.0f, -1, 48));
+        addView(s6Var2, w7.z5.a(25.0f, 22.0f, 13.0f, 22.0f, 0.0f, -1, 48));
         org.telegram.ui.Components.s6 s6Var3 = new org.telegram.ui.Components.s6(context, true, true, true);
         this.d = s6Var3;
         s6Var3.b(0.3f, 220L, esVar);
@@ -67,12 +67,12 @@ public final class z7 extends FrameLayout {
         s6Var3.setEmojiColor(-1);
         s6Var3.setEmojiCacheType(19);
         s6Var3.setImportantForAccessibility(2);
-        addView(s6Var3, w7.a6.a(25.0f, 22.0f, 13.0f, 22.0f, 0.0f, -1, 48));
-        k0 k0Var = new k0(2, context, c6Var, false);
-        this.e = k0Var;
-        k0Var.setReportChanges(true);
-        k0Var.setDelegate(new x7(this));
-        addView(k0Var, w7.a6.a(38.0f, 6.0f, 30.0f, 6.0f, 0.0f, -1, 55));
+        addView(s6Var3, w7.z5.a(25.0f, 22.0f, 13.0f, 22.0f, 0.0f, -1, 48));
+        j0 j0Var = new j0(2, context, c6Var, false);
+        this.e = j0Var;
+        j0Var.setReportChanges(true);
+        j0Var.setDelegate(new x7(this));
+        addView(j0Var, w7.z5.a(38.0f, 6.0f, 30.0f, 6.0f, 0.0f, -1, 55));
     }
 
     public static int[] a(int i10, int[] iArr) {

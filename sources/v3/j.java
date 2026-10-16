@@ -4,7 +4,7 @@ import c3.a0;
 import c3.c0;
 import e2.m0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class j implements h {
     public final long a;
@@ -26,12 +26,7 @@ public final class j implements h {
     }
 
     @Override // v3.h
-    public final long a() {
-        return this.f;
-    }
-
-    @Override // v3.h
-    public final long b(long j10) {
+    public final long a(long j10) {
         long j11 = j10 - this.a;
         if (!d() || j11 <= this.b) {
             return 0L;
@@ -46,6 +41,11 @@ public final class j implements h {
         int i10 = f7 + 1;
         long j15 = (j12 * i10) / 100;
         return Math.round((j14 == (f7 == 99 ? 256L : jArr[i10]) ? 0.0d : (d - j14) / (r0 - j14)) * (j15 - j13)) + j13;
+    }
+
+    @Override // v3.h
+    public final long b() {
+        return this.f;
     }
 
     @Override // v3.h

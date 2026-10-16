@@ -19,32 +19,32 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Cells.i6;
 import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.h71;
+import org.telegram.ui.Components.i71;
 import org.telegram.ui.Components.k9;
-import org.telegram.ui.Components.l61;
-import w7.a6;
+import org.telegram.ui.Components.m61;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class f extends m2 implements NotificationCenter.NotificationCenterDelegate {
     public long a;
     public TLRPC.Chat b;
     public TLRPC.User c;
     public FrameLayout d;
-    public h71 e;
+    public i71 e;
     public e f;
     public ArrayList h;
     public NotificationCenter.ObserversGroup n;
 
-    public static void U(f fVar, l61 l61Var) {
+    public static void U(f fVar, m61 m61Var) {
         f fVar2;
-        if (l61Var.d == 1) {
+        if (m61Var.d == 1) {
             fVar2 = fVar;
             g5.Q(fVar.getParentActivity(), fVar2, LocaleController.getString(R.string.CommunityNewCommunityTitle), null, LocaleController.getString(R.string.CommunityNewCommunityNameHint), null, ConnectionsManager.DEFAULT_DATACENTER_ID, LocaleController.getString(R.string.Create), fVar.resourceProvider, new c(fVar));
         } else {
             fVar2 = fVar;
         }
-        Object obj = l61Var.G;
+        Object obj = m61Var.G;
         if (obj instanceof TLRPC.Chat) {
             TLRPC.Chat chat = (TLRPC.Chat) obj;
             fVar2.getMessagesController().getChat(Long.valueOf(-fVar2.a));
@@ -79,7 +79,7 @@ public final class f extends m2 implements NotificationCenter.NotificationCenter
         setHasOwnBackground(true);
         this.actionBar.setAddToContainer(false);
         this.actionBar.setAllowOverlayTitle(false);
-        i2.d.v(false, this.actionBar);
+        i2.d.y(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, 4));
         gh.c cVar = new gh.c();
@@ -105,14 +105,14 @@ public final class f extends m2 implements NotificationCenter.NotificationCenter
                 this.f.a.e(chat, new k9(this.b));
             }
         }
-        h71 h71Var = new h71(this, new b(this, 0), new c(this), new c(this));
-        this.e = h71Var;
-        h71Var.setClipToPadding(false);
-        h71 h71Var2 = this.e;
-        h71Var2.W2.r = false;
-        h71Var2.p1();
-        this.d.addView(this.e, a6.d(-1.0f, -1));
-        this.d.addView(this.actionBar, a6.e(-1, -2, 48));
+        i71 i71Var = new i71(this, new b(this, 0), new c(this), new c(this));
+        this.e = i71Var;
+        i71Var.setClipToPadding(false);
+        i71 i71Var2 = this.e;
+        i71Var2.W2.r = false;
+        i71Var2.p1();
+        this.d.addView(this.e, z5.d(-1.0f, -1));
+        this.d.addView(this.actionBar, z5.e(-1, -2, 48));
         FrameLayout frameLayout2 = this.d;
         this.fragmentView = frameLayout2;
         return frameLayout2;

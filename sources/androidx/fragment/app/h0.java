@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class h0 implements f0 {
     public final /* synthetic */ i0 a;
@@ -27,7 +27,7 @@ public final class h0 implements f0 {
             Log.i("FragmentManager", "Ignoring call to start back stack pop because the back stack is empty.");
             U = false;
         } else {
-            a aVar = (a) i2.d.g(1, i0Var.d);
+            a aVar = (a) i2.d.h(1, i0Var.d);
             i0Var.h = aVar;
             ArrayList arrayList4 = aVar.a;
             int size = arrayList4.size();

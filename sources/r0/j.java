@@ -1,36 +1,9 @@
 package r0;
 
-import android.view.DisplayCutout;
-import j$.util.Objects;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class j {
-    public final DisplayCutout a;
-
-    public j(DisplayCutout displayCutout) {
-        this.a = displayCutout;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || j.class != obj.getClass()) {
-            return false;
-        }
-        return Objects.equals(this.a, ((j) obj).a);
-    }
-
-    public final int hashCode() {
-        DisplayCutout displayCutout = this.a;
-        if (displayCutout == null) {
-            return 0;
-        }
-        return displayCutout.hashCode();
-    }
-
-    public final String toString() {
-        return "DisplayCutoutCompat{" + this.a + "}";
-    }
+public interface j {
+    boolean i(KeyEvent keyEvent);
 }

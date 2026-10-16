@@ -1,12 +1,12 @@
 package v7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class u2 implements ja.d {
     public static final u2 a = new u2();
-    public static final ja.c b = new ja.c("identifyLanguageConfidenceThreshold", i2.d.n(t8.b.k(h.class, new e(1))));
-    public static final ja.c c = new ja.c("identifyAllLanguagesConfidenceThreshold", i2.d.n(t8.b.k(h.class, new e(2))));
-    public static final ja.c d = new ja.c("confidenceThreshold", i2.d.n(t8.b.k(h.class, new e(3))));
+    public static final ja.c b = new ja.c("identifyLanguageConfidenceThreshold", i2.d.o(t8.b.k(h.class, new e(1))));
+    public static final ja.c c = new ja.c("identifyAllLanguagesConfidenceThreshold", i2.d.o(t8.b.k(h.class, new e(2))));
+    public static final ja.c d = new ja.c("confidenceThreshold", i2.d.o(t8.b.k(h.class, new e(3))));
 
     @Override // ja.a
     public final void a(Object obj, Object obj2) {

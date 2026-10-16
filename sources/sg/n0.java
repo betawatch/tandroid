@@ -11,10 +11,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.ob0;
-import w7.a6;
+import org.telegram.ui.nb0;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class n0 extends FrameLayout implements l0 {
     public final c6 a;
@@ -28,9 +28,9 @@ public final class n0 extends FrameLayout implements l0 {
         super(context);
         this.b = new ArrayList();
         this.a = c6Var;
-        for (ob0 ob0Var : ob0.values()) {
-            if (ob0Var.e) {
-                this.b.add(ob0Var);
+        for (nb0 nb0Var : nb0.values()) {
+            if (nb0Var.e) {
+                this.b.add(nb0Var);
             }
             if (this.b.size() == 3) {
                 break;
@@ -48,7 +48,7 @@ public final class n0 extends FrameLayout implements l0 {
     }
 
     public final m0 a(Context context, int i10) {
-        ob0 ob0Var = (ob0) this.b.get(i10);
+        nb0 nb0Var = (nb0) this.b.get(i10);
         m0 m0Var = new m0(context);
         w1 w1Var = new w1(20);
         m0Var.e = w1Var;
@@ -67,9 +67,9 @@ public final class n0 extends FrameLayout implements l0 {
         w1Var.P = g6.Zj;
         w1Var.c();
         paint.setColor(-1);
-        m0Var.setLayoutParams(a6.a(-2.0f, 0.0f, 52.0f, 0.0f, 0.0f, -2, 17));
-        m0Var.setForeground(ob0Var.c);
-        m0Var.setBackgroundResource(ob0Var.b);
+        m0Var.setLayoutParams(z5.a(-2.0f, 0.0f, 52.0f, 0.0f, 0.0f, -2, 17));
+        m0Var.setForeground(nb0Var.c);
+        m0Var.setBackgroundResource(nb0Var.b);
         m0Var.setPadding(AndroidUtilities.dp(8.0f));
         m0Var.setBackgroundOuterPadding(AndroidUtilities.dp(32.0f));
         addView(m0Var);

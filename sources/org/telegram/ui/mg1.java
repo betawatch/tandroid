@@ -1,24 +1,28 @@
 package org.telegram.ui;
 
-import java.util.Iterator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mg1 implements org.telegram.ui.ActionBar.z1 {
-    public final /* synthetic */ og1 a;
+public final class mg1 implements b21 {
+    public final /* synthetic */ TLRPC.TL_forumTopic a;
+    public final /* synthetic */ ng1 b;
 
-    public /* synthetic */ mg1(og1 og1Var) {
-        this.a = og1Var;
+    public mg1(ng1 ng1Var, TLRPC.TL_forumTopic tL_forumTopic) {
+        this.b = ng1Var;
+        this.a = tL_forumTopic;
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        rg1 rg1Var = this.a.a;
-        Iterator it = rg1Var.e.iterator();
-        while (it.hasNext()) {
-            rg1.U(rg1Var, ((Integer) it.next()).intValue());
-        }
-        rg1Var.e.clear();
-        rg1Var.V();
+    @Override // org.telegram.ui.b21
+    public final void a0() {
+        qg1 qg1Var = this.b.a;
+        TLRPC.TL_forumTopic tL_forumTopic = this.a;
+        qg1.U(qg1Var, tL_forumTopic.id);
+        AndroidUtilities.runOnUIThread(new i11(28, this, tL_forumTopic), 300L);
+    }
+
+    @Override // org.telegram.ui.b21
+    public final void v(zk0 zk0Var) {
     }
 }

@@ -15,7 +15,7 @@ import org.telegram.ui.Components.zd0;
 import org.telegram.ui.Components.zv;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class o3 extends org.telegram.ui.ActionBar.m2 {
     public final /* synthetic */ int a;
@@ -147,7 +147,7 @@ public final class o3 extends org.telegram.ui.ActionBar.m2 {
                 }
                 return null;
             case 8:
-                return ((org.telegram.ui.web.b1) this.b).W;
+                return ((org.telegram.ui.web.c1) this.b).W;
             case 9:
                 org.telegram.ui.ActionBar.m2 m2Var = ((sg.m1) this.b).t0;
                 if (m2Var == null) {
@@ -199,9 +199,9 @@ public final class o3 extends org.telegram.ui.ActionBar.m2 {
             case 6:
                 return ((ny) this.b).E.Z1;
             case 8:
-                return new n3(9, ((org.telegram.ui.web.b1) this.b).e);
+                return new n3(9, ((org.telegram.ui.web.c1) this.b).e);
             case 10:
-                return new m4.c((org.telegram.ui.ActionBar.c6) new b());
+                return new m2.t((org.telegram.ui.ActionBar.c6) new b());
             case 11:
                 c6Var3 = ((org.telegram.ui.ActionBar.e3) ((yh.x4) this.b)).resourcesProvider;
                 return c6Var3;
@@ -321,10 +321,10 @@ public final class o3 extends org.telegram.ui.ActionBar.m2 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o3(org.telegram.ui.web.b1 b1Var) {
+    public o3(org.telegram.ui.web.c1 c1Var) {
         super(null);
         this.a = 8;
-        this.b = b1Var;
-        this.currentAccount = b1Var.M;
+        this.b = c1Var;
+        this.currentAccount = c1Var.M;
     }
 }

@@ -11,16 +11,16 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u70 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ w70 b;
+    public final /* synthetic */ v70 b;
     public final /* synthetic */ String c;
 
-    public /* synthetic */ u70(w70 w70Var, String str, int i10) {
+    public /* synthetic */ u70(v70 v70Var, String str, int i10) {
         this.a = i10;
-        this.b = w70Var;
+        this.b = v70Var;
         this.c = str;
     }
 
@@ -34,16 +34,16 @@ public final /* synthetic */ class u70 implements Runnable {
         Object obj;
         switch (this.a) {
             case 0:
-                w70 w70Var = this.b;
+                v70 v70Var = this.b;
                 String str2 = this.c;
-                w70Var.getClass();
-                AndroidUtilities.runOnUIThread(new u70(w70Var, str2, 1));
+                v70Var.getClass();
+                AndroidUtilities.runOnUIThread(new u70(v70Var, str2, 1));
                 break;
             case 1:
-                w70 w70Var2 = this.b;
+                v70 v70Var2 = this.b;
                 String str3 = this.c;
-                hg.a2 a2Var = w70Var2.e;
-                org.telegram.ui.mu muVar = w70Var2.n.m0;
+                hg.a2 a2Var = v70Var2.e;
+                org.telegram.ui.mu muVar = v70Var2.n.m0;
                 boolean z11 = false;
                 boolean z12 = muVar != null;
                 if (muVar != null) {
@@ -51,14 +51,14 @@ public final /* synthetic */ class u70 implements Runnable {
                 }
                 a2Var.g(str3, true, z12, true, z11, 0L, false, 0, 0);
                 DispatchQueue dispatchQueue = Utilities.searchQueue;
-                u70 u70Var = new u70(w70Var2, str3, 2);
-                w70Var2.h = u70Var;
+                u70 u70Var = new u70(v70Var2, str3, 2);
+                v70Var2.h = u70Var;
                 dispatchQueue.postRunnable(u70Var);
                 break;
             default:
-                w70 w70Var3 = this.b;
+                v70 v70Var3 = this.b;
                 String str4 = this.c;
-                ArrayList arrayList2 = w70Var3.n.e0;
+                ArrayList arrayList2 = v70Var3.n.e0;
                 String lowerCase = str4.trim().toLowerCase();
                 if (lowerCase.length() != 0) {
                     String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
@@ -96,7 +96,7 @@ public final /* synthetic */ class u70 implements Runnable {
                         while (true) {
                             if (i11 < i12) {
                                 String str5 = strArr[i11];
-                                if (str.startsWith(str5) || org.telegram.messenger.yh.v(" ", str5, str) || (translitString2 != null && (translitString2.startsWith(str5) || org.telegram.messenger.yh.v(" ", str5, translitString2)))) {
+                                if (str.startsWith(str5) || org.telegram.messenger.g0.w(" ", str5, str) || (translitString2 != null && (translitString2.startsWith(str5) || org.telegram.messenger.g0.w(" ", str5, translitString2)))) {
                                     i10 = 1;
                                 } else {
                                     if (publicUsername != null && publicUsername.startsWith(str5)) {
@@ -136,10 +136,10 @@ public final /* synthetic */ class u70 implements Runnable {
                         arrayList2 = arrayList;
                         i11 = 0;
                     }
-                    AndroidUtilities.runOnUIThread(new v70(w70Var3, arrayList3, arrayList4, 0));
+                    AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.f(v70Var3, arrayList3, arrayList4, 27));
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new v70(w70Var3, new ArrayList(), new ArrayList(), 0));
+                    AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.f(v70Var3, new ArrayList(), new ArrayList(), 27));
                     break;
                 }
                 break;

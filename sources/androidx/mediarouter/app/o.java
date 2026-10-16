@@ -9,7 +9,7 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class o implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -44,13 +44,13 @@ public final class o implements View.OnClickListener {
                         if (bVar != null && (playbackStateCompat = tVar.k0) != null) {
                             i10 = playbackStateCompat.a != 3 ? 0 : 1;
                             if (i10 != 0 && (playbackStateCompat.e & 514) != 0) {
-                                bVar.U().a.pause();
+                                bVar.Y().a.pause();
                                 i12 = R.string.mr_controller_pause;
                             } else if (i10 != 0 && (playbackStateCompat.e & 1) != 0) {
-                                bVar.U().a.stop();
+                                bVar.Y().a.stop();
                                 i12 = R.string.mr_controller_stop;
                             } else if (i10 == 0 && (playbackStateCompat.e & 516) != 0) {
-                                bVar.U().a.play();
+                                bVar.Y().a.play();
                                 i12 = R.string.mr_controller_play;
                             }
                             if (accessibilityManager != null && accessibilityManager.isEnabled() && i12 != 0) {
@@ -65,10 +65,10 @@ public final class o implements View.OnClickListener {
                     }
                 } else {
                     if (tVar.r.g()) {
-                        p4.y yVar = tVar.h;
+                        p4.x xVar = tVar.h;
                         i10 = id2 == 16908313 ? 2 : 1;
-                        yVar.getClass();
-                        p4.y.j(i10);
+                        xVar.getClass();
+                        p4.x.j(i10);
                     }
                     tVar.dismiss();
                     break;

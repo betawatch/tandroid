@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class dx extends s4.r0 {
     public boolean a;
@@ -26,7 +26,7 @@ public final class dx extends s4.r0 {
         yy yyVar = this.d;
         if (i10 == 1) {
             this.a = true;
-            yyVar.d3 = true;
+            yyVar.e3 = true;
             a5.a aVar = yyVar.e0[0].b;
             ValueAnimator valueAnimator = (ValueAnimator) aVar.c;
             if (valueAnimator != null) {
@@ -39,7 +39,7 @@ public final class dx extends s4.r0 {
                 yyVar.X.r.clearFocus();
             }
         } else {
-            yyVar.d3 = false;
+            yyVar.e3 = false;
         }
         if (i10 == 0) {
             this.a = false;
@@ -105,7 +105,7 @@ public final class dx extends s4.r0 {
             }
         }
         yy yyVar = this.d;
-        yyVar.o3(xyVar);
+        yyVar.p3(xyVar);
         yyVar.Q = true;
         View view3 = yyVar.fragmentView;
         if (view3 != null) {
@@ -113,7 +113,7 @@ public final class dx extends s4.r0 {
         }
         if (yyVar.R0 != 10 && this.a && recyclerView.getChildCount() > 0 && i16 != -1) {
             s4.b1 K = recyclerView.K(i16);
-            if (!yyVar.W3() || (K != null && K.b() >= 0)) {
+            if (!yyVar.X3() || (K != null && K.b() >= 0)) {
                 int top = K != null ? K.a.getTop() : 0;
                 int i18 = yyVar.Y1;
                 if (i18 == i16) {
@@ -122,8 +122,8 @@ public final class dx extends s4.r0 {
                     z10 = top < i19;
                     if (Math.abs(i20) <= 1) {
                         objArr = false;
-                        if (objArr != false && yyVar.a2 && (z10 || yyVar.d3)) {
-                            yyVar.Z3(z10);
+                        if (objArr != false && yyVar.a2 && (z10 || yyVar.e3)) {
+                            yyVar.a4(z10);
                         }
                         yyVar.Y1 = i16;
                         yyVar.Z1 = top;
@@ -134,7 +134,7 @@ public final class dx extends s4.r0 {
                 }
                 objArr = true;
                 if (objArr != false) {
-                    yyVar.Z3(z10);
+                    yyVar.a4(z10);
                 }
                 yyVar.Y1 = i16;
                 yyVar.Z1 = top;
@@ -145,8 +145,8 @@ public final class dx extends s4.r0 {
             kVar = ((org.telegram.ui.ActionBar.m2) yyVar).actionBar;
             if (kVar != null) {
                 kVar2 = ((org.telegram.ui.ActionBar.m2) yyVar).actionBar;
-                if (!kVar2.t() && !yyVar.e2 && !yyVar.F3.c()) {
-                    if (i11 > 0 && yyVar.W3() && yyVar.e0[0].s == 0 && (childAt = recyclerView.getChildAt(0)) != null && recyclerView.T(childAt).b() == 0) {
+                if (!kVar2.t() && !yyVar.e2 && !yyVar.G3.c()) {
+                    if (i11 > 0 && yyVar.X3() && yyVar.e0[0].s == 0 && (childAt = recyclerView.getChildAt(0)) != null && recyclerView.T(childAt).b() == 0) {
                         int top2 = (childAt.getTop() - recyclerView.getPaddingTop()) + childAt.getMeasuredHeight();
                         if (top2 + i11 > 0) {
                             if (top2 >= 0) {
@@ -167,7 +167,7 @@ public final class dx extends s4.r0 {
         if (yyVar.fragmentView != null) {
             yyVar.j3();
         }
-        sx sxVar = yyVar.F3;
+        sx sxVar = yyVar.G3;
         if (sxVar != null && sxVar.c() && (uyVar = xyVar.a) != null) {
             uyVar.invalidate();
         }
@@ -175,10 +175,10 @@ public final class dx extends s4.r0 {
         if (pxVar != null && pxVar.getPremiumHint() != null && yyVar.E0.getPremiumHint().V) {
             yyVar.E0.getPremiumHint().e(true);
         }
-        ?? W3 = yyVar.W3();
-        View childAt2 = xyVar.a.getChildAt(W3 == true ? 1 : 0);
-        yyVar.e.a(i16 > W3 || (((float) (childAt2 != null ? childAt2.getTop() : 0)) - yyVar.N) + ((float) AndroidUtilities.dp(5.0f)) < ((float) xyVar.a.getPaddingTop()), true);
-        if (i11 == 0 || (fVar = yyVar.k4) == null || Build.VERSION.SDK_INT < 31) {
+        ?? X3 = yyVar.X3();
+        View childAt2 = xyVar.a.getChildAt(X3 == true ? 1 : 0);
+        yyVar.e.a(i16 > X3 || (((float) (childAt2 != null ? childAt2.getTop() : 0)) - yyVar.N) + ((float) AndroidUtilities.dp(5.0f)) < ((float) xyVar.a.getPaddingTop()), true);
+        if (i11 == 0 || (fVar = yyVar.l4) == null || Build.VERSION.SDK_INT < 31) {
             return;
         }
         fVar.f(i10, i11);

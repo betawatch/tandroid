@@ -16,7 +16,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class j91 extends LinearLayout implements org.telegram.ui.ActionBar.x5 {
     public final org.telegram.ui.ActionBar.c6 a;
@@ -59,18 +59,18 @@ public final class j91 extends LinearLayout implements org.telegram.ui.ActionBar
         imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.m6, c6Var), PorterDuff.Mode.SRC_IN));
         if (!LocaleController.isRTL) {
             h5Var.setGravity(19);
-            addView(z9Var, w7.a6.t(28, 28, 19, 18, 0, 18, 0));
-            addView(h5Var, w7.a6.p(0, -1, 1.0f, 119, 0, 0, 18, 0));
-            addView(textView, w7.a6.p(-2, 20, 0.0f, 16, 0, 0, 0, 0));
-            addView(imageView, w7.a6.p(24, 24, 0.0f, 21, 0, 0, 12, 0));
+            addView(z9Var, w7.z5.t(28, 28, 19, 18, 0, 18, 0));
+            addView(h5Var, w7.z5.p(0, -1, 1.0f, 119, 0, 0, 18, 0));
+            addView(textView, w7.z5.p(-2, 20, 0.0f, 16, 0, 0, 0, 0));
+            addView(imageView, w7.z5.p(24, 24, 0.0f, 21, 0, 0, 12, 0));
             return;
         }
         h5Var.setGravity(21);
         imageView.setScaleX(-1.0f);
-        addView(imageView, w7.a6.p(24, 24, 0.0f, 19, 12, 0, 0, 0));
-        addView(textView, w7.a6.p(-2, 20, 0.0f, 16, 0, 0, 0, 0));
-        addView(h5Var, w7.a6.p(0, -1, 1.0f, 119, 18, 0, 0, 0));
-        addView(z9Var, w7.a6.t(28, 28, 21, 18, 0, 18, 0));
+        addView(imageView, w7.z5.p(24, 24, 0.0f, 19, 12, 0, 0, 0));
+        addView(textView, w7.z5.p(-2, 20, 0.0f, 16, 0, 0, 0, 0));
+        addView(h5Var, w7.z5.p(0, -1, 1.0f, 119, 18, 0, 0, 0));
+        addView(z9Var, w7.z5.t(28, 28, 21, 18, 0, 18, 0));
     }
 
     @Override // org.telegram.ui.ActionBar.x5

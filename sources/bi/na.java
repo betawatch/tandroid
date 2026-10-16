@@ -26,9 +26,9 @@ import org.telegram.tgnet.Vector;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.ew;
 import org.telegram.ui.Components.ha0;
-import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.j61;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class na extends View {
     public static Object I;
@@ -207,7 +207,7 @@ public final class na extends View {
         }
         SpannableString spannableString = new SpannableString("x " + tL_messages_stickerSet.set.title);
         spannableString.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.gc, this.h.a)), 0, spannableString.length(), 33);
-        spannableString.setSpan(new i61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
+        spannableString.setSpan(new j61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
         ArrayList<TLRPC.Document> arrayList = tL_messages_stickerSet.documents;
         int i10 = 0;
         while (true) {
@@ -350,7 +350,7 @@ public final class na extends View {
         String string;
         SpannableString spannableString = new SpannableString("x " + stickerSetCovered.set.title);
         spannableString.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.gc, this.h.a)), 0, spannableString.length(), 33);
-        spannableString.setSpan(new i61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
+        spannableString.setSpan(new j61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
         TLRPC.Document document = stickerSetCovered.cover;
         if (document == null && (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered)) {
             ArrayList<TLRPC.Document> arrayList = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;

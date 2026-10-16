@@ -39,7 +39,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.a10;
 import org.telegram.ui.Components.ap0;
@@ -51,9 +51,9 @@ import org.telegram.ui.Components.ow0;
 import org.telegram.ui.Components.ro;
 import org.telegram.ui.Components.z9;
 import org.telegram.ui.Components.zw0;
-import org.telegram.ui.uz0;
+import org.telegram.ui.tz0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class k extends FrameLayout implements ne.d, x5 {
     public CharSequence A0;
@@ -93,7 +93,7 @@ public class k extends FrameLayout implements ne.d, x5 {
     public b10 T;
     public Runnable T0;
     public Paint.FontMetricsInt U;
-    public uz0 U0;
+    public tz0 U0;
     public boolean V;
     public AnimatorSet V0;
     public Rect W;
@@ -203,11 +203,11 @@ public class k extends FrameLayout implements ne.d, x5 {
         return null;
     }
 
-    public final void A(mm0 mm0Var, boolean z10) {
+    public final void B(mm0 mm0Var, boolean z10) {
         z(mm0Var, z10, g6.a7, g6.s8);
     }
 
-    public final void B(int i10, boolean z10) {
+    public final void C(int i10, boolean z10) {
         ImageView imageView;
         if (z10) {
             this.q0 = i10;
@@ -407,7 +407,7 @@ public class k extends FrameLayout implements ne.d, x5 {
                 this.r.setVisibility(0);
                 this.r.setAlpha(0.0f);
             }
-            yh.r(this.r.animate(), z10 ? 0.0f : 1.0f, 220L);
+            sk.s(this.r.animate(), z10 ? 0.0f : 1.0f, 220L);
         }
         h5 h5Var = h5VarArr[1];
         if (h5Var != null) {
@@ -968,7 +968,7 @@ public class k extends FrameLayout implements ne.d, x5 {
                                     int i13 = AndroidUtilities.statusBarHeight;
                                     float nextFloat = Utilities.random.nextFloat() * getMeasuredWidth();
                                     float f11 = 20.0f;
-                                    float nextFloat2 = (Utilities.random.nextFloat() * org.telegram.messenger.q.D(20.0f, getMeasuredHeight(), i13)) + i13;
+                                    float nextFloat2 = (Utilities.random.nextFloat() * org.telegram.messenger.g0.B(20.0f, getMeasuredHeight(), i13)) + i13;
                                     int nextInt = Utilities.random.nextInt(4);
                                     int i14 = nextInt != 0 ? nextInt != 1 ? nextInt != 2 ? nextInt != 3 ? -5752 : -15088582 : -207021 : -843755 : -13357350;
                                     int i15 = 0;
@@ -1282,7 +1282,7 @@ public class k extends FrameLayout implements ne.d, x5 {
         h5Var.setGravity(3);
         this.s.setVisibility(8);
         this.s.setTextColor(g6.w0(g6.B8, this.I0));
-        addView(this.s, 0, w7.a6.e(-2, -2, 51));
+        addView(this.s, 0, w7.z5.e(-2, -2, 51));
     }
 
     public final void m() {
@@ -1294,7 +1294,7 @@ public class k extends FrameLayout implements ne.d, x5 {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         this.e.setBackgroundDrawable(g6.g0(this.p0, 1, -1));
         this.e.setPadding(AndroidUtilities.dp(1.0f), 0, 0, 0);
-        addView(this.e, w7.a6.e(54, 54, 51));
+        addView(this.e, w7.z5.e(54, 54, 51));
         this.e.setOnClickListener(new b(this, 1));
         this.e.setContentDescription(LocaleController.getString(R.string.AccDescrGoBack));
     }
@@ -1306,7 +1306,7 @@ public class k extends FrameLayout implements ne.d, x5 {
         }
         y yVar2 = new y(getContext(), this);
         this.E = yVar2;
-        addView(yVar2, 0, w7.a6.e(-2, -1, 5));
+        addView(yVar2, 0, w7.z5.e(-2, -1, 5));
         return this.E;
     }
 
@@ -1319,7 +1319,7 @@ public class k extends FrameLayout implements ne.d, x5 {
         h5Var.setGravity(3);
         this.r.setVisibility(8);
         this.r.setTextColor(g6.w0(g6.B8, this.I0));
-        addView(this.r, 0, w7.a6.e(-2, -2, 51));
+        addView(this.r, 0, w7.z5.e(-2, -2, 51));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -1583,7 +1583,7 @@ public class k extends FrameLayout implements ne.d, x5 {
                 } else if (AndroidUtilities.isTablet()) {
                     f7 = 74.0f;
                 }
-                makeMeasureSpec = yh.z(f7, size, TLObject.FLAG_30);
+                makeMeasureSpec = sk.c(f7, size, TLObject.FLAG_30);
                 if (!kVar.y) {
                     kVar.E.r(0.0f);
                 }
@@ -1606,7 +1606,7 @@ public class k extends FrameLayout implements ne.d, x5 {
                 i12 = i13;
             } else {
                 y yVar2 = kVar.E;
-                int max = Math.max(org.telegram.messenger.q.D(16.0f, size - (yVar2 != null ? yVar2.getMeasuredWidth() : 0), dp) - kVar.a0, 0);
+                int max = Math.max(org.telegram.messenger.g0.B(16.0f, size - (yVar2 != null ? yVar2.getMeasuredWidth() : 0), dp) - kVar.a0, 0);
                 boolean z10 = kVar.y0;
                 int i15 = 20;
                 if (((z10 && i14 == 0) || (!z10 && i14 == i13)) && kVar.w0 && kVar.x0) {
@@ -1737,9 +1737,9 @@ public class k extends FrameLayout implements ne.d, x5 {
         h5VarArr[i10].setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
         h5VarArr[i10].setRightDrawableTopPadding(-AndroidUtilities.dp(1.0f));
         if (this.G0) {
-            this.F0.addView(h5VarArr[i10], 0, w7.a6.e(-2, -2, 51));
+            this.F0.addView(h5VarArr[i10], 0, w7.z5.e(-2, -2, 51));
         } else {
-            addView(h5VarArr[i10], 0, w7.a6.e(-2, -2, 51));
+            addView(h5VarArr[i10], 0, w7.z5.e(-2, -2, 51));
         }
     }
 
@@ -2325,11 +2325,11 @@ public class k extends FrameLayout implements ne.d, x5 {
     public final void z(RecyclerView recyclerView, boolean z10, int i10, int i11) {
         this.p1 = i10;
         this.q1 = i11;
-        org.telegram.messenger.voip.j jVar = new org.telegram.messenger.voip.j(9, this, recyclerView);
-        recyclerView.j(new ah.d0(jVar, 13));
+        org.telegram.messenger.voip.p0 p0Var = new org.telegram.messenger.voip.p0(4, this, recyclerView);
+        recyclerView.j(new ah.d0(p0Var, 13));
         this.o1 = z10;
         if (this.n1) {
-            jVar.run();
+            p0Var.run();
             return;
         }
         this.n1 = true;
@@ -2345,10 +2345,10 @@ public class k extends FrameLayout implements ne.d, x5 {
         this.p1 = i10;
         this.q1 = i11;
         b();
-        org.telegram.messenger.voip.j jVar = new org.telegram.messenger.voip.j(8, this, ap0Var);
-        ap0Var.f.add(jVar);
+        org.telegram.messenger.voip.p0 p0Var = new org.telegram.messenger.voip.p0(3, this, ap0Var);
+        ap0Var.f.add(p0Var);
         if (this.n1) {
-            jVar.run();
+            p0Var.run();
             return;
         }
         this.n1 = true;
@@ -2359,6 +2359,6 @@ public class k extends FrameLayout implements ne.d, x5 {
     }
 
     @Override // ne.d
-    public final /* synthetic */ void C(float f7, int i10) {
+    public final /* synthetic */ void A(float f7, int i10) {
     }
 }

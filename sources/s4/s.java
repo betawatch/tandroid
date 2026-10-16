@@ -14,7 +14,7 @@ import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.jv;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class s extends b0 {
     public boolean I;
@@ -329,7 +329,7 @@ public class s extends b0 {
             int i22 = zVar.d;
             int v12 = v1(i22, eVar, y0Var);
             if (v12 > this.J) {
-                throw new IllegalArgumentException(a1.g.n(this.J, " spans.", i2.d.l("Item at position ", i22, " requires ", v12, " spans but GridLayoutManager has only ")));
+                throw new IllegalArgumentException(a1.g.n(this.J, " spans.", i2.d.m("Item at position ", i22, " requires ", v12, " spans but GridLayoutManager has only ")));
             }
             i20 -= v12;
             if (i20 < 0 || (c10 = zVar.c(eVar)) == null) {
@@ -642,14 +642,14 @@ public class s extends b0 {
         if (this.o == 1) {
             int height = rect.height() + C;
             RecyclerView recyclerView = this.b;
-            WeakHashMap weakHashMap = r0.j0.a;
+            WeakHashMap weakHashMap = r0.i0.a;
             g11 = n0.g(i11, height, recyclerView.getMinimumHeight());
             int[] iArr = this.K;
             g10 = n0.g(i10, iArr[iArr.length - 1] + E, this.b.getMinimumWidth());
         } else {
             int width = rect.width() + E;
             RecyclerView recyclerView2 = this.b;
-            WeakHashMap weakHashMap2 = r0.j0.a;
+            WeakHashMap weakHashMap2 = r0.i0.a;
             g10 = n0.g(i10, width, recyclerView2.getMinimumWidth());
             int[] iArr2 = this.K;
             g11 = n0.g(i11, iArr2[iArr2.length - 1] + C, this.b.getMinimumHeight());
@@ -767,7 +767,7 @@ public class s extends b0 {
         }
         this.I = true;
         if (i10 < 1) {
-            throw new IllegalArgumentException(i2.d.i(i10, "Span count should be at least 1. Provided "));
+            throw new IllegalArgumentException(i2.d.j(i10, "Span count should be at least 1. Provided "));
         }
         this.J = i10;
         this.O.j();

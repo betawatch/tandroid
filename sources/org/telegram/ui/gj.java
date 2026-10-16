@@ -22,7 +22,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gj implements Runnable {
     public final /* synthetic */ int a;
@@ -171,12 +171,12 @@ public final /* synthetic */ class gj implements Runnable {
                 yy yyVar = ((ww) obj).B0;
                 yyVar.showDialog(new sg.y0((org.telegram.ui.ActionBar.m2) yyVar, 9, true));
                 yyVar.z0.setIsEditing(false);
-                yyVar.F4(false);
+                yyVar.G4(false);
                 break;
             case 24:
                 yy yyVar2 = ((xw) obj).b;
                 yyVar2.z0.setIsEditing(true);
-                yyVar2.F4(true);
+                yyVar2.G4(true);
                 break;
             case 25:
                 ((yw) obj).a.f0.setAlpha(1.0f);

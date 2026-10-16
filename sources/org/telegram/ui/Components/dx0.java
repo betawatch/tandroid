@@ -6,7 +6,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class dx0 extends db {
     public et X;
@@ -25,7 +25,7 @@ public final class dx0 extends db {
     }
 
     public static void Q(dx0 dx0Var, int i10) {
-        l61 G = dx0Var.X.G(i10 - 1);
+        m61 G = dx0Var.X.G(i10 - 1);
         Object obj = G != null ? G.G : null;
         if (obj instanceof TLRPC.User) {
             MessagesController.getInstance(dx0Var.currentAccount).openApp(dx0Var.attachedFragment, (TLRPC.User) obj, null, 0, null);
@@ -33,7 +33,7 @@ public final class dx0 extends db {
     }
 
     @Override // org.telegram.ui.Components.db
-    public final CharSequence A() {
+    public final CharSequence B() {
         return LocaleController.getString(R.string.SearchAppsExamples);
     }
 

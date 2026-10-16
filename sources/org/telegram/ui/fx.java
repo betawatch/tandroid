@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.TopicsController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class fx extends hg.m {
     public final /* synthetic */ xy d0;
@@ -34,12 +34,12 @@ public final class fx extends hg.m {
         org.telegram.ui.ActionBar.a2 a2Var = new org.telegram.ui.ActionBar.a2(yyVar.getParentActivity(), 3, null);
         TLRPC.RequestPeerType requestPeerType = yyVar.G;
         if (requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast) {
-            Bundle g10 = org.telegram.ui.Cells.d0.g(0, "step");
+            Bundle f7 = org.telegram.ui.Cells.c1.f(0, "step");
             Boolean bool = yyVar.G.has_username;
             if (bool != null) {
-                g10.putBoolean("forcePublic", bool.booleanValue());
+                f7.putBoolean("forcePublic", bool.booleanValue());
             }
-            sd sdVar = new sd(g10);
+            sd sdVar = new sd(f7);
             sdVar.t0 = new q6(yyVar, sdVar, a2Var, 2);
             yyVar.presentFragment(sdVar);
             return;
@@ -73,7 +73,7 @@ public final class fx extends hg.m {
     public final void a(org.telegram.ui.Cells.s2 s2Var) {
         xy xyVar = this.d0;
         xyVar.a.getClass();
-        this.e0.l4(s2Var, RecyclerView.R(s2Var), 0.0f, xyVar.d);
+        this.e0.m4(s2Var, RecyclerView.R(s2Var), 0.0f, xyVar.d);
     }
 
     @Override // hg.m, org.telegram.ui.Cells.o2
@@ -87,7 +87,7 @@ public final class fx extends hg.m {
             TLRPC.TL_forumTopic findTopic = topicsController.findTopic(j10, MessageObject.getTopicId(i10, s2Var.getMessage().messageOwner, true));
             if (findTopic != null) {
                 if (yyVar.l2) {
-                    yyVar.L3(s2Var.getDialogId(), findTopic.id, false, null);
+                    yyVar.M3(s2Var.getDialogId(), findTopic.id, false, null);
                 } else {
                     og.d.m(yyVar, -s2Var.getDialogId(), findTopic, 0);
                 }

@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class q0 extends ph.c implements ne.d {
     public static final /* synthetic */ int s = 0;
@@ -31,7 +31,7 @@ public final class q0 extends ph.c implements ne.d {
                 bVarArr[0].e(true, false);
                 return;
             } else {
-                this.a.addView(bVarArr[i11], w7.a6.l(1.0f, 0, -1));
+                this.a.addView(bVarArr[i11], w7.z5.l(1.0f, 0, -1));
                 this.n[i11].setOnClickListener(new di.m4(this, i11, 28));
                 i11++;
             }
@@ -78,6 +78,6 @@ public final class q0 extends ph.c implements ne.d {
     }
 
     @Override // ne.d
-    public final /* synthetic */ void C(float f7, int i10) {
+    public final /* synthetic */ void A(float f7, int i10) {
     }
 }

@@ -55,7 +55,7 @@ import r2.p;
 import u2.c0;
 import u2.g0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class i implements b {
     public z0 E;
@@ -223,14 +223,14 @@ public final class i implements b {
             }
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (bVar.z(0)) {
+        if (bVar.y(0)) {
             a aVar2 = (a) ((SparseArray) bVar.c).get(0);
             aVar2.getClass();
             if (this.v != null) {
                 r(aVar2.b, aVar2.d);
             }
         }
-        if (bVar.z(2) && this.v != null) {
+        if (bVar.y(2) && this.v != null) {
             l0 listIterator = g1Var.h0().a.listIterator(0);
             loop2: while (true) {
                 if (!listIterator.hasNext()) {
@@ -271,7 +271,7 @@ public final class i implements b {
                 builder.setDrmType(i24);
             }
         }
-        if (bVar.z(1011)) {
+        if (bVar.y(1011)) {
             this.Q++;
         }
         z0 z0Var = this.E;
@@ -434,7 +434,7 @@ public final class i implements b {
                                 }
                                 v0Var = new v0(i29, A);
                             } else {
-                                v0Var = cause3 instanceof MediaDrmResetException ? new v0(27, 0) : cause3 instanceof NotProvisionedException ? new v0(24, 0) : cause3 instanceof DeniedByServerException ? new v0(29, 0) : cause3 instanceof n2.y ? new v0(23, 0) : cause3 instanceof n2.c ? new v0(28, 0) : new v0(30, 0);
+                                v0Var = cause3 instanceof MediaDrmResetException ? new v0(27, 0) : cause3 instanceof NotProvisionedException ? new v0(24, 0) : cause3 instanceof DeniedByServerException ? new v0(29, 0) : cause3 instanceof n2.x ? new v0(23, 0) : cause3 instanceof n2.c ? new v0(28, 0) : new v0(30, 0);
                             }
                         } else if ((cause instanceof s) && (cause.getCause() instanceof FileNotFoundException)) {
                             Throwable cause4 = cause.getCause();
@@ -476,7 +476,7 @@ public final class i implements b {
             this.E = null;
             i19 = 2;
         }
-        if (bVar.z(i19)) {
+        if (bVar.y(i19)) {
             w1 h02 = g1Var.h0();
             boolean a10 = h02.a(i19);
             boolean a11 = h02.a(i18);
@@ -584,7 +584,7 @@ public final class i implements b {
                         }
                         if (g1Var.W() == null) {
                             this.N = false;
-                        } else if (bVar.z(i21)) {
+                        } else if (bVar.y(i21)) {
                             this.N = true;
                         }
                         int d = g1Var.d();
@@ -611,7 +611,7 @@ public final class i implements b {
                                         this.R = z11;
                                         this.b.execute(new q3(25, this, new PlaybackStateEvent.Builder().setState(this.x).setTimeSinceCreatedMillis(elapsedRealtime - this.e).build()));
                                     }
-                                    if (bVar.z(1028)) {
+                                    if (bVar.y(1028)) {
                                         return;
                                     }
                                     h hVar2 = this.c;
@@ -630,7 +630,7 @@ public final class i implements b {
                         z11 = true;
                         if (this.x != i23) {
                         }
-                        if (bVar.z(1028)) {
+                        if (bVar.y(1028)) {
                         }
                     }
                 }
@@ -668,7 +668,7 @@ public final class i implements b {
                 z11 = true;
                 if (this.x != i23) {
                 }
-                if (bVar.z(1028)) {
+                if (bVar.y(1028)) {
                 }
             }
         }
@@ -695,7 +695,7 @@ public final class i implements b {
         z11 = true;
         if (this.x != i23) {
         }
-        if (bVar.z(1028)) {
+        if (bVar.y(1028)) {
         }
     }
 

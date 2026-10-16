@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class hm0 implements s4.q0 {
     public final /* synthetic */ int a = 0;
@@ -32,7 +32,7 @@ public final class hm0 implements s4.q0 {
                 break;
             default:
                 s4.y yVar = (s4.y) this.b;
-                org.telegram.ui.Wallet.m5 m5Var = yVar.I;
+                p4.s0 s0Var = yVar.I;
                 ((GestureDetector) yVar.N.b).onTouchEvent(motionEvent);
                 VelocityTracker velocityTracker = yVar.J;
                 if (velocityTracker != null) {
@@ -51,8 +51,8 @@ public final class hm0 implements s4.q0 {
                                 if (findPointerIndex >= 0) {
                                     yVar.s(yVar.E, findPointerIndex, motionEvent);
                                     yVar.n(b1Var);
-                                    yVar.H.removeCallbacks(m5Var);
-                                    m5Var.run();
+                                    yVar.H.removeCallbacks(s0Var);
+                                    s0Var.run();
                                     yVar.H.invalidate();
                                     break;
                                 }
@@ -131,7 +131,7 @@ public final class hm0 implements s4.q0 {
                 }
                 if (mm0Var.L1 != null && !mm0Var.N1) {
                     try {
-                        mm0Var.K1.Y0(motionEvent);
+                        mm0Var.K1.j1(motionEvent);
                     } catch (Exception e) {
                         FileLog.e(e);
                     }
@@ -267,9 +267,9 @@ public final class hm0 implements s4.q0 {
 
     public hm0(mm0 mm0Var, Context context) {
         this.b = mm0Var;
-        ji.h5 h5Var = new ji.h5(context, new gm0(this));
-        mm0Var.K1 = h5Var;
-        ((x20) h5Var.b).t = false;
+        ji.w4 w4Var = new ji.w4(context, new gm0(this));
+        mm0Var.K1 = w4Var;
+        ((x20) w4Var.b).t = false;
     }
 
     private final void d(RecyclerView recyclerView, MotionEvent motionEvent) {

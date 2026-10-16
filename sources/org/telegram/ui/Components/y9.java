@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class y9 extends GradientDrawable {
     public final int[] a;
@@ -36,7 +36,7 @@ public final class y9 extends GradientDrawable {
         paint.setDither(true);
     }
 
-    public static /* synthetic */ void a(y9 y9Var, Runnable[] runnableArr, Bitmap bitmap, w60 w60Var, int i10, w7.x5[] x5VarArr) {
+    public static /* synthetic */ void a(y9 y9Var, Runnable[] runnableArr, Bitmap bitmap, w60 w60Var, int i10, w7.w5[] w5VarArr) {
         a0.f fVar = y9Var.b;
         ArrayList arrayList = y9Var.e;
         if (!arrayList.contains(runnableArr)) {
@@ -65,14 +65,14 @@ public final class y9 extends GradientDrawable {
         if (!z10) {
             arrayList.remove(runnableArr);
         }
-        w7.x5 x5Var = x5VarArr[0];
-        if (x5Var != null) {
-            x5Var.b(w60Var.a, w60Var.b);
+        w7.w5 w5Var = w5VarArr[0];
+        if (w5Var != null) {
+            w5Var.b(w60Var.a, w60Var.b);
             if (z10) {
                 return;
             }
-            x5VarArr[0].a();
-            x5VarArr[0] = null;
+            w5VarArr[0].a();
+            w5VarArr[0] = null;
         }
     }
 
@@ -236,8 +236,8 @@ public final class y9 extends GradientDrawable {
         }
     }
 
-    public final t9 f(ji.w4 w4Var, w7.x5 x5Var, long j10) {
-        w60[] w60VarArr = (w60[]) w4Var.b;
+    public final t9 f(m.l lVar, w7.w5 w5Var, long j10) {
+        w60[] w60VarArr = (w60[]) lVar.a;
         if (!this.g) {
             ArrayList arrayList = new ArrayList(w60VarArr.length);
             for (w60 w60Var : w60VarArr) {
@@ -248,7 +248,7 @@ public final class y9 extends GradientDrawable {
                 }
             }
             if (!arrayList.isEmpty()) {
-                return g((w60[]) arrayList.toArray(new w60[0]), x5Var, j10);
+                return g((w60[]) arrayList.toArray(new w60[0]), w5Var, j10);
             }
         }
         return null;
@@ -262,23 +262,23 @@ public final class y9 extends GradientDrawable {
         }
     }
 
-    public final t9 g(w60[] w60VarArr, w7.x5 x5Var, long j10) {
+    public final t9 g(w60[] w60VarArr, w7.w5 w5Var, long j10) {
         if (w60VarArr.length == 0) {
             return null;
         }
-        w7.x5[] x5VarArr = {x5Var};
+        w7.w5[] w5VarArr = {w5Var};
         Runnable[] runnableArr = new Runnable[w60VarArr.length];
         this.e.add(runnableArr);
         for (int i10 = 0; i10 < w60VarArr.length; i10++) {
             w60 w60Var = w60VarArr[i10];
             if (w60Var.a != 0 && w60Var.b != 0) {
                 DispatchQueue dispatchQueue = Utilities.globalQueue;
-                s9 s9Var = new s9(this, w60Var, runnableArr, i10, x5VarArr);
+                s9 s9Var = new s9(this, w60Var, runnableArr, i10, w5VarArr);
                 runnableArr[i10] = s9Var;
                 dispatchQueue.postRunnable(s9Var, j10);
             }
         }
-        return new t9(this, x5VarArr, runnableArr, w60VarArr);
+        return new t9(this, w5VarArr, runnableArr, w60VarArr);
     }
 
     @Override // android.graphics.drawable.GradientDrawable, android.graphics.drawable.Drawable

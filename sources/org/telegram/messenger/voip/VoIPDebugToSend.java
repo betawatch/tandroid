@@ -16,13 +16,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Components.voip.d2;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class VoIPDebugToSend {
     private final int currentAccount;
     private final HashMap<Long, Data> pending = new HashMap<>();
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public final class Data {
         long access_hash;
         long callId;
@@ -56,7 +56,7 @@ public class VoIPDebugToSend {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$done$2(Data data, File file, TL_phone.saveCallDebug savecalldebug) {
         if (AndroidUtilities.gzip(new File(data.logPath), file)) {
-            AndroidUtilities.runOnUIThread(new o(this, file, savecalldebug, 0));
+            AndroidUtilities.runOnUIThread(new n(this, file, savecalldebug, 0));
         }
     }
 
@@ -68,7 +68,7 @@ public class VoIPDebugToSend {
         if (!(tLObject instanceof TLRPC.TL_boolFalse) || TextUtils.isEmpty(data.logPath)) {
             return;
         }
-        Utilities.searchQueue.postRunnable(new n(this, data, new File(a1.g.s(new StringBuilder(), data.logPath, ".gzip")), savecalldebug, 0));
+        Utilities.searchQueue.postRunnable(new m(this, data, new File(a1.g.s(new StringBuilder(), data.logPath, ".gzip")), savecalldebug, 0));
     }
 
     public void done(long j10, boolean z10) {
@@ -84,7 +84,7 @@ public class VoIPDebugToSend {
         savecalldebug.peer = tL_inputPhoneCall;
         tL_inputPhoneCall.access_hash = remove.access_hash;
         tL_inputPhoneCall.id = remove.callId;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(savecalldebug, new p(this, remove, savecalldebug, 0));
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(savecalldebug, new o(this, remove, savecalldebug, 0));
     }
 
     public void push(long j10, long j11, Instance.FinalState finalState, String str) {

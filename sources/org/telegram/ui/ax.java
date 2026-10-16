@@ -4,7 +4,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ax implements Runnable {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class ax implements Runnable {
                 uy uyVar = xyVar.a;
                 if (uyVar != null && uyVar.getScrollState() == 0 && xyVar.a.getChildCount() > 0 && xyVar.a.getLayoutManager() != null) {
                     int i10 = 1;
-                    boolean z10 = xyVar.s == 0 && yyVar.W3() && xyVar.v == 2;
+                    boolean z10 = xyVar.s == 0 && yyVar.X3() && xyVar.v == 2;
                     float f7 = yyVar.N;
                     s4.b0 b0Var = (s4.b0) xyVar.a.getLayoutManager();
                     View view = null;

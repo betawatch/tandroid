@@ -1,37 +1,78 @@
 package m;
 
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.os.Handler;
-import bi.n7;
+import android.R;
+import android.content.Context;
+import android.content.res.ColorStateList;
+import android.content.res.TypedArray;
+import android.graphics.Color;
+import android.util.AttributeSet;
+import android.util.Log;
+import android.util.TypedValue;
+import android.view.View;
+import v7.q7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class d3 implements j9.t {
-    public boolean a;
-    public boolean b;
-    public Object c = new Path();
-    public Object d = new Rect();
+public abstract class d3 {
+    public static final ThreadLocal a = new ThreadLocal();
+    public static final int[] b = {-16842910};
+    public static final int[] c = {R.attr.state_focused};
+    public static final int[] d = {R.attr.state_pressed};
+    public static final int[] e = {R.attr.state_checked};
+    public static final int[] f = new int[0];
+    public static final int[] g = new int[1];
 
-    public boolean a(Rect rect, boolean z10, boolean z11) {
-        Rect rect2 = (Rect) this.d;
-        boolean z12 = (!rect2.isEmpty() && rect2.top == rect.top && rect2.bottom == rect.bottom && rect2.right == rect.right && rect2.left == rect.left && this.a == z11 && this.b == z10 && z11 && z10) ? false : true;
-        this.a = z11;
-        this.b = z10;
-        rect2.set(rect);
-        return z12;
+    public static void a(View view, Context context) {
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(f.a.j);
+        try {
+            if (!obtainStyledAttributes.hasValue(117)) {
+                Log.e("ThemeUtils", "View " + view.getClass() + " is an AppCompat widget that can only be used with a Theme.AppCompat theme (or descendant).");
+            }
+        } finally {
+            obtainStyledAttributes.recycle();
+        }
     }
 
-    @Override // j9.t
-    public void onSuccess(Object obj) {
-        m4.x xVar = (m4.x) obj;
-        m4.f0 f0Var = ((m4.q0) this.d).g;
-        Handler handler = f0Var.l;
-        m4.w wVar = (m4.w) this.c;
-        e2.m0.W(handler, new ji.v2(f0Var, wVar, new n7(this, xVar, this.a, this.b, wVar, 2)));
+    public static int b(Context context, int i10) {
+        ColorStateList d10 = d(context, i10);
+        if (d10 != null && d10.isStateful()) {
+            return d10.getColorForState(b, d10.getDefaultColor());
+        }
+        ThreadLocal threadLocal = a;
+        TypedValue typedValue = (TypedValue) threadLocal.get();
+        if (typedValue == null) {
+            typedValue = new TypedValue();
+            threadLocal.set(typedValue);
+        }
+        context.getTheme().resolveAttribute(R.attr.disabledAlpha, typedValue, true);
+        float f7 = typedValue.getFloat();
+        return i0.a.k(c(context, i10), Math.round(Color.alpha(r4) * f7));
     }
 
-    @Override // j9.t
-    public void i(Throwable th2) {
+    public static int c(Context context, int i10) {
+        int[] iArr = g;
+        iArr[0] = i10;
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes((AttributeSet) null, iArr);
+        try {
+            return obtainStyledAttributes.getColor(0, 0);
+        } finally {
+            obtainStyledAttributes.recycle();
+        }
+    }
+
+    public static ColorStateList d(Context context, int i10) {
+        ColorStateList colorStateList;
+        int resourceId;
+        int[] iArr = g;
+        iArr[0] = i10;
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes((AttributeSet) null, iArr);
+        try {
+            if (!obtainStyledAttributes.hasValue(0) || (resourceId = obtainStyledAttributes.getResourceId(0, 0)) == 0 || (colorStateList = q7.a(context, resourceId)) == null) {
+                colorStateList = obtainStyledAttributes.getColorStateList(0);
+            }
+            return colorStateList;
+        } finally {
+            obtainStyledAttributes.recycle();
+        }
     }
 }

@@ -30,7 +30,7 @@ import org.telegram.ui.a71;
 import org.telegram.ui.o61;
 import org.telegram.ui.p71;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class s0 extends FrameLayout {
     public final Drawable a;
@@ -155,7 +155,7 @@ public final class s0 extends FrameLayout {
             float lerp = AndroidUtilities.lerp(t0Var.e, AndroidUtilities.dp(i20 == 5 ? 20.0f : 8.0f), t0Var.j);
             HashMap hashMap3 = this.e;
             hashMap3.clear();
-            if (i20 == 1 || (gl0Var5.getDelegate() != null && gl0Var5.getDelegate().D())) {
+            if (i20 == 1 || (gl0Var5.getDelegate() != null && gl0Var5.getDelegate().z())) {
                 f7 = 1.0f;
                 fl0 delegate = gl0Var5.getDelegate();
                 float x10 = getX();
@@ -164,7 +164,7 @@ public final class s0 extends FrameLayout {
                 hashMap = hashMap3;
                 i10 = 4;
                 f10 = 255.0f;
-                delegate.w(canvas, rectF9, lerp, x10, i20 == 1 ? s0Var.getY() - AndroidUtilities.statusBarHeight : s0Var.getY() + t0Var.c.getY(), 255, true);
+                delegate.r(canvas, rectF9, lerp, x10, i20 == 1 ? s0Var.getY() - AndroidUtilities.statusBarHeight : s0Var.getY() + t0Var.c.getY(), 255, true);
                 canvas2 = canvas;
                 rectF = rectF9;
             } else {
@@ -236,7 +236,7 @@ public final class s0 extends FrameLayout {
                 canvas2.translate(width, (rectF.height() - gl0Var5.w.height()) + (rectF.top - gl0Var5.w.top));
                 float max = (Math.max(0.25f, Math.min(gl0Var5.v, f7)) - 0.25f) / 0.75f;
                 Canvas canvas3 = canvas2;
-                gl0Var5.f(gl0Var5.E * max, max, gl0Var5.F * max, gl0Var5.M0 == i11 ? 255 : (int) org.telegram.messenger.q.B(1.0f, gl0Var5.w0, Utilities.clamp(gl0Var5.w0 / 0.2f, 1.0f, 0.0f), f10), canvas3);
+                gl0Var5.f(gl0Var5.E * max, max, gl0Var5.F * max, gl0Var5.M0 == i11 ? 255 : (int) org.telegram.messenger.g0.z(1.0f, gl0Var5.w0, Utilities.clamp(gl0Var5.w0 / 0.2f, 1.0f, 0.0f), f10), canvas3);
                 gl0Var = gl0Var5;
                 canvas2 = canvas3;
                 canvas2.restore();
@@ -628,7 +628,7 @@ public final class s0 extends FrameLayout {
         super.invalidate();
         t0 t0Var = this.w;
         gl0 gl0Var = t0Var.n;
-        if (t0Var.y == 1 || !(gl0Var == null || gl0Var.getDelegate() == null || !gl0Var.getDelegate().D())) {
+        if (t0Var.y == 1 || !(gl0Var == null || gl0Var.getDelegate() == null || !gl0Var.getDelegate().z())) {
             t0Var.m.f0.invalidate();
         }
     }

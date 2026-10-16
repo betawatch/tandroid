@@ -1,60 +1,33 @@
 package org.telegram.ui.Wallet;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.wc0;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class y implements Runnable, NotificationCenter.NotificationCenterDelegate {
-    public boolean a;
-    public final /* synthetic */ NotificationCenter b;
-    public final /* synthetic */ wc0 c;
-    public final /* synthetic */ j0 d;
+public final class y implements Runnable {
+    public volatile boolean a;
+    public Runnable b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ byte[] f;
+    public final /* synthetic */ Utilities.Callback2 h;
+    public final /* synthetic */ k0 n;
 
-    public y(NotificationCenter notificationCenter, wc0 wc0Var, j0 j0Var) {
-        this.b = notificationCenter;
-        this.c = wc0Var;
-        this.d = j0Var;
-    }
-
-    public final void a() {
-        if (this.a) {
-            return;
-        }
-        j0 j0Var = this.d;
-        if (j0Var.e == null) {
-            return;
-        }
-        ArrayList arrayList = j0Var.C;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            if (((f0) obj).d) {
-                return;
-            }
-        }
-        run();
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.walletUpdate) {
-            a();
-        }
+    public y(k0 k0Var, String str, long j10, String str2, byte[] bArr, Utilities.Callback2 callback2) {
+        this.n = k0Var;
+        this.c = str;
+        this.d = j10;
+        this.e = str2;
+        this.f = bArr;
+        this.h = callback2;
     }
 
     @Override // java.lang.Runnable
-    public final void run() {
+    public final synchronized void run() {
         if (this.a) {
             return;
         }
-        this.a = true;
-        AndroidUtilities.cancelRunOnUIThread(this);
-        this.b.removeObserver(this, NotificationCenter.walletUpdate);
-        this.c.run();
+        this.b = this.n.b.emulateSend(this.c, this.d, this.e, this.f, new bi.f0(23, this, this.h));
     }
 }

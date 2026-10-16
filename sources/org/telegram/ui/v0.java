@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class v0 extends org.telegram.ui.Components.u6 {
     public final /* synthetic */ int b;
@@ -26,7 +26,7 @@ public final class v0 extends org.telegram.ui.Components.u6 {
                 ((org.telegram.ui.Cells.u1) obj).setTimeAlpha(f7);
                 break;
             case 3:
-                ((s01) obj).setCrossfadeProgress(f7);
+                ((r01) obj).setCrossfadeProgress(f7);
                 break;
             case 4:
                 ((SecretMediaViewer) obj).setVideoCrossfadeAlpha(f7);
@@ -53,10 +53,10 @@ public final class v0 extends org.telegram.ui.Components.u6 {
                         float f11 = 1.0f - (0.1f * f10);
                         secretMediaViewer.S.setScaleX(f11);
                         secretMediaViewer.S.setScaleY(f11);
-                        org.telegram.ui.Components.j81 j81Var = secretMediaViewer.Q;
-                        if (j81Var.y != f10) {
-                            j81Var.y = f10;
-                            j81Var.v.invalidate();
+                        org.telegram.ui.Components.k81 k81Var = secretMediaViewer.Q;
+                        if (k81Var.y != f10) {
+                            k81Var.y = f10;
+                            k81Var.v.invalidate();
                             break;
                         }
                     }
@@ -75,7 +75,7 @@ public final class v0 extends org.telegram.ui.Components.u6 {
             case 2:
                 return Float.valueOf(((org.telegram.ui.Cells.u1) obj).getTimeAlpha());
             case 3:
-                return Float.valueOf(((s01) obj).S);
+                return Float.valueOf(((r01) obj).S);
             case 4:
                 return Float.valueOf(((SecretMediaViewer) obj).getVideoCrossfadeAlpha());
             case 5:

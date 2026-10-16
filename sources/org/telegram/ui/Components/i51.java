@@ -24,7 +24,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class i51 extends db {
     public final ImageView X;
@@ -39,7 +39,7 @@ public final class i51 extends db {
     public int g0;
     public final String[] h0;
     public final String[] i0;
-    public z61 j0;
+    public a71 j0;
     public boolean k0;
     public int l0;
 
@@ -57,8 +57,8 @@ public final class i51 extends db {
         int i10 = org.telegram.ui.ActionBar.g6.G6;
         imageView.setColorFilter(getThemedColor(i10));
         imageView.setBackground(org.telegram.ui.ActionBar.g6.g0(org.telegram.ui.ActionBar.g6.m1(0.1f, getThemedColor(i10)), 1, -1));
-        this.e.addView(imageView, w7.a6.a(54.0f, 0.0f, 0.0f, 8.0f, 0.0f, 54, 85));
-        w7.c6.b(imageView, 0.1f, 1.5f);
+        this.e.addView(imageView, w7.z5.a(54.0f, 0.0f, 0.0f, 8.0f, 0.0f, 54, 85));
+        w7.b6.b(imageView, 0.1f, 1.5f);
         imageView.setOnClickListener(new z41(this, 2));
         String D = x41.D();
         this.f0 = D;
@@ -76,13 +76,13 @@ public final class i51 extends db {
         dVar.setRoundRadius(24);
         this.Z = dVar;
         dVar.setText(LocaleController.getString(R.string.OK));
-        FrameLayout.LayoutParams a2 = w7.a6.a(48.0f, 12.0f, 6.0f, 12.0f, 12.0f, -1, 119);
+        FrameLayout.LayoutParams a2 = w7.z5.a(48.0f, 12.0f, 6.0f, 12.0f, 12.0f, -1, 119);
         int i12 = a2.leftMargin;
         int i13 = this.backgroundPaddingLeft;
         a2.leftMargin = i12 + i13;
         a2.rightMargin += i13;
         frameLayout.addView(dVar, a2);
-        this.containerView.addView(frameLayout, w7.a6.e(-1, -2, 80));
+        this.containerView.addView(frameLayout, w7.z5.e(-1, -2, 80));
         mm0 mm0Var = this.d;
         int i14 = this.backgroundPaddingLeft;
         mm0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(66.0f));
@@ -99,7 +99,7 @@ public final class i51 extends db {
     }
 
     public static void Q(final i51 i51Var, View view) {
-        m80 F = m80.F(i51Var.container, i51Var.resourcesProvider, view);
+        l80 F = l80.F(i51Var.container, i51Var.resourcesProvider, view);
         F.X = AndroidUtilities.dp(450.0f);
         int i10 = 0;
         F.t = false;
@@ -111,16 +111,16 @@ public final class i51 extends db {
         F.q(scrollView);
         int i11 = 0;
         while (i11 < i51Var.h0.length) {
-            i51Var.U(F, linearLayout, i51Var.g0 == i11, i51Var.i0[i11], new o8(i51Var, i11, 13));
+            i51Var.U(F, linearLayout, i51Var.g0 == i11, i51Var.i0[i11], new o8(i51Var, i11, 12));
             i11++;
         }
         View j1Var = new org.telegram.ui.ActionBar.j1(i51Var.getContext(), i51Var.resourcesProvider);
         j1Var.setTag(R.id.fit_width_tag, 1);
-        linearLayout.addView(j1Var, w7.a6.n(-1, 8));
+        linearLayout.addView(j1Var, w7.z5.n(-1, 8));
         ArrayList<TranslateController.Language> suggestedLanguages = TranslateController.getSuggestedLanguages(null);
         ArrayList<TranslateController.Language> languages = TranslateController.getLanguages();
         if (!TextUtils.isEmpty(i51Var.f0)) {
-            i51Var.U(F, linearLayout, true, x41.A(x41.F(i51Var.f0, null, null)), null);
+            i51Var.U(F, linearLayout, true, x41.B(x41.F(i51Var.f0, null, null)), null);
         }
         int size = suggestedLanguages.size();
         int i12 = 0;
@@ -163,7 +163,7 @@ public final class i51 extends db {
         }
         View j1Var2 = new org.telegram.ui.ActionBar.j1(i51Var.getContext(), i51Var.resourcesProvider);
         j1Var2.setTag(R.id.fit_width_tag, 1);
-        linearLayout.addView(j1Var2, w7.a6.n(-1, 8));
+        linearLayout.addView(j1Var2, w7.z5.n(-1, 8));
         int size2 = languages.size();
         while (i10 < size2) {
             TranslateController.Language language2 = languages.get(i10);
@@ -215,7 +215,7 @@ public final class i51 extends db {
         di.d dVar = i51Var.Z;
         dVar.setLoading(false);
         if (tL_error != null) {
-            org.telegram.ui.Cells.d0.r(i51Var.topBulletinContainer, i51Var.resourcesProvider, tL_error, false);
+            org.telegram.ui.Cells.c1.p(i51Var.topBulletinContainer, i51Var.resourcesProvider, tL_error, false);
             dVar.setText(LocaleController.getString(R.string.OK));
             dVar.setOnClickListener(new z41(i51Var, 0));
         } else if (tL_messages_translateResult == null || tL_messages_translateResult.result.isEmpty()) {
@@ -229,7 +229,7 @@ public final class i51 extends db {
     }
 
     public static /* synthetic */ void T(i51 i51Var, org.telegram.ui.ActionBar.c6 c6Var, int i10) {
-        l61 G = i51Var.j0.G(i10 - 1);
+        m61 G = i51Var.j0.G(i10 - 1);
         if (G == null) {
             return;
         }
@@ -256,7 +256,7 @@ public final class i51 extends db {
     }
 
     @Override // org.telegram.ui.Components.db
-    public final CharSequence A() {
+    public final CharSequence B() {
         return "Translate";
     }
 
@@ -269,7 +269,7 @@ public final class i51 extends db {
         imageView.setScaleY(AndroidUtilities.lerp(0.6f, 1.0f, f10));
     }
 
-    public final void U(m80 m80Var, LinearLayout linearLayout, boolean z10, String str, Runnable runnable) {
+    public final void U(l80 l80Var, LinearLayout linearLayout, boolean z10, String str, Runnable runnable) {
         int i10 = org.telegram.ui.ActionBar.g6.E8;
         int i11 = org.telegram.ui.ActionBar.g6.F8;
         org.telegram.ui.ActionBar.e1 e1Var = new org.telegram.ui.ActionBar.e1(1, getContext(), this.resourcesProvider, false, false);
@@ -278,8 +278,8 @@ public final class i51 extends db {
         e1Var.setChecked(z10);
         e1Var.c(org.telegram.ui.ActionBar.g6.w0(i10, this.resourcesProvider), org.telegram.ui.ActionBar.g6.w0(i11, this.resourcesProvider));
         e1Var.setSelectorColor(org.telegram.ui.ActionBar.g6.m1(0.12f, org.telegram.ui.ActionBar.g6.w0(i10, this.resourcesProvider)));
-        e1Var.setOnClickListener(new h(m80Var, z10, runnable, 1));
-        linearLayout.addView(e1Var, w7.a6.n(-1, -2));
+        e1Var.setOnClickListener(new h(l80Var, z10, runnable, 1));
+        linearLayout.addView(e1Var, w7.z5.n(-1, -2));
     }
 
     public final void V() {
@@ -347,9 +347,9 @@ public final class i51 extends db {
 
     @Override // org.telegram.ui.Components.db
     public final lm0 x(mm0 mm0Var) {
-        z61 z61Var = new z61(mm0Var, getContext(), this.currentAccount, 0, true, new a51(this, 0), this.resourcesProvider);
-        this.j0 = z61Var;
-        z61Var.r = false;
-        return z61Var;
+        a71 a71Var = new a71(mm0Var, getContext(), this.currentAccount, 0, true, new a51(this, 0), this.resourcesProvider);
+        this.j0 = a71Var;
+        a71Var.r = false;
+        return a71Var;
     }
 }

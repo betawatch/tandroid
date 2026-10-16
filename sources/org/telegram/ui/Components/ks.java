@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class ks {
     public final org.telegram.ui.ActionBar.m1 a;
@@ -15,7 +15,7 @@ public abstract class ks {
     public ks(Context context, org.telegram.ui.ActionBar.c6 c6Var, boolean z10) {
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert2, z10 ? 1 : 0, context, c6Var);
         actionBarPopupWindow$ActionBarPopupWindowLayout.setAnimationEnabled(false);
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setOnTouchListener(new uk(this, 1));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setOnTouchListener(new tk(this, 1));
         actionBarPopupWindow$ActionBarPopupWindowLayout.setDispatchKeyEventListener(new s(this, 27));
         actionBarPopupWindow$ActionBarPopupWindowLayout.setShownFromBottom(false);
         b(actionBarPopupWindow$ActionBarPopupWindowLayout);
@@ -44,7 +44,7 @@ public abstract class ks {
     public final void a() {
         org.telegram.ui.ActionBar.m1 m1Var = this.a;
         if (m1Var != null) {
-            m1Var.d(true);
+            m1Var.dismiss();
         }
     }
 

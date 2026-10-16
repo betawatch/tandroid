@@ -1,33 +1,24 @@
 package org.telegram.messenger;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ AtomicInteger b;
-    public final /* synthetic */ AtomicInteger c;
-    public final /* synthetic */ Runnable d;
+    public final /* synthetic */ BillingController b;
 
-    public /* synthetic */ z(AtomicInteger atomicInteger, AtomicInteger atomicInteger2, Runnable runnable, int i10) {
+    public /* synthetic */ z(BillingController billingController, int i10) {
         this.a = i10;
-        this.b = atomicInteger;
-        this.c = atomicInteger2;
-        this.d = runnable;
+        this.b = billingController;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                BillingController.lambda$onPurchasesUpdatedInternal$11(this.b, this.c, this.d);
-                break;
-            case 1:
-                BillingController.lambda$onPurchasesUpdatedInternal$8(this.b, this.c, this.d);
+                this.b.lambda$onQueriedPremiumProductDetails$14();
                 break;
             default:
-                BillingController.lambda$onPurchasesUpdatedInternal$9(this.b, this.c, this.d);
+                this.b.lambda$onBillingServiceDisconnected$13();
                 break;
         }
     }

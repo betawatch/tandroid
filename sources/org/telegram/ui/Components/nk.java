@@ -4,7 +4,7 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class nk implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -25,94 +25,94 @@ public final class nk implements ViewTreeObserver.OnPreDrawListener {
     public final boolean onPreDraw() {
         switch (this.a) {
             case 0:
-                org.telegram.ui.Cells.k7 k7Var = (org.telegram.ui.Cells.k7) this.d;
-                k7Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                org.telegram.ui.Cells.j7 j7Var = (org.telegram.ui.Cells.j7) this.d;
+                j7Var.getViewTreeObserver().removeOnPreDrawListener(this);
                 ok okVar = (ok) this.e;
-                org.telegram.ui.u10 u10Var = okVar.H;
+                org.telegram.ui.t10 t10Var = okVar.H;
                 pk pkVar = okVar.X;
                 boolean t10 = pkVar.b.a1.t();
                 boolean z10 = this.c;
                 if (!t10) {
-                    k7Var.b(false, z10);
+                    j7Var.b(false, z10);
                     break;
                 } else {
                     MessageObject messageObject = this.b;
                     int id2 = messageObject.getId();
-                    u10Var.a = messageObject.getDialogId();
-                    u10Var.b = id2;
-                    k7Var.b(pkVar.T.containsKey(u10Var), z10);
+                    t10Var.a = messageObject.getDialogId();
+                    t10Var.b = id2;
+                    j7Var.b(pkVar.T.containsKey(t10Var), z10);
                     break;
                 }
             case 1:
                 org.telegram.ui.Cells.s2 s2Var = (org.telegram.ui.Cells.s2) this.d;
                 s2Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                org.telegram.ui.c20 c20Var = ((org.telegram.ui.v10) this.e).c;
-                boolean g10 = c20Var.o0.g();
+                org.telegram.ui.b20 b20Var = ((org.telegram.ui.u10) this.e).c;
+                boolean g10 = b20Var.o0.g();
                 boolean z11 = this.c;
                 if (!g10) {
                     s2Var.V(false, z11);
                     break;
                 } else {
-                    org.telegram.ui.u10 u10Var2 = c20Var.S;
+                    org.telegram.ui.t10 t10Var2 = b20Var.S;
                     MessageObject messageObject2 = this.b;
                     int id3 = messageObject2.getId();
-                    u10Var2.a = messageObject2.getDialogId();
-                    u10Var2.b = id3;
-                    s2Var.V(c20Var.o0.b(c20Var.S), z11);
+                    t10Var2.a = messageObject2.getDialogId();
+                    t10Var2.b = id3;
+                    s2Var.V(b20Var.o0.b(b20Var.S), z11);
                     break;
                 }
             case 2:
-                org.telegram.ui.Cells.k7 k7Var2 = (org.telegram.ui.Cells.k7) this.d;
-                k7Var2.getViewTreeObserver().removeOnPreDrawListener(this);
-                org.telegram.ui.c20 c20Var2 = ((org.telegram.ui.x10) this.e).v;
-                boolean g11 = c20Var2.o0.g();
+                org.telegram.ui.Cells.j7 j7Var2 = (org.telegram.ui.Cells.j7) this.d;
+                j7Var2.getViewTreeObserver().removeOnPreDrawListener(this);
+                org.telegram.ui.b20 b20Var2 = ((org.telegram.ui.w10) this.e).v;
+                boolean g11 = b20Var2.o0.g();
                 boolean z12 = this.c;
                 if (!g11) {
-                    k7Var2.b(false, z12);
+                    j7Var2.b(false, z12);
                     break;
                 } else {
-                    org.telegram.ui.u10 u10Var3 = c20Var2.S;
+                    org.telegram.ui.t10 t10Var3 = b20Var2.S;
                     MessageObject messageObject3 = this.b;
                     int id4 = messageObject3.getId();
-                    u10Var3.a = messageObject3.getDialogId();
-                    u10Var3.b = id4;
-                    k7Var2.b(c20Var2.o0.b(c20Var2.S), z12);
+                    t10Var3.a = messageObject3.getDialogId();
+                    t10Var3.b = id4;
+                    j7Var2.b(b20Var2.o0.b(b20Var2.S), z12);
                     break;
                 }
             case 3:
-                org.telegram.ui.Cells.j7 j7Var = (org.telegram.ui.Cells.j7) this.d;
-                j7Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                org.telegram.ui.c20 c20Var3 = ((org.telegram.ui.x10) this.e).v;
-                boolean g12 = c20Var3.o0.g();
+                org.telegram.ui.Cells.i7 i7Var = (org.telegram.ui.Cells.i7) this.d;
+                i7Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                org.telegram.ui.b20 b20Var3 = ((org.telegram.ui.w10) this.e).v;
+                boolean g12 = b20Var3.o0.g();
                 boolean z13 = this.c;
                 if (!g12) {
-                    j7Var.e(false, z13);
+                    i7Var.e(false, z13);
                     break;
                 } else {
-                    org.telegram.ui.u10 u10Var4 = c20Var3.S;
+                    org.telegram.ui.t10 t10Var4 = b20Var3.S;
                     MessageObject messageObject4 = this.b;
                     int id5 = messageObject4.getId();
-                    u10Var4.a = messageObject4.getDialogId();
-                    u10Var4.b = id5;
-                    j7Var.e(c20Var3.o0.b(c20Var3.S), z13);
+                    t10Var4.a = messageObject4.getDialogId();
+                    t10Var4.b = id5;
+                    i7Var.e(b20Var3.o0.b(b20Var3.S), z13);
                     break;
                 }
             default:
                 org.telegram.ui.Cells.n7 n7Var = (org.telegram.ui.Cells.n7) this.d;
                 n7Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                org.telegram.ui.c20 c20Var4 = ((org.telegram.ui.z10) this.e).v;
-                boolean g13 = c20Var4.o0.g();
+                org.telegram.ui.b20 b20Var4 = ((org.telegram.ui.y10) this.e).v;
+                boolean g13 = b20Var4.o0.g();
                 boolean z14 = this.c;
                 if (!g13) {
                     n7Var.f(false, z14);
                     break;
                 } else {
-                    org.telegram.ui.u10 u10Var5 = c20Var4.S;
+                    org.telegram.ui.t10 t10Var5 = b20Var4.S;
                     MessageObject messageObject5 = this.b;
                     int id6 = messageObject5.getId();
-                    u10Var5.a = messageObject5.getDialogId();
-                    u10Var5.b = id6;
-                    n7Var.f(c20Var4.o0.b(c20Var4.S), z14);
+                    t10Var5.a = messageObject5.getDialogId();
+                    t10Var5.b = id6;
+                    n7Var.f(b20Var4.o0.b(b20Var4.S), z14);
                     break;
                 }
         }

@@ -4,12 +4,12 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.a91;
-import org.telegram.ui.Components.k91;
-import org.telegram.ui.Components.z70;
+import org.telegram.ui.Components.b91;
+import org.telegram.ui.Components.l91;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.ki1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class w5 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -81,7 +81,7 @@ public final class w5 implements ValueAnimator.AnimatorUpdateListener {
                 ((org.telegram.ui.Components.z9) this.b).setRoundRadius(((Integer) valueAnimator.getAnimatedValue()).intValue());
                 break;
             case 8:
-                o0 o0Var = ((z70) this.b).e.d;
+                o0 o0Var = ((y70) this.b).e.d;
                 int i11 = o0Var.C1;
                 if (i11 != -1 && (view = o0Var.D1) != null) {
                     o0Var.i1(i11, view);
@@ -90,17 +90,17 @@ public final class w5 implements ValueAnimator.AnimatorUpdateListener {
                 }
                 break;
             case 9:
-                k91 k91Var = (k91) this.b;
-                View[] viewArr = k91Var.e;
-                if (k91Var.x) {
+                l91 l91Var = (l91) this.b;
+                View[] viewArr = l91Var.e;
+                if (l91Var.x) {
                     float abs = 1.0f - (Math.abs(viewArr[0].getTranslationX()) / viewArr[0].getMeasuredWidth());
-                    k91Var.c = abs;
-                    a91 a91Var = k91Var.M;
-                    if (a91Var != null) {
-                        a91Var.e(abs, k91Var.d, k91Var.b);
+                    l91Var.c = abs;
+                    b91 b91Var = l91Var.M;
+                    if (b91Var != null) {
+                        b91Var.e(abs, l91Var.d, l91Var.b);
                     }
                 }
-                k91Var.w(false);
+                l91Var.w(false);
                 break;
             case 10:
                 org.telegram.ui.Components.voip.s1 s1Var = (org.telegram.ui.Components.voip.s1) this.b;

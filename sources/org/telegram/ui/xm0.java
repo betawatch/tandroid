@@ -1,73 +1,90 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class xm0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ un0 c;
+public final class xm0 implements org.telegram.ui.Components.ti {
+    public final /* synthetic */ sn0 a;
 
-    public /* synthetic */ xm0(un0 un0Var, boolean z10, int i10) {
-        this.a = i10;
-        this.c = un0Var;
-        this.b = z10;
+    public xm0(sn0 sn0Var) {
+        this.a = sn0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                un0 un0Var = this.c;
-                AnimatorSet animatorSet = un0Var.M;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    un0Var.M = null;
-                    break;
-                }
-                break;
-            default:
-                un0 un0Var2 = this.c;
-                AnimatorSet animatorSet2 = un0Var2.M;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    un0Var2.M = null;
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.ti
+    public final void F() {
+        AndroidUtilities.hideKeyboard(this.a.fragmentView.findFocus());
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                un0 un0Var = this.c;
-                AnimatorSet animatorSet = un0Var.M;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    if (!this.b) {
-                        un0Var.N.setVisibility(4);
-                        break;
-                    } else {
-                        un0Var.L.getContentView().setVisibility(4);
-                        break;
-                    }
-                }
-                break;
-            default:
-                un0 un0Var2 = this.c;
-                AnimatorSet animatorSet2 = un0Var2.M;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    if (!this.b) {
-                        un0Var2.P.setVisibility(4);
-                        break;
-                    } else {
-                        un0Var2.O.setVisibility(4);
-                        break;
-                    }
-                }
-                break;
+    @Override // org.telegram.ui.Components.ti
+    public final void b0(int i10, boolean z10, boolean z11, int i11, int i12, long j10, boolean z12, boolean z13, long j11) {
+        org.telegram.ui.Components.vi viVar;
+        sn0 sn0Var = this.a;
+        if (sn0Var.getParentActivity() == null || (viVar = sn0Var.R0) == null) {
+            return;
         }
+        if (i10 != 8 && i10 != 7) {
+            viVar.dismissWithButtonClick(i10);
+            sn0Var.E1(i10);
+            return;
+        }
+        if (i10 != 8) {
+            viVar.dismiss(true);
+        }
+        HashMap<Object, Object> selectedPhotos = sn0Var.R0.j0.getSelectedPhotos();
+        ArrayList<Object> selectedPhotosOrder = sn0Var.R0.j0.getSelectedPhotosOrder();
+        if (selectedPhotos.isEmpty()) {
+            return;
+        }
+        ArrayList arrayList = new ArrayList();
+        for (int i13 = 0; i13 < selectedPhotosOrder.size(); i13++) {
+            MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) selectedPhotos.get(selectedPhotosOrder.get(i13));
+            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
+            String str = photoEntry.imagePath;
+            if (str != null) {
+                sendingMediaInfo.path = str;
+            } else {
+                sendingMediaInfo.path = photoEntry.path;
+            }
+            arrayList.add(sendingMediaInfo);
+            photoEntry.reset();
+        }
+        sn0Var.F1(arrayList);
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ boolean r0() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final void v(org.telegram.ui.Components.hh hhVar) {
+        hhVar.run();
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ boolean w() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void J(Object obj) {
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void U(TLRPC.User user) {
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void z() {
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void s0(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j10, boolean z11, long j11) {
     }
 }

@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pg implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class pg implements Utilities.Callback2 {
                 break;
             case 1:
                 LaunchActivity launchActivity = (LaunchActivity) obj4;
-                o00 o00Var = (o00) obj3;
+                d20 d20Var = (d20) obj3;
                 TLRPC.ChatInviteJoinResult chatInviteJoinResult = (TLRPC.ChatInviteJoinResult) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 Pattern pattern = LaunchActivity.B1;
@@ -46,11 +46,11 @@ public final /* synthetic */ class pg implements Utilities.Callback2 {
                     updates = updates2;
                 } else {
                     if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultWebView) {
-                        AndroidUtilities.runOnUIThread(new o00(19, launchActivity, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult));
+                        AndroidUtilities.runOnUIThread(new d20(14, launchActivity, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult));
                     }
                     updates = null;
                 }
-                AndroidUtilities.runOnUIThread(new fi.l3(launchActivity, o00Var, tL_error, updates, this.b, 26));
+                AndroidUtilities.runOnUIThread(new fi.l3(launchActivity, d20Var, tL_error, updates, this.b, 26));
                 break;
             default:
                 PasskeysActivity passkeysActivity = (PasskeysActivity) obj4;
@@ -76,10 +76,10 @@ public final /* synthetic */ class pg implements Utilities.Callback2 {
         }
     }
 
-    public /* synthetic */ pg(LaunchActivity launchActivity, o00 o00Var, int i10) {
+    public /* synthetic */ pg(LaunchActivity launchActivity, d20 d20Var, int i10) {
         this.a = 1;
         this.c = launchActivity;
-        this.d = o00Var;
+        this.d = d20Var;
         this.b = i10;
     }
 }

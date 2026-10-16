@@ -2,7 +2,7 @@ package w6;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class b {
     public static final b b;
@@ -23,7 +23,7 @@ public final class b {
                     if (context.getApplicationContext() != null) {
                         context = context.getApplicationContext();
                     }
-                    bVar2.a = new k0.b(context, false);
+                    bVar2.a = new k0.b(context, (byte) 0);
                 }
                 bVar = bVar2.a;
             } catch (Throwable th2) {

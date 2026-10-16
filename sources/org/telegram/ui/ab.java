@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ab implements ch.a {
     public final /* synthetic */ int a;
@@ -29,12 +29,12 @@ public final /* synthetic */ class ab implements ch.a {
                 ((xb) this.b).Z(canvas, rectF);
                 break;
             case 1:
-                gq0 gq0Var = (gq0) this.b;
-                l0 l0Var = gq0Var.d;
-                rp0 rp0Var = gq0Var.h.b;
-                hh.d.a(rp0Var, canvas, rectF, rp0Var, l0Var);
-                rp0 rp0Var2 = gq0Var.n.b;
-                hh.d.a(rp0Var2, canvas, rectF, rp0Var2, l0Var);
+                eq0 eq0Var = (eq0) this.b;
+                l0 l0Var = eq0Var.d;
+                pp0 pp0Var = eq0Var.h.b;
+                hh.d.a(pp0Var, canvas, rectF, pp0Var, l0Var);
+                pp0 pp0Var2 = eq0Var.n.b;
+                hh.d.a(pp0Var2, canvas, rectF, pp0Var2, l0Var);
                 break;
             default:
                 PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) this.b;

@@ -10,12 +10,12 @@ import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class CaptchaController {
     public static HashMap<Integer, Request> currentRequests;
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class Request {
         public String action;
         public int currentAccount;
@@ -66,7 +66,7 @@ public class CaptchaController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$request$0(String str, String str2, Request request, String str3) {
-        i2.d.t(str3, a1.g.w("CaptchaController: got token for {action=", str, ", key_id=", str2, "}: "));
+        i2.d.v(str3, a1.g.w("CaptchaController: got token for {action=", str, ", key_id=", str2, "}: "));
         if (str3 == null) {
             request.done("RECAPTCHA_FAILED_TOKEN_NULL");
         } else {

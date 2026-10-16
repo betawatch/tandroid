@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class UserConfig extends BaseController {
     private static volatile UserConfig[] Instance = new UserConfig[4];
@@ -101,7 +101,7 @@ public class UserConfig extends BaseController {
     private void checkPremiumSelf(TLRPC.User user, final TLRPC.User user2) {
         if (user != null && user2 != null && user.premium != user2.premium) {
             final int i10 = 0;
-            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.wl
+            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.xl
                 public final /* synthetic */ UserConfig b;
 
                 {
@@ -122,7 +122,7 @@ public class UserConfig extends BaseController {
             });
         } else if (user == null) {
             final int i11 = 1;
-            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.wl
+            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.xl
                 public final /* synthetic */ UserConfig b;
 
                 {
@@ -691,7 +691,7 @@ public class UserConfig extends BaseController {
     }
 
     public void saveConfig(boolean z10) {
-        NotificationCenter.getInstance(this.currentAccount).doOnIdle(new ah.t(15, this, z10));
+        NotificationCenter.getInstance(this.currentAccount).doOnIdle(new ah.t(14, this, z10));
     }
 
     public void savePassword(byte[] bArr, byte[] bArr2) {

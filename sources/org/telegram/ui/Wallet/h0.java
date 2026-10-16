@@ -1,151 +1,155 @@
 package org.telegram.ui.Wallet;
 
-import android.text.TextUtils;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_wallet;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h0 implements Utilities.Callback2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i0 b;
-    public final /* synthetic */ TL_wallet.getTransactions c;
+public final class h0 implements AutoCloseable {
+    public final byte[] a;
+    public boolean b;
 
-    public /* synthetic */ h0(i0 i0Var, TL_wallet.getTransactions gettransactions, int i10) {
-        this.a = i10;
-        this.b = i0Var;
-        this.c = gettransactions;
+    public h0(byte[] bArr) {
+        if (bArr == null) {
+            throw new IllegalArgumentException("Missing recovery phrase");
+        }
+        this.a = (byte[]) bArr.clone();
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        TL_wallet.walletTransactions wallettransactions = (TL_wallet.walletTransactions) obj;
-        switch (this.a) {
-            case 0:
-                i0 i0Var = this.b;
-                HashMap hashMap = i0Var.e;
-                int i10 = i0Var.j.a;
-                HashSet hashSet = i0Var.d;
-                ArrayList arrayList = i0Var.b;
-                i0Var.h = -1;
-                if (wallettransactions != null) {
-                    MessagesController.getInstance(i10).putUsers(wallettransactions.users, false);
-                    MessagesController.getInstance(i10).putChats(wallettransactions.chats, false);
-                    ArrayList<TL_wallet.walletTransaction> arrayList2 = wallettransactions.transactions;
-                    int size = arrayList2.size();
-                    int i11 = 0;
-                    while (true) {
-                        if (i11 < size) {
-                            TL_wallet.walletTransaction wallettransaction = arrayList2.get(i11);
-                            i11++;
-                            if (i0.b(wallettransaction.id, arrayList) != null) {
-                                boolean z10 = false;
-                                for (int size2 = wallettransactions.transactions.size() - 1; size2 >= 0; size2--) {
-                                    TL_wallet.walletTransaction wallettransaction2 = wallettransactions.transactions.get(size2);
-                                    hashSet.remove(wallettransaction2.id);
-                                    hashMap.remove(wallettransaction2.id);
-                                    TL_wallet.walletTransaction b10 = i0.b(wallettransaction2.id, arrayList);
-                                    if (b10 == null) {
-                                        arrayList.add(0, wallettransaction2);
-                                    } else if (!b10.set(wallettransaction2)) {
-                                    }
-                                    z10 = true;
-                                }
-                                r4 = z10;
-                            }
-                        } else {
-                            ArrayList arrayList3 = new ArrayList();
-                            int size3 = arrayList.size();
-                            int i12 = 0;
-                            while (i12 < size3) {
-                                Object obj3 = arrayList.get(i12);
-                                i12++;
-                                TL_wallet.walletTransaction wallettransaction3 = (TL_wallet.walletTransaction) obj3;
-                                if (hashSet.contains(wallettransaction3.id)) {
-                                    arrayList3.add(wallettransaction3);
-                                }
-                            }
-                            ArrayList<TL_wallet.walletTransaction> arrayList4 = wallettransactions.transactions;
-                            int size4 = arrayList4.size();
-                            int i13 = 0;
-                            while (i13 < size4) {
-                                TL_wallet.walletTransaction wallettransaction4 = arrayList4.get(i13);
-                                i13++;
-                                TL_wallet.walletTransaction wallettransaction5 = wallettransaction4;
-                                hashSet.remove(wallettransaction5.id);
-                                hashMap.remove(wallettransaction5.id);
-                            }
-                            arrayList.clear();
-                            arrayList.addAll(wallettransactions.transactions);
-                            int size5 = arrayList3.size();
-                            int i14 = 0;
-                            while (i14 < size5) {
-                                Object obj4 = arrayList3.get(i14);
-                                i14++;
-                                TL_wallet.walletTransaction wallettransaction6 = (TL_wallet.walletTransaction) obj4;
-                                if (hashSet.contains(wallettransaction6.id)) {
-                                    i0Var.c(wallettransaction6);
-                                }
-                            }
-                            i0Var.f = wallettransactions.next_offset;
-                            i0Var.g = wallettransactions.transactions.size() < this.c.limit;
-                            r4 = true;
-                        }
-                    }
+    public static h0 d(ArrayList arrayList) {
+        int max = Math.max(0, arrayList.size() - 1);
+        ArrayList arrayList2 = new ArrayList();
+        try {
+            int size = arrayList.size();
+            int i10 = 0;
+            while (i10 < size) {
+                Object obj = arrayList.get(i10);
+                i10++;
+                arrayList2.add(((String) obj).getBytes(StandardCharsets.UTF_8));
+                long length = max + r5.length;
+                max = (int) length;
+                if (length != max) {
+                    throw new ArithmeticException();
                 }
-                if (r4) {
-                    i0Var.h();
-                    i0Var.f();
-                    break;
-                }
-                break;
-            default:
-                i0 i0Var2 = this.b;
-                int i15 = i0Var2.j.a;
-                i0Var2.i = -1;
-                if (wallettransactions != null) {
-                    MessagesController.getInstance(i15).putUsers(wallettransactions.users, false);
-                    MessagesController.getInstance(i15).putChats(wallettransactions.chats, false);
-                    ArrayList<TL_wallet.walletTransaction> arrayList5 = wallettransactions.transactions;
-                    int size6 = arrayList5.size();
-                    int i16 = 0;
-                    while (i16 < size6) {
-                        TL_wallet.walletTransaction wallettransaction7 = arrayList5.get(i16);
-                        i16++;
-                        TL_wallet.walletTransaction wallettransaction8 = wallettransaction7;
-                        ArrayList arrayList6 = i0Var2.b;
-                        if (wallettransaction8 != null) {
-                            int i17 = 0;
-                            while (true) {
-                                if (i17 < arrayList6.size()) {
-                                    TL_wallet.walletTransaction wallettransaction9 = (TL_wallet.walletTransaction) arrayList6.get(i17);
-                                    if (TextUtils.equals(wallettransaction9.id, wallettransaction8.id)) {
-                                        i0Var2.d.remove(wallettransaction8.id);
-                                        i0Var2.e.remove(wallettransaction8.id);
-                                        wallettransaction9.set(wallettransaction8);
-                                    } else {
-                                        i17++;
-                                    }
-                                } else {
-                                    arrayList6.add(wallettransaction8);
-                                }
-                            }
-                        }
+            }
+            byte[] bArr = new byte[max];
+            int i11 = 0;
+            for (int i12 = 0; i12 < arrayList2.size(); i12++) {
+                try {
+                    if (i12 > 0) {
+                        bArr[i11] = 32;
+                        i11++;
                     }
-                    i0Var2.f = wallettransactions.next_offset;
-                    if (wallettransactions.transactions.size() < this.c.limit) {
-                        i0Var2.g = true;
-                    }
-                } else {
-                    i0Var2.g = true;
+                    byte[] bArr2 = (byte[]) arrayList2.get(i12);
+                    System.arraycopy(bArr2, 0, bArr, i11, bArr2.length);
+                    i11 += bArr2.length;
+                } finally {
+                    Arrays.fill(bArr, (byte) 0);
                 }
-                i0Var2.h();
-                i0Var2.f();
-                break;
+            }
+            h0 h0Var = new h0(bArr);
+            Arrays.fill(bArr, (byte) 0);
+            int size2 = arrayList2.size();
+            int i13 = 0;
+            while (i13 < size2) {
+                Object obj2 = arrayList2.get(i13);
+                i13++;
+                Arrays.fill((byte[]) obj2, (byte) 0);
+            }
+            return h0Var;
+        } catch (Throwable th2) {
+            int size3 = arrayList2.size();
+            int i14 = 0;
+            while (i14 < size3) {
+                Object obj3 = arrayList2.get(i14);
+                i14++;
+                Arrays.fill((byte[]) obj3, (byte) 0);
+            }
+            throw th2;
         }
+    }
+
+    public static boolean f(byte b10) {
+        return b10 == 32 || b10 == 9 || b10 == 10 || b10 == 13 || b10 == 12 || b10 == 11;
+    }
+
+    public final void a() {
+        if (this.b) {
+            throw new IllegalStateException("Recovery phrase is closed");
+        }
+    }
+
+    public final synchronized h0 b() {
+        a();
+        return new h0(this.a);
+    }
+
+    public final synchronized byte[] c() {
+        a();
+        return (byte[]) this.a.clone();
+    }
+
+    @Override // java.lang.AutoCloseable
+    public final synchronized void close() {
+        Arrays.fill(this.a, (byte) 0);
+        this.b = true;
+    }
+
+    public final synchronized boolean e() {
+        return h() == 0;
+    }
+
+    public final synchronized ArrayList g() {
+        ArrayList arrayList;
+        try {
+            a();
+            arrayList = new ArrayList();
+            int i10 = 0;
+            while (i10 < this.a.length) {
+                while (true) {
+                    byte[] bArr = this.a;
+                    if (i10 >= bArr.length || !f(bArr[i10])) {
+                        break;
+                    }
+                    i10++;
+                }
+                int i11 = i10;
+                while (true) {
+                    byte[] bArr2 = this.a;
+                    if (i11 >= bArr2.length || f(bArr2[i11])) {
+                        break;
+                    }
+                    i11++;
+                }
+                if (i11 > i10) {
+                    arrayList.add(new String(this.a, i10, i11 - i10, StandardCharsets.UTF_8));
+                }
+                i10 = i11;
+            }
+        } catch (Throwable th2) {
+            throw th2;
+        }
+        return arrayList;
+    }
+
+    public final synchronized int h() {
+        int i10;
+        a();
+        i10 = 0;
+        boolean z10 = false;
+        for (byte b10 : this.a) {
+            if (f(b10)) {
+                z10 = false;
+            } else if (!z10) {
+                i10++;
+                z10 = true;
+            }
+        }
+        return i10;
+    }
+
+    public final String toString() {
+        return "SecretPhrase[redacted]";
     }
 }

@@ -12,7 +12,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sd implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -61,12 +61,12 @@ public final /* synthetic */ class sd implements Runnable {
                 boolean z12 = false;
                 if (z11) {
                     if (chatActivityEnterView.R1 != 0) {
-                        chatActivityEnterView.U0.B();
+                        chatActivityEnterView.U0.C();
                     }
-                    chatActivityEnterView.l1(false, true, false, true);
+                    chatActivityEnterView.k1(false, true, false, true);
                 }
                 pg pgVar = chatActivityEnterView.Z2;
-                TL_stories.StoryItem a12 = pgVar != null ? pgVar.a1() : null;
+                TL_stories.StoryItem b12 = pgVar != null ? pgVar.b1() : null;
                 Object obj = this.b;
                 boolean z13 = obj instanceof TLRPC.Document;
                 boolean z14 = this.c;
@@ -133,7 +133,7 @@ public final /* synthetic */ class sd implements Runnable {
                         SendMessagesHelper sendMessagesHelper = SendMessagesHelper.getInstance(chatActivityEnterView.Q);
                         long j11 = chatActivityEnterView.Q2;
                         CharSequence charSequence2 = photoEntry != null ? photoEntry.caption : null;
-                        TL_stories.StoryItem storyItem = a12;
+                        TL_stories.StoryItem storyItem = b12;
                         MessageObject messageObject2 = chatActivityEnterView.T2;
                         threadMessage3 = chatActivityEnterView.getThreadMessage();
                         sendMessagesHelper.sendSticker(document, str2, j11, charSequence2, videoEditedInfo, messageObject2, threadMessage3, storyItem, chatActivityEnterView.V2, null, z14, i12, i11, false, obj2, foVar != null ? foVar.H8() : null, l4.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams(), z15);
@@ -146,7 +146,7 @@ public final /* synthetic */ class sd implements Runnable {
                     }
                 } else {
                     z10 = z14;
-                    TL_stories.StoryItem storyItem2 = a12;
+                    TL_stories.StoryItem storyItem2 = b12;
                     if (obj instanceof TLRPC.BotInlineResult) {
                         TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) obj;
                         if (botInlineResult.document != null) {
@@ -177,9 +177,9 @@ public final /* synthetic */ class sd implements Runnable {
                             sendMessagesHelper2.sendSticker(document2, str2, j13, messageObject4, threadMessage, storyItem2, chatActivityEnterView.V2, null, z10, i12, i11, false, obj2, foVar != null ? foVar.H8() : null, l4.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
                         }
                         if (chatActivityEnterView.R1 != 0) {
-                            chatActivityEnterView.k1(0, true);
+                            chatActivityEnterView.j1(0, true);
                             chatActivityEnterView.U0.u(true);
-                            chatActivityEnterView.U0.B();
+                            chatActivityEnterView.U0.C();
                         }
                     }
                 }

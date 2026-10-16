@@ -1,69 +1,59 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.Crop.CropAreaView;
+import android.view.MotionEvent;
+import org.telegram.messenger.video.VideoFramesRewinder;
+import org.telegram.messenger.video.VideoPlayerRewinder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class qt0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ float a;
-    public final /* synthetic */ Runnable b;
-    public final /* synthetic */ PhotoViewer c;
+public final class qt0 extends VideoPlayerRewinder {
+    public final /* synthetic */ PhotoViewer a;
 
-    public qt0(PhotoViewer photoViewer, float f7, Runnable runnable) {
-        this.c = photoViewer;
-        this.a = f7;
-        this.b = runnable;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qt0(PhotoViewer photoViewer, VideoFramesRewinder videoFramesRewinder) {
+        super(videoFramesRewinder);
+        this.a = photoViewer;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        PhotoViewer photoViewer = this.c;
-        photoViewer.p6 = null;
-        photoViewer.f6 = 0.0f;
-        photoViewer.b6 = 0.0f;
-        photoViewer.g6 = 0.0f;
-        float r22 = photoViewer.r2(false);
-        photoViewer.e6 = r22;
-        photoViewer.a6 = r22;
+    @Override // org.telegram.messenger.video.VideoPlayerRewinder
+    public final void onRewindCanceled() {
+        MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
+        PhotoViewer photoViewer = this.a;
+        PhotoViewer.k(photoViewer, obtain);
+        photoViewer.z1.f(false);
+        org.telegram.ui.Components.fh0.p0.Q.f(false);
+    }
+
+    @Override // org.telegram.messenger.video.VideoPlayerRewinder
+    public final void onRewindStart(boolean z10) {
+        PhotoViewer photoViewer = this.a;
+        photoViewer.z1.e(false);
+        photoViewer.z1.d(!z10);
+        photoViewer.z1.f(true);
         photoViewer.e0.invalidate();
-        CropAreaView cropAreaView = photoViewer.C1.b.a;
-        float r23 = photoViewer.r2(false);
-        cropAreaView.n0 = 0.0f;
-        cropAreaView.o0 = r23;
-        cropAreaView.p0 = 0.0f;
-        cropAreaView.q0 = 0.0f;
-        cropAreaView.invalidate();
-        photoViewer.C1.c.setRotated(false);
-        float f7 = this.a;
-        if (Math.abs(f7) > 0.0f) {
-            org.telegram.ui.Components.tf0 tf0Var = photoViewer.C1;
-            mg.f fVar = tf0Var.c;
-            if (fVar != null) {
-                fVar.b(0.0f);
-                fVar.setRotated(false);
-            }
-            if (tf0Var.b.m(f7)) {
-                photoViewer.b1.setColorFilter(new PorterDuffColorFilter(photoViewer.z1(org.telegram.ui.ActionBar.g6.zf), PorterDuff.Mode.MULTIPLY));
-            } else {
-                photoViewer.b1.setColorFilter((ColorFilter) null);
-            }
+        org.telegram.ui.Components.fh0.v(z10);
+    }
+
+    @Override // org.telegram.messenger.video.VideoPlayerRewinder
+    public final void updateRewindProgressUi(long j10, float f7, boolean z10) {
+        PhotoViewer photoViewer = this.a;
+        photoViewer.z1.g(Math.abs(j10));
+        if (z10) {
+            photoViewer.q3.h(f7, false);
+            photoViewer.r3.invalidate();
         }
-        MediaController.CropState cropState = photoViewer.X4.c;
-        if (cropState != null) {
-            cropState.cropPy = 0.0f;
-            cropState.cropPx = 0.0f;
-            cropState.cropPh = 1.0f;
-            cropState.cropPw = 1.0f;
-        }
-        Runnable runnable = this.b;
-        if (runnable != null) {
-            runnable.run();
+        org.telegram.ui.Components.fh0 fh0Var = org.telegram.ui.Components.fh0.p0;
+        fh0Var.Q.g(0L);
+        if (z10) {
+            fh0Var.Z = f7;
+            bi.d4 d4Var = fh0Var.b0;
+            if (d4Var != null) {
+                d4Var.invalidate();
+            }
+            org.telegram.ui.Components.eh0 eh0Var = fh0Var.h;
+            if (eh0Var != null) {
+                eh0Var.invalidate();
+            }
         }
     }
 }

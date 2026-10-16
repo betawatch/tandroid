@@ -20,12 +20,12 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertController$RecycleListView;
 import androidx.core.widget.NestedScrollView;
 import java.util.WeakHashMap;
-import m.v1;
+import m.x1;
 import org.telegram.messenger.beta.R;
-import r0.c0;
-import r0.j0;
+import r0.b0;
+import r0.i0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class f extends t implements DialogInterface {
     public final e f;
@@ -74,7 +74,7 @@ public class f extends t implements DialogInterface {
                 frameLayout.setPadding(0, 0, 0, 0);
             }
             if (eVar.e != null) {
-                ((LinearLayout.LayoutParams) ((v1) viewGroup.getLayoutParams())).weight = 0.0f;
+                ((LinearLayout.LayoutParams) ((x1) viewGroup.getLayoutParams())).weight = 0.0f;
             }
         } else {
             viewGroup.setVisibility(8);
@@ -220,8 +220,8 @@ public class f extends t implements DialogInterface {
                 int i12 = z12 ? 2 : 0;
                 View findViewById11 = window.findViewById(R.id.scrollIndicatorUp);
                 View findViewById12 = window.findViewById(R.id.scrollIndicatorDown);
-                WeakHashMap weakHashMap = j0.a;
-                c0.b(view2, i11 | i12, 3);
+                WeakHashMap weakHashMap = i0.a;
+                b0.b(view2, i11 | i12, 3);
                 if (findViewById11 != null) {
                     b11.removeView(findViewById11);
                 }

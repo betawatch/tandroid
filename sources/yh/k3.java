@@ -11,8 +11,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.br;
+import w7.b6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class k3 extends TextView {
     public final br a;
@@ -25,7 +26,7 @@ public final class k3 extends TextView {
         setPadding(AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(11.0f), 0);
         setGravity(17);
         setTypeface(AndroidUtilities.bold());
-        w7.c6.a(this);
+        b6.a(this);
         br brVar = new br(R.drawable.arrows_select, 0);
         this.a = brVar;
         brVar.spaceScaleX = 0.8f;

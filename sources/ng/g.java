@@ -10,20 +10,20 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.w1;
 import org.telegram.ui.Cells.m4;
-import org.telegram.ui.Components.g91;
 import org.telegram.ui.Components.gp0;
 import org.telegram.ui.Components.h91;
 import org.telegram.ui.Components.i91;
 import org.telegram.ui.Components.j91;
+import org.telegram.ui.Components.k91;
 import org.telegram.ui.Components.lm0;
 import org.telegram.ui.Components.u6;
 import org.telegram.ui.Components.wl0;
 import org.telegram.ui.LaunchActivity;
 import s4.b1;
 import s4.o0;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class g extends lm0 {
     public final /* synthetic */ int c = 0;
@@ -52,7 +52,7 @@ public final class g extends lm0 {
             case 0:
                 return ((i) this.e).E.size();
             default:
-                return ((j91) this.e).h.size();
+                return ((k91) this.e).h.size();
         }
     }
 
@@ -60,7 +60,7 @@ public final class g extends lm0 {
     public long i(int i10) {
         switch (this.c) {
             case 1:
-                return ((g91) ((j91) this.e).h.get(i10)).a;
+                return ((h91) ((k91) this.e).h.get(i10)).a;
             default:
                 return super.i(i10);
         }
@@ -78,7 +78,7 @@ public final class g extends lm0 {
 
     @Override // s4.g0
     public final void v(b1 b1Var, int i10) {
-        i91 i91Var;
+        j91 j91Var;
         switch (this.c) {
             case 0:
                 View view = b1Var.a;
@@ -109,14 +109,14 @@ public final class g extends lm0 {
                 }
                 break;
             default:
-                h91 h91Var = (h91) b1Var.a;
-                j91 j91Var = (j91) this.e;
-                g91 g91Var = (g91) j91Var.h.get(i10);
-                h91Var.a = g91Var;
-                h91Var.setContentDescription(g91Var.b);
-                h91Var.setAlpha(1.0f);
-                h91Var.requestLayout();
-                h91Var.setReordering(j91Var.m0 && (i91Var = j91Var.y) != null && ((l2.f) i91Var).e(i10));
+                i91 i91Var = (i91) b1Var.a;
+                k91 k91Var = (k91) this.e;
+                h91 h91Var = (h91) k91Var.h.get(i10);
+                i91Var.a = h91Var;
+                i91Var.setContentDescription(h91Var.b);
+                i91Var.setAlpha(1.0f);
+                i91Var.requestLayout();
+                i91Var.setReordering(k91Var.m0 && (j91Var = k91Var.y) != null && ((m.h) j91Var).b(i10));
                 break;
         }
     }
@@ -141,20 +141,20 @@ public final class g extends lm0 {
                     gp0 gp0Var = new gp0(context);
                     hVar.a = gp0Var;
                     gp0Var.setReportChanges(true);
-                    gp0Var.setDelegate(new l2.f(hVar, 4));
+                    gp0Var.setDelegate(new m.h(hVar, 3));
                     gp0Var.setImportantForAccessibility(2);
-                    hVar.addView(gp0Var, a6.a(38.0f, 5.0f, 29.0f, 47.0f, 0.0f, -1, 83));
+                    hVar.addView(gp0Var, z5.a(38.0f, 5.0f, 29.0f, 47.0f, 0.0f, -1, 83));
                     frameLayout = hVar;
                 }
                 frameLayout.setLayoutParams(new o0(-1, -2));
                 return new wl0(frameLayout);
             default:
-                return new wl0(new h91((j91) this.e, this.d));
+                return new wl0(new i91((k91) this.e, this.d));
         }
     }
 
-    public g(j91 j91Var, Context context) {
-        this.e = j91Var;
+    public g(k91 k91Var, Context context) {
+        this.e = k91Var;
         this.d = context;
     }
 }

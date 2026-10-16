@@ -24,10 +24,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
-import r0.j0;
-import r0.m0;
+import r0.i0;
+import r0.l0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class m implements Window.Callback {
     public final Window.Callback a;
@@ -300,7 +300,7 @@ public final class m implements Window.Callback {
             return k.j.b(this.a, callback, i10);
         }
         Context context = rVar.e;
-        qi.e eVar = new qi.e();
+        pi.e eVar = new pi.e();
         eVar.b = context;
         eVar.a = callback;
         eVar.c = new ArrayList();
@@ -324,7 +324,7 @@ public final class m implements Window.Callback {
             l.k kVar = zVar2.d;
             kVar.w();
             try {
-                if (((qi.e) zVar2.e.b).z(zVar2, kVar)) {
+                if (((pi.e) zVar2.e.b).z(zVar2, kVar)) {
                     r10.i = zVar2;
                     zVar2.g();
                     r10.f.c(zVar2);
@@ -338,9 +338,9 @@ public final class m implements Window.Callback {
             }
         }
         if (rVar.x == null) {
-            m0 m0Var = rVar.G;
-            if (m0Var != null) {
-                m0Var.b();
+            l0 l0Var = rVar.G;
+            if (l0Var != null) {
+                l0Var.b();
             }
             k.a aVar2 = rVar.x;
             if (aVar2 != null) {
@@ -372,15 +372,15 @@ public final class m implements Window.Callback {
                 } else {
                     ViewStubCompat viewStubCompat = (ViewStubCompat) rVar.J.findViewById(R.id.action_mode_bar_stub);
                     if (viewStubCompat != null) {
-                        viewStubCompat.setLayoutInflater(LayoutInflater.from(rVar.m()));
+                        viewStubCompat.setLayoutInflater(LayoutInflater.from(rVar.n()));
                         rVar.y = (ActionBarContextView) viewStubCompat.a();
                     }
                 }
             }
             if (rVar.y != null) {
-                m0 m0Var2 = rVar.G;
-                if (m0Var2 != null) {
-                    m0Var2.b();
+                l0 l0Var2 = rVar.G;
+                if (l0Var2 != null) {
+                    l0Var2.b();
                 }
                 rVar.y.e();
                 Context context2 = rVar.y.getContext();
@@ -398,10 +398,10 @@ public final class m implements Window.Callback {
                     rVar.y.c(dVar);
                     rVar.x = dVar;
                     if (rVar.I && (viewGroup = rVar.J) != null) {
-                        WeakHashMap weakHashMap = j0.a;
+                        WeakHashMap weakHashMap = i0.a;
                         if (viewGroup.isLaidOut()) {
                             rVar.y.setAlpha(0.0f);
-                            m0 a2 = j0.a(rVar.y);
+                            l0 a2 = i0.a(rVar.y);
                             a2.a(1.0f);
                             rVar.G = a2;
                             a2.d(new i(rVar, i11));
@@ -414,8 +414,8 @@ public final class m implements Window.Callback {
                     rVar.y.setVisibility(0);
                     if (rVar.y.getParent() instanceof View) {
                         View view = (View) rVar.y.getParent();
-                        WeakHashMap weakHashMap2 = j0.a;
-                        r0.z.c(view);
+                        WeakHashMap weakHashMap2 = i0.a;
+                        r0.y.c(view);
                     }
                     if (rVar.E != null) {
                     }

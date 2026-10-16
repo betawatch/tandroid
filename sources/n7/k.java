@@ -1,59 +1,11 @@
 package n7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class k extends m {
-    public final transient m c;
+public abstract class k {
+    public static final /* synthetic */ int a = 0;
 
-    public k(m mVar) {
-        this.c = mVar;
-    }
-
-    @Override // n7.m, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean contains(Object obj) {
-        return this.c.contains(obj);
-    }
-
-    @Override // java.util.List
-    public final Object get(int i10) {
-        m mVar = this.c;
-        a.e(i10, mVar.size());
-        return mVar.get((mVar.size() - 1) - i10);
-    }
-
-    @Override // n7.m, java.util.List
-    public final int indexOf(Object obj) {
-        int lastIndexOf = this.c.lastIndexOf(obj);
-        if (lastIndexOf >= 0) {
-            return (r0.size() - 1) - lastIndexOf;
-        }
-        return -1;
-    }
-
-    @Override // n7.m, java.util.List
-    public final int lastIndexOf(Object obj) {
-        int indexOf = this.c.indexOf(obj);
-        if (indexOf >= 0) {
-            return (r0.size() - 1) - indexOf;
-        }
-        return -1;
-    }
-
-    @Override // n7.m
-    public final m q() {
-        return this.c;
-    }
-
-    @Override // n7.m, java.util.List
-    /* renamed from: r */
-    public final m subList(int i10, int i11) {
-        m mVar = this.c;
-        a.m(i10, i11, mVar.size());
-        return mVar.subList(mVar.size() - i11, mVar.size() - i10).q();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.c.size();
+    static {
+        k.class.getClassLoader();
     }
 }

@@ -40,14 +40,14 @@ import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.Components.b6;
 import org.telegram.ui.Components.ct;
 import org.telegram.ui.Components.dt;
-import org.telegram.ui.Components.w80;
+import org.telegram.ui.Components.v80;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.fo;
-import org.telegram.ui.gt0;
-import org.telegram.ui.iv0;
+import org.telegram.ui.ft0;
+import org.telegram.ui.hv0;
 import org.telegram.ui.jr;
 import org.telegram.ui.kr;
 import org.telegram.ui.tq;
@@ -62,7 +62,7 @@ import zh.m5;
 import zh.n5;
 import zh.q7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -188,10 +188,10 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 if (tLObject3 != null) {
                     TL_phone.joinAsPeers joinaspeers = (TL_phone.joinAsPeers) tLObject3;
-                    w80.G = joinaspeers.peers;
-                    w80.I = j14;
-                    w80.H = SystemClock.elapsedRealtime();
-                    w80.J = accountInstance.getCurrentAccount();
+                    v80.G = joinaspeers.peers;
+                    v80.I = j14;
+                    v80.H = SystemClock.elapsedRealtime();
+                    v80.J = accountInstance.getCurrentAccount();
                     accountInstance.getMessagesController().putChats(joinaspeers.chats, false);
                     accountInstance.getMessagesController().putUsers(joinaspeers.users, false);
                     booleanCallback.run(joinaspeers.peers.size() == 1);
@@ -217,13 +217,13 @@ public final /* synthetic */ class f implements Runnable {
                 photoEntry.coverPhoto = null;
                 photoEntry.coverPhotoParentObject = null;
                 photoViewer.q5.b.setLoading(false);
-                iv0 iv0Var = photoViewer.d;
-                if (iv0Var != null) {
-                    iv0Var.W(photoViewer.P4);
+                hv0 hv0Var = photoViewer.d;
+                if (hv0Var != null) {
+                    hv0Var.X(photoViewer.P4);
                 }
-                gt0 gt0Var = photoViewer.g1;
-                if (gt0Var != null) {
-                    gt0Var.setImage(bitmap);
+                ft0 ft0Var = photoViewer.g1;
+                if (ft0Var != null) {
+                    ft0Var.setImage(bitmap);
                 }
                 photoViewer.e3(0);
                 CheckBox checkBox = photoViewer.N0;
@@ -299,7 +299,7 @@ public final /* synthetic */ class f implements Runnable {
                             spannableStringBuilder2.setSpan(new b6(document2, v0Var.getPaint().getFontMetricsInt()), spannableStringBuilder2.length() - 1, spannableStringBuilder2.length(), 33);
                         }
                         spannableStringBuilder2.append((CharSequence) " >");
-                        spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(spannableStringBuilder2, new ri.e(p1Var, callback, j17, 2)), true));
+                        spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(spannableStringBuilder2, new qi.e(p1Var, callback, j17, 2)), true));
                     } else {
                         spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(LocaleController.getString(R.string.Gift2StarsInfoLink), new ei.a(context, 5)), true));
                     }

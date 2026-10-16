@@ -1,13 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.LinearLayout;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class al extends LinearLayout {
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(0, 0));
+public final class al implements TextWatcher {
+    public final /* synthetic */ cl a;
+
+    public al(cl clVar) {
+        this.a = clVar;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        this.a.g0();
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

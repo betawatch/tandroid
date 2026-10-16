@@ -9,7 +9,7 @@ import android.widget.EditText;
 import androidx.emoji2.text.l;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class b extends InputConnectionWrapper {
     public final EditText a;
@@ -32,7 +32,7 @@ public final class b extends InputConnectionWrapper {
             androidx.emoji2.text.f fVar = a2.e;
             fVar.getClass();
             Bundle bundle = editorInfo.extras;
-            p1.b bVar = (p1.b) ((qi.e) fVar.c).a;
+            p1.b bVar = (p1.b) ((pi.e) fVar.c).a;
             int a10 = bVar.a(4);
             bundle.putInt("android.support.text.emoji.emojiCompat_metadataVersion", a10 != 0 ? ((ByteBuffer) bVar.d).getInt(a10 + bVar.a) : 0);
             editorInfo.extras.putBoolean("android.support.text.emoji.emojiCompat_replaceAll", false);
@@ -43,13 +43,13 @@ public final class b extends InputConnectionWrapper {
     public final boolean deleteSurroundingText(int i10, int i11) {
         Editable editableText = this.a.getEditableText();
         this.b.getClass();
-        return sb.a.t2(this, editableText, i10, i11, false) || super.deleteSurroundingText(i10, i11);
+        return sb.a.w2(this, editableText, i10, i11, false) || super.deleteSurroundingText(i10, i11);
     }
 
     @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
     public final boolean deleteSurroundingTextInCodePoints(int i10, int i11) {
         Editable editableText = this.a.getEditableText();
         this.b.getClass();
-        return sb.a.t2(this, editableText, i10, i11, true) || super.deleteSurroundingTextInCodePoints(i10, i11);
+        return sb.a.w2(this, editableText, i10, i11, true) || super.deleteSurroundingTextInCodePoints(i10, i11);
     }
 }

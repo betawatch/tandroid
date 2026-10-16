@@ -3,9 +3,9 @@ package r8;
 import android.graphics.Point;
 import android.os.Parcel;
 import android.os.Parcelable;
-import w7.g0;
+import w7.f0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class m extends o6.a {
     public static final Parcelable.Creator<m> CREATOR = new p7.m(8);
@@ -28,29 +28,29 @@ public final class m extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = g0.q(parcel, 20293);
+        int q6 = f0.q(parcel, 20293);
         int i11 = this.a;
-        g0.s(parcel, 2, 4);
+        f0.s(parcel, 2, 4);
         parcel.writeInt(i11);
-        g0.l(parcel, 3, this.b);
-        g0.l(parcel, 4, this.c);
+        f0.l(parcel, 3, this.b);
+        f0.l(parcel, 4, this.c);
         int i12 = this.d;
-        g0.s(parcel, 5, 4);
+        f0.s(parcel, 5, 4);
         parcel.writeInt(i12);
-        g0.o(parcel, 6, this.e, i10);
-        g0.k(parcel, 7, this.f, i10);
-        g0.k(parcel, 8, this.h, i10);
-        g0.k(parcel, 9, this.n, i10);
-        g0.k(parcel, 10, this.r, i10);
-        g0.k(parcel, 11, this.s, i10);
-        g0.k(parcel, 12, this.v, i10);
-        g0.k(parcel, 13, this.w, i10);
-        g0.k(parcel, 14, this.x, i10);
-        g0.k(parcel, 15, this.y, i10);
-        g0.c(parcel, 16, this.E);
+        f0.o(parcel, 6, this.e, i10);
+        f0.k(parcel, 7, this.f, i10);
+        f0.k(parcel, 8, this.h, i10);
+        f0.k(parcel, 9, this.n, i10);
+        f0.k(parcel, 10, this.r, i10);
+        f0.k(parcel, 11, this.s, i10);
+        f0.k(parcel, 12, this.v, i10);
+        f0.k(parcel, 13, this.w, i10);
+        f0.k(parcel, 14, this.x, i10);
+        f0.k(parcel, 15, this.y, i10);
+        f0.c(parcel, 16, this.E);
         boolean z10 = this.F;
-        g0.s(parcel, 17, 4);
+        f0.s(parcel, 17, 4);
         parcel.writeInt(z10 ? 1 : 0);
-        g0.r(parcel, q6);
+        f0.r(parcel, q6);
     }
 }

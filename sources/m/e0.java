@@ -1,30 +1,47 @@
 package m;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.util.AttributeSet;
+import android.widget.SeekBar;
+
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class e0 extends u1 {
-    public final /* synthetic */ m0 s;
-    public final /* synthetic */ p0 v;
+public class e0 extends SeekBar {
+    public final f0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e0(p0 p0Var, p0 p0Var2, m0 m0Var) {
-        super(p0Var2);
-        this.v = p0Var;
-        this.s = m0Var;
+    public e0(Context context, AttributeSet attributeSet, int i10) {
+        super(context, attributeSet, i10);
+        d3.a(this, getContext());
+        f0 f0Var = new f0(this);
+        this.a = f0Var;
+        f0Var.b(attributeSet, i10);
     }
 
-    @Override // m.u1
-    public final l.b0 b() {
-        return this.s;
-    }
-
-    @Override // m.u1
-    public final boolean c() {
-        p0 p0Var = this.v;
-        if (p0Var.getInternalPopup().a()) {
-            return true;
+    @Override // android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
+    public void drawableStateChanged() {
+        super.drawableStateChanged();
+        f0 f0Var = this.a;
+        e0 e0Var = f0Var.e;
+        Drawable drawable = f0Var.f;
+        if (drawable != null && drawable.isStateful() && drawable.setState(e0Var.getDrawableState())) {
+            e0Var.invalidateDrawable(drawable);
         }
-        p0Var.f.m(g0.b(p0Var), g0.a(p0Var));
-        return true;
+    }
+
+    @Override // android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
+    public final void jumpDrawablesToCurrentState() {
+        super.jumpDrawablesToCurrentState();
+        Drawable drawable = this.a.f;
+        if (drawable != null) {
+            drawable.jumpToCurrentState();
+        }
+    }
+
+    @Override // android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
+    public final synchronized void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        this.a.g(canvas);
     }
 }

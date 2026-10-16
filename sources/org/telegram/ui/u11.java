@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class u11 implements ImageReceiver.ImageReceiverDelegate {
     public final /* synthetic */ Runnable[] a;
@@ -22,7 +22,7 @@ public final class u11 implements ImageReceiver.ImageReceiverDelegate {
                     runnableArr[0].run();
                     runnableArr[0] = null;
                 } else if (lottieAnimation.y()) {
-                    lottieAnimation.A0 = new uz0(runnableArr, 6);
+                    lottieAnimation.A0 = new tz0(runnableArr, 6);
                 } else {
                     runnableArr[0].run();
                     runnableArr[0] = null;

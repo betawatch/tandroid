@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.TelegramQRCodeWriter;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class kj0 extends org.telegram.ui.ActionBar.e3 {
     public final Bitmap b;
@@ -55,16 +55,16 @@ public class kj0 extends org.telegram.ui.ActionBar.e3 {
         this.h = bk0Var;
         bk0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
         bk0Var.setBackgroundColor(-1);
-        org.telegram.ui.nm0 nm0Var = new org.telegram.ui.nm0(this, context, kVar);
-        nm0Var.addView(kVar, w7.a6.d(-1.0f, -1));
-        nm0Var.addView(bk0Var, w7.a6.e(60, 60, 17));
-        linearLayout.addView(nm0Var, w7.a6.t(220, 220, 1, 30, 0, 30, 0));
+        org.telegram.ui.mm0 mm0Var = new org.telegram.ui.mm0(this, context, kVar);
+        mm0Var.addView(kVar, w7.z5.d(-1.0f, -1));
+        mm0Var.addView(bk0Var, w7.z5.e(60, 60, 17));
+        linearLayout.addView(mm0Var, w7.z5.t(220, 220, 1, 30, 0, 30, 0));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTextSize(1, 14.0f);
         textView.setText(str3);
         textView.setGravity(1);
-        linearLayout.addView(textView, w7.a6.a(-2.0f, 40.0f, 8.0f, 40.0f, 8.0f, -1, 0));
+        linearLayout.addView(textView, w7.z5.a(-2.0f, 40.0f, 8.0f, 40.0f, 8.0f, -1, 0));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
@@ -73,7 +73,7 @@ public class kj0 extends org.telegram.ui.ActionBar.e3 {
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setText(LocaleController.getString(R.string.ShareQrCode));
         textView2.setOnClickListener(new rt(12, this, context));
-        linearLayout.addView(textView2, w7.a6.t(-1, 48, 80, 16, 15, 16, 3));
+        linearLayout.addView(textView2, w7.z5.t(-1, 48, 80, 16, 15, 16, 3));
         if (z10) {
             TextView textView3 = new TextView(context);
             this.e = textView3;
@@ -82,7 +82,7 @@ public class kj0 extends org.telegram.ui.ActionBar.e3 {
             textView3.setTextSize(1, 14.0f);
             textView3.setText(LocaleController.getString(R.string.ShareLink));
             textView3.setOnClickListener(new rt(13, str2, context));
-            linearLayout.addView(textView3, w7.a6.t(-1, 48, 80, 16, 3, 16, 16));
+            linearLayout.addView(textView3, w7.z5.t(-1, 48, 80, 16, 3, 16, 16));
         }
         d();
         ScrollView scrollView = new ScrollView(context);

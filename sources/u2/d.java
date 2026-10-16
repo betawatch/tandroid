@@ -1,6 +1,6 @@
 package u2;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class d implements d1 {
     public final d1 a;
@@ -13,8 +13,8 @@ public final class d implements d1 {
     }
 
     @Override // u2.d1
-    public final void d() {
-        this.a.d();
+    public final void b() {
+        this.a.b();
     }
 
     @Override // u2.d1
@@ -32,14 +32,14 @@ public final class d implements d1 {
             hVar.setFlags(4);
             return -4;
         }
-        long s10 = eVar.s();
+        long p5 = eVar.p();
         int f7 = this.a.f(bVar, hVar, i10);
         if (eVar.e != -9223372036854775807L && f7 != -3) {
             eVar.e = -9223372036854775807L;
         }
         if (f7 != -5) {
             long j10 = eVar.h;
-            if (j10 == Long.MIN_VALUE || ((f7 != -4 || hVar.e < j10) && !(f7 == -3 && s10 == Long.MIN_VALUE && !hVar.d))) {
+            if (j10 == Long.MIN_VALUE || ((f7 != -4 || hVar.e < j10) && !(f7 == -3 && p5 == Long.MIN_VALUE && !hVar.d))) {
                 return f7;
             }
             hVar.clear();
@@ -69,10 +69,10 @@ public final class d implements d1 {
     }
 
     @Override // u2.d1
-    public final int m(long j10) {
+    public final int j(long j10) {
         if (this.c.a()) {
             return -3;
         }
-        return this.a.m(j10);
+        return this.a.j(j10);
     }
 }

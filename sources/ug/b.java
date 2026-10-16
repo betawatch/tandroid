@@ -8,12 +8,13 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.r6;
 import org.telegram.ui.fi1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class b extends View {
     public final r6 a;
@@ -61,7 +62,7 @@ public final class b extends View {
             this.c = ofFloat;
             ofFloat.addUpdateListener(new ki.a(this, 19));
             this.c.addListener(new fi1(this, 18));
-            org.telegram.ui.Cells.d0.l(2.0f, this.c);
+            sk.l(2.0f, this.c);
             this.c.setDuration(200L);
             this.c.start();
         }

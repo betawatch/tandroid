@@ -8,9 +8,9 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.locks.Lock;
-import m.q3;
+import m.t3;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class d0 implements Runnable {
     public final /* synthetic */ g0 a;
@@ -33,15 +33,15 @@ public final class d0 implements Runnable {
                 g0 g0Var = this.c;
                 m0 m0Var = g0Var.a;
                 Context context = g0Var.c;
-                m4.c cVar = new m4.c(g0Var.d);
+                m2.t tVar = new m2.t(g0Var.d);
                 ArrayList arrayList = new ArrayList();
                 ArrayList arrayList2 = new ArrayList();
                 HashMap hashMap = (HashMap) this.d;
-                for (com.google.android.gms.common.api.c cVar2 : hashMap.keySet()) {
-                    if (!cVar2.k() || ((b0) hashMap.get(cVar2)).c) {
-                        arrayList2.add(cVar2);
+                for (com.google.android.gms.common.api.c cVar : hashMap.keySet()) {
+                    if (!cVar.k() || ((b0) hashMap.get(cVar)).c) {
+                        arrayList2.add(cVar);
                     } else {
-                        arrayList.add(cVar2);
+                        arrayList.add(cVar);
                     }
                 }
                 int i10 = 0;
@@ -49,7 +49,7 @@ public final class d0 implements Runnable {
                 if (arrayList.isEmpty()) {
                     int size = arrayList2.size();
                     while (i10 < size) {
-                        i11 = cVar.L(context, (com.google.android.gms.common.api.c) arrayList2.get(i10));
+                        i11 = tVar.K(context, (com.google.android.gms.common.api.c) arrayList2.get(i10));
                         i10++;
                         if (i11 == 0) {
                         }
@@ -57,7 +57,7 @@ public final class d0 implements Runnable {
                 } else {
                     int size2 = arrayList.size();
                     while (i10 < size2) {
-                        i11 = cVar.L(context, (com.google.android.gms.common.api.c) arrayList.get(i10));
+                        i11 = tVar.K(context, (com.google.android.gms.common.api.c) arrayList.get(i10));
                         i10++;
                         if (i11 != 0) {
                         }
@@ -72,10 +72,10 @@ public final class d0 implements Runnable {
                 if (g0Var.x && (aVar = g0Var.v) != null) {
                     aVar.G();
                 }
-                for (com.google.android.gms.common.api.c cVar3 : hashMap.keySet()) {
-                    n6.b bVar = (n6.b) hashMap.get(cVar3);
-                    if (!cVar3.k() || cVar.L(context, cVar3) == 0) {
-                        cVar3.f(bVar);
+                for (com.google.android.gms.common.api.c cVar2 : hashMap.keySet()) {
+                    n6.b bVar = (n6.b) hashMap.get(cVar2);
+                    if (!cVar2.k() || tVar.K(context, cVar2) == 0) {
+                        cVar2.f(bVar);
                     } else {
                         z zVar = new z(g0Var, bVar);
                         h0 h0Var2 = m0Var.e;
@@ -87,12 +87,12 @@ public final class d0 implements Runnable {
                 g0 g0Var2 = this.c;
                 m0 m0Var2 = g0Var2.a;
                 j0 j0Var = m0Var2.o;
-                q3 q3Var = g0Var2.H;
-                if (q3Var == null) {
+                t3 t3Var = g0Var2.H;
+                if (t3Var == null) {
                     set = Collections.EMPTY_SET;
                 } else {
-                    HashSet hashSet = new HashSet((Set) q3Var.a);
-                    Map map = (Map) q3Var.c;
+                    HashSet hashSet = new HashSet((Set) t3Var.a);
+                    Map map = (Map) t3Var.c;
                     for (com.google.android.gms.common.api.e eVar : map.keySet()) {
                         if (!m0Var2.i.containsKey(eVar.b)) {
                             map.get(eVar).getClass();

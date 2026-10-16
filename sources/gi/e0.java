@@ -7,10 +7,10 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.h71;
-import w7.a6;
+import org.telegram.ui.Components.i71;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class e0 extends h0 {
     public final /* synthetic */ k0 h;
@@ -28,22 +28,22 @@ public final class e0 extends h0 {
         t tVar = new t(k0Var, 3);
         u uVar = new u(k0Var, 2);
         c6Var = ((e3) k0Var).resourcesProvider;
-        h71 h71Var = new h71(context, i10, 0, false, tVar, uVar, null, c6Var);
-        this.d = h71Var;
-        h71Var.p1();
-        h71 h71Var2 = this.d;
-        h71Var2.W2.r = false;
-        h71Var2.setClipToPadding(false);
+        i71 i71Var = new i71(context, i10, 0, false, tVar, uVar, null, c6Var);
+        this.d = i71Var;
+        i71Var.p1();
+        i71 i71Var2 = this.d;
+        i71Var2.W2.r = false;
+        i71Var2.setClipToPadding(false);
         this.d.setPadding(0, 0, 0, AndroidUtilities.dp(60.0f) + AndroidUtilities.navigationBarHeight);
-        this.c.addView(k0Var.G, a6.g());
-        this.c.addView(this.d, 0, a6.d(-1.0f, -1));
-        this.c.addView(k0Var.I, a6.g());
+        this.c.addView(k0Var.G, z5.g());
+        this.c.addView(this.d, 0, z5.d(-1.0f, -1));
+        this.c.addView(k0Var.I, z5.g());
         c6Var2 = ((e3) k0Var).resourcesProvider;
         org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, c6Var2);
         this.a = kVar;
         kVar.setOccupyStatusBar(false);
         this.a.setTitleColor(k0Var.getThemedColor(g6.G6));
-        this.a.B(k0Var.getThemedColor(g6.z8), false);
+        this.a.C(k0Var.getThemedColor(g6.z8), false);
         org.telegram.ui.ActionBar.k kVar2 = this.a;
         boolean z10 = k0Var.N;
         kVar2.setBackButtonImage(z10 ? R.drawable.ic_ab_close : R.drawable.ic_ab_back);
@@ -51,8 +51,8 @@ public final class e0 extends h0 {
         this.a.setTitle(LocaleController.getString(R.string.CommunityAddAChatToCommunity));
         this.a.getTitleTextView().setTranslationX(-AndroidUtilities.dp(18.0f));
         this.a.setActionBarMenuOnItemClick(new ah.s(this, 7));
-        this.c.addView(this.a, a6.e(-1, 56, 48));
-        this.c.addView(k0Var.E, a6.a(40.0f, 11.0f, 0.0f, 11.0f, 0.0f, -1, 48));
+        this.c.addView(this.a, z5.e(-1, 56, 48));
+        this.c.addView(k0Var.E, z5.a(40.0f, 11.0f, 0.0f, 11.0f, 0.0f, -1, 48));
         org.telegram.ui.ActionBar.y n10 = this.a.n();
         n10.setGlassMode(true);
         n10.setTranslationX(-AndroidUtilities.dp(7.0f));
@@ -67,7 +67,7 @@ public final class e0 extends h0 {
         if (z10) {
             k0Var.r.setVisibility(8);
         }
-        this.c.addView(k0Var.r, a6.f(48.0f, 80, AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f) + AndroidUtilities.navigationBarHeight));
+        this.c.addView(k0Var.r, z5.f(48.0f, 80, AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f) + AndroidUtilities.navigationBarHeight));
         a();
     }
 

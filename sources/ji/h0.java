@@ -9,7 +9,6 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.messenger.yh;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.o9;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
@@ -18,7 +17,7 @@ import org.telegram.ui.Components.vj;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.fo;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -29,13 +28,13 @@ public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ h0(m4.j1 j1Var, m4.w wVar, int i10, m4.f0 f0Var, int i11, m4.h1 h1Var) {
-        this.d = j1Var;
-        this.e = wVar;
+    public /* synthetic */ h0(m4.i1 i1Var, m4.v vVar, int i10, m4.e0 e0Var, int i11, m4.g1 g1Var) {
+        this.d = i1Var;
+        this.e = vVar;
         this.b = i10;
-        this.f = f0Var;
+        this.f = e0Var;
         this.c = i11;
-        this.h = h1Var;
+        this.h = g1Var;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -67,7 +66,7 @@ public final /* synthetic */ class h0 implements Runnable {
                 o9 o9Var = (o9) obj2;
                 j0 j0Var = (j0) obj;
                 k0 k0Var = (k0) ((n4.s) obj4).c;
-                if (h1Var.length() >= i14 && h1Var.getSelectionStart() != h1Var.getSelectionEnd() && o9Var.j0(j0Var.L(), 0, i13, i14)) {
+                if (h1Var.length() >= i14 && h1Var.getSelectionStart() != h1Var.getSelectionEnd() && o9Var.j0(j0Var.g0(), 0, i13, i14)) {
                     k0Var.d = true;
                     h1Var.setSelection(i14);
                     k0Var.d = false;
@@ -75,28 +74,28 @@ public final /* synthetic */ class h0 implements Runnable {
                 }
                 break;
             case 1:
-                final m4.w wVar = (m4.w) obj3;
-                final m4.f0 f0Var = (m4.f0) obj2;
-                final m4.h1 h1Var2 = (m4.h1) obj;
-                qi.e eVar = ((m4.j1) obj4).b;
-                if (!eVar.u(wVar, i14)) {
-                    m4.j1.P0(f0Var, wVar, i13, new m4.t1(-4));
+                final m4.v vVar = (m4.v) obj3;
+                final m4.e0 e0Var = (m4.e0) obj2;
+                final m4.g1 g1Var = (m4.g1) obj;
+                pi.e eVar = ((m4.i1) obj4).b;
+                if (!eVar.u(vVar, i14)) {
+                    m4.i1.P0(e0Var, vVar, i13, new m4.s1(-4));
                     break;
                 } else {
-                    pb.a aVar = f0Var.e;
-                    f0Var.s(wVar);
+                    pb.a aVar = e0Var.e;
+                    e0Var.s(vVar);
                     aVar.getClass();
                     if (i14 != 27) {
-                        eVar.b(wVar, i14, new m4.h() { // from class: m4.c1
-                            @Override // m4.h
+                        eVar.b(vVar, i14, new m4.g() { // from class: m4.b1
+                            @Override // m4.g
                             public final j9.y run() {
-                                return (j9.y) h1.this.c(f0Var, wVar, i13);
+                                return (j9.y) g1.this.c(e0Var, vVar, i13);
                             }
                         });
                         break;
                     } else {
-                        h1Var2.c(f0Var, wVar, i13);
-                        eVar.b(wVar, i14, new m4.b1());
+                        g1Var.c(e0Var, vVar, i13);
+                        eVar.b(vVar, i14, new m4.a1());
                         break;
                     }
                 }
@@ -146,10 +145,10 @@ public final /* synthetic */ class h0 implements Runnable {
                         while (i17 < i15) {
                             int i18 = i17;
                             String str4 = strArr2[i18];
-                            if ((str == null || !(str.startsWith(str4) || yh.v(" ", str4, str))) && (str2 == null || !(str2.startsWith(str4) || yh.v(" ", str4, str2)))) {
+                            if ((str == null || !(str.startsWith(str4) || org.telegram.messenger.g0.w(" ", str4, str))) && (str2 == null || !(str2.startsWith(str4) || org.telegram.messenger.g0.w(" ", str4, str2)))) {
                                 str3 = str;
                                 TLRPC.User user2 = contact.user;
-                                r22 = (user2 == null || (publicUsername = UserObject.getPublicUsername(user2)) == null || !publicUsername.startsWith(str4)) ? (lowerCase2.startsWith(str4) || yh.v(" ", str4, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str4) || yh.v(" ", str4, translitString2)))) ? 3 : z10 : 2;
+                                r22 = (user2 == null || (publicUsername = UserObject.getPublicUsername(user2)) == null || !publicUsername.startsWith(str4)) ? (lowerCase2.startsWith(str4) || org.telegram.messenger.g0.w(" ", str4, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str4) || org.telegram.messenger.g0.w(" ", str4, translitString2)))) ? 3 : z10 : 2;
                             } else {
                                 str3 = str;
                                 r22 = 1;
@@ -201,7 +200,7 @@ public final /* synthetic */ class h0 implements Runnable {
                             int i20 = 0;
                             while (i20 < i15) {
                                 String str6 = strArr3[i20];
-                                if (lowerCase3.startsWith(str6) || yh.v(" ", str6, lowerCase3) || (translitString3 != null && (translitString3.startsWith(str6) || yh.v(" ", str6, translitString3)))) {
+                                if (lowerCase3.startsWith(str6) || org.telegram.messenger.g0.w(" ", str6, lowerCase3) || (translitString3 != null && (translitString3.startsWith(str6) || org.telegram.messenger.g0.w(" ", str6, translitString3)))) {
                                     i10 = i19;
                                     z11 = true;
                                 } else {

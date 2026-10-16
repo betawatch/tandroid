@@ -1,71 +1,53 @@
 package n6;
 
-import android.os.Bundle;
+import android.content.ComponentName;
+import android.content.ServiceConnection;
 import android.os.IBinder;
-import android.os.Parcel;
-import android.util.Log;
+import android.os.IInterface;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class c0 extends b8.b {
-    public g b;
-    public final int c;
+public final class c0 implements ServiceConnection {
+    public final int a;
+    public final /* synthetic */ g b;
 
     public c0(g gVar, int i10) {
-        super("com.google.android.gms.common.internal.IGmsCallbacks", 7);
         this.b = gVar;
-        this.c = i10;
+        this.a = i10;
     }
 
-    @Override // b8.b
-    public final boolean I0(int i10, Parcel parcel, Parcel parcel2) {
-        if (i10 == 1) {
-            int readInt = parcel.readInt();
-            IBinder readStrongBinder = parcel.readStrongBinder();
-            Bundle bundle = (Bundle) m7.a.a(parcel, Bundle.CREATOR);
-            m7.a.b(parcel);
-            l.i(this.b, "onPostInitComplete can be called only once per call to getRemoteService");
-            this.b.B(readInt, readStrongBinder, bundle, this.c);
-            this.b = null;
-        } else if (i10 == 2) {
-            parcel.readInt();
-            m7.a.b(parcel);
-            Log.wtf("GmsClient", "received deprecated onAccountValidationComplete callback, ignoring", new Exception());
-        } else {
-            if (i10 != 3) {
-                return false;
-            }
-            int readInt2 = parcel.readInt();
-            IBinder readStrongBinder2 = parcel.readStrongBinder();
-            g0 g0Var = (g0) m7.a.a(parcel, g0.CREATOR);
-            m7.a.b(parcel);
-            g gVar = this.b;
-            l.i(gVar, "onPostInitCompleteWithConnectionInfo can be called only once per call togetRemoteService");
-            l.h(g0Var);
-            gVar.Q = g0Var;
-            if (gVar.C()) {
-                e eVar = g0Var.d;
-                m a2 = m.a();
-                n nVar = eVar == null ? null : eVar.a;
-                synchronized (a2) {
-                    if (nVar == null) {
-                        nVar = m.c;
-                    } else {
-                        n nVar2 = (n) a2.a;
-                        if (nVar2 != null) {
-                            if (nVar2.a < nVar.a) {
-                            }
-                        }
-                    }
-                    a2.a = nVar;
-                }
-            }
-            Bundle bundle2 = g0Var.a;
-            l.i(this.b, "onPostInitComplete can be called only once per call to getRemoteService");
-            this.b.B(readInt2, readStrongBinder2, bundle2, this.c);
-            this.b = null;
+    @Override // android.content.ServiceConnection
+    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+        g gVar = this.b;
+        if (iBinder == null) {
+            g.D(gVar);
+            return;
         }
-        parcel2.writeNoException();
-        return true;
+        synchronized (gVar.x) {
+            try {
+                g gVar2 = this.b;
+                IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.internal.IGmsServiceBroker");
+                gVar2.y = (queryLocalInterface == null || !(queryLocalInterface instanceof y)) ? new y(iBinder) : (y) queryLocalInterface;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        g gVar3 = this.b;
+        int i10 = this.a;
+        e0 e0Var = new e0(gVar3, 0, null);
+        a0 a0Var = gVar3.v;
+        a0Var.sendMessage(a0Var.obtainMessage(7, i10, -1, e0Var));
+    }
+
+    @Override // android.content.ServiceConnection
+    public final void onServiceDisconnected(ComponentName componentName) {
+        g gVar;
+        synchronized (this.b.x) {
+            gVar = this.b;
+            gVar.y = null;
+        }
+        int i10 = this.a;
+        a0 a0Var = gVar.v;
+        a0Var.sendMessage(a0Var.obtainMessage(6, i10, 1));
     }
 }

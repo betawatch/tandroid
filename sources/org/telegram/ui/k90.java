@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k90 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class k90 implements Runnable {
                 break;
             case 3:
                 if (!launchActivity.q0.getFragmentStack().isEmpty()) {
-                    launchActivity.q0.getFragmentStack().get(0).showDialog(new org.telegram.ui.Components.ty0(launchActivity, launchActivity.j0, launchActivity.h0, launchActivity.i0));
+                    launchActivity.q0.getFragmentStack().get(0).showDialog(new org.telegram.ui.Components.uy0(launchActivity, launchActivity.j0, launchActivity.h0, launchActivity.i0));
                     break;
                 }
                 break;
@@ -75,10 +75,10 @@ public final /* synthetic */ class k90 implements Runnable {
                 ArrayList arrayList2 = launchActivity.e0;
                 if (AndroidUtilities.isTablet()) {
                     if (!arrayList2.isEmpty()) {
-                        m2Var = (org.telegram.ui.ActionBar.m2) i2.d.g(1, arrayList2);
+                        m2Var = (org.telegram.ui.ActionBar.m2) i2.d.h(1, arrayList2);
                     }
                 } else if (!arrayList.isEmpty()) {
-                    m2Var = (org.telegram.ui.ActionBar.m2) i2.d.g(1, arrayList);
+                    m2Var = (org.telegram.ui.ActionBar.m2) i2.d.h(1, arrayList);
                 }
                 if (!(m2Var instanceof ProxyListActivity) && !(m2Var instanceof v21)) {
                     launchActivity.p0(new ProxyListActivity());
@@ -113,7 +113,7 @@ public final /* synthetic */ class k90 implements Runnable {
             case 8:
                 Pattern pattern4 = LaunchActivity.B1;
                 launchActivity.getClass();
-                launchActivity.p0(new rc0());
+                launchActivity.p0(new qc0());
                 break;
             case 9:
                 launchActivity.t1 = null;

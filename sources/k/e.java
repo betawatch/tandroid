@@ -7,7 +7,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import l.a0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class e extends ActionMode {
     public final Context a;
@@ -85,12 +85,12 @@ public final class e extends ActionMode {
 
     @Override // android.view.ActionMode
     public final void setTitle(CharSequence charSequence) {
-        this.b.m(charSequence);
+        this.b.n(charSequence);
     }
 
     @Override // android.view.ActionMode
     public final void setTitleOptionalHint(boolean z10) {
-        this.b.o(z10);
+        this.b.p(z10);
     }
 
     @Override // android.view.ActionMode
@@ -100,6 +100,6 @@ public final class e extends ActionMode {
 
     @Override // android.view.ActionMode
     public final void setTitle(int i10) {
-        this.b.l(i10);
+        this.b.m(i10);
     }
 }

@@ -31,7 +31,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class el0 extends FrameLayout {
     public boolean E;
@@ -81,9 +81,9 @@ public final class el0 extends FrameLayout {
         dl0Var.getImageReceiver().setAllowStartLottieAnimation(false);
         dl0 dl0Var3 = new dl0(this, context, 2);
         this.c = dl0Var3;
-        addView(dl0Var, w7.a6.e(34, 34, 17));
-        addView(dl0Var3, w7.a6.e(34, 34, 17));
-        addView(dl0Var2, w7.a6.e(34, 34, 17));
+        addView(dl0Var, w7.z5.e(34, 34, 17));
+        addView(dl0Var3, w7.z5.e(34, 34, 17));
+        addView(dl0Var2, w7.z5.e(34, 34, 17));
         if (gl0Var.M0 == 4) {
             LayoutTransition layoutTransition = new LayoutTransition();
             layoutTransition.setDuration(100L);
@@ -121,7 +121,7 @@ public final class el0 extends FrameLayout {
             el0Var.f = c1Var;
             c1Var.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
             el0Var.f.setImageReceiver(dl0Var3.getImageReceiver());
-            el0Var.addView(el0Var.f, w7.a6.a(18.0f, 8.0f, 8.0f, 0.0f, 0.0f, 18, 17));
+            el0Var.addView(el0Var.f, w7.z5.a(18.0f, 8.0f, 8.0f, 0.0f, 0.0f, 18, 17));
         }
         sg.c1 c1Var2 = el0Var.f;
         if (c1Var2 != null) {
@@ -228,7 +228,7 @@ public final class el0 extends FrameLayout {
             this.b.setScaleY(0.0f);
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.J = ofFloat;
-            ofFloat.addUpdateListener(new g80(this, 10));
+            ofFloat.addUpdateListener(new f80(this, 10));
             this.J.setDuration(150L);
             this.J.setInterpolator(es.h);
             this.J.setStartDelay((long) (i10 * this.P.c));
@@ -449,7 +449,7 @@ public final class el0 extends FrameLayout {
                     this.N = true;
                     this.L = motionEvent.getX();
                     this.M = motionEvent.getY();
-                    if (this.h == 1.0f && !this.H && (i10 = gl0Var.M0) != 3 && i10 != 4 && i10 != 5 && ((fl0Var = gl0Var.g0) == null || fl0Var.i())) {
+                    if (this.h == 1.0f && !this.H && (i10 = gl0Var.M0) != 3 && i10 != 4 && i10 != 5 && ((fl0Var = gl0Var.g0) == null || fl0Var.j())) {
                         AndroidUtilities.runOnUIThread(bl0Var, ViewConfiguration.getLongPressTimeout());
                     }
                 }
@@ -462,7 +462,7 @@ public final class el0 extends FrameLayout {
                     gl0Var.r0 = true;
                     if (System.currentTimeMillis() - gl0Var.s0 > 300) {
                         gl0Var.s0 = System.currentTimeMillis();
-                        gl0Var.g0.r(this, this.e, gl0Var.n0 > 0.8f, false);
+                        gl0Var.g0.n(this, this.e, gl0Var.n0 > 0.8f, false);
                     }
                 }
                 if (!gl0Var.r0 && gl0Var.l0 != null) {

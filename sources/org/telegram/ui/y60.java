@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y60 implements org.telegram.ui.Components.p20, org.telegram.ui.ActionBar.z1, r0.o {
+public final /* synthetic */ class y60 implements org.telegram.ui.Components.p20, org.telegram.ui.ActionBar.z1, r0.n {
     public final /* synthetic */ int a;
     public final /* synthetic */ j70 b;
 
@@ -14,7 +14,7 @@ public final /* synthetic */ class y60 implements org.telegram.ui.Components.p20
         this.b = j70Var;
     }
 
-    @Override // r0.o
+    @Override // r0.n
     public r0.l1 Q0(View view, r0.l1 l1Var) {
         int i10 = AndroidUtilities.getDefaultWindowInsets(l1Var, false).d;
         j70 j70Var = this.b;

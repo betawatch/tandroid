@@ -23,11 +23,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.z61;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x8 implements Runnable {
     public final /* synthetic */ int a;
@@ -123,7 +123,7 @@ public final /* synthetic */ class x8 implements Runnable {
             case 2:
                 jc jcVar = (jc) this.b;
                 jcVar.x0.onTouchEvent(AndroidUtilities.emptyMotionEvent());
-                jcVar.w0.Y0(AndroidUtilities.emptyMotionEvent());
+                jcVar.w0.j1(AndroidUtilities.emptyMotionEvent());
                 return;
             case 3:
                 kc kcVar = ((jb) this.b).k0;
@@ -342,7 +342,7 @@ public final /* synthetic */ class x8 implements Runnable {
                 } catch (Exception e7) {
                     FileLog.e(e7);
                 }
-                AndroidUtilities.runOnUIThread(new x6(14, scVar2, bitmap));
+                AndroidUtilities.runOnUIThread(new y6(14, scVar2, bitmap));
                 return;
             case 10:
                 a();
@@ -455,9 +455,9 @@ public final /* synthetic */ class x8 implements Runnable {
                 return;
             default:
                 ig.k0 k0Var = (ig.k0) this.b;
-                z61 z61Var = k0Var.d0;
-                if (z61Var != null) {
-                    z61Var.N(true);
+                a71 a71Var = k0Var.d0;
+                if (a71Var != null) {
+                    a71Var.N(true);
                 }
                 k0Var.U(true);
                 return;

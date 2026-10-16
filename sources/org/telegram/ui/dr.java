@@ -13,7 +13,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dr implements Utilities.Callback {
     public final /* synthetic */ int a = 1;
@@ -81,7 +81,7 @@ public final /* synthetic */ class dr implements Utilities.Callback {
                         if (sendPaidMessagesStars <= 0 && longValue > 0) {
                             sendPaidMessagesStars = DialogObject.getMessagesStarsPrice(MessagesController.getInstance(i11).isUserContactBlocked(longValue));
                         }
-                        edit.putLong(org.telegram.ui.Cells.d0.i(longValue, "ask_paid_message_", "_price"), sendPaidMessagesStars);
+                        edit.putLong(org.telegram.ui.Cells.c1.h(longValue, "ask_paid_message_", "_price"), sendPaidMessagesStars);
                         zh.n5.y(i11, false).O.put(l4, Long.valueOf(System.currentTimeMillis()));
                     }
                     edit.apply();
@@ -105,7 +105,7 @@ public final /* synthetic */ class dr implements Utilities.Callback {
                 tL_messages_toggleBotInAttachMenu.bot = MessagesController.getInstance(i13).getInputUser(this.c);
                 tL_messages_toggleBotInAttachMenu.enabled = true;
                 tL_messages_toggleBotInAttachMenu.write_allowed = true;
-                ConnectionsManager.getInstance(i13).sendRequest(tL_messages_toggleBotInAttachMenu, new org.telegram.messenger.ni((LaunchActivity) obj5, i13, (yy) obj4, (org.telegram.ui.ActionBar.m2) obj3, (TLRPC.User) obj2, (String) serializable), 66);
+                ConnectionsManager.getInstance(i13).sendRequest(tL_messages_toggleBotInAttachMenu, new org.telegram.messenger.mi((LaunchActivity) obj5, i13, (yy) obj4, (org.telegram.ui.ActionBar.m2) obj3, (TLRPC.User) obj2, (String) serializable), 66);
                 break;
         }
     }

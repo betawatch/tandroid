@@ -20,7 +20,7 @@ import com.google.android.gms.internal.play_billing.u3;
 import com.google.android.gms.internal.play_billing.w3;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class i0 extends BroadcastReceiver {
     public boolean a;
@@ -77,7 +77,7 @@ public final class i0 extends BroadcastReceiver {
         o1 d;
         try {
             if (bundle.getByteArray("FAILURE_LOGGING_PAYLOAD") == null) {
-                ((qf.b) ((g0) this.c.d)).j0(f0.b(23, i10, iVar, null, n3Var), j10, z10);
+                ((qf.b) ((g0) this.c.d)).k0(f0.b(23, i10, iVar, null, n3Var), j10, z10);
                 return;
             }
             g0 g0Var = (g0) this.c.d;
@@ -89,7 +89,7 @@ public final class i0 extends BroadcastReceiver {
                 d = s1.d();
                 int i13 = o1.a;
             }
-            ((qf.b) g0Var).j0(g3.n(byteArray, d), j10, z10);
+            ((qf.b) g0Var).k0(g3.n(byteArray, d), j10, z10);
         } catch (Throwable unused) {
             com.google.android.gms.internal.play_billing.u.h("BillingBroadcastManager", "Failed parsing Api failure.");
         }
@@ -187,7 +187,7 @@ public final class i0 extends BroadcastReceiver {
                 com.google.android.gms.internal.play_billing.u.h("BillingBroadcastManager", "AlternativeBillingListener and UserChoiceBillingListener is null.");
                 g0 g0Var2 = (g0) hVar.d;
                 i iVar3 = h0.f;
-                ((qf.b) g0Var2).j0(f0.b(77, i10, iVar3, null, n3Var), j11, z10);
+                ((qf.b) g0Var2).k0(f0.b(77, i10, iVar3, null, n3Var), j11, z10);
                 r rVar3 = (r) hVar.c;
                 com.google.android.gms.internal.play_billing.p pVar2 = com.google.android.gms.internal.play_billing.r.b;
                 rVar3.onPurchasesUpdated(iVar3, com.google.android.gms.internal.play_billing.v.e);

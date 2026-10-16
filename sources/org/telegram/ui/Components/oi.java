@@ -5,7 +5,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class oi extends qi {
     public TLRPC.User b;
@@ -31,14 +31,14 @@ public final class oi extends qi {
         bVar.a(false);
         z9 z9Var = new z9(context);
         bVar.c = z9Var;
-        bVar.addView(z9Var, w7.a6.a(24.0f, 0.0f, 4.0f, 0.0f, 0.0f, 24, 49));
+        bVar.addView(z9Var, w7.z5.a(24.0f, 0.0f, 4.0f, 0.0f, 0.0f, 24, 49));
         bVar.w = org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.cl, c6Var);
         bVar.s = org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.al, c6Var);
         bVar.v = org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.bl, c6Var);
         bVar.f();
         this.a = bVar;
-        bVar.getBackupImageView().a.setDelegate(new l2(12));
-        addView(this.a, w7.a6.d(-1.0f, -1));
+        bVar.getBackupImageView().a.setDelegate(new n2(10));
+        addView(this.a, w7.z5.d(-1.0f, -1));
     }
 
     public final void a(boolean z10) {

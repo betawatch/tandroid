@@ -47,11 +47,11 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.qb;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.lq0;
 import org.telegram.ui.lz;
-import org.telegram.ui.nq0;
 import org.telegram.ui.r41;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class m2 {
     protected k actionBar;
@@ -78,7 +78,7 @@ public abstract class m2 {
     protected boolean hasOwnBackground = false;
     protected boolean isPaused = true;
     protected boolean inTransitionAnimation = false;
-    protected final ni.e glassEngine = new ni.e();
+    protected final mi.e glassEngine = new mi.e();
     protected int classGuid = ConnectionsManager.generateClassGuid();
 
     public m2(Bundle bundle) {
@@ -218,8 +218,8 @@ public abstract class m2 {
         b5 b5Var;
         k kVar = new k(context, getResourceProvider());
         kVar.setBackgroundColor(getThemedColor(g6.s8));
-        kVar.B(getThemedColor(g6.t8), false);
-        kVar.B(getThemedColor(g6.z8), true);
+        kVar.C(getThemedColor(g6.t8), false);
+        kVar.C(getThemedColor(g6.z8), true);
         kVar.D(getThemedColor(g6.v8), false);
         kVar.D(getThemedColor(g6.y8), true);
         if (!this.inPreviewMode && !this.inBubbleMode && ((b5Var = this.parentLayout) == null || !((ActionBarLayout) b5Var).M0)) {
@@ -318,7 +318,7 @@ public abstract class m2 {
         } else if (!this.inPreviewMode || (l2Var = this.previewDelegate) == null) {
             finishFragment(true);
         } else {
-            ((r41) ((nq0) l2Var).b).a();
+            ((r41) ((lq0) l2Var).b).a();
         }
     }
 
@@ -533,7 +533,7 @@ public abstract class m2 {
         if (this.sheetsStack == null) {
             this.sheetsStack = new ArrayList<>();
         }
-        sb sbVar = (this.sheetsStack.isEmpty() || !(i2.d.g(1, this.sheetsStack) instanceof sb)) ? null : (sb) i2.d.g(1, this.sheetsStack);
+        sb sbVar = (this.sheetsStack.isEmpty() || !(i2.d.h(1, this.sheetsStack) instanceof sb)) ? null : (sb) i2.d.h(1, this.sheetsStack);
         if (sbVar == null) {
             sbVar = new sb(this);
             b5 b5Var = this.parentLayout;
@@ -587,8 +587,8 @@ public abstract class m2 {
     }
 
     public Paint getThemedPaint(String str) {
-        Paint G = getResourceProvider() != null ? getResourceProvider().G(str) : null;
-        return G != null ? G : g6.T0(str);
+        Paint F = getResourceProvider() != null ? getResourceProvider().F(str) : null;
+        return F != null ? F : g6.T0(str);
     }
 
     public UserConfig getUserConfig() {
@@ -1390,7 +1390,7 @@ public abstract class m2 {
             this.sheetsStack = new ArrayList<>();
         }
         sb sbVar = null;
-        sb sbVar2 = (this.sheetsStack.isEmpty() || !(i2.d.g(1, this.sheetsStack) instanceof sb)) ? null : (sb) i2.d.g(1, this.sheetsStack);
+        sb sbVar2 = (this.sheetsStack.isEmpty() || !(i2.d.h(1, this.sheetsStack) instanceof sb)) ? null : (sb) i2.d.h(1, this.sheetsStack);
         if (sbVar2 == null || sbVar2.h == i10) {
             sbVar = sbVar2;
         } else {

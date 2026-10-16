@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class px0 extends bk0 {
     public float E;
@@ -139,7 +139,7 @@ public final class px0 extends bk0 {
     @Override // android.widget.ImageView, android.view.View
     public final void onMeasure(int i10, int i11) {
         int size = View.MeasureSpec.getSize(i11);
-        super.onMeasure(org.telegram.messenger.yh.z(4.0f, size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
+        super.onMeasure(org.telegram.messenger.sk.c(4.0f, size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
     }
 
     @Override // android.view.View
@@ -162,7 +162,7 @@ public final class px0 extends bk0 {
                 this.F = ofFloat;
                 ofFloat.addUpdateListener(new mx0(this, 0));
                 this.F.addListener(new ox0(this, 2));
-                org.telegram.ui.Cells.d0.l(3.0f, this.F);
+                org.telegram.messenger.sk.l(3.0f, this.F);
                 this.F.setDuration(350L);
                 this.F.start();
             }

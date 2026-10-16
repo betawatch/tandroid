@@ -25,7 +25,7 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class og extends nu {
     public hd c;
@@ -123,7 +123,7 @@ public abstract class og extends nu {
 
     public final void m(Uri uri, String str) {
         org.telegram.ui.fo foVar = this.d.P2;
-        Utilities.globalQueue.postRunnable(new n2.h(this, uri, AndroidUtilities.generatePicturePath(foVar != null && foVar.x(), MimeTypeMap.getSingleton().getExtensionFromMimeType(str)), 17));
+        Utilities.globalQueue.postRunnable(new org.telegram.messenger.video.f(this, uri, AndroidUtilities.generatePicturePath(foVar != null && foVar.x(), MimeTypeMap.getSingleton().getExtensionFromMimeType(str)), 14));
     }
 
     public final void n(File file, ArrayList arrayList) {
@@ -183,7 +183,7 @@ public abstract class og extends nu {
     public final void onContextMenuClose() {
         pg pgVar = this.d.Z2;
         if (pgVar != null) {
-            pgVar.T1();
+            pgVar.W1();
         }
     }
 
@@ -224,8 +224,8 @@ public abstract class og extends nu {
         super.onMeasure(i10, i11);
         if (chatActivityEnterView.S) {
             chatActivityEnterView.T = getLineCount();
-            chatActivityEnterView.n1(chatActivityEnterView.T > 2 && !TextUtils.isEmpty(getText().toString().trim()));
-            chatActivityEnterView.t1(chatActivityEnterView.T > 2 && !TextUtils.isEmpty(getText().toString().trim()));
+            chatActivityEnterView.m1(chatActivityEnterView.T > 2 && !TextUtils.isEmpty(getText().toString().trim()));
+            chatActivityEnterView.s1(chatActivityEnterView.T > 2 && !TextUtils.isEmpty(getText().toString().trim()));
         }
         chatActivityEnterView.S = false;
     }
@@ -244,7 +244,7 @@ public abstract class og extends nu {
         super.onSelectionChanged(i10, i11);
         pg pgVar = this.d.Z2;
         if (pgVar != null) {
-            pgVar.D0(i10, i11);
+            pgVar.E0(i10, i11);
         }
     }
 
@@ -285,7 +285,7 @@ public abstract class og extends nu {
                                 case 0:
                                     ChatActivityEnterView chatActivityEnterView2 = ogVar.d;
                                     int i12 = ChatActivityEnterView.n5;
-                                    chatActivityEnterView2.s1();
+                                    chatActivityEnterView2.r1();
                                     break;
                                 default:
                                     ChatActivityEnterView chatActivityEnterView3 = ogVar.d;
@@ -310,16 +310,16 @@ public abstract class og extends nu {
             }
             if (chatActivityEnterView.r0() && motionEvent.getAction() == 0) {
                 if (chatActivityEnterView.R1 != 0) {
-                    chatActivityEnterView.k1(0, false);
+                    chatActivityEnterView.j1(0, false);
                     chatActivityEnterView.U0.u(false);
                     requestFocus();
                 }
-                chatActivityEnterView.r1(AndroidUtilities.usingHardwareInput ? 0 : 2, 0, true, true);
+                chatActivityEnterView.q1(AndroidUtilities.usingHardwareInput ? 0 : 2, 0, true, true);
                 if (!chatActivityEnterView.z3) {
                     chatActivityEnterView.G0();
                     return true;
                 }
-                chatActivityEnterView.l1(false, true, false, true);
+                chatActivityEnterView.k1(false, true, false, true);
                 chatActivityEnterView.l3 = true;
                 final int i11 = 1;
                 AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.ui.Components.mg
@@ -337,7 +337,7 @@ public abstract class og extends nu {
                             case 0:
                                 ChatActivityEnterView chatActivityEnterView2 = ogVar.d;
                                 int i12 = ChatActivityEnterView.n5;
-                                chatActivityEnterView2.s1();
+                                chatActivityEnterView2.r1();
                                 break;
                             default:
                                 ChatActivityEnterView chatActivityEnterView3 = ogVar.d;

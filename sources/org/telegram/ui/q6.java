@@ -8,7 +8,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q6 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -33,11 +33,11 @@ public final /* synthetic */ class q6 implements Utilities.Callback2 {
         Object obj5 = this.b;
         switch (i10) {
             case 0:
-                p6 p6Var = (p6) obj3;
+                androidx.car.app.utils.b bVar = (androidx.car.app.utils.b) obj3;
                 ((float[]) obj5)[0] = ((Float) obj).floatValue();
                 ((boolean[]) obj4)[0] = ((Boolean) obj2).booleanValue();
-                AndroidUtilities.cancelRunOnUIThread(p6Var);
-                AndroidUtilities.runOnUIThread(p6Var);
+                AndroidUtilities.cancelRunOnUIThread(bVar);
+                AndroidUtilities.runOnUIThread(bVar);
                 break;
             case 1:
                 fo foVar = (fo) obj5;
@@ -61,7 +61,7 @@ public final /* synthetic */ class q6 implements Utilities.Callback2 {
                 org.telegram.ui.ActionBar.a2 a2Var = (org.telegram.ui.ActionBar.a2) obj3;
                 org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) obj;
                 final Long l4 = (Long) obj2;
-                Utilities.doCallbacks(new bi.u3(yyVar, l4, sdVar, m2Var, 11), new z(yyVar, a2Var, l4, 8), new Utilities.Callback() { // from class: org.telegram.ui.fw
+                Utilities.doCallbacks(new bi.u3(yyVar, l4, sdVar, m2Var, 11), new z(yyVar, a2Var, l4, 7), new Utilities.Callback() { // from class: org.telegram.ui.fw
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj6) {
                         switch (i12) {
@@ -155,7 +155,7 @@ public final /* synthetic */ class q6 implements Utilities.Callback2 {
                     if (U != null) {
                         PasskeysActivity passkeysActivity = new PasskeysActivity(passkeys.passkeys);
                         U.presentFragment(passkeysActivity);
-                        AndroidUtilities.runOnUIThread(new wc0(26, passkeysActivity, passkey), 150L);
+                        AndroidUtilities.runOnUIThread(new se0(21, passkeysActivity, passkey), 150L);
                         break;
                     }
                 }

@@ -17,12 +17,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.l61;
 import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.uc0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class t8 extends org.telegram.ui.Components.db implements NotificationCenter.NotificationCenterDelegate {
     public p8 X;
@@ -57,14 +57,14 @@ public final class t8 extends org.telegram.ui.Components.db implements Notificat
         m8 m8Var = new m8(this, 1);
         org.telegram.ui.Cells.h3 h3Var = j3Var.b;
         h3Var.setImeOptions(6);
-        h3Var.setOnEditorActionListener(new m.s2(m8Var, 2));
+        h3Var.setOnEditorActionListener(new m.u2(m8Var, 2));
         h3Var.setHandlesColor(-12476440);
         h3Var.setCursorColor(-11230757);
         h3Var.setText("https://");
         h3Var.setSelection(8);
         TextView textView = new TextView(getContext());
         com.google.android.gms.internal.play_billing.k3.m(12.0f, 1, textView);
-        textView.setPadding(org.telegram.ui.Cells.d0.c(10.0f, R.string.Paste, textView), 0, AndroidUtilities.dp(10.0f), 0);
+        textView.setPadding(org.telegram.ui.Cells.c1.b(10.0f, R.string.Paste, textView), 0, AndroidUtilities.dp(10.0f), 0);
         textView.setGravity(17);
         int themedColor = getThemedColor(org.telegram.ui.ActionBar.g6.o6);
         textView.setTextColor(themedColor);
@@ -72,18 +72,18 @@ public final class t8 extends org.telegram.ui.Components.db implements Notificat
         int m12 = org.telegram.ui.ActionBar.g6.m1(0.12f, themedColor);
         int m13 = org.telegram.ui.ActionBar.g6.m1(0.15f, themedColor);
         textView.setBackground(org.telegram.ui.ActionBar.g6.j0(dp, dp, dp, dp, m12, m13, m13));
-        w7.c6.b(textView, 0.1f, 1.5f);
-        j3Var.addView(textView, w7.a6.a(26.0f, 0.0f, 4.0f, 24.0f, 3.0f, -2, 21));
-        x6 x6Var = new x6(10, this, textView);
-        textView.setOnClickListener(new bi.u1(5, this, x6Var));
-        x6Var.run();
-        h3Var.addTextChangedListener(new n8(this, x6Var));
+        w7.b6.b(textView, 0.1f, 1.5f);
+        j3Var.addView(textView, w7.z5.a(26.0f, 0.0f, 4.0f, 24.0f, 3.0f, -2, 21));
+        y6 y6Var = new y6(10, this, textView);
+        textView.setOnClickListener(new bi.u1(5, this, y6Var));
+        y6Var.run();
+        h3Var.addTextChangedListener(new n8(this, y6Var));
         org.telegram.ui.Cells.j3 j3Var2 = new org.telegram.ui.Cells.j3(context, LocaleController.getString(R.string.StoryLinkNamePlaceholder), true, false, -1, c6Var);
         this.Z = j3Var2;
         m8 m8Var2 = new m8(this, 1);
         org.telegram.ui.Cells.h3 h3Var2 = j3Var2.b;
         h3Var2.setImeOptions(6);
-        h3Var2.setOnEditorActionListener(new m.s2(m8Var2, 2));
+        h3Var2.setOnEditorActionListener(new m.u2(m8Var2, 2));
         FrameLayout frameLayout = new FrameLayout(context);
         this.a0 = frameLayout;
         d dVar = new d(context, c6Var, true);
@@ -91,7 +91,7 @@ public final class t8 extends org.telegram.ui.Components.db implements Notificat
         dVar.g(LocaleController.getString(R.string.StoryLinkAdd), false, true);
         dVar.setOnClickListener(new l8(this, 1));
         dVar.setEnabled(W(j3Var.getText().toString()));
-        frameLayout.addView(dVar, w7.a6.a(48.0f, 10.0f, 10.0f, 10.0f, 10.0f, -1, 119));
+        frameLayout.addView(dVar, w7.z5.a(48.0f, 10.0f, 10.0f, 10.0f, 10.0f, -1, 119));
         this.v = 0.2f;
         this.O = true;
         this.smoothKeyboardAnimationEnabled = true;
@@ -116,7 +116,7 @@ public final class t8 extends org.telegram.ui.Components.db implements Notificat
         TLRPC.WebPage webPage;
         org.telegram.ui.Cells.j3 j3Var = t8Var.Z;
         org.telegram.ui.Cells.j3 j3Var2 = t8Var.Y;
-        l61 G = t8Var.X.G(i10 - 1);
+        m61 G = t8Var.X.G(i10 - 1);
         if (G == null) {
             return;
         }
@@ -254,7 +254,7 @@ public final class t8 extends org.telegram.ui.Components.db implements Notificat
     }
 
     @Override // org.telegram.ui.Components.db
-    public final CharSequence A() {
+    public final CharSequence B() {
         return LocaleController.getString(R.string.StoryLinkCreate);
     }
 

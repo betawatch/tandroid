@@ -6,13 +6,13 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class qu0 extends FrameLayout {
     public pl0 E;
     public int F;
-    public qr0 G;
-    public f60 H;
+    public pr0 G;
+    public g90 H;
     public boolean I;
     public int J;
     public boolean K;
@@ -35,8 +35,8 @@ public abstract class qu0 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        qr0 qr0Var = this.G;
-        if (qr0Var == null || qr0Var.getVisibility() != 0) {
+        pr0 pr0Var = this.G;
+        if (pr0Var == null || pr0Var.getVisibility() != 0) {
             return;
         }
         tl0 fastScroll = this.h.getFastScroll();
@@ -46,7 +46,7 @@ public abstract class qu0 extends FrameLayout {
                 dp += AndroidUtilities.dp(64.0f);
             }
             int i10 = this.F;
-            if (i10 == 8 || xv0.w0(i10)) {
+            if (i10 == 8 || xv0.x0(i10)) {
                 dp += AndroidUtilities.dp(42.0f);
             }
             float measuredWidth = (getMeasuredWidth() - this.G.getMeasuredWidth()) - AndroidUtilities.dp(16.0f);

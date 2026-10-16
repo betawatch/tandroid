@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class hv extends org.telegram.ui.ActionBar.e3 {
     public static hv S;
@@ -54,7 +54,7 @@ public final class hv extends org.telegram.ui.ActionBar.e3 {
     public int Q;
     public av R;
     public bv b;
-    public ca1 c;
+    public da1 c;
     public View d;
     public FrameLayout e;
     public WebChromeClient.CustomViewCallback f;
@@ -67,16 +67,16 @@ public final class hv extends org.telegram.ui.ActionBar.e3 {
     public ImageView x;
     public boolean y;
 
-    public static void J(org.telegram.ui.ActionBar.m2 m2Var, MessageObject messageObject, org.telegram.ui.av0 av0Var, String str, String str2, String str3, String str4, int i10, int i11, int i12, boolean z10) {
+    public static void J(org.telegram.ui.ActionBar.m2 m2Var, MessageObject messageObject, org.telegram.ui.zu0 zu0Var, String str, String str2, String str3, String str4, int i10, int i11, int i12, boolean z10) {
         float f7;
         TLRPC.MessageMedia messageMedia;
         hv hvVar = S;
         if (hvVar != null) {
             hvVar.H();
         }
-        if (((messageObject == null || (messageMedia = messageObject.messageOwner.media) == null || messageMedia.webpage == null) ? null : ca1.e(str4)) != null) {
+        if (((messageObject == null || (messageMedia = messageObject.messageOwner.media) == null || messageMedia.webpage == null) ? null : da1.e(str4)) != null) {
             PhotoViewer.t1().K2(null, m2Var, null);
-            PhotoViewer.t1().f2(messageObject, null, null, null, null, null, null, 0, av0Var, null, 0L, 0L, 0L, true, null, Integer.valueOf(i12));
+            PhotoViewer.t1().f2(messageObject, null, null, null, null, null, null, 0, zu0Var, null, 0L, 0L, 0L, true, null, Integer.valueOf(i12));
             return;
         }
         Activity parentActivity = m2Var.getParentActivity();
@@ -108,7 +108,7 @@ public final class hv extends org.telegram.ui.ActionBar.e3 {
         frameLayout.setBackgroundColor(-16777216);
         frameLayout.setFitsSystemWindows(true);
         frameLayout.setOnTouchListener(new ci.d(17));
-        hvVar2.container.addView(frameLayout, w7.a6.d(-1.0f, -1));
+        hvVar2.container.addView(frameLayout, w7.z5.d(-1.0f, -1));
         frameLayout.setVisibility(4);
         ah.x xVar = new ah.x(hvVar2, parentActivity, 13);
         hvVar2.w = xVar;
@@ -123,20 +123,20 @@ public final class hv extends org.telegram.ui.ActionBar.e3 {
         CookieManager.getInstance().setAcceptThirdPartyCookies(bvVar, true);
         bvVar.setWebChromeClient(new org.telegram.ui.r1(hvVar2, 1));
         bvVar.setWebViewClient(new cv(hvVar2));
-        xVar.addView(bvVar, w7.a6.a(-1.0f, 0.0f, 0.0f, 0.0f, (z11 ? 22 : 0) + 84, -1, 51));
-        ca1 ca1Var = new ca1(parentActivity, true, new dv(hvVar2));
-        hvVar2.c = ca1Var;
-        ca1Var.setVisibility(4);
-        xVar.addView(ca1Var, w7.a6.a(-1.0f, 0.0f, 0.0f, 0.0f, (z11 ? 22 : 0) + 74, -1, 51));
+        xVar.addView(bvVar, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, (z11 ? 22 : 0) + 84, -1, 51));
+        da1 da1Var = new da1(parentActivity, true, new dv(hvVar2));
+        hvVar2.c = da1Var;
+        da1Var.setVisibility(4);
+        xVar.addView(da1Var, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, (z11 ? 22 : 0) + 74, -1, 51));
         View view = new View(parentActivity);
         hvVar2.h = view;
         view.setBackgroundColor(-16777216);
         view.setVisibility(4);
-        xVar.addView(view, w7.a6.a(-1.0f, 0.0f, 0.0f, 0.0f, (z11 ? 22 : 0) + 84, -1, 51));
+        xVar.addView(view, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, (z11 ? 22 : 0) + 84, -1, 51));
         RadialProgressView radialProgressView = new RadialProgressView(parentActivity, null);
         hvVar2.n = radialProgressView;
         radialProgressView.setVisibility(4);
-        xVar.addView(radialProgressView, w7.a6.a(-2.0f, 0.0f, 0.0f, 0.0f, ((z11 ? 22 : 0) + 84) / 2, -2, 17));
+        xVar.addView(radialProgressView, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, ((z11 ? 22 : 0) + 84) / 2, -2, 17));
         if (z11) {
             TextView textView = new TextView(parentActivity);
             f7 = 18.0f;
@@ -147,7 +147,7 @@ public final class hv extends org.telegram.ui.ActionBar.e3 {
             textView.setTypeface(AndroidUtilities.bold());
             textView.setEllipsize(TextUtils.TruncateAt.END);
             textView.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
-            xVar.addView(textView, w7.a6.a(-2.0f, 0.0f, 0.0f, 0.0f, 77.0f, -1, 83));
+            xVar.addView(textView, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 77.0f, -1, 83));
         } else {
             f7 = 18.0f;
         }
@@ -159,18 +159,18 @@ public final class hv extends org.telegram.ui.ActionBar.e3 {
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView2.setEllipsize(truncateAt);
         textView2.setPadding(AndroidUtilities.dp(f7), 0, AndroidUtilities.dp(f7), 0);
-        xVar.addView(textView2, w7.a6.a(-2.0f, 0.0f, 0.0f, 0.0f, 57.0f, -1, 83));
+        xVar.addView(textView2, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 57.0f, -1, 83));
         View view2 = new View(parentActivity);
         view2.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.K5, false));
         xVar.addView(view2, new FrameLayout.LayoutParams(-1, 1, 83));
         ((FrameLayout.LayoutParams) view2.getLayoutParams()).bottomMargin = AndroidUtilities.dp(48.0f);
         FrameLayout frameLayout2 = new FrameLayout(parentActivity);
         frameLayout2.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.h5, false));
-        xVar.addView(frameLayout2, w7.a6.e(-1, 48, 83));
+        xVar.addView(frameLayout2, w7.z5.e(-1, 48, 83));
         LinearLayout linearLayout = new LinearLayout(parentActivity);
         linearLayout.setOrientation(0);
         linearLayout.setWeightSum(1.0f);
-        frameLayout2.addView(linearLayout, w7.a6.e(-2, -1, 53));
+        frameLayout2.addView(linearLayout, w7.z5.e(-2, -1, 53));
         TextView textView3 = new TextView(parentActivity);
         textView3.setTextSize(1, 14.0f);
         int i13 = org.telegram.ui.ActionBar.g6.o5;
@@ -182,7 +182,7 @@ public final class hv extends org.telegram.ui.ActionBar.e3 {
         textView3.setPadding(AndroidUtilities.dp(f7), 0, AndroidUtilities.dp(f7), 0);
         textView3.setText(LocaleController.getString(R.string.Close).toUpperCase());
         textView3.setTypeface(AndroidUtilities.bold());
-        frameLayout2.addView(textView3, w7.a6.q(-2, -1, 51));
+        frameLayout2.addView(textView3, w7.z5.q(-2, -1, 51));
         final int i15 = 0;
         textView3.setOnClickListener(new View.OnClickListener(hvVar2) { // from class: org.telegram.ui.Components.yu
             public final /* synthetic */ hv b;
@@ -210,13 +210,13 @@ public final class hv extends org.telegram.ui.ActionBar.e3 {
                         }
                         Activity activity = hvVar3.r;
                         if (activity instanceof LaunchActivity) {
-                            ((LaunchActivity) activity).D0(new l2(15));
+                            ((LaunchActivity) activity).D0(new n2(13));
                         }
                         hvVar3.dismiss();
                         break;
                     default:
                         hv hvVar4 = this.b;
-                        pf.d.s(hvVar4.r, hvVar4.I);
+                        pf.d.r(hvVar4.r, hvVar4.I);
                         hvVar4.dismiss();
                         break;
                 }
@@ -225,7 +225,7 @@ public final class hv extends org.telegram.ui.ActionBar.e3 {
         LinearLayout linearLayout2 = new LinearLayout(parentActivity);
         hvVar2.s = linearLayout2;
         linearLayout2.setVisibility(4);
-        frameLayout2.addView(linearLayout2, w7.a6.e(-2, -1, 17));
+        frameLayout2.addView(linearLayout2, w7.z5.e(-2, -1, 17));
         ImageView imageView = new ImageView(parentActivity);
         hvVar2.x = imageView;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
@@ -238,7 +238,7 @@ public final class hv extends org.telegram.ui.ActionBar.e3 {
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         imageView.setColorFilter(new PorterDuffColorFilter(x02, mode));
         imageView.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.g0(org.telegram.ui.ActionBar.g6.x0(null, i14, false), 0, -1));
-        linearLayout2.addView(imageView, w7.a6.a(48.0f, 0.0f, 0.0f, 4.0f, 0.0f, 48, 51));
+        linearLayout2.addView(imageView, w7.z5.a(48.0f, 0.0f, 0.0f, 4.0f, 0.0f, 48, 51));
         final int i16 = 1;
         imageView.setOnClickListener(new View.OnClickListener(hvVar2) { // from class: org.telegram.ui.Components.yu
             public final /* synthetic */ hv b;
@@ -266,13 +266,13 @@ public final class hv extends org.telegram.ui.ActionBar.e3 {
                         }
                         Activity activity = hvVar3.r;
                         if (activity instanceof LaunchActivity) {
-                            ((LaunchActivity) activity).D0(new l2(15));
+                            ((LaunchActivity) activity).D0(new n2(13));
                         }
                         hvVar3.dismiss();
                         break;
                     default:
                         hv hvVar4 = this.b;
-                        pf.d.s(hvVar4.r, hvVar4.I);
+                        pf.d.r(hvVar4.r, hvVar4.I);
                         hvVar4.dismiss();
                         break;
                 }
@@ -305,13 +305,13 @@ public final class hv extends org.telegram.ui.ActionBar.e3 {
                         }
                         Activity activity = hvVar3.r;
                         if (activity instanceof LaunchActivity) {
-                            ((LaunchActivity) activity).D0(new l2(15));
+                            ((LaunchActivity) activity).D0(new n2(13));
                         }
                         hvVar3.dismiss();
                         break;
                     default:
                         hv hvVar4 = this.b;
-                        pf.d.s(hvVar4.r, hvVar4.I);
+                        pf.d.r(hvVar4.r, hvVar4.I);
                         hvVar4.dismiss();
                         break;
                 }
@@ -323,7 +323,7 @@ public final class hv extends org.telegram.ui.ActionBar.e3 {
         imageView2.setContentDescription(LocaleController.getString(R.string.CopyLink));
         imageView2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.x0(null, i13, false), mode));
         imageView2.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.g0(org.telegram.ui.ActionBar.g6.x0(null, i14, false), 0, -1));
-        linearLayout2.addView(imageView2, w7.a6.e(48, 48, 51));
+        linearLayout2.addView(imageView2, w7.z5.e(48, 48, 51));
         imageView2.setOnClickListener(onClickListener);
         TextView textView4 = new TextView(parentActivity);
         hvVar2.v = textView4;
@@ -335,7 +335,7 @@ public final class hv extends org.telegram.ui.ActionBar.e3 {
         textView4.setPadding(AndroidUtilities.dp(f7), 0, AndroidUtilities.dp(f7), 0);
         textView4.setText(LocaleController.getString(R.string.Copy).toUpperCase());
         textView4.setTypeface(AndroidUtilities.bold());
-        linearLayout.addView(textView4, w7.a6.e(-2, -1, 51));
+        linearLayout.addView(textView4, w7.z5.e(-2, -1, 51));
         textView4.setOnClickListener(onClickListener);
         TextView textView5 = new TextView(parentActivity);
         textView5.setTextSize(1, 14.0f);
@@ -346,7 +346,7 @@ public final class hv extends org.telegram.ui.ActionBar.e3 {
         textView5.setPadding(AndroidUtilities.dp(f7), 0, AndroidUtilities.dp(f7), 0);
         textView5.setText(LocaleController.getString(R.string.OpenInBrowser).toUpperCase());
         textView5.setTypeface(AndroidUtilities.bold());
-        linearLayout.addView(textView5, w7.a6.e(-2, -1, 51));
+        linearLayout.addView(textView5, w7.z5.e(-2, -1, 51));
         final int i18 = 3;
         textView5.setOnClickListener(new View.OnClickListener(hvVar2) { // from class: org.telegram.ui.Components.yu
             public final /* synthetic */ hv b;
@@ -374,29 +374,29 @@ public final class hv extends org.telegram.ui.ActionBar.e3 {
                         }
                         Activity activity = hvVar3.r;
                         if (activity instanceof LaunchActivity) {
-                            ((LaunchActivity) activity).D0(new l2(15));
+                            ((LaunchActivity) activity).D0(new n2(13));
                         }
                         hvVar3.dismiss();
                         break;
                     default:
                         hv hvVar4 = this.b;
-                        pf.d.s(hvVar4.r, hvVar4.I);
+                        pf.d.r(hvVar4.r, hvVar4.I);
                         hvVar4.dismiss();
                         break;
                 }
             }
         });
-        boolean z12 = ca1.a(str4) || ca1.a(str3);
-        ca1Var.setVisibility(z12 ? 0 : 4);
+        boolean z12 = da1.a(str4) || da1.a(str3);
+        da1Var.setVisibility(z12 ? 0 : 4);
         if (z12) {
-            y91 y91Var = ca1Var.f0;
-            y91Var.setVisibility(4);
-            y91Var.d(false, false);
-            ca1Var.j(true, false);
+            z91 z91Var = da1Var.f0;
+            z91Var.setVisibility(4);
+            z91Var.d(false, false);
+            da1Var.j(true, false);
         }
         hvVar2.setDelegate(new ev(hvVar2, z12));
         hvVar2.F = new fv(hvVar2, ApplicationLoader.applicationContext);
-        String e = ca1.e(str4);
+        String e = da1.e(str4);
         if (e != null || !z12) {
             radialProgressView.setVisibility(0);
             bvVar.setVisibility(0);
@@ -406,11 +406,11 @@ public final class hv extends org.telegram.ui.ActionBar.e3 {
             }
             textView4.setVisibility(4);
             bvVar.setKeepScreenOn(true);
-            ca1Var.setVisibility(4);
-            ca1Var.getControlsView().setVisibility(4);
-            ca1Var.getTextureView().setVisibility(4);
-            if (ca1Var.getTextureImageView() != null) {
-                ca1Var.getTextureImageView().setVisibility(4);
+            da1Var.setVisibility(4);
+            da1Var.getControlsView().setVisibility(4);
+            da1Var.getTextureView().setVisibility(4);
+            if (da1Var.getTextureImageView() != null) {
+                da1Var.getTextureImageView().setVisibility(4);
             }
             if (e != null && "disabled".equals(MessagesController.getInstance(hvVar2.currentAccount).youtubePipType)) {
                 imageView.setVisibility(8);
@@ -468,9 +468,9 @@ public final class hv extends org.telegram.ui.ActionBar.e3 {
             bvVar.destroy();
         }
         fh0.j(false);
-        ca1 ca1Var = this.c;
-        if (ca1Var != null) {
-            ca1Var.b();
+        da1 da1Var = this.c;
+        if (da1Var != null) {
+            da1Var.b();
         }
         S = null;
         dismissInternal();
@@ -494,29 +494,29 @@ public final class hv extends org.telegram.ui.ActionBar.e3 {
         if (viewGroup != null) {
             viewGroup.removeView(this.b);
         }
-        this.w.addView(this.b, 0, w7.a6.a(-1.0f, 0.0f, 0.0f, 0.0f, (this.J ? 22 : 0) + 84, -1, 51));
+        this.w.addView(this.b, 0, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, (this.J ? 22 : 0) + 84, -1, 51));
         setShowWithoutAnimation(true);
         show();
         fh0.j(true);
     }
 
     public final void K() {
-        ca1 ca1Var = this.c;
-        View aspectRatioView = ca1Var.getAspectRatioView();
+        da1 da1Var = this.c;
+        View aspectRatioView = da1Var.getAspectRatioView();
         int[] iArr = this.E;
         aspectRatioView.getLocationInWindow(iArr);
         iArr[0] = iArr[0] - getLeftInset();
-        if (!ca1Var.f() && !this.O) {
-            TextureView textureView = ca1Var.getTextureView();
+        if (!da1Var.f() && !this.O) {
+            TextureView textureView = da1Var.getTextureView();
             textureView.setTranslationX(iArr[0]);
             textureView.setTranslationY(iArr[1]);
-            ImageView textureImageView = ca1Var.getTextureImageView();
+            ImageView textureImageView = da1Var.getTextureImageView();
             if (textureImageView != null) {
                 textureImageView.setTranslationX(iArr[0]);
                 textureImageView.setTranslationY(iArr[1]);
             }
         }
-        View controlsView = ca1Var.getControlsView();
+        View controlsView = da1Var.getControlsView();
         if (controlsView.getParent() == this.container) {
             controlsView.setTranslationY(iArr[1]);
         } else {
@@ -526,8 +526,8 @@ public final class hv extends org.telegram.ui.ActionBar.e3 {
 
     @Override // org.telegram.ui.ActionBar.e3
     public final boolean canDismissWithSwipe() {
-        ca1 ca1Var = this.c;
-        return (ca1Var.getVisibility() == 0 && ca1Var.T) ? false : true;
+        da1 da1Var = this.c;
+        return (da1Var.getVisibility() == 0 && da1Var.T) ? false : true;
     }
 
     @Override // org.telegram.ui.ActionBar.e3
@@ -547,23 +547,23 @@ public final class hv extends org.telegram.ui.ActionBar.e3 {
 
     @Override // org.telegram.ui.ActionBar.e3
     public final void onConfigurationChanged(Configuration configuration) {
-        ca1 ca1Var = this.c;
-        if (ca1Var.getVisibility() == 0 && ca1Var.w && !ca1Var.f()) {
+        da1 da1Var = this.c;
+        if (da1Var.getVisibility() == 0 && da1Var.w && !da1Var.f()) {
             if (configuration.orientation == 2) {
-                boolean z10 = ca1Var.T;
+                boolean z10 = da1Var.T;
                 if (z10 || z10) {
                     return;
                 }
-                ca1Var.T = true;
-                ca1Var.m();
-                ca1Var.l(false);
+                da1Var.T = true;
+                da1Var.m();
+                da1Var.l(false);
                 return;
             }
-            boolean z11 = ca1Var.T;
+            boolean z11 = da1Var.T;
             if (z11 && z11) {
-                ca1Var.T = false;
-                ca1Var.m();
-                ca1Var.l(false);
+                da1Var.T = false;
+                da1Var.m();
+                da1Var.l(false);
             }
         }
     }
@@ -578,25 +578,25 @@ public final class hv extends org.telegram.ui.ActionBar.e3 {
                 this.container.invalidate();
                 return;
             }
-            ca1 ca1Var = this.c;
-            TextureView textureView = ca1Var.d;
-            ImageView imageView = ca1Var.e;
+            da1 da1Var = this.c;
+            TextureView textureView = da1Var.d;
+            ImageView imageView = da1Var.e;
             if (imageView != null) {
                 try {
                     Bitmap createBitmap = Bitmaps.createBitmap(textureView.getWidth(), textureView.getHeight(), Bitmap.Config.ARGB_8888);
-                    ca1Var.h = createBitmap;
-                    ca1Var.n.getBitmap(createBitmap);
+                    da1Var.h = createBitmap;
+                    da1Var.n.getBitmap(createBitmap);
                 } catch (Throwable th2) {
-                    Bitmap bitmap = ca1Var.h;
+                    Bitmap bitmap = da1Var.h;
                     if (bitmap != null) {
                         bitmap.recycle();
-                        ca1Var.h = null;
+                        da1Var.h = null;
                     }
                     FileLog.e(th2);
                 }
-                if (ca1Var.h != null) {
+                if (da1Var.h != null) {
                     imageView.setVisibility(0);
-                    imageView.setImageBitmap(ca1Var.h);
+                    imageView.setImageBitmap(da1Var.h);
                 } else {
                     imageView.setImageDrawable(null);
                 }
@@ -621,11 +621,11 @@ public final class hv extends org.telegram.ui.ActionBar.e3 {
 
     @Override // org.telegram.ui.ActionBar.e3
     public final boolean onCustomMeasure(View view, int i10, int i11) {
-        ca1 ca1Var = this.c;
-        if (view == ca1Var.getControlsView()) {
+        da1 da1Var = this.c;
+        if (view == da1Var.getControlsView()) {
             ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-            layoutParams.width = ca1Var.getMeasuredWidth();
-            layoutParams.height = ca1Var.getAspectRatioView().getMeasuredHeight() + (ca1Var.T ? 0 : AndroidUtilities.dp(10.0f));
+            layoutParams.width = da1Var.getMeasuredWidth();
+            layoutParams.height = da1Var.getAspectRatioView().getMeasuredHeight() + (da1Var.T ? 0 : AndroidUtilities.dp(10.0f));
         }
         return false;
     }

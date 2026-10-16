@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class hz extends org.telegram.ui.ActionBar.m2 {
     public ez a;
@@ -49,10 +49,10 @@ public final class hz extends org.telegram.ui.ActionBar.m2 {
     public static /* synthetic */ void U(hz hzVar, Context context, int i10) {
         ArrayList arrayList = hzVar.e;
         if (i10 == hzVar.h) {
-            org.telegram.ui.Components.a80 a80Var = new org.telegram.ui.Components.a80(context, hzVar.currentAccount, null, 0L, hzVar, null);
-            a80Var.Z(new mu(hzVar, 5));
-            a80Var.a0(arrayList);
-            hzVar.showDialog(a80Var);
+            org.telegram.ui.Components.z70 z70Var = new org.telegram.ui.Components.z70(context, hzVar.currentAccount, null, 0L, hzVar, null);
+            z70Var.Z(new mu(hzVar, 5));
+            z70Var.a0(arrayList);
+            hzVar.showDialog(z70Var);
         }
     }
 
@@ -112,7 +112,7 @@ public final class hz extends org.telegram.ui.ActionBar.m2 {
         this.b.setVerticalScrollBarEnabled(false);
         this.b.setAdapter(this.a);
         ((s4.k) this.b.getItemAnimator()).C = false;
-        frameLayout.addView(this.b, w7.a6.d(-1.0f, -1));
+        frameLayout.addView(this.b, w7.z5.d(-1.0f, -1));
         s4.y yVar = new s4.y(new fz(this));
         this.c = yVar;
         yVar.d(this.b);
@@ -165,7 +165,7 @@ public final class hz extends org.telegram.ui.ActionBar.m2 {
 
     @Override // org.telegram.ui.ActionBar.m2
     public final boolean onFragmentCreate() {
-        yy.f4(AccountInstance.getInstance(this.currentAccount));
+        yy.g4(AccountInstance.getInstance(this.currentAccount));
         getMediaDataController().loadHints(true);
         return super.onFragmentCreate();
     }

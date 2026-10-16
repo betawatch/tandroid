@@ -29,7 +29,7 @@ import org.telegram.ui.Components.pk;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -107,7 +107,7 @@ public final /* synthetic */ class u3 implements Runnable {
                 ((di.d) obj6).setLoading(false);
                 if (!(tLObject instanceof TL_payments.connectedStarRefBots)) {
                     if (tL_error != null) {
-                        org.telegram.ui.Cells.d0.r(e3Var.topBulletinContainer, c6Var, tL_error, false);
+                        org.telegram.ui.Cells.c1.p(e3Var.topBulletinContainer, c6Var, tL_error, false);
                         break;
                     }
                 } else {

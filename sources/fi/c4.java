@@ -17,9 +17,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.z9;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class c4 extends FrameLayout {
     public final int a;
@@ -40,23 +40,23 @@ public final class c4 extends FrameLayout {
         z9 z9Var = new z9(context);
         this.c = z9Var;
         z9Var.setRoundRadius(AndroidUtilities.dp(46.0f));
-        addView(z9Var, a6.a(46.0f, 13.0f, 0.0f, 13.0f, 0.0f, 46, 19));
+        addView(z9Var, z5.a(46.0f, 13.0f, 0.0f, 13.0f, 0.0f, 46, 19));
         View view = new View(context);
         this.d = view;
         view.setBackground(g6.K(AndroidUtilities.dp(11.0f), g6.w0(g6.d6, c6Var)));
-        addView(view, a6.a(22.0f, 40.0f, 15.0f, 0.0f, 0.0f, 22, 19));
+        addView(view, z5.a(22.0f, 40.0f, 15.0f, 0.0f, 0.0f, 22, 19));
         View view2 = new View(context);
         this.e = view2;
         view2.setBackground(g6.K(AndroidUtilities.dp(9.665f), g6.w0(g6.uj, c6Var)));
-        addView(view2, a6.c(19.33f, 19.33f, 19, 41.33f, 15.0f, 0.0f, 0.0f));
+        addView(view2, z5.c(19.33f, 19.33f, 19, 41.33f, 15.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.f = imageView;
         imageView.setScaleX(0.6f);
         imageView.setScaleY(0.6f);
-        addView(imageView, a6.c(19.33f, 19.33f, 19, 41.33f, 15.0f, 0.0f, 0.0f));
+        addView(imageView, z5.c(19.33f, 19.33f, 19, 41.33f, 15.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        addView(linearLayout, a6.a(-2.0f, 66.0f, 8.66f, 10.0f, 0.0f, -1, 55));
+        addView(linearLayout, z5.a(-2.0f, 66.0f, 8.66f, 10.0f, 0.0f, -1, 55));
         TextView textView = new TextView(context);
         this.h = textView;
         textView.setMaxLines(1);
@@ -67,20 +67,20 @@ public final class c4 extends FrameLayout {
         textView.setTextSize(1, 16.0f);
         textView.setTextColor(g6.w0(g6.G6, c6Var));
         NotificationCenter.listenEmojiLoading(textView);
-        TextView i11 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, a6.t(-1, -2, 55, 6, 0, 24, 0), context);
+        TextView i11 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, z5.t(-1, -2, 55, 6, 0, 24, 0), context);
         this.n = i11;
         i11.setMaxLines(1);
         i11.setSingleLine(true);
         i11.setEllipsize(truncateAt);
         i11.setTextSize(1, 14.0f);
         i11.setTextColor(g6.w0(g6.z6, c6Var));
-        linearLayout.addView(i11, a6.t(-1, -2, 55, 6, 1, 24, 0));
+        linearLayout.addView(i11, z5.t(-1, -2, 55, 6, 1, 24, 0));
         ImageView imageView2 = new ImageView(context);
         this.r = imageView2;
         imageView2.setColorFilter(new PorterDuffColorFilter(g6.w0(g6.M6, c6Var), PorterDuff.Mode.SRC_IN));
         imageView2.setImageResource(R.drawable.msg_arrowright);
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView2, a6.a(24.0f, 0.0f, 0.0f, 10.0f, 0.0f, 24, 21));
+        addView(imageView2, z5.a(24.0f, 0.0f, 0.0f, 10.0f, 0.0f, 24, 21));
     }
 
     @Override // android.view.ViewGroup, android.view.View

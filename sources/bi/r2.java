@@ -8,7 +8,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r2 implements Runnable {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class r2 implements Runnable {
                         d4Var2.U = false;
                         d4Var2.s(LocaleController.getString(R.string.ReactionLongTapHint));
                         q5Var.H0.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(1.0f));
-                        q5Var.c1.addView(q5Var.H0, w7.a6.a(-2.0f, 0.0f, 0.0f, 0.0f, q5Var.x2 ? 0.0f : 56.0f, -1, 85));
+                        q5Var.c1.addView(q5Var.H0, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, q5Var.x2 ? 0.0f : 56.0f, -1, 85));
                     }
                     q5Var.H0.u();
                     SharedConfig.setStoriesReactionsLongPressHintUsed(true);
@@ -71,7 +71,7 @@ public final /* synthetic */ class r2 implements Runnable {
                 q3 q3Var = q5Var2.b2;
                 if (q3Var != null) {
                     q3Var.I(true);
-                    q5Var2.b2.Q1();
+                    q5Var2.b2.O1();
                     q5Var2.r0(true);
                     break;
                 }

@@ -11,7 +11,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.voip.d2;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class VoIPPendingCall {
     private AccountInstance accountInstance;
@@ -25,7 +25,7 @@ public final class VoIPPendingCall {
     private final boolean video;
 
     private VoIPPendingCall(Activity activity, long j10, boolean z10, long j11, AccountInstance accountInstance) {
-        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.messenger.voip.r
+        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.messenger.voip.q
             @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
             public final void didReceivedNotification(int i10, int i11, Object[] objArr) {
                 VoIPPendingCall.this.lambda$new$0(i10, i11, objArr);

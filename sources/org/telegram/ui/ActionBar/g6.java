@@ -91,9 +91,9 @@ import org.telegram.ui.Components.cr;
 import org.telegram.ui.Components.eq;
 import org.telegram.ui.Components.hh0;
 import org.telegram.ui.Components.j20;
-import org.telegram.ui.Components.j61;
 import org.telegram.ui.Components.jd0;
 import org.telegram.ui.Components.k20;
+import org.telegram.ui.Components.k61;
 import org.telegram.ui.Components.kx0;
 import org.telegram.ui.Components.n8;
 import org.telegram.ui.Components.t9;
@@ -109,7 +109,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.fo;
 import org.telegram.ui.rd1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class g6 {
     public static int A;
@@ -201,7 +201,7 @@ public abstract class g6 {
     public static final int Di;
     public static final int Dj;
     public static final int Dk;
-    public static li.k Dl;
+    public static m.h3 Dl;
     public static TextPaint E0;
     public static int E1;
     public static TextPaint E2;
@@ -5354,7 +5354,7 @@ public abstract class g6 {
                             z5Var2.b = new ColorDrawable(i19);
                         } else {
                             y9 y9Var = new y9(y9.d(i18), new int[]{i19, i17});
-                            V = y9Var.f(ji.w4.T(0.5f, 3), new p5(), 100L);
+                            V = y9Var.f(m.l.D(0.5f, 3), new p5(), 100L);
                             z5Var2.b = y9Var;
                         }
                     } else {
@@ -5455,7 +5455,7 @@ public abstract class g6 {
                             int i21 = z5Var.e;
                             if (i21 != 0) {
                                 y9 y9Var2 = new y9(y9.d(z5Var.h), new int[]{i20, i21});
-                                V = y9Var2.f(ji.w4.T(0.5f, 3), new q5(), 100L);
+                                V = y9Var2.f(m.l.D(0.5f, 3), new q5(), 100L);
                                 z5Var2.b = y9Var2;
                             } else {
                                 z5Var2.b = new ColorDrawable(i20);
@@ -6473,8 +6473,8 @@ public abstract class g6 {
     }
 
     public static Paint U0(String str, c6 c6Var) {
-        Paint G10;
-        return (c6Var == null || (G10 = c6Var.G(str)) == null) ? T0(str) : G10;
+        Paint F10;
+        return (c6Var == null || (F10 = c6Var.F(str)) == null) ? T0(str) : F10;
     }
 
     public static s5 V(Context context, int i10, int i11, int i12) {
@@ -6560,7 +6560,7 @@ public abstract class g6 {
             } else {
                 if (file == null) {
                     y9 y9Var = new y9(y9.d(i16), new int[]{i11, i13});
-                    y9Var.f(!z10 ? ji.w4.T(0.5f, 3) : ji.w4.T(0.125f, 1), view != null ? new r5(view, z10) : null, 0L);
+                    y9Var.f(!z10 ? m.l.D(0.5f, 3) : m.l.D(0.125f, 1), view != null ? new r5(view, z10) : null, 0L);
                     return y9Var;
                 }
                 cd0Var = null;
@@ -6756,9 +6756,9 @@ public abstract class g6 {
         Color.colorToHSV(i10, N02);
         float f12 = N02[1];
         if (f12 > 0.1f && f12 < 0.9f) {
-            N02[1] = w7.s.a(f12 + f10, 0.0f, 1.0f);
+            N02[1] = w7.r.a(f12 + f10, 0.0f, 1.0f);
         }
-        N02[2] = w7.s.a(N02[2] + f11, 0.0f, 1.0f);
+        N02[2] = w7.r.a(N02[2] + f11, 0.0f, 1.0f);
         return Color.HSVToColor(Color.alpha(i10), N02);
     }
 
@@ -7784,7 +7784,7 @@ public abstract class g6 {
     }
 
     public static int m1(float f10, int i10) {
-        return f10 == 1.0f ? i10 : i0.a.k(i10, w7.s.b((int) (Color.alpha(i10) * f10), 0, 255));
+        return f10 == 1.0f ? i10 : i0.a.k(i10, w7.r.b((int) (Color.alpha(i10) * f10), 0, 255));
     }
 
     public static void n() {
@@ -7970,7 +7970,7 @@ public abstract class g6 {
     }
 
     public static ColorFilter o0(c6 c6Var) {
-        return c6Var != null ? c6Var.x() : v3;
+        return c6Var != null ? c6Var.w() : v3;
     }
 
     public static void o1(boolean z10, boolean z11) {
@@ -8684,7 +8684,7 @@ public abstract class g6 {
             return kx0Var;
         }
         if (i10 == 0) {
-            kx0VarArr[0] = new j61(true);
+            kx0VarArr[0] = new k61(true);
         } else if (i10 == 1) {
             kx0VarArr[1] = new eq(true);
         } else if (i10 == 2) {
@@ -8842,7 +8842,7 @@ public abstract class g6 {
     }
 
     public static int w0(int i10, c6 c6Var) {
-        return c6Var != null ? c6Var.F0(i10) : x0(null, i10, false);
+        return c6Var != null ? c6Var.E0(i10) : x0(null, i10, false);
     }
 
     public static void w1(Drawable drawable, int i10, boolean z10) {

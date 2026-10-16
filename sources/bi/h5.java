@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.ks;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.sc;
 import org.telegram.ui.Components.vh0;
 import org.telegram.ui.Components.x41;
@@ -40,7 +40,7 @@ import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.es;
 import org.telegram.ui.zr;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class h5 extends ks {
     public boolean c;
@@ -172,13 +172,13 @@ public final class h5 extends ks {
                 z10 = true;
             } else {
                 HashSet hashSet = storyItem.albums != null ? new HashSet(storyItem.albums) : new HashSet();
-                m80 m80Var = new m80(actionBarPopupWindow$ActionBarPopupWindowLayout2, c6Var);
-                m80Var.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new a3.d(actionBarPopupWindow$ActionBarPopupWindowLayout2, 19), false);
-                m80Var.k();
+                l80 l80Var = new l80(actionBarPopupWindow$ActionBarPopupWindowLayout2, c6Var);
+                l80Var.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new a3.d(actionBarPopupWindow$ActionBarPopupWindowLayout2, 19), false);
+                l80Var.k();
                 i8 B = q5Var.getStoriesController().B(q5Var.B1, true);
                 i8 B2 = q5Var.S1.B(q5Var.B1, false);
-                m80.f(m80Var, B, hashSet, B2 != null && B2.a(), new a3.l0(h5Var, c6Var, storyItem, 5), new u3(h5Var, hashSet, storyItem, c6Var, 2));
-                int b10 = actionBarPopupWindow$ActionBarPopupWindowLayout2.b(m80Var.B);
+                l80.f(l80Var, B, hashSet, B2 != null && B2.a(), new a3.l0(h5Var, c6Var, storyItem, 5), new u3(h5Var, hashSet, storyItem, c6Var, 2));
+                int b10 = actionBarPopupWindow$ActionBarPopupWindowLayout2.b(l80Var.B);
                 org.telegram.ui.ActionBar.e1 e1Var = new org.telegram.ui.ActionBar.e1(0, q5Var.getContext(), h5Var.d, false, false);
                 q5Var.E3 = e1Var;
                 e1Var.g(LocaleController.getString(R.string.StoriesAlbumAddToAlbum), R.drawable.menu_album_add, null);
@@ -190,7 +190,7 @@ public final class h5 extends ks {
                 actionBarPopupWindow$ActionBarPopupWindowLayout2.c = true;
                 org.telegram.ui.ActionBar.j1 j1Var = new org.telegram.ui.ActionBar.j1(q5Var.getContext(), org.telegram.ui.ActionBar.g6.H8, c6Var);
                 j1Var.setTag(R.id.fit_width_tag, num3);
-                actionBarPopupWindow$ActionBarPopupWindowLayout2.a(j1Var, w7.a6.n(-1, 8));
+                actionBarPopupWindow$ActionBarPopupWindowLayout2.a(j1Var, w7.z5.n(-1, 8));
             }
             if (q5Var.C1) {
                 z11 = z10;
@@ -208,7 +208,7 @@ public final class h5 extends ks {
             if (q5Var.C1 || h5Var.f) {
                 org.telegram.ui.ActionBar.j1 j1Var2 = new org.telegram.ui.ActionBar.j1(q5Var.getContext(), org.telegram.ui.ActionBar.g6.H8, c6Var);
                 j1Var2.setTag(R.id.fit_width_tag, num3);
-                actionBarPopupWindow$ActionBarPopupWindowLayout3.a(j1Var2, w7.a6.n(-1, 8));
+                actionBarPopupWindow$ActionBarPopupWindowLayout3.a(j1Var2, w7.z5.n(-1, 8));
             }
             if (q5Var.c3 || o5Var.f || !((q5Var.I0() || MessagesController.getInstance(q5Var.C2).storiesEnabled()) && h5Var.h)) {
                 sbVar = sbVar6;
@@ -301,7 +301,7 @@ public final class h5 extends ks {
                 org.telegram.ui.ActionBar.e1 c12 = org.telegram.ui.ActionBar.u0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_remove, LocaleController.getString(R.string.LiveStoryEnd), false, h5Var.d);
                 int i12 = org.telegram.ui.ActionBar.g6.q7;
                 c12.setSelectorColor(org.telegram.ui.ActionBar.g6.m1(0.12f, org.telegram.ui.ActionBar.g6.w0(i12, c6Var)));
-                c12.c(c6Var.F0(i12), c6Var.F0(i12));
+                c12.c(c6Var.E0(i12), c6Var.E0(i12));
                 c12.setOnClickListener(new x4(h5Var, c6Var, sbVar3, 2));
             }
             if (!o5Var.f) {
@@ -345,7 +345,7 @@ public final class h5 extends ks {
                 org.telegram.ui.ActionBar.e1 c13 = org.telegram.ui.ActionBar.u0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout6, R.drawable.msg_delete, LocaleController.getString(R.string.Delete), false, h5Var.d);
                 int i14 = org.telegram.ui.ActionBar.g6.q7;
                 c13.setSelectorColor(org.telegram.ui.ActionBar.g6.m1(0.12f, org.telegram.ui.ActionBar.g6.w0(i14, c6Var)));
-                c13.c(c6Var.F0(i14), c6Var.F0(i14));
+                c13.c(c6Var.E0(i14), c6Var.E0(i14));
                 c13.setOnClickListener(new v4(h5Var, 13));
             }
             actionBarPopupWindow$ActionBarPopupWindowLayout6 = actionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -747,7 +747,7 @@ public final class h5 extends ks {
         if (z21 || z22) {
             org.telegram.ui.ActionBar.j1 j1Var3 = new org.telegram.ui.ActionBar.j1(context, org.telegram.ui.ActionBar.g6.H8, c6Var);
             j1Var3.setTag(R.id.fit_width_tag, num);
-            actionBarPopupWindow$ActionBarPopupWindowLayout6.a(j1Var3, w7.a6.n(-1, 8));
+            actionBarPopupWindow$ActionBarPopupWindowLayout6.a(j1Var3, w7.z5.n(-1, 8));
             TLRPC.MessageMedia messageMedia3 = o5Var.a.media;
             TLObject tLObject = messageMedia3.document;
             if (tLObject == null) {
@@ -756,7 +756,7 @@ public final class h5 extends ks {
             na naVar = new na(h5Var.i, q5Var.C2, tLObject, o5Var.a, z21, arrayList, h5Var.d);
             naVar.setOnClickListener(new u1(3, h5Var, naVar));
             naVar.setTag(R.id.fit_width_tag, num);
-            actionBarPopupWindow$ActionBarPopupWindowLayout6.a(naVar, w7.a6.n(-1, -2));
+            actionBarPopupWindow$ActionBarPopupWindowLayout6.a(naVar, w7.z5.n(-1, -2));
         }
     }
 
@@ -810,7 +810,7 @@ public final class h5 extends ks {
         a1Var.setBackgroundColor(-14540254);
         a1Var.setTextColor(-1);
         a1Var.setOnValueChange(new org.telegram.ui.f5(bVar, 6));
-        actionBarPopupWindow$ActionBarPopupWindowLayout2.a(a1Var, w7.a6.n(-1, 44));
+        actionBarPopupWindow$ActionBarPopupWindowLayout2.a(a1Var, w7.z5.n(-1, 44));
         View i5Var2 = new i5(context, 13);
         i5Var2.setMinimumWidth(AndroidUtilities.dp(196.0f));
         i5Var2.setBackgroundColor(-15198184);
@@ -830,19 +830,19 @@ public final class h5 extends ks {
             public final void onClick(View view) {
                 switch (i10) {
                     case 0:
-                        bVar.Z(true, true, 0.2f);
+                        bVar.b0(true, true, 0.2f);
                         break;
                     case 1:
-                        bVar.Z(true, true, 0.5f);
+                        bVar.b0(true, true, 0.5f);
                         break;
                     case 2:
-                        bVar.Z(true, true, 1.0f);
+                        bVar.b0(true, true, 1.0f);
                         break;
                     case 3:
-                        bVar.Z(true, true, 1.5f);
+                        bVar.b0(true, true, 1.5f);
                         break;
                     default:
-                        bVar.Z(true, true, 2.0f);
+                        bVar.b0(true, true, 2.0f);
                         break;
                 }
             }
@@ -857,19 +857,19 @@ public final class h5 extends ks {
             public final void onClick(View view) {
                 switch (i11) {
                     case 0:
-                        bVar.Z(true, true, 0.2f);
+                        bVar.b0(true, true, 0.2f);
                         break;
                     case 1:
-                        bVar.Z(true, true, 0.5f);
+                        bVar.b0(true, true, 0.5f);
                         break;
                     case 2:
-                        bVar.Z(true, true, 1.0f);
+                        bVar.b0(true, true, 1.0f);
                         break;
                     case 3:
-                        bVar.Z(true, true, 1.5f);
+                        bVar.b0(true, true, 1.5f);
                         break;
                     default:
-                        bVar.Z(true, true, 2.0f);
+                        bVar.b0(true, true, 2.0f);
                         break;
                 }
             }
@@ -884,19 +884,19 @@ public final class h5 extends ks {
             public final void onClick(View view) {
                 switch (i12) {
                     case 0:
-                        bVar.Z(true, true, 0.2f);
+                        bVar.b0(true, true, 0.2f);
                         break;
                     case 1:
-                        bVar.Z(true, true, 0.5f);
+                        bVar.b0(true, true, 0.5f);
                         break;
                     case 2:
-                        bVar.Z(true, true, 1.0f);
+                        bVar.b0(true, true, 1.0f);
                         break;
                     case 3:
-                        bVar.Z(true, true, 1.5f);
+                        bVar.b0(true, true, 1.5f);
                         break;
                     default:
-                        bVar.Z(true, true, 2.0f);
+                        bVar.b0(true, true, 2.0f);
                         break;
                 }
             }
@@ -911,19 +911,19 @@ public final class h5 extends ks {
             public final void onClick(View view) {
                 switch (i13) {
                     case 0:
-                        bVar.Z(true, true, 0.2f);
+                        bVar.b0(true, true, 0.2f);
                         break;
                     case 1:
-                        bVar.Z(true, true, 0.5f);
+                        bVar.b0(true, true, 0.5f);
                         break;
                     case 2:
-                        bVar.Z(true, true, 1.0f);
+                        bVar.b0(true, true, 1.0f);
                         break;
                     case 3:
-                        bVar.Z(true, true, 1.5f);
+                        bVar.b0(true, true, 1.5f);
                         break;
                     default:
-                        bVar.Z(true, true, 2.0f);
+                        bVar.b0(true, true, 2.0f);
                         break;
                 }
             }
@@ -938,19 +938,19 @@ public final class h5 extends ks {
             public final void onClick(View view) {
                 switch (i14) {
                     case 0:
-                        bVar.Z(true, true, 0.2f);
+                        bVar.b0(true, true, 0.2f);
                         break;
                     case 1:
-                        bVar.Z(true, true, 0.5f);
+                        bVar.b0(true, true, 0.5f);
                         break;
                     case 2:
-                        bVar.Z(true, true, 1.0f);
+                        bVar.b0(true, true, 1.0f);
                         break;
                     case 3:
-                        bVar.Z(true, true, 1.5f);
+                        bVar.b0(true, true, 1.5f);
                         break;
                     default:
-                        bVar.Z(true, true, 2.0f);
+                        bVar.b0(true, true, 2.0f);
                         break;
                 }
             }
@@ -981,7 +981,7 @@ public final class h5 extends ks {
         if (z10) {
             org.telegram.ui.ActionBar.j1 j1Var = new org.telegram.ui.ActionBar.j1(q5Var.getContext(), org.telegram.ui.ActionBar.g6.H8, this.d);
             j1Var.setTag(R.id.fit_width_tag, 1);
-            actionBarPopupWindow$ActionBarPopupWindowLayout.a(j1Var, w7.a6.n(-1, 8));
+            actionBarPopupWindow$ActionBarPopupWindowLayout.a(j1Var, w7.z5.n(-1, 8));
         }
     }
 

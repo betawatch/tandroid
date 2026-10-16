@@ -10,7 +10,7 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import kotlin.jvm.internal.i;
 import v7.h5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class e extends Binder implements b, IInterface {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final class e extends Binder implements b, IInterface {
             l8.d dVar = (l8.d) a.a(parcel, l8.d.CREATOR);
             int dataAvail = parcel.dataAvail();
             if (dataAvail > 0) {
-                throw new BadParcelableException(i2.d.i(dataAvail, "Parcel data not fully consumed, unread size: "));
+                throw new BadParcelableException(i2.d.j(dataAvail, "Parcel data not fully consumed, unread size: "));
             }
             s(status, dVar);
             return true;
@@ -56,7 +56,7 @@ public final class e extends Binder implements b, IInterface {
         l8.b bVar = (l8.b) a.a(parcel, l8.b.CREATOR);
         int dataAvail2 = parcel.dataAvail();
         if (dataAvail2 > 0) {
-            throw new BadParcelableException(i2.d.i(dataAvail2, "Parcel data not fully consumed, unread size: "));
+            throw new BadParcelableException(i2.d.j(dataAvail2, "Parcel data not fully consumed, unread size: "));
         }
         S(status2, bVar);
         return true;

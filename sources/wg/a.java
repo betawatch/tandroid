@@ -9,9 +9,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class a extends FrameLayout {
     public final di.d a;
@@ -26,10 +26,10 @@ public final class a extends FrameLayout {
         this.c = c6Var;
         View view = new View(context);
         this.b = view;
-        addView(view, a6.n(-1, -1));
+        addView(view, z5.n(-1, -1));
         di.d dVar = new di.d(context, c6Var, true);
         this.a = dVar;
-        addView(dVar, a6.a(48.0f, 14.0f, 0.0f, 14.0f, 0.0f, -1, 17));
+        addView(dVar, z5.a(48.0f, 14.0f, 0.0f, 14.0f, 0.0f, -1, 17));
     }
 
     public final void a(int i10, boolean z10) {

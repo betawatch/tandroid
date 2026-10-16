@@ -33,7 +33,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class cn0 extends Dialog {
     public static final /* synthetic */ int O = 0;
@@ -58,7 +58,7 @@ public final class cn0 extends Dialog {
     public float r;
     public final ah.x s;
     public final ow0 v;
-    public m80 w;
+    public l80 w;
     public FrameLayout x;
     public ViewGroup y;
 
@@ -71,20 +71,20 @@ public final class cn0 extends Dialog {
         this.b = c6Var;
         ah.x xVar = new ah.x(this, context, 18);
         this.s = xVar;
-        xVar.setOnClickListener(new z80(this, 9));
+        xVar.setOnClickListener(new y80(this, 9));
         ow0 ow0Var = new ow0(context, null);
         this.v = ow0Var;
         ow0Var.setClipToPadding(false);
-        xVar.addView(ow0Var, w7.a6.e(-1, -1, 119));
+        xVar.addView(ow0Var, w7.z5.e(-1, -1, 119));
         gh.b bVar = new gh.b();
         this.h = bVar;
         bh.b bVar2 = new bh.b(bVar);
         this.n = bVar2;
         bVar2.f = new ih.j(xVar);
         bVar2.g = xVar;
-        ji.d4 d4Var = new ji.d4(this, 14);
-        WeakHashMap weakHashMap = r0.j0.a;
-        r0.b0.i(xVar, d4Var);
+        ji.h5 h5Var = new ji.h5(this, 15);
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.a0.i(xVar, h5Var);
     }
 
     public static void d(Utilities.Callback2 callback2) {
@@ -98,7 +98,7 @@ public final class cn0 extends Dialog {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.r, z10 ? 1.0f : 0.0f);
         this.N = ofFloat;
-        ofFloat.addUpdateListener(new g80(this, 12));
+        ofFloat.addUpdateListener(new f80(this, 12));
         this.N.addListener(new ah.q0(this, z10, runnable, 6));
         this.N.setInterpolator(es.h);
         this.N.setDuration(350L);
@@ -115,17 +115,17 @@ public final class cn0 extends Dialog {
         this.s.invalidate();
     }
 
-    public final void e(m80 m80Var) {
+    public final void e(l80 l80Var) {
         int i10 = org.telegram.ui.ActionBar.g6.E8;
         org.telegram.ui.ActionBar.c6 c6Var = this.b;
-        m80Var.T(org.telegram.ui.ActionBar.g6.m1(0.06f, org.telegram.ui.ActionBar.g6.w0(i10, c6Var)));
-        m80Var.Q(this.n, fh.b.k(c6Var), false);
-        this.w = m80Var;
-        this.y = m80Var.A;
+        l80Var.T(org.telegram.ui.ActionBar.g6.m1(0.06f, org.telegram.ui.ActionBar.g6.w0(i10, c6Var)));
+        l80Var.Q(this.n, fh.b.k(c6Var), false);
+        this.w = l80Var;
+        this.y = l80Var.A;
         FrameLayout frameLayout = new FrameLayout(this.a);
         this.x = frameLayout;
-        frameLayout.addView(this.y, w7.a6.d(-2.0f, -2));
-        this.v.addView(this.x, w7.a6.d(-2.0f, -2));
+        frameLayout.addView(this.y, w7.z5.d(-2.0f, -2));
+        this.v.addView(this.x, w7.z5.d(-2.0f, -2));
     }
 
     /* JADX WARN: Multi-variable type inference failed */

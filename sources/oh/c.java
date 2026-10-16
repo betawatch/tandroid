@@ -14,10 +14,10 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.x5;
 import org.telegram.ui.Cells.f8;
 import org.telegram.ui.Components.es;
-import w7.a6;
+import w7.z5;
 import zf.q;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class c extends FrameLayout implements ne.d, x5 {
     public ShapeDrawable a;
@@ -32,14 +32,14 @@ public final class c extends FrameLayout implements ne.d, x5 {
         this.b = c6Var;
         f8 f8Var = new f8(context, c6Var, false);
         this.c = f8Var;
-        addView(f8Var, a6.a(45.0f, 0.0f, 8.0f, 0.0f, 0.0f, 45, 49));
+        addView(f8Var, z5.a(45.0f, 0.0f, 8.0f, 0.0f, 0.0f, 45, 49));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setTextSize(1, 10.0f);
         textView.setGravity(17);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setSingleLine();
-        addView(textView, a6.a(-2.0f, 6.0f, 0.0f, 6.0f, 5.0f, -1, 80));
+        addView(textView, z5.a(-2.0f, 6.0f, 0.0f, 6.0f, 5.0f, -1, 80));
         d();
     }
 
@@ -102,6 +102,6 @@ public final class c extends FrameLayout implements ne.d, x5 {
     }
 
     @Override // ne.d
-    public final /* synthetic */ void C(float f7, int i10) {
+    public final /* synthetic */ void A(float f7, int i10) {
     }
 }

@@ -17,7 +17,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class iz extends FrameLayout implements ne.d {
     public kq E;
@@ -25,7 +25,7 @@ public abstract class iz extends FrameLayout implements ne.d {
     public final /* synthetic */ wz G;
     public final ne.b a;
     public final int b;
-    public final ao0 c;
+    public final zn0 c;
     public final vq d;
     public final View e;
     public final View f;
@@ -50,40 +50,40 @@ public abstract class iz extends FrameLayout implements ne.d {
         View view = new View(context);
         this.e = view;
         view.setVisibility(4);
-        int A = wzVar.A(org.telegram.ui.ActionBar.g6.Ke);
+        int B = wzVar.B(org.telegram.ui.ActionBar.g6.Ke);
         boolean z10 = wzVar.i2;
-        view.setBackgroundColor(A);
+        view.setBackgroundColor(B);
         addView(view, new FrameLayout.LayoutParams(-1, AndroidUtilities.getShadowHeight(), 83));
         View view2 = new View(context);
         this.f = view2;
         if (wzVar.u0) {
-            view2.setBackgroundColor(wzVar.A(org.telegram.ui.ActionBar.g6.He));
+            view2.setBackgroundColor(wzVar.B(org.telegram.ui.ActionBar.g6.He));
         }
         addView(view2, new FrameLayout.LayoutParams(-1, wzVar.b1));
         FrameLayout frameLayout = new FrameLayout(context);
         this.n = frameLayout;
-        frameLayout.setBackground(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(18.0f), z10 ? wzVar.w(0.06f) : wzVar.A(org.telegram.ui.ActionBar.g6.Ie)));
+        frameLayout.setBackground(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(18.0f), z10 ? wzVar.w(0.06f) : wzVar.B(org.telegram.ui.ActionBar.g6.Ie)));
         frameLayout.setClipToOutline(true);
         float dp = AndroidUtilities.dp(18.0f);
         bi.a2 a2Var = zf.j0.a;
         frameLayout.setOutlineProvider(new zf.i0(0, dp));
         int i13 = 2;
         if (i10 == 2) {
-            addView(frameLayout, w7.a6.a(36.0f, 10.0f, 8.0f, 10.0f, 8.0f, -1, 119));
+            addView(frameLayout, w7.z5.a(36.0f, 10.0f, 8.0f, 10.0f, 8.0f, -1, 119));
         } else {
-            addView(frameLayout, w7.a6.a(36.0f, 10.0f, 6.0f, 10.0f, 8.0f, -1, 119));
+            addView(frameLayout, w7.z5.a(36.0f, 10.0f, 6.0f, 10.0f, 8.0f, -1, 119));
         }
         ah.v vVar = new ah.v(this, context, 12);
         this.s = vVar;
-        frameLayout.addView(vVar, w7.a6.a(40.0f, 38.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+        frameLayout.addView(vVar, w7.z5.a(40.0f, 38.0f, 0.0f, 0.0f, 0.0f, -1, 51));
         ImageView imageView = new ImageView(context);
-        ao0 ao0Var = new ao0();
-        this.c = ao0Var;
-        ao0Var.c(0, false, false);
-        ao0Var.a(z10 ? wzVar.w(0.4f) : wzVar.A(org.telegram.ui.ActionBar.g6.Je));
+        zn0 zn0Var = new zn0();
+        this.c = zn0Var;
+        zn0Var.c(0, false, false);
+        zn0Var.a(z10 ? wzVar.w(0.4f) : wzVar.B(org.telegram.ui.ActionBar.g6.Je));
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
-        imageView.setImageDrawable(ao0Var);
+        imageView.setImageDrawable(zn0Var);
         imageView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.fz
             public final /* synthetic */ iz b;
 
@@ -132,12 +132,12 @@ public abstract class iz extends FrameLayout implements ne.d {
                 }
             }
         });
-        frameLayout.addView(imageView, w7.a6.e(36, 36, 51));
+        frameLayout.addView(imageView, w7.z5.e(36, 36, 51));
         vq vqVar = new vq(this, context, i10, i13);
         this.d = vqVar;
         vqVar.setTextSize(1, 16.0f);
-        vqVar.setHintTextColor(z10 ? wzVar.w(0.45f) : wzVar.A(org.telegram.ui.ActionBar.g6.Je));
-        vqVar.setTextColor(z10 ? wzVar.w(0.8f) : wzVar.A(org.telegram.ui.ActionBar.g6.G6));
+        vqVar.setHintTextColor(z10 ? wzVar.w(0.45f) : wzVar.B(org.telegram.ui.ActionBar.g6.Je));
+        vqVar.setTextColor(z10 ? wzVar.w(0.8f) : wzVar.B(org.telegram.ui.ActionBar.g6.G6));
         vqVar.setBackgroundDrawable(null);
         vqVar.setPadding(0, 0, 0, 0);
         vqVar.setMaxLines(1);
@@ -145,21 +145,21 @@ public abstract class iz extends FrameLayout implements ne.d {
         vqVar.setSingleLine(true);
         vqVar.setImeOptions(268435459);
         vqVar.setHint(LocaleController.getString(R.string.Search));
-        vqVar.setCursorColor(wzVar.A(org.telegram.ui.ActionBar.g6.Mh));
+        vqVar.setCursorColor(wzVar.B(org.telegram.ui.ActionBar.g6.Mh));
         vqVar.setCursorSize(AndroidUtilities.dp(20.0f));
         vqVar.setCursorWidth(1.5f);
         vqVar.setTranslationY(AndroidUtilities.dp(-2.0f));
-        vVar.addView(vqVar, w7.a6.a(40.0f, 0.0f, 0.0f, 28.0f, 0.0f, -1, 51));
+        vVar.addView(vqVar, w7.z5.a(40.0f, 0.0f, 0.0f, 28.0f, 0.0f, -1, 51));
         vqVar.addTextChangedListener(new di.h2(this, 8));
         if (wzVar.u0) {
             View view3 = new View(context);
             this.v = view3;
             Drawable mutate = context.getResources().getDrawable(R.drawable.gradient_right).mutate();
-            mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v(wzVar.A(org.telegram.ui.ActionBar.g6.He), wzVar.A(org.telegram.ui.ActionBar.g6.Ie)), PorterDuff.Mode.MULTIPLY));
+            mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v(wzVar.B(org.telegram.ui.ActionBar.g6.He), wzVar.B(org.telegram.ui.ActionBar.g6.Ie)), PorterDuff.Mode.MULTIPLY));
             view3.setBackground(mutate);
             view3.setAlpha(0.0f);
             i11 = 3;
-            vVar.addView(view3, w7.a6.e(18, -1, 3));
+            vVar.addView(view3, w7.z5.e(18, -1, 3));
         } else {
             i11 = 3;
         }
@@ -218,14 +218,14 @@ public abstract class iz extends FrameLayout implements ne.d {
                 }
             }
         });
-        frameLayout.addView(imageView2, w7.a6.e(36, 36, 53));
+        frameLayout.addView(imageView2, w7.z5.e(36, 36, 53));
         if (i10 != 1 || (wzVar.c2 && UserConfig.getInstance(UserConfig.selectedAccount).isPremium())) {
             hz hzVar = new hz(this, context, i10 == 0 ? i11 : 0, wzVar.Z1, i10);
             this.r = hzVar;
             hzVar.u3 = z10;
             hzVar.setDontOccupyWidth(AndroidUtilities.dp(16.0f) + ((int) vqVar.getPaint().measureText(((Object) vqVar.getHint()) + "")));
             if (wzVar.u0) {
-                hzVar.setBackgroundColor(org.telegram.ui.ActionBar.g6.v(wzVar.A(org.telegram.ui.ActionBar.g6.He), wzVar.A(org.telegram.ui.ActionBar.g6.Ie)));
+                hzVar.setBackgroundColor(org.telegram.ui.ActionBar.g6.v(wzVar.B(org.telegram.ui.ActionBar.g6.He), wzVar.B(org.telegram.ui.ActionBar.g6.Ie)));
             }
             final int i15 = 0;
             hzVar.setOnScrollIntoOccupiedWidth(new Utilities.Callback(this) { // from class: org.telegram.ui.Components.gz
@@ -270,7 +270,7 @@ public abstract class iz extends FrameLayout implements ne.d {
                     }
                 }
             });
-            hzVar.setOnTouchListener(new m.c2(this, 2));
+            hzVar.setOnTouchListener(new m.e2(this, 2));
             final int i16 = 1;
             hzVar.setOnCategoryClick(new Utilities.Callback(this) { // from class: org.telegram.ui.Components.gz
                 public final /* synthetic */ iz b;
@@ -314,7 +314,7 @@ public abstract class iz extends FrameLayout implements ne.d {
                     }
                 }
             });
-            frameLayout.addView(hzVar, w7.a6.a(36.0f, 36.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+            frameLayout.addView(hzVar, w7.z5.a(36.0f, 36.0f, 0.0f, 0.0f, 0.0f, -1, 51));
         }
     }
 
@@ -436,6 +436,6 @@ public abstract class iz extends FrameLayout implements ne.d {
     }
 
     @Override // ne.d
-    public final /* synthetic */ void C(float f7, int i10) {
+    public final /* synthetic */ void A(float f7, int i10) {
     }
 }

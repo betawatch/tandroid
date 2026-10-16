@@ -21,9 +21,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.m9;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class m1 extends FrameLayout {
     public final c6 a;
@@ -54,7 +54,7 @@ public final class m1 extends FrameLayout {
             this.c[i10].setTextSize(1, 14.0f);
             int i11 = 8;
             this.c[i10].setVisibility(i10 == 0 ? 0 : 8);
-            addView(this.c[i10], a6.a(-2.0f, 76.0f, 7.0f, 40.0f, 0.0f, -1, 48));
+            addView(this.c[i10], z5.a(-2.0f, 76.0f, 7.0f, 40.0f, 0.0f, -1, 48));
             this.d[i10] = new TextView(context);
             this.d[i10].setTextColor(g6.w0(g6.z6, c6Var));
             this.d[i10].setTextSize(1, 12.0f);
@@ -63,13 +63,13 @@ public final class m1 extends FrameLayout {
                 i11 = 0;
             }
             textView.setVisibility(i11);
-            addView(this.d[i10], a6.a(-2.0f, 76.0f, 26.33f, 40.0f, 0.0f, -1, 48));
+            addView(this.d[i10], z5.a(-2.0f, 76.0f, 26.33f, 40.0f, 0.0f, -1, 48));
             i10++;
         }
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.msg_arrowright);
         imageView.setColorFilter(new PorterDuffColorFilter(g6.w0(g6.P5, c6Var), PorterDuff.Mode.SRC_IN));
-        addView(imageView, a6.a(24.0f, 0.0f, 0.0f, 8.66f, 0.0f, 24, 21));
+        addView(imageView, z5.a(24.0f, 0.0f, 0.0f, 8.66f, 0.0f, 24, 21));
     }
 
     public final boolean a(g8 g8Var) {

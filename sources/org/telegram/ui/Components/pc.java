@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class pc extends pb {
     public final bk0 a;
@@ -23,13 +23,13 @@ public final class pc extends pb {
         bk0 bk0Var = new bk0(context);
         this.a = bk0Var;
         bk0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(bk0Var, w7.a6.h(56.0f, 48.0f, 8388627));
+        addView(bk0Var, w7.z5.h(56.0f, 48.0f, 8388627));
         int themedColor = getThemedColor(i10);
         int themedColor2 = getThemedColor(org.telegram.ui.ActionBar.g6.Gi);
         LinearLayout linearLayout = new LinearLayout(context);
         this.d = linearLayout;
         linearLayout.setOrientation(1);
-        addView(linearLayout, w7.a6.i(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
+        addView(linearLayout, w7.z5.i(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
         da0 da0Var = new da0(context, null);
         this.b = da0Var;
         da0Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);

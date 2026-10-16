@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class kf implements Runnable {
     public final /* synthetic */ int a;
@@ -39,10 +39,10 @@ public final class kf implements Runnable {
                     chatActivityEnterView.y3 = currentPage == 0;
                     if (chatActivityEnterView.z3) {
                         if (chatActivityEnterView.R1 != 0) {
-                            chatActivityEnterView.k1(currentPage != 0 ? 1 : 2, true);
+                            chatActivityEnterView.j1(currentPage != 0 ? 1 : 2, true);
                             chatActivityEnterView.J();
                         } else if (!z11) {
-                            chatActivityEnterView.l1(false, true, false, true);
+                            chatActivityEnterView.k1(false, true, false, true);
                         }
                     }
                     if (z10 != chatActivityEnterView.x3 || z12 != chatActivityEnterView.y3) {

@@ -17,13 +17,13 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.b00;
 import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.tl0;
-import org.telegram.ui.w01;
+import org.telegram.ui.v01;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class g9 implements ob {
     public final mm0 a;
-    public final w01 b;
+    public final v01 b;
     public final int[] c;
     public final boolean d;
     public f9 e;
@@ -45,7 +45,7 @@ public final class g9 implements ob {
     }
 
     @Override // bi.ob
-    public final boolean H0(long j10, int i10, int i11, int i12, pb pbVar) {
+    public final boolean G0(long j10, int i10, int i11, int i12, pb pbVar) {
         mb mbVar = null;
         pbVar.a = null;
         pbVar.b = null;
@@ -114,16 +114,16 @@ public final class g9 implements ob {
                         c(pbVar);
                         return true;
                     }
-                } else if (childAt instanceof org.telegram.ui.Cells.x0) {
-                    org.telegram.ui.Cells.x0 x0Var = (org.telegram.ui.Cells.x0) childAt;
-                    if (x0Var.getMessageObject().getId() == i10) {
+                } else if (childAt instanceof org.telegram.ui.Cells.w0) {
+                    org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) childAt;
+                    if (w0Var.getMessageObject().getId() == i10) {
                         pbVar.a = childAt;
-                        if (x0Var.getMessageObject().messageOwner.media.storyItem.noforwards) {
-                            pbVar.b = x0Var.getPhotoImage();
+                        if (w0Var.getMessageObject().messageOwner.media.storyItem.noforwards) {
+                            pbVar.b = w0Var.getPhotoImage();
                         } else {
-                            pbVar.c = x0Var.getPhotoImage();
+                            pbVar.c = w0Var.getPhotoImage();
                         }
-                        pbVar.g = (View) x0Var.getParent();
+                        pbVar.g = (View) w0Var.getParent();
                         pbVar.k = 1.0f;
                         c(pbVar);
                         return true;
@@ -329,9 +329,9 @@ public final class g9 implements ob {
         r4Var.run();
     }
 
-    public g9(w01 w01Var) {
+    public g9(v01 v01Var) {
         this.c = new int[2];
-        this.b = w01Var;
+        this.b = v01Var;
         this.a = null;
     }
 }

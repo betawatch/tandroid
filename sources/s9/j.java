@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import m.h3;
 import org.telegram.messenger.BuildConfig;
 import org.xmlpull.v1.XmlSerializer;
 import x9.p;
@@ -22,7 +23,7 @@ import y8.b1;
 import y8.k0;
 import y8.v0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class j implements Runnable {
     public final /* synthetic */ int a;
@@ -128,11 +129,11 @@ public final class j implements Runnable {
                 ArrayList arrayList = (ArrayList) this.b;
                 shortcutInfoCompatSaverImpl.e(arrayList);
                 File file = shortcutInfoCompatSaverImpl.f;
-                li.k kVar = new li.k(file);
-                File file2 = (File) kVar.c;
+                h3 h3Var = new h3(file);
+                File file2 = (File) h3Var.c;
                 FileOutputStream fileOutputStream = null;
                 try {
-                    W = kVar.W();
+                    W = h3Var.W();
                 } catch (Exception e7) {
                     exc = e7;
                 }
@@ -167,7 +168,7 @@ public final class j implements Runnable {
                     } catch (IOException e10) {
                         Log.e("AtomicFile", "Failed to close file output stream", e10);
                     }
-                    li.k.T(file2, file);
+                    h3.T(file2, file);
                     return;
                 } catch (Exception e11) {
                     exc = e11;

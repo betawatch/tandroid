@@ -23,7 +23,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class md extends di.m {
     public boolean S0;
@@ -31,7 +31,7 @@ public abstract class md extends di.m {
     public boolean U0;
     public final ImageView V0;
     public final di.l W0;
-    public m80 X0;
+    public l80 X0;
     public final i0 Y0;
     public final ImageView Z0;
     public di.d4 a1;
@@ -73,7 +73,7 @@ public abstract class md extends di.m {
         r6Var.w(AndroidUtilities.dp(14.0f));
         r6Var.M = AndroidUtilities.displaySize.x;
         r6Var.u(-1);
-        boolean z10 = this instanceof org.telegram.ui.jt0;
+        boolean z10 = this instanceof org.telegram.ui.it0;
         if (z10) {
             r6Var.t(LocaleController.getString(R.string.MoveCaptionDown), true, true);
             this.g1 = context.getResources().getDrawable(R.drawable.menu_link_below);
@@ -99,7 +99,7 @@ public abstract class md extends di.m {
             f10 = 0.0f;
         }
         float f12 = f10;
-        addView(imageView, w7.a6.a(44.0f, 14.0f, f11, 0.0f, f7, 44, i10));
+        addView(imageView, w7.z5.a(44.0f, 14.0f, f11, 0.0f, f7, 44, i10));
         ImageView imageView2 = new ImageView(context);
         this.V0 = imageView2;
         di.l lVar = new di.l(5);
@@ -108,14 +108,14 @@ public abstract class md extends di.m {
         imageView2.setBackground(org.telegram.ui.ActionBar.g6.g0(1090519039, 1, AndroidUtilities.dp(18.0f)));
         imageView2.setScaleType(scaleType);
         E(false, false);
-        addView(imageView2, w7.a6.a(44.0f, 0.0f, z10 ? 6.0f : f12, 10.0f, z10 ? f12 : 6.0f, 44, (z10 ? 48 : 80) | 5));
+        addView(imageView2, w7.z5.a(44.0f, 0.0f, z10 ? 6.0f : f12, 10.0f, z10 ? f12 : 6.0f, 44, (z10 ? 48 : 80) | 5));
         di.d4 d4Var = new di.d4(context, z10 ? 1 : 3);
         this.d1 = d4Var;
         d4Var.q(12.0f);
         d4Var.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(z10 ? 8.0f : f12), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(z10 ? f12 : 8.0f));
         d4Var.l(1.0f, -21.0f);
         d4Var.p(true);
-        addView(d4Var, w7.a6.e(-1, 80, (z10 ? 48 : 80) | 5));
+        addView(d4Var, w7.z5.e(-1, 80, (z10 ? 48 : 80) | 5));
         ImageView imageView3 = new ImageView(context);
         this.Z0 = imageView3;
         i0 i0Var = new i0(context);
@@ -124,9 +124,9 @@ public abstract class md extends di.m {
         imageView3.setScaleType(scaleType);
         imageView3.setColorFilter(new PorterDuffColorFilter(-1140850689, PorterDuff.Mode.MULTIPLY));
         imageView3.setBackground(org.telegram.ui.ActionBar.g6.g0(1090519039, 1, AndroidUtilities.dp(16.0f)));
-        addView(imageView3, w7.a6.a(44.0f, 8.0f, 0.0f, 8.0f, 0.0f, 44, 53));
+        addView(imageView3, w7.z5.a(44.0f, 8.0f, 0.0f, 8.0f, 0.0f, 44, 53));
         imageView3.setContentDescription(LocaleController.getString(R.string.AIEditor));
-        w7.c6.a(imageView3);
+        w7.b6.a(imageView3);
         this.f.getEditText().addTextChangedListener(new di.h2(this, 5));
         imageView3.setVisibility(8);
         imageView3.setAlpha(f12);
@@ -225,9 +225,9 @@ public abstract class md extends di.m {
             d4Var3.p(true);
             this.a1.s(LocaleController.getString(R.string.AIEditorHint));
             this.a1.m(1.0f, ((-imageView.getWidth()) / 2.0f) + AndroidUtilities.dp(4.0f));
-            addView(this.a1, w7.a6.a(200.0f, 0.0f, -196.0f, 0.0f, 0.0f, -1, 48));
+            addView(this.a1, w7.z5.a(200.0f, 0.0f, -196.0f, 0.0f, 0.0f, -1, 48));
             di.d4 d4Var4 = this.a1;
-            d4Var4.l0 = new org.telegram.ui.rp(14, this, d4Var3);
+            d4Var4.l0 = new org.telegram.ui.vp(9, this, d4Var3);
             d4Var4.d = 4000L;
             d4Var4.u();
             MessagesController.getGlobalMainSettings().edit().putInt("aihintshown", MessagesController.getGlobalMainSettings().getInt("aihintshown", 0) + 1).apply();
@@ -287,7 +287,7 @@ public abstract class md extends di.m {
         ImageView imageView = this.Z0;
         if (imageView != null) {
             imageView.setTranslationX(-AndroidUtilities.dp((1.0f - this.o0) * 4.0f));
-            boolean z10 = this instanceof org.telegram.ui.jt0;
+            boolean z10 = this instanceof org.telegram.ui.it0;
             imageView.setTranslationY((Utilities.clamp01((-this.k1.d(this.f.getEditText().getLineCount(), false)) + 4.0f) * AndroidUtilities.dp(3.0f) * (z10 ? 1 : -1)) + (z10 ? rectF.bottom - AndroidUtilities.dp(44.0f) : rectF.top));
         }
         float f10 = this.l1.f(this.n1, true ^ G());
@@ -295,7 +295,7 @@ public abstract class md extends di.m {
         if (f10 > 0.0f) {
             float a2 = this.i1.a(0.03f);
             int dp = AndroidUtilities.dp((1.0f - this.o0) * 4.0f);
-            boolean z11 = this instanceof org.telegram.ui.jt0;
+            boolean z11 = this instanceof org.telegram.ui.it0;
             r6 r6Var = this.h1;
             RectF rectF2 = this.f1;
             if (z11) {
@@ -357,7 +357,7 @@ public abstract class md extends di.m {
         } else if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && adVar.i) {
             if (motionEvent.getAction() == 1) {
                 A();
-                this.h1.t(LocaleController.getString(this instanceof org.telegram.ui.jt0 ? R.string.MoveCaptionDown : R.string.MoveCaptionUp), true, true);
+                this.h1.t(LocaleController.getString(this instanceof org.telegram.ui.it0 ? R.string.MoveCaptionDown : R.string.MoveCaptionUp), true, true);
             }
             adVar.c(false);
             return true;
@@ -405,7 +405,7 @@ public abstract class md extends di.m {
 
     @Override // di.m
     public final void r(int i10) {
-        this.d1.setTranslationY(((-Math.min(AndroidUtilities.dp(34.0f), i10)) - AndroidUtilities.dp(10.0f)) * (this instanceof org.telegram.ui.jt0 ? -1.0f : 1.0f));
+        this.d1.setTranslationY(((-Math.min(AndroidUtilities.dp(34.0f), i10)) - AndroidUtilities.dp(10.0f)) * (this instanceof org.telegram.ui.it0 ? -1.0f : 1.0f));
     }
 
     @Override // di.m

@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class SharedConfig {
     private static final int[] LOW_SOC;
@@ -186,7 +186,7 @@ public class SharedConfig {
     public static boolean useThreeLinesLayout;
     public static boolean walletUseFingerprintLock;
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class BackgroundActivityPrefs {
         private static SharedPreferences prefs;
 
@@ -207,25 +207,25 @@ public class SharedConfig {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PasscodeType {
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PerformanceClass {
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class ProxyInfo {
         public boolean available;
         public long availableCheckTime;
         public boolean checking;
         public long ping;
-        public qi.a settings;
+        public pi.a settings;
 
-        public ProxyInfo(qi.a aVar) {
+        public ProxyInfo(pi.a aVar) {
             this.settings = aVar;
         }
 
@@ -233,7 +233,7 @@ public class SharedConfig {
         public static ProxyInfo fromSerializedData(int i10, InputSerializedData inputSerializedData) {
             long j10;
             long j11;
-            k2.p0 a2 = qi.a.a();
+            k2.p0 a2 = pi.a.a();
             String readString = inputSerializedData.readString(false);
             if (readString == null) {
                 readString = "";
@@ -260,7 +260,7 @@ public class SharedConfig {
                 j11 = 0;
             }
             if (i10 >= 3) {
-                int e = qi.a.e(inputSerializedData.readInt32(false));
+                int e = pi.a.e(inputSerializedData.readInt32(false));
                 if (e == 0) {
                     e = 1;
                 }
@@ -1180,7 +1180,7 @@ public class SharedConfig {
             return;
         }
         SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
-        qi.a c10 = qi.a.c(sharedPreferences);
+        pi.a c10 = pi.a.c(sharedPreferences);
         proxyListLoaded = true;
         proxyList.clear();
         currentProxy = null;
@@ -1279,17 +1279,17 @@ public class SharedConfig {
             i12 = (i11 < 8 || memoryClass <= 160 || (ceil != -1 && ceil <= 2055) || (ceil == -1 && i11 == 8 && i10 <= 23)) ? 1 : 2;
         }
         if (BuildVars.LOGS_ENABLED) {
-            StringBuilder l4 = i2.d.l("device performance info selected_class = ", i12, " (cpu_count = ", i11, ", freq = ");
-            i2.d.u(l4, ceil, ", memoryClass = ", memoryClass, ", android version ");
-            l4.append(i10);
-            l4.append(", manufacture ");
-            l4.append(Build.MANUFACTURER);
-            l4.append(", screenRefreshRate=");
-            l4.append(AndroidUtilities.screenRefreshRate);
-            l4.append(", screenMaxRefreshRate=");
-            l4.append(AndroidUtilities.screenMaxRefreshRate);
-            l4.append(")");
-            FileLog.d(l4.toString());
+            StringBuilder m10 = i2.d.m("device performance info selected_class = ", i12, " (cpu_count = ", i11, ", freq = ");
+            i2.d.w(m10, ceil, ", memoryClass = ", memoryClass, ", android version ");
+            m10.append(i10);
+            m10.append(", manufacture ");
+            m10.append(Build.MANUFACTURER);
+            m10.append(", screenRefreshRate=");
+            m10.append(AndroidUtilities.screenRefreshRate);
+            m10.append(", screenMaxRefreshRate=");
+            m10.append(AndroidUtilities.screenMaxRefreshRate);
+            m10.append(")");
+            FileLog.d(m10.toString());
         }
         return i12;
     }
@@ -1413,7 +1413,7 @@ public class SharedConfig {
 
     public static void saveProxyList() {
         ArrayList arrayList = new ArrayList(proxyList);
-        Collections.sort(arrayList, new di(4));
+        Collections.sort(arrayList, new ci(4));
         SerializedData serializedData = new SerializedData();
         serializedData.writeInt32(-1);
         serializedData.writeByte(3);

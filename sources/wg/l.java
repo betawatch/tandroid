@@ -13,9 +13,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.nu;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class l extends LinearLayout {
     public final nu a;
@@ -50,13 +50,13 @@ public final class l extends LinearLayout {
         textView.setTextSize(1, 16.0f);
         textView.setTextColor(g6.w0(g6.j5, c6Var));
         if (!LocaleController.isRTL) {
-            addView(textView, a6.t(-2, -2, 16, 20, 0, 0, 0));
-            addView(nuVar, a6.t(-1, -2, 16, 36, 0, 20, 0));
+            addView(textView, z5.t(-2, -2, 16, 20, 0, 0, 0));
+            addView(nuVar, z5.t(-1, -2, 16, 36, 0, 20, 0));
         } else {
-            LinearLayout.LayoutParams t10 = a6.t(-1, -2, 16, 20, 0, 36, 0);
+            LinearLayout.LayoutParams t10 = z5.t(-1, -2, 16, 20, 0, 36, 0);
             t10.weight = 1.0f;
             addView(nuVar, t10);
-            addView(textView, a6.t(-2, -2, 16, 0, 0, 20, 0));
+            addView(textView, z5.t(-2, -2, 16, 0, 0, 20, 0));
         }
     }
 

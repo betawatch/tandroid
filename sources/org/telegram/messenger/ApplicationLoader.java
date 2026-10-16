@@ -26,12 +26,12 @@ import org.telegram.messenger.PushListenerController;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.s10;
 import org.telegram.ui.IUpdateLayout;
-import org.telegram.ui.ob0;
+import org.telegram.ui.nb0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class ApplicationLoader extends Application {
     public static volatile Context applicationContext = null;
@@ -493,7 +493,7 @@ public class ApplicationLoader extends Application {
             StringBuilder sb2 = new StringBuilder("app start time = ");
             long elapsedRealtime = SystemClock.elapsedRealtime();
             startTime = elapsedRealtime;
-            q.s(sb2, elapsedRealtime);
+            i2.d.x(sb2, elapsedRealtime);
             try {
                 PackageInfo packageInfo = applicationContext.getPackageManager().getPackageInfo(applicationContext.getPackageName(), 0);
                 int i11 = packageInfo.versionCode % 10;
@@ -516,7 +516,7 @@ public class ApplicationLoader extends Application {
             sb3.append(", model=");
             sb3.append(Build.MODEL);
             sb3.append(", product=");
-            i2.d.t(Build.PRODUCT, sb3);
+            i2.d.v(Build.PRODUCT, sb3);
         }
         if (applicationContext == null) {
             applicationContext = getApplicationContext();
@@ -540,13 +540,13 @@ public class ApplicationLoader extends Application {
             }
             applicationHandler = new Handler(applicationContext.getMainLooper());
             AndroidUtilities.runOnUIThread(new y1(6));
-            ob0[] values = ob0.values();
+            nb0[] values = nb0.values();
             int length = values.length;
             while (true) {
                 if (i10 >= length) {
-                    w7.h6.b(ob0.h);
+                    w7.g6.b(nb0.h);
                     break;
-                } else if (w7.h6.a(values[i10])) {
+                } else if (w7.g6.a(values[i10])) {
                     break;
                 } else {
                     i10++;
@@ -661,7 +661,7 @@ public class ApplicationLoader extends Application {
     public void onResume() {
     }
 
-    public void addItemOptions(m80 m80Var) {
+    public void addItemOptions(l80 l80Var) {
     }
 
     public void appCenterLogInternal(Throwable th2) {

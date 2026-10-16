@@ -7,7 +7,7 @@ import java.io.EOFException;
 import java.io.IOException;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class b implements g {
     public final f a;
@@ -38,7 +38,7 @@ public final class b implements g {
     }
 
     @Override // x3.g
-    public final void W(long j10) {
+    public final void g0(long j10) {
         this.n = m0.j(j10, 0L, this.f - 1);
         this.e = 2;
         this.r = this.b;
@@ -53,7 +53,7 @@ public final class b implements g {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final long k(p pVar) {
+    public final long l(p pVar) {
         long j10;
         long j11;
         long j12;
@@ -167,7 +167,7 @@ public final class b implements g {
     }
 
     @Override // x3.g
-    public final b0 v() {
+    public final b0 y() {
         if (this.f != 0) {
             return new a(this);
         }

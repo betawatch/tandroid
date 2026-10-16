@@ -10,7 +10,7 @@ import org.telegram.ui.Components.e30;
 import org.telegram.ui.Components.qu0;
 import org.telegram.ui.Components.xv0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class y2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final class y2 extends AnimatorListenerAdapter {
                         qu0VarArr[i13].r.setVisibility(8);
                     }
                 }
-                xv0Var.X0();
+                xv0Var.Y0();
                 break;
             default:
                 org.telegram.ui.Components.voip.t tVar = (org.telegram.ui.Components.voip.t) this.d;

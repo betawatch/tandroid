@@ -10,9 +10,9 @@ import org.telegram.ui.Components.ud0;
 import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.fo;
 import org.telegram.ui.qn;
-import org.telegram.ui.un0;
+import org.telegram.ui.sn0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class pk implements org.telegram.ui.ActionBar.z1, e2.j {
     public final /* synthetic */ int a = 3;
@@ -53,17 +53,17 @@ public final /* synthetic */ class pk implements org.telegram.ui.ActionBar.z1, e
                 qn qnVar = (qn) obj4;
                 TL_account.contentSettings contentsettings = (TL_account.contentSettings) obj;
                 fo foVar = qnVar.a;
-                org.telegram.ui.vc vcVar = new org.telegram.ui.vc(11, qnVar, (org.telegram.ui.Cells.u1) obj3);
+                org.telegram.ui.uc ucVar = new org.telegram.ui.uc(11, qnVar, (org.telegram.ui.Cells.u1) obj3);
                 if (!((boolean[]) obj2)[0]) {
-                    vcVar.run(Boolean.FALSE);
+                    ucVar.run(Boolean.FALSE);
                     break;
                 } else if (!z10 && (contentsettings == null || !contentsettings.sensitive_can_change)) {
-                    vcVar.run(Boolean.TRUE);
+                    ucVar.run(Boolean.TRUE);
                     break;
                 } else {
                     Activity parentActivity = foVar.getParentActivity();
                     i11 = ((org.telegram.ui.ActionBar.m2) foVar).currentAccount;
-                    ThemeActivity.C0(i11, parentActivity, new org.telegram.ui.vc(12, qnVar, vcVar), foVar.getResourceProvider());
+                    ThemeActivity.C0(i11, parentActivity, new org.telegram.ui.uc(12, qnVar, ucVar), foVar.getResourceProvider());
                     break;
                 }
             default:
@@ -77,16 +77,16 @@ public final /* synthetic */ class pk implements org.telegram.ui.ActionBar.z1, e
                 int value = ud0Var3.getValue();
                 int value2 = ud0Var2.getValue();
                 int value3 = ud0Var.getValue();
-                un0 un0Var = (un0) b2Var.c;
+                sn0 sn0Var = (sn0) b2Var.c;
                 int i13 = b2Var.b;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) b2Var.d;
                 if (i13 == 8) {
-                    int[] iArr = un0Var.x;
+                    int[] iArr = sn0Var.x;
                     iArr[0] = value;
                     iArr[1] = value2 + 1;
                     iArr[2] = value3;
                 } else {
-                    un0Var.getClass();
+                    sn0Var.getClass();
                 }
                 editTextBoldCursor.setText(String.format(Locale.US, "%02d.%02d.%d", Integer.valueOf(value3), Integer.valueOf(value2 + 1), Integer.valueOf(value)));
                 break;

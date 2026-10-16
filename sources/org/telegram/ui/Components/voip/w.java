@@ -1,10 +1,10 @@
 package org.telegram.ui.Components.voip;
 
 import android.animation.ValueAnimator;
-import org.telegram.ui.dj1;
+import org.telegram.ui.cj1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ float b;
@@ -33,12 +33,12 @@ public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateList
                 l0Var.invalidate();
                 break;
             case 1:
-                dj1 dj1Var = (dj1) this.e;
+                cj1 cj1Var = (cj1) this.e;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dj1Var.f1 = com.google.android.gms.internal.play_billing.k3.y(1.0f, floatValue2, 1.0f, this.b * floatValue2);
-                dj1Var.Y0 = this.c * floatValue2;
-                dj1Var.Z0 = this.d * floatValue2;
-                dj1Var.s.invalidate();
+                cj1Var.f1 = com.google.android.gms.internal.play_billing.k3.y(1.0f, floatValue2, 1.0f, this.b * floatValue2);
+                cj1Var.Y0 = this.c * floatValue2;
+                cj1Var.Z0 = this.d * floatValue2;
+                cj1Var.s.invalidate();
                 break;
             default:
                 tg.n nVar = (tg.n) this.e;

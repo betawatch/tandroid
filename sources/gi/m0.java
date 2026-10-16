@@ -28,16 +28,16 @@ import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.bd;
 import org.telegram.ui.Components.cd;
 import org.telegram.ui.Components.ew;
-import org.telegram.ui.Components.m21;
+import org.telegram.ui.Components.n21;
 import org.telegram.ui.Components.sc;
 import org.telegram.ui.Components.yx0;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.o00;
+import org.telegram.ui.d20;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -88,10 +88,10 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
                 if (i12 == i6Var.I && i6Var.x == aVar) {
                     Editable text = i6Var.f.getText();
                     if (TextUtils.equals(str, text)) {
-                        for (mi.d dVar : (mi.d[]) text.getSpans(0, text.length(), mi.d.class)) {
+                        for (li.d dVar : (li.d[]) text.getSpans(0, text.length(), li.d.class)) {
                             text.removeSpan(dVar);
                         }
-                        mi.d[] dVarArr = (mi.d[]) spannableString.getSpans(0, spannableString.length(), mi.d.class);
+                        li.d[] dVarArr = (li.d[]) spannableString.getSpans(0, spannableString.length(), li.d.class);
                         int length = text.length();
                         while (i11 < dVarArr.length) {
                             int spanStart = spannableString.getSpanStart(dVarArr[i11]);
@@ -123,12 +123,12 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
                 break;
             case 3:
                 LaunchActivity launchActivity = (LaunchActivity) obj4;
-                o00 o00Var = (o00) obj3;
+                d20 d20Var = (d20) obj3;
                 Long l4 = (Long) obj2;
                 TL_stories.TL_storyAlbum tL_storyAlbum = (TL_stories.TL_storyAlbum) obj;
                 Pattern pattern = LaunchActivity.B1;
                 try {
-                    o00Var.run();
+                    d20Var.run();
                 } catch (Exception e) {
                     FileLog.e(e);
                 }
@@ -136,7 +136,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
                 if (tL_storyAlbum == null) {
                     zc X = zc.X();
                     if (X != null) {
-                        org.telegram.messenger.q.r(R.string.StoryAlbumNotFound, X, R.raw.story_bomb2, 36);
+                        org.telegram.messenger.g0.q(R.string.StoryAlbumNotFound, X, R.raw.story_bomb2, 36);
                         break;
                     }
                 } else {
@@ -181,7 +181,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                 if (savedStarGift != null) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(bdVar.getText());
-                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) cd.b(LocaleController.getString(R.string.StarGiftReasonUpgradeView), new m21(this.b, context, c6Var, savedStarGift, 21), c6Var, null));
+                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) cd.b(LocaleController.getString(R.string.StarGiftReasonUpgradeView), new n21(this.b, context, c6Var, savedStarGift, 21), c6Var, null));
                     bdVar.setText(spannableStringBuilder);
                     break;
                 }
@@ -197,10 +197,10 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
         this.e = arrayList;
     }
 
-    public /* synthetic */ m0(LaunchActivity launchActivity, o00 o00Var, Long l4, int i10) {
+    public /* synthetic */ m0(LaunchActivity launchActivity, d20 d20Var, Long l4, int i10) {
         this.a = 3;
         this.c = launchActivity;
-        this.d = o00Var;
+        this.d = d20Var;
         this.e = l4;
         this.b = i10;
     }

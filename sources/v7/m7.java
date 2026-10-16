@@ -2,7 +2,7 @@ package v7;
 
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class m7 {
     public static int a(int i10, int i11) {
@@ -67,7 +67,7 @@ public abstract class m7 {
     public static int c(int i10) {
         RoundingMode roundingMode = RoundingMode.UNNECESSARY;
         if (i10 <= 0) {
-            throw new IllegalArgumentException(i2.d.j(i10, "x (", ") must be > 0"));
+            throw new IllegalArgumentException(i2.d.k(i10, "x (", ") must be > 0"));
         }
         switch (g9.d.a[roundingMode.ordinal()]) {
             case 1:

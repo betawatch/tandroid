@@ -1,28 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class rf0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ tf0 b;
+public final class rf0 extends u6 {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ uf0 c;
 
-    public /* synthetic */ rf0(tf0 tf0Var, int i10) {
-        this.a = i10;
-        this.b = tf0Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.s = null;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rf0(uf0 uf0Var, int i10) {
+        super("thumbAnimationProgress", 0);
+        this.b = i10;
+        switch (i10) {
+            case 1:
+                this.c = uf0Var;
+                super("thumbImageVisibleProgress", 0);
                 break;
             default:
-                this.b.v = null;
+                this.c = uf0Var;
                 break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.u6
+    public final void c(Object obj, float f7) {
+        switch (this.b) {
+            case 0:
+                this.c.r = f7;
+                ((uf0) obj).invalidate();
+                break;
+            default:
+                this.c.n = f7;
+                ((uf0) obj).invalidate();
+                break;
+        }
+    }
+
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        switch (this.b) {
+            case 0:
+                return Float.valueOf(this.c.r);
+            default:
+                return Float.valueOf(this.c.n);
         }
     }
 }

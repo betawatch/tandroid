@@ -8,7 +8,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class on0 extends HorizontalScrollView {
     public boolean a;
@@ -37,7 +37,7 @@ public abstract class on0 extends HorizontalScrollView {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(getScrollX(), i10);
         this.f = ofFloat;
-        ofFloat.addUpdateListener(new g80(this, 15));
+        ofFloat.addUpdateListener(new f80(this, 15));
         this.f.setInterpolator(es.h);
         this.f.setDuration(250L);
         this.f.addListener(new k90(this, 13));
@@ -59,7 +59,7 @@ public abstract class on0 extends HorizontalScrollView {
                 measuredWidth = (i11 - getMeasuredWidth()) + dp;
             }
         }
-        a(w7.s.b(measuredWidth, 0, getChildAt(0).getMeasuredWidth() - getMeasuredWidth()));
+        a(w7.r.b(measuredWidth, 0, getChildAt(0).getMeasuredWidth() - getMeasuredWidth()));
     }
 
     public final void c() {

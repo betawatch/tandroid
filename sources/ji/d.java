@@ -1,9 +1,9 @@
 package ji;
 
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.hj0;
+import org.telegram.ui.gj0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -20,9 +20,9 @@ public final /* synthetic */ class d implements Runnable {
             case 0:
                 r rVar = this.b;
                 rVar.K(2147483646, true, 0, false, 0L);
-                hj0 hj0Var = rVar.O;
-                if (hj0Var != null) {
-                    hj0Var.h(false);
+                gj0 gj0Var = rVar.O;
+                if (gj0Var != null) {
+                    gj0Var.h(false);
                     rVar.O = null;
                     break;
                 }
@@ -30,9 +30,9 @@ public final /* synthetic */ class d implements Runnable {
             case 1:
                 r rVar2 = this.b;
                 rVar2.K(0, false, 0, false, 0L);
-                hj0 hj0Var2 = rVar2.O;
-                if (hj0Var2 != null) {
-                    hj0Var2.h(true);
+                gj0 gj0Var2 = rVar2.O;
+                if (gj0Var2 != null) {
+                    gj0Var2.h(true);
                     rVar2.O = null;
                     break;
                 }

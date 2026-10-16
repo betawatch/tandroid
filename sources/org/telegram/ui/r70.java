@@ -10,7 +10,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class r70 extends org.telegram.ui.Components.lm0 {
     public final Context c;
@@ -112,7 +112,7 @@ public final class r70 extends org.telegram.ui.Components.lm0 {
             textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.G6, false));
             textView.setTextSize(1, 16.0f);
             textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-            p8Var.addView(textView, w7.a6.a(-2.0f, 23.0f, 10.0f, 23.0f, 10.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
+            p8Var.addView(textView, w7.z5.a(-2.0f, 23.0f, 10.0f, 23.0f, 10.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
             p8Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
             frameLayout = p8Var;
         } else {

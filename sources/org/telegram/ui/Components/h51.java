@@ -20,7 +20,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.XiaomiUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class h51 extends FrameLayout implements org.telegram.ui.ActionBar.x5 {
     public final org.telegram.ui.ActionBar.c6 a;
@@ -48,19 +48,19 @@ public final class h51 extends FrameLayout implements org.telegram.ui.ActionBar.
         e51Var.setMaxLines(1);
         e51Var.setSingleLine();
         e51Var.setEllipsize(TextUtils.TruncateAt.END);
-        addView(e51Var, w7.a6.d(-2.0f, -1));
+        addView(e51Var, w7.z5.d(-2.0f, -1));
         TextView textView = new TextView(context);
         this.d = textView;
-        textView.setPadding(org.telegram.ui.Cells.d0.c(8.0f, R.string.DescriptionMore, textView), 0, AndroidUtilities.dp(8.0f), 0);
+        textView.setPadding(org.telegram.ui.Cells.c1.b(8.0f, R.string.DescriptionMore, textView), 0, AndroidUtilities.dp(8.0f), 0);
         textView.setGravity(17);
-        w7.c6.a(textView);
-        addView(textView, w7.a6.a(18.0f, 0.0f, 1.0f, 0.0f, 0.0f, -2, 53));
+        w7.b6.a(textView);
+        addView(textView, w7.z5.a(18.0f, 0.0f, 1.0f, 0.0f, 0.0f, -2, 53));
         f51 f51Var = new f51(context);
         this.f = f51Var;
         NotificationCenter.listenEmojiLoading(f51Var);
         f51Var.setTextSize(1, 16.0f);
         f51Var.setTextIsSelectable(true);
-        FrameLayout.LayoutParams d = w7.a6.d(-2.0f, -1);
+        FrameLayout.LayoutParams d = w7.z5.d(-2.0f, -1);
         this.e = d;
         addView(f51Var, d);
         ImageView imageView = new ImageView(context);
@@ -68,8 +68,8 @@ public final class h51 extends FrameLayout implements org.telegram.ui.ActionBar.
         imageView.setImageResource(R.drawable.msg_copy);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setContentDescription(LocaleController.getString(R.string.Copy));
-        w7.c6.a(imageView);
-        addView(imageView, w7.a6.a(38.0f, 0.0f, 0.0f, -16.0f, -12.0f, 38, 85));
+        w7.b6.a(imageView);
+        addView(imageView, w7.z5.a(38.0f, 0.0f, 0.0f, -16.0f, -12.0f, 38, 85));
         imageView.setVisibility(8);
         d();
     }

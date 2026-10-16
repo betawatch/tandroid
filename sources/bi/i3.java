@@ -12,9 +12,9 @@ import org.telegram.ui.fo;
 import org.telegram.ui.un;
 import org.telegram.ui.vl;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class i3 extends w7.w5 {
+public final class i3 extends w7.j0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -23,7 +23,7 @@ public final class i3 extends w7.w5 {
         this.b = obj;
     }
 
-    @Override // w7.w5
+    @Override // w7.j0
     public final void a(boolean z10) {
         switch (this.a) {
             case 0:
@@ -92,7 +92,7 @@ public final class i3 extends w7.w5 {
         }
     }
 
-    @Override // w7.w5
+    @Override // w7.j0
     public void b() {
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;

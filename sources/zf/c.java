@@ -30,7 +30,7 @@ import zh.p7;
 import zh.r2;
 import zh.s2;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -312,10 +312,10 @@ public final /* synthetic */ class c implements Runnable {
                 }
                 break;
             case 18:
-                pf.d.s(((e7) obj).getContext(), LocaleController.getString(R.string.StarsTOSLink));
+                pf.d.r(((e7) obj).getContext(), LocaleController.getString(R.string.StarsTOSLink));
                 break;
             default:
-                pf.d.s(((f7) obj).getContext(), LocaleController.getString(R.string.StarsTOSLink));
+                pf.d.r(((f7) obj).getContext(), LocaleController.getString(R.string.StarsTOSLink));
                 break;
         }
     }

@@ -7,14 +7,14 @@ import java.util.List;
 import k1.z;
 import td.l;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class c {
     public final String a;
     public final l b;
     public final c0 c;
     public final Object d;
-    public volatile l2.f e;
+    public volatile m.h e;
 
     public c(String name, l lVar, c0 c0Var) {
         kotlin.jvm.internal.i.e(name, "name");
@@ -24,14 +24,14 @@ public final class c {
         this.d = new Object();
     }
 
-    public final l2.f a(Object obj, xd.g property) {
-        l2.f fVar;
+    public final m.h a(Object obj, xd.g property) {
+        m.h hVar;
         Context thisRef = (Context) obj;
         kotlin.jvm.internal.i.e(thisRef, "thisRef");
         kotlin.jvm.internal.i.e(property, "property");
-        l2.f fVar2 = this.e;
-        if (fVar2 != null) {
-            return fVar2;
+        m.h hVar2 = this.e;
+        if (hVar2 != null) {
+            return hVar2;
         }
         synchronized (this.d) {
             try {
@@ -43,14 +43,14 @@ public final class c {
                     c0 c0Var = this.c;
                     b bVar = new b(applicationContext, this);
                     kotlin.jvm.internal.i.e(migrations, "migrations");
-                    this.e = new l2.f(new z(new k0(bVar, 2), jd.h.b(new ab.l(migrations, null, 4)), new rb.b(12), c0Var), 3);
+                    this.e = new m.h(new z(new k0(bVar, 2), jd.h.b(new ab.l(migrations, null, 4)), new rb.b(12), c0Var), 2);
                 }
-                fVar = this.e;
-                kotlin.jvm.internal.i.b(fVar);
+                hVar = this.e;
+                kotlin.jvm.internal.i.b(hVar);
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        return fVar;
+        return hVar;
     }
 }

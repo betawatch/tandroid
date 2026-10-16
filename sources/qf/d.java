@@ -32,16 +32,16 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
-import org.telegram.ui.ul0;
+import org.telegram.ui.ps0;
 import t7.u;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class d extends l {
     public static final f l;
     public static final HashMap m;
     public final ExtendedDefaultDataSourceFactory e;
-    public final ul0 f;
+    public final ps0 f;
     public final u g;
     public final HashMap h;
     public Pair i;
@@ -64,7 +64,7 @@ public final class d extends l {
         this.i = null;
         this.j = false;
         this.k = new AtomicInteger();
-        this.f = new ul0(22);
+        this.f = new ps0(20);
         this.g = new u(8);
         this.e = new ExtendedDefaultDataSourceFactory(ApplicationLoader.applicationContext, "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20150101 Firefox/47.0 (Chrome)");
     }
@@ -102,7 +102,7 @@ public final class d extends l {
     public final i e(ad.e eVar) {
         String str;
         int incrementAndGet = this.k.incrementAndGet();
-        StringBuilder k10 = i2.d.k(incrementAndGet, "Request ", " ");
+        StringBuilder l4 = i2.d.l(incrementAndGet, "Request ", " ");
         switch (eVar.g) {
             case 1:
                 str = "GET";
@@ -156,20 +156,20 @@ public final class d extends l {
                 str = BuildConfig.BETA_URL;
                 break;
         }
-        k10.append(str);
-        k10.append(" ");
-        k10.append(eVar.f);
-        k10.append(" ");
-        k10.append((String) eVar.i.get("range"));
-        Log.d("CAST_SERVER", k10.toString());
+        l4.append(str);
+        l4.append(" ");
+        l4.append(eVar.f);
+        l4.append(" ");
+        l4.append((String) eVar.i.get("range"));
+        Log.d("CAST_SERVER", l4.toString());
         try {
-            i k11 = k(eVar);
-            ad.f fVar = k11.e;
+            i k10 = k(eVar);
+            ad.f fVar = k10.e;
             fVar.put("Access-Control-Allow-Origin", "*");
             fVar.put("Access-Control-Max-Age", "3628800");
             fVar.put("Access-Control-Allow-Methods", "*");
             fVar.put("Access-Control-Allow-Headers", "*");
-            return k11;
+            return k10;
         } catch (Throwable unused) {
             Log.d("CAST_SERVER", "Error " + incrementAndGet);
             i c10 = l.c(h.n, "text/plain", "Error reading file");

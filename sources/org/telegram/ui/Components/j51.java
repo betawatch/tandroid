@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j51 implements Runnable {
     public final /* synthetic */ int a;
@@ -25,15 +25,15 @@ public final /* synthetic */ class j51 implements Runnable {
         switch (this.a) {
             case 0:
                 this.b[0].dismiss();
-                pf.d.s(this.c, LocaleController.getString(R.string.CocoonFeature1TextLink));
+                pf.d.r(this.c, LocaleController.getString(R.string.CocoonFeature1TextLink));
                 break;
             case 1:
                 this.b[0].dismiss();
-                pf.d.u(this.c, LocaleController.getString(R.string.CocoonFeature3TextLink));
+                pf.d.t(this.c, LocaleController.getString(R.string.CocoonFeature3TextLink));
                 break;
             case 2:
                 this.b[0].dismiss();
-                pf.d.s(this.c, LocaleController.getString(R.string.CocoonFooterLink));
+                pf.d.r(this.c, LocaleController.getString(R.string.CocoonFooterLink));
                 break;
             default:
                 dx0 dx0Var = new dx0(this.c);

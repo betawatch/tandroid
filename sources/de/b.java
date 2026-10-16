@@ -14,7 +14,7 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import k1.k;
 import v7.i8;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class b {
     public static final /* synthetic */ AtomicLongFieldUpdater b = AtomicLongFieldUpdater.newUpdater(b.class, "sendersAndCloseStatus$volatile");
@@ -40,7 +40,7 @@ public class b {
     public b(int i10) {
         this.a = i10;
         if (i10 < 0) {
-            throw new IllegalArgumentException(i2.d.j(i10, "Invalid channel capacity: ", ", should be >=0").toString());
+            throw new IllegalArgumentException(i2.d.k(i10, "Invalid channel capacity: ", ", should be >=0").toString());
         }
         h hVar = d.a;
         this.bufferEnd$volatile = i10 != 0 ? i10 != Integer.MAX_VALUE ? i10 : Long.MAX_VALUE : 0L;
@@ -438,7 +438,7 @@ public class b {
                 }
             } else {
                 if (i10 != 3) {
-                    throw new IllegalStateException(i2.d.i(i10, "unexpected close status: ").toString());
+                    throw new IllegalStateException(i2.d.j(i10, "unexpected close status: ").toString());
                 }
                 h b10 = b(1152921504606846975L & j10);
                 Object obj = null;

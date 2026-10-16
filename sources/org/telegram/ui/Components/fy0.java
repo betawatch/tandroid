@@ -1,54 +1,36 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fy0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ TLObject b;
-    public final /* synthetic */ Utilities.Callback c;
+    public final /* synthetic */ uy0 b;
 
-    public /* synthetic */ fy0(TLObject tLObject, Utilities.Callback callback, int i10) {
+    public /* synthetic */ fy0(uy0 uy0Var, int i10) {
         this.a = i10;
-        this.b = tLObject;
-        this.c = callback;
+        this.b = uy0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        boolean z10;
         switch (this.a) {
             case 0:
-                TLObject tLObject = this.b;
-                if (tLObject instanceof TLRPC.TL_messages_stickerSet) {
-                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
-                    MediaDataController.getInstance(UserConfig.selectedAccount).putStickerSet(tL_messages_stickerSet);
-                    if (!MediaDataController.getInstance(UserConfig.selectedAccount).isStickerPackInstalled(tL_messages_stickerSet.set.id)) {
-                        MediaDataController.getInstance(UserConfig.selectedAccount).toggleStickerSet(null, tL_messages_stickerSet, 2, null, false, false);
-                    }
-                    z10 = true;
-                } else {
-                    z10 = false;
-                }
-                this.c.run(Boolean.valueOf(z10));
+                this.b.d.l();
+                break;
+            case 1:
+                this.b.d.l();
+                break;
+            case 2:
+                uy0.v(this.b);
+                break;
+            case 3:
+                MessagesController.getInstance(r0.currentAccount).openByUserName("stickers", this.b.L, 1);
                 break;
             default:
-                TLObject tLObject2 = this.b;
-                boolean z11 = tLObject2 instanceof TL_account.paidMessagesRevenue;
-                Utilities.Callback callback = this.c;
-                if (!z11) {
-                    callback.run(0L);
-                    break;
-                } else {
-                    callback.run(Long.valueOf(((TL_account.paidMessagesRevenue) tLObject2).stars_amount));
-                    break;
-                }
+                uy0.u(this.b);
+                break;
         }
     }
 }

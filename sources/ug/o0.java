@@ -11,9 +11,9 @@ import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.k9;
 import org.telegram.ui.Components.z9;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class o0 extends FrameLayout {
     public final z9 a;
@@ -38,8 +38,8 @@ public final class o0 extends FrameLayout {
         paint2.setColor(g6.x0(null, i10, false));
         this.b = p0Var;
         p0Var.setAlpha(0.0f);
-        addView(z9Var, a6.a(-1.0f, 5.0f, 5.0f, 5.0f, 5.0f, -1, 0));
-        addView(p0Var, a6.a(28.0f, 0.0f, 0.0f, 0.0f, 3.0f, 28, 85));
+        addView(z9Var, z5.a(-1.0f, 5.0f, 5.0f, 5.0f, 5.0f, -1, 0));
+        addView(p0Var, z5.a(28.0f, 0.0f, 0.0f, 0.0f, 3.0f, 28, 85));
         paint.setColor(g6.x0(null, i10, false));
     }
 

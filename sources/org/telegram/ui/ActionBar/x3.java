@@ -14,7 +14,7 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class x3 extends FrameLayout {
     public b5 a;
@@ -32,8 +32,8 @@ public final class x3 extends FrameLayout {
         this.f = bVar;
         this.h = bVar;
         n nVar = new n(this, 8);
-        WeakHashMap weakHashMap = r0.j0.a;
-        r0.b0.i(this, nVar);
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.a0.i(this, nVar);
         setSystemUiVisibility(1280);
     }
 
@@ -43,7 +43,7 @@ public final class x3 extends FrameLayout {
         r0.l1 l1Var = this.e;
         if (l1Var != null) {
             if ((view instanceof ActionBarLayout) || view.getTag() == null) {
-                r0.j0.b(view, l1Var);
+                r0.i0.b(view, l1Var);
             }
         }
     }

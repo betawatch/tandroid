@@ -29,7 +29,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class wo extends LinearLayout {
     public static final /* synthetic */ int L = 0;
@@ -78,15 +78,15 @@ public abstract class wo extends LinearLayout {
         z9 z9Var = new z9(context);
         this.h = z9Var;
         z9Var.getImageReceiver().setAspectFit(true);
-        frameLayout.addView(this.h, w7.a6.d(112.0f, 112));
-        w7.c6.a(this.h);
+        frameLayout.addView(this.h, w7.z5.d(112.0f, 112));
+        w7.b6.a(this.h);
         z9 z9Var2 = new z9(context);
         this.n = z9Var2;
         z9Var2.getImageReceiver().setAspectFit(true);
-        frameLayout.addView(this.n, w7.a6.d(112.0f, 112));
+        frameLayout.addView(this.n, w7.z5.d(112.0f, 112));
         this.n.setVisibility(8);
         this.n.setAlpha(0.0f);
-        w7.c6.a(this.n);
+        w7.b6.a(this.n);
         e();
         int i11 = org.telegram.ui.ActionBar.g6.ic;
         textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(i11, c6Var));
@@ -224,7 +224,7 @@ public abstract class wo extends LinearLayout {
                 ci.n nVar2 = this.x;
                 int dp = AndroidUtilities.dp(15.0f);
                 nVar2.setBackground(org.telegram.ui.ActionBar.g6.j0(dp, dp, dp, dp, 503316480, 855638016, 855638016));
-                w7.c6.a(this.x);
+                w7.b6.a(this.x);
             }
             this.x.setText(str);
             this.x.setTextColor(org.telegram.ui.ActionBar.g6.w0(i10, c6Var));
@@ -272,14 +272,14 @@ public abstract class wo extends LinearLayout {
     public final void e() {
         removeAllViews();
         if (!this.y) {
-            addView(this.b, w7.a6.t(-2, -2, 1, 20, 6, 20, 6));
-            addView(this.c, w7.a6.t(-2, -2, 1, 20, 6, 20, 6));
-            addView(this.f, w7.a6.t(112, 112, 1, 16, 10, 16, 16));
+            addView(this.b, w7.z5.t(-2, -2, 1, 20, 6, 20, 6));
+            addView(this.c, w7.z5.t(-2, -2, 1, 20, 6, 20, 6));
+            addView(this.f, w7.z5.t(112, 112, 1, 16, 10, 16, 16));
             return;
         }
-        addView(this.v, w7.a6.t(78, 78, 49, 20, 9, 20, 9));
+        addView(this.v, w7.z5.t(78, 78, 49, 20, 9, 20, 9));
         boolean premiumFeaturesBlocked = MessagesController.getInstance(this.e).premiumFeaturesBlocked();
-        addView(this.w, w7.a6.t(-2, -2, 49, 20, 0, 20, premiumFeaturesBlocked ? 13 : 9));
+        addView(this.w, w7.z5.t(-2, -2, 49, 20, 0, 20, premiumFeaturesBlocked ? 13 : 9));
         if (premiumFeaturesBlocked) {
             return;
         }
@@ -287,7 +287,7 @@ public abstract class wo extends LinearLayout {
         if ((nVar == null || TextUtils.isEmpty(nVar.getText())) && this.E) {
             return;
         }
-        addView(this.x, w7.a6.t(-2, 30, 49, 20, 2, 20, 13));
+        addView(this.x, w7.z5.t(-2, 30, 49, 20, 2, 20, 13));
     }
 
     @Override // android.view.ViewGroup, android.view.View

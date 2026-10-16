@@ -6,7 +6,7 @@ import android.text.style.URLSpan;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class o41 extends ClickableSpan {
     public final /* synthetic */ URLSpan a;
@@ -37,7 +37,7 @@ public final class o41 extends ClickableSpan {
     @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
     public final void updateDrawState(TextPaint textPaint) {
         int min = Math.min(textPaint.getAlpha(), (textPaint.getColor() >> 24) & 255);
-        if (!(this.a instanceof p61)) {
+        if (!(this.a instanceof q61)) {
             textPaint.setUnderlineText(true);
         }
         textPaint.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.k5, false));

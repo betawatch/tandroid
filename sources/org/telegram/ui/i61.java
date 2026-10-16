@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class i61 extends g71 {
     public final /* synthetic */ r71 E;
@@ -34,7 +34,7 @@ public final class i61 extends g71 {
             RectF rectF = AndroidUtilities.rectTmp;
             float f7 = 0;
             rectF.set(f7, f7, measuredWidth, measuredHeight);
-            gl0Var.getDelegate().w(canvas, rectF, 0.0f, s0Var.getX() + x10, (t0Var.y == 1 ? s0Var.getY() - AndroidUtilities.statusBarHeight : s0Var.getY() + t0Var.c.getY()) + y3, 255, true);
+            gl0Var.getDelegate().r(canvas, rectF, 0.0f, s0Var.getX() + x10, (t0Var.y == 1 ? s0Var.getY() - AndroidUtilities.statusBarHeight : s0Var.getY() + t0Var.c.getY()) + y3, 255, true);
         }
         super.dispatchDraw(canvas);
     }

@@ -9,15 +9,15 @@ import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
+import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.mt;
 import org.telegram.ui.Components.ot;
 import org.telegram.ui.Components.qu0;
-import org.telegram.ui.Components.voip.m2;
-import org.telegram.ui.Components.voip.o2;
+import org.telegram.ui.Components.voip.n2;
 import org.telegram.ui.Components.xv0;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class j0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -105,8 +105,8 @@ public final class j0 extends AnimatorListenerAdapter {
                 }
                 break;
             case 4:
-                o2 o2Var = (o2) this.e;
-                TextView[] textViewArr = o2Var.a;
+                n2 n2Var = (n2) this.e;
+                TextView[] textViewArr = n2Var.a;
                 View view4 = (View) this.c;
                 view4.setVisibility(8);
                 view4.setAlpha(1.0f);
@@ -123,16 +123,16 @@ public final class j0 extends AnimatorListenerAdapter {
                 if (runnable != null) {
                     runnable.run();
                 }
-                o2Var.f = false;
-                CharSequence charSequence = o2Var.e;
+                n2Var.f = false;
+                CharSequence charSequence = n2Var.e;
                 if (charSequence != null) {
                     if (charSequence.equals("timer")) {
-                        o2Var.e(true);
+                        n2Var.e(true);
                     } else {
-                        textViewArr[1].setText(o2Var.e);
-                        o2Var.a(textViewArr[0], textViewArr[1], new m2(this, 0));
+                        textViewArr[1].setText(n2Var.e);
+                        n2Var.a(textViewArr[0], textViewArr[1], new ig.t0(this, 29));
                     }
-                    o2Var.e = null;
+                    n2Var.e = null;
                     break;
                 }
                 break;
@@ -151,7 +151,7 @@ public final class j0 extends AnimatorListenerAdapter {
                     profileActivity.e0.setProgressToExpand(0.0f);
                     profileActivity.a.setLayerType(0, null);
                     if (profileActivity.P0 != null) {
-                        kVar = ((org.telegram.ui.ActionBar.m2) profileActivity).actionBar;
+                        kVar = ((m2) profileActivity).actionBar;
                         org.telegram.ui.ActionBar.y n10 = kVar.n();
                         ArrayList arrayList = n10.e;
                         if (arrayList != null) {

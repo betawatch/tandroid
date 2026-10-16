@@ -22,12 +22,12 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.yi0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class w extends FrameLayout implements Checkable {
     public final boolean a;
@@ -56,7 +56,7 @@ public final class w extends FrameLayout implements Checkable {
             int x02 = org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Oh, false);
             org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Qh, false);
             yi0Var.setBackground(org.telegram.ui.ActionBar.w5.e(new float[]{14.0f}, x02));
-            addView(yi0Var, w7.a6.i(-2.0f, 28.0f, 8388661, 0.0f, 18.0f, 14.0f, 0.0f));
+            addView(yi0Var, w7.z5.i(-2.0f, 28.0f, 8388661, 0.0f, 18.0f, 14.0f, 0.0f));
             int dp = AndroidUtilities.dp(60.0f);
             yi0 yi0Var2 = new yi0(context);
             this.e = yi0Var2;
@@ -69,9 +69,9 @@ public final class w extends FrameLayout implements Checkable {
             yi0Var2.setText(LocaleController.getString(R.string.StickersRemove));
             yi0Var2.setBackground(org.telegram.ui.ActionBar.g6.H0(AndroidUtilities.dp(3.0f), org.telegram.ui.ActionBar.g6.x0(null, i10, false)));
             yi0Var2.setTypeface(AndroidUtilities.bold());
-            w7.g6.a(yi0Var2, 8.0f, 0.0f, 8.0f, 0.0f);
+            w7.f6.a(yi0Var2, 8.0f, 0.0f, 8.0f, 0.0f);
             yi0Var2.setOutlineProvider(null);
-            addView(yi0Var2, w7.a6.i(-2.0f, 28.0f, 8388661, 0.0f, 18.0f, 14.0f, 0.0f));
+            addView(yi0Var2, w7.z5.i(-2.0f, 28.0f, 8388661, 0.0f, 18.0f, 14.0f, 0.0f));
             a aVar = new a(this, 2);
             yi0Var.setOnClickListener(aVar);
             yi0Var2.setOnClickListener(aVar);
@@ -82,24 +82,24 @@ public final class w extends FrameLayout implements Checkable {
         }
         TextView textView = new TextView(context);
         this.b = textView;
-        yh.t(textView, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.G6, false), 1, 16.0f, 1);
+        sk.u(textView, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.G6, false), 1, 16.0f, 1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setGravity(w7.a6.y());
-        addView(textView, w7.a6.i(-2.0f, -2.0f, 8388611, 71.0f, 10.0f, 21.0f, 0.0f));
+        textView.setGravity(w7.z5.y());
+        addView(textView, w7.z5.i(-2.0f, -2.0f, 8388611, 71.0f, 10.0f, 21.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.c = textView2;
-        yh.t(textView2, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.z6, false), 1, 13.0f, 1);
+        sk.u(textView2, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.z6, false), 1, 13.0f, 1);
         textView2.setMaxLines(1);
         textView2.setSingleLine(true);
-        textView2.setGravity(w7.a6.y());
-        addView(textView2, w7.a6.i(-2.0f, -2.0f, 8388611, 71.0f, 35.0f, 21.0f, 0.0f));
+        textView2.setGravity(w7.z5.y());
+        addView(textView2, w7.z5.i(-2.0f, -2.0f, 8388611, 71.0f, 35.0f, 21.0f, 0.0f));
         org.telegram.ui.Components.z9 z9Var = new org.telegram.ui.Components.z9(context);
         this.d = z9Var;
         z9Var.setAspectFit(true);
         z9Var.setLayerNum(1);
-        addView(z9Var, w7.a6.i(48.0f, 48.0f, 8388659, 12.0f, 8.0f, 0.0f, 0.0f));
+        addView(z9Var, w7.z5.i(48.0f, 48.0f, 8388659, 12.0f, 8.0f, 0.0f, 0.0f));
     }
 
     public final void a(boolean z10, boolean z11, boolean z12) {
@@ -113,9 +113,9 @@ public final class w extends FrameLayout implements Checkable {
         if (!z12 || (vVar = this.v) == null) {
             return;
         }
-        m4.z0 z0Var = (m4.z0) vVar;
-        org.telegram.ui.p pVar = ((org.telegram.ui.o) z0Var.b).d;
-        TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) z0Var.c;
+        m4.y0 y0Var = (m4.y0) vVar;
+        org.telegram.ui.p pVar = ((org.telegram.ui.o) y0Var.b).d;
+        TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) y0Var.c;
         a0.h hVar = pVar.a;
         if (z10) {
             a(false, false, false);

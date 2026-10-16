@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class cn {
     public long i;
@@ -22,10 +22,10 @@ public final class cn {
     public float q;
     public float r;
     public float s;
-    public h11 u;
+    public i11 u;
     public long v;
     public final org.telegram.ui.ActionBar.d5 x;
-    public final m.d3 y;
+    public final m.f3 y;
     public final /* synthetic */ dn z;
     public float a = 0.0f;
     public int b = 0;
@@ -46,7 +46,7 @@ public final class cn {
         org.telegram.ui.ActionBar.c6 c6Var = dnVar.P.n;
         Drawable drawable = c6Var != null ? c6Var.getDrawable("drawableMsgOutMedia") : null;
         this.x = (org.telegram.ui.ActionBar.d5) (drawable == null ? org.telegram.ui.ActionBar.g6.P0("drawableMsgOutMedia") : drawable);
-        this.y = new m.d3();
+        this.y = new m.f3();
     }
 
     public static void a(cn cnVar, xm xmVar, boolean z10) {

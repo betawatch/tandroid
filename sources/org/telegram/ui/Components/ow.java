@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class ow extends on0 {
     public static final int[] e0 = {R.drawable.msg_emoji_smiles, R.drawable.msg_emoji_cat, R.drawable.msg_emoji_food, R.drawable.msg_emoji_activities, R.drawable.msg_emoji_travel, R.drawable.msg_emoji_objects, R.drawable.msg_emoji_other, R.drawable.msg_emoji_flags};
@@ -309,7 +309,7 @@ public abstract class ow extends on0 {
                     kwVar.setAlpha(z10 ? 1.0f : 0.0f);
                 } else {
                     kwVar.setVisibility(0);
-                    kwVar.animate().alpha(z10 ? 1.0f : 0.0f).setDuration(200L).setInterpolator(es.h).withEndAction(new ah.t(25, this, z10)).start();
+                    kwVar.animate().alpha(z10 ? 1.0f : 0.0f).setDuration(200L).setInterpolator(es.h).withEndAction(new ah.t(24, this, z10)).start();
                 }
                 this.b.requestLayout();
                 this.a0 = false;

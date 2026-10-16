@@ -14,7 +14,7 @@ import org.telegram.messenger.SaveToGallerySettingsHelper;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.StatsController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class su extends org.telegram.ui.Components.lm0 {
     public final Context c;
@@ -460,7 +460,7 @@ public final class su extends org.telegram.ui.Components.lm0 {
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
         Context context = this.c;
-        View r8Var = i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? i10 != 5 ? new org.telegram.ui.Cells.r8(context) : new org.telegram.ui.Cells.j5(context) : new org.telegram.ui.Cells.e9(context) : new org.telegram.ui.Cells.w8(context) : new org.telegram.ui.Cells.m4(context, 22) : new org.telegram.ui.Cells.ca(context) : new org.telegram.ui.Cells.b7(context, (org.telegram.ui.Cells.d0) null);
+        View r8Var = i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? i10 != 5 ? new org.telegram.ui.Cells.r8(context) : new org.telegram.ui.Cells.j5(context) : new org.telegram.ui.Cells.e9(context) : new org.telegram.ui.Cells.w8(context) : new org.telegram.ui.Cells.m4(context, 22) : new org.telegram.ui.Cells.ca(context) : new org.telegram.ui.Cells.a7(context, (org.telegram.ui.Cells.c1) null);
         return com.google.android.gms.internal.play_billing.k3.l(r8Var, r8Var, -1, -2);
     }
 

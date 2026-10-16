@@ -13,11 +13,11 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class h5 extends LinearLayout {
     public final org.telegram.ui.Components.z9 a;
@@ -40,7 +40,7 @@ public final class h5 extends LinearLayout {
         org.telegram.ui.Components.z9 z9Var = new org.telegram.ui.Components.z9(context);
         this.a = z9Var;
         z9Var.setRoundRadius(AndroidUtilities.dp(14.0f));
-        addView(z9Var, w7.a6.k(8.0f, 4.0f, 0.0f, 0.0f, 28, 28));
+        addView(z9Var, w7.z5.k(8.0f, 4.0f, 0.0f, 0.0f, 28, 28));
         bi.f4 f4Var = new bi.f4(context, 6);
         this.b = f4Var;
         f4Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.G6, c6Var));
@@ -49,14 +49,14 @@ public final class h5 extends LinearLayout {
         f4Var.setGravity(3);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         f4Var.setEllipsize(truncateAt);
-        addView(f4Var, w7.a6.t(-2, -2, 16, 12, 0, 0, 0));
+        addView(f4Var, w7.z5.t(-2, -2, 16, 12, 0, 0, 0));
         TextView textView = new TextView(context);
         this.c = textView;
-        yh.n(org.telegram.ui.ActionBar.g6.A6, c6Var, textView, 1, 15.0f);
+        sk.o(org.telegram.ui.ActionBar.g6.A6, c6Var, textView, 1, 15.0f);
         textView.setSingleLine(true);
         textView.setGravity(3);
         textView.setEllipsize(truncateAt);
-        addView(textView, w7.a6.t(-2, -2, 16, 12, 0, 8, 0));
+        addView(textView, w7.z5.t(-2, -2, 16, 12, 0, 8, 0));
     }
 
     public final void a() {

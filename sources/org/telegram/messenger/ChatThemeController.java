@@ -31,7 +31,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.io;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class ChatThemeController extends BaseController {
     public static final int THEME_LIST_WITH_DEFAULT = 1;
@@ -50,7 +50,7 @@ public class ChatThemeController extends BaseController {
     private final Map<String, Long> usedGiftThemesBySlug;
     private final Map<Long, String> usedGiftThemesByUsers;
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class ThemeList {
         private boolean completed;
         private long hash;
@@ -624,7 +624,7 @@ public class ChatThemeController extends BaseController {
     private void loadWallpaperPatternBitmap(long j10, Utilities.Callback<eg.a> callback) {
         File filesDirFixed = ApplicationLoader.getFilesDirFixed("rasterized/wallpaper");
         Locale locale = Locale.US;
-        chatThemeQueue.postRunnable(new g3(17, new File(filesDirFixed, org.telegram.ui.Cells.d0.i(j10, "pattern_", ".pgm.gz")), callback));
+        chatThemeQueue.postRunnable(new g3(17, new File(filesDirFixed, org.telegram.ui.Cells.c1.h(j10, "pattern_", ".pgm.gz")), callback));
     }
 
     private void preloadSticker(String str) {
@@ -656,7 +656,7 @@ public class ChatThemeController extends BaseController {
     private void saveWallpaperPatternBitmap(Bitmap bitmap, List<eg.c> list, long j10) {
         File filesDirFixed = ApplicationLoader.getFilesDirFixed("rasterized/wallpaper");
         Locale locale = Locale.US;
-        chatThemeQueue.postRunnable(new h0(new File(filesDirFixed, org.telegram.ui.Cells.d0.i(j10, "pattern_", ".pgm.gz")), list, bitmap, 13));
+        chatThemeQueue.postRunnable(new h0(new File(filesDirFixed, org.telegram.ui.Cells.c1.h(j10, "pattern_", ".pgm.gz")), list, bitmap, 13));
     }
 
     private void setGiftThemeUser(String str, long j10) {
@@ -844,7 +844,7 @@ public class ChatThemeController extends BaseController {
 
     public void loadWallpaperBitmap(long j10, int i10, Utilities.Callback<eg.a> callback) {
         if (i10 == 0) {
-            getWallpaperBitmap(j10, new e0(callback, 1));
+            getWallpaperBitmap(j10, new d0(callback, 1));
         } else if (i10 == 1) {
             loadWallpaperPatternBitmap(j10, callback);
         }
@@ -863,7 +863,7 @@ public class ChatThemeController extends BaseController {
         for (org.telegram.ui.ActionBar.b4 b4Var : this.allChatThemes) {
             long i10 = b4Var.i(z10 ? 1 : 0);
             if (i10 != 0 && !this.themeIdWallpaperThumbMap.containsKey(Long.valueOf(i10))) {
-                b4Var.p(z10 ? 1 : 0, new e0(this, 2));
+                b4Var.p(z10 ? 1 : 0, new d0(this, 2));
             }
         }
     }

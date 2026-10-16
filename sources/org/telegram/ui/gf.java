@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.TopicsController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gf implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -97,29 +97,29 @@ public final /* synthetic */ class gf implements View.OnClickListener {
                 MessageObject messageObject2 = foVar.d5;
                 if (messageObject2 != null) {
                     foVar.O9(messageObject2, false, false);
-                    pf.d.r(foVar.getParentActivity(), Uri.parse(foVar.d5.sponsoredUrl), true, false, false, null, null, false, foVar.getMessagesController().sponsoredLinksInappAllow, false);
+                    pf.d.q(foVar.getParentActivity(), Uri.parse(foVar.d5.sponsoredUrl), true, false, false, null, null, false, foVar.getMessagesController().sponsoredLinksInappAllow, false);
                     break;
                 }
                 break;
             case 8:
                 if (AndroidUtilities.addToClipboard(foVar.d5.sponsoredInfo)) {
-                    org.telegram.messenger.yh.o(R.string.TextCopied, new org.telegram.ui.Components.zc(org.telegram.ui.Components.nb.a(foVar.getParentActivity()), foVar.ea));
+                    org.telegram.messenger.sk.p(R.string.TextCopied, new org.telegram.ui.Components.zc(org.telegram.ui.Components.nb.a(foVar.getParentActivity()), foVar.ea));
                     break;
                 }
                 break;
             case 9:
                 if (AndroidUtilities.addToClipboard(foVar.d5.sponsoredAdditionalInfo)) {
-                    org.telegram.messenger.yh.o(R.string.TextCopied, new org.telegram.ui.Components.zc(org.telegram.ui.Components.nb.a(foVar.getParentActivity()), foVar.ea));
+                    org.telegram.messenger.sk.p(R.string.TextCopied, new org.telegram.ui.Components.zc(org.telegram.ui.Components.nb.a(foVar.getParentActivity()), foVar.ea));
                     break;
                 }
                 break;
             case 10:
                 if (foVar.X0 != null && foVar.getParentActivity() != null) {
-                    org.telegram.ui.ActionBar.e3 i15 = org.telegram.messenger.yh.i(1, foVar.X0.getContext(), null, false);
+                    org.telegram.ui.ActionBar.e3 i15 = org.telegram.messenger.sk.i(1, foVar.X0.getContext(), null, false);
                     Activity parentActivity = foVar.getParentActivity();
                     co coVar = foVar.ea;
                     final t91 t91Var = new t91(parentActivity);
-                    LinearLayout f7 = org.telegram.messenger.q.f(parentActivity, 1);
+                    LinearLayout e = org.telegram.messenger.g0.e(parentActivity, 1);
                     TextView textView = new TextView(parentActivity);
                     textView.setText(LocaleController.getString(R.string.SponsoredMessageInfo));
                     textView.setTypeface(AndroidUtilities.bold());
@@ -209,19 +209,19 @@ public final /* synthetic */ class gf implements View.OnClickListener {
                     da0Var4.setTextColor(org.telegram.ui.ActionBar.g6.w0(i16, coVar));
                     da0Var4.setTextSize(1, 14.0f);
                     textView.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
-                    f7.addView(textView);
+                    e.addView(textView);
                     da0Var.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
-                    f7.addView(da0Var, w7.a6.t(-1, -2, 0, 0, 18, 0, 0));
+                    e.addView(da0Var, w7.z5.t(-1, -2, 0, 0, 18, 0, 0));
                     da0Var2.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
-                    f7.addView(da0Var2, w7.a6.t(-1, -2, 0, 0, 24, 0, 0));
+                    e.addView(da0Var2, w7.z5.t(-1, -2, 0, 0, 24, 0, 0));
                     da0Var3.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
-                    f7.addView(da0Var3, w7.a6.t(-1, -2, 0, 0, 24, 0, 0));
-                    f7.addView(xkVar, w7.a6.t(-2, 34, 1, 22, 14, 22, 0));
+                    e.addView(da0Var3, w7.z5.t(-1, -2, 0, 0, 24, 0, 0));
+                    e.addView(xkVar, w7.z5.t(-2, 34, 1, 22, 14, 22, 0));
                     da0Var4.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
-                    f7.addView(da0Var4, w7.a6.t(-1, -2, 0, 0, 14, 0, 0));
+                    e.addView(da0Var4, w7.z5.t(-1, -2, 0, 0, 14, 0, 0));
                     ScrollView scrollView = new ScrollView(t91Var.getContext());
-                    scrollView.addView(f7);
-                    t91Var.addView(scrollView, w7.a6.a(-2.0f, 0.0f, 12.0f, 0.0f, 22.0f, -1, 0));
+                    scrollView.addView(e);
+                    t91Var.addView(scrollView, w7.z5.a(-2.0f, 0.0f, 12.0f, 0.0f, 22.0f, -1, 0));
                     i15.customView = t91Var;
                     i15.show();
                     break;
@@ -271,7 +271,7 @@ public final /* synthetic */ class gf implements View.OnClickListener {
                     int i19 = foVar4.L4;
                     if (i19 != 0) {
                         if (!foVar4.H4.isEmpty()) {
-                            if (i19 == ((Integer) i2.d.g(1, foVar4.H4)).intValue()) {
+                            if (i19 == ((Integer) i2.d.h(1, foVar4.H4)).intValue()) {
                                 i13 = ((Integer) foVar4.H4.get(0)).intValue() + 1;
                                 foVar4.O4 = true;
                             } else {

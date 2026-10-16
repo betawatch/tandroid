@@ -17,10 +17,10 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.iw0;
-import org.telegram.ui.Components.m21;
+import org.telegram.ui.Components.n21;
 import v7.f7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class d0 {
     public static final es B = new es(0.0d, 0.5d, 0.0d, 1.0d);
@@ -130,7 +130,7 @@ public final class d0 {
                                     }
                                     long j11 = currentTimeMillis;
                                     if (arrayList.size() == 47) {
-                                        arrayList.add((h1) i2.d.g(1, f7));
+                                        arrayList.add((h1) i2.d.h(1, f7));
                                     }
                                     ArrayList f10 = k1.f(arrayList);
                                     h1 b10 = k1.b(f10);
@@ -261,7 +261,7 @@ public final class d0 {
                                         sb2.append(f1Var != null ? " (template#" + i21 + " shape#" + i23 + ")" : "");
                                         Log.i("shapedetector", sb2.toString());
                                     }
-                                    AndroidUtilities.runOnUIThread(new m21(k1Var2, f1Var, i21, f10));
+                                    AndroidUtilities.runOnUIThread(new n21(k1Var2, f1Var, i21, f10));
                                     k1Var2.j.set(false);
                                 }
                             } finally {
@@ -398,7 +398,7 @@ public final class d0 {
                                     }
                                     long j11 = currentTimeMillis;
                                     if (arrayList.size() == 47) {
-                                        arrayList.add((h1) i2.d.g(1, f7));
+                                        arrayList.add((h1) i2.d.h(1, f7));
                                     }
                                     ArrayList f10 = k1.f(arrayList);
                                     h1 b10 = k1.b(f10);
@@ -529,7 +529,7 @@ public final class d0 {
                                         sb2.append(f1Var != null ? " (template#" + i21 + " shape#" + i23 + ")" : "");
                                         Log.i("shapedetector", sb2.toString());
                                     }
-                                    AndroidUtilities.runOnUIThread(new m21(k1Var2, f1Var, i21, f10));
+                                    AndroidUtilities.runOnUIThread(new n21(k1Var2, f1Var, i21, f10));
                                     k1Var2.j.set(false);
                                 }
                             } finally {
@@ -729,7 +729,7 @@ public final class d0 {
             double d12 = f12;
             double d13 = (b11.a * d10) + (u0Var2.a * 2.0d * d12 * d) + (b10.a * d11);
             double d14 = (b11.b * d10) + (u0Var2.b * 2.0d * d12 * d) + (b10.b * d11);
-            double lerp = ((((b11.c * d10) + ((u0Var2.c * ((2.0f * f13) * f12)) + (b10.c * pow))) - 1.0d) * AndroidUtilities.lerp(f7, 1.0f, w7.s.a(this.o / 16.0f, 0.0f, 1.0f))) + 1.0d;
+            double lerp = ((((b11.c * d10) + ((u0Var2.c * ((2.0f * f13) * f12)) + (b10.c * pow))) - 1.0d) * AndroidUtilities.lerp(f7, 1.0f, w7.r.a(this.o / 16.0f, 0.0f, 1.0f))) + 1.0d;
             u0 u0Var4 = new u0(d13, d14, lerp);
             if (this.c) {
                 u0Var4.d = true;

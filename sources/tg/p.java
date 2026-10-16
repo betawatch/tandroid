@@ -10,8 +10,9 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
+import ri.h0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class p {
     public final Context a;
@@ -103,7 +104,7 @@ public final class p {
 
     public final void c() {
         if (this.g.compareAndSet(false, true)) {
-            this.b.post(new rh.j(this, 10));
+            this.b.post(new h0(this, 10));
         }
     }
 }

@@ -26,9 +26,9 @@ import java.util.Map;
 import java.util.regex.Pattern;
 import java.util.zip.CRC32;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
-import w7.w6;
+import w7.v6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class g {
     public static final String[] E;
@@ -825,7 +825,7 @@ public final class g {
                 if (Arrays.equals(bArr2, y)) {
                     byte[] bArr3 = new byte[readInt];
                     if (bVar.read(bArr3) != readInt) {
-                        throw new IOException("Failed to read given length for given PNG chunk type: " + w6.a(bArr2));
+                        throw new IOException("Failed to read given length for given PNG chunk type: " + v6.a(bArr2));
                     }
                     int readInt2 = bVar.readInt();
                     CRC32 crc32 = new CRC32();
@@ -962,7 +962,7 @@ public final class g {
                         x(new b(bArr3));
                         return;
                     } else {
-                        throw new IOException("Failed to read given length for given PNG chunk type: " + w6.a(bArr2));
+                        throw new IOException("Failed to read given length for given PNG chunk type: " + v6.a(bArr2));
                     }
                 }
                 if (readInt2 % 2 == 1) {
@@ -1157,7 +1157,7 @@ public final class g {
         }
         int readInt = fVar.readInt();
         if (readInt < 8) {
-            throw new IOException(i2.d.i(readInt, "Invalid first Ifd offset: "));
+            throw new IOException(i2.d.j(readInt, "Invalid first Ifd offset: "));
         }
         int i11 = readInt - 8;
         if (i11 > 0) {
@@ -1172,9 +1172,9 @@ public final class g {
             if (i10 >= hashMapArr.length) {
                 return;
             }
-            StringBuilder k10 = i2.d.k(i10, "The size of tag group[", "]: ");
-            k10.append(hashMapArr[i10].size());
-            Log.d("ExifInterface", k10.toString());
+            StringBuilder l4 = i2.d.l(i10, "The size of tag group[", "]: ");
+            l4.append(hashMapArr[i10].size());
+            Log.d("ExifInterface", l4.toString());
             for (Map.Entry entry : hashMapArr[i10].entrySet()) {
                 c cVar = (c) entry.getValue();
                 Log.d("ExifInterface", "tagName: " + ((String) entry.getKey()) + ", tagType: " + cVar.toString() + ", tagValue: '" + cVar.f(this.g) + "'");
@@ -1479,8 +1479,8 @@ public final class g {
                 if (cVar4 == null || cVar5 == null) {
                     return;
                 }
-                long[] b10 = w6.b(cVar4.g(this.g));
-                long[] b11 = w6.b(cVar5.g(this.g));
+                long[] b10 = v6.b(cVar4.g(this.g));
+                long[] b11 = v6.b(cVar5.g(this.g));
                 if (b10 == null || b10.length == 0) {
                     Log.w("ExifInterface", "stripOffsets should not be null or have zero length.");
                     return;

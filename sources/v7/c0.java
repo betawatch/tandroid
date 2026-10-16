@@ -3,7 +3,7 @@ package v7;
 import android.os.CancellationSignal;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class c0 {
     public static void a(CancellationSignal cancellationSignal, td.a onResultOrException) {
@@ -20,7 +20,7 @@ public abstract class c0 {
             return false;
         }
         kotlin.jvm.internal.p pVar2 = new kotlin.jvm.internal.p();
-        pVar2.a = new w0.h(i2.d.j(i10, "activity with result code: ", " indicating not RESULT_OK"), 2);
+        pVar2.a = new w0.h(i2.d.k(i10, "activity with result code: ", " indicating not RESULT_OK"), 2);
         if (i10 == 0) {
             pVar2.a = new w0.g("activity is cancelled by the user.");
         }

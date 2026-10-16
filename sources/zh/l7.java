@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.z61;
+import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.m61;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l7 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -39,15 +39,15 @@ public final /* synthetic */ class l7 implements Utilities.Callback2 {
                         Object obj3 = arrayList2.get(i14);
                         i14++;
                         int i15 = i7.a;
-                        l61 J = l61.J(i7.class);
+                        m61 J = m61.J(i7.class);
                         J.G = (TL_stars.StarsTransaction) obj3;
                         J.q = false;
                         arrayList.add(J);
                     }
                     if (!y3.u[i12]) {
-                        arrayList.add(l61.o(arrayList.size(), 7));
-                        arrayList.add(l61.o(arrayList.size(), 7));
-                        arrayList.add(l61.o(arrayList.size(), 7));
+                        arrayList.add(m61.o(arrayList.size(), 7));
+                        arrayList.add(m61.o(arrayList.size(), 7));
+                        arrayList.add(m61.o(arrayList.size(), 7));
                         break;
                     }
                 } else {
@@ -58,21 +58,21 @@ public final /* synthetic */ class l7 implements Utilities.Callback2 {
                         Object obj4 = arrayList3.get(i13);
                         i13++;
                         int i16 = i7.a;
-                        l61 J2 = l61.J(i7.class);
+                        m61 J2 = m61.J(i7.class);
                         J2.G = (TL_stars.StarsTransaction) obj4;
                         J2.q = true;
                         arrayList.add(J2);
                     }
                     if (!g10.k(j10).e[i12]) {
-                        arrayList.add(l61.o(arrayList.size(), 7));
-                        arrayList.add(l61.o(arrayList.size(), 7));
-                        arrayList.add(l61.o(arrayList.size(), 7));
+                        arrayList.add(m61.o(arrayList.size(), 7));
+                        arrayList.add(m61.o(arrayList.size(), 7));
+                        arrayList.add(m61.o(arrayList.size(), 7));
                         break;
                     }
                 }
                 break;
             default:
-                ig.e2.V((ig.e2) notificationCenterDelegate, (ArrayList) obj, (z61) obj2);
+                ig.e2.V((ig.e2) notificationCenterDelegate, (ArrayList) obj, (a71) obj2);
                 break;
         }
     }

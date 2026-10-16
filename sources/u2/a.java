@@ -7,13 +7,13 @@ import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class a {
     public final ArrayList a = new ArrayList(1);
     public final HashSet b = new HashSet(1);
     public final a5.a c = new a5.a(new CopyOnWriteArrayList(), 0, null, 21);
-    public final n2.k d = new n2.k(new CopyOnWriteArrayList(), 0, null);
+    public final n2.j d = new n2.j(new CopyOnWriteArrayList(), 0, null);
     public Looper e;
     public b2.p1 f;
     public j2.k g;
@@ -109,13 +109,13 @@ public abstract class a {
 
     public abstract void q();
 
-    public final void r(n2.l lVar) {
+    public final void r(n2.k kVar) {
         CopyOnWriteArrayList copyOnWriteArrayList = this.d.c;
         Iterator it = copyOnWriteArrayList.iterator();
         while (it.hasNext()) {
-            n2.j jVar = (n2.j) it.next();
-            if (jVar.b == lVar) {
-                copyOnWriteArrayList.remove(jVar);
+            n2.i iVar = (n2.i) it.next();
+            if (iVar.b == kVar) {
+                copyOnWriteArrayList.remove(iVar);
             }
         }
     }

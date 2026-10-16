@@ -14,7 +14,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.Components.da0;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class v0 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -35,19 +35,19 @@ public final class v0 extends LinearLayout {
                 org.telegram.ui.Components.z9 z9Var = new org.telegram.ui.Components.z9(context);
                 this.b = z9Var;
                 z9Var.setRoundRadius(AndroidUtilities.dp(35.0f));
-                addView(z9Var, w7.a6.q(70, 70, 1));
+                addView(z9Var, w7.z5.q(70, 70, 1));
                 TextView textView = new TextView(context);
                 this.c = textView;
                 textView.setTypeface(AndroidUtilities.bold());
                 textView.setTextSize(1, 20.0f);
                 textView.setGravity(17);
-                addView(textView, w7.a6.r(-1, -2, 0, 0.0f, 11.33f, 0.0f, 7.0f));
+                addView(textView, w7.z5.r(-1, -2, 0, 0.0f, 11.33f, 0.0f, 7.0f));
                 TextView textView2 = new TextView(context);
                 this.d = textView2;
                 textView2.setTextSize(1, 14.0f);
                 textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
                 textView2.setGravity(17);
-                addView(textView2, w7.a6.n(-1, -2));
+                addView(textView2, w7.z5.n(-1, -2));
                 break;
         }
     }
@@ -129,26 +129,26 @@ public final class v0 extends LinearLayout {
                 FrameLayout frameLayout = new FrameLayout(context);
                 frameLayout.setClipChildren(false);
                 frameLayout.setClipToPadding(false);
-                frameLayout.addView(new zh.r6(context, 70, 0), w7.a6.d(-1.0f, -1));
+                frameLayout.addView(new zh.r6(context, 70, 0), w7.z5.d(-1.0f, -1));
                 org.telegram.ui.Components.z9 z9Var = new org.telegram.ui.Components.z9(context);
                 this.b = z9Var;
                 z9Var.setRoundRadius(AndroidUtilities.dp(50.0f));
-                frameLayout.addView(z9Var, w7.a6.a(100.0f, 0.0f, 32.0f, 0.0f, 24.0f, 100, 17));
-                addView(frameLayout, w7.a6.d(150.0f, -1));
+                frameLayout.addView(z9Var, w7.z5.a(100.0f, 0.0f, 32.0f, 0.0f, 24.0f, 100, 17));
+                addView(frameLayout, w7.z5.d(150.0f, -1));
                 TextView textView = new TextView(context);
                 this.c = textView;
                 com.google.android.gms.internal.play_billing.k3.m(20.0f, 1, textView);
                 int i11 = org.telegram.ui.ActionBar.g6.j5;
                 textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(i11, c6Var));
                 textView.setGravity(17);
-                addView(textView, w7.a6.t(-2, -2, 1, 0, 2, 0, 0));
+                addView(textView, w7.z5.t(-2, -2, 1, 0, 2, 0, 0));
                 da0 da0Var = new da0(context, c6Var);
                 this.d = da0Var;
                 da0Var.setLinkTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.gc, c6Var));
                 da0Var.setTextSize(1, 14.0f);
                 da0Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(i11, c6Var));
                 da0Var.setGravity(17);
-                addView(da0Var, w7.a6.t(-2, -2, 1, 0, 9, 0, 18));
+                addView(da0Var, w7.z5.t(-2, -2, 1, 0, 9, 0, 18));
                 break;
             default:
                 setOrientation(1);
@@ -156,26 +156,26 @@ public final class v0 extends LinearLayout {
                 frameLayout2.setClipChildren(false);
                 frameLayout2.setClipToPadding(false);
                 ei.d dVar = new ei.d(context, 70, 0);
-                frameLayout2.addView(dVar, w7.a6.d(-1.0f, -1));
-                org.telegram.ui.Wallet.b6 b6Var = new org.telegram.ui.Wallet.b6(170, context, false);
-                this.b = b6Var;
-                b6Var.setStarParticlesView(dVar);
-                frameLayout2.addView(b6Var, w7.a6.a(170.0f, 0.0f, 32.0f, 0.0f, 24.0f, 170, 17));
-                b6Var.setPaused(false);
-                addView(frameLayout2, w7.a6.d(180.0f, -1));
+                frameLayout2.addView(dVar, w7.z5.d(-1.0f, -1));
+                org.telegram.ui.Wallet.c6 c6Var2 = new org.telegram.ui.Wallet.c6(170, context, false);
+                this.b = c6Var2;
+                c6Var2.setStarParticlesView(dVar);
+                frameLayout2.addView(c6Var2, w7.z5.a(170.0f, 0.0f, 32.0f, 0.0f, 24.0f, 170, 17));
+                c6Var2.setPaused(false);
+                addView(frameLayout2, w7.z5.d(180.0f, -1));
                 TextView textView2 = new TextView(context);
                 this.c = textView2;
                 com.google.android.gms.internal.play_billing.k3.m(20.0f, 1, textView2);
                 int i12 = org.telegram.ui.ActionBar.g6.j5;
                 textView2.setTextColor(org.telegram.ui.ActionBar.g6.w0(i12, c6Var));
                 textView2.setGravity(17);
-                addView(textView2, w7.a6.t(-2, -2, 1, 0, 2, 0, 0));
+                addView(textView2, w7.z5.t(-2, -2, 1, 0, 2, 0, 0));
                 TextView textView3 = new TextView(context);
                 this.d = textView3;
                 textView3.setTextSize(1, 14.0f);
                 textView3.setTextColor(org.telegram.ui.ActionBar.g6.w0(i12, c6Var));
                 textView3.setGravity(17);
-                addView(textView3, w7.a6.t(-2, -2, 1, 0, 9, 0, 18));
+                addView(textView3, w7.z5.t(-2, -2, 1, 0, 9, 0, 18));
                 break;
         }
     }

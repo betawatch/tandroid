@@ -14,9 +14,9 @@ import java.io.File;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
-import m.q3;
+import m.t3;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class y0 extends n6.g {
     public final ExecutorService U;
@@ -33,8 +33,8 @@ public final class y0 extends n6.g {
     public final z0 f0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y0(Context context, Looper looper, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar, q3 q3Var) {
-        super(context, looper, 14, q3Var, kVar, lVar, 0);
+    public y0(Context context, Looper looper, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar, t3 t3Var) {
+        super(context, looper, 14, t3Var, kVar, lVar, 0);
         ExecutorService unconfigurableExecutorService = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool());
         z0 a2 = z0.a(context);
         this.V = new v1.b();
@@ -88,7 +88,7 @@ public final class y0 extends n6.g {
 
     @Override // n6.g, com.google.android.gms.common.api.c
     public final void f(n6.b bVar) {
-        n6.b0 b0Var = this.v;
+        n6.a0 a0Var = this.v;
         AtomicInteger atomicInteger = this.R;
         Context context = this.n;
         if (!k()) {
@@ -104,13 +104,13 @@ public final class y0 extends n6.g {
                     PendingIntent activity = PendingIntent.getActivity(context, 0, intent, f8.b.a);
                     n6.l.i(bVar, "Connection progress callbacks cannot be null.");
                     this.E = bVar;
-                    b0Var.sendMessage(b0Var.obtainMessage(3, atomicInteger.get(), 6, activity));
+                    a0Var.sendMessage(a0Var.obtainMessage(3, atomicInteger.get(), 6, activity));
                     return;
                 }
             } catch (PackageManager.NameNotFoundException unused) {
                 n6.l.i(bVar, "Connection progress callbacks cannot be null.");
                 this.E = bVar;
-                b0Var.sendMessage(b0Var.obtainMessage(3, atomicInteger.get(), 16, null));
+                a0Var.sendMessage(a0Var.obtainMessage(3, atomicInteger.get(), 16, null));
                 return;
             }
         }

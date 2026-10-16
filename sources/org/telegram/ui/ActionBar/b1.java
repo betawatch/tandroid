@@ -34,7 +34,7 @@ import org.telegram.ui.Components.cd0;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.gd;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class b1 extends FrameLayout {
     public final Paint E;
@@ -188,7 +188,7 @@ public abstract class b1 extends FrameLayout {
             valueAnimator.cancel();
             this.T = null;
         }
-        float a2 = w7.s.a(f7, 0.0f, 1.0f);
+        float a2 = w7.r.a(f7, 0.0f, 1.0f);
         if (z10) {
             int i10 = 0;
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.a, a2);
@@ -226,7 +226,7 @@ public abstract class b1 extends FrameLayout {
         }
         int i11 = g6.sj;
         c6 c6Var = a1Var.x;
-        this.J.setColor(i0.a.d(w7.s.a((((a2 * 2.8f) + 0.2f) - 1.0f) / 1.0f, 0.0f, 1.0f), g6.w0(i11, c6Var), g6.w0(g6.tj, c6Var)));
+        this.J.setColor(i0.a.d(w7.r.a((((a2 * 2.8f) + 0.2f) - 1.0f) / 1.0f, 0.0f, 1.0f), g6.w0(i11, c6Var), g6.w0(g6.tj, c6Var)));
     }
 
     public float getValue() {

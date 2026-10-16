@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class wk0 extends pg.b {
     public final /* synthetic */ gl0 d;
@@ -61,7 +61,7 @@ public final class wk0 extends pg.b {
             gl0Var.u0.setScaleX(0.0f);
             gl0Var.u0.setScaleY(0.0f);
             gl0Var.u0.setPadding(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f));
-            gl0Var.R.addView(gl0Var.u0, w7.a6.e(26, 26, 17));
+            gl0Var.R.addView(gl0Var.u0, w7.z5.e(26, 26, 17));
             final int i12 = 0;
             gl0Var.u0.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.vk0
                 public final /* synthetic */ wk0 b;
@@ -107,7 +107,7 @@ public final class wk0 extends pg.b {
             gl0Var.v0.setBackground(org.telegram.ui.ActionBar.g6.i0(AndroidUtilities.dp(28.0f), 0, i0.a.k(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.i6, false), 40)));
             gl0Var.v0.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
             gl0Var.v0.setContentDescription(LocaleController.getString(R.string.AccDescrExpandPanel));
-            gl0Var.S.addView(gl0Var.v0, w7.a6.e(30, 30, 17));
+            gl0Var.S.addView(gl0Var.v0, w7.z5.e(30, 30, 17));
             final int i14 = 1;
             gl0Var.v0.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.vk0
                 public final /* synthetic */ wk0 b;

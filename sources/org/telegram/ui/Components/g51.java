@@ -9,15 +9,15 @@ import android.view.ViewPropertyAnimator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class g51 extends k61 {
+public final class g51 extends l61 {
     static {
-        k61.setup(new g51());
+        l61.setup(new g51());
     }
 
-    public static l61 a(int i10, CharSequence charSequence, boolean z10, View.OnClickListener onClickListener, ca0 ca0Var, View.OnClickListener onClickListener2) {
-        l61 J = l61.J(g51.class);
+    public static m61 a(int i10, CharSequence charSequence, boolean z10, View.OnClickListener onClickListener, ca0 ca0Var, View.OnClickListener onClickListener2) {
+        m61 J = m61.J(g51.class);
         J.d = i10;
         J.l = charSequence;
         J.f = z10;
@@ -28,16 +28,16 @@ public final class g51 extends k61 {
         return J;
     }
 
-    @Override // org.telegram.ui.Components.k61
-    public final void bindView(View view, l61 l61Var, boolean z10, z61 z61Var, h71 h71Var) {
+    @Override // org.telegram.ui.Components.l61
+    public final void bindView(View view, m61 m61Var, boolean z10, a71 a71Var, i71 i71Var) {
         h51 h51Var = (h51) view;
-        CharSequence charSequence = l61Var.l;
-        boolean z11 = l61Var.f;
-        View.OnClickListener onClickListener = l61Var.D;
-        Object obj = l61Var.G;
+        CharSequence charSequence = m61Var.l;
+        boolean z11 = m61Var.f;
+        View.OnClickListener onClickListener = m61Var.D;
+        Object obj = m61Var.G;
         ca0 ca0Var = obj != null ? (ca0) obj : null;
-        boolean z12 = l61Var.t;
-        View.OnClickListener onClickListener2 = l61Var.E;
+        boolean z12 = m61Var.t;
+        View.OnClickListener onClickListener2 = m61Var.E;
         ImageView imageView = h51Var.n;
         TextView textView = h51Var.d;
         e51 e51Var = h51Var.c;
@@ -72,7 +72,7 @@ public final class g51 extends k61 {
         } else {
             e51Var.setVisibility(0);
             f51Var.setVisibility(0);
-            ViewPropertyAnimator withEndAction = e51Var.animate().alpha(0.0f).withEndAction(new lr0(h51Var, 24));
+            ViewPropertyAnimator withEndAction = e51Var.animate().alpha(0.0f).withEndAction(new kr0(h51Var, 24));
             TimeInterpolator timeInterpolator = es.h;
             withEndAction.setInterpolator(timeInterpolator).setDuration(320L).start();
             f51Var.animate().alpha(1.0f).setInterpolator(timeInterpolator).setDuration(320L).start();
@@ -91,22 +91,22 @@ public final class g51 extends k61 {
         h51Var.setWillNotDraw(true ^ z10);
     }
 
-    @Override // org.telegram.ui.Components.k61
-    public final boolean contentsEquals(l61 l61Var, l61 l61Var2) {
-        return TextUtils.equals(l61Var.l, l61Var2.l) && l61Var.f == l61Var2.f;
+    @Override // org.telegram.ui.Components.l61
+    public final boolean contentsEquals(m61 m61Var, m61 m61Var2) {
+        return TextUtils.equals(m61Var.l, m61Var2.l) && m61Var.f == m61Var2.f;
     }
 
-    @Override // org.telegram.ui.Components.k61
+    @Override // org.telegram.ui.Components.l61
     public final View createView(Context context, mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
         return new h51(context, c6Var);
     }
 
-    @Override // org.telegram.ui.Components.k61
-    public final boolean equals(l61 l61Var, l61 l61Var2) {
-        return l61Var.d == l61Var2.d;
+    @Override // org.telegram.ui.Components.l61
+    public final boolean equals(m61 m61Var, m61 m61Var2) {
+        return m61Var.d == m61Var2.d;
     }
 
-    @Override // org.telegram.ui.Components.k61
+    @Override // org.telegram.ui.Components.l61
     public final boolean isClickable() {
         return false;
     }

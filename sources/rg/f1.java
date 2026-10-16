@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class f1 extends s4.m0 {
     @Override // s4.m0
@@ -39,7 +39,7 @@ public final class f1 extends s4.m0 {
                 byte b10 = groupedMessagePosition.minY;
                 byte b11 = currentPosition.minY;
                 if (b10 == b11 && ((groupedMessagePosition.minX != currentPosition.minX || groupedMessagePosition.maxX != currentPosition.maxX || b10 != b11 || groupedMessagePosition.maxY != currentPosition.maxY) && b10 == b11)) {
-                    round = org.telegram.messenger.q.C(4.0f, (int) Math.ceil(max * groupedMessagePosition.ph), round);
+                    round = org.telegram.messenger.g0.A(4.0f, (int) Math.ceil(max * groupedMessagePosition.ph), round);
                     break;
                 }
                 i10++;

@@ -7,7 +7,7 @@ import android.graphics.Rect;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class pw0 extends ow0 {
     public Activity w0;
@@ -43,7 +43,7 @@ public abstract class pw0 extends ow0 {
         }
         this.y0 = R();
         Point point = AndroidUtilities.displaySize;
-        post(new sn0(5, this, point.x > point.y));
+        post(new zr0(4, this, point.x > point.y));
     }
 
     @Override // org.telegram.ui.Components.ow0

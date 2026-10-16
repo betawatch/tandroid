@@ -8,11 +8,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
-import z7.bg;
+import z7.cg;
 import z7.de;
-import z7.lg;
+import z7.mg;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class m extends AbstractCollection implements List {
     public final /* synthetic */ int a = 0;
@@ -302,7 +302,7 @@ public class m extends AbstractCollection implements List {
                 return new x7.c(this);
             default:
                 zzb();
-                return new bg(this);
+                return new cg(this);
         }
     }
 
@@ -345,7 +345,7 @@ public class m extends AbstractCollection implements List {
             default:
                 m mVar2 = (m) this.e;
                 if (mVar2 == null) {
-                    ((lg) this.f).c.put(this.b, this.c);
+                    ((mg) this.f).c.put(this.b, this.c);
                     break;
                 } else {
                     mVar2.o();
@@ -372,8 +372,8 @@ public class m extends AbstractCollection implements List {
                 m mVar2 = (m) this.e;
                 if (mVar2 == null) {
                     if (this.c.isEmpty()) {
-                        lg lgVar = (lg) this.f;
-                        lgVar.c.remove(this.b);
+                        mg mgVar = (mg) this.f;
+                        mgVar.c.remove(this.b);
                         break;
                     }
                 } else {
@@ -552,10 +552,10 @@ public class m extends AbstractCollection implements List {
                 if (mVar3 == null) {
                     mVar3 = this;
                 }
-                lg lgVar = (lg) this.h;
+                mg mgVar = (mg) this.h;
                 boolean z12 = subList3 instanceof RandomAccess;
                 Object obj3 = this.b;
-                return z12 ? new de(lgVar, obj3, subList3, mVar3) : new m(lgVar, obj3, subList3, mVar3);
+                return z12 ? new de(mgVar, obj3, subList3, mVar3) : new m(mgVar, obj3, subList3, mVar3);
         }
     }
 
@@ -603,7 +603,7 @@ public class m extends AbstractCollection implements List {
                     return;
                 } else {
                     if (this.c.isEmpty()) {
-                        Collection collection2 = (Collection) ((lg) this.f).c.get(this.b);
+                        Collection collection2 = (Collection) ((mg) this.f).c.get(this.b);
                         if (collection2 != null) {
                             this.c = collection2;
                             return;
@@ -615,9 +615,9 @@ public class m extends AbstractCollection implements List {
         }
     }
 
-    public m(lg lgVar, Object obj, List list, m mVar) {
-        this.h = lgVar;
-        this.f = lgVar;
+    public m(mg mgVar, Object obj, List list, m mVar) {
+        this.h = mgVar;
+        this.f = mgVar;
         this.b = obj;
         this.c = list;
         this.e = mVar;
@@ -644,7 +644,7 @@ public class m extends AbstractCollection implements List {
                 return new x7.c(this, i10);
             default:
                 zzb();
-                return new bg(this, i10);
+                return new cg(this, i10);
         }
     }
 

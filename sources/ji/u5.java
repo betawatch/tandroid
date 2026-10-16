@@ -23,7 +23,7 @@ import org.telegram.ui.Cells.o9;
 import org.telegram.ui.Cells.z9;
 import v7.u8;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class u5 extends a0 implements org.telegram.ui.ActionBar.x5, n9 {
     public d3 E;
@@ -60,7 +60,7 @@ public final class u5 extends a0 implements org.telegram.ui.ActionBar.x5, n9 {
         h1Var.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f), 0);
         h1Var.setHint(LocaleController.getString(R.string.ArticleTableTitleHint));
         h1Var.setCenterEmptyHint(true);
-        h1Var.setListener(new d4(this, 1));
+        h1Var.setListener(new a4.l(this, 28));
         h1Var.setDelegate(new f1.a(this, 29));
         addView(h1Var);
         b4 b4Var = new b4(this, context, 1);
@@ -68,7 +68,7 @@ public final class u5 extends a0 implements org.telegram.ui.ActionBar.x5, n9 {
         b4Var.setClipChildren(false);
         b4Var.setClipToPadding(false);
         b4Var.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
-        addView(b4Var, w7.a6.a(-2.0f, 0.0f, 6.0f, 0.0f, 0.0f, -1, 51));
+        addView(b4Var, w7.z5.a(-2.0f, 0.0f, 6.0f, 0.0f, 0.0f, -1, 51));
         w5 w5Var = new w5(context, c6Var);
         this.v = w5Var;
         t5 t5Var = new t5(this, context);
@@ -520,7 +520,7 @@ public final class u5 extends a0 implements org.telegram.ui.ActionBar.x5, n9 {
         }
         int i19 = i15 - i16;
         int i20 = measuredHeight + i18;
-        h1Var.layout(AndroidUtilities.dp(16.0f) + i17, i18, org.telegram.messenger.q.c(16.0f, i19, AndroidUtilities.dp(16.0f) + i17), i20);
+        h1Var.layout(AndroidUtilities.dp(16.0f) + i17, i18, org.telegram.messenger.g0.b(16.0f, i19, AndroidUtilities.dp(16.0f) + i17), i20);
         int dp = AndroidUtilities.dp(9.0f) + i20;
         b4 b4Var = this.s;
         b4Var.layout(i17, dp, i19, b4Var.getMeasuredHeight() + dp);

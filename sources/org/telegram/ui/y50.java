@@ -11,12 +11,12 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class y50 {
-    public final org.telegram.ui.Components.h11 d;
-    public final org.telegram.ui.Components.h11 e;
-    public final org.telegram.ui.Components.h11 f;
+    public final org.telegram.ui.Components.i11 d;
+    public final org.telegram.ui.Components.i11 e;
+    public final org.telegram.ui.Components.i11 f;
     public x50 g;
     public int j;
     public final Paint a = new Paint(1);
@@ -34,13 +34,13 @@ public final class y50 {
             a60[] a60VarArr = this.c;
             if (i10 >= a60VarArr.length) {
                 this.a.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.tg, false));
-                this.d = new org.telegram.ui.Components.h11(LocaleController.getString(R.string.ConferenceEncrypted), 12.0f, AndroidUtilities.bold());
-                org.telegram.ui.Components.h11 h11Var = new org.telegram.ui.Components.h11(LocaleController.getString(R.string.ConferenceEncryptedInfo), 11.0f, null);
-                h11Var.n(99);
-                h11Var.q(AndroidUtilities.dp(200.0f));
-                h11Var.m(AndroidUtilities.dp(2.66f));
-                this.e = h11Var;
-                this.f = new org.telegram.ui.Components.h11(LocaleController.getString(R.string.ConferenceEncryptedClose), 14.0f, AndroidUtilities.bold());
+                this.d = new org.telegram.ui.Components.i11(LocaleController.getString(R.string.ConferenceEncrypted), 12.0f, AndroidUtilities.bold());
+                org.telegram.ui.Components.i11 i11Var = new org.telegram.ui.Components.i11(LocaleController.getString(R.string.ConferenceEncryptedInfo), 11.0f, null);
+                i11Var.n(99);
+                i11Var.q(AndroidUtilities.dp(200.0f));
+                i11Var.m(AndroidUtilities.dp(2.66f));
+                this.e = i11Var;
+                this.f = new org.telegram.ui.Components.i11(LocaleController.getString(R.string.ConferenceEncryptedClose), 14.0f, AndroidUtilities.bold());
                 b(null);
                 return;
             }
@@ -51,13 +51,13 @@ public final class y50 {
 
     public final boolean a(Canvas canvas, float f7, float f10) {
         canvas.save();
-        org.telegram.ui.Components.h11 h11Var = this.d;
-        h11Var.p = f7 - AndroidUtilities.dp(132.0f);
+        org.telegram.ui.Components.i11 i11Var = this.d;
+        i11Var.p = f7 - AndroidUtilities.dp(132.0f);
         int d = i0.a.d(f10, this.j, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.tg, false));
         Paint paint = this.a;
         paint.setColor(d);
         float e = this.i.e(this.h);
-        float l4 = h11Var.l() + AndroidUtilities.dp(86.0f) + AndroidUtilities.dp(14.0f);
+        float l4 = i11Var.l() + AndroidUtilities.dp(86.0f) + AndroidUtilities.dp(14.0f);
         float dp = AndroidUtilities.dp(28.0f);
         float dp2 = AndroidUtilities.dp(232.0f);
         float j10 = this.e.j() + AndroidUtilities.dp(54.0f) + AndroidUtilities.dp(50.0f);
@@ -101,8 +101,8 @@ public final class y50 {
         if (a60VarArr[1].b(canvas, rectF3, f10)) {
             z10 = true;
         }
-        org.telegram.ui.Components.h11 h11Var2 = this.d;
-        h11Var2.c(f14 - (h11Var2.l() / 2.0f), dp / 2.0f, AndroidUtilities.lerp(1.0f, 0.75f, e) * (1.0f - f10), -1, canvas);
+        org.telegram.ui.Components.i11 i11Var2 = this.d;
+        i11Var2.c(f14 - (i11Var2.l() / 2.0f), dp / 2.0f, AndroidUtilities.lerp(1.0f, 0.75f, e) * (1.0f - f10), -1, canvas);
         rectF2.set((AndroidUtilities.dp(10.0f) + (((int) rectF.right) - AndroidUtilities.dp(47.0f))) - f11, f12, AndroidUtilities.dp(10.0f) + (((int) rectF.right) - AndroidUtilities.dp(47.0f)) + f11, f13);
         float f19 = (int) ((dp6 * 2.5f) + f15);
         rectF3.set(f19 - f17, (int) ((rectF.top + AndroidUtilities.dp(27.33f)) - f17), f19 + f17, (int) (rectF.top + AndroidUtilities.dp(27.33f) + f17));

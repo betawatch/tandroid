@@ -1,77 +1,120 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
 import android.view.View;
+import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public abstract class b31 extends View {
-    public final c31 a;
-    public Utilities.Callback b;
-    public final org.telegram.ui.ActionBar.c6 c;
-    public int d;
+public final class b31 extends LinearLayout implements org.telegram.ui.ActionBar.x5 {
+    public final org.telegram.ui.ActionBar.c6 a;
+    public final z9 b;
+    public final da0 c;
+    public final da0 d;
+    public int e;
+    public int f;
 
-    public b31(Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
+    public b31(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
         super(context);
-        this.c = c6Var;
-        c31 c31Var = new c31(i10, this, c6Var, false);
-        this.a = c31Var;
-        c31Var.r = new lr0(this, 19);
+        this.e = 90;
+        this.a = c6Var;
+        setOrientation(1);
+        z9 z9Var = new z9(context);
+        this.b = z9Var;
+        z9Var.getImageReceiver().setAutoRepeatCount(1);
+        z9Var.getImageReceiver().setAutoRepeat(1);
+        z9Var.setOnClickListener(new y80(this, 21));
+        addView(z9Var, w7.z5.t(90, 90, 17, 0, 9, 0, 9));
+        da0 da0Var = new da0(context, null);
+        this.c = da0Var;
+        da0Var.setTextSize(1, 20.0f);
+        da0Var.setGravity(17);
+        da0Var.setTypeface(AndroidUtilities.bold());
+        da0Var.setTextAlignment(4);
+        addView(da0Var, w7.z5.t(-1, -2, 17, 48, 0, 48, 10));
+        da0 da0Var2 = new da0(context, null);
+        this.d = da0Var2;
+        da0Var2.setTextSize(1, 14.0f);
+        da0Var2.setGravity(17);
+        da0Var2.setTextAlignment(4);
+        addView(da0Var2, w7.z5.t(-1, -2, 17, 48, 0, 48, 17));
+        d();
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        org.telegram.ui.ActionBar.c6 c6Var = this.c;
-        if (c6Var != null) {
-            c6Var.l(0.0f, 0.0f, getMeasuredWidth(), this.d);
-        } else {
-            org.telegram.ui.ActionBar.g6.q(0.0f, 0.0f, getMeasuredWidth(), this.d);
+    public final void a(CharSequence charSequence, CharSequence charSequence2) {
+        da0 da0Var = this.c;
+        da0Var.setText(charSequence);
+        da0Var.setVisibility(0);
+        da0 da0Var2 = this.d;
+        da0Var2.setText(charSequence2);
+        da0Var2.setMaxWidth(di.d4.a(charSequence2, da0Var2.getPaint()));
+        da0Var2.requestLayout();
+        d();
+    }
+
+    @Override // org.telegram.ui.ActionBar.x5
+    public final void d() {
+        int i10 = org.telegram.ui.ActionBar.g6.G6;
+        org.telegram.ui.ActionBar.c6 c6Var = this.a;
+        int w02 = org.telegram.ui.ActionBar.g6.w0(i10, c6Var);
+        da0 da0Var = this.c;
+        da0Var.setTextColor(w02);
+        int i11 = org.telegram.ui.ActionBar.g6.gc;
+        da0Var.setLinkTextColor(org.telegram.ui.ActionBar.g6.w0(i11, c6Var));
+        if (da0Var.getVisibility() != 0) {
+            i10 = org.telegram.ui.ActionBar.g6.B6;
         }
-        this.a.c(canvas, getWidth(), 0.0f, 0.0f, 0.75f, 1.0f, true);
+        int w03 = org.telegram.ui.ActionBar.g6.w0(i10, c6Var);
+        da0 da0Var2 = this.d;
+        da0Var2.setTextColor(w03);
+        da0Var2.setLinkTextColor(org.telegram.ui.ActionBar.g6.w0(i11, c6Var));
+        int i12 = this.e;
+        this.b.setLayoutParams(w7.z5.t(i12, i12, 17, 0, da0Var.getVisibility() == 0 ? 0 : 9, 0, 9));
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.a();
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
     }
 
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.b();
-    }
-
-    @Override // android.view.View
+    @Override // android.widget.LinearLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(33.0f), TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
     }
 
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        return this.a.d(motionEvent, false) || super.onTouchEvent(motionEvent);
-    }
-
-    public void set(MessageObject messageObject) {
-        c31 c31Var = this.a;
-        c31Var.e(messageObject);
-        if (isAttachedToWindow()) {
-            c31Var.a();
+    public void setEmoji(int i10) {
+        if (this.f != i10) {
+            this.f = i10;
+            yj0 yj0Var = new yj0(i10, AndroidUtilities.dp(90.0f), AndroidUtilities.dp(90.0f));
+            z9 z9Var = this.b;
+            z9Var.setImageDrawable(yj0Var);
+            z9Var.getImageReceiver().setAutoRepeat(2);
         }
     }
 
-    public void setBackgroundHeight(int i10) {
-        this.d = i10;
+    public void setEmojiSize(int i10) {
+        if (this.e != i10) {
+            this.e = i10;
+            d();
+        }
     }
 
-    public void setOnTopicClickListener(Utilities.Callback<Long> callback) {
-        this.b = callback;
+    public void setEmojiStatic(int i10) {
+        if (this.f != i10) {
+            z9 z9Var = this.b;
+            z9Var.b();
+            this.f = i10;
+            z9Var.setImageResource(i10);
+        }
+    }
+
+    public void setText(CharSequence charSequence) {
+        this.c.setVisibility(8);
+        da0 da0Var = this.d;
+        da0Var.setText(charSequence);
+        da0Var.setMaxWidth(di.d4.a(charSequence, da0Var.getPaint()));
+        da0Var.requestLayout();
+        d();
     }
 }

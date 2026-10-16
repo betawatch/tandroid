@@ -33,9 +33,9 @@ import org.telegram.ui.Components.uw0;
 import org.telegram.ui.Components.vw0;
 import org.telegram.ui.Components.ww0;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.hr0;
+import org.telegram.ui.fr0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r2 implements Runnable {
     public final /* synthetic */ int a;
@@ -467,7 +467,7 @@ public final /* synthetic */ class r2 implements Runnable {
                             AndroidUtilities.runOnUIThread(new uw0(ww0Var, 1));
                             return;
                         } else {
-                            AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.n0(ww0Var, this.c, i25, u1Var));
+                            AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.m0(ww0Var, this.c, i25, u1Var));
                             return;
                         }
                     }
@@ -517,13 +517,13 @@ public final /* synthetic */ class r2 implements Runnable {
                 org.telegram.ui.Components.voip.d2.g(activity, this.b, inputGroupCall, this.c, groupCall, hashSet);
                 return;
             case 5:
-                hr0 hr0Var = (hr0) this.d;
+                fr0 fr0Var = (fr0) this.d;
                 String str5 = (String) this.f;
                 TLObject tLObject = (TLObject) this.e;
                 TLRPC.User user = (TLRPC.User) this.h;
-                HashMap hashMap = hr0Var.h;
-                ArrayList arrayList = hr0Var.f;
-                ArrayList arrayList2 = hr0Var.n;
+                HashMap hashMap = fr0Var.h;
+                ArrayList arrayList = fr0Var.f;
+                ArrayList arrayList2 = fr0Var.n;
                 int size = arrayList2.size();
                 int i29 = 0;
                 int i30 = 0;
@@ -540,14 +540,14 @@ public final /* synthetic */ class r2 implements Runnable {
                 while (arrayList2.size() > 20) {
                     a1.g.y(1, arrayList2);
                 }
-                hr0Var.c0();
-                if (this.b != hr0Var.y) {
+                fr0Var.c0();
+                if (this.b != fr0Var.y) {
                     return;
                 }
                 int size2 = arrayList.size();
                 if (tLObject != null) {
                     TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject;
-                    hr0Var.w = messages_botresults.next_offset;
+                    fr0Var.w = messages_botresults.next_offset;
                     int size3 = messages_botresults.results.size();
                     int i31 = 0;
                     i22 = 0;
@@ -565,7 +565,7 @@ public final /* synthetic */ class r2 implements Runnable {
                                         searchImage.document = botInlineResult.document;
                                         searchImage.size = 0;
                                         photo2 = botInlineResult.photo;
-                                        if (photo2 != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, hr0Var.R, true)) != null) {
+                                        if (photo2 != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, fr0Var.R, true)) != null) {
                                             botInlineResult.document.thumbs.add(closestPhotoSizeWithSize);
                                             botInlineResult.document.flags |= 1;
                                         }
@@ -627,18 +627,18 @@ public final /* synthetic */ class r2 implements Runnable {
                         i31++;
                         i29 = 0;
                     }
-                    hr0Var.s = size2 == arrayList.size() || hr0Var.w == null;
+                    fr0Var.s = size2 == arrayList.size() || fr0Var.w == null;
                 } else {
                     i22 = 0;
                 }
-                hr0Var.r = false;
+                fr0Var.r = false;
                 if (i22 != 0) {
-                    hr0Var.L.s(size2, i22);
-                } else if (hr0Var.s) {
+                    fr0Var.L.s(size2, i22);
+                } else if (fr0Var.s) {
                     z10 = true;
-                    hr0Var.L.u(arrayList.size() - 1);
+                    fr0Var.L.u(arrayList.size() - 1);
                     if (arrayList.size() > 0) {
-                        hr0Var.N.e(false, z10);
+                        fr0Var.N.e(false, z10);
                         return;
                     }
                     return;
@@ -648,8 +648,8 @@ public final /* synthetic */ class r2 implements Runnable {
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) this.d;
-                org.telegram.ui.Wallet.g0 g0Var = (org.telegram.ui.Wallet.g0) this.e;
+                org.telegram.ui.Wallet.k0 k0Var = (org.telegram.ui.Wallet.k0) this.d;
+                org.telegram.ui.Wallet.h0 h0Var = (org.telegram.ui.Wallet.h0) this.e;
                 TL_wallet.proofChallenge proofchallenge = (TL_wallet.proofChallenge) this.f;
                 Utilities.Callback2 callback2 = (Utilities.Callback2) this.h;
                 boolean z14 = this.c;
@@ -657,19 +657,19 @@ public final /* synthetic */ class r2 implements Runnable {
                 WalletEngine2.ImportedWalletProof importedWalletProof = null;
                 try {
                     try {
-                        WalletEngine2.ImportedWalletProof createImportProof = z14 ? WalletEngine2.createImportProof(g0Var, proofchallenge.domain, proofchallenge.payload, i34) : WalletEngine2.createOwnershipProof(g0Var, proofchallenge.domain, proofchallenge.payload, i34);
-                        g0Var.close();
+                        WalletEngine2.ImportedWalletProof createImportProof = z14 ? WalletEngine2.createImportProof(h0Var, proofchallenge.domain, proofchallenge.payload, i34) : WalletEngine2.createOwnershipProof(h0Var, proofchallenge.domain, proofchallenge.payload, i34);
+                        h0Var.close();
                         importedWalletProof = createImportProof;
                         e = null;
                     } catch (Exception e19) {
                         e = e19;
-                        org.telegram.ui.Wallet.j0.j("createImportProof", e);
-                        g0Var.close();
+                        org.telegram.ui.Wallet.k0.j("createImportProof", e);
+                        h0Var.close();
                     }
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.k(j0Var, importedWalletProof, e, callback2));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.l(k0Var, importedWalletProof, e, callback2));
                     return;
                 } catch (Throwable th7) {
-                    g0Var.close();
+                    h0Var.close();
                     throw th7;
                 }
         }
@@ -705,9 +705,9 @@ public final /* synthetic */ class r2 implements Runnable {
         this.c = z10;
     }
 
-    public /* synthetic */ r2(hr0 hr0Var, String str, int i10, TLObject tLObject, boolean z10, TLRPC.User user) {
+    public /* synthetic */ r2(fr0 fr0Var, String str, int i10, TLObject tLObject, boolean z10, TLRPC.User user) {
         this.a = 5;
-        this.d = hr0Var;
+        this.d = fr0Var;
         this.f = str;
         this.b = i10;
         this.e = tLObject;
@@ -715,11 +715,11 @@ public final /* synthetic */ class r2 implements Runnable {
         this.h = user;
     }
 
-    public /* synthetic */ r2(org.telegram.ui.Wallet.j0 j0Var, boolean z10, org.telegram.ui.Wallet.g0 g0Var, TL_wallet.proofChallenge proofchallenge, int i10, Utilities.Callback2 callback2) {
+    public /* synthetic */ r2(org.telegram.ui.Wallet.k0 k0Var, boolean z10, org.telegram.ui.Wallet.h0 h0Var, TL_wallet.proofChallenge proofchallenge, int i10, Utilities.Callback2 callback2) {
         this.a = 6;
-        this.d = j0Var;
+        this.d = k0Var;
         this.c = z10;
-        this.e = g0Var;
+        this.e = h0Var;
         this.f = proofchallenge;
         this.b = i10;
         this.h = callback2;

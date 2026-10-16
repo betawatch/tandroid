@@ -15,7 +15,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class UsersSelectActivity extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate, View.OnClickListener {
     public org.telegram.ui.Components.i5 E;
@@ -136,7 +136,7 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.m2 implements
                 TLRPC.Chat chat = (TLRPC.Chat) object;
                 j10 = -chat.id;
                 if (usersSelectActivity.x == 1 && !ChatObject.canUserDoAdminAction(chat, 13)) {
-                    org.telegram.messenger.yh.p(R.string.NeedAdminRightForSetAutoDeleteTimer, org.telegram.ui.Components.zc.a0(usersSelectActivity), null);
+                    org.telegram.messenger.sk.q(R.string.NeedAdminRightForSetAutoDeleteTimer, org.telegram.ui.Components.zc.a0(usersSelectActivity), null);
                     return;
                 }
             }
@@ -360,7 +360,7 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.m2 implements
             this.E = i5Var;
             org.telegram.ui.ActionBar.k kVar = this.actionBar;
             boolean z10 = LocaleController.isRTL;
-            kVar.addView(i5Var, w7.a6.a(-1.0f, z10 ? 0.0f : 64.0f, 0.0f, z10 ? 64.0f : 0.0f, 0.0f, -1, 0));
+            kVar.addView(i5Var, w7.z5.a(-1.0f, z10 ? 0.0f : 64.0f, 0.0f, z10 ? 64.0f : 0.0f, 0.0f, -1, 0));
             this.actionBar.setAllowOverlayTitle(false);
         }
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
@@ -386,7 +386,7 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.m2 implements
         fVar.addView(this.a);
         gi1 gi1Var = new gi1(this, context);
         this.b = gi1Var;
-        this.a.addView(gi1Var, w7.a6.d(-2.0f, -1));
+        this.a.addView(gi1Var, w7.z5.d(-2.0f, -1));
         final int i13 = 0;
         this.b.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ai1
             public final /* synthetic */ UsersSelectActivity b;
@@ -463,7 +463,7 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.m2 implements
         this.d.i(new bi.o(10));
         fVar.addView(this.d);
         this.d.setOnItemClickListener(new bi.z5(22, this, context));
-        this.d.setOnScrollListener(new ve1(this, 2));
+        this.d.setOnScrollListener(new ue1(this, 2));
         this.s = org.telegram.ui.Components.l20.b();
         org.telegram.ui.Components.l20 l20Var = new org.telegram.ui.Components.l20(context, this.resourceProvider, false);
         this.r = l20Var;

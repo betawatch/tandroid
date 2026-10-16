@@ -16,7 +16,7 @@ import org.telegram.ui.Components.g6;
 import org.telegram.ui.Components.gq;
 import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class h0 extends Drawable {
     public final ImageView a;
@@ -71,7 +71,7 @@ public final class h0 extends Drawable {
             float f15 = centerY;
             canvas2.scale(f13, f13, f14, f15);
             Drawable drawable = this.e;
-            drawable.setBounds(org.telegram.ui.Cells.d0.u(2, centerX, drawable), org.telegram.ui.Cells.d0.d(2, centerY, drawable), org.telegram.ui.Cells.d0.y(2, centerX, drawable), org.telegram.ui.Cells.d0.x(2, centerY, drawable));
+            drawable.setBounds(org.telegram.ui.Cells.c1.r(2, centerX, drawable), org.telegram.ui.Cells.c1.c(2, centerY, drawable), org.telegram.ui.Cells.c1.v(2, centerX, drawable), org.telegram.ui.Cells.c1.u(2, centerY, drawable));
             drawable.setAlpha((int) (f12 * 255.0f));
             drawable.draw(canvas2);
             float dp = AndroidUtilities.dp(14.0f);

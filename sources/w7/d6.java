@@ -1,15 +1,31 @@
 package w7;
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.da0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class d6 {
-    public static ArrayList a(org.telegram.ui.ActionBar.h6 h6Var, int... iArr) {
-        ArrayList arrayList = new ArrayList(iArr.length);
-        for (int i10 : iArr) {
-            arrayList.add(new org.telegram.ui.ActionBar.i6(null, 0, null, null, null, h6Var, i10));
+    public static da0 a(Context context, float f7, int i10, boolean z10, org.telegram.ui.ActionBar.c6 c6Var) {
+        int i11 = org.telegram.ui.ActionBar.g6.gc;
+        da0 da0Var = new da0(context, null);
+        da0Var.setTextSize(1, f7);
+        da0Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(i10, c6Var));
+        da0Var.setLinkTextColor(org.telegram.ui.ActionBar.g6.w0(i11, c6Var));
+        if (z10) {
+            da0Var.setTypeface(AndroidUtilities.bold());
         }
-        return arrayList;
+        return da0Var;
+    }
+
+    public static TextView b(Context context, float f7, int i10, boolean z10, org.telegram.ui.ActionBar.c6 c6Var) {
+        TextView f10 = org.telegram.messenger.g0.f(context, 1, f7);
+        f10.setTextColor(org.telegram.ui.ActionBar.g6.w0(i10, c6Var));
+        if (z10) {
+            f10.setTypeface(AndroidUtilities.bold());
+        }
+        return f10;
     }
 }

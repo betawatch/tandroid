@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ew implements org.telegram.ui.Components.am0 {
     public final /* synthetic */ int a;
@@ -26,10 +26,10 @@ public final /* synthetic */ class ew implements org.telegram.ui.Components.am0 
                 if (!(obj instanceof MessageObject)) {
                     if (obj instanceof bi.g8) {
                         bi.g8 g8Var = (bi.g8) obj;
-                        Bundle g10 = org.telegram.ui.Cells.d0.g(3, TeXSymbolParser.TYPE_ATTR);
-                        g10.putString("hashtag", g8Var.C);
-                        g10.putInt("storiesCount", g8Var.J);
-                        yyVar.presentFragment(new org.telegram.ui.Components.cb0(g10, null));
+                        Bundle f7 = org.telegram.ui.Cells.c1.f(3, TeXSymbolParser.TYPE_ATTR);
+                        f7.putString("hashtag", g8Var.C);
+                        f7.putInt("storiesCount", g8Var.J);
+                        yyVar.presentFragment(new org.telegram.ui.Components.cb0(f7, null));
                         break;
                     }
                 } else {
@@ -42,7 +42,7 @@ public final /* synthetic */ class ew implements org.telegram.ui.Components.am0 
                     }
                     bundle.putInt("message_id", messageObject.getId());
                     fo foVar = new fo(bundle);
-                    yy.a4(foVar, messageObject);
+                    yy.b4(foVar, messageObject);
                     yyVar.presentFragment(foVar);
                     break;
                 }

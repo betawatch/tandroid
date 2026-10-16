@@ -6,7 +6,7 @@ import android.app.Activity;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class yx extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final class yx extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 yy yyVar = this.c;
-                yyVar.o3.unlock();
+                yyVar.p3.unlock();
                 if (yyVar.w1 == animator) {
                     if (this.b) {
                         yyVar.e0[0].a.c1();
@@ -52,9 +52,9 @@ public final class yx extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 yy yyVar = this.c;
-                yyVar.o3.unlock();
+                yyVar.p3.unlock();
                 if (yyVar.w1 == animator) {
-                    yyVar.x4(false, true);
+                    yyVar.y4(false, true);
                     boolean z10 = this.b;
                     if (z10) {
                         yyVar.e0[0].a.c1();
@@ -62,17 +62,17 @@ public final class yx extends AnimatorListenerAdapter {
                         if (pxVar != null) {
                             pxVar.setVisibility(8);
                         }
-                        yyVar.q3 = true;
+                        yyVar.r3 = true;
                         Activity parentActivity = yyVar.getParentActivity();
                         i10 = ((org.telegram.ui.ActionBar.m2) yyVar).classGuid;
                         AndroidUtilities.requestAdjustResize(parentActivity, i10);
                         yyVar.j0.setVisibility(8);
-                        sx sxVar = yyVar.F3;
+                        sx sxVar = yyVar.G3;
                         if (sxVar != null) {
                             sxVar.setVisibility(8);
                         }
                     } else {
-                        yyVar.r3 = false;
+                        yyVar.s3 = false;
                         iy iyVar = yyVar.C0;
                         if (iyVar != null) {
                             iyVar.setVisibility(8);
@@ -91,8 +91,8 @@ public final class yx extends AnimatorListenerAdapter {
                             uyVar.g1 = false;
                             uyVar.K0(false);
                         }
-                        yyVar.q3 = false;
-                        sx sxVar2 = yyVar.F3;
+                        yyVar.r3 = false;
+                        sx sxVar2 = yyVar.G3;
                         if (sxVar2 != null) {
                             sxVar2.setVisibility(0);
                         }
@@ -101,7 +101,7 @@ public final class yx extends AnimatorListenerAdapter {
                     if (view != null) {
                         view.requestLayout();
                     }
-                    yyVar.A4(z10 ? 1.0f : 0.0f);
+                    yyVar.B4(z10 ? 1.0f : 0.0f);
                     yyVar.e0[0].a.setVerticalScrollBarEnabled(true);
                     iy iyVar3 = yyVar.C0;
                     if (iyVar3 != null) {
@@ -113,7 +113,7 @@ public final class yx extends AnimatorListenerAdapter {
                 break;
             case 1:
                 yy yyVar2 = this.c;
-                yyVar2.O3 = null;
+                yyVar2.P3 = null;
                 if (!this.b && (u0Var = yyVar2.m0) != null) {
                     u0Var.setVisibility(8);
                     break;
@@ -128,11 +128,11 @@ public final class yx extends AnimatorListenerAdapter {
                     yyVar3.E0.setVisibility(8);
                 }
                 if (z11) {
-                    yyVar3.x3 = -AndroidUtilities.dp(81.0f);
-                    yyVar3.z4(-yyVar3.R3());
+                    yyVar3.y3 = -AndroidUtilities.dp(81.0f);
+                    yyVar3.A4(-yyVar3.S3());
                 } else {
-                    yyVar3.z4(0.0f);
-                    yyVar3.x3 = AndroidUtilities.dp(81.0f);
+                    yyVar3.A4(0.0f);
+                    yyVar3.y3 = AndroidUtilities.dp(81.0f);
                 }
                 int i11 = 0;
                 while (true) {

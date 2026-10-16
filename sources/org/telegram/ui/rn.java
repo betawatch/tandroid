@@ -4,9 +4,9 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class rn extends w7.b6 {
+public final class rn extends w7.a6 {
     public MessageObject a;
     public int b = 0;
     public boolean c = true;
@@ -20,7 +20,7 @@ public final class rn extends w7.b6 {
         this.h = foVar;
     }
 
-    @Override // w7.b6
+    @Override // w7.a6
     public final void a() {
         MessageObject messageObject = this.a;
         fo foVar = this.h;
@@ -40,7 +40,7 @@ public final class rn extends w7.b6 {
         AndroidUtilities.runOnUIThread(new gj(this, 9));
     }
 
-    @Override // w7.b6
+    @Override // w7.a6
     public final void c() {
         fo foVar = this.h;
         foVar.I9 = foVar.getNotificationCenter().setAnimationInProgress(foVar.I9, fo.Nc);
@@ -50,7 +50,7 @@ public final class rn extends w7.b6 {
         }
     }
 
-    @Override // w7.b6
+    @Override // w7.a6
     public final void d(View view) {
         if (view instanceof org.telegram.ui.Cells.u1) {
             org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) view;

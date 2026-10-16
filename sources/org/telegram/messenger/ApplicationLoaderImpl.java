@@ -12,11 +12,11 @@ import androidx.core.content.FileProvider;
 import java.io.File;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.m71;
 import org.telegram.ui.Components.n71;
+import org.telegram.ui.Components.o71;
 import org.telegram.ui.IUpdateLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class ApplicationLoaderImpl extends ApplicationLoader {
     private static long lastUpdateCheckTime;
@@ -156,7 +156,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
     @Override // org.telegram.messenger.ApplicationLoader
     public boolean showCustomUpdateAppPopup(Context context, BetaUpdate betaUpdate, int i10) {
         try {
-            new m71(context, betaUpdate).show();
+            new n71(context, betaUpdate).show();
             return true;
         } catch (Exception e) {
             FileLog.e(e);
@@ -206,7 +206,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
     @Override // org.telegram.messenger.ApplicationLoader
     public IUpdateLayout takeUpdateLayout(Activity activity, ViewGroup viewGroup) {
         if (isCustomUpdate()) {
-            return new n71(activity, viewGroup);
+            return new o71(activity, viewGroup);
         }
         return null;
     }

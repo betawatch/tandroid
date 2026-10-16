@@ -10,9 +10,10 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.jr;
-import w7.a6;
+import w7.b6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class h extends FrameLayout implements ne.d {
     public static final int[] s;
@@ -122,9 +123,9 @@ public final class h extends FrameLayout implements ne.d {
                 jh.b bVar3 = new jh.b(context, c6Var);
                 jh.a d = jh.a.d(context, this.d, this.c, c6Var, i15, i14);
                 bVar3.b = d;
-                bVar3.addView(d, a6.e(i11, i11, 80));
+                bVar3.addView(d, z5.e(i11, i11, 80));
                 d.setIconPadding(AndroidUtilities.dp(2.0f));
-                w7.c6.b(bVar3, 0.13f, 2.0f);
+                b6.b(bVar3, 0.13f, 2.0f);
                 float f7 = i11 / 2.0f;
                 bVar3.setPivotX(AndroidUtilities.dp(f7));
                 bVar3.setPivotY(AndroidUtilities.dp(f7 + 8.0f));
@@ -144,7 +145,7 @@ public final class h extends FrameLayout implements ne.d {
                         jrVar.setReverse(true);
                     }
                 }
-                addView(bVar3, a6.e(i11, i11 + 8, this.r));
+                addView(bVar3, z5.e(i11, i11 + 8, this.r));
                 eVarArr[i10] = new androidx.biometric.e(bVar3, bVar, bVar2, 27);
                 l lVar = this.f[i10];
                 if (lVar != null) {
@@ -193,6 +194,6 @@ public final class h extends FrameLayout implements ne.d {
     }
 
     @Override // ne.d
-    public final /* synthetic */ void C(float f7, int i10) {
+    public final /* synthetic */ void A(float f7, int i10) {
     }
 }

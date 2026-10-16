@@ -1,40 +1,82 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class do0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
+import android.content.Context;
+import android.view.View;
+import android.widget.LinearLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-    public /* synthetic */ do0(long j10, int i10) {
-        this.a = i10;
-        this.b = j10;
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes3.dex */
+public final class do0 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int[] c;
+    public final /* synthetic */ int[] d;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public do0(Context context, int i10, int[] iArr, int[] iArr2) {
+        super(context);
+        this.b = i10;
+        this.c = iArr;
+        this.d = iArr2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
-                if (U != null) {
-                    U.presentFragment(fo.W9(this.b));
-                    break;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        this.a = true;
+        int dp = AndroidUtilities.dp(9.0f);
+        int i12 = this.b;
+        int i13 = (i12 - 1) * dp;
+        int[] iArr = this.c;
+        float f7 = 1.0f;
+        if ((iArr[0] * i12) + i13 <= size) {
+            setWeightSum(1.0f);
+            int childCount = getChildCount();
+            for (int i14 = 0; i14 < childCount; i14++) {
+                getChildAt(i14).getLayoutParams().width = 0;
+                ((LinearLayout.LayoutParams) getChildAt(i14).getLayoutParams()).weight = 1.0f / childCount;
+            }
+        } else if (this.d[0] + i13 <= size) {
+            setWeightSum(1.0f);
+            int i15 = size - i13;
+            int childCount2 = getChildCount();
+            for (int i16 = 0; i16 < childCount2; i16++) {
+                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) getChildAt(i16).getLayoutParams();
+                layoutParams.width = 0;
+                float intValue = ((Integer) r9.getTag(R.id.width_tag)).intValue() / i15;
+                layoutParams.weight = intValue;
+                f7 -= intValue;
+            }
+            float f10 = f7 / (i12 - 1);
+            if (f10 > 0.0f) {
+                int childCount3 = getChildCount();
+                for (int i17 = 0; i17 < childCount3; i17++) {
+                    View childAt = getChildAt(i17);
+                    LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) childAt.getLayoutParams();
+                    if (((Integer) childAt.getTag(R.id.width_tag)).intValue() != iArr[0]) {
+                        layoutParams2.weight += f10;
+                    }
                 }
-                break;
-            case 1:
-                org.telegram.ui.ActionBar.m2 U2 = LaunchActivity.U();
-                if (U2 != null) {
-                    U2.presentFragment(fo.W9(this.b));
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.ActionBar.m2 U3 = LaunchActivity.U();
-                if (U3 != null) {
-                    U3.presentFragment(fo.W9(this.b));
-                    break;
-                }
-                break;
+            }
+        } else {
+            setWeightSum(0.0f);
+            int childCount4 = getChildCount();
+            for (int i18 = 0; i18 < childCount4; i18++) {
+                getChildAt(i18).getLayoutParams().width = -2;
+                ((LinearLayout.LayoutParams) getChildAt(i18).getLayoutParams()).weight = 0.0f;
+            }
         }
+        this.a = false;
+        super.onMeasure(i10, i11);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.a) {
+            return;
+        }
+        super.requestLayout();
     }
 }

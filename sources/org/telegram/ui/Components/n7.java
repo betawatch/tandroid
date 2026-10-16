@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n7 implements o1.g {
     public final /* synthetic */ int a;
@@ -42,9 +42,9 @@ public final /* synthetic */ class n7 implements o1.g {
                 viewGroup.invalidate();
                 break;
             case 4:
-                dl dlVar = (dl) this.b;
-                dlVar.j0 = f7;
-                dlVar.k0();
+                cl clVar = (cl) this.b;
+                clVar.j0 = f7;
+                clVar.k0();
                 break;
             default:
                 ((cd0) this.b).z();

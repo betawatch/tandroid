@@ -4,9 +4,9 @@ import android.content.Context;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class i7 extends org.telegram.ui.Components.c91 {
+public final class i7 extends org.telegram.ui.Components.d91 {
     public org.telegram.ui.ActionBar.m1 a;
     public final /* synthetic */ Context b;
     public final /* synthetic */ org.telegram.ui.ActionBar.m2 c;
@@ -18,7 +18,7 @@ public final class i7 extends org.telegram.ui.Components.c91 {
         this.c = m2Var;
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final void b(View view, int i10, int i11) {
         org.telegram.ui.Components.mm0 mm0Var = (org.telegram.ui.Components.mm0) view;
         ArrayList arrayList = this.d.e;
@@ -33,7 +33,7 @@ public final class i7 extends org.telegram.ui.Components.c91 {
         mm0Var.setTag(Integer.valueOf(((v7) arrayList.get(i10)).b));
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final View d(int i10) {
         org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(this.b, null);
         s4.k kVar = (s4.k) mm0Var.getItemAnimator();
@@ -46,17 +46,17 @@ public final class i7 extends org.telegram.ui.Components.c91 {
         return mm0Var;
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final int e() {
         return this.d.e.size();
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final int f(int i10) {
         return ((v7) this.d.e.get(i10)).b;
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final CharSequence g(int i10) {
         return ((v7) this.d.e.get(i10)).a;
     }

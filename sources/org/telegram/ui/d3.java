@@ -12,9 +12,9 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class d3 implements org.telegram.ui.Cells.z9, yj0, org.telegram.ui.Components.zz0 {
+public final class d3 implements org.telegram.ui.Cells.z9, xj0, org.telegram.ui.Components.a01 {
     public int E = -1;
     public int F = -1;
     public int G = -1;
@@ -54,7 +54,7 @@ public final class d3 implements org.telegram.ui.Cells.z9, yj0, org.telegram.ui.
         return this.E;
     }
 
-    @Override // org.telegram.ui.Components.zz0
+    @Override // org.telegram.ui.Components.a01
     public final void attach(View view) {
         this.L = view;
         StaticLayout staticLayout = this.d;
@@ -87,7 +87,7 @@ public final class d3 implements org.telegram.ui.Cells.z9, yj0, org.telegram.ui.
         return this.G;
     }
 
-    @Override // org.telegram.ui.Components.zz0
+    @Override // org.telegram.ui.Components.a01
     public final void detach(View view) {
         if (view == null) {
             view = this.L;
@@ -96,7 +96,7 @@ public final class d3 implements org.telegram.ui.Cells.z9, yj0, org.telegram.ui.
         this.L = null;
     }
 
-    @Override // org.telegram.ui.Components.zz0
+    @Override // org.telegram.ui.Components.a01
     public final void draw(Canvas canvas, View view) {
         float width;
         Object obj;
@@ -156,7 +156,7 @@ public final class d3 implements org.telegram.ui.Cells.z9, yj0, org.telegram.ui.
         this.c = false;
     }
 
-    @Override // org.telegram.ui.Components.zz0
+    @Override // org.telegram.ui.Components.a01
     public final /* synthetic */ int getEmojiOnlyCount() {
         return 0;
     }
@@ -166,7 +166,7 @@ public final class d3 implements org.telegram.ui.Cells.z9, yj0, org.telegram.ui.
         return this.d;
     }
 
-    @Override // org.telegram.ui.yj0
+    @Override // org.telegram.ui.xj0
     public final View getParentView() {
         View view = this.L;
         return view != null ? view : this.b;
@@ -202,17 +202,17 @@ public final class d3 implements org.telegram.ui.Cells.z9, yj0, org.telegram.ui.
         return this.v;
     }
 
-    @Override // org.telegram.ui.Components.zz0
+    @Override // org.telegram.ui.Components.a01
     public final void setRow(int i10) {
         this.w = i10;
     }
 
-    @Override // org.telegram.ui.Components.zz0
+    @Override // org.telegram.ui.Components.a01
     public final void setX(int i10) {
         this.s = i10;
     }
 
-    @Override // org.telegram.ui.Components.zz0
+    @Override // org.telegram.ui.Components.a01
     public final void setY(int i10) {
         this.v = i10;
     }

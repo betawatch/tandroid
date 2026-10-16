@@ -1,37 +1,38 @@
 package org.telegram.ui.Components;
 
+import android.net.Uri;
 import android.text.TextPaint;
+import android.text.style.URLSpan;
+import android.view.View;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class s61 extends p61 {
-    public final int e;
-    public final p11 f;
+public final class s61 extends URLSpan {
+    public final q11 a;
+    public boolean b;
 
-    public s61(String str, int i10, p11 p11Var) {
-        super(str, (p11) null);
-        this.e = i10;
-        this.f = p11Var;
+    public s61(String str, q11 q11Var) {
+        super(str != null ? str.replace((char) 8238, ' ') : str);
+        this.a = q11Var;
     }
 
-    @Override // org.telegram.ui.Components.p61, android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        int i10 = this.e;
-        if (i10 == 3) {
-            textPaint.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.J6, false));
-        } else if (i10 == 2) {
-            textPaint.setColor(-1);
-        } else if (i10 == 1) {
-            textPaint.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.hc, false));
-        } else {
-            textPaint.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.gc, false));
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        if (this.b && (view.getContext() instanceof LaunchActivity)) {
+            ((LaunchActivity) view.getContext()).X0 = true;
         }
-        p11 p11Var = this.f;
-        if (p11Var != null) {
-            p11Var.a(textPaint);
-        } else {
-            textPaint.setUnderlineText(false);
+        pf.d.o(view.getContext(), Uri.parse(getURL()), true, true);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int color = textPaint.getColor();
+        super.updateDrawState(textPaint);
+        q11 q11Var = this.a;
+        if (q11Var != null) {
+            q11Var.a(textPaint);
+            textPaint.setUnderlineText(textPaint.linkColor == color);
         }
     }
 }

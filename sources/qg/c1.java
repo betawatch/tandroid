@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Vector;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
-import ji.h5;
+import ji.w4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.DispatchQueue;
@@ -26,12 +26,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.iw0;
 import org.telegram.ui.Components.la;
-import org.telegram.ui.Wallet.t8;
 import org.telegram.ui.fi1;
 import v7.f7;
-import w7.r6;
+import w7.q6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class c1 extends TextureView {
     public b1 a;
@@ -90,7 +89,7 @@ public class c1 extends TextureView {
         paint.setPathEffect(new DashPathEffect(new float[]{AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f)}, 0.0f));
         paint.setShadowLayer(4.0f, 0.0f, 1.5f, TLObject.FLAG_30);
         this.f = p1Var;
-        q0Var.a = new h5(this, 20);
+        q0Var.a = new w4(this, 20);
     }
 
     public final void a() {
@@ -446,7 +445,7 @@ public class c1 extends TextureView {
         fArr2[1] = height2;
         d0Var.t.mapPoints(fArr2);
         float currentTimeMillis = System.currentTimeMillis() - d0Var.v;
-        d0Var.w = w7.s.a(d0Var.w - (currentTimeMillis / 125.0f), 0.6f, 1.0f);
+        d0Var.w = w7.r.a(d0Var.w - (currentTimeMillis / 125.0f), 0.6f, 1.0f);
         if (d0Var.a.getCurrentBrush() != null && (d0Var.a.getCurrentBrush() instanceof a)) {
             d0Var.w = 1.0f - d0Var.w;
         }
@@ -457,7 +456,7 @@ public class c1 extends TextureView {
             if ((motionEvent.getButtonState() & 32) == 32) {
                 z10 = true;
                 if (d0Var.a.getCurrentBrush() != null) {
-                    f28 = (AndroidUtilities.lerp(d0Var.a.getCurrentBrush().j(), 1.0f, w7.s.a(d0Var.o / 16.0f, 0.0f, 1.0f)) * (f28 - 1.0f)) + 1.0f;
+                    f28 = (AndroidUtilities.lerp(d0Var.a.getCurrentBrush().j(), 1.0f, w7.r.a(d0Var.o / 16.0f, 0.0f, 1.0f)) * (f28 - 1.0f)) + 1.0f;
                 }
                 float[] fArr3 = d0Var.u;
                 double d14 = fArr3[0];
@@ -693,14 +692,14 @@ public class c1 extends TextureView {
                                             u0 u0Var5 = u0VarArr[r42];
                                             float atan2 = (float) Math.atan2(d19 - u0Var5.b, u0Var4.a - u0Var5.a);
                                             if (d0Var.j) {
-                                                float a13 = w7.s.a(f7 / (AndroidUtilities.dp(16.0f) / scaleX), 0.0f, 1.0f);
+                                                float a13 = w7.r.a(f7 / (AndroidUtilities.dp(16.0f) / scaleX), 0.0f, 1.0f);
                                                 if (a13 > 0.4f) {
                                                     double d20 = 1.0f - a13;
                                                     double d21 = d0Var.k;
                                                     double d22 = a13;
                                                     double d23 = atan2;
                                                     f10 = scaleX;
-                                                    d0Var.k = (float) Math.atan2((Math.sin(d23) * d22) + (Math.sin(d21) * d20), org.telegram.messenger.q.a(d23, d22, Math.cos(d21) * d20));
+                                                    d0Var.k = (float) Math.atan2((Math.sin(d23) * d22) + (Math.sin(d21) * d20), i2.d.f(d23, d22, Math.cos(d21) * d20));
                                                     d0Var.c(d0Var.a.getCurrentBrush().j(), false);
                                                 }
                                             } else {
@@ -716,7 +715,7 @@ public class c1 extends TextureView {
                                         if (f7 > AndroidUtilities.dp(8.0f) / f10) {
                                             d0Var.h = u0Var;
                                         }
-                                        d0Var.w = w7.s.a((currentTimeMillis / 75.0f) + d0Var.w, 0.6f, 1.0f);
+                                        d0Var.w = w7.r.a((currentTimeMillis / 75.0f) + d0Var.w, 0.6f, 1.0f);
                                         return;
                                     }
                                 }
@@ -734,7 +733,7 @@ public class c1 extends TextureView {
                     d0Var.g = u0Var;
                     if (f7 > AndroidUtilities.dp(8.0f) / f10) {
                     }
-                    d0Var.w = w7.s.a((currentTimeMillis / 75.0f) + d0Var.w, 0.6f, 1.0f);
+                    d0Var.w = w7.r.a((currentTimeMillis / 75.0f) + d0Var.w, 0.6f, 1.0f);
                     return;
                 }
                 return;
@@ -759,7 +758,7 @@ public class c1 extends TextureView {
         if (a1Var == null) {
             return;
         }
-        a1Var.postRunnable(new t8(16, this, runnable));
+        a1Var.postRunnable(new org.telegram.ui.web.v(14, this, runnable));
     }
 
     public m getCurrentBrush() {
@@ -816,7 +815,7 @@ public class c1 extends TextureView {
             matrix.invert(matrix3);
         }
         a1 a1Var = this.d;
-        q0Var.y = r6.c(r6.b(a1Var.n, a1Var.r), r6.a(matrix));
+        q0Var.y = q6.c(q6.b(a1Var.n, a1Var.r), q6.a(matrix));
     }
 
     public void setBrush(m mVar) {

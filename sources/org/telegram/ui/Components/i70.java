@@ -6,16 +6,16 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class i70 implements org.telegram.ui.zb0 {
+public final class i70 implements org.telegram.ui.yb0 {
     public final /* synthetic */ j70 a;
 
     public i70(j70 j70Var) {
         this.a = j70Var;
     }
 
-    @Override // org.telegram.ui.zb0
+    @Override // org.telegram.ui.yb0
     public final void b(TLRPC.TL_chatInviteExported tL_chatInviteExported, TLObject tLObject) {
         int i10;
         org.telegram.ui.mb mbVar = this.a.a.c.j0;
@@ -38,11 +38,11 @@ public final class i70 implements org.telegram.ui.zb0 {
         }
     }
 
-    @Override // org.telegram.ui.zb0
+    @Override // org.telegram.ui.yb0
     public final void a(TLRPC.TL_chatInviteExported tL_chatInviteExported) {
     }
 
-    @Override // org.telegram.ui.zb0
+    @Override // org.telegram.ui.yb0
     public final void c(TLObject tLObject) {
     }
 }

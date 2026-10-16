@@ -47,9 +47,9 @@ import org.telegram.ui.Components.sc;
 import org.telegram.ui.Components.v6;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.nb0;
+import org.telegram.ui.mb0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class e3 extends Dialog implements i2 {
     private static final boolean AVOID_SYSTEM_CUTOUT_FULLSCREEN = false;
@@ -655,12 +655,12 @@ public class e3 extends Dialog implements i2 {
             this.containerView.setPadding(this.backgroundPaddingLeft, ((this.applyTopPadding ? AndroidUtilities.dp(8.0f) : 0) + this.backgroundPaddingTop) - 1, this.backgroundPaddingLeft, this.applyBottomPadding ? AndroidUtilities.dp(8.0f) : 0);
         }
         this.containerView.setVisibility(4);
-        this.container.addView(this.containerView, 0, w7.a6.e(-1, -2, 80));
+        this.container.addView(this.containerView, 0, w7.z5.e(-1, -2, 80));
         if (this.topBulletinContainer == null) {
             FrameLayout frameLayout = new FrameLayout(getContext());
             this.topBulletinContainer = frameLayout;
             c3 c3Var = this.container;
-            c3Var.addView(frameLayout, c3Var.indexOfChild(this.containerView) + 1, w7.a6.e(-1, -2, 80));
+            c3Var.addView(frameLayout, c3Var.indexOfChild(this.containerView) + 1, w7.z5.e(-1, -2, 80));
         }
         if (this.title != null) {
             t2 t2Var = new t2(this, getContext());
@@ -687,7 +687,7 @@ public class e3 extends Dialog implements i2 {
             }
             this.titleView.setGravity(16);
             i10 = 48;
-            this.containerView.addView(this.titleView, w7.a6.d(this.multipleLinesTitle ? -2.0f : 48, -1));
+            this.containerView.addView(this.titleView, w7.z5.d(this.multipleLinesTitle ? -2.0f : 48, -1));
             this.titleView.setOnTouchListener(new ci.d(1));
         } else {
             i10 = 0;
@@ -698,14 +698,14 @@ public class e3 extends Dialog implements i2 {
                 ((ViewGroup) this.customView.getParent()).removeView(this.customView);
             }
             if (this.useBackgroundTopPadding) {
-                this.containerView.addView(this.customView, w7.a6.a(-2.0f, 0.0f, i10, 0.0f, 0.0f, -1, this.customViewGravity));
+                this.containerView.addView(this.customView, w7.z5.a(-2.0f, 0.0f, i10, 0.0f, 0.0f, -1, this.customViewGravity));
             } else {
                 this.containerView.setClipToPadding(false);
                 this.containerView.setClipChildren(false);
                 this.container.setClipToPadding(false);
                 this.container.setClipChildren(false);
                 float f7 = i10;
-                this.containerView.addView(this.customView, w7.a6.a(-2.0f, 0.0f, f7, 0.0f, 0.0f, -1, this.customViewGravity));
+                this.containerView.addView(this.customView, w7.z5.a(-2.0f, 0.0f, f7, 0.0f, 0.0f, -1, this.customViewGravity));
                 ((ViewGroup.MarginLayoutParams) this.customView.getLayoutParams()).topMargin = AndroidUtilities.dp(f7) + (-this.backgroundPaddingTop);
             }
         } else if (this.items != null) {
@@ -720,7 +720,7 @@ public class e3 extends Dialog implements i2 {
                     CharSequence charSequence = this.items[i11];
                     int[] iArr = this.itemIcons;
                     x2Var.a(charSequence, iArr != null ? iArr[i11] : 0, null, this.bigTitle);
-                    this.containerView.addView(x2Var, w7.a6.a(48.0f, 0.0f, i10, 0.0f, 0.0f, -1, 51));
+                    this.containerView.addView(x2Var, w7.z5.a(48.0f, 0.0f, i10, 0.0f, 0.0f, -1, 51));
                     i10 += 48;
                     x2Var.setTag(Integer.valueOf(i11));
                     x2Var.setOnClickListener(new w(this, 2));
@@ -786,7 +786,7 @@ public class e3 extends Dialog implements i2 {
         }
         zf.l0 l0Var = this.windowVisibilityManager;
         l0Var.getClass();
-        return new nb0(l0Var, 2);
+        return new mb0(l0Var, 2);
     }
 
     @Override // org.telegram.ui.ActionBar.i2
@@ -1208,8 +1208,8 @@ public class e3 extends Dialog implements i2 {
         this.backDrawable.setAlpha(0);
         if (i10 == 3) {
             n nVar = new n(this, 6);
-            WeakHashMap weakHashMap = r0.j0.a;
-            r0.b0.i(r2Var, nVar);
+            WeakHashMap weakHashMap = r0.i0.a;
+            r0.a0.i(r2Var, nVar);
         }
     }
 

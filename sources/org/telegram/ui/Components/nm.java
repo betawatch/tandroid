@@ -1,31 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class nm extends s4.c0 {
-    public final /* synthetic */ ci.k r;
+public final class nm implements nm0 {
+    public final /* synthetic */ ChatAttachAlertPhotoLayout a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nm(ci.k kVar, Context context) {
-        super(context);
-        this.r = kVar;
+    public nm(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout) {
+        this.a = chatAttachAlertPhotoLayout;
     }
 
-    @Override // s4.c0
-    public final int k(int i10, View view) {
-        int topScrollOffset;
-        int k10 = super.k(i10, view);
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) this.r.R;
-        int paddingTop = chatAttachAlertPhotoLayout.E.getPaddingTop();
-        topScrollOffset = chatAttachAlertPhotoLayout.getTopScrollOffset();
-        return k10 - (paddingTop - topScrollOffset);
+    @Override // org.telegram.ui.Components.nm0
+    public final void a(boolean z10) {
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.a;
+        chatAttachAlertPhotoLayout.L = z10 ? 1 : 0;
+        chatAttachAlertPhotoLayout.E.d1(true);
     }
 
-    @Override // s4.c0
-    public final int m(int i10) {
-        return super.m(i10) * 2;
+    @Override // org.telegram.ui.Components.nm0
+    public final boolean b(int i10) {
+        return this.a.G.j(i10) == 0;
+    }
+
+    @Override // org.telegram.ui.Components.nm0
+    public final void c(View view, boolean z10) {
+        if (z10 == this.a.K && (view instanceof org.telegram.ui.Cells.t5)) {
+            org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
+            t5Var.w.c(t5Var);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.nm0
+    public final boolean d(int i10) {
+        MediaController.PhotoEntry M = this.a.G.M(i10);
+        return M != null && ChatAttachAlertPhotoLayout.s1.containsKey(Integer.valueOf(M.imageId));
     }
 }

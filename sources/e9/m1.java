@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class m1 extends AbstractMap {
     public final Map a;
@@ -37,7 +37,7 @@ public final class m1 extends AbstractMap {
         Map map = this.a;
         Object obj2 = map.get(obj);
         if (obj2 != null || map.containsKey(obj)) {
-            return this.b.e(obj, obj2);
+            return this.b.k(obj, obj2);
         }
         return null;
     }
@@ -51,7 +51,7 @@ public final class m1 extends AbstractMap {
     public final Object remove(Object obj) {
         Map map = this.a;
         if (map.containsKey(obj)) {
-            return this.b.e(obj, map.remove(obj));
+            return this.b.k(obj, map.remove(obj));
         }
         return null;
     }

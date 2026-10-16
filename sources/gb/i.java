@@ -1,63 +1,40 @@
 package gb;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class i extends Number {
-    public final String a;
+public abstract class i {
+    public static final int a;
 
-    public i(String str) {
-        this.a = str;
-    }
-
-    @Override // java.lang.Number
-    public final double doubleValue() {
-        return Double.parseDouble(this.a);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof i) {
-            return this.a.equals(((i) obj).a);
-        }
-        return false;
-    }
-
-    @Override // java.lang.Number
-    public final float floatValue() {
-        return Float.parseFloat(this.a);
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    @Override // java.lang.Number
-    public final int intValue() {
-        String str = this.a;
+    static {
+        int i10;
+        String property = System.getProperty("java.version");
         try {
-            try {
-                return Integer.parseInt(str);
-            } catch (NumberFormatException unused) {
-                return (int) Long.parseLong(str);
+            String[] split = property.split("[._]", 3);
+            i10 = Integer.parseInt(split[0]);
+            if (i10 == 1 && split.length > 1) {
+                i10 = Integer.parseInt(split[1]);
             }
-        } catch (NumberFormatException unused2) {
-            return d.i(str).intValue();
-        }
-    }
-
-    @Override // java.lang.Number
-    public final long longValue() {
-        String str = this.a;
-        try {
-            return Long.parseLong(str);
         } catch (NumberFormatException unused) {
-            return d.i(str).longValue();
+            i10 = -1;
         }
-    }
-
-    public final String toString() {
-        return this.a;
+        if (i10 == -1) {
+            try {
+                StringBuilder sb2 = new StringBuilder();
+                for (int i11 = 0; i11 < property.length(); i11++) {
+                    char charAt = property.charAt(i11);
+                    if (!Character.isDigit(charAt)) {
+                        break;
+                    }
+                    sb2.append(charAt);
+                }
+                i10 = Integer.parseInt(sb2.toString());
+            } catch (NumberFormatException unused2) {
+                i10 = -1;
+            }
+        }
+        if (i10 == -1) {
+            i10 = 6;
+        }
+        a = i10;
     }
 }

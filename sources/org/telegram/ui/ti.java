@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ti implements org.telegram.ui.Components.dm0 {
     public final /* synthetic */ fo a;
@@ -31,11 +31,11 @@ public final class ti implements org.telegram.ui.Components.dm0 {
             z10 = ((org.telegram.ui.ActionBar.m2) foVar).inPreviewMode;
             if (!z10 && !foVar.Pa) {
                 foVar.D4 = true;
-                if (view instanceof org.telegram.ui.Cells.x0) {
-                    org.telegram.ui.Cells.x0 x0Var = (org.telegram.ui.Cells.x0) view;
-                    MessageObject messageObject = x0Var.getMessageObject();
+                if (view instanceof org.telegram.ui.Cells.w0) {
+                    org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) view;
+                    MessageObject messageObject = w0Var.getMessageObject();
                     if (messageObject != null) {
-                        if (!(messageObject.messageOwner.action instanceof TLRPC.TL_messageActionSetMessagesTTL) && x0Var.getMessageObject().type != 21 && !x0Var.getMessageObject().isWallpaperAction() && x0Var.getMessageObject().type != 30) {
+                        if (!(messageObject.messageOwner.action instanceof TLRPC.TL_messageActionSetMessagesTTL) && w0Var.getMessageObject().type != 21 && !w0Var.getMessageObject().isWallpaperAction() && w0Var.getMessageObject().type != 30) {
                             z11 = false;
                             kVar = ((org.telegram.ui.ActionBar.m2) foVar).actionBar;
                             if (!kVar.t() || (foVar.F9() && !z11)) {

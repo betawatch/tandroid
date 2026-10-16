@@ -7,12 +7,12 @@ import java.util.Locale;
 import java.util.UUID;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class v {
     public static final Pattern g = Pattern.compile("[^\\p{Alnum}]");
     public static final String h = Pattern.quote("/");
-    public final gb.e a;
+    public final gb.f a;
     public final Context b;
     public final String c;
     public final ra.d d;
@@ -30,7 +30,7 @@ public final class v {
         this.c = str;
         this.d = dVar;
         this.e = sVar;
-        this.a = new gb.e();
+        this.a = new gb.f();
     }
 
     public final synchronized String a(String str, SharedPreferences sharedPreferences) {
@@ -87,18 +87,18 @@ public final class v {
 
     public final String c() {
         String str;
-        gb.e eVar = this.a;
+        gb.f fVar = this.a;
         Context context = this.b;
-        synchronized (eVar) {
+        synchronized (fVar) {
             try {
-                if (eVar.a == null) {
+                if (fVar.a == null) {
                     String installerPackageName = context.getPackageManager().getInstallerPackageName(context.getPackageName());
                     if (installerPackageName == null) {
                         installerPackageName = "";
                     }
-                    eVar.a = installerPackageName;
+                    fVar.a = installerPackageName;
                 }
-                str = "".equals(eVar.a) ? null : eVar.a;
+                str = "".equals(fVar.a) ? null : fVar.a;
             } finally {
             }
         }

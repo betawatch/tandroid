@@ -8,16 +8,16 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.FlagSecureReason;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ai implements FlagSecureReason.FlagSecureCondition, tv0, r0.o, zf.b0, org.telegram.ui.ActionBar.z1 {
+public final /* synthetic */ class ai implements FlagSecureReason.FlagSecureCondition, sv0, r0.n, zf.b0, org.telegram.ui.ActionBar.z1 {
     public final /* synthetic */ fo a;
 
     public /* synthetic */ ai(fo foVar) {
         this.a = foVar;
     }
 
-    @Override // r0.o
+    @Override // r0.n
     public r0.l1 Q0(View view, r0.l1 l1Var) {
         fo foVar = this.a;
         r0.l1 z82 = foVar.z8(l1Var);
@@ -44,7 +44,7 @@ public final /* synthetic */ class ai implements FlagSecureReason.FlagSecureCond
         }
         di.h1 h1Var = foVar.q1;
         if (h1Var != null) {
-            r0.j0.b(h1Var, z82);
+            r0.i0.b(h1Var, z82);
         }
         return r0.l1.b;
     }
@@ -54,7 +54,7 @@ public final /* synthetic */ class ai implements FlagSecureReason.FlagSecureCond
         fo.X0(this.a, i10);
     }
 
-    @Override // org.telegram.ui.tv0
+    @Override // org.telegram.ui.sv0
     public void b(float[] fArr) {
         fo foVar = this.a;
         fArr[1] = foVar.x0.getBottom() - foVar.Ba;

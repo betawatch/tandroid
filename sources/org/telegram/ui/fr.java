@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class fr implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -148,9 +148,9 @@ public final class fr implements ViewTreeObserver.OnPreDrawListener {
                 animatorSet3.addListener(new org.telegram.ui.Components.ql0(0, this, animatorSet3));
                 return false;
             default:
-                c20 c20Var = (c20) obj;
-                c20Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                bi.o0 o0Var = c20Var.b;
+                b20 b20Var = (b20) obj;
+                b20Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                bi.o0 o0Var = b20Var.b;
                 int childCount4 = o0Var.getChildCount();
                 AnimatorSet animatorSet4 = new AnimatorSet();
                 int i19 = 0;
@@ -191,8 +191,8 @@ public final class fr implements ViewTreeObserver.OnPreDrawListener {
                 }
                 float f13 = f11;
                 int i20 = i14;
-                animatorSet4.addListener(new s10(this));
-                c20Var.l0.lock();
+                animatorSet4.addListener(new r10(this));
+                b20Var.l0.lock();
                 animatorSet4.start();
                 if (view != null && view.getParent() == null) {
                     o0Var.addView(view);
@@ -204,7 +204,7 @@ public final class fr implements ViewTreeObserver.OnPreDrawListener {
                         fArr2[i20] = view.getAlpha();
                         fArr2[1] = f13;
                         ObjectAnimator ofFloat7 = ObjectAnimator.ofFloat(view, (Property<View, Float>) property, fArr2);
-                        ofFloat7.addListener(new s10(this, layoutManager3));
+                        ofFloat7.addListener(new r10(this, layoutManager3));
                         ofFloat7.start();
                         return true;
                     }

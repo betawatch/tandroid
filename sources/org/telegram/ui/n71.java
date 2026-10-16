@@ -34,7 +34,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class n71 extends Dialog {
     public final int E;
@@ -92,10 +92,10 @@ public abstract class n71 extends Dialog {
         setContentView(l0Var, new ViewGroup.LayoutParams(-1, -1));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        linearLayout.addView(new x50(g61Var, context, 9), w7.a6.t(160, 160, 17, 0, 0, 0, 16));
+        linearLayout.addView(new x50(g61Var, context, 9), w7.z5.t(160, 160, 17, 0, 0, 0, 16));
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert2, 0, context, c6Var);
         this.v = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        linearLayout.addView(actionBarPopupWindow$ActionBarPopupWindowLayout, w7.a6.t(-2, -2, 17, 0, 0, 0, 0));
+        linearLayout.addView(actionBarPopupWindow$ActionBarPopupWindowLayout, w7.z5.t(-2, -2, 17, 0, 0, 0, 0));
         org.telegram.ui.ActionBar.u0.c(true, false, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, LocaleController.getString(R.string.SetEmojiStatusUntil1Hour), false, c6Var).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.k71
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -176,7 +176,7 @@ public abstract class n71 extends Dialog {
             }
         });
         org.telegram.ui.ActionBar.u0.c(false, true, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, LocaleController.getString(R.string.SetEmojiStatusUntilOther), false, c6Var).setOnClickListener(new bz0(2, g61Var, context));
-        l0Var.addView(linearLayout, w7.a6.e(-2, -2, 17));
+        l0Var.addView(linearLayout, w7.z5.e(-2, -2, 17));
         Window window = getWindow();
         if (window != null) {
             window.setWindowAnimations(R.style.DialogNoAnimation);

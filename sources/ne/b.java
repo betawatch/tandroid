@@ -3,7 +3,7 @@ package ne;
 import android.view.View;
 import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class b implements d {
     public final int a;
@@ -19,8 +19,8 @@ public final class b implements d {
     }
 
     @Override // ne.d
-    public final void C(float f7, int i10) {
-        this.b.C(f7, this.a);
+    public final void A(float f7, int i10) {
+        this.b.A(f7, this.a);
     }
 
     public final void a(boolean z10, boolean z11) {
@@ -52,7 +52,7 @@ public final class b implements d {
                 this.e = f7;
                 dVar.p(i10, f7, -1.0f, null);
             }
-            dVar.C(f7, i10);
+            dVar.A(f7, i10);
         }
     }
 

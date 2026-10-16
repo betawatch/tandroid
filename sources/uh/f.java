@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import ji.p1;
+import m.h;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
@@ -32,6 +33,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Cells.v3;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.db;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.kc0;
@@ -41,15 +43,15 @@ import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.o20;
 import org.telegram.ui.Components.s20;
 import org.telegram.ui.Components.z30;
-import org.telegram.ui.Components.z61;
 import org.telegram.ui.x5;
-import r0.b0;
+import r0.a0;
 import s4.k;
 import ug.u0;
-import w7.a6;
+import w7.b6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
 public final class f extends db implements ne.d {
     public static final /* synthetic */ int r0 = 0;
     public final ne.e X;
@@ -58,14 +60,14 @@ public final class f extends db implements ne.d {
     public final ArrayList a0;
     public final ArrayList b0;
     public String c0;
-    public z61 d0;
+    public a71 d0;
     public final di.d e0;
     public final n f0;
     public final x5 g0;
     public final s20 h0;
     public final v3 i0;
     public final HashMap j0;
-    public l2.f k0;
+    public h k0;
     public int l0;
     public final int m0;
     public final FrameLayout n0;
@@ -110,8 +112,8 @@ public final class f extends db implements ne.d {
         nVar.setGravity(17);
         nVar.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
         nVar.setVisibility(8);
-        w7.c6.a(nVar);
-        this.e.n().addView(nVar, a6.t(-2, 48, 16, 12, 0, 12, 0));
+        b6.a(nVar);
+        this.e.n().addView(nVar, z5.t(-2, 48, 16, 12, 0, 12, 0));
         nVar.setOnClickListener(new a(this, 1));
         o20 o20Var = new o20(context, c6Var);
         String string = LocaleController.getString(R.string.PollV2SearchHint);
@@ -125,22 +127,22 @@ public final class f extends db implements ne.d {
         this.g0 = x5Var;
         int i11 = this.backgroundPaddingLeft;
         x5Var.setPadding(i11, 0, i11, 0);
-        x5Var.addView(o20Var, a6.a(40.0f, 10.0f, 0.0f, 10.0f, 0.0f, -1, 48));
-        x5Var.addView(s20Var, a6.a(144.0f, -3.0f, 40.0f, -3.0f, 0.0f, -1, 48));
+        x5Var.addView(o20Var, z5.a(40.0f, 10.0f, 0.0f, 10.0f, 0.0f, -1, 48));
+        x5Var.addView(s20Var, z5.a(144.0f, -3.0f, 40.0f, -3.0f, 0.0f, -1, 48));
         v3 v3Var = new v3(context, 18, c6Var);
         this.i0 = v3Var;
         v3Var.setTranslationY(AndroidUtilities.dp(48.0f));
         v3Var.c(LocaleController.getString(R.string.SearchCountriesTitle), LocaleController.getString(R.string.DeselectAll), new a(this, 2));
-        x5Var.addView(v3Var, a6.e(-1, 32, 48));
-        this.containerView.addView(x5Var, a6.e(-1, 216, 48));
+        x5Var.addView(v3Var, z5.e(-1, 32, 48));
+        this.containerView.addView(x5Var, z5.e(-1, 216, 48));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setPadding(AndroidUtilities.dp(10.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(10.0f) + AndroidUtilities.navigationBarHeight);
-        frameLayout.addView(dVar, a6.d(48.0f, -1));
-        this.containerView.addView(frameLayout, a6.e(-1, -2, 80));
+        frameLayout.addView(dVar, z5.d(48.0f, -1));
+        this.containerView.addView(frameLayout, z5.e(-1, -2, 80));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.n0 = frameLayout2;
         frameLayout2.setTranslationY((-AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(68.0f));
-        this.containerView.addView(frameLayout2, a6.e(-1, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 80));
+        this.containerView.addView(frameLayout2, z5.e(-1, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 80));
         k kVar = new k();
         kVar.n(350L);
         kVar.o(esVar);
@@ -153,7 +155,7 @@ public final class f extends db implements ne.d {
         TLRPC.TL_help_getCountriesList tL_help_getCountriesList = new TLRPC.TL_help_getCountriesList();
         tL_help_getCountriesList.lang_code = LocaleController.getInstance().getCurrentLocaleInfo() != null ? LocaleController.getInstance().getCurrentLocaleInfo().getLangCode() : Locale.getDefault().getCountry();
         connectionsManager.sendRequest(tL_help_getCountriesList, new z7(p1Var, 20));
-        b0.i(getContainer(), new b(this));
+        a0.i(getContainer(), new b(this));
     }
 
     public static void Q(f fVar, Pair pair) {
@@ -196,7 +198,7 @@ public final class f extends db implements ne.d {
     }
 
     @Override // org.telegram.ui.Components.db
-    public final CharSequence A() {
+    public final CharSequence B() {
         return LocaleController.getString(R.string.BoostingSelectCountry);
     }
 
@@ -278,13 +280,13 @@ public final class f extends db implements ne.d {
 
     @Override // org.telegram.ui.Components.db
     public final lm0 x(mm0 mm0Var) {
-        z61 z61Var = new z61(mm0Var, getContext(), this.currentAccount, 0, true, new ii.a(this, 8), this.resourcesProvider);
-        this.d0 = z61Var;
-        z61Var.r = false;
-        return z61Var;
+        a71 a71Var = new a71(mm0Var, getContext(), this.currentAccount, 0, true, new ii.a(this, 8), this.resourcesProvider);
+        this.d0 = a71Var;
+        a71Var.r = false;
+        return a71Var;
     }
 
     @Override // ne.d
-    public final /* synthetic */ void C(float f7, int i10) {
+    public final /* synthetic */ void A(float f7, int i10) {
     }
 }

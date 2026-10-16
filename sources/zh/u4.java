@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u4 implements Runnable {
     public final /* synthetic */ int a;
@@ -535,8 +535,8 @@ public final /* synthetic */ class u4 implements Runnable {
                                             break;
                                         } else {
                                             c5.a aVar = new c5.a();
-                                            aVar.c = "inapp";
-                                            aVar.b = ((TL_stars.TL_starsTopupOption) arrayList5.get(i14)).store_product;
+                                            aVar.b = "inapp";
+                                            aVar.a = ((TL_stars.TL_starsTopupOption) arrayList5.get(i14)).store_product;
                                             arrayList4.add(aVar.a());
                                             i14++;
                                         }
@@ -983,8 +983,8 @@ public final /* synthetic */ class u4 implements Runnable {
                                             break;
                                         } else {
                                             c5.a aVar2 = new c5.a();
-                                            aVar2.c = "inapp";
-                                            aVar2.b = ((TL_stars.TL_starsGiftOption) arrayList7.get(i16)).store_product;
+                                            aVar2.b = "inapp";
+                                            aVar2.a = ((TL_stars.TL_starsGiftOption) arrayList7.get(i16)).store_product;
                                             arrayList6.add(aVar2.a());
                                             i16++;
                                         }
@@ -1431,8 +1431,8 @@ public final /* synthetic */ class u4 implements Runnable {
                                             break;
                                         } else {
                                             c5.a aVar3 = new c5.a();
-                                            aVar3.c = "inapp";
-                                            aVar3.b = ((TL_stars.TL_starsGiveawayOption) arrayList9.get(i18)).store_product;
+                                            aVar3.b = "inapp";
+                                            aVar3.a = ((TL_stars.TL_starsGiveawayOption) arrayList9.get(i18)).store_product;
                                             arrayList8.add(aVar3.a());
                                             i18++;
                                         }
@@ -1924,8 +1924,8 @@ public final /* synthetic */ class u4 implements Runnable {
                                             break;
                                         } else {
                                             c5.a aVar = new c5.a();
-                                            aVar.c = "inapp";
-                                            aVar.b = ((TL_stars.TL_starsTopupOption) arrayList52.get(i142)).store_product;
+                                            aVar.b = "inapp";
+                                            aVar.a = ((TL_stars.TL_starsTopupOption) arrayList52.get(i142)).store_product;
                                             arrayList42.add(aVar.a());
                                             i142++;
                                         }
@@ -2372,8 +2372,8 @@ public final /* synthetic */ class u4 implements Runnable {
                                             break;
                                         } else {
                                             c5.a aVar2 = new c5.a();
-                                            aVar2.c = "inapp";
-                                            aVar2.b = ((TL_stars.TL_starsGiftOption) arrayList7.get(i16)).store_product;
+                                            aVar2.b = "inapp";
+                                            aVar2.a = ((TL_stars.TL_starsGiftOption) arrayList7.get(i16)).store_product;
                                             arrayList62.add(aVar2.a());
                                             i16++;
                                         }
@@ -2820,8 +2820,8 @@ public final /* synthetic */ class u4 implements Runnable {
                                             break;
                                         } else {
                                             c5.a aVar3 = new c5.a();
-                                            aVar3.c = "inapp";
-                                            aVar3.b = ((TL_stars.TL_starsGiveawayOption) arrayList9.get(i18)).store_product;
+                                            aVar3.b = "inapp";
+                                            aVar3.a = ((TL_stars.TL_starsGiveawayOption) arrayList9.get(i18)).store_product;
                                             arrayList8.add(aVar3.a());
                                             i18++;
                                         }
@@ -3313,8 +3313,8 @@ public final /* synthetic */ class u4 implements Runnable {
                                             break;
                                         } else {
                                             c5.a aVar = new c5.a();
-                                            aVar.c = "inapp";
-                                            aVar.b = ((TL_stars.TL_starsTopupOption) arrayList52.get(i142)).store_product;
+                                            aVar.b = "inapp";
+                                            aVar.a = ((TL_stars.TL_starsTopupOption) arrayList52.get(i142)).store_product;
                                             arrayList42.add(aVar.a());
                                             i142++;
                                         }
@@ -3761,8 +3761,8 @@ public final /* synthetic */ class u4 implements Runnable {
                                             break;
                                         } else {
                                             c5.a aVar2 = new c5.a();
-                                            aVar2.c = "inapp";
-                                            aVar2.b = ((TL_stars.TL_starsGiftOption) arrayList72.get(i162)).store_product;
+                                            aVar2.b = "inapp";
+                                            aVar2.a = ((TL_stars.TL_starsGiftOption) arrayList72.get(i162)).store_product;
                                             arrayList62.add(aVar2.a());
                                             i162++;
                                         }
@@ -4209,8 +4209,8 @@ public final /* synthetic */ class u4 implements Runnable {
                                             break;
                                         } else {
                                             c5.a aVar3 = new c5.a();
-                                            aVar3.c = "inapp";
-                                            aVar3.b = ((TL_stars.TL_starsGiveawayOption) arrayList92.get(i18)).store_product;
+                                            aVar3.b = "inapp";
+                                            aVar3.a = ((TL_stars.TL_starsGiveawayOption) arrayList92.get(i18)).store_product;
                                             arrayList82.add(aVar3.a());
                                             i18++;
                                         }

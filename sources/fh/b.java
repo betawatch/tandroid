@@ -9,9 +9,9 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
-import w7.s;
+import w7.r;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class b {
     public static e a(c6 c6Var) {
@@ -185,7 +185,7 @@ public abstract class b {
     }
 
     public static int m(float f7, int i10, int i11) {
-        float a2 = s.a(f7, 0.0f, 1.0f);
+        float a2 = r.a(f7, 0.0f, 1.0f);
         if (a2 <= 0.0f) {
             return Color.argb(0, 0, 0, 0);
         }
@@ -196,7 +196,7 @@ public abstract class b {
         int green = Color.green(i10);
         int blue = Color.blue(i10);
         float f10 = 1.0f - a2;
-        return Color.argb(s.b(Math.round(a2 * 255.0f), 0, 255), s.b(Math.round((Color.red(i11) - (red * f10)) / a2), 0, 255), s.b(Math.round((Color.green(i11) - (green * f10)) / a2), 0, 255), s.b(Math.round((Color.blue(i11) - (blue * f10)) / a2), 0, 255));
+        return Color.argb(r.b(Math.round(a2 * 255.0f), 0, 255), r.b(Math.round((Color.red(i11) - (red * f10)) / a2), 0, 255), r.b(Math.round((Color.green(i11) - (green * f10)) / a2), 0, 255), r.b(Math.round((Color.blue(i11) - (blue * f10)) / a2), 0, 255));
     }
 
     public static e n(c6 c6Var) {

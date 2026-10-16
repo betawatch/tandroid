@@ -11,13 +11,14 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
+import ji.w4;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class p {
     public final Context a;
     public final s b;
-    public final n6.o c;
+    public final n3.b c;
     public l d;
     public l e;
     public n f;
@@ -29,9 +30,9 @@ public final class p {
     public final com.google.firebase.messaging.s l;
     public final j m;
     public final u9.a n;
-    public final u9.d o;
+    public final w4 o;
 
-    public p(l9.h hVar, v vVar, u9.a aVar, s sVar, t9.a aVar2, t9.a aVar3, ca.c cVar, ExecutorService executorService, j jVar, u9.d dVar) {
+    public p(l9.h hVar, v vVar, u9.a aVar, s sVar, t9.a aVar2, t9.a aVar3, ca.c cVar, ExecutorService executorService, j jVar, w4 w4Var) {
         this.b = sVar;
         hVar.a();
         this.a = hVar.a;
@@ -43,9 +44,9 @@ public final class p {
         this.h = cVar;
         this.l = new com.google.firebase.messaging.s(executorService);
         this.m = jVar;
-        this.o = dVar;
+        this.o = w4Var;
         System.currentTimeMillis();
-        this.c = new n6.o(26);
+        this.c = new n3.b(27);
     }
 
     public static Task a(p pVar, ea.b bVar) {

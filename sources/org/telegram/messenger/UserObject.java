@@ -1,11 +1,12 @@
 package org.telegram.messenger;
 
 import android.text.TextUtils;
+import java.util.Locale;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class UserObject {
     public static final long ANONYMOUS = 2666000;
@@ -69,6 +70,29 @@ public class UserObject {
             }
         }
         return false;
+    }
+
+    public static String getBotStatus(TLRPC.User user) {
+        String publicUsername = getPublicUsername(user);
+        if (publicUsername != null) {
+            String lowerCase = publicUsername.toLowerCase(Locale.ROOT);
+            if (lowerCase.endsWith("agent")) {
+                return LocaleController.getString(R.string.BotTypeAgent);
+            }
+            if (lowerCase.endsWith("game")) {
+                return LocaleController.getString(R.string.BotTypeGame);
+            }
+            if (lowerCase.endsWith("app")) {
+                return LocaleController.getString(R.string.BotTypeApp);
+            }
+            if (lowerCase.endsWith("ai")) {
+                return LocaleController.getString(R.string.BotTypeAI);
+            }
+            if (lowerCase.endsWith("gay")) {
+                return LocaleController.getString(R.string.BotTypeNonBinary);
+            }
+        }
+        return LocaleController.getString(R.string.Bot);
     }
 
     public static int getColorId(TLRPC.User user) {
@@ -215,7 +239,7 @@ public class UserObject {
         if (removeRTL.length() != 0 || TextUtils.isEmpty(user.phone)) {
             return removeRTL;
         }
-        return yh.g(new StringBuilder("+"), user.phone, jf.b.c());
+        return sk.g(new StringBuilder("+"), user.phone, jf.b.c());
     }
 
     public static boolean hasFallbackPhoto(TLRPC.UserFull userFull) {

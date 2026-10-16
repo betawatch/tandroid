@@ -2,7 +2,7 @@ package di;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e5 implements Runnable {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class e5 implements Runnable {
                         l6Var.setSelected(false);
                         l6Var.setOnClickListener(new ah.g0(oVar, 11));
                         l6Var.setOnLongClickListener(new l5(o6Var, 0));
-                        o6Var.I1.a(l6Var, w7.a6.n(-1, 48));
+                        o6Var.I1.a(l6Var, w7.z5.n(-1, 48));
                         i10++;
                     }
                 }

@@ -20,10 +20,10 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.m9;
 import org.telegram.ui.xe;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
 public final class d {
     public final m2 a;
     public final TLRPC.Chat b;
@@ -113,7 +113,7 @@ public final class d {
             LinearLayout linearLayout = new LinearLayout(m2Var.getParentActivity());
             this.f = linearLayout;
             linearLayout.setOrientation(0);
-            this.d.addView(this.f, a6.a(-1.0f, 0.0f, 0.0f, 100.0f, 0.0f, -1, 48));
+            this.d.addView(this.f, z5.a(-1.0f, 0.0f, 0.0f, 100.0f, 0.0f, -1, 48));
             a0 a0Var = new a0(1, m2Var.getParentActivity(), false);
             this.e = a0Var;
             a0Var.setAvatarsTextSize(AndroidUtilities.dp(18.0f));
@@ -121,7 +121,7 @@ public final class d {
             for (int i11 = 0; i11 < m9Var.c.length; i11++) {
                 m9Var.l(0, null, 0);
             }
-            this.f.addView(this.e, a6.a(-1.0f, 8.0f, 0.0f, 10.0f, 0.0f, -2, 48));
+            this.f.addView(this.e, z5.a(-1.0f, 8.0f, 0.0f, 10.0f, 0.0f, -2, 48));
             TextView textView = new TextView(m2Var.getParentActivity());
             this.g = textView;
             textView.setEllipsize(TextUtils.TruncateAt.END);
@@ -130,7 +130,7 @@ public final class d {
             this.g.setText((CharSequence) null);
             this.g.setTextColor(m2Var.getThemedColor(g6.fe));
             this.g.setTypeface(AndroidUtilities.bold());
-            this.f.addView(this.g, a6.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 48));
+            this.f.addView(this.g, z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 48));
             ImageView imageView = new ImageView(m2Var.getParentActivity());
             this.h = imageView;
             imageView.setBackground(g6.g0(m2Var.getThemedColor(g6.x7) & 436207615, 1, AndroidUtilities.dp(14.0f)));
@@ -166,7 +166,7 @@ public final class d {
                     }
                 }
             });
-            this.d.addView(this.h, a6.a(-1.0f, 0.0f, 0.0f, 4.0f, 0.0f, 36, 53));
+            this.d.addView(this.h, z5.a(-1.0f, 0.0f, 0.0f, 4.0f, 0.0f, 36, 53));
             TLRPC.ChatFull chatFull = this.j;
             if (chatFull != null) {
                 e(chatFull.requests_pending, chatFull.recent_requesters, false);

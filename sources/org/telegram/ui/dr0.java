@@ -1,49 +1,172 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class dr0 extends org.telegram.ui.Components.f10 {
-    public final /* synthetic */ int U;
+public final class dr0 extends org.telegram.ui.Components.lm0 {
+    public final Context c;
+    public final /* synthetic */ fr0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ dr0(Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, c6Var);
-        this.U = i10;
+    public dr0(fr0 fr0Var, Context context) {
+        this.d = fr0Var;
+        this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.f10
-    public int getColumnsCount() {
-        switch (this.U) {
-            case 0:
-                return 3;
-            default:
-                return super.getColumnsCount();
+    @Override // org.telegram.ui.Components.lm0
+    public final boolean D(s4.b1 b1Var) {
+        fr0 fr0Var = this.d;
+        if (fr0Var.J == null) {
+            return TextUtils.isEmpty(fr0Var.v) ? b1Var.f == 3 : b1Var.b() < fr0Var.f.size();
+        }
+        return true;
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        fr0 fr0Var = this.d;
+        MediaController.AlbumEntry albumEntry = fr0Var.J;
+        if (albumEntry != null) {
+            return albumEntry.photos.size();
+        }
+        if (!fr0Var.f.isEmpty()) {
+            return fr0Var.f.size() + (!fr0Var.s ? 1 : 0);
+        }
+        if (!TextUtils.isEmpty(fr0Var.v) || fr0Var.n.isEmpty()) {
+            return 0;
+        }
+        return fr0Var.n.size() + 2;
+    }
+
+    @Override // s4.g0
+    public final long i(int i10) {
+        return i10;
+    }
+
+    @Override // s4.g0
+    public final int j(int i10) {
+        fr0 fr0Var = this.d;
+        if (fr0Var.Y) {
+            return 2;
+        }
+        if (fr0Var.J != null) {
+            return 0;
+        }
+        return fr0Var.f.isEmpty() ? i10 == fr0Var.n.size() ? 4 : 3 : i10 < fr0Var.f.size() ? 0 : 1;
+    }
+
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        boolean M1;
+        fr0 fr0Var = this.d;
+        MediaController.AlbumEntry albumEntry = fr0Var.J;
+        ArrayList arrayList = fr0Var.n;
+        ArrayList arrayList2 = fr0Var.c;
+        HashMap hashMap = fr0Var.b;
+        int i11 = b1Var.f;
+        View view = b1Var.a;
+        if (i11 == 0) {
+            org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
+            t5Var.setItemSize(fr0Var.R);
+            org.telegram.ui.Components.z9 imageView = t5Var.getImageView();
+            t5Var.setTag(Integer.valueOf(i10));
+            imageView.q(0, true);
+            if (albumEntry != null) {
+                MediaController.PhotoEntry photoEntry = albumEntry.photos.get(i10);
+                t5Var.d(photoEntry, arrayList2.size() > 1, true, false, false);
+                t5Var.b(fr0Var.e ? arrayList2.indexOf(Integer.valueOf(photoEntry.imageId)) : -1, hashMap.containsKey(Integer.valueOf(photoEntry.imageId)), false);
+                M1 = PhotoViewer.M1(photoEntry.path);
+            } else {
+                MediaController.SearchImage searchImage = (MediaController.SearchImage) fr0Var.f.get(i10);
+                t5Var.e(searchImage);
+                t5Var.getVideoInfoContainer().setVisibility(4);
+                t5Var.b(fr0Var.e ? arrayList2.indexOf(searchImage.id) : -1, hashMap.containsKey(searchImage.id), false);
+                M1 = PhotoViewer.M1(searchImage.getPathToAttach());
+            }
+            imageView.getImageReceiver().setVisible(!M1, true);
+            t5Var.getCheckBox().setVisibility((fr0Var.T != 0 || M1) ? 8 : 0);
+            return;
+        }
+        if (i11 == 1) {
+            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+            if (layoutParams != null) {
+                layoutParams.width = -1;
+                layoutParams.height = fr0Var.R;
+                view.setLayoutParams(layoutParams);
+                return;
+            }
+            return;
+        }
+        if (i11 == 2) {
+            MediaController.PhotoEntry photoEntry2 = albumEntry.photos.get(i10);
+            org.telegram.ui.Cells.j7 j7Var = (org.telegram.ui.Cells.j7) view;
+            j7Var.setPhotoEntry(photoEntry2);
+            j7Var.b(hashMap.containsKey(Integer.valueOf(photoEntry2.imageId)), false);
+            j7Var.setTag(Integer.valueOf(i10));
+            return;
+        }
+        if (i11 != 3) {
+            return;
+        }
+        org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) view;
+        if (i10 < arrayList.size()) {
+            r8Var.m(R.drawable.msg_recent, (CharSequence) arrayList.get(i10), false);
+        } else {
+            r8Var.m(R.drawable.msg_clear_recent, LocaleController.getString(R.string.ClearRecentHistory), false);
         }
     }
 
-    @Override // org.telegram.ui.Components.f10
-    public int getViewType() {
-        switch (this.U) {
-            case 0:
-                return 2;
-            default:
-                return super.getViewType();
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        ViewGroup viewGroup2;
+        ViewGroup viewGroup3;
+        fr0 fr0Var = this.d;
+        boolean z10 = fr0Var.r0;
+        Context context = this.c;
+        if (i10 != 0) {
+            if (i10 == 1) {
+                ViewGroup frameLayout = new FrameLayout(context);
+                frameLayout.setLayoutParams(new s4.o0(-1, -2));
+                RadialProgressView radialProgressView = new RadialProgressView(context, null);
+                radialProgressView.setProgressColor(-11371101);
+                frameLayout.addView(radialProgressView, w7.z5.d(-1.0f, -1));
+                viewGroup3 = frameLayout;
+            } else if (i10 == 2) {
+                viewGroup3 = new org.telegram.ui.Cells.j7(context, 1, null);
+            } else if (i10 != 3) {
+                org.telegram.ui.Cells.d3 d3Var = new org.telegram.ui.Cells.d3(context, null);
+                d3Var.setForceDarkTheme(z10);
+                viewGroup3 = d3Var;
+            } else {
+                org.telegram.ui.Cells.r8 r8Var = new org.telegram.ui.Cells.r8(23, context, true);
+                r8Var.setLayoutParams(new s4.o0(-1, -2));
+                viewGroup2 = r8Var;
+                if (z10) {
+                    r8Var.a.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, fr0Var.v0, false));
+                    r8Var.e.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.rg, false), PorterDuff.Mode.MULTIPLY));
+                    viewGroup2 = r8Var;
+                }
+            }
+            return new org.telegram.ui.Components.wl0(viewGroup3);
         }
-    }
-
-    @Override // org.telegram.ui.Components.f10, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.U) {
-            case 1:
-                setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(104.0f));
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
-        }
+        org.telegram.ui.Cells.t5 t5Var = new org.telegram.ui.Cells.t5(context, null);
+        t5Var.setDelegate(new cr0(this));
+        t5Var.getCheckFrame().setVisibility(fr0Var.T != 0 ? 8 : 0);
+        viewGroup2 = t5Var;
+        viewGroup3 = viewGroup2;
+        return new org.telegram.ui.Components.wl0(viewGroup3);
     }
 }

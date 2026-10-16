@@ -1,6 +1,6 @@
 package org.telegram.ui.web;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m0 implements Runnable {
     public final /* synthetic */ int a;
@@ -15,23 +15,23 @@ public final /* synthetic */ class m0 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                y0 y0Var = this.b.e;
-                b1 b1Var = y0Var.Q;
-                if (b1Var != null) {
-                    y0Var.h = false;
-                    b1Var.D(false, null);
+                z0 z0Var = this.b.e;
+                c1 c1Var = z0Var.Q;
+                if (c1Var != null) {
+                    z0Var.h = false;
+                    c1Var.D(false, null);
                     break;
                 }
                 break;
             case 1:
-                b1 b1Var2 = this.b.e.Q;
-                if (b1Var2 != null) {
-                    b1Var2.I(!r0.canGoBack(), !r0.canGoForward());
+                c1 c1Var2 = this.b.e.Q;
+                if (c1Var2 != null) {
+                    c1Var2.I(!r0.canGoBack(), !r0.canGoForward());
                     break;
                 }
                 break;
             default:
-                pf.d.s(this.b.e.getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
+                pf.d.r(this.b.e.getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
                 break;
         }
     }

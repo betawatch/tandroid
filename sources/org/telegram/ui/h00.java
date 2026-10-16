@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class h00 extends org.telegram.ui.ActionBar.m2 {
     public boolean E;
@@ -245,7 +245,7 @@ public final class h00 extends org.telegram.ui.ActionBar.m2 {
         if (!z10) {
             arrayList.addAll(arrayList2.subList(0, Math.min(a0(), arrayList2.size())));
         }
-        l10Var.a(LocaleController.getString(arrayList.size() >= Math.min(a0(), arrayList2.size()) ? R.string.DeselectAll : R.string.SelectAll), new di.x0(this, l10Var, z10, 28));
+        l10Var.a(LocaleController.getString(arrayList.size() >= Math.min(a0(), arrayList2.size()) ? R.string.DeselectAll : R.string.SelectAll), new di.x0(this, l10Var, z10, 26));
         this.G = true;
         Y();
         X();
@@ -336,7 +336,7 @@ public final class h00 extends org.telegram.ui.ActionBar.m2 {
         this.a = kc1Var;
         kc1Var.setLayoutManager(new s4.b0(1, false));
         this.a.setVerticalScrollBarEnabled(false);
-        frameLayout.addView(this.a, w7.a6.d(-1.0f, -1));
+        frameLayout.addView(this.a, w7.z5.d(-1.0f, -1));
         kc1 kc1Var2 = this.a;
         g00 g00Var = new g00(this);
         this.b = g00Var;
@@ -363,7 +363,7 @@ public final class h00 extends org.telegram.ui.ActionBar.m2 {
                 long j10 = dialog.id;
                 boolean z10 = j10 < 0;
                 if (j10 < 0) {
-                    z10 = l10.g0(getMessagesController().getChat(Long.valueOf(-dialog.id)));
+                    z10 = k10.g0(getMessagesController().getChat(Long.valueOf(-dialog.id)));
                 }
                 if (z10) {
                     arrayList.add(Long.valueOf(dialog.id));
@@ -450,7 +450,7 @@ public final class h00 extends org.telegram.ui.ActionBar.m2 {
         ArrayList arrayList2 = this.f;
         if (arrayList2.size() > 1) {
             boolean z11 = arrayList.size() >= Math.min(a0(), arrayList2.size());
-            this.P.a(LocaleController.getString(!z11 ? R.string.SelectAll : R.string.DeselectAll), new org.telegram.ui.Components.sn0(8, this, z11));
+            this.P.a(LocaleController.getString(!z11 ? R.string.SelectAll : R.string.DeselectAll), new org.telegram.ui.Components.zr0(8, this, z11));
         } else {
             this.P.a("", null);
         }

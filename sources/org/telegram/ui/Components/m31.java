@@ -12,9 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class m31 extends h71 {
+public final class m31 extends i71 {
     public final org.telegram.ui.p20 d3;
     public final g6 e3;
     public final g6 f3;
@@ -27,8 +27,8 @@ public final class m31 extends h71 {
     public final /* synthetic */ y31 m3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m31(y31 y31Var, Context context, int i10, l31 l31Var, d31 d31Var, d31 d31Var2, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, i10, 0, false, l31Var, d31Var, d31Var2, c6Var);
+    public m31(y31 y31Var, Context context, int i10, l31 l31Var, e31 e31Var, e31 e31Var2, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context, i10, 0, false, l31Var, e31Var, e31Var2, c6Var);
         this.m3 = y31Var;
         this.d3 = new org.telegram.ui.p20();
         es esVar = es.h;
@@ -45,7 +45,7 @@ public final class m31 extends h71 {
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.h71, org.telegram.ui.Components.mm0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.i71, org.telegram.ui.Components.mm0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
         float f7;

@@ -5,13 +5,13 @@ import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.az;
 import org.telegram.ui.Components.bz;
 import org.telegram.ui.Components.kj;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.ty0;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.uy0;
 import org.telegram.ui.Components.wz;
 import org.telegram.ui.Components.zz;
-import org.telegram.ui.aq0;
+import org.telegram.ui.yp0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class w1 extends g.o {
     public final /* synthetic */ int c;
@@ -71,19 +71,19 @@ public final class w1 extends g.o {
                 bzVar.B1();
                 return bzVar.R.get(i10);
             case 5:
-                ty0 ty0Var = (ty0) this.d;
-                if ((ty0Var.W == null || !(ty0Var.d.e.get(i10) instanceof Integer)) && i10 != ty0Var.d.h) {
+                uy0 uy0Var = (uy0) this.d;
+                if ((uy0Var.W == null || !(uy0Var.d.e.get(i10) instanceof Integer)) && i10 != uy0Var.d.h) {
                     return 1;
                 }
-                return ty0Var.d.d;
+                return uy0Var.d.d;
             case 6:
-                aq0 aq0Var = (aq0) this.d;
-                if (i10 < aq0Var.b0 || i10 >= aq0Var.c0) {
-                    return (i10 < aq0Var.d0 || i10 >= aq0Var.e0) ? 3 : 1;
+                yp0 yp0Var = (yp0) this.d;
+                if (i10 < yp0Var.b0 || i10 >= yp0Var.c0) {
+                    return (i10 < yp0Var.d0 || i10 >= yp0Var.e0) ? 3 : 1;
                 }
                 return 1;
             case 7:
-                l61 G = ((yh.f4) this.d).i0.G(i10 - 1);
+                m61 G = ((yh.f4) this.d).i0.G(i10 - 1);
                 if (G == null || (i11 = G.u) == -1) {
                     return 3;
                 }
@@ -95,7 +95,7 @@ public final class w1 extends g.o {
                 if (m0Var == null || i10 == 0) {
                     return zzVar.J;
                 }
-                l61 G2 = m0Var.G(i10 - 1);
+                m61 G2 = m0Var.G(i10 - 1);
                 return (G2 == null || (i12 = G2.u) == -1) ? zzVar.J : i12;
         }
     }

@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class q11 extends Drawable implements org.telegram.ui.ActionBar.g5 {
     public final org.telegram.ui.Components.r6 a;
@@ -15,15 +15,15 @@ public final class q11 extends Drawable implements org.telegram.ui.ActionBar.g5 
     public int c;
     public float d;
     public float e;
-    public final org.telegram.ui.Cells.m0 f;
-    public org.telegram.ui.Cells.x0 h;
+    public final org.telegram.ui.Cells.l0 f;
+    public org.telegram.ui.Cells.w0 h;
 
     public q11(String str) {
         Paint paint = new Paint(1);
         this.b = paint;
         this.d = 1.0f;
         this.e = 1.0f;
-        this.f = new org.telegram.ui.Cells.m0(this);
+        this.f = new org.telegram.ui.Cells.l0(this);
         org.telegram.ui.Components.r6 r6Var = new org.telegram.ui.Components.r6(false, false, false);
         this.a = r6Var;
         r6Var.setCallback(new bs(1, this));

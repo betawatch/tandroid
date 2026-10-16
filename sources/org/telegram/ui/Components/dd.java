@@ -12,7 +12,7 @@ import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class dd {
     public float A;
@@ -105,26 +105,26 @@ public final class dd {
                 float f23 = f20 * sqrt;
                 float f24 = f19;
                 double lerp = AndroidUtilities.lerp(f15 - f23, f16 + f23, sin);
-                float a2 = (float) org.telegram.messenger.q.a(fd.a(f22), lerp, f7);
+                float f25 = (float) i2.d.f(fd.a(f22), lerp, f7);
                 int i10 = width;
                 float sin2 = (float) ((Math.sin(fd.a(f22)) * lerp) + f10);
                 float abs = (Math.abs(sin - 0.5f) * (-1.75f)) + 1.0f;
-                int max = (int) (Math.max(0.0f, Math.min(1.0f, AndroidUtilities.lerp(1.0f, Math.min(v7.f7.a(a2, sin2, f11, f12) / AndroidUtilities.dpf2(64.0f), 1.0f), f17) * com.google.android.gms.internal.play_billing.k3.A((float) (Math.sin(sin * 3.141592653589793d) - 1.0d), 0.25f, 1.0f, abs * 0.65f * f18))) * 255.0f);
+                int max = (int) (Math.max(0.0f, Math.min(1.0f, AndroidUtilities.lerp(1.0f, Math.min(v7.f7.a(f25, sin2, f11, f12) / AndroidUtilities.dpf2(64.0f), 1.0f), f17) * com.google.android.gms.internal.play_billing.k3.A((float) (Math.sin(sin * 3.141592653589793d) - 1.0d), 0.25f, 1.0f, abs * 0.65f * f18))) * 255.0f);
                 Paint paint = this.a;
                 paint.setAlpha(max);
-                float f25 = dpf2;
-                float sin3 = f25 * ((float) ((((Math.sin(f22) + 1.0d) * 0.25d) + 0.800000011920929d) * com.google.android.gms.internal.play_billing.k3.A((float) (Math.sin(r12) - 1.0d), 0.25f, 1.0f, 0.75f)));
+                float f26 = dpf2;
+                float sin3 = f26 * ((float) ((((Math.sin(f22) + 1.0d) * 0.25d) + 0.800000011920929d) * com.google.android.gms.internal.play_billing.k3.A((float) (Math.sin(r12) - 1.0d), 0.25f, 1.0f, 0.75f)));
                 canvas.save();
-                canvas.translate(a2, sin2);
+                canvas.translate(f25, sin2);
                 canvas.scale(sin3, sin3);
-                float f26 = -(i10 >> 1);
-                canvas.drawBitmap(this.b, f26, f26, paint);
+                float f27 = -(i10 >> 1);
+                canvas.drawBitmap(this.b, f27, f27, paint);
                 canvas.restore();
                 floor++;
                 sqrt = sqrt;
                 width = i10;
                 f20 = f20;
-                dpf2 = f25;
+                dpf2 = f26;
                 f19 = f24;
                 f21 = 7.0f;
             }

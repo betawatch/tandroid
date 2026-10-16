@@ -1,15 +1,11 @@
 package m;
 
-import android.text.StaticLayout;
-import android.text.TextDirectionHeuristic;
-import android.text.TextDirectionHeuristics;
-import android.widget.TextView;
+import android.view.View;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public class d1 extends f1 {
-    @Override // m.f1
-    public void a(StaticLayout.Builder builder, TextView textView) {
-        builder.setTextDirection((TextDirectionHeuristic) g1.e(textView, "getTextDirectionHeuristic", TextDirectionHeuristics.FIRSTSTRONG_LTR));
+public abstract class d1 {
+    public static boolean a(View view) {
+        return view.isInLayout();
     }
 }

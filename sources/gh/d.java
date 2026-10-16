@@ -14,7 +14,7 @@ import bh.i;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class d implements a {
     public final a a;
@@ -94,33 +94,33 @@ public final class d implements a {
         }
     }
 
-    public final boolean f(int i10, int i11) {
-        return (this.b.hasDisplayList() && this.b.getWidth() == i10 && this.b.getHeight() == i11) ? false : true;
-    }
-
-    public final void g(float f7) {
-        this.b.setRenderEffect(f7 > 0.0f ? RenderEffect.createBlurEffect(f7, f7, Shader.TileMode.CLAMP) : null);
-    }
-
-    public final void h(float f7, RenderEffect renderEffect) {
-        this.b.setRenderEffect(RenderEffect.createChainEffect(RenderEffect.createBlurEffect(f7, f7, Shader.TileMode.CLAMP), renderEffect));
-    }
-
-    public final void i(int i10, int i11) {
-        this.b.setPosition(0, 0, i10, i11);
-    }
-
-    public final void j(h hVar) {
-        if (this.c == null) {
-            this.c = new i(this.b, hVar);
-        }
-    }
-
     @Override // gh.a
-    public final dh.d k() {
+    public final dh.d f() {
         dh.e eVar = new dh.e(this);
         this.s.add(eVar);
         return eVar;
+    }
+
+    public final boolean g(int i10, int i11) {
+        return (this.b.hasDisplayList() && this.b.getWidth() == i10 && this.b.getHeight() == i11) ? false : true;
+    }
+
+    public final void h(float f7) {
+        this.b.setRenderEffect(f7 > 0.0f ? RenderEffect.createBlurEffect(f7, f7, Shader.TileMode.CLAMP) : null);
+    }
+
+    public final void i(float f7, RenderEffect renderEffect) {
+        this.b.setRenderEffect(RenderEffect.createChainEffect(RenderEffect.createBlurEffect(f7, f7, Shader.TileMode.CLAMP), renderEffect));
+    }
+
+    public final void j(int i10, int i11) {
+        this.b.setPosition(0, 0, i10, i11);
+    }
+
+    public final void k(h hVar) {
+        if (this.c == null) {
+            this.c = new i(this.b, hVar);
+        }
     }
 
     public final void l() {

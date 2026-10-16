@@ -16,9 +16,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class aw implements org.telegram.ui.Components.nr0, org.telegram.ui.Components.bm0, org.telegram.ui.Components.cm0, t10, org.telegram.ui.ActionBar.z1, r0.o, org.telegram.ui.Components.ol0 {
+public final /* synthetic */ class aw implements org.telegram.ui.Components.mr0, org.telegram.ui.Components.bm0, org.telegram.ui.Components.cm0, s10, org.telegram.ui.ActionBar.z1, r0.n, org.telegram.ui.Components.ol0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ yy b;
 
@@ -27,23 +27,23 @@ public final /* synthetic */ class aw implements org.telegram.ui.Components.nr0,
         this.b = yyVar;
     }
 
-    @Override // r0.o
+    @Override // r0.n
     public r0.l1 Q0(View view, r0.l1 l1Var) {
         yy yyVar = this.b;
         yyVar.v.j(l1Var);
         i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
-        yyVar.e4 = defaultWindowInsets.b;
-        yyVar.f4 = defaultWindowInsets.d;
+        yyVar.f4 = defaultWindowInsets.b;
+        yyVar.g4 = defaultWindowInsets.d;
         int i10 = l1Var.a.f(8).d;
-        if (yyVar.g4 != i10) {
-            yyVar.g4 = i10;
+        if (yyVar.h4 != i10) {
+            yyVar.h4 = i10;
             yyVar.fragmentView.requestLayout();
         }
-        yyVar.F0.setPadding(0, yyVar.e4, 0, 0);
-        yyVar.U4();
+        yyVar.F0.setPadding(0, yyVar.f4, 0, 0);
+        yyVar.V4();
         for (UndoView undoView : yyVar.y0) {
             if (undoView != null) {
-                int i11 = yyVar.f4 + yyVar.h4;
+                int i11 = yyVar.g4 + yyVar.i4;
                 ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) undoView.getLayoutParams();
                 if (marginLayoutParams != null && marginLayoutParams.bottomMargin != i11) {
                     marginLayoutParams.bottomMargin = i11;
@@ -51,16 +51,16 @@ public final /* synthetic */ class aw implements org.telegram.ui.Components.nr0,
                 }
             }
         }
-        sx sxVar = yyVar.F3;
+        sx sxVar = yyVar.G3;
         if (sxVar != null) {
-            r0.j0.b(sxVar, l1Var);
+            r0.i0.b(sxVar, l1Var);
         }
         return r0.l1.b;
     }
 
     @Override // org.telegram.ui.Components.cm0
     public boolean a(int i10, View view) {
-        yy.m0(this.b, i10);
+        yy.G0(this.b, i10);
         return false;
     }
 
@@ -89,7 +89,7 @@ public final /* synthetic */ class aw implements org.telegram.ui.Components.nr0,
         switch (this.a) {
             case 1:
                 yy yyVar = this.b;
-                org.telegram.ui.Components.l61 G = yyVar.C0.j0.G(i10);
+                org.telegram.ui.Components.m61 G = yyVar.C0.j0.G(i10);
                 Object obj = G != null ? G.G : null;
                 if (!(obj instanceof TLRPC.Chat)) {
                     if (obj instanceof MessageObject) {
@@ -102,7 +102,7 @@ public final /* synthetic */ class aw implements org.telegram.ui.Components.nr0,
                         }
                         bundle.putInt("message_id", messageObject.getId());
                         fo foVar = new fo(bundle);
-                        yy.a4(foVar, messageObject);
+                        yy.b4(foVar, messageObject);
                         yyVar.presentFragment(foVar);
                         break;
                     }
@@ -120,7 +120,7 @@ public final /* synthetic */ class aw implements org.telegram.ui.Components.nr0,
                             yyVar.presentFragment(foVar2);
                             break;
                         } else {
-                            org.telegram.ui.Components.l61 G2 = uo0Var.G(i10);
+                            org.telegram.ui.Components.m61 G2 = uo0Var.G(i10);
                             if (G2 != null) {
                                 Object obj2 = G2.G;
                                 if (obj2 instanceof TLRPC.Chat) {
@@ -139,7 +139,7 @@ public final /* synthetic */ class aw implements org.telegram.ui.Components.nr0,
                 break;
             case 2:
                 yy yyVar2 = this.b;
-                org.telegram.ui.Components.l61 G3 = yyVar2.C0.o0.G(i10);
+                org.telegram.ui.Components.m61 G3 = yyVar2.C0.o0.G(i10);
                 Object obj3 = G3 != null ? G3.G : null;
                 if (!(obj3 instanceof TLRPC.User)) {
                     if (obj3 instanceof MessageObject) {
@@ -152,7 +152,7 @@ public final /* synthetic */ class aw implements org.telegram.ui.Components.nr0,
                         }
                         bundle3.putInt("message_id", messageObject2.getId());
                         fo foVar3 = new fo(bundle3);
-                        yy.a4(foVar3, messageObject2);
+                        yy.b4(foVar3, messageObject2);
                         yyVar2.presentFragment(foVar3);
                         break;
                     }
@@ -168,17 +168,17 @@ public final /* synthetic */ class aw implements org.telegram.ui.Components.nr0,
                     if (view instanceof org.telegram.ui.Cells.i6) {
                         org.telegram.ui.Cells.i6 i6Var = (org.telegram.ui.Cells.i6) view;
                         if (i6Var.n0) {
-                            yyVar3.K4(i6Var.getDialogId(), view);
+                            yyVar3.L4(i6Var.getDialogId(), view);
                             break;
                         }
                     }
                     if (yyVar3.R0 != 10) {
-                        yyVar3.k4(view, i10, yyVar3.C0.b0);
+                        yyVar3.l4(view, i10, yyVar3.C0.b0);
                         break;
                     } else {
                         iy iyVar = yyVar3.C0;
                         bi.o0 o0Var = iyVar.V;
-                        yyVar3.l4(view, i10, f7, iyVar.b0);
+                        yyVar3.m4(view, i10, f7, iyVar.b0);
                         break;
                     }
                 } else {
@@ -198,13 +198,13 @@ public final /* synthetic */ class aw implements org.telegram.ui.Components.nr0,
     public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
         switch (this.a) {
             case 6:
-                yy.d0(this.b);
+                yy.g0(this.b);
                 break;
             case 7:
             default:
                 yy yyVar = this.b;
                 yyVar.getMessagesController().hidePromoDialog();
-                yyVar.Y3(false);
+                yyVar.Z3(false);
                 break;
             case 8:
                 yy yyVar2 = this.b;
@@ -250,12 +250,12 @@ public final /* synthetic */ class aw implements org.telegram.ui.Components.nr0,
         if (i10 == 0) {
             ixVar.o0(true);
         } else {
-            ixVar.v1(true, false);
+            ixVar.u1(true, false);
         }
     }
 
     public void i(boolean z10, ArrayList arrayList, ArrayList arrayList2, boolean z11) {
-        this.b.T4(z10, arrayList, arrayList2, z11, true);
+        this.b.U4(z10, arrayList, arrayList2, z11, true);
     }
 
     @Override // org.telegram.ui.Components.bm0

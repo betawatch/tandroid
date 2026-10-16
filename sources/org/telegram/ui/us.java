@@ -6,10 +6,10 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class us extends org.telegram.ui.Cells.r8 {
-    public final /* synthetic */ int R = 1;
+    public final /* synthetic */ int R = 2;
     public final /* synthetic */ Object S;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -22,7 +22,7 @@ public final class us extends org.telegram.ui.Cells.r8 {
     public int c(int i10) {
         switch (this.R) {
             case 2:
-                ((f11) this.S).e.getClass();
+                ((e11) this.S).e.getClass();
                 break;
         }
         return i10;
@@ -83,8 +83,8 @@ public final class us extends org.telegram.ui.Cells.r8 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public us(f11 f11Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
+    public us(e11 e11Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
         super(18, context, c6Var, false, false);
-        this.S = f11Var;
+        this.S = e11Var;
     }
 }

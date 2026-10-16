@@ -8,9 +8,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class xs0 extends org.telegram.ui.av0 {
+public final class xs0 extends org.telegram.ui.zu0 {
     public final /* synthetic */ xv0 a;
 
     public xs0(xv0 xv0Var) {
@@ -25,11 +25,11 @@ public final class xs0 extends org.telegram.ui.av0 {
     /* JADX WARN: Type inference failed for: r16v12 */
     /* JADX WARN: Type inference failed for: r16v13 */
     /* JADX WARN: Type inference failed for: r16v4 */
-    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
+    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final org.telegram.ui.kv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+    public final org.telegram.ui.jv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
         ImageReceiver imageReceiver;
         int i11;
         ImageReceiver linkImageView;
@@ -90,38 +90,38 @@ public final class xs0 extends org.telegram.ui.av0 {
                                     iArr[z14 ? 1 : 0] = Math.round(linkImageView.getImageY()) + iArr[z14 ? 1 : 0];
                                     r16 = z14;
                                     if (linkImageView != null) {
-                                        org.telegram.ui.kv0 kv0Var = new org.telegram.ui.kv0();
-                                        kv0Var.b = iArr[i11];
-                                        kv0Var.c = iArr[r16];
-                                        kv0Var.d = ws0Var;
+                                        org.telegram.ui.jv0 jv0Var = new org.telegram.ui.jv0();
+                                        jv0Var.b = iArr[i11];
+                                        jv0Var.c = iArr[r16];
+                                        jv0Var.d = ws0Var;
                                         qu0 qu0Var2 = qu0VarArr[i11];
-                                        kv0Var.m = qu0Var2.y;
+                                        jv0Var.m = qu0Var2.y;
                                         qu0Var2.h.getLocationInWindow(iArr);
-                                        kv0Var.n = -iArr[r16];
-                                        kv0Var.a = linkImageView;
+                                        jv0Var.n = -iArr[r16];
+                                        jv0Var.a = linkImageView;
                                         boolean z15 = r16;
-                                        kv0Var.o = z15;
-                                        kv0Var.h = linkImageView.getRoundRadius(z15);
-                                        kv0Var.e = kv0Var.a.getBitmapSafe();
-                                        kv0Var.d.getLocationInWindow(iArr);
+                                        jv0Var.o = z15;
+                                        jv0Var.h = linkImageView.getRoundRadius(z15);
+                                        jv0Var.e = jv0Var.a.getBitmapSafe();
+                                        jv0Var.d.getLocationInWindow(iArr);
                                         int i19 = i11;
-                                        kv0Var.j = i19;
-                                        kv0Var.q = xv0Var.t1[i19].m;
+                                        jv0Var.j = i19;
+                                        jv0Var.q = xv0Var.t1[i19].m;
                                         if (jt0Var != null && jt0Var.getVisibility() == 0) {
-                                            kv0Var.j = AndroidUtilities.dp(36.0f) + kv0Var.j;
+                                            jv0Var.j = AndroidUtilities.dp(36.0f) + jv0Var.j;
                                         }
                                         if (PhotoViewer.N1(messageObject) && (pinnedHeader = ws0Var.getPinnedHeader()) != null) {
                                             int height = (jt0Var == null || jt0Var.getVisibility() != 0) ? 0 : jt0Var.getHeight() - AndroidUtilities.dp(2.5f);
-                                            boolean z16 = childAt instanceof org.telegram.ui.Cells.k7;
+                                            boolean z16 = childAt instanceof org.telegram.ui.Cells.j7;
                                             if (z16) {
                                                 height += AndroidUtilities.dp(8.0f);
                                             }
-                                            int i20 = height - kv0Var.c;
+                                            int i20 = height - jv0Var.c;
                                             if (i20 > childAt.getHeight()) {
                                                 ws0Var.scrollBy(0, -(pinnedHeader.getHeight() + i20));
-                                                return kv0Var;
+                                                return jv0Var;
                                             }
-                                            int height2 = kv0Var.c - ws0Var.getHeight();
+                                            int height2 = jv0Var.c - ws0Var.getHeight();
                                             if (z16) {
                                                 height2 -= AndroidUtilities.dp(8.0f);
                                             }
@@ -129,7 +129,7 @@ public final class xs0 extends org.telegram.ui.av0 {
                                                 ws0Var.scrollBy(0, childAt.getHeight() + height2);
                                             }
                                         }
-                                        return kv0Var;
+                                        return jv0Var;
                                     }
                                     i12 = i11;
                                 }
@@ -141,11 +141,11 @@ public final class xs0 extends org.telegram.ui.av0 {
                         } else {
                             i11 = i13;
                             boolean z17 = z13;
-                            if (childAt instanceof org.telegram.ui.Cells.k7) {
-                                org.telegram.ui.Cells.k7 k7Var = (org.telegram.ui.Cells.k7) childAt;
+                            if (childAt instanceof org.telegram.ui.Cells.j7) {
+                                org.telegram.ui.Cells.j7 j7Var = (org.telegram.ui.Cells.j7) childAt;
                                 z12 = z17;
-                                if (k7Var.getMessage().getId() == messageObject.getId()) {
-                                    z9 imageView = k7Var.getImageView();
+                                if (j7Var.getMessage().getId() == messageObject.getId()) {
+                                    z9 imageView = j7Var.getImageView();
                                     photoImage = imageView.getImageReceiver();
                                     imageView.getLocationInWindow(iArr);
                                     linkImageView = photoImage;

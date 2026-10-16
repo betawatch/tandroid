@@ -7,25 +7,25 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.WebFile;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.i71;
 import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.z61;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class a9 extends k61 {
+public final class a9 extends l61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        k61.setup(new a9());
+        l61.setup(new a9());
     }
 
-    @Override // org.telegram.ui.Components.k61
-    public final void bindView(View view, l61 l61Var, boolean z10, z61 z61Var, h71 h71Var) {
+    @Override // org.telegram.ui.Components.l61
+    public final void bindView(View view, m61 m61Var, boolean z10, a71 a71Var, i71 i71Var) {
         b9 b9Var = (b9) view;
-        TL_wallet.tonConnectSession tonconnectsession = (TL_wallet.tonConnectSession) l61Var.G;
+        TL_wallet.tonConnectSession tonconnectsession = (TL_wallet.tonConnectSession) m61Var.G;
         b9Var.getClass();
         TL_wallet.tonConnectManifest tonconnectmanifest = tonconnectsession.manifest;
         if (tonconnectmanifest != null) {
@@ -38,7 +38,7 @@ public final class a9 extends k61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.k61
+    @Override // org.telegram.ui.Components.l61
     public final View createView(Context context, mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
         return new b9(context, c6Var);
     }

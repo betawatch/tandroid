@@ -44,7 +44,7 @@ import v7.y7;
 import v7.z7;
 import w7.d8;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class d implements Runnable {
         boolean z10 = false;
         switch (this.a) {
             case 0:
-                ((f) this.b).h.e();
+                ((f) this.b).h.k();
                 return;
             case 1:
                 ((w) this.b).m--;
@@ -69,7 +69,7 @@ public final /* synthetic */ class d implements Runnable {
                 r0.a.postVsyncCallback((e0) this.b);
                 return;
             case 3:
-                ah.f0 f0Var = (ah.f0) ((qb.c) this.b).b;
+                ah.f0 f0Var = (ah.f0) ((a6.m) this.b).b;
                 ah.e0 e0Var = f0Var.b;
                 if (e0Var != null) {
                     e0Var.d();
@@ -141,7 +141,7 @@ public final /* synthetic */ class d implements Runnable {
                                     }
                                     try {
                                         Trace.beginSection("EmojiCompat.MetadataRepo.create");
-                                        qi.e eVar = new qi.e(b10, v7.u.a(e));
+                                        pi.e eVar = new pi.e(b10, v7.u.a(e));
                                         Trace.endSection();
                                         synchronized (qVar.d) {
                                             try {
@@ -206,11 +206,11 @@ public final /* synthetic */ class d implements Runnable {
                 return;
             case 13:
                 yy yyVar = ((px) this.b).O0;
-                if (yyVar.L && yyVar.U3().G()) {
+                if (yyVar.L && yyVar.V3().G()) {
                     yyVar.E0.h();
                     return;
                 } else {
-                    yyVar.u4(true, true);
+                    yyVar.v4(true, true);
                     return;
                 }
             case 14:

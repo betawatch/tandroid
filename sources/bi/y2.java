@@ -32,19 +32,20 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.h91;
 import org.telegram.ui.Components.i91;
 import org.telegram.ui.Components.j91;
+import org.telegram.ui.Components.k91;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.fo;
-import org.telegram.ui.ma0;
-import org.telegram.ui.n01;
+import org.telegram.ui.gm0;
+import org.telegram.ui.m01;
+import org.telegram.ui.wc;
 import org.telegram.ui.xc;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -65,8 +66,8 @@ public final /* synthetic */ class y2 implements Utilities.Callback {
     */
     public final void run(Object obj) {
         int[] iArr;
-        i91 i91Var;
-        di.x6 x6Var = null;
+        j91 j91Var;
+        di.y6 y6Var = null;
         r4 = false;
         boolean z10 = false;
         switch (this.a) {
@@ -120,12 +121,12 @@ public final /* synthetic */ class y2 implements Utilities.Callback {
                                 iArr = iArr2;
                                 edVar.run();
                             }
-                            x6Var = new di.x6(15, iArr, connectionsManager);
+                            y6Var = new di.y6(15, iArr, connectionsManager);
                         } else {
                             cdVar.run(jd.b);
                         }
-                        if (z12 && x6Var != null) {
-                            a2Var.setOnCancelListener(new dd(x6Var, r4 ? 1 : 0));
+                        if (z12 && y6Var != null) {
+                            a2Var.setOnCancelListener(new dd(y6Var, r4 ? 1 : 0));
                             break;
                         }
                     }
@@ -204,17 +205,17 @@ public final /* synthetic */ class y2 implements Utilities.Callback {
                     y2Var.run(location2);
                 }
             case 3:
-                org.telegram.ui.yc ycVar = (org.telegram.ui.yc) this.c;
+                xc xcVar = (xc) this.c;
                 boolean z14 = this.b;
                 View view = (View) obj;
-                xc xcVar = (xc) view;
-                ycVar.b.getClass();
-                r4 = RecyclerView.R(view) == ycVar.e;
-                xcVar.s = r4;
+                wc wcVar = (wc) view;
+                xcVar.b.getClass();
+                r4 = RecyclerView.R(view) == xcVar.e;
+                wcVar.s = r4;
                 if (!z14) {
-                    xcVar.v.f(r4, true);
+                    wcVar.v.f(r4, true);
                 }
-                xcVar.invalidate();
+                wcVar.invalidate();
                 break;
             case 4:
                 fo foVar = (fo) this.c;
@@ -232,19 +233,19 @@ public final /* synthetic */ class y2 implements Utilities.Callback {
                         u1Var.forceLayout();
                         break;
                     }
-                } else if (view2 instanceof org.telegram.ui.Cells.x0) {
-                    ((org.telegram.ui.Cells.x0) view2).e0 = z15;
+                } else if (view2 instanceof org.telegram.ui.Cells.w0) {
+                    ((org.telegram.ui.Cells.w0) view2).e0 = z15;
                     break;
                 }
                 break;
             case 5:
-                j91 j91Var = (j91) this.c;
+                k91 k91Var = (k91) this.c;
                 boolean z16 = this.b;
                 View view3 = (View) obj;
-                j91Var.v.getClass();
+                k91Var.v.getClass();
                 int R = RecyclerView.R(view3);
-                if (view3 instanceof h91) {
-                    ((h91) view3).setReordering(z16 && (i91Var = j91Var.y) != null && ((l2.f) i91Var).e(R));
+                if (view3 instanceof i91) {
+                    ((i91) view3).setReordering(z16 && (j91Var = k91Var.y) != null && ((m.h) j91Var).b(R));
                     break;
                 }
                 break;
@@ -257,21 +258,21 @@ public final /* synthetic */ class y2 implements Utilities.Callback {
                 }
                 break;
             case 7:
-                n01 n01Var = (n01) this.c;
+                m01 m01Var = (m01) this.c;
                 boolean z18 = this.b;
-                ProfileActivity profileActivity = n01Var.b;
+                ProfileActivity profileActivity = m01Var.b;
                 if (profileActivity.getParentActivity() != null) {
                     zc.a0(profileActivity).o(z18 ? yc.h : yc.e, null).j();
                     break;
                 }
                 break;
             case 8:
-                AndroidUtilities.runOnUIThread(new ma0((org.telegram.ui.web.k) this.c, (String) obj, this.b, 14));
+                AndroidUtilities.runOnUIThread(new gm0((org.telegram.ui.web.k) this.c, (String) obj, this.b, 12));
                 break;
             case 9:
-                org.telegram.ui.web.y1 y1Var = (org.telegram.ui.web.y1) this.c;
-                y1Var.getMessagesController().addWebBrowserException((String) obj, this.b);
-                y1Var.a.W2.N(true);
+                org.telegram.ui.web.z1 z1Var = (org.telegram.ui.web.z1) this.c;
+                z1Var.getMessagesController().addWebBrowserException((String) obj, this.b);
+                z1Var.a.W2.N(true);
                 break;
             default:
                 zh.n5 n5Var = (zh.n5) this.c;

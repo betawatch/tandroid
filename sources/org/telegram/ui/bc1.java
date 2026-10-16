@@ -8,7 +8,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class bc1 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ ThemeActivity a;
@@ -40,7 +40,7 @@ public final class bc1 extends org.telegram.ui.ActionBar.j {
                 return;
             }
             String str = "https://" + this.a.getMessagesController().linkPrefix + "/addtheme/" + k10.r.slug;
-            this.a.showDialog(new org.telegram.ui.Components.jr0(this.a.getParentActivity(), null, str, false, str, false, null));
+            this.a.showDialog(new org.telegram.ui.Components.ir0(this.a.getParentActivity(), null, str, false, str, false, null));
             return;
         }
         if (i10 == 3) {
@@ -54,7 +54,7 @@ public final class bc1 extends org.telegram.ui.ActionBar.j {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.a.getParentActivity());
             alertDialog$Builder.a.R = LocaleController.getString("ThemeResetToDefaultsTitle", R.string.ThemeResetToDefaultsTitle);
             alertDialog$Builder.a.T = LocaleController.getString("ThemeResetToDefaultsText", R.string.ThemeResetToDefaultsText);
-            alertDialog$Builder.k(LocaleController.getString("Reset", R.string.Reset), new nq0(this, 19));
+            alertDialog$Builder.k(LocaleController.getString("Reset", R.string.Reset), new lq0(this, 19));
             alertDialog$Builder.h(LocaleController.getString("Cancel", R.string.Cancel), null);
             org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
             this.a.showDialog(a2Var);

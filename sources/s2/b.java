@@ -18,7 +18,7 @@ import u2.g0;
 import v7.u6;
 import w7.m;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class b extends i2.b implements Handler.Callback {
     public final a I;
@@ -74,7 +74,7 @@ public final class b extends i2.b implements Handler.Callback {
                     aVar2.clear();
                     aVar2.b(c10.length);
                     aVar2.c.put(c10);
-                    aVar2.e();
+                    aVar2.d();
                     u0 a11 = a10.a(aVar2);
                     if (a11 != null) {
                         F(a11, arrayList);
@@ -179,14 +179,14 @@ public final class b extends i2.b implements Handler.Callback {
                 l3.a aVar = this.L;
                 aVar.clear();
                 qf.b bVar = this.c;
-                bVar.y();
+                bVar.x();
                 int w9 = w(bVar, aVar, 0);
                 if (w9 == -4) {
                     if (aVar.isEndOfStream()) {
                         this.N = true;
                     } else if (aVar.e >= this.w) {
                         aVar.r = this.P;
-                        aVar.e();
+                        aVar.d();
                         m mVar = this.M;
                         String str = m0.a;
                         u0 a2 = mVar.a(aVar);

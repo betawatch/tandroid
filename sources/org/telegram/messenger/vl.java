@@ -2,35 +2,46 @@ package org.telegram.messenger;
 
 import org.telegram.messenger.UnconfirmedAuthController;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class vl implements RequestDelegate {
+public final /* synthetic */ class vl implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ UnconfirmedAuthController.UnconfirmedAuth b;
-    public final /* synthetic */ Utilities.Callback c;
+    public final /* synthetic */ TLObject c;
+    public final /* synthetic */ Utilities.Callback d;
+    public final /* synthetic */ TLRPC.TL_error e;
 
-    public /* synthetic */ vl(UnconfirmedAuthController.UnconfirmedAuth unconfirmedAuth, Utilities.Callback callback, int i10) {
-        this.a = i10;
+    public /* synthetic */ vl(UnconfirmedAuthController.UnconfirmedAuth unconfirmedAuth, Utilities.Callback callback, TLObject tLObject, TLRPC.TL_error tL_error) {
+        this.a = 1;
         this.b = unconfirmedAuth;
-        this.c = callback;
+        this.c = tLObject;
+        this.d = callback;
+        this.e = tL_error;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$deny$4(this.c, tLObject, tL_error);
+                this.b.lambda$confirm$1(this.d, this.c, this.e);
                 break;
             case 1:
-                this.b.lambda$deny$6(this.c, tLObject, tL_error);
+                this.b.lambda$deny$3(this.c, this.d, this.e);
                 break;
             default:
-                this.b.lambda$confirm$2(this.c, tLObject, tL_error);
+                this.b.lambda$deny$5(this.d, this.c, this.e);
                 break;
         }
+    }
+
+    public /* synthetic */ vl(UnconfirmedAuthController.UnconfirmedAuth unconfirmedAuth, Utilities.Callback callback, TLObject tLObject, TLRPC.TL_error tL_error, int i10) {
+        this.a = i10;
+        this.b = unconfirmedAuth;
+        this.d = callback;
+        this.c = tLObject;
+        this.e = tL_error;
     }
 }

@@ -13,14 +13,13 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
 import org.telegram.ui.Components.aa0;
 import org.telegram.ui.Components.ea0;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.ha0;
 import org.telegram.ui.Components.tm0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class fa {
     public ea0 a;
@@ -280,7 +279,7 @@ public final class fa {
             }
             ca caVar2 = this.p;
             if (caVar2 != null) {
-                this.l = yh.c(4.0f, caVar2.b(), this.l);
+                this.l = org.telegram.messenger.g0.C(4.0f, caVar2.b(), this.l);
             }
             this.m = this.l;
             if (this == faVarArr[0]) {
@@ -298,7 +297,7 @@ public final class fa {
         int dp = caVar3 != null ? AndroidUtilities.dp(8.0f) + caVar3.b() : 0;
         ca caVar4 = this.p;
         if (caVar4 != null) {
-            this.l = yh.c(8.0f, caVar4.b(), this.l);
+            this.l = org.telegram.messenger.g0.C(8.0f, caVar4.b(), this.l);
         }
         this.l += dp;
         float measureText = textPaint2.measureText(" ");

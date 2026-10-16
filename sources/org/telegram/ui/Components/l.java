@@ -9,9 +9,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class l extends jr0 {
+public final class l extends ir0 {
     public final /* synthetic */ e0 b1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -20,7 +20,7 @@ public final class l extends jr0 {
         this.b1 = e0Var;
     }
 
-    @Override // org.telegram.ui.Components.jr0
+    @Override // org.telegram.ui.Components.ir0
     public final void S0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
         FrameLayout frameLayout = this.b1.G0;
         if (z10) {

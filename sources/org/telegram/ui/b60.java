@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.animation.ValueAnimator;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class b60 extends s4.k {
     public float F;
@@ -42,7 +42,7 @@ public final class b60 extends s4.k {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.G = ofFloat;
             ofFloat.addUpdateListener(new e3(this, 17));
-            this.G.addListener(new org.telegram.ui.Components.u61(this, 26));
+            this.G.addListener(new org.telegram.ui.Components.v61(this, 26));
             this.G.setDuration(350L);
             this.G.setInterpolator(org.telegram.ui.Components.es.f);
             this.G.start();

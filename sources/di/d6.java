@@ -12,10 +12,10 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.i61;
 import org.telegram.ui.Components.wy;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class d6 implements wy {
     public final /* synthetic */ o6 a;
@@ -105,7 +105,7 @@ public final class d6 implements wy {
         alertDialog$Builder.a.R = LocaleController.getString(R.string.ClearRecentEmojiTitle);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.ClearRecentEmojiText);
         alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new a1.c(this, 26));
-        org.telegram.messenger.q.q(R.string.Cancel, alertDialog$Builder, null);
+        i2.d.r(R.string.Cancel, alertDialog$Builder, null);
     }
 
     @Override // org.telegram.ui.Components.wy
@@ -149,18 +149,6 @@ public final class d6 implements wy {
     }
 
     @Override // org.telegram.ui.Components.wy
-    public final void q() {
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ void u() {
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ void w() {
-    }
-
-    @Override // org.telegram.ui.Components.wy
     public final /* synthetic */ void h(TLRPC.StickerSetCovered stickerSetCovered) {
     }
 
@@ -169,7 +157,7 @@ public final class d6 implements wy {
     }
 
     @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ void o(h61 h61Var) {
+    public final /* synthetic */ void o(i61 i61Var) {
     }
 
     @Override // org.telegram.ui.Components.wy
@@ -186,6 +174,18 @@ public final class d6 implements wy {
 
     @Override // org.telegram.ui.Components.wy
     public final /* synthetic */ void y(long j10) {
+    }
+
+    @Override // org.telegram.ui.Components.wy
+    public final void q() {
+    }
+
+    @Override // org.telegram.ui.Components.wy
+    public final /* synthetic */ void u() {
+    }
+
+    @Override // org.telegram.ui.Components.wy
+    public final /* synthetic */ void w() {
     }
 
     @Override // org.telegram.ui.Components.wy

@@ -6,13 +6,13 @@ import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.bk0;
-import org.telegram.ui.a20;
-import org.telegram.ui.c20;
-import org.telegram.ui.nq0;
+import org.telegram.ui.b20;
+import org.telegram.ui.lq0;
+import org.telegram.ui.mq0;
 import org.telegram.ui.oq0;
-import org.telegram.ui.qq0;
+import org.telegram.ui.z10;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -75,7 +75,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 y5 y5Var = (y5) obj;
                 x5 x5Var = y5Var.d;
                 if (x5Var != null) {
-                    qq0.U(((oq0) ((nq0) x5Var).b).d, y5Var.b[((Integer) view.getTag()).intValue()]);
+                    oq0.U(((mq0) ((lq0) x5Var).b).d, y5Var.b[((Integer) view.getTag()).intValue()]);
                     break;
                 }
                 break;
@@ -86,9 +86,9 @@ public final /* synthetic */ class a implements View.OnClickListener {
                     r7 r7Var = u7Var.d;
                     int i11 = u7Var.c[intValue];
                     MessageObject messageObject = u7Var.b[intValue];
-                    c20 c20Var = ((a20) ((org.telegram.ui.g) r7Var).b).d;
-                    SpannableStringBuilder[] spannableStringBuilderArr = c20.s0;
-                    c20Var.f(i11, u7Var, messageObject, intValue);
+                    b20 b20Var = ((z10) ((org.telegram.ui.g) r7Var).b).d;
+                    SpannableStringBuilder[] spannableStringBuilderArr = b20.s0;
+                    b20Var.f(i11, u7Var, messageObject, intValue);
                     break;
                 }
                 break;

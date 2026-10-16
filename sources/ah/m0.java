@@ -16,12 +16,12 @@ import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.a8;
 import org.telegram.ui.Components.qb;
-import org.telegram.ui.Components.rm;
+import org.telegram.ui.Components.qm;
 import org.telegram.ui.Components.sc;
-import org.telegram.ui.Components.ty0;
+import org.telegram.ui.Components.uy0;
 import org.telegram.ui.Components.wb;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class m0 implements qb {
     public final /* synthetic */ int a;
@@ -141,20 +141,20 @@ public final class m0 implements qb {
                 return qbVar.f(i10);
             case 8:
                 editTextHeight = AndroidUtilities.dp(126.0f);
-                dp = ((rm) this.b).c.b.getBottomInset();
+                dp = ((qm) this.b).c.b.getBottomInset();
                 break;
             case 9:
-                FrameLayout frameLayout = ((ty0) this.b).w;
+                FrameLayout frameLayout = ((uy0) this.b).w;
                 if (frameLayout != null) {
                     return frameLayout.getHeight();
                 }
                 return 0;
             case 10:
-                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) this.b;
-                if (!(b1Var.getParent() instanceof p4)) {
+                org.telegram.ui.web.c1 c1Var = (org.telegram.ui.web.c1) this.b;
+                if (!(c1Var.getParent() instanceof p4)) {
                     return 0;
                 }
-                p4 p4Var = (p4) b1Var.getParent();
+                p4 p4Var = (p4) c1Var.getParent();
                 return (int) ((p4Var.getSwipeOffsetY() + p4Var.getOffsetY()) - p4Var.getTopActionBarOffsetY());
             default:
                 return 0;

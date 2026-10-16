@@ -12,12 +12,12 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.am0;
 import org.telegram.ui.Components.mm0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class e9 extends org.telegram.ui.ActionBar.e3 implements NotificationCenter.NotificationCenterDelegate {
     public final int b;
@@ -45,7 +45,7 @@ public final class e9 extends org.telegram.ui.ActionBar.e3 implements Notificati
         this.h = d9Var;
         mm0Var.setAdapter(d9Var);
         mm0Var.setLayoutManager(new s4.b0());
-        this.containerView.addView(mm0Var, w7.a6.e(-1, -1, 119));
+        this.containerView.addView(mm0Var, w7.z5.e(-1, -1, 119));
         mm0Var.setOnItemClickListener(new am0() { // from class: di.a9
             @Override // org.telegram.ui.Components.am0
             public final void a(int i12, View view) {
@@ -72,12 +72,12 @@ public final class e9 extends org.telegram.ui.ActionBar.e3 implements Notificati
         mm0Var.setOnScrollListener(new c9(this));
         TextView textView = new TextView(getContext());
         this.n = textView;
-        yh.n(org.telegram.ui.ActionBar.g6.G6, c6Var, textView, 1, 20.0f);
+        sk.o(org.telegram.ui.ActionBar.g6.G6, c6Var, textView, 1, 20.0f);
         textView.setPadding(AndroidUtilities.dp(22.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(22.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(14.0f));
         textView.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.h5, c6Var));
         textView.setTypeface(AndroidUtilities.bold());
         textView.setText(LocaleController.getString(z10 ? R.string.StoryPrivacyPublishLiveAs : R.string.StoryPrivacyPublishAs));
-        this.containerView.addView(textView, w7.a6.d(-2.0f, -1));
+        this.containerView.addView(textView, w7.z5.d(-2.0f, -1));
     }
 
     @Override // org.telegram.ui.ActionBar.e3

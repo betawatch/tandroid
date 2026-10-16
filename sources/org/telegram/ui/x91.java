@@ -8,10 +8,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class x91 extends ReplacementSpan {
-    public final org.telegram.ui.Components.h11 a = new org.telegram.ui.Components.h11(LocaleController.getString(R.string.StakeDiceTitleBeta), 12.0f, AndroidUtilities.bold());
+    public final org.telegram.ui.Components.i11 a = new org.telegram.ui.Components.i11(LocaleController.getString(R.string.StakeDiceTitleBeta), 12.0f, AndroidUtilities.bold());
     public final Paint b = new Paint(1);
     public final /* synthetic */ org.telegram.ui.ActionBar.c6 c;
 

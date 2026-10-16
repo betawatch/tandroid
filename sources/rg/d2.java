@@ -14,15 +14,15 @@ import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.g6;
 import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.iw0;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class d2 extends j {
     public boolean A0;
@@ -64,7 +64,7 @@ public final class d2 extends j {
         }
         TextureView textureView = new TextureView(context);
         this.u0 = textureView;
-        addView(textureView, a6.d(-1.0f, -1));
+        addView(textureView, z5.d(-1.0f, -1));
         this.s0 = new g6(this, 0L, 500L, esVar);
         k();
         setWillNotDraw(false);
@@ -89,7 +89,7 @@ public final class d2 extends j {
         canvas.save();
         float e = this.s0.e(this.r0);
         canvas.scale(1.0f - (e * 2.0f), 1.0f, getMeasuredWidth() / 2.0f, 0.0f);
-        canvas.skew(0.0f, org.telegram.messenger.q.B(1.0f, e, 4.0f * e, 0.25f));
+        canvas.skew(0.0f, org.telegram.messenger.g0.z(1.0f, e, 4.0f * e, 0.25f));
         float e7 = this.C0.e(this.B0);
         float width = (view.getWidth() / 2.0f) + view.getX();
         float height = (view.getHeight() / 2.0f) + view.getY();
@@ -148,8 +148,8 @@ public final class d2 extends j {
         float scaleX = viewGroup.getScaleX();
         float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float dp2 = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float x10 = yh.x(dp, 2.0f, getPositionX(), scaleX);
-        return new il0(x10, yh.x(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + x10) - x10, dp2 * scaleX);
+        float y3 = sk.y(dp, 2.0f, getPositionX(), scaleX);
+        return new il0(y3, sk.y(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + y3) - y3, dp2 * scaleX);
     }
 
     @Override // rg.j

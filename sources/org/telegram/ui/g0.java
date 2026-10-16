@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.net.Uri;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g0 implements Utilities.Callback0Return {
     public final /* synthetic */ k4 a;
@@ -21,20 +21,20 @@ public final /* synthetic */ class g0 implements Utilities.Callback0Return {
     @Override // org.telegram.messenger.Utilities.Callback0Return
     public final Object run() {
         String str = this.b;
-        if (!pf.d.f(Uri.parse(str), false, this.c)) {
+        if (!pf.d.e(Uri.parse(str), false, this.c)) {
             return Boolean.FALSE;
         }
         k4 k4Var = this.a;
         pf.c cVar = this.d;
         if (cVar != null) {
-            cVar.c = new org.telegram.messenger.voip.j(16, k4Var, cVar);
+            cVar.c = new org.telegram.messenger.voip.p0(11, k4Var, cVar);
         } else {
             x3 x3Var = k4Var.K;
             if (x3Var != null) {
                 x3Var.dismiss(true);
             }
         }
-        pf.d.r(k4Var.L, Uri.parse(str), true, true, false, cVar, null, true, true, false);
+        pf.d.q(k4Var.L, Uri.parse(str), true, true, false, cVar, null, true, true, false);
         return Boolean.TRUE;
     }
 }

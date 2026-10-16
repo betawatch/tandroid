@@ -9,7 +9,7 @@ import b2.b2;
 import u2.d1;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class a extends i2.b {
     public final long I;
@@ -205,7 +205,7 @@ public abstract class a extends i2.b {
                 return false;
             }
             qf.b bVar = this.c;
-            bVar.y();
+            bVar.x();
             int w9 = w(bVar, hVar2, 0);
             if (w9 == -5) {
                 K(bVar);
@@ -227,7 +227,7 @@ public abstract class a extends i2.b {
                     this.L.a(xVar, j10);
                     this.d0 = false;
                 }
-                hVar2.e();
+                hVar2.d();
                 hVar2.a = this.N;
                 h2.e eVar4 = this.P;
                 eVar4.getClass();
@@ -272,7 +272,7 @@ public abstract class a extends i2.b {
             return;
         }
         n2.g gVar = this.X;
-        i2.d.A(this.W, gVar);
+        i2.d.D(this.W, gVar);
         this.W = gVar;
         if (gVar != null && gVar.h() == null && this.W.g() == null) {
             return;
@@ -313,7 +313,7 @@ public abstract class a extends i2.b {
         b2.x xVar = (b2.x) bVar.c;
         xVar.getClass();
         n2.g gVar = (n2.g) bVar.b;
-        i2.d.A(this.X, gVar);
+        i2.d.D(this.X, gVar);
         this.X = gVar;
         b2.x xVar2 = this.N;
         this.N = xVar;
@@ -373,7 +373,7 @@ public abstract class a extends i2.b {
             }
             this.P = null;
         }
-        i2.d.A(this.W, null);
+        i2.d.D(this.W, null);
         this.W = null;
     }
 
@@ -396,7 +396,7 @@ public abstract class a extends i2.b {
         if (b2Var == null || b2Var.a != i10 || b2Var.b != i11) {
             b2 b2Var2 = new b2(i10, i11);
             this.g0 = b2Var2;
-            sVar.D(b2Var2);
+            sVar.H(b2Var2);
         }
         Surface surface = this.U;
         surface.getClass();
@@ -407,7 +407,7 @@ public abstract class a extends i2.b {
             this.a0 = 3;
             Surface surface2 = this.T;
             if (surface2 != null) {
-                sVar.y(surface2);
+                sVar.w(surface2);
             }
         }
     }
@@ -466,12 +466,12 @@ public abstract class a extends i2.b {
             if (obj != null) {
                 b2 b2Var = this.g0;
                 if (b2Var != null) {
-                    sVar.D(b2Var);
+                    sVar.H(b2Var);
                 }
                 if (this.a0 != 3 || (surface = this.T) == null) {
                     return;
                 }
-                sVar.y(surface);
+                sVar.w(surface);
                 return;
             }
             return;
@@ -487,7 +487,7 @@ public abstract class a extends i2.b {
         }
         b2 b2Var2 = this.g0;
         if (b2Var2 != null) {
-            sVar.D(b2Var2);
+            sVar.H(b2Var2);
         }
         this.a0 = Math.min(this.a0, 1);
         if (this.n == 2) {
@@ -550,11 +550,11 @@ public abstract class a extends i2.b {
         this.g0 = null;
         this.a0 = Math.min(this.a0, 0);
         try {
-            i2.d.A(this.X, null);
+            i2.d.D(this.X, null);
             this.X = null;
             L();
         } finally {
-            sVar.i(this.m0);
+            sVar.j(this.m0);
         }
     }
 
@@ -624,7 +624,7 @@ public abstract class a extends i2.b {
         }
         if (this.N == null) {
             qf.b bVar = this.c;
-            bVar.y();
+            bVar.x();
             this.M.clear();
             int w9 = w(bVar, this.M, 2);
             if (w9 != -5) {

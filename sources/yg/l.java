@@ -26,9 +26,9 @@ import org.telegram.ui.Components.aq;
 import org.telegram.ui.Components.jx0;
 import org.telegram.ui.Components.k9;
 import org.telegram.ui.Components.z9;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class l extends wg.c {
     public boolean E;
@@ -58,7 +58,7 @@ public final class l extends wg.c {
             aqVar.setDrawUnchecked(false);
             aqVar.setDrawBackgroundAsArc(3);
             boolean z13 = LocaleController.isRTL;
-            addView(aqVar, a6.a(24.0f, z13 ? 0.0f : 40.0f, 33.0f, z13 ? 39.0f : 0.0f, 0.0f, 24, (z13 ? 5 : 3) | 48));
+            addView(aqVar, z5.a(24.0f, z13 ? 0.0f : 40.0f, 33.0f, z13 ? 39.0f : 0.0f, 0.0f, 24, (z13 ? 5 : 3) | 48));
             d();
         } else if (z10) {
             aq aqVar2 = new aq(context, 21, c6Var);
@@ -72,7 +72,7 @@ public final class l extends wg.c {
             aqVar2.setDrawBackgroundAsArc(10);
             addView(aqVar2);
             aqVar2.a(false, false);
-            aqVar2.setLayoutParams(a6.a(24.0f, 13.0f, 0.0f, 14.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
+            aqVar2.setLayoutParams(z5.a(24.0f, 13.0f, 0.0f, 14.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
             d();
         } else {
             this.v = null;
@@ -85,7 +85,7 @@ public final class l extends wg.c {
         int w02 = g6.w0(g6.Ac, c6Var);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(w02, mode));
-        addView(imageView, a6.a(32.0f, 12.0f, 0.0f, 12.0f, 0.0f, 32, (LocaleController.isRTL ? 3 : 5) | 16));
+        addView(imageView, z5.a(32.0f, 12.0f, 0.0f, 12.0f, 0.0f, 32, (LocaleController.isRTL ? 3 : 5) | 16));
         ImageView imageView2 = new ImageView(context);
         this.y = imageView2;
         imageView2.setScaleType(scaleType);
@@ -93,14 +93,14 @@ public final class l extends wg.c {
         int i10 = g6.Oh;
         imageView2.setColorFilter(new PorterDuffColorFilter(g6.w0(i10, c6Var), mode));
         boolean z14 = LocaleController.isRTL;
-        addView(imageView2, a6.a(32.0f, z14 ? 52.0f : 12.0f, 0.0f, z14 ? 12.0f : 52.0f, 0.0f, 32, (z14 ? 3 : 5) | 16));
+        addView(imageView2, z5.a(32.0f, z14 ? 52.0f : 12.0f, 0.0f, z14 ? 12.0f : 52.0f, 0.0f, 32, (z14 ? 3 : 5) | 16));
         imageView2.setVisibility(8);
         ImageView imageView3 = new ImageView(context);
         this.F = imageView3;
         imageView3.setScaleType(scaleType);
         imageView3.setImageResource(R.drawable.menu_videocall);
         imageView3.setColorFilter(new PorterDuffColorFilter(g6.w0(i10, c6Var), mode));
-        addView(imageView3, a6.a(32.0f, 12.0f, 0.0f, 12.0f, 0.0f, 32, (LocaleController.isRTL ? 3 : 5) | 16));
+        addView(imageView3, z5.a(32.0f, 12.0f, 0.0f, 12.0f, 0.0f, 32, (LocaleController.isRTL ? 3 : 5) | 16));
         imageView3.setVisibility(8);
     }
 

@@ -8,7 +8,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class v60 extends org.telegram.ui.Components.mm0 {
     public final /* synthetic */ int V2;
@@ -63,14 +63,14 @@ public final class v60 extends org.telegram.ui.Components.mm0 {
                 }
                 break;
             case 1:
-                fq0 fq0Var = (fq0) this.W2;
-                Paint paint = fq0Var.w;
-                RectF rectF = fq0Var.s;
-                RectF rectF2 = fq0Var.r;
-                RectF rectF3 = fq0Var.n;
-                s4.b0 b0Var = fq0Var.b;
-                if (!fq0Var.f.isEmpty()) {
-                    float d = fq0Var.e.d(fq0Var.d, false);
+                dq0 dq0Var = (dq0) this.W2;
+                Paint paint = dq0Var.w;
+                RectF rectF = dq0Var.s;
+                RectF rectF2 = dq0Var.r;
+                RectF rectF3 = dq0Var.n;
+                s4.b0 b0Var = dq0Var.b;
+                if (!dq0Var.f.isEmpty()) {
+                    float d = dq0Var.e.d(dq0Var.d, false);
                     double d10 = d;
                     int clamp = Utilities.clamp((int) Math.floor(d10), r6.size() - 1, 0);
                     int clamp2 = Utilities.clamp((int) Math.ceil(d10), r6.size() - 1, 0);
@@ -84,7 +84,7 @@ public final class v60 extends org.telegram.ui.Components.mm0 {
                         }
                         rectF2.set(m10.getLeft(), m10.getTop(), m10.getRight(), m10.getBottom());
                         AndroidUtilities.lerp(rectF3, rectF2, d - clamp, rectF);
-                        paint.setColor(fq0Var.x);
+                        paint.setColor(dq0Var.x);
                         float height = rectF.height() / 2.0f;
                         canvas.drawRoundRect(rectF, height, height, paint);
                         super.dispatchDraw(canvas);
@@ -104,9 +104,9 @@ public final class v60 extends org.telegram.ui.Components.mm0 {
         switch (this.V2) {
             case 1:
                 super.invalidate();
-                qp0 qp0Var = ((fq0) this.W2).F;
-                if (qp0Var != null) {
-                    qp0Var.run();
+                op0 op0Var = ((dq0) this.W2).F;
+                if (op0Var != null) {
+                    op0Var.run();
                     break;
                 }
                 break;

@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class s8 {
     public final ActionBarPopupWindow$ActionBarPopupWindowLayout a;
@@ -158,9 +158,9 @@ public final class s8 {
             frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.H8, c6Var));
             View view = new View(context);
             view.setBackground(org.telegram.ui.ActionBar.g6.V0(context, R.drawable.greydivider, org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.b7, c6Var)));
-            frameLayout.addView(view, w7.a6.d(-1.0f, -1));
+            frameLayout.addView(view, w7.z5.d(-1.0f, -1));
             frameLayout.setTag(R.id.fit_width_tag, 1);
-            actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout, w7.a6.n(-1, 8));
+            actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout, w7.z5.n(-1, 8));
             da0 da0Var = new da0(context, null);
             this.e = da0Var;
             da0Var.setTag(R.id.fit_width_tag, 1);
@@ -170,7 +170,7 @@ public final class s8 {
             da0Var.setMovementMethod(LinkMovementMethod.getInstance());
             da0Var.setLinkTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.J6, false));
             da0Var.setText(LocaleController.getString(R.string.AutoDeletePopupDescription));
-            actionBarPopupWindow$ActionBarPopupWindowLayout.a(da0Var, w7.a6.p(-1, -2, 0.0f, 0, 0, 8, 0, 0));
+            actionBarPopupWindow$ActionBarPopupWindowLayout.a(da0Var, w7.z5.p(-1, -2, 0.0f, 0, 0, 8, 0, 0));
         }
     }
 

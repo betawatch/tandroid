@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.aa0;
 import org.telegram.ui.Components.da0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class e9 extends FrameLayout {
     public final y1 a;
@@ -183,7 +183,7 @@ public class e9 extends FrameLayout {
         y1Var.setLinkTextColor(org.telegram.ui.ActionBar.g6.w0(this.c, c6Var));
         y1Var.setImportantForAccessibility(2);
         float f7 = i10;
-        addView(y1Var, w7.a6.a(-2.0f, f7, 0.0f, f7, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
+        addView(y1Var, w7.z5.a(-2.0f, f7, 0.0f, f7, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
         this.n = LocaleController.isRTL;
         setWillNotDraw(false);
     }

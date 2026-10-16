@@ -19,7 +19,7 @@ import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.hw0;
 import org.telegram.ui.Components.xn;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class b2 implements NotificationCenter.NotificationCenterDelegate, tf.a {
     public static final hw0 X = new hw0(new aa.a(25), new aa.a(26));
@@ -57,7 +57,7 @@ public final class b2 implements NotificationCenter.NotificationCenterDelegate, 
     public t1 v;
     public int w;
     public ScaleGestureDetector x;
-    public ji.d4 y;
+    public ji.h5 y;
 
     static {
         b2 b2Var = new b2();
@@ -186,7 +186,7 @@ public final class b2 implements NotificationCenter.NotificationCenterDelegate, 
         o1.k kVar2 = this.Q;
         kVar2.b = this.O;
         kVar2.c = true;
-        kVar2.u.i = w7.s.a(r1, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - (m() * this.M)) - AndroidUtilities.dp(16.0f));
+        kVar2.u.i = w7.r.a(r1, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - (m() * this.M)) - AndroidUtilities.dp(16.0f));
         this.Q.h();
     }
 

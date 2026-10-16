@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class bh extends bk0 {
     public zg r;
@@ -86,7 +86,7 @@ public class bh extends bk0 {
                 yj0Var.K(0);
                 yj0Var.t0 = new qg(this, 20);
                 setAnimation(yj0Var);
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Cells.s0(yj0Var, 1));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Cells.r0(yj0Var, 1));
                 ordinal = zgVar.ordinal();
                 if (ordinal != 0) {
                     setContentDescription(LocaleController.getString(R.string.AccDescrVoiceMessage));

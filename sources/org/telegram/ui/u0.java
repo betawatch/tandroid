@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class u0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -86,7 +86,7 @@ public final class u0 extends AnimatorListenerAdapter {
                 break;
             case 7:
                 org.telegram.ui.Cells.j jVar = (org.telegram.ui.Cells.j) this.b;
-                ((a11) jVar).c0.e.c.r = false;
+                ((z01) jVar).c0.e.c.r = false;
                 FrameLayout frameLayout = jVar.J;
                 if (frameLayout.getBackground() == null) {
                     frameLayout.setBackground(jVar.K);
@@ -106,7 +106,7 @@ public final class u0 extends AnimatorListenerAdapter {
                 }
             case 9:
                 super.onAnimationEnd(animator);
-                ((org.telegram.ui.Cells.f0) this.b).x = null;
+                ((org.telegram.ui.Cells.e0) this.b).x = null;
                 break;
             case 10:
                 ((org.telegram.ui.Cells.g4) this.b).G = null;
@@ -163,18 +163,18 @@ public final class u0 extends AnimatorListenerAdapter {
                 }
                 break;
             case 19:
-                ((ic) this.b).I.setVisibility(8);
+                ((hc) this.b).I.setVisibility(8);
                 break;
             case 20:
-                hd hdVar = (hd) this.b;
-                rc rcVar = hdVar.m0;
-                if (rcVar != null) {
-                    if (rcVar.getParent() != null) {
-                        ((ViewGroup) hdVar.m0.getParent()).removeView(hdVar.m0);
+                gd gdVar = (gd) this.b;
+                qc qcVar = gdVar.m0;
+                if (qcVar != null) {
+                    if (qcVar.getParent() != null) {
+                        ((ViewGroup) gdVar.m0.getParent()).removeView(gdVar.m0);
                     }
-                    hdVar.m0 = null;
+                    gdVar.m0 = null;
                 }
-                hdVar.o0 = null;
+                gdVar.o0 = null;
                 super.onAnimationEnd(animator);
                 break;
             case 21:
@@ -278,7 +278,7 @@ public final class u0 extends AnimatorListenerAdapter {
                 }
                 break;
             case 7:
-                ((a11) ((org.telegram.ui.Cells.j) this.b)).c0.e.c.r = true;
+                ((z01) ((org.telegram.ui.Cells.j) this.b)).c0.e.c.r = true;
                 break;
             default:
                 super.onAnimationStart(animator);

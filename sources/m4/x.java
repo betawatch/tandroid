@@ -1,33 +1,40 @@
 package m4;
 
-import java.util.List;
-import v7.c8;
+import android.content.Context;
+import android.os.Bundle;
+import android.os.Looper;
+import java.util.HashMap;
+import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class x {
-    public final e9.n0 a;
-    public final int b;
-    public final long c;
+public class x {
+    public static final Object b = new Object();
+    public static final HashMap c = new HashMap();
+    public final e0 a;
 
-    public x(long j10, int i10, List list) {
-        this.a = e9.n0.u(list);
-        this.b = i10;
-        this.c = j10;
+    public x(Context context, String str, b2.g1 g1Var, e9.n0 n0Var, e9.n0 n0Var2, e9.n0 n0Var3, pb.a aVar, Bundle bundle, Bundle bundle2, e2.d dVar, boolean z10, boolean z11) {
+        synchronized (b) {
+            HashMap hashMap = c;
+            if (hashMap.containsKey(str)) {
+                throw new IllegalStateException("Session ID must be unique. ID=" + str);
+            }
+            hashMap.put(str, this);
+        }
+        this.a = new e0(this, context, str, g1Var, n0Var, n0Var2, n0Var3, aVar, bundle, bundle2, dVar, z10, z11);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final void a(b2.g1 g1Var) {
+        g1Var.getClass();
+        u6.g(g1Var.P());
+        Looper A0 = g1Var.A0();
+        e0 e0Var = this.a;
+        u6.g(A0 == e0Var.t.a.A0());
+        u6.p(g1Var.A0() == Looper.myLooper());
+        m1 m1Var = e0Var.t;
+        if (g1Var == m1Var.a) {
+            return;
         }
-        if (!(obj instanceof x)) {
-            return false;
-        }
-        x xVar = (x) obj;
-        return this.a.equals(xVar.a) && this.b == xVar.b && this.c == xVar.c;
-    }
-
-    public final int hashCode() {
-        return c8.b(this.c) + (((this.a.hashCode() * 31) + this.b) * 31);
+        e0Var.u(m1Var, new m1(g1Var));
     }
 }

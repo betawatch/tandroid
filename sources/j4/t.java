@@ -7,7 +7,7 @@ import java.util.Collections;
 import org.telegram.messenger.MediaController;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class t implements i {
     public final String a;
@@ -227,7 +227,7 @@ public final class t implements i {
     public final void d(c3.q qVar, f0 f0Var) {
         f0Var.b();
         f0Var.c();
-        this.e = qVar.a0(f0Var.c, 1);
+        this.e = qVar.W(f0Var.c, 1);
         f0Var.c();
         this.f = (String) f0Var.e;
     }

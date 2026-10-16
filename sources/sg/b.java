@@ -7,9 +7,9 @@ import android.widget.FrameLayout;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.mm0;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class b extends FrameLayout implements l0 {
     public final c6 a;
@@ -27,7 +27,7 @@ public abstract class b extends FrameLayout implements l0 {
         this.c = b0Var;
         mm0Var.setLayoutManager(b0Var);
         mm0Var.setClipToPadding(false);
-        addView(mm0Var, a6.d(-1.0f, -1));
+        addView(mm0Var, z5.d(-1.0f, -1));
     }
 
     public abstract s4.g0 a();

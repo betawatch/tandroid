@@ -29,7 +29,7 @@ import v7.s6;
 import v7.u6;
 import v7.v6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class j extends v2.l {
     public static final AtomicInteger c0 = new AtomicInteger();
@@ -101,17 +101,12 @@ public final class j extends v2.l {
     }
 
     @Override // y2.i
-    public final void J() {
-        this.W = true;
-    }
-
-    @Override // y2.i
     public final void a() {
         b bVar;
         this.T.getClass();
         if (this.S == null && (bVar = this.H) != null) {
             c3.o b10 = bVar.a.b();
-            if ((b10 instanceof d0) || (b10 instanceof w3.i)) {
+            if ((b10 instanceof d0) || (b10 instanceof w3.h)) {
                 this.S = this.H;
                 this.V = false;
             }
@@ -134,6 +129,11 @@ public final class j extends v2.l {
         this.X = !this.W;
     }
 
+    @Override // y2.i
+    public final void a0() {
+        this.W = true;
+    }
+
     @Override // v2.l
     public final boolean c() {
         throw null;
@@ -153,7 +153,7 @@ public final class j extends v2.l {
         try {
             c3.l h = h(hVar, b10);
             if (z11) {
-                h.g(this.U, false);
+                h.i(this.U, false);
             }
             do {
                 try {
@@ -290,7 +290,7 @@ public final class j extends v2.l {
                 if (bVar3 != null) {
                     c3.o oVar = bVar3.a;
                     c3.o b10 = oVar.b();
-                    u6.p(!((b10 instanceof d0) || (b10 instanceof w3.i)));
+                    u6.p(!((b10 instanceof d0) || (b10 instanceof w3.h)));
                     ?? r11 = oVar.b() == oVar;
                     Class<?> cls = oVar.getClass();
                     if (r11 != true) {
@@ -379,7 +379,7 @@ public final class j extends v2.l {
                                     i12 = 36;
                                     dVar = dVar3;
                                 }
-                                aVar = new w3.i(dVar, i12 | w3.i.g(i19), k0Var, list2 != null ? list2 : x1.e, null);
+                                aVar = new w3.h(dVar, i12 | w3.h.g(i19), k0Var, list2 != null ? list2 : x1.e, null);
                             } else if (intValue == 11) {
                                 i11 = i18;
                                 arrayList = arrayList2;

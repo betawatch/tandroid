@@ -1,5 +1,6 @@
 package a1;
 
+import a6.m;
 import ab.e0;
 import ab.f0;
 import android.content.Context;
@@ -43,7 +44,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.b0;
 import com.google.firebase.messaging.d0;
-import com.google.firebase.messaging.m;
 import com.google.firebase.messaging.y;
 import di.ac;
 import di.bb;
@@ -101,21 +101,21 @@ import org.telegram.ui.Cells.t7;
 import org.telegram.ui.Components.bm0;
 import org.telegram.ui.Components.cm0;
 import org.telegram.ui.Components.cr;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.ms0;
 import org.telegram.ui.Components.ol0;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.px;
 import org.telegram.ui.yy;
 import qg.s1;
-import r0.o;
+import r0.n;
 import s4.l0;
 import wh.k;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0, Utilities.Callback2Return, bm0, z1, f9, mb, k, o, Continuation, OnCompleteListener, ol0, Utilities.Callback5, s1, CameraController.VideoTakeCallback, l1 {
+public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0, Utilities.Callback2Return, bm0, z1, f9, mb, k, n, Continuation, OnCompleteListener, ol0, Utilities.Callback5, s1, CameraController.VideoTakeCallback, l1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -124,7 +124,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
         this.b = obj;
     }
 
-    @Override // r0.o
+    @Override // r0.n
     public r0.l1 Q0(View view, r0.l1 l1Var) {
         sb sbVar = (sb) this.b;
         i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
@@ -180,7 +180,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
         cr crVar;
         boolean z11;
         boolean z12;
-        m80 m80Var;
+        l80 l80Var;
         int i18;
         MediaController.PhotoEntry photoEntry;
         switch (this.a) {
@@ -191,7 +191,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                     yy yyVar = pxVar.O0;
                     i11 = ((m2) yyVar).currentAccount;
                     MediaDataController.getInstance(i11).loadHints(true);
-                    m80 H = m80.H(yyVar, view);
+                    l80 H = l80.H(yyVar, view);
                     H.z.set(0, AndroidUtilities.dp(8.0f), 0, 0);
                     H.W(g6.d0(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), yyVar.getThemedColor(g6.d6)));
                     H.a0(0.0f, AndroidUtilities.dp(8.0f));
@@ -232,7 +232,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                     drawable.setColorFilter(new PorterDuffColorFilter(i0.a.d(0.5f, -1, -16777216), PorterDuff.Mode.MULTIPLY));
                                     crVar = new cr(drawable2, drawable);
                                     cr crVar2 = crVar;
-                                    if (j11 < j10 && yyVar.U3().j(j11)) {
+                                    if (j11 < j10 && yyVar.V3().j(j11)) {
                                         final int i19 = 4;
                                         yyVar.L0.b(R.drawable.msg_stories_add, null, LocaleController.getString(R.string.AddStory), g6.F8, g6.E8, new Runnable() { // from class: org.telegram.ui.lx
                                             @Override // java.lang.Runnable
@@ -243,10 +243,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                         pxVar.O0.presentFragment(fo.W9(j11));
                                                         break;
                                                     case 1:
-                                                        AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                        AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                         break;
                                                     case 2:
-                                                        AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                        AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                         break;
                                                     case 3:
                                                         yy yyVar2 = pxVar.O0;
@@ -273,9 +273,9 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                         i18 = ((m2) yyVar).currentAccount;
                                         if (MediaDataController.getInstance(i18).containsTopPeer(j11)) {
                                             z11 = true;
-                                            m80 m80Var2 = yyVar.L0;
+                                            l80 l80Var2 = yyVar.L0;
                                             final int i20 = 5;
-                                            m80Var2.l(R.drawable.msg_discussion, LocaleController.getString(R.string.SendMessage), new Runnable() { // from class: org.telegram.ui.lx
+                                            l80Var2.l(R.drawable.msg_discussion, LocaleController.getString(R.string.SendMessage), new Runnable() { // from class: org.telegram.ui.lx
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
                                                     int i202;
@@ -284,10 +284,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                             pxVar.O0.presentFragment(fo.W9(j11));
                                                             break;
                                                         case 1:
-                                                            AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                            AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                             break;
                                                         case 2:
-                                                            AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                            AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                             break;
                                                         case 3:
                                                             yy yyVar2 = pxVar.O0;
@@ -310,7 +310,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                 }
                                             }, j11 > j10 ? true : z10);
                                             final int i21 = 6;
-                                            m80Var2.l(R.drawable.msg_openprofile, LocaleController.getString(R.string.OpenProfile), new Runnable() { // from class: org.telegram.ui.lx
+                                            l80Var2.l(R.drawable.msg_openprofile, LocaleController.getString(R.string.OpenProfile), new Runnable() { // from class: org.telegram.ui.lx
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
                                                     int i202;
@@ -319,10 +319,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                             pxVar.O0.presentFragment(fo.W9(j11));
                                                             break;
                                                         case 1:
-                                                            AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                            AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                             break;
                                                         case 2:
-                                                            AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                            AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                             break;
                                                         case 3:
                                                             yy yyVar2 = pxVar.O0;
@@ -345,7 +345,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                 }
                                             }, j11 > j10 ? true : z10);
                                             final int i22 = 0;
-                                            m80Var2.l(R.drawable.msg_channel, LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.OpenChannel2 : R.string.OpenGroup2), new Runnable() { // from class: org.telegram.ui.lx
+                                            l80Var2.l(R.drawable.msg_channel, LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.OpenChannel2 : R.string.OpenGroup2), new Runnable() { // from class: org.telegram.ui.lx
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
                                                     int i202;
@@ -354,10 +354,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                             pxVar.O0.presentFragment(fo.W9(j11));
                                                             break;
                                                         case 1:
-                                                            AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                            AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                             break;
                                                         case 2:
-                                                            AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                            AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                             break;
                                                         case 3:
                                                             yy yyVar2 = pxVar.O0;
@@ -380,7 +380,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                 }
                                             }, j11 < j10 ? true : z10);
                                             final int i23 = 0;
-                                            m80Var2.l(R.drawable.msg_mute, LocaleController.getString(R.string.NotificationsStoryMute2), new Runnable() { // from class: org.telegram.ui.mx
+                                            l80Var2.l(R.drawable.msg_mute, LocaleController.getString(R.string.NotificationsStoryMute2), new Runnable() { // from class: org.telegram.ui.mx
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
                                                     int i24;
@@ -419,9 +419,9 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                     }
                                                 }
                                             }, (c02 || j11 <= j10) ? z10 : true);
-                                            m80Var2.E();
+                                            l80Var2.E();
                                             final int i24 = 1;
-                                            m80Var2.l(R.drawable.msg_unmute, LocaleController.getString(R.string.NotificationsStoryUnmute2), new Runnable() { // from class: org.telegram.ui.mx
+                                            l80Var2.l(R.drawable.msg_unmute, LocaleController.getString(R.string.NotificationsStoryUnmute2), new Runnable() { // from class: org.telegram.ui.mx
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
                                                     int i242;
@@ -460,9 +460,9 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                     }
                                                 }
                                             }, (!c02 || j11 <= j10) ? z10 : true);
-                                            m80Var2.E();
+                                            l80Var2.E();
                                             final int i25 = 0;
-                                            m80Var2.l(R.drawable.msg_stories_stealth2, LocaleController.getString(R.string.ViewAnonymously), new Runnable() { // from class: org.telegram.ui.nx
+                                            l80Var2.l(R.drawable.msg_stories_stealth2, LocaleController.getString(R.string.ViewAnonymously), new Runnable() { // from class: org.telegram.ui.nx
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
                                                     org.telegram.ui.ActionBar.c6 c6Var;
@@ -501,7 +501,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                     }
                                                 }
                                             }, (premiumFeaturesBlocked && j11 > j10 && isPremium && J && !F) ? true : z10);
-                                            m80Var2.E();
+                                            l80Var2.E();
                                             z12 = (!premiumFeaturesBlocked || j11 <= j10 || isPremium || !J || F) ? z10 : true;
                                             int i26 = R.drawable.msg_stories_stealth2;
                                             String string = LocaleController.getString(R.string.ViewAnonymously);
@@ -546,14 +546,14 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                 }
                                             };
                                             if (z12) {
-                                                m80Var2.b(i26, crVar2, string, g6.F8, g6.E8, runnable);
-                                                m80Var = m80Var2;
+                                                l80Var2.b(i26, crVar2, string, g6.F8, g6.E8, runnable);
+                                                l80Var = l80Var2;
                                             } else {
-                                                m80Var = m80Var2;
+                                                l80Var = l80Var2;
                                             }
-                                            m80Var.E();
+                                            l80Var.E();
                                             final int i28 = 1;
-                                            m80Var.l(R.drawable.msg_archive, LocaleController.getString(R.string.ArchivePeerStories), new Runnable() { // from class: org.telegram.ui.lx
+                                            l80Var.l(R.drawable.msg_archive, LocaleController.getString(R.string.ArchivePeerStories), new Runnable() { // from class: org.telegram.ui.lx
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
                                                     int i202;
@@ -562,10 +562,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                             pxVar.O0.presentFragment(fo.W9(j11));
                                                             break;
                                                         case 1:
-                                                            AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                            AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                             break;
                                                         case 2:
-                                                            AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                            AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                             break;
                                                         case 3:
                                                             yy yyVar2 = pxVar.O0;
@@ -586,10 +586,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                             break;
                                                     }
                                                 }
-                                            }, (!z11 || yyVar.b4()) ? z10 : true);
-                                            m80Var.E();
+                                            }, (!z11 || yyVar.c4()) ? z10 : true);
+                                            l80Var.E();
                                             final int i29 = 2;
-                                            m80Var.l(R.drawable.msg_unarchive, LocaleController.getString(R.string.UnarchiveStories), new Runnable() { // from class: org.telegram.ui.lx
+                                            l80Var.l(R.drawable.msg_unarchive, LocaleController.getString(R.string.UnarchiveStories), new Runnable() { // from class: org.telegram.ui.lx
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
                                                     int i202;
@@ -598,10 +598,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                             pxVar.O0.presentFragment(fo.W9(j11));
                                                             break;
                                                         case 1:
-                                                            AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                            AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                             break;
                                                         case 2:
-                                                            AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                            AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                             break;
                                                         case 3:
                                                             yy yyVar2 = pxVar.O0;
@@ -622,10 +622,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                             break;
                                                     }
                                                 }
-                                            }, (z11 && yyVar.b4()) ? true : z10);
-                                            m80Var.E();
+                                            }, (z11 && yyVar.c4()) ? true : z10);
+                                            l80Var.E();
                                             final int i30 = 3;
-                                            m80Var.l(R.drawable.msg_delete, LocaleController.getString(R.string.StoriesRemoveFromRecent), new Runnable() { // from class: org.telegram.ui.lx
+                                            l80Var.l(R.drawable.msg_delete, LocaleController.getString(R.string.StoriesRemoveFromRecent), new Runnable() { // from class: org.telegram.ui.lx
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
                                                     int i202;
@@ -634,10 +634,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                             pxVar.O0.presentFragment(fo.W9(j11));
                                                             break;
                                                         case 1:
-                                                            AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                            AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                             break;
                                                         case 2:
-                                                            AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                            AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                             break;
                                                         case 3:
                                                             yy yyVar2 = pxVar.O0;
@@ -662,9 +662,9 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                         }
                                     }
                                     z11 = z10;
-                                    m80 m80Var22 = yyVar.L0;
+                                    l80 l80Var22 = yyVar.L0;
                                     final int i202 = 5;
-                                    m80Var22.l(R.drawable.msg_discussion, LocaleController.getString(R.string.SendMessage), new Runnable() { // from class: org.telegram.ui.lx
+                                    l80Var22.l(R.drawable.msg_discussion, LocaleController.getString(R.string.SendMessage), new Runnable() { // from class: org.telegram.ui.lx
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             int i2022;
@@ -673,10 +673,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                     pxVar.O0.presentFragment(fo.W9(j11));
                                                     break;
                                                 case 1:
-                                                    AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                    AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                     break;
                                                 case 2:
-                                                    AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                    AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                     break;
                                                 case 3:
                                                     yy yyVar2 = pxVar.O0;
@@ -699,7 +699,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                         }
                                     }, j11 > j10 ? true : z10);
                                     final int i212 = 6;
-                                    m80Var22.l(R.drawable.msg_openprofile, LocaleController.getString(R.string.OpenProfile), new Runnable() { // from class: org.telegram.ui.lx
+                                    l80Var22.l(R.drawable.msg_openprofile, LocaleController.getString(R.string.OpenProfile), new Runnable() { // from class: org.telegram.ui.lx
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             int i2022;
@@ -708,10 +708,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                     pxVar.O0.presentFragment(fo.W9(j11));
                                                     break;
                                                 case 1:
-                                                    AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                    AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                     break;
                                                 case 2:
-                                                    AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                    AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                     break;
                                                 case 3:
                                                     yy yyVar2 = pxVar.O0;
@@ -736,7 +736,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                     if (j11 < j10) {
                                     }
                                     final int i222 = 0;
-                                    m80Var22.l(R.drawable.msg_channel, LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.OpenChannel2 : R.string.OpenGroup2), new Runnable() { // from class: org.telegram.ui.lx
+                                    l80Var22.l(R.drawable.msg_channel, LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.OpenChannel2 : R.string.OpenGroup2), new Runnable() { // from class: org.telegram.ui.lx
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             int i2022;
@@ -745,10 +745,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                     pxVar.O0.presentFragment(fo.W9(j11));
                                                     break;
                                                 case 1:
-                                                    AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                    AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                     break;
                                                 case 2:
-                                                    AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                    AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                     break;
                                                 case 3:
                                                     yy yyVar2 = pxVar.O0;
@@ -771,7 +771,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                         }
                                     }, j11 < j10 ? true : z10);
                                     final int i232 = 0;
-                                    m80Var22.l(R.drawable.msg_mute, LocaleController.getString(R.string.NotificationsStoryMute2), new Runnable() { // from class: org.telegram.ui.mx
+                                    l80Var22.l(R.drawable.msg_mute, LocaleController.getString(R.string.NotificationsStoryMute2), new Runnable() { // from class: org.telegram.ui.mx
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             int i242;
@@ -810,9 +810,9 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                             }
                                         }
                                     }, (c02 || j11 <= j10) ? z10 : true);
-                                    m80Var22.E();
+                                    l80Var22.E();
                                     final int i242 = 1;
-                                    m80Var22.l(R.drawable.msg_unmute, LocaleController.getString(R.string.NotificationsStoryUnmute2), new Runnable() { // from class: org.telegram.ui.mx
+                                    l80Var22.l(R.drawable.msg_unmute, LocaleController.getString(R.string.NotificationsStoryUnmute2), new Runnable() { // from class: org.telegram.ui.mx
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             int i2422;
@@ -851,9 +851,9 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                             }
                                         }
                                     }, (!c02 || j11 <= j10) ? z10 : true);
-                                    m80Var22.E();
+                                    l80Var22.E();
                                     final int i252 = 0;
-                                    m80Var22.l(R.drawable.msg_stories_stealth2, LocaleController.getString(R.string.ViewAnonymously), new Runnable() { // from class: org.telegram.ui.nx
+                                    l80Var22.l(R.drawable.msg_stories_stealth2, LocaleController.getString(R.string.ViewAnonymously), new Runnable() { // from class: org.telegram.ui.nx
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             org.telegram.ui.ActionBar.c6 c6Var;
@@ -892,7 +892,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                             }
                                         }
                                     }, (premiumFeaturesBlocked && j11 > j10 && isPremium && J && !F) ? true : z10);
-                                    m80Var22.E();
+                                    l80Var22.E();
                                     if (premiumFeaturesBlocked) {
                                     }
                                     int i262 = R.drawable.msg_stories_stealth2;
@@ -939,9 +939,9 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                     };
                                     if (z12) {
                                     }
-                                    m80Var.E();
+                                    l80Var.E();
                                     final int i282 = 1;
-                                    m80Var.l(R.drawable.msg_archive, LocaleController.getString(R.string.ArchivePeerStories), new Runnable() { // from class: org.telegram.ui.lx
+                                    l80Var.l(R.drawable.msg_archive, LocaleController.getString(R.string.ArchivePeerStories), new Runnable() { // from class: org.telegram.ui.lx
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             int i2022;
@@ -950,10 +950,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                     pxVar.O0.presentFragment(fo.W9(j11));
                                                     break;
                                                 case 1:
-                                                    AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                    AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                     break;
                                                 case 2:
-                                                    AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                    AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                     break;
                                                 case 3:
                                                     yy yyVar2 = pxVar.O0;
@@ -974,10 +974,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                     break;
                                             }
                                         }
-                                    }, (!z11 || yyVar.b4()) ? z10 : true);
-                                    m80Var.E();
+                                    }, (!z11 || yyVar.c4()) ? z10 : true);
+                                    l80Var.E();
                                     final int i292 = 2;
-                                    m80Var.l(R.drawable.msg_unarchive, LocaleController.getString(R.string.UnarchiveStories), new Runnable() { // from class: org.telegram.ui.lx
+                                    l80Var.l(R.drawable.msg_unarchive, LocaleController.getString(R.string.UnarchiveStories), new Runnable() { // from class: org.telegram.ui.lx
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             int i2022;
@@ -986,10 +986,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                     pxVar.O0.presentFragment(fo.W9(j11));
                                                     break;
                                                 case 1:
-                                                    AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                    AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                     break;
                                                 case 2:
-                                                    AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                    AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                     break;
                                                 case 3:
                                                     yy yyVar2 = pxVar.O0;
@@ -1010,10 +1010,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                     break;
                                             }
                                         }
-                                    }, (z11 && yyVar.b4()) ? true : z10);
-                                    m80Var.E();
+                                    }, (z11 && yyVar.c4()) ? true : z10);
+                                    l80Var.E();
                                     final int i302 = 3;
-                                    m80Var.l(R.drawable.msg_delete, LocaleController.getString(R.string.StoriesRemoveFromRecent), new Runnable() { // from class: org.telegram.ui.lx
+                                    l80Var.l(R.drawable.msg_delete, LocaleController.getString(R.string.StoriesRemoveFromRecent), new Runnable() { // from class: org.telegram.ui.lx
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             int i2022;
@@ -1022,10 +1022,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                     pxVar.O0.presentFragment(fo.W9(j11));
                                                     break;
                                                 case 1:
-                                                    AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                    AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                     break;
                                                 case 2:
-                                                    AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                    AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                     break;
                                                 case 3:
                                                     yy yyVar2 = pxVar.O0;
@@ -1063,10 +1063,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                                 pxVar.O0.presentFragment(fo.W9(j11));
                                                 break;
                                             case 1:
-                                                AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                 break;
                                             case 2:
-                                                AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                                AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                                 break;
                                             case 3:
                                                 yy yyVar2 = pxVar.O0;
@@ -1095,9 +1095,9 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                 }
                             }
                             z11 = z10;
-                            m80 m80Var222 = yyVar.L0;
+                            l80 l80Var222 = yyVar.L0;
                             final int i2022 = 5;
-                            m80Var222.l(R.drawable.msg_discussion, LocaleController.getString(R.string.SendMessage), new Runnable() { // from class: org.telegram.ui.lx
+                            l80Var222.l(R.drawable.msg_discussion, LocaleController.getString(R.string.SendMessage), new Runnable() { // from class: org.telegram.ui.lx
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i20222;
@@ -1106,10 +1106,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                             pxVar.O0.presentFragment(fo.W9(j11));
                                             break;
                                         case 1:
-                                            AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                            AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                             break;
                                         case 2:
-                                            AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                            AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                             break;
                                         case 3:
                                             yy yyVar2 = pxVar.O0;
@@ -1132,7 +1132,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                 }
                             }, j11 > j10 ? true : z10);
                             final int i2122 = 6;
-                            m80Var222.l(R.drawable.msg_openprofile, LocaleController.getString(R.string.OpenProfile), new Runnable() { // from class: org.telegram.ui.lx
+                            l80Var222.l(R.drawable.msg_openprofile, LocaleController.getString(R.string.OpenProfile), new Runnable() { // from class: org.telegram.ui.lx
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i20222;
@@ -1141,10 +1141,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                             pxVar.O0.presentFragment(fo.W9(j11));
                                             break;
                                         case 1:
-                                            AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                            AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                             break;
                                         case 2:
-                                            AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                            AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                             break;
                                         case 3:
                                             yy yyVar2 = pxVar.O0;
@@ -1169,7 +1169,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                             if (j11 < j10) {
                             }
                             final int i2222 = 0;
-                            m80Var222.l(R.drawable.msg_channel, LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.OpenChannel2 : R.string.OpenGroup2), new Runnable() { // from class: org.telegram.ui.lx
+                            l80Var222.l(R.drawable.msg_channel, LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.OpenChannel2 : R.string.OpenGroup2), new Runnable() { // from class: org.telegram.ui.lx
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i20222;
@@ -1178,10 +1178,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                             pxVar.O0.presentFragment(fo.W9(j11));
                                             break;
                                         case 1:
-                                            AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                            AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                             break;
                                         case 2:
-                                            AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                            AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                             break;
                                         case 3:
                                             yy yyVar2 = pxVar.O0;
@@ -1204,7 +1204,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                 }
                             }, j11 < j10 ? true : z10);
                             final int i2322 = 0;
-                            m80Var222.l(R.drawable.msg_mute, LocaleController.getString(R.string.NotificationsStoryMute2), new Runnable() { // from class: org.telegram.ui.mx
+                            l80Var222.l(R.drawable.msg_mute, LocaleController.getString(R.string.NotificationsStoryMute2), new Runnable() { // from class: org.telegram.ui.mx
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i2422;
@@ -1243,9 +1243,9 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                     }
                                 }
                             }, (c02 || j11 <= j10) ? z10 : true);
-                            m80Var222.E();
+                            l80Var222.E();
                             final int i2422 = 1;
-                            m80Var222.l(R.drawable.msg_unmute, LocaleController.getString(R.string.NotificationsStoryUnmute2), new Runnable() { // from class: org.telegram.ui.mx
+                            l80Var222.l(R.drawable.msg_unmute, LocaleController.getString(R.string.NotificationsStoryUnmute2), new Runnable() { // from class: org.telegram.ui.mx
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i24222;
@@ -1284,9 +1284,9 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                     }
                                 }
                             }, (!c02 || j11 <= j10) ? z10 : true);
-                            m80Var222.E();
+                            l80Var222.E();
                             final int i2522 = 0;
-                            m80Var222.l(R.drawable.msg_stories_stealth2, LocaleController.getString(R.string.ViewAnonymously), new Runnable() { // from class: org.telegram.ui.nx
+                            l80Var222.l(R.drawable.msg_stories_stealth2, LocaleController.getString(R.string.ViewAnonymously), new Runnable() { // from class: org.telegram.ui.nx
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     org.telegram.ui.ActionBar.c6 c6Var;
@@ -1325,7 +1325,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                     }
                                 }
                             }, (premiumFeaturesBlocked && j11 > j10 && isPremium && J && !F) ? true : z10);
-                            m80Var222.E();
+                            l80Var222.E();
                             if (premiumFeaturesBlocked) {
                             }
                             int i2622 = R.drawable.msg_stories_stealth2;
@@ -1372,9 +1372,9 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                             };
                             if (z12) {
                             }
-                            m80Var.E();
+                            l80Var.E();
                             final int i2822 = 1;
-                            m80Var.l(R.drawable.msg_archive, LocaleController.getString(R.string.ArchivePeerStories), new Runnable() { // from class: org.telegram.ui.lx
+                            l80Var.l(R.drawable.msg_archive, LocaleController.getString(R.string.ArchivePeerStories), new Runnable() { // from class: org.telegram.ui.lx
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i20222;
@@ -1383,10 +1383,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                             pxVar.O0.presentFragment(fo.W9(j11));
                                             break;
                                         case 1:
-                                            AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                            AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                             break;
                                         case 2:
-                                            AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                            AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                             break;
                                         case 3:
                                             yy yyVar2 = pxVar.O0;
@@ -1407,10 +1407,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                             break;
                                     }
                                 }
-                            }, (!z11 || yyVar.b4()) ? z10 : true);
-                            m80Var.E();
+                            }, (!z11 || yyVar.c4()) ? z10 : true);
+                            l80Var.E();
                             final int i2922 = 2;
-                            m80Var.l(R.drawable.msg_unarchive, LocaleController.getString(R.string.UnarchiveStories), new Runnable() { // from class: org.telegram.ui.lx
+                            l80Var.l(R.drawable.msg_unarchive, LocaleController.getString(R.string.UnarchiveStories), new Runnable() { // from class: org.telegram.ui.lx
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i20222;
@@ -1419,10 +1419,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                             pxVar.O0.presentFragment(fo.W9(j11));
                                             break;
                                         case 1:
-                                            AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                            AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                             break;
                                         case 2:
-                                            AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                            AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                             break;
                                         case 3:
                                             yy yyVar2 = pxVar.O0;
@@ -1443,10 +1443,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                             break;
                                     }
                                 }
-                            }, (z11 && yyVar.b4()) ? true : z10);
-                            m80Var.E();
+                            }, (z11 && yyVar.c4()) ? true : z10);
+                            l80Var.E();
                             final int i3022 = 3;
-                            m80Var.l(R.drawable.msg_delete, LocaleController.getString(R.string.StoriesRemoveFromRecent), new Runnable() { // from class: org.telegram.ui.lx
+                            l80Var.l(R.drawable.msg_delete, LocaleController.getString(R.string.StoriesRemoveFromRecent), new Runnable() { // from class: org.telegram.ui.lx
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i20222;
@@ -1455,10 +1455,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                             pxVar.O0.presentFragment(fo.W9(j11));
                                             break;
                                         case 1:
-                                            AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                            AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                             break;
                                         case 2:
-                                            AndroidUtilities.runOnUIThread(new mw(pxVar.O0, j11, !r2.b4(), 0), 200L);
+                                            AndroidUtilities.runOnUIThread(new lw(pxVar.O0, j11, !r2.c4(), 0), 200L);
                                             break;
                                         case 3:
                                             yy yyVar2 = pxVar.O0;
@@ -1480,14 +1480,14 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                     }
                                 }
                             }, z11);
-                        } else if (yyVar.N3) {
-                            m80 m80Var3 = yyVar.L0;
+                        } else if (yyVar.O3) {
+                            l80 l80Var3 = yyVar.L0;
                             int i31 = R.drawable.msg_stories_add;
                             String string3 = LocaleController.getString(R.string.AddStory);
                             int i32 = g6.F8;
                             int i33 = g6.E8;
                             final int i34 = 0;
-                            m80Var3.b(i31, null, string3, i32, i33, new Runnable() { // from class: org.telegram.ui.kx
+                            l80Var3.b(i31, null, string3, i32, i33, new Runnable() { // from class: org.telegram.ui.kx
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i35;
@@ -1583,10 +1583,10 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
                                 pxVar2.n();
                             }
                         }
-                        m80 m80Var4 = yyVar.L0;
-                        m80Var4.i = 3;
-                        m80Var4.a0(AndroidUtilities.dp(-8.0f), AndroidUtilities.dp(-10.0f));
-                        m80Var4.Z();
+                        l80 l80Var4 = yyVar.L0;
+                        l80Var4.i = 3;
+                        l80Var4.a0(AndroidUtilities.dp(-8.0f), AndroidUtilities.dp(-10.0f));
+                        l80Var4.Z();
                         return z10;
                     }
                     BotWebViewVibrationEffect.APP_ERROR.vibrate();
@@ -1656,11 +1656,11 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
 
     @Override // i5.e
     public Object apply(Object obj) {
-        ((qb.c) this.b).getClass();
-        String N = f0.b.N((e0) obj);
-        kotlin.jvm.internal.i.d(N, "SessionEvents.SESSION_EVENT_ENCODER.encode(value)");
-        Log.d("EventGDTLogger", "Session Event: ".concat(N));
-        byte[] bytes = N.getBytes(zd.a.a);
+        ((m) this.b).getClass();
+        String b12 = f0.b.b1((e0) obj);
+        kotlin.jvm.internal.i.d(b12, "SessionEvents.SESSION_EVENT_ENCODER.encode(value)");
+        Log.d("EventGDTLogger", "Session Event: ".concat(b12));
+        byte[] bytes = b12.getBytes(zd.a.a);
         kotlin.jvm.internal.i.d(bytes, "this as java.lang.String).getBytes(charset)");
         return bytes;
     }
@@ -1769,13 +1769,8 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
         o0Var.setItemAnimator(itemAnimator);
     }
 
-    @Override // e9.l1
-    public Object e(Object obj, Object obj2) {
-        return s.x((List) ((Collection) obj2), new n4.s(14, ((q1) this.b).f, obj));
-    }
-
     @Override // qg.s1
-    public void f() {
+    public void e() {
         di.mb mbVar = (di.mb) this.b;
         TextView textView = mbVar.o1;
         boolean a2 = mbVar.D0.a();
@@ -1786,6 +1781,18 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
         textView.animate().cancel();
         textView.animate().alpha(a2 ? 1.0f : 0.6f).translationY(0.0f).setDuration(150L).start();
         textView.setClickable(a2);
+    }
+
+    @Override // bi.mb
+    public void f(float f7, Canvas canvas, RectF rectF, boolean z10) {
+        Path path = (Path) this.b;
+        if (z10) {
+            return;
+        }
+        path.rewind();
+        float pow = (float) Math.pow(f7, 2.0d);
+        path.addCircle((rectF.right + AndroidUtilities.dp(7.0f)) - (AndroidUtilities.dp(14.0f) * pow), (rectF.bottom + AndroidUtilities.dp(7.0f)) - (AndroidUtilities.dp(14.0f) * pow), AndroidUtilities.dp(11.0f), Path.Direction.CW);
+        canvas.clipPath(path, Region.Op.DIFFERENCE);
     }
 
     @Override // org.telegram.ui.ActionBar.z1
@@ -1834,24 +1841,17 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
         }
     }
 
-    @Override // bi.mb
-    public void h(float f7, Canvas canvas, RectF rectF, boolean z10) {
-        Path path = (Path) this.b;
-        if (z10) {
-            return;
-        }
-        path.rewind();
-        float pow = (float) Math.pow(f7, 2.0d);
-        path.addCircle((rectF.right + AndroidUtilities.dp(7.0f)) - (AndroidUtilities.dp(14.0f) * pow), (rectF.bottom + AndroidUtilities.dp(7.0f)) - (AndroidUtilities.dp(14.0f) * pow), AndroidUtilities.dp(11.0f), Path.Direction.CW);
-        canvas.clipPath(path, Region.Op.DIFFERENCE);
-    }
-
     @Override // h2.i
-    public void i(j jVar) {
+    public void h(j jVar) {
         a4.k kVar = (a4.k) this.b;
         a4.j jVar2 = (a4.j) jVar;
         jVar2.clear();
         kVar.b.add(jVar2);
+    }
+
+    @Override // e9.l1
+    public Object k(Object obj, Object obj2) {
+        return s.x((List) ((Collection) obj2), new n4.s(14, ((q1) this.b).f, obj));
     }
 
     @Override // wh.k
@@ -2014,12 +2014,12 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
     @Override // org.telegram.messenger.Utilities.Callback5
     public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
         bb bbVar = (bb) this.b;
-        l61 l61Var = (l61) obj;
+        m61 m61Var = (m61) obj;
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        int i10 = l61Var.d;
-        k8 k8Var = (k8) l61Var.G;
+        int i10 = m61Var.d;
+        k8 k8Var = (k8) m61Var.G;
         bbVar.c(false, true);
         kc kcVar = bbVar.O;
         if (k8Var == kcVar.K1 || kcVar.X1) {
@@ -2046,7 +2046,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, cm0,
 
     @Override // com.google.android.gms.tasks.Continuation
     public Object then(Task task) {
-        ((m) this.b).getClass();
+        ((com.google.firebase.messaging.m) this.b).getClass();
         Bundle bundle = (Bundle) task.getResult(IOException.class);
         if (bundle == null) {
             throw new IOException("SERVICE_NOT_AVAILABLE");

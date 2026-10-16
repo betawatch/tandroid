@@ -14,7 +14,7 @@ import android.view.ViewConfiguration;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class hd {
     public static final int[] p = {R.attr.state_enabled, R.attr.state_pressed};
@@ -28,7 +28,7 @@ public final class hd {
     public Runnable h;
     public boolean i;
     public Runnable j;
-    public final org.telegram.ui.Cells.t6 k;
+    public final org.telegram.ui.Cells.l7 k;
     public boolean l;
     public final CornerPathEffect m;
     public boolean n;
@@ -37,7 +37,7 @@ public final class hd {
     public hd(View view) {
         Paint paint = new Paint(1);
         this.g = paint;
-        this.k = new org.telegram.ui.Cells.t6(this, 5);
+        this.k = new org.telegram.ui.Cells.l7(this, 4);
         float dp = AndroidUtilities.dp(12.0f);
         this.f = view;
         CornerPathEffect cornerPathEffect = new CornerPathEffect(dp);
@@ -72,7 +72,7 @@ public final class hd {
         int y3 = (int) motionEvent.getY();
         int action = motionEvent.getAction();
         View view = this.f;
-        org.telegram.ui.Cells.t6 t6Var = this.k;
+        org.telegram.ui.Cells.l7 l7Var = this.k;
         org.telegram.ui.Cells.z zVar = this.e;
         if (action == 0) {
             for (int i10 = 0; i10 < this.c; i10++) {
@@ -84,9 +84,9 @@ public final class hd {
                         zVar.setHotspot(f7, f10);
                         zVar.setState(p);
                     }
-                    AndroidUtilities.cancelRunOnUIThread(t6Var);
+                    AndroidUtilities.cancelRunOnUIThread(l7Var);
                     if (this.l) {
-                        AndroidUtilities.runOnUIThread(t6Var, ViewConfiguration.getLongPressTimeout());
+                        AndroidUtilities.runOnUIThread(l7Var, ViewConfiguration.getLongPressTimeout());
                     }
                     view.invalidate();
                     return true;
@@ -104,7 +104,7 @@ public final class hd {
                 this.d = false;
                 view.invalidate();
             }
-            AndroidUtilities.cancelRunOnUIThread(t6Var);
+            AndroidUtilities.cancelRunOnUIThread(l7Var);
         } else if (motionEvent.getAction() == 2 && this.d && zVar != null) {
             zVar.setHotspot(x10, y3);
         }

@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class m70 extends FrameLayout {
     public final TextView a;
@@ -27,17 +27,17 @@ public final class m70 extends FrameLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         imageView.setImageResource(R.drawable.large_income);
         imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        addView(imageView, w7.a6.a(46.0f, 13.0f, 0.0f, 0.0f, 0.0f, 46, 19));
+        addView(imageView, w7.z5.a(46.0f, 13.0f, 0.0f, 0.0f, 0.0f, 46, 19));
         TextView textView = new TextView(context);
         this.a = textView;
         com.google.android.gms.internal.play_billing.k3.m(16.0f, 1, textView);
         textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.G6, false));
-        addView(textView, w7.a6.a(-2.0f, 72.0f, 9.0f, 0.0f, 0.0f, -1, 51));
+        addView(textView, w7.z5.a(-2.0f, 72.0f, 9.0f, 0.0f, 0.0f, -1, 51));
         TextView textView2 = new TextView(context);
         this.b = textView2;
         textView2.setTextSize(1, 14.0f);
         textView2.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.y6, false));
-        addView(textView2, w7.a6.a(-2.0f, 72.0f, 32.0f, 0.0f, 0.0f, -1, 51));
+        addView(textView2, w7.z5.a(-2.0f, 72.0f, 32.0f, 0.0f, 0.0f, -1, 51));
     }
 
     @Override // android.widget.FrameLayout, android.view.View

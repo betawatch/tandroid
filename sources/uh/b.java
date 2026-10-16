@@ -5,19 +5,19 @@ import android.view.WindowInsets;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.p20;
 import r0.l1;
-import r0.o;
-import rh.j;
+import r0.n;
+import ri.h0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class b implements p20, o {
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class b implements p20, n {
     public final /* synthetic */ f a;
 
     public /* synthetic */ b(f fVar) {
         this.a = fVar;
     }
 
-    @Override // r0.o
+    @Override // r0.n
     public l1 Q0(View view, l1 l1Var) {
         WindowInsets g10 = l1Var.g();
         f fVar = this.a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class b implements p20, o {
         if (fVar.l0 != min) {
             fVar.l0 = min;
             fVar.X.a(min);
-            fVar.h0.postOnAnimation(new j(fVar, 19));
+            fVar.h0.postOnAnimation(new h0(fVar, 19));
         }
     }
 }

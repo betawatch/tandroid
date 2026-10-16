@@ -17,9 +17,9 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.h5;
 import org.telegram.ui.Cells.xa;
 import org.telegram.ui.Components.k9;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class b extends xa {
     public final TextView a0;
@@ -39,11 +39,11 @@ public final class b extends xa {
         this.a0.setTypeface(AndroidUtilities.bold());
         this.a0.setTextSize(12.0f);
         this.a0.setGravity(17);
-        this.b0.addView(this.a0, a6.d(22.0f, -2));
+        this.b0.addView(this.a0, z5.d(22.0f, -2));
         this.b0.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
         FrameLayout frameLayout = this.b0;
         boolean z10 = LocaleController.isRTL;
-        addView(frameLayout, a6.a(-2.0f, z10 ? 9 : 0, 9.0f, z10 ? 0 : 9, 0.0f, -2, (z10 ? 3 : 5) | 48));
+        addView(frameLayout, z5.a(-2.0f, z10 ? 9 : 0, 9.0f, z10 ? 0 : 9, 0.0f, -2, (z10 ? 3 : 5) | 48));
     }
 
     private void setAvatarColorByMonths(int i10) {

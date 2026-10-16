@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagePreviewParams;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class oc0 extends s4.g0 {
     public final /* synthetic */ pc0 c;
@@ -19,7 +19,7 @@ public final class oc0 extends s4.g0 {
     }
 
     public static int D(org.telegram.ui.Cells.u1 u1Var, int i10, boolean z10) {
-        int c10;
+        int C;
         ArrayList<MessageObject.TextLayoutBlock> arrayList;
         CharSequence charSequence;
         float lineBottom;
@@ -33,11 +33,11 @@ public final class oc0 extends s4.g0 {
                     int i11 = u1Var.r0;
                     CharSequence charSequence2 = messageObject.messageText;
                     ArrayList<MessageObject.TextLayoutBlock> arrayList2 = messageObject.textLayoutBlocks;
-                    c10 = u1Var.t1 ? org.telegram.messenger.yh.c(10.0f, u1Var.m2, i11) : i11;
+                    C = u1Var.t1 ? org.telegram.messenger.g0.C(10.0f, u1Var.m2, i11) : i11;
                     arrayList = arrayList2;
                     charSequence = charSequence2;
                 } else {
-                    c10 = (int) u1Var.q4;
+                    C = (int) u1Var.q4;
                     charSequence = messageObject.caption;
                     arrayList = textLayoutBlocks.textLayoutBlocks;
                 }
@@ -49,10 +49,10 @@ public final class oc0 extends s4.g0 {
                         int i13 = textLayoutBlock.charactersOffset;
                         if (i10 > i13) {
                             if (i10 - i13 > charSequence3.length() - 1) {
-                                lineBottom = c10 + ((int) (textLayoutBlock.textYOffset(arrayList, t1Var) + textLayoutBlock.padTop + textLayoutBlock.height));
+                                lineBottom = C + ((int) (textLayoutBlock.textYOffset(arrayList, t1Var) + textLayoutBlock.padTop + textLayoutBlock.height));
                             } else {
                                 int lineForOffset = staticLayout.getLineForOffset(i10 - textLayoutBlock.charactersOffset);
-                                lineBottom = (z10 ? staticLayout.getLineBottom(lineForOffset) : staticLayout.getLineTop(lineForOffset)) + textLayoutBlock.textYOffset(arrayList, t1Var) + c10 + textLayoutBlock.padTop;
+                                lineBottom = (z10 ? staticLayout.getLineBottom(lineForOffset) : staticLayout.getLineTop(lineForOffset)) + textLayoutBlock.textYOffset(arrayList, t1Var) + C + textLayoutBlock.padTop;
                             }
                             return (int) lineBottom;
                         }

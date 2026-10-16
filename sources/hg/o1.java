@@ -7,7 +7,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.BuildVars;
 import org.telegram.ui.Components.mm0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class o1 extends s4.i0 {
     public final /* synthetic */ int a;
@@ -70,10 +70,10 @@ public final class o1 extends s4.i0 {
                 ArrayList arrayList = (ArrayList) bVar.d;
                 if (i11 >= 1) {
                     if (BuildVars.DEBUG_VERSION) {
-                        StringBuilder l4 = i2.d.l("onItemRangeChanged(", i10, ", ", i11, ", ");
-                        l4.append(obj);
-                        l4.append(")");
-                        bVar.i(l4.toString());
+                        StringBuilder m10 = i2.d.m("onItemRangeChanged(", i10, ", ", i11, ", ");
+                        m10.append(obj);
+                        m10.append(")");
+                        bVar.i(m10.toString());
                     }
                     arrayList.add(bVar.j(4, i10, obj, i11));
                     bVar.b |= 4;
@@ -188,7 +188,7 @@ public final class o1 extends s4.i0 {
             return;
         }
         s4.f0 f0Var = recyclerView.n;
-        WeakHashMap weakHashMap = r0.j0.a;
+        WeakHashMap weakHashMap = r0.i0.a;
         recyclerView.postOnAnimation(f0Var);
     }
 }

@@ -16,7 +16,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.rm0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class k6 extends FrameLayout {
     public final LinearLayout a;
@@ -63,8 +63,8 @@ public final class k6 extends FrameLayout {
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f));
         linearLayout.setPadding(0, AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f));
-        linearLayout.addView(textView, w7.a6.t(-2, -2, 0, 13, 0, 0, 0));
-        linearLayout.addView(textView2, w7.a6.t(-2, -2, 0, 0, 0, 0, 0));
+        linearLayout.addView(textView, w7.z5.t(-2, -2, 0, 13, 0, 0, 0));
+        linearLayout.addView(textView2, w7.z5.t(-2, -2, 0, 0, 0, 0, 0));
         LinearLayout linearLayout2 = new LinearLayout(getContext());
         this.a = linearLayout2;
         linearLayout2.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), 0);
@@ -78,12 +78,12 @@ public final class k6 extends FrameLayout {
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         imageView.setImageDrawable(rm0Var);
         imageView.setPadding(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f));
-        linearLayout2.addView(imageView, w7.a6.n(26, 26));
+        linearLayout2.addView(imageView, w7.z5.n(26, 26));
         ImageView imageView2 = new ImageView(getContext());
         imageView2.setImageResource(R.drawable.arrow_more);
-        linearLayout2.addView(imageView2, w7.a6.n(16, 26));
-        addView(linearLayout, w7.a6.d(-2.0f, -2));
-        addView(linearLayout2, w7.a6.a(-2.0f, 13.0f, 6.0f, 13.0f, 6.0f, -2, 5));
+        linearLayout2.addView(imageView2, w7.z5.n(16, 26));
+        addView(linearLayout, w7.z5.d(-2.0f, -2));
+        addView(linearLayout2, w7.z5.a(-2.0f, 13.0f, 6.0f, 13.0f, 6.0f, -2, 5));
         final int i12 = 0;
         textView.setOnClickListener(new View.OnClickListener(this) { // from class: bi.h6
             public final /* synthetic */ k6 b;

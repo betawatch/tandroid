@@ -54,7 +54,7 @@ import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class p60 extends u60 implements NotificationCenter.NotificationCenterDelegate {
     public static final int[] m1 = {285904780, -1394191079};
@@ -92,7 +92,7 @@ public final class p60 extends u60 implements NotificationCenter.NotificationCen
     public float R0;
     public VideoEditedInfo S;
     public float S0;
-    public h81 T;
+    public i81 T;
     public boolean T0;
     public Bitmap U;
     public boolean U0;
@@ -129,8 +129,8 @@ public final class p60 extends u60 implements NotificationCenter.NotificationCen
     public volatile int k1;
     public boolean l0;
     public ValueAnimator l1;
-    public a60 m0;
-    public final b60 n;
+    public b60 m0;
+    public final c60 n;
     public final Size[] n0;
     public Size o0;
     public final Size p0;
@@ -151,7 +151,7 @@ public final class p60 extends u60 implements NotificationCenter.NotificationCen
     public volatile long y0;
     public volatile int z0;
 
-    public p60(Context context, b60 b60Var, org.telegram.ui.ActionBar.c6 c6Var, boolean z10) {
+    public p60(Context context, c60 c60Var, org.telegram.ui.ActionBar.c6 c6Var, boolean z10) {
         super(context);
         int i10 = UserConfig.selectedAccount;
         this.f = i10;
@@ -169,11 +169,11 @@ public final class p60 extends u60 implements NotificationCenter.NotificationCen
         this.H0 = new float[16];
         this.c1 = AndroidUtilities.dp(z10 ? 24.0f : 28.0f);
         this.Z0 = c6Var;
-        this.P0 = b60Var.getFragmentView();
+        this.P0 = c60Var.getFragmentView();
         setWillNotDraw(false);
-        this.n = b60Var;
-        this.V = b60Var.getClassGuid();
-        this.R = b60Var.x();
+        this.n = c60Var;
+        this.V = c60Var.getClassGuid();
+        this.R = c60Var.x();
         t50 t50Var = new t50(this, 0);
         this.r = t50Var;
         t50Var.setStyle(Paint.Style.STROKE);
@@ -186,7 +186,7 @@ public final class p60 extends u60 implements NotificationCenter.NotificationCen
         w2Var.o = 0.5f;
         w2Var.n = di.w2.f(0.5f);
         w2Var.g();
-        addView(w2Var.b, w7.a6.e(-1, -1, 119));
+        addView(w2Var.b, w7.z5.e(-1, -1, 119));
         u50 u50Var = new u50(this, context);
         this.h = u50Var;
         u50Var.setOutlineProvider(new dh.b(this, 2));
@@ -194,18 +194,18 @@ public final class p60 extends u60 implements NotificationCenter.NotificationCen
         u50Var.setWillNotDraw(false);
         int i11 = AndroidUtilities.roundPlayingMessageSize;
         addView(u50Var, new FrameLayout.LayoutParams(i11, i11, 17));
-        addView(w2Var.c, w7.a6.e(-1, -1, 119));
+        addView(w2Var.c, w7.z5.e(-1, -1, 119));
         LinearLayout linearLayout = new LinearLayout(context);
         this.b1 = linearLayout;
         linearLayout.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f));
         linearLayout.setOrientation(0);
-        addView(linearLayout, w7.a6.a(56.0f, 1.0f, 0.0f, 0.0f, 0.0f, -2, 83));
+        addView(linearLayout, w7.z5.a(56.0f, 1.0f, 0.0f, 0.0f, 0.0f, -2, 83));
         di.u2 u2Var = new di.u2(context);
         this.v = u2Var;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         u2Var.setScaleType(scaleType);
         u2Var.setContentDescription(LocaleController.getString(R.string.AccDescrSwitchCamera));
-        linearLayout.addView(u2Var, w7.a6.n(44, 44));
+        linearLayout.addView(u2Var, w7.z5.n(44, 44));
         final int i12 = 0;
         u2Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.q50
             public final /* synthetic */ p60 b;
@@ -265,7 +265,7 @@ public final class p60 extends u60 implements NotificationCenter.NotificationCen
         di.u2 u2Var2 = new di.u2(context);
         this.w = u2Var2;
         u2Var2.setScaleType(scaleType);
-        linearLayout.addView(u2Var2, w7.a6.n(44, 44));
+        linearLayout.addView(u2Var2, w7.z5.n(44, 44));
         final int i13 = 1;
         u2Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.q50
             public final /* synthetic */ p60 b;
@@ -335,7 +335,7 @@ public final class p60 extends u60 implements NotificationCenter.NotificationCen
         imageView.setScaleType(scaleType);
         imageView.setImageResource(R.drawable.video_mute);
         imageView.setAlpha(0.0f);
-        addView(imageView, w7.a6.e(48, 48, 17));
+        addView(imageView, w7.z5.e(48, 48, 17));
         Paint paint = new Paint(1);
         paint.setColor(i0.a.k(-16777216, 40));
         org.telegram.ui.rl rlVar = new org.telegram.ui.rl(this, getContext(), paint);
@@ -391,9 +391,9 @@ public final class p60 extends u60 implements NotificationCenter.NotificationCen
     @Override // org.telegram.ui.Components.u60
     public final void a(boolean z10) {
         t();
-        h81 h81Var = this.T;
-        if (h81Var != null) {
-            h81Var.H();
+        i81 i81Var = this.T;
+        if (i81Var != null) {
+            i81Var.H();
             this.T = null;
         }
         if (this.q0 == null) {
@@ -411,7 +411,7 @@ public final class p60 extends u60 implements NotificationCenter.NotificationCen
         } else {
             i60 i60Var = this.i1;
             if (i60Var != null) {
-                i60Var.i(0, new d60(0L, 0, 0, true, 0L));
+                i60Var.i(0, new e60(0L, 0, 0, true, 0L));
             }
         }
         if (this.f0 != null) {
@@ -429,8 +429,8 @@ public final class p60 extends u60 implements NotificationCenter.NotificationCen
 
     @Override // org.telegram.ui.Components.u60
     public final void b(float f7, int i10) {
-        h81 h81Var = this.T;
-        if (h81Var == null) {
+        i81 i81Var = this.T;
+        if (i81Var == null) {
             return;
         }
         if (i10 == 0) {
@@ -440,7 +440,7 @@ public final class p60 extends u60 implements NotificationCenter.NotificationCen
             t();
             this.T.B();
         } else if (i10 == 2) {
-            h81Var.L((long) (f7 * h81Var.p()), false);
+            i81Var.L((long) (f7 * i81Var.p()), false);
         }
     }
 
@@ -520,9 +520,9 @@ public final class p60 extends u60 implements NotificationCenter.NotificationCen
             return;
         }
         t();
-        h81 h81Var = this.T;
-        if (h81Var != null) {
-            h81Var.H();
+        i81 i81Var = this.T;
+        if (i81Var != null) {
+            i81Var.H();
             this.T = null;
         }
         int i14 = this.f;
@@ -532,9 +532,9 @@ public final class p60 extends u60 implements NotificationCenter.NotificationCen
             this.e1 = false;
             v();
             int i15 = this.l0 ? 4 : i10 == 3 ? 2 : 5;
-            a60 a60Var = this.m0;
+            b60 b60Var = this.m0;
             int i16 = this.V;
-            if (a60Var != null) {
+            if (b60Var != null) {
                 c10 = 1;
                 NotificationCenter.getInstance(i14).lambda$postNotificationNameOnUIThread$1(NotificationCenter.recordStopped, Integer.valueOf(i16), Integer.valueOf(i15));
                 int i17 = this.l0 ? 0 : i10 == 3 ? 2 : 1;
@@ -564,7 +564,7 @@ public final class p60 extends u60 implements NotificationCenter.NotificationCen
         }
         i60 i60Var = this.i1;
         if (i60Var != null && this.k0 > 800) {
-            i60Var.i(1, new d60(j10, i11, i12, z10, j11));
+            i60Var.i(1, new e60(j10, i11, i12, z10, j11));
             return;
         }
         if (BuildVars.DEBUG_VERSION && !this.f0.exists()) {
@@ -780,8 +780,8 @@ public final class p60 extends u60 implements NotificationCenter.NotificationCen
             }
             TextureView textureView = new TextureView(getContext());
             this.q0 = textureView;
-            textureView.setSurfaceTextureListener(new li.e(this, 1));
-            this.h.addView(this.q0, w7.a6.d(-1.0f, -1));
+            textureView.setSurfaceTextureListener(new x50(this, 0));
+            this.h.addView(this.q0, w7.z5.d(-1.0f, -1));
             this.Y0 = true;
             this.g1 = z10;
             setVisibility(0);
@@ -797,9 +797,9 @@ public final class p60 extends u60 implements NotificationCenter.NotificationCen
             if (i60Var != null) {
                 i60Var.T.sendMessage(i60Var.T.obtainMessage(5));
                 c(false);
-                h81 h81Var = this.T;
-                if (h81Var != null) {
-                    h81Var.H();
+                i81 i81Var = this.T;
+                if (i81Var != null) {
+                    i81Var.H();
                     this.T = null;
                 }
                 h(true);
@@ -820,9 +820,9 @@ public final class p60 extends u60 implements NotificationCenter.NotificationCen
         if (this.m0 != null) {
             NotificationCenter.getInstance(this.f).lambda$postNotificationNameOnUIThread$1(NotificationCenter.recordStopped, Integer.valueOf(this.V), Integer.valueOf(this.l0 ? 4 : 2));
             q();
-            a60 a60Var = this.m0;
+            b60 b60Var = this.m0;
             boolean z10 = this.l0;
-            a60Var.b(0L, z10 ? 0 : 2, true, 0, z10 ? 0 : -2);
+            b60Var.b(0L, z10 ? 0 : 2, true, 0, z10 ? 0 : -2);
             this.m0 = null;
         }
         if (!this.l0) {
@@ -971,7 +971,7 @@ public final class p60 extends u60 implements NotificationCenter.NotificationCen
             StringBuilder sb2 = new StringBuilder("InstantCamera preview w = ");
             sb2.append(sizeArr[0].mWidth);
             sb2.append(" h = ");
-            org.telegram.messenger.q.p(sizeArr[0].mHeight, sb2);
+            org.telegram.messenger.g0.o(sizeArr[0].mHeight, sb2);
         }
         return true;
     }
@@ -1064,12 +1064,12 @@ public final class p60 extends u60 implements NotificationCenter.NotificationCen
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        h81 h81Var;
+        i81 i81Var;
         if (motionEvent.getAction() == 0 && motionEvent.getY() > getMeasuredHeight() - getPaddingBottom()) {
             return false;
         }
-        if (motionEvent.getAction() == 0 && this.n != null && (h81Var = this.T) != null) {
-            boolean x10 = h81Var.x();
+        if (motionEvent.getAction() == 0 && this.n != null && (i81Var = this.T) != null) {
+            boolean x10 = i81Var.x();
             this.T.O(!x10);
             AnimatorSet animatorSet = this.L;
             if (animatorSet != null) {
@@ -1317,11 +1317,11 @@ public final class p60 extends u60 implements NotificationCenter.NotificationCen
         } else {
             if (this.u0) {
                 this.w0 = this.v0[!this.J ? 1 : 0];
-                a60 a60Var = this.m0;
-                Handler handler = a60Var.getHandler();
+                b60 b60Var = this.m0;
+                Handler handler = b60Var.getHandler();
                 if (handler != null) {
-                    a60Var.sendMessage(handler.obtainMessage(4), 0);
-                    a60Var.requestRender(true, true);
+                    b60Var.sendMessage(handler.obtainMessage(4), 0);
+                    b60Var.requestRender(true, true);
                     return;
                 }
                 return;
@@ -1345,19 +1345,19 @@ public final class p60 extends u60 implements NotificationCenter.NotificationCen
             }
             create.setRecordingVideo(true);
             this.n0[0] = new Size(this.w0.getPreviewWidth(), this.w0.getPreviewHeight());
-            a60 a60Var2 = this.m0;
+            b60 b60Var2 = this.m0;
             Camera2Session camera2Session2 = this.w0;
-            Handler handler2 = a60Var2.getHandler();
+            Handler handler2 = b60Var2.getHandler();
             if (handler2 != null) {
-                a60Var2.sendMessage(handler2.obtainMessage(3, camera2Session2), 0);
+                b60Var2.sendMessage(handler2.obtainMessage(3, camera2Session2), 0);
             }
         }
         o();
         this.K = false;
-        a60 a60Var3 = this.m0;
-        Handler handler3 = a60Var3.getHandler();
+        b60 b60Var3 = this.m0;
+        Handler handler3 = b60Var3.getHandler();
         if (handler3 != null) {
-            a60Var3.sendMessage(handler3.obtainMessage(2), 0);
+            b60Var3.sendMessage(handler3.obtainMessage(2), 0);
         }
     }
 
@@ -1430,7 +1430,7 @@ public final class p60 extends u60 implements NotificationCenter.NotificationCen
     }
 
     @Override // org.telegram.ui.Components.u60
-    public c60 getCameraContainer() {
+    public d60 getCameraContainer() {
         return this.h;
     }
 

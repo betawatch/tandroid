@@ -1,41 +1,128 @@
 package org.telegram.ui.Cells;
 
-import android.view.View;
-import org.telegram.ui.Components.ad;
-import org.telegram.ui.q11;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class m0 extends ad {
-    public final /* synthetic */ int k;
-    public final /* synthetic */ Object l;
+public final class m0 extends Drawable {
+    public final /* synthetic */ int a;
+    public Object b;
+    public int c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ m0(u1 u1Var, u1 u1Var2, int i10) {
-        super(u1Var);
-        this.k = i10;
-        this.l = u1Var2;
-    }
-
-    @Override // org.telegram.ui.Components.ad
-    public final void b() {
-        switch (this.k) {
-            case 0:
-                ((u1) this.l).a3();
-                break;
-            case 1:
-                ((u1) this.l).a3();
-                break;
-            default:
-                ((q11) this.l).invalidateSelf();
+    public m0(int i10) {
+        this.a = i10;
+        switch (i10) {
+            case 2:
+                this.c = 255;
                 break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m0(q11 q11Var) {
-        super((View) null);
-        this.k = 2;
-        this.l = q11Var;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), getBounds().width() / 2.0f, (Paint) this.b);
+                break;
+            case 1:
+                canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), Math.min(getBounds().width(), getBounds().height()) / 2.0f, (Paint) this.b);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getAlpha() {
+        switch (this.a) {
+            case 2:
+                return this.c;
+            default:
+                return super.getAlpha();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public ColorFilter getColorFilter() {
+        switch (this.a) {
+            case 2:
+                return (ColorFilter) this.b;
+            default:
+                return super.getColorFilter();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicHeight() {
+        switch (this.a) {
+            case 1:
+                return this.c;
+            default:
+                return super.getIntrinsicHeight();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicWidth() {
+        switch (this.a) {
+            case 1:
+                return this.c;
+            default:
+                return super.getIntrinsicWidth();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        switch (this.a) {
+            case 0:
+                return -2;
+            case 1:
+                return -2;
+            default:
+                return -1;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        switch (this.a) {
+            case 0:
+                ((Paint) this.b).setAlpha(org.telegram.ui.ActionBar.g6.m1(i10 / 255.0f, this.c));
+                break;
+            case 1:
+                ((Paint) this.b).setAlpha(i10);
+                break;
+            default:
+                this.c = i10;
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        switch (this.a) {
+            case 0:
+                ((Paint) this.b).setColorFilter(colorFilter);
+                break;
+            case 1:
+                break;
+            default:
+                this.b = colorFilter;
+                break;
+        }
+    }
+
+    public m0(Paint paint, int i10) {
+        this.a = 0;
+        this.b = paint;
+        this.c = i10;
+    }
+
+    private final void a(Canvas canvas) {
+    }
+
+    private final void b(ColorFilter colorFilter) {
     }
 }

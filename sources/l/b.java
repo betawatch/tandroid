@@ -2,11 +2,11 @@ package l;
 
 import android.view.View;
 import androidx.appcompat.view.menu.ActionMenuItemView;
-import m.u1;
+import m.w1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class b extends u1 {
+public final class b extends w1 {
     public final /* synthetic */ int s = 0;
     public final /* synthetic */ View v;
 
@@ -16,7 +16,7 @@ public final class b extends u1 {
         this.v = actionMenuItemView;
     }
 
-    @Override // m.u1
+    @Override // m.w1
     public final b0 b() {
         m.d dVar;
         switch (this.s) {
@@ -35,7 +35,7 @@ public final class b extends u1 {
         }
     }
 
-    @Override // m.u1
+    @Override // m.w1
     public final boolean c() {
         b0 b10;
         switch (this.s) {
@@ -49,15 +49,15 @@ public final class b extends u1 {
         }
     }
 
-    @Override // m.u1
+    @Override // m.w1
     public boolean d() {
         switch (this.s) {
             case 1:
-                m.h hVar = ((m.g) this.v).d;
-                if (hVar.K != null) {
+                m.i iVar = ((m.g) this.v).d;
+                if (iVar.K != null) {
                     return false;
                 }
-                hVar.f();
+                iVar.f();
                 return true;
             default:
                 return super.d();

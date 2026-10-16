@@ -9,9 +9,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.li0;
+import org.telegram.ui.ki0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w7 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final /* synthetic */ class w7 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new fi.p3(tLObject, this.b, (di.d) this.d, (org.telegram.ui.ActionBar.e3) this.e, this.c, tL_error));
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new fi.p3((li0) this.d, tL_error, tLObject, this.c, this.b, (TLRPC.Chat) this.e, 4));
+                AndroidUtilities.runOnUIThread(new fi.p3((ki0) this.d, tL_error, tLObject, this.c, this.b, (TLRPC.Chat) this.e, 4));
                 break;
             case 6:
                 AndroidUtilities.runOnUIThread(new y7((zh.p) this.d, (zh.o) this.e, this.b, tLObject, this.c));
@@ -74,9 +74,9 @@ public final /* synthetic */ class w7 implements RequestDelegate {
         this.c = j10;
     }
 
-    public /* synthetic */ w7(li0 li0Var, long j10, int i10, TLRPC.Chat chat) {
+    public /* synthetic */ w7(ki0 ki0Var, long j10, int i10, TLRPC.Chat chat) {
         this.a = 5;
-        this.d = li0Var;
+        this.d = ki0Var;
         this.c = j10;
         this.b = i10;
         this.e = chat;

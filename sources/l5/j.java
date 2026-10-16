@@ -2,13 +2,13 @@ package l5;
 
 import java.io.Closeable;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class j implements Closeable {
     public hd.a a;
-    public n5.c b;
+    public a9.r b;
     public hd.a c;
-    public l2.f d;
+    public m.l d;
     public hd.a e;
     public hd.a f;
 

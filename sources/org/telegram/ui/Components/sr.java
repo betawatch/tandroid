@@ -13,7 +13,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class sr extends lm0 {
     public final /* synthetic */ ur c;
@@ -114,20 +114,20 @@ public final class sr extends lm0 {
             bk0Var.setAutoRepeat(true);
             bk0Var.f(R.raw.utyan_schedule, 112, 112, null);
             bk0Var.d();
-            trVar.addView(bk0Var, w7.a6.t(112, 112, 49, 0, 24, 0, 0));
+            trVar.addView(bk0Var, w7.z5.t(112, 112, 49, 0, 24, 0, 0));
             TextView textView = new TextView(context);
             textView.setTypeface(AndroidUtilities.bold());
             textView.setText(z10 ? LocaleController.formatString(R.string.StartVoipChannelTitle, new Object[0]) : LocaleController.formatString(R.string.StartVoipChatTitle, new Object[0]));
             textView.setTextSize(1, 20.0f);
             textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.G6, false));
-            trVar.addView(textView, w7.a6.t(-2, -2, 1, 0, 14, 0, 7));
+            trVar.addView(textView, w7.z5.t(-2, -2, 1, 0, 14, 0, 7));
             TextView textView2 = new TextView(context);
             textView2.setTextSize(1, 14.0f);
             textView2.setGravity(1);
             textView2.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.j5, false));
             textView2.setText(z10 ? LocaleController.formatString(R.string.VoipChannelStart2, new Object[0]) : LocaleController.formatString(R.string.VoipGroupStart2, new Object[0]));
             textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
-            trVar.addView(textView2, w7.a6.t(-2, -2, 1, 28, 0, 28, 17));
+            trVar.addView(textView2, w7.z5.t(-2, -2, 1, 28, 0, 28, 17));
             frameLayout = trVar;
         } else {
             frameLayout = new org.telegram.ui.Cells.g4(1, 0, context, false);

@@ -1,43 +1,43 @@
 package di;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public interface oc {
     void B(float f7, int i10);
 
-    void E(float f7);
+    void D(float f7);
 
-    void I(float f7, boolean z10);
+    void E(float f7, boolean z10);
 
-    void P(long j10);
+    void M(long j10);
 
-    void R(boolean z10);
+    void N(boolean z10);
 
-    void T(float f7, int i10);
+    void O(float f7, int i10);
 
-    void V(float f7);
+    void P(float f7);
 
-    void a0(float f7);
+    void S(float f7);
 
-    void d0(float f7, int i10);
+    void Y(float f7, int i10);
+
+    void Z(float f7);
+
+    void c0();
 
     void e(int i10);
 
     void e0(float f7);
 
-    void f0();
+    void f0(int i10, long j10);
 
     void g(float f7);
 
-    void j(float f7);
+    void k(float f7);
 
-    void l0(float f7);
+    void l0(long j10);
 
     void n(long j10, boolean z10);
-
-    void n0(int i10, long j10);
-
-    void q0(long j10);
 
     void r();
 

@@ -6,10 +6,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.i31;
+import org.telegram.ui.Components.j31;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p7 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -34,7 +34,7 @@ public final /* synthetic */ class p7 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new x2((x8) this.d, tL_error, this.b, this.c, (Utilities.Callback) this.e, (org.telegram.ui.ActionBar.c6) this.f));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new i31((zh.g) this.d, tL_error, (TwoStepVerificationActivity) this.e, (Activity) this.f, this.b, this.c, tLObject));
+                AndroidUtilities.runOnUIThread(new j31((zh.g) this.d, tL_error, (TwoStepVerificationActivity) this.e, (Activity) this.f, this.b, this.c, tLObject));
                 break;
         }
     }

@@ -8,9 +8,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class g21 extends org.telegram.ui.Components.c91 {
+public final class g21 extends org.telegram.ui.Components.d91 {
     public boolean a;
     public final /* synthetic */ org.telegram.ui.Components.ss0 b;
 
@@ -18,11 +18,11 @@ public final class g21 extends org.telegram.ui.Components.c91 {
         this.b = ss0Var;
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final void a(ArrayList arrayList) {
         org.telegram.ui.Components.ss0 ss0Var = this.b;
-        uz0 uz0Var = ss0Var.G;
-        org.telegram.ui.Components.j91 j91Var = ss0Var.n;
+        tz0 tz0Var = ss0Var.G;
+        org.telegram.ui.Components.k91 k91Var = ss0Var.n;
         ArrayList arrayList2 = new ArrayList();
         int size = arrayList.size();
         int i10 = 0;
@@ -36,7 +36,7 @@ public final class g21 extends org.telegram.ui.Components.c91 {
                 arrayList2.add(num);
             }
         }
-        int f7 = f(j91Var.getCurrentPosition());
+        int f7 = f(k91Var.getCurrentPosition());
         bi.i8 i8Var = ss0Var.r;
         i8Var.getClass();
         HashMap hashMap = new HashMap();
@@ -65,13 +65,13 @@ public final class g21 extends org.telegram.ui.Components.c91 {
         arrayList3.addAll(arrayList4);
         if (f7 >= 0) {
             int i13 = i(f7);
-            j91Var.e(0.0f, i13, i13);
+            k91Var.e(0.0f, i13, i13);
         }
-        AndroidUtilities.cancelRunOnUIThread(uz0Var);
-        AndroidUtilities.runOnUIThread(uz0Var, 1000L);
+        AndroidUtilities.cancelRunOnUIThread(tz0Var);
+        AndroidUtilities.runOnUIThread(tz0Var, 1000L);
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final boolean c(int i10) {
         if (i10 == 0) {
             return false;
@@ -79,7 +79,7 @@ public final class g21 extends org.telegram.ui.Components.c91 {
         return (this.a && i10 == e() - 1) ? false : true;
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final View d(int i10) {
         if (i10 == -1) {
             return null;
@@ -87,12 +87,12 @@ public final class g21 extends org.telegram.ui.Components.c91 {
         return new View(this.b.getContext());
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final int e() {
         return this.b.r.h.size() + 1 + (this.a ? 1 : 0);
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final int f(int i10) {
         if (i10 == 0) {
             return 0;
@@ -103,7 +103,7 @@ public final class g21 extends org.telegram.ui.Components.c91 {
         return ((bi.p8) this.b.r.h.get(i10 - 1)).a;
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final CharSequence g(int i10) {
         if (i10 == 0) {
             return LocaleController.getString(R.string.StoriesAlbumNameAllStories);
@@ -119,7 +119,7 @@ public final class g21 extends org.telegram.ui.Components.c91 {
         return spannableStringBuilder;
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final int h(int i10) {
         if (this.a && i10 == e() - 1) {
             return -1;
@@ -138,7 +138,7 @@ public final class g21 extends org.telegram.ui.Components.c91 {
         return c10 + 1;
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final void b(View view, int i10, int i11) {
     }
 }

@@ -23,9 +23,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.RLottieNative;
-import org.telegram.ui.Components.fg0;
+import org.telegram.ui.Components.gg0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class VideoEditedInfo {
     public int account;
@@ -84,7 +84,7 @@ public class VideoEditedInfo {
     public boolean shouldLimitFps = true;
     public ArrayList<MediaCodecVideoConvertor.MixedSoundInfo> mixedSoundInfos = new ArrayList<>();
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class EmojiEntity extends TLRPC.TL_messageEntityCustomEmoji {
         public String documentAbsolutePath;
         public MediaEntity entity;
@@ -173,12 +173,12 @@ public class VideoEditedInfo {
                 serializedData.writeFloat(this.filterState.blurAngle);
                 int i11 = 0;
                 while (i11 < 4) {
-                    fg0 fg0Var = i11 == 0 ? this.filterState.curvesToolValue.a : i11 == 1 ? this.filterState.curvesToolValue.b : i11 == 2 ? this.filterState.curvesToolValue.c : this.filterState.curvesToolValue.d;
-                    serializedData.writeFloat(fg0Var.a);
-                    serializedData.writeFloat(fg0Var.b);
-                    serializedData.writeFloat(fg0Var.c);
-                    serializedData.writeFloat(fg0Var.d);
-                    serializedData.writeFloat(fg0Var.e);
+                    gg0 gg0Var = i11 == 0 ? this.filterState.curvesToolValue.a : i11 == 1 ? this.filterState.curvesToolValue.b : i11 == 2 ? this.filterState.curvesToolValue.c : this.filterState.curvesToolValue.d;
+                    serializedData.writeFloat(gg0Var.a);
+                    serializedData.writeFloat(gg0Var.b);
+                    serializedData.writeFloat(gg0Var.c);
+                    serializedData.writeFloat(gg0Var.d);
+                    serializedData.writeFloat(gg0Var.e);
                     i11++;
                 }
             } else {
@@ -354,12 +354,12 @@ public class VideoEditedInfo {
                             this.filterState.blurAngle = serializedData.readFloat(false);
                             int i11 = 0;
                             while (i11 < 4) {
-                                fg0 fg0Var = i11 == 0 ? this.filterState.curvesToolValue.a : i11 == 1 ? this.filterState.curvesToolValue.b : i11 == 2 ? this.filterState.curvesToolValue.c : this.filterState.curvesToolValue.d;
-                                fg0Var.a = serializedData.readFloat(false);
-                                fg0Var.b = serializedData.readFloat(false);
-                                fg0Var.c = serializedData.readFloat(false);
-                                fg0Var.d = serializedData.readFloat(false);
-                                fg0Var.e = serializedData.readFloat(false);
+                                gg0 gg0Var = i11 == 0 ? this.filterState.curvesToolValue.a : i11 == 1 ? this.filterState.curvesToolValue.b : i11 == 2 ? this.filterState.curvesToolValue.c : this.filterState.curvesToolValue.d;
+                                gg0Var.a = serializedData.readFloat(false);
+                                gg0Var.b = serializedData.readFloat(false);
+                                gg0Var.c = serializedData.readFloat(false);
+                                gg0Var.d = serializedData.readFloat(false);
+                                gg0Var.e = serializedData.readFloat(false);
                                 i11++;
                             }
                         }
@@ -436,7 +436,7 @@ public class VideoEditedInfo {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class Part extends TLObject {
         public org.telegram.ui.Components.f6 animatedFileDrawable;
         public float currentFrame;
@@ -561,7 +561,7 @@ public class VideoEditedInfo {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class MediaEntity {
         public static final byte TYPE_LINK = 7;
         public static final byte TYPE_LOCATION = 3;

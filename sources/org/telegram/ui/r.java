@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -42,14 +42,14 @@ public final /* synthetic */ class r implements Utilities.Callback {
                 k4 k4Var3 = this.b;
                 if (k4Var3.L != null && str2 != null) {
                     k4Var3.h0.k(false);
-                    if (!pf.d.f(Uri.parse(str2), false, null)) {
-                        if (!pf.d.l(k4Var3.L, str2, false)) {
+                    if (!pf.d.e(Uri.parse(str2), false, null)) {
+                        if (!pf.d.k(k4Var3.L, str2, false)) {
                             o3 o3Var = k4Var3.u0[0];
                             if (o3Var != null && o3Var.getWebView() != null) {
                                 k4Var3.u0[0].getWebView().loadUrl(str2);
                                 break;
                             } else {
-                                pf.d.n(str2);
+                                pf.d.m(str2);
                                 break;
                             }
                         }
@@ -58,22 +58,22 @@ public final /* synthetic */ class r implements Utilities.Callback {
                         if (x3Var != null) {
                             x3Var.dismiss(true);
                         }
-                        pf.d.k(k4Var3.L, str2, false, false, null);
+                        pf.d.j(k4Var3.L, str2, false, false, null);
                         break;
                     }
                 }
                 break;
             default:
-                org.telegram.ui.web.c1 c1Var = (org.telegram.ui.web.c1) obj;
+                org.telegram.ui.web.d1 d1Var = (org.telegram.ui.web.d1) obj;
                 k4 k4Var4 = this.b;
-                if (k4Var4.L != null && c1Var != null) {
+                if (k4Var4.L != null && d1Var != null) {
                     k4Var4.h0.k(false);
                     o3 o3Var2 = k4Var4.u0[0];
                     if (o3Var2 != null && o3Var2.getWebView() != null) {
-                        k4Var4.u0[0].getWebView().e(c1Var.c, c1Var.d);
+                        k4Var4.u0[0].getWebView().e(d1Var.c, d1Var.d);
                         break;
                     } else {
-                        pf.d.n(c1Var.c);
+                        pf.d.m(d1Var.c);
                         break;
                     }
                 }

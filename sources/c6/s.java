@@ -6,9 +6,8 @@ import android.os.Parcelable;
 import java.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
-import w7.g0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class s extends o6.a {
     public static final Parcelable.Creator<s> CREATOR = new v(19);
@@ -179,39 +178,39 @@ public final class s extends o6.a {
     public final void writeToParcel(Parcel parcel, int i10) {
         JSONObject jSONObject = this.x;
         this.w = jSONObject == null ? null : jSONObject.toString();
-        int q6 = g0.q(parcel, 20293);
+        int q6 = w7.f0.q(parcel, 20293);
         float f7 = this.a;
-        g0.s(parcel, 2, 4);
+        w7.f0.s(parcel, 2, 4);
         parcel.writeFloat(f7);
         int i11 = this.b;
-        g0.s(parcel, 3, 4);
+        w7.f0.s(parcel, 3, 4);
         parcel.writeInt(i11);
         int i12 = this.c;
-        g0.s(parcel, 4, 4);
+        w7.f0.s(parcel, 4, 4);
         parcel.writeInt(i12);
         int i13 = this.d;
-        g0.s(parcel, 5, 4);
+        w7.f0.s(parcel, 5, 4);
         parcel.writeInt(i13);
         int i14 = this.e;
-        g0.s(parcel, 6, 4);
+        w7.f0.s(parcel, 6, 4);
         parcel.writeInt(i14);
         int i15 = this.f;
-        g0.s(parcel, 7, 4);
+        w7.f0.s(parcel, 7, 4);
         parcel.writeInt(i15);
         int i16 = this.h;
-        g0.s(parcel, 8, 4);
+        w7.f0.s(parcel, 8, 4);
         parcel.writeInt(i16);
         int i17 = this.n;
-        g0.s(parcel, 9, 4);
+        w7.f0.s(parcel, 9, 4);
         parcel.writeInt(i17);
-        g0.l(parcel, 10, this.r);
+        w7.f0.l(parcel, 10, this.r);
         int i18 = this.s;
-        g0.s(parcel, 11, 4);
+        w7.f0.s(parcel, 11, 4);
         parcel.writeInt(i18);
         int i19 = this.v;
-        g0.s(parcel, 12, 4);
+        w7.f0.s(parcel, 12, 4);
         parcel.writeInt(i19);
-        g0.l(parcel, 13, this.w);
-        g0.r(parcel, q6);
+        w7.f0.l(parcel, 13, this.w);
+        w7.f0.r(parcel, q6);
     }
 }

@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class bx extends s4.b0 {
     public boolean I;
@@ -28,7 +28,7 @@ public final class bx extends s4.b0 {
     @Override // s4.b0
     public final int R0() {
         xy xyVar = this.L;
-        return (xyVar.s == 0 && this.M.W3() && xyVar.v == 2) ? 1 : 0;
+        return (xyVar.s == 0 && this.M.X3() && xyVar.v == 2) ? 1 : 0;
     }
 
     @Override // s4.b0, s4.n0
@@ -50,7 +50,7 @@ public final class bx extends s4.b0 {
             yy yyVar = this.M;
             sb2.append(yyVar.S1);
             sb2.append(" lastUpdateAction=");
-            sb2.append(yyVar.y3);
+            sb2.append(yyVar.z3);
             throw new RuntimeException(sb2.toString());
         }
     }
@@ -74,7 +74,7 @@ public final class bx extends s4.b0 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.M.T, 0.0f);
             this.K = ofFloat;
             ofFloat.addUpdateListener(new ah.l0(22, this, xyVar));
-            this.K.addListener(new org.telegram.ui.Components.u61(this, 20));
+            this.K.addListener(new org.telegram.ui.Components.v61(this, 20));
             this.K.setDuration(200L);
             this.K.setInterpolator(org.telegram.ui.Components.es.f);
             this.K.start();
@@ -177,19 +177,19 @@ public final class bx extends s4.b0 {
                 yy.n1(yyVar, xyVar, f10);
                 return super.o0(i15, eVar, y0Var);
             }
-            if (yyVar.K && yyVar.X2 == 0) {
+            if (yyVar.K && yyVar.Y2 == 0) {
                 kVar5 = ((org.telegram.ui.ActionBar.m2) yyVar).actionBar;
                 if (kVar5 != null) {
                     kVar6 = ((org.telegram.ui.ActionBar.m2) yyVar).actionBar;
                 }
                 z10 = true;
                 int paddingTop = xyVar.a.getPaddingTop();
-                int dp2 = (z10 || yyVar.F3.c() || yyVar.R) ? paddingTop : paddingTop - AndroidUtilities.dp(81.0f);
-                if (yyVar.R && xyVar.s == 0 && !yyVar.l2 && yyVar.V2 == 0) {
+                int dp2 = (z10 || yyVar.G3.c() || yyVar.R) ? paddingTop : paddingTop - AndroidUtilities.dp(81.0f);
+                if (yyVar.R && xyVar.s == 0 && !yyVar.l2 && yyVar.W2 == 0) {
                     z11 = true;
-                    if (yyVar.X2 == 0 && yyVar.getMessagesController().hasHiddenArchive() && xyVar.v == 2) {
+                    if (yyVar.Y2 == 0 && yyVar.getMessagesController().hasHiddenArchive() && xyVar.v == 2) {
                         i11 = 1;
-                        if ((i11 == 0 || (z10 && !yyVar.F3.c())) && i10 < 0) {
+                        if ((i11 == 0 || (z10 && !yyVar.G3.c())) && i10 < 0) {
                             xyVar.a.setOverScrollMode(0);
                             L0 = xyVar.c.L0();
                             z12 = z11;
@@ -199,7 +199,7 @@ public final class bx extends s4.b0 {
                             if (z14) {
                                 if (L0 != 0 || i11 == 0) {
                                     i12 = -1;
-                                    if (((L0 == z12 && i11 != 0) || L0 == 0) && z10 && z14 && !yyVar.F3.c()) {
+                                    if (((L0 == z12 && i11 != 0) || L0 == 0) && z10 && z14 && !yyVar.G3.c()) {
                                         if (yyVar.N == 0.0f) {
                                             xyVar.a.setOverScrollMode(0);
                                         } else {
@@ -258,17 +258,17 @@ public final class bx extends s4.b0 {
                                     i11++;
                                 }
                                 int i17 = (-(m12.getTop() - dp2)) + i16;
-                                if (!yyVar.F3.c()) {
+                                if (!yyVar.G3.c()) {
                                     kVar3 = ((org.telegram.ui.ActionBar.m2) yyVar).actionBar;
                                     if (kVar3 != null) {
                                         kVar4 = ((org.telegram.ui.ActionBar.m2) yyVar).actionBar;
                                     }
                                     i17 -= AndroidUtilities.dp(48.0f);
                                 }
-                                if (z10 && ((((ValueAnimator) xyVar.b.c) != null || yyVar.E0.g()) && !yyVar.F3.c() && !yyVar.R)) {
+                                if (z10 && ((((ValueAnimator) xyVar.b.c) != null || yyVar.E0.g()) && !yyVar.G3.c() && !yyVar.R)) {
                                     i17 += AndroidUtilities.dp(81.0f);
                                 }
-                                if ((((ValueAnimator) xyVar.b.c) != null || yyVar.E0.g()) && !yyVar.F3.c() && !yyVar.R) {
+                                if ((((ValueAnimator) xyVar.b.c) != null || yyVar.E0.g()) && !yyVar.G3.c() && !yyVar.R) {
                                     kVar = ((org.telegram.ui.ActionBar.m2) yyVar).actionBar;
                                     if (kVar != null) {
                                         kVar2 = ((org.telegram.ui.ActionBar.m2) yyVar).actionBar;
@@ -288,10 +288,10 @@ public final class bx extends s4.b0 {
                                         }
                                         xyVar.a.setViewsOffset(f7);
                                     }
-                                    if (xyVar.s == 0 || xyVar.v == 0 || !yyVar.W3() || yyVar.R) {
+                                    if (xyVar.s == 0 || xyVar.v == 0 || !yyVar.X3() || yyVar.R) {
                                         boolean z152 = z10;
                                         o02 = super.o0(i12, eVar, y0Var);
-                                        if (o02 == 0 && i10 < 0 && z14 && !yyVar.F3.c() && z152 && yyVar.t3 == 0.0f) {
+                                        if (o02 == 0 && i10 < 0 && z14 && !yyVar.G3.c() && z152 && yyVar.u3 == 0.0f) {
                                             yy.n1(yyVar, xyVar, yyVar.T - (yyVar.E0.getOverScrollCoef() * i10));
                                         }
                                         return o02;
@@ -305,8 +305,8 @@ public final class bx extends s4.b0 {
                                     View m13 = L02 == 0 ? xyVar.c.m(L02) : null;
                                     if (L02 != 0 || m13 == null || m13.getBottom() - dp2 < AndroidUtilities.dp(4.0f)) {
                                         boolean z16 = z10;
-                                        yyVar.c3 = 0L;
-                                        yyVar.e3 = false;
+                                        yyVar.d3 = 0L;
+                                        yyVar.f3 = false;
                                         boolean z17 = xyVar.v != 2;
                                         xyVar.v = 2;
                                         if (z17 && AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
@@ -332,13 +332,13 @@ public final class bx extends s4.b0 {
                                         }
                                     } else {
                                         boolean z18 = z10;
-                                        if (yyVar.c3 == 0) {
-                                            yyVar.c3 = System.currentTimeMillis();
+                                        if (yyVar.d3 == 0) {
+                                            yyVar.d3 = System.currentTimeMillis();
                                         }
                                         if (xyVar.v == 2 && (exVar = xyVar.n) != null) {
                                             exVar.h();
                                         }
-                                        if (z18 && !yyVar.F3.c() && !yyVar.R) {
+                                        if (z18 && !yyVar.G3.c() && !yyVar.R) {
                                             dp2 += AndroidUtilities.dp(81.0f);
                                         }
                                         float top2 = ((m13.getTop() - dp2) / m13.getMeasuredHeight()) + 1.0f;
@@ -346,9 +346,9 @@ public final class bx extends s4.b0 {
                                             top2 = 1.0f;
                                         }
                                         boolean z19 = z18;
-                                        boolean z20 = top2 > 0.85f && System.currentTimeMillis() - yyVar.c3 > 220;
-                                        if (yyVar.e3 != z20) {
-                                            yyVar.e3 = z20;
+                                        boolean z20 = top2 > 0.85f && System.currentTimeMillis() - yyVar.d3 > 220;
+                                        if (yyVar.f3 != z20) {
+                                            yyVar.f3 = z20;
                                             if (xyVar.v == 2) {
                                                 try {
                                                     xyVar.a.performHapticFeedback(3, 2);
@@ -374,7 +374,7 @@ public final class bx extends s4.b0 {
                                     if (m13 != null) {
                                         m13.invalidate();
                                     }
-                                    if (xyVar.v == 1 && o03 == 0 && i10 < 0 && z14 && !yyVar.F3.c() && z13 && yyVar.t3 == 0.0f) {
+                                    if (xyVar.v == 1 && o03 == 0 && i10 < 0 && z14 && !yyVar.G3.c() && z13 && yyVar.u3 == 0.0f) {
                                         yy.n1(yyVar, xyVar, yyVar.T - (AndroidUtilities.lerp(0.2f, 0.5f, yyVar.E0.n0) * i10));
                                     }
                                     return o03;
@@ -430,7 +430,7 @@ public final class bx extends s4.b0 {
 
     @Override // s4.b0, s4.n0
     public final void v0(RecyclerView recyclerView, s4.y0 y0Var, int i10) {
-        if (this.M.W3() && i10 == 1) {
+        if (this.M.X3() && i10 == 1) {
             super.v0(recyclerView, y0Var, i10);
             return;
         }

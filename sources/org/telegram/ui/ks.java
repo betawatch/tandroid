@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class ks extends EditTextBoldCursor {
     public static final org.telegram.ui.Components.hw0 I;
@@ -40,16 +40,16 @@ public abstract class ks extends EditTextBoldCursor {
     public Bitmap y;
 
     static {
-        org.telegram.ui.Components.hw0 hw0Var = new org.telegram.ui.Components.hw0(new m4.w0(26), new m4.w0(27));
+        org.telegram.ui.Components.hw0 hw0Var = new org.telegram.ui.Components.hw0(new m4.v0(24), new m4.v0(25));
         hw0Var.c = 100.0f;
         I = hw0Var;
-        org.telegram.ui.Components.hw0 hw0Var2 = new org.telegram.ui.Components.hw0(new m4.w0(28), new m4.w0(29));
+        org.telegram.ui.Components.hw0 hw0Var2 = new org.telegram.ui.Components.hw0(new m4.v0(26), new m4.v0(27));
         hw0Var2.c = 100.0f;
         J = hw0Var2;
-        org.telegram.ui.Components.hw0 hw0Var3 = new org.telegram.ui.Components.hw0(new is(0), new is(1));
+        org.telegram.ui.Components.hw0 hw0Var3 = new org.telegram.ui.Components.hw0(new m4.v0(28), new m4.v0(29));
         hw0Var3.c = 100.0f;
         K = hw0Var3;
-        org.telegram.ui.Components.hw0 hw0Var4 = new org.telegram.ui.Components.hw0(new is(2), new is(3));
+        org.telegram.ui.Components.hw0 hw0Var4 = new org.telegram.ui.Components.hw0(new is(0), new is(1));
         hw0Var4.c = 100.0f;
         L = hw0Var4;
     }
@@ -99,9 +99,9 @@ public abstract class ks extends EditTextBoldCursor {
             this.e = 1.0f;
             return;
         }
-        o1.l k10 = org.telegram.ui.Cells.d0.k(1.0f, 500.0f, 0.75f);
-        k10.i = 100.0f;
-        kVar.u = k10;
+        o1.l j10 = org.telegram.ui.Cells.c1.j(1.0f, 500.0f, 0.75f);
+        j10.i = 100.0f;
+        kVar.u = j10;
         kVar.b = 100.0f;
         kVar.c = true;
         kVar.a = 4000.0f;

@@ -30,7 +30,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class ra0 {
     public static final Pattern a = Pattern.compile("^\\[\\^([^\\]]+)\\]:[ \\t]*(.*)$");
@@ -332,7 +332,7 @@ public abstract class ra0 {
             } catch (Throwable th4) {
                 FileLog.e(th4);
             }
-            Collections.sort(arrayList5, Comparator$-CC.comparingInt(new bi.s6(10)));
+            Collections.sort(arrayList5, Comparator$-CC.comparingInt(new bi.s6(11)));
             int size3 = arrayList5.size();
             int i16 = 0;
             while (i16 < size3) {

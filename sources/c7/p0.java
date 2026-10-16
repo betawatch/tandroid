@@ -4,19 +4,19 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class p0 extends o6.a {
     public static final Parcelable.Creator<p0> CREATOR = new w.a(22);
-    public final n7.s0 a;
-    public final n7.s0 b;
-    public final n7.s0 c;
+    public final n7.t0 a;
+    public final n7.t0 b;
+    public final n7.t0 c;
     public final int d;
 
-    public p0(n7.s0 s0Var, n7.s0 s0Var2, n7.s0 s0Var3, int i10) {
-        this.a = s0Var;
-        this.b = s0Var2;
-        this.c = s0Var3;
+    public p0(n7.t0 t0Var, n7.t0 t0Var2, n7.t0 t0Var3, int i10) {
+        this.a = t0Var;
+        this.b = t0Var2;
+        this.c = t0Var3;
         this.d = i10;
     }
 
@@ -33,12 +33,12 @@ public final class p0 extends o6.a {
     }
 
     public final String toString() {
-        n7.s0 s0Var = this.a;
-        String c10 = u6.b.c(s0Var == null ? null : s0Var.t());
-        n7.s0 s0Var2 = this.b;
-        String c11 = u6.b.c(s0Var2 == null ? null : s0Var2.t());
-        n7.s0 s0Var3 = this.c;
-        String c12 = u6.b.c(s0Var3 != null ? s0Var3.t() : null);
+        n7.t0 t0Var = this.a;
+        String c10 = u6.b.c(t0Var == null ? null : t0Var.t());
+        n7.t0 t0Var2 = this.b;
+        String c11 = u6.b.c(t0Var2 == null ? null : t0Var2.t());
+        n7.t0 t0Var3 = this.c;
+        String c12 = u6.b.c(t0Var3 != null ? t0Var3.t() : null);
         StringBuilder w9 = a1.g.w("HmacSecretExtension{coseKeyAgreement=", c10, ", saltEnc=", c11, ", saltAuth=");
         w9.append(c12);
         w9.append(", getPinUvAuthProtocol=");
@@ -47,15 +47,15 @@ public final class p0 extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.g0.q(parcel, 20293);
-        n7.s0 s0Var = this.a;
-        w7.g0.c(parcel, 1, s0Var == null ? null : s0Var.t());
-        n7.s0 s0Var2 = this.b;
-        w7.g0.c(parcel, 2, s0Var2 == null ? null : s0Var2.t());
-        n7.s0 s0Var3 = this.c;
-        w7.g0.c(parcel, 3, s0Var3 != null ? s0Var3.t() : null);
-        w7.g0.s(parcel, 4, 4);
+        int q6 = w7.f0.q(parcel, 20293);
+        n7.t0 t0Var = this.a;
+        w7.f0.c(parcel, 1, t0Var == null ? null : t0Var.t());
+        n7.t0 t0Var2 = this.b;
+        w7.f0.c(parcel, 2, t0Var2 == null ? null : t0Var2.t());
+        n7.t0 t0Var3 = this.c;
+        w7.f0.c(parcel, 3, t0Var3 != null ? t0Var3.t() : null);
+        w7.f0.s(parcel, 4, 4);
         parcel.writeInt(this.d);
-        w7.g0.r(parcel, q6);
+        w7.f0.r(parcel, q6);
     }
 }

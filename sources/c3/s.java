@@ -2,7 +2,6 @@ package c3;
 
 import ah.l0;
 import android.animation.ObjectAnimator;
-import org.telegram.ui.Components.am;
 import org.telegram.ui.Components.fb;
 import org.telegram.ui.Components.hb;
 import org.telegram.ui.Components.ib;
@@ -10,26 +9,27 @@ import org.telegram.ui.Components.qg;
 import org.telegram.ui.Components.vb;
 import org.telegram.ui.Components.wb;
 import org.telegram.ui.Components.xt;
+import org.telegram.ui.Components.zl;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class s implements vb {
     public long a;
 
-    public boolean a(nf.m mVar) {
-        return mVar.b == this.a && nf.a.c(mVar);
-    }
-
     @Override // org.telegram.ui.Components.vb
-    public void a0(wb wbVar, hb hbVar, qg qgVar, am amVar) {
+    public void X(wb wbVar, hb hbVar, qg qgVar, zl zlVar) {
         wbVar.setInOutOffset(wbVar.getMeasuredHeight());
-        amVar.accept(Float.valueOf(wbVar.getTranslationY()));
+        zlVar.accept(Float.valueOf(wbVar.getTranslationY()));
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(wbVar, wb.IN_OUT_OFFSET_Y2, 0.0f);
         ofFloat.setDuration(this.a);
         ofFloat.setInterpolator(xt.d);
         ofFloat.addListener(new bi.t(hbVar, qgVar, 16));
-        ofFloat.addUpdateListener(new l0(14, amVar, wbVar));
+        ofFloat.addUpdateListener(new l0(14, zlVar, wbVar));
         ofFloat.start();
+    }
+
+    public boolean a(nf.m mVar) {
+        return mVar.b == this.a && nf.a.c(mVar);
     }
 
     @Override // org.telegram.ui.Components.vb

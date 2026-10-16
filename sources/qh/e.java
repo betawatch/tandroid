@@ -12,15 +12,15 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
-import r0.j0;
+import r0.i0;
 import r0.l1;
+import r0.p0;
 import r0.q0;
-import r0.r0;
 import r0.u0;
 import r0.w0;
-import w7.m6;
+import w7.l6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class e extends b2.h {
     public static final RectF e;
@@ -37,16 +37,16 @@ public final class e extends b2.h {
 
     public e(ViewGroup viewGroup) {
         this.b = viewGroup;
-        WeakHashMap weakHashMap = j0.a;
+        WeakHashMap weakHashMap = i0.a;
         if (Build.VERSION.SDK_INT >= 30) {
             u0.g(viewGroup, this);
             return;
         }
-        PathInterpolator pathInterpolator = r0.e;
-        View.OnApplyWindowInsetsListener q0Var = new q0(viewGroup, this);
-        viewGroup.setTag(R.id.tag_window_insets_animation_callback, q0Var);
+        PathInterpolator pathInterpolator = q0.e;
+        View.OnApplyWindowInsetsListener p0Var = new p0(viewGroup, this);
+        viewGroup.setTag(R.id.tag_window_insets_animation_callback, p0Var);
         if (viewGroup.getTag(R.id.tag_compat_insets_dispatch) == null && viewGroup.getTag(R.id.tag_on_apply_window_listener) == null) {
-            viewGroup.setOnApplyWindowInsetsListener(q0Var);
+            viewGroup.setOnApplyWindowInsetsListener(p0Var);
         }
     }
 
@@ -89,7 +89,7 @@ public final class e extends b2.h {
         while (it.hasNext()) {
             i10 |= ((w0) it.next()).a.c();
         }
-        if (m6.a(i10, 8)) {
+        if (l6.a(i10, 8)) {
             Iterator it2 = this.d.iterator();
             while (it2.hasNext()) {
                 d dVar = (d) it2.next();

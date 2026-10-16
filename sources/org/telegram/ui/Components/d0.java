@@ -17,7 +17,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class d0 extends FrameLayout {
     public final int a;
@@ -38,13 +38,13 @@ public final class d0 extends FrameLayout {
         b0Var.setOrientation(0);
         this.h = new g6(b0Var, 0L, 320L, es.h);
         if (!z10) {
-            addView(b0Var, w7.a6.e(-1, -1, 119));
+            addView(b0Var, w7.z5.e(-1, -1, 119));
             return;
         }
         HorizontalScrollView horizontalScrollView = new HorizontalScrollView(context);
         horizontalScrollView.setFillViewport(true);
         horizontalScrollView.addView(b0Var);
-        addView(horizontalScrollView, w7.a6.e(-1, -1, 119));
+        addView(horizontalScrollView, w7.z5.e(-1, -1, 119));
     }
 
     public final void a(int i10, String str, Utilities.Callback callback) {
@@ -57,7 +57,7 @@ public final class d0 extends FrameLayout {
         c0Var.h.setImageResource(i10);
         c0Var.n.setText(str);
         c0Var.setOnClickListener(new a0(childCount, 0, callback));
-        b0Var.addView(c0Var, w7.a6.o(0, -1, 1.0f, 119));
+        b0Var.addView(c0Var, w7.z5.o(0, -1, 1.0f, 119));
     }
 
     public final void b(TL_aicompose.AiComposeTone aiComposeTone, Utilities.Callback callback) {
@@ -100,7 +100,7 @@ public final class d0 extends FrameLayout {
         c0Var.setOnClickListener(new org.telegram.ui.xf(10, callback, aiComposeTone));
         c0Var.setOnLongClickListener(new bi.g3(1, this, c0Var));
         b0 b0Var = this.c;
-        b0Var.addView(c0Var, w7.a6.o(b0Var.getOrientation() == 0 ? 0 : -1, b0Var.getOrientation() != 1 ? -1 : 0, 1.0f, 119));
+        b0Var.addView(c0Var, w7.z5.o(b0Var.getOrientation() == 0 ? 0 : -1, b0Var.getOrientation() != 1 ? -1 : 0, 1.0f, 119));
     }
 
     public final void c(int i10) {

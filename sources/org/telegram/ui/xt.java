@@ -42,7 +42,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class xt {
     public static TextPaint f0;
@@ -86,7 +86,7 @@ public final class xt {
     public float g;
     public View h;
     public boolean i;
-    public org.telegram.ui.Components.m21 j;
+    public org.telegram.ui.Components.n21 j;
     public org.telegram.ui.ActionBar.m1 k;
     public vt l;
     public boolean m;
@@ -152,7 +152,7 @@ public final class xt {
         boolean z10;
         float f10;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2;
-        rh.r rVar;
+        rh.q qVar;
         vt vtVar = xtVar.l;
         if (vtVar == null) {
             return false;
@@ -167,23 +167,23 @@ public final class xt {
         boolean z12 = (MessageObject.isVoted(d) || d.poll.closed || xtVar.l.c()) ? false : true;
         boolean z13 = !z12 && MessageObject.canUnvote(d);
         if (z11) {
-            rh.r rVar2 = new rh.r(actionBarPopupWindow$ActionBarPopupWindowLayout.getContext(), xtVar.r, xtVar.c0);
-            org.telegram.ui.Components.m80 m80Var = new org.telegram.ui.Components.m80(actionBarPopupWindow$ActionBarPopupWindowLayout, xtVar.c0);
-            int b10 = actionBarPopupWindow$ActionBarPopupWindowLayout.b(m80Var.B);
+            rh.q qVar2 = new rh.q(actionBarPopupWindow$ActionBarPopupWindowLayout.getContext(), xtVar.r, xtVar.c0);
+            org.telegram.ui.Components.l80 l80Var = new org.telegram.ui.Components.l80(actionBarPopupWindow$ActionBarPopupWindowLayout, xtVar.c0);
+            int b10 = actionBarPopupWindow$ActionBarPopupWindowLayout.b(l80Var.B);
             int i10 = org.telegram.ui.ActionBar.g6.E8;
-            m80Var.T(org.telegram.ui.ActionBar.g6.m1(0.06f, org.telegram.ui.ActionBar.g6.w0(i10, xtVar.c0)));
+            l80Var.T(org.telegram.ui.ActionBar.g6.m1(0.06f, org.telegram.ui.ActionBar.g6.w0(i10, xtVar.c0)));
             bh.b bVar = xtVar.t;
             eh.e k10 = fh.b.k(xtVar.c0);
             org.telegram.ui.ActionBar.m2 m2Var = null;
-            LinearLayout linearLayout = m80Var.B;
+            LinearLayout linearLayout = l80Var.B;
             if (linearLayout != null) {
                 dh.d c10 = bVar.c(linearLayout, null, true);
                 c10.o(k10);
                 linearLayout.setBackground(c10);
             }
             z10 = true;
-            m80Var.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new gj(actionBarPopupWindow$ActionBarPopupWindowLayout, 16), false);
-            m80Var.k();
+            l80Var.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new gj(actionBarPopupWindow$ActionBarPopupWindowLayout, 16), false);
+            l80Var.k();
             MessageObject A = xtVar.l.A();
             Activity activity = xtVar.w;
             if ((activity instanceof LaunchActivity) && A != null) {
@@ -192,35 +192,35 @@ public final class xt {
                     m2Var = launchActivity.O().getLastFragment();
                 }
                 if (m2Var != null) {
-                    org.telegram.ui.Components.h71 a2 = rVar2.a(m2Var, A.getDialogId(), A.getId(), h.option, pollResult.voters, new mt(0, xtVar, m2Var));
-                    rVar = rVar2;
-                    m80Var.q(a2);
-                    rVar.setText(LocaleController.formatPluralString("PollVotesCount", pollResult.voters, new Object[0]));
-                    rVar.a.d(pollResult.recent_voters, false);
-                    rVar.setLayoutParams(w7.a6.n(-1, 48));
-                    rVar.setBackground(org.telegram.ui.ActionBar.g6.Z(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.I5, xtVar.c0), 12, 0));
-                    rVar.setOnClickListener(new di.m4(actionBarPopupWindow$ActionBarPopupWindowLayout, b10, 17));
-                    actionBarPopupWindow$ActionBarPopupWindowLayout.addView(rVar);
+                    org.telegram.ui.Components.i71 a2 = qVar2.a(m2Var, A.getDialogId(), A.getId(), h.option, pollResult.voters, new mt(0, xtVar, m2Var));
+                    qVar = qVar2;
+                    l80Var.q(a2);
+                    qVar.setText(LocaleController.formatPluralString("PollVotesCount", pollResult.voters, new Object[0]));
+                    qVar.a.d(pollResult.recent_voters, false);
+                    qVar.setLayoutParams(w7.z5.n(-1, 48));
+                    qVar.setBackground(org.telegram.ui.ActionBar.g6.Z(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.I5, xtVar.c0), 12, 0));
+                    qVar.setOnClickListener(new di.m4(actionBarPopupWindow$ActionBarPopupWindowLayout, b10, 17));
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.addView(qVar);
                     org.telegram.ui.ActionBar.j1 j1Var = new org.telegram.ui.ActionBar.j1(actionBarPopupWindow$ActionBarPopupWindowLayout.getContext(), xtVar.c0);
                     j1Var.setTag(R.id.fit_width_tag, 1);
                     f7 = 0.06f;
                     j1Var.setColor(org.telegram.ui.ActionBar.g6.m1(0.06f, org.telegram.ui.ActionBar.g6.w0(i10, xtVar.c0)));
-                    j1Var.setLayoutParams(w7.a6.n(-1, 8));
+                    j1Var.setLayoutParams(w7.z5.n(-1, 8));
                     actionBarPopupWindow$ActionBarPopupWindowLayout.addView(j1Var);
                 }
             }
-            rVar = rVar2;
-            rVar.setText(LocaleController.formatPluralString("PollVotesCount", pollResult.voters, new Object[0]));
-            rVar.a.d(pollResult.recent_voters, false);
-            rVar.setLayoutParams(w7.a6.n(-1, 48));
-            rVar.setBackground(org.telegram.ui.ActionBar.g6.Z(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.I5, xtVar.c0), 12, 0));
-            rVar.setOnClickListener(new di.m4(actionBarPopupWindow$ActionBarPopupWindowLayout, b10, 17));
-            actionBarPopupWindow$ActionBarPopupWindowLayout.addView(rVar);
+            qVar = qVar2;
+            qVar.setText(LocaleController.formatPluralString("PollVotesCount", pollResult.voters, new Object[0]));
+            qVar.a.d(pollResult.recent_voters, false);
+            qVar.setLayoutParams(w7.z5.n(-1, 48));
+            qVar.setBackground(org.telegram.ui.ActionBar.g6.Z(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.I5, xtVar.c0), 12, 0));
+            qVar.setOnClickListener(new di.m4(actionBarPopupWindow$ActionBarPopupWindowLayout, b10, 17));
+            actionBarPopupWindow$ActionBarPopupWindowLayout.addView(qVar);
             org.telegram.ui.ActionBar.j1 j1Var2 = new org.telegram.ui.ActionBar.j1(actionBarPopupWindow$ActionBarPopupWindowLayout.getContext(), xtVar.c0);
             j1Var2.setTag(R.id.fit_width_tag, 1);
             f7 = 0.06f;
             j1Var2.setColor(org.telegram.ui.ActionBar.g6.m1(0.06f, org.telegram.ui.ActionBar.g6.w0(i10, xtVar.c0)));
-            j1Var2.setLayoutParams(w7.a6.n(-1, 8));
+            j1Var2.setLayoutParams(w7.z5.n(-1, 8));
             actionBarPopupWindow$ActionBarPopupWindowLayout.addView(j1Var2);
         } else {
             f7 = 0.06f;
@@ -242,7 +242,7 @@ public final class xt {
             org.telegram.ui.ActionBar.j1 j1Var3 = new org.telegram.ui.ActionBar.j1(actionBarPopupWindow$ActionBarPopupWindowLayout2.getContext(), xtVar.c0);
             j1Var3.setTag(R.id.fit_width_tag, 1);
             j1Var3.setColor(org.telegram.ui.ActionBar.g6.m1(f10, org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.E8, xtVar.c0)));
-            j1Var3.setLayoutParams(w7.a6.n(-1, 8));
+            j1Var3.setLayoutParams(w7.z5.n(-1, 8));
             actionBarPopupWindow$ActionBarPopupWindowLayout2.addView(j1Var3);
         }
         if (z11 || z12 || z13) {
@@ -317,7 +317,7 @@ public final class xt {
         }
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = this.L;
         if (actionBarPopupWindow$ActionBarPopupWindowLayout != null) {
-            org.telegram.messenger.yh.s(actionBarPopupWindow$ActionBarPopupWindowLayout.animate().alpha(0.0f).scaleX(0.8f).scaleY(0.8f).translationY(AndroidUtilities.dp(-12.0f)), org.telegram.ui.Components.es.h, 320L);
+            org.telegram.messenger.sk.t(actionBarPopupWindow$ActionBarPopupWindowLayout.animate().alpha(0.0f).scaleX(0.8f).scaleY(0.8f).translationY(AndroidUtilities.dp(-12.0f)), org.telegram.ui.Components.es.h, 320L);
             this.L = null;
             this.K = false;
             if (this.R) {
@@ -386,7 +386,7 @@ public final class xt {
                         } else if (childAt instanceof org.telegram.ui.Components.vv) {
                             imageReceiver.setRoundRadius(0);
                         } else if (!(childAt instanceof org.telegram.ui.Components.ez) || ((org.telegram.ui.Components.ez) childAt).getSpan() == null) {
-                            if ((childAt instanceof org.telegram.ui.Components.jz0) && (((org.telegram.ui.Components.jz0) childAt).b instanceof org.telegram.ui.Components.s5)) {
+                            if ((childAt instanceof org.telegram.ui.Components.kz0) && (((org.telegram.ui.Components.kz0) childAt).b instanceof org.telegram.ui.Components.s5)) {
                                 imageReceiver.setRoundRadius(0);
                             }
                             i10 = -1;
@@ -398,9 +398,9 @@ public final class xt {
                         this.a = x10;
                         this.b = y3;
                         this.h = childAt;
-                        org.telegram.ui.Components.m21 m21Var = new org.telegram.ui.Components.m21(this, mm0Var, i10, c6Var, 2);
-                        this.j = m21Var;
-                        AndroidUtilities.runOnUIThread(m21Var, 200L);
+                        org.telegram.ui.Components.n21 n21Var = new org.telegram.ui.Components.n21(this, mm0Var, i10, c6Var, 2);
+                        this.j = n21Var;
+                        AndroidUtilities.runOnUIThread(n21Var, 200L);
                         return true;
                     }
                 }
@@ -433,10 +433,10 @@ public final class xt {
         vt vtVar3 = this.l;
         if ((vtVar3 == null || vtVar3.i()) && (this.j != null || this.E)) {
             if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3 || motionEvent.getAction() == 6) {
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.k31(15, mm0Var, obj), 150L);
-                org.telegram.ui.Components.m21 m21Var = this.j;
-                if (m21Var != null) {
-                    AndroidUtilities.cancelRunOnUIThread(m21Var);
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.n51(10, mm0Var, obj), 150L);
+                org.telegram.ui.Components.n21 n21Var = this.j;
+                if (n21Var != null) {
+                    AndroidUtilities.cancelRunOnUIThread(n21Var);
                     this.j = null;
                     return false;
                 }
@@ -570,8 +570,8 @@ public final class xt {
                                                 if (document != null) {
                                                     t(document, null, MessageObject.findAnimatedEmojiEmoticon(document, null, Integer.valueOf(this.r)), null, null, i10, false, null, c6Var, 0);
                                                 }
-                                            } else if (view2 instanceof org.telegram.ui.Components.jz0) {
-                                                Drawable drawable = ((org.telegram.ui.Components.jz0) view2).b;
+                                            } else if (view2 instanceof org.telegram.ui.Components.kz0) {
+                                                Drawable drawable = ((org.telegram.ui.Components.kz0) view2).b;
                                                 TLRPC.Document document5 = drawable instanceof org.telegram.ui.Components.s5 ? ((org.telegram.ui.Components.s5) drawable).e : null;
                                                 if (document5 != null) {
                                                     t(document5, null, MessageObject.findAnimatedEmojiEmoticon(document5, null, Integer.valueOf(this.r)), null, null, i10, false, null, c6Var, 0);
@@ -878,9 +878,9 @@ public final class xt {
     }
 
     public final void u() {
-        org.telegram.ui.Components.m21 m21Var = this.j;
-        if (m21Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(m21Var);
+        org.telegram.ui.Components.n21 n21Var = this.j;
+        if (n21Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(n21Var);
             this.j = null;
         }
         View view = this.h;
@@ -931,12 +931,12 @@ public final class xt {
         this.y.setSystemUiVisibility(1792);
         l0 l0Var2 = this.y;
         kt ktVar = new kt(this);
-        WeakHashMap weakHashMap = r0.j0.a;
-        r0.b0.i(l0Var2, ktVar);
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.a0.i(l0Var2, ktVar);
         ah.v vVar = new ah.v(this, activity);
         this.z = vVar;
         vVar.setFocusable(false);
-        this.y.addView(this.z, w7.a6.e(-1, -1, 51));
+        this.y.addView(this.z, w7.z5.e(-1, -1, 51));
         this.z.setOnTouchListener(new e0(this, 1));
         MessagesController.getInstance(this.r);
         this.I = MessagesController.getGlobalEmojiSettings().getInt("kbd_height", AndroidUtilities.dp(200.0f));

@@ -2,9 +2,9 @@ package bi;
 
 import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class n3 extends m4.c {
+public final class n3 extends m2.t {
     public final /* synthetic */ int d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -13,8 +13,8 @@ public final class n3 extends m4.c {
         this.d = i10;
     }
 
-    @Override // m4.c
-    public final void w() {
+    @Override // m2.t
+    public final void x() {
         switch (this.d) {
             case 0:
                 SparseIntArray sparseIntArray = (SparseIntArray) this.b;

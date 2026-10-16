@@ -1,29 +1,36 @@
 package org.telegram.messenger.video;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ VideoPlayerHolderBase b;
-    public final /* synthetic */ float c;
 
-    public /* synthetic */ k(VideoPlayerHolderBase videoPlayerHolderBase, float f7, int i10) {
+    public /* synthetic */ k(VideoPlayerHolderBase videoPlayerHolderBase, int i10) {
         this.a = i10;
         this.b = videoPlayerHolderBase;
-        this.c = f7;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$setSpeed$5(this.c);
+                this.b.lambda$new$13();
                 break;
             case 1:
-                this.b.lambda$play$7(this.c);
+                this.b.lambda$start$1();
+                break;
+            case 2:
+                this.b.lambda$new$14();
+                break;
+            case 3:
+                this.b.lambda$play$6();
+                break;
+            case 4:
+                this.b.lambda$pause$4();
                 break;
             default:
-                this.b.lambda$setVolume$10(this.c);
+                this.b.lambda$loopBack$9();
                 break;
         }
     }

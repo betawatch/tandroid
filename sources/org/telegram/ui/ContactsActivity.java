@@ -48,9 +48,9 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public class ContactsActivity extends org.telegram.ui.ActionBar.m2 implements ne.d, NotificationCenter.NotificationCenterDelegate, jh0, qh.d {
+public class ContactsActivity extends org.telegram.ui.ActionBar.m2 implements ne.d, NotificationCenter.NotificationCenterDelegate, ih0, qh.d {
     public boolean E;
     public boolean F;
     public boolean G;
@@ -186,9 +186,9 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.m2 implements ne
                     b.b(contactsActivity.currentAccount);
                     return;
                 }
-                ik0 ik0Var = new ik0(contactsActivity.getParentActivity(), contactsActivity);
-                ik0Var.x(str, true);
-                ik0Var.show();
+                hk0 hk0Var = new hk0(contactsActivity.getParentActivity(), contactsActivity);
+                hk0Var.x(str, true);
+                hk0Var.show();
                 return;
             }
             TLRPC.User user = (TLRPC.User) E;
@@ -272,7 +272,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.m2 implements ne
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(contactsActivity.getParentActivity());
                 alertDialog$Builder.a.T = LocaleController.getString(R.string.InviteUser);
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
-                alertDialog$Builder.k(LocaleController.getString(R.string.OK), new org.telegram.ui.Components.t2(26, contactsActivity, str2));
+                alertDialog$Builder.k(LocaleController.getString(R.string.OK), new org.telegram.ui.Components.u2(25, contactsActivity, str2));
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                 contactsActivity.showDialog(alertDialog$Builder.a);
                 return;
@@ -327,7 +327,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.m2 implements ne
             }
             SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
             if (!BuildVars.DEBUG_VERSION && globalMainSettings.getBoolean("channel_intro", false)) {
-                contactsActivity.presentFragment(new sd(org.telegram.ui.Cells.d0.g(0, "step")));
+                contactsActivity.presentFragment(new sd(org.telegram.ui.Cells.c1.f(0, "step")));
             } else {
                 contactsActivity.presentFragment(new h(0));
                 globalMainSettings.edit().putBoolean("channel_intro", true).commit();
@@ -387,7 +387,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.m2 implements ne
         if (MessagesController.getInstance(contactsActivity.currentAccount).isFrozen()) {
             b.b(contactsActivity.currentAccount);
         } else {
-            new ik0(contactsActivity.getParentActivity(), contactsActivity).show();
+            new hk0(contactsActivity.getParentActivity(), contactsActivity).show();
         }
     }
 
@@ -433,7 +433,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.m2 implements ne
         return this.fragmentView;
     }
 
-    @Override // org.telegram.ui.ActionBar.m2, org.telegram.ui.jh0
+    @Override // org.telegram.ui.ActionBar.m2, org.telegram.ui.ih0
     public final boolean S(MotionEvent motionEvent, boolean z10) {
         org.telegram.ui.Components.mm0 mm0Var = this.f;
         return mm0Var == null || mm0Var.getFastScroll() == null || !this.f.getFastScroll().n;
@@ -505,14 +505,14 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.m2 implements ne
                     }
                 }
             });
-            j10.addView(this.e0, w7.a6.q(54, 54, 16));
+            j10.addView(this.e0, w7.z5.q(54, 54, 16));
         }
         NumberTextView numberTextView = new NumberTextView(j10.getContext());
         this.f0 = numberTextView;
         numberTextView.setTextSize(18);
         this.f0.setTypeface(AndroidUtilities.bold());
         this.f0.setTextColor(getThemedColor(org.telegram.ui.ActionBar.g6.y8));
-        j10.addView(this.f0, w7.a6.m(1.0f, 0, -1, this.I ? 18 : 72, 0, 0));
+        j10.addView(this.f0, w7.z5.m(1.0f, 0, -1, this.I ? 18 : 72, 0, 0));
         int i13 = 2;
         this.f0.setOnTouchListener(new ci.d(i13));
         j10.h(100, R.drawable.msg_delete, LocaleController.getString(R.string.Delete), AndroidUtilities.dp(54.0f));
@@ -570,7 +570,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.m2 implements ne
         this.e.e(true, false);
         this.e.d.setText(LocaleController.getString(R.string.NoResult));
         this.e.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-        this.y.addView(this.e, w7.a6.a(-1.0f, 12.0f, 64.0f, 12.0f, 0.0f, -1, 119));
+        this.y.addView(this.e, w7.z5.a(-1.0f, 12.0f, 64.0f, 12.0f, 0.0f, -1, 119));
         s4.k kVar = new s4.k();
         kVar.C = false;
         kVar.n(150L);
@@ -591,8 +591,8 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.m2 implements ne
         z8 z8Var2 = this.y;
         org.telegram.ui.Components.mm0 mm0Var3 = this.f;
         float f7 = -this.a;
-        z8Var2.addView(mm0Var3, w7.a6.a(-1.0f, 0.0f, f7, 0.0f, f7, -1, 3));
-        this.y.addView(this.Z, w7.a6.a(52.0f, 6.0f, 0.0f, 6.0f, 0.0f, -1, 48));
+        z8Var2.addView(mm0Var3, w7.z5.a(-1.0f, 0.0f, f7, 0.0f, f7, -1, 3));
+        this.y.addView(this.Z, w7.z5.a(52.0f, 6.0f, 0.0f, 6.0f, 0.0f, -1, 48));
         this.f.setEmptyView(this.e);
         org.telegram.ui.Components.mm0 mm0Var4 = this.f;
         mm0Var4.W1 = true;
@@ -636,7 +636,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.m2 implements ne
         di.p6 p6Var = new di.p6(context, this.parentLayout);
         this.Y = p6Var;
         p6Var.b(false, false);
-        this.y.addView(this.Y, w7.a6.e(-1, 5, 48));
+        this.y.addView(this.Y, w7.z5.e(-1, 5, 48));
         this.actionBar.setAdaptiveBackground(this.f);
         this.actionBar.setDrawBlurBackground(this.y);
         this.b.a(true, false);
@@ -648,8 +648,8 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.m2 implements ne
         }
         View view = this.fragmentView;
         zs zsVar = new zs(this);
-        WeakHashMap weakHashMap = r0.j0.a;
-        r0.b0.i(view, zsVar);
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.a0.i(view, zsVar);
         return this.fragmentView;
     }
 
@@ -889,7 +889,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.m2 implements ne
                 if (canAddAdmins) {
                     a2Var.R = LocaleController.getString(R.string.AddBotAdminAlert);
                     a2Var.T = LocaleController.getString(R.string.AddBotAsAdmin);
-                    alertDialog$Builder.k(LocaleController.getString(R.string.AddAsAdmin), new org.telegram.ui.Components.t2(this, user, str));
+                    alertDialog$Builder.k(LocaleController.getString(R.string.AddAsAdmin), new org.telegram.ui.Components.u2(this, user, str));
                     alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                 } else {
                     a2Var.T = LocaleController.getString(R.string.CantAddBotAsAdmin);
@@ -1191,19 +1191,19 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.m2 implements ne
         this.f0.a(hVar.m(), z12);
     }
 
-    @Override // org.telegram.ui.jh0
+    @Override // org.telegram.ui.ih0
     public final void t() {
         if (this.n.L0() < 15) {
             this.f.x0(0);
         } else {
             org.telegram.ui.Components.pl0 pl0Var = this.h;
             pl0Var.b = 1;
-            pl0Var.c(0, 0, false, false);
+            pl0Var.d(0, 0, false, false);
         }
         this.b.a(true, true);
     }
 
-    @Override // org.telegram.ui.jh0
+    @Override // org.telegram.ui.ih0
     public final gh.d z() {
         return this.v0;
     }
@@ -1217,6 +1217,6 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.m2 implements ne
     }
 
     @Override // ne.d
-    public final void C(float f7, int i10) {
+    public final void A(float f7, int i10) {
     }
 }

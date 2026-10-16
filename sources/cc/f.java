@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
-import m.q3;
+import m.t3;
 import n6.l;
 import n6.o;
 import rb.g;
@@ -22,8 +22,7 @@ import rb.j;
 import rb.m;
 import w7.p8;
 import x7.da;
-import z7.ag;
-import z7.dg;
+import z7.bg;
 import z7.eg;
 import z7.fb;
 import z7.fg;
@@ -34,9 +33,11 @@ import z7.hg;
 import z7.i1;
 import z7.ig;
 import z7.jg;
+import z7.kg;
 import z7.wf;
+import z7.xf;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class f extends rb.e {
     public static final k6.c[] k = {j.c};
@@ -44,23 +45,23 @@ public final class f extends rb.e {
     public final Context d;
     public final bc.e e;
     public final wf f;
-    public final o g;
+    public final xf g;
     public boolean h = true;
     public boolean i;
-    public dg j;
+    public eg j;
 
-    public f(g gVar, bc.e eVar, wf wfVar, o oVar) {
+    public f(g gVar, bc.e eVar, wf wfVar, xf xfVar) {
         l.i(gVar, "MlKitContext can not be null");
         l.i(eVar, "SubjectSegmenterOptions can not be null");
         this.d = gVar.b();
         this.e = eVar;
         this.f = wfVar;
-        this.g = oVar;
+        this.g = xfVar;
     }
 
     @Override // rb.i
     public final synchronized void b() {
-        gg egVar;
+        hg fgVar;
         try {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             Context context = this.d;
@@ -76,24 +77,24 @@ public final class f extends rb.e {
             try {
                 if (this.j == null) {
                     IBinder b10 = y6.e.c(this.d, y6.e.b, "com.google.android.gms.mlkit_subject_segmentation").b("com.google.android.gms.mlkit.segmentation.subject.SubjectSegmenterCreator");
-                    int i10 = fg.a;
+                    int i10 = gg.a;
                     if (b10 == null) {
-                        egVar = null;
+                        fgVar = null;
                     } else {
                         IInterface queryLocalInterface = b10.queryLocalInterface("com.google.mlkit.vision.segmentation.subject.aidls.ISubjectSegmenterCreator");
-                        egVar = queryLocalInterface instanceof gg ? (gg) queryLocalInterface : new eg(b10, "com.google.mlkit.vision.segmentation.subject.aidls.ISubjectSegmenterCreator", 11);
+                        fgVar = queryLocalInterface instanceof hg ? (hg) queryLocalInterface : new fg(b10, "com.google.mlkit.vision.segmentation.subject.aidls.ISubjectSegmenterCreator", 11);
                     }
                     x6.b bVar = new x6.b(this.d);
                     this.e.getClass();
                     bc.e eVar = this.e;
-                    this.j = ((eg) egVar).V0(bVar, new jg(false, eVar.a, eVar.b, false, eVar.c));
+                    this.j = ((fg) fgVar).V0(bVar, new kg(false, eVar.a, eVar.b, false, eVar.c));
                 }
                 try {
-                    dg dgVar = this.j;
-                    dgVar.getClass();
+                    eg egVar = this.j;
+                    egVar.getClass();
                     Parcel obtain = Parcel.obtain();
-                    obtain.writeInterfaceToken(dgVar.c);
-                    dgVar.R0(obtain, 1);
+                    obtain.writeInterfaceToken(egVar.c);
+                    egVar.R0(obtain, 1);
                     f(gb.b, elapsedRealtime);
                 } catch (RemoteException e) {
                     f(gb.d, elapsedRealtime);
@@ -112,11 +113,11 @@ public final class f extends rb.e {
     public final synchronized void c() {
         try {
             try {
-                dg dgVar = this.j;
-                if (dgVar != null) {
+                eg egVar = this.j;
+                if (egVar != null) {
                     Parcel obtain = Parcel.obtain();
-                    obtain.writeInterfaceToken(dgVar.c);
-                    dgVar.R0(obtain, 2);
+                    obtain.writeInterfaceToken(egVar.c);
+                    egVar.R0(obtain, 2);
                 }
                 this.j = null;
             } catch (RemoteException unused) {
@@ -129,9 +130,9 @@ public final class f extends rb.e {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             if (wfVar.d(hbVar, elapsedRealtime)) {
                 wfVar.i.put(hbVar, Long.valueOf(elapsedRealtime));
-                q3 q3Var = new q3();
-                q3Var.c = fb.b;
-                m.a.execute(new p(wfVar, new a5.a(q3Var, 0), hbVar, wfVar.c(), 8));
+                t3 t3Var = new t3();
+                t3Var.c = fb.b;
+                m.a.execute(new p(wfVar, new a5.a(t3Var, 0), hbVar, wfVar.c(), 8));
             }
         } finally {
             this.j = null;
@@ -148,9 +149,9 @@ public final class f extends rb.e {
             try {
                 try {
                     long elapsedRealtime = SystemClock.elapsedRealtime();
-                    dg dgVar = this.j;
-                    l.h(dgVar);
-                    ag agVar = new ag(aVar.e, aVar.b, aVar.c, SystemClock.elapsedRealtime(), p8.a(aVar.d));
+                    eg egVar = this.j;
+                    l.h(egVar);
+                    bg bgVar = new bg(aVar.e, aVar.b, aVar.c, SystemClock.elapsedRealtime(), p8.a(aVar.d));
                     int i10 = aVar.e;
                     try {
                         if (i10 != -1) {
@@ -168,17 +169,17 @@ public final class f extends rb.e {
                         l.h(bitmap);
                         bVar = new x6.b(bitmap);
                         try {
-                            ig V0 = dgVar.V0(bVar, agVar);
+                            jg V0 = egVar.V0(bVar, bgVar);
                             ArrayList arrayList = new ArrayList();
                             if (this.e.b) {
-                                for (hg hgVar : V0.a) {
-                                    float[] fArr = hgVar.a;
+                                for (ig igVar : V0.a) {
+                                    float[] fArr = igVar.a;
                                     if (fArr != null) {
                                         FloatBuffer allocate = FloatBuffer.allocate(fArr.length);
                                         allocate.put(fArr);
                                         allocate.rewind();
                                     }
-                                    arrayList.add(new bc.a(hgVar.b, hgVar.c, hgVar.d, hgVar.e, hgVar.f));
+                                    arrayList.add(new bc.a(igVar.b, igVar.c, igVar.d, igVar.e, igVar.f));
                                 }
                             }
                             fVar = this;
@@ -230,9 +231,9 @@ public final class f extends rb.e {
         this.f.b(new e(this, gbVar, j10), hb.O4);
     }
 
-    public final void g(gb gbVar, long j10, boolean z10, wb.a aVar, ig igVar) {
+    public final void g(gb gbVar, long j10, boolean z10, wb.a aVar, jg jgVar) {
         long elapsedRealtime = SystemClock.elapsedRealtime() - j10;
-        this.f.b(new d(this, elapsedRealtime, gbVar, z10, aVar, igVar), hb.P4);
+        this.f.b(new d(this, elapsedRealtime, gbVar, z10, aVar, jgVar), hb.P4);
         u2.c cVar = new u2.c(17, false);
         cVar.d = this.e.a();
         cVar.b = gbVar;
@@ -240,15 +241,15 @@ public final class f extends rb.e {
         m.a.execute(new da(this.f, new i1(cVar), elapsedRealtime));
         long currentTimeMillis = System.currentTimeMillis();
         long j11 = currentTimeMillis - elapsedRealtime;
-        o oVar = this.g;
+        xf xfVar = this.g;
         int i10 = gbVar.a;
-        synchronized (oVar) {
-            AtomicLong atomicLong = (AtomicLong) oVar.c;
+        synchronized (xfVar) {
+            AtomicLong atomicLong = (AtomicLong) xfVar.b;
             long elapsedRealtime2 = SystemClock.elapsedRealtime();
-            if (atomicLong.get() != -1 && elapsedRealtime2 - ((AtomicLong) oVar.c).get() <= TimeUnit.MINUTES.toMillis(30L)) {
+            if (atomicLong.get() != -1 && elapsedRealtime2 - ((AtomicLong) xfVar.b).get() <= TimeUnit.MINUTES.toMillis(30L)) {
                 return;
             }
-            ((p6.b) oVar.b).f(new n6.p(0, Arrays.asList(new n6.j(24336, i10, 0, j11, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new ad.d(oVar, elapsedRealtime2, 10));
+            ((p6.b) xfVar.a).f(new o(0, Arrays.asList(new n6.j(24336, i10, 0, j11, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new ad.d(xfVar, elapsedRealtime2, 10));
         }
     }
 }

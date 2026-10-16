@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ze extends wg {
     public final /* synthetic */ int l0;
@@ -63,7 +63,7 @@ public final class ze extends wg {
             case 0:
                 super.setAlpha(f7);
                 int i10 = ChatActivityEnterView.n5;
-                this.m0.x1();
+                this.m0.w1();
                 break;
             default:
                 super.setAlpha(f7);

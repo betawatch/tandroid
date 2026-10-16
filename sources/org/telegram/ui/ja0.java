@@ -9,7 +9,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ja0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class ja0 implements Utilities.Callback {
         switch (i10) {
             case 0:
                 boolean booleanValue = ((Boolean) obj).booleanValue();
-                if (launchActivity.q0 != null && booleanValue && LiteMode.getPowerSaverLevel() < 100 && (lastFragment = launchActivity.q0.getLastFragment()) != null && !(lastFragment instanceof rc0)) {
+                if (launchActivity.q0 != null && booleanValue && LiteMode.getPowerSaverLevel() < 100 && (lastFragment = launchActivity.q0.getLastFragment()) != null && !(lastFragment instanceof qc0)) {
                     int batteryLevel = LiteMode.getBatteryLevel();
                     org.telegram.ui.Components.zc a02 = org.telegram.ui.Components.zc.a0(lastFragment);
                     org.telegram.ui.Components.ba baVar = new org.telegram.ui.Components.ba(batteryLevel / 100.0f, lastFragment.getThemedColor(org.telegram.ui.ActionBar.g6.Y5));

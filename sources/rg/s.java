@@ -3,10 +3,10 @@ package rg;
 import android.content.DialogInterface;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.hu0;
+import org.telegram.ui.gu0;
 import zh.m6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a = 1;
@@ -23,7 +23,7 @@ public final /* synthetic */ class s implements DialogInterface.OnDismissListene
         switch (this.a) {
             case 0:
                 o0 o0Var = (o0) this.c;
-                PhotoViewer photoViewer = ((hu0) o0Var).o2;
+                PhotoViewer photoViewer = ((gu0) o0Var).o2;
                 if (photoViewer.F2 != null) {
                     photoViewer.H2 = false;
                     photoViewer.u0();

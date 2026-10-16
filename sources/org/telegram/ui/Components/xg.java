@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class xg extends FrameLayout {
     public final org.telegram.ui.ActionBar.h5 a;
@@ -28,14 +28,14 @@ public final class xg extends FrameLayout {
         this.e = false;
         org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(activity);
         this.a = h5Var;
-        addView(h5Var, w7.a6.d(-1.0f, -1));
+        addView(h5Var, w7.z5.d(-1.0f, -1));
         setWillNotDraw(false);
         Drawable drawable = activity.getDrawable(R.drawable.msg_mini_close_tooltip);
         this.d = drawable;
         drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
         setClipToPadding(false);
         setClipChildren(false);
-        w7.c6.a(this);
+        w7.b6.a(this);
     }
 
     @Override // android.view.ViewGroup

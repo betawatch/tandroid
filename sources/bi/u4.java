@@ -19,22 +19,22 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.cb0;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.o40;
-import org.telegram.ui.Components.o61;
-import org.telegram.ui.Components.p11;
 import org.telegram.ui.Components.p61;
-import org.telegram.ui.Components.r61;
+import org.telegram.ui.Components.q11;
+import org.telegram.ui.Components.q61;
 import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.sc;
+import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.fo;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class u4 extends ha {
     public final /* synthetic */ sb x0;
@@ -76,36 +76,36 @@ public final class u4 extends ha {
 
     @Override // bi.ha
     public final void G(CharacterStyle characterStyle, View view) {
-        boolean z10 = characterStyle instanceof s61;
+        boolean z10 = characterStyle instanceof t61;
         sb sbVar = this.x0;
         q5 q5Var = this.z0;
         if (z10) {
-            TLRPC.User user = MessagesController.getInstance(q5Var.C2).getUser(Utilities.parseLong(((s61) characterStyle).getURL()));
+            TLRPC.User user = MessagesController.getInstance(q5Var.C2).getUser(Utilities.parseLong(((t61) characterStyle).getURL()));
             if (user != null) {
                 MessagesController.getInstance(q5Var.C2).openChatOrProfileWith(user, null, sbVar.f, 0, false);
                 return;
             }
             return;
         }
-        if (!(characterStyle instanceof p61)) {
+        if (!(characterStyle instanceof q61)) {
             if (characterStyle instanceof URLSpan) {
-                M(2, ((URLSpan) characterStyle).getURL(), characterStyle, characterStyle instanceof r61);
+                M(2, ((URLSpan) characterStyle).getURL(), characterStyle, characterStyle instanceof s61);
                 return;
             }
-            if (!(characterStyle instanceof o61)) {
+            if (!(characterStyle instanceof p61)) {
                 if (characterStyle instanceof ClickableSpan) {
                     ((ClickableSpan) characterStyle).onClick(view);
                     return;
                 }
                 return;
             } else {
-                o61 o61Var = (o61) characterStyle;
-                AndroidUtilities.addToClipboard(o61Var.a.subSequence(o61Var.b, o61Var.c).toString());
-                yh.o(R.string.TextCopied, new zc(q5Var.c1, this.y0));
+                p61 p61Var = (p61) characterStyle;
+                AndroidUtilities.addToClipboard(p61Var.a.subSequence(p61Var.b, p61Var.c).toString());
+                sk.p(R.string.TextCopied, new zc(q5Var.c1, this.y0));
                 return;
             }
         }
-        String url = ((p61) characterStyle).getURL();
+        String url = ((q61) characterStyle).getURL();
         if (url != null && (url.startsWith("#") || url.startsWith("$"))) {
             if (url.contains("@")) {
                 sbVar.H(new o40(url, null));
@@ -138,7 +138,7 @@ public final class u4 extends ha {
         try {
             try {
                 Uri parse = Uri.parse(url2);
-                url2 = pf.d.v(parse, null, null, pf.d.a(parse.getHost()), null);
+                url2 = pf.d.u(parse, null, null, pf.d.a(parse.getHost()), null);
             } catch (Exception e) {
                 FileLog.e((Throwable) e, false);
             }
@@ -191,7 +191,7 @@ public final class u4 extends ha {
         sb sbVar = this.x0;
         final org.telegram.ui.ActionBar.c6 c6Var = this.y0;
         if (document != null) {
-            m80 F = m80.F(sbVar.v, c6Var, q5Var.K0);
+            l80 F = l80.F(sbVar.v, c6Var, q5Var.K0);
             F.i = 3;
             F.a0(-AndroidUtilities.dp(8.0f), 0.0f);
             final int i10 = 0;
@@ -294,11 +294,11 @@ public final class u4 extends ha {
     }
 
     public final void M(int i10, String str, CharacterStyle characterStyle, boolean z10) {
-        p11 p11Var;
+        q11 q11Var;
         if (z10 || AndroidUtilities.shouldShowUrlInAlert(str)) {
             sb sbVar = this.x0;
             if (i10 == 0 || i10 == 2) {
-                org.telegram.ui.Components.g5.q0(sbVar.f, str, true, true, true, (!(characterStyle instanceof r61) || (p11Var = ((r61) characterStyle).a) == null || (p11Var.a & 1024) == 0) ? false : true, null, null, this.y0);
+                org.telegram.ui.Components.g5.q0(sbVar.f, str, true, true, true, (!(characterStyle instanceof s61) || (q11Var = ((s61) characterStyle).a) == null || (q11Var.a & 1024) == 0) ? false : true, null, null, this.y0);
                 return;
             } else {
                 if (i10 == 1) {
@@ -309,11 +309,11 @@ public final class u4 extends ha {
             }
         }
         if (i10 == 0) {
-            pf.d.q(getContext(), Uri.parse(str), true, true, null);
+            pf.d.p(getContext(), Uri.parse(str), true, true, null);
         } else if (i10 == 1) {
-            pf.d.q(getContext(), Uri.parse(str), false, false, null);
+            pf.d.p(getContext(), Uri.parse(str), false, false, null);
         } else if (i10 == 2) {
-            pf.d.q(getContext(), Uri.parse(str), false, true, null);
+            pf.d.p(getContext(), Uri.parse(str), false, true, null);
         }
     }
 }

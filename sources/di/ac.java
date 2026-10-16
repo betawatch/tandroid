@@ -17,7 +17,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.ow0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class ac extends r {
     public final Path R1;
@@ -38,7 +38,7 @@ public final class ac extends r {
             return false;
         }
         int i11 = MessagesController.getInstance(this.U).storyCaptionLengthLimitPremium;
-        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("CaptionPremiumSubtitle", Math.round(i11 / MessagesController.getInstance(this.U).storyCaptionLengthLimitDefault), i2.d.i(i11, "")));
+        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("CaptionPremiumSubtitle", Math.round(i11 / MessagesController.getInstance(this.U).storyCaptionLengthLimitDefault), i2.d.j(i11, "")));
         int indexOf = replaceTags.toString().indexOf("__");
         if (indexOf >= 0) {
             replaceTags.replace(indexOf, indexOf + 2, (CharSequence) "");

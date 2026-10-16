@@ -17,12 +17,12 @@ import org.telegram.ui.Components.cn0;
 import org.telegram.ui.Components.h50;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.fo;
-import org.telegram.ui.kv0;
-import org.telegram.ui.n01;
+import org.telegram.ui.jv0;
+import org.telegram.ui.m01;
 import org.telegram.ui.n60;
 import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w6 implements i8, org.telegram.ui.Components.f5, org.telegram.ui.ActionBar.z1, t5.b, s9.h, h50 {
     public final /* synthetic */ int a;
@@ -73,19 +73,19 @@ public final /* synthetic */ class w6 implements i8, org.telegram.ui.Components.
     }
 
     @Override // s9.h
-    public ScheduledFuture a(final ji.d4 d4Var) {
+    public ScheduledFuture a(final m.h hVar) {
         switch (this.a) {
             case 5:
                 s9.g gVar = (s9.g) this.c;
                 Runnable runnable = (Runnable) this.d;
-                return gVar.b.schedule(new s9.e(gVar, runnable, d4Var, 1), this.b, (TimeUnit) this.e);
+                return gVar.b.schedule(new s9.e(gVar, runnable, hVar, 1), this.b, (TimeUnit) this.e);
             default:
                 final s9.g gVar2 = (s9.g) this.c;
                 final Callable callable = (Callable) this.d;
                 return gVar2.b.schedule(new Callable() { // from class: s9.f
                     @Override // java.util.concurrent.Callable
                     public final Object call() {
-                        return g.this.a.submit(new b(0, callable, d4Var));
+                        return g.this.a.submit(new b(0, callable, hVar));
                     }
                 }, this.b, (TimeUnit) this.e);
         }
@@ -96,55 +96,8 @@ public final /* synthetic */ class w6 implements i8, org.telegram.ui.Components.
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        switch (this.a) {
-            case 2:
-                ChatObject.Call call = (ChatObject.Call) this.c;
-                org.telegram.ui.Cells.a2[] a2VarArr = (org.telegram.ui.Cells.a2[]) this.d;
-                Runnable runnable = (Runnable) this.e;
-                boolean z10 = false;
-                org.telegram.ui.Cells.a2 a2Var2 = a2VarArr[0];
-                if (a2Var2 != null && a2Var2.b()) {
-                    z10 = true;
-                }
-                n60.x1(call, z10, this.b, runnable);
-                break;
-            default:
-                n01 n01Var = (n01) this.c;
-                yy yyVar = (yy) this.d;
-                TLRPC.User user = (TLRPC.User) this.e;
-                ProfileActivity profileActivity = n01Var.b;
-                profileActivity.N1 = true;
-                Bundle h = a1.g.h("scrollToTopOnResume", true);
-                long j10 = -this.b;
-                h.putLong("chat_id", j10);
-                if (profileActivity.getMessagesController().checkCanOpenChat(h, yyVar)) {
-                    fo foVar = new fo(h);
-                    NotificationCenter notificationCenter = profileActivity.getNotificationCenter();
-                    int i11 = NotificationCenter.closeChats;
-                    notificationCenter.removeObserver(profileActivity, i11);
-                    profileActivity.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i11, new Object[0]);
-                    profileActivity.getMessagesController().addUserToChat(j10, user, 0, null, foVar, true, null, null);
-                    profileActivity.presentFragment(foVar, true);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.h50
-    public /* synthetic */ kv0 getCloseIntoObject() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.h50
-    public /* synthetic */ String getInitialSearchString() {
-        return null;
-    }
-
     @Override // t5.b
-    public Object h() {
+    public Object f() {
         ea.b bVar = (ea.b) this.c;
         Iterable iterable = (Iterable) this.d;
         l5.i iVar = (l5.i) this.e;
@@ -172,7 +125,54 @@ public final /* synthetic */ class w6 implements i8, org.telegram.ui.Components.
                 a2.endTransaction();
             }
         }
-        gVar.c(new bi.p1(((u5.a) bVar.g).d() + this.b, iVar));
+        gVar.c(new bi.p1(((u5.a) bVar.g).b() + this.b, iVar));
+        return null;
+    }
+
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+        switch (this.a) {
+            case 2:
+                ChatObject.Call call = (ChatObject.Call) this.c;
+                org.telegram.ui.Cells.a2[] a2VarArr = (org.telegram.ui.Cells.a2[]) this.d;
+                Runnable runnable = (Runnable) this.e;
+                boolean z10 = false;
+                org.telegram.ui.Cells.a2 a2Var2 = a2VarArr[0];
+                if (a2Var2 != null && a2Var2.b()) {
+                    z10 = true;
+                }
+                n60.x1(call, z10, this.b, runnable);
+                break;
+            default:
+                m01 m01Var = (m01) this.c;
+                yy yyVar = (yy) this.d;
+                TLRPC.User user = (TLRPC.User) this.e;
+                ProfileActivity profileActivity = m01Var.b;
+                profileActivity.N1 = true;
+                Bundle h = a1.g.h("scrollToTopOnResume", true);
+                long j10 = -this.b;
+                h.putLong("chat_id", j10);
+                if (profileActivity.getMessagesController().checkCanOpenChat(h, yyVar)) {
+                    fo foVar = new fo(h);
+                    NotificationCenter notificationCenter = profileActivity.getNotificationCenter();
+                    int i11 = NotificationCenter.closeChats;
+                    notificationCenter.removeObserver(profileActivity, i11);
+                    profileActivity.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i11, new Object[0]);
+                    profileActivity.getMessagesController().addUserToChat(j10, user, 0, null, foVar, true, null, null);
+                    profileActivity.presentFragment(foVar, true);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.h50
+    public /* synthetic */ jv0 getCloseIntoObject() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.h50
+    public /* synthetic */ String getInitialSearchString() {
         return null;
     }
 
@@ -210,20 +210,20 @@ public final /* synthetic */ class w6 implements i8, org.telegram.ui.Components.
         this.b = j10;
     }
 
-    public /* synthetic */ w6(n01 n01Var, long j10, yy yyVar, TLRPC.User user) {
+    public /* synthetic */ w6(m01 m01Var, long j10, yy yyVar, TLRPC.User user) {
         this.a = 3;
-        this.c = n01Var;
+        this.c = m01Var;
         this.b = j10;
         this.d = yyVar;
         this.e = user;
     }
 
     @Override // org.telegram.ui.Components.h50
-    public /* synthetic */ void P() {
+    public /* synthetic */ void E(float f7) {
     }
 
     @Override // org.telegram.ui.Components.h50
-    public /* synthetic */ void E(float f7) {
+    public /* synthetic */ void P() {
     }
 
     @Override // org.telegram.ui.Components.h50

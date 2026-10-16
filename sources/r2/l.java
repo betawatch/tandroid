@@ -7,21 +7,21 @@ import android.os.Handler;
 import android.view.Surface;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import ji.w4;
-import org.telegram.ui.Wallet.t8;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public interface l {
     void b(long j10, int i10, int i11, int i12);
 
-    void e(int i10, h2.d dVar, long j10, int i11);
+    void d(int i10, h2.d dVar, long j10, int i11);
 
-    void f(int i10);
+    void e(int i10);
+
+    void f(a3.m mVar, Handler handler);
 
     void flush();
 
-    void g(t8 t8Var);
+    void g();
 
     ByteBuffer getInputBuffer(int i10);
 
@@ -29,25 +29,23 @@ public interface l {
 
     MediaFormat getOutputFormat();
 
-    void h(a3.m mVar, Handler handler);
+    void h(int i10, long j10);
 
-    void i();
+    int i();
 
-    void j(int i10, long j10);
+    int j(MediaCodec.BufferInfo bufferInfo);
 
-    int k();
+    void k(int i10);
 
-    int l(MediaCodec.BufferInfo bufferInfo);
+    void l(org.telegram.ui.web.v vVar);
 
-    void m(int i10);
+    void m(Surface surface);
 
-    void n(Surface surface);
+    void n(ArrayList arrayList);
 
-    boolean o(w4 w4Var);
+    boolean o(m.l lVar);
 
     void p(ArrayList arrayList);
-
-    void q(ArrayList arrayList);
 
     void release();
 

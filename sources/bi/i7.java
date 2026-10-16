@@ -19,14 +19,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.u90;
 import org.telegram.ui.Components.w90;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.j70;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class i7 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -41,25 +41,25 @@ public final class i7 extends FrameLayout {
         org.telegram.ui.Components.z9 z9Var = new org.telegram.ui.Components.z9(context);
         this.d = z9Var;
         z9Var.setRoundRadius(AndroidUtilities.dp(23.0f));
-        addView(z9Var, w7.a6.a(46.0f, 21.0f, 6.0f, 0.0f, 6.0f, 46, 19));
+        addView(z9Var, w7.z5.a(46.0f, 21.0f, 6.0f, 0.0f, 6.0f, 46, 19));
         if (z10) {
-            addView(new hi.a(context, c6Var), w7.a6.c(22.66f, 22.66f, 83, 48.66f, 0.0f, 0.0f, 3.6599998f));
+            addView(new hi.a(context, c6Var), w7.z5.c(22.66f, 22.66f, 83, 48.66f, 0.0f, 0.0f, 3.6599998f));
         }
         TextView textView = new TextView(context);
         this.b = textView;
-        yh.k(16.0f, 1, textView);
+        sk.k(16.0f, 1, textView);
         textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.j5, c6Var));
         textView.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
-        addView(textView, w7.a6.a(-2.0f, 80.0f, 7.0f, 0.0f, 0.0f, -1, 51));
+        addView(textView, w7.z5.a(-2.0f, 80.0f, 7.0f, 0.0f, 0.0f, -1, 51));
         TextView textView2 = new TextView(context);
         this.c = textView2;
         textView2.setTextSize(1, 14.0f);
         textView2.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.z6, c6Var));
         textView2.setSingleLine(true);
         textView2.setEllipsize(truncateAt);
-        addView(textView2, w7.a6.a(-2.0f, 80.0f, 30.33f, 0.0f, 0.0f, -1, 51));
+        addView(textView2, w7.z5.a(-2.0f, 80.0f, 30.33f, 0.0f, 0.0f, -1, 51));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -171,7 +171,7 @@ public final class i7 extends FrameLayout {
                 int save = canvas.save();
                 canvas.concat((Matrix) this.b);
                 Path path2 = (Path) this.c;
-                w7.j6.a(path2, getWidth(), getHeight());
+                w7.i6.a(path2, getWidth(), getHeight());
                 canvas.clipPath(path2);
                 super.dispatchDraw(canvas);
                 canvas.restoreToCount(save);
@@ -354,7 +354,7 @@ public final class i7 extends FrameLayout {
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Oh, false), PorterDuff.Mode.MULTIPLY));
-        addView(imageView, w7.a6.a(28.0f, 25.0f, 12.0f, 16.0f, 0.0f, 28, 0));
+        addView(imageView, w7.z5.a(28.0f, 25.0f, 12.0f, 16.0f, 0.0f, 28, 0));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTypeface(AndroidUtilities.bold());
@@ -362,14 +362,14 @@ public final class i7 extends FrameLayout {
         c6Var = ((org.telegram.ui.ActionBar.e3) j7Var).resourcesProvider;
         textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(i10, c6Var));
         textView.setTextSize(1, 14.0f);
-        addView(textView, w7.a6.a(-2.0f, 68.0f, 8.0f, 16.0f, 0.0f, -1, 0));
+        addView(textView, w7.z5.a(-2.0f, 68.0f, 8.0f, 16.0f, 0.0f, -1, 0));
         TextView textView2 = new TextView(context);
         this.c = textView2;
         int i11 = org.telegram.ui.ActionBar.g6.y6;
         c6Var2 = ((org.telegram.ui.ActionBar.e3) j7Var).resourcesProvider;
         textView2.setTextColor(org.telegram.ui.ActionBar.g6.w0(i11, c6Var2));
         textView2.setTextSize(1, 14.0f);
-        addView(textView2, w7.a6.a(-2.0f, 68.0f, 28.0f, 16.0f, 8.0f, -1, 0));
+        addView(textView2, w7.z5.a(-2.0f, 68.0f, 28.0f, 16.0f, 8.0f, -1, 0));
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -406,14 +406,14 @@ public final class i7 extends FrameLayout {
         this.d = w90Var;
         u90 u90Var = new u90(this, context);
         this.c = u90Var;
-        LinearLayout e = yh.e(context, 0);
-        addView(e, w7.a6.e(-2, -1, 1));
+        LinearLayout e = sk.e(context, 0);
+        addView(e, w7.z5.e(-2, -1, 1));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(AndroidUtilities.bold());
-        e.addView(u90Var, w7.a6.n(-2, -1));
-        e.addView(textView, w7.a6.q(-2, -2, 16));
+        e.addView(u90Var, w7.z5.n(-2, -1));
+        e.addView(textView, w7.z5.q(-2, -2, 16));
         setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
         u90Var.a(false);
     }

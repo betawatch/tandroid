@@ -4,11 +4,11 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.mt;
 import org.telegram.ui.vt;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class r1 implements vt {
     @Override // org.telegram.ui.vt
@@ -117,29 +117,13 @@ public final class r1 implements vt {
     }
 
     @Override // org.telegram.ui.vt
-    public final /* synthetic */ m80 u(ah.v vVar) {
+    public final /* synthetic */ l80 u(ah.v vVar) {
         return null;
     }
 
     @Override // org.telegram.ui.vt
     public final /* synthetic */ boolean y() {
         return true;
-    }
-
-    @Override // org.telegram.ui.vt
-    public final /* synthetic */ void K() {
-    }
-
-    @Override // org.telegram.ui.vt
-    public final /* synthetic */ void L() {
-    }
-
-    @Override // org.telegram.ui.vt
-    public final /* synthetic */ void r() {
-    }
-
-    @Override // org.telegram.ui.vt
-    public final /* synthetic */ void t() {
     }
 
     @Override // org.telegram.ui.vt
@@ -180,6 +164,22 @@ public final class r1 implements vt {
 
     @Override // org.telegram.ui.vt
     public final /* synthetic */ void z(String str) {
+    }
+
+    @Override // org.telegram.ui.vt
+    public final /* synthetic */ void K() {
+    }
+
+    @Override // org.telegram.ui.vt
+    public final /* synthetic */ void L() {
+    }
+
+    @Override // org.telegram.ui.vt
+    public final /* synthetic */ void r() {
+    }
+
+    @Override // org.telegram.ui.vt
+    public final /* synthetic */ void t() {
     }
 
     @Override // org.telegram.ui.vt

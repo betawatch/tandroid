@@ -26,16 +26,16 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.ac;
-import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.c71;
 import org.telegram.ui.Components.nu;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.sc;
-import org.telegram.ui.Components.z61;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.web.BotWebViewContainer$WebViewProxy;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p1 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class p1 implements Utilities.Callback {
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
-        z61 z61Var;
+        a71 a71Var;
         int i10;
         TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway;
         String str;
@@ -75,27 +75,27 @@ public final /* synthetic */ class p1 implements Utilities.Callback {
                 AndroidUtilities.runOnUIThread((Runnable) obj, 80L);
                 break;
             case 3:
-                org.telegram.ui.web.y0 y0Var = ((BotWebViewContainer$WebViewProxy) obj2).b;
+                org.telegram.ui.web.z0 z0Var = ((BotWebViewContainer$WebViewProxy) obj2).b;
                 StringBuilder sb2 = new StringBuilder("window.navigator.__share__receive(");
                 sb2.append(((Boolean) obj).booleanValue() ? "" : "'abort'");
                 sb2.append(")");
-                y0Var.d(sb2.toString());
+                z0Var.d(sb2.toString());
                 break;
             case 4:
-                org.telegram.ui.web.g1 g1Var = (org.telegram.ui.web.g1) obj2;
-                g1Var.e = (ArrayList) obj;
-                b71 b71Var = g1Var.a;
-                if (b71Var.G) {
-                    b71Var.W2.N(true);
+                org.telegram.ui.web.h1 h1Var = (org.telegram.ui.web.h1) obj2;
+                h1Var.e = (ArrayList) obj;
+                c71 c71Var = h1Var.a;
+                if (c71Var.G) {
+                    c71Var.W2.N(true);
                     break;
                 }
                 break;
             case 5:
-                org.telegram.ui.web.y1 y1Var = (org.telegram.ui.web.y1) obj2;
-                y1Var.n = ((ArrayList) obj).size();
-                b71 b71Var2 = y1Var.a;
-                if (b71Var2 != null && (z61Var = b71Var2.W2) != null && b71Var2.G) {
-                    z61Var.N(true);
+                org.telegram.ui.web.z1 z1Var = (org.telegram.ui.web.z1) obj2;
+                z1Var.n = ((ArrayList) obj).size();
+                c71 c71Var2 = z1Var.a;
+                if (c71Var2 != null && (a71Var = c71Var2.W2) != null && c71Var2.G) {
+                    a71Var.N(true);
                     break;
                 }
                 break;
@@ -157,7 +157,7 @@ public final /* synthetic */ class p1 implements Utilities.Callback {
                 rh.e eVar = (rh.e) obj;
                 cVar.h = eVar;
                 cVar.c.a(eVar, true);
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.voip.m2(cVar, 27), 200L);
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.voip.r2(cVar, 26), 200L);
                 break;
             case 11:
                 ((sg.j0) obj2).F1((HashMap) obj);

@@ -17,7 +17,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qg implements Runnable {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final /* synthetic */ class qg implements Runnable {
                     chatActivityEnterView.J3 = true;
                 }
                 MediaController.getInstance().toggleRecordingPause(chatActivityEnterView.O);
-                chatActivityEnterView.Z2.X0(0);
+                chatActivityEnterView.Z2.Y0(0);
                 ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.k1;
                 if (slideTextView != null) {
                     slideTextView.setEnabled(false);
@@ -92,7 +92,7 @@ public final /* synthetic */ class qg implements Runnable {
                 ((l8) obj).n.n.setVisibility(8);
                 break;
             case 10:
-                ((s8) obj).c.l1();
+                ((s8) obj).c.k1();
                 break;
             case 11:
                 ha haVar = (ha) obj;
@@ -161,7 +161,7 @@ public final /* synthetic */ class qg implements Runnable {
             case 19:
                 ChatActivityEnterView chatActivityEnterView2 = ((tf) obj).f;
                 int i12 = ChatActivityEnterView.n5;
-                chatActivityEnterView2.o1();
+                chatActivityEnterView2.n1();
                 break;
             case 20:
                 ((bh) obj).s = null;
@@ -185,12 +185,12 @@ public final /* synthetic */ class qg implements Runnable {
                     return;
                 }
             case 23:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = ((lm) obj).b;
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = ((km) obj).b;
                 boolean z10 = ChatAttachAlertPhotoLayout.q1;
                 chatAttachAlertPhotoLayout2.p0(-1, true);
                 break;
             case 24:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout3 = ((im) obj).c;
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout3 = ((hm) obj).c;
                 if (chatAttachAlertPhotoLayout3.P != null && !chatAttachAlertPhotoLayout3.b.isDismissed()) {
                     chatAttachAlertPhotoLayout3.P.setSystemUiVisibility(1028);
                     break;
@@ -213,7 +213,7 @@ public final /* synthetic */ class qg implements Runnable {
                 ioVar.j1 = null;
                 break;
             case 27:
-                ((bp) obj).n();
+                ((bp) obj).o();
                 break;
             case 28:
                 ((dp) obj).setVisibility(8);

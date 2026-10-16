@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class FileRefController extends BaseController {
     private static volatile FileRefController[] Instance = new FileRefController[4];
@@ -32,7 +32,7 @@ public class FileRefController extends BaseController {
     private ArrayList<Waiter> savedGifsWaiters;
     private ArrayList<Waiter> wallpaperWaiters;
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class CachedResult {
         private long firstQueryTime;
         private TLObject response;
@@ -41,7 +41,7 @@ public class FileRefController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class Requester {
         private Object[] args;
         private boolean completed;
@@ -52,7 +52,7 @@ public class FileRefController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class Waiter {
         private String locationKey;
         private String parentKey;
@@ -1003,7 +1003,7 @@ public class FileRefController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$requestReferenceFromServer$1(String str, String str2, bi.e8 e8Var) {
-        Utilities.stageQueue.postRunnable(new sk(this, str, str2, e8Var, 7));
+        Utilities.stageQueue.postRunnable(new tk(this, str, str2, e8Var, 7));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1929,7 +1929,7 @@ public class FileRefController extends BaseController {
             StringBuilder sb2 = new StringBuilder("fileref updated for ");
             sb2.append(requester.args[0]);
             sb2.append(" ");
-            i2.d.t(requester.locationKey, sb2);
+            i2.d.v(requester.locationKey, sb2);
         }
         if (requester.args[0] instanceof TL_stories.TL_storyItem) {
             ((TL_stories.TL_storyItem) requester.args[0]).media.document.file_reference = bArr;

@@ -1,58 +1,41 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarLayout;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class eb0 implements MessagesController.MessagesLoadedCallback {
-    public final /* synthetic */ o00 a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ Bundle c;
-    public final /* synthetic */ TLRPC.ChatInvite d;
-    public final /* synthetic */ LaunchActivity e;
+public final class eb0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ org.telegram.ui.Components.bk0 a;
+    public final /* synthetic */ org.telegram.ui.Components.yj0 b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ LaunchActivity d;
 
-    public eb0(LaunchActivity launchActivity, o00 o00Var, boolean[] zArr, Bundle bundle, TLRPC.ChatInvite chatInvite) {
-        this.e = launchActivity;
-        this.a = o00Var;
-        this.b = zArr;
-        this.c = bundle;
-        this.d = chatInvite;
+    public eb0(LaunchActivity launchActivity, org.telegram.ui.Components.bk0 bk0Var, org.telegram.ui.Components.yj0 yj0Var, boolean z10) {
+        this.d = launchActivity;
+        this.a = bk0Var;
+        this.b = yj0Var;
+        this.c = z10;
     }
 
-    @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
-    public final void onError() {
-        LaunchActivity launchActivity = this.e;
-        if (!launchActivity.isFinishing()) {
-            org.telegram.ui.Components.g5.t0((org.telegram.ui.ActionBar.m2) i2.d.g(1, launchActivity.d0), null, LocaleController.getString(R.string.JoinToGroupErrorNotExist), null);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        LaunchActivity launchActivity = this.d;
+        launchActivity.G0 = null;
+        launchActivity.z0.invalidate();
+        launchActivity.o0.invalidate();
+        launchActivity.o0.setImageDrawable(null);
+        launchActivity.o0.setVisibility(8);
+        launchActivity.p0.setVisibility(8);
+        org.telegram.ui.Components.bk0 bk0Var = this.a;
+        if (bk0Var != null) {
+            bk0Var.setImageDrawable(this.b);
         }
-        try {
-            this.a.run();
-        } catch (Exception e) {
-            FileLog.e(e);
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.themeAccentListUpdated, new Object[0]);
+        if (!this.c && bk0Var != null) {
+            bk0Var.setVisibility(0);
         }
-    }
-
-    @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
-    public final void onMessagesLoaded(boolean z10) {
-        try {
-            this.a.run();
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-        if (this.b[0]) {
-            return;
-        }
-        fo foVar = new fo(this.c);
-        TLRPC.ChatInvite chatInvite = this.d;
-        if (chatInvite instanceof TLRPC.TL_chatInvitePeek) {
-            foVar.K5 = chatInvite;
-        }
-        ((ActionBarLayout) this.e.O()).P(foVar);
+        yy.x4 = false;
     }
 }

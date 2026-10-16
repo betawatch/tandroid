@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class ko0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static org.telegram.ui.ActionBar.a2 H;
@@ -77,8 +77,8 @@ public abstract class ko0 extends FrameLayout implements NotificationCenter.Noti
         this.e = m0Var;
         o0Var.setAdapter(m0Var);
         o0Var.setOverScrollMode(2);
-        addView(o0Var, w7.a6.d(-1.0f, -1));
-        o0Var.setOnItemClickListener(new co0(this, i10, m2Var, 0));
+        addView(o0Var, w7.z5.d(-1.0f, -1));
+        o0Var.setOnItemClickListener(new bo0(this, i10, m2Var, 0));
         o0Var.setOnItemLongClickListener(new org.telegram.ui.ia(this, i10, m2Var, c6Var, 3));
         do0 do0Var = new do0();
         do0Var.o(es.h);
@@ -131,22 +131,22 @@ public abstract class ko0 extends FrameLayout implements NotificationCenter.Noti
         eo0Var.setImeOptions(6);
         eo0Var.setBackgroundDrawable(null);
         eo0Var.setPadding(0, 0, AndroidUtilities.dp(42.0f), 0);
-        LinearLayout e = org.telegram.messenger.yh.e(context, 1);
+        LinearLayout e = org.telegram.messenger.sk.e(context, 1);
         TextView textView = new TextView(context);
-        org.telegram.messenger.yh.n(i11, c6Var, textView, 1, 16.0f);
+        org.telegram.messenger.sk.o(i11, c6Var, textView, 1, 16.0f);
         textView.setText(LocaleController.getString(R.string.SavedTagLabelTagText));
-        e.addView(textView, w7.a6.k(24.0f, 5.0f, 24.0f, 12.0f, -1, -2));
-        e.addView(eo0Var, w7.a6.k(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
+        e.addView(textView, w7.z5.k(24.0f, 5.0f, 24.0f, 12.0f, -1, -2));
+        e.addView(eo0Var, w7.z5.k(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
         d2Var.n(e);
         a2Var.a = AndroidUtilities.dp(292.0f);
         d2Var.k(LocaleController.getString(R.string.Save), new hg.b2(eo0Var, i10, reaction, 9));
-        d2Var.h(LocaleController.getString(R.string.Cancel), new zg0(2));
+        d2Var.h(LocaleController.getString(R.string.Cancel), new co0(0));
         if (z10) {
             H = a2Var;
             a2VarArr[0] = a2Var;
             a2Var.setOnDismissListener(new b1(currentFocus, 8));
             final int i12 = 0;
-            H.setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Components.bo0
+            H.setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Components.ao0
                 @Override // android.content.DialogInterface.OnShowListener
                 public final void onShow(DialogInterface dialogInterface) {
                     switch (i12) {
@@ -168,7 +168,7 @@ public abstract class ko0 extends FrameLayout implements NotificationCenter.Noti
             a2VarArr[0] = a2Var;
             a2Var.setOnDismissListener(new b1(eo0Var, 9));
             final int i13 = 1;
-            a2VarArr[0].setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Components.bo0
+            a2VarArr[0].setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Components.ao0
                 @Override // android.content.DialogInterface.OnShowListener
                 public final void onShow(DialogInterface dialogInterface) {
                     switch (i13) {
@@ -300,7 +300,7 @@ public abstract class ko0 extends FrameLayout implements NotificationCenter.Noti
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.F, z10 ? 1.0f : 0.0f);
         this.G = ofFloat;
-        ofFloat.addUpdateListener(new g80(this, 16));
+        ofFloat.addUpdateListener(new f80(this, 16));
         this.G.setInterpolator(es.h);
         this.G.setDuration(320L);
         this.G.addListener(new org.telegram.ui.vo(19, this, z10));
@@ -378,9 +378,9 @@ public abstract class ko0 extends FrameLayout implements NotificationCenter.Noti
         if (this.f == null) {
             LinearLayout linearLayout2 = new LinearLayout(getContext());
             this.f = linearLayout2;
-            linearLayout2.setOnClickListener(new z80(this, 12));
+            linearLayout2.setOnClickListener(new y80(this, 12));
             this.f.setOrientation(0);
-            w7.c6.b(this.f, 0.03f, 1.25f);
+            w7.b6.b(this.f, 0.03f, 1.25f);
             org.telegram.ui.w9 w9Var = new org.telegram.ui.w9(this, getContext());
             int i14 = org.telegram.ui.ActionBar.g6.o6;
             org.telegram.ui.ActionBar.c6 c6Var = this.c;
@@ -418,11 +418,11 @@ public abstract class ko0 extends FrameLayout implements NotificationCenter.Noti
             spannableStringBuilder2.append((CharSequence) spannableString2);
             textView.setText(spannableStringBuilder2);
             textView.setPadding(AndroidUtilities.dp(5.66f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(4.0f));
-            this.f.addView(w9Var, w7.a6.q(-2, -2, 16));
-            this.f.addView(textView, w7.a6.q(-2, -2, 16));
+            this.f.addView(w9Var, w7.z5.q(-2, -2, 16));
+            this.f.addView(textView, w7.z5.q(-2, -2, 16));
             this.f.setPadding(AndroidUtilities.dp(7.0f), 0, 0, 0);
             this.f.setClipToPadding(false);
-            addView(this.f, w7.a6.a(-1.0f, 5.0f, 0.0f, 5.0f, 0.0f, -2, 19));
+            addView(this.f, w7.z5.a(-1.0f, 5.0f, 0.0f, 5.0f, 0.0f, -2, 19));
         }
         if (z10) {
             return;

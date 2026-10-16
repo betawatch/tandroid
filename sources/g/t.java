@@ -10,13 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.appcompat.widget.Toolbar;
-import m.j1;
-import m.m3;
+import m.l1;
+import m.p3;
 import org.telegram.messenger.beta.R;
-import r0.j0;
-import w7.u6;
+import r0.i0;
+import w7.t6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class t extends androidx.activity.n {
     public r d;
@@ -37,8 +37,8 @@ public abstract class t extends androidx.activity.n {
         } else {
             i11 = i10;
         }
-        this.e = new r0.k() { // from class: g.s
-            @Override // r0.k
+        this.e = new r0.j() { // from class: g.s
+            @Override // r0.j
             public final boolean i(KeyEvent keyEvent) {
                 return t.this.d(keyEvent);
             }
@@ -98,7 +98,7 @@ public abstract class t extends androidx.activity.n {
 
     @Override // android.app.Dialog, android.view.Window.Callback
     public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        return u6.b(this.e, getWindow().getDecorView(), this, keyEvent);
+        return t6.b(this.e, getWindow().getDecorView(), this, keyEvent);
     }
 
     @Override // android.app.Dialog
@@ -156,9 +156,9 @@ public abstract class t extends androidx.activity.n {
         super.setTitle(charSequence);
         r rVar = (r) c();
         rVar.r = charSequence;
-        j1 j1Var = rVar.s;
-        if (j1Var != null) {
-            j1Var.setWindowTitle(charSequence);
+        l1 l1Var = rVar.s;
+        if (l1Var != null) {
+            l1Var.setWindowTitle(charSequence);
             return;
         }
         a0 a0Var = rVar.n;
@@ -170,16 +170,16 @@ public abstract class t extends androidx.activity.n {
             }
             return;
         }
-        m3 m3Var = (m3) a0Var.e;
-        if (m3Var.g) {
+        p3 p3Var = (p3) a0Var.e;
+        if (p3Var.g) {
             return;
         }
-        Toolbar toolbar = m3Var.a;
-        m3Var.h = charSequence;
-        if ((m3Var.b & 8) != 0) {
+        Toolbar toolbar = p3Var.a;
+        p3Var.h = charSequence;
+        if ((p3Var.b & 8) != 0) {
             toolbar.setTitle(charSequence);
-            if (m3Var.g) {
-                j0.k(toolbar.getRootView(), charSequence);
+            if (p3Var.g) {
+                i0.k(toolbar.getRootView(), charSequence);
             }
         }
     }
@@ -211,23 +211,23 @@ public abstract class t extends androidx.activity.n {
         String string = getContext().getString(i10);
         r rVar = (r) c10;
         rVar.r = string;
-        j1 j1Var = rVar.s;
-        if (j1Var != null) {
-            j1Var.setWindowTitle(string);
+        l1 l1Var = rVar.s;
+        if (l1Var != null) {
+            l1Var.setWindowTitle(string);
             return;
         }
         a0 a0Var = rVar.n;
         if (a0Var != null) {
-            m3 m3Var = (m3) a0Var.e;
-            if (m3Var.g) {
+            p3 p3Var = (p3) a0Var.e;
+            if (p3Var.g) {
                 return;
             }
-            Toolbar toolbar = m3Var.a;
-            m3Var.h = string;
-            if ((m3Var.b & 8) != 0) {
+            Toolbar toolbar = p3Var.a;
+            p3Var.h = string;
+            if ((p3Var.b & 8) != 0) {
                 toolbar.setTitle(string);
-                if (m3Var.g) {
-                    j0.k(toolbar.getRootView(), string);
+                if (p3Var.g) {
+                    i0.k(toolbar.getRootView(), string);
                     return;
                 }
                 return;

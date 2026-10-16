@@ -3,18 +3,15 @@ package hg;
 import android.content.SharedPreferences;
 import android.media.AudioTrack;
 import android.os.Handler;
-import android.os.HandlerThread;
 import android.text.SpannableString;
 import android.util.Pair;
 import android.view.KeyEvent;
 import android.view.View;
 import ig.f2;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ScheduledExecutorService;
 import ji.c6;
 import ji.f3;
@@ -32,20 +29,20 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
+import org.telegram.messenger.video.VideoAds;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.a11;
-import org.telegram.ui.Components.c11;
-import org.telegram.ui.Components.m80;
-import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.sc;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -60,39 +57,25 @@ public final /* synthetic */ class t implements Runnable {
         this.d = obj3;
     }
 
-    private final void a() {
-        li.u0 u0Var = (li.u0) this.b;
-        li.q0 q0Var = (li.q0) this.c;
-        File file = (File) this.d;
-        li.r0 r0Var = u0Var.e;
-        long j10 = q0Var.a;
-        c11 c11Var = (c11) r0Var;
-        synchronized (c11Var) {
-            if (c11Var.d) {
-                return;
-            }
-            c11Var.c.put(Long.valueOf(j10), new a11(file));
-        }
-    }
-
+    /* JADX WARN: Type inference failed for: r1v98, types: [java.lang.Object, n2.k] */
+    /* JADX WARN: Type inference failed for: r1v99, types: [java.lang.Object, n2.k] */
     @Override // java.lang.Runnable
     public final void run() {
         ArrayList arrayList;
         int i10 = 13;
-        int i11 = 1;
         switch (this.a) {
             case 0:
                 h0 h0Var = (h0) this.b;
                 HashSet hashSet = (HashSet) this.c;
                 s sVar = (s) this.d;
-                int i12 = h0Var.s0;
-                MessagesController messagesController = MessagesController.getInstance(i12);
+                int i11 = h0Var.s0;
+                MessagesController messagesController = MessagesController.getInstance(i11);
                 Iterator it = hashSet.iterator();
                 while (it.hasNext()) {
                     Pair pair = (Pair) it.next();
                     boolean booleanValue = ((Boolean) pair.first).booleanValue();
                     Long l4 = (Long) pair.second;
-                    (booleanValue ? messagesController.dialogs_read_outbox_max : messagesController.dialogs_read_inbox_max).put(l4, Integer.valueOf(MessagesStorage.getInstance(i12).getDialogReadMaxSync(booleanValue, l4.longValue())));
+                    (booleanValue ? messagesController.dialogs_read_outbox_max : messagesController.dialogs_read_inbox_max).put(l4, Integer.valueOf(MessagesStorage.getInstance(i11).getDialogReadMaxSync(booleanValue, l4.longValue())));
                 }
                 AndroidUtilities.runOnUIThread(sVar);
                 return;
@@ -134,7 +117,7 @@ public final /* synthetic */ class t implements Runnable {
                 a2Var.q = arrayList5;
                 a2Var.r = hashMap;
                 a2Var.s = true;
-                a2Var.a.I0(arrayList5);
+                a2Var.a.O0(arrayList5);
                 return;
             case 4:
                 c2 c2Var = (c2) this.b;
@@ -143,12 +126,12 @@ public final /* synthetic */ class t implements Runnable {
                 String str2 = tL_messages_searchStickerSets.q;
                 e2 e2Var = c2Var.a;
                 String str3 = e2Var.R;
-                v51 v51Var = e2Var.e;
+                w51 w51Var = e2Var.e;
                 if (str2.equals(str3)) {
                     c2Var.a();
-                    v51Var.b.h.getProgressDrawable().e = false;
+                    w51Var.b.h.getProgressDrawable().e = false;
                     e2Var.N = 0;
-                    v51Var.b(true);
+                    w51Var.b(true);
                     e2Var.E.addAll(tL_messages_foundStickerSets.sets);
                     e2Var.l();
                     return;
@@ -198,7 +181,7 @@ public final /* synthetic */ class t implements Runnable {
                     return;
                 } else {
                     cVar.a.a(0.0f);
-                    yh.p(R.string.UnknownError, zc.a0(cVar), null);
+                    sk.q(R.string.UnknownError, zc.a0(cVar), null);
                     return;
                 }
             case 9:
@@ -211,7 +194,7 @@ public final /* synthetic */ class t implements Runnable {
                     return;
                 } else if (tLObject3 instanceof TLRPC.TL_boolFalse) {
                     mVar2.e.a(0.0f);
-                    yh.p(R.string.UnknownError, zc.a0(mVar2), null);
+                    sk.q(R.string.UnknownError, zc.a0(mVar2), null);
                     return;
                 } else {
                     if (mVar2.E != null) {
@@ -259,7 +242,7 @@ public final /* synthetic */ class t implements Runnable {
                     return;
                 } else {
                     w0Var.a.a(0.0f);
-                    yh.p(R.string.UnknownError, zc.a0(w0Var), null);
+                    sk.q(R.string.UnknownError, zc.a0(w0Var), null);
                     return;
                 }
             case 14:
@@ -283,9 +266,9 @@ public final /* synthetic */ class t implements Runnable {
                 return;
             case 16:
                 x3 x3Var = (x3) this.b;
-                m80 m80Var = (m80) this.c;
+                l80 l80Var = (l80) this.c;
                 u5 u5Var = (u5) this.d;
-                if (x3Var.h4 != m80Var) {
+                if (x3Var.h4 != l80Var) {
                     return;
                 }
                 x3Var.h4 = null;
@@ -308,13 +291,13 @@ public final /* synthetic */ class t implements Runnable {
                 if (indexOf < 0 || indexOf2 < 0) {
                     return;
                 }
-                for (int i13 = 0; i13 < arrayList8.size(); i13++) {
-                    ji.a aVar3 = (ji.a) arrayList8.get(i13);
+                for (int i12 = 0; i12 < arrayList8.size(); i12++) {
+                    ji.a aVar3 = (ji.a) arrayList8.get(i12);
                     long j10 = aVar3.t;
                     if (j10 != 0) {
-                        k3Var.X(i13, k6.l((TL_iv.RichText) x3Var2.k3.get(Long.valueOf(j10))));
+                        k3Var.X(i12, k6.l((TL_iv.RichText) x3Var2.k3.get(Long.valueOf(j10))));
                     } else {
-                        k3Var.X(i13, i6.z(aVar3.b));
+                        k3Var.X(i12, i6.z(aVar3.b));
                     }
                 }
                 k3Var.i0(Math.min(indexOf, indexOf2), Math.max(indexOf, indexOf2));
@@ -354,9 +337,9 @@ public final /* synthetic */ class t implements Runnable {
                     }
                     synchronized (k2.h0.t) {
                         try {
-                            int i14 = k2.h0.v - 1;
-                            k2.h0.v = i14;
-                            if (i14 == 0) {
+                            int i13 = k2.h0.v - 1;
+                            k2.h0.v = i13;
+                            if (i13 == 0) {
                                 ScheduledExecutorService scheduledExecutorService = k2.h0.u;
                                 scheduledExecutorService.getClass();
                                 scheduledExecutorService.shutdown();
@@ -372,9 +355,9 @@ public final /* synthetic */ class t implements Runnable {
                     }
                     synchronized (k2.h0.t) {
                         try {
-                            int i15 = k2.h0.v - 1;
-                            k2.h0.v = i15;
-                            if (i15 == 0) {
+                            int i14 = k2.h0.v - 1;
+                            k2.h0.v = i14;
+                            if (i14 == 0) {
                                 ScheduledExecutorService scheduledExecutorService2 = k2.h0.u;
                                 scheduledExecutorService2.getClass();
                                 scheduledExecutorService2.shutdown();
@@ -390,12 +373,12 @@ public final /* synthetic */ class t implements Runnable {
                 ArrayList arrayList9 = (ArrayList) this.c;
                 ArrayList arrayList10 = (ArrayList) this.d;
                 nVar.getClass();
-                for (int i16 = 0; i16 < arrayList9.size(); i16++) {
-                    ((View) arrayList9.get(i16)).setVisibility(0);
+                for (int i15 = 0; i15 < arrayList9.size(); i15++) {
+                    ((View) arrayList9.get(i15)).setVisibility(0);
                 }
                 if (nVar.A.removeAll(arrayList10)) {
-                    for (int i17 = 0; i17 < arrayList10.size(); i17++) {
-                        nVar.d((s4.b1) arrayList10.get(i17));
+                    for (int i16 = 0; i16 < arrayList10.size(); i16++) {
+                        nVar.d((s4.b1) arrayList10.get(i16));
                     }
                     nVar.G();
                 }
@@ -414,69 +397,49 @@ public final /* synthetic */ class t implements Runnable {
                 nVar2.K.remove(view);
                 return;
             case 24:
-                li.u uVar2 = (li.u) this.b;
-                HandlerThread handlerThread = (HandlerThread) this.c;
-                CountDownLatch countDownLatch = (CountDownLatch) this.d;
-                uVar2.getClass();
-                try {
-                    uVar2.i();
-                    return;
-                } finally {
-                    handlerThread.quitSafely();
-                    countDownLatch.countDown();
-                }
+                SpannableString spannableString = (SpannableString) this.b;
+                n4.s sVar2 = (n4.s) this.c;
+                gi.m0 m0Var = (gi.m0) this.d;
+                li.k.a(spannableString, spannableString.length(), (com.google.android.gms.internal.play_billing.s0) sVar2.b);
+                m0Var.run(spannableString);
+                return;
             case 25:
-                li.u0 u0Var = (li.u0) this.b;
-                li.x xVar2 = (li.x) this.c;
-                File file = (File) this.d;
-                Handler handler2 = u0Var.i;
-                try {
-                    xVar2.c(file);
-                    u0Var.g();
-                    long e = w7.p.e(file) / 1000;
-                    u0Var.m.b("preview snapshot completed: durationMs=" + e + ", size=" + file.length() + ", elapsedMs=" + li.u0.f(u0Var.J));
-                    handler2.post(new li.h0(u0Var, e, i11));
-                    return;
-                } catch (Exception e7) {
-                    handler2.post(new li.g0(u0Var, e7, 3));
+                m4.a0 a0Var = (m4.a0) this.b;
+                m4.v vVar = (m4.v) this.c;
+                KeyEvent keyEvent = (KeyEvent) this.d;
+                m4.e0 e0Var = a0Var.b;
+                if (e0Var.i(vVar)) {
+                    e0Var.b(keyEvent, false, false);
+                } else {
+                    m4.p0 p0Var = e0Var.h;
+                    n4.t tVar = vVar.a;
+                    tVar.getClass();
+                    p0Var.getClass();
+                    p0Var.H(1, new m4.h0(p0Var, 9), tVar, true);
+                }
+                a0Var.a = null;
+                return;
+            case 26:
+                m4.e0 e0Var2 = (m4.e0) this.b;
+                m4.v0 v0Var = (m4.v0) this.c;
+                m4.w wVar = (m4.w) this.d;
+                if (e0Var2.j()) {
                     return;
                 }
-            case 26:
-                a();
+                m4.m1 m1Var = e0Var2.t;
+                v0Var.getClass();
+                w7.v.b(m1Var, wVar);
                 return;
             case 27:
-                m4.b0 b0Var = (m4.b0) this.b;
-                m4.w wVar = (m4.w) this.c;
-                KeyEvent keyEvent = (KeyEvent) this.d;
-                m4.f0 f0Var = b0Var.b;
-                if (f0Var.i(wVar)) {
-                    f0Var.b(keyEvent, false, false);
-                } else {
-                    m4.q0 q0Var = f0Var.h;
-                    n4.t tVar = wVar.a;
-                    tVar.getClass();
-                    q0Var.getClass();
-                    q0Var.H(1, new m4.i0(q0Var, 9), tVar, true);
-                }
-                b0Var.a = null;
+                n2.j jVar = (n2.j) this.b;
+                this.c.b(jVar.a, jVar.b, (Exception) this.d);
                 return;
             case 28:
-                m4.f0 f0Var2 = (m4.f0) this.b;
-                m4.w0 w0Var2 = (m4.w0) this.c;
-                m4.x xVar3 = (m4.x) this.d;
-                if (f0Var2.j()) {
-                    return;
-                }
-                m4.n1 n1Var = f0Var2.t;
-                w0Var2.getClass();
-                w7.w.b(n1Var, xVar3);
+                n2.j jVar2 = (n2.j) this.b;
+                this.c.c(jVar2.a, jVar2.b, (oa.d) this.d);
                 return;
             default:
-                SpannableString spannableString = (SpannableString) this.b;
-                m4.c cVar2 = (m4.c) this.c;
-                gi.m0 m0Var = (gi.m0) this.d;
-                mi.k.a(spannableString, spannableString.length(), (com.google.android.gms.internal.play_billing.s0) cVar2.b);
-                m0Var.run(spannableString);
+                ((VideoAds) this.b).lambda$show$3((sc) this.c, (TLRPC.TL_sponsoredMessage) this.d);
                 return;
         }
     }

@@ -37,7 +37,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.kc1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class io extends ni implements nw0, NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int m1 = 0;
@@ -69,7 +69,7 @@ public final class io extends ni implements nw0, NotificationCenter.Notification
     public final c5.f[] O0;
     public Editable P;
     public final ArrayList P0;
-    public final rh.t Q;
+    public final rh.s Q;
     public int Q0;
     public boolean R;
     public int R0;
@@ -78,7 +78,7 @@ public final class io extends ni implements nw0, NotificationCenter.Notification
     public boolean T;
     public final int[] T0;
     public int U;
-    public final org.telegram.ui.Cells.t6 U0;
+    public final org.telegram.ui.Cells.l7 U0;
     public int V;
     public boolean V0;
     public boolean W;
@@ -151,7 +151,7 @@ public final class io extends ni implements nw0, NotificationCenter.Notification
         ArrayList arrayList = new ArrayList();
         this.P0 = arrayList;
         this.T0 = new int[]{3600, 10800, 28800, 86400, 259200};
-        this.U0 = new org.telegram.ui.Cells.t6(this, 8);
+        this.U0 = new org.telegram.ui.Cells.l7(this, 7);
         this.V0 = false;
         this.W0 = -1;
         this.h1 = false;
@@ -200,7 +200,7 @@ public final class io extends ni implements nw0, NotificationCenter.Notification
         kc1Var.setLayoutManager(e0Var);
         e0Var.O = true;
         new s4.y(new ci.f(this, i10)).d(kc1Var);
-        addView(kc1Var, w7.a6.e(-1, -1, 51));
+        addView(kc1Var, w7.z5.e(-1, -1, 51));
         kc1Var.setPreserveFocusAfterLayout(true);
         kc1Var.setAdapter(goVar);
         kc1Var.setOnItemClickListener(new jn(this, c6Var, viVar, context));
@@ -209,9 +209,9 @@ public final class io extends ni implements nw0, NotificationCenter.Notification
         this.y = v40Var;
         v40Var.setAlpha(0.0f);
         v40Var.setVisibility(4);
-        addView(v40Var, w7.a6.a(-2.0f, 19.0f, 0.0f, 19.0f, 0.0f, -2, 51));
+        addView(v40Var, w7.z5.a(-2.0f, 19.0f, 0.0f, 19.0f, 0.0f, -2, 51));
         this.S0 = MessagesController.getInstance(this.b.M1).config.pollCaptionLengthMax.get();
-        this.Q = new rh.t(this.b.M1);
+        this.Q = new rh.s(this.b.M1);
         NotificationCenter.getInstance(this.b.M1).addObserver(this, NotificationCenter.didReceivedWebpagesInUpdates);
         if (isPremium) {
             NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
@@ -220,7 +220,7 @@ public final class io extends ni implements nw0, NotificationCenter.Notification
             wnVar.y = true;
             wnVar.E = true;
             wnVar.setHorizontalPadding(AndroidUtilities.dp(24.0f));
-            addView(wnVar, w7.a6.e(-2, 160, 51));
+            addView(wnVar, w7.z5.e(-2, 160, 51));
         }
         this.F = new di.h4(this.b.u1, false, null);
         W();
@@ -451,7 +451,7 @@ public final class io extends ni implements nw0, NotificationCenter.Notification
         pnVar.j1(i10);
         pnVar.w2 = new hn(callback);
         pnVar.X = new tn(callback, m2Var, pnVar);
-        pnVar.Y = new t2(12, callback, pnVar);
+        pnVar.Y = new u2(11, callback, pnVar);
         pnVar.t1();
         pnVar.setFocusable(true);
         pnVar.show();
@@ -472,7 +472,7 @@ public final class io extends ni implements nw0, NotificationCenter.Notification
     }
 
     @Override // org.telegram.ui.Components.ni
-    public final void A() {
+    public final void B() {
         go goVar = this.r;
         if (goVar != null) {
             goVar.l();
@@ -497,7 +497,7 @@ public final class io extends ni implements nw0, NotificationCenter.Notification
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void B(int i10, int i11) {
+    public final void C(int i10, int i11) {
         int dp;
         int i12;
         vi viVar = this.b;
@@ -689,7 +689,7 @@ public final class io extends ni implements nw0, NotificationCenter.Notification
             alertDialog$Builder.a.R = LocaleController.getString(z11 ? R.string.CancelTodoAlertTitle : R.string.CancelPollAlertTitle);
             alertDialog$Builder.a.T = LocaleController.getString(z11 ? R.string.CancelTodoAlertText : R.string.CancelPollAlertText);
             alertDialog$Builder.k(LocaleController.getString(R.string.PassportDiscard), new s(this, 23));
-            org.telegram.messenger.q.q(R.string.Cancel, alertDialog$Builder, null);
+            i2.d.r(R.string.Cancel, alertDialog$Builder, null);
         }
         return z10;
     }
@@ -765,9 +765,9 @@ public final class io extends ni implements nw0, NotificationCenter.Notification
     public final void Y(sh.e eVar, boolean z10) {
         TLRPC.Photo photo;
         String str = eVar.b;
-        rh.t tVar = this.Q;
-        boolean containsKey = tVar.c.containsKey(str);
-        TLRPC.WebPage webPage = (TLRPC.WebPage) tVar.b.get(eVar.b);
+        rh.s sVar = this.Q;
+        boolean containsKey = sVar.c.containsKey(str);
+        TLRPC.WebPage webPage = (TLRPC.WebPage) sVar.b.get(eVar.b);
         ne.b bVar = eVar.s;
         ImageReceiver imageReceiver = eVar.a;
         eVar.r.a(containsKey || (webPage instanceof TLRPC.TL_webPagePending), z10);
@@ -892,7 +892,7 @@ public final class io extends ni implements nw0, NotificationCenter.Notification
                 wzVar.Q.h1(0, 0);
                 this.E.u(false);
                 if (z10) {
-                    this.E.B();
+                    this.E.C();
                 }
                 this.h1 = false;
                 i0(0);
@@ -987,9 +987,9 @@ public final class io extends ni implements nw0, NotificationCenter.Notification
             return;
         }
         this.G = true;
-        org.telegram.ui.Cells.t6 t6Var = this.U0;
-        AndroidUtilities.cancelRunOnUIThread(t6Var);
-        AndroidUtilities.runOnUIThread(t6Var, 100L);
+        org.telegram.ui.Cells.l7 l7Var = this.U0;
+        AndroidUtilities.cancelRunOnUIThread(l7Var);
+        AndroidUtilities.runOnUIThread(l7Var, 100L);
     }
 
     @Override // org.telegram.ui.Components.ni
@@ -1035,9 +1035,9 @@ public final class io extends ni implements nw0, NotificationCenter.Notification
         kc1 kc1Var = this.s;
         arrayList.add(new org.telegram.ui.ActionBar.i6(kc1Var, 32768, null, null, null, null, i10));
         int i11 = org.telegram.ui.ActionBar.g6.b7;
-        arrayList.add(new org.telegram.ui.ActionBar.i6(kc1Var, 32, new Class[]{org.telegram.ui.Cells.b7.class}, null, null, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(kc1Var, 32, new Class[]{org.telegram.ui.Cells.a7.class}, null, null, null, i11));
         int i12 = org.telegram.ui.ActionBar.g6.a7;
-        arrayList.add(new org.telegram.ui.ActionBar.i6(kc1Var, 48, new Class[]{org.telegram.ui.Cells.b7.class}, null, null, null, i12));
+        arrayList.add(new org.telegram.ui.ActionBar.i6(kc1Var, 48, new Class[]{org.telegram.ui.Cells.a7.class}, null, null, null, i12));
         arrayList.add(new org.telegram.ui.ActionBar.i6(kc1Var, 16, new Class[]{xn.class}, null, null, null, i12));
         arrayList.add(new org.telegram.ui.ActionBar.i6(kc1Var, 32, new Class[]{org.telegram.ui.Cells.e9.class}, null, null, null, i11));
         arrayList.add(new org.telegram.ui.ActionBar.i6(kc1Var, 48, new Class[]{org.telegram.ui.Cells.e9.class}, null, null, null, i12));
@@ -1105,9 +1105,9 @@ public final class io extends ni implements nw0, NotificationCenter.Notification
             sh.e eVar2 = (sh.e) eVar;
             String str = eVar2.b;
             bi.f0 f0Var = new bi.f0(10, this, eVar);
-            rh.t tVar = this.Q;
-            HashMap hashMap = tVar.c;
-            HashMap hashMap2 = tVar.b;
+            rh.s sVar = this.Q;
+            HashMap hashMap = sVar.c;
+            HashMap hashMap2 = sVar.b;
             if (hashMap2.containsKey(str)) {
                 f0Var.run((TLRPC.WebPage) hashMap2.get(str), null);
             } else {
@@ -1121,7 +1121,7 @@ public final class io extends ni implements nw0, NotificationCenter.Notification
                 if (!containsKey) {
                     TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
                     getwebpagepreview.message = str;
-                    ConnectionsManager.getInstance(tVar.a).sendRequestTyped(getwebpagepreview, new org.telegram.messenger.a(), new rh.s(0, tVar, str));
+                    ConnectionsManager.getInstance(sVar.a).sendRequestTyped(getwebpagepreview, new org.telegram.messenger.a(), new rh.r(0, sVar, str));
                 }
             }
             Y(eVar2, false);
@@ -1241,7 +1241,7 @@ public final class io extends ni implements nw0, NotificationCenter.Notification
     }
 
     public final void j0(int i10, Utilities.CallbackReturn callbackReturn, int i11, int i12) {
-        m80 F = m80.F(this, null, new View(getContext()));
+        l80 F = l80.F(this, null, new View(getContext()));
         F.s = 0;
         F.t = false;
         F.c(R.drawable.msg_replace, LocaleController.getString(R.string.ReplaceAttachedPollMedia), new gn(this, i10, 1), false);

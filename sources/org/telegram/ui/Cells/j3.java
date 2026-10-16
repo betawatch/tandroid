@@ -13,7 +13,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class j3 extends FrameLayout {
     public boolean a;
@@ -63,8 +63,8 @@ public class j3 extends FrameLayout {
         h3Var.setCursorSize(AndroidUtilities.dp(19.0f));
         h3Var.setCursorWidth(1.5f);
         h3Var.addTextChangedListener(new i3(this, i10, z10));
-        h3Var.setOnFocusChangeListener(new m.r2(this, 2));
-        addView(h3Var, w7.a6.e(-1, -1, 48));
+        h3Var.setOnFocusChangeListener(new m.t2(this, 2));
+        addView(h3Var, w7.z5.e(-1, -1, 48));
         c();
     }
 

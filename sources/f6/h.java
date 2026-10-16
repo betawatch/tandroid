@@ -35,7 +35,7 @@ import n4.s;
 import n6.l;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class h {
     public static final g6.b v = new g6.b("MediaSessionManager", null);
@@ -221,7 +221,7 @@ public final class h {
                             if (sVar != null || !g6.a.d(uri, (Uri) sVar.b)) {
                                 z5 z5Var = fVar.i;
                                 z5Var.e = new qf.b(fVar, sVar2, false, 18);
-                                z5Var.A(uri);
+                                z5Var.C(uri);
                             }
                         } else {
                             Integer num = (Integer) e.N.get(e.c);
@@ -251,7 +251,7 @@ public final class h {
                                 }
                                 z5 z5Var2 = fVar.i;
                                 z5Var2.e = new qf.b(fVar, sVar22, false, 18);
-                                z5Var2.A(uri);
+                                z5Var2.C(uri);
                             }
                         }
                     }
@@ -279,7 +279,7 @@ public final class h {
                     }
                     z5 z5Var22 = fVar.i;
                     z5Var22.e = new qf.b(fVar, sVar222, false, 18);
-                    z5Var22.A(uri);
+                    z5Var22.C(uri);
                 }
             }
             if (hVar.k()) {
@@ -567,7 +567,7 @@ public final class h {
         if (fVar != null) {
             v.b("Stopping media notification.", new Object[0]);
             z5 z5Var = fVar.i;
-            z5Var.B();
+            z5Var.D();
             z5Var.e = null;
             NotificationManager notificationManager = fVar.b;
             if (notificationManager != null) {
@@ -720,7 +720,7 @@ public final class h {
         b0Var.e(new MediaMetadataCompat(cVar.a));
         Uri d = d(lVar);
         if (d != null) {
-            this.h.A(d);
+            this.h.C(d);
             bitmap = null;
         } else {
             bitmap = null;
@@ -728,7 +728,7 @@ public final class h {
         }
         Uri d10 = d(lVar);
         if (d10 != null) {
-            this.i.A(d10);
+            this.i.C(d10);
         } else {
             e(bitmap, 3);
         }

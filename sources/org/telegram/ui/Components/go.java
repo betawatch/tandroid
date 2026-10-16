@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class go extends lm0 {
     public final Context c;
@@ -245,9 +245,9 @@ public final class go extends lm0 {
                 m4Var = new org.telegram.ui.Cells.m4(this.c, org.telegram.ui.ActionBar.g6.L6, 21, 15, false, ioVar.a);
                 break;
             case 1:
-                View b7Var = new org.telegram.ui.Cells.b7(context, (org.telegram.ui.Cells.d0) null);
+                View a7Var = new org.telegram.ui.Cells.a7(context, (org.telegram.ui.Cells.c1) null);
                 new cr(new ColorDrawable(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.a7, c6Var)), org.telegram.ui.ActionBar.g6.W0(context, R.drawable.greydivider, org.telegram.ui.ActionBar.g6.b7)).w = true;
-                m4Var = b7Var;
+                m4Var = a7Var;
                 break;
             case 2:
                 m4Var = new org.telegram.ui.Cells.e9(context, c6Var);

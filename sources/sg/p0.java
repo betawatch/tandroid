@@ -7,12 +7,12 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.e3;
-import org.telegram.ui.jg0;
+import org.telegram.ui.ig0;
 import zh.e2;
 import zh.p7;
 import zh.r3;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class p0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -85,8 +85,8 @@ public final class p0 extends FrameLayout {
             case 2:
                 super.onMeasure(i10, i11);
                 m1 m1Var = ((l1) this.b).c;
-                jg0 jg0Var = m1Var.r0;
-                if (jg0Var == null) {
+                ig0 ig0Var = m1Var.r0;
+                if (ig0Var == null) {
                     View view = m1Var.B0;
                     if (view == null) {
                         f7 = 0.0f;
@@ -97,7 +97,7 @@ public final class p0 extends FrameLayout {
                         measuredHeight = m1Var.B0.getMeasuredHeight();
                     }
                 } else {
-                    top = jg0Var.getTop();
+                    top = ig0Var.getTop();
                     measuredHeight = m1Var.r0.getMeasuredHeight();
                 }
                 f7 = (measuredHeight / 2.0f) + top;

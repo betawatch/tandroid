@@ -13,8 +13,9 @@ import k2.m0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.TextureViewRenderer;
+import w7.r;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class d {
     public static int n;
@@ -128,13 +129,13 @@ public final class d {
         int width = view.getWidth() + i12;
         int height = view.getHeight() + i13;
         int i14 = iArr[0];
-        int b10 = w7.s.b(i12, i14, decorView.getWidth() + i14);
+        int b10 = r.b(i12, i14, decorView.getWidth() + i14);
         int i15 = iArr[1];
-        int b11 = w7.s.b(i13, i15, decorView.getHeight() + i15);
+        int b11 = r.b(i13, i15, decorView.getHeight() + i15);
         int i16 = iArr[0];
-        int b12 = w7.s.b(width, i16, decorView.getWidth() + i16);
+        int b12 = r.b(width, i16, decorView.getWidth() + i16);
         int i17 = iArr[1];
-        int b13 = w7.s.b(height, i17, decorView.getHeight() + i17);
+        int b13 = r.b(height, i17, decorView.getHeight() + i17);
         Rect rect = o;
         rect.set(b10, b11, b12, b13);
         m0 m0Var = this.h;

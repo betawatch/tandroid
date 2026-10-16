@@ -1,14 +1,14 @@
 package bi;
 
 import android.content.Context;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.f10;
 import org.telegram.ui.Components.pk;
 import org.telegram.ui.Components.wx0;
-import org.telegram.ui.lg1;
+import org.telegram.ui.kg1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class p6 extends wx0 {
     public final /* synthetic */ int K = 0;
@@ -24,14 +24,14 @@ public final class p6 extends wx0 {
     public void e(boolean z10, boolean z11) {
         switch (this.K) {
             case 2:
-                lg1 lg1Var = (lg1) this.L;
+                kg1 kg1Var = (kg1) this.L;
                 super.e(z10, z11);
                 if (!z11) {
-                    lg1Var.n.a.animate().cancel();
-                    lg1Var.n.a.setAlpha(z10 ? 0.0f : 1.0f);
+                    kg1Var.n.a.animate().cancel();
+                    kg1Var.n.a.setAlpha(z10 ? 0.0f : 1.0f);
                     break;
                 } else {
-                    lg1Var.n.a.animate().alpha(z10 ? 0.0f : 1.0f).start();
+                    kg1Var.n.a.animate().alpha(z10 ? 0.0f : 1.0f).start();
                     break;
                 }
             default:
@@ -55,7 +55,7 @@ public final class p6 extends wx0 {
         switch (this.K) {
             case 0:
                 w6 w6Var = ((q6) this.L).d;
-                super.onMeasure(i10, yh.z(w6Var.e, w6Var.n - w6Var.r.getPaddingTop(), TLObject.FLAG_30));
+                super.onMeasure(i10, sk.c(w6Var.e, w6Var.n - w6Var.r.getPaddingTop(), TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i10, i11);
@@ -82,8 +82,8 @@ public final class p6 extends wx0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p6(lg1 lg1Var, Context context, f10 f10Var) {
+    public p6(kg1 kg1Var, Context context, f10 f10Var) {
         super(context, f10Var, 0, null);
-        this.L = lg1Var;
+        this.L = kg1Var;
     }
 }

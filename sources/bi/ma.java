@@ -24,7 +24,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ni;
+import org.telegram.messenger.mi;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -36,19 +36,19 @@ import org.telegram.ui.Components.qh0;
 import org.telegram.ui.Components.w60;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.b81;
+import org.telegram.ui.bs0;
 import org.telegram.ui.gj;
-import org.telegram.ui.li1;
 import org.telegram.ui.mt;
-import org.telegram.ui.ol0;
-import org.telegram.ui.rl0;
+import org.telegram.ui.nl0;
+import org.telegram.ui.ps0;
+import org.telegram.ui.ql0;
 import org.telegram.ui.rx0;
-import org.telegram.ui.ul0;
-import org.telegram.ui.wi0;
+import org.telegram.ui.vi0;
 import org.telegram.ui.ws;
 import org.telegram.ui.z60;
 import org.telegram.ui.z70;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ma implements Runnable {
     public final /* synthetic */ int a;
@@ -77,54 +77,54 @@ public final /* synthetic */ class ma implements Runnable {
                 na.a((na) this.c, (TLObject) this.d, this.e, (ArrayList) this.f, (boolean[]) this.h, this.b);
                 break;
             case 1:
-                m4.j1 j1Var = (m4.j1) this.c;
-                m4.w wVar = (m4.w) this.d;
-                m4.p1 p1Var = (m4.p1) this.e;
-                String str = p1Var.b;
-                m4.f0 f0Var = (m4.f0) this.f;
+                m4.i1 i1Var = (m4.i1) this.c;
+                m4.v vVar = (m4.v) this.d;
+                m4.o1 o1Var = (m4.o1) this.e;
+                String str = o1Var.b;
+                m4.e0 e0Var = (m4.e0) this.f;
                 int i10 = this.b;
-                m4.m mVar = (m4.m) this.h;
-                qi.e eVar = j1Var.b;
-                if (eVar.t(wVar)) {
+                m4.l lVar = (m4.l) this.h;
+                pi.e eVar = i1Var.b;
+                if (eVar.t(vVar)) {
                     try {
-                        m4.e d = m4.e.d(p1Var);
+                        m4.d d = m4.d.d(o1Var);
                         Object obj = d.g;
                         int i11 = d.b;
                         if (d.b()) {
-                            m4.p1 p1Var2 = d.a;
+                            m4.o1 o1Var2 = d.a;
                             boolean z10 = true;
-                            if (p1Var2 != null) {
-                                v7.u6.p(p1Var2.a == 40010);
-                                j1Var.H0(mVar, i10, null, 40010, new m4.a1(new m4.d1(d), 1));
+                            if (o1Var2 != null) {
+                                v7.u6.p(o1Var2.a == 40010);
+                                i1Var.H0(lVar, i10, null, 40010, new m4.z0(new m4.c1(d), 1));
                                 break;
                             } else {
-                                m4.n1 n1Var = f0Var.t;
+                                m4.m1 m1Var = e0Var.t;
                                 if (i11 == 1) {
                                     if (obj != null) {
                                         r8 = ((Boolean) obj).booleanValue();
-                                    } else if (!n1Var.t()) {
+                                    } else if (!m1Var.t()) {
                                         r8 = true;
                                     }
                                 }
                                 if (r8) {
-                                    j1Var.M0(wVar, i10);
+                                    i1Var.M0(vVar, i10);
                                 } else if (i11 == 31) {
                                     obj.getClass();
-                                    j1Var.O0(wVar, i10, 31, new m4.a1(new m4.z0(0, new h(2, (b2.p0) obj, z10), new m4.w0(8)), 1));
+                                    i1Var.O0(vVar, i10, 31, new m4.z0(new m4.y0(0, new h(2, (b2.p0) obj, z10), new m4.v0(8)), 1));
                                 } else {
-                                    j1Var.O0(wVar, i10, i11, m4.j1.Q0(new m4.d1(d)));
+                                    i1Var.O0(vVar, i10, i11, m4.i1.Q0(new m4.c1(d)));
                                 }
-                                eVar.j(wVar);
+                                eVar.j(vVar);
                                 break;
                             }
                         } else {
                             e2.a.l("MediaSessionStub", "Can't execute predefined custom command: " + str);
-                            m4.j1.P0(f0Var, wVar, i10, new m4.t1(-6));
+                            m4.i1.P0(e0Var, vVar, i10, new m4.s1(-6));
                             break;
                         }
                     } catch (RuntimeException e) {
                         e2.a.m("MediaSessionStub", "Failed to convert predefined custom command: " + str, e);
-                        m4.j1.P0(f0Var, wVar, i10, new m4.t1(-3));
+                        m4.i1.P0(e0Var, vVar, i10, new m4.s1(-3));
                         return;
                     }
                 }
@@ -212,7 +212,7 @@ public final /* synthetic */ class ma implements Runnable {
                     TLRPC.GroupCall groupCall2 = groupcall.call;
                     tL_inputGroupCall2.id = groupCall2.id;
                     tL_inputGroupCall2.access_hash = groupCall2.access_hash;
-                    ConnectionsManager.getInstance(i13).sendRequest(exportgroupcallinvite, new ni(a2Var, context, i13, exportgroupcallinvite, c6Var, z60Var));
+                    ConnectionsManager.getInstance(i13).sendRequest(exportgroupcallinvite, new mi(a2Var, context, i13, exportgroupcallinvite, c6Var, z60Var));
                     break;
                 } else {
                     a2Var.dismiss();
@@ -224,7 +224,7 @@ public final /* synthetic */ class ma implements Runnable {
                 new b81((Context) this.c, (TLRPC.Chat) this.d, (TLRPC.User) this.e, new ah.g(this.b, (MessagesStorage.BooleanCallback) this.f, 28), (org.telegram.ui.ActionBar.c6) this.h).show();
                 break;
             case 8:
-                org.telegram.ui.Components.y9.a((org.telegram.ui.Components.y9) this.c, (Runnable[]) this.d, (Bitmap) this.e, (w60) this.f, this.b, (w7.x5[]) this.h);
+                org.telegram.ui.Components.y9.a((org.telegram.ui.Components.y9) this.c, (Runnable[]) this.d, (Bitmap) this.e, (w60) this.f, this.b, (w7.w5[]) this.h);
                 break;
             case 9:
                 qh0.n((qh0) this.c, (Integer[]) this.e, this.b, (TLObject) this.d, (ArrayList) this.f, (TLRPC.PollAnswerVoters) this.h);
@@ -236,13 +236,13 @@ public final /* synthetic */ class ma implements Runnable {
                 TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest = (TLRPC.TL_urlAuthResultRequest) this.c;
                 String[] strArr = (String[]) this.d;
                 Context context2 = (Context) this.e;
-                ol0 ol0Var = (ol0) this.f;
+                nl0 nl0Var = (nl0) this.f;
                 org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) this.h;
                 if (tL_urlAuthResultRequest.match_codes.isEmpty() || !TextUtils.isEmpty(strArr[0])) {
-                    ol0Var.run();
+                    nl0Var.run();
                     break;
                 } else {
-                    rl0.c(context2, this.b, tL_urlAuthResultRequest.match_codes, tL_urlAuthResultRequest.domain, new mt(10, strArr, ol0Var), true, new ah.j(19), m2Var.getResourceProvider());
+                    ql0.c(context2, this.b, tL_urlAuthResultRequest.match_codes, tL_urlAuthResultRequest.domain, new mt(10, strArr, nl0Var), true, new ah.j(19), m2Var.getResourceProvider());
                     break;
                 }
                 break;
@@ -253,7 +253,7 @@ public final /* synthetic */ class ma implements Runnable {
                 c5.g gVar = (c5.g) this.f;
                 rx0 rx0Var = (rx0) this.h;
                 if (iVar.a == 0) {
-                    wi0 wi0Var = new wi0(1, m2Var2);
+                    vi0 vi0Var = new vi0(1, m2Var2);
                     int i15 = this.b;
                     if (list != null && !list.isEmpty() && !UserConfig.getInstance(i15).isPremium()) {
                         for (Purchase purchase : list) {
@@ -268,26 +268,26 @@ public final /* synthetic */ class ma implements Runnable {
                                     tL_inputStorePaymentPremiumSubscription.upgrade = true;
                                 }
                                 tL_payments_assignPlayMarketTransaction.purpose = tL_inputStorePaymentPremiumSubscription;
-                                ConnectionsManager.getInstance(i15).sendRequest(tL_payments_assignPlayMarketTransaction, new ja(i15, wi0Var, m2Var2, tL_payments_assignPlayMarketTransaction), 66);
+                                ConnectionsManager.getInstance(i15).sendRequest(tL_payments_assignPlayMarketTransaction, new ja(i15, vi0Var, m2Var2, tL_payments_assignPlayMarketTransaction), 66);
                                 break;
                             }
                         }
                     }
-                    BillingController.getInstance().addResultListener(BillingController.PREMIUM_PRODUCT_ID, new org.telegram.ui.j3(wi0Var, 4));
+                    BillingController.getInstance().addResultListener(BillingController.PREMIUM_PRODUCT_ID, new org.telegram.ui.j3(vi0Var, 4));
                     TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
                     TLRPC.TL_inputStorePaymentPremiumSubscription tL_inputStorePaymentPremiumSubscription2 = new TLRPC.TL_inputStorePaymentPremiumSubscription();
                     if (gVar != null) {
                         tL_inputStorePaymentPremiumSubscription2.upgrade = true;
                     }
                     tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentPremiumSubscription2;
-                    ConnectionsManager.getInstance(i15).sendRequest(tL_payments_canPurchaseStore, new ni(i15, 5, m2Var2, rx0Var, gVar, tL_payments_canPurchaseStore, tL_inputStorePaymentPremiumSubscription2));
+                    ConnectionsManager.getInstance(i15).sendRequest(tL_payments_canPurchaseStore, new mi(i15, 5, m2Var2, rx0Var, gVar, tL_payments_canPurchaseStore, tL_inputStorePaymentPremiumSubscription2));
                     break;
                 }
                 break;
             case 13:
-                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) this.c;
+                org.telegram.ui.web.c1 c1Var = (org.telegram.ui.web.c1) this.c;
                 TLObject tLObject3 = (TLObject) this.d;
-                org.telegram.ui.web.y0 y0Var = (org.telegram.ui.web.y0) this.e;
+                org.telegram.ui.web.z0 z0Var = (org.telegram.ui.web.z0) this.e;
                 n9 n9Var = (n9) this.f;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.h;
                 boolean z12 = tLObject3 instanceof TLRPC.TL_boolTrue;
@@ -296,23 +296,23 @@ public final /* synthetic */ class ma implements Runnable {
                     try {
                         JSONObject jSONObject = new JSONObject();
                         jSONObject.put("status", "allowed");
-                        org.telegram.ui.web.b1.w(i16, y0Var, n9Var, "write_access_requested", jSONObject);
+                        org.telegram.ui.web.c1.w(i16, z0Var, n9Var, "write_access_requested", jSONObject);
                         break;
                     } catch (Exception e7) {
                         FileLog.e(e7);
                         return;
                     }
                 } else if (tL_error2 != null) {
-                    b1Var.Y(tL_error2.text);
+                    c1Var.Y(tL_error2.text);
                     break;
                 } else {
                     String[] strArr2 = {"cancelled"};
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(b1Var.getContext());
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(c1Var.getContext());
                     alertDialog$Builder.a.R = LocaleController.getString(R.string.BotWebViewRequestWriteTitle);
                     alertDialog$Builder.a.T = LocaleController.getString(R.string.BotWebViewRequestWriteMessage);
-                    alertDialog$Builder.k(LocaleController.getString(R.string.BotWebViewRequestAllow), new org.telegram.ui.web.c0(0, b1Var, strArr2));
-                    alertDialog$Builder.h(LocaleController.getString(R.string.BotWebViewRequestDontAllow), new ul0(16));
-                    b1Var.X(3, alertDialog$Builder.a, new org.telegram.ui.web.w(strArr2, i16, y0Var, n9Var, 1));
+                    alertDialog$Builder.k(LocaleController.getString(R.string.BotWebViewRequestAllow), new bs0(29, c1Var, strArr2));
+                    alertDialog$Builder.h(LocaleController.getString(R.string.BotWebViewRequestDontAllow), new ps0(14));
+                    c1Var.X(3, alertDialog$Builder.a, new org.telegram.ui.web.x(strArr2, i16, z0Var, n9Var, 1));
                     break;
                 }
             case 14:
@@ -351,7 +351,7 @@ public final /* synthetic */ class ma implements Runnable {
                         UserConfig.getInstance(i17).setCurrentUser(user);
                         UserConfig.getInstance(i17).saveConfig(true);
                         gjVar.run();
-                        zc.a0(b5Var.getLastFragment()).V(Collections.singletonList(user), AndroidUtilities.replaceTags(LocaleController.getString(R.string.ApplyAvatarHintTitle)), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ApplyAvatarHint), new li1(i17, b5Var, 11)), null).j();
+                        zc.a0(b5Var.getLastFragment()).V(Collections.singletonList(user), AndroidUtilities.replaceTags(LocaleController.getString(R.string.ApplyAvatarHintTitle)), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ApplyAvatarHint), new org.telegram.ui.Wallet.i(i17, b5Var, 10)), null).j();
                         break;
                     }
                 }
@@ -471,12 +471,12 @@ public final /* synthetic */ class ma implements Runnable {
         this.h = f1Var;
     }
 
-    public /* synthetic */ ma(org.telegram.ui.web.b1 b1Var, TLObject tLObject, int i10, org.telegram.ui.web.y0 y0Var, n9 n9Var, TLRPC.TL_error tL_error) {
+    public /* synthetic */ ma(org.telegram.ui.web.c1 c1Var, TLObject tLObject, int i10, org.telegram.ui.web.z0 z0Var, n9 n9Var, TLRPC.TL_error tL_error) {
         this.a = 13;
-        this.c = b1Var;
+        this.c = c1Var;
         this.d = tLObject;
         this.b = i10;
-        this.e = y0Var;
+        this.e = z0Var;
         this.f = n9Var;
         this.h = tL_error;
     }

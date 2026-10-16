@@ -5,7 +5,7 @@ import e9.n0;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class x {
     public final List a;
@@ -22,9 +22,9 @@ public final class x {
     public final float l;
     public final int m;
     public final String n;
-    public final qi.e o;
+    public final pi.e o;
 
-    public x(List list, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, int i19, float f7, int i20, String str, qi.e eVar) {
+    public x(List list, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, int i19, float f7, int i20, String str, pi.e eVar) {
         this.a = list;
         this.b = i10;
         this.c = i11;
@@ -42,7 +42,7 @@ public final class x {
         this.o = eVar;
     }
 
-    public static x a(e2.x xVar, boolean z10, qi.e eVar) {
+    public static x a(e2.x xVar, boolean z10, pi.e eVar) {
         boolean z11;
         com.google.android.gms.internal.cast.a j10;
         int i10;
@@ -75,7 +75,7 @@ public final class x {
             }
             xVar.N(i12);
             byte[] bArr = new byte[i15];
-            qi.e eVar2 = eVar;
+            pi.e eVar2 = eVar;
             int i17 = -1;
             int i18 = -1;
             int i19 = -1;
@@ -94,7 +94,7 @@ public final class x {
                 int A3 = xVar.A() & 63;
                 int H3 = xVar.H();
                 int i29 = i13;
-                qi.e eVar3 = eVar2;
+                pi.e eVar3 = eVar2;
                 while (i29 < H3) {
                     boolean z12 = z11;
                     int H4 = xVar.H();

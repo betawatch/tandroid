@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.RequestDelegateTimestamp;
@@ -20,13 +20,13 @@ import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.cn0;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.fo;
-import org.telegram.ui.x00;
+import org.telegram.ui.w00;
 import org.telegram.ui.ye;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q9 implements Runnable {
     public final /* synthetic */ int a;
@@ -117,7 +117,7 @@ public final /* synthetic */ class q9 implements Runnable {
             case 2:
                 fo foVar = (fo) obj5;
                 cn0 cn0Var = (cn0) obj;
-                ((m80) obj4).n0 = true;
+                ((l80) obj4).n0 = true;
                 Activity parentActivity = foVar.getParentActivity();
                 long j11 = ((TLRPC.TL_messageEntityFormattedDate) obj3).date;
                 long j12 = this.c;
@@ -137,11 +137,11 @@ public final /* synthetic */ class q9 implements Runnable {
                         TL_chatlists.TL_chatlists_exportedInvites tL_chatlists_exportedInvites = (TL_chatlists.TL_chatlists_exportedInvites) tLObject2;
                         m2Var.getMessagesController().putChats(tL_chatlists_exportedInvites.chats, false);
                         m2Var.getMessagesController().putUsers(tL_chatlists_exportedInvites.users, false);
-                        new x00(m2Var, dialogFilter, tL_chatlists_exportedInvites.invites).show();
+                        new w00(m2Var, dialogFilter, tL_chatlists_exportedInvites.invites).show();
                     } else if (tL_error == null || !"FILTER_ID_INVALID".equals(tL_error.text) || dialogFilter.isDefault()) {
-                        yh.p(R.string.UnknownError, zc.a0(m2Var), null);
+                        sk.q(R.string.UnknownError, zc.a0(m2Var), null);
                     } else {
-                        new x00(m2Var, dialogFilter, null).show();
+                        new w00(m2Var, dialogFilter, null).show();
                     }
                     if (runnable != null) {
                         AndroidUtilities.runOnUIThread(runnable, Math.max(0L, 200 - (System.currentTimeMillis() - this.c)));

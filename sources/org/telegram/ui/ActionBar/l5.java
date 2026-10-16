@@ -14,13 +14,13 @@ import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.nh0;
 import org.telegram.ui.Components.q9;
 import org.telegram.ui.Components.vu0;
-import org.telegram.ui.Components.xq0;
+import org.telegram.ui.Components.wq0;
 import org.telegram.ui.w6;
 import org.telegram.ui.y6;
 import org.telegram.ui.yr;
 import org.telegram.ui.zu;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l5 implements Comparator {
     public final /* synthetic */ int a;
@@ -181,8 +181,8 @@ public final /* synthetic */ class l5 implements Comparator {
                 }
                 return ((Float) pair4.first).floatValue() > ((Float) pair3.first).floatValue() ? -1 : 0;
             case 20:
-                int i16 = ((xq0) obj).c;
-                int i17 = ((xq0) obj2).c;
+                int i16 = ((wq0) obj).c;
+                int i17 = ((wq0) obj2).c;
                 if (i16 < i17) {
                     return 1;
                 }

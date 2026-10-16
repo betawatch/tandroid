@@ -10,7 +10,7 @@ import android.util.TypedValue;
 import j$.util.Objects;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class AnimatedPhoneNumberEditText extends s40 {
     public String E;
@@ -103,7 +103,7 @@ public class AnimatedPhoneNumberEditText extends s40 {
         }
         if (isEmpty) {
             int length = str2.length();
-            di.x0 x0Var = new di.x0(this, z10, str, 18);
+            di.x0 x0Var = new di.x0(this, z10, str, 16);
             Runnable runnable = this.F;
             if (runnable != null) {
                 removeCallbacks(runnable);

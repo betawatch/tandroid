@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vv implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -17,22 +17,22 @@ public final /* synthetic */ class vv implements DialogInterface.OnDismissListen
     public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                yy.h0(this.b);
+                yy.Y(this.b);
                 break;
             case 1:
                 yy yyVar = this.b;
-                if (yyVar.R3 != null) {
-                    yyVar.getMessagesController().removeSuggestion(0L, yyVar.R3);
-                    yyVar.R3 = null;
-                    yyVar.I4();
+                if (yyVar.S3 != null) {
+                    yyVar.getMessagesController().removeSuggestion(0L, yyVar.S3);
+                    yyVar.S3 = null;
+                    yyVar.J4();
                     break;
                 }
                 break;
             case 2:
-                this.b.Y3(true);
+                this.b.Z3(true);
                 break;
             default:
-                this.b.Y3(true);
+                this.b.Z3(true);
                 break;
         }
     }

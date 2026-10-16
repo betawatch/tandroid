@@ -28,10 +28,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.ad;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.h11;
 import org.telegram.ui.Components.ha0;
+import org.telegram.ui.Components.i11;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class k4 {
     public int A;
@@ -52,8 +52,8 @@ public final class k4 {
     public final ad n;
     public j4 o;
     public boolean p;
-    public h11 q;
-    public h11 r;
+    public i11 q;
+    public i11 r;
     public long s;
     public Bitmap w;
     public Paint x;
@@ -136,7 +136,7 @@ public final class k4 {
                 int round = Math.round(0 / 1000.0f);
                 if (!j4Var.x && j4Var.K != (max = Math.max(0, j4Var.J - round))) {
                     j4Var.K = max;
-                    j4Var.L = new h11(AndroidUtilities.formatLongDuration(max), 12.0f, null);
+                    j4Var.L = new i11(AndroidUtilities.formatLongDuration(max), 12.0f, null);
                 }
             }
             if (f19 > 0.0f) {
@@ -250,7 +250,7 @@ public final class k4 {
             f10 = 5.0f;
             float f30 = this.h;
             f11 = 17.0f;
-            rectF.set(z11, com.google.android.gms.internal.play_billing.k3.z(f30, dp5, 2.0f, f29), org.telegram.messenger.q.b(f28, dp4, 2.0f, f27), org.telegram.messenger.q.b(f30, dp5, 2.0f, f29));
+            rectF.set(z11, com.google.android.gms.internal.play_billing.k3.z(f30, dp5, 2.0f, f29), org.telegram.messenger.g0.a(f28, dp4, 2.0f, f27), org.telegram.messenger.g0.a(f30, dp5, 2.0f, f29));
             path.rewind();
             float f31 = dp5 / 2.0f;
             path.addRoundRect(rectF, f31, f31, Path.Direction.CW);
@@ -264,7 +264,7 @@ public final class k4 {
             path2 = path;
             this.q.c((((this.g / 2.0f) + this.d) - (dp4 / 2.0f)) + AndroidUtilities.dp(14.0f), this.e + (this.h / 2.0f), f12, -1, canvas2);
             canvas2.restore();
-            if (u1Var.getDelegate() == null || !u1Var.getDelegate().Z0(5, u1Var)) {
+            if (u1Var.getDelegate() == null || !u1Var.getDelegate().a1(5, u1Var)) {
                 ha0 ha0Var = this.k;
                 if (ha0Var != null && !ha0Var.d() && !this.k.c()) {
                     this.k.a();
@@ -451,7 +451,7 @@ public final class k4 {
                                 TLRPC.MessageExtendedMedia messageExtendedMedia = j4Var2.E;
                                 motionEvent.getX();
                                 motionEvent.getY();
-                                delegate.M1(u1Var, messageExtendedMedia);
+                                delegate.P1(u1Var, messageExtendedMedia);
                             } else if (messageObject.isSending()) {
                                 SendMessagesHelper.getInstance(messageObject.currentAccount).cancelSendingMessage(messageObject);
                             }
@@ -475,7 +475,7 @@ public final class k4 {
                     TLRPC.MessageExtendedMedia messageExtendedMedia2 = j4Var22.E;
                     motionEvent.getX();
                     motionEvent.getY();
-                    delegate2.M1(u1Var, messageExtendedMedia2);
+                    delegate2.P1(u1Var, messageExtendedMedia2);
                 }
             }
             this.p = false;
@@ -1167,16 +1167,16 @@ public final class k4 {
             k4Var.g = (int) ((i4Var4.d / 1000.0f) * k4Var.f);
             k4Var.h = (int) (i4Var4.g * i4Var4.i);
             if (k4Var.i) {
-                h11 h11Var = new h11(zh.p7.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
-                k4Var.q = h11Var;
-                if (h11Var.c > k4Var.g - AndroidUtilities.dp(30.0f)) {
-                    k4Var.q = new h11(zh.p7.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContentShort", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                i11 i11Var = new i11(zh.p7.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                k4Var.q = i11Var;
+                if (i11Var.c > k4Var.g - AndroidUtilities.dp(30.0f)) {
+                    k4Var.q = new i11(zh.p7.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContentShort", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
                 }
             }
             if (k4Var.r == null || k4Var.s != tL_messageMediaPaidMedia3.stars_amount) {
                 long j10 = tL_messageMediaPaidMedia3.stars_amount;
                 k4Var.s = j10;
-                k4Var.r = new h11(zh.p7.S0(LocaleController.formatPluralStringComma("PaidMediaPrice", (int) j10), 0.9f, null), 12.0f, AndroidUtilities.bold());
+                k4Var.r = new i11(zh.p7.S0(LocaleController.formatPluralStringComma("PaidMediaPrice", (int) j10), 0.9f, null), 12.0f, AndroidUtilities.bold());
             }
         }
     }
@@ -1327,10 +1327,10 @@ public final class k4 {
         if (this.i) {
             TLRPC.TL_messageMediaPaidMedia tL_messageMediaPaidMedia = messageObject == null ? null : (TLRPC.TL_messageMediaPaidMedia) messageObject.messageOwner.media;
             if (tL_messageMediaPaidMedia != null) {
-                h11 h11Var = new h11(zh.p7.Y0(z16, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
-                this.q = h11Var;
-                if (h11Var.c > this.g - AndroidUtilities.dp(30.0f)) {
-                    this.q = new h11(zh.p7.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContentShort", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                i11 i11Var = new i11(zh.p7.Y0(z16, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                this.q = i11Var;
+                if (i11Var.c > this.g - AndroidUtilities.dp(30.0f)) {
+                    this.q = new i11(zh.p7.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContentShort", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
                 }
             }
         }

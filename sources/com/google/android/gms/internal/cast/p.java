@@ -34,7 +34,7 @@ import z7.hb;
 import z7.we;
 import z7.wf;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -65,7 +65,7 @@ public final /* synthetic */ class p implements Runnable {
         a5.a aVar = (a5.a) this.c;
         v7.j6 j6Var = (v7.j6) this.d;
         String str2 = (String) this.e;
-        qi.e eVar = (qi.e) aVar.c;
+        pi.e eVar = (pi.e) aVar.c;
         eVar.b = j6Var;
         e8 e8Var = (e8) eVar.a;
         if (e8Var != null) {
@@ -81,7 +81,7 @@ public final /* synthetic */ class p implements Runnable {
         synchronized (y8.class) {
             j9Var = y8.j;
             if (j9Var == null) {
-                n0.c a2 = w7.a0.a(Resources.getSystem().getConfiguration());
+                n0.c a2 = w7.z.a(Resources.getSystem().getConfiguration());
                 Object[] objArr = new Object[4];
                 int i11 = 0;
                 int i12 = 0;
@@ -153,7 +153,7 @@ public final /* synthetic */ class p implements Runnable {
         synchronized (fa.class) {
             sVar = fa.k;
             if (sVar == null) {
-                n0.c a2 = w7.a0.a(Resources.getSystem().getConfiguration());
+                n0.c a2 = w7.z.a(Resources.getSystem().getConfiguration());
                 Object[] objArr = new Object[4];
                 int i11 = 0;
                 int i12 = 0;
@@ -213,8 +213,8 @@ public final /* synthetic */ class p implements Runnable {
         switch (this.a) {
             case 0:
                 q qVar = (q) this.b;
-                p4.w wVar = (p4.w) this.c;
-                p4.w wVar2 = (p4.w) this.d;
+                p4.v vVar = (p4.v) this.c;
+                p4.v vVar2 = (p4.v) this.d;
                 c0.i iVar = (c0.i) this.e;
                 u uVar = qVar.a;
                 uVar.getClass();
@@ -225,7 +225,7 @@ public final /* synthetic */ class p implements Runnable {
                     iVar.a(null);
                     return;
                 }
-                if (wVar.l != 1) {
+                if (vVar.l != 1) {
                     bVar.b("No need to prepare transfer when transferring from local", new Object[0]);
                     iVar.a(null);
                     return;
@@ -237,11 +237,11 @@ public final /* synthetic */ class p implements Runnable {
                     return;
                 }
                 bVar.b("Prepare route transfer for changing endpoint", new Object[0]);
-                if (wVar2.l == 0) {
+                if (vVar2.l == 0) {
                     d2.a(d1.g0);
                     i10 = 1;
                 } else {
-                    i10 = CastDevice.b(wVar2.s) == null ? 3 : 2;
+                    i10 = CastDevice.b(vVar2.s) == null ? 3 : 2;
                 }
                 uVar.e = i10;
                 uVar.g = iVar;
@@ -323,13 +323,13 @@ public final /* synthetic */ class p implements Runnable {
                 }
                 return;
             case 2:
-                ((l2.f) this.b).k((p4.p) this.e, (p4.m) this.c, (Collection) this.d);
+                ((m.h) this.b).f((p4.p) this.e, (p4.m) this.c, (Collection) this.d);
                 return;
             case 3:
-                ((l2.f) this.b).k((p4.p) this.e, (p4.m) this.c, (ArrayList) this.d);
+                ((m.h) this.b).f((p4.p) this.e, (p4.m) this.c, (ArrayList) this.d);
                 return;
             case 4:
-                r0.r0.h((View) this.b, (r0.w0) this.c, (m4.c) this.d);
+                r0.q0.h((View) this.b, (r0.w0) this.c, (m2.t) this.d);
                 ((ValueAnimator) this.e).start();
                 return;
             case 5:
@@ -340,7 +340,7 @@ public final /* synthetic */ class p implements Runnable {
                         ((tf.b) this.c).a(false);
                         return;
                     } else {
-                        handler.post(new rh.j(this, 12));
+                        handler.post(new ri.h0(this, 12));
                         return;
                     }
                 }
@@ -356,9 +356,9 @@ public final /* synthetic */ class p implements Runnable {
                 a5.a aVar2 = (a5.a) this.c;
                 hb hbVar = (hb) this.d;
                 String str2 = (String) this.e;
-                m.q3 q3Var = (m.q3) aVar2.c;
-                q3Var.b = hbVar;
-                we weVar = (we) q3Var.a;
+                m.t3 t3Var = (m.t3) aVar2.c;
+                t3Var.b = hbVar;
+                we weVar = (we) t3Var.a;
                 if (weVar != null) {
                     str = weVar.d;
                     int i13 = z7.l4.a;
@@ -373,7 +373,7 @@ public final /* synthetic */ class p implements Runnable {
                 synchronized (wf.class) {
                     mVar = wf.k;
                     if (mVar == null) {
-                        n0.c a11 = w7.a0.a(Resources.getSystem().getConfiguration());
+                        n0.c a11 = w7.z.a(Resources.getSystem().getConfiguration());
                         Object[] objArr = new Object[4];
                         int i14 = 0;
                         while (i11 < a11.a.size()) {

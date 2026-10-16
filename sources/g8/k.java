@@ -3,9 +3,9 @@ package g8;
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
-import w7.g0;
+import w7.f0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class k extends o6.a {
     public static final Parcelable.Creator<k> CREATOR = new j(2);
@@ -36,24 +36,24 @@ public final class k extends o6.a {
     }
 
     public final String toString() {
-        StringBuilder l4 = i2.d.l("NetworkLocationStatus: Wifi status: ", this.a, " Cell status: ", this.b, " elapsed time NS: ");
-        l4.append(this.d);
-        l4.append(" system time ms: ");
-        l4.append(this.c);
-        return l4.toString();
+        StringBuilder m10 = i2.d.m("NetworkLocationStatus: Wifi status: ", this.a, " Cell status: ", this.b, " elapsed time NS: ");
+        m10.append(this.d);
+        m10.append(" system time ms: ");
+        m10.append(this.c);
+        return m10.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = g0.q(parcel, 20293);
-        g0.s(parcel, 1, 4);
+        int q6 = f0.q(parcel, 20293);
+        f0.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        g0.s(parcel, 2, 4);
+        f0.s(parcel, 2, 4);
         parcel.writeInt(this.b);
-        g0.s(parcel, 3, 8);
+        f0.s(parcel, 3, 8);
         parcel.writeLong(this.c);
-        g0.s(parcel, 4, 8);
+        f0.s(parcel, 4, 8);
         parcel.writeLong(this.d);
-        g0.r(parcel, q6);
+        f0.r(parcel, q6);
     }
 }

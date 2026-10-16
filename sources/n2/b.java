@@ -22,18 +22,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
-import ji.d4;
 import ji.h5;
+import ji.w4;
 import v7.u6;
-import w7.b0;
+import w7.a0;
+import z7.xf;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class b implements g {
     public final List a;
-    public final r b;
-    public final n4.s c;
-    public final h5 d;
+    public final q b;
+    public final xf c;
+    public final w4 d;
     public final boolean e;
     public final boolean f;
     public final HashMap g;
@@ -53,15 +54,15 @@ public final class b implements g {
     public f u;
     public byte[] v;
     public byte[] w;
-    public p x;
-    public d4 y;
-    public q z;
+    public o x;
+    public h5 y;
+    public p z;
 
-    public b(UUID uuid, r rVar, n4.s sVar, h5 h5Var, List list, boolean z10, boolean z11, byte[] bArr, HashMap hashMap, c2.b bVar, Looper looper, oa.d dVar, j2.k kVar) {
+    public b(UUID uuid, q qVar, xf xfVar, w4 w4Var, List list, boolean z10, boolean z11, byte[] bArr, HashMap hashMap, c2.b bVar, Looper looper, oa.d dVar, j2.k kVar) {
         this.l = uuid;
-        this.c = sVar;
-        this.d = h5Var;
-        this.b = rVar;
+        this.c = xfVar;
+        this.d = w4Var;
+        this.b = qVar;
         this.e = z10;
         this.f = z11;
         if (bArr != null) {
@@ -83,7 +84,7 @@ public final class b implements g {
     }
 
     @Override // n2.g
-    public final void a(k kVar) {
+    public final void a(j jVar) {
         p();
         int i10 = this.q;
         if (i10 <= 0) {
@@ -110,24 +111,24 @@ public final class b implements g {
             this.z = null;
             byte[] bArr = this.v;
             if (bArr != null) {
-                this.b.X(bArr);
+                this.b.W(bArr);
                 this.v = null;
             }
         }
-        if (kVar != null) {
-            this.h.m(kVar);
-            if (this.h.h(kVar) == 0) {
-                kVar.e();
+        if (jVar != null) {
+            this.h.m(jVar);
+            if (this.h.h(jVar) == 0) {
+                jVar.e();
             }
         }
-        h5 h5Var = this.d;
+        w4 w4Var = this.d;
         int i12 = this.q;
-        e eVar = (e) h5Var.b;
+        e eVar = (e) w4Var.b;
         if (i12 == 1 && eVar.E > 0 && eVar.v != -9223372036854775807L) {
             eVar.y.add(this);
             Handler handler = eVar.J;
             handler.getClass();
-            handler.postAtTime(new t0(this, 19), this, SystemClock.uptimeMillis() + eVar.v);
+            handler.postAtTime(new t0(this, 18), this, SystemClock.uptimeMillis() + eVar.v);
         } else if (i12 == 0) {
             eVar.w.remove(this);
             if (eVar.G == this) {
@@ -136,21 +137,21 @@ public final class b implements g {
             if (eVar.H == this) {
                 eVar.H = null;
             }
-            n4.s sVar = eVar.n;
-            HashSet hashSet = (HashSet) sVar.b;
+            xf xfVar = eVar.n;
+            HashSet hashSet = (HashSet) xfVar.a;
             hashSet.remove(this);
-            if (((b) sVar.c) == this) {
-                sVar.c = null;
+            if (((b) xfVar.b) == this) {
+                xfVar.b = null;
                 if (!hashSet.isEmpty()) {
                     b bVar = (b) hashSet.iterator().next();
-                    sVar.c = bVar;
-                    q l4 = bVar.b.l();
-                    bVar.z = l4;
+                    xfVar.b = bVar;
+                    p p5 = bVar.b.p();
+                    bVar.z = p5;
                     android.support.v4.media.session.f fVar = bVar.s;
                     String str2 = m0.a;
-                    l4.getClass();
+                    p5.getClass();
                     fVar.getClass();
-                    fVar.obtainMessage(1, new a(u2.u.g.getAndIncrement(), true, SystemClock.elapsedRealtime(), l4)).sendToTarget();
+                    fVar.obtainMessage(1, new a(u2.u.g.getAndIncrement(), true, SystemClock.elapsedRealtime(), p5)).sendToTarget();
                 }
             }
             if (eVar.v != -9223372036854775807L) {
@@ -164,26 +165,26 @@ public final class b implements g {
     }
 
     @Override // n2.g
-    public final void b(k kVar) {
+    public final void b(j jVar) {
         p();
         if (this.q < 0) {
             e2.a.c("DefaultDrmSession", "Session reference count less than zero: " + this.q);
             this.q = 0;
         }
-        if (kVar != null) {
-            e2.k kVar2 = this.h;
-            synchronized (kVar2.a) {
+        if (jVar != null) {
+            e2.k kVar = this.h;
+            synchronized (kVar.a) {
                 try {
-                    ArrayList arrayList = new ArrayList(kVar2.d);
-                    arrayList.add(kVar);
-                    kVar2.d = DesugarCollections.unmodifiableList(arrayList);
-                    Integer num = (Integer) kVar2.b.get(kVar);
+                    ArrayList arrayList = new ArrayList(kVar.d);
+                    arrayList.add(jVar);
+                    kVar.d = DesugarCollections.unmodifiableList(arrayList);
+                    Integer num = (Integer) kVar.b.get(jVar);
                     if (num == null) {
-                        HashSet hashSet = new HashSet(kVar2.c);
-                        hashSet.add(kVar);
-                        kVar2.c = DesugarCollections.unmodifiableSet(hashSet);
+                        HashSet hashSet = new HashSet(kVar.c);
+                        hashSet.add(jVar);
+                        kVar.c = DesugarCollections.unmodifiableSet(hashSet);
                     }
-                    kVar2.b.put(kVar, Integer.valueOf(num != null ? num.intValue() + 1 : 1));
+                    kVar.b.put(jVar, Integer.valueOf(num != null ? num.intValue() + 1 : 1));
                 } finally {
                 }
             }
@@ -199,8 +200,8 @@ public final class b implements g {
             if (n()) {
                 j(true);
             }
-        } else if (kVar != null && k() && this.h.h(kVar) == 1) {
-            kVar.c(this.p);
+        } else if (jVar != null && k() && this.h.h(jVar) == 1) {
+            jVar.c(this.p);
         }
         e eVar = (e) this.d.b;
         if (eVar.v != -9223372036854775807L) {
@@ -234,7 +235,7 @@ public final class b implements g {
         p();
         byte[] bArr = this.v;
         bArr.getClass();
-        return this.b.D0(str, bArr);
+        return this.b.w0(str, bArr);
     }
 
     @Override // n2.g
@@ -260,7 +261,7 @@ public final class b implements g {
         }
         Iterator it = set.iterator();
         while (it.hasNext()) {
-            jVar.accept((k) it.next());
+            jVar.accept((j) it.next());
         }
     }
 
@@ -334,7 +335,7 @@ public final class b implements g {
             return;
         }
         if (min <= 0) {
-            l(2, new v());
+            l(2, new u());
             return;
         }
         this.p = 4;
@@ -344,7 +345,7 @@ public final class b implements g {
         }
         Iterator it = set.iterator();
         while (it.hasNext()) {
-            ((k) it.next()).b();
+            ((j) it.next()).b();
         }
     }
 
@@ -360,14 +361,14 @@ public final class b implements g {
             i11 = m0.z(m0.A(((MediaDrm.MediaDrmStateException) th2).getDiagnosticInfo()));
         } else {
             if (!(th2 instanceof MediaDrmResetException)) {
-                if (!(th2 instanceof NotProvisionedException) && !b0.b(th2)) {
+                if (!(th2 instanceof NotProvisionedException) && !a0.b(th2)) {
                     if (th2 instanceof DeniedByServerException) {
                         i11 = 6007;
-                    } else if (th2 instanceof y) {
+                    } else if (th2 instanceof x) {
                         i11 = 6001;
                     } else if (th2 instanceof c) {
                         i11 = 6003;
-                    } else if (th2 instanceof v) {
+                    } else if (th2 instanceof u) {
                         i11 = 6008;
                     } else if (i10 != 1) {
                         if (i10 == 2) {
@@ -390,13 +391,13 @@ public final class b implements g {
             }
             Iterator it = set.iterator();
             while (it.hasNext()) {
-                ((k) it.next()).d((Exception) th2);
+                ((j) it.next()).d((Exception) th2);
             }
         } else {
             if (!(th2 instanceof Error)) {
                 throw new IllegalStateException("Unexpected Throwable subclass", th2);
             }
-            if (!b0.c(th2) && !b0.b(th2)) {
+            if (!a0.c(th2) && !a0.b(th2)) {
                 throw ((Error) th2);
             }
         }
@@ -406,8 +407,8 @@ public final class b implements g {
     }
 
     public final void m(Throwable th2, boolean z10) {
-        if ((th2 instanceof NotProvisionedException) || b0.b(th2)) {
-            this.c.u(this);
+        if ((th2 instanceof NotProvisionedException) || a0.b(th2)) {
+            this.c.b(this);
         } else {
             l(z10 ? 1 : 2, th2);
         }
@@ -426,7 +427,7 @@ public final class b implements g {
         try {
             byte[] D = this.b.D();
             this.v = D;
-            this.b.h(D, this.j);
+            this.b.k(D, this.j);
             this.t = this.b.q(this.v);
             this.p = 3;
             e2.k kVar = this.h;
@@ -435,24 +436,24 @@ public final class b implements g {
             }
             Iterator it = set.iterator();
             while (it.hasNext()) {
-                ((k) it.next()).c(3);
+                ((j) it.next()).c(3);
             }
             this.v.getClass();
             return true;
         } catch (NotProvisionedException unused) {
-            this.c.u(this);
+            this.c.b(this);
             return false;
         } catch (Exception e) {
             e = e;
-            if (b0.b(e)) {
+            if (a0.b(e)) {
                 l(1, e);
                 return false;
             }
-            this.c.u(this);
+            this.c.b(this);
             return false;
         } catch (NoSuchMethodError e7) {
             e = e7;
-            if (b0.b(e)) {
+            if (a0.b(e)) {
             }
         }
     }
@@ -461,7 +462,7 @@ public final class b implements g {
         try {
             synchronized (this.o) {
                 try {
-                    this.y = new d4(6);
+                    this.y = new h5(7);
                     List list = this.a;
                     if (list != null) {
                         n0.u(list);
@@ -470,13 +471,13 @@ public final class b implements g {
                     throw th2;
                 }
             }
-            p m0 = this.b.m0(bArr, this.a, i10, this.g);
-            this.x = m0;
+            o k02 = this.b.k0(bArr, this.a, i10, this.g);
+            this.x = k02;
             android.support.v4.media.session.f fVar = this.s;
             String str = m0.a;
-            m0.getClass();
+            k02.getClass();
             fVar.getClass();
-            fVar.obtainMessage(2, new a(u2.u.g.getAndIncrement(), z10, SystemClock.elapsedRealtime(), m0)).sendToTarget();
+            fVar.obtainMessage(2, new a(u2.u.g.getAndIncrement(), z10, SystemClock.elapsedRealtime(), k02)).sendToTarget();
         } catch (Exception | NoSuchMethodError e) {
             m(e, true);
         }

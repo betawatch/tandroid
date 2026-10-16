@@ -28,22 +28,22 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.eg;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.io;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.sc;
-import org.telegram.ui.Components.ul;
+import org.telegram.ui.Components.tl;
 import org.telegram.ui.Components.vy;
 import org.telegram.ui.Components.xv0;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.br;
 import org.telegram.ui.fo;
-import org.telegram.ui.hd;
-import org.telegram.ui.jl0;
+import org.telegram.ui.gd;
+import org.telegram.ui.il0;
 import org.telegram.ui.r71;
 import org.telegram.ui.sd;
 import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -164,7 +164,7 @@ public final /* synthetic */ class u3 implements Utilities.Callback {
                 }
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new c3((hd) obj5, (boolean[]) obj4, (int[]) obj3, (int[]) obj2, (TLRPC.TL_error) obj, 15));
+                AndroidUtilities.runOnUIThread(new c3((gd) obj5, (boolean[]) obj4, (int[]) obj3, (int[]) obj2, (TLRPC.TL_error) obj, 15));
                 break;
             case 5:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj5;
@@ -193,10 +193,10 @@ public final /* synthetic */ class u3 implements Utilities.Callback {
                 }
                 break;
             case 6:
-                ul.O((ul) obj5, (fo) obj4, (TLRPC.TL_messageMediaGeo) obj3, (org.telegram.ui.ActionBar.c6) obj2, (Long) obj);
+                tl.O((tl) obj5, (fo) obj4, (TLRPC.TL_messageMediaGeo) obj3, (org.telegram.ui.ActionBar.c6) obj2, (Long) obj);
                 break;
             case 7:
-                ul.S((ul) obj5, (fo) obj4, (TLRPC.TL_messageMediaVenue) obj3, (org.telegram.ui.ActionBar.c6) obj2);
+                tl.S((tl) obj5, (fo) obj4, (TLRPC.TL_messageMediaVenue) obj3, (org.telegram.ui.ActionBar.c6) obj2);
                 break;
             case 8:
                 io ioVar = (io) obj5;
@@ -233,11 +233,11 @@ public final /* synthetic */ class u3 implements Utilities.Callback {
                 }
                 break;
             case 10:
-                xv0.m((xv0) obj5, (HashSet) obj4, (TL_stories.StoryItem) obj3, (m80) obj2, (p8) obj);
+                xv0.m((xv0) obj5, (HashSet) obj4, (TL_stories.StoryItem) obj3, (l80) obj2, (p8) obj);
                 break;
             case 11:
                 yy yyVar = (yy) obj5;
-                yyVar.N4(yyVar.getMessagesController().getChat((Long) obj4), (Runnable) obj, new br(yyVar, (sd) obj3, (org.telegram.ui.ActionBar.m2) obj2, i13));
+                yyVar.O4(yyVar.getMessagesController().getChat((Long) obj4), (Runnable) obj, new br(yyVar, (sd) obj3, (org.telegram.ui.ActionBar.m2) obj2, i13));
                 break;
             case 12:
                 r71 r71Var = (r71) obj5;
@@ -320,35 +320,35 @@ public final /* synthetic */ class u3 implements Utilities.Callback {
                 }
                 break;
             case 14:
-                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) obj5;
+                org.telegram.ui.web.c1 c1Var = (org.telegram.ui.web.c1) obj5;
                 n9 n9Var = (n9) obj4;
                 String str4 = (String) obj3;
                 TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer2 = (TL_keyboard.TL_buttonTypeRequestPeer) obj2;
                 TLRPC.User user3 = (TLRPC.User) obj;
                 if (user3 == null) {
-                    b1Var.x(n9Var, "requested_chat_failed", org.telegram.ui.web.b1.A(str4, "req_id"));
+                    c1Var.x(n9Var, "requested_chat_failed", org.telegram.ui.web.c1.A(str4, "req_id"));
                     break;
                 } else {
                     TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer2 = new TLRPC.TL_messages_sendBotRequestedPeer();
-                    tL_messages_sendBotRequestedPeer2.peer = MessagesController.getInputPeer(b1Var.U);
+                    tL_messages_sendBotRequestedPeer2.peer = MessagesController.getInputPeer(c1Var.U);
                     tL_messages_sendBotRequestedPeer2.webapp_req_id = str4;
                     tL_messages_sendBotRequestedPeer2.button_id = tL_buttonTypeRequestPeer2.button_id;
                     tL_messages_sendBotRequestedPeer2.requested_peers.add(MessagesController.getInputPeer(user3));
-                    ConnectionsManager.getInstance(b1Var.M).sendRequestTyped(tL_messages_sendBotRequestedPeer2, new org.telegram.messenger.a(), new jl0(b1Var, n9Var, str4, user3, 1));
-                    b1Var.x(n9Var, "requested_chat_sent", org.telegram.ui.web.b1.A(str4, "req_id"));
+                    ConnectionsManager.getInstance(c1Var.M).sendRequestTyped(tL_messages_sendBotRequestedPeer2, new org.telegram.messenger.a(), new il0(c1Var, n9Var, str4, user3, 1));
+                    c1Var.x(n9Var, "requested_chat_sent", org.telegram.ui.web.c1.A(str4, "req_id"));
                     break;
                 }
             case 15:
-                org.telegram.ui.web.b1 b1Var2 = (org.telegram.ui.web.b1) obj5;
+                org.telegram.ui.web.c1 c1Var2 = (org.telegram.ui.web.c1) obj5;
                 n9 n9Var2 = (n9) obj4;
                 String str5 = (String) obj3;
                 String str6 = (String) obj2;
                 if (((Boolean) obj).booleanValue()) {
-                    b1Var2.l0.b(str5, str6);
-                    b1Var2.x(n9Var2, "file_download_requested", org.telegram.ui.web.b1.A("downloading", "status"));
+                    c1Var2.l0.b(str5, str6);
+                    c1Var2.x(n9Var2, "file_download_requested", org.telegram.ui.web.c1.A("downloading", "status"));
                     break;
                 } else {
-                    b1Var2.x(n9Var2, "file_download_requested", org.telegram.ui.web.b1.A("cancelled", "status"));
+                    c1Var2.x(n9Var2, "file_download_requested", org.telegram.ui.web.c1.A("cancelled", "status"));
                     break;
                 }
             case 16:
@@ -391,7 +391,7 @@ public final /* synthetic */ class u3 implements Utilities.Callback {
             default:
                 yh.p1 p1Var = (yh.p1) obj5;
                 Utilities.Callback callback = (Utilities.Callback) obj3;
-                yh.b1 b1Var3 = (yh.b1) obj2;
+                yh.b1 b1Var = (yh.b1) obj2;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
                 ((pf.c) obj4).b();
                 if (callback != null) {
@@ -399,7 +399,7 @@ public final /* synthetic */ class u3 implements Utilities.Callback {
                 }
                 p1Var.dismiss();
                 if (tL_error != null) {
-                    AndroidUtilities.runOnUIThread(new s9.b(25, b1Var3, tL_error));
+                    AndroidUtilities.runOnUIThread(new s9.b(25, b1Var, tL_error));
                     break;
                 } else {
                     p1Var.dismiss();

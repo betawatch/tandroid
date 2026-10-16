@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.view.View;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ea1 implements ch.a {
     public final RectF a = new RectF();
@@ -25,7 +25,7 @@ public final class ea1 implements ch.a {
     public final void f(Canvas canvas, RectF rectF) {
         bh.l lVar;
         View view;
-        ic icVar;
+        hc hcVar;
         hb1 hb1Var = this.c;
         hb1Var.fragmentView.getMeasuredWidth();
         hb1Var.fragmentView.getMeasuredHeight();
@@ -34,7 +34,7 @@ public final class ea1 implements ch.a {
             if (i10 == 0) {
                 lVar = hb1Var.T;
                 view = hb1Var.S;
-            } else if (i10 != 1 || (icVar = hb1Var.j0) == null) {
+            } else if (i10 != 1 || (hcVar = hb1Var.j0) == null) {
                 qe qeVar = hb1Var.k0;
                 if (qeVar != null) {
                     lVar = qeVar.b1;
@@ -44,8 +44,8 @@ public final class ea1 implements ch.a {
                     view = null;
                 }
             } else {
-                lVar = icVar.G;
-                view = icVar;
+                lVar = hcVar.G;
+                view = hcVar;
             }
             if (lVar != null && view != null) {
                 z8 z8Var = this.b;

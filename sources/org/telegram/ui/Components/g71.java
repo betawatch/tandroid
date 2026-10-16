@@ -1,45 +1,25 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class g71 extends s4.k {
-    public final /* synthetic */ h71 F;
+public final class g71 extends g.o {
+    public final /* synthetic */ f71 c;
+    public final /* synthetic */ i71 d;
 
-    public g71(h71 h71Var) {
-        this.F = h71Var;
+    public g71(i71 i71Var, f71 f71Var) {
+        this.d = i71Var;
+        this.c = f71Var;
     }
 
-    @Override // s4.k
-    public final void M() {
-        h71 h71Var = this.F;
-        if (h71Var.b1()) {
-            h71Var.invalidate();
+    @Override // g.o
+    public final int i(int i10) {
+        int i11;
+        a71 a71Var = this.d.W2;
+        f71 f71Var = this.c;
+        if (a71Var == null) {
+            return f71Var.J;
         }
-        h71Var.D1();
-    }
-
-    @Override // s4.k
-    public final void O() {
-        h71 h71Var = this.F;
-        if (h71Var.b1()) {
-            h71Var.invalidate();
-        }
-        h71Var.D1();
-    }
-
-    @Override // s4.k
-    public final void P(s4.b1 b1Var) {
-        h71 h71Var = this.F;
-        h71Var.invalidate();
-        h71Var.D1();
-    }
-
-    @Override // s4.k
-    public final void Q() {
-        h71 h71Var = this.F;
-        if (h71Var.b1()) {
-            h71Var.invalidate();
-        }
-        h71Var.D1();
+        m61 G = a71Var.G(i10);
+        return (G == null || (i11 = G.u) == -1) ? f71Var.J : i11;
     }
 }

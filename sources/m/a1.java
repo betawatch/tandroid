@@ -1,18 +1,25 @@
 package m;
 
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.widget.TextView;
+import ji.w4;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public abstract class a1 {
-    public static StaticLayout a(CharSequence charSequence, Layout.Alignment alignment, int i10, TextView textView, TextPaint textPaint) {
-        return new StaticLayout(charSequence, textPaint, i10, alignment, textView.getLineSpacingMultiplier(), textView.getLineSpacingExtra(), textView.getIncludeFontPadding());
+public final class a1 extends w4 {
+    public final /* synthetic */ b1 c;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a1(b1 b1Var) {
+        super(b1Var, 5);
+        this.c = b1Var;
     }
 
-    public static int b(TextView textView) {
-        return textView.getMaxLines();
+    @Override // ji.w4, m.z0
+    public final void I0(int i10) {
+        super/*android.widget.TextView*/.setFirstBaselineToTopHeight(i10);
+    }
+
+    @Override // ji.w4, m.z0
+    public final void J(int i10) {
+        super/*android.widget.TextView*/.setLastBaselineToBottomHeight(i10);
     }
 }

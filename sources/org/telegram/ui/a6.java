@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class a6 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final class a6 implements Runnable {
                 z9 z9Var = (z9) this.b;
                 CameraView cameraView = z9Var.c;
                 if (cameraView != null && !z9Var.N && cameraView.getCameraSession() != null) {
-                    z9Var.e.post(new tu0(this, 17));
+                    z9Var.e.post(new su0(this, 17));
                     break;
                 }
                 break;
@@ -85,12 +85,12 @@ public final class a6 implements Runnable {
                 }
                 break;
             case 4:
-                c20 c20Var = (c20) this.b;
-                if (c20Var.M) {
-                    c20Var.f.clear();
-                    c20Var.n.clear();
-                    c20Var.r.clear();
-                    org.telegram.ui.Components.lm0 lm0Var = c20Var.d;
+                b20 b20Var = (b20) this.b;
+                if (b20Var.M) {
+                    b20Var.f.clear();
+                    b20Var.n.clear();
+                    b20Var.r.clear();
+                    org.telegram.ui.Components.lm0 lm0Var = b20Var.d;
                     if (lm0Var != null) {
                         lm0Var.l();
                         break;
@@ -107,7 +107,7 @@ public final class a6 implements Runnable {
                     n60 n60Var2 = (n60) this.b;
                     e40 e40Var = n60Var2.a2;
                     if (e40Var != null && !e40Var.b && (J0 = n60.J0(n60Var2)) != null && J0.isAttachedToWindow() && (renderer = J0.getRenderer()) != null && (oVar = renderer.a) != null) {
-                        n60.H3.postRunnable(new o00(9, this, oVar));
+                        n60.H3.postRunnable(new d20(4, this, oVar));
                         break;
                     }
                 } catch (Exception e) {
@@ -129,7 +129,7 @@ public final class a6 implements Runnable {
                     EGLSurface eGLSurface = f80Var3.f;
                     if (!egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, f80Var3.e)) {
                         if (BuildVars.LOGS_ENABLED) {
-                            org.telegram.messenger.yh.u(((f80) this.b).b, new StringBuilder("eglMakeCurrent failed "));
+                            org.telegram.messenger.sk.v(((f80) this.b).b, new StringBuilder("eglMakeCurrent failed "));
                             break;
                         }
                     }
@@ -177,31 +177,31 @@ public final class a6 implements Runnable {
                 }
                 break;
             case 9:
-                nf0 nf0Var = (nf0) this.b;
-                if (nf0Var.h == this) {
-                    nf0Var.o();
-                    AndroidUtilities.runOnUIThread(nf0Var.h, 1000L);
+                mf0 mf0Var = (mf0) this.b;
+                if (mf0Var.h == this) {
+                    mf0Var.o();
+                    AndroidUtilities.runOnUIThread(mf0Var.h, 1000L);
                     break;
                 }
                 break;
             case 10:
-                ((qj0) this.b).T.animate().alpha(1.0f).setDuration(230L);
+                ((pj0) this.b).T.animate().alpha(1.0f).setDuration(230L);
                 break;
             case 11:
-                xj0 xj0Var = (xj0) this.b;
-                String str = xj0Var.j0;
+                wj0 wj0Var = (wj0) this.b;
+                String str = wj0Var.j0;
                 if (str != null) {
-                    xj0.R(xj0Var, str);
+                    wj0.R(wj0Var, str);
                     break;
                 }
                 break;
             case 12:
-                gw0 gw0Var = (gw0) this.b;
-                a6 a6Var = gw0Var.y0;
-                org.telegram.ui.Cells.d6 d6Var = gw0Var.b0;
+                fw0 fw0Var = (fw0) this.b;
+                a6 a6Var = fw0Var.y0;
+                org.telegram.ui.Cells.d6 d6Var = fw0Var.b0;
                 if (d6Var != null) {
                     EditTextBoldCursor editField = d6Var.getEditField();
-                    if (!gw0Var.U && editField != null && gw0Var.T && !gw0Var.Y && !AndroidUtilities.usingHardwareInput && !AndroidUtilities.isInMultiwindow && AndroidUtilities.isTablet()) {
+                    if (!fw0Var.U && editField != null && fw0Var.T && !fw0Var.Y && !AndroidUtilities.usingHardwareInput && !AndroidUtilities.isInMultiwindow && AndroidUtilities.isTablet()) {
                         editField.requestFocus();
                         AndroidUtilities.showKeyboard(editField);
                         AndroidUtilities.cancelRunOnUIThread(a6Var);
@@ -214,18 +214,18 @@ public final class a6 implements Runnable {
                 ((hb1) this.b).b0.animate().alpha(1.0f).setDuration(230L);
                 break;
             case 14:
-                af1 af1Var = (af1) this.b;
-                af1Var.F.setVisibility(0);
-                af1Var.F.setAlpha(0.0f);
-                af1Var.F.animate().alpha(1.0f).start();
+                ze1 ze1Var = (ze1) this.b;
+                ze1Var.F.setVisibility(0);
+                ze1Var.F.setAlpha(0.0f);
+                ze1Var.F.animate().alpha(1.0f).start();
                 break;
             default:
-                yj1 yj1Var = (yj1) this.b;
-                MessageObject messageObject = yj1Var.n;
-                if (messageObject != null && yj1Var.getParentActivity() != null && yj1Var.s != null) {
-                    i10 = ((org.telegram.ui.ActionBar.m2) yj1Var).currentAccount;
+                xj1 xj1Var = (xj1) this.b;
+                MessageObject messageObject = xj1Var.n;
+                if (messageObject != null && xj1Var.getParentActivity() != null && xj1Var.s != null) {
+                    i10 = ((org.telegram.ui.ActionBar.m2) xj1Var).currentAccount;
                     MessagesController.getInstance(i10).sendTyping(messageObject.getDialogId(), 0L, 6, 0);
-                    AndroidUtilities.runOnUIThread(yj1Var.s, 25000L);
+                    AndroidUtilities.runOnUIThread(xj1Var.s, 25000L);
                     break;
                 }
                 break;

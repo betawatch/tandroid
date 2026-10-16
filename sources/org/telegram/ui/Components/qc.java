@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class qc extends ob {
     public Runnable a;
@@ -21,29 +21,29 @@ public final class qc extends ob {
     public qc(Context context, org.telegram.ui.ActionBar.c6 c6Var, boolean z10, boolean z11) {
         super(context);
         int i10 = org.telegram.ui.ActionBar.g6.Gi;
-        int F0 = c6Var != null ? c6Var.F0(i10) : org.telegram.ui.ActionBar.g6.x0(null, i10, false);
+        int E0 = c6Var != null ? c6Var.E0(i10) : org.telegram.ui.ActionBar.g6.x0(null, i10, false);
         if (z10) {
             TextView textView = new TextView(context);
             this.d = textView;
-            textView.setBackground(org.telegram.ui.ActionBar.g6.g0((F0 & 16777215) | 419430400, 7, -1));
+            textView.setBackground(org.telegram.ui.ActionBar.g6.g0((E0 & 16777215) | 419430400, 7, -1));
             textView.setTextSize(1, 14.0f);
             textView.setTypeface(AndroidUtilities.bold());
-            textView.setTextColor(F0);
-            org.telegram.messenger.yh.l(R.string.UndoNoCaps, textView, 16);
+            textView.setTextColor(E0);
+            org.telegram.messenger.sk.m(R.string.UndoNoCaps, textView, 16);
             float f7 = z11 ? 34.0f : 12.0f;
             boolean z12 = LocaleController.isRTL;
-            w7.g6.a(textView, z12 ? 12.0f : f7, 8.0f, z12 ? f7 : 12.0f, 8.0f);
-            addView(textView, w7.a6.i(-2.0f, -2.0f, 16, 8.0f, 0.0f, 8.0f, 0.0f));
+            w7.f6.a(textView, z12 ? 12.0f : f7, 8.0f, z12 ? f7 : 12.0f, 8.0f);
+            addView(textView, w7.z5.i(-2.0f, -2.0f, 16, 8.0f, 0.0f, 8.0f, 0.0f));
         }
         if (z11) {
             ImageView imageView = new ImageView(getContext());
             imageView.setImageResource(R.drawable.chats_undo);
-            imageView.setColorFilter(new PorterDuffColorFilter(F0, PorterDuff.Mode.MULTIPLY));
+            imageView.setColorFilter(new PorterDuffColorFilter(E0, PorterDuff.Mode.MULTIPLY));
             if (!z10) {
-                imageView.setBackground(org.telegram.ui.ActionBar.g6.g0((F0 & 16777215) | 419430400, 1, -1));
+                imageView.setBackground(org.telegram.ui.ActionBar.g6.g0((E0 & 16777215) | 419430400, 1, -1));
             }
-            w7.g6.a(imageView, 0.0f, 12.0f, 0.0f, 12.0f);
-            addView(imageView, w7.a6.h(56.0f, 48.0f, 16));
+            w7.f6.a(imageView, 0.0f, 12.0f, 0.0f, 12.0f);
+            addView(imageView, w7.z5.h(56.0f, 48.0f, 16));
         }
         setOnClickListener(new f0(this, 5));
     }

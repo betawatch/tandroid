@@ -5,7 +5,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class u0 extends eb.u {
     public static eb.i a(mb.a aVar, int i10) {
@@ -14,13 +14,13 @@ public class u0 extends eb.u {
             return new eb.m(aVar.v());
         }
         if (c10 == 6) {
-            return new eb.m(new gb.i(aVar.v()));
+            return new eb.m(new gb.j(aVar.v()));
         }
         if (c10 == 7) {
             return new eb.m(Boolean.valueOf(aVar.n()));
         }
         if (c10 != 8) {
-            throw new IllegalStateException("Unexpected token: ".concat(i2.d.D(i10)));
+            throw new IllegalStateException("Unexpected token: ".concat(i2.d.E(i10)));
         }
         aVar.t();
         return eb.k.a;
@@ -55,9 +55,9 @@ public class u0 extends eb.u {
                 throw new IllegalArgumentException("Couldn't write " + iVar.getClass());
             }
             bVar.c();
-            Iterator it = ((gb.l) iVar.h().a.entrySet()).iterator();
-            while (((gb.k) it).hasNext()) {
-                gb.m b10 = ((gb.k) it).b();
+            Iterator it = ((gb.m) iVar.h().a.entrySet()).iterator();
+            while (((gb.l) it).hasNext()) {
+                gb.n b10 = ((gb.l) it).b();
                 bVar.g((String) b10.getKey());
                 b((eb.i) b10.getValue(), bVar);
             }
@@ -91,7 +91,7 @@ public class u0 extends eb.u {
                 lVar.C();
                 return iVar;
             }
-            throw new IllegalStateException("Unexpected " + i2.d.D(x10) + " when reading a JsonElement.");
+            throw new IllegalStateException("Unexpected " + i2.d.E(x10) + " when reading a JsonElement.");
         }
         int x11 = aVar.x();
         int c10 = m1.j.c(x11);

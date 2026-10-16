@@ -38,16 +38,16 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.Components.h81;
-import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.i81;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.o8;
 import org.telegram.ui.Components.sc;
-import org.telegram.ui.Components.z61;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.fo;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q3 implements Runnable {
     public final /* synthetic */ int a;
@@ -298,7 +298,7 @@ public final /* synthetic */ class q3 implements Runnable {
                 while (i21 < size) {
                     Object obj2 = arrayList4.get(i21);
                     i21++;
-                    ((h81) ((b2.a2) obj2)).J.onSurfaceTextureUpdated(surfaceTexture);
+                    ((i81) ((b2.a2) obj2)).J.onSurfaceTextureUpdated(surfaceTexture);
                 }
                 return;
             case 14:
@@ -322,9 +322,9 @@ public final /* synthetic */ class q3 implements Runnable {
                 return;
             case 17:
                 ig.g1 g1Var = (ig.g1) this.b;
-                l61 l61Var = (l61) this.c;
+                m61 m61Var = (m61) this.c;
                 g1Var.getClass();
-                g1Var.X(l61Var.d);
+                g1Var.X(m61Var.d);
                 return;
             case 18:
                 MessagesStorage messagesStorage = (MessagesStorage) this.b;
@@ -485,9 +485,9 @@ public final /* synthetic */ class q3 implements Runnable {
                 xVar.c0.set(richMessage);
                 dVar.g(LocaleController.getString(R.string.ArticleAIAddToPage), true, true);
                 xVar.Q();
-                z61 z61Var = xVar.Z;
-                if (z61Var != null) {
-                    z61Var.N(true);
+                a71 a71Var = xVar.Z;
+                if (a71Var != null) {
+                    a71Var.N(true);
                     return;
                 }
                 return;

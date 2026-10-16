@@ -61,9 +61,9 @@ import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.xn;
 import org.telegram.ui.Components.z9;
 import org.telegram.ui.fo;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class j1 extends lm0 implements NotificationCenter.NotificationCenterDelegate {
     public ArrayList A0;
@@ -1767,7 +1767,7 @@ public final class j1 extends lm0 implements NotificationCenter.NotificationCent
             boolean z10 = (tL_inlineBotSwitchPM == null && this.U == null) ? false : true;
             if (i12 == 2) {
                 if (z10) {
-                    ((org.telegram.ui.Cells.j0) view).setText(tL_inlineBotSwitchPM != null ? tL_inlineBotSwitchPM.text : this.U.text);
+                    ((org.telegram.ui.Cells.i0) view).setText(tL_inlineBotSwitchPM != null ? tL_inlineBotSwitchPM.text : this.U.text);
                     return;
                 }
                 return;
@@ -1876,9 +1876,9 @@ public final class j1 extends lm0 implements NotificationCenter.NotificationCent
         if (i10 != 0) {
             if (i10 != 1) {
                 if (i10 == 2) {
-                    org.telegram.ui.Cells.j0 j0Var = new org.telegram.ui.Cells.j0(context);
+                    org.telegram.ui.Cells.i0 i0Var = new org.telegram.ui.Cells.i0(context);
                     TextView textView = new TextView(context);
-                    j0Var.a = textView;
+                    i0Var.a = textView;
                     textView.setTextSize(1, 15.0f);
                     textView.setTextColor(g6.x0(null, g6.Ce, false));
                     textView.setTypeface(AndroidUtilities.bold());
@@ -1886,8 +1886,8 @@ public final class j1 extends lm0 implements NotificationCenter.NotificationCent
                     textView.setEllipsize(TextUtils.TruncateAt.END);
                     textView.setMaxLines(1);
                     textView.setGravity(LocaleController.isRTL ? 5 : 3);
-                    j0Var.addView(textView, a6.a(-2.0f, 14.0f, 0.0f, 14.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 16));
-                    view = j0Var;
+                    i0Var.addView(textView, z5.a(-2.0f, 14.0f, 0.0f, 14.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 16));
+                    view = i0Var;
                 } else if (i10 == 3) {
                     TextView textView2 = new TextView(context);
                     textView2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
@@ -1905,13 +1905,13 @@ public final class j1 extends lm0 implements NotificationCenter.NotificationCent
                         d8Var.a = z9Var;
                         z9Var.setAspectFit(true);
                         z9Var.setLayerNum(1);
-                        d8Var.addView(z9Var, a6.a(66.0f, 0.0f, 5.0f, 0.0f, 0.0f, 66, 1));
+                        d8Var.addView(z9Var, z5.a(66.0f, 0.0f, 5.0f, 0.0f, 0.0f, 66, 1));
                         d8Var.setFocusable(true);
                         sg.c1 c1Var = new sg.c1(context, 1, null);
                         d8Var.n = c1Var;
                         c1Var.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
                         c1Var.setImageReceiver(z9Var.getImageReceiver());
-                        d8Var.addView(c1Var, a6.a(24.0f, 0.0f, 0.0f, 0.0f, 0.0f, 24, 81));
+                        d8Var.addView(c1Var, z5.a(24.0f, 0.0f, 0.0f, 0.0f, 0.0f, 24, 81));
                         view2 = d8Var;
                     } else {
                         View xnVar = new xn(context, 6);

@@ -36,7 +36,6 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.RichMessageLayout;
-import org.telegram.messenger.yh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
@@ -44,12 +43,12 @@ import org.telegram.ui.Components.aa0;
 import org.telegram.ui.Components.aq;
 import org.telegram.ui.Components.ea0;
 import org.telegram.ui.Components.m90;
-import org.telegram.ui.Components.p11;
 import org.telegram.ui.Components.q11;
+import org.telegram.ui.Components.r11;
 import org.telegram.ui.Components.x90;
-import org.telegram.ui.c20;
+import org.telegram.ui.b20;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class n7 extends FrameLayout {
     public final ArrayList E;
@@ -77,7 +76,7 @@ public final class n7 extends FrameLayout {
     public MessageObject b0;
     public int c;
     public final TextPaint c0;
-    public t6 d;
+    public l7 d;
     public final TextPaint d0;
     public final aa0 e;
     public final TextPaint e0;
@@ -144,7 +143,7 @@ public final class n7 extends FrameLayout {
         aqVar.setDrawUnchecked(false);
         aqVar.setDrawBackgroundAsArc(2);
         boolean z10 = LocaleController.isRTL;
-        addView(aqVar, w7.a6.a(24.0f, z10 ? 0.0f : 44.0f, 44.0f, z10 ? 44.0f : 0.0f, 0.0f, 24, (z10 ? 5 : 3) | 48));
+        addView(aqVar, w7.z5.a(24.0f, z10 ? 0.0f : 44.0f, 44.0f, z10 ? 44.0f : 0.0f, 0.0f, 24, (z10 ? 5 : 3) | 48));
         if (i10 == 1) {
             TextPaint textPaint3 = new TextPaint(1);
             this.e0 = textPaint3;
@@ -227,9 +226,9 @@ public final class n7 extends FrameLayout {
         if (jVar != null) {
             removeCallbacks(jVar);
         }
-        t6 t6Var = this.d;
-        if (t6Var != null) {
-            removeCallbacks(t6Var);
+        l7 l7Var = this.d;
+        if (l7Var != null) {
+            removeCallbacks(l7Var);
         }
         invalidate();
     }
@@ -245,7 +244,7 @@ public final class n7 extends FrameLayout {
     public final void g(int i10, int i11, int i12) {
         int dp = AndroidUtilities.dp(LocaleController.isRTL ? 8.0f : AndroidUtilities.leftBaseline);
         e();
-        this.M.q = new l7(this, 0);
+        this.M.q = new k7(this, 0);
         int i13 = i10 - dp;
         float sqrt = (float) Math.sqrt(Math.pow(getHeight(), 2.0d) + Math.pow(getWidth(), 2.0d));
         int i14 = this.N;
@@ -670,12 +669,12 @@ public final class n7 extends FrameLayout {
                                                             spannableStringBuilder3 = spannableStringBuilder5;
                                                             arrayList2 = arrayList7;
                                                         } else {
-                                                            p11 p11Var = new p11();
+                                                            q11 q11Var = new q11();
                                                             spannableStringBuilder3 = spannableStringBuilder5;
                                                             try {
-                                                                p11Var.a |= 256;
+                                                                q11Var.a |= 256;
                                                                 arrayList2 = arrayList7;
-                                                                valueOf.setSpan(new q11(p11Var, 0), Math.max(i26, i32), Math.min(i27, i33) + i28, 33);
+                                                                valueOf.setSpan(new r11(q11Var, 0), Math.max(i26, i32), Math.min(i27, i33) + i28, 33);
                                                             } catch (Exception e7) {
                                                                 e = e7;
                                                                 str2 = str7;
@@ -918,7 +917,7 @@ public final class n7 extends FrameLayout {
                             if (this.j0 != null) {
                             }
                             this.w.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
-                            setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.q.z(17.0f, i39, AndroidUtilities.dp(76.0f)) + (this.y ? 1 : 0));
+                            setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.y(17.0f, i39, AndroidUtilities.dp(76.0f)) + (this.y ? 1 : 0));
                         }
                     } catch (Exception e16) {
                         e = e16;
@@ -943,9 +942,9 @@ public final class n7 extends FrameLayout {
                 if (staticLayout != null) {
                     int i40 = this.Q;
                     this.W = i40;
-                    int c10 = yh.c(5.0f, staticLayout.getLineBottom(staticLayout.getLineCount() - 1), i40);
-                    this.Q = c10;
-                    this.T = c10;
+                    int C = org.telegram.messenger.g0.C(5.0f, staticLayout.getLineBottom(staticLayout.getLineCount() - 1), i40);
+                    this.Q = C;
+                    this.T = C;
                 }
                 if (!arrayList6.isEmpty()) {
                     int i41 = 0;
@@ -1154,8 +1153,8 @@ public final class n7 extends FrameLayout {
                 int i382 = size;
                 float f162 = f15;
                 int dp2 = AndroidUtilities.dp(52.0f);
-                int D = LocaleController.isRTL ? org.telegram.messenger.q.D(f162, View.MeasureSpec.getSize(i10), dp2) : AndroidUtilities.dp(f162);
-                m90Var32.setBounds(D, AndroidUtilities.dp(11.0f), D + dp2, AndroidUtilities.dp(63.0f));
+                int B = LocaleController.isRTL ? org.telegram.messenger.g0.B(f162, View.MeasureSpec.getSize(i10), dp2) : AndroidUtilities.dp(f162);
+                m90Var32.setBounds(B, AndroidUtilities.dp(11.0f), B + dp2, AndroidUtilities.dp(63.0f));
                 if (z10) {
                     i15 = 1;
                     TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(this.b0.photoThumbs, dp2, true);
@@ -1172,7 +1171,7 @@ public final class n7 extends FrameLayout {
                     float dp3 = AndroidUtilities.dp(11.0f);
                     float f17 = dp2;
                     ImageReceiver imageReceiver = this.r;
-                    imageReceiver.setImageCoords(D, dp3, f17, f17);
+                    imageReceiver.setImageCoords(B, dp3, f17, f17);
                     FileLoader.getAttachFileName(closestPhotoSizeWithSize);
                     Locale locale = Locale.US;
                     imageReceiver.setImage(ImageLocation.getForObject(closestPhotoSizeWithSize, this.b0.photoThumbsObject), a1.g.k(dp2, dp2, "_"), ImageLocation.getForObject(closestPhotoSizeWithSize2, this.b0.photoThumbsObject), dp2 + "_" + dp2 + "_b", 0L, null, this.b0, 0);
@@ -1182,7 +1181,7 @@ public final class n7 extends FrameLayout {
                 }
                 if (i12 == i15) {
                     f10 = f162;
-                    StaticLayout u24 = u1.u2(c20.d(this.b0, i15, 2, textPaint), textPaint, i382, i382, 0, i14);
+                    StaticLayout u24 = u1.u2(b20.d(this.b0, i15, 2, textPaint), textPaint, i382, i382, 0, i14);
                     this.j0 = u24;
                     org.telegram.ui.Components.x5 x5Var = this.k0;
                     Layout[] layoutArr = new Layout[i15];
@@ -1206,17 +1205,17 @@ public final class n7 extends FrameLayout {
                 } else {
                     StaticLayout staticLayout11 = this.a0;
                     f11 = 5.0f;
-                    i17 = yh.c(5.0f, staticLayout11.getLineBottom(staticLayout11.getLineCount() - i15), i17);
+                    i17 = org.telegram.messenger.g0.C(5.0f, staticLayout11.getLineBottom(staticLayout11.getLineCount() - i15), i17);
                 }
                 staticLayout4 = this.R;
                 if (staticLayout4 != null && staticLayout4.getLineCount() != 0) {
                     StaticLayout staticLayout12 = this.R;
-                    i17 = yh.c(f11, staticLayout12.getLineBottom(staticLayout12.getLineCount() - i15), i17);
+                    i17 = org.telegram.messenger.g0.C(f11, staticLayout12.getLineBottom(staticLayout12.getLineCount() - i15), i17);
                 }
                 staticLayout5 = this.U;
                 if (staticLayout5 != null && staticLayout5.getLineCount() != 0) {
                     StaticLayout staticLayout13 = this.U;
-                    i17 = yh.c(f11, staticLayout13.getLineBottom(staticLayout13.getLineCount() - i15), i17);
+                    i17 = org.telegram.messenger.g0.C(f11, staticLayout13.getLineBottom(staticLayout13.getLineCount() - i15), i17);
                     if (this.R != null) {
                         i17 += AndroidUtilities.dp(f10);
                     }
@@ -1231,10 +1230,10 @@ public final class n7 extends FrameLayout {
                 if (this.j0 != null) {
                     this.i0 = AndroidUtilities.dp(f11) + this.F + i16;
                     StaticLayout staticLayout15 = this.j0;
-                    i392 = yh.c(f11, staticLayout15.getLineBottom(staticLayout15.getLineCount() - i15), i392);
+                    i392 = org.telegram.messenger.g0.C(f11, staticLayout15.getLineBottom(staticLayout15.getLineCount() - i15), i392);
                 }
                 this.w.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
-                setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.q.z(17.0f, i392, AndroidUtilities.dp(76.0f)) + (this.y ? 1 : 0));
+                setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.y(17.0f, i392, AndroidUtilities.dp(76.0f)) + (this.y ? 1 : 0));
             }
         }
         z10 = false;
@@ -1291,7 +1290,7 @@ public final class n7 extends FrameLayout {
         int dp22 = AndroidUtilities.dp(52.0f);
         if (LocaleController.isRTL) {
         }
-        m90Var322.setBounds(D, AndroidUtilities.dp(11.0f), D + dp22, AndroidUtilities.dp(63.0f));
+        m90Var322.setBounds(B, AndroidUtilities.dp(11.0f), B + dp22, AndroidUtilities.dp(63.0f));
         if (z10) {
         }
         if (i12 == i15) {
@@ -1307,12 +1306,12 @@ public final class n7 extends FrameLayout {
         staticLayout4 = this.R;
         if (staticLayout4 != null) {
             StaticLayout staticLayout122 = this.R;
-            i17 = yh.c(f11, staticLayout122.getLineBottom(staticLayout122.getLineCount() - i15), i17);
+            i17 = org.telegram.messenger.g0.C(f11, staticLayout122.getLineBottom(staticLayout122.getLineCount() - i15), i17);
         }
         staticLayout5 = this.U;
         if (staticLayout5 != null) {
             StaticLayout staticLayout132 = this.U;
-            i17 = yh.c(f11, staticLayout132.getLineBottom(staticLayout132.getLineCount() - i15), i17);
+            i17 = org.telegram.messenger.g0.C(f11, staticLayout132.getLineBottom(staticLayout132.getLineCount() - i15), i17);
             if (this.R != null) {
             }
         }
@@ -1322,7 +1321,7 @@ public final class n7 extends FrameLayout {
         if (this.j0 != null) {
         }
         this.w.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.q.z(17.0f, i3922, AndroidUtilities.dp(76.0f)) + (this.y ? 1 : 0));
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.y(17.0f, i3922, AndroidUtilities.dp(76.0f)) + (this.y ? 1 : 0));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:104:0x0244  */
@@ -1401,7 +1400,7 @@ public final class n7 extends FrameLayout {
                                     if (!this.a) {
                                         this.a = true;
                                         if (this.d == null) {
-                                            this.d = new t6(this, 1);
+                                            this.d = new l7(this, 0);
                                         }
                                         postDelayed(this.d, ViewConfiguration.getTapTimeout());
                                     }

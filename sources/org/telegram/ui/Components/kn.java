@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class kn implements wy {
     public final /* synthetic */ io a;
@@ -103,7 +103,7 @@ public final class kn implements wy {
         alertDialog$Builder.a.R = LocaleController.getString(R.string.ClearRecentEmojiTitle);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.ClearRecentEmojiText);
         alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new s(this, 24));
-        org.telegram.messenger.q.q(R.string.Cancel, alertDialog$Builder, null);
+        i2.d.r(R.string.Cancel, alertDialog$Builder, null);
     }
 
     @Override // org.telegram.ui.Components.wy
@@ -145,7 +145,7 @@ public final class kn implements wy {
     }
 
     @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ void o(h61 h61Var) {
+    public final /* synthetic */ void o(i61 i61Var) {
     }
 
     @Override // org.telegram.ui.Components.wy

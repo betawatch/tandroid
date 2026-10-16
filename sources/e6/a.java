@@ -6,9 +6,9 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.RemoteException;
 import c7.r0;
-import w7.g0;
+import w7.f0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class a extends o6.a {
     public final String a;
@@ -55,16 +55,16 @@ public final class a extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = g0.q(parcel, 20293);
-        g0.l(parcel, 2, this.a);
-        g0.l(parcel, 3, this.b);
+        int q6 = f0.q(parcel, 20293);
+        f0.l(parcel, 2, this.a);
+        f0.l(parcel, 3, this.b);
         l lVar = this.c;
-        g0.f(parcel, 4, lVar == null ? null : lVar.b);
-        g0.k(parcel, 5, this.d, i10);
-        g0.s(parcel, 6, 4);
+        f0.f(parcel, 4, lVar == null ? null : lVar.b);
+        f0.k(parcel, 5, this.d, i10);
+        f0.s(parcel, 6, 4);
         parcel.writeInt(this.e ? 1 : 0);
-        g0.s(parcel, 7, 4);
+        f0.s(parcel, 7, 4);
         parcel.writeInt(this.f ? 1 : 0);
-        g0.r(parcel, q6);
+        f0.r(parcel, q6);
     }
 }

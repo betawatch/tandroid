@@ -11,7 +11,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class gu0 extends lm0 {
     public final Context c;
@@ -110,7 +110,7 @@ public final class gu0 extends lm0 {
         xv0 xv0Var = this.f;
         if (i10 == 18) {
             org.telegram.ui.ActionBar.m2 m2Var = xv0Var.v1;
-            i6Var = new uu0(m2Var == null ? UserConfig.selectedAccount : m2Var.getCurrentAccount(), this.c, xv0Var.j1 > 0, xv0Var.F1, new lr0(this, 4));
+            i6Var = new uu0(m2Var == null ? UserConfig.selectedAccount : m2Var.getCurrentAccount(), this.c, xv0Var.j1 > 0, xv0Var.F1, new kr0(this, 4));
         } else {
             i6Var = new org.telegram.ui.Cells.i6(this.c, xv0Var.F1);
         }

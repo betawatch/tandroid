@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class c20 extends FrameLayout {
     public final RectF a;
@@ -113,7 +113,7 @@ public final class c20 extends FrameLayout {
                         b20Var.run();
                         zc a02 = zc.a0(m2Var);
                         boolean z11 = fragmentContextView.i0;
-                        org.telegram.messenger.q.r(z11 ? R.string.LiveStreamWillNotify : R.string.LiveStreamWillNotNotify, a02, z11 ? R.raw.silent_unmute : R.raw.silent_mute, 36);
+                        org.telegram.messenger.g0.q(z11 ? R.string.LiveStreamWillNotify : R.string.LiveStreamWillNotNotify, a02, z11 ? R.raw.silent_unmute : R.raw.silent_mute, 36);
                     }
                 }
                 fragmentContextView.k0.c(false);

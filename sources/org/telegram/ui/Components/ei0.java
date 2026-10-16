@@ -28,7 +28,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ei0 extends View {
     public float E;
@@ -62,7 +62,7 @@ public final class ei0 extends View {
     public float f;
     public final Path h;
     public final Path n;
-    public org.telegram.ui.s01 r;
+    public org.telegram.ui.r01 r;
     public float s;
     public float v;
     public RenderNode w;
@@ -200,7 +200,7 @@ public final class ei0 extends View {
             m(0, arrayList);
             m(1, arrayList);
         }
-        AndroidUtilities.runOnUIThread(new f60(12, this, arrayList));
+        AndroidUtilities.runOnUIThread(new g90(7, this, arrayList));
     }
 
     public final void e() {
@@ -642,9 +642,9 @@ public final class ei0 extends View {
         RenderNode renderNode2 = this.w;
         if (renderNode2 != null && Build.VERSION.SDK_INT >= 29 && renderNode2.hasDisplayList() && canvas.isHardwareAccelerated()) {
             canvas.save();
-            org.telegram.ui.s01 s01Var = this.r;
-            if (s01Var != null) {
-                View view = (View) s01Var.getParent();
+            org.telegram.ui.r01 r01Var = this.r;
+            if (r01Var != null) {
+                View view = (View) r01Var.getParent();
                 float x10 = view.getX();
                 float y10 = view.getY() - getTranslationY();
                 float scaleX = view.getScaleX() * view.getWidth();
@@ -671,7 +671,7 @@ public final class ei0 extends View {
                     RectF rectF8 = bi0Var11.d;
                     if (!bi0Var11.p) {
                         boolean z17 = AndroidUtilities.computePerceivedBrightness(this.Q) > 0.72f;
-                        float a2 = (!z17 || Build.VERSION.SDK_INT >= 31) ? !z17 ? 1.0f : w7.s.a((this.d - 0.75f) / 0.25f, 0.0f, 1.0f) : 0.0f;
+                        float a2 = (!z17 || Build.VERSION.SDK_INT >= 31) ? !z17 ? 1.0f : w7.r.a((this.d - 0.75f) / 0.25f, 0.0f, 1.0f) : 0.0f;
                         int d = i0.a.d(a2, -16777216, -1);
                         if (this.V == null || this.U != d) {
                             this.U = d;
@@ -712,8 +712,8 @@ public final class ei0 extends View {
                         f7 = f26;
                         float f33 = f21;
                         canvas.scale(f32, f32, centerX2, a1.g.B(bi0Var11.l.j(), bi0Var11.m, f33, j10));
-                        h11 h11Var = bi0Var11.l;
-                        h11Var.c(centerX2 - (h11Var.l() / f33), j10, b11, d, canvas);
+                        i11 i11Var = bi0Var11.l;
+                        i11Var.c(centerX2 - (i11Var.l() / f33), j10, b11, d, canvas);
                         canvas.restore();
                         float f34 = bi0Var11.q;
                         if (f34 != 1.0f) {
@@ -851,7 +851,7 @@ public final class ei0 extends View {
                             RectF rectF = bi0Var5.d;
                             ProfileActivity.Y(((org.telegram.ui.py0) di0Var).b, i13, rectF.left, rectF.top);
                         } else {
-                            postDelayed(new f60(13, this, bi0Var5), i12);
+                            postDelayed(new g90(8, this, bi0Var5), i12);
                         }
                     }
                 }

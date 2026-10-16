@@ -31,9 +31,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.yj0;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.s01;
+import org.telegram.ui.r01;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class b extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -124,10 +124,10 @@ public final class b extends AnimatorListenerAdapter {
                 break;
             case 9:
                 ProfileStoriesView profileStoriesView = (ProfileStoriesView) obj;
-                s01 s01Var = profileStoriesView.h;
+                r01 r01Var = profileStoriesView.h;
                 profileStoriesView.G = 1.0f;
-                s01Var.R = 1.0f;
-                s01Var.invalidate();
+                r01Var.R = 1.0f;
+                r01Var.invalidate();
                 profileStoriesView.invalidate();
                 break;
             case 10:

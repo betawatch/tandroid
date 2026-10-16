@@ -17,7 +17,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class zv extends FrameLayout {
     public final da0 a;
@@ -115,7 +115,7 @@ public final class zv extends FrameLayout {
                 marginLayoutParams.width = dp2;
                 ((ViewGroup.MarginLayoutParams) q0Var.getTextView().getLayoutParams()).leftMargin = AndroidUtilities.dp(3.0f);
                 q0Var.getChildAt(0).setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
-                addView(q0Var, w7.a6.i(-2.0f, 28.0f, 8388661, 0.0f, 15.66f, 5.66f, 0.0f));
+                addView(q0Var, w7.z5.i(-2.0f, 28.0f, 8388661, 0.0f, 15.66f, 5.66f, 0.0f));
                 q0Var.measure(View.MeasureSpec.makeMeasureSpec(99999, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLObject.FLAG_30));
                 f12 = (AndroidUtilities.dp(16.0f) + q0Var.getMeasuredWidth()) / AndroidUtilities.density;
             }
@@ -125,7 +125,7 @@ public final class zv extends FrameLayout {
             textView.setTextColor(ewVar.getThemedColor(org.telegram.ui.ActionBar.g6.Sh));
             int i15 = org.telegram.ui.ActionBar.g6.Oh;
             textView.setBackground(org.telegram.ui.ActionBar.w5.e(new float[]{14.0f}, ewVar.getThemedColor(i15)));
-            textView.setPadding(org.telegram.ui.Cells.d0.c(18.0f, R.string.Add, textView), 0, AndroidUtilities.dp(18.0f), 0);
+            textView.setPadding(org.telegram.ui.Cells.c1.b(18.0f, R.string.Add, textView), 0, AndroidUtilities.dp(18.0f), 0);
             textView.setGravity(17);
             textView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.wv
                 public final /* synthetic */ zv b;
@@ -164,7 +164,7 @@ public final class zv extends FrameLayout {
                     }
                 }
             });
-            addView(textView, w7.a6.i(-2.0f, 28.0f, 8388661, 0.0f, 15.66f, 5.66f, 0.0f));
+            addView(textView, w7.z5.i(-2.0f, 28.0f, 8388661, 0.0f, 15.66f, 5.66f, 0.0f));
             textView.measure(View.MeasureSpec.makeMeasureSpec(99999, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f10), TLObject.FLAG_30));
             float max = Math.max(f12, (AndroidUtilities.dp(f11) + textView.getMeasuredWidth()) / AndroidUtilities.density);
             TextView textView2 = new TextView(context);
@@ -172,7 +172,7 @@ public final class zv extends FrameLayout {
             textView2.setTypeface(AndroidUtilities.bold());
             textView2.setTextColor(ewVar.getThemedColor(i15));
             textView2.setBackground(org.telegram.ui.ActionBar.g6.Z(ewVar.getThemedColor(i15) & 268435455, 4, 4));
-            textView2.setPadding(org.telegram.ui.Cells.d0.c(12.0f, R.string.StickersRemove, textView2), 0, AndroidUtilities.dp(12.0f), 0);
+            textView2.setPadding(org.telegram.ui.Cells.c1.b(12.0f, R.string.StickersRemove, textView2), 0, AndroidUtilities.dp(12.0f), 0);
             textView2.setGravity(17);
             textView2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.wv
                 public final /* synthetic */ zv b;
@@ -212,7 +212,7 @@ public final class zv extends FrameLayout {
                 }
             });
             textView2.setClickable(false);
-            addView(textView2, w7.a6.i(-2.0f, 28.0f, 8388661, 0.0f, 15.66f, 5.66f, 0.0f));
+            addView(textView2, w7.z5.i(-2.0f, 28.0f, 8388661, 0.0f, 15.66f, 5.66f, 0.0f));
             textView2.setScaleX(0.0f);
             textView2.setScaleY(0.0f);
             textView2.setAlpha(0.0f);
@@ -235,10 +235,10 @@ public final class zv extends FrameLayout {
         da0Var.setTextColor(ewVar.getThemedColor(org.telegram.ui.ActionBar.g6.j5));
         if (z10) {
             da0Var.setTextSize(1, 20.0f);
-            addView(da0Var, w7.a6.i(-1.0f, -2.0f, 8388659, 12.0f, 11.0f, f13, 0.0f));
+            addView(da0Var, w7.z5.i(-1.0f, -2.0f, 8388659, 12.0f, 11.0f, f13, 0.0f));
         } else {
             da0Var.setTextSize(1, 17.0f);
-            addView(da0Var, w7.a6.i(-1.0f, -2.0f, 8388659, 6.0f, 10.0f, f13, 0.0f));
+            addView(da0Var, w7.z5.i(-1.0f, -2.0f, 8388659, 6.0f, 10.0f, f13, 0.0f));
         }
         if (!z10) {
             TextView textView3 = new TextView(context);
@@ -248,7 +248,7 @@ public final class zv extends FrameLayout {
             textView3.setEllipsize(truncateAt);
             textView3.setSingleLine(true);
             textView3.setLines(1);
-            addView(textView3, w7.a6.i(-1.0f, -2.0f, 8388659, 8.0f, 31.66f, f13, 0.0f));
+            addView(textView3, w7.z5.i(-1.0f, -2.0f, 8388659, 8.0f, 31.66f, f13, 0.0f));
         }
         if (z10) {
             int themedColor = ewVar.getThemedColor(org.telegram.ui.ActionBar.g6.Ji);
@@ -260,7 +260,7 @@ public final class zv extends FrameLayout {
             u0Var.setIcon(R.drawable.ic_ab_other);
             u0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.g0(ewVar.getThemedColor(org.telegram.ui.ActionBar.g6.Ni), 1, -1));
             i10 = ((org.telegram.ui.ActionBar.e3) ewVar).backgroundPaddingLeft;
-            addView(u0Var, w7.a6.a(40.0f, 0.0f, 5.0f, 5.0f - (i10 / AndroidUtilities.density), 0.0f, 40, 53));
+            addView(u0Var, w7.z5.a(40.0f, 0.0f, 5.0f, 5.0f - (i10 / AndroidUtilities.density), 0.0f, 40, 53));
             u0Var.e(1, R.drawable.msg_share, LocaleController.getString(R.string.StickersShare));
             u0Var.e(2, R.drawable.msg_link, LocaleController.getString(R.string.CopyLink));
             final int i17 = 3;

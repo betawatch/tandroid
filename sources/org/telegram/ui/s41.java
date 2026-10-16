@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class s41 extends org.telegram.ui.Components.lm0 {
     public final Context c;
@@ -77,15 +77,15 @@ public final class s41 extends org.telegram.ui.Components.lm0 {
         org.telegram.ui.Cells.ca caVar = (org.telegram.ui.Cells.ca) b1Var.a;
         caVar.setEnabled(z10);
         if (i10 == 2) {
-            caVar.c(LocaleController.getString(R.string.RoundVideoOutputResolution), a1.g.n(((li.s0) si.e.e.a()).a, "p", new StringBuilder()), false, true);
+            caVar.c(LocaleController.getString(R.string.RoundVideoOutputResolution), a1.g.n(((ri.p0) si.e.e.a()).a, "p", new StringBuilder()), false, true);
             return;
         }
         if (i10 == 3) {
             String string2 = LocaleController.getString(R.string.RoundVideoCameraResolution);
-            li.o0 o0Var = (li.o0) si.e.f.a();
-            caVar.c(string2, o0Var == li.o0.a ? LocaleController.getString(R.string.RoundVideoCameraResolutionHigh) : o0Var == li.o0.b ? LocaleController.getString(R.string.RoundVideoCameraResolutionMedium) : LocaleController.getString(R.string.RoundVideoCameraResolutionLow), false, true);
+            ri.l0 l0Var = (ri.l0) si.e.f.a();
+            caVar.c(string2, l0Var == ri.l0.a ? LocaleController.getString(R.string.RoundVideoCameraResolutionHigh) : l0Var == ri.l0.b ? LocaleController.getString(R.string.RoundVideoCameraResolutionMedium) : LocaleController.getString(R.string.RoundVideoCameraResolutionLow), false, true);
         } else if (i10 == 4) {
-            caVar.c(LocaleController.getString(R.string.RoundVideoFrameRate), a1.g.n(((li.p0) si.e.g.a()).a, " FPS", new StringBuilder()), false, true);
+            caVar.c(LocaleController.getString(R.string.RoundVideoFrameRate), a1.g.n(((ri.m0) si.e.g.a()).a, " FPS", new StringBuilder()), false, true);
         } else {
             caVar.c(LocaleController.getString(R.string.RoundVideoBitrate), t41.U(si.e.h.a()), false, false);
         }

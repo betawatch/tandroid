@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class b9 extends FragmentContextView {
     public final /* synthetic */ int R0 = 1;
@@ -23,15 +23,15 @@ public final class b9 extends FragmentContextView {
                 n9Var.M.i(n9Var.N, i10 == 0, true);
                 break;
             default:
-                lg1 lg1Var = (lg1) this.S0;
-                lg1Var.U0.i(lg1Var.F0, i10 == 0, true);
+                kg1 kg1Var = (kg1) this.S0;
+                kg1Var.U0.i(kg1Var.F0, i10 == 0, true);
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b9(lg1 lg1Var, Context context, lg1 lg1Var2) {
-        super(context, lg1Var2, null, false, null);
-        this.S0 = lg1Var;
+    public b9(kg1 kg1Var, Context context, kg1 kg1Var2) {
+        super(context, kg1Var2, null, false, null);
+        this.S0 = kg1Var;
     }
 }

@@ -3,10 +3,10 @@ package qh;
 import android.graphics.RectF;
 import android.view.View;
 import java.util.WeakHashMap;
-import r0.c0;
-import r0.j0;
+import r0.b0;
+import r0.i0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
@@ -34,8 +34,8 @@ public final /* synthetic */ class h implements Runnable {
                 if (i11 == 0) {
                     View view = iVar.E;
                     RectF rectF = e.e;
-                    WeakHashMap weakHashMap = j0.a;
-                    iVar.l(e.e1(c0.a(view), view, view.getRootView()), false);
+                    WeakHashMap weakHashMap = i0.a;
+                    iVar.l(e.e1(b0.a(view), view, view.getRootView()), false);
                     break;
                 }
                 break;

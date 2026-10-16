@@ -13,11 +13,11 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class tu0 extends lm0 {
     public final Context c;
-    public f60 e;
+    public g90 e;
     public int n;
     public final int r;
     public int s;
@@ -107,9 +107,9 @@ public final class tu0 extends lm0 {
     }
 
     public final void G(String str, boolean z10) {
-        f60 f60Var = this.e;
-        if (f60Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(f60Var);
+        g90 g90Var = this.e;
+        if (g90Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(g90Var);
             this.e = null;
         }
         if (!this.d.isEmpty() || !this.f.isEmpty()) {
@@ -137,9 +137,9 @@ public final class tu0 extends lm0 {
         while (true) {
             qu0[] qu0VarArr = xv0Var.k0;
             if (i10 >= qu0VarArr.length) {
-                f60 f60Var2 = new f60(26, this, str);
-                this.e = f60Var2;
-                AndroidUtilities.runOnUIThread(f60Var2, 300L);
+                g90 g90Var2 = new g90(21, this, str);
+                this.e = g90Var2;
+                AndroidUtilities.runOnUIThread(g90Var2, 300L);
                 return;
             } else {
                 qu0 qu0Var = qu0VarArr[i10];
@@ -171,30 +171,30 @@ public final class tu0 extends lm0 {
         SparseArray[] sparseArrayArr = xv0Var.Z0;
         int i11 = this.r;
         if (i11 == 1) {
-            if (view instanceof org.telegram.ui.Cells.k7) {
-                org.telegram.ui.Cells.k7 k7Var = (org.telegram.ui.Cells.k7) view;
+            if (view instanceof org.telegram.ui.Cells.j7) {
+                org.telegram.ui.Cells.j7 j7Var = (org.telegram.ui.Cells.j7) view;
                 MessageObject E = E(i10);
-                k7Var.c(E, i10 != h() - 1);
+                j7Var.c(E, i10 != h() - 1);
                 if (xv0Var.C1) {
-                    k7Var.b(sparseArrayArr[(E.getDialogId() > j10 ? 1 : (E.getDialogId() == j10 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(E.getId()) >= 0, !xv0Var.b1);
+                    j7Var.b(sparseArrayArr[(E.getDialogId() > j10 ? 1 : (E.getDialogId() == j10 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(E.getId()) >= 0, !xv0Var.b1);
                     return;
                 } else {
-                    k7Var.b(false, !xv0Var.b1);
+                    j7Var.b(false, !xv0Var.b1);
                     return;
                 }
             }
             return;
         }
         if (i11 != 3) {
-            if (i11 == 4 && (view instanceof org.telegram.ui.Cells.j7)) {
-                org.telegram.ui.Cells.j7 j7Var = (org.telegram.ui.Cells.j7) view;
+            if (i11 == 4 && (view instanceof org.telegram.ui.Cells.i7)) {
+                org.telegram.ui.Cells.i7 i7Var = (org.telegram.ui.Cells.i7) view;
                 MessageObject E2 = E(i10);
-                j7Var.f(E2, i10 != h() - 1);
+                i7Var.f(E2, i10 != h() - 1);
                 if (xv0Var.C1) {
-                    j7Var.e(sparseArrayArr[(E2.getDialogId() > j10 ? 1 : (E2.getDialogId() == j10 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(E2.getId()) >= 0, !xv0Var.b1);
+                    i7Var.e(sparseArrayArr[(E2.getDialogId() > j10 ? 1 : (E2.getDialogId() == j10 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(E2.getId()) >= 0, !xv0Var.b1);
                     return;
                 } else {
-                    j7Var.e(false, !xv0Var.b1);
+                    i7Var.e(false, !xv0Var.b1);
                     return;
                 }
             }
@@ -223,7 +223,7 @@ public final class tu0 extends lm0 {
         Context context = this.c;
         int i11 = this.r;
         if (i11 == 1) {
-            view = new org.telegram.ui.Cells.k7(context, 0, c6Var);
+            view = new org.telegram.ui.Cells.j7(context, 0, c6Var);
         } else if (i11 == 4) {
             view = new su0(this, context, c6Var, 0);
         } else {

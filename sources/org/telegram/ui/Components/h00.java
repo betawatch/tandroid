@@ -20,7 +20,7 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class h00 extends DispatchQueue {
     public final int[] E;
@@ -200,7 +200,7 @@ public final class h00 extends DispatchQueue {
         if (egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.d) || !BuildVars.LOGS_ENABLED) {
             return;
         }
-        org.telegram.messenger.yh.u(this.b, new StringBuilder("eglMakeCurrent failed "));
+        org.telegram.messenger.sk.v(this.b, new StringBuilder("eglMakeCurrent failed "));
     }
 
     public final void d(boolean z10, boolean z11, boolean z12) {
@@ -208,7 +208,7 @@ public final class h00 extends DispatchQueue {
     }
 
     public final void f(k00 k00Var) {
-        postRunnable(new sk(26, this, k00Var));
+        postRunnable(new vm(21, this, k00Var));
     }
 
     public final void finish() {
@@ -321,7 +321,7 @@ public final class h00 extends DispatchQueue {
         boolean z10 = false;
         if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
             if (BuildVars.LOGS_ENABLED) {
-                org.telegram.messenger.yh.u(this.b, new StringBuilder("eglGetDisplay failed "));
+                org.telegram.messenger.sk.v(this.b, new StringBuilder("eglGetDisplay failed "));
             }
             finish();
         } else {
@@ -331,7 +331,7 @@ public final class h00 extends DispatchQueue {
                 EGLConfig[] eGLConfigArr = new EGLConfig[1];
                 if (!this.b.eglChooseConfig(this.c, new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 0, 12326, 0, 12344}, eGLConfigArr, 1, iArr)) {
                     if (BuildVars.LOGS_ENABLED) {
-                        org.telegram.messenger.yh.u(this.b, new StringBuilder("eglChooseConfig failed "));
+                        org.telegram.messenger.sk.v(this.b, new StringBuilder("eglChooseConfig failed "));
                     }
                     finish();
                 } else if (iArr[0] > 0) {
@@ -355,7 +355,7 @@ public final class h00 extends DispatchQueue {
                     this.d = eglCreateContext;
                     if (eglCreateContext == null) {
                         if (BuildVars.LOGS_ENABLED) {
-                            org.telegram.messenger.yh.u(this.b, new StringBuilder("eglCreateContext failed "));
+                            org.telegram.messenger.sk.v(this.b, new StringBuilder("eglCreateContext failed "));
                         }
                         finish();
                     } else {
@@ -369,7 +369,7 @@ public final class h00 extends DispatchQueue {
                             this.e = eglCreateWindowSurface;
                             if (eglCreateWindowSurface == null || eglCreateWindowSurface == EGL10.EGL_NO_SURFACE) {
                                 if (BuildVars.LOGS_ENABLED) {
-                                    org.telegram.messenger.yh.u(this.b, new StringBuilder("createWindowSurface failed "));
+                                    org.telegram.messenger.sk.v(this.b, new StringBuilder("createWindowSurface failed "));
                                 }
                                 finish();
                             } else if (this.b.eglMakeCurrent(this.c, eglCreateWindowSurface, eglCreateWindowSurface, this.d)) {
@@ -438,7 +438,7 @@ public final class h00 extends DispatchQueue {
                                 }
                             } else {
                                 if (BuildVars.LOGS_ENABLED) {
-                                    org.telegram.messenger.yh.u(this.b, new StringBuilder("eglMakeCurrent failed "));
+                                    org.telegram.messenger.sk.v(this.b, new StringBuilder("eglMakeCurrent failed "));
                                 }
                                 finish();
                             }
@@ -454,7 +454,7 @@ public final class h00 extends DispatchQueue {
                 }
             } else {
                 if (BuildVars.LOGS_ENABLED) {
-                    org.telegram.messenger.yh.u(this.b, new StringBuilder("eglInitialize failed "));
+                    org.telegram.messenger.sk.v(this.b, new StringBuilder("eglInitialize failed "));
                 }
                 finish();
             }

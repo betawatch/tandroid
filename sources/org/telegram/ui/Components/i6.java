@@ -12,10 +12,10 @@ import java.util.Comparator;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class i6 extends LinearLayout {
-    public static final Comparator r = Comparator$-EL.thenComparingInt(Comparator$-CC.comparingInt(new bi.s6(8)), new bi.s6(9));
+    public static final Comparator r = Comparator$-EL.thenComparingInt(Comparator$-CC.comparingInt(new bi.s6(9)), new bi.s6(10));
     public final HashMap a;
     public final ArrayList b;
     public final ne.j c;

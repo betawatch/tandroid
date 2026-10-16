@@ -6,14 +6,14 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.h71;
-import w7.a6;
+import org.telegram.ui.Components.i71;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class j0 extends h0 {
     public final /* synthetic */ k0 h;
@@ -32,15 +32,15 @@ public final class j0 extends h0 {
         t tVar = new t(k0Var, i11);
         u uVar = new u(k0Var, i11);
         c6Var = ((e3) k0Var).resourcesProvider;
-        h71 h71Var = new h71(context, i10, 0, false, tVar, uVar, null, c6Var);
-        this.d = h71Var;
-        h71Var.p1();
-        h71 h71Var2 = this.d;
-        h71Var2.W2.r = false;
-        h71Var2.setClipToPadding(false);
+        i71 i71Var = new i71(context, i10, 0, false, tVar, uVar, null, c6Var);
+        this.d = i71Var;
+        i71Var.p1();
+        i71 i71Var2 = this.d;
+        i71Var2.W2.r = false;
+        i71Var2.setClipToPadding(false);
         this.d.setPadding(0, 0, 0, AndroidUtilities.dp(60.0f) + AndroidUtilities.navigationBarHeight);
         this.d.j(new ah.d0(this, 8));
-        this.c.addView(this.d, 0, a6.d(-1.0f, -1));
+        this.c.addView(this.d, 0, z5.d(-1.0f, -1));
         c6Var2 = ((e3) k0Var).resourcesProvider;
         org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, c6Var2);
         this.a = kVar;
@@ -48,14 +48,14 @@ public final class j0 extends h0 {
         org.telegram.ui.ActionBar.k kVar2 = this.a;
         int i12 = g6.G6;
         kVar2.setTitleColor(k0Var.getThemedColor(i12));
-        this.a.B(k0Var.getThemedColor(g6.z8), false);
+        this.a.C(k0Var.getThemedColor(g6.z8), false);
         this.a.setBackButtonImage(R.drawable.ic_ab_back);
         this.a.D(k0Var.getThemedColor(g6.y8), false);
         this.a.setTitle(LocaleController.getString(R.string.CommunityPendingRequestsTitle));
         this.a.getTitleTextView().setTranslationX(-AndroidUtilities.dp(18.0f));
         this.a.setActionBarMenuOnItemClick(new ah.s(this, 9));
-        this.c.addView(this.a, a6.e(-1, 56, 48));
-        LinearLayout e = yh.e(context, 0);
+        this.c.addView(this.a, z5.e(-1, 56, 48));
+        LinearLayout e = sk.e(context, 0);
         e.setPadding(AndroidUtilities.dp(7.0f), 0, AndroidUtilities.dp(7.0f), AndroidUtilities.dp(12.0f));
         c6Var3 = ((e3) k0Var).resourcesProvider;
         di.d dVar = new di.d(context, c6Var3, true);
@@ -83,7 +83,7 @@ public final class j0 extends h0 {
                 }
             }
         });
-        e.addView(dVar, a6.p(0, 48, 1.0f, 0, 4, 0, 4, 0));
+        e.addView(dVar, z5.p(0, 48, 1.0f, 0, 4, 0, 4, 0));
         c6Var4 = ((e3) k0Var).resourcesProvider;
         di.d dVar2 = new di.d(context, c6Var4, true);
         dVar2.setText(LocaleController.getString(R.string.CommunityPendingRequestAddAll));
@@ -108,8 +108,8 @@ public final class j0 extends h0 {
                 }
             }
         });
-        e.addView(dVar2, a6.p(0, 48, 1.0f, 0, 4, 0, 4, 0));
-        this.c.addView(e, a6.f(-2.0f, 80, 0, 0, 0, AndroidUtilities.navigationBarHeight));
+        e.addView(dVar2, z5.p(0, 48, 1.0f, 0, 4, 0, 4, 0));
+        this.c.addView(e, z5.f(-2.0f, 80, 0, 0, 0, AndroidUtilities.navigationBarHeight));
         a();
     }
 }

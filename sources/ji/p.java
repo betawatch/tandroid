@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.i61;
 import org.telegram.ui.Components.wy;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class p implements wy {
     public final /* synthetic */ r a;
@@ -133,27 +133,11 @@ public final class p implements wy {
     }
 
     @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ void n() {
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ void q() {
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ void u() {
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ void w() {
-    }
-
-    @Override // org.telegram.ui.Components.wy
     public final /* synthetic */ void h(TLRPC.StickerSetCovered stickerSetCovered) {
     }
 
     @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ void o(h61 h61Var) {
+    public final /* synthetic */ void o(i61 i61Var) {
     }
 
     @Override // org.telegram.ui.Components.wy
@@ -170,6 +154,22 @@ public final class p implements wy {
 
     @Override // org.telegram.ui.Components.wy
     public final /* synthetic */ void y(long j10) {
+    }
+
+    @Override // org.telegram.ui.Components.wy
+    public final /* synthetic */ void n() {
+    }
+
+    @Override // org.telegram.ui.Components.wy
+    public final /* synthetic */ void q() {
+    }
+
+    @Override // org.telegram.ui.Components.wy
+    public final /* synthetic */ void u() {
+    }
+
+    @Override // org.telegram.ui.Components.wy
+    public final /* synthetic */ void w() {
     }
 
     @Override // org.telegram.ui.Components.wy

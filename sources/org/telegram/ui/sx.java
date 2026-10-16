@@ -6,7 +6,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AnimationNotificationsLocker;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class sx extends r41 {
     public boolean S;
@@ -35,7 +35,7 @@ public final class sx extends r41 {
         xyVar2.d.G = false;
         xyVar2.G.G = false;
         yy yyVar = this.W;
-        yyVar.x4(false, true);
+        yyVar.y4(false, true);
         this.T.a.setClipChildren(true);
         this.T.a.invalidate();
         this.T.d.l();
@@ -55,9 +55,9 @@ public final class sx extends r41 {
         if (iyVar != null) {
             iyVar.R();
         }
-        yyVar.S4(false, true);
-        yyVar.A3();
-        yyVar.R4();
+        yyVar.T4(false, true);
+        yyVar.B3();
+        yyVar.S4();
     }
 
     @Override // org.telegram.ui.r41
@@ -74,7 +74,7 @@ public final class sx extends r41 {
             this.T.F.setLayoutManager(new rx(this, this.T));
             xy xyVar2 = this.T;
             int i11 = this.T.s;
-            int i12 = yyVar.V2;
+            int i12 = yyVar.W2;
             boolean z11 = yyVar.l2;
             ArrayList arrayList = yyVar.I2;
             i10 = ((org.telegram.ui.ActionBar.m2) yyVar).currentAccount;
@@ -88,7 +88,7 @@ public final class sx extends r41 {
         }
         if (!z10) {
             yyVar.Q = false;
-            yyVar.z4(-yyVar.Q3());
+            yyVar.A4(-yyVar.R3());
         }
         this.T.a.B0();
         xy xyVar5 = this.T;
@@ -101,8 +101,8 @@ public final class sx extends r41 {
         xyVar7.d.G = true;
         xyVar7.G.G = true;
         xyVar7.c.H = false;
-        yyVar.x4(true, true);
-        yyVar.Z3(this.S);
+        yyVar.y4(true, true);
+        yyVar.a4(this.S);
         this.T.d.l();
         this.T.G.l();
         float f7 = !z10 ? yyVar.N : -yyVar.N;
@@ -110,8 +110,8 @@ public final class sx extends r41 {
         xyVar8.a.z1(xyVar8.F, f7, false);
         this.T.a.setClipChildren(false);
         this.T.a.B0();
-        yyVar.A3();
-        yyVar.R4();
+        yyVar.B3();
+        yyVar.S4();
     }
 
     @Override // org.telegram.ui.r41
@@ -160,7 +160,7 @@ public final class sx extends r41 {
             kVar3 = ((org.telegram.ui.ActionBar.m2) yyVar).actionBar;
             kVar3.getBackButton().setAlpha(f7 != 1.0f ? 1.0f : 0.0f);
         }
-        if (yyVar.V2 != 0 || yyVar.X2 != 0) {
+        if (yyVar.W2 != 0 || yyVar.Y2 != 0) {
             Paint paint = yyVar.f1;
             int i10 = org.telegram.ui.ActionBar.g6.d6;
             paint.setColor(i0.a.d(f7, yyVar.getThemedColor(i10), yyVar.getThemedColor(i10)));
@@ -169,10 +169,10 @@ public final class sx extends r41 {
         if (xyVar != null) {
             xyVar.a.setOpenRightFragmentProgress(f7);
         }
-        yyVar.z3();
-        yyVar.E3();
-        yyVar.r3();
-        yyVar.B3();
+        yyVar.A3();
+        yyVar.F3();
+        yyVar.s3();
+        yyVar.C3();
         xy xyVar2 = yyVar.e0[0];
         if (xyVar2 != null && (uyVar = xyVar2.a) != null) {
             uyVar.requestLayout();

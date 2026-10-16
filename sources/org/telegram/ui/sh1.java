@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sh1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -44,10 +44,10 @@ public final /* synthetic */ class sh1 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new ji.k(tL_error, (Utilities.Callback) this.b, tLObject, (List) this.c, (c5.i) this.d, (Utilities.Callback) this.e, (org.telegram.ui.ActionBar.m2) this.f, (TLRPC.TL_inputStorePaymentPremiumGiftCode) this.g, 8));
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new ji.k(tLObject, (c5.p) this.b, (c5.i) this.c, (rh.s) this.d, (Activity) this.e, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.f, (List) this.g, tL_error, 9));
+                AndroidUtilities.runOnUIThread(new ji.k(tLObject, (c5.p) this.b, (c5.i) this.c, (rh.r) this.d, (Activity) this.e, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.f, (List) this.g, tL_error, 9));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new ji.k(tLObject, (c5.p) this.b, (c5.i) this.c, (org.telegram.ui.Components.d90) this.d, (Activity) this.e, (TLRPC.TL_inputStorePaymentStarsGift) this.f, (List) this.g, tL_error, 10));
+                AndroidUtilities.runOnUIThread(new ji.k(tLObject, (c5.p) this.b, (c5.i) this.c, (org.telegram.ui.Components.c90) this.d, (Activity) this.e, (TLRPC.TL_inputStorePaymentStarsGift) this.f, (List) this.g, tL_error, 10));
                 break;
         }
     }

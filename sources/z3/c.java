@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class c implements e {
     public static final r c = new r(new a(1), s1.b);
@@ -118,13 +118,13 @@ public final class c implements e {
     }
 
     @Override // z3.e
-    public final long d(int i10) {
+    public final long h(int i10) {
         u6.g(i10 < this.a.size());
         return this.b[i10];
     }
 
     @Override // z3.e
-    public final List f(long j10) {
+    public final List o(long j10) {
         int f7 = m0.f(this.b, j10, false);
         if (f7 != -1) {
             return (n0) this.a.get(f7);
@@ -134,7 +134,7 @@ public final class c implements e {
     }
 
     @Override // z3.e
-    public final int j() {
+    public final int u() {
         return this.a.size();
     }
 }

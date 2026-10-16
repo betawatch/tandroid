@@ -2,77 +2,58 @@ package org.telegram.ui;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class qw0 extends org.telegram.ui.Cells.u1 {
-    public final Path Ge;
-    public final Paint He;
-    public final /* synthetic */ byte[] Ie;
-    public final /* synthetic */ int Je;
-    public final /* synthetic */ int Ke;
-    public final /* synthetic */ sw0 Le;
+    public final /* synthetic */ int Ge;
+    public final /* synthetic */ int He;
+    public final /* synthetic */ int Ie;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qw0(sw0 sw0Var, Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var, byte[] bArr, int i11, int i12) {
+    public /* synthetic */ qw0(Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var, int i11, int i12, int i13) {
         super(context, i10, false, null, c6Var);
-        this.Le = sw0Var;
-        this.Ie = bArr;
-        this.Je = i11;
-        this.Ke = i12;
-        this.Ge = new Path();
-        this.He = new Paint(1);
+        this.Ge = i13;
+        this.He = i11;
+        this.Ie = i12;
     }
 
     @Override // org.telegram.ui.Cells.u1
     public final void Y1(Canvas canvas) {
-        this.i6 = 0;
-        this.j6 = this.Y5.size() - 1;
-        this.k6 = (-AndroidUtilities.dp(7.0f)) * this.Le.y;
-        super.Y1(canvas);
-    }
-
-    @Override // org.telegram.ui.Cells.u1, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        int I2 = I2(this.Ie);
-        float H2 = H2(I2);
-        float G2 = G2(I2);
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(getPollButtonsLeft(), H2, getPollButtonsRight(), G2);
-        float f7 = rectF.top;
-        float dp = AndroidUtilities.dp(3.0f);
-        sw0 sw0Var = this.Le;
-        rectF.top = AndroidUtilities.lerp(dp, sw0Var.V ? -AndroidUtilities.dp(3.0f) : 0.0f, sw0Var.y) + f7;
-        float f10 = rectF.bottom;
-        boolean z10 = sw0Var.V;
-        float dp2 = AndroidUtilities.dp(3.0f);
-        if (!z10) {
-            dp2 = AndroidUtilities.lerp(dp2, 0.0f, sw0Var.y);
+        switch (this.Ge) {
+            case 0:
+                this.i6 = 0;
+                this.j6 = this.Y5.size() - 1;
+                super.Y1(canvas);
+                break;
+            default:
+                this.i6 = 0;
+                this.j6 = this.Y5.size() - 1;
+                super.Y1(canvas);
+                break;
         }
-        rectF.bottom = f10 + dp2;
-        Path path = this.Ge;
-        path.rewind();
-        path.addRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), Path.Direction.CW);
-        Paint paint = this.He;
-        paint.setColor(0);
-        paint.setShadowLayer(AndroidUtilities.dp(2.0f), 0.0f, AndroidUtilities.dp(0.66f), org.telegram.ui.ActionBar.g6.m1(sw0Var.y * 0.2f, -16777216));
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), paint);
-        canvas.clipPath(path);
-        S1(canvas);
-        canvas.restore();
     }
 
     @Override // org.telegram.ui.Cells.u1, android.view.View
     public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(this.Je, this.Ke);
+        switch (this.Ge) {
+            case 0:
+                setMeasuredDimension(this.He, this.Ie);
+                break;
+            default:
+                setMeasuredDimension(this.He, this.Ie);
+                break;
+        }
     }
 
     @Override // org.telegram.ui.Cells.u1, android.view.View
     public final void setPressed(boolean z10) {
+        int i10 = this.Ge;
+    }
+
+    private final void A4(boolean z10) {
+    }
+
+    private final void B4(boolean z10) {
     }
 }

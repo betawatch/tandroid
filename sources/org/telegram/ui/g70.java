@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g70 implements Runnable {
     public final /* synthetic */ int a;
@@ -98,7 +98,7 @@ public final /* synthetic */ class g70 implements Runnable {
                         int i14 = i11;
                         while (i11 < i12) {
                             String str5 = strArr[i11];
-                            if (str.startsWith(str5) || org.telegram.messenger.yh.v(" ", str5, str) || (translitString2 != null && (translitString2.startsWith(str5) || org.telegram.messenger.yh.v(" ", str5, translitString2)))) {
+                            if (str.startsWith(str5) || org.telegram.messenger.g0.w(" ", str5, str) || (translitString2 != null && (translitString2.startsWith(str5) || org.telegram.messenger.g0.w(" ", str5, translitString2)))) {
                                 i10 = 1;
                             } else {
                                 if (publicUsername != null && publicUsername.startsWith(str5)) {

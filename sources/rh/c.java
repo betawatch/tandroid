@@ -22,10 +22,11 @@ import org.telegram.ui.d61;
 import org.telegram.ui.fo;
 import org.telegram.ui.xg;
 import rg.b0;
-import w7.a6;
+import w7.b6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
 public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawListener {
     public final Rect E;
     public ViewTreeObserver F;
@@ -77,12 +78,12 @@ public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
         this.b = bVar;
         int i11 = g6.Vh;
         bVar.setBackground(g6.g0(g6.w0(i11, c6Var), 1, -1));
-        w7.c6.a(bVar);
+        b6.a(bVar);
         d dVar = new d(getContext(), 36);
         this.c = dVar;
         dVar.setBackground(g6.g0(g6.w0(i11, c6Var), 1, -1));
         dVar.setOnClickListener(new bz0(21, this, foVar));
-        w7.c6.a(dVar);
+        b6.a(dVar);
         h5 h5Var = new h5(getContext());
         this.f = h5Var;
         h5Var.setTextSize(13);
@@ -94,11 +95,11 @@ public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
         addView(d61Var, layoutParams);
         d61 d61Var2 = new d61(activity, 8);
         this.v = d61Var2;
-        d61Var.addView(d61Var2, a6.d(-2.0f, -1));
-        d61Var2.addView(h5Var, a6.e(54, 24, 53));
-        d61Var2.addView(bVar, a6.e(44, 44, 51));
-        d61Var2.addView(dVar, a6.a(44.0f, 0.0f, 0.0f, 5.0f, 0.0f, 44, 53));
-        d61Var2.addView(c6Var2, a6.a(-2.0f, 39.0f, 0.0f, 47.0f, 0.0f, -1, 119));
+        d61Var.addView(d61Var2, z5.d(-2.0f, -1));
+        d61Var2.addView(h5Var, z5.e(54, 24, 53));
+        d61Var2.addView(bVar, z5.e(44, 44, 51));
+        d61Var2.addView(dVar, z5.a(44.0f, 0.0f, 0.0f, 5.0f, 0.0f, 44, 53));
+        d61Var2.addView(c6Var2, z5.a(-2.0f, 39.0f, 0.0f, 47.0f, 0.0f, -1, 119));
         c6Var2.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(11.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(11.0f));
     }
 

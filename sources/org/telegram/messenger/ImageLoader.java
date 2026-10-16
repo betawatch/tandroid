@@ -78,12 +78,12 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.cd0;
-import org.telegram.ui.Components.t21;
+import org.telegram.ui.Components.u21;
 import org.telegram.ui.Components.wj0;
 import org.telegram.ui.Components.ww0;
 import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class ImageLoader {
     public static final String AUTOPLAY_FILTER = "g";
@@ -134,7 +134,7 @@ public class ImageLoader {
     private LinkedList<HttpImageTask> httpTasks = new LinkedList<>();
     private LinkedList<ArtworkLoadTask> artworkTasks = new LinkedList<>();
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public class 5 implements FileLoader.FileLoaderDelegate {
         final /* synthetic */ int val$currentAccount;
 
@@ -312,7 +312,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public class 6 extends BroadcastReceiver {
         public 6() {
         }
@@ -336,7 +336,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static /* synthetic */ class 7 {
         static final /* synthetic */ int[] $SwitchMap$android$graphics$Bitmap$CompressFormat;
 
@@ -361,7 +361,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public class ArtworkLoadTask extends AsyncTask<Void, Void, String> {
         private CacheImage cacheImage;
         private boolean canRetry = true;
@@ -579,7 +579,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public class CacheImage {
         protected ArtworkLoadTask artworkTask;
         protected CacheOutTask cacheTask;
@@ -912,7 +912,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public class CacheOutTask implements Runnable {
         private CacheImage cacheImage;
         private boolean isCancelled;
@@ -1231,7 +1231,7 @@ public class ImageLoader {
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public void run() {
-            t21 t21Var;
+            u21 u21Var;
             boolean z10;
             boolean z11;
             Bitmap bitmap;
@@ -1369,12 +1369,12 @@ public class ImageLoader {
                     if (i31 == 5) {
                         try {
                             CacheImage cacheImage3 = this.cacheImage;
-                            t21Var = new t21(cacheImage3.finalFilePath, (DocumentObject.ThemeDocument) cacheImage3.imageLocation.document);
+                            u21Var = new u21(cacheImage3.finalFilePath, (DocumentObject.ThemeDocument) cacheImage3.imageLocation.document);
                         } catch (Throwable th3) {
                             FileLog.e(th3);
-                            t21Var = null;
+                            u21Var = null;
                         }
-                        onPostExecute(t21Var);
+                        onPostExecute(u21Var);
                         return;
                     }
                     if (i31 == 3 || i31 == 4) {
@@ -3017,7 +3017,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public class HttpFileTask extends AsyncTask<Void, Void, Boolean> {
         private int currentAccount;
         private String ext;
@@ -3247,7 +3247,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public class HttpImageTask extends AsyncTask<Void, Void, Boolean> {
         private CacheImage cacheImage;
         private boolean canRetry = true;
@@ -3621,7 +3621,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class MessageThumb {
         BitmapDrawable drawable;
         String key;
@@ -3632,7 +3632,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class PhotoSizeFromPhoto extends TLRPC.PhotoSize {
         public final TLRPC.InputPhoto inputPhoto;
         public final TLRPC.Photo photo;
@@ -3647,7 +3647,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class ThumbGenerateInfo {
         private boolean big;
         private String filter;
@@ -3661,7 +3661,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public class ThumbGenerateTask implements Runnable {
         private ThumbGenerateInfo info;
         private int mediaType;
@@ -3789,7 +3789,7 @@ public class ImageLoader {
     public ImageLoader() {
         hf.c cVar = new hf.c();
         TimeUnit timeUnit = TimeUnit.SECONDS;
-        cVar.a = new hf.a(cVar, new PriorityBlockingQueue(10, new gb.j(1)));
+        cVar.a = new hf.a(cVar, new PriorityBlockingQueue(10, new gb.k(1)));
         this.cacheOutQueue = cVar;
         this.cacheThumbOutQueue = new DispatchQueue("cacheThumbOutQueue");
         this.thumbGeneratingQueue = new DispatchQueue("thumbGeneratingQueue");
@@ -6040,7 +6040,7 @@ public class ImageLoader {
         if (imageReceiver == null) {
             return;
         }
-        HashMap hashMap = org.telegram.ui.web.h2.f;
+        HashMap hashMap = org.telegram.ui.web.i2.f;
         if (hashMap != null) {
             Iterator it = hashMap.entrySet().iterator();
             while (true) {
@@ -6062,7 +6062,7 @@ public class ImageLoader {
                     i10++;
                 }
                 if (arrayList.isEmpty()) {
-                    org.telegram.ui.web.h2.f.remove(str);
+                    org.telegram.ui.web.i2.f.remove(str);
                     break;
                 }
             }
@@ -6129,7 +6129,7 @@ public class ImageLoader {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("cache path = " + cacheDir);
         }
-        i2.d.t(SharedConfig.storageCacheDir, new StringBuilder("selected SD card = "));
+        i2.d.v(SharedConfig.storageCacheDir, new StringBuilder("selected SD card = "));
         try {
             if ("mounted".equals(Environment.getExternalStorageState())) {
                 File externalStorageDirectory = Environment.getExternalStorageDirectory();
@@ -6531,7 +6531,7 @@ public class ImageLoader {
 
     public void replaceImageInCache(String str, String str2, ImageLocation imageLocation, boolean z10) {
         if (z10) {
-            AndroidUtilities.runOnUIThread(new sk(this, str, str2, imageLocation, 8));
+            AndroidUtilities.runOnUIThread(new tk(this, str, str2, imageLocation, 8));
         } else {
             lambda$replaceImageInCache$5(str, str2, imageLocation);
         }

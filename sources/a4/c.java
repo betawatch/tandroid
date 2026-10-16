@@ -11,7 +11,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class c extends k {
     public final int i;
@@ -67,11 +67,11 @@ public final class c extends k {
     }
 
     @Override // a4.k
-    public final k6.h f() {
+    public final l f() {
         List list = this.o;
         this.p = list;
         list.getClass();
-        return new k6.h(list, 1);
+        return new l(list, 0);
     }
 
     @Override // a4.k, h2.e
@@ -327,7 +327,7 @@ public final class c extends k {
         }
         this.o = Collections.EMPTY_LIST;
         this.y = -9223372036854775807L;
-        k6.h f7 = f();
+        l f7 = f();
         long j12 = this.e;
         kVar.timeUs = j12;
         kVar.a = f7;

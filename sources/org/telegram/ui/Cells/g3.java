@@ -12,7 +12,7 @@ import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.nu;
 import org.telegram.ui.Components.ow0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class g3 extends FrameLayout {
     public boolean a;
@@ -41,7 +41,7 @@ public abstract class g3 extends FrameLayout {
         e3 e3Var = new e3(this, context, ow0Var, c6Var, z10);
         this.b = e3Var;
         nu editText = e3Var.getEditText();
-        editText.setDelegate(new m4.c(this, editText, false, 11));
+        editText.setDelegate(new m2.t(this, editText, false, 11));
         e3Var.setWillNotDraw(false);
         this.r = new org.telegram.ui.Components.j5(e3Var);
         r6Var.setCallback(e3Var);
@@ -66,8 +66,8 @@ public abstract class g3 extends FrameLayout {
         editText.setCursorSize(AndroidUtilities.dp(19.0f));
         editText.setCursorWidth(1.5f);
         editText.addTextChangedListener(new f3(this, i10, editText, z10));
-        editText.setOnFocusChangeListener(new m.r2(this, 1));
-        addView(e3Var, w7.a6.e(-1, -1, 48));
+        editText.setOnFocusChangeListener(new m.t2(this, 1));
+        addView(e3Var, w7.z5.e(-1, -1, 48));
         c();
     }
 

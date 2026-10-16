@@ -9,7 +9,7 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class tf implements TextWatcher {
     public boolean a;
@@ -92,15 +92,15 @@ public final class tf implements TextWatcher {
                     pfVar = chatActivityEnterView.m0;
                     if (pfVar != null) {
                     }
-                    chatActivityEnterView.B();
+                    chatActivityEnterView.C();
                     if (chatActivityEnterView.a2) {
                         chatActivityEnterView.o0 = true;
                         if (this.e) {
                         }
                     }
-                    chatActivityEnterView.n1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
+                    chatActivityEnterView.m1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
                     chatActivityEnterView.E(true);
-                    chatActivityEnterView.t1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
+                    chatActivityEnterView.s1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
                 }
                 chatActivityEnterView.b0.setTextColor(chatActivityEnterView.g0(org.telegram.ui.ActionBar.g6.p7));
                 z10 = false;
@@ -112,18 +112,18 @@ public final class tf implements TextWatcher {
                 if (pfVar != null) {
                     pfVar.c();
                 }
-                chatActivityEnterView.B();
+                chatActivityEnterView.C();
                 if (chatActivityEnterView.a2 && !chatActivityEnterView.o0 && !MessagesController.getInstance(chatActivityEnterView.Q).premiumFeaturesBlocked() && !UserConfig.getInstance(chatActivityEnterView.Q).isPremium() && chatActivityEnterView.d0 > MessagesController.getInstance(chatActivityEnterView.Q).captionLengthLimitDefault && chatActivityEnterView.d0 < MessagesController.getInstance(chatActivityEnterView.Q).captionLengthLimitPremium) {
                     chatActivityEnterView.o0 = true;
                     if (this.e) {
-                        chatActivityEnterView.o1();
+                        chatActivityEnterView.n1();
                     } else {
                         AndroidUtilities.runOnUIThread(new qg(this, 19), 300L);
                     }
                 }
-                chatActivityEnterView.n1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
+                chatActivityEnterView.m1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
                 chatActivityEnterView.E(true);
-                chatActivityEnterView.t1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
+                chatActivityEnterView.s1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
             }
         }
         NumberTextView numberTextView2 = chatActivityEnterView.b0;
@@ -136,12 +136,12 @@ public final class tf implements TextWatcher {
         pfVar = chatActivityEnterView.m0;
         if (pfVar != null) {
         }
-        chatActivityEnterView.B();
+        chatActivityEnterView.C();
         if (chatActivityEnterView.a2) {
         }
-        chatActivityEnterView.n1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
+        chatActivityEnterView.m1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
         chatActivityEnterView.E(true);
-        chatActivityEnterView.t1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
+        chatActivityEnterView.s1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
     }
 
     @Override // android.text.TextWatcher
@@ -160,7 +160,7 @@ public final class tf implements TextWatcher {
         fg fgVar = chatActivityEnterView.U0;
         boolean z10 = (fgVar == null ? MessagesController.getGlobalEmojiSettings().getInt("selected_page", 0) : fgVar.getCurrentPage()) != 0 && (chatActivityEnterView.J2 || chatActivityEnterView.K2);
         if (((i11 == 0 && !TextUtils.isEmpty(charSequence)) || (i11 != 0 && TextUtils.isEmpty(charSequence))) && z10) {
-            chatActivityEnterView.b1(false, true);
+            chatActivityEnterView.a1(false, true);
         }
         if (chatActivityEnterView.T != chatActivityEnterView.E0.getLineCount()) {
             this.e = (chatActivityEnterView.E0.getLineCount() >= 4) != (chatActivityEnterView.T >= 4);
@@ -169,8 +169,8 @@ public final class tf implements TextWatcher {
             }
             int lineCount = chatActivityEnterView.E0.getLineCount();
             chatActivityEnterView.T = lineCount;
-            chatActivityEnterView.n1((lineCount <= 2 || charSequence == null || TextUtils.isEmpty(charSequence.toString().trim())) ? false : true);
-            chatActivityEnterView.t1((chatActivityEnterView.T <= 2 || charSequence == null || TextUtils.isEmpty(charSequence.toString().trim())) ? false : true);
+            chatActivityEnterView.m1((lineCount <= 2 || charSequence == null || TextUtils.isEmpty(charSequence.toString().trim())) ? false : true);
+            chatActivityEnterView.s1((chatActivityEnterView.T <= 2 || charSequence == null || TextUtils.isEmpty(charSequence.toString().trim())) ? false : true);
         } else {
             this.e = false;
         }
@@ -188,7 +188,7 @@ public final class tf implements TextWatcher {
             if (i11 > i13 || i12 - i11 > 2 || TextUtils.isEmpty(charSequence)) {
                 chatActivityEnterView.Y2 = true;
             }
-            chatActivityEnterView.Z2.g1(charSequence, i11 > i13 || i12 - i11 > 2, false);
+            chatActivityEnterView.Z2.h1(charSequence, i11 > i13 || i12 - i11 > 2, false);
         }
         if (chatActivityEnterView.S2 != 2 && i12 - i11 > 1) {
             this.a = true;
@@ -197,9 +197,9 @@ public final class tf implements TextWatcher {
             chatActivityEnterView.C2 = System.currentTimeMillis();
             pg pgVar = chatActivityEnterView.Z2;
             if (pgVar != null) {
-                pgVar.y1();
+                pgVar.z1();
             }
         }
-        chatActivityEnterView.Q1();
+        chatActivityEnterView.O1();
     }
 }

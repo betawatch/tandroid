@@ -9,9 +9,9 @@ import javax.net.SocketFactory;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Cells.d0;
+import org.telegram.ui.Cells.c1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class s {
     public final SocketFactory a;
@@ -44,7 +44,7 @@ public final class s {
         try {
             inetAddressArr = InetAddress.getAllByName(aVar.a);
             try {
-                Arrays.sort(inetAddressArr, new gb.j(6));
+                Arrays.sort(inetAddressArr, new gb.k(6));
             } catch (UnknownHostException e) {
                 e = e;
                 unknownHostException = e;
@@ -75,7 +75,7 @@ public final class s {
                         str = " (" + sSLSocket.getSession().getPeerPrincipal().toString() + ")";
                     } catch (Exception unused) {
                     }
-                    throw new i(49, d0.j("The certificate of the peer", str, " does not match the expected hostname (", str2, ")"));
+                    throw new i(49, c1.i("The certificate of the peer", str, " does not match the expected hostname (", str2, ")"));
                 }
             }
         } catch (Exception e10) {

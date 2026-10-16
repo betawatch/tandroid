@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class cp {
     public final org.telegram.ui.ActionBar.e1 a;
@@ -70,7 +70,7 @@ public final class cp {
                 switch (i12) {
                     case 0:
                         this.b.a();
-                        bpVar.s();
+                        bpVar.t();
                         break;
                     case 1:
                         cp cpVar = this.b;
@@ -112,7 +112,7 @@ public final class cp {
                 switch (i13) {
                     case 0:
                         this.b.a();
-                        bpVar.s();
+                        bpVar.t();
                         break;
                     case 1:
                         cp cpVar = this.b;
@@ -154,7 +154,7 @@ public final class cp {
                 switch (i14) {
                     case 0:
                         this.b.a();
-                        bpVar.s();
+                        bpVar.t();
                         break;
                     case 1:
                         cp cpVar = this.b;
@@ -196,7 +196,7 @@ public final class cp {
                 switch (i15) {
                     case 0:
                         this.b.a();
-                        bpVar.s();
+                        bpVar.t();
                         break;
                     case 1:
                         cp cpVar = this.b;
@@ -238,7 +238,7 @@ public final class cp {
                 switch (i16) {
                     case 0:
                         this.b.a();
-                        bpVar.s();
+                        bpVar.t();
                         break;
                     case 1:
                         cp cpVar = this.b;
@@ -268,7 +268,7 @@ public final class cp {
         FrameLayout frameLayout = new FrameLayout(context);
         this.m = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.H8, c6Var));
-        actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout, w7.a6.n(-1, 8));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout, w7.z5.n(-1, 8));
         TextView textView = new TextView(context);
         this.n = textView;
         textView.setPadding(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f));
@@ -276,7 +276,7 @@ public final class cp {
         textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.E8, c6Var));
         frameLayout.setTag(R.id.fit_width_tag, num2);
         textView.setTag(R.id.fit_width_tag, num2);
-        actionBarPopupWindow$ActionBarPopupWindowLayout.a(textView, w7.a6.n(-2, -2));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.a(textView, w7.z5.n(-2, -2));
         textView.setBackground(org.telegram.ui.ActionBar.g6.Z(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.I5, c6Var), 0, 6));
         final int i17 = 5;
         textView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.yo
@@ -291,7 +291,7 @@ public final class cp {
                 switch (i17) {
                     case 0:
                         this.b.a();
-                        bpVar.s();
+                        bpVar.t();
                         break;
                     case 1:
                         cp cpVar = this.b;
@@ -399,7 +399,7 @@ public final class cp {
         int i11;
         int i12;
         if (System.currentTimeMillis() - this.j < 200) {
-            AndroidUtilities.runOnUIThread(new a3.h0(this, j10, j11, hashSet, 13));
+            AndroidUtilities.runOnUIThread(new a3.h0(this, j10, j11, hashSet, 12));
             return;
         }
         int i13 = this.g;
@@ -436,7 +436,7 @@ public final class cp {
         if (i12 != 0) {
             this.l = i12;
             e1Var3.setVisibility(0);
-            e1Var3.getImageView().setImageDrawable(w21.a(i12));
+            e1Var3.getImageView().setImageDrawable(x21.a(i12));
             e1Var3.setText(b(i12));
         } else {
             e1Var3.setVisibility(8);
@@ -445,7 +445,7 @@ public final class cp {
         if (i11 != 0) {
             this.k = i11;
             e1Var4.setVisibility(0);
-            e1Var4.getImageView().setImageDrawable(w21.a(i11));
+            e1Var4.getImageView().setImageDrawable(x21.a(i11));
             e1Var4.setText(b(i11));
         } else {
             e1Var4.setVisibility(8);

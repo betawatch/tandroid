@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class le extends org.telegram.ui.Components.c91 {
+public final class le extends org.telegram.ui.Components.d91 {
     public final Context a;
     public final int b;
     public final int c;
@@ -25,23 +25,23 @@ public final class le extends org.telegram.ui.Components.c91 {
         i();
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final View d(int i10) {
         return new ke(this.f, this.a, i10, this.b, this.c, new ah.g(this, i10, 19), this.d);
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final int e() {
         return this.e.size();
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final CharSequence g(int i10) {
         int h = h(i10);
         return h != 0 ? h != 1 ? "" : LocaleController.getString(R.string.MonetizationTransactionsTON) : LocaleController.getString(R.string.MonetizationTransactionsStars);
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final int h(int i10) {
         if (i10 < 0) {
             return 1;
@@ -50,7 +50,7 @@ public final class le extends org.telegram.ui.Components.c91 {
         if (i10 >= arrayList.size()) {
             return 1;
         }
-        return ((org.telegram.ui.Components.l61) arrayList.get(i10)).z;
+        return ((org.telegram.ui.Components.m61) arrayList.get(i10)).z;
     }
 
     public final void i() {
@@ -58,15 +58,15 @@ public final class le extends org.telegram.ui.Components.c91 {
         arrayList.clear();
         me meVar = this.f;
         if (!meVar.h.isEmpty()) {
-            arrayList.add(org.telegram.ui.Components.l61.C(1));
+            arrayList.add(org.telegram.ui.Components.m61.C(1));
         }
         if (meVar.n.isEmpty()) {
             return;
         }
-        arrayList.add(org.telegram.ui.Components.l61.C(0));
+        arrayList.add(org.telegram.ui.Components.m61.C(0));
     }
 
-    @Override // org.telegram.ui.Components.c91
+    @Override // org.telegram.ui.Components.d91
     public final void b(View view, int i10, int i11) {
     }
 }

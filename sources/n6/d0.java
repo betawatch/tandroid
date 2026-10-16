@@ -1,53 +1,60 @@
 package n6;
 
-import android.content.ComponentName;
-import android.content.ServiceConnection;
+import android.os.Bundle;
 import android.os.IBinder;
 import android.os.IInterface;
+import android.os.RemoteException;
+import android.util.Log;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class d0 implements ServiceConnection {
-    public final int a;
-    public final /* synthetic */ g b;
+public final class d0 extends w {
+    public final IBinder g;
+    public final /* synthetic */ g h;
 
-    public d0(g gVar, int i10) {
-        this.b = gVar;
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d0(g gVar, int i10, IBinder iBinder, Bundle bundle) {
+        super(gVar, i10, bundle);
+        this.h = gVar;
+        this.g = iBinder;
     }
 
-    @Override // android.content.ServiceConnection
-    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-        g gVar = this.b;
-        if (iBinder == null) {
-            g.D(gVar);
-            return;
+    @Override // n6.w
+    public final void a(k6.a aVar) {
+        g gVar = this.h;
+        m mVar = gVar.K;
+        if (mVar != null) {
+            ((com.google.android.gms.common.api.l) mVar.a).onConnectionFailed(aVar);
         }
-        synchronized (gVar.x) {
-            try {
-                g gVar2 = this.b;
-                IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.internal.IGmsServiceBroker");
-                gVar2.y = (queryLocalInterface == null || !(queryLocalInterface instanceof z)) ? new z(iBinder) : (z) queryLocalInterface;
-            } catch (Throwable th2) {
-                throw th2;
+        gVar.z(aVar);
+    }
+
+    @Override // n6.w
+    public final boolean b() {
+        IBinder iBinder = this.g;
+        try {
+            l.h(iBinder);
+            String interfaceDescriptor = iBinder.getInterfaceDescriptor();
+            g gVar = this.h;
+            if (!gVar.v().equals(interfaceDescriptor)) {
+                Log.w("GmsClient", "service descriptor mismatch: " + gVar.v() + " vs. " + interfaceDescriptor);
+                return false;
             }
+            IInterface q6 = gVar.q(iBinder);
+            if (q6 == null || !(g.E(gVar, 2, 4, q6) || g.E(gVar, 3, 4, q6))) {
+                return false;
+            }
+            gVar.O = null;
+            Bundle s10 = gVar.s();
+            m mVar = gVar.J;
+            if (mVar == null) {
+                return true;
+            }
+            ((com.google.android.gms.common.api.k) mVar.a).onConnected(s10);
+            return true;
+        } catch (RemoteException unused) {
+            Log.w("GmsClient", "service probably died");
+            return false;
         }
-        g gVar3 = this.b;
-        int i10 = this.a;
-        f0 f0Var = new f0(gVar3, 0, null);
-        b0 b0Var = gVar3.v;
-        b0Var.sendMessage(b0Var.obtainMessage(7, i10, -1, f0Var));
-    }
-
-    @Override // android.content.ServiceConnection
-    public final void onServiceDisconnected(ComponentName componentName) {
-        g gVar;
-        synchronized (this.b.x) {
-            gVar = this.b;
-            gVar.y = null;
-        }
-        int i10 = this.a;
-        b0 b0Var = gVar.v;
-        b0Var.sendMessage(b0Var.obtainMessage(6, i10, 1));
     }
 }

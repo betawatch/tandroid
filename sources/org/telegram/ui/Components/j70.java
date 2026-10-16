@@ -4,7 +4,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class j70 implements v90 {
     public final /* synthetic */ k70 a;
@@ -17,18 +17,18 @@ public final class j70 implements v90 {
     public final void c() {
         p70 p70Var = this.a.c;
         org.telegram.ui.ActionBar.m2 m2Var = p70Var.U;
-        if (m2Var instanceof org.telegram.ui.ei0) {
-            org.telegram.ui.ei0 ei0Var = (org.telegram.ui.ei0) m2Var;
+        if (m2Var instanceof org.telegram.ui.di0) {
+            org.telegram.ui.di0 di0Var = (org.telegram.ui.di0) m2Var;
             TLRPC.TL_chatInviteExported tL_chatInviteExported = p70Var.b;
-            org.telegram.ui.ac0 ac0Var = new org.telegram.ui.ac0(1, ei0Var.n);
-            ac0Var.T = ei0Var.s0;
-            ac0Var.Y(tL_chatInviteExported);
-            ei0Var.presentFragment(ac0Var);
+            org.telegram.ui.zb0 zb0Var = new org.telegram.ui.zb0(1, di0Var.n);
+            zb0Var.T = di0Var.s0;
+            zb0Var.Y(tL_chatInviteExported);
+            di0Var.presentFragment(zb0Var);
         } else {
-            org.telegram.ui.ac0 ac0Var2 = new org.telegram.ui.ac0(1, p70Var.g0);
-            ac0Var2.Y(p70Var.b);
-            ac0Var2.T = new i70(this);
-            p70Var.U.presentFragment(ac0Var2);
+            org.telegram.ui.zb0 zb0Var2 = new org.telegram.ui.zb0(1, p70Var.g0);
+            zb0Var2.Y(p70Var.b);
+            zb0Var2.T = new i70(this);
+            p70Var.U.presentFragment(zb0Var2);
         }
         p70Var.dismiss();
     }
@@ -39,8 +39,8 @@ public final class j70 implements v90 {
         int i11;
         p70 p70Var = this.a.c;
         org.telegram.ui.ActionBar.m2 m2Var = p70Var.U;
-        if (m2Var instanceof org.telegram.ui.ei0) {
-            ((org.telegram.ui.ei0) m2Var).e0(p70Var.b);
+        if (m2Var instanceof org.telegram.ui.di0) {
+            ((org.telegram.ui.di0) m2Var).e0(p70Var.b);
         } else {
             TLRPC.TL_messages_editExportedChatInvite tL_messages_editExportedChatInvite = new TLRPC.TL_messages_editExportedChatInvite();
             tL_messages_editExportedChatInvite.link = p70Var.b.link;
@@ -54,13 +54,13 @@ public final class j70 implements v90 {
     }
 
     @Override // org.telegram.ui.Components.v90
-    public final void i() {
+    public final void j() {
         int i10;
         int i11;
         p70 p70Var = this.a.c;
         org.telegram.ui.ActionBar.m2 m2Var = p70Var.U;
-        if (m2Var instanceof org.telegram.ui.ei0) {
-            ((org.telegram.ui.ei0) m2Var).b0(p70Var.b);
+        if (m2Var instanceof org.telegram.ui.di0) {
+            ((org.telegram.ui.di0) m2Var).b0(p70Var.b);
         } else {
             TLRPC.TL_messages_deleteExportedChatInvite tL_messages_deleteExportedChatInvite = new TLRPC.TL_messages_deleteExportedChatInvite();
             tL_messages_deleteExportedChatInvite.link = p70Var.b.link;
@@ -73,6 +73,6 @@ public final class j70 implements v90 {
     }
 
     @Override // org.telegram.ui.Components.v90
-    public final /* synthetic */ void h() {
+    public final /* synthetic */ void i() {
     }
 }

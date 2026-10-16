@@ -25,7 +25,7 @@ import android.widget.Scroller;
 import bi.ib;
 import bi.q5;
 import bi.w9;
-import gb.j;
+import gb.k;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.WeakHashMap;
@@ -33,19 +33,19 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.m2;
-import org.telegram.ui.Wallet.m5;
-import r0.b0;
-import r0.j0;
+import p4.s0;
+import r0.a0;
+import r0.i0;
 import s4.c1;
 import x9.l;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class g extends ViewGroup {
     public static final int[] s0 = {R.attr.layout_gravity};
-    public static final j t0 = new j(7);
+    public static final k t0 = new k(7);
     public static final m2 u0 = new m2(4);
-    public static final j v0 = new j(8);
+    public static final k v0 = new k(8);
     public int E;
     public float F;
     public float G;
@@ -89,7 +89,7 @@ public class g extends ViewGroup {
     public int n0;
     public int o0;
     public ArrayList p0;
-    public final m5 q0;
+    public final s0 q0;
     public Scroller r;
     public int r0;
     public boolean s;
@@ -110,7 +110,7 @@ public class g extends ViewGroup {
         this.L = 1;
         this.V = -1;
         this.h0 = true;
-        this.q0 = new m5(this, 13);
+        this.q0 = new s0(this, 13);
         this.r0 = 0;
         setWillNotDraw(false);
         setDescendantFocusability(262144);
@@ -127,14 +127,14 @@ public class g extends ViewGroup {
         this.c0 = (int) (25.0f * f7);
         this.d0 = (int) (2.0f * f7);
         this.O = (int) (f7 * 16.0f);
-        j0.j(this, new c1(this));
+        i0.j(this, new c1(this));
         if (getImportantForAccessibility() == 0) {
             setImportantForAccessibility(1);
         }
         l lVar = new l();
         lVar.b = this;
         lVar.a = new Rect();
-        b0.i(this, lVar);
+        a0.i(this, lVar);
     }
 
     public static boolean d(int i10, int i11, int i12, View view, boolean z10) {
@@ -353,7 +353,7 @@ public class g extends ViewGroup {
                 scrollTo(0, currY);
             }
         }
-        WeakHashMap weakHashMap = j0.a;
+        WeakHashMap weakHashMap = i0.a;
         postInvalidateOnAnimation();
     }
 
@@ -449,7 +449,7 @@ public class g extends ViewGroup {
             this.g0.finish();
         }
         if (z10) {
-            WeakHashMap weakHashMap = j0.a;
+            WeakHashMap weakHashMap = i0.a;
             postInvalidateOnAnimation();
         }
     }
@@ -497,12 +497,12 @@ public class g extends ViewGroup {
             i10++;
         }
         if (z11) {
-            m5 m5Var = this.q0;
+            s0 s0Var = this.q0;
             if (!z10) {
-                m5Var.run();
+                s0Var.run();
             } else {
-                WeakHashMap weakHashMap = j0.a;
-                postOnAnimation(m5Var);
+                WeakHashMap weakHashMap = i0.a;
+                postOnAnimation(s0Var);
             }
         }
     }
@@ -569,7 +569,7 @@ public class g extends ViewGroup {
         }
         ArrayList arrayList = this.b;
         if (arrayList.size() > 0) {
-            return Math.max(((c) arrayList.get(0)).b, Math.min(i10, ((c) i2.d.g(1, arrayList)).b));
+            return Math.max(((c) arrayList.get(0)).b, Math.min(i10, ((c) i2.d.h(1, arrayList)).b));
         }
         return i10;
     }
@@ -1025,7 +1025,7 @@ public class g extends ViewGroup {
                     this.N = true;
                 }
                 if (this.M && r(x11)) {
-                    WeakHashMap weakHashMap = j0.a;
+                    WeakHashMap weakHashMap = i0.a;
                     postInvalidateOnAnimation();
                 }
             }
@@ -1372,7 +1372,7 @@ public class g extends ViewGroup {
                 z10 = v();
             }
             if (z10) {
-                WeakHashMap weakHashMap = j0.a;
+                WeakHashMap weakHashMap = i0.a;
                 postInvalidateOnAnimation();
             }
         }
@@ -1426,7 +1426,7 @@ public class g extends ViewGroup {
         ArrayList arrayList = this.b;
         boolean z12 = false;
         c cVar = (c) arrayList.get(0);
-        c cVar2 = (c) i2.d.g(1, arrayList);
+        c cVar2 = (c) i2.d.h(1, arrayList);
         if (cVar.b != 0) {
             f11 = cVar.e * clientWidth;
             z10 = false;
@@ -1645,7 +1645,7 @@ public class g extends ViewGroup {
                 hexString = Integer.toHexString(getId());
             }
             StringBuilder sb2 = new StringBuilder("The application's PagerAdapter changed the adapter's contents without calling PagerAdapter#notifyDataSetChanged! Expected adapter item count: ");
-            i2.d.u(sb2, this.a, ", found: ", b10, " Pager id: ");
+            i2.d.w(sb2, this.a, ", found: ", b10, " Pager id: ");
             sb2.append(hexString);
             sb2.append(" Pager class: ");
             sb2.append(getClass());
@@ -1989,7 +1989,7 @@ public class g extends ViewGroup {
                 int min = Math.min(abs, 600);
                 this.s = false;
                 this.r.startScroll(i12, scrollY, i13, i14, min);
-                WeakHashMap weakHashMap = j0.a;
+                WeakHashMap weakHashMap = i0.a;
                 postInvalidateOnAnimation();
             }
         }

@@ -3,7 +3,7 @@ package org.telegram.ui.ActionBar;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class s implements Runnable {
     public final /* synthetic */ boolean a;
@@ -65,7 +65,7 @@ public final class s implements Runnable {
             valueOf2 = valueOf;
         }
         if (actionBarLayout.H != null && valueOf != null && valueOf2 != null) {
-            int d = i0.a.d(w7.s.a(actionBarLayout.E0 * 4.0f, 0.0f, 1.0f), valueOf.intValue(), valueOf2.intValue());
+            int d = i0.a.d(w7.r.a(actionBarLayout.E0 * 4.0f, 0.0f, 1.0f), valueOf.intValue(), valueOf2.intValue());
             r rVar = actionBarLayout.G;
             if (rVar != null && rVar.sheetsStack != null) {
                 for (int i10 = 0; i10 < actionBarLayout.G.sheetsStack.size(); i10++) {
@@ -79,7 +79,7 @@ public final class s implements Runnable {
         }
         float interpolation = z12 ? z11 ? actionBarLayout.M.getInterpolation(actionBarLayout.E0) : es.h.getInterpolation(actionBarLayout.E0) : actionBarLayout.L.getInterpolation(actionBarLayout.E0);
         if (z11) {
-            float a2 = w7.s.a(interpolation, 0.0f, 1.0f);
+            float a2 = w7.r.a(interpolation, 0.0f, 1.0f);
             actionBarLayout.s.setAlpha(a2);
             if (z12) {
                 float f10 = (0.3f * interpolation) + 0.7f;
@@ -102,7 +102,7 @@ public final class s implements Runnable {
             }
         } else {
             float f13 = 1.0f - interpolation;
-            float a10 = w7.s.a(f13, 0.0f, 1.0f);
+            float a10 = w7.r.a(f13, 0.0f, 1.0f);
             actionBarLayout.v.setAlpha(a10);
             if (z12) {
                 float f14 = (f13 * 0.1f) + 0.9f;

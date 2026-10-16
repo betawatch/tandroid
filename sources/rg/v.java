@@ -6,17 +6,17 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.ui.hu0;
+import org.telegram.ui.gu0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class v implements qg.u {
     public boolean a;
     public final /* synthetic */ Bitmap b;
-    public final /* synthetic */ hu0 c;
+    public final /* synthetic */ gu0 c;
 
-    public v(hu0 hu0Var, Bitmap bitmap) {
-        this.c = hu0Var;
+    public v(gu0 gu0Var, Bitmap bitmap) {
+        this.c = gu0Var;
         this.b = bitmap;
     }
 
@@ -66,13 +66,13 @@ public final class v implements qg.u {
 
     @Override // qg.u
     public final void h(int i10) {
-        hu0 hu0Var = this.c;
-        hu0Var.x0(false);
-        qg.s0 s0Var = hu0Var.V1;
+        gu0 gu0Var = this.c;
+        gu0Var.x0(false);
+        qg.s0 s0Var = gu0Var.V1;
         s0Var.h(i10, true);
         s0Var.g();
-        hu0Var.setNewColor(i10);
-        k0 k0Var = hu0Var.G1;
+        gu0Var.setNewColor(i10);
+        k0 k0Var = gu0Var.G1;
         k0Var.setSelectedColorIndex(s0Var.d());
         k0Var.getAdapter().l();
     }

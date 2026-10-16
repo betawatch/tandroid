@@ -9,10 +9,10 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
 public final class j1 extends FrameLayout {
     public final o1 a;
     public final RectF b;
@@ -34,8 +34,8 @@ public final class j1 extends FrameLayout {
         textView2.setTextColor(-1);
         textView2.setGravity(1);
         textView2.setText(LocaleController.getString(R.string.VoipRateCallDescription));
-        addView(textView, a6.a(-2.0f, 0.0f, 24.0f, 0.0f, 0.0f, -1, 3));
-        addView(textView2, a6.a(-2.0f, 0.0f, 50.0f, 0.0f, 0.0f, -1, 3));
+        addView(textView, z5.a(-2.0f, 0.0f, 24.0f, 0.0f, 0.0f, -1, 3));
+        addView(textView2, z5.a(-2.0f, 0.0f, 50.0f, 0.0f, 0.0f, -1, 3));
     }
 
     @Override // android.view.ViewGroup, android.view.View

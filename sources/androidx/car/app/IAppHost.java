@@ -8,7 +8,7 @@ import android.os.Parcel;
 import android.text.TextUtils;
 import androidx.car.app.ISurfaceCallback;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public interface IAppHost extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$IAppHost".replace('$', '.');
@@ -27,7 +27,7 @@ public interface IAppHost extends IInterface {
 
     void showToast(CharSequence charSequence, int i10);
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class Default implements IAppHost {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -64,7 +64,7 @@ public interface IAppHost extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static abstract class Stub extends Binder implements IAppHost {
         static final int TRANSACTION_dismissAlert = 7;
         static final int TRANSACTION_invalidate = 2;
@@ -74,7 +74,7 @@ public interface IAppHost extends IInterface {
         static final int TRANSACTION_showAlert = 6;
         static final int TRANSACTION_showToast = 3;
 
-        /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+        /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
         public static class Proxy implements IAppHost {
             private IBinder mRemote;
 

@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.aq;
 import org.telegram.ui.Components.yi0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class p4 extends FrameLayout {
     public final org.telegram.ui.Components.z9 a;
@@ -27,25 +27,25 @@ public final class p4 extends FrameLayout {
         org.telegram.ui.Components.z9 z9Var = new org.telegram.ui.Components.z9(context);
         this.a = z9Var;
         z9Var.setRoundRadius(AndroidUtilities.dp(23.0f));
-        addView(z9Var, w7.a6.a(46.0f, 13.0f, 6.0f, 13.0f, 6.0f, 46, (LocaleController.isRTL ? 5 : 3) | 48));
+        addView(z9Var, w7.z5.a(46.0f, 13.0f, 6.0f, 13.0f, 6.0f, 46, (LocaleController.isRTL ? 5 : 3) | 48));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
         boolean z11 = LocaleController.isRTL;
-        addView(linearLayout, w7.a6.a(-1.0f, z11 ? 0 : 72, 0.0f, z11 ? 72 : 0, 0.0f, -1, 119));
+        addView(linearLayout, w7.z5.a(-1.0f, z11 ? 0 : 72, 0.0f, z11 ? 72 : 0, 0.0f, -1, 119));
         FrameLayout frameLayout = new FrameLayout(context);
-        linearLayout.addView(frameLayout, w7.a6.l(1.0f, 0, 58));
+        linearLayout.addView(frameLayout, w7.z5.l(1.0f, 0, 58));
         org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(context);
         this.b = h5Var;
         h5Var.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.G6, false));
         h5Var.setTypeface(AndroidUtilities.bold());
         h5Var.setTextSize(15);
         h5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        frameLayout.addView(h5Var, w7.a6.a(20.0f, 0.0f, 9.0f, 0.0f, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
+        frameLayout.addView(h5Var, w7.z5.a(20.0f, 0.0f, 9.0f, 0.0f, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
         org.telegram.ui.ActionBar.h5 h5Var2 = new org.telegram.ui.ActionBar.h5(context);
         this.c = h5Var2;
         h5Var2.setTextSize(13);
         h5Var2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        frameLayout.addView(h5Var2, w7.a6.a(20.0f, 0.0f, 33.0f, 0.0f, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
+        frameLayout.addView(h5Var2, w7.z5.a(20.0f, 0.0f, 33.0f, 0.0f, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
         if (z10) {
             aq aqVar = new aq(context, 21, null);
             this.e = aqVar;
@@ -53,7 +53,7 @@ public final class p4 extends FrameLayout {
             aqVar.setDrawUnchecked(false);
             aqVar.setDrawBackgroundAsArc(3);
             boolean z12 = LocaleController.isRTL;
-            addView(aqVar, w7.a6.a(24.0f, z12 ? 0.0f : 40.0f, 32.0f, z12 ? 39.0f : 0.0f, 0.0f, 24, (z12 ? 5 : 3) | 48));
+            addView(aqVar, w7.z5.a(24.0f, z12 ? 0.0f : 40.0f, 32.0f, z12 ? 39.0f : 0.0f, 0.0f, 24, (z12 ? 5 : 3) | 48));
             return;
         }
         this.e = null;
@@ -66,7 +66,7 @@ public final class p4 extends FrameLayout {
         org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Qh, false);
         yi0Var.setBackground(org.telegram.ui.ActionBar.w5.e(new float[]{16.0f}, x02));
         yi0Var.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
-        linearLayout.addView(yi0Var, w7.a6.p(-2, 28, 0.0f, 16, 18, 0, 18, 0));
+        linearLayout.addView(yi0Var, w7.z5.p(-2, 28, 0.0f, 16, 18, 0, 18, 0));
         yi0Var.setOnClickListener(new a(this, 6));
     }
 

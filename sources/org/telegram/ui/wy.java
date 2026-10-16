@@ -15,7 +15,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class wy extends s4.v {
     public s4.b1 d;
@@ -94,7 +94,7 @@ public final class wy extends s4.v {
             if (b5Var != null) {
                 b5Var2 = ((org.telegram.ui.ActionBar.m2) yyVar).parentLayout;
             }
-            if (!yyVar.F3.c() && yyVar.X2 == 0) {
+            if (!yyVar.G3.c() && yyVar.Y2 == 0) {
                 if (this.e && this.f) {
                     View view = b1Var.a;
                     if (view instanceof org.telegram.ui.Cells.s2) {
@@ -112,7 +112,7 @@ public final class wy extends s4.v {
                         MessagesController.DialogFilter dialogFilter = null;
                         if (kVar.u(null)) {
                             TLRPC.Dialog dialog2 = (TLRPC.Dialog) yyVar.getMessagesController().dialogs_dict.f(dialogId);
-                            if (yyVar.Y0 && dialog2 != null && yyVar.d4(dialog2) && !DialogObject.isFolderDialogId(dialogId)) {
+                            if (yyVar.Y0 && dialog2 != null && yyVar.e4(dialog2) && !DialogObject.isFolderDialogId(dialogId)) {
                                 org.telegram.ui.Cells.s2 s2Var2 = (org.telegram.ui.Cells.s2) b1Var.a;
                                 yyVar.X0 = s2Var2;
                                 s2Var2.setBackgroundColor(yyVar.getThemedColor(org.telegram.ui.ActionBar.g6.d6));
@@ -134,7 +134,7 @@ public final class wy extends s4.v {
                                     i10 = ((org.telegram.ui.ActionBar.m2) yyVar).currentAccount;
                                 }
                                 if (!yyVar.getMessagesController().isPromoDialog(dialogId, false) || yyVar.getMessagesController().promoDialogType == MessagesController.PROMO_TYPE_PSA) {
-                                    if (yyVar.V2 == 0) {
+                                    if (yyVar.W2 == 0) {
                                         i13 = ((org.telegram.ui.ActionBar.m2) yyVar).currentAccount;
                                         if (!ChatObject.isCommunity(i13, dialogId)) {
                                             i14 = ((org.telegram.ui.ActionBar.m2) yyVar).currentAccount;
@@ -148,7 +148,7 @@ public final class wy extends s4.v {
                                                 }
                                             }
                                         }
-                                        if (!yyVar.F3.c()) {
+                                        if (!yyVar.G3.c()) {
                                             z10 = true;
                                             i11 = ((org.telegram.ui.ActionBar.m2) yyVar).currentAccount;
                                             if (SharedConfig.getChatSwipeAction(i11) == 1) {
@@ -211,7 +211,7 @@ public final class wy extends s4.v {
         if (view instanceof org.telegram.ui.Cells.s2) {
             long dialogId = ((org.telegram.ui.Cells.s2) view).getDialogId();
             TLRPC.Dialog dialog = (TLRPC.Dialog) yyVar.getMessagesController().dialogs_dict.f(dialogId);
-            if (dialog != null && yyVar.d4(dialog) && !DialogObject.isFolderDialogId(dialogId)) {
+            if (dialog != null && yyVar.e4(dialog) && !DialogObject.isFolderDialogId(dialogId)) {
                 int b10 = b1Var.b();
                 int b11 = b1Var2.b();
                 xy xyVar = this.g;
@@ -221,11 +221,11 @@ public final class wy extends s4.v {
                 fx fxVar = xyVar.d;
                 yy yyVar2 = fxVar.R;
                 int i11 = fxVar.F;
-                ArrayList O3 = yyVar2.O3(i11, fxVar.h, fxVar.r, false);
+                ArrayList P3 = yyVar2.P3(i11, fxVar.h, fxVar.r, false);
                 int G = fxVar.G(b10);
                 int G2 = fxVar.G(b11);
-                TLRPC.Dialog dialog2 = (TLRPC.Dialog) O3.get(G);
-                TLRPC.Dialog dialog3 = (TLRPC.Dialog) O3.get(G2);
+                TLRPC.Dialog dialog2 = (TLRPC.Dialog) P3.get(G);
+                TLRPC.Dialog dialog3 = (TLRPC.Dialog) P3.get(G2);
                 int i12 = fxVar.h;
                 if (i12 == 7 || i12 == 8) {
                     MessagesController.DialogFilter dialogFilter = MessagesController.getInstance(i11).selectedDialogFilter[fxVar.h == 8 ? (char) 1 : (char) 0];
@@ -237,7 +237,7 @@ public final class wy extends s4.v {
                     dialog2.pinnedNum = dialog3.pinnedNum;
                     dialog3.pinnedNum = i14;
                 }
-                Collections.swap(O3, G, G2);
+                Collections.swap(P3, G, G2);
                 fxVar.W(null);
                 int i15 = yyVar.e0[0].s;
                 if (i15 != 7) {
@@ -296,25 +296,25 @@ public final class wy extends s4.v {
         if (dialog == null) {
             return;
         }
-        if (!yyVar.getMessagesController().isPromoDialog(dialogId, false) && yyVar.V2 == 0) {
+        if (!yyVar.getMessagesController().isPromoDialog(dialogId, false) && yyVar.W2 == 0) {
             i10 = ((org.telegram.ui.ActionBar.m2) yyVar).currentAccount;
             if (SharedConfig.getChatSwipeAction(i10) == 1) {
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(Long.valueOf(dialogId));
-                yyVar.M2 = (dialog.unread_count > 0 || dialog.unread_mark) ? 1 : 0;
-                yyVar.o4(arrayList, 101, true, false, null);
+                yyVar.N2 = (dialog.unread_count > 0 || dialog.unread_mark) ? 1 : 0;
+                yyVar.p4(arrayList, 101, true, false, null);
                 return;
             }
         }
         if (ChatObject.isCommunity(yyVar.getMessagesController().getChat(Long.valueOf(-dialogId)))) {
             ArrayList arrayList2 = new ArrayList();
             arrayList2.add(Long.valueOf(dialogId));
-            yyVar.o4(arrayList2, 111, true, false, null);
+            yyVar.p4(arrayList2, 111, true, false, null);
             return;
         }
         yyVar.W0 = s2Var;
         i2.z zVar = new i2.z(this, dialog, xyVar.d.h(), b1Var.b(), 5);
-        yyVar.x4(true, true);
+        yyVar.y4(true, true);
         if (Utilities.random.nextInt(MediaDataController.MAX_STYLE_RUNS_COUNT) != 1) {
             zVar.run();
             return;

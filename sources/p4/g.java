@@ -13,9 +13,9 @@ import android.util.Log;
 import android.util.SparseArray;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.ui.Components.voip.m2;
+import org.telegram.ui.Components.voip.r2;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class g extends p {
     public final String f;
@@ -27,7 +27,7 @@ public final class g extends p {
     public final /* synthetic */ k p;
     public final SparseArray j = new SparseArray();
     public final AtomicInteger l = new AtomicInteger(1);
-    public final m2 m = new m2(this, 13);
+    public final r2 m = new r2(this, 12);
     public int n = -1;
 
     public g(k kVar, MediaRouter2.RoutingController routingController, String str) {
@@ -54,9 +54,9 @@ public final class g extends p {
         routingController.setVolume(i10);
         this.n = i10;
         Handler handler = this.k;
-        m2 m2Var = this.m;
-        handler.removeCallbacks(m2Var);
-        handler.postDelayed(m2Var, 1000L);
+        r2 r2Var = this.m;
+        handler.removeCallbacks(r2Var);
+        handler.postDelayed(r2Var, 1000L);
     }
 
     @Override // p4.q
@@ -73,9 +73,9 @@ public final class g extends p {
         this.n = max;
         this.g.setVolume(max);
         Handler handler = this.k;
-        m2 m2Var = this.m;
-        handler.removeCallbacks(m2Var);
-        handler.postDelayed(m2Var, 1000L);
+        r2 r2Var = this.m;
+        handler.removeCallbacks(r2Var);
+        handler.postDelayed(r2Var, 1000L);
     }
 
     @Override // p4.p

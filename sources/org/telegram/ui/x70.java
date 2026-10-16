@@ -12,13 +12,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class x70 extends org.telegram.ui.Components.lm0 {
     public final Context c;
     public ArrayList d = new ArrayList();
     public ArrayList e = new ArrayList();
-    public o00 f;
+    public d20 f;
     public String h;
     public int n;
     public final /* synthetic */ y70 r;
@@ -42,9 +42,9 @@ public final class x70 extends org.telegram.ui.Components.lm0 {
             y70Var.getConnectionsManager().cancelRequest(x70Var.n, true);
             x70Var.n = 0;
         }
-        o00 o00Var = x70Var.f;
-        if (o00Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(o00Var);
+        d20 d20Var = x70Var.f;
+        if (d20Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(d20Var);
             x70Var.f = null;
         }
         x70Var.h = null;
@@ -65,9 +65,9 @@ public final class x70 extends org.telegram.ui.Components.lm0 {
         } else {
             y70Var.b.e(true, true);
         }
-        o00 o00Var2 = new o00(14, x70Var, str);
-        x70Var.f = o00Var2;
-        AndroidUtilities.runOnUIThread(o00Var2, 300L);
+        d20 d20Var2 = new d20(9, x70Var, str);
+        x70Var.f = d20Var2;
+        AndroidUtilities.runOnUIThread(d20Var2, 300L);
     }
 
     @Override // org.telegram.ui.Components.lm0

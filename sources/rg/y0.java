@@ -13,7 +13,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
-import ji.h5;
+import ji.w4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.LocaleController;
@@ -23,9 +23,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.iw0;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class y0 extends FrameLayout {
     public float E;
@@ -51,7 +51,7 @@ public abstract class y0 extends FrameLayout {
 
     public y0(Context context, int i10, Bitmap bitmap, Bitmap bitmap2, int i11, MediaController.CropState cropState) {
         super(context);
-        h5 h5Var = new h5(this, 23);
+        w4 w4Var = new w4(this, 23);
         this.I = new ArrayList();
         this.J = new Rect();
         this.a = i10;
@@ -74,23 +74,23 @@ public abstract class y0 extends FrameLayout {
         c1Var.setQueue(dispatchQueue);
         c1Var.setVisibility(4);
         c1Var.setBrush(new qg.f());
-        c1Var.setBrushSize(h5Var.get());
+        c1Var.setBrushSize(w4Var.get());
         c1Var.setColor(-65536);
-        addView(c1Var, a6.e(-1, -1, 51));
+        addView(c1Var, z5.e(-1, -1, 51));
         y1 y1Var = new y1(context);
         this.w = y1Var;
         y1Var.b(0.05f, 1.0f);
-        y1Var.setBrushWeight(h5Var.get());
+        y1Var.setBrushWeight(w4Var.get());
         y1Var.setRenderView(c1Var);
-        y1Var.setValueOverride(h5Var);
+        y1Var.setValueOverride(w4Var);
         y1Var.setTranslationX(-AndroidUtilities.dp(18.0f));
         y1Var.setAlpha(0.0f);
-        addView(y1Var, a6.d(-1.0f, -1));
+        addView(y1Var, z5.d(-1.0f, -1));
         FrameLayout frameLayout = new FrameLayout(context);
         this.r = frameLayout;
         frameLayout.setAlpha(0.0f);
         frameLayout.setVisibility(8);
-        addView(frameLayout, a6.e(-1, 44, 80));
+        addView(frameLayout, z5.e(-1, 44, 80));
         TextView textView = new TextView(context);
         this.s = textView;
         textView.setTextSize(1, 15.0f);
@@ -100,16 +100,16 @@ public abstract class y0 extends FrameLayout {
         textView.setText(LocaleController.getString(R.string.Cancel).toUpperCase());
         textView.setTextColor(-1);
         textView.setGravity(17);
-        TextView h = org.telegram.ui.Cells.d0.h(frameLayout, textView, a6.a(44.0f, -8.0f, 0.0f, 0.0f, 0.0f, -2, 3), context);
-        this.v = h;
-        k3.m(15.0f, 1, h);
+        TextView g10 = org.telegram.ui.Cells.c1.g(frameLayout, textView, z5.a(44.0f, -8.0f, 0.0f, 0.0f, 0.0f, -2, 3), context);
+        this.v = g10;
+        k3.m(15.0f, 1, g10);
         int i12 = g6.zf;
-        h.setBackground(g6.g0(g6.m1(0.15f, g6.x0(null, i12, false)), 3, -1));
-        h.setPadding(AndroidUtilities.dp(28.0f), 0, AndroidUtilities.dp(28.0f), 0);
-        h.setText(LocaleController.getString(R.string.Save).toUpperCase());
-        h.setTextColor(g6.x0(null, i12, false));
-        h.setGravity(17);
-        frameLayout.addView(h, a6.a(44.0f, 0.0f, 0.0f, -8.0f, 0.0f, -2, 5));
+        g10.setBackground(g6.g0(g6.m1(0.15f, g6.x0(null, i12, false)), 3, -1));
+        g10.setPadding(AndroidUtilities.dp(28.0f), 0, AndroidUtilities.dp(28.0f), 0);
+        g10.setText(LocaleController.getString(R.string.Save).toUpperCase());
+        g10.setTextColor(g6.x0(null, i12, false));
+        g10.setGravity(17);
+        frameLayout.addView(g10, z5.a(44.0f, 0.0f, 0.0f, -8.0f, 0.0f, -2, 5));
     }
 
     private iw0 getPaintingSize() {
@@ -140,7 +140,7 @@ public abstract class y0 extends FrameLayout {
         double radians = (float) Math.toRadians(-c1Var.getRotation());
         double d10 = y3;
         float measuredWidth = (c1Var.getMeasuredWidth() / 2.0f) + ((float) ((Math.cos(radians) * d) - (Math.sin(radians) * d10)));
-        float measuredHeight = (c1Var.getMeasuredHeight() / 2.0f) + ((float) org.telegram.messenger.q.a(radians, d10, Math.sin(radians) * d));
+        float measuredHeight = (c1Var.getMeasuredHeight() / 2.0f) + ((float) i2.d.f(radians, d10, Math.sin(radians) * d));
         MotionEvent obtain = MotionEvent.obtain(motionEvent);
         obtain.setLocation(measuredWidth, measuredHeight);
         c1Var.e(obtain);

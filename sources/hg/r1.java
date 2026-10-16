@@ -5,11 +5,11 @@ import java.util.TimerTask;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.k31;
 import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.n51;
 import org.telegram.ui.du;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class r1 extends TimerTask {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final class r1 extends TimerTask {
                 } catch (Exception e7) {
                     FileLog.e(e7);
                 }
-                Utilities.searchQueue.postRunnable(new k31(16, (du) this.c, this.b));
+                Utilities.searchQueue.postRunnable(new n51(11, (du) this.c, this.b));
                 break;
         }
     }

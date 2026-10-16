@@ -3,7 +3,7 @@ package bi;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public abstract class pa {
     public static void a(TL_stories.StoryItem storyItem, NativeByteBuffer nativeByteBuffer) {
@@ -12,7 +12,7 @@ public abstract class pa {
         }
         int readInt32 = nativeByteBuffer.readInt32(true);
         if (readInt32 != 1) {
-            throw new RuntimeException(i2.d.i(readInt32, "(story) can't read params version = "));
+            throw new RuntimeException(i2.d.j(readInt32, "(story) can't read params version = "));
         }
         new oa(storyItem).readParams(nativeByteBuffer, true);
     }

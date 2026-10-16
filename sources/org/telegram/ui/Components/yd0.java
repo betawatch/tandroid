@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class yd0 extends FrameLayout {
     public static final hw0 I;
@@ -37,13 +37,13 @@ public class yd0 extends FrameLayout {
     public boolean y;
 
     static {
-        hw0 hw0Var = new hw0(new l2(19), new l2(20));
+        hw0 hw0Var = new hw0(new n2(17), new n2(18));
         hw0Var.c = 100.0f;
         I = hw0Var;
-        hw0 hw0Var2 = new hw0(new l2(21), new l2(22));
+        hw0 hw0Var2 = new hw0(new n2(19), new n2(20));
         hw0Var2.c = 100.0f;
         J = hw0Var2;
-        hw0 hw0Var3 = new hw0(new l2(23), new l2(24));
+        hw0 hw0Var3 = new hw0(new n2(21), new n2(22));
         hw0Var3.c = 100.0f;
         K = hw0Var3;
     }

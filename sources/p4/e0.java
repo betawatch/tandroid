@@ -1,11 +1,10 @@
 package p4;
 
-import android.media.MediaRouter;
+import android.content.BroadcastReceiver;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public abstract class e0 {
-    public static MediaRouter.VolumeCallback a(c0 c0Var) {
-        return new d0(c0Var);
-    }
+public abstract class e0 extends BroadcastReceiver {
+    public static final /* synthetic */ int a = 0;
+    public static final /* synthetic */ int b = 0;
 }

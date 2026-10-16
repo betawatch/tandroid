@@ -8,7 +8,7 @@ import org.webrtc.GlGenericDrawer;
 import org.webrtc.ThreadUtils;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public class YuvConverter {
     private static final String FRAGMENT_SHADER = "uniform vec2 xUnit;\nuniform vec4 coeffs;\n\nvoid main() {\n  gl_FragColor.r = coeffs.a + dot(coeffs.rgb,\n      sample(tc - 1.5 * xUnit).rgb);\n  gl_FragColor.g = coeffs.a + dot(coeffs.rgb,\n      sample(tc - 0.5 * xUnit).rgb);\n  gl_FragColor.b = coeffs.a + dot(coeffs.rgb,\n      sample(tc + 0.5 * xUnit).rgb);\n  gl_FragColor.a = coeffs.a + dot(coeffs.rgb,\n      sample(tc + 1.5 * xUnit).rgb);\n}\n";
@@ -18,7 +18,7 @@ public class YuvConverter {
     private final ThreadUtils.ThreadChecker threadChecker;
     private final VideoFrameDrawer videoFrameDrawer;
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class ShaderCallbacks implements GlGenericDrawer.ShaderCallbacks {
         private float[] coeffs;
         private int coeffsLoc;
@@ -142,7 +142,7 @@ public class YuvConverter {
             byteBuffer.limit(i19 + i20);
             ByteBuffer slice3 = byteBuffer.slice();
             textureBuffer2.release();
-            return JavaI420Buffer.wrap(width, height, slice, i10, slice2, i10, slice3, i10, new k(1, byteBuffer));
+            return JavaI420Buffer.wrap(width, height, slice, i10, slice2, i10, slice3, i10, new j(1, byteBuffer));
         }
         try {
             GLES20.glReadPixels(0, 0, this.i420TextureFrameBuffer.getWidth(), this.i420TextureFrameBuffer.getHeight(), 6408, 5121, byteBuffer);
@@ -165,7 +165,7 @@ public class YuvConverter {
             byteBuffer.limit(i192 + i202);
             ByteBuffer slice32 = byteBuffer.slice();
             textureBuffer2.release();
-            return JavaI420Buffer.wrap(width, height, slice4, i10, slice22, i10, slice32, i10, new k(1, byteBuffer));
+            return JavaI420Buffer.wrap(width, height, slice4, i10, slice22, i10, slice32, i10, new j(1, byteBuffer));
         }
         int i1722 = i10 * height;
         int i1822 = i10 / 2;
@@ -181,7 +181,7 @@ public class YuvConverter {
         byteBuffer.limit(i1922 + i2022);
         ByteBuffer slice322 = byteBuffer.slice();
         textureBuffer2.release();
-        return JavaI420Buffer.wrap(width, height, slice42, i10, slice222, i10, slice322, i10, new k(1, byteBuffer));
+        return JavaI420Buffer.wrap(width, height, slice42, i10, slice222, i10, slice322, i10, new j(1, byteBuffer));
     }
 
     public void release() {

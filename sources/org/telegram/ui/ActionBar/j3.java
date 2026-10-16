@@ -19,9 +19,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.h11;
+import org.telegram.ui.Components.i11;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class j3 {
     public final Path A;
@@ -45,8 +45,8 @@ public final class j3 {
     public final Bitmap r;
     public final Drawable s;
     public int t;
-    public final h11 u;
-    public h11 v;
+    public final i11 u;
+    public i11 v;
     public float w;
     public final float[] x;
     public final Path y;
@@ -79,7 +79,7 @@ public final class j3 {
         this.r = l3Var.F;
         String b10 = l3Var.b();
         textPaint = m3.getTextPaint();
-        this.u = new h11(Emoji.replaceEmoji(b10, textPaint.getFontMetricsInt(), false), 17.0f, AndroidUtilities.bold());
+        this.u = new i11(Emoji.replaceEmoji(b10, textPaint.getFontMetricsInt(), false), 17.0f, AndroidUtilities.bold());
         int i10 = l3Var.q;
         this.n = i10;
         this.p = AndroidUtilities.computePerceivedBrightness(i10) < 0.721f;
@@ -87,8 +87,8 @@ public final class j3 {
         if (k4Var != null) {
             ArrayList arrayList = k4Var.d0;
             if (!arrayList.isEmpty()) {
-                Object g10 = i2.d.g(1, arrayList);
-                if ((g10 instanceof TLRPC.WebPage) && ((page = ((TLRPC.WebPage) g10).cached_page) == null || page.local == null)) {
+                Object h = i2.d.h(1, arrayList);
+                if ((h instanceof TLRPC.WebPage) && ((page = ((TLRPC.WebPage) h).cached_page) == null || page.local == null)) {
                     this.s = view.getContext().getResources().getDrawable(R.drawable.msg_instant).mutate();
                 }
             }
@@ -204,19 +204,19 @@ public final class j3 {
                 i10 = intrinsicHeight - AndroidUtilities.dp(2.0f);
             }
         }
-        h11 h11Var = this.v;
-        if (h11Var != null) {
-            h11Var.p = (int) ((rectF.width() - AndroidUtilities.dp(100.0f)) - r3);
+        i11 i11Var = this.v;
+        if (i11Var != null) {
+            i11Var.p = (int) ((rectF.width() - AndroidUtilities.dp(100.0f)) - r3);
             f12 = 1.0f;
-            h11Var.c(rectF.left + AndroidUtilities.dp(60.0f) + i10, rectF.centerY(), org.telegram.messenger.q.B(1.0f, this.w, f10, f11), d10, canvas2);
+            i11Var.c(rectF.left + AndroidUtilities.dp(60.0f) + i10, rectF.centerY(), org.telegram.messenger.g0.z(1.0f, this.w, f10, f11), d10, canvas2);
         } else {
             f12 = 1.0f;
         }
         float width = rectF.width() - AndroidUtilities.dp(100.0f);
         float f20 = i10;
-        h11 h11Var2 = this.u;
-        h11Var2.p = (int) (width - f20);
-        h11Var2.c(f20 + rectF.left + AndroidUtilities.dp(60.0f), rectF.centerY(), (this.v == null ? f12 : this.w) * f10 * f11, d10, canvas);
+        i11 i11Var2 = this.u;
+        i11Var2.p = (int) (width - f20);
+        i11Var2.c(f20 + rectF.left + AndroidUtilities.dp(60.0f), rectF.centerY(), (this.v == null ? f12 : this.w) * f10 * f11, d10, canvas);
     }
 
     public final float b() {

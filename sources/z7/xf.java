@@ -1,27 +1,50 @@
 package z7;
 
 import android.content.Context;
+import android.os.SystemClock;
+import java.util.HashSet;
+import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class xf implements tf {
-    public final r9.n a;
-    public final sf b;
+public final class xf {
+    public final Object a;
+    public Object b;
 
-    public xf(Context context, sf sfVar) {
-        this.b = sfVar;
-        j5.a aVar = j5.a.e;
-        l5.s.b(context);
-        l5.q c10 = l5.s.a().c(aVar);
-        if (j5.a.d.contains(new i5.c("json"))) {
-            new r9.n(new v7.a9(c10, 6));
-        }
-        this.a = new r9.n(new v7.a9(c10, 7));
+    public xf(Context context) {
+        this.b = new AtomicLong(-1L);
+        this.a = new p6.b(context, p6.b.k, new n6.p("mlkit:vision"), com.google.android.gms.common.api.i.c);
     }
 
-    @Override // z7.tf
-    public final void a(a5.a aVar) {
-        this.b.getClass();
-        ((l5.r) this.a.get()).a(aVar.b != 0 ? new i5.a(null, aVar.F(), i5.d.a, null) : new i5.a(null, aVar.F(), i5.d.b, null), new k2.y0(2));
+    public void a(Exception exc, boolean z10) {
+        this.b = null;
+        HashSet hashSet = (HashSet) this.a;
+        e9.n0 u10 = e9.n0.u(hashSet);
+        hashSet.clear();
+        e9.l0 listIterator = u10.listIterator(0);
+        while (listIterator.hasNext()) {
+            n2.b bVar = (n2.b) listIterator.next();
+            bVar.getClass();
+            bVar.l(z10 ? 1 : 3, exc);
+        }
+    }
+
+    public void b(n2.b bVar) {
+        ((HashSet) this.a).add(bVar);
+        if (((n2.b) this.b) != null) {
+            return;
+        }
+        this.b = bVar;
+        n2.p p5 = bVar.b.p();
+        bVar.z = p5;
+        android.support.v4.media.session.f fVar = bVar.s;
+        String str = e2.m0.a;
+        p5.getClass();
+        fVar.getClass();
+        fVar.obtainMessage(1, new n2.a(u2.u.g.getAndIncrement(), true, SystemClock.elapsedRealtime(), p5)).sendToTarget();
+    }
+
+    public xf() {
+        this.a = new HashSet();
     }
 }

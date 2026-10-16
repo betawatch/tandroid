@@ -7,9 +7,8 @@ import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import w7.g0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class d extends o6.a {
     public static final Parcelable.Creator<d> CREATOR = new v(17);
@@ -66,16 +65,16 @@ public final class d extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = g0.q(parcel, 20293);
-        g0.l(parcel, 2, this.a);
-        g0.l(parcel, 3, this.b);
-        g0.n(parcel, 5, DesugarCollections.unmodifiableList(this.c));
-        g0.l(parcel, 6, this.d);
-        g0.k(parcel, 7, this.e, i10);
-        g0.l(parcel, 8, this.f);
-        g0.l(parcel, 9, this.h);
-        g0.a(parcel, 10, this.n);
-        g0.a(parcel, 11, this.r);
-        g0.r(parcel, q6);
+        int q6 = w7.f0.q(parcel, 20293);
+        w7.f0.l(parcel, 2, this.a);
+        w7.f0.l(parcel, 3, this.b);
+        w7.f0.n(parcel, 5, DesugarCollections.unmodifiableList(this.c));
+        w7.f0.l(parcel, 6, this.d);
+        w7.f0.k(parcel, 7, this.e, i10);
+        w7.f0.l(parcel, 8, this.f);
+        w7.f0.l(parcel, 9, this.h);
+        w7.f0.a(parcel, 10, this.n);
+        w7.f0.a(parcel, 11, this.r);
+        w7.f0.r(parcel, q6);
     }
 }

@@ -27,7 +27,7 @@ import org.telegram.ui.Components.jy;
 import org.telegram.ui.Components.wl0;
 import org.telegram.ui.r71;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class c2 extends s4.g0 {
     public final TLRPC.TL_inputStickerSetShortName E;
@@ -526,12 +526,12 @@ public final class c2 extends s4.g0 {
             a2Var.b = -1;
             org.telegram.ui.Components.z9 z9Var = new org.telegram.ui.Components.z9(context2);
             a2Var.a = z9Var;
-            a2Var.addView(z9Var, w7.a6.e(36, 36, 17));
+            a2Var.addView(z9Var, w7.z5.e(36, 36, 17));
             TextView textView = new TextView(context2);
             textView.setTextSize(1, 14.0f);
             textView.setTextColor(-8553090);
             textView.setText(LocaleController.getString(z10 ? R.string.NoEmojiFound : R.string.NoStickersFound));
-            a2Var.addView(textView, w7.a6.a(-2.0f, 0.0f, 34.0f, 0.0f, 0.0f, -2, 17));
+            a2Var.addView(textView, w7.z5.a(-2.0f, 0.0f, 34.0f, 0.0f, 0.0f, -2, 17));
             o8Var = a2Var;
         } else if (i10 == 4) {
             p2 p2Var = new p2(r2Var, d2Var.getContext());

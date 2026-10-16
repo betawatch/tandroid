@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class s0 {
     public static final List m;
@@ -61,14 +61,14 @@ public final class s0 {
         this.k = sharedPreferences.getBoolean("fill_shapes", false);
         int i13 = 0;
         while (i13 < o) {
-            i13 = k3.f((int) sharedPreferences.getLong(i2.d.i(i13, "color_"), ((Integer) m.get(i13)).intValue()), i13, 1, this.b);
+            i13 = k3.f((int) sharedPreferences.getLong(i2.d.j(i13, "color_"), ((Integer) m.get(i13)).intValue()), i13, 1, this.b);
         }
         while (true) {
             if (i12 >= m.a.size()) {
                 hashMap.put(-1, Integer.valueOf((int) sharedPreferences.getLong("brush_color_-1", -1L)));
                 return;
             } else {
-                hashMap.put(Integer.valueOf(i12), Integer.valueOf((int) sharedPreferences.getLong(i2.d.i(i12, "brush_color_"), ((m) r1.get(i12)).c())));
+                hashMap.put(Integer.valueOf(i12), Integer.valueOf((int) sharedPreferences.getLong(i2.d.j(i12, "brush_color_"), ((m) r1.get(i12)).c())));
                 i12++;
             }
         }
@@ -98,7 +98,7 @@ public final class s0 {
     public final int b(int i10) {
         int i11 = q;
         if (i10 < 0 || i10 >= i11) {
-            throw new IndexOutOfBoundsException(i2.d.i(i11, "Color palette index should be in range 0 ... "));
+            throw new IndexOutOfBoundsException(i2.d.j(i11, "Color palette index should be in range 0 ... "));
         }
         List list = n;
         ArrayList arrayList = new ArrayList(list);
@@ -143,7 +143,7 @@ public final class s0 {
             if (!this.d.isEmpty()) {
                 int i10 = 0;
                 while (i10 < o) {
-                    edit.putLong(i2.d.i(i10, "color_"), ((Integer) (i10 < this.d.size() ? this.d : m).get(i10)).intValue());
+                    edit.putLong(i2.d.j(i10, "color_"), ((Integer) (i10 < this.d.size() ? this.d : m).get(i10)).intValue());
                     i10++;
                 }
                 ArrayList arrayList = this.b;

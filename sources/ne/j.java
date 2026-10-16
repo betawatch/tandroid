@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class j implements Iterable {
     public final f a;
@@ -28,7 +28,7 @@ public final class j implements Iterable {
 
     public final void h(float f7) {
         i iVar = this.d;
-        boolean z10 = iVar.a.i(f7) || (iVar.c.a(f7) || (iVar.g.a(f7) || (iVar.f.a(f7) || (iVar.e.a(f7) || (iVar.d.a(f7) || iVar.b.a(f7))))));
+        boolean z10 = iVar.a.j(f7) || (iVar.c.a(f7) || (iVar.g.a(f7) || (iVar.f.a(f7) || (iVar.e.a(f7) || (iVar.d.a(f7) || iVar.b.a(f7))))));
         ArrayList arrayList = this.b;
         int size = arrayList.size();
         int i10 = 0;
@@ -165,7 +165,7 @@ public final class j implements Iterable {
             o();
             mVar3.c = f17;
         }
-        if (fVar.h()) {
+        if (fVar.i()) {
             o();
             fVar.m();
         }
@@ -211,7 +211,7 @@ public final class j implements Iterable {
         iVar.f.c(z10);
         iVar.g.c(z10);
         iVar.c.c(z10);
-        iVar.a.f(z10);
+        iVar.a.h(z10);
     }
 
     public final void q(List list, boolean z10) {

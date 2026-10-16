@@ -4,7 +4,7 @@ import java.util.concurrent.ThreadFactory;
 import org.telegram.ui.Components.yj0;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements ThreadFactory {
     public final /* synthetic */ int a;
@@ -20,26 +20,26 @@ public final /* synthetic */ class l0 implements ThreadFactory {
             case 0:
                 return new Thread(runnable, "ExoPlayer:AudioTrackReleaseThread");
             case 1:
-                return new Thread(runnable, "RoundVideoFiles");
-            case 2:
-                return new Thread(runnable, "RoundVideoOutput");
-            case 3:
                 Thread thread = new Thread(runnable, "PrismaHighlight");
                 thread.setDaemon(true);
                 return thread;
-            case 4:
+            case 2:
                 return new Thread(runnable, "Lottie-" + yj0.P0.getAndIncrement());
-            case 5:
+            case 3:
                 return new Thread(runnable, "LottieLow-" + yj0.Q0.getAndIncrement());
-            case 6:
+            case 4:
                 return new Thread(runnable, "GramWalletStorage");
-            case 7:
+            case 5:
                 lambda$new$0 = WalletEngine2.lambda$new$0(runnable);
                 return lambda$new$0;
-            case 8:
+            case 6:
                 return new Thread(runnable, "AudioRecorderFiles");
-            default:
+            case 7:
                 return new Thread(runnable, "AudioRecorderOutput");
+            case 8:
+                return new Thread(runnable, "RoundVideoFiles");
+            default:
+                return new Thread(runnable, "RoundVideoOutput");
         }
     }
 }

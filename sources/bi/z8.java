@@ -5,7 +5,7 @@ import android.view.ViewTreeObserver;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class z8 implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ TextView a;
@@ -29,8 +29,8 @@ public final class z8 implements ViewTreeObserver.OnGlobalLayoutListener {
         int measuredHeight = this.b.getMeasuredHeight();
         b9 b9Var = this.d;
         if (dp > measuredHeight) {
-            textView.setLayoutParams(w7.a6.k(0.0f, 13.0f, 0.0f, 0.0f, -2, -2));
-            this.c.setLayoutParams(w7.a6.k(68.0f, 8.0f, 68.0f, 13.0f, -2, -2));
+            textView.setLayoutParams(w7.z5.k(0.0f, 13.0f, 0.0f, 0.0f, -2, -2));
+            this.c.setLayoutParams(w7.z5.k(68.0f, 8.0f, 68.0f, 13.0f, -2, -2));
             b9Var.requestLayout();
         }
         b9Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);

@@ -10,14 +10,15 @@ import c5.c0;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Stack;
+import m2.t;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
 public final class i {
     public static i q;
     public Bitmap e;
@@ -31,7 +32,7 @@ public final class i {
     public boolean p;
     public final DispatchQueue a = new DispatchQueue("SpoilerEffectBitmapFactory", true, 3);
     public final c0[] b = new c0[g.C.length];
-    public final m4.c[] c = new m4.c[2];
+    public final t[] c = new t[2];
     public int d = 0;
     public final Rect m = new Rect();
     public final r4.e n = new r4.e(this, 2);

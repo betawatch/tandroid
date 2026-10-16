@@ -1,61 +1,42 @@
 package n7;
 
-import java.util.Iterator;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class b0 extends o {
-    public final transient Object d;
+public final class b0 extends x implements Serializable {
+    public final x a;
 
-    public b0(Object obj) {
-        this.d = obj;
+    public b0(x xVar) {
+        this.a = xVar;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        return this.d.equals(obj);
+    @Override // n7.x
+    public final x a() {
+        return this.a;
     }
 
-    @Override // n7.h
-    public final int h(Object[] objArr) {
-        objArr[0] = this.d;
-        return 1;
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        return this.a.compare(obj2, obj);
     }
 
-    @Override // n7.o, java.util.Collection, java.util.Set
-    public final int hashCode() {
-        return this.d.hashCode();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return new t(this.d);
-    }
-
-    @Override // n7.h
-    public final d0 o() {
-        return new t(this.d);
-    }
-
-    @Override // n7.o
-    public final m s() {
-        Object[] objArr = {this.d};
-        for (int i10 = 0; i10 < 1; i10++) {
-            i iVar = m.b;
-            if (objArr[i10] == null) {
-                throw new NullPointerException(i2.d.i(i10, "at index "));
-            }
+    @Override // java.util.Comparator
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        return m.s(1, objArr);
+        if (obj instanceof b0) {
+            return this.a.equals(((b0) obj).a);
+        }
+        return false;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return 1;
+    public final int hashCode() {
+        return -this.a.hashCode();
     }
 
-    @Override // java.util.AbstractCollection
     public final String toString() {
-        return a1.g.p("[", this.d.toString(), "]");
+        return this.a.toString().concat(".reverse()");
     }
 }

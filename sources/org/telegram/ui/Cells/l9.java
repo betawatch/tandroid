@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.x41;
 import org.telegram.ui.l41;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class l9 implements ActionMode.Callback {
     public String a = null;
@@ -50,9 +50,9 @@ public final class l9 implements ActionMode.Callback {
                     }
                     baVar.u();
                     baVar.f(true);
-                    w7.w5 w5Var = baVar.D;
-                    if (w5Var != null) {
-                        w5Var.b();
+                    w7.j0 j0Var = baVar.D;
+                    if (j0Var != null) {
+                        j0Var.b();
                         return true;
                     }
                 }

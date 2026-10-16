@@ -4,7 +4,7 @@ import b2.w0;
 import c3.i0;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class u implements i {
     public final e2.x a;
@@ -128,7 +128,7 @@ public final class u implements i {
         f0Var.c();
         this.g = (String) f0Var.e;
         f0Var.c();
-        this.f = qVar.a0(f0Var.c, 1);
+        this.f = qVar.W(f0Var.c, 1);
     }
 
     @Override // j4.i

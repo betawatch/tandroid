@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class qt0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -29,12 +29,12 @@ public final class qt0 extends AnimatorListenerAdapter {
                     qu0VarArr[1].setVisibility(8);
                     if (u0Var == null || xv0Var.D()) {
                         xv0Var.o0 = xv0Var.b0(0.0f);
-                        xv0Var.s1(0.0f);
+                        xv0Var.t1(0.0f);
                     } else {
-                        u0Var.setVisibility(xv0Var.v0() ? 8 : 4);
+                        u0Var.setVisibility(xv0Var.w0() ? 8 : 4);
                         xv0Var.o0 = 0.0f;
                     }
-                    xv0Var.q1(false);
+                    xv0Var.r1(false);
                     xv0Var.x0 = 0;
                 } else {
                     qu0 qu0Var = qu0VarArr[0];
@@ -42,17 +42,17 @@ public final class qt0 extends AnimatorListenerAdapter {
                     qu0VarArr[1] = qu0Var;
                     qu0Var.setVisibility(8);
                     if (u0Var != null && xv0Var.x0 == 2) {
-                        u0Var.setVisibility(xv0Var.v0() ? 8 : 4);
+                        u0Var.setVisibility(xv0Var.w0() ? 8 : 4);
                     }
                     xv0Var.x0 = 0;
-                    xv0Var.Z0(1.0f, qu0VarArr[0].F);
-                    xv0Var.L0();
-                    xv0Var.f1();
+                    xv0Var.a1(1.0f, qu0VarArr[0].F);
+                    xv0Var.M0();
+                    xv0Var.g1();
                 }
                 xv0Var.g1 = false;
                 xv0Var.y1 = false;
                 xv0Var.x1 = false;
-                xv0Var.N0(false);
+                xv0Var.O0(false);
                 xv0Var.G.setEnabled(true);
                 xv0Var.I0.setEnabled(true);
                 break;

@@ -3,12 +3,12 @@ package zf;
 import android.graphics.RectF;
 import java.util.ArrayList;
 import java.util.Collections;
-import org.telegram.ui.es0;
+import org.telegram.ui.ds0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class f0 {
-    public static final es0 a = new es0(26);
+    public static final ds0 a = new ds0(26);
 
     public static int a(ArrayList arrayList, int i10, ArrayList arrayList2) {
         boolean z10;
@@ -88,7 +88,7 @@ public abstract class f0 {
     }
 
     public static float b(float f7) {
-        return 1.0f - w7.s.a(f7, 0.0f, 1.0f);
+        return 1.0f - w7.r.a(f7, 0.0f, 1.0f);
     }
 
     public static boolean c(float[] fArr) {

@@ -1,71 +1,65 @@
 package org.telegram.ui.Components;
 
-import android.os.Build;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zl implements Runnable {
+public final /* synthetic */ class zl implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ChatAttachAlertPhotoLayout b;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ zl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, int i10) {
+    public /* synthetic */ zl(int i10, Object obj, boolean z10) {
         this.a = i10;
-        this.b = chatAttachAlertPhotoLayout;
+        this.b = obj;
+        this.c = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // q0.a
+    public final void accept(Object obj) {
         int i10 = this.a;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
+        boolean z10 = false;
+        boolean z11 = this.c;
+        Object obj2 = this.b;
         switch (i10) {
             case 0:
-                boolean z10 = ChatAttachAlertPhotoLayout.q1;
-                chatAttachAlertPhotoLayout.b.getContainer().removeView(chatAttachAlertPhotoLayout.P);
-                chatAttachAlertPhotoLayout.P = null;
+                ArrayList arrayList = (ArrayList) obj2;
+                View view = (View) obj;
+                boolean z12 = ChatAttachAlertPhotoLayout.q1;
+                if (view instanceof org.telegram.ui.Cells.t5) {
+                    org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
+                    MediaController.PhotoEntry photoEntry = t5Var.getPhotoEntry();
+                    if (photoEntry != null && arrayList.contains(Integer.valueOf(photoEntry.imageId)) && z11) {
+                        z10 = true;
+                    }
+                    t5Var.setHasSpoiler(z10);
+                    break;
+                }
                 break;
             case 1:
-                chatAttachAlertPhotoLayout.w.setVisibility(8);
-                break;
-            case 2:
-                chatAttachAlertPhotoLayout.G.l();
-                break;
-            case 3:
-                boolean z11 = ChatAttachAlertPhotoLayout.q1;
-                chatAttachAlertPhotoLayout.t0(false);
-                chatAttachAlertPhotoLayout.n0 = null;
-                break;
-            case 4:
-                boolean z12 = ChatAttachAlertPhotoLayout.q1;
-                chatAttachAlertPhotoLayout.t0(false);
-                chatAttachAlertPhotoLayout.n0 = null;
-                break;
-            case 5:
+                ArrayList arrayList2 = (ArrayList) obj2;
+                View view2 = (View) obj;
                 boolean z13 = ChatAttachAlertPhotoLayout.q1;
-                vi viVar = chatAttachAlertPhotoLayout.b;
-                if (f0.c.b(viVar.f0.getParentActivity(), "android.permission.CAMERA") == 0) {
-                    chatAttachAlertPhotoLayout.i0();
-                    break;
-                } else {
-                    try {
-                        viVar.f0.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 18);
-                        break;
-                    } catch (Exception unused) {
-                        return;
+                if (view2 instanceof org.telegram.ui.Cells.t5) {
+                    org.telegram.ui.Cells.t5 t5Var2 = (org.telegram.ui.Cells.t5) view2;
+                    MediaController.PhotoEntry photoEntry2 = t5Var2.getPhotoEntry();
+                    if (photoEntry2 != null && arrayList2.contains(Integer.valueOf(photoEntry2.imageId)) && z11) {
+                        z10 = true;
                     }
+                    t5Var2.setHighQuality(z10);
+                    break;
                 }
+                break;
             default:
-                boolean z14 = ChatAttachAlertPhotoLayout.q1;
-                vi viVar2 = chatAttachAlertPhotoLayout.b;
-                try {
-                    if (Build.VERSION.SDK_INT >= 33) {
-                        viVar2.f0.getParentActivity().requestPermissions(new String[]{"android.permission.READ_MEDIA_VIDEO", "android.permission.READ_MEDIA_IMAGES"}, 4);
-                    } else {
-                        viVar2.f0.getParentActivity().requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, 4);
-                    }
+                Float f7 = (Float) obj;
+                qb qbVar = ((lb) obj2).b.p;
+                if (qbVar != null && !z11) {
+                    qbVar.c(r0.e.getHeight() - f7.floatValue());
                     break;
-                } catch (Exception unused2) {
-                    return;
                 }
+                break;
         }
     }
 }

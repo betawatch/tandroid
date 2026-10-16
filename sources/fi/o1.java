@@ -20,25 +20,25 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.db;
 import org.telegram.ui.Components.lm0;
 import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.z61;
 import org.webrtc.MediaStreamTrack;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class o1 extends db {
     public final int X;
     public final String Y;
-    public z61 Z;
+    public a71 Z;
     public final l1 a0;
     public boolean b0;
     public boolean c0;
@@ -291,27 +291,27 @@ public final class o1 extends db {
             Q = Q(i11, j10, botInlineResult, null, null, webPage);
         }
         n1 n1Var = Q;
-        org.telegram.ui.Cells.x0 x0Var = new org.telegram.ui.Cells.x0(context, c6Var, false);
-        x0Var.setDelegate(new i1());
-        x0Var.setCustomText(LocaleController.getString(R.string.BotShareMessagePreview));
+        org.telegram.ui.Cells.w0 w0Var = new org.telegram.ui.Cells.w0(context, c6Var, false);
+        w0Var.setDelegate(new i1());
+        w0Var.setCustomText(LocaleController.getString(R.string.BotShareMessagePreview));
         j1 j1Var = new j1(context, i11);
         j1Var.setDelegate(new k1());
         j1Var.X3(n1Var, null, false, false, false, false);
-        LinearLayout e = yh.e(context, r11);
-        e.addView(x0Var, a6.n(-1, -2));
-        e.addView(j1Var, a6.n(-1, -2));
+        LinearLayout e = sk.e(context, r11);
+        e.addView(w0Var, z5.n(-1, -2));
+        e.addView(j1Var, z5.n(-1, -2));
         l1 l1Var = new l1(context, null);
         this.a0 = l1Var;
         l1Var.V(a7.e(null, i11, j10, g6.I.q()));
-        l1Var.addView(e, a6.a(-1.0f, 4.0f, 8.0f, 4.0f, 8.0f, -1, 119));
+        l1Var.addView(e, z5.a(-1.0f, 4.0f, 8.0f, 4.0f, 8.0f, -1, 119));
         FrameLayout frameLayout = new FrameLayout(context);
-        di.d f7 = yh.f(24, context, c6Var, r11);
+        di.d f7 = sk.f(24, context, c6Var, r11);
         f7.g(LocaleController.getString(R.string.BotShareMessageShare), false, r11);
         f7.setOnClickListener(new b1(this, tL_messages_preparedInlineMessage, eVar, i11, j10, sVar));
-        frameLayout.addView(f7, a6.a(48.0f, 10.0f, 10.0f, 10.0f, 10.0f, -1, 119));
+        frameLayout.addView(f7, z5.a(48.0f, 10.0f, 10.0f, 10.0f, 10.0f, -1, 119));
         ViewGroup viewGroup = this.containerView;
         int i13 = this.backgroundPaddingLeft;
-        viewGroup.addView(frameLayout, a6.f(-2.0f, 87, i13, 0, i13, 0));
+        viewGroup.addView(frameLayout, z5.f(-2.0f, 87, i13, 0, i13, 0));
         mm0 mm0Var = this.d;
         int i14 = this.backgroundPaddingLeft;
         mm0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(68.0f) + r11);
@@ -456,7 +456,7 @@ public final class o1 extends db {
     }
 
     @Override // org.telegram.ui.Components.db
-    public final CharSequence A() {
+    public final CharSequence B() {
         return LocaleController.getString(R.string.BotShareMessage);
     }
 
@@ -482,8 +482,8 @@ public final class o1 extends db {
 
     @Override // org.telegram.ui.Components.db
     public final lm0 x(mm0 mm0Var) {
-        z61 z61Var = new z61(mm0Var, getContext(), this.X, 0, true, new ci.u(this, 15), this.resourcesProvider);
-        this.Z = z61Var;
-        return z61Var;
+        a71 a71Var = new a71(mm0Var, getContext(), this.X, 0, true, new ci.u(this, 15), this.resourcesProvider);
+        this.Z = a71Var;
+        return a71Var;
     }
 }

@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class l51 extends FrameLayout {
     public float a;
@@ -30,8 +30,8 @@ public final class l51 extends FrameLayout {
         o1.j jVar = new o1.j(0.0f);
         this.f = jVar;
         o1.k kVar = new o1.k(jVar);
-        kVar.u = org.telegram.ui.Cells.d0.k(0.0f, 750.0f, 1.0f);
-        kVar.b(new yd0(this, 5));
+        kVar.u = org.telegram.ui.Cells.c1.j(0.0f, 750.0f, 1.0f);
+        kVar.b(new wd0(this, 5));
         this.h = kVar;
         this.n = new v0("progress", 6);
         setWillNotDraw(false);
@@ -84,12 +84,12 @@ public final class l51 extends FrameLayout {
                 this.e = ceil;
             }
         }
-        org.telegram.ui.Components.j81 j81Var = secretMediaViewer.Q;
-        int D = org.telegram.messenger.q.D(16.0f, getMeasuredWidth(), ceil);
+        org.telegram.ui.Components.k81 k81Var = secretMediaViewer.Q;
+        int B = org.telegram.messenger.g0.B(16.0f, getMeasuredWidth(), ceil);
         int measuredHeight = getMeasuredHeight();
-        j81Var.h = D;
-        j81Var.i = measuredHeight;
-        View view = j81Var.v;
+        k81Var.h = B;
+        k81Var.i = measuredHeight;
+        View view = k81Var.v;
         if (view != null) {
             view.invalidate();
         }

@@ -5,10 +5,11 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.zip.CRC32;
+import org.telegram.messenger.ApplicationLoader;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static void a(TLRPC.GroupCall groupCall, TLRPC.GroupCall groupCall2) {
@@ -159,7 +160,7 @@ public abstract class d {
     public static void i(String str, ArrayList arrayList) {
         int i10;
         int i11;
-        if (arrayList == null || arrayList.isEmpty()) {
+        if (arrayList == null || arrayList.isEmpty() || ApplicationLoader.isAndroidTestEnvironment()) {
             return;
         }
         int length = str != null ? str.length() : 0;

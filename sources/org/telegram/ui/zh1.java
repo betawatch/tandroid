@@ -8,7 +8,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class zh1 extends LinearLayout {
     public final org.telegram.ui.ActionBar.c6 a;
@@ -28,23 +28,23 @@ public final class zh1 extends LinearLayout {
         this.b = imageView;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
-        addView(imageView, w7.a6.t(40, 40, 19, 12, 0, 12, 0));
+        addView(imageView, w7.z5.t(40, 40, 19, 12, 0, 12, 0));
         LinearLayout linearLayout = new LinearLayout(context);
         this.c = linearLayout;
         linearLayout.setOrientation(1);
         linearLayout.setPadding(0, AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f));
-        addView(linearLayout, w7.a6.p(0, -2, 1.0f, 23, 0, 0, 32, 0));
+        addView(linearLayout, w7.z5.p(0, -2, 1.0f, 23, 0, 0, 32, 0));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setTextSize(1, 16.0f);
-        TextView i10 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, w7.a6.t(-1, -2, 7, 0, 0, 0, 0), context);
+        TextView i10 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, w7.z5.t(-1, -2, 7, 0, 0, 0, 0), context);
         this.e = i10;
         i10.setTextSize(1, 13.0f);
-        linearLayout.addView(i10, w7.a6.r(-1, -2, 7, 0.0f, 4.33f, 0.0f, 0.0f));
+        linearLayout.addView(i10, w7.z5.r(-1, -2, 7, 0.0f, 4.33f, 0.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.f = imageView2;
         imageView2.setScaleType(scaleType);
-        addView(imageView2, w7.a6.t(40, 40, 21, 12, 0, 12, 0));
+        addView(imageView2, w7.z5.t(40, 40, 21, 12, 0, 12, 0));
     }
 
     @Override // android.widget.LinearLayout, android.view.View

@@ -8,7 +8,7 @@ import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ob0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class s3 extends ob0 {
     public final /* synthetic */ q5 V;
@@ -30,7 +30,7 @@ public final class s3 extends ob0 {
         canvas.drawRoundRect(rectF, f7, f7, (Paint) mVar.a);
         canvas.drawRoundRect(rectF, f7, f7, q5Var.n2);
         if (rectF.top < getMeasuredHeight() - 1) {
-            canvas.drawRect(0.0f, getMeasuredHeight(), getMeasuredWidth(), getMeasuredHeight() - 1, q5Var.B0.G("paintDivider"));
+            canvas.drawRect(0.0f, getMeasuredHeight(), getMeasuredWidth(), getMeasuredHeight() - 1, q5Var.B0.F("paintDivider"));
         }
     }
 }

@@ -3,9 +3,9 @@ package i2;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import org.telegram.ui.Components.voip.m2;
+import org.telegram.ui.Components.voip.r2;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class u1 implements w0 {
     public long a;
@@ -14,9 +14,9 @@ public final class u1 implements w0 {
     public final Object d;
     public Object e;
 
-    public u1(m2 m2Var) {
+    public u1(r2 r2Var) {
         this.d = new Handler(Looper.getMainLooper());
-        this.e = m2Var;
+        this.e = r2Var;
     }
 
     @Override // i2.w0

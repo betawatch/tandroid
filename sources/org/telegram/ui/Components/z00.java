@@ -20,7 +20,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class z00 extends org.telegram.ui.ActionBar.e3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int w = 0;
@@ -78,7 +78,7 @@ public final class z00 extends org.telegram.ui.ActionBar.e3 implements Notificat
         o0Var.setGlowColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.A5, false));
         o0Var.setOnScrollListener(new ah.d0(this, 28));
         o0Var.setOnItemClickListener(new j(this, 7));
-        this.containerView.addView(o0Var, w7.a6.a(-1.0f, 0.0f, 48.0f, 0.0f, 0.0f, -1, 51));
+        this.containerView.addView(o0Var, w7.z5.a(-1.0f, 0.0f, 48.0f, 0.0f, 0.0f, -1, 51));
         TextView textView = new TextView(parentActivity);
         this.d = textView;
         textView.setLines(1);
@@ -92,7 +92,7 @@ public final class z00 extends org.telegram.ui.ActionBar.e3 implements Notificat
         textView.setGravity(16);
         textView.setText(LocaleController.getString(R.string.FilterChoose));
         textView.setTypeface(AndroidUtilities.bold());
-        this.containerView.addView(textView, w7.a6.a(50.0f, 0.0f, 0.0f, 40.0f, 0.0f, -1, 51));
+        this.containerView.addView(textView, w7.z5.a(50.0f, 0.0f, 0.0f, 40.0f, 0.0f, -1, 51));
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
     }
 
@@ -134,9 +134,9 @@ public final class z00 extends org.telegram.ui.ActionBar.e3 implements Notificat
         for (int i10 = 0; i10 < size; i10++) {
             long longValue = ((Long) arrayList.get(i10)).longValue();
             if (DialogObject.isEncryptedDialog(longValue)) {
-                TLRPC.EncryptedChat m10 = org.telegram.messenger.q.m(m2Var.getMessagesController(), longValue);
-                if (m10 != null) {
-                    longValue = m10.user_id;
+                TLRPC.EncryptedChat l4 = org.telegram.messenger.g0.l(m2Var.getMessagesController(), longValue);
+                if (l4 != null) {
+                    longValue = l4.user_id;
                     if (arrayList2.contains(Long.valueOf(longValue))) {
                         continue;
                     }

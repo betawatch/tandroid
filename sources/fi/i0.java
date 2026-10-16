@@ -20,9 +20,9 @@ import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.sc;
 import org.telegram.ui.Components.yj0;
 import org.telegram.ui.LaunchActivity;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class i0 extends pb {
     public final c6 a;
@@ -46,21 +46,21 @@ public final class i0 extends pb {
         h0 h0Var = new h0(context, imageView);
         this.c = h0Var;
         imageView.setImageDrawable(h0Var);
-        addView(imageView, a6.a(40.0f, 7.0f, 0.0f, 0.0f, 0.0f, 40, 23));
+        addView(imageView, z5.a(40.0f, 7.0f, 0.0f, 0.0f, 0.0f, 40, 23));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        addView(linearLayout, a6.a(-2.0f, 54.0f, 0.0f, 0.0f, 0.0f, -1, 23));
+        addView(linearLayout, z5.a(-2.0f, 54.0f, 0.0f, 0.0f, 0.0f, -1, 23));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setTextSize(1, 14.0f);
         int i10 = g6.Hi;
         textView.setTextColor(g6.w0(i10, c6Var));
         textView.setTypeface(AndroidUtilities.bold());
-        TextView i11 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, a6.t(-1, -2, 55, 0, 0, 0, 2), context);
+        TextView i11 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, z5.t(-1, -2, 55, 0, 0, 0, 2), context);
         this.e = i11;
         i11.setTextSize(1, 13.0f);
         i11.setTextColor(g6.w0(i10, c6Var));
-        linearLayout.addView(i11, a6.t(-1, -2, 55, 0, 0, 0, 0));
+        linearLayout.addView(i11, z5.t(-1, -2, 55, 0, 0, 0, 0));
     }
 
     private void setButton(int i10) {

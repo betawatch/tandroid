@@ -14,7 +14,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class sw0 extends View {
     public int E;
@@ -70,7 +70,7 @@ public final class sw0 extends View {
         this.I = i10;
         rw0 rw0Var = this.N;
         if (rw0Var != null) {
-            rw0Var.f(i10);
+            rw0Var.h(i10);
         }
         invalidate();
     }
@@ -142,7 +142,7 @@ public final class sw0 extends View {
             float f17 = f16 - d;
             boolean z11 = z10;
             float max = Math.max(f11, f12 - Math.abs(f17));
-            float a2 = w7.s.a((d - f16) + f12, f11, f12);
+            float a2 = w7.r.a((d - f16) + f12, f11, f12);
             int w02 = org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.M6, c6Var2);
             float f18 = f12;
             int w03 = org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.N6, c6Var2);
@@ -164,8 +164,8 @@ public final class sw0 extends View {
                     i10 = i20;
                     c6Var = c6Var2;
                     float f20 = f17 - f18;
-                    float a10 = w7.s.a(f18 - Math.abs(f20), 0.0f, f18);
-                    int dp2 = (int) (i24 - (AndroidUtilities.dp(3.0f) * w7.s.a(f18 - Math.min(Math.abs(f17), Math.abs(f20)), 0.0f, f18)));
+                    float a10 = w7.r.a(f18 - Math.abs(f20), 0.0f, f18);
+                    int dp2 = (int) (i24 - (AndroidUtilities.dp(3.0f) * w7.r.a(f18 - Math.min(Math.abs(f17), Math.abs(f20)), 0.0f, f18)));
                     f18 = 1.0f;
                     canvas2 = canvas;
                     canvas2.drawRect((int) ((AndroidUtilities.dp(3.0f) * a10) + i25), dp - AndroidUtilities.dp(1.0f), dp2 + r2, AndroidUtilities.dp(1.0f) + dp, paint);
@@ -177,7 +177,7 @@ public final class sw0 extends View {
                         i10 = i20;
                         float[] fArr = new float[i22];
                         fArr[z11 ? 1 : 0] = AndroidUtilities.dp(6.0f);
-                        fArr[1] = org.telegram.messenger.yh.C(8.0f, dp4, r12) / (dp4 - 1);
+                        fArr[1] = org.telegram.messenger.sk.B(8.0f, dp4, r12) / (dp4 - 1);
                         paint2.setPathEffect(new DashPathEffect(fArr, 0.0f));
                         this.e = dp4;
                     } else {
@@ -256,7 +256,7 @@ public final class sw0 extends View {
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         float x10 = motionEvent.getX();
         float y3 = motionEvent.getY();
-        float a2 = w7.s.a(((this.f / 2.0f) + (x10 - this.n)) / (((this.h * 2) + this.r) + r3), 0.0f, this.F.length - 1);
+        float a2 = w7.r.a(((this.f / 2.0f) + (x10 - this.n)) / (((this.h * 2) + this.r) + r3), 0.0f, this.F.length - 1);
         boolean z10 = Math.abs(a2 - ((float) Math.round(a2))) < 0.35f;
         if (z10) {
             a2 = Math.round(a2);

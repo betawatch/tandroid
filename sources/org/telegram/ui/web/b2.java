@@ -1,32 +1,93 @@
 package org.telegram.ui.web;
 
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.webkit.ValueCallback;
+import android.webkit.WebView;
+import java.io.File;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class b2 extends FrameLayout {
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        return false;
+public final /* synthetic */ class b2 implements ValueCallback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ WebView c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+
+    public /* synthetic */ b2(i2 i2Var, WebView webView, File file, a2 a2Var, int i10) {
+        this.a = i10;
+        this.b = i2Var;
+        this.c = webView;
+        this.d = file;
+        this.e = a2Var;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        return false;
+    @Override // android.webkit.ValueCallback
+    public final void onReceiveValue(Object obj) {
+        int i10 = 1;
+        switch (this.a) {
+            case 0:
+                i2 i2Var = (i2) this.b;
+                WebView webView = this.c;
+                File file = (File) this.d;
+                webView.saveWebArchive(file.getAbsolutePath(), false, new b2(i2Var, webView, file, (a2) this.e, 1));
+                return;
+            case 1:
+                i2 i2Var2 = (i2) this.b;
+                WebView webView2 = this.c;
+                File file2 = (File) this.d;
+                a2 a2Var = (a2) this.e;
+                webView2.evaluateJavascript(AndroidUtilities.readRes(R.raw.open_collapsed).replace("$OPEN$", "false"), new i0(i10));
+                try {
+                    pi.e eVar = new pi.e(file2);
+                    i2Var2.b = eVar;
+                    if (!((ArrayList) eVar.b).isEmpty()) {
+                        a2Var.run(((l1) ((ArrayList) i2Var2.b.b).get(0)).a());
+                        return;
+                    }
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+                a2Var.run(null);
+                return;
+            default:
+                pi.j jVar = (pi.j) this.b;
+                pi.g gVar = (pi.g) this.d;
+                WebView webView3 = this.c;
+                b5.h hVar = (b5.h) this.e;
+                String str = (String) obj;
+                AndroidUtilities.cancelRunOnUIThread(gVar);
+                synchronized (jVar.a) {
+                    if (!jVar.u && jVar.o == webView3 && jVar.p == hVar && !jVar.r) {
+                        if (!"true".equals(str)) {
+                            FileLog.e("WEB proxy: Base64 bridge installation failed; transport stopped");
+                            jVar.o();
+                            return;
+                        } else {
+                            if (!jVar.h(webView3)) {
+                                jVar.f();
+                                return;
+                            }
+                            jVar.s = false;
+                            jVar.r = true;
+                            FileLog.d("WEB proxy: Base64 bridge ready");
+                            jVar.l(16, 0, new byte[]{1});
+                            return;
+                        }
+                    }
+                    return;
+                }
+        }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(500.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(500.0f), TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return false;
+    public /* synthetic */ b2(pi.j jVar, pi.g gVar, WebView webView, b5.h hVar) {
+        this.a = 2;
+        this.b = jVar;
+        this.d = gVar;
+        this.c = webView;
+        this.e = hVar;
     }
 }

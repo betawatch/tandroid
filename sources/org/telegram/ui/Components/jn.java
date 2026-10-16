@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.kc1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jn implements am0 {
     public final /* synthetic */ int a = 1;
@@ -46,26 +46,26 @@ public final /* synthetic */ class jn implements am0 {
                 org.telegram.ui.ActionBar.c6 c6Var = this.b;
                 if (i10 == i11) {
                     uh.f fVar2 = new uh.f(ioVar.getContext(), c6Var);
-                    fVar2.k0 = new l2.f(ioVar, 8);
+                    fVar2.k0 = new m.h(ioVar, 7);
                     ArrayList arrayList = ioVar.P0;
                     fVar2.c0 = null;
                     fVar2.o0 = new HashSet(arrayList);
                     fVar2.show();
                     break;
                 } else if (i10 == ioVar.I0) {
-                    m80 F = m80.F(viVar.container, c6Var, view);
+                    l80 F = l80.F(viVar.container, c6Var, view);
                     int i12 = 0;
                     while (true) {
                         int[] iArr = ioVar.T0;
                         if (i12 >= iArr.length) {
-                            F.c(R.drawable.msg_customize, LocaleController.getString(R.string.PollV2PollDurationOptionCustom), new org.telegram.ui.p6(ioVar, context, view, c6Var, 18), false);
+                            F.c(R.drawable.msg_customize, LocaleController.getString(R.string.PollV2PollDurationOptionCustom), new org.telegram.ui.p6(ioVar, context, view, c6Var, 17), false);
                             F.t = false;
                             F.s = 0;
                             F.Z();
                             break;
                         } else {
                             int i13 = iArr[i12];
-                            w21 a2 = w21.a(i13);
+                            x21 a2 = x21.a(i13);
                             int i14 = org.telegram.ui.ActionBar.g6.F8;
                             a2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(i14, ioVar.a), PorterDuff.Mode.SRC_IN));
                             F.b(0, a2, LocaleController.formatPluralString("Hours", i13 / 3600, new Object[0]), i14, org.telegram.ui.ActionBar.g6.E8, new org.telegram.ui.gm(ioVar, i13, view, 2));

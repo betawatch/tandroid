@@ -1,52 +1,31 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.TranslateController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.LanguageDetector;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class hl implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ BaseController b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Runnable f;
-    public final /* synthetic */ long h;
+public final /* synthetic */ class hl implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback {
+    public final /* synthetic */ TranslateController a;
+    public final /* synthetic */ MessageObject b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ hl(TopicsController topicsController, TLObject tLObject, long j10, TLRPC.TL_messages_forumTopics tL_messages_forumTopics, a0.h hVar, Runnable runnable) {
-        this.a = 2;
-        this.b = topicsController;
-        this.c = tLObject;
-        this.h = j10;
-        this.d = tL_messages_forumTopics;
-        this.e = hVar;
-        this.f = runnable;
+    public /* synthetic */ hl(TranslateController translateController, MessageObject messageObject, long j10, int i10) {
+        this.a = translateController;
+        this.b = messageObject;
+        this.c = j10;
+        this.d = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ((TranslateController) this.b).lambda$translatePhoto$43((MessageObject) this.c, (String) this.d, (TranslateController.MessageKey) this.e, this.f, this.h);
-                break;
-            case 1:
-                ((TranslateController) this.b).lambda$translatePhoto$45((MessageObject) this.c, (String) this.d, (TranslateController.MessageKey) this.e, this.f, this.h);
-                break;
-            default:
-                ((TopicsController) this.b).lambda$reloadTopics$14((TLObject) this.c, this.h, (TLRPC.TL_messages_forumTopics) this.d, (a0.h) this.e, this.f);
-                break;
-        }
+    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
+    public void run(Exception exc) {
+        this.a.lambda$checkLanguage$15(this.b, this.c, this.d, exc);
     }
 
-    public /* synthetic */ hl(TranslateController translateController, MessageObject messageObject, String str, TranslateController.MessageKey messageKey, Runnable runnable, long j10, int i10) {
-        this.a = i10;
-        this.b = translateController;
-        this.c = messageObject;
-        this.d = str;
-        this.e = messageKey;
-        this.f = runnable;
-        this.h = j10;
+    @Override // org.telegram.messenger.LanguageDetector.StringCallback
+    public void run(String str) {
+        long j10 = this.c;
+        int i10 = this.d;
+        this.a.lambda$checkLanguage$13(this.b, j10, i10, str);
     }
 }

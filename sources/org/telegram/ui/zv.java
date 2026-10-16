@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zv implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class zv implements View.OnClickListener {
         switch (this.a) {
             case 0:
                 yy yyVar = this.b;
-                if (yyVar.X3() && (arrayList = yyVar.D2) != null && !arrayList.isEmpty() && yyVar.getParentActivity() != null) {
+                if (yyVar.Y3() && (arrayList = yyVar.D2) != null && !arrayList.isEmpty() && yyVar.getParentActivity() != null) {
                     int i10 = 0;
                     MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) yyVar.D2.get(0);
                     ix ixVar = yyVar.B1;
@@ -65,41 +65,41 @@ public final /* synthetic */ class zv implements View.OnClickListener {
                 break;
             case 1:
                 yy yyVar2 = this.b;
-                yyVar2.L4(true, false, true, false);
+                yyVar2.M4(true, false, true, false);
                 yyVar2.Y.b(true);
                 AndroidUtilities.runOnUIThread(new uv(yyVar2, 3), 100L);
                 break;
             case 2:
                 yy yyVar3 = this.b;
                 if (yyVar3.G0 && (pxVar = yyVar3.E0) != null && !pxVar.g()) {
-                    yyVar3.u4(true, true);
+                    yyVar3.v4(true, true);
                     break;
                 } else {
-                    yyVar3.M4();
+                    yyVar3.N4();
                     break;
                 }
                 break;
             case 3:
                 yy yyVar4 = this.b;
                 if (yyVar4.G0 && (pxVar2 = yyVar4.E0) != null && !pxVar2.g()) {
-                    yyVar4.u4(true, true);
+                    yyVar4.v4(true, true);
                     break;
                 } else {
-                    yyVar4.M4();
+                    yyVar4.N4();
                     break;
                 }
-                break;
             case 4:
                 yy yyVar5 = this.b;
                 yyVar5.getClass();
                 Bundle bundle = new Bundle();
-                bundle.putLong("community_id", yyVar5.X2);
+                bundle.putLong("community_id", yyVar5.Y2);
                 yyVar5.presentFragment(new gi.s(bundle));
                 break;
             case 5:
                 yy yyVar6 = this.b;
                 ArrayList arrayList4 = yyVar6.I2;
                 if (yyVar6.C2 != null && !arrayList4.isEmpty()) {
+                    yyVar6.M2 = false;
                     ArrayList arrayList5 = new ArrayList();
                     for (int i11 = 0; i11 < arrayList4.size(); i11++) {
                         arrayList5.add(MessagesStorage.TopicKey.of(((Long) arrayList4.get(i11)).longValue(), 0L));
@@ -109,7 +109,7 @@ public final /* synthetic */ class zv implements View.OnClickListener {
                 }
                 break;
             case 6:
-                this.b.Y3(true);
+                this.b.Z3(true);
                 break;
             case 7:
                 this.b.finishPreviewFragment();
@@ -117,7 +117,7 @@ public final /* synthetic */ class zv implements View.OnClickListener {
             case 8:
                 yy yyVar7 = this.b;
                 yyVar7.z0.setIsEditing(false);
-                yyVar7.F4(false);
+                yyVar7.G4(false);
                 break;
             case 9:
                 yy yyVar8 = this.b;
@@ -127,29 +127,29 @@ public final /* synthetic */ class zv implements View.OnClickListener {
             case 10:
                 yy yyVar9 = this.b;
                 yyVar9.getContactsController().loadGlobalPrivacySetting();
-                yyVar9.H4();
+                yyVar9.I4();
                 break;
             case 11:
-                this.b.m4(view);
+                this.b.n4(view);
                 break;
             case 12:
-                yy.s0(this.b);
+                yy.r0(this.b);
                 break;
             case 13:
-                yy.G0(this.b);
+                yy.F0(this.b);
                 break;
             case 14:
-                yy.u0(this.b);
+                yy.t0(this.b);
                 break;
             case 15:
                 yy yyVar10 = this.b;
                 yyVar10.showDialog(org.telegram.ui.Components.g5.l(yyVar10.getParentActivity(), LocaleController.getString(R.string.EditProfileBirthdayTitle), LocaleController.getString(R.string.EditProfileBirthdayButton), null, new bw(yyVar10, 1), new uv(yyVar10, 18), false, false, yyVar10.getResourceProvider()).a);
                 break;
             case 16:
-                yy.y0(this.b);
+                yy.A0(this.b);
                 break;
             case 17:
-                yy.x0(this.b);
+                yy.y0(this.b);
                 break;
             case 18:
                 PremiumPreviewFragment premiumPreviewFragment = new PremiumPreviewFragment(0, "dialogs_hint");
@@ -159,7 +159,7 @@ public final /* synthetic */ class zv implements View.OnClickListener {
                 AndroidUtilities.runOnUIThread(new uv(yyVar11, 22), 250L);
                 break;
             case 19:
-                yy.Y(this.b);
+                yy.Z(this.b);
                 break;
             case 20:
                 PremiumPreviewFragment premiumPreviewFragment2 = new PremiumPreviewFragment(0, "dialogs_hint");
@@ -172,23 +172,23 @@ public final /* synthetic */ class zv implements View.OnClickListener {
                 d7 d7Var = new d7();
                 yy yyVar13 = this.b;
                 yyVar13.presentFragment(d7Var);
-                AndroidUtilities.runOnUIThread(new nw(yyVar13, 11), 250L);
+                AndroidUtilities.runOnUIThread(new mw(yyVar13, 11), 250L);
                 break;
             case 22:
-                yy.z0(this.b);
+                yy.B0(this.b);
                 break;
             case 23:
                 yy.X(this.b);
                 break;
             case 24:
-                yy.k0(this.b);
+                yy.l0(this.b);
                 break;
             case 25:
                 yy yyVar14 = this.b;
-                pf.d.s(yyVar14.getParentActivity(), yyVar14.getMessagesController().premiumManageSubscriptionUrl);
+                pf.d.r(yyVar14.getParentActivity(), yyVar14.getMessagesController().premiumManageSubscriptionUrl);
                 break;
             case 26:
-                yy.j0(this.b);
+                yy.k0(this.b);
                 break;
             case 27:
                 yy.w0(this.b);

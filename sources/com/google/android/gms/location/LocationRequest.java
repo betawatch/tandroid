@@ -14,9 +14,9 @@ import n6.l;
 import o6.a;
 import r7.p;
 import u6.f;
-import w7.g0;
+import w7.f0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class LocationRequest extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<LocationRequest> CREATOR = new j(5);
@@ -240,38 +240,38 @@ public final class LocationRequest extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = g0.q(parcel, 20293);
+        int q6 = f0.q(parcel, 20293);
         int i11 = this.a;
-        g0.s(parcel, 1, 4);
+        f0.s(parcel, 1, 4);
         parcel.writeInt(i11);
         long j10 = this.b;
-        g0.s(parcel, 2, 8);
+        f0.s(parcel, 2, 8);
         parcel.writeLong(j10);
         long j11 = this.c;
-        g0.s(parcel, 3, 8);
+        f0.s(parcel, 3, 8);
         parcel.writeLong(j11);
-        g0.s(parcel, 6, 4);
+        f0.s(parcel, 6, 4);
         parcel.writeInt(this.f);
-        g0.s(parcel, 7, 4);
+        f0.s(parcel, 7, 4);
         parcel.writeFloat(this.h);
-        g0.s(parcel, 8, 8);
+        f0.s(parcel, 8, 8);
         parcel.writeLong(this.d);
-        g0.s(parcel, 9, 4);
+        f0.s(parcel, 9, 4);
         parcel.writeInt(this.n ? 1 : 0);
-        g0.s(parcel, 10, 8);
+        f0.s(parcel, 10, 8);
         parcel.writeLong(this.e);
         long j12 = this.r;
-        g0.s(parcel, 11, 8);
+        f0.s(parcel, 11, 8);
         parcel.writeLong(j12);
-        g0.s(parcel, 12, 4);
+        f0.s(parcel, 12, 4);
         parcel.writeInt(this.s);
-        g0.s(parcel, 13, 4);
+        f0.s(parcel, 13, 4);
         parcel.writeInt(this.v);
-        g0.l(parcel, 14, this.w);
-        g0.s(parcel, 15, 4);
+        f0.l(parcel, 14, this.w);
+        f0.s(parcel, 15, 4);
         parcel.writeInt(this.x ? 1 : 0);
-        g0.k(parcel, 16, this.y, i10);
-        g0.k(parcel, 17, this.E, i10);
-        g0.r(parcel, q6);
+        f0.k(parcel, 16, this.y, i10);
+        f0.k(parcel, 17, this.E, i10);
+        f0.r(parcel, q6);
     }
 }

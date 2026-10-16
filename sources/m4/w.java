@@ -1,47 +1,33 @@
 package m4;
 
-import android.os.Bundle;
-import j$.util.Objects;
+import java.util.List;
+import v7.c8;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class w {
-    public final n4.t a;
+    public final e9.n0 a;
     public final int b;
-    public final int c;
-    public final v d;
-    public final Bundle e;
+    public final long c;
 
-    public w(n4.t tVar, int i10, int i11, boolean z10, v vVar, Bundle bundle) {
-        this.a = tVar;
+    public w(long j10, int i10, List list) {
+        this.a = e9.n0.u(list);
         this.b = i10;
-        this.c = i11;
-        this.d = vVar;
-        this.e = bundle;
+        this.c = j10;
     }
 
     public final boolean equals(Object obj) {
-        if (!(obj instanceof w)) {
-            return false;
-        }
         if (this == obj) {
             return true;
         }
+        if (!(obj instanceof w)) {
+            return false;
+        }
         w wVar = (w) obj;
-        v vVar = wVar.d;
-        v vVar2 = this.d;
-        return (vVar2 == null && vVar == null) ? this.a.equals(wVar.a) : Objects.equals(vVar2, vVar);
+        return this.a.equals(wVar.a) && this.b == wVar.b && this.c == wVar.c;
     }
 
     public final int hashCode() {
-        return Objects.hash(this.d, this.a);
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("ControllerInfo {pkg=");
-        n4.t tVar = this.a;
-        sb2.append(tVar.a.a);
-        sb2.append(", uid=");
-        return a1.g.n(tVar.a.c, "}", sb2);
+        return c8.b(this.c) + (((this.a.hashCode() * 31) + this.b) * 31);
     }
 }

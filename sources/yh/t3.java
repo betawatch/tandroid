@@ -6,10 +6,10 @@ import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.lj1;
+import org.telegram.ui.kj1;
 import zh.g5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class t3 implements g5 {
     public final int a;
@@ -156,7 +156,7 @@ public final class t3 implements g5 {
                     }
                 }
             }
-            this.v = ConnectionsManager.getInstance(this.a).sendRequest(getresalestargifts, new lj1(5, this, getresalestargifts));
+            this.v = ConnectionsManager.getInstance(this.a).sendRequest(getresalestargifts, new kj1(5, this, getresalestargifts));
         }
     }
 

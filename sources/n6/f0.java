@@ -1,28 +1,27 @@
 package n6;
 
 import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class f0 extends x {
-    public final /* synthetic */ g g;
+public final class f0 extends o6.a {
+    public static final Parcelable.Creator<f0> CREATOR = new m8.h(17);
+    public Bundle a;
+    public k6.c[] b;
+    public int c;
+    public e d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f0(g gVar, int i10, Bundle bundle) {
-        super(gVar, i10, bundle);
-        this.g = gVar;
-    }
-
-    @Override // n6.x
-    public final void a(k6.a aVar) {
-        g gVar = this.g;
-        gVar.E.a(aVar);
-        gVar.z(aVar);
-    }
-
-    @Override // n6.x
-    public final boolean b() {
-        this.g.E.a(k6.a.e);
-        return true;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = w7.f0.q(parcel, 20293);
+        w7.f0.b(parcel, 1, this.a);
+        w7.f0.o(parcel, 2, this.b, i10);
+        int i11 = this.c;
+        w7.f0.s(parcel, 3, 4);
+        parcel.writeInt(i11);
+        w7.f0.k(parcel, 4, this.d, i10);
+        w7.f0.r(parcel, q6);
     }
 }

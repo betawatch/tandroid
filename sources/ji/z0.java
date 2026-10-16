@@ -27,7 +27,7 @@ import org.telegram.ui.Cells.n9;
 import org.telegram.ui.Cells.o9;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class z0 extends a0 implements org.telegram.ui.ActionBar.x5, n9, l0, DownloadController.FileDownloadProgressListener {
     public final ImageReceiver E;
@@ -83,7 +83,7 @@ public final class z0 extends a0 implements org.telegram.ui.ActionBar.x5, n9, l0
         imageReceiver.setRoundRadius(AndroidUtilities.dp(6.0f));
         k0 k0Var = new k0(context, c6Var, new a6.i(this, 28));
         this.F = k0Var;
-        addView(k0Var.a, w7.a6.e(-2, -2, 51));
+        addView(k0Var.a, w7.z5.e(-2, -2, 51));
         d();
     }
 

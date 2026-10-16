@@ -30,7 +30,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b, NotificationCenter.NotificationCenterDelegate {
     public org.telegram.ui.ActionBar.f2 E;
@@ -88,7 +88,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
     }
 
     @Override // ng.b
-    public final List B() {
+    public final List C() {
         Activity parentActivity = getParentActivity();
         DispatchQueue dispatchQueue = qg.k1.m;
         return Arrays.asList(new ng.a((parentActivity.getSharedPreferences("shapedetector_conf", 0).getBoolean("learning", false) ? "Disable" : "Enable").concat(" shape detector learning debug"), new kq(this, 27)));
@@ -161,7 +161,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
         int i10 = org.telegram.ui.ActionBar.g6.G6;
         kVar.D(org.telegram.ui.ActionBar.g6.x0(null, i10, false), false);
         this.actionBar.D(org.telegram.ui.ActionBar.g6.x0(null, i10, false), true);
-        this.actionBar.B(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.z8, false), false);
+        this.actionBar.C(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.z8, false), false);
         this.actionBar.setTitleColor(org.telegram.ui.ActionBar.g6.x0(null, i10, false));
         org.telegram.ui.ActionBar.h5[] h5VarArr = this.w;
         org.telegram.ui.ActionBar.h5 h5Var = h5VarArr[0];
@@ -303,7 +303,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                     if (!z13) {
                         this.G.setVisibility(0);
                     }
-                    this.G.animate().alpha(z13 ? 0.0f : 1.0f).withEndAction(new ah.t(29, this, z13)).setDuration(220L).setInterpolator(es.h).start();
+                    this.G.animate().alpha(z13 ? 0.0f : 1.0f).withEndAction(new ah.t(28, this, z13)).setDuration(220L).setInterpolator(es.h).start();
                 }
                 di.d dVar = this.T;
                 if (dVar != null) {
@@ -327,7 +327,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
 
     @Override // org.telegram.ui.ActionBar.m2
     public final boolean canBeginSlide() {
-        if (this.V.x0()) {
+        if (this.V.y0()) {
             return super.canBeginSlide();
         }
         return false;
@@ -379,7 +379,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
         int i13 = this.a;
         if (i13 == 1 || i13 == 2) {
             FrameLayout frameLayout2 = new FrameLayout(context);
-            this.actionBar.addView(frameLayout2, w7.a6.e(56, 56, 85));
+            this.actionBar.addView(frameLayout2, w7.z5.e(56, 56, 85));
             int i14 = org.telegram.ui.ActionBar.g6.z8;
             int themedColor = getThemedColor(i14);
             int i15 = org.telegram.ui.ActionBar.g6.G6;
@@ -388,7 +388,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
             u0Var2.setIcon(R.drawable.msg_delete);
             this.H.setVisibility(8);
             this.H.setAlpha(0.0f);
-            this.H.setOnClickListener(new z80(n10, 1));
+            this.H.setOnClickListener(new y80(n10, 1));
             frameLayout2.addView(this.H);
             org.telegram.ui.ActionBar.u0 u0Var3 = new org.telegram.ui.ActionBar.u0(context, n10, getThemedColor(i14), getThemedColor(i15));
             this.G = u0Var3;
@@ -415,9 +415,9 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                             cb0Var.G.M(null, null);
                             break;
                         case 1:
-                            Boolean w12 = cb0Var.V.w1(null, null);
-                            if (w12 != null) {
-                                boolean booleanValue = w12.booleanValue();
+                            Boolean x12 = cb0Var.V.x1(null, null);
+                            if (x12 != null) {
+                                boolean booleanValue = x12.booleanValue();
                                 cb0Var.Q.setEnabled(true);
                                 cb0Var.Q.animate().alpha(cb0Var.Q.isEnabled() ? 1.0f : 0.5f).start();
                                 cb0Var.P.setEnabled(booleanValue);
@@ -426,9 +426,9 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                             }
                             break;
                         case 2:
-                            Boolean x12 = cb0Var.V.x1(null, null);
-                            if (x12 != null) {
-                                cb0Var.Q.setEnabled(x12.booleanValue());
+                            Boolean y12 = cb0Var.V.y1(null, null);
+                            if (y12 != null) {
+                                cb0Var.Q.setEnabled(y12.booleanValue());
                                 cb0Var.Q.animate().alpha(cb0Var.Q.isEnabled() ? 1.0f : 0.5f).start();
                                 cb0Var.P.setEnabled(true);
                                 cb0Var.P.animate().alpha(cb0Var.P.isEnabled() ? 1.0f : 0.5f).start();
@@ -522,22 +522,21 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                                 i17 = 0;
                             }
                             cb0Var2.V.L(false);
-                            int i22 = 8;
                             if (z18) {
-                                cb0Var2.V.Y0(8);
+                                cb0Var2.V.Z0(8);
                             }
                             if (!arrayList.isEmpty()) {
                                 boolean[] zArr = new boolean[arrayList.size()];
-                                for (int i23 = 0; i23 < arrayList.size(); i23++) {
-                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i23);
-                                    zArr[i23] = storyItem2.pinned;
+                                for (int i22 = 0; i22 < arrayList.size(); i22++) {
+                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i22);
+                                    zArr[i22] = storyItem2.pinned;
                                     storyItem2.pinned = z18;
                                 }
                                 cb0Var2.getMessagesController().getStoriesController().n0(cb0Var2.e, arrayList, false);
                                 boolean[] zArr2 = {false};
-                                cb0Var2.U = new di.x0(cb0Var2, arrayList, z18, 21);
-                                org.telegram.ui.p6 p6Var = new org.telegram.ui.p6((Object) cb0Var2, zArr2, (Object) arrayList, (Object) zArr, 26);
-                                (z18 ? zc.a0(cb0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i17, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), p6Var).j() : zc.a0(cb0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i17, new Object[0]), LocaleController.getString("Undo"), 5000, false, p6Var).j()).v = new f60(i22, cb0Var2, zArr2);
+                                cb0Var2.U = new di.x0(cb0Var2, arrayList, z18, 19);
+                                org.telegram.ui.p6 p6Var = new org.telegram.ui.p6(cb0Var2, zArr2, arrayList, zArr, 25);
+                                (z18 ? zc.a0(cb0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i17, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), p6Var).j() : zc.a0(cb0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i17, new Object[0]), LocaleController.getString("Undo"), 5000, false, p6Var).j()).v = new g90(3, cb0Var2, zArr2);
                                 break;
                             }
                             break;
@@ -571,9 +570,9 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                             cb0Var.G.M(null, null);
                             break;
                         case 1:
-                            Boolean w12 = cb0Var.V.w1(null, null);
-                            if (w12 != null) {
-                                boolean booleanValue = w12.booleanValue();
+                            Boolean x12 = cb0Var.V.x1(null, null);
+                            if (x12 != null) {
+                                boolean booleanValue = x12.booleanValue();
                                 cb0Var.Q.setEnabled(true);
                                 cb0Var.Q.animate().alpha(cb0Var.Q.isEnabled() ? 1.0f : 0.5f).start();
                                 cb0Var.P.setEnabled(booleanValue);
@@ -582,9 +581,9 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                             }
                             break;
                         case 2:
-                            Boolean x12 = cb0Var.V.x1(null, null);
-                            if (x12 != null) {
-                                cb0Var.Q.setEnabled(x12.booleanValue());
+                            Boolean y12 = cb0Var.V.y1(null, null);
+                            if (y12 != null) {
+                                cb0Var.Q.setEnabled(y12.booleanValue());
                                 cb0Var.Q.animate().alpha(cb0Var.Q.isEnabled() ? 1.0f : 0.5f).start();
                                 cb0Var.P.setEnabled(true);
                                 cb0Var.P.animate().alpha(cb0Var.P.isEnabled() ? 1.0f : 0.5f).start();
@@ -678,22 +677,21 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                                 i172 = 0;
                             }
                             cb0Var2.V.L(false);
-                            int i22 = 8;
                             if (z18) {
-                                cb0Var2.V.Y0(8);
+                                cb0Var2.V.Z0(8);
                             }
                             if (!arrayList.isEmpty()) {
                                 boolean[] zArr = new boolean[arrayList.size()];
-                                for (int i23 = 0; i23 < arrayList.size(); i23++) {
-                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i23);
-                                    zArr[i23] = storyItem2.pinned;
+                                for (int i22 = 0; i22 < arrayList.size(); i22++) {
+                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i22);
+                                    zArr[i22] = storyItem2.pinned;
                                     storyItem2.pinned = z18;
                                 }
                                 cb0Var2.getMessagesController().getStoriesController().n0(cb0Var2.e, arrayList, false);
                                 boolean[] zArr2 = {false};
-                                cb0Var2.U = new di.x0(cb0Var2, arrayList, z18, 21);
-                                org.telegram.ui.p6 p6Var = new org.telegram.ui.p6((Object) cb0Var2, zArr2, (Object) arrayList, (Object) zArr, 26);
-                                (z18 ? zc.a0(cb0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), p6Var).j() : zc.a0(cb0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, p6Var).j()).v = new f60(i22, cb0Var2, zArr2);
+                                cb0Var2.U = new di.x0(cb0Var2, arrayList, z18, 19);
+                                org.telegram.ui.p6 p6Var = new org.telegram.ui.p6(cb0Var2, zArr2, arrayList, zArr, 25);
+                                (z18 ? zc.a0(cb0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), p6Var).j() : zc.a0(cb0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, p6Var).j()).v = new g90(3, cb0Var2, zArr2);
                                 break;
                             }
                             break;
@@ -724,9 +722,9 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                             cb0Var.G.M(null, null);
                             break;
                         case 1:
-                            Boolean w12 = cb0Var.V.w1(null, null);
-                            if (w12 != null) {
-                                boolean booleanValue = w12.booleanValue();
+                            Boolean x12 = cb0Var.V.x1(null, null);
+                            if (x12 != null) {
+                                boolean booleanValue = x12.booleanValue();
                                 cb0Var.Q.setEnabled(true);
                                 cb0Var.Q.animate().alpha(cb0Var.Q.isEnabled() ? 1.0f : 0.5f).start();
                                 cb0Var.P.setEnabled(booleanValue);
@@ -735,9 +733,9 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                             }
                             break;
                         case 2:
-                            Boolean x12 = cb0Var.V.x1(null, null);
-                            if (x12 != null) {
-                                cb0Var.Q.setEnabled(x12.booleanValue());
+                            Boolean y12 = cb0Var.V.y1(null, null);
+                            if (y12 != null) {
+                                cb0Var.Q.setEnabled(y12.booleanValue());
                                 cb0Var.Q.animate().alpha(cb0Var.Q.isEnabled() ? 1.0f : 0.5f).start();
                                 cb0Var.P.setEnabled(true);
                                 cb0Var.P.animate().alpha(cb0Var.P.isEnabled() ? 1.0f : 0.5f).start();
@@ -831,22 +829,21 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                                 i172 = 0;
                             }
                             cb0Var2.V.L(false);
-                            int i22 = 8;
                             if (z18) {
-                                cb0Var2.V.Y0(8);
+                                cb0Var2.V.Z0(8);
                             }
                             if (!arrayList.isEmpty()) {
                                 boolean[] zArr = new boolean[arrayList.size()];
-                                for (int i23 = 0; i23 < arrayList.size(); i23++) {
-                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i23);
-                                    zArr[i23] = storyItem2.pinned;
+                                for (int i22 = 0; i22 < arrayList.size(); i22++) {
+                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i22);
+                                    zArr[i22] = storyItem2.pinned;
                                     storyItem2.pinned = z18;
                                 }
                                 cb0Var2.getMessagesController().getStoriesController().n0(cb0Var2.e, arrayList, false);
                                 boolean[] zArr2 = {false};
-                                cb0Var2.U = new di.x0(cb0Var2, arrayList, z18, 21);
-                                org.telegram.ui.p6 p6Var = new org.telegram.ui.p6((Object) cb0Var2, zArr2, (Object) arrayList, (Object) zArr, 26);
-                                (z18 ? zc.a0(cb0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), p6Var).j() : zc.a0(cb0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, p6Var).j()).v = new f60(i22, cb0Var2, zArr2);
+                                cb0Var2.U = new di.x0(cb0Var2, arrayList, z18, 19);
+                                org.telegram.ui.p6 p6Var = new org.telegram.ui.p6(cb0Var2, zArr2, arrayList, zArr, 25);
+                                (z18 ? zc.a0(cb0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), p6Var).j() : zc.a0(cb0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, p6Var).j()).v = new g90(3, cb0Var2, zArr2);
                                 break;
                             }
                             break;
@@ -884,9 +881,9 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                             cb0Var.G.M(null, null);
                             break;
                         case 1:
-                            Boolean w12 = cb0Var.V.w1(null, null);
-                            if (w12 != null) {
-                                boolean booleanValue = w12.booleanValue();
+                            Boolean x12 = cb0Var.V.x1(null, null);
+                            if (x12 != null) {
+                                boolean booleanValue = x12.booleanValue();
                                 cb0Var.Q.setEnabled(true);
                                 cb0Var.Q.animate().alpha(cb0Var.Q.isEnabled() ? 1.0f : 0.5f).start();
                                 cb0Var.P.setEnabled(booleanValue);
@@ -895,9 +892,9 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                             }
                             break;
                         case 2:
-                            Boolean x12 = cb0Var.V.x1(null, null);
-                            if (x12 != null) {
-                                cb0Var.Q.setEnabled(x12.booleanValue());
+                            Boolean y12 = cb0Var.V.y1(null, null);
+                            if (y12 != null) {
+                                cb0Var.Q.setEnabled(y12.booleanValue());
                                 cb0Var.Q.animate().alpha(cb0Var.Q.isEnabled() ? 1.0f : 0.5f).start();
                                 cb0Var.P.setEnabled(true);
                                 cb0Var.P.animate().alpha(cb0Var.P.isEnabled() ? 1.0f : 0.5f).start();
@@ -991,22 +988,21 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                                 i172 = 0;
                             }
                             cb0Var2.V.L(false);
-                            int i22 = 8;
                             if (z18) {
-                                cb0Var2.V.Y0(8);
+                                cb0Var2.V.Z0(8);
                             }
                             if (!arrayList.isEmpty()) {
                                 boolean[] zArr = new boolean[arrayList.size()];
-                                for (int i23 = 0; i23 < arrayList.size(); i23++) {
-                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i23);
-                                    zArr[i23] = storyItem2.pinned;
+                                for (int i22 = 0; i22 < arrayList.size(); i22++) {
+                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i22);
+                                    zArr[i22] = storyItem2.pinned;
                                     storyItem2.pinned = z18;
                                 }
                                 cb0Var2.getMessagesController().getStoriesController().n0(cb0Var2.e, arrayList, false);
                                 boolean[] zArr2 = {false};
-                                cb0Var2.U = new di.x0(cb0Var2, arrayList, z18, 21);
-                                org.telegram.ui.p6 p6Var = new org.telegram.ui.p6((Object) cb0Var2, zArr2, (Object) arrayList, (Object) zArr, 26);
-                                (z18 ? zc.a0(cb0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), p6Var).j() : zc.a0(cb0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, p6Var).j()).v = new f60(i22, cb0Var2, zArr2);
+                                cb0Var2.U = new di.x0(cb0Var2, arrayList, z18, 19);
+                                org.telegram.ui.p6 p6Var = new org.telegram.ui.p6(cb0Var2, zArr2, arrayList, zArr, 25);
+                                (z18 ? zc.a0(cb0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), p6Var).j() : zc.a0(cb0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, p6Var).j()).v = new g90(3, cb0Var2, zArr2);
                                 break;
                             }
                             break;
@@ -1039,9 +1035,9 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                             cb0Var.G.M(null, null);
                             break;
                         case 1:
-                            Boolean w12 = cb0Var.V.w1(null, null);
-                            if (w12 != null) {
-                                boolean booleanValue = w12.booleanValue();
+                            Boolean x12 = cb0Var.V.x1(null, null);
+                            if (x12 != null) {
+                                boolean booleanValue = x12.booleanValue();
                                 cb0Var.Q.setEnabled(true);
                                 cb0Var.Q.animate().alpha(cb0Var.Q.isEnabled() ? 1.0f : 0.5f).start();
                                 cb0Var.P.setEnabled(booleanValue);
@@ -1050,9 +1046,9 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                             }
                             break;
                         case 2:
-                            Boolean x12 = cb0Var.V.x1(null, null);
-                            if (x12 != null) {
-                                cb0Var.Q.setEnabled(x12.booleanValue());
+                            Boolean y12 = cb0Var.V.y1(null, null);
+                            if (y12 != null) {
+                                cb0Var.Q.setEnabled(y12.booleanValue());
                                 cb0Var.Q.animate().alpha(cb0Var.Q.isEnabled() ? 1.0f : 0.5f).start();
                                 cb0Var.P.setEnabled(true);
                                 cb0Var.P.animate().alpha(cb0Var.P.isEnabled() ? 1.0f : 0.5f).start();
@@ -1146,22 +1142,21 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                                 i172 = 0;
                             }
                             cb0Var2.V.L(false);
-                            int i22 = 8;
                             if (z18) {
-                                cb0Var2.V.Y0(8);
+                                cb0Var2.V.Z0(8);
                             }
                             if (!arrayList.isEmpty()) {
                                 boolean[] zArr = new boolean[arrayList.size()];
-                                for (int i23 = 0; i23 < arrayList.size(); i23++) {
-                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i23);
-                                    zArr[i23] = storyItem2.pinned;
+                                for (int i22 = 0; i22 < arrayList.size(); i22++) {
+                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i22);
+                                    zArr[i22] = storyItem2.pinned;
                                     storyItem2.pinned = z18;
                                 }
                                 cb0Var2.getMessagesController().getStoriesController().n0(cb0Var2.e, arrayList, false);
                                 boolean[] zArr2 = {false};
-                                cb0Var2.U = new di.x0(cb0Var2, arrayList, z18, 21);
-                                org.telegram.ui.p6 p6Var = new org.telegram.ui.p6((Object) cb0Var2, zArr2, (Object) arrayList, (Object) zArr, 26);
-                                (z18 ? zc.a0(cb0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), p6Var).j() : zc.a0(cb0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, p6Var).j()).v = new f60(i22, cb0Var2, zArr2);
+                                cb0Var2.U = new di.x0(cb0Var2, arrayList, z18, 19);
+                                org.telegram.ui.p6 p6Var = new org.telegram.ui.p6(cb0Var2, zArr2, arrayList, zArr, 25);
+                                (z18 ? zc.a0(cb0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), p6Var).j() : zc.a0(cb0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, p6Var).j()).v = new g90(3, cb0Var2, zArr2);
                                 break;
                             }
                             break;
@@ -1173,7 +1168,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.s = frameLayout3;
         int i21 = 119;
-        frameLayout.addView(frameLayout3, w7.a6.e(-1, -1, 119));
+        frameLayout.addView(frameLayout3, w7.z5.e(-1, -1, 119));
         int i22 = 0;
         while (true) {
             int i23 = this.a == 1 ? 2 : 1;
@@ -1185,7 +1180,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
             FrameLayout frameLayout4 = new FrameLayout(context);
             FrameLayout[] frameLayoutArr = this.v;
             frameLayoutArr[i22] = frameLayout4;
-            this.s.addView(frameLayout4, w7.a6.e(-1, -1, i21));
+            this.s.addView(frameLayout4, w7.z5.e(-1, -1, i21));
             org.telegram.ui.ActionBar.h5 h5Var2 = new org.telegram.ui.ActionBar.h5(context);
             h5VarArr[i22] = h5Var2;
             h5Var2.setPivotX(0.0f);
@@ -1196,13 +1191,13 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
             h5VarArr[i22].setLeftDrawableTopPadding(-AndroidUtilities.dp(1.3f));
             h5VarArr[i22].setScrollNonFitText(true);
             h5VarArr[i22].setImportantForAccessibility(2);
-            frameLayoutArr[i22].addView(h5VarArr[i22], w7.a6.a(-2.0f, z10 ? 118.0f : 72.0f, 0.0f, 56.0f, 0.0f, -2, 51));
+            frameLayoutArr[i22].addView(h5VarArr[i22], w7.z5.a(-2.0f, z10 ? 118.0f : 72.0f, 0.0f, 56.0f, 0.0f, -2, 51));
             s6 s6Var = new s6(context, true, true, true);
             s6VarArr[i22] = s6Var;
             s6Var.b(0.4f, 320L, es.h);
             s6VarArr[i22].setTextSize(AndroidUtilities.dp(14.0f));
             s6VarArr[i22].setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Pi, false));
-            frameLayoutArr[i22].addView(s6VarArr[i22], w7.a6.a(-2.0f, z10 ? 118.0f : 72.0f, 0.0f, 56.0f, 0.0f, -2, 51));
+            frameLayoutArr[i22].addView(s6VarArr[i22], w7.z5.a(-2.0f, z10 ? 118.0f : 72.0f, 0.0f, 56.0f, 0.0f, -2, 51));
             if (i22 != 0) {
                 frameLayoutArr[i22].setAlpha(0.0f);
             }
@@ -1219,7 +1214,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
         k9Var3.l = true;
         this.y.setVisibility(z10 ? 0 : 8);
         this.y.setImageDrawable(k9Var3);
-        frameLayout.addView(this.y, w7.a6.a(42.0f, 64.0f, 0.0f, 0.0f, 0.0f, 42, 51));
+        frameLayout.addView(this.y, w7.z5.a(42.0f, 64.0f, 0.0f, 0.0f, 0.0f, 42, 51));
         s6 s6Var2 = new s6(context, true, true, true);
         this.F = s6Var2;
         s6Var2.b(0.4f, 320L, es.h);
@@ -1229,7 +1224,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
         int i24 = org.telegram.ui.ActionBar.g6.G6;
         s6Var3.setTextColor(getThemedColor(i24));
         this.F.setTypeface(AndroidUtilities.bold());
-        frameLayout.addView(this.F, w7.a6.a(-1.0f, (z10 ? 48 : 0) + 72, -2.0f, 72.0f, 0.0f, -2, 23));
+        frameLayout.addView(this.F, w7.z5.a(-1.0f, (z10 ? 48 : 0) + 72, -2.0f, 72.0f, 0.0f, -2, 23));
         if (this.a == 1) {
             bb0 bb0Var = new bb0(context, getResourceProvider());
             this.R = bb0Var;
@@ -1266,9 +1261,9 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                             cb0Var.G.M(null, null);
                             break;
                         case 1:
-                            Boolean w12 = cb0Var.V.w1(null, null);
-                            if (w12 != null) {
-                                boolean booleanValue = w12.booleanValue();
+                            Boolean x12 = cb0Var.V.x1(null, null);
+                            if (x12 != null) {
+                                boolean booleanValue = x12.booleanValue();
                                 cb0Var.Q.setEnabled(true);
                                 cb0Var.Q.animate().alpha(cb0Var.Q.isEnabled() ? 1.0f : 0.5f).start();
                                 cb0Var.P.setEnabled(booleanValue);
@@ -1277,9 +1272,9 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                             }
                             break;
                         case 2:
-                            Boolean x12 = cb0Var.V.x1(null, null);
-                            if (x12 != null) {
-                                cb0Var.Q.setEnabled(x12.booleanValue());
+                            Boolean y12 = cb0Var.V.y1(null, null);
+                            if (y12 != null) {
+                                cb0Var.Q.setEnabled(y12.booleanValue());
                                 cb0Var.Q.animate().alpha(cb0Var.Q.isEnabled() ? 1.0f : 0.5f).start();
                                 cb0Var.P.setEnabled(true);
                                 cb0Var.P.animate().alpha(cb0Var.P.isEnabled() ? 1.0f : 0.5f).start();
@@ -1373,22 +1368,21 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                                 i172 = 0;
                             }
                             cb0Var2.V.L(false);
-                            int i222 = 8;
                             if (z18) {
-                                cb0Var2.V.Y0(8);
+                                cb0Var2.V.Z0(8);
                             }
                             if (!arrayList.isEmpty()) {
                                 boolean[] zArr = new boolean[arrayList.size()];
-                                for (int i232 = 0; i232 < arrayList.size(); i232++) {
-                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i232);
-                                    zArr[i232] = storyItem2.pinned;
+                                for (int i222 = 0; i222 < arrayList.size(); i222++) {
+                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i222);
+                                    zArr[i222] = storyItem2.pinned;
                                     storyItem2.pinned = z18;
                                 }
                                 cb0Var2.getMessagesController().getStoriesController().n0(cb0Var2.e, arrayList, false);
                                 boolean[] zArr2 = {false};
-                                cb0Var2.U = new di.x0(cb0Var2, arrayList, z18, 21);
-                                org.telegram.ui.p6 p6Var = new org.telegram.ui.p6((Object) cb0Var2, zArr2, (Object) arrayList, (Object) zArr, 26);
-                                (z18 ? zc.a0(cb0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), p6Var).j() : zc.a0(cb0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, p6Var).j()).v = new f60(i222, cb0Var2, zArr2);
+                                cb0Var2.U = new di.x0(cb0Var2, arrayList, z18, 19);
+                                org.telegram.ui.p6 p6Var = new org.telegram.ui.p6(cb0Var2, zArr2, arrayList, zArr, 25);
+                                (z18 ? zc.a0(cb0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), p6Var).j() : zc.a0(cb0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, p6Var).j()).v = new g90(3, cb0Var2, zArr2);
                                 break;
                             }
                             break;
@@ -1417,7 +1411,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
         }
         int i26 = this.a;
         if (i26 == 1 || i26 == 2) {
-            wa0Var.addView(this.V, w7.a6.a(-1.0f, 0.0f, 0.0f, 0.0f, 64.0f, -1, 119));
+            wa0Var.addView(this.V, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 64.0f, -1, 119));
         } else {
             wa0Var.addView(this.V);
         }
@@ -1431,13 +1425,13 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
         bb0 bb0Var2 = this.R;
         if (bb0Var2 != null) {
             i10 = -1;
-            wa0Var.addView(bb0Var2, w7.a6.e(-1, -2, 87));
+            wa0Var.addView(bb0Var2, w7.z5.e(-1, -2, 87));
         } else {
             i10 = -1;
         }
         FrameLayout frameLayout6 = this.S;
         if (frameLayout6 != null) {
-            wa0Var.addView(frameLayout6, w7.a6.e(i10, 64, 87));
+            wa0Var.addView(frameLayout6, w7.z5.e(i10, 64, 87));
         }
         long j10 = this.e;
         if (this.f != 0 && j10 == getUserConfig().getClientUserId()) {
@@ -1464,10 +1458,10 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                     k9 k9Var5 = k9Var3;
                     if (this.f == 0 || j10 != getUserConfig().getClientUserId()) {
                         if (DialogObject.isEncryptedDialog(j10)) {
-                            TLRPC.EncryptedChat m10 = org.telegram.messenger.q.m(getMessagesController(), j10);
+                            TLRPC.EncryptedChat l4 = org.telegram.messenger.g0.l(getMessagesController(), j10);
                             k9Var2 = k9Var5;
-                            if (m10 != null) {
-                                TLRPC.User user3 = getMessagesController().getUser(Long.valueOf(m10.user_id));
+                            if (l4 != null) {
+                                TLRPC.User user3 = getMessagesController().getUser(Long.valueOf(l4.user_id));
                                 k9Var2 = k9Var5;
                                 if (user3 != null) {
                                     h5VarArr[0].k(ContactsController.formatName(user3.first_name, user3.last_name));
@@ -1511,7 +1505,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                             h5VarArr[0].k(LocaleController.getString(R.string.SharedContentTitle));
                         }
                         za0Var = this.V;
-                        if (za0Var.s0(za0Var.k0[0].F) && this.a != 1) {
+                        if (za0Var.t0(za0Var.k0[0].F) && this.a != 1) {
                             this.V.getSearchItem().setVisibility(0);
                         }
                         u0Var = this.V.m0;
@@ -1527,7 +1521,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                             r10 = 0;
                         } else {
                             r10 = 0;
-                            this.V.A(!r0.s0(r0.k0[0].F), false);
+                            this.V.A(!r0.t0(r0.k0[0].F), false);
                             this.V.getSearchOptionsItem().setVisibility(0);
                         }
                         qu0[] qu0VarArr = this.V.k0;
@@ -1542,7 +1536,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                         a0();
                         Z();
                         if (this.a == 1 && this.W == 9) {
-                            this.V.M0(9.0f);
+                            this.V.N0(9.0f);
                         }
                         return wa0Var;
                     }
@@ -1559,7 +1553,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                     h5VarArr[0].k(LocaleController.getString(R.string.SharedContentTitle));
                 }
                 za0Var = this.V;
-                if (za0Var.s0(za0Var.k0[0].F)) {
+                if (za0Var.t0(za0Var.k0[0].F)) {
                     this.V.getSearchItem().setVisibility(0);
                 }
                 u0Var = this.V.m0;
@@ -1578,7 +1572,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
                 a0();
                 Z();
                 if (this.a == 1) {
-                    this.V.M0(9.0f);
+                    this.V.N0(9.0f);
                 }
                 return wa0Var;
             }
@@ -1593,7 +1587,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
         if (h5Var != null) {
         }
         za0Var = this.V;
-        if (za0Var.s0(za0Var.k0[0].F)) {
+        if (za0Var.t0(za0Var.k0[0].F)) {
         }
         u0Var = this.V.m0;
         if (u0Var != null) {
@@ -1665,7 +1659,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.m2 implements qv0, ng.b
 
     @Override // org.telegram.ui.ActionBar.m2
     public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
-        if (!this.V.x0()) {
+        if (!this.V.y0()) {
             return false;
         }
         za0 za0Var = this.V;

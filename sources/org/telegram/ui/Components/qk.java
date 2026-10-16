@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class qk extends ni {
     public final wz n;
@@ -41,7 +41,7 @@ public final class qk extends ni {
             imageView.setVisibility(8);
         }
         wzVar.M2 = true;
-        addView(wzVar, w7.a6.d(-1.0f, -1));
+        addView(wzVar, w7.z5.d(-1.0f, -1));
         HorizontalScrollView z12 = wzVar.z(z11 ? 1 : 0);
         this.v = z12;
         mm0 y3 = wzVar.y(z11 ? 1 : 0);
@@ -58,7 +58,7 @@ public final class qk extends ni {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void B(int i10, int i11) {
+    public final void C(int i10, int i11) {
         int i12;
         int dp;
         int dp2;

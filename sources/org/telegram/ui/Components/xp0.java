@@ -13,7 +13,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class xp0 extends View {
     public static final hw0 v;
@@ -29,7 +29,7 @@ public final class xp0 extends View {
     public boolean s;
 
     static {
-        hw0 hw0Var = new hw0(new zg0(4), new zg0(5));
+        hw0 hw0Var = new hw0(new co0(2), new co0(3));
         hw0Var.c = 100.0f;
         v = hw0Var;
     }
@@ -54,7 +54,7 @@ public final class xp0 extends View {
             ValueAnimator duration = ValueAnimator.ofFloat(this.n, f7).setDuration(200L);
             this.h = duration;
             duration.setInterpolator(es.f);
-            this.h.addUpdateListener(new g80(this, 17));
+            this.h.addUpdateListener(new f80(this, 17));
             this.h.addListener(new k90(this, 15));
             this.h.start();
             return;

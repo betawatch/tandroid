@@ -15,7 +15,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class ob0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int U = 0;
@@ -99,7 +99,7 @@ public abstract class ob0 extends FrameLayout implements NotificationCenter.Noti
         this.e = p1Var;
         nb0Var.setAdapter(p1Var);
         nb0Var.setTranslationY(AndroidUtilities.dp(6.0f));
-        addView(nb0Var, w7.a6.d(-1.0f, -1));
+        addView(nb0Var, w7.z5.d(-1.0f, -1));
         setReversed(false);
     }
 
@@ -349,7 +349,7 @@ public abstract class ob0 extends FrameLayout implements NotificationCenter.Noti
         bi.z5 z5Var = new bi.z5(12, this, lb0Var);
         this.w = z5Var;
         listView.setOnItemClickListener(z5Var);
-        getListView().setOnTouchListener(new uk(this, 4));
+        getListView().setOnTouchListener(new tk(this, 4));
     }
 
     @Override // android.view.View, android.view.ViewParent

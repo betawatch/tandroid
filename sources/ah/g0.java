@@ -34,10 +34,10 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.be;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.hj0;
+import org.telegram.ui.gj0;
 import org.telegram.ui.wf;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -216,9 +216,9 @@ public final /* synthetic */ class g0 implements View.OnClickListener {
             case 28:
                 ji.r rVar = (ji.r) this.b;
                 rVar.K(0, true, 0, false, 0L);
-                hj0 hj0Var = rVar.O;
-                if (hj0Var != null) {
-                    hj0Var.h(true);
+                gj0 gj0Var = rVar.O;
+                if (gj0Var != null) {
+                    gj0Var.h(true);
                     rVar.O = null;
                     break;
                 }

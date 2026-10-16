@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class zc {
     public final org.telegram.ui.ActionBar.m2 a;
@@ -200,7 +200,7 @@ public final class zc {
         }
         ac acVar2 = acVar;
         boolean z11 = i0Var != null;
-        org.telegram.ui.rp rpVar = i0Var != null ? new org.telegram.ui.rp(13, new boolean[]{false}, i0Var) : null;
+        org.telegram.ui.vp vpVar = i0Var != null ? new org.telegram.ui.vp(8, new boolean[]{false}, i0Var) : null;
         if (i10 > 1) {
             replaceTags = i11 <= 1 ? AndroidUtilities.replaceTags(LocaleController.formatPluralString("FwdMessageToManyChats", i10, new Object[0])) : AndroidUtilities.replaceTags(LocaleController.formatPluralString("FwdMessagesToManyChats", i10, new Object[0]));
             acVar2.c(R.raw.forward, 30, 30, new String[0]);
@@ -213,7 +213,7 @@ public final class zc {
             }
             acVar2.c(R.raw.saved_messages, 30, 30, new String[0]);
         } else {
-            a3.i0 i0Var2 = new a3.i0(rpVar, m2Var, j10, 16);
+            a3.i0 i0Var2 = new a3.i0(vpVar, m2Var, j10, 16);
             if (DialogObject.isChatDialog(j10)) {
                 TLRPC.Chat chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(-j10));
                 replaceTags = i11 <= 1 ? m2Var != null ? AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.FwdMessageToGroup, chat.title), -1, 2, i0Var2) : AndroidUtilities.replaceTags(LocaleController.formatString(R.string.FwdMessageToGroup, chat.title)) : m2Var != null ? AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.FwdMessagesToGroup, chat.title), -1, 2, i0Var2) : AndroidUtilities.replaceTags(LocaleController.formatString(R.string.FwdMessagesToGroup, chat.title));
@@ -233,7 +233,7 @@ public final class zc {
         if (z11) {
             qc qcVar = new qc(acVar2.getContext(), m2Var != null ? m2Var.getResourceProvider() : null, true, true);
             qcVar.a = null;
-            qcVar.b = rpVar;
+            qcVar.b = vpVar;
             acVar2.setButton(qcVar);
         }
         acVar2.postDelayed(new tc(acVar2, i15), 300);
@@ -418,8 +418,8 @@ public final class zc {
     public final sc L(Drawable drawable, CharSequence charSequence) {
         ac acVar = new ac(W(), this.c);
         acVar.a.setImageDrawable(drawable);
-        if (drawable instanceof org.telegram.ui.bq0) {
-            ((org.telegram.ui.bq0) drawable).e(acVar.a);
+        if (drawable instanceof org.telegram.ui.zp0) {
+            ((org.telegram.ui.zp0) drawable).e(acVar.a);
         }
         acVar.b.setText(charSequence);
         acVar.b.setSingleLine(false);
@@ -542,7 +542,7 @@ public final class zc {
         return b(pbVar, 5000);
     }
 
-    public final sc V(List list, CharSequence charSequence, CharSequence charSequence2, n6.o oVar) {
+    public final sc V(List list, CharSequence charSequence, CharSequence charSequence2, n3.b bVar) {
         float f7;
         int i10;
         Context W = W();
@@ -611,11 +611,11 @@ public final class zc {
                 }
             }
         }
-        if (oVar != null) {
+        if (bVar != null) {
             qc qcVar = new qc(W(), c6Var, true);
             qcVar.e(LocaleController.getString(R.string.UndoNoCaps));
-            qcVar.a = (Runnable) oVar.b;
-            qcVar.b = (Runnable) oVar.c;
+            qcVar.a = (Runnable) bVar.b;
+            qcVar.b = (Runnable) bVar.c;
             rcVar.setButton(qcVar);
         }
         return b(rcVar, 5000);
@@ -840,7 +840,7 @@ public final class zc {
         da0Var.setEllipsize(TextUtils.TruncateAt.END);
         da0Var.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
         ybVar.b.setVisibility(8);
-        ybVar.addView(da0Var, w7.a6.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 8.0f, 0.0f));
+        ybVar.addView(da0Var, w7.z5.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 8.0f, 0.0f));
         int i15 = org.telegram.ui.ActionBar.g6.Hi;
         ybVar.setTextColor(ybVar.getThemedColor(i15));
         if (MessageObject.isTextColorEmoji(document)) {
@@ -1045,7 +1045,7 @@ public final class zc {
             acVar.setButton(qcVar);
         }
         acVar.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Hi, c6Var));
-        acVar.addView(acVar.b, w7.a6.i(-2.0f, -2.0f, 8388627, 56.0f, 2.0f, 8.0f, 0.0f));
+        acVar.addView(acVar.b, w7.z5.i(-2.0f, -2.0f, 8388627, 56.0f, 2.0f, 8.0f, 0.0f));
         return b(acVar, 2750);
     }
 

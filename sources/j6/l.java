@@ -39,9 +39,9 @@ import org.telegram.ui.Cells.q2;
 import org.telegram.ui.Components.r6;
 import org.telegram.ui.xg;
 import v7.u6;
-import w7.m6;
+import w7.l6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class l implements OnSuccessListener, ne.k {
     public static l e;
@@ -179,7 +179,7 @@ public final class l implements OnSuccessListener, ne.k {
 
     public void i(int i10, boolean z10, boolean z11) {
         int numberOfLeadingZeros = 31 - Integer.numberOfLeadingZeros(this.a);
-        int b10 = m6.b(this.a, 1 << i10, z10);
+        int b10 = l6.b(this.a, 1 << i10, z10);
         this.a = b10;
         int numberOfLeadingZeros2 = 31 - Integer.numberOfLeadingZeros(b10);
         if (numberOfLeadingZeros != numberOfLeadingZeros2) {

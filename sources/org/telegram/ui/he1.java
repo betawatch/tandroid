@@ -23,11 +23,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class he1 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public String E;
-    public hz0 F;
+    public i11 F;
     public boolean G;
     public SpannableStringBuilder H;
     public final boolean I;
@@ -84,7 +84,7 @@ public final class he1 extends org.telegram.ui.ActionBar.m2 implements Notificat
         createtheme.slug = str;
         createtheme.title = "";
         createtheme.document = new TLRPC.TL_inputDocumentEmpty();
-        he1Var.y = ConnectionsManager.getInstance(he1Var.currentAccount).sendRequest(createtheme, new fc0(25, he1Var, str), 2);
+        he1Var.y = ConnectionsManager.getInstance(he1Var.currentAccount).sendRequest(createtheme, new ec0(25, he1Var, str), 2);
     }
 
     public static void Y(he1 he1Var) {
@@ -131,7 +131,7 @@ public final class he1 extends org.telegram.ui.ActionBar.m2 implements Notificat
             int i10 = updatetheme.flags;
             updatetheme.title = obj3;
             updatetheme.flags = i10 | 3;
-            int sendRequest = ConnectionsManager.getInstance(he1Var.currentAccount).sendRequest(updatetheme, new fc0(26, he1Var, updatetheme), 2);
+            int sendRequest = ConnectionsManager.getInstance(he1Var.currentAccount).sendRequest(updatetheme, new ec0(26, he1Var, updatetheme), 2);
             ConnectionsManager.getInstance(he1Var.currentAccount).bindRequestToGuid(sendRequest, he1Var.classGuid);
             he1Var.r.setOnCancelListener(new ga(he1Var, sendRequest, 8));
             he1Var.r.show();
@@ -140,9 +140,9 @@ public final class he1 extends org.telegram.ui.ActionBar.m2 implements Notificat
 
     public final boolean Z(String str, boolean z10) {
         String str2;
-        hz0 hz0Var = this.F;
-        if (hz0Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(hz0Var);
+        i11 i11Var = this.F;
+        if (i11Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(i11Var);
             this.F = null;
             this.E = null;
             if (this.y != 0) {
@@ -201,9 +201,9 @@ public final class he1 extends org.telegram.ui.ActionBar.m2 implements Notificat
             }
             a0(org.telegram.ui.ActionBar.g6.F6, LocaleController.getString(R.string.SetUrlChecking));
             this.E = str;
-            hz0 hz0Var2 = new hz0(27, this, str);
-            this.F = hz0Var2;
-            AndroidUtilities.runOnUIThread(hz0Var2, 300L);
+            i11 i11Var2 = new i11(22, this, str);
+            this.F = i11Var2;
+            AndroidUtilities.runOnUIThread(i11Var2, 300L);
         }
         return true;
     }
@@ -256,7 +256,7 @@ public final class he1 extends org.telegram.ui.ActionBar.m2 implements Notificat
         this.x = linearLayout3;
         linearLayout3.setOrientation(1);
         this.x.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
-        linearLayout2.addView(this.x, w7.a6.n(-1, -2));
+        linearLayout2.addView(this.x, w7.z5.n(-1, -2));
         org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(context, 23);
         this.v = m4Var;
         m4Var.setText(LocaleController.getString(R.string.Info));
@@ -283,7 +283,7 @@ public final class he1 extends org.telegram.ui.ActionBar.m2 implements Notificat
         this.b.setCursorColor(org.telegram.ui.ActionBar.g6.x0(null, i13, false));
         this.b.setCursorSize(AndroidUtilities.dp(20.0f));
         this.b.setCursorWidth(1.5f);
-        this.x.addView(this.b, w7.a6.k(23.0f, 0.0f, 23.0f, 0.0f, -1, 50));
+        this.x.addView(this.b, w7.z5.k(23.0f, 0.0f, 23.0f, 0.0f, -1, 50));
         this.b.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.de1
             public final /* synthetic */ he1 b;
 
@@ -317,7 +317,7 @@ public final class he1 extends org.telegram.ui.ActionBar.m2 implements Notificat
         this.x.addView(xnVar, new LinearLayout.LayoutParams(-1, 1));
         LinearLayout linearLayout4 = new LinearLayout(context);
         linearLayout4.setOrientation(0);
-        this.x.addView(linearLayout4, w7.a6.k(23.0f, 0.0f, 23.0f, 0.0f, -1, 50));
+        this.x.addView(linearLayout4, w7.z5.k(23.0f, 0.0f, 23.0f, 0.0f, -1, 50));
         EditTextBoldCursor editTextBoldCursor4 = new EditTextBoldCursor(context);
         this.w = editTextBoldCursor4;
         editTextBoldCursor4.setText(getMessagesController().linkPrefix + "/addtheme/");
@@ -332,7 +332,7 @@ public final class he1 extends org.telegram.ui.ActionBar.m2 implements Notificat
         this.w.setSingleLine(true);
         this.w.setInputType(163840);
         this.w.setImeOptions(6);
-        linearLayout4.addView(this.w, w7.a6.n(-2, 50));
+        linearLayout4.addView(this.w, w7.z5.n(-2, 50));
         EditTextBoldCursor editTextBoldCursor5 = new EditTextBoldCursor(context);
         this.a = editTextBoldCursor5;
         editTextBoldCursor5.setTextSize(1, 18.0f);
@@ -349,7 +349,7 @@ public final class he1 extends org.telegram.ui.ActionBar.m2 implements Notificat
         this.a.setCursorColor(org.telegram.ui.ActionBar.g6.x0(null, i13, false));
         this.a.setCursorSize(AndroidUtilities.dp(20.0f));
         this.a.setCursorWidth(1.5f);
-        linearLayout4.addView(this.a, w7.a6.n(-1, 50));
+        linearLayout4.addView(this.a, w7.z5.n(-1, 50));
         this.a.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.de1
             public final /* synthetic */ he1 b;
 
@@ -389,7 +389,7 @@ public final class he1 extends org.telegram.ui.ActionBar.m2 implements Notificat
         e9Var.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.W0(context, i14, i15));
         this.e.setVisibility(8);
         this.e.setBottomPadding(0);
-        linearLayout2.addView(this.e, w7.a6.n(-1, -2));
+        linearLayout2.addView(this.e, w7.z5.n(-1, -2));
         org.telegram.ui.Cells.e9 e9Var2 = new org.telegram.ui.Cells.e9(context);
         this.d = e9Var2;
         e9Var2.getTextView().setMovementMethod(new org.telegram.ui.Components.cw(2));
@@ -402,23 +402,23 @@ public final class he1 extends org.telegram.ui.ActionBar.m2 implements Notificat
             this.H = replaceTags;
             e9Var3.setText(replaceTags);
         }
-        linearLayout2.addView(this.d, w7.a6.n(-1, -2));
+        linearLayout2.addView(this.d, w7.z5.n(-1, -2));
         if (z10) {
             this.d.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.W0(context, R.drawable.greydivider, i15));
             org.telegram.ui.Cells.ga gaVar = new org.telegram.ui.Cells.ga(context, this.parentLayout, 1);
             this.f = gaVar;
-            linearLayout2.addView(gaVar, w7.a6.n(-1, -2));
+            linearLayout2.addView(gaVar, w7.z5.n(-1, -2));
             org.telegram.ui.Cells.ca caVar = new org.telegram.ui.Cells.ca(context);
             this.h = caVar;
             caVar.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.L0(true));
             this.h.b(LocaleController.getString(R.string.UseDifferentTheme), false);
-            linearLayout2.addView(this.h, w7.a6.n(-1, -2));
+            linearLayout2.addView(this.h, w7.z5.n(-1, -2));
             this.h.setOnClickListener(new bz0(9, this, context));
             org.telegram.ui.Cells.e9 e9Var4 = new org.telegram.ui.Cells.e9(context);
             this.n = e9Var4;
             e9Var4.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.UseDifferentThemeInfo)));
             this.n.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.W0(context, R.drawable.greydivider_bottom, i15));
-            linearLayout2.addView(this.n, w7.a6.n(-1, -2));
+            linearLayout2.addView(this.n, w7.z5.n(-1, -2));
         } else {
             this.d.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.W0(context, R.drawable.greydivider_bottom, i15));
         }

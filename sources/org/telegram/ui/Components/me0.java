@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class me0 implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ int a;
@@ -148,7 +148,7 @@ public final class me0 implements ViewTreeObserver.OnGlobalLayoutListener {
         animatorSet6.setInterpolator(esVar);
         animatorSet6.setDuration(500L);
         ValueAnimator ofFloat4 = ValueAnimator.ofFloat(re0Var.T, 1.0f);
-        ofFloat4.addUpdateListener(new g80(this, 3));
+        ofFloat4.addUpdateListener(new f80(this, 3));
         ofFloat4.addListener(new le0(this, i10));
         ofFloat4.setDuration(420L);
         ofFloat4.setInterpolator(esVar);

@@ -17,7 +17,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ic1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class wx0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
@@ -39,7 +39,7 @@ public class wx0 extends FrameLayout implements NotificationCenter.NotificationC
     public int v;
     public final int w;
     public boolean x;
-    public final org.telegram.ui.Cells.t6 y;
+    public final org.telegram.ui.Cells.l7 y;
 
     public wx0(Context context) {
         this(context, null, 1, null);
@@ -144,7 +144,7 @@ public class wx0 extends FrameLayout implements NotificationCenter.NotificationC
                 this.H = ofFloat;
                 ofFloat.setDuration(480L);
                 this.H.setInterpolator(es.h);
-                this.H.addUpdateListener(new g80(this, 25));
+                this.H.addUpdateListener(new f80(this, 25));
                 this.H.start();
             } else {
                 this.I = z11 ? 1.0f : 0.0f;
@@ -357,7 +357,7 @@ public class wx0 extends FrameLayout implements NotificationCenter.NotificationC
     public wx0(Context context, View view, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
         super(context);
         this.w = UserConfig.selectedAccount;
-        this.y = new org.telegram.ui.Cells.t6(this, 24);
+        this.y = new org.telegram.ui.Cells.l7(this, 23);
         this.G = org.telegram.ui.ActionBar.g6.c7;
         this.n = c6Var;
         this.s = view;
@@ -367,7 +367,7 @@ public class wx0 extends FrameLayout implements NotificationCenter.NotificationC
         ic1Var.setOrientation(1);
         z9 z9Var = new z9(context);
         this.b = z9Var;
-        z9Var.setOnClickListener(new z80(this, 17));
+        z9Var.setOnClickListener(new y80(this, 17));
         wh.n nVar = new wh.n(context);
         this.d = nVar;
         nVar.setTypeface(AndroidUtilities.bold());
@@ -388,18 +388,18 @@ public class wx0 extends FrameLayout implements NotificationCenter.NotificationC
         dVar.setRoundRadius(24);
         this.f = dVar;
         dVar.setVisibility(8);
-        ic1Var.addView(z9Var, w7.a6.q(117, 117, 1));
-        ic1Var.addView(nVar, w7.a6.t(-2, -2, 1, 0, 12, 0, 0));
-        ic1Var.addView(da0Var, w7.a6.t(-2, -2, 1, 0, 8, 0, 0));
-        ic1Var.addView(dVar, w7.a6.t(-1, 48, 1, 28, 16, 28, 0));
-        addView(ic1Var, w7.a6.a(-2.0f, 46.0f, 0.0f, 46.0f, 30.0f, -2, 17));
+        ic1Var.addView(z9Var, w7.z5.q(117, 117, 1));
+        ic1Var.addView(nVar, w7.z5.t(-2, -2, 1, 0, 12, 0, 0));
+        ic1Var.addView(da0Var, w7.z5.t(-2, -2, 1, 0, 8, 0, 0));
+        ic1Var.addView(dVar, w7.z5.t(-1, 48, 1, 28, 16, 28, 0));
+        addView(ic1Var, w7.z5.a(-2.0f, 46.0f, 0.0f, 46.0f, 30.0f, -2, 17));
         if (view == null) {
             RadialProgressView radialProgressView = new RadialProgressView(context, c6Var);
             this.c = radialProgressView;
             radialProgressView.setAlpha(0.0f);
             radialProgressView.setScaleY(0.5f);
             radialProgressView.setScaleX(0.5f);
-            addView(radialProgressView, w7.a6.e(-2, -2, 17));
+            addView(radialProgressView, w7.z5.e(-2, -2, 17));
         }
     }
 }

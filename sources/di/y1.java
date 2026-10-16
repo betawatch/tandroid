@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class y1 extends z1 implements NotificationCenter.NotificationCenterDelegate {
     public final bi.o0 b;
@@ -41,13 +41,13 @@ public final class y1 extends z1 implements NotificationCenter.NotificationCente
         o0Var.setOnTouchListener(new p1(0, this, dVar));
         o0Var.setOnItemClickListener(dVar);
         o0Var.setOnScrollListener(new ah.d0(this, 2));
-        addView(o0Var, w7.a6.a(-1.0f, 0.0f, 58.0f, 0.0f, 40.0f, -1, 119));
+        addView(o0Var, w7.z5.a(-1.0f, 0.0f, 58.0f, 0.0f, 40.0f, -1, 119));
         c6Var = ((org.telegram.ui.ActionBar.e3) r2Var).resourcesProvider;
         k2 k2Var = new k2(context, c6Var);
         this.d = k2Var;
         k2Var.v = new ci.u(this, 2);
         k2Var.a(2, false);
-        addView(k2Var, w7.a6.e(-1, -2, 48));
+        addView(k2Var, w7.z5.e(-1, -2, 48));
     }
 
     @Override // di.z1

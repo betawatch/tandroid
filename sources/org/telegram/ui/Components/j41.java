@@ -5,7 +5,7 @@ import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class j41 extends mm0 {
     public final /* synthetic */ x41 V2;
@@ -21,7 +21,7 @@ public final class j41 extends mm0 {
         if (motionEvent.getAction() == 0) {
             float y3 = motionEvent.getY();
             x41 x41Var = this.V2;
-            if (y3 < x41Var.B(true) - getTop()) {
+            if (y3 < x41Var.C(true) - getTop()) {
                 x41Var.dismiss();
                 return true;
             }

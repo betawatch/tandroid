@@ -11,21 +11,22 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.aq;
-import w7.a6;
+import ri.h0;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class b extends wg.c {
     public final aq s;
     public TLRPC.TL_help_country v;
     public final TextPaint w;
-    public final rh.j x;
+    public final h0 x;
 
     public b(Context context, c6 c6Var) {
         super(context, c6Var);
         TextPaint textPaint = new TextPaint();
         this.w = textPaint;
-        this.x = new rh.j(this, 22);
+        this.x = new h0(this, 22);
         textPaint.setTextSize(AndroidUtilities.dp(20.0f));
         this.f.setVisibility(8);
         this.c.setVisibility(8);
@@ -36,7 +37,7 @@ public final class b extends wg.c {
         aqVar.setDrawBackgroundAsArc(10);
         addView(aqVar);
         aqVar.a(false, false);
-        aqVar.setLayoutParams(a6.a(24.0f, 13.0f, 0.0f, 14.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
+        aqVar.setLayoutParams(z5.a(24.0f, 13.0f, 0.0f, 14.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
     }
 
     @Override // wg.c
@@ -60,11 +61,11 @@ public final class b extends wg.c {
     @Override // wg.c
     public final void d() {
         boolean z10 = LocaleController.isRTL;
-        this.d.setLayoutParams(a6.a(-2.0f, z10 ? 20.0f : 52.0f, 0.0f, z10 ? 52.0f : 20.0f, 0.0f, -1, (z10 ? 5 : 3) | 16));
+        this.d.setLayoutParams(z5.a(-2.0f, z10 ? 20.0f : 52.0f, 0.0f, z10 ? 52.0f : 20.0f, 0.0f, -1, (z10 ? 5 : 3) | 16));
         boolean z11 = LocaleController.isRTL;
-        this.e.setLayoutParams(a6.a(-2.0f, z11 ? 20.0f : 52.0f, 0.0f, z11 ? 52.0f : 20.0f, 0.0f, -1, (z11 ? 5 : 3) | 16));
+        this.e.setLayoutParams(z5.a(-2.0f, z11 ? 20.0f : 52.0f, 0.0f, z11 ? 52.0f : 20.0f, 0.0f, -1, (z11 ? 5 : 3) | 16));
         boolean z12 = LocaleController.isRTL;
-        this.f.setLayoutParams(a6.a(22.0f, z12 ? 15.0f : 20.0f, 0.0f, z12 ? 20.0f : 15.0f, 0.0f, 22, (z12 ? 5 : 3) | 16));
+        this.f.setLayoutParams(z5.a(22.0f, z12 ? 15.0f : 20.0f, 0.0f, z12 ? 20.0f : 15.0f, 0.0f, 22, (z12 ? 5 : 3) | 16));
     }
 
     public final void f() {

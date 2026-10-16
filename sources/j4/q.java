@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class q implements i {
     public final c0 a;
@@ -170,7 +170,7 @@ public final class q implements i {
                 wVar.E = m11.g;
                 wVar.u = arrayList;
                 wVar.t = i15;
-                i2.d.s(wVar, i0Var);
+                i2.d.u(wVar, i0Var);
                 this.l = true;
                 cVar.k(i15);
                 this.k.d.append(m11.d, m11);
@@ -352,9 +352,9 @@ public final class q implements i {
         f0Var.c();
         this.i = (String) f0Var.e;
         f0Var.c();
-        i0 a02 = qVar.a0(f0Var.c, 2);
-        this.j = a02;
-        this.k = new p(a02, this.b, this.c);
+        i0 W = qVar.W(f0Var.c, 2);
+        this.j = W;
+        this.k = new p(W, this.b, this.c);
         this.a.b(qVar, f0Var);
     }
 

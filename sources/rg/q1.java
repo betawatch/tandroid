@@ -19,9 +19,9 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.bh;
 import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.yj0;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class q1 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final List w = Arrays.asList(new n1(0, 1, 20, 0), new n1(0, 2, 20, 40), new n1(1, 0, 0, 20), new n1(1, 2, 60, 40), new n1(2, 0, 40, 20), new n1(2, 1, 40, 60));
@@ -73,7 +73,7 @@ public final class q1 extends FrameLayout implements NotificationCenter.Notifica
                 }
             }
         });
-        addView(view, a6.a(24.0f, 0.0f, 0.0f, 16.0f, 0.0f, 24, 48));
+        addView(view, z5.a(24.0f, 0.0f, 0.0f, 16.0f, 0.0f, 24, 48));
         bk0 bk0Var = new bk0(context);
         this.b = bk0Var;
         bk0Var.f(R.raw.photo_text_allign, 24, 24, null);
@@ -114,7 +114,7 @@ public final class q1 extends FrameLayout implements NotificationCenter.Notifica
             }
         });
         bk0Var.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
-        addView(bk0Var, a6.a(28.0f, 0.0f, 0.0f, 16.0f, 0.0f, 28, 16));
+        addView(bk0Var, z5.a(28.0f, 0.0f, 0.0f, 16.0f, 0.0f, 28, 16));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setImageResource(R.drawable.msg_text_outlined);
@@ -149,7 +149,7 @@ public final class q1 extends FrameLayout implements NotificationCenter.Notifica
                 }
             }
         });
-        addView(imageView, a6.a(28.0f, 0.0f, 0.0f, 16.0f, 0.0f, 28, 16));
+        addView(imageView, z5.a(28.0f, 0.0f, 0.0f, 16.0f, 0.0f, 28, 16));
         ImageView imageView2 = new ImageView(context);
         this.d = imageView2;
         imageView2.setImageResource(R.drawable.msg_add);
@@ -186,7 +186,7 @@ public final class q1 extends FrameLayout implements NotificationCenter.Notifica
             }
         });
         imageView2.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
-        addView(imageView2, a6.a(28.0f, 0.0f, 0.0f, 16.0f, 0.0f, 28, 16));
+        addView(imageView2, z5.a(28.0f, 0.0f, 0.0f, 16.0f, 0.0f, 28, 16));
         p1 p1Var = new p1(context);
         this.f = p1Var;
         p1Var.setCurrent(true);
@@ -220,7 +220,7 @@ public final class q1 extends FrameLayout implements NotificationCenter.Notifica
                 }
             }
         });
-        addView(p1Var, a6.o(-2, -2, 0.0f, 21));
+        addView(p1Var, z5.o(-2, -2, 0.0f, 21));
     }
 
     public final void a(int i10) {

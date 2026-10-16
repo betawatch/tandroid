@@ -47,7 +47,7 @@ import org.telegram.messenger.video.Mp4Movie;
 import org.webrtc.EglBase;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class i60 implements Runnable {
     public DispatchQueue B0;
@@ -69,7 +69,7 @@ public final class i60 implements Runnable {
     public volatile boolean V;
     public volatile boolean W;
     public volatile int X;
-    public volatile d60 Y;
+    public volatile e60 Y;
     public long Z;
     public w50 a;
     public boolean a0;
@@ -137,7 +137,7 @@ public final class i60 implements Runnable {
             int i11 = 49152 < minBufferSize ? ((minBufferSize / 2048) + 1) * 4096 : 49152;
             i60Var.z0.clear();
             for (int i12 = 0; i12 < 3; i12++) {
-                i60Var.z0.add(new x50());
+                i60Var.z0.add(new y50());
             }
             if (z10) {
                 i60Var.g0 = i60Var.d0 + i60Var.e0;
@@ -220,7 +220,7 @@ public final class i60 implements Runnable {
                 p60Var.a1 = deviceIsHigh;
                 createMovie.setAllowSyncFiles(deviceIsHigh);
             }
-            AndroidUtilities.runOnUIThread(new ah.t(28, i60Var, z10));
+            AndroidUtilities.runOnUIThread(new ah.t(27, i60Var, z10));
             if (i60Var.s != EGL14.EGL_NO_DISPLAY) {
                 throw new RuntimeException("EGL already set up");
             }
@@ -300,7 +300,7 @@ public final class i60 implements Runnable {
         }
     }
 
-    public static void b(i60 i60Var, int i10, d60 d60Var) {
+    public static void b(i60 i60Var, int i10, e60 e60Var) {
         boolean z10;
         DispatchQueue dispatchQueue;
         VideoEditedInfo videoEditedInfo;
@@ -309,14 +309,14 @@ public final class i60 implements Runnable {
         } else {
             if (!i60Var.G0) {
                 i60Var.G0 = true;
-                AndroidUtilities.runOnUIThread(new f60(0, i60Var, d60Var));
+                AndroidUtilities.runOnUIThread(new vm(25, i60Var, e60Var));
             }
             z10 = false;
         }
         if (i60Var.W && !i60Var.D0) {
             FileLog.d("InstantCamera handleStopRecording running=false");
             i60Var.X = i10;
-            i60Var.Y = d60Var;
+            i60Var.Y = e60Var;
             i60Var.W = false;
             return;
         }
@@ -400,9 +400,9 @@ public final class i60 implements Runnable {
         } else {
             if (z10 && (i10 != 1 || !i60Var.G0)) {
                 i60Var.G0 = true;
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.gm(i60Var, i10, d60Var, 9));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.gm(i60Var, i10, e60Var, 9));
             }
-            AndroidUtilities.runOnUIThread(new e60(i60Var, 2));
+            AndroidUtilities.runOnUIThread(new f60(i60Var, 2));
         }
         EGL14.eglDestroySurface(i60Var.s, i60Var.y);
         i60Var.y = EGL14.EGL_NO_SURFACE;
@@ -429,12 +429,12 @@ public final class i60 implements Runnable {
             p50Var.b();
             i60Var.x0 = null;
         }
-        AndroidUtilities.runOnUIThread(new e60(i60Var, 3));
+        AndroidUtilities.runOnUIThread(new f60(i60Var, 3));
     }
 
     public static void g(boolean z10) {
         AudioManager audioManager = (AudioManager) ApplicationLoader.applicationContext.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
-        if (SharedConfig.recordViaSco && !cf0.d("android.permission.BLUETOOTH_CONNECT")) {
+        if (SharedConfig.recordViaSco && !df0.d("android.permission.BLUETOOTH_CONNECT")) {
             SharedConfig.recordViaSco = false;
             SharedConfig.saveConfig();
         }
@@ -523,7 +523,7 @@ public final class i60 implements Runnable {
             } else {
                 ByteBuffer outputBuffer = this.E.getOutputBuffer(dequeueOutputBuffer);
                 if (outputBuffer == null) {
-                    throw new RuntimeException(i2.d.j(dequeueOutputBuffer, "encoderOutputBuffer ", " was null"));
+                    throw new RuntimeException(i2.d.k(dequeueOutputBuffer, "encoderOutputBuffer ", " was null"));
                 }
                 MediaCodec.BufferInfo bufferInfo = this.I;
                 int i10 = bufferInfo.size;
@@ -618,7 +618,7 @@ public final class i60 implements Runnable {
                 } else {
                     ByteBuffer outputBuffer2 = this.F.getOutputBuffer(dequeueOutputBuffer2);
                     if (outputBuffer2 == null) {
-                        throw new RuntimeException(i2.d.j(dequeueOutputBuffer2, "encoderOutputBuffer ", " was null"));
+                        throw new RuntimeException(i2.d.k(dequeueOutputBuffer2, "encoderOutputBuffer ", " was null"));
                     }
                     MediaCodec.BufferInfo bufferInfo3 = this.J;
                     if ((bufferInfo3.flags & 2) != 0) {
@@ -697,11 +697,11 @@ public final class i60 implements Runnable {
     }
 
     public final void h(File file) {
-        h81 h81Var = new h81();
+        i81 i81Var = new i81();
         p60 p60Var = this.H0;
-        p60Var.T = h81Var;
-        h81Var.J = new ji.d4(this, 12);
-        h81Var.V(p60Var.q0);
+        p60Var.T = i81Var;
+        i81Var.J = new ji.h5(this, 13);
+        i81Var.V(p60Var.q0);
         p60Var.T.D(Uri.fromFile(file), "other");
         p60Var.T.C();
         p60Var.T.O(true);
@@ -733,8 +733,8 @@ public final class i60 implements Runnable {
         this.x = null;
     }
 
-    public final void i(int i10, d60 d60Var) {
-        this.T.sendMessage(this.T.obtainMessage(1, i10, 0, d60Var));
+    public final void i(int i10, e60 e60Var) {
+        this.T.sendMessage(this.T.obtainMessage(1, i10, 0, e60Var));
         AndroidUtilities.runOnUIThread(new ve(9));
     }
 

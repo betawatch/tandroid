@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class gx extends org.telegram.ui.Components.u6 {
     public final /* synthetic */ int b;
@@ -27,13 +27,13 @@ public final class gx extends org.telegram.ui.Components.u6 {
     public final void c(Object obj, float f7) {
         switch (this.b) {
             case 0:
-                ((yy) obj).z4(f7);
+                ((yy) obj).A4(f7);
                 break;
             default:
                 yy yyVar = this.c;
                 yyVar.I0 = f7;
                 ((View) obj).setTranslationY(yyVar.J0 + f7);
-                yyVar.C3();
+                yyVar.D3();
                 break;
         }
     }

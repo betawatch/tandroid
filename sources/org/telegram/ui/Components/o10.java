@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class o10 extends db {
     public boolean A0;
@@ -144,7 +144,7 @@ public final class o10 extends db {
     }
 
     @Override // org.telegram.ui.Components.db
-    public final CharSequence A() {
+    public final CharSequence B() {
         if (this.b0) {
             return LocaleController.getString(R.string.FolderLinkTitleRemove);
         }
@@ -191,7 +191,7 @@ public final class o10 extends db {
             }
         }
         V(true);
-        l10Var.a(LocaleController.getString(z10 ? R.string.SelectAll : R.string.DeselectAll), new di.x0(this, l10Var, z10, 20));
+        l10Var.a(LocaleController.getString(z10 ? R.string.SelectAll : R.string.DeselectAll), new di.x0(this, l10Var, z10, 18));
         R(true);
         while (true) {
             mm0 mm0Var = this.d;
@@ -296,7 +296,7 @@ public final class o10 extends db {
         k10Var.f = view;
         int i17 = org.telegram.ui.ActionBar.g6.Oh;
         view.setBackground(org.telegram.ui.ActionBar.w5.d(new float[]{8.0f}, 0, org.telegram.ui.ActionBar.w5.b(org.telegram.ui.ActionBar.g6.x0(null, i17, false))));
-        k10Var.addView(view, w7.a6.d(-1.0f, -1));
+        k10Var.addView(view, w7.z5.d(-1.0f, -1));
         k10Var.setBackground(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(8.0f), org.telegram.ui.ActionBar.g6.x0(null, i17, false)));
         Paint paint = new Paint(1);
         k10Var.a = paint;
@@ -323,18 +323,18 @@ public final class o10 extends db {
         k10Var.setWillNotDraw(false);
         this.l0 = k10Var;
         k10Var.setOnClickListener(new f0(this, 15));
-        this.containerView.addView(this.l0, w7.a6.a(48.0f, 16.0f, 10.0f, 16.0f, 10.0f, -1, 87));
+        this.containerView.addView(this.l0, w7.z5.a(48.0f, 16.0f, 10.0f, 16.0f, 10.0f, -1, 87));
         View view2 = new View(getContext());
         this.m0 = view2;
         view2.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.a7, false));
-        this.containerView.addView(this.m0, w7.a6.a(1.0f / AndroidUtilities.density, 6.0f, 0.0f, 6.0f, 68.0f, -1, 87));
+        this.containerView.addView(this.m0, w7.z5.a(1.0f / AndroidUtilities.density, 6.0f, 0.0f, 6.0f, 68.0f, -1, 87));
         this.d.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.l0 != null ? 68.0f : 0.0f));
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.k0 = frameLayout;
-        this.containerView.addView(frameLayout, w7.a6.a(100.0f, 6.0f, 0.0f, 6.0f, 68.0f, -1, 87));
+        this.containerView.addView(frameLayout, w7.z5.a(100.0f, 6.0f, 0.0f, 6.0f, 68.0f, -1, 87));
         fixNavigationBar(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.h5, false));
         V(false);
-        this.e.setTitle(A());
+        this.e.setTitle(B());
     }
 
     public final void V(boolean z10) {
@@ -374,7 +374,7 @@ public final class o10 extends db {
                 k10Var2.v = ofFloat;
                 ofFloat.addUpdateListener(new j10(k10Var2, 1));
                 k10Var2.v.addListener(new l6(k10Var2, i11));
-                org.telegram.ui.Cells.d0.l(2.0f, k10Var2.v);
+                org.telegram.messenger.sk.l(2.0f, k10Var2.v);
                 k10Var2.v.setDuration(200L);
                 k10Var2.v.start();
             }
@@ -408,7 +408,7 @@ public final class o10 extends db {
             this.y0.a("", null);
         } else {
             boolean z10 = this.i0.size() >= arrayList2.size() - arrayList.size();
-            this.y0.a(LocaleController.getString(z10 ? R.string.DeselectAll : R.string.SelectAll), new ah.t(26, this, z10));
+            this.y0.a(LocaleController.getString(z10 ? R.string.DeselectAll : R.string.SelectAll), new ah.t(25, this, z10));
         }
     }
 

@@ -1,94 +1,69 @@
 package pi;
 
-import android.content.Context;
-import android.util.SparseArray;
-import android.util.SparseIntArray;
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import org.telegram.tgnet.SerializedData;
+import ji.m5;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class b {
-    public static SparseIntArray b;
-    public static final b c = new b();
-    public final SparseArray a;
+public final /* synthetic */ class b implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e b;
+    public final /* synthetic */ d c;
 
-    public b() {
-        this.a = new SparseArray();
+    public /* synthetic */ b(e eVar, d dVar, int i10) {
+        this.a = i10;
+        this.b = eVar;
+        this.c = dVar;
     }
 
-    public static SparseArray a(Context context, String str, SparseArray sparseArray) {
-        BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getAssets().open(str));
-        try {
-            SerializedData serializedData = new SerializedData(bufferedInputStream);
-            int readInt32 = serializedData.readInt32(true);
-            int i10 = 0;
-            if (sparseArray == null) {
-                sparseArray = new SparseArray(readInt32);
-                while (i10 < readInt32) {
-                    sparseArray.append(serializedData.readInt32(true), serializedData.readString(true));
-                    i10++;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                e eVar = this.b;
+                d dVar = (d) eVar.b;
+                d dVar2 = this.c;
+                if (dVar == dVar2) {
+                    eVar.c = null;
+                    eVar.h(dVar2);
+                    break;
                 }
-            } else {
-                while (i10 < readInt32) {
-                    sparseArray.put(serializedData.readInt32(true), serializedData.readString(true));
-                    i10++;
-                }
-            }
-            bufferedInputStream.close();
-            return sparseArray;
-        } catch (Throwable th2) {
-            try {
-                bufferedInputStream.close();
-            } catch (Throwable th3) {
-                th2.addSuppressed(th3);
-            }
-            throw th2;
-        }
-    }
-
-    public final String b(String str) {
-        if (str == null) {
-            return null;
-        }
-        return (String) this.a.get(str.hashCode());
-    }
-
-    public final String c(Context context, String str, int i10) {
-        String b10 = str != null ? b(str) : null;
-        if (b10 != null || i10 == 0) {
-            return b10;
-        }
-        if (context != null && i10 != 0) {
-            if (b == null) {
-                try {
-                    BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getResources().getAssets().open("string_resource_ids.bin"));
-                    try {
-                        SerializedData serializedData = new SerializedData(bufferedInputStream);
-                        int readInt32 = serializedData.readInt32(true);
-                        SparseIntArray sparseIntArray = new SparseIntArray(readInt32);
-                        for (int i11 = 0; i11 < readInt32; i11++) {
-                            sparseIntArray.append(serializedData.readInt32(true), serializedData.readInt32(true));
-                        }
-                        bufferedInputStream.close();
-                        b = sparseIntArray;
-                    } finally {
+                break;
+            case 1:
+                e eVar2 = this.b;
+                d dVar3 = (d) eVar2.b;
+                d dVar4 = this.c;
+                if (dVar3 == dVar4) {
+                    b bVar = (b) eVar2.c;
+                    if (bVar != null) {
+                        AndroidUtilities.cancelRunOnUIThread(bVar);
+                        eVar2.c = null;
                     }
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
+                    int i10 = dVar4.d;
+                    if (i10 != 0) {
+                        b bVar2 = new b(eVar2, dVar4, 2);
+                        eVar2.d = bVar2;
+                        AndroidUtilities.runOnUIThread(bVar2, 20000L);
+                        m5 m5Var = dVar4.a;
+                        ((ConnectionsManager) m5Var.b).checkWebProxyInternal(dVar4.b, i10, new c(eVar2, dVar4));
+                        break;
+                    } else {
+                        eVar2.h(dVar4);
+                        break;
+                    }
                 }
-            }
-            int i12 = b.get(i10);
-            if (i12 != 0) {
-                return (String) this.a.get(i12);
-            }
+                break;
+            default:
+                e eVar3 = this.b;
+                d dVar5 = (d) eVar3.b;
+                d dVar6 = this.c;
+                if (dVar5 == dVar6) {
+                    eVar3.d = null;
+                    eVar3.h(dVar6);
+                    break;
+                }
+                break;
         }
-        return null;
-    }
-
-    public b(a aVar) {
-        SparseArray sparseArray = aVar.a;
-        this.a = sparseArray == null ? new SparseArray() : sparseArray;
     }
 }

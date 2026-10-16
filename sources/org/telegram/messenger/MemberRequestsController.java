@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class MemberRequestsController extends BaseController {
     private static final MemberRequestsController[] instances = new MemberRequestsController[4];
@@ -52,7 +52,7 @@ public class MemberRequestsController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$getImporters$1(TLRPC.TL_chatInviteImporter tL_chatInviteImporter, boolean z10, long j10, RequestDelegate requestDelegate, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new al(j10, this, requestDelegate, tLObject, tL_chatInviteImporter, tL_error, z10));
+        AndroidUtilities.runOnUIThread(new bl(j10, this, requestDelegate, tLObject, tL_chatInviteImporter, tL_error, z10));
     }
 
     public TLRPC.TL_messages_chatInviteImporters getCachedImporters(long j10) {

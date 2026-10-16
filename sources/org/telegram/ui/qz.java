@@ -7,7 +7,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class qz extends org.telegram.ui.ActionBar.m2 {
     public long a;
@@ -23,7 +23,7 @@ public final class qz extends org.telegram.ui.ActionBar.m2 {
         }
         for (org.telegram.ui.ActionBar.m2 m2Var : getParentLayout().getFragmentStack()) {
             if (m2Var instanceof yy) {
-                sx sxVar = ((yy) m2Var).F3;
+                sx sxVar = ((yy) m2Var).G3;
                 if (sxVar.c()) {
                     sxVar.a();
                 }
@@ -42,7 +42,7 @@ public final class qz extends org.telegram.ui.ActionBar.m2 {
         this.e = nzVar;
         nzVar.p1();
         this.e.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.a7, this.resourceProvider));
-        frameLayout.addView(this.e, w7.a6.e(-1, -1, 119));
+        frameLayout.addView(this.e, w7.z5.e(-1, -1, 119));
         this.actionBar.setAdaptiveBackground(this.e);
         this.fragmentView = frameLayout;
         return frameLayout;

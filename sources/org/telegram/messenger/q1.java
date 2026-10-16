@@ -2,14 +2,14 @@ package org.telegram.messenger;
 
 import android.app.Activity;
 import java.util.HashMap;
-import org.telegram.ui.Components.cf0;
+import org.telegram.ui.Components.df0;
 import org.telegram.ui.Components.qn;
 import org.telegram.ui.dw;
-import org.telegram.ui.lk0;
+import org.telegram.ui.kk0;
 import org.telegram.ui.mt;
 import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q1 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -43,7 +43,7 @@ public final /* synthetic */ class q1 implements Runnable {
                     boolean z12 = this.d;
                     if (z10 || z11 || z12) {
                         yyVar.A0 = true;
-                        if (!z10 || !lk0.o(activity)) {
+                        if (!z10 || !kk0.o(activity)) {
                             if (!z11 || !yyVar.U1 || !yyVar.getUserConfig().syncContacts || !activity.shouldShowRequestPermissionRationale("android.permission.READ_CONTACTS")) {
                                 if (!z12 || !activity.shouldShowRequestPermissionRationale("android.permission.WRITE_EXTERNAL_STORAGE")) {
                                     yyVar.h3(true);
@@ -61,7 +61,7 @@ public final /* synthetic */ class q1 implements Runnable {
                                 break;
                             }
                         } else {
-                            cf0.e(new String[]{"android.permission.POST_NOTIFICATIONS"}, new qn(1, new mt(2, yyVar, activity)));
+                            df0.e(new String[]{"android.permission.POST_NOTIFICATIONS"}, new qn(1, new mt(2, yyVar, activity)));
                             break;
                         }
                     }

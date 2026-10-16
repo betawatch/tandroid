@@ -54,7 +54,6 @@ import ji.e3;
 import ji.h1;
 import ji.i6;
 import ji.k4;
-import ji.k6;
 import ji.l5;
 import ji.o0;
 import ji.t0;
@@ -85,15 +84,15 @@ import org.telegram.ui.Cells.j5;
 import org.telegram.ui.Cells.r8;
 import org.telegram.ui.Cells.w8;
 import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.lu;
-import org.telegram.ui.Components.m80;
-import org.telegram.ui.lg1;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.kg1;
 import org.telegram.ui.sy;
 import org.telegram.ui.yy;
-import w7.l6;
+import w7.k6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements OnSuccessListener, z1, Utilities.Callback5, g, o, v, lu, o0, sy {
     public final /* synthetic */ int a;
@@ -129,7 +128,7 @@ public final /* synthetic */ class a implements OnSuccessListener, z1, Utilities
     public j5.b b(e eVar) {
         c cVar = (c) this.b;
         URL url = (URL) eVar.b;
-        String c10 = l6.c("CctTransportBackend");
+        String c10 = k6.c("CctTransportBackend");
         if (Log.isLoggable(c10, 4)) {
             Log.i(c10, String.format("Making request to: %s", url));
         }
@@ -166,12 +165,12 @@ public final /* synthetic */ class a implements OnSuccessListener, z1, Utilities
                     }
                     int responseCode = httpURLConnection.getResponseCode();
                     Integer valueOf = Integer.valueOf(responseCode);
-                    String c11 = l6.c("CctTransportBackend");
+                    String c11 = k6.c("CctTransportBackend");
                     if (Log.isLoggable(c11, 4)) {
                         Log.i(c11, String.format("Status Code: %d", valueOf));
                     }
-                    l6.a(httpURLConnection.getHeaderField("Content-Type"), "CctTransportBackend", "Content-Type: %s");
-                    l6.a(httpURLConnection.getHeaderField("Content-Encoding"), "CctTransportBackend", "Content-Encoding: %s");
+                    k6.a(httpURLConnection.getHeaderField("Content-Type"), "CctTransportBackend", "Content-Type: %s");
+                    k6.a(httpURLConnection.getHeaderField("Content-Encoding"), "CctTransportBackend", "Content-Encoding: %s");
                     if (responseCode == 302 || responseCode == 301 || responseCode == 307) {
                         return new j5.b(responseCode, new URL(httpURLConnection.getHeaderField("Location")), 0L);
                     }
@@ -200,19 +199,19 @@ public final /* synthetic */ class a implements OnSuccessListener, z1, Utilities
             }
         } catch (ja.b e) {
             e = e;
-            l6.b("CctTransportBackend", "Couldn't encode request, returning with 400", e);
+            k6.b("CctTransportBackend", "Couldn't encode request, returning with 400", e);
             return new j5.b(400, null, 0L);
         } catch (ConnectException e7) {
             e = e7;
-            l6.b("CctTransportBackend", "Couldn't open connection, returning with 500", e);
+            k6.b("CctTransportBackend", "Couldn't open connection, returning with 500", e);
             return new j5.b(500, null, 0L);
         } catch (UnknownHostException e10) {
             e = e10;
-            l6.b("CctTransportBackend", "Couldn't open connection, returning with 500", e);
+            k6.b("CctTransportBackend", "Couldn't open connection, returning with 500", e);
             return new j5.b(500, null, 0L);
         } catch (IOException e11) {
             e = e11;
-            l6.b("CctTransportBackend", "Couldn't encode request, returning with 400", e);
+            k6.b("CctTransportBackend", "Couldn't encode request, returning with 400", e);
             return new j5.b(400, null, 0L);
         }
     }
@@ -293,8 +292,8 @@ public final /* synthetic */ class a implements OnSuccessListener, z1, Utilities
     }
 
     @Override // ji.o0
-    public m80 i(h1 h1Var) {
-        return m80.H((d2) ((ya.c) this.b).b, h1Var);
+    public l80 h(h1 h1Var) {
+        return l80.H((d2) ((ya.c) this.b).b, h1Var);
     }
 
     @Override // e2.o
@@ -336,7 +335,7 @@ public final /* synthetic */ class a implements OnSuccessListener, z1, Utilities
     }
 
     @Override // c3.g
-    public long k(long j10) {
+    public long l(long j10) {
         return m0.j((j10 * r0.e) / 1000000, 0L, ((u) this.b).j - 1);
     }
 
@@ -359,7 +358,7 @@ public final /* synthetic */ class a implements OnSuccessListener, z1, Utilities
                 if (aVar != null) {
                     TL_iv.PageBlock pageBlock = aVar.b;
                     if (pageBlock instanceof TL_iv.pageBlockDetails) {
-                        ((TL_iv.pageBlockDetails) pageBlock).title = k6.f(h1Var.getText());
+                        ((TL_iv.pageBlockDetails) pageBlock).title = ji.k6.f(h1Var.getText());
                     }
                 }
                 e3 e3Var = t0Var.h;
@@ -396,16 +395,16 @@ public final /* synthetic */ class a implements OnSuccessListener, z1, Utilities
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                ((d5) this.b).V((l61) obj);
+                ((d5) this.b).V((m61) obj);
                 break;
             case 11:
                 g1 g1Var = (g1) this.b;
-                l61 l61Var = (l61) obj;
+                m61 m61Var = (m61) obj;
                 View view = (View) obj2;
                 ((Integer) obj3).getClass();
                 float floatValue = ((Float) obj4).floatValue();
                 ((Float) obj5).getClass();
-                int i11 = l61Var.d;
+                int i11 = m61Var.d;
                 if (i11 == -1) {
                     boolean z10 = !g1Var.e;
                     g1Var.e = z10;
@@ -419,9 +418,9 @@ public final /* synthetic */ class a implements OnSuccessListener, z1, Utilities
                     e2Var.c = new v2(18, g1Var, view);
                     g1Var.presentFragment(e2Var);
                     break;
-                } else if (l61Var.a == 5 && i11 >= 0 && i11 < g1Var.h.length) {
+                } else if (m61Var.a == 5 && i11 >= 0 && i11 < g1Var.h.length) {
                     if (!LocaleController.isRTL ? floatValue < view.getMeasuredWidth() - AndroidUtilities.dp(76.0f) : floatValue > AndroidUtilities.dp(76.0f)) {
-                        int i12 = (l61Var.d + 6) % 7;
+                        int i12 = (m61Var.d + 6) % 7;
                         int i13 = 0;
                         for (int i14 = 0; i14 < g1Var.h[i12].size(); i14++) {
                             if (((f1) g1Var.h[i12].get(i14)).b > i13) {
@@ -429,7 +428,7 @@ public final /* synthetic */ class a implements OnSuccessListener, z1, Utilities
                             }
                         }
                         int max = Math.max(0, i13 - 1439);
-                        int i15 = (l61Var.d + 1) % 7;
+                        int i15 = (m61Var.d + 1) % 7;
                         int i16 = 1440;
                         for (int i17 = 0; i17 < g1Var.h[i15].size(); i17++) {
                             if (((f1) g1Var.h[i15].get(i17)).a < i16) {
@@ -437,8 +436,8 @@ public final /* synthetic */ class a implements OnSuccessListener, z1, Utilities
                             }
                         }
                         int i18 = i16 + 1439;
-                        CharSequence charSequence = l61Var.l;
-                        ArrayList arrayList = g1Var.h[l61Var.d];
+                        CharSequence charSequence = m61Var.l;
+                        ArrayList arrayList = g1Var.h[m61Var.d];
                         int i19 = 0;
                         for (int i20 = 0; i20 < 7; i20++) {
                             ArrayList arrayList2 = g1Var.h[i20];
@@ -448,19 +447,19 @@ public final /* synthetic */ class a implements OnSuccessListener, z1, Utilities
                         }
                         i1 i1Var = new i1(charSequence, arrayList, max, i18, 28 - i19);
                         i1Var.f = new ig.t0(g1Var, 2);
-                        i1Var.h = new q3(17, g1Var, l61Var);
+                        i1Var.h = new q3(17, g1Var, m61Var);
                         g1Var.presentFragment(i1Var);
                         break;
                     } else {
-                        if (g1Var.h[l61Var.d].isEmpty()) {
+                        if (g1Var.h[m61Var.d].isEmpty()) {
                             ((j5) view).setChecked(true);
-                            g1Var.h[l61Var.d].add(new f1(0, 1439));
-                            g1Var.X(l61Var.d);
+                            g1Var.h[m61Var.d].add(new f1(0, 1439));
+                            g1Var.X(m61Var.d);
                         } else {
-                            g1Var.h[l61Var.d].clear();
+                            g1Var.h[m61Var.d].clear();
                             ((j5) view).setChecked(false);
                         }
-                        ((j5) view).setValue(g1.a0(g1Var.h[l61Var.d]));
+                        ((j5) view).setValue(g1.a0(g1Var.h[m61Var.d]));
                         g1Var.Y(true);
                         break;
                     }
@@ -468,7 +467,7 @@ public final /* synthetic */ class a implements OnSuccessListener, z1, Utilities
                 break;
             case 12:
                 final i1 i1Var2 = (i1) this.b;
-                l61 l61Var2 = (l61) obj;
+                m61 m61Var2 = (m61) obj;
                 final View view2 = (View) obj2;
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
@@ -476,7 +475,7 @@ public final /* synthetic */ class a implements OnSuccessListener, z1, Utilities
                 int i21 = i1Var2.c;
                 int i22 = i1Var2.d;
                 ArrayList arrayList3 = i1Var2.b;
-                int i23 = l61Var2.d;
+                int i23 = m61Var2.d;
                 if (i23 == -1) {
                     i1Var2.r = !i1Var2.r;
                     arrayList3.clear();
@@ -485,7 +484,7 @@ public final /* synthetic */ class a implements OnSuccessListener, z1, Utilities
                     }
                     w8 w8Var = (w8) view2;
                     boolean z11 = i1Var2.r;
-                    l61Var2.e = z11;
+                    m61Var2.e = z11;
                     w8Var.setChecked(z11);
                     boolean z12 = i1Var2.r;
                     w8Var.b(g6.x0(null, z12 ? g6.f6 : g6.e6, false), z12);
@@ -503,7 +502,7 @@ public final /* synthetic */ class a implements OnSuccessListener, z1, Utilities
                         int clamp = Utilities.clamp(480, i22 - 1, i21);
                         arrayList3.add(new f1(clamp, Utilities.clamp(1200, i22, clamp + 1)));
                     } else {
-                        int i24 = ((f1) i2.d.g(1, arrayList3)).b;
+                        int i24 = ((f1) i2.d.h(1, arrayList3)).b;
                         int clamp2 = Utilities.clamp(i24 + 30, i22 - 1, i21);
                         arrayList3.add(new f1(clamp2, Utilities.clamp((i24 + 1560) / 2, i22, clamp2 + 1)));
                     }
@@ -513,13 +512,13 @@ public final /* synthetic */ class a implements OnSuccessListener, z1, Utilities
                     }
                     i1Var2.n.W2.N(true);
                     break;
-                } else if (l61Var2.a == 3 && (i10 = i23 / 3) >= 0 && i10 < arrayList3.size()) {
+                } else if (m61Var2.a == 3 && (i10 = i23 / 3) >= 0 && i10 < arrayList3.size()) {
                     int i25 = i10 - 1;
                     f1 f1Var = i25 >= 0 ? (f1) arrayList3.get(i25) : null;
                     final f1 f1Var2 = (f1) arrayList3.get(i10);
                     int i26 = i10 + 1;
                     f1 f1Var3 = i26 < arrayList3.size() ? (f1) arrayList3.get(i26) : null;
-                    int i27 = l61Var2.d % 3;
+                    int i27 = m61Var2.d % 3;
                     if (i27 == 0) {
                         Activity parentActivity = i1Var2.getParentActivity();
                         String string = LocaleController.getString(R.string.BusinessHoursDayOpenHourPicker);
@@ -637,7 +636,7 @@ public final /* synthetic */ class a implements OnSuccessListener, z1, Utilities
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                e2.U((e2) this.b, (l61) obj, (View) obj2);
+                e2.U((e2) this.b, (m61) obj, (View) obj2);
                 break;
             default:
                 View view3 = (View) obj2;
@@ -658,7 +657,7 @@ public final /* synthetic */ class a implements OnSuccessListener, z1, Utilities
     }
 
     @Override // org.telegram.ui.sy
-    public boolean w(yy yyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, lg1 lg1Var) {
+    public boolean w(yy yyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, kg1 kg1Var) {
         k4 k4Var = (k4) this.b;
         if (arrayList.isEmpty() || ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId <= 0) {
             return false;

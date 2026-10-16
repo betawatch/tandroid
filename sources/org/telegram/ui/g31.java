@@ -31,7 +31,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class g31 extends View {
     public static final float T = AndroidUtilities.dp(2.0f);
@@ -110,8 +110,8 @@ public final class g31 extends View {
     public final void a(Canvas canvas) {
         w21 w21Var;
         if (this.F != null) {
-            int B = org.telegram.messenger.yh.B(60.0f, getWidth(), 33);
-            int i10 = (B * 33) + 32;
+            int A = org.telegram.messenger.sk.A(60.0f, getWidth(), 33);
+            int i10 = (A * 33) + 32;
             int width = (getWidth() - i10) / 2;
             int height = (int) (getHeight() * 0.15f);
             Point point = AndroidUtilities.displaySize;
@@ -135,9 +135,9 @@ public final class g31 extends View {
             float f7 = i11;
             float f10 = width;
             float width3 = ((getWidth() / 2.0f) + f7) - f10;
-            float round = ((Math.round((r8 / 4.65f) / r6) * B) / 2) * 0.75f;
+            float round = ((Math.round((r8 / 4.65f) / r6) * A) / 2) * 0.75f;
             canvas.drawCircle(width2, width3, round, paint);
-            TelegramQRCodeWriter.drawSideQuads(canvas, f10, f7, paint, 7.0f, B, 16, i10, 0.75f, this.L, true);
+            TelegramQRCodeWriter.drawSideQuads(canvas, f10, f7, paint, 7.0f, A, 16, i10, 0.75f, this.L, true);
             if (this.M || (w21Var = this.e) == null) {
                 return;
             }
@@ -188,7 +188,7 @@ public final class g31 extends View {
         textPaint.setColor(-16777216);
         textPaint.setTypeface(AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf"));
         int i19 = 2;
-        int C = org.telegram.messenger.yh.C(20.0f, 2, createBitmap.getWidth());
+        int B = org.telegram.messenger.sk.B(20.0f, 2, createBitmap.getWidth());
         float f10 = 30.0f;
         if (!this.r) {
             int i20 = 0;
@@ -212,13 +212,13 @@ public final class g31 extends View {
                 }
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(t8.b.h(" ", upperCase));
                 if (!this.H) {
-                    spannableStringBuilder.setSpan(new org.telegram.ui.Cells.x6(drawable), 0, 1, 33);
+                    spannableStringBuilder.setSpan(new org.telegram.ui.Cells.w6(drawable), 0, 1, 33);
                 }
                 float measureText = textPaint.measureText(spannableStringBuilder, 1, spannableStringBuilder.length()) + drawable.getBounds().width();
-                if (i20 > 1 || measureText <= C) {
-                    int i21 = measureText > ((float) C) ? i18 : 1;
-                    int dp = i21 > 1 ? AndroidUtilities.dp(2.0f) + (((int) (drawable.getBounds().width() + measureText)) / 2) : C;
-                    if (dp > C) {
+                if (i20 > 1 || measureText <= B) {
+                    int i21 = measureText > ((float) B) ? i18 : 1;
+                    int dp = i21 > 1 ? AndroidUtilities.dp(2.0f) + (((int) (drawable.getBounds().width() + measureText)) / 2) : B;
+                    if (dp > B) {
                         dp = AndroidUtilities.dp(4.0f) + (((int) (measureText + drawable.getBounds().width())) / 3);
                         i21 = 3;
                     }
@@ -227,7 +227,7 @@ public final class g31 extends View {
                     f7 = 30.0f;
                     staticLayout = org.telegram.ui.Components.ix0.c(spannableStringBuilder, textPaint, dp, Layout.Alignment.ALIGN_CENTER, 0.0f, null, Math.min(AndroidUtilities.dp(10.0f) + dp, createBitmap.getWidth()), i21, true);
                     float lineCount = (staticLayout != null ? i13 : staticLayout.getLineCount()) * (textPaint.descent() - textPaint.ascent());
-                    int C2 = org.telegram.messenger.yh.C(f7, i12, i10);
+                    int B2 = org.telegram.messenger.sk.B(f7, i12, i10);
                     HashMap hashMap = new HashMap();
                     hashMap.put(dc.b.a, ic.c.c);
                     hashMap.put(dc.b.c, Integer.valueOf(i13));
@@ -248,7 +248,7 @@ public final class g31 extends View {
                         try {
                             i16 = i17;
                             try {
-                                bitmap = telegramQRCodeWriter.encode(this.I, C2, C2, hashMap, null, 0.75f, 16777215, -16777216);
+                                bitmap = telegramQRCodeWriter.encode(this.I, B2, B2, hashMap, null, 0.75f, 16777215, -16777216);
                                 i15 = -16777216;
                                 try {
                                     i13 = telegramQRCodeWriter.getImageSize();
@@ -341,7 +341,7 @@ public final class g31 extends View {
         i13 = 0;
         staticLayout = null;
         float lineCount2 = (staticLayout != null ? i13 : staticLayout.getLineCount()) * (textPaint.descent() - textPaint.ascent());
-        int C22 = org.telegram.messenger.yh.C(f7, i12, i10);
+        int B22 = org.telegram.messenger.sk.B(f7, i12, i10);
         HashMap hashMap2 = new HashMap();
         hashMap2.put(dc.b.a, ic.c.c);
         hashMap2.put(dc.b.c, Integer.valueOf(i13));

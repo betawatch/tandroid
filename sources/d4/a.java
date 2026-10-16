@@ -30,7 +30,7 @@ import z3.e;
 import z3.m;
 import z3.n;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class a implements n {
     public static final Pattern h = Pattern.compile("(?:(\\d+):)?(\\d+):(\\d+)[:.](\\d+)");
@@ -86,6 +86,11 @@ public final class a implements n {
         String group = matcher.group(1);
         String str2 = m0.a;
         return (Long.parseLong(matcher.group(4)) * 10000) + (Long.parseLong(matcher.group(3)) * 1000000) + (Long.parseLong(matcher.group(2)) * 60000000) + (Long.parseLong(group) * 3600000000L);
+    }
+
+    @Override // z3.n
+    public final int X() {
+        return 1;
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -276,10 +281,10 @@ public final class a implements n {
                                         int length2 = split3.length;
                                         String str = m0.a;
                                         Locale locale = Locale.US;
-                                        StringBuilder l4 = i2.d.l("Skipping malformed 'Style:' line (expected ", i25, " values, found ", length2, "): '");
-                                        l4.append(n12);
-                                        l4.append("'");
-                                        e2.a.l("SsaStyle", l4.toString());
+                                        StringBuilder m10 = i2.d.m("Skipping malformed 'Style:' line (expected ", i25, " values, found ", length2, "): '");
+                                        m10.append(n12);
+                                        m10.append("'");
+                                        e2.a.l("SsaStyle", m10.toString());
                                     } else {
                                         try {
                                             String trim = split3[bVar.a].trim();
@@ -347,18 +352,13 @@ public final class a implements n {
         }
     }
 
-    @Override // z3.n
-    public final int h0() {
-        return 1;
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:28:0x00c4  */
     /* JADX WARN: Removed duplicated region for block: B:33:0x00cc  */
     @Override // z3.n
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void u0(byte[] bArr, int i10, int i11, m mVar, j jVar) {
+    public final void m0(byte[] bArr, int i10, int i11, m mVar, j jVar) {
         Charset charset;
         x xVar;
         b4.b bVar;
@@ -719,7 +719,7 @@ public final class a implements n {
     }
 
     @Override // z3.n
-    public final /* synthetic */ e w(int i10, int i11, byte[] bArr) {
+    public final /* synthetic */ e x(int i10, int i11, byte[] bArr) {
         return t8.b.a(this, bArr, i11);
     }
 

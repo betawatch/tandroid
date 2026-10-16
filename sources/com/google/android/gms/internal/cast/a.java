@@ -3,17 +3,22 @@ package com.google.android.gms.internal.cast;
 import android.content.Context;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.h81;
+import org.telegram.ui.Components.i81;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ba;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class a implements d6.h, y6.c {
     public int a;
 
     public a() {
         this.a = 3;
+    }
+
+    @Override // y6.c
+    public int H(Context context, String str) {
+        return this.a;
     }
 
     @Override // d6.h
@@ -29,18 +34,13 @@ public final class a implements d6.h, y6.c {
     }
 
     @Override // d6.h
-    public void i(d6.f fVar, int i10) {
+    public void h(d6.f fVar, int i10) {
         b5.d.d(false);
         b5.d.C();
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void k(d6.f fVar) {
-    }
-
-    @Override // y6.c
-    public int l(Context context, String str, boolean z10) {
-        return 0;
+    public /* bridge */ /* synthetic */ void j(d6.f fVar) {
     }
 
     @Override // d6.h
@@ -53,8 +53,13 @@ public final class a implements d6.h, y6.c {
         b5.d.C();
     }
 
+    @Override // y6.c
+    public int q(Context context, String str, boolean z10) {
+        return 0;
+    }
+
     @Override // d6.h
-    public void q(d6.f fVar, String str) {
+    public void r(d6.f fVar, String str) {
         d6.c cVar = (d6.c) fVar;
         if (cVar == null) {
             return;
@@ -78,9 +83,9 @@ public final class a implements d6.h, y6.c {
         int i10 = this.a;
         long j10 = -1;
         if (i10 == 0) {
-            h81 h81Var = PhotoViewer.t1().F2;
-            if (h81Var != null) {
-                j10 = h81Var.n();
+            i81 i81Var = PhotoViewer.t1().F2;
+            if (i81Var != null) {
+                j10 = i81Var.n();
             }
         } else if (i10 == 1) {
             j10 = MediaController.getInstance().getCurrentPosition();
@@ -92,12 +97,7 @@ public final class a implements d6.h, y6.c {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void r(d6.f fVar, int i10) {
-    }
-
-    @Override // y6.c
-    public int y(Context context, String str) {
-        return this.a;
+    public /* bridge */ /* synthetic */ void s(d6.f fVar, int i10) {
     }
 
     public /* synthetic */ a(int i10) {

@@ -3,9 +3,9 @@ package ah;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.ui.fo;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -40,10 +40,10 @@ public final /* synthetic */ class b0 implements Runnable {
                         i11 = 0;
                     }
                     e0Var.setPadding(dp, dp2, dp3 + i11, AndroidUtilities.dp(i10));
-                    f0Var.b.setDelegate(new qb.c(f0Var, 3));
+                    f0Var.b.setDelegate(new a6.m(f0Var, 2));
                     f0Var.b.setClipChildren(false);
                     f0Var.b.setClipToPadding(false);
-                    f0Var.addView(f0Var.b, a6.e(-2, i10 + 70, 5));
+                    f0Var.addView(f0Var.b, z5.e(-2, i10 + 70, 5));
                 }
                 f0Var.c(false);
                 if (!f0Var.b.isEnabled()) {

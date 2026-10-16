@@ -31,7 +31,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class pc0 extends FrameLayout {
     public final uc0 E;
@@ -117,7 +117,7 @@ public final class pc0 extends FrameLayout {
         this.b0 = true;
         this.J = new ChatMessageSharedResources(context3);
         this.a = i10;
-        setOnTouchListener(new uk(this, 5));
+        setOnTouchListener(new tk(this, 5));
         ?? z8Var = new org.telegram.ui.z8(this, context3, i11);
         this.b = z8Var;
         rc0 rc0Var = vc0Var.F;
@@ -156,8 +156,8 @@ public final class pc0 extends FrameLayout {
         hc0Var.setLayoutManager(cc0Var);
         hc0Var.i(new ec0());
         z8Var.addView(hc0Var);
-        addView(z8Var, w7.a6.a(400.0f, 8.0f, 0.0f, 8.0f, 0.0f, -1, 0));
-        z8Var.addView(vVar, w7.a6.d(-2.0f, -1));
+        addView(z8Var, w7.z5.a(400.0f, 8.0f, 0.0f, 8.0f, 0.0f, -1, 0));
+        z8Var.addView(vVar, w7.z5.d(-2.0f, -1));
         ?? actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert2, 1, getContext(), rc0Var);
         this.s = actionBarPopupWindow$ActionBarPopupWindowLayout;
         actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().setOnForegroundOpenFinished(new ac0(this, i11));
@@ -167,7 +167,7 @@ public final class pc0 extends FrameLayout {
         c10.j.e = true;
         c10.q(AndroidUtilities.dp(12.0f));
         actionBarPopupWindow$ActionBarPopupWindowLayout.setBackground(c10);
-        addView(actionBarPopupWindow$ActionBarPopupWindowLayout, w7.a6.d(-2.0f, -2));
+        addView(actionBarPopupWindow$ActionBarPopupWindowLayout, w7.z5.d(-2.0f, -2));
         if (i10 != 0 || (messages = messagePreviewParams3.replyMessage) == null) {
             messagePreviewParams = messagePreviewParams3;
             if (i10 != 1 || messagePreviewParams.forwardMessages == null) {
@@ -179,7 +179,7 @@ public final class pc0 extends FrameLayout {
                         uc0 uc0Var2 = new uc0(context, R.raw.position_below, LocaleController.getString(R.string.LinkAbove), R.raw.position_above, LocaleController.getString(R.string.LinkBelow), vc0Var.F);
                         pc0Var3.E = uc0Var2;
                         uc0Var2.a(!messagePreviewParams.webpageTop, false);
-                        actionBarPopupWindow$ActionBarPopupWindowLayout.a(uc0Var2, w7.a6.n(-1, 48));
+                        actionBarPopupWindow$ActionBarPopupWindowLayout.a(uc0Var2, w7.z5.n(-1, 48));
                         FrameLayout frameLayout = new FrameLayout(context);
                         pc0Var3.F = frameLayout;
                         frameLayout.setBackground(org.telegram.ui.ActionBar.g6.Z(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.I5, rc0Var), 0, 0));
@@ -187,21 +187,21 @@ public final class pc0 extends FrameLayout {
                         pc0Var3.G = uc0Var3;
                         uc0Var3.setBackground(null);
                         uc0Var3.setVisibility(messagePreviewParams.isVideo ? 4 : 0);
-                        frameLayout.addView(uc0Var3, w7.a6.n(-1, 48));
+                        frameLayout.addView(uc0Var3, w7.z5.n(-1, 48));
                         uc0 uc0Var4 = new uc0(context, R.raw.media_shrink, LocaleController.getString(R.string.LinkVideoLarger), R.raw.media_enlarge, LocaleController.getString(R.string.LinkVideoSmaller), vc0Var.F);
                         pc0Var3.H = uc0Var4;
                         uc0Var4.setBackground(null);
                         uc0Var4.setVisibility(!messagePreviewParams.isVideo ? 4 : 0);
                         frameLayout.setAlpha(messagePreviewParams.hasMedia ? 1.0f : 0.5f);
-                        frameLayout.addView(uc0Var4, w7.a6.n(-1, 48));
-                        actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout, w7.a6.n(-1, 48));
+                        frameLayout.addView(uc0Var4, w7.z5.n(-1, 48));
+                        actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout, w7.z5.n(-1, 48));
                         frameLayout.setVisibility((!messagePreviewParams.singleLink || messagePreviewParams.hasMedia) ? 0 : 8);
                         uc0Var3.a(messagePreviewParams.webpageSmall, false);
                         uc0Var4.a(messagePreviewParams.webpageSmall, false);
                         org.telegram.ui.ActionBar.j1 j1Var = new org.telegram.ui.ActionBar.j1(context, rc0Var);
                         j1Var.setColor(org.telegram.ui.ActionBar.g6.m1(0.06f, org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.E8, rc0Var)));
                         j1Var.setTag(R.id.fit_width_tag, 1);
-                        actionBarPopupWindow$ActionBarPopupWindowLayout.a(j1Var, w7.a6.n(-1, 8));
+                        actionBarPopupWindow$ActionBarPopupWindowLayout.a(j1Var, w7.z5.n(-1, 8));
                         org.telegram.ui.ActionBar.e1 e1Var = new org.telegram.ui.ActionBar.e1(1, context, vc0Var.F, false, false);
                         e1Var.g(LocaleController.getString(R.string.ApplyChanges), R.drawable.msg_select, null);
                         final int i15 = 10;
@@ -400,7 +400,7 @@ public final class pc0 extends FrameLayout {
                                 }
                             }
                         });
-                        actionBarPopupWindow$ActionBarPopupWindowLayout.a(e1Var, w7.a6.n(-1, 48));
+                        actionBarPopupWindow$ActionBarPopupWindowLayout.a(e1Var, w7.z5.n(-1, 48));
                         org.telegram.ui.ActionBar.e1 e1Var2 = new org.telegram.ui.ActionBar.e1(1, context, vc0Var.F, false, true);
                         context2 = context;
                         e1Var2.g(LocaleController.getString(R.string.DoNotLinkPreview), R.drawable.msg_delete, null);
@@ -604,7 +604,7 @@ public final class pc0 extends FrameLayout {
                             }
                         });
                         e1Var2.setSelectorColor(org.telegram.ui.ActionBar.g6.m1(0.12f, org.telegram.ui.ActionBar.g6.x0(null, i16, false)));
-                        actionBarPopupWindow$ActionBarPopupWindowLayout.a(e1Var2, w7.a6.n(-1, 48));
+                        actionBarPopupWindow$ActionBarPopupWindowLayout.a(e1Var2, w7.z5.n(-1, 48));
                         final int i18 = 12;
                         frameLayout.setOnClickListener(new View.OnClickListener(pc0Var3) { // from class: org.telegram.ui.Components.yb0
                             public final /* synthetic */ pc0 b;
@@ -1012,11 +1012,11 @@ public final class pc0 extends FrameLayout {
                 }
                 z10 = true;
                 uc0 uc0Var5 = new uc0(context, R.raw.name_hide, LocaleController.getString(messagePreviewParams.multipleUsers ? R.string.ShowSenderNames : R.string.ShowSendersName), R.raw.name_show, LocaleController.getString(messagePreviewParams.multipleUsers ? R.string.HideSenderNames : R.string.HideSendersName), vc0Var.F);
-                this.s.a(uc0Var5, w7.a6.n(-1, 48));
+                this.s.a(uc0Var5, w7.z5.n(-1, 48));
                 if (messagePreviewParams.hasCaption) {
                     uc0 uc0Var6 = new uc0(context, R.raw.caption_hide, LocaleController.getString(R.string.ShowCaption), R.raw.caption_show, LocaleController.getString(R.string.HideCaption), vc0Var.F);
                     uc0Var6.a(messagePreviewParams.hideCaption, false);
-                    this.s.a(uc0Var6, w7.a6.n(-1, 48));
+                    this.s.a(uc0Var6, w7.z5.n(-1, 48));
                     uc0Var = uc0Var6;
                 } else {
                     uc0Var = null;
@@ -1219,11 +1219,11 @@ public final class pc0 extends FrameLayout {
                     }
                 });
                 e1Var3.g(LocaleController.getString(R.string.ChangeRecipient), R.drawable.msg_forward_replace, null);
-                this.s.a(e1Var3, w7.a6.n(-1, 48));
+                this.s.a(e1Var3, w7.z5.n(-1, 48));
                 org.telegram.ui.ActionBar.j1 j1Var2 = new org.telegram.ui.ActionBar.j1(context, rc0Var);
                 j1Var2.setColor(org.telegram.ui.ActionBar.g6.m1(0.06f, org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.E8, rc0Var)));
                 j1Var2.setTag(R.id.fit_width_tag, 1);
-                this.s.a(j1Var2, w7.a6.n(-1, 8));
+                this.s.a(j1Var2, w7.z5.n(-1, 8));
                 org.telegram.ui.ActionBar.e1 e1Var4 = new org.telegram.ui.ActionBar.e1(1, context, vc0Var.F, false, false);
                 e1Var4.g(LocaleController.getString(R.string.ApplyChanges), R.drawable.msg_select, null);
                 final int i22 = 8;
@@ -1422,7 +1422,7 @@ public final class pc0 extends FrameLayout {
                         }
                     }
                 });
-                this.s.a(e1Var4, w7.a6.n(-1, 48));
+                this.s.a(e1Var4, w7.z5.n(-1, 48));
                 org.telegram.ui.ActionBar.e1 e1Var5 = new org.telegram.ui.ActionBar.e1(1, context, vc0Var.F, false, true);
                 e1Var5.g(LocaleController.getString(R.string.DoNotForward), R.drawable.msg_delete, null);
                 int w03 = org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.q7, rc0Var);
@@ -1625,7 +1625,7 @@ public final class pc0 extends FrameLayout {
                     }
                 });
                 e1Var5.setSelectorColor(org.telegram.ui.ActionBar.g6.m1(0.12f, org.telegram.ui.ActionBar.g6.x0(null, i23, false)));
-                this.s.a(e1Var5, w7.a6.n(-1, 48));
+                this.s.a(e1Var5, w7.z5.n(-1, 48));
                 uc0Var5.a(messagePreviewParams.hideForwardSendersName, false);
                 uc0 uc0Var7 = uc0Var;
                 pc0 pc0Var4 = this;
@@ -1644,7 +1644,7 @@ public final class pc0 extends FrameLayout {
                 r11 = 0;
                 messagePreviewParams2 = messagePreviewParams3;
             } else {
-                LinearLayout e = org.telegram.messenger.yh.e(context3, 1);
+                LinearLayout e = org.telegram.messenger.sk.e(context3, 1);
                 if (z12) {
                     drawable = null;
                     z11 = true;
@@ -1849,11 +1849,11 @@ public final class pc0 extends FrameLayout {
                             }
                         }
                     });
-                    r92.addView(e1Var6, w7.a6.n(-1, 48));
+                    r92.addView(e1Var6, w7.z5.n(-1, 48));
                     org.telegram.ui.ActionBar.j1 j1Var3 = new org.telegram.ui.ActionBar.j1(context3, rc0Var);
                     j1Var3.setColor(org.telegram.ui.ActionBar.g6.m1(0.06f, org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.E8, rc0Var)));
                     j1Var3.setTag(R.id.fit_width_tag, 1);
-                    r92.addView(j1Var3, w7.a6.n(-1, 8));
+                    r92.addView(j1Var3, w7.z5.n(-1, 8));
                     org.telegram.ui.ActionBar.e1 e1Var7 = new org.telegram.ui.ActionBar.e1(0, context3, vc0Var.F, false, true);
                     e1Var7.g(LocaleController.getString(R.string.QuoteSelectedPart), R.drawable.menu_quote_specific, null);
                     z11 = true;
@@ -2053,7 +2053,7 @@ public final class pc0 extends FrameLayout {
                             }
                         }
                     });
-                    r92.addView(e1Var7, w7.a6.n(-1, 48));
+                    r92.addView(e1Var7, w7.z5.n(-1, 48));
                     linearLayout = r92;
                 }
                 this.I = actionBarPopupWindow$ActionBarPopupWindowLayout.b(linearLayout);
@@ -2264,9 +2264,9 @@ public final class pc0 extends FrameLayout {
                         }
                     }
                 });
-                frameLayout2.addView(fc0Var, w7.a6.d(48.0f, -1));
-                frameLayout2.addView(fc0Var2, w7.a6.d(48.0f, -1));
-                actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout2, w7.a6.n(-1, 48));
+                frameLayout2.addView(fc0Var, w7.z5.d(48.0f, -1));
+                frameLayout2.addView(fc0Var2, w7.z5.d(48.0f, -1));
+                actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout2, w7.z5.n(-1, 48));
                 r11 = drawable;
             }
             messagePreviewParams = messagePreviewParams2;
@@ -2671,15 +2671,15 @@ public final class pc0 extends FrameLayout {
                         }
                     }
                 });
-                frameLayout3.addView(e1Var9, w7.a6.d(48.0f, -1));
-                frameLayout3.addView(e1Var8, w7.a6.d(48.0f, -1));
-                actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout3, w7.a6.n(-1, 48));
+                frameLayout3.addView(e1Var9, w7.z5.d(48.0f, -1));
+                frameLayout3.addView(e1Var8, w7.z5.d(48.0f, -1));
+                actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout3, w7.z5.n(-1, 48));
             }
             if (!messagePreviewParams.noforwards && !messagePreviewParams.hasSecretMessages) {
                 org.telegram.ui.ActionBar.j1 j1Var4 = new org.telegram.ui.ActionBar.j1(context3, rc0Var);
                 j1Var4.setColor(org.telegram.ui.ActionBar.g6.m1(0.06f, org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.E8, rc0Var)));
                 j1Var4.setTag(R.id.fit_width_tag, 1);
-                actionBarPopupWindow$ActionBarPopupWindowLayout.a(j1Var4, w7.a6.n(-1, 8));
+                actionBarPopupWindow$ActionBarPopupWindowLayout.a(j1Var4, w7.z5.n(-1, 8));
             }
             g(messagePreviewParams.quote != null, false);
             ?? e1Var10 = new org.telegram.ui.ActionBar.e1(1, context3, vc0Var.F, false, false);
@@ -2880,7 +2880,7 @@ public final class pc0 extends FrameLayout {
                     }
                 }
             });
-            actionBarPopupWindow$ActionBarPopupWindowLayout.a(e1Var10, w7.a6.n(-1, 48));
+            actionBarPopupWindow$ActionBarPopupWindowLayout.a(e1Var10, w7.z5.n(-1, 48));
             ?? e1Var11 = new org.telegram.ui.ActionBar.e1(1, context, vc0Var.F, false, true);
             e1Var11.g(LocaleController.getString(z12 ? R.string.DoNotQuote : R.string.DoNotReply), R.drawable.msg_delete, r11);
             int w04 = org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.q7, rc0Var);
@@ -3083,7 +3083,7 @@ public final class pc0 extends FrameLayout {
                     }
                 }
             });
-            actionBarPopupWindow$ActionBarPopupWindowLayout.a(e1Var11, w7.a6.n(-1, 48));
+            actionBarPopupWindow$ActionBarPopupWindowLayout.a(e1Var11, w7.z5.n(-1, 48));
             context2 = context;
             pc0Var2 = this;
             viewOutlineProvider = r11;
@@ -3103,7 +3103,7 @@ public final class pc0 extends FrameLayout {
         if (n10.getParent() instanceof ViewGroup) {
             ((ViewGroup) n10.getParent()).removeView(n10);
         }
-        pc0Var2.addView(n10, w7.a6.a(-1.0f, 0.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / AndroidUtilities.density, 0.0f, 0.0f, -1, 51));
+        pc0Var2.addView(n10, w7.z5.a(-1.0f, 0.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / AndroidUtilities.density, 0.0f, 0.0f, -1, 51));
         pc0Var2.e.S(pc0Var2.f);
     }
 
@@ -3362,9 +3362,9 @@ public final class pc0 extends FrameLayout {
             if (messages == null || i11 == 0 || i11 > messages.previewMessages.size()) {
                 this.R = 0;
             } else {
-                int c10 = org.telegram.messenger.q.c(4.0f, measuredHeight, 0);
-                this.R = c10;
-                this.R = Math.min(((hc0Var.getMeasuredHeight() - this.R) + c10) - ((int) ((((AndroidUtilities.displaySize.y - (Build.VERSION.SDK_INT >= 35 ? AndroidUtilities.navigationBarHeight : 0)) * 0.8f) - this.W) - AndroidUtilities.dp(8.0f))), this.R);
+                int b10 = org.telegram.messenger.g0.b(4.0f, measuredHeight, 0);
+                this.R = b10;
+                this.R = Math.min(((hc0Var.getMeasuredHeight() - this.R) + b10) - ((int) ((((AndroidUtilities.displaySize.y - (Build.VERSION.SDK_INT >= 35 ? AndroidUtilities.navigationBarHeight : 0)) * 0.8f) - this.W) - AndroidUtilities.dp(8.0f))), this.R);
             }
             float z11 = com.google.android.gms.internal.play_billing.k3.z(getMeasuredHeight() - AndroidUtilities.dp(16.0f), (this.b.getMeasuredHeight() - this.R) + (this.W - AndroidUtilities.dp(8.0f)), 2.0f, AndroidUtilities.dp(8.0f)) - this.R;
             this.S = z11;

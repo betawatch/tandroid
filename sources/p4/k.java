@@ -19,18 +19,17 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import ji.w4;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ul0;
+import org.telegram.ui.ps0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class k extends g3 {
     public final i2.f0 E;
     public ArrayList F;
     public final ArrayMap G;
     public final MediaRouter2 r;
-    public final w4 s;
+    public final m.l s;
     public final ArrayMap v;
     public final MediaRouter2$RouteCallback w;
     public final j x;
@@ -40,7 +39,7 @@ public final class k extends g3 {
         Log.isLoggable("MR2Provider", 3);
     }
 
-    public k(Context context, w4 w4Var) {
+    public k(Context context, m.l lVar) {
         super(context, null);
         this.v = new ArrayMap();
         this.x = new j(this);
@@ -48,7 +47,7 @@ public final class k extends g3 {
         this.F = new ArrayList();
         this.G = new ArrayMap();
         this.r = MediaRouter2.getInstance(context);
-        this.s = w4Var;
+        this.s = lVar;
         this.E = new i2.f0(new Handler(Looper.getMainLooper()), 1);
         if (Build.VERSION.SDK_INT >= 34) {
             this.w = new i(this, 1);
@@ -105,10 +104,10 @@ public final class k extends g3 {
     @Override // com.google.android.gms.internal.vision.g3
     public final void f(n nVar) {
         ArrayList<String> arrayList;
-        s sVar;
+        r rVar;
         RouteDiscoveryPreference build;
         String str;
-        int i10 = y.c == null ? 0 : y.c().B;
+        int i10 = x.c == null ? 0 : x.c().B;
         MediaRouter2$RouteCallback mediaRouter2$RouteCallback = this.w;
         f fVar = this.y;
         j jVar = this.x;
@@ -118,10 +117,10 @@ public final class k extends g3 {
             this.r.unregisterControllerCallback(fVar);
             return;
         }
-        a0 a0Var = y.c().u;
-        boolean z10 = a0Var == null ? false : a0Var.d;
+        z zVar = x.c().u;
+        boolean z10 = zVar == null ? false : zVar.d;
         if (nVar == null) {
-            nVar = new n(s.c, false);
+            nVar = new n(r.c, false);
         }
         nVar.a();
         ArrayList c10 = nVar.b.c();
@@ -152,27 +151,27 @@ public final class k extends g3 {
             }
         }
         if (arrayList == null) {
-            sVar = s.c;
+            rVar = r.c;
         } else {
             Bundle bundle = new Bundle();
             bundle.putStringArrayList("controlCategories", arrayList);
-            sVar = new s(bundle, arrayList);
+            rVar = new r(bundle, arrayList);
         }
         boolean b10 = nVar.b();
-        if (sVar == null) {
+        if (rVar == null) {
             throw new IllegalArgumentException("selector must not be null");
         }
         Bundle bundle2 = new Bundle();
-        bundle2.putBundle("selector", sVar.a);
+        bundle2.putBundle("selector", rVar.a);
         bundle2.putBoolean("activeScan", b10);
         MediaRouter2 mediaRouter2 = this.r;
-        sVar.a();
-        if (sVar.b.contains(null)) {
+        rVar.a();
+        if (rVar.b.contains(null)) {
             build = new RouteDiscoveryPreference.Builder(new ArrayList(), false).build();
         } else {
             boolean z11 = bundle2.getBoolean("activeScan");
             ArrayList arrayList2 = new ArrayList();
-            ArrayList c11 = sVar.c();
+            ArrayList c11 = rVar.c();
             int size2 = c11.size();
             int i12 = 0;
             while (i12 < size2) {
@@ -211,7 +210,7 @@ public final class k extends g3 {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            MediaRoute2Info d = ul0.d(obj);
+            MediaRoute2Info d = ps0.d(obj);
             if (TextUtils.equals(d.getId(), str)) {
                 return d;
             }
@@ -224,7 +223,7 @@ public final class k extends g3 {
         ArraySet arraySet = new ArraySet();
         Iterator<MediaRoute2Info> it = this.r.getRoutes().iterator();
         while (it.hasNext()) {
-            MediaRoute2Info d = ul0.d(it.next());
+            MediaRoute2Info d = ps0.d(it.next());
             if (d != null && !arraySet.contains(d) && !d.isSystemRoute()) {
                 arraySet.add(d);
                 arrayList.add(d);
@@ -243,7 +242,7 @@ public final class k extends g3 {
         while (i11 < size) {
             Object obj = arrayList2.get(i11);
             i11++;
-            MediaRoute2Info d10 = ul0.d(obj);
+            MediaRoute2Info d10 = ps0.d(obj);
             Bundle extras = d10.getExtras();
             if (extras == null || extras.getString("androidx.mediarouter.media.KEY_ORIGINAL_ROUTE_ID") == null) {
                 Log.w("MR2Provider", "Cannot find the original route Id. route=" + d10);
@@ -258,7 +257,7 @@ public final class k extends g3 {
         while (i12 < size2) {
             Object obj2 = arrayList4.get(i12);
             i12++;
-            MediaRoute2Info d11 = ul0.d(obj2);
+            MediaRoute2Info d11 = ps0.d(obj2);
             m w9 = g0.f.w(d11);
             if (d11 != null) {
                 arrayList3.add(w9);
@@ -297,7 +296,7 @@ public final class k extends g3 {
         }
         ArrayList h = g0.f.h(selectedRoutes);
         int i10 = 0;
-        m w9 = g0.f.w(ul0.d(selectedRoutes.get(0)));
+        m w9 = g0.f.w(ps0.d(selectedRoutes.get(0)));
         Bundle controlHints = routingController.getControlHints();
         String string = this.a.getString(R.string.mr_dialog_default_group_name);
         m mVar = null;

@@ -5,13 +5,13 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.qg;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.io;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class b4 extends ImageReceiver {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final class b4 extends ImageReceiver {
                 return imageBitmapByKey;
             case 1:
                 if (drawable != null && i10 != 1) {
-                    yh.s(((ig.e1) ((k5) obj).H).n.animate().alpha(1.0f).translationY(0.0f), es.k, 250L);
+                    sk.t(((ig.e1) ((k5) obj).H).n.animate().alpha(1.0f).translationY(0.0f), es.k, 250L);
                 }
                 return super.setImageBitmapByKey(drawable, str, i10, z10, i11);
             case 2:

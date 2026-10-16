@@ -1,64 +1,82 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.Utilities;
+import android.text.TextUtils;
+import java.nio.charset.StandardCharsets;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.d71;
+import org.telegram.ui.mb0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f7 implements Utilities.Callback {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ k7 b;
-    public final /* synthetic */ Utilities.Callback c;
-    public final /* synthetic */ o0 d;
-    public final /* synthetic */ j0 e;
+public final /* synthetic */ class f7 implements org.telegram.ui.ActionBar.z1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d71 b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ f7(k7 k7Var, Utilities.Callback callback, j0 j0Var, o0 o0Var) {
-        this.b = k7Var;
-        this.c = callback;
-        this.e = j0Var;
-        this.d = o0Var;
+    public /* synthetic */ f7(d71 d71Var, Object obj, Object obj2, int i10) {
+        this.a = i10;
+        this.b = d71Var;
+        this.d = obj;
+        this.c = obj2;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public final void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
         switch (this.a) {
             case 0:
-                k7.Y(this.b, this.c, this.e, this.d, (g0) obj);
+                l7 l7Var = (l7) this.b;
+                Boolean bool = (Boolean) this.d;
+                k0 k0Var = (k0) this.c;
+                if (!bool.booleanValue()) {
+                    k0Var.c.B();
+                }
+                r2.a(k0Var.a, new fi.c(8), null, null, null, new bi.j0(5, k0Var, new z6(2, l7Var, (l7Var.getParentLayout() == null || l7Var.getParentLayout().getFragmentStack().size() <= 1) ? null : (org.telegram.ui.ActionBar.m2) l7Var.getParentLayout().getFragmentStack().get(l7Var.getParentLayout().getFragmentStack().size() - 2))), false, true, new mb0((Object) null, 1));
+                break;
+            case 1:
+                l7 l7Var2 = (l7) this.b;
+                k0 k0Var2 = (k0) this.c;
+                f0 f0Var = (f0) this.d;
+                pf.c g10 = a2Var.g(i10, true, true);
+                g10.d();
+                h7 h7Var = new h7(l7Var2, g10, 2);
+                k0.E("disable backup: getting phrase...");
+                k0Var2.x(new j((Object) k0Var2, (Object) h7Var, (Object) f0Var, 3), false, true);
                 break;
             default:
-                a0 a0Var = (a0) obj;
-                Utilities.Callback callback = this.c;
-                if (a0Var != null) {
-                    byte[] bArr = a0Var.c;
-                    o0 o0Var = this.d;
-                    boolean z10 = false;
-                    if (bArr == null) {
-                        byte[][] m10 = o0Var.m();
-                        if (m10.length <= 0) {
-                            callback.run("STORAGE_NO_PUBLIC_KEY");
-                            break;
-                        } else {
-                            bArr = m10[0];
-                        }
+                j8 j8Var = (j8) this.b;
+                ig.b1 b1Var = (ig.b1) this.d;
+                org.telegram.ui.Cells.a2 a2Var2 = (org.telegram.ui.Cells.a2) this.c;
+                if (b1Var.getText().toString().getBytes(StandardCharsets.UTF_8).length <= 960) {
+                    String trim = b1Var.getText().toString().trim();
+                    if (TextUtils.isEmpty(trim)) {
+                        trim = null;
                     }
-                    if (!o0Var.f(bArr)) {
-                        callback.run("STORAGE_OLD_PUBLIC_KEY");
-                        break;
+                    j8Var.d0 = trim;
+                    j8Var.e0 = !a2Var2.b();
+                    if (TextUtils.isEmpty(j8Var.d0)) {
+                        j8Var.M.setVisibility(8);
                     } else {
-                        f7 f7Var = new f7(this.b, callback, this.e, o0Var);
-                        o0.h.execute(new org.telegram.ui.Components.r2(o0Var, o0Var.l(), bArr == null ? "" : o0.o(bArr), z10, f7Var));
-                        break;
+                        j8Var.M.setText(j8Var.d0);
+                        j8Var.M.setVisibility(0);
                     }
+                    j8Var.y0();
+                    a2Var.dismiss();
+                    j8Var.n0();
+                    break;
                 } else {
-                    callback.run("ADDRESS_NO_INFO");
+                    int i11 = -j8Var.l0;
+                    j8Var.l0 = i11;
+                    AndroidUtilities.shakeViewSpring(b1Var, i11);
                     break;
                 }
         }
     }
 
-    public /* synthetic */ f7(k7 k7Var, Utilities.Callback callback, o0 o0Var, j0 j0Var) {
-        this.b = k7Var;
-        this.c = callback;
-        this.d = o0Var;
-        this.e = j0Var;
+    public /* synthetic */ f7(l7 l7Var, k0 k0Var, f0 f0Var) {
+        this.a = 1;
+        this.b = l7Var;
+        this.c = k0Var;
+        this.d = f0Var;
     }
 }

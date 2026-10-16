@@ -3,15 +3,15 @@ package org.telegram.ui;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dc implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ic b;
+    public final /* synthetic */ hc b;
 
-    public /* synthetic */ dc(ic icVar, int i10) {
+    public /* synthetic */ dc(hc hcVar, int i10) {
         this.a = i10;
-        this.b = icVar;
+        this.b = hcVar;
     }
 
     @Override // java.lang.Runnable
@@ -19,29 +19,29 @@ public final /* synthetic */ class dc implements Runnable {
         switch (this.a) {
             case 0:
                 CountDownLatch countDownLatch = new CountDownLatch(2);
-                ic icVar = this.b;
-                icVar.a(countDownLatch, null);
-                icVar.b(countDownLatch, null);
+                hc hcVar = this.b;
+                hcVar.a(countDownLatch, null);
+                hcVar.b(countDownLatch, null);
                 try {
                     countDownLatch.await();
                 } catch (InterruptedException unused) {
                 }
-                AndroidUtilities.runOnUIThread(new dc(icVar, 3));
+                AndroidUtilities.runOnUIThread(new dc(hcVar, 3));
                 break;
             case 1:
-                ic icVar2 = this.b;
-                icVar2.H = false;
-                icVar2.d(true);
+                hc hcVar2 = this.b;
+                hcVar2.H = false;
+                hcVar2.d(true);
                 break;
             case 2:
-                ic icVar3 = this.b;
-                icVar3.H = false;
-                icVar3.d(true);
+                hc hcVar3 = this.b;
+                hcVar3.H = false;
+                hcVar3.d(true);
                 break;
             default:
-                ic icVar4 = this.b;
-                icVar4.H = false;
-                icVar4.d(true);
+                hc hcVar4 = this.b;
+                hcVar4.H = false;
+                hcVar4.d(true);
                 break;
         }
     }

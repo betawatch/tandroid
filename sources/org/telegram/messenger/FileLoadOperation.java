@@ -23,7 +23,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class FileLoadOperation {
     private static final int FINISH_CODE_DEFAULT = 0;
@@ -160,7 +160,7 @@ public class FileLoadOperation {
     public static volatile DispatchQueue filesQueue = new DispatchQueue("writeFileQueue");
     private static final Object lockObject = new Object();
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public interface FileLoadOperationDelegate {
         void didChangedLoadProgress(FileLoadOperation fileLoadOperation, long j10, long j11);
 
@@ -177,7 +177,7 @@ public class FileLoadOperation {
         void saveFilePath(FilePathDatabase.PathData pathData, File file);
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class PreloadRange {
         private long fileOffset;
         private long length;
@@ -188,7 +188,7 @@ public class FileLoadOperation {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class Range {
         private long end;
         private long start;
@@ -203,7 +203,7 @@ public class FileLoadOperation {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class RequestInfo {
         public boolean cancelled;
         public boolean cancelling;
@@ -463,7 +463,7 @@ public class FileLoadOperation {
                     requestInfo.cancelling = true;
                     if (runnable == null) {
                         requestInfo.cancelled = true;
-                        q.p(requestInfo.requestToken, new StringBuilder("cancelRequests cancel "));
+                        g0.o(requestInfo.requestToken, new StringBuilder("cancelRequests cancel "));
                         ConnectionsManager.getInstance(this.currentAccount).cancelRequest(requestInfo.requestToken, true);
                     } else {
                         requestInfo.whenCancelled = new h0(requestInfo, iArr, runnable, 21);
@@ -1363,7 +1363,7 @@ public class FileLoadOperation {
             sb2.append(" conType=");
             sb2.append(i11);
             sb2.append(" reqId");
-            q.p(requestInfo.requestToken, sb2);
+            g0.o(requestInfo.requestToken, sb2);
         }
         if (requestInfo == this.priorityRequestInfo) {
             if (BuildVars.DEBUG_VERSION) {
@@ -1514,7 +1514,7 @@ public class FileLoadOperation {
                     sb2.append(" of ");
                     sb2.append(this.totalBytesCount);
                     sb2.append(" prefSize=");
-                    q.p(this.preloadPrefixSize, sb2);
+                    g0.o(this.preloadPrefixSize, sb2);
                 }
             }
             if (this.fileMetadata != null) {
@@ -2512,7 +2512,7 @@ public class FileLoadOperation {
                 }
                 if (fileLoadOperation.streamPriorityStartOffset != j10) {
                     if (BuildVars.DEBUG_VERSION) {
-                        q.s(new StringBuilder("frame get offset = "), fileLoadOperation.streamPriorityStartOffset);
+                        i2.d.x(new StringBuilder("frame get offset = "), fileLoadOperation.streamPriorityStartOffset);
                     }
                     j12 = j10;
                     fileLoadOperation.streamPriorityStartOffset = j12;
@@ -2547,7 +2547,7 @@ public class FileLoadOperation {
                         sb2.append(" conType=");
                         sb2.append(i22);
                         sb2.append(" priority=");
-                        q.p(fileLoadOperation.priority, sb2);
+                        g0.o(fileLoadOperation.priority, sb2);
                     }
                     AndroidUtilities.runOnUIThread(new p2(fileLoadOperation, sendRequestSync, 3));
                     fileLoadOperation.requestsCount++;
@@ -3129,7 +3129,7 @@ public class FileLoadOperation {
                         sb3.append(" final = ");
                         sb3.append(this.cacheFileFinal);
                         sb3.append(" priority");
-                        q.p(this.priority, sb3);
+                        g0.o(this.priority, sb3);
                     }
                 }
                 if (str2 != null) {

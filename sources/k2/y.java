@@ -1,6 +1,6 @@
 package k2;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class y extends Exception {
     public final int a;
@@ -8,7 +8,7 @@ public final class y extends Exception {
     public final b2.x c;
 
     public y(int i10, b2.x xVar, boolean z10) {
-        super(i2.d.i(i10, "AudioTrack write failed: "));
+        super(i2.d.j(i10, "AudioTrack write failed: "));
         this.b = z10;
         this.a = i10;
         this.c = xVar;

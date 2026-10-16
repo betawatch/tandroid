@@ -1,9 +1,8 @@
 package qg;
 
 import android.os.Looper;
-import org.telegram.ui.Wallet.m5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z0 implements Runnable {
     public final /* synthetic */ int a;
@@ -19,14 +18,14 @@ public final /* synthetic */ class z0 implements Runnable {
         switch (this.a) {
             case 0:
                 a1 a1Var = this.b;
-                m5 m5Var = a1Var.w;
+                p4.s0 s0Var = a1Var.w;
                 z0 z0Var = a1Var.s;
                 if (z0Var != null) {
                     a1Var.cancelRunnable(z0Var);
                     a1Var.s = null;
                 }
-                a1Var.cancelRunnable(m5Var);
-                a1Var.postRunnable(m5Var);
+                a1Var.cancelRunnable(s0Var);
+                a1Var.postRunnable(s0Var);
                 break;
             case 1:
                 a1 a1Var2 = this.b;

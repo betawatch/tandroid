@@ -7,36 +7,36 @@ import org.telegram.messenger.pk;
 import org.telegram.ui.Components.nz;
 import org.telegram.ui.ia;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class k implements k0, n2.l {
+public final class k implements k0, n2.k {
     public final Object a;
     public a5.a b;
-    public n2.k c;
+    public n2.j c;
     public final /* synthetic */ m d;
 
     public k(m mVar, Object obj) {
         this.d = mVar;
         this.b = mVar.b(null);
-        this.c = new n2.k(mVar.d.c, 0, null);
+        this.c = new n2.j(mVar.d.c, 0, null);
         this.a = obj;
     }
 
-    @Override // n2.l
+    @Override // n2.k
     public final void a(int i10, g0 g0Var, int i11) {
         if (l(i10, g0Var)) {
             this.c.c(i11);
         }
     }
 
-    @Override // n2.l
+    @Override // n2.k
     public final void b(int i10, g0 g0Var, Exception exc) {
         if (l(i10, g0Var)) {
             this.c.d(exc);
         }
     }
 
-    @Override // n2.l
+    @Override // n2.k
     public final void c(int i10, g0 g0Var, oa.d dVar) {
         if (l(i10, g0Var)) {
             this.c.a(dVar);
@@ -60,7 +60,7 @@ public final class k implements k0, n2.l {
             a5.a aVar = this.b;
             c0 m10 = m(c0Var, g0Var);
             aVar.getClass();
-            aVar.l(new org.telegram.ui.web.c0(10, aVar, m10));
+            aVar.l(new org.telegram.ui.web.o0(10, aVar, m10));
         }
     }
 
@@ -84,7 +84,7 @@ public final class k implements k0, n2.l {
         }
     }
 
-    @Override // n2.l
+    @Override // n2.k
     public final void h(int i10, g0 g0Var) {
         if (l(i10, g0Var)) {
             this.c.e();
@@ -101,7 +101,7 @@ public final class k implements k0, n2.l {
         }
     }
 
-    @Override // n2.l
+    @Override // n2.k
     public final void j(int i10, g0 g0Var) {
         if (l(i10, g0Var)) {
             this.c.b();
@@ -135,11 +135,11 @@ public final class k implements k0, n2.l {
         if (aVar.b != w9 || !Objects.equals((g0) aVar.c, g0Var2)) {
             this.b = new a5.a((CopyOnWriteArrayList) mVar.c.d, w9, g0Var2, 21);
         }
-        n2.k kVar = this.c;
-        if (kVar.a == w9 && Objects.equals(kVar.b, g0Var2)) {
+        n2.j jVar = this.c;
+        if (jVar.a == w9 && Objects.equals(jVar.b, g0Var2)) {
             return true;
         }
-        this.c = new n2.k(mVar.d.c, w9, g0Var2);
+        this.c = new n2.j(mVar.d.c, w9, g0Var2);
         return true;
     }
 

@@ -15,9 +15,9 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.c90;
 import org.telegram.ui.gm;
 import org.telegram.ui.qi;
-import org.telegram.ui.sj1;
+import org.telegram.ui.rj1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u7 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -89,7 +89,7 @@ public final /* synthetic */ class u7 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new c90((qi) obj, tLObject, i13, i12));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new c90((sj1) obj, i13, tLObject, 17));
+                AndroidUtilities.runOnUIThread(new c90((rj1) obj, i13, tLObject, 17));
                 break;
             case 8:
                 zh.r3.V((zh.r3) obj, i13, tLObject);

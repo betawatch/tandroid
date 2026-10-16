@@ -13,10 +13,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.br;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.h11;
+import org.telegram.ui.Components.i11;
 import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class k2 {
     public final long a;
@@ -25,7 +25,7 @@ public final class k2 {
     public final yj0 d;
     public final Paint e;
     public final ImageReceiver f;
-    public final h11 g;
+    public final i11 g;
     public boolean h;
     public final org.telegram.ui.Components.g6 i;
     public final org.telegram.ui.Components.g6 j;
@@ -64,7 +64,7 @@ public final class k2 {
         spannableStringBuilder.setSpan(brVar, 0, spannableStringBuilder.length(), 33);
         spannableStringBuilder.append((CharSequence) " ");
         spannableStringBuilder.append((CharSequence) LocaleController.formatNumber(i11, ','));
-        this.g = new h11(spannableStringBuilder, 10.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+        this.g = new i11(spannableStringBuilder, 10.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
         org.telegram.ui.Components.g6 g6Var = new org.telegram.ui.Components.g6(view, 2000L, new LinearInterpolator());
         this.i = g6Var;
         g6Var.d(0.0f, true);

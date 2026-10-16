@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import v7.q7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class d extends ArrayAdapter implements AdapterView.OnItemClickListener {
     public final LayoutInflater a;
@@ -57,12 +57,12 @@ public final class d extends ArrayAdapter implements AdapterView.OnItemClickList
         if (view == null) {
             view = this.a.inflate(R.layout.mr_chooser_list_item, viewGroup, false);
         }
-        p4.w wVar = (p4.w) getItem(i10);
+        p4.v vVar = (p4.v) getItem(i10);
         TextView textView = (TextView) view.findViewById(R.id.mr_chooser_route_name);
         TextView textView2 = (TextView) view.findViewById(R.id.mr_chooser_route_desc);
-        textView.setText(wVar.d);
-        String str = wVar.e;
-        int i11 = wVar.i;
+        textView.setText(vVar.d);
+        String str = vVar.e;
+        int i11 = vVar.i;
         if ((i11 == 2 || i11 == 1) && !TextUtils.isEmpty(str)) {
             textView.setGravity(80);
             textView2.setVisibility(0);
@@ -72,10 +72,10 @@ public final class d extends ArrayAdapter implements AdapterView.OnItemClickList
             textView2.setVisibility(8);
             textView2.setText("");
         }
-        view.setEnabled(wVar.g);
+        view.setEnabled(vVar.g);
         ImageView imageView = (ImageView) view.findViewById(R.id.mr_chooser_route_icon);
         if (imageView != null) {
-            Uri uri = wVar.f;
+            Uri uri = vVar.f;
             if (uri != null) {
                 try {
                     createFromStream = Drawable.createFromStream(getContext().getContentResolver().openInputStream(uri), null);
@@ -83,8 +83,8 @@ public final class d extends ArrayAdapter implements AdapterView.OnItemClickList
                     Log.w("MediaRouteChooserDialog", "Failed to load " + uri, e);
                 }
             }
-            int i12 = wVar.n;
-            createFromStream = i12 != 1 ? i12 != 2 ? wVar.e() ? this.e : this.b : this.d : this.c;
+            int i12 = vVar.n;
+            createFromStream = i12 != 1 ? i12 != 2 ? vVar.e() ? this.e : this.b : this.d : this.c;
             imageView.setImageDrawable(createFromStream);
         }
         return view;
@@ -92,18 +92,18 @@ public final class d extends ArrayAdapter implements AdapterView.OnItemClickList
 
     @Override // android.widget.BaseAdapter, android.widget.ListAdapter
     public final boolean isEnabled(int i10) {
-        return ((p4.w) getItem(i10)).g;
+        return ((p4.v) getItem(i10)).g;
     }
 
     @Override // android.widget.AdapterView.OnItemClickListener
     public final void onItemClick(AdapterView adapterView, View view, int i10, long j10) {
-        p4.w wVar = (p4.w) getItem(i10);
+        p4.v vVar = (p4.v) getItem(i10);
         ImageView imageView = (ImageView) view.findViewById(R.id.mr_chooser_route_icon);
         ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.mr_chooser_route_progress_bar);
         if (imageView != null && progressBar != null) {
             imageView.setVisibility(8);
             progressBar.setVisibility(0);
         }
-        wVar.l();
+        vVar.l();
     }
 }

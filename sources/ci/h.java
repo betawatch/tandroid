@@ -3,12 +3,12 @@ package ci;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.ui.Cells.u7;
-import org.telegram.ui.Components.h71;
+import org.telegram.ui.Components.i71;
 import org.telegram.ui.Components.iw0;
 import org.telegram.ui.Components.zz;
 import s4.y0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class h extends zz {
     public final /* synthetic */ int X = 0;
@@ -49,9 +49,9 @@ public final class h extends zz {
                 super.U(eVar, y0Var, view, cVar);
                 AccessibilityNodeInfo accessibilityNodeInfo = cVar.a;
                 AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo = accessibilityNodeInfo.getCollectionItemInfo();
-                n5.c cVar2 = collectionItemInfo != null ? new n5.c(collectionItemInfo) : null;
-                if (cVar2 != null) {
-                    Object obj = cVar2.a;
+                n7.b bVar = collectionItemInfo != null ? new n7.b(collectionItemInfo) : null;
+                if (bVar != null) {
+                    Object obj = bVar.a;
                     if (((AccessibilityNodeInfo.CollectionItemInfo) obj).isHeading()) {
                         accessibilityNodeInfo.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowSpan(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnSpan(), false));
                         break;
@@ -68,7 +68,7 @@ public final class h extends zz {
     public int W0(y0 y0Var) {
         switch (this.X) {
             case 1:
-                if (!((h71) this.Y).Y2) {
+                if (!((i71) this.Y).Y2) {
                     break;
                 } else {
                     break;
@@ -91,8 +91,8 @@ public final class h extends zz {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(h71 h71Var, int i10) {
+    public h(i71 i71Var, int i10) {
         super(i10, false);
-        this.Y = h71Var;
+        this.Y = i71Var;
     }
 }

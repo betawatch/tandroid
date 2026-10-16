@@ -5,7 +5,7 @@ import android.os.IInterface;
 import android.util.Log;
 import java.util.Set;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class r0 implements Runnable {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final class r0 implements Runnable {
                 o oVar = (o) this.c;
                 Object obj = pVar.b;
                 if (obj != null) {
-                    oVar.z(obj);
+                    oVar.v(obj);
                     break;
                 }
                 break;
@@ -65,9 +65,9 @@ public final class r0 implements Runnable {
                 o8.h hVar3 = (o8.h) this.b;
                 k6.a aVar2 = hVar3.b;
                 if (aVar2.c()) {
-                    n6.w wVar = hVar3.c;
-                    n6.l.h(wVar);
-                    k6.a aVar3 = wVar.c;
+                    n6.v vVar = hVar3.c;
+                    n6.l.h(vVar);
+                    k6.a aVar3 = vVar.c;
                     if (!aVar3.c()) {
                         Log.wtf("SignInCoordinator", "Sign-in succeeded with resolve account failure: ".concat(String.valueOf(aVar3)), new Exception());
                         d1Var.j.b(aVar3);
@@ -75,11 +75,11 @@ public final class r0 implements Runnable {
                         break;
                     } else {
                         s0 s0Var2 = d1Var.j;
-                        IBinder iBinder = wVar.b;
+                        IBinder iBinder = vVar.b;
                         if (iBinder != null) {
                             int i10 = n6.a.b;
                             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.internal.IAccountAccessor");
-                            hVar2 = queryLocalInterface instanceof n6.h ? (n6.h) queryLocalInterface : new n6.m0(iBinder, "com.google.android.gms.common.internal.IAccountAccessor", 7);
+                            hVar2 = queryLocalInterface instanceof n6.h ? (n6.h) queryLocalInterface : new n6.l0(iBinder, "com.google.android.gms.common.internal.IAccountAccessor", 7);
                         }
                         Set set = d1Var.e;
                         s0Var2.getClass();

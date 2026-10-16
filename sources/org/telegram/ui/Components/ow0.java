@@ -26,7 +26,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class ow0 extends FrameLayout implements org.telegram.ui.ActionBar.x5 {
     public static DispatchQueue u0;
@@ -80,7 +80,7 @@ public class ow0 extends FrameLayout implements org.telegram.ui.ActionBar.x5 {
     public boolean s;
     public final ArrayList s0;
     public final ArrayList t0;
-    public n91 v;
+    public o91 v;
     public float w;
     public float x;
     public float y;
@@ -151,9 +151,9 @@ public class ow0 extends FrameLayout implements org.telegram.ui.ActionBar.x5 {
 
     public final void I() {
         if (!this.e && !this.c) {
-            n91 n91Var = this.v;
-            if (n91Var != null) {
-                n91Var.c(false);
+            o91 o91Var = this.v;
+            if (o91Var != null) {
+                o91Var.c(false);
                 this.v = null;
                 this.y = 1.0f;
                 this.w = 0.0f;
@@ -163,15 +163,15 @@ public class ow0 extends FrameLayout implements org.telegram.ui.ActionBar.x5 {
             return;
         }
         if (this.v == null) {
-            n91 n91Var2 = new n91(getContext());
-            this.v = n91Var2;
-            n91Var2.n = new xv(this, 22);
+            o91 o91Var2 = new o91(getContext());
+            this.v = o91Var2;
+            o91Var2.n = new xv(this, 22);
             if (getMeasuredWidth() != 0 && getMeasuredHeight() != 0) {
-                n91 n91Var3 = this.v;
+                o91 o91Var3 = this.v;
                 int measuredWidth = getMeasuredWidth();
                 int measuredHeight = getMeasuredHeight();
-                n91Var3.getClass();
-                this.y = n91.a(measuredWidth, measuredHeight);
+                o91Var3.getClass();
+                this.y = o91.a(measuredWidth, measuredHeight);
             }
         }
         if (this.F) {
@@ -329,7 +329,7 @@ public class ow0 extends FrameLayout implements org.telegram.ui.ActionBar.x5 {
                     for (int size2 = arrayList2.size(); i13 < size2; size2 = size2) {
                         Object obj2 = arrayList2.get(i13);
                         i13++;
-                        ((lw0) obj2).g(new lr0(this, 8));
+                        ((lw0) obj2).g(new kr0(this, 8));
                     }
                 } else {
                     L(beginRecording, null);
@@ -434,14 +434,14 @@ public class ow0 extends FrameLayout implements org.telegram.ui.ActionBar.x5 {
 
     public void S() {
         if (this.v != null) {
-            this.y = n91.a(getMeasuredWidth(), getMeasuredHeight());
+            this.y = o91.a(getMeasuredWidth(), getMeasuredHeight());
         }
         if (this.n == null && this.r.isEmpty()) {
             return;
         }
         this.f = R();
         Point point = AndroidUtilities.displaySize;
-        post(new sn0(4, this, point.x > point.y));
+        post(new zr0(3, this, point.x > point.y));
     }
 
     public final void V(Drawable drawable) {
@@ -451,7 +451,7 @@ public class ow0 extends FrameLayout implements org.telegram.ui.ActionBar.x5 {
         if (this.L == null) {
             di.ab abVar = new di.ab(this, getContext(), 24);
             this.L = abVar;
-            addView(abVar, 0, w7.a6.d(-1.0f, -1));
+            addView(abVar, 0, w7.z5.d(-1.0f, -1));
         }
         if (drawable instanceof cd0) {
             ((cd0) drawable).r(this.L);
@@ -500,7 +500,7 @@ public class ow0 extends FrameLayout implements org.telegram.ui.ActionBar.x5 {
         int i11 = (int) (f10 / 12.0f);
         System.currentTimeMillis();
         ArrayList arrayList = this.S;
-        kw0 kw0Var = arrayList.size() > 0 ? (kw0) i2.d.x(1, arrayList) : null;
+        kw0 kw0Var = arrayList.size() > 0 ? (kw0) i2.d.A(1, arrayList) : null;
         if (kw0Var == null) {
             kw0Var = new kw0();
             kw0Var.c = Bitmap.createBitmap(i11, i10, Bitmap.Config.ARGB_8888);

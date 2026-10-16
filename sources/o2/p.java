@@ -7,14 +7,14 @@ import b2.x;
 import java.util.Map;
 import u2.c1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class p extends c1 {
     public final Map J;
     public b2.t K;
 
-    public p(androidx.biometric.e eVar, n2.n nVar, n2.k kVar, Map map) {
-        super(eVar, nVar, kVar);
+    public p(androidx.biometric.e eVar, n2.m mVar, n2.j jVar, Map map) {
+        super(eVar, mVar, jVar);
         this.J = map;
     }
 

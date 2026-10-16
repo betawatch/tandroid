@@ -4,10 +4,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.d90;
-import org.telegram.ui.ma0;
+import org.telegram.ui.Components.c90;
+import org.telegram.ui.gm0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j5 implements q0.a {
     public final /* synthetic */ int a;
@@ -55,23 +55,23 @@ public final /* synthetic */ class j5 implements q0.a {
                 c5.i iVar2 = (c5.i) this.b;
                 ug.v vVar = (ug.v) this.c;
                 if (iVar2.a == 0) {
-                    AndroidUtilities.runOnUIThread(new rh.j(vVar, 16));
+                    AndroidUtilities.runOnUIThread(new ri.h0(vVar, 16));
                     break;
                 }
                 break;
             case 4:
                 c5.i iVar3 = (c5.i) this.b;
-                d90 d90Var = (d90) this.c;
+                c90 c90Var = (c90) this.c;
                 int i10 = iVar3.a;
                 boolean z10 = i10 == 0;
-                AndroidUtilities.runOnUIThread(new ma0(d90Var, z10, z10 ? null : BillingController.getResponseCodeString(i10), 17));
+                AndroidUtilities.runOnUIThread(new gm0(c90Var, z10, z10 ? null : BillingController.getResponseCodeString(i10), 17));
                 break;
             default:
                 c5.i iVar4 = (c5.i) this.b;
-                rh.s sVar = (rh.s) this.c;
+                rh.r rVar = (rh.r) this.c;
                 int i11 = iVar4.a;
                 boolean z11 = i11 == 0;
-                AndroidUtilities.runOnUIThread(new ma0(sVar, z11, z11 ? null : BillingController.getResponseCodeString(i11), 18));
+                AndroidUtilities.runOnUIThread(new gm0(rVar, z11, z11 ? null : BillingController.getResponseCodeString(i11), 18));
                 break;
         }
     }

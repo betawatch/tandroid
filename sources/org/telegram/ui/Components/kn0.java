@@ -34,7 +34,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ic1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class kn0 extends HorizontalScrollView {
     public static final /* synthetic */ int t0 = 0;
@@ -146,35 +146,35 @@ public abstract class kn0 extends HorizontalScrollView {
     }
 
     public final FrameLayout b(int i10, Drawable drawable) {
-        String i11 = i2.d.i(i10, "tab");
-        int i12 = this.x;
-        this.x = i12 + 1;
-        FrameLayout frameLayout = (FrameLayout) this.n.get(i11);
+        String j10 = i2.d.j(i10, "tab");
+        int i11 = this.x;
+        this.x = i11 + 1;
+        FrameLayout frameLayout = (FrameLayout) this.n.get(j10);
         if (frameLayout != null) {
-            g(i11, frameLayout, i12);
+            g(j10, frameLayout, i11);
         } else {
             frameLayout = new FrameLayout(getContext());
             ImageView imageView = new ImageView(getContext());
             imageView.setImageDrawable(drawable);
             imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-            frameLayout.addView(imageView, w7.a6.e(24, 24, 17));
+            frameLayout.addView(imageView, w7.z5.e(24, 24, 17));
             frameLayout.setFocusable(true);
             frameLayout.setOnClickListener(new dn0(this, 3));
-            this.e.addView(frameLayout, i12);
+            this.e.addView(frameLayout, i11);
         }
-        frameLayout.setTag(R.id.index_tag, Integer.valueOf(i12));
-        frameLayout.setSelected(i12 == this.y);
-        this.h.put(i11, frameLayout);
+        frameLayout.setTag(R.id.index_tag, Integer.valueOf(i11));
+        frameLayout.setSelected(i11 == this.y);
+        this.h.put(j10, frameLayout);
         return frameLayout;
     }
 
     public final by0 c(int i10, Drawable drawable) {
-        String i11 = i2.d.i(i10, "tab");
-        int i12 = this.x;
-        this.x = i12 + 1;
-        by0 by0Var = (by0) this.n.get(i11);
+        String j10 = i2.d.j(i10, "tab");
+        int i11 = this.x;
+        this.x = i11 + 1;
+        by0 by0Var = (by0) this.n.get(j10);
         if (by0Var != null) {
-            g(i11, by0Var, i12);
+            g(j10, by0Var, i11);
         } else {
             by0Var = new by0(getContext(), 1);
             by0Var.f.setImageDrawable(drawable);
@@ -182,12 +182,12 @@ public abstract class kn0 extends HorizontalScrollView {
             by0Var.setOnClickListener(new dn0(this, 4));
             by0Var.setExpanded(this.f0);
             by0Var.a(this.i0);
-            this.e.addView(by0Var, i12);
+            this.e.addView(by0Var, i11);
         }
         by0Var.d = false;
-        by0Var.setTag(R.id.index_tag, Integer.valueOf(i12));
-        by0Var.setSelected(i12 == this.y);
-        this.h.put(i11, by0Var);
+        by0Var.setTag(R.id.index_tag, Integer.valueOf(i11));
+        by0Var.setSelected(i11 == this.y);
+        this.h.put(j10, by0Var);
         return by0Var;
     }
 
@@ -386,7 +386,7 @@ public abstract class kn0 extends HorizontalScrollView {
                     }
                 }
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat.addUpdateListener(new g80(this, 13));
+                ofFloat.addUpdateListener(new f80(this, 13));
                 ofFloat.addListener(new k90(this, 12));
                 ofFloat.start();
             }

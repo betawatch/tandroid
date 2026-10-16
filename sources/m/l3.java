@@ -1,39 +1,21 @@
 package m;
 
-import android.content.Context;
-import android.view.View;
-import android.view.Window;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class l3 implements View.OnClickListener {
-    public final l.a a;
-    public final /* synthetic */ m3 b;
+public final class l3 extends ViewGroup.MarginLayoutParams {
+    public int a;
+    public int b;
 
-    public l3(m3 m3Var) {
-        this.b = m3Var;
-        Context context = m3Var.a.getContext();
-        CharSequence charSequence = m3Var.h;
-        l.a aVar = new l.a();
-        aVar.e = 4096;
-        aVar.g = 4096;
-        aVar.l = null;
-        aVar.m = null;
-        aVar.n = false;
-        aVar.o = false;
-        aVar.p = 16;
-        aVar.i = context;
-        aVar.a = charSequence;
-        this.a = aVar;
+    public l3(l3 l3Var) {
+        super((ViewGroup.MarginLayoutParams) l3Var);
+        this.a = 0;
+        this.a = l3Var.a;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        m3 m3Var = this.b;
-        Window.Callback callback = m3Var.k;
-        if (callback == null || !m3Var.l) {
-            return;
-        }
-        callback.onMenuItemSelected(0, this.a);
+    public l3(ViewGroup.LayoutParams layoutParams) {
+        super(layoutParams);
+        this.a = 0;
     }
 }

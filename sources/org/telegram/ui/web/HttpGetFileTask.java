@@ -17,8 +17,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.voip.r2;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public class HttpGetFileTask extends AsyncTask<String, Void, File> {
     private Utilities.Callback<File> doneCallback;
@@ -63,8 +64,8 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
         r18.file.delete();
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0178 A[LOOP:0: B:2:0x0009->B:35:0x0178, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0183 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0176 A[LOOP:0: B:2:0x0009->B:35:0x0176, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0181 A[SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r16v0 */
     /* JADX WARN: Type inference failed for: r16v1 */
     /* JADX WARN: Type inference failed for: r16v10 */
@@ -157,7 +158,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                             r16 = j10;
                                             if (read == -1) {
                                                 if (this.progressCallback != null) {
-                                                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.voip.m2(this, 8));
+                                                    AndroidUtilities.runOnUIThread(new r2(this, 7));
                                                 }
                                                 if (channel != null) {
                                                     channel.close();
@@ -226,6 +227,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                             }
                         } catch (Throwable th11) {
                             th = th11;
+                            r16 = j10;
                             th2 = th;
                             try {
                                 try {
@@ -243,7 +245,6 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                         }
                     } catch (Throwable th13) {
                         th = th13;
-                        r16 = j10;
                         th2 = th;
                         bufferedInputStream.close();
                         throw th2;

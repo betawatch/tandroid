@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xf implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class xf implements View.OnClickListener {
         int b10;
         View view2;
         int i11 = this.a;
-        int i12 = 7;
+        int i12 = 6;
         int i13 = 1;
         Object obj = this.c;
         Object obj2 = this.b;
@@ -71,7 +71,7 @@ public final /* synthetic */ class xf implements View.OnClickListener {
                 fo.W0((fo) obj2, (String) obj);
                 break;
             case 2:
-                fo.S0((fo) obj2, (org.telegram.ui.Components.m80) obj);
+                fo.S0((fo) obj2, (org.telegram.ui.Components.l80) obj);
                 break;
             case 3:
                 org.telegram.ui.Cells.a2 a2Var = (org.telegram.ui.Cells.a2) obj2;
@@ -94,8 +94,8 @@ public final /* synthetic */ class xf implements View.OnClickListener {
                 m4Var.setHeight(47);
                 m4Var.setText(LocaleController.getString("ChatHistory", R.string.ChatHistory));
                 linearLayout.addView(m4Var);
-                LinearLayout e = org.telegram.messenger.yh.e(context, 1);
-                linearLayout.addView(e, w7.a6.n(-1, -2));
+                LinearLayout e = org.telegram.messenger.sk.e(context, 1);
+                linearLayout.addView(e, w7.z5.n(-1, -2));
                 org.telegram.ui.Cells.j6[] j6VarArr = new org.telegram.ui.Cells.j6[2];
                 int i15 = 0;
                 for (int i16 = 2; i15 < i16; i16 = 2) {
@@ -110,7 +110,7 @@ public final /* synthetic */ class xf implements View.OnClickListener {
                     } else {
                         j6VarArr[i15].b(LocaleController.getString("ChatHistoryHidden", R.string.ChatHistoryHidden), LocaleController.getString("ChatHistoryHiddenInfo2", R.string.ChatHistoryHiddenInfo2), false, zoVar.J0);
                     }
-                    e.addView(j6VarArr[i15], w7.a6.n(-1, -2));
+                    e.addView(j6VarArr[i15], w7.z5.n(-1, -2));
                     j6VarArr[i15].setOnClickListener(new a0(zoVar, j6VarArr, z2Var, 8));
                     i15++;
                 }
@@ -167,7 +167,7 @@ public final /* synthetic */ class xf implements View.OnClickListener {
             case 17:
                 org.telegram.ui.Components.m8 m8Var = (org.telegram.ui.Components.m8) obj2;
                 m8Var.getClass();
-                ((org.telegram.ui.Components.m80) obj).u();
+                ((org.telegram.ui.Components.l80) obj).u();
                 m8Var.u0(6);
                 break;
             case 18:
@@ -216,10 +216,10 @@ public final /* synthetic */ class xf implements View.OnClickListener {
                 LaunchActivity launchActivity2 = (LaunchActivity) obj;
                 if (!ApplicationLoader.isStandaloneBuild() && !BuildVars.DEBUG_VERSION) {
                     if (BuildVars.isHuaweiStoreApp()) {
-                        pf.d.s(launchActivity2, BuildVars.HUAWEI_STORE_URL);
+                        pf.d.r(launchActivity2, BuildVars.HUAWEI_STORE_URL);
                         break;
                     } else {
-                        pf.d.s(launchActivity2, BuildVars.PLAYSTORE_APP_URL);
+                        pf.d.r(launchActivity2, BuildVars.PLAYSTORE_APP_URL);
                         break;
                     }
                 } else if (ApplicationLoader.applicationLoaderInstance.checkApkInstallPermissions(faVar.getContext())) {
@@ -231,7 +231,7 @@ public final /* synthetic */ class xf implements View.OnClickListener {
                             break;
                         }
                     } else if (tL_help_appUpdate.url != null) {
-                        pf.d.s(faVar.getContext(), faVar.n.url);
+                        pf.d.r(faVar.getContext(), faVar.n.url);
                         break;
                     }
                 }
@@ -239,10 +239,10 @@ public final /* synthetic */ class xf implements View.OnClickListener {
             case 21:
                 org.telegram.ui.Components.md mdVar = (org.telegram.ui.Components.md) obj2;
                 FrameLayout frameLayout = (FrameLayout) obj;
-                org.telegram.ui.Components.m80 m80Var = mdVar.X0;
-                if (m80Var == null || !m80Var.D()) {
+                org.telegram.ui.Components.l80 l80Var = mdVar.X0;
+                if (l80Var == null || !l80Var.D()) {
                     mdVar.d1.e(true);
-                    org.telegram.ui.Components.m80 F = org.telegram.ui.Components.m80.F(frameLayout, new bi.b(), mdVar.V0);
+                    org.telegram.ui.Components.l80 F = org.telegram.ui.Components.l80.F(frameLayout, new bi.b(), mdVar.V0);
                     mdVar.X0 = F;
                     F.s = 0;
                     F.p(13, AndroidUtilities.dp(200.0f), LocaleController.getString(R.string.TimerPeriodHint));
@@ -265,17 +265,17 @@ public final /* synthetic */ class xf implements View.OnClickListener {
                 }
                 break;
             case 22:
-                org.telegram.ui.Components.rl rlVar = (org.telegram.ui.Components.rl) obj2;
-                org.telegram.ui.Components.tl tlVar = (org.telegram.ui.Components.tl) obj;
-                org.telegram.ui.Components.ul ulVar = rlVar.b;
-                org.telegram.ui.Components.vi viVar = ulVar.b;
+                org.telegram.ui.Components.ql qlVar = (org.telegram.ui.Components.ql) obj2;
+                org.telegram.ui.Components.sl slVar = (org.telegram.ui.Components.sl) obj;
+                org.telegram.ui.Components.tl tlVar = qlVar.b;
+                org.telegram.ui.Components.vi viVar = tlVar.b;
                 fo foVar2 = (fo) viVar.f0;
                 if (foVar2.c()) {
-                    parentActivity = ulVar.getParentActivity();
-                    org.telegram.ui.Components.g5.L(parentActivity, foVar2.a(), new org.telegram.ui.Components.t2(i12, rlVar, tlVar), ulVar.a);
+                    parentActivity = tlVar.getParentActivity();
+                    org.telegram.ui.Components.g5.L(parentActivity, foVar2.a(), new org.telegram.ui.Components.u2(i12, qlVar, slVar), tlVar.a);
                     break;
                 } else {
-                    org.telegram.ui.Components.g5.Z(viVar.M1, viVar.l1() + 1, viVar.p1(), new vc(20, rlVar, tlVar));
+                    org.telegram.ui.Components.g5.Z(viVar.M1, viVar.l1() + 1, viVar.p1(), new uc(20, qlVar, slVar));
                     break;
                 }
             case 23:
@@ -327,7 +327,7 @@ public final /* synthetic */ class xf implements View.OnClickListener {
                                 v40Var.setAlpha(0.0f);
                                 foVar3.o2.setVisibility(4);
                                 foVar3.o2.setShowingDuration(4000L);
-                                foVar3.X0.addView(foVar3.o2, w7.a6.a(-2.0f, 19.0f, 0.0f, 19.0f, 0.0f, -2, 51));
+                                foVar3.X0.addView(foVar3.o2, w7.z5.a(-2.0f, 19.0f, 0.0f, 19.0f, 0.0f, -2, 51));
                             }
                             int i20 = foVar3.Z7.ttl_period;
                             foVar3.o2.setText(LocaleController.formatString("AutoDeleteSetInfo", R.string.AutoDeleteSetInfo, i20 > 86400 ? LocaleController.formatPluralString("Days", i20 / 86400, new Object[0]) : i20 >= 3600 ? LocaleController.formatPluralString("Hours", i20 / 3600, new Object[0]) : i20 >= 60 ? LocaleController.formatPluralString("Minutes", i20 / 60, new Object[0]) : LocaleController.formatPluralString("Seconds", i20, new Object[0])));
@@ -393,7 +393,7 @@ public final /* synthetic */ class xf implements View.OnClickListener {
                 break;
             default:
                 ((org.telegram.ui.Components.ss) obj2).B0 = !r13.B0;
-                ((org.telegram.ui.Components.z61) obj).N(true);
+                ((org.telegram.ui.Components.a71) obj).N(true);
                 break;
         }
     }

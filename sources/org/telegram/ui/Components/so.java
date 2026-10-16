@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class so extends LinearLayout {
     public final org.telegram.ui.ActionBar.c6 a;
@@ -28,10 +28,10 @@ public final class so extends LinearLayout {
         this.d = new ArrayList();
         this.a = c6Var;
         int dp = AndroidUtilities.dp(18.0f);
-        Paint G = c6Var != null ? c6Var.G("paintChatActionBackground") : null;
-        G = G == null ? org.telegram.ui.ActionBar.g6.T0("paintChatActionBackground") : G;
+        Paint F = c6Var != null ? c6Var.F("paintChatActionBackground") : null;
+        F = F == null ? org.telegram.ui.ActionBar.g6.T0("paintChatActionBackground") : F;
         int i11 = org.telegram.ui.ActionBar.g6.a;
-        setBackground(new org.telegram.ui.ActionBar.t5(this, view, dp, G));
+        setBackground(new org.telegram.ui.ActionBar.t5(this, view, dp, F));
         setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f));
         setOrientation(1);
         if (i10 == 0) {
@@ -42,7 +42,7 @@ public final class so extends LinearLayout {
             textView.setGravity(1);
             textView.setMaxWidth(AndroidUtilities.dp(210.0f));
             arrayList.add(textView);
-            addView(textView, w7.a6.q(-2, -2, 49));
+            addView(textView, w7.z5.q(-2, -2, 49));
         } else if (i10 == 1) {
             TextView textView2 = new TextView(activity);
             this.b = textView2;
@@ -51,19 +51,19 @@ public final class so extends LinearLayout {
             textView2.setGravity(1);
             textView2.setMaxWidth(AndroidUtilities.dp(210.0f));
             arrayList.add(textView2);
-            addView(textView2, w7.a6.q(-2, -2, 49));
+            addView(textView2, w7.z5.q(-2, -2, 49));
         } else {
             bk0 bk0Var = new bk0(activity);
             bk0Var.setAutoRepeat(true);
             bk0Var.f(R.raw.utyan_saved_messages, 120, 120, null);
             bk0Var.d();
-            addView(bk0Var, w7.a6.t(-2, -2, 49, 0, 2, 0, 0));
+            addView(bk0Var, w7.z5.t(-2, -2, 49, 0, 2, 0, 0));
         }
         TextView textView3 = new TextView(activity);
         if (i10 == 0) {
-            org.telegram.messenger.yh.j(15.0f, R.string.EncryptedDescriptionTitle, 1, textView3);
+            org.telegram.messenger.sk.j(15.0f, R.string.EncryptedDescriptionTitle, 1, textView3);
         } else if (i10 == 1) {
-            org.telegram.messenger.yh.j(15.0f, R.string.GroupEmptyTitle2, 1, textView3);
+            org.telegram.messenger.sk.j(15.0f, R.string.GroupEmptyTitle2, 1, textView3);
         } else {
             textView3.setText(LocaleController.getString(R.string.ChatYourSelfTitle));
             textView3.setTextSize(1, 16.0f);
@@ -74,14 +74,14 @@ public final class so extends LinearLayout {
         arrayList.add(textView3);
         float f7 = 260.0f;
         textView3.setMaxWidth(AndroidUtilities.dp(260.0f));
-        addView(textView3, w7.a6.t(-2, -2, (i10 != 2 ? LocaleController.isRTL ? 5 : 3 : 1) | 48, 0, 8, 0, i10 != 2 ? 0 : 8));
+        addView(textView3, w7.z5.t(-2, -2, (i10 != 2 ? LocaleController.isRTL ? 5 : 3 : 1) | 48, 0, 8, 0, i10 != 2 ? 0 : 8));
         int i12 = 0;
         while (i12 < 4) {
-            LinearLayout f10 = org.telegram.messenger.q.f(activity, 0);
-            addView(f10, w7.a6.t(-2, -2, LocaleController.isRTL ? 5 : 3, 0, 8, 0, 0));
+            LinearLayout e = org.telegram.messenger.g0.e(activity, 0);
+            addView(e, w7.z5.t(-2, -2, LocaleController.isRTL ? 5 : 3, 0, 8, 0, 0));
             ImageView imageView = new ImageView(activity);
             int i13 = org.telegram.ui.ActionBar.g6.ic;
-            float f11 = f7;
+            float f10 = f7;
             imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(i13, this.a), PorterDuff.Mode.MULTIPLY));
             if (i10 == 0) {
                 imageView.setImageResource(R.drawable.ic_lock_white);
@@ -96,7 +96,7 @@ public final class so extends LinearLayout {
             textView4.setTextColor(org.telegram.ui.ActionBar.g6.w0(i13, this.a));
             this.c.add(textView4);
             textView4.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-            textView4.setMaxWidth(AndroidUtilities.dp(f11));
+            textView4.setMaxWidth(AndroidUtilities.dp(f10));
             if (i12 != 0) {
                 if (i12 != 1) {
                     if (i12 != 2) {
@@ -131,26 +131,26 @@ public final class so extends LinearLayout {
                 textView4.setText(LocaleController.getString(R.string.GroupDescription1));
             }
             if (LocaleController.isRTL) {
-                f10.addView(textView4, w7.a6.n(-2, -2));
+                e.addView(textView4, w7.z5.n(-2, -2));
                 if (i10 == 0) {
-                    f10.addView(imageView, w7.a6.k(8.0f, 3.0f, 0.0f, 0.0f, -2, -2));
+                    e.addView(imageView, w7.z5.k(8.0f, 3.0f, 0.0f, 0.0f, -2, -2));
                 } else if (i10 == 2) {
-                    f10.addView(imageView, w7.a6.k(8.0f, 7.0f, 0.0f, 0.0f, -2, -2));
+                    e.addView(imageView, w7.z5.k(8.0f, 7.0f, 0.0f, 0.0f, -2, -2));
                 } else {
-                    f10.addView(imageView, w7.a6.k(8.0f, 3.0f, 0.0f, 0.0f, -2, -2));
+                    e.addView(imageView, w7.z5.k(8.0f, 3.0f, 0.0f, 0.0f, -2, -2));
                 }
             } else {
                 if (i10 == 0) {
-                    f10.addView(imageView, w7.a6.k(0.0f, 4.0f, 8.0f, 0.0f, -2, -2));
+                    e.addView(imageView, w7.z5.k(0.0f, 4.0f, 8.0f, 0.0f, -2, -2));
                 } else if (i10 == 2) {
-                    f10.addView(imageView, w7.a6.k(0.0f, 8.0f, 8.0f, 0.0f, -2, -2));
+                    e.addView(imageView, w7.z5.k(0.0f, 8.0f, 8.0f, 0.0f, -2, -2));
                 } else {
-                    f10.addView(imageView, w7.a6.k(0.0f, 4.0f, 8.0f, 0.0f, -2, -2));
+                    e.addView(imageView, w7.z5.k(0.0f, 4.0f, 8.0f, 0.0f, -2, -2));
                 }
-                f10.addView(textView4, w7.a6.n(-2, -2));
+                e.addView(textView4, w7.z5.n(-2, -2));
             }
             i12++;
-            f7 = f11;
+            f7 = f10;
         }
     }
 

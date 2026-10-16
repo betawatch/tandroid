@@ -18,20 +18,20 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.i71;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.wx0;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.fo;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class s extends m2 implements ne.d {
     public final ne.b a;
     public long b;
     public FrameLayout c;
-    public h71 d;
+    public i71 d;
     public kh.f e;
     public LinearLayout f;
     public di.d h;
@@ -45,8 +45,8 @@ public final class s extends m2 implements ne.d {
         this.a = new ne.b(0, this, es.h, 320L, false);
     }
 
-    public static void U(s sVar, l61 l61Var) {
-        Object obj = l61Var.G;
+    public static void U(s sVar, m61 m61Var) {
+        Object obj = m61Var.G;
         if (obj instanceof hi.f) {
             hi.f fVar = (hi.f) obj;
             long j10 = fVar.a;
@@ -76,11 +76,11 @@ public final class s extends m2 implements ne.d {
         setHasOwnBackground(true);
         t0 t0Var = new t0(getParentActivity(), this.resourceProvider, zc.a0(this), this.currentAccount, this.b);
         this.v = t0Var;
-        t0Var.h = new k6.h(this, 25);
+        t0Var.h = new a4.l(this, 23);
         t0Var.d();
         this.v.e();
         final int i10 = 0;
-        i2.d.v(false, this.actionBar);
+        i2.d.y(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, 6));
         this.actionBar.setTitle(LocaleController.getString(R.string.CommunityPendingRequests));
@@ -88,22 +88,22 @@ public final class s extends m2 implements ne.d {
         this.c = frameLayout;
         int i11 = g6.a7;
         frameLayout.setBackgroundColor(g6.x0(null, i11, false));
-        h71 h71Var = new h71(this, new ci.u(this, 19), new q(this), new q(this));
-        this.d = h71Var;
-        h71Var.setClipToPadding(false);
-        h71 h71Var2 = this.d;
-        h71Var2.W2.r = false;
-        h71Var2.p1();
+        i71 i71Var = new i71(this, new ci.u(this, 19), new q(this), new q(this));
+        this.d = i71Var;
+        i71Var.setClipToPadding(false);
+        i71 i71Var2 = this.d;
+        i71Var2.W2.r = false;
+        i71Var2.p1();
         this.d.j(new ah.d0(this, 6));
         this.actionBar.setAdaptiveBackground(this.d);
-        this.c.addView(this.d, a6.d(-1.0f, -1));
+        this.c.addView(this.d, z5.d(-1.0f, -1));
         kh.f fVar = new kh.f(context);
         this.e = fVar;
         fVar.setupColorKey(i11);
         this.e.setFadeZoneBottom(AndroidUtilities.dp(72.0f));
         this.e.setFadeHeightBottom(AndroidUtilities.dp(24.0f));
-        this.c.addView(this.e, a6.g());
-        this.c.addView(this.actionBar, a6.e(-1, -2, 48));
+        this.c.addView(this.e, z5.g());
+        this.c.addView(this.actionBar, z5.e(-1, -2, 48));
         LinearLayout linearLayout = new LinearLayout(context);
         this.f = linearLayout;
         linearLayout.setOrientation(0);
@@ -133,7 +133,7 @@ public final class s extends m2 implements ne.d {
                 }
             }
         });
-        this.f.addView(this.n, a6.p(0, 48, 1.0f, 0, 4, 0, 4, 0));
+        this.f.addView(this.n, z5.p(0, 48, 1.0f, 0, 4, 0, 4, 0));
         di.d dVar2 = new di.d(context, this.resourceProvider, true);
         this.h = dVar2;
         dVar2.setText(LocaleController.getString(R.string.CommunityPendingRequestAddAll));
@@ -159,15 +159,15 @@ public final class s extends m2 implements ne.d {
                 }
             }
         });
-        this.f.addView(this.h, a6.p(0, 48, 1.0f, 0, 4, 0, 4, 0));
-        this.c.addView(this.f, a6.e(-1, -2, 80));
+        this.f.addView(this.h, z5.p(0, 48, 1.0f, 0, 4, 0, 4, 0));
+        this.c.addView(this.f, z5.e(-1, -2, 80));
         wx0 wx0Var = new wx0(getParentActivity(), null, 16, this.resourceProvider);
         this.r = wx0Var;
         wx0Var.d.setText(LocaleController.getString(R.string.NoCommunityJoinRequests));
         this.r.e.setText(LocaleController.getString(R.string.NoCommunityJoinRequestsDescription));
         this.r.setAnimateLayoutChange(true);
         this.r.setVisibility(8);
-        this.c.addView(this.r, a6.e(-2, -2, 17));
+        this.c.addView(this.r, z5.e(-2, -2, 17));
         TLRPC.ChatFull chatFull = this.s;
         if (chatFull != null && chatFull.requests_pending != 0) {
             z10 = false;
@@ -176,8 +176,8 @@ public final class s extends m2 implements ne.d {
         V(0);
         FrameLayout frameLayout2 = this.c;
         q qVar = new q(this);
-        WeakHashMap weakHashMap = r0.j0.a;
-        r0.b0.i(frameLayout2, qVar);
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.a0.i(frameLayout2, qVar);
         setBulletinDelegate(new z8(4));
         FrameLayout frameLayout3 = this.c;
         this.fragmentView = frameLayout3;
@@ -223,6 +223,6 @@ public final class s extends m2 implements ne.d {
     }
 
     @Override // ne.d
-    public final /* synthetic */ void C(float f7, int i10) {
+    public final /* synthetic */ void A(float f7, int i10) {
     }
 }

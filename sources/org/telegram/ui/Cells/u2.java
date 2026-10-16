@@ -6,11 +6,11 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class u2 extends FrameLayout {
     public int a;
@@ -42,17 +42,17 @@ public final class u2 extends FrameLayout {
         TextView textView2 = this.c;
         if (textView2.getVisibility() == 0) {
             boolean z10 = LocaleController.isRTL;
-            a2 = w7.a6.a(-1.0f, z10 ? 23.0f : 61.0f, 0.0f, z10 ? 61.0f : 23.0f, 0.0f, -1, (z10 ? 5 : 3) | 48);
+            a2 = w7.z5.a(-1.0f, z10 ? 23.0f : 61.0f, 0.0f, z10 ? 61.0f : 23.0f, 0.0f, -1, (z10 ? 5 : 3) | 48);
         } else {
             boolean z11 = LocaleController.isRTL;
-            a2 = w7.a6.a(-1.0f, z11 ? 61.0f : 23.0f, 0.0f, z11 ? 23.0f : 61.0f, 0.0f, -1, (z11 ? 5 : 3) | 48);
+            a2 = w7.z5.a(-1.0f, z11 ? 61.0f : 23.0f, 0.0f, z11 ? 23.0f : 61.0f, 0.0f, -1, (z11 ? 5 : 3) | 48);
         }
         textView.setLayoutParams(a2);
         RadioButton radioButton = this.d;
         if (textView2.getVisibility() == 0) {
-            a10 = w7.a6.a(22.0f, 20.0f, 15.0f, 20.0f, 0.0f, 22, (LocaleController.isRTL ? 5 : 3) | 48);
+            a10 = w7.z5.a(22.0f, 20.0f, 15.0f, 20.0f, 0.0f, 22, (LocaleController.isRTL ? 5 : 3) | 48);
         } else {
-            a10 = w7.a6.a(22.0f, 20.0f, 15.0f, 20.0f, 0.0f, 22, (LocaleController.isRTL ? 3 : 5) | 48);
+            a10 = w7.z5.a(22.0f, 20.0f, 15.0f, 20.0f, 0.0f, 22, (LocaleController.isRTL ? 3 : 5) | 48);
         }
         radioButton.setLayoutParams(a10);
     }
@@ -73,7 +73,7 @@ public final class u2 extends FrameLayout {
         this.d.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(22.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(22.0f), TLObject.FLAG_30));
         if (textView.getVisibility() == 0) {
             textView.measure(View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
-            dp = yh.A(12.0f, textView.getMeasuredWidth(), dp);
+            dp = sk.z(12.0f, textView.getMeasuredWidth(), dp);
         }
         this.b.measure(View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
     }

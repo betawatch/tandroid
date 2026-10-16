@@ -19,9 +19,10 @@ import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.x5;
 import org.telegram.ui.Components.z9;
-import w7.a6;
+import w7.b6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class h extends FrameLayout implements x5 {
     public final c6 a;
@@ -41,11 +42,11 @@ public final class h extends FrameLayout implements x5 {
         super(context);
         this.v = new Paint(1);
         this.a = c6Var;
-        w7.c6.b(this, 0.03f, 1.25f);
+        b6.b(this, 0.03f, 1.25f);
         z9 z9Var = new z9(context);
         this.b = z9Var;
         z9Var.setRoundRadius(AndroidUtilities.dp(6.0f));
-        addView(z9Var, a6.a(32.0f, 10.0f, 8.0f, 8.0f, 8.0f, 32, 19));
+        addView(z9Var, z5.a(32.0f, 10.0f, 8.0f, 8.0f, 8.0f, 32, 19));
         LinearLayout linearLayout = new LinearLayout(context);
         this.c = linearLayout;
         linearLayout.setOrientation(1);
@@ -55,14 +56,14 @@ public final class h extends FrameLayout implements x5 {
         textView.setMaxLines(1);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
-        linearLayout.addView(textView, a6.q(-1, -2, 51));
+        linearLayout.addView(textView, z5.q(-1, -2, 51));
         TextView textView2 = new TextView(context);
         this.f = textView2;
         textView2.setTextSize(1, 13.0f);
         textView2.setMaxLines(1);
         textView2.setEllipsize(truncateAt);
-        linearLayout.addView(textView2, a6.t(-1, -2, 51, 0, 3, 0, 0));
-        FrameLayout.LayoutParams a2 = a6.a(-2.0f, 64.0f, 0.0f, 70.0f, 0.0f, -1, 19);
+        linearLayout.addView(textView2, z5.t(-1, -2, 51, 0, 3, 0, 0));
+        FrameLayout.LayoutParams a2 = z5.a(-2.0f, 64.0f, 0.0f, 70.0f, 0.0f, -1, 19);
         this.d = a2;
         addView(linearLayout, a2);
         TextView textView3 = new TextView(context);
@@ -72,18 +73,18 @@ public final class h extends FrameLayout implements x5 {
         textView3.setEllipsize(truncateAt);
         textView3.setGravity(5);
         textView3.setTextAlignment(6);
-        addView(textView3, a6.a(-2.0f, 64.0f, -10.0f, 12.0f, 0.0f, -2, 21));
+        addView(textView3, z5.a(-2.0f, 64.0f, -10.0f, 12.0f, 0.0f, -2, 21));
         ImageView imageView = new ImageView(context);
         this.n = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setImageResource(R.drawable.attach_arrow_right);
-        addView(imageView, a6.a(32.0f, 8.0f, 8.0f, 8.0f, 8.0f, 32, 21));
+        addView(imageView, z5.a(32.0f, 8.0f, 8.0f, 8.0f, 8.0f, 32, 21));
         o3 o3Var = new o3(this, getContext(), c6Var, 2);
         this.r = o3Var;
         o3Var.b(-1, g6.d6, g6.k7);
         o3Var.setDrawUnchecked(false);
         o3Var.setDrawBackgroundAsArc(3);
-        addView(o3Var, a6.a(24.0f, 26.0f, 12.0f, 0.0f, 0.0f, 24, 19));
+        addView(o3Var, z5.a(24.0f, 26.0f, 12.0f, 0.0f, 0.0f, 24, 19));
     }
 
     @Override // org.telegram.ui.ActionBar.x5

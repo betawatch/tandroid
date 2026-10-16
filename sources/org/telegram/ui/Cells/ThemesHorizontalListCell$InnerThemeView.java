@@ -43,7 +43,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.cd0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
     public static final /* synthetic */ int b0 = 0;
@@ -100,7 +100,7 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
         RadioButton radioButton = new RadioButton(context);
         this.a = radioButton;
         radioButton.setSize(AndroidUtilities.dp(20.0f));
-        addView(radioButton, w7.a6.a(22.0f, 27.0f, 75.0f, 0.0f, 0.0f, 22, 51));
+        addView(radioButton, w7.z5.a(22.0f, 27.0f, 75.0f, 0.0f, 0.0f, 22, 51));
     }
 
     public final void a() {

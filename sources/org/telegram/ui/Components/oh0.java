@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class oh0 extends FrameLayout {
     public final a6 a;
@@ -49,11 +49,11 @@ public abstract class oh0 extends FrameLayout {
         x1Var.setTextSize(AndroidUtilities.dp(14.0f));
         x1Var.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i10, false));
         x1Var.setGravity(LocaleController.isRTL ? 3 : 5);
-        x1Var.setOnClickListener(new z80(this, 8));
+        x1Var.setOnClickListener(new y80(this, 8));
         boolean z10 = LocaleController.isRTL;
-        addView(a6Var, w7.a6.a(-1.0f, z10 ? 0 : 16, 0.0f, z10 ? 16 : 0, 0.0f, -2, (z10 ? 5 : 3) | 48));
-        addView(textView, w7.a6.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 48));
-        addView(x1Var, w7.a6.a(-1.0f, 16.0f, 0.0f, 16.0f, 0.0f, -2, (LocaleController.isRTL ? 3 : 5) | 48));
+        addView(a6Var, w7.z5.a(-1.0f, z10 ? 0 : 16, 0.0f, z10 ? 16 : 0, 0.0f, -2, (z10 ? 5 : 3) | 48));
+        addView(textView, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 48));
+        addView(x1Var, w7.z5.a(-1.0f, 16.0f, 0.0f, 16.0f, 0.0f, -2, (LocaleController.isRTL ? 3 : 5) | 48));
     }
 
     public final void a(String str, ArrayList arrayList, int i10, int i11, int i12, boolean z10) {
@@ -69,8 +69,8 @@ public abstract class oh0 extends FrameLayout {
             a6Var.setText(Emoji.replaceEmoji(str, a6Var.getPaint().getFontMetricsInt(), false));
         }
         String format = String.format("%d", Integer.valueOf(i10));
-        SpannableStringBuilder spannableStringBuilder2 = LocaleController.isRTL ? new SpannableStringBuilder(a1.g.m(i10, "% – ")) : new SpannableStringBuilder(i2.d.j(i10, " – ", "%"));
-        spannableStringBuilder2.setSpan(new i61(AndroidUtilities.bold()), 3, format.length() + 3, 33);
+        SpannableStringBuilder spannableStringBuilder2 = LocaleController.isRTL ? new SpannableStringBuilder(a1.g.m(i10, "% – ")) : new SpannableStringBuilder(i2.d.k(i10, " – ", "%"));
+        spannableStringBuilder2.setSpan(new j61(AndroidUtilities.bold()), 3, format.length() + 3, 33);
         this.b.setText(spannableStringBuilder2);
         org.telegram.ui.Cells.x1 x1Var = this.c;
         if (i12 == 0) {

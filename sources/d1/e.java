@@ -28,7 +28,7 @@ import com.google.android.gms.fido.common.Transport;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.concurrent.Executor;
-import n7.s0;
+import n7.t0;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,7 +37,7 @@ import org.telegram.messenger.MediaDataController;
 import v0.i;
 import v7.p6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class e extends b1.d {
     public final Context e;
@@ -56,11 +56,11 @@ public final class e extends b1.d {
         JSONObject jSONObject;
         try {
             k kVar = uVar.f;
-            s0 s0Var = uVar.c;
+            t0 t0Var = uVar.c;
             try {
                 JSONObject jSONObject2 = new JSONObject();
-                if (s0Var != null && s0Var.t().length > 0) {
-                    jSONObject2.put("rawId", u6.b.c(s0Var.t()));
+                if (t0Var != null && t0Var.t().length > 0) {
+                    jSONObject2.put("rawId", u6.b.c(t0Var.t()));
                 }
                 String str = uVar.n;
                 if (str != null) {

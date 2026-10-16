@@ -1,38 +1,19 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
 import android.text.TextPaint;
-import android.text.style.URLSpan;
-import android.view.View;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class r61 extends URLSpan {
-    public final p11 a;
-    public boolean b;
-
-    public r61(String str, p11 p11Var) {
-        super(str != null ? str.replace((char) 8238, ' ') : str);
-        this.a = p11Var;
+public final class r61 extends q61 {
+    public r61(String str) {
+        super(str != null ? str.replace((char) 8238, ' ') : str, (q11) null);
     }
 
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        if (this.b && (view.getContext() instanceof LaunchActivity)) {
-            ((LaunchActivity) view.getContext()).X0 = true;
-        }
-        pf.d.p(view.getContext(), Uri.parse(getURL()), true, true);
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    @Override // org.telegram.ui.Components.q61, android.text.style.ClickableSpan, android.text.style.CharacterStyle
     public final void updateDrawState(TextPaint textPaint) {
-        int color = textPaint.getColor();
         super.updateDrawState(textPaint);
-        p11 p11Var = this.a;
-        if (p11Var != null) {
-            p11Var.a(textPaint);
-            textPaint.setUnderlineText(textPaint.linkColor == color);
-        }
+        textPaint.setTypeface(AndroidUtilities.bold());
+        textPaint.setUnderlineText(false);
     }
 }

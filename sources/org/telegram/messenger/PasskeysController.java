@@ -15,11 +15,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class PasskeysController {
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public class 1 implements v0.i {
         final /* synthetic */ Context val$context;
         final /* synthetic */ int val$currentAccount;
@@ -63,8 +63,8 @@ public class PasskeysController {
         }
 
         @Override // v0.i
-        public void onResult(v0.o oVar) {
-            b2.h hVar = oVar.a;
+        public void onResult(v0.p pVar) {
+            b2.h hVar = pVar.a;
             TL_account.finishPasskeyLogin finishpasskeylogin = new TL_account.finishPasskeyLogin();
             finishpasskeylogin.credential = new TL_account.inputPasskeyCredentialPublicKey();
             try {
@@ -120,7 +120,7 @@ public class PasskeysController {
     public static void create(Context context, int i10, Utilities.Callback2<TL_account.Passkey, String> callback2) {
         if (BuildVars.SUPPORTS_PASSKEYS) {
             kotlin.jvm.internal.i.e(context, "context");
-            k0.b bVar = new k0.b(context);
+            k0.b bVar = new k0.b(context, 3);
             org.telegram.ui.ActionBar.a2 a2Var = new org.telegram.ui.ActionBar.a2(context, 3, null);
             a2Var.q(500L);
             ConnectionsManager.getInstance(i10).sendRequestTyped(new TL_account.initPasskeyRegistration(), new a(), new mh(a2Var, callback2, bVar, context, i10, 0));
@@ -268,21 +268,21 @@ public class PasskeysController {
             return;
         }
         try {
-            v0.p pVar = new v0.p(new JSONObject(passkeyloginoptions.options.data).getJSONObject("publicKey").toString());
+            v0.q qVar = new v0.q(new JSONObject(passkeyloginoptions.options.data).getJSONObject("publicKey").toString());
             ArrayList arrayList = new ArrayList();
-            arrayList.add(pVar);
-            v0.n nVar = new v0.n(jd.g.m(arrayList), !z10);
+            arrayList.add(qVar);
+            v0.o oVar = new v0.o(jd.g.m(arrayList), !z10);
             try {
                 CancellationSignal cancellationSignal = new CancellationSignal();
                 Executor executor = context.getMainExecutor();
                 1 r82 = new 1(callback3, context, i10);
                 ((k0.b) hVar).getClass();
                 kotlin.jvm.internal.i.e(executor, "executor");
-                v0.j a2 = q2.b.a(new q2.b(context, 1), nVar);
+                v0.j a2 = v0.k.a(new v0.k(context), oVar);
                 if (a2 == null) {
                     r82.onError((Object) new w0.h("getCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added", 1));
                 } else {
-                    a2.onGetCredential(context, nVar, cancellationSignal, executor, r82);
+                    a2.onGetCredential(context, oVar, cancellationSignal, executor, r82);
                 }
                 runnableArr[0] = new jh(cancellationSignal, 1);
             } catch (Exception e) {
@@ -313,7 +313,7 @@ public class PasskeysController {
             return null;
         }
         kotlin.jvm.internal.i.e(context, "context");
-        final k0.b bVar = new k0.b(context);
+        final k0.b bVar = new k0.b(context, 3);
         final boolean[] zArr = new boolean[1];
         final Runnable[] runnableArr = new Runnable[1];
         TL_account.initPasskeyLogin initpasskeylogin = new TL_account.initPasskeyLogin();

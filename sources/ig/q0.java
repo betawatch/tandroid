@@ -17,9 +17,9 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.m2;
 import org.telegram.ui.Components.ec;
 import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.i61;
-import org.telegram.ui.Components.jy0;
+import org.telegram.ui.Components.j61;
 import org.telegram.ui.Components.k9;
+import org.telegram.ui.Components.ky0;
 import org.telegram.ui.Components.sc;
 import org.telegram.ui.Components.z9;
 import org.telegram.ui.PhotoViewer;
@@ -27,7 +27,7 @@ import org.telegram.ui.fo;
 import org.telegram.ui.oh1;
 import org.telegram.ui.xt;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -75,7 +75,7 @@ public final /* synthetic */ class q0 implements Runnable {
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
                 arrayList2.add(new MediaController.PhotoEntry(0, 0, 0L, ((File) obj5).getAbsolutePath(), 0, false, 0, 0, 0L));
                 PhotoViewer.t1().K2(m2Var.getParentActivity(), null, m2Var.getResourceProvider());
-                PhotoViewer.t1().g2(arrayList2, 0, 11, false, new jy0(), (fo) obj3);
+                PhotoViewer.t1().g2(arrayList2, 0, 11, false, new ky0(), (fo) obj3);
                 PhotoViewer.t1().X0(document, z10 ? document : null, false, null);
                 xt q6 = xt.q();
                 if (!z10) {
@@ -150,7 +150,7 @@ public final /* synthetic */ class q0 implements Runnable {
                             String formatString = lVar.a ? LocaleController.formatString("HasBeenAddedToChannel", R.string.HasBeenAddedToChannel, firstName) : LocaleController.formatString("HasBeenAddedToGroup", R.string.HasBeenAddedToGroup, firstName);
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(formatString);
                             int indexOf = formatString.indexOf(firstName);
-                            spannableStringBuilder.setSpan(new i61(AndroidUtilities.bold()), indexOf, firstName.length() + indexOf, 18);
+                            spannableStringBuilder.setSpan(new j61(AndroidUtilities.bold()), indexOf, firstName.length() + indexOf, 18);
                             ecVar.b.setText(spannableStringBuilder);
                             if (arrayList3.isEmpty()) {
                                 sc.g(m2Var2, ecVar, 2750).j();

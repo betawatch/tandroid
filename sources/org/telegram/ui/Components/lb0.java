@@ -3,16 +3,16 @@ package org.telegram.ui.Components;
 import android.graphics.Paint;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public interface lb0 {
-    void E(String str);
-
     void g(TLRPC.BotInlineResult botInlineResult, boolean z10, int i10);
 
-    Paint.FontMetricsInt m();
+    Paint.FontMetricsInt i();
 
-    void r(TLRPC.TL_document tL_document, String str, Object obj);
+    void m(TLRPC.TL_document tL_document, String str, Object obj);
 
-    void y(int i10, int i11, CharSequence charSequence, boolean z10);
+    void r(int i10, int i11, CharSequence charSequence, boolean z10);
+
+    void y(String str);
 }

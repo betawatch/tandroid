@@ -8,9 +8,8 @@ import e9.n0;
 import f2.p;
 import java.util.ArrayList;
 import java.util.Arrays;
-import n6.o;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class h extends i {
     public static final byte[] o = {79, 112, 117, 115, 72, 101, 97, 100};
@@ -35,35 +34,35 @@ public final class h extends i {
     }
 
     @Override // x3.i
-    public final boolean c(x xVar, long j10, o oVar) {
+    public final boolean c(x xVar, long j10, n3.b bVar) {
         if (e(xVar, o)) {
             byte[] copyOf = Arrays.copyOf(xVar.a, xVar.c);
             int i10 = copyOf[9] & 255;
             ArrayList a2 = p.a(copyOf);
-            if (((b2.x) oVar.b) == null) {
+            if (((b2.x) bVar.b) == null) {
                 w wVar = new w();
                 wVar.q = w0.n("audio/ogg");
                 wVar.r = w0.n("audio/opus");
                 wVar.J = i10;
                 wVar.K = 48000;
                 wVar.u = a2;
-                oVar.b = new b2.x(wVar);
+                bVar.b = new b2.x(wVar);
                 return true;
             }
         } else {
             if (!e(xVar, p)) {
-                ((b2.x) oVar.b).getClass();
+                ((b2.x) bVar.b).getClass();
                 return false;
             }
-            ((b2.x) oVar.b).getClass();
+            ((b2.x) bVar.b).getClass();
             if (!this.n) {
                 this.n = true;
                 xVar.O(8);
                 u0 r10 = c3.b.r(n0.v(c3.b.u(xVar, false, false).a));
                 if (r10 != null) {
-                    w a10 = ((b2.x) oVar.b).a();
-                    a10.k = r10.b(((b2.x) oVar.b).l);
-                    oVar.b = new b2.x(a10);
+                    w a10 = ((b2.x) bVar.b).a();
+                    a10.k = r10.b(((b2.x) bVar.b).l);
+                    bVar.b = new b2.x(a10);
                     return true;
                 }
             }

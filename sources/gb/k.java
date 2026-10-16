@@ -1,67 +1,99 @@
 package gb;
 
-import java.util.ConcurrentModificationException;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import j$.util.Objects;
+import java.net.Inet6Address;
+import java.net.InetAddress;
+import java.util.Comparator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class k implements Iterator {
-    public m a;
-    public m b = null;
-    public int c;
-    public final /* synthetic */ n d;
-    public final /* synthetic */ int e;
+public final class k implements Comparator {
+    public final /* synthetic */ int a;
 
-    public k(n nVar, int i10) {
-        this.e = i10;
-        this.d = nVar;
-        this.a = nVar.f.d;
-        this.c = nVar.e;
+    public /* synthetic */ k(int i10) {
+        this.a = i10;
     }
 
-    public final Object a() {
-        return b();
-    }
-
-    public final m b() {
-        m mVar = this.a;
-        n nVar = this.d;
-        if (mVar == nVar.f) {
-            throw new NoSuchElementException();
-        }
-        if (nVar.e != this.c) {
-            throw new ConcurrentModificationException();
-        }
-        this.a = mVar.d;
-        this.b = mVar;
-        return mVar;
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.a != this.d.f;
-    }
-
-    @Override // java.util.Iterator
-    public Object next() {
-        switch (this.e) {
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x005f, code lost:
+    
+        if (r0 == null) goto L36;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x006a, code lost:
+    
+        return -1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:30:?, code lost:
+    
+        return 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0068, code lost:
+    
+        if (r0 != false) goto L35;
+     */
+    @Override // java.util.Comparator
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int compare(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                return ((Comparable) obj).compareTo((Comparable) obj2);
             case 1:
-                return b().f;
+                Runnable runnable = (Runnable) obj;
+                Runnable runnable2 = (Runnable) obj2;
+                return (runnable2 instanceof hf.b ? ((hf.b) runnable2).a : 1) - (runnable instanceof hf.b ? ((hf.b) runnable).a : 1);
+            case 2:
+                Map.Entry entry = (Map.Entry) obj;
+                Map.Entry entry2 = (Map.Entry) obj2;
+                Objects.requireNonNull(entry);
+                Objects.requireNonNull(entry2);
+                Comparable comparable = (Comparable) entry.getKey();
+                Comparable comparable2 = (Comparable) entry2.getKey();
+                comparable.getClass();
+                comparable2.getClass();
+                return comparable.compareTo(comparable2);
+            case 3:
+                return ((q4.a) obj2).b() - ((q4.a) obj).b();
+            case 4:
+                s4.n nVar = (s4.n) obj;
+                s4.n nVar2 = (s4.n) obj2;
+                int i10 = nVar.a - nVar2.a;
+                return i10 == 0 ? nVar.b - nVar2.b : i10;
+            case 5:
+                s4.p pVar = (s4.p) obj;
+                s4.p pVar2 = (s4.p) obj2;
+                RecyclerView recyclerView = pVar.d;
+                if ((recyclerView == null) == (pVar2.d == null)) {
+                    boolean z10 = pVar.a;
+                    if (z10 == pVar2.a) {
+                        int i11 = pVar2.b - pVar.b;
+                        if (i11 != 0) {
+                            return i11;
+                        }
+                        int i12 = pVar.c - pVar2.c;
+                        if (i12 != 0) {
+                            return i12;
+                        }
+                        return 0;
+                    }
+                }
+                break;
+            case 6:
+                InetAddress inetAddress = (InetAddress) obj;
+                if (inetAddress.getClass() == ((InetAddress) obj2).getClass()) {
+                    return 0;
+                }
+                return inetAddress instanceof Inet6Address ? -1 : 1;
+            case 7:
+                return ((z4.c) obj).b - ((z4.c) obj2).b;
             default:
-                return a();
+                z4.d dVar = (z4.d) ((View) obj).getLayoutParams();
+                z4.d dVar2 = (z4.d) ((View) obj2).getLayoutParams();
+                boolean z11 = dVar.a;
+                return z11 != dVar2.a ? z11 ? 1 : -1 : dVar.e - dVar2.e;
         }
-    }
-
-    @Override // java.util.Iterator
-    public final void remove() {
-        m mVar = this.b;
-        if (mVar == null) {
-            throw new IllegalStateException();
-        }
-        n nVar = this.d;
-        nVar.c(mVar, true);
-        this.b = null;
-        this.c = nVar.e;
     }
 }

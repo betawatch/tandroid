@@ -10,13 +10,13 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class t70 extends lm0 {
-    public final /* synthetic */ a80 c;
+    public final /* synthetic */ z70 c;
 
-    public t70(a80 a80Var) {
-        this.c = a80Var;
+    public t70(z70 z70Var) {
+        this.c = z70Var;
     }
 
     @Override // org.telegram.ui.Components.lm0
@@ -28,16 +28,16 @@ public final class t70 extends lm0 {
     public final TLObject E(int i10) {
         int i11;
         int i12;
-        a80 a80Var = this.c;
-        if (a80Var.m0 == null) {
-            return (TLObject) a80Var.e0.get(i10 - a80Var.Y);
+        z70 z70Var = this.c;
+        if (z70Var.m0 == null) {
+            return (TLObject) z70Var.e0.get(i10 - z70Var.Y);
         }
-        TLRPC.Dialog dialog = (TLRPC.Dialog) a80Var.n0.get(i10 - a80Var.Y);
+        TLRPC.Dialog dialog = (TLRPC.Dialog) z70Var.n0.get(i10 - z70Var.Y);
         if (DialogObject.isUserDialog(dialog.id)) {
-            i12 = ((org.telegram.ui.ActionBar.e3) a80Var).currentAccount;
+            i12 = ((org.telegram.ui.ActionBar.e3) z70Var).currentAccount;
             return MessagesController.getInstance(i12).getUser(Long.valueOf(dialog.id));
         }
-        i11 = ((org.telegram.ui.ActionBar.e3) a80Var).currentAccount;
+        i11 = ((org.telegram.ui.ActionBar.e3) z70Var).currentAccount;
         return MessagesController.getInstance(i11).getChat(Long.valueOf(-dialog.id));
     }
 
@@ -48,21 +48,21 @@ public final class t70 extends lm0 {
 
     @Override // s4.g0
     public final int j(int i10) {
-        a80 a80Var = this.c;
-        if (i10 == a80Var.X) {
+        z70 z70Var = this.c;
+        if (i10 == z70Var.X) {
             return 1;
         }
-        a80Var.getClass();
+        z70Var.getClass();
         if (i10 == 0) {
             return 2;
         }
-        if (i10 >= a80Var.Y && i10 < a80Var.Z) {
+        if (i10 >= z70Var.Y && i10 < z70Var.Z) {
             return 3;
         }
-        if (i10 == a80Var.b0) {
+        if (i10 == z70Var.b0) {
             return 4;
         }
-        return i10 == a80Var.a0 ? 5 : 0;
+        return i10 == z70Var.a0 ? 5 : 0;
     }
 
     @Override // s4.g0
@@ -80,13 +80,13 @@ public final class t70 extends lm0 {
         TLObject E = E(i10);
         Object object = g4Var.getObject();
         long j10 = object instanceof TLRPC.User ? ((TLRPC.User) object).id : object instanceof TLRPC.Chat ? -((TLRPC.Chat) object).id : 0L;
-        a80 a80Var = this.c;
-        g4Var.e(E, null, null, i10 != a80Var.Z);
+        z70 z70Var = this.c;
+        g4Var.e(E, null, null, i10 != z70Var.Z);
         long j11 = E instanceof TLRPC.User ? ((TLRPC.User) E).id : E instanceof TLRPC.Chat ? -((TLRPC.Chat) E).id : 0L;
         if (j11 != 0) {
-            a0.h hVar = a80Var.T;
+            a0.h hVar = z70Var.T;
             if (hVar == null || hVar.h(j11) < 0) {
-                g4Var.c(a80Var.f0.h(j11) >= 0, j10 == j11);
+                g4Var.c(z70Var.f0.h(j11) >= 0, j10 == j11);
                 g4Var.setCheckBoxEnabled(true);
             } else {
                 g4Var.c(true, false);
@@ -100,9 +100,9 @@ public final class t70 extends lm0 {
         View view;
         Context context = viewGroup.getContext();
         if (i10 != 2) {
-            a80 a80Var = this.c;
+            z70 z70Var = this.c;
             if (i10 == 3) {
-                view = new org.telegram.ui.Cells.g4(1, 0, context, a80Var.m0 != null);
+                view = new org.telegram.ui.Cells.g4(1, 0, context, z70Var.m0 != null);
             } else if (i10 == 4) {
                 view = new View(context);
             } else if (i10 != 5) {
@@ -115,7 +115,7 @@ public final class t70 extends lm0 {
                 s70 s70Var = new s70(context, null, 0, null, 0);
                 s70Var.setLayoutParams(new s4.o0(-1, -1));
                 s70Var.e.setVisibility(8);
-                org.telegram.ui.mu muVar = a80Var.m0;
+                org.telegram.ui.mu muVar = z70Var.m0;
                 wh.n nVar = s70Var.d;
                 if (muVar != null) {
                     nVar.setText(LocaleController.getString(R.string.FilterNoChats));

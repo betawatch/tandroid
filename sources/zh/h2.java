@@ -14,7 +14,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.z9;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class h2 extends FrameLayout {
     public final z9 a;
@@ -29,21 +29,21 @@ public final class h2 extends FrameLayout {
         z9 z9Var = new z9(context);
         this.a = z9Var;
         z9Var.setRoundRadius(AndroidUtilities.dp(13.0f));
-        addView(z9Var, w7.a6.a(26.0f, 0.0f, 11.33f, 0.0f, 0.0f, 26, 49));
+        addView(z9Var, w7.z5.a(26.0f, 0.0f, 11.33f, 0.0f, 0.0f, 26, 49));
         n2 n2Var = new n2(context);
         this.b = n2Var;
         n2Var.e = AndroidUtilities.dp(18.0f);
         n2Var.a.setStrokeWidth(AndroidUtilities.dp(3.0f));
-        addView(n2Var, w7.a6.a(48.0f, 0.0f, 0.66f, 0.0f, 0.0f, 48, 49));
+        addView(n2Var, w7.z5.a(48.0f, 0.0f, 0.66f, 0.0f, 0.0f, 48, 49));
         org.telegram.ui.Components.s6 s6Var = new org.telegram.ui.Components.s6(context, false, false, false);
         this.c = s6Var;
         s6Var.setTypeface(AndroidUtilities.bold());
         s6Var.setGravity(17);
         s6Var.setTextSize(AndroidUtilities.dp(12.0f));
         s6Var.setTextColor(-1);
-        addView(s6Var, w7.a6.a(14.0f, 0.0f, 39.0f, 0.0f, 0.0f, -1, 48));
+        addView(s6Var, w7.z5.a(14.0f, 0.0f, 39.0f, 0.0f, 0.0f, -1, 48));
         c(0.0f, false);
-        w7.c6.a(this);
+        w7.b6.a(this);
     }
 
     public final void a(TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop) {

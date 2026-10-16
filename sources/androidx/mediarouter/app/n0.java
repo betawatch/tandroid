@@ -29,10 +29,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import ji.w4;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class n0 extends g.t {
     public static final /* synthetic */ int j0 = 0;
@@ -44,7 +43,7 @@ public final class n0 extends g.t {
     public l0 J;
     public m0 K;
     public HashMap L;
-    public p4.w M;
+    public p4.v M;
     public HashMap N;
     public boolean O;
     public boolean P;
@@ -63,14 +62,14 @@ public final class n0 extends g.t {
     public e0 c0;
     public Bitmap d0;
     public Uri e0;
-    public final p4.y f;
+    public final p4.x f;
     public boolean f0;
     public Bitmap g0;
     public final c h;
     public int h0;
     public final boolean i0;
-    public p4.s n;
-    public p4.w r;
+    public p4.r n;
+    public p4.v r;
     public final ArrayList s;
     public final ArrayList v;
     public final ArrayList w;
@@ -89,7 +88,7 @@ public final class n0 extends g.t {
         super(r2, r0 == 0 ? v7.a0.e(r2) : r0);
         ContextThemeWrapper a2 = v7.a0.a(context, false);
         int g10 = v7.a0.g(a2, R.attr.mediaRouteTheme);
-        this.n = p4.s.c;
+        this.n = p4.r.c;
         this.s = new ArrayList();
         this.v = new ArrayList();
         this.w = new ArrayList();
@@ -98,18 +97,18 @@ public final class n0 extends g.t {
         this.H = new ab.o0(this, i10);
         Context context2 = getContext();
         this.y = context2;
-        this.f = p4.y.d(context2);
-        this.i0 = p4.y.g();
+        this.f = p4.x.d(context2);
+        this.i0 = p4.x.g();
         this.h = new c(this, i10);
-        this.r = p4.y.f();
+        this.r = p4.x.f();
         this.a0 = new q(this, 1);
-        h(p4.y.e());
+        h(p4.x.e());
     }
 
     public final void e(List list) {
         for (int size = list.size() - 1; size >= 0; size--) {
-            p4.w wVar = (p4.w) list.get(size);
-            if (wVar.d() || !wVar.g || !wVar.h(this.n) || this.r == wVar) {
+            p4.v vVar = (p4.v) list.get(size);
+            if (vVar.d() || !vVar.g || !vVar.h(this.n) || this.r == vVar) {
                 list.remove(size);
             }
         }
@@ -144,7 +143,7 @@ public final class n0 extends g.t {
         if (mediaSessionCompat$Token != null && this.F) {
             qf.b bVar2 = new qf.b(this.y, mediaSessionCompat$Token);
             this.Z = bVar2;
-            bVar2.a0(qVar);
+            bVar2.c0(qVar);
             MediaMetadata metadata = ((android.support.v4.media.session.h) this.Z.b).a.getMetadata();
             if (metadata != null) {
                 a0.f fVar = MediaMetadataCompat.d;
@@ -163,19 +162,19 @@ public final class n0 extends g.t {
         }
     }
 
-    public final void i(p4.s sVar) {
-        if (sVar == null) {
+    public final void i(p4.r rVar) {
+        if (rVar == null) {
             throw new IllegalArgumentException("selector must not be null");
         }
-        if (this.n.equals(sVar)) {
+        if (this.n.equals(rVar)) {
             return;
         }
-        this.n = sVar;
+        this.n = rVar;
         if (this.F) {
-            p4.y yVar = this.f;
+            p4.x xVar = this.f;
             c cVar = this.h;
-            yVar.h(cVar);
-            yVar.a(sVar, cVar, 1);
+            xVar.h(cVar);
+            xVar.a(rVar, cVar, 1);
             l();
         }
     }
@@ -289,18 +288,18 @@ public final class n0 extends g.t {
         ArrayList arrayList3 = this.w;
         arrayList3.clear();
         arrayList.addAll(DesugarCollections.unmodifiableList(this.r.v));
-        p4.v vVar = this.r.a;
-        vVar.getClass();
-        p4.y.b();
-        for (p4.w wVar : DesugarCollections.unmodifiableList(vVar.b)) {
-            w4 b10 = this.r.b(wVar);
+        p4.u uVar = this.r.a;
+        uVar.getClass();
+        p4.x.b();
+        for (p4.v vVar : DesugarCollections.unmodifiableList(uVar.b)) {
+            m.l b10 = this.r.b(vVar);
             if (b10 != null) {
-                p4.o oVar = (p4.o) b10.b;
+                p4.o oVar = (p4.o) b10.a;
                 if (oVar != null && oVar.d) {
-                    arrayList2.add(wVar);
+                    arrayList2.add(vVar);
                 }
                 if (oVar != null && oVar.e) {
-                    arrayList3.add(wVar);
+                    arrayList3.add(vVar);
                 }
             }
         }
@@ -349,7 +348,7 @@ public final class n0 extends g.t {
         this.F = true;
         this.f.a(this.n, this.h, 1);
         l();
-        h(p4.y.e());
+        h(p4.x.e());
     }
 
     @Override // g.t, androidx.activity.n, android.app.Dialog

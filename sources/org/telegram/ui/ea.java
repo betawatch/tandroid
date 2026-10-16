@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ea extends org.telegram.ui.ActionBar.m2 {
     public da a;
@@ -59,7 +59,7 @@ public final class ea extends org.telegram.ui.ActionBar.m2 {
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
         int i10 = org.telegram.ui.ActionBar.g6.f8;
         org.telegram.ui.ActionBar.c6 c6Var = this.d;
-        kVar.B(org.telegram.ui.ActionBar.g6.w0(i10, c6Var), false);
+        kVar.C(org.telegram.ui.ActionBar.g6.w0(i10, c6Var), false);
         this.actionBar.D(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.v8, c6Var), false);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
@@ -102,7 +102,7 @@ public final class ea extends org.telegram.ui.ActionBar.m2 {
         this.a.setCursorColor(org.telegram.ui.ActionBar.g6.w0(i12, c6Var));
         this.a.setCursorSize(AndroidUtilities.dp(20.0f));
         this.a.setCursorWidth(1.5f);
-        linearLayout.addView(this.a, w7.a6.k(24.0f, 24.0f, 24.0f, 0.0f, -1, 36));
+        linearLayout.addView(this.a, w7.z5.k(24.0f, 24.0f, 24.0f, 0.0f, -1, 36));
         final int i16 = 0;
         this.a.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.ca
             public final /* synthetic */ ea b;
@@ -150,7 +150,7 @@ public final class ea extends org.telegram.ui.ActionBar.m2 {
         this.b.setCursorColor(org.telegram.ui.ActionBar.g6.w0(i12, c6Var));
         this.b.setCursorSize(AndroidUtilities.dp(20.0f));
         this.b.setCursorWidth(1.5f);
-        linearLayout.addView(this.b, w7.a6.k(24.0f, 16.0f, 24.0f, 0.0f, -1, 36));
+        linearLayout.addView(this.b, w7.z5.k(24.0f, 16.0f, 24.0f, 0.0f, -1, 36));
         final int i17 = 1;
         this.b.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.ca
             public final /* synthetic */ ea b;
@@ -235,7 +235,7 @@ public final class ea extends org.telegram.ui.ActionBar.m2 {
     @Override // org.telegram.ui.ActionBar.m2
     public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
         if (z10) {
-            AndroidUtilities.runOnUIThread(new tu0(this, 18), 100L);
+            AndroidUtilities.runOnUIThread(new su0(this, 18), 100L);
         }
     }
 }

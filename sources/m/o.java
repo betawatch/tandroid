@@ -2,104 +2,115 @@ package m;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.content.res.Resources;
-import android.content.res.TypedArray;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.text.InputFilter;
 import android.util.AttributeSet;
 import android.view.ActionMode;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputConnection;
-import android.widget.CheckedTextView;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.Button;
 import org.telegram.messenger.beta.R;
-import v7.q7;
+import w7.n6;
 import w7.w7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class o extends CheckedTextView implements u0.k {
-    public final p a;
-    public final e2.c b;
-    public final w0 c;
-    public t d;
+public final class o extends Button implements u0.k {
+    public final e2.c a;
+    public final y0 b;
+    public v c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0085 A[Catch: all -> 0x0064, TryCatch #1 {all -> 0x0064, blocks: (B:3:0x004b, B:5:0x0052, B:8:0x0058, B:9:0x007e, B:11:0x0085, B:12:0x008c, B:14:0x0093, B:21:0x0067, B:23:0x006d, B:25:0x0073), top: B:2:0x004b }] */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0093 A[Catch: all -> 0x0064, TRY_LEAVE, TryCatch #1 {all -> 0x0064, blocks: (B:3:0x004b, B:5:0x0052, B:8:0x0058, B:9:0x007e, B:11:0x0085, B:12:0x008c, B:14:0x0093, B:21:0x0067, B:23:0x006d, B:25:0x0073), top: B:2:0x004b }] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public o(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet, R.attr.checkedTextViewStyle);
-        int resourceId;
-        int resourceId2;
-        c3.a(context);
-        b3.a(this, getContext());
-        w0 w0Var = new w0(this);
-        this.c = w0Var;
-        w0Var.f(attributeSet, R.attr.checkedTextViewStyle);
-        w0Var.b();
+        super(context, attributeSet, R.attr.buttonStyle);
+        e3.a(context);
+        d3.a(this, getContext());
         e2.c cVar = new e2.c(this);
-        this.b = cVar;
-        cVar.f(attributeSet, R.attr.checkedTextViewStyle);
-        this.a = new p(this);
-        Context context2 = getContext();
-        int[] iArr = f.a.l;
-        li.k P = li.k.P(context2, attributeSet, iArr, R.attr.checkedTextViewStyle);
-        TypedArray typedArray = (TypedArray) P.c;
-        r0.j0.i(this, getContext(), iArr, attributeSet, (TypedArray) P.c, R.attr.checkedTextViewStyle);
-        try {
-            if (typedArray.hasValue(1) && (resourceId2 = typedArray.getResourceId(1, 0)) != 0) {
-                try {
-                    setCheckMarkDrawable(q7.b(getContext(), resourceId2));
-                } catch (Resources.NotFoundException unused) {
-                }
-                if (typedArray.hasValue(2)) {
-                    setCheckMarkTintList(P.E(2));
-                }
-                if (typedArray.hasValue(3)) {
-                    setCheckMarkTintMode(l1.b(typedArray.getInt(3, -1), null));
-                }
-                P.Q();
-                getEmojiTextViewHelper().a(attributeSet, R.attr.checkedTextViewStyle);
-            }
-            if (typedArray.hasValue(0) && (resourceId = typedArray.getResourceId(0, 0)) != 0) {
-                setCheckMarkDrawable(q7.b(getContext(), resourceId));
-            }
-            if (typedArray.hasValue(2)) {
-            }
-            if (typedArray.hasValue(3)) {
-            }
-            P.Q();
-            getEmojiTextViewHelper().a(attributeSet, R.attr.checkedTextViewStyle);
-        } catch (Throwable th2) {
-            P.Q();
-            throw th2;
-        }
+        this.a = cVar;
+        cVar.f(attributeSet, R.attr.buttonStyle);
+        y0 y0Var = new y0(this);
+        this.b = y0Var;
+        y0Var.f(attributeSet, R.attr.buttonStyle);
+        y0Var.b();
+        getEmojiTextViewHelper().a(attributeSet, R.attr.buttonStyle);
     }
 
-    private t getEmojiTextViewHelper() {
-        if (this.d == null) {
-            this.d = new t(this);
+    private v getEmojiTextViewHelper() {
+        if (this.c == null) {
+            this.c = new v(this);
         }
-        return this.d;
+        return this.c;
     }
 
-    @Override // android.widget.CheckedTextView, android.widget.TextView, android.view.View
+    @Override // android.widget.TextView, android.view.View
     public final void drawableStateChanged() {
         super.drawableStateChanged();
-        w0 w0Var = this.c;
-        if (w0Var != null) {
-            w0Var.b();
-        }
-        e2.c cVar = this.b;
+        e2.c cVar = this.a;
         if (cVar != null) {
             cVar.b();
         }
-        p pVar = this.a;
-        if (pVar != null) {
-            pVar.b();
+        y0 y0Var = this.b;
+        if (y0Var != null) {
+            y0Var.b();
         }
+    }
+
+    @Override // android.widget.TextView
+    public int getAutoSizeMaxTextSize() {
+        if (w3.b) {
+            return super.getAutoSizeMaxTextSize();
+        }
+        y0 y0Var = this.b;
+        if (y0Var != null) {
+            return Math.round(y0Var.i.e);
+        }
+        return -1;
+    }
+
+    @Override // android.widget.TextView
+    public int getAutoSizeMinTextSize() {
+        if (w3.b) {
+            return super.getAutoSizeMinTextSize();
+        }
+        y0 y0Var = this.b;
+        if (y0Var != null) {
+            return Math.round(y0Var.i.d);
+        }
+        return -1;
+    }
+
+    @Override // android.widget.TextView
+    public int getAutoSizeStepGranularity() {
+        if (w3.b) {
+            return super.getAutoSizeStepGranularity();
+        }
+        y0 y0Var = this.b;
+        if (y0Var != null) {
+            return Math.round(y0Var.i.c);
+        }
+        return -1;
+    }
+
+    @Override // android.widget.TextView
+    public int[] getAutoSizeTextAvailableSizes() {
+        if (w3.b) {
+            return super.getAutoSizeTextAvailableSizes();
+        }
+        y0 y0Var = this.b;
+        return y0Var != null ? y0Var.i.f : new int[0];
+    }
+
+    @Override // android.widget.TextView
+    public int getAutoSizeTextType() {
+        if (w3.b) {
+            return super.getAutoSizeTextType() == 1 ? 1 : 0;
+        }
+        y0 y0Var = this.b;
+        if (y0Var != null) {
+            return y0Var.i.a;
+        }
+        return 0;
     }
 
     @Override // android.widget.TextView
@@ -108,7 +119,7 @@ public final class o extends CheckedTextView implements u0.k {
     }
 
     public ColorStateList getSupportBackgroundTintList() {
-        e2.c cVar = this.b;
+        e2.c cVar = this.a;
         if (cVar != null) {
             return cVar.d();
         }
@@ -116,42 +127,54 @@ public final class o extends CheckedTextView implements u0.k {
     }
 
     public PorterDuff.Mode getSupportBackgroundTintMode() {
-        e2.c cVar = this.b;
+        e2.c cVar = this.a;
         if (cVar != null) {
             return cVar.e();
         }
         return null;
     }
 
-    public ColorStateList getSupportCheckMarkTintList() {
-        p pVar = this.a;
-        if (pVar != null) {
-            return (ColorStateList) pVar.a;
-        }
-        return null;
-    }
-
-    public PorterDuff.Mode getSupportCheckMarkTintMode() {
-        p pVar = this.a;
-        if (pVar != null) {
-            return (PorterDuff.Mode) pVar.b;
-        }
-        return null;
-    }
-
     public ColorStateList getSupportCompoundDrawablesTintList() {
-        return this.c.d();
+        return this.b.d();
     }
 
     public PorterDuff.Mode getSupportCompoundDrawablesTintMode() {
-        return this.c.e();
+        return this.b.e();
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
+        super.onInitializeAccessibilityEvent(accessibilityEvent);
+        accessibilityEvent.setClassName(Button.class.getName());
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName(Button.class.getName());
     }
 
     @Override // android.widget.TextView, android.view.View
-    public final InputConnection onCreateInputConnection(EditorInfo editorInfo) {
-        InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
-        w7.q.a(editorInfo, onCreateInputConnection, this);
-        return onCreateInputConnection;
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        y0 y0Var = this.b;
+        if (y0Var == null || w3.b) {
+            return;
+        }
+        y0Var.i.a();
+    }
+
+    @Override // android.widget.TextView
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        super.onTextChanged(charSequence, i10, i11, i12);
+        y0 y0Var = this.b;
+        if (y0Var != null) {
+            i1 i1Var = y0Var.i;
+            if (w3.b || !i1Var.f()) {
+                return;
+            }
+            i1Var.a();
+        }
     }
 
     @Override // android.widget.TextView
@@ -160,10 +183,46 @@ public final class o extends CheckedTextView implements u0.k {
         getEmojiTextViewHelper().b(z10);
     }
 
+    @Override // android.widget.TextView
+    public final void setAutoSizeTextTypeUniformWithConfiguration(int i10, int i11, int i12, int i13) {
+        if (w3.b) {
+            super.setAutoSizeTextTypeUniformWithConfiguration(i10, i11, i12, i13);
+            return;
+        }
+        y0 y0Var = this.b;
+        if (y0Var != null) {
+            y0Var.i(i10, i11, i12, i13);
+        }
+    }
+
+    @Override // android.widget.TextView
+    public final void setAutoSizeTextTypeUniformWithPresetSizes(int[] iArr, int i10) {
+        if (w3.b) {
+            super.setAutoSizeTextTypeUniformWithPresetSizes(iArr, i10);
+            return;
+        }
+        y0 y0Var = this.b;
+        if (y0Var != null) {
+            y0Var.j(iArr, i10);
+        }
+    }
+
+    @Override // android.widget.TextView
+    public void setAutoSizeTextTypeWithDefaults(int i10) {
+        if (w3.b) {
+            super.setAutoSizeTextTypeWithDefaults(i10);
+            return;
+        }
+        y0 y0Var = this.b;
+        if (y0Var != null) {
+            y0Var.k(i10);
+        }
+    }
+
     @Override // android.view.View
     public void setBackgroundDrawable(Drawable drawable) {
         super.setBackgroundDrawable(drawable);
-        e2.c cVar = this.b;
+        e2.c cVar = this.a;
         if (cVar != null) {
             cVar.g();
         }
@@ -172,41 +231,9 @@ public final class o extends CheckedTextView implements u0.k {
     @Override // android.view.View
     public void setBackgroundResource(int i10) {
         super.setBackgroundResource(i10);
-        e2.c cVar = this.b;
+        e2.c cVar = this.a;
         if (cVar != null) {
             cVar.h(i10);
-        }
-    }
-
-    @Override // android.widget.CheckedTextView
-    public void setCheckMarkDrawable(Drawable drawable) {
-        super.setCheckMarkDrawable(drawable);
-        p pVar = this.a;
-        if (pVar != null) {
-            if (pVar.e) {
-                pVar.e = false;
-            } else {
-                pVar.e = true;
-                pVar.b();
-            }
-        }
-    }
-
-    @Override // android.widget.TextView
-    public final void setCompoundDrawables(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
-        super.setCompoundDrawables(drawable, drawable2, drawable3, drawable4);
-        w0 w0Var = this.c;
-        if (w0Var != null) {
-            w0Var.b();
-        }
-    }
-
-    @Override // android.widget.TextView
-    public final void setCompoundDrawablesRelative(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
-        super.setCompoundDrawablesRelative(drawable, drawable2, drawable3, drawable4);
-        w0 w0Var = this.c;
-        if (w0Var != null) {
-            w0Var.b();
         }
     }
 
@@ -219,63 +246,69 @@ public final class o extends CheckedTextView implements u0.k {
         getEmojiTextViewHelper().c(z10);
     }
 
+    @Override // android.widget.TextView
+    public void setFilters(InputFilter[] inputFilterArr) {
+        super.setFilters(((n6) getEmojiTextViewHelper().b.b).a(inputFilterArr));
+    }
+
+    public void setSupportAllCaps(boolean z10) {
+        y0 y0Var = this.b;
+        if (y0Var != null) {
+            y0Var.a.setAllCaps(z10);
+        }
+    }
+
     public void setSupportBackgroundTintList(ColorStateList colorStateList) {
-        e2.c cVar = this.b;
+        e2.c cVar = this.a;
         if (cVar != null) {
             cVar.l(colorStateList);
         }
     }
 
     public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
-        e2.c cVar = this.b;
+        e2.c cVar = this.a;
         if (cVar != null) {
             cVar.m(mode);
         }
     }
 
-    public void setSupportCheckMarkTintList(ColorStateList colorStateList) {
-        p pVar = this.a;
-        if (pVar != null) {
-            pVar.a = colorStateList;
-            pVar.c = true;
-            pVar.b();
-        }
-    }
-
-    public void setSupportCheckMarkTintMode(PorterDuff.Mode mode) {
-        p pVar = this.a;
-        if (pVar != null) {
-            pVar.b = mode;
-            pVar.d = true;
-            pVar.b();
-        }
-    }
-
     @Override // u0.k
     public void setSupportCompoundDrawablesTintList(ColorStateList colorStateList) {
-        w0 w0Var = this.c;
-        w0Var.l(colorStateList);
-        w0Var.b();
+        y0 y0Var = this.b;
+        y0Var.l(colorStateList);
+        y0Var.b();
     }
 
     @Override // u0.k
     public void setSupportCompoundDrawablesTintMode(PorterDuff.Mode mode) {
-        w0 w0Var = this.c;
-        w0Var.m(mode);
-        w0Var.b();
+        y0 y0Var = this.b;
+        y0Var.m(mode);
+        y0Var.b();
     }
 
     @Override // android.widget.TextView
     public final void setTextAppearance(Context context, int i10) {
         super.setTextAppearance(context, i10);
-        w0 w0Var = this.c;
-        if (w0Var != null) {
-            w0Var.g(context, i10);
+        y0 y0Var = this.b;
+        if (y0Var != null) {
+            y0Var.g(context, i10);
         }
     }
 
-    @Override // android.widget.CheckedTextView
-    public void setCheckMarkDrawable(int i10) {
-        setCheckMarkDrawable(q7.b(getContext(), i10));
+    @Override // android.widget.TextView
+    public final void setTextSize(int i10, float f7) {
+        boolean z10 = w3.b;
+        if (z10) {
+            super.setTextSize(i10, f7);
+            return;
+        }
+        y0 y0Var = this.b;
+        if (y0Var != null) {
+            i1 i1Var = y0Var.i;
+            if (z10 || i1Var.f()) {
+                return;
+            }
+            i1Var.g(f7, i10);
+        }
     }
 }

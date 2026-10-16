@@ -10,7 +10,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nr implements Runnable {
     public final /* synthetic */ o8 E;
@@ -22,7 +22,7 @@ public final /* synthetic */ class nr implements Runnable {
     public final /* synthetic */ di.d e;
     public final /* synthetic */ org.telegram.ui.Cells.j3 f;
     public final /* synthetic */ TreeSet h;
-    public final /* synthetic */ n2.h n;
+    public final /* synthetic */ org.telegram.messenger.video.f n;
     public final /* synthetic */ org.telegram.ui.Cells.e9 r;
     public final /* synthetic */ org.telegram.ui.ActionBar.c6 s;
     public final /* synthetic */ int[] v;
@@ -30,7 +30,7 @@ public final /* synthetic */ class nr implements Runnable {
     public final /* synthetic */ int[] x;
     public final /* synthetic */ int y;
 
-    public /* synthetic */ nr(boolean[] zArr, int[] iArr, bi.n8 n8Var, String[] strArr, di.d dVar, org.telegram.ui.Cells.j3 j3Var, TreeSet treeSet, n2.h hVar, org.telegram.ui.Cells.e9 e9Var, org.telegram.ui.ActionBar.c6 c6Var, int[] iArr2, Runnable[] runnableArr, int[] iArr3, int i10, o8 o8Var, org.telegram.ui.ActionBar.e3 e3Var) {
+    public /* synthetic */ nr(boolean[] zArr, int[] iArr, bi.n8 n8Var, String[] strArr, di.d dVar, org.telegram.ui.Cells.j3 j3Var, TreeSet treeSet, org.telegram.messenger.video.f fVar, org.telegram.ui.Cells.e9 e9Var, org.telegram.ui.ActionBar.c6 c6Var, int[] iArr2, Runnable[] runnableArr, int[] iArr3, int i10, o8 o8Var, org.telegram.ui.ActionBar.e3 e3Var) {
         this.a = zArr;
         this.b = iArr;
         this.c = n8Var;
@@ -38,7 +38,7 @@ public final /* synthetic */ class nr implements Runnable {
         this.e = dVar;
         this.f = j3Var;
         this.h = treeSet;
-        this.n = hVar;
+        this.n = fVar;
         this.r = e9Var;
         this.s = c6Var;
         this.v = iArr2;
@@ -68,9 +68,9 @@ public final /* synthetic */ class nr implements Runnable {
         u10.append((a2 || qr.c(charSequence, treeSet) != null) ? "" : "bot");
         final String sb2 = u10.toString();
         boolean isEmpty = TextUtils.isEmpty(charSequence);
-        final n2.h hVar = this.n;
+        final org.telegram.messenger.video.f fVar = this.n;
         if (isEmpty) {
-            hVar.run();
+            fVar.run();
             return;
         }
         int length = sb2.length();
@@ -113,7 +113,7 @@ public final /* synthetic */ class nr implements Runnable {
                 final int[] iArr4 = iArr2;
                 final String[] strArr2 = strArr;
                 final di.d dVar2 = dVar;
-                final n2.h hVar2 = hVar;
+                final org.telegram.messenger.video.f fVar2 = fVar;
                 final TreeSet treeSet2 = treeSet;
                 final o8 o8Var2 = o8Var;
                 final org.telegram.ui.ActionBar.c6 c6Var2 = c6Var;
@@ -137,7 +137,7 @@ public final /* synthetic */ class nr implements Runnable {
                         if (z10) {
                             strArr2[0] = str2;
                             dVar3.setEnabled(true);
-                            hVar2.run();
+                            fVar2.run();
                             return;
                         }
                         String str3 = tL_error == null ? "USERNAME_OCCUPIED" : tL_error.text;
@@ -154,7 +154,7 @@ public final /* synthetic */ class nr implements Runnable {
                             return;
                         }
                         dVar3.setEnabled(true);
-                        org.telegram.ui.Cells.d0.r(e3Var2.topBulletinContainer, c6Var3, tL_error, false);
+                        org.telegram.ui.Cells.c1.p(e3Var2.topBulletinContainer, c6Var3, tL_error, false);
                     }
                 });
             }

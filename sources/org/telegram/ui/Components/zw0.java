@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class zw0 {
     public final e0.g0 a;
@@ -90,8 +90,8 @@ public final class zw0 {
             double d12 = dpf22;
             float f18 = f16 + f14;
             float f19 = f17 + f15;
-            canvas.drawLine(f18, f19, f16 + ((float) ((Math.cos(d10) * d11) - (Math.sin(d10) * d12))), ((float) org.telegram.messenger.q.a(d10, d12, Math.sin(d10) * d11)) + f17, paint);
-            canvas.drawLine(f18, f19, f16 + ((float) (((-Math.cos(d10)) * d11) - (Math.sin(d10) * d12))), ((float) org.telegram.messenger.q.a(d10, d12, (-Math.sin(d10)) * d11)) + f17, paint);
+            canvas.drawLine(f18, f19, f16 + ((float) ((Math.cos(d10) * d11) - (Math.sin(d10) * d12))), ((float) i2.d.f(d10, d12, Math.sin(d10) * d11)) + f17, paint);
+            canvas.drawLine(f18, f19, f16 + ((float) (((-Math.cos(d10)) * d11) - (Math.sin(d10) * d12))), ((float) i2.d.f(d10, d12, (-Math.sin(d10)) * d11)) + f17, paint);
             f11 = f13 + 1.0471976f;
             i10++;
             dp2 = f17;
@@ -178,7 +178,7 @@ public final class zw0 {
                 } else {
                     int i20 = AndroidUtilities.statusBarHeight;
                     float nextFloat = Utilities.random.nextFloat() * view.getMeasuredWidth();
-                    float nextFloat2 = i16 == 0 ? (Utilities.random.nextFloat() * org.telegram.messenger.q.D(20.0f, view.getMeasuredHeight(), i20)) + i20 : Utilities.random.nextFloat() * view.getMeasuredHeight();
+                    float nextFloat2 = i16 == 0 ? (Utilities.random.nextFloat() * org.telegram.messenger.g0.B(20.0f, view.getMeasuredHeight(), i20)) + i20 : Utilities.random.nextFloat() * view.getMeasuredHeight();
                     double nextInt = (Utilities.random.nextInt(40) + 70) * 0.017453292519943295d;
                     i10 = i11;
                     float cos = (float) Math.cos(nextInt);

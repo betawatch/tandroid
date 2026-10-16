@@ -12,9 +12,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class q3 implements ev0 {
+public final class q3 implements dv0 {
     public final TLRPC.WebPage a;
     public final List b;
     public final /* synthetic */ k4 c;
@@ -25,12 +25,12 @@ public final class q3 implements ev0 {
         this.b = list;
     }
 
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.dv0
     public final boolean a(int i10) {
         return i10 < this.b.size() && i10 >= 0 && h4.g(this.a, get(i10));
     }
 
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.dv0
     public final File b(int i10) {
         TLRPC.Document a2;
         TLRPC.PhotoSize closestPhotoSizeWithSize;
@@ -50,7 +50,7 @@ public final class q3 implements ev0 {
         return null;
     }
 
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.dv0
     public final String c(int i10) {
         TLObject d = d(i10);
         if (d instanceof TLRPC.Photo) {
@@ -59,7 +59,7 @@ public final class q3 implements ev0 {
         return FileLoader.getAttachFileName(d);
     }
 
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.dv0
     public final TLObject d(int i10) {
         if (i10 < this.b.size() && i10 >= 0) {
             TL_iv.PageBlock pageBlock = get(i10);
@@ -75,7 +75,7 @@ public final class q3 implements ev0 {
         return null;
     }
 
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.dv0
     public final boolean e(int i10) {
         if (i10 < this.b.size() && i10 >= 0 && !h4.g(this.a, get(i10))) {
             i4 i4Var = this.c.u0[0].c;
@@ -88,7 +88,7 @@ public final class q3 implements ev0 {
         return false;
     }
 
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.dv0
     public final TLRPC.PhotoSize f(TLObject tLObject, int[] iArr) {
         TLRPC.PhotoSize closestPhotoSizeWithSize;
         if (!(tLObject instanceof TLRPC.Photo)) {
@@ -115,22 +115,22 @@ public final class q3 implements ev0 {
         return closestPhotoSizeWithSize2;
     }
 
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.dv0
     public final Object g() {
         return this.a;
     }
 
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.dv0
     public final TL_iv.PageBlock get(int i10) {
         return (TL_iv.PageBlock) this.b.get(i10);
     }
 
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.dv0
     public final List getAll() {
         return this.b;
     }
 
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.dv0
     public final void h(TL_iv.PageBlock pageBlock) {
         k4 k4Var = this.c;
         int childCount = k4Var.u0[0].b.getChildCount();
@@ -149,7 +149,7 @@ public final class q3 implements ev0 {
 
     /* JADX WARN: Removed duplicated region for block: B:20:0x0089 A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:7:0x002c  */
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.dv0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -172,11 +172,11 @@ public final class q3 implements ev0 {
                     return C;
                 }
                 Spannable spannable = (Spannable) C;
-                org.telegram.ui.Components.l11[] l11VarArr = (org.telegram.ui.Components.l11[]) spannable.getSpans(0, C.length(), org.telegram.ui.Components.l11.class);
+                org.telegram.ui.Components.m11[] m11VarArr = (org.telegram.ui.Components.m11[]) spannable.getSpans(0, C.length(), org.telegram.ui.Components.m11.class);
                 SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(C.toString());
-                if (l11VarArr != null && l11VarArr.length > 0) {
-                    for (int i11 = 0; i11 < l11VarArr.length; i11++) {
-                        spannableStringBuilder2.setSpan(new p3(this, l11VarArr[i11].b, 1), spannable.getSpanStart(l11VarArr[i11]), spannable.getSpanEnd(l11VarArr[i11]), 33);
+                if (m11VarArr != null && m11VarArr.length > 0) {
+                    for (int i11 = 0; i11 < m11VarArr.length; i11++) {
+                        spannableStringBuilder2.setSpan(new p3(this, m11VarArr[i11].b, 1), spannable.getSpanStart(m11VarArr[i11]), spannable.getSpanEnd(m11VarArr[i11]), 33);
                     }
                 }
                 return spannableStringBuilder2;
@@ -187,7 +187,7 @@ public final class q3 implements ev0 {
         }
     }
 
-    @Override // org.telegram.ui.ev0
+    @Override // org.telegram.ui.dv0
     public final int j() {
         return this.b.size();
     }

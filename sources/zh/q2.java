@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.z9;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class q2 extends FrameLayout {
     public final yh.e1 a;
@@ -28,14 +28,14 @@ public final class q2 extends FrameLayout {
     public q2(Context context) {
         super(context);
         FrameLayout frameLayout = new FrameLayout(context);
-        addView(frameLayout, w7.a6.a(-1.0f, 6.0f, 6.0f, 6.0f, 6.0f, -1, 119));
+        addView(frameLayout, w7.z5.a(-1.0f, 6.0f, 6.0f, 6.0f, 6.0f, -1, 119));
         frameLayout.setBackground(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(18.0f), org.telegram.ui.ActionBar.g6.m1(0.12f, -4530177)));
         frameLayout.setForeground(new f3(AndroidUtilities.dp(18.0f), 0));
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.filled_add_album);
         imageView.setScaleX(1.25f);
         imageView.setScaleY(1.25f);
-        frameLayout.addView(imageView, w7.a6.e(24, 24, 17));
+        frameLayout.addView(imageView, w7.z5.e(24, 24, 17));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.b = frameLayout2;
         yh.e1 e1Var = new yh.e1(frameLayout2, null, false);
@@ -43,13 +43,13 @@ public final class q2 extends FrameLayout {
         frameLayout2.setBackground(e1Var);
         e1Var.s = AndroidUtilities.dp(18.0f);
         e1Var.u = false;
-        frameLayout.addView(frameLayout2, w7.a6.e(-1, -1, 119));
+        frameLayout.addView(frameLayout2, w7.z5.e(-1, -1, 119));
         frameLayout2.setAlpha(0.0f);
         frameLayout2.setScaleX(0.6f);
         frameLayout2.setScaleY(0.6f);
         z9 z9Var = new z9(context);
         this.c = z9Var;
-        frameLayout2.addView(z9Var, w7.a6.e(52, 52, 17));
+        frameLayout2.addView(z9Var, w7.z5.e(52, 52, 17));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), 0);
@@ -58,16 +58,16 @@ public final class q2 extends FrameLayout {
         textView.setTextSize(1, 10.0f);
         textView.setTextColor(-1);
         textView.setAlpha(0.0f);
-        addView(textView, w7.a6.a(15.33f, 2.0f, 0.0f, 2.0f, 0.0f, -2, 51));
+        addView(textView, w7.z5.a(15.33f, 2.0f, 0.0f, 2.0f, 0.0f, -2, 51));
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.e = frameLayout3;
         frameLayout3.setAlpha(0.0f);
-        addView(frameLayout3, w7.a6.a(20.0f, 2.0f, 0.0f, 2.0f, 0.0f, 20, 53));
+        addView(frameLayout3, w7.z5.a(20.0f, 2.0f, 0.0f, 2.0f, 0.0f, 20, 53));
         ImageView imageView2 = new ImageView(context);
         this.f = imageView2;
         imageView2.setImageResource(R.drawable.msg_close);
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
-        frameLayout3.addView(imageView2, w7.a6.e(12, 12, 17));
+        frameLayout3.addView(imageView2, w7.z5.e(12, 12, 17));
         b(false, false);
     }
 

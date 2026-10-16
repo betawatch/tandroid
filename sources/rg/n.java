@@ -3,11 +3,11 @@ package rg;
 import di.l5;
 import java.util.List;
 import ji.o4;
-import org.telegram.ui.Components.y11;
+import org.telegram.ui.Components.z11;
 import org.telegram.ui.c90;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -23,10 +23,10 @@ public final /* synthetic */ class n implements Runnable {
         switch (this.a) {
             case 0:
                 o0 o0Var = this.b;
-                y11 y11Var = o0Var.a1;
-                if (y11Var != null) {
+                z11 z11Var = o0Var.a1;
+                if (z11Var != null) {
                     o0Var.a1 = null;
-                    o0Var.removeView(y11Var);
+                    o0Var.removeView(z11Var);
                     break;
                 }
                 break;
@@ -66,7 +66,7 @@ public final /* synthetic */ class n implements Runnable {
                         n0Var.setSelected(false);
                         n0Var.setOnClickListener(new o4(c90Var, 7));
                         n0Var.setOnLongClickListener(new l5(o0Var3, 6));
-                        o0Var3.S1.a(n0Var, a6.n(-1, 48));
+                        o0Var3.S1.a(n0Var, z5.n(-1, 48));
                         i10++;
                     }
                 }

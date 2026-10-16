@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class d2 extends z1 {
     public final o1 b;
@@ -48,16 +48,16 @@ public final class d2 extends z1 {
         kVar.g = 160L;
         kVar.i = es.g;
         o1Var.setItemAnimator(kVar);
-        addView(o1Var, w7.a6.d(-1.0f, -1));
+        addView(o1Var, w7.z5.d(-1.0f, -1));
         c6Var = ((org.telegram.ui.ActionBar.e3) r2Var).resourcesProvider;
         k2 k2Var = new k2(context, c6Var);
         this.f = k2Var;
         k2Var.v = new ci.u(this, 3);
-        addView(k2Var, w7.a6.e(-1, -2, 48));
+        addView(k2Var, w7.z5.e(-1, -2, 48));
         c6Var2 = ((org.telegram.ui.ActionBar.e3) r2Var).resourcesProvider;
         b2 b2Var = new b2(this, context, c6Var2);
         this.e = b2Var;
-        addView(b2Var, w7.a6.d(36.0f, -1));
+        addView(b2Var, w7.z5.d(36.0f, -1));
     }
 
     @Override // di.z1
@@ -122,7 +122,7 @@ public final class d2 extends z1 {
             }
             Object tag = o1Var.getChildAt(i10).getTag();
             if ((tag instanceof Integer) && ((Integer) tag).intValue() == 34) {
-                return org.telegram.messenger.q.c(102.0f, r3.getBottom(), 0);
+                return org.telegram.messenger.g0.b(102.0f, r3.getBottom(), 0);
             }
             i10++;
         }

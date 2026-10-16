@@ -14,13 +14,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.k61;
 import org.telegram.ui.Components.k9;
-import org.telegram.ui.Components.k91;
-import org.telegram.ui.Wallet.c4;
+import org.telegram.ui.Components.l91;
+import org.telegram.ui.Wallet.d4;
 import zf.q;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class a extends View {
     public final /* synthetic */ int a = 1;
@@ -34,11 +34,11 @@ public final class a extends View {
         this.c = new ne.b(this, es.h, 380L);
         this.b = new Paint(1);
         this.d = c6Var;
-        j61 j61Var = new j61(true);
-        this.e = j61Var;
-        j61Var.setCallback(this);
-        j61Var.b(-1);
-        j61Var.i = true;
+        k61 k61Var = new k61(true);
+        this.e = k61Var;
+        k61Var.setCallback(this);
+        k61Var.b(-1);
+        k61Var.i = true;
     }
 
     @Override // android.view.View
@@ -46,7 +46,7 @@ public final class a extends View {
         switch (this.a) {
             case 1:
                 super.onAttachedToWindow();
-                ((j61) this.e).d();
+                ((k61) this.e).d();
                 break;
             case 2:
             default:
@@ -65,7 +65,7 @@ public final class a extends View {
         switch (this.a) {
             case 1:
                 super.onDetachedFromWindow();
-                ((j61) this.e).e();
+                ((k61) this.e).e();
                 break;
             case 2:
             default:
@@ -103,7 +103,7 @@ public final class a extends View {
                 float f7 = ((ne.b) this.c).e;
                 float f10 = 1.0f - f7;
                 if (f10 > 0.0f) {
-                    q.b(canvas, (j61) this.e, f10 * 1.35f);
+                    q.b(canvas, (k61) this.e, f10 * 1.35f);
                     invalidate();
                 }
                 if (f7 > 0.0f) {
@@ -114,14 +114,14 @@ public final class a extends View {
                 }
                 break;
             case 2:
-                c4 c4Var = (c4) this.e;
-                c4Var.getClass();
-                int themedColor = c4Var.getThemedColor(g6.d6);
+                d4 d4Var = (d4) this.e;
+                d4Var.getClass();
+                int themedColor = d4Var.getThemedColor(g6.d6);
                 Paint paint2 = this.b;
                 paint2.setColor(themedColor);
-                c4Var.b0.getLocationInWindow((int[]) this.c);
+                d4Var.b0.getLocationInWindow((int[]) this.c);
                 getLocationInWindow((int[]) this.d);
-                for (View view : ((k91) c4Var.b0).getViewPages()) {
+                for (View view : ((l91) d4Var.b0).getViewPages()) {
                     if (view != null && view.getVisibility() == 0) {
                         canvas.save();
                         canvas.translate(view.getLeft() + (r6[0] - r7[0]), view.getTop() + (r6[1] - r7[1]));
@@ -166,7 +166,7 @@ public final class a extends View {
         switch (this.a) {
             case 1:
                 super.onSizeChanged(i10, i11, i12, i13);
-                q.d((j61) this.e, i10 / 2.0f, i11 / 2.0f, 17);
+                q.d((k61) this.e, i10 / 2.0f, i11 / 2.0f, 17);
                 break;
             default:
                 super.onSizeChanged(i10, i11, i12, i13);
@@ -178,7 +178,7 @@ public final class a extends View {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.a) {
             case 1:
-                return super.verifyDrawable(drawable) || (drawable == ((j61) this.e) && !((ne.b) this.c).f);
+                return super.verifyDrawable(drawable) || (drawable == ((k61) this.e) && !((ne.b) this.c).f);
             default:
                 return super.verifyDrawable(drawable);
         }
@@ -199,9 +199,9 @@ public final class a extends View {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a(c4 c4Var, Context context) {
+    public a(d4 d4Var, Context context) {
         super(context);
-        this.e = c4Var;
+        this.e = d4Var;
         this.b = new Paint(1);
         this.c = new int[2];
         this.d = new int[2];

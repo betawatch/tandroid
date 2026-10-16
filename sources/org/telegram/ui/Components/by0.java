@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SvgHelper;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class by0 extends FrameLayout {
     public static int G;
@@ -43,13 +43,13 @@ public final class by0 extends FrameLayout {
             z9Var.setLayerNum(1);
             z9Var.setAspectFit(false);
             z9Var.setRoundRadius(AndroidUtilities.dp(6.0f));
-            addView(z9Var, w7.a6.e(26, 26, 17));
+            addView(z9Var, w7.z5.e(26, 26, 17));
             this.n = z9Var;
         } else if (i10 == 1) {
             ImageView imageView = new ImageView(context);
             this.f = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            addView(imageView, w7.a6.e(24, 24, 17));
+            addView(imageView, w7.z5.e(24, 24, 17));
             this.n = imageView;
         } else {
             z9 z9Var2 = new z9(getContext());
@@ -57,18 +57,18 @@ public final class by0 extends FrameLayout {
             z9Var2.setLayerNum(1);
             z9Var2.setAspectFit(true);
             z9Var2.setRoundRadius(AndroidUtilities.dp(6.0f));
-            addView(z9Var2, w7.a6.e(26, 26, 17));
+            addView(z9Var2, w7.z5.e(26, 26, 17));
             this.n = z9Var2;
         }
         bi.f4 f4Var = new bi.f4(context, 24);
         this.h = f4Var;
-        f4Var.addOnLayoutChangeListener(new d80(this, 1));
+        f4Var.addOnLayoutChangeListener(new c80(this, 1));
         f4Var.setLines(1);
         f4Var.setEllipsize(TextUtils.TruncateAt.END);
         f4Var.setTextSize(1, 11.0f);
         f4Var.setGravity(1);
         f4Var.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.G6, false));
-        addView(f4Var, w7.a6.a(-2.0f, 8.0f, 0.0f, 8.0f, 10.0f, -1, 81));
+        addView(f4Var, w7.z5.a(-2.0f, 8.0f, 0.0f, 8.0f, 10.0f, -1, 81));
         f4Var.setVisibility(8);
     }
 

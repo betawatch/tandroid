@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.WeakHashMap;
 import ji.w4;
-import w7.g7;
+import w7.f7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class w extends com.googlecode.mp4parser.c {
     public static final /* synthetic */ w4 f;
@@ -25,7 +25,7 @@ public final class w extends com.googlecode.mp4parser.c {
     @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
-        int a2 = g7.a(e5.b.i(byteBuffer));
+        int a2 = f7.a(e5.b.i(byteBuffer));
         this.e = new ArrayList(a2);
         for (int i10 = 0; i10 < a2; i10++) {
             this.e.add(new v(e5.b.i(byteBuffer), e5.b.i(byteBuffer)));

@@ -21,7 +21,7 @@ import org.telegram.ui.Cells.n9;
 import org.telegram.ui.Cells.o9;
 import v7.c9;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class t4 extends a0 implements org.telegram.ui.ActionBar.x5, n9 {
     public final int[] E;
@@ -52,7 +52,7 @@ public final class t4 extends a0 implements org.telegram.ui.ActionBar.x5, n9 {
         horizontalScrollView.setPadding(0, 0, 0, 0);
         horizontalScrollView.setFillViewport(true);
         horizontalScrollView.addView(frameLayout, new FrameLayout.LayoutParams(-2, -2));
-        addView(horizontalScrollView, w7.a6.e(-1, -2, 16));
+        addView(horizontalScrollView, w7.z5.e(-1, -2, 16));
         d();
     }
 

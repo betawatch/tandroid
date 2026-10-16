@@ -1,47 +1,31 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.UnconfirmedAuthController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ul implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ UnconfirmedAuthController.UnconfirmedAuth b;
-    public final /* synthetic */ TLObject c;
-    public final /* synthetic */ Utilities.Callback d;
-    public final /* synthetic */ TLRPC.TL_error e;
+    public final /* synthetic */ UnconfirmedAuthController b;
 
-    public /* synthetic */ ul(UnconfirmedAuthController.UnconfirmedAuth unconfirmedAuth, Utilities.Callback callback, TLObject tLObject, TLRPC.TL_error tL_error) {
-        this.a = 1;
-        this.b = unconfirmedAuth;
-        this.c = tLObject;
-        this.d = callback;
-        this.e = tL_error;
+    public /* synthetic */ ul(UnconfirmedAuthController unconfirmedAuthController, int i10) {
+        this.a = i10;
+        this.b = unconfirmedAuthController;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$confirm$1(this.d, this.c, this.e);
+                this.b.lambda$readCache$1();
                 break;
             case 1:
-                this.b.lambda$deny$3(this.c, this.d, this.e);
+                this.b.lambda$saveCache$3();
+                break;
+            case 2:
+                this.b.lambda$new$2();
                 break;
             default:
-                this.b.lambda$deny$5(this.d, this.c, this.e);
+                this.b.lambda$saveCache$4();
                 break;
         }
-    }
-
-    public /* synthetic */ ul(UnconfirmedAuthController.UnconfirmedAuth unconfirmedAuth, Utilities.Callback callback, TLObject tLObject, TLRPC.TL_error tL_error, int i10) {
-        this.a = i10;
-        this.b = unconfirmedAuth;
-        this.d = callback;
-        this.c = tLObject;
-        this.e = tL_error;
     }
 }

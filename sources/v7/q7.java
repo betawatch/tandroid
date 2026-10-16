@@ -8,7 +8,7 @@ import android.util.Log;
 import android.util.SparseArray;
 import android.util.TypedValue;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class q7 {
     /* JADX WARN: Code restructure failed: missing block: B:42:0x0046, code lost:
@@ -71,6 +71,6 @@ public abstract class q7 {
     }
 
     public static Drawable b(Context context, int i10) {
-        return m.m2.d().g(context, i10);
+        return m.o2.d().g(context, i10);
     }
 }

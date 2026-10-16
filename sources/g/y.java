@@ -3,12 +3,12 @@ package g;
 import android.view.View;
 import androidx.appcompat.widget.ActionBarOverlayLayout;
 import java.util.WeakHashMap;
-import r0.j0;
-import r0.o0;
+import r0.i0;
+import r0.n0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class y extends o0 {
+public final class y extends n0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ a0 b;
 
@@ -17,7 +17,7 @@ public final class y extends o0 {
         this.b = a0Var;
     }
 
-    @Override // r0.n0
+    @Override // r0.m0
     public final void c() {
         View view;
         int i10 = this.a;
@@ -33,14 +33,14 @@ public final class y extends o0 {
                 a0Var.s = null;
                 n4.s sVar = a0Var.k;
                 if (sVar != null) {
-                    sVar.r(a0Var.j);
+                    sVar.t(a0Var.j);
                     a0Var.j = null;
                     a0Var.k = null;
                 }
                 ActionBarOverlayLayout actionBarOverlayLayout = a0Var.c;
                 if (actionBarOverlayLayout != null) {
-                    WeakHashMap weakHashMap = j0.a;
-                    r0.z.c(actionBarOverlayLayout);
+                    WeakHashMap weakHashMap = i0.a;
+                    r0.y.c(actionBarOverlayLayout);
                     break;
                 }
                 break;

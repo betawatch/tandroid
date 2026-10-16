@@ -7,9 +7,9 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import org.telegram.ui.Cells.d0;
+import org.telegram.ui.Cells.c1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class s {
     public final SharedPreferences a;
@@ -94,9 +94,9 @@ public final class s {
                 z10 = false;
             }
         }
-        String j10 = d0.j("Crashlytics automatic data collection ", z10 ? "ENABLED" : "DISABLED", " by ", this.g == null ? "global Firebase setting" : this.f ? "firebase_crashlytics_collection_enabled manifest flag" : "API", ".");
+        String i10 = c1.i("Crashlytics automatic data collection ", z10 ? "ENABLED" : "DISABLED", " by ", this.g == null ? "global Firebase setting" : this.f ? "firebase_crashlytics_collection_enabled manifest flag" : "API", ".");
         if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-            Log.d("FirebaseCrashlytics", j10, null);
+            Log.d("FirebaseCrashlytics", i10, null);
         }
         return z10;
     }

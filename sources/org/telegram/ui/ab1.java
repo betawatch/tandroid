@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ab1 {
     public TLRPC.User a;
@@ -71,9 +71,9 @@ public final class ab1 {
             }
         }
         arrayList2.add(LocaleController.getString("StatisticOpenProfile", R.string.StatisticOpenProfile));
-        org.telegram.ui.Cells.d0.m(R.drawable.msg_openprofile, 2, arrayList4, arrayList3);
+        org.telegram.ui.Cells.c1.k(R.drawable.msg_openprofile, 2, arrayList4, arrayList3);
         arrayList2.add(LocaleController.getString("StatisticSearchUserHistory", R.string.StatisticSearchUserHistory));
-        org.telegram.ui.Cells.d0.m(R.drawable.msg_msgbubble3, 1, arrayList4, arrayList3);
+        org.telegram.ui.Cells.c1.k(R.drawable.msg_msgbubble3, 1, arrayList4, arrayList3);
         if (z10 && tL_chatChannelParticipant == null) {
             if (a2VarArr[0] == null) {
                 org.telegram.ui.ActionBar.a2 a2Var = new org.telegram.ui.ActionBar.a2(hb1Var.getFragmentView().getContext(), 3, null);
@@ -386,7 +386,7 @@ public final class ab1 {
                     i10 = R.string.EditAdminRights;
                 }
                 arrayList2.add(LocaleController.getString(str, i10));
-                org.telegram.ui.Cells.d0.m(z13 ? R.drawable.msg_admins : R.drawable.msg_permissions, 0, arrayList4, arrayList3);
+                org.telegram.ui.Cells.c1.k(z13 ? R.drawable.msg_admins : R.drawable.msg_permissions, 0, arrayList4, arrayList3);
                 z11 = z13;
             }
         }

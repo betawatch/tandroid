@@ -15,9 +15,9 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.br;
 import org.telegram.ui.Components.lm0;
 import org.telegram.ui.Components.wl0;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class a0 extends lm0 {
     public ArrayList c;
@@ -89,14 +89,14 @@ public final class a0 extends lm0 {
         f4Var.setTag(Integer.valueOf(i11));
         f4Var.setMaxLines(2);
         f4Var.setEllipsize(TextUtils.TruncateAt.END);
-        zVar.addView(f4Var, a6.p(-1, -2, 1.0f, 16, 0, 0, AndroidUtilities.dp(8.0f), 0));
+        zVar.addView(f4Var, z5.p(-1, -2, 1.0f, 16, 0, 0, AndroidUtilities.dp(8.0f), 0));
         TextView textView = new TextView(context);
         zVar.a = textView;
         textView.setTextSize(1, 14.0f);
         int i12 = g6.y6;
         textView.setTextColor(g6.x0(null, i12, false));
         textView.setTag(Integer.valueOf(i12));
-        zVar.addView(textView, a6.o(-2, -2, 0.0f, 16));
+        zVar.addView(textView, z5.o(-2, -2, 0.0f, 16));
         zVar.setLayoutParams(new s4.o0(-1, -2));
         return new wl0(zVar);
     }

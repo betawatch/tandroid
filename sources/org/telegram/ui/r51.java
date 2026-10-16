@@ -30,7 +30,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class r51 extends Dialog {
     public final org.telegram.ui.Components.wt E;
@@ -61,7 +61,7 @@ public final class r51 extends Dialog {
     public boolean b0;
     public final ah.v c;
     public org.telegram.ui.ActionBar.a2 c0;
-    public org.telegram.ui.Components.y11 d;
+    public org.telegram.ui.Components.z11 d;
     public ValueAnimator d0;
     public i0.b e;
     public ValueAnimator e0;
@@ -71,7 +71,7 @@ public final class r51 extends Dialog {
     public Matrix r;
     public float s;
     public float v;
-    public org.telegram.ui.Components.h81 w;
+    public org.telegram.ui.Components.i81 w;
     public di.d4 x;
     public TextView y;
 
@@ -93,10 +93,10 @@ public final class r51 extends Dialog {
         ah.v vVar = new ah.v(this, activity);
         this.c = vVar;
         vVar.setClipToPadding(false);
-        l0Var.addView(vVar, w7.a6.e(-1, -1, 119));
+        l0Var.addView(vVar, w7.z5.e(-1, -1, 119));
         o51 o51Var = new o51(this, i10);
-        WeakHashMap weakHashMap = r0.j0.a;
-        r0.b0.i(l0Var, o51Var);
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.a0.i(l0Var, o51Var);
         if (SharedConfig.raiseToListen) {
             this.E = new org.telegram.ui.Components.wt();
         }
@@ -151,7 +151,7 @@ public final class r51 extends Dialog {
             float f10 = iArr[1] - this.e.b;
             int height = l0Var.getHeight();
             i0.b bVar2 = this.e;
-            this.G = org.telegram.messenger.q.y(((height - bVar2.b) - bVar2.d) - this.O.getHeight(), this.K, 2.0f, f10);
+            this.G = org.telegram.messenger.g0.x(((height - bVar2.b) - bVar2.d) - this.O.getHeight(), this.K, 2.0f, f10);
             if (!this.J) {
                 this.J = true;
                 float clamp = (Utilities.clamp((this.O.getHeight() / 2.0f) + iArr[1], l0Var.getHeight() * 0.7f, l0Var.getHeight() * 0.3f) - (this.O.getHeight() / 2.0f)) - ((l0Var.getHeight() - this.O.getHeight()) / 2.0f);
@@ -186,9 +186,9 @@ public final class r51 extends Dialog {
         if (d4Var != null) {
             d4Var.e(true);
         }
-        org.telegram.ui.Components.h81 h81Var = this.w;
-        if (h81Var != null) {
-            h81Var.B();
+        org.telegram.ui.Components.i81 i81Var = this.w;
+        if (i81Var != null) {
+            i81Var.B();
             this.w.H();
             this.w = null;
         }
@@ -213,20 +213,20 @@ public final class r51 extends Dialog {
             }
             AndroidUtilities.runOnUIThread(i0Var);
             this.Y = null;
-            org.telegram.ui.Components.y11 y11Var = new org.telegram.ui.Components.y11(this.a, null);
-            this.d = y11Var;
-            l0Var.addView(y11Var, w7.a6.e(-1, -1, 119));
-            org.telegram.ui.Components.y11 y11Var2 = this.d;
+            org.telegram.ui.Components.z11 z11Var = new org.telegram.ui.Components.z11(this.a, null);
+            this.d = z11Var;
+            l0Var.addView(z11Var, w7.z5.e(-1, -1, 119));
+            org.telegram.ui.Components.z11 z11Var2 = this.d;
             p51 p51Var2 = this.N;
             m51 m51Var = new m51(this, 1);
-            org.telegram.ui.Components.w11 w11Var = y11Var2.a;
-            if (w11Var != null) {
-                w11Var.d(p51Var2, 1.5f, m51Var);
-                Choreographer.getInstance().postFrameCallback(y11Var2.b);
+            org.telegram.ui.Components.x11 x11Var = z11Var2.a;
+            if (x11Var != null) {
+                x11Var.d(p51Var2, 1.5f, m51Var);
+                Choreographer.getInstance().postFrameCallback(z11Var2.b);
             } else {
-                org.telegram.ui.Components.x11 x11Var = new org.telegram.ui.Components.x11(p51Var2, m51Var);
-                x11Var.g = 1.5f;
-                y11Var2.c.add(x11Var);
+                org.telegram.ui.Components.y11 y11Var = new org.telegram.ui.Components.y11(p51Var2, m51Var);
+                y11Var.g = 1.5f;
+                z11Var2.c.add(y11Var);
             }
             WindowManager.LayoutParams attributes = getWindow().getAttributes();
             attributes.flags |= 16;

@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class n21 extends FrameLayout {
     public final TextView a;
@@ -37,14 +37,14 @@ public final class n21 extends FrameLayout {
         this.s = proxyListActivity;
         TextView textView = new TextView(context);
         this.a = textView;
-        org.telegram.messenger.yh.t(textView, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.G6, false), 1, 16.0f, 1);
+        org.telegram.messenger.sk.u(textView, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.G6, false), 1, 16.0f, 1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         boolean z10 = LocaleController.isRTL;
-        addView(textView, w7.a6.a(-2.0f, z10 ? 56 : 21, 10.0f, z10 ? 21 : 56, 0.0f, -2, (z10 ? 5 : 3) | 48));
+        addView(textView, w7.z5.a(-2.0f, z10 ? 56 : 21, 10.0f, z10 ? 21 : 56, 0.0f, -2, (z10 ? 5 : 3) | 48));
         TextView textView2 = new TextView(context);
         this.b = textView2;
         textView2.setTextSize(1, 13.0f);
@@ -56,21 +56,21 @@ public final class n21 extends FrameLayout {
         textView2.setEllipsize(truncateAt);
         textView2.setPadding(0, 0, 0, 0);
         boolean z11 = LocaleController.isRTL;
-        addView(textView2, w7.a6.a(-2.0f, z11 ? 56 : 21, 35.0f, z11 ? 21 : 56, 0.0f, -2, (z11 ? 5 : 3) | 48));
+        addView(textView2, w7.z5.a(-2.0f, z11 ? 56 : 21, 35.0f, z11 ? 21 : 56, 0.0f, -2, (z11 ? 5 : 3) | 48));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setImageResource(R.drawable.msg_info);
         imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.A6, false), PorterDuff.Mode.MULTIPLY));
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setContentDescription(LocaleController.getString(R.string.Edit));
-        addView(imageView, w7.a6.a(48.0f, 8.0f, 8.0f, 8.0f, 0.0f, 48, (LocaleController.isRTL ? 3 : 5) | 48));
+        addView(imageView, w7.z5.a(48.0f, 8.0f, 8.0f, 8.0f, 0.0f, 48, (LocaleController.isRTL ? 3 : 5) | 48));
         imageView.setOnClickListener(new t60(this, 25));
         org.telegram.ui.Components.aq aqVar = new org.telegram.ui.Components.aq(context, 21, null);
         this.f = aqVar;
         aqVar.b(org.telegram.ui.ActionBar.g6.i7, org.telegram.ui.ActionBar.g6.g7, org.telegram.ui.ActionBar.g6.k7);
         aqVar.setDrawBackgroundAsArc(14);
         aqVar.setVisibility(8);
-        addView(aqVar, w7.a6.a(24.0f, 16.0f, 0.0f, 8.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
+        addView(aqVar, w7.z5.a(24.0f, 16.0f, 0.0f, 8.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
         setWillNotDraw(false);
     }
 
@@ -132,7 +132,7 @@ public final class n21 extends FrameLayout {
                     i10 = org.telegram.ui.ActionBar.g6.s6;
                     if (proxyInfo2.ping != 0) {
                         StringBuilder sb2 = new StringBuilder();
-                        org.telegram.ui.Cells.d0.n(R.string.Connected, ", ", sb2);
+                        org.telegram.ui.Cells.c1.l(R.string.Connected, ", ", sb2);
                         sb2.append(LocaleController.formatString("Ping", R.string.Ping, Long.valueOf(this.d.ping)));
                         textView.setText(sb2.toString());
                     } else {
@@ -163,7 +163,7 @@ public final class n21 extends FrameLayout {
         } else if (proxyInfo2.available) {
             if (proxyInfo2.ping != 0) {
                 StringBuilder sb3 = new StringBuilder();
-                org.telegram.ui.Cells.d0.n(R.string.Available, ", ", sb3);
+                org.telegram.ui.Cells.c1.l(R.string.Available, ", ", sb3);
                 sb3.append(LocaleController.formatString("Ping", R.string.Ping, Long.valueOf(this.d.ping)));
                 textView.setText(sb3.toString());
             } else {
@@ -195,7 +195,7 @@ public final class n21 extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), org.telegram.messenger.yh.D(64.0f, 1, TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), org.telegram.messenger.sk.C(64.0f, 1, TLObject.FLAG_30));
     }
 
     public void setChecked(boolean z10) {

@@ -1,31 +1,36 @@
 package m;
 
-import androidx.appcompat.widget.SearchView;
-
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class q2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SearchView b;
+public final class q2 {
+    public int a;
+    public int b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public boolean g;
+    public boolean h;
 
-    public /* synthetic */ q2(SearchView searchView, int i10) {
-        this.a = i10;
-        this.b = searchView;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.r();
-                break;
-            default:
-                h1.b bVar = this.b.h0;
-                if (bVar instanceof a3) {
-                    bVar.b(null);
-                    break;
-                }
-                break;
+    public final void a(int i10, int i11) {
+        this.c = i10;
+        this.d = i11;
+        this.h = true;
+        if (this.g) {
+            if (i11 != Integer.MIN_VALUE) {
+                this.a = i11;
+            }
+            if (i10 != Integer.MIN_VALUE) {
+                this.b = i10;
+                return;
+            }
+            return;
+        }
+        if (i10 != Integer.MIN_VALUE) {
+            this.a = i10;
+        }
+        if (i11 != Integer.MIN_VALUE) {
+            this.b = i11;
         }
     }
 }

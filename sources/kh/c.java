@@ -14,9 +14,9 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.oj;
-import w7.a6;
+import w7.b6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class c extends LinearLayout {
     public static final /* synthetic */ int e = 0;
@@ -35,17 +35,17 @@ public final class c extends LinearLayout {
         jh.a c10 = jh.a.c(context, bVar, ojVar, c6Var);
         z5Var.b = c10;
         c10.setOnClickListener(new ah.f(6));
-        w7.c6.b((jh.a) z5Var.b, 0.065f, 2.0f);
+        b6.b((jh.a) z5Var.b, 0.065f, 2.0f);
         jh.a c11 = jh.a.c(context, bVar, ojVar, c6Var);
         z5Var2.b = c11;
         c11.setOnClickListener(new ah.f(6));
-        w7.c6.b((jh.a) z5Var2.b, 0.065f, 2.0f);
+        b6.b((jh.a) z5Var2.b, 0.065f, 2.0f);
         a(z5Var, LocaleController.getString(R.string.Reply), R.drawable.input_reply, false);
         a(z5Var2, LocaleController.getString(R.string.Forward), R.drawable.input_forward, true);
         setOrientation(0);
         setClipChildren(false);
-        addView((jh.a) z5Var.b, a6.m(1.0f, 0, 56, 1, -1, 0));
-        addView((jh.a) z5Var2.b, a6.m(1.0f, 0, 56, -1, 1, 0));
+        addView((jh.a) z5Var.b, w7.z5.m(1.0f, 0, 56, 1, -1, 0));
+        addView((jh.a) z5Var2.b, w7.z5.m(1.0f, 0, 56, -1, 1, 0));
     }
 
     public final void a(z5 z5Var, String str, int i10, boolean z10) {
@@ -67,7 +67,7 @@ public final class c extends LinearLayout {
         }
         textView.setCompoundDrawablesWithIntrinsicBounds(drawable, (Drawable) null, mutate, (Drawable) null);
         z5Var.c = textView;
-        ((jh.a) z5Var.b).addView(textView, a6.e(-2, -2, 17));
+        ((jh.a) z5Var.b).addView(textView, w7.z5.e(-2, -2, 17));
     }
 
     public final void b(z5 z5Var) {

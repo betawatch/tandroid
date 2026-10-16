@@ -1,18 +1,16 @@
 package r0;
 
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.util.AttributeSet;
 import android.view.View;
+import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class f0 {
-    public static View.AccessibilityDelegate a(View view) {
-        return view.getAccessibilityDelegate();
+    public static WindowInsets a(View view, WindowInsets windowInsets) {
+        return view.dispatchApplyWindowInsets(windowInsets);
     }
 
-    public static void b(View view, Context context, int[] iArr, AttributeSet attributeSet, TypedArray typedArray, int i10, int i11) {
-        view.saveAttributeDataForStyleable(context, iArr, attributeSet, typedArray, i10, i11);
+    public static CharSequence b(View view) {
+        return view.getStateDescription();
     }
 }

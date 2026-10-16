@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class l20 extends FrameLayout implements ne.d {
     public final ne.b a;
@@ -32,11 +32,11 @@ public final class l20 extends FrameLayout implements ne.d {
     }
 
     public static FrameLayout.LayoutParams b() {
-        return w7.a6.a(48.0f, 20.0f, 0.0f, 20.0f, 14.0f, 48, (LocaleController.isRTL ? 3 : 5) | 80);
+        return w7.z5.a(48.0f, 20.0f, 0.0f, 20.0f, 14.0f, 48, (LocaleController.isRTL ? 3 : 5) | 80);
     }
 
     public static FrameLayout.LayoutParams c() {
-        return w7.a6.a(48.0f, 20.0f, 0.0f, 20.0f, 14.0f, 48, (LocaleController.isRTL ? 3 : 5) | 80);
+        return w7.z5.a(48.0f, 20.0f, 0.0f, 20.0f, 14.0f, 48, (LocaleController.isRTL ? 3 : 5) | 80);
     }
 
     public static void d(View view, float f7) {
@@ -177,14 +177,14 @@ public final class l20 extends FrameLayout implements ne.d {
         bk0 bk0Var = new bk0(context);
         this.c = bk0Var;
         bk0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(bk0Var, w7.a6.d(-1.0f, -1));
+        addView(bk0Var, w7.z5.d(-1.0f, -1));
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         this.d = radialProgressView;
         radialProgressView.setSize(AndroidUtilities.dp(18.0f));
         radialProgressView.setStrokeWidth(2.0f);
-        addView(radialProgressView, w7.a6.d(-1.0f, -1));
+        addView(radialProgressView, w7.z5.d(-1.0f, -1));
         d(radialProgressView, 0.0f);
-        w7.c6.a(this);
+        w7.b6.a(this);
         if (!z10) {
             setOutlineProvider(zf.j0.a);
             setTranslationZ(AndroidUtilities.dpf2(0.5f));
@@ -209,6 +209,6 @@ public final class l20 extends FrameLayout implements ne.d {
     }
 
     @Override // ne.d
-    public final /* synthetic */ void C(float f7, int i10) {
+    public final /* synthetic */ void A(float f7, int i10) {
     }
 }

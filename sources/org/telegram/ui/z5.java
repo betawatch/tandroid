@@ -25,7 +25,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class z5 extends v20 implements NotificationCenter.NotificationCenterDelegate {
     public final long P;
@@ -178,7 +178,7 @@ public final class z5 extends v20 implements NotificationCenter.NotificationCent
         String string = LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingBoostForChannels : R.string.BoostingBoostForGroups);
         SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingBoostForChannelsInfo : R.string.BoostingBoostForGroupsInfo));
         t5 t5Var = new t5(getParentActivity());
-        t5Var.addView(this.R != null ? this.c0 : new View(t5Var.getContext()), w7.a6.a(this.R != null ? -2.0f : 110.0f, 8.0f, 46.0f, 8.0f, 33.0f, -1, 0));
+        t5Var.addView(this.R != null ? this.c0 : new View(t5Var.getContext()), w7.z5.a(this.R != null ? -2.0f : 110.0f, 8.0f, 46.0f, 8.0f, 33.0f, -1, 0));
         m0(string, replaceTags, t5Var, new w5(this, getParentActivity()));
     }
 
@@ -277,8 +277,8 @@ public final class z5 extends v20 implements NotificationCenter.NotificationCent
         LinearLayout linearLayout = new LinearLayout(parentActivity);
         this.f0 = linearLayout;
         linearLayout.setOrientation(1);
-        this.f0.addView(new bi.f2(parentActivity), w7.a6.t(100, 100, 17, 0, 120, 0, 0));
-        ((ViewGroup) this.fragmentView).addView(this.f0, w7.a6.e(-1, -2, 17));
+        this.f0.addView(new bi.f2(parentActivity), w7.z5.t(100, 100, 17, 0, 120, 0, 0));
+        ((ViewGroup) this.fragmentView).addView(this.f0, w7.z5.e(-1, -2, 17));
         this.f0.setAlpha(0.0f);
         if (this.R == null) {
             this.f0.animate().alpha(1.0f).setDuration(200L).setStartDelay(500L).start();

@@ -16,12 +16,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.qh0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.br;
+import org.telegram.ui.d20;
 import org.telegram.ui.gj;
-import org.telegram.ui.o00;
 import org.telegram.ui.ws;
 import org.telegram.ui.z60;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ia implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -78,14 +78,14 @@ public final /* synthetic */ class ia implements RequestDelegate {
                 break;
             case 9:
                 Pattern pattern = LaunchActivity.B1;
-                AndroidUtilities.runOnUIThread(new hg.d1((LaunchActivity) obj4, tL_error, tLObject, (TLRPC.TL_inputInvoiceSlug) obj, (o00) obj3, this.b, (String) obj2));
+                AndroidUtilities.runOnUIThread(new hg.d1((LaunchActivity) obj4, tL_error, tLObject, (TLRPC.TL_inputInvoiceSlug) obj, (d20) obj3, this.b, (String) obj2));
                 break;
             case 10:
                 Pattern pattern2 = LaunchActivity.B1;
-                AndroidUtilities.runOnUIThread(new hg.d1((LaunchActivity) obj4, tL_error, tLObject, this.b, (org.telegram.ui.ActionBar.a2) obj, (o00) obj3, (String) obj2));
+                AndroidUtilities.runOnUIThread(new hg.d1((LaunchActivity) obj4, tL_error, tLObject, this.b, (org.telegram.ui.ActionBar.a2) obj, (d20) obj3, (String) obj2));
                 break;
             case 11:
-                AndroidUtilities.runOnUIThread(new hg.d1((org.telegram.ui.web.b1) obj4, (String) obj, tLObject, tL_error, this.b, (org.telegram.ui.web.y0) obj3, (n9) obj2));
+                AndroidUtilities.runOnUIThread(new hg.d1((org.telegram.ui.web.c1) obj4, (String) obj, tLObject, tL_error, this.b, (org.telegram.ui.web.z0) obj3, (n9) obj2));
                 break;
             case 12:
                 int i12 = this.b;

@@ -2,43 +2,33 @@ package org.telegram.ui.Wallet;
 
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback2 b;
+    public final /* synthetic */ WalletEngine2 b;
+    public final /* synthetic */ byte[] c;
+    public final /* synthetic */ d2 d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ Utilities.Callback2 f;
 
-    public /* synthetic */ f6(int i10, Utilities.Callback2 callback2) {
+    public /* synthetic */ f6(WalletEngine2 walletEngine2, byte[] bArr, d2 d2Var, String str, Utilities.Callback2 callback2, int i10) {
         this.a = i10;
-        this.b = callback2;
+        this.b = walletEngine2;
+        this.c = bArr;
+        this.d = d2Var;
+        this.e = str;
+        this.f = callback2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.run(null, "Wallet engine is closed");
-                break;
-            case 1:
-                this.b.run(null, "NO_WALLET_ENGINE");
-                break;
-            case 2:
-                this.b.run(null, "NO_WALLET_ENGINE");
-                break;
-            case 3:
-                this.b.run(null, "Recovery phrase is required");
-                break;
-            case 4:
-                this.b.run(null, "Transaction hash is required");
-                break;
-            case 5:
-                this.b.run(null, "NO_WALLET_ENGINE");
-                break;
-            case 6:
-                this.b.run(null, "NO_WALLET_ENGINE");
+                this.b.lambda$signMessage$11(this.c, this.d, this.e, this.f);
                 break;
             default:
-                this.b.run(null, "NO_WALLET_ENGINE");
+                this.b.lambda$prepareTonConnectTransfer$5(this.c, this.d, this.e, this.f);
                 break;
         }
     }

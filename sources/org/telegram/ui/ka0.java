@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ka0 implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class ka0 implements ViewTreeObserver.OnGlobalLayou
             case 0:
                 Pattern pattern = LaunchActivity.B1;
                 int measuredHeight = ((View) obj).getMeasuredHeight();
-                org.telegram.messenger.q.p(AndroidUtilities.displaySize.y, i2.d.k(measuredHeight, "height = ", " displayHeight = "));
+                org.telegram.messenger.g0.o(AndroidUtilities.displaySize.y, i2.d.l(measuredHeight, "height = ", " displayHeight = "));
                 int i11 = (measuredHeight - AndroidUtilities.navigationBarHeight) - AndroidUtilities.statusBarHeight;
                 if (i11 > AndroidUtilities.dp(100.0f) && i11 < AndroidUtilities.displaySize.y) {
                     int dp = AndroidUtilities.dp(100.0f) + i11;
@@ -35,7 +35,7 @@ public final /* synthetic */ class ka0 implements ViewTreeObserver.OnGlobalLayou
                     if (dp > point.y) {
                         point.y = i11;
                         if (BuildVars.LOGS_ENABLED) {
-                            org.telegram.messenger.q.p(AndroidUtilities.displaySize.y, new StringBuilder("fix display size y to "));
+                            org.telegram.messenger.g0.o(AndroidUtilities.displaySize.y, new StringBuilder("fix display size y to "));
                             break;
                         }
                     }

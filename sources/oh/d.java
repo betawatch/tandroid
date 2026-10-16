@@ -14,9 +14,9 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.x5;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class d extends FrameLayout implements x5 {
     public final c6 a;
@@ -30,7 +30,7 @@ public final class d extends FrameLayout implements x5 {
         this.b = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setImageResource(R.drawable.msg_arrow_back);
-        addView(imageView, a6.a(48.0f, 6.0f, 0.0f, 0.0f, 0.0f, 48, 8388627));
+        addView(imageView, z5.a(48.0f, 6.0f, 0.0f, 0.0f, 0.0f, 48, 8388627));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setText(LocaleController.getString(R.string.EmojiSearchBackToSearch));
@@ -38,7 +38,7 @@ public final class d extends FrameLayout implements x5 {
         textView.setTypeface(AndroidUtilities.bold());
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        addView(textView, a6.a(-2.0f, 50.0f, 0.0f, 16.0f, 0.0f, -2, 8388627));
+        addView(textView, z5.a(-2.0f, 50.0f, 0.0f, 16.0f, 0.0f, -2, 8388627));
         d();
     }
 

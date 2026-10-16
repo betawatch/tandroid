@@ -1,63 +1,39 @@
 package z7;
 
-import java.util.List;
-import java.util.ListIterator;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class bg extends e9.d implements ListIterator {
-    public final /* synthetic */ e9.m e;
+public final class bg extends o6.a {
+    public static final Parcelable.Creator<bg> CREATOR = new dg(0);
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final long e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bg(e9.m mVar) {
-        super(mVar, (char) 0);
-        this.e = mVar;
+    public bg(int i10, int i11, int i12, long j10, int i13) {
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
+        this.d = i13;
+        this.e = j10;
     }
 
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        e9.m mVar = this.e;
-        boolean isEmpty = mVar.isEmpty();
-        b();
-        ((ListIterator) this.b).add(obj);
-        if (isEmpty) {
-            mVar.o();
-        }
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        b();
-        return ((ListIterator) this.b).hasPrevious();
-    }
-
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        b();
-        return ((ListIterator) this.b).nextIndex();
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        b();
-        return ((ListIterator) this.b).previous();
-    }
-
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        b();
-        return ((ListIterator) this.b).previousIndex();
-    }
-
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        b();
-        ((ListIterator) this.b).set(obj);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bg(e9.m mVar, int i10) {
-        super(mVar, ((List) mVar.c).listIterator(i10), (char) 0);
-        this.e = mVar;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = w7.f0.q(parcel, 20293);
+        w7.f0.s(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        w7.f0.s(parcel, 2, 4);
+        parcel.writeInt(this.b);
+        w7.f0.s(parcel, 3, 4);
+        parcel.writeInt(this.c);
+        w7.f0.s(parcel, 4, 4);
+        parcel.writeInt(this.d);
+        w7.f0.s(parcel, 5, 8);
+        parcel.writeLong(this.e);
+        w7.f0.r(parcel, q6);
     }
 }

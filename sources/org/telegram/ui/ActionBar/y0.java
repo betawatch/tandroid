@@ -10,7 +10,7 @@ import org.telegram.ui.Cells.z7;
 import org.telegram.ui.Components.ba;
 import org.telegram.ui.Components.vh0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class y0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -78,11 +78,11 @@ public final class y0 extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.z4 z4Var = (org.telegram.ui.Wallet.z4) this.c;
-                if (z4Var.k0 == animator) {
-                    z4Var.k0 = null;
-                    z4Var.x0(this.b);
-                    z4Var.n0.o(false);
+                org.telegram.ui.Wallet.a5 a5Var = (org.telegram.ui.Wallet.a5) this.c;
+                if (a5Var.k0 == animator) {
+                    a5Var.k0 = null;
+                    a5Var.x0(this.b);
+                    a5Var.n0.o(false);
                     break;
                 }
                 break;

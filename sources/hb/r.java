@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class r extends eb.u {
     public static final p c = new p(eb.t.a, 1);
@@ -30,7 +30,7 @@ public final class r extends eb.u {
             return Boolean.valueOf(aVar.n());
         }
         if (c10 != 8) {
-            throw new IllegalStateException("Unexpected token: ".concat(i2.d.D(i10)));
+            throw new IllegalStateException("Unexpected token: ".concat(i2.d.E(i10)));
         }
         aVar.t();
         return null;
@@ -49,7 +49,7 @@ public final class r extends eb.u {
             arrayList = null;
         } else {
             aVar.b();
-            arrayList = new gb.n(true);
+            arrayList = new gb.o(true);
         }
         if (arrayList == null) {
             return a(aVar, x10);
@@ -67,7 +67,7 @@ public final class r extends eb.u {
                     arrayList2 = null;
                 } else {
                     aVar.b();
-                    arrayList2 = new gb.n(true);
+                    arrayList2 = new gb.o(true);
                 }
                 boolean z10 = arrayList2 != null;
                 if (arrayList2 == null) {

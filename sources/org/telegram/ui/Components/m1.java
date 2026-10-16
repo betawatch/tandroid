@@ -7,7 +7,7 @@ import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m1 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -51,35 +51,35 @@ public final /* synthetic */ class m1 implements Runnable {
                 }
                 break;
             default:
-                final org.telegram.ui.Wallet.d2 d2Var = (org.telegram.ui.Wallet.d2) this.d;
-                final org.telegram.ui.Wallet.z1 z1Var = (org.telegram.ui.Wallet.z1) this.e;
+                final org.telegram.ui.Wallet.e2 e2Var = (org.telegram.ui.Wallet.e2) this.d;
+                final org.telegram.ui.Wallet.a2 a2Var = (org.telegram.ui.Wallet.a2) this.e;
                 final bi.f0 f0Var = (bi.f0) this.f;
                 String str = (String) this.h;
-                org.telegram.ui.Wallet.g0 g0Var = (org.telegram.ui.Wallet.g0) this.n;
-                d2Var.h = false;
-                if (z1Var != null) {
-                    String str2 = z1Var.e;
-                    if (d2Var.y(z1Var) && !d2Var.i(z1Var)) {
-                        d2Var.g = z1Var;
-                        if ("sendTransaction".equals(str2) && z1Var.f != null) {
-                            if (MessagesController.getMainSettings(d2Var.a).contains(org.telegram.ui.Wallet.d2.j(this.b, this.c) + ".transfer")) {
-                                z1Var.m = true;
+                org.telegram.ui.Wallet.h0 h0Var = (org.telegram.ui.Wallet.h0) this.n;
+                e2Var.h = false;
+                if (a2Var != null) {
+                    String str2 = a2Var.e;
+                    if (e2Var.y(a2Var) && !e2Var.i(a2Var)) {
+                        e2Var.g = a2Var;
+                        if ("sendTransaction".equals(str2) && a2Var.f != null) {
+                            if (MessagesController.getMainSettings(e2Var.a).contains(org.telegram.ui.Wallet.e2.j(this.b, this.c) + ".transfer")) {
+                                a2Var.m = true;
                                 final int i11 = 0;
-                                d2Var.z(z1Var, g0Var, new Utilities.Callback() { // from class: org.telegram.ui.Wallet.u1
+                                e2Var.z(a2Var, h0Var, new Utilities.Callback() { // from class: org.telegram.ui.Wallet.v1
                                     @Override // org.telegram.messenger.Utilities.Callback
                                     public final void run(Object obj) {
                                         String str3 = (String) obj;
                                         switch (i11) {
                                             case 0:
-                                                d2 d2Var2 = d2Var;
-                                                d2Var2.getClass();
-                                                z1 z1Var2 = z1Var;
-                                                z1Var2.m = false;
-                                                d2Var2.s(z1Var2);
+                                                e2 e2Var2 = e2Var;
+                                                e2Var2.getClass();
+                                                a2 a2Var2 = a2Var;
+                                                a2Var2.m = false;
+                                                e2Var2.s(a2Var2);
                                                 f0Var.run(null, str3);
                                                 break;
                                             default:
-                                                d2Var.s(z1Var);
+                                                e2Var.s(a2Var);
                                                 f0Var.run(null, str3);
                                                 break;
                                         }
@@ -88,27 +88,27 @@ public final /* synthetic */ class m1 implements Runnable {
                                 break;
                             }
                         }
-                        if (z1Var.l < 0 && !"disconnect".equals(str2)) {
-                            f0Var.run(z1Var, null);
+                        if (a2Var.l < 0 && !"disconnect".equals(str2)) {
+                            f0Var.run(a2Var, null);
                             break;
                         } else {
-                            g0Var.close();
+                            h0Var.close();
                             final int i12 = 1;
-                            d2Var.e(z1Var, false, new Utilities.Callback() { // from class: org.telegram.ui.Wallet.u1
+                            e2Var.e(a2Var, false, new Utilities.Callback() { // from class: org.telegram.ui.Wallet.v1
                                 @Override // org.telegram.messenger.Utilities.Callback
                                 public final void run(Object obj) {
                                     String str3 = (String) obj;
                                     switch (i12) {
                                         case 0:
-                                            d2 d2Var2 = d2Var;
-                                            d2Var2.getClass();
-                                            z1 z1Var2 = z1Var;
-                                            z1Var2.m = false;
-                                            d2Var2.s(z1Var2);
+                                            e2 e2Var2 = e2Var;
+                                            e2Var2.getClass();
+                                            a2 a2Var2 = a2Var;
+                                            a2Var2.m = false;
+                                            e2Var2.s(a2Var2);
                                             f0Var.run(null, str3);
                                             break;
                                         default:
-                                            d2Var.s(z1Var);
+                                            e2Var.s(a2Var);
                                             f0Var.run(null, str3);
                                             break;
                                     }
@@ -128,13 +128,13 @@ public final /* synthetic */ class m1 implements Runnable {
         }
     }
 
-    public /* synthetic */ m1(org.telegram.ui.Wallet.d2 d2Var, org.telegram.ui.Wallet.z1 z1Var, bi.f0 f0Var, String str, long j10, int i10, org.telegram.ui.Wallet.g0 g0Var) {
-        this.d = d2Var;
-        this.e = z1Var;
+    public /* synthetic */ m1(org.telegram.ui.Wallet.e2 e2Var, org.telegram.ui.Wallet.a2 a2Var, bi.f0 f0Var, String str, long j10, int i10, org.telegram.ui.Wallet.h0 h0Var) {
+        this.d = e2Var;
+        this.e = a2Var;
         this.f = f0Var;
         this.h = str;
         this.b = j10;
         this.c = i10;
-        this.n = g0Var;
+        this.n = h0Var;
     }
 }

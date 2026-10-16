@@ -7,8 +7,9 @@ import android.util.Log;
 import com.google.android.gms.internal.clearcut.e2;
 import java.util.HashMap;
 import org.json.JSONObject;
+import org.telegram.ui.Cells.c1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class j implements com.google.android.gms.internal.clearcut.g {
     public String a;
@@ -20,26 +21,26 @@ public final class j implements com.google.android.gms.internal.clearcut.g {
     public static void a(androidx.biometric.e eVar, ea.d dVar) {
         String str = dVar.a;
         if (str != null) {
-            eVar.s("X-CRASHLYTICS-GOOGLE-APP-ID", str);
+            eVar.r("X-CRASHLYTICS-GOOGLE-APP-ID", str);
         }
-        eVar.s("X-CRASHLYTICS-API-CLIENT-TYPE", "android");
-        eVar.s("X-CRASHLYTICS-API-CLIENT-VERSION", "18.6.0");
-        eVar.s("Accept", "application/json");
+        eVar.r("X-CRASHLYTICS-API-CLIENT-TYPE", "android");
+        eVar.r("X-CRASHLYTICS-API-CLIENT-VERSION", "18.6.0");
+        eVar.r("Accept", "application/json");
         String str2 = dVar.b;
         if (str2 != null) {
-            eVar.s("X-CRASHLYTICS-DEVICE-MODEL", str2);
+            eVar.r("X-CRASHLYTICS-DEVICE-MODEL", str2);
         }
         String str3 = dVar.c;
         if (str3 != null) {
-            eVar.s("X-CRASHLYTICS-OS-BUILD-VERSION", str3);
+            eVar.r("X-CRASHLYTICS-OS-BUILD-VERSION", str3);
         }
         String str4 = dVar.d;
         if (str4 != null) {
-            eVar.s("X-CRASHLYTICS-OS-DISPLAY-VERSION", str4);
+            eVar.r("X-CRASHLYTICS-OS-DISPLAY-VERSION", str4);
         }
         String str5 = dVar.e.b().a;
         if (str5 != null) {
-            eVar.s("X-CRASHLYTICS-INSTALLATION-ID", str5);
+            eVar.r("X-CRASHLYTICS-INSTALLATION-ID", str5);
         }
     }
 
@@ -101,7 +102,7 @@ public final class j implements com.google.android.gms.internal.clearcut.g {
                     bool = Boolean.TRUE;
                     z11 = true;
                 } else if (!e2.d.matcher(b10).matches()) {
-                    Log.w("Gservices", org.telegram.ui.Cells.d0.j("attempt to read gservices key ", str, " (value \"", b10, "\") as boolean"));
+                    Log.w("Gservices", c1.i("attempt to read gservices key ", str, " (value \"", b10, "\") as boolean"));
                 }
                 e2.e(obj, hashMap, str, bool);
                 z10 = z11;

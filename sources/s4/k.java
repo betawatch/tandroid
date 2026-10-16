@@ -11,7 +11,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.BuildVars;
 import org.telegram.ui.Components.lt;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class k extends e1 {
     public static TimeInterpolator E;
@@ -462,7 +462,7 @@ public class k extends e1 {
             } else {
                 View view = ((j) arrayList5.get(0)).a.a;
                 long L = L();
-                WeakHashMap weakHashMap = r0.j0.a;
+                WeakHashMap weakHashMap = r0.i0.a;
                 view.postOnAnimationDelayed(fVar, L);
             }
         }
@@ -477,7 +477,7 @@ public class k extends e1 {
             } else {
                 View view2 = ((i) arrayList6.get(0)).a.a;
                 long j10 = this.d;
-                WeakHashMap weakHashMap2 = r0.j0.a;
+                WeakHashMap weakHashMap2 = r0.i0.a;
                 view2.postOnAnimationDelayed(fVar2, j10);
             }
         }
@@ -495,7 +495,7 @@ public class k extends e1 {
         }
         long K = K(!isEmpty ? this.d : 0L, !isEmpty2 ? j() : 0L, isEmpty3 ? 0L : i());
         View view3 = ((b1) arrayList7.get(0)).a;
-        WeakHashMap weakHashMap3 = r0.j0.a;
+        WeakHashMap weakHashMap3 = r0.i0.a;
         view3.postOnAnimationDelayed(fVar3, K);
     }
 

@@ -1,35 +1,64 @@
 package m4;
 
+import android.os.Bundle;
 import j$.util.Objects;
-import java.util.HashSet;
+import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class q1 {
-    public static final String b;
-    public final e9.y0 a;
+    public static final String d;
+    public static final String e;
+    public static final String f;
+    public final int a;
+    public final String b;
+    public final Bundle c;
 
     static {
-        new q1(new HashSet());
         String str = e2.m0.a;
-        b = Integer.toString(0, 36);
+        d = Integer.toString(0, 36);
+        e = Integer.toString(1, 36);
+        f = Integer.toString(2, 36);
     }
 
-    public q1(HashSet hashSet) {
-        this.a = e9.y0.u(hashSet);
+    public q1(int i10) {
+        this("no error message provided", i10, Bundle.EMPTY);
+    }
+
+    public final Bundle a() {
+        Bundle bundle = new Bundle();
+        bundle.putInt(d, this.a);
+        bundle.putString(e, this.b);
+        Bundle bundle2 = this.c;
+        if (!bundle2.isEmpty()) {
+            bundle.putBundle(f, bundle2);
+        }
+        return bundle;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (obj instanceof q1) {
-            return this.a.equals(((q1) obj).a);
+        if (!(obj instanceof q1)) {
+            return false;
         }
-        return false;
+        q1 q1Var = (q1) obj;
+        return this.a == q1Var.a && Objects.equals(this.b, q1Var.b);
     }
 
     public final int hashCode() {
-        return Objects.hash(this.a);
+        return Objects.hash(Integer.valueOf(this.a), this.b);
+    }
+
+    public q1(String str, int i10, Bundle bundle) {
+        boolean z10 = true;
+        if (i10 >= 0 && i10 != 1) {
+            z10 = false;
+        }
+        u6.g(z10);
+        this.a = i10;
+        this.b = str;
+        this.c = bundle;
     }
 }

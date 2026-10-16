@@ -12,23 +12,23 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class o31 extends h71 {
+public final class o31 extends i71 {
     public final org.telegram.ui.p20 d3;
     public final g6 e3;
     public Drawable f3;
     public int g3;
     public final Paint h3;
 
-    public o31(Context context, int i10, l31 l31Var, d31 d31Var, d31 d31Var2, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, i10, 0, false, l31Var, d31Var, d31Var2, c6Var);
+    public o31(Context context, int i10, l31 l31Var, e31 e31Var, e31 e31Var2, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context, i10, 0, false, l31Var, e31Var, e31Var2, c6Var);
         this.d3 = new org.telegram.ui.p20();
         this.e3 = new g6(this, 320L, es.h);
         this.h3 = new Paint(1);
     }
 
-    @Override // org.telegram.ui.Components.h71, org.telegram.ui.Components.mm0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.i71, org.telegram.ui.Components.mm0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
         float e = this.e3.e(canScrollVertically(-1));

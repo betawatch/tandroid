@@ -5,11 +5,11 @@ import android.os.RemoteException;
 import android.util.Log;
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
-import n6.y;
+import n6.x;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public abstract class l extends b8.b implements y {
+public abstract class l extends b8.b implements x {
     public final int b;
 
     public l(byte[] bArr) {
@@ -45,11 +45,11 @@ public abstract class l extends b8.b implements y {
     public abstract byte[] L0();
 
     public final boolean equals(Object obj) {
-        if (obj != null && (obj instanceof y)) {
+        if (obj != null && (obj instanceof x)) {
             try {
-                y yVar = (y) obj;
-                if (((l) yVar).b == this.b) {
-                    return Arrays.equals(L0(), (byte[]) x6.b.L0(new x6.b(((l) yVar).L0())));
+                x xVar = (x) obj;
+                if (((l) xVar).b == this.b) {
+                    return Arrays.equals(L0(), (byte[]) x6.b.L0(new x6.b(((l) xVar).L0())));
                 }
             } catch (RemoteException e) {
                 Log.e("GoogleCertificates", "Failed to get Google certificates from remote", e);

@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.g6;
 import t7.u;
 import u2.f0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class f {
     public boolean a;
@@ -66,7 +66,7 @@ public final class f {
                             nVar = new i2.n(Class.forName("androidx.media3.exoplayer.rtsp.RtspMediaSource$Factory").asSubclass(f0.class), 3);
                         } else {
                             if (i10 != 4) {
-                                throw new IllegalArgumentException(i2.d.i(i10, "Unrecognized contentType: "));
+                                throw new IllegalArgumentException(i2.d.j(i10, "Unrecognized contentType: "));
                             }
                             nVar = new d9.u() { // from class: u2.p
                                 @Override // d9.u

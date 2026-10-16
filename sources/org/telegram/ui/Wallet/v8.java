@@ -5,17 +5,17 @@ import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.vi;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class v8 extends AnimatorListenerAdapter {
     public final /* synthetic */ vi a;
-    public final /* synthetic */ b6 b;
+    public final /* synthetic */ c6 b;
     public final /* synthetic */ w8 c;
 
-    public v8(w8 w8Var, vi viVar, b6 b6Var) {
+    public v8(w8 w8Var, vi viVar, c6 c6Var) {
         this.c = w8Var;
         this.a = viVar;
-        this.b = b6Var;
+        this.b = c6Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener

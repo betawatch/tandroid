@@ -9,7 +9,7 @@ import android.view.ViewConfiguration;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class dy extends kn0 {
     public boolean A0;
@@ -64,7 +64,7 @@ public class dy extends kn0 {
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         boolean z10;
         wz wzVar = this.D0;
-        org.telegram.ui.Cells.t6 t6Var = wzVar.f2;
+        org.telegram.ui.Cells.l7 l7Var = wzVar.f2;
         kx kxVar = wzVar.h;
         if (this.s != null) {
             return super.onTouchEvent(motionEvent);
@@ -86,7 +86,7 @@ public class dy extends kn0 {
             float f7 = this.u0;
             if (abs >= f7 && canScrollHorizontally((int) (this.y0 - motionEvent.getRawX()))) {
                 this.B0 = true;
-                AndroidUtilities.cancelRunOnUIThread(t6Var);
+                AndroidUtilities.cancelRunOnUIThread(l7Var);
                 wzVar.X1 = true;
                 wzVar.Y();
             } else if (Math.abs(motionEvent.getRawY() - this.z0) >= f7) {
@@ -100,7 +100,7 @@ public class dy extends kn0 {
             }
         }
         if (wzVar.X1 && (motionEvent.getAction() == 1 || motionEvent.getAction() == 3)) {
-            AndroidUtilities.runOnUIThread(t6Var, 1500L);
+            AndroidUtilities.runOnUIThread(l7Var, 1500L);
         }
         if (!this.A0) {
             float translationX = getTranslationX();
@@ -159,9 +159,9 @@ public class dy extends kn0 {
                 if (fVar.d()) {
                     chatActivityEnterView.E3 = false;
                     if ((!fVar.b || yVelocity < AndroidUtilities.dp(200.0f)) && ((fVar.b || yVelocity > AndroidUtilities.dp(-200.0f)) && ((!(z10 = fVar.b) || chatActivityEnterView.C3 > 0.6f) && (z10 || chatActivityEnterView.C3 < 0.4f)))) {
-                        chatActivityEnterView.l1(z10, true, true, true);
+                        chatActivityEnterView.k1(z10, true, true, true);
                     } else {
-                        chatActivityEnterView.l1(!fVar.b, true, true, true);
+                        chatActivityEnterView.k1(!fVar.b, true, true, true);
                     }
                 }
             } else {
@@ -169,7 +169,7 @@ public class dy extends kn0 {
                 ChatActivityEnterView chatActivityEnterView2 = (ChatActivityEnterView) fVar2.c;
                 if (chatActivityEnterView2.x3) {
                     chatActivityEnterView2.E3 = false;
-                    chatActivityEnterView2.l1(fVar2.b, true, false, true);
+                    chatActivityEnterView2.k1(fVar2.b, true, false, true);
                 }
             }
             this.x0 = true;

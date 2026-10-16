@@ -28,7 +28,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class zq extends FrameLayout {
     public static final /* synthetic */ int e0 = 0;
@@ -101,19 +101,19 @@ public class zq extends FrameLayout {
         bi.v0 v0Var = new bi.v0(this, context);
         this.x = v0Var;
         v0Var.setOrientation(0);
-        addView(v0Var, w7.a6.a(54.0f, 27.0f, -6.0f, 17.0f, 0.0f, -1, 51));
+        addView(v0Var, w7.z5.a(54.0f, 27.0f, -6.0f, 17.0f, 0.0f, -1, 51));
         v0Var.setWillNotDraw(false);
         FrameLayout frameLayout = new FrameLayout(context);
         this.w = frameLayout;
         frameLayout.setClipChildren(false);
-        addView(frameLayout, w7.a6.a(30.0f, 72.0f, 1.0f, 0.0f, 0.0f, 174, 49));
+        addView(frameLayout, w7.z5.a(30.0f, 72.0f, 1.0f, 0.0f, 0.0f, 174, 49));
         int i14 = 0;
         while (i14 < 4) {
             this.v[i14] = new ColorPicker$RadioButton(context);
             ColorPicker$RadioButton colorPicker$RadioButton = this.v[i14];
             colorPicker$RadioButton.d = this.S == i14;
             colorPicker$RadioButton.b(false);
-            this.w.addView(this.v[i14], w7.a6.a(30.0f, 0.0f, 0.0f, 0.0f, 0.0f, 30, 48));
+            this.w.addView(this.v[i14], w7.z5.a(30.0f, 0.0f, 0.0f, 0.0f, 0.0f, 30, 48));
             this.v[i14].setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.uq
                 public final /* synthetic */ zq b;
 
@@ -229,7 +229,7 @@ public class zq extends FrameLayout {
                                     arrayList2.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property5, AndroidUtilities.dp(13.0f) + AndroidUtilities.dp(30.0f)));
                                 } else if (i18 == 4) {
                                     zqVar.K = 3;
-                                    arrayList2.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property5, org.telegram.messenger.yh.y(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
+                                    arrayList2.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property5, org.telegram.messenger.g0.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
                                 }
                                 if (zqVar.K < zqVar.L) {
                                     imageView2.setVisibility(0);
@@ -298,16 +298,16 @@ public class zq extends FrameLayout {
                 this.E[i15].setEnabled(false);
                 this.E[i15].setFocusable(false);
                 this.E[i15].setPadding(0, AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(16.0f));
-                this.x.addView(this.E[i15], w7.a6.k(0.0f, 0.0f, 0.0f, 0.0f, -2, -1));
+                this.x.addView(this.E[i15], w7.z5.k(0.0f, 0.0f, 0.0f, 0.0f, -2, -1));
             } else {
                 editTextBoldCursorArr[i15] = new vq(this, context, i15, i10);
                 this.E[i15].setBackgroundDrawable(null);
                 this.E[i15].setFilters(new InputFilter[]{new InputFilter.LengthFilter(6)});
                 this.E[i15].setHint("8BC6ED");
                 this.E[i15].setPadding(0, AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(16.0f));
-                this.x.addView(this.E[i15], w7.a6.k(0.0f, 0.0f, 0.0f, 0.0f, 71, -1));
+                this.x.addView(this.E[i15], w7.z5.k(0.0f, 0.0f, 0.0f, 0.0f, 71, -1));
                 this.E[i15].addTextChangedListener(new wq(this, i15));
-                this.E[i15].setOnEditorActionListener(new u2(i10));
+                this.E[i15].setOnEditorActionListener(new t2(i10));
             }
             this.E[i15].setTextSize(1, 16.0f);
             this.E[i15].setHintTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.H6, this.d0));
@@ -456,7 +456,7 @@ public class zq extends FrameLayout {
                                 arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, AndroidUtilities.dp(13.0f) + AndroidUtilities.dp(30.0f)));
                             } else if (i182 == 4) {
                                 zqVar.K = 3;
-                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, org.telegram.messenger.yh.y(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, org.telegram.messenger.g0.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
                             }
                             if (zqVar.K < zqVar.L) {
                                 imageView22.setVisibility(0);
@@ -511,7 +511,7 @@ public class zq extends FrameLayout {
             }
         });
         imageView.setContentDescription(LocaleController.getString(R.string.Add));
-        addView(imageView, w7.a6.a(30.0f, 36.0f, 1.0f, 0.0f, 0.0f, 30, 49));
+        addView(imageView, w7.z5.a(30.0f, 36.0f, 1.0f, 0.0f, 0.0f, 30, 49));
         org.telegram.ui.ActionBar.j0 j0Var = new org.telegram.ui.ActionBar.j0(this, getContext(), 1);
         this.F = j0Var;
         j0Var.setBackground(org.telegram.ui.ActionBar.g6.g0(org.telegram.ui.ActionBar.g6.w0(i17, this.d0), 1, -1));
@@ -637,7 +637,7 @@ public class zq extends FrameLayout {
                                 arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, AndroidUtilities.dp(13.0f) + AndroidUtilities.dp(30.0f)));
                             } else if (i182 == 4) {
                                 zqVar.K = 3;
-                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, org.telegram.messenger.yh.y(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, org.telegram.messenger.g0.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
                             }
                             if (zqVar.K < zqVar.L) {
                                 imageView22.setVisibility(0);
@@ -692,7 +692,7 @@ public class zq extends FrameLayout {
             }
         });
         j0Var.setContentDescription(LocaleController.getString(R.string.ClearButton));
-        addView(j0Var, w7.a6.a(30.0f, 97.0f, 1.0f, 0.0f, 0.0f, 30, 51));
+        addView(j0Var, w7.z5.a(30.0f, 97.0f, 1.0f, 0.0f, 0.0f, 30, 51));
         TextView textView = new TextView(context);
         this.H = textView;
         textView.setTextSize(1, 15.0f);
@@ -700,7 +700,7 @@ public class zq extends FrameLayout {
         textView.setGravity(17);
         textView.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
         textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(i18, this.d0));
-        addView(textView, w7.a6.a(36.0f, 0.0f, 3.0f, 14.0f, 0.0f, -2, 53));
+        addView(textView, w7.z5.a(36.0f, 0.0f, 3.0f, 14.0f, 0.0f, -2, 53));
         textView.setOnClickListener(new ah.f(10));
         if (z10) {
             org.telegram.ui.ActionBar.u0 u0Var = new org.telegram.ui.ActionBar.u0(context, (org.telegram.ui.ActionBar.y) null, 0, org.telegram.ui.ActionBar.g6.w0(i18, this.d0));
@@ -717,7 +717,7 @@ public class zq extends FrameLayout {
             u0Var.setAdditionalYOffset(AndroidUtilities.dp(72.0f));
             u0Var.setTranslationX(AndroidUtilities.dp(6.0f));
             u0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.g0(org.telegram.ui.ActionBar.g6.w0(i17, this.d0), 1, -1));
-            addView(u0Var, w7.a6.a(30.0f, 0.0f, 2.0f, 10.0f, 0.0f, 30, 53));
+            addView(u0Var, w7.z5.a(30.0f, 0.0f, 2.0f, 10.0f, 0.0f, 30, 53));
             u0Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.uq
                 public final /* synthetic */ zq b;
 
@@ -833,7 +833,7 @@ public class zq extends FrameLayout {
                                     arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, AndroidUtilities.dp(13.0f) + AndroidUtilities.dp(30.0f)));
                                 } else if (i182 == 4) {
                                     zqVar.K = 3;
-                                    arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, org.telegram.messenger.yh.y(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
+                                    arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, org.telegram.messenger.g0.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
                                 }
                                 if (zqVar.K < zqVar.L) {
                                     imageView22.setVisibility(0);
@@ -939,8 +939,8 @@ public class zq extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public void setColorInner(int i10) {
         Color.colorToHSV(i10, this.N);
-        int L0 = this.a.L0(this.S);
-        if (L0 == 0 || L0 != i10) {
+        int J0 = this.a.J0(this.S);
+        if (J0 == 0 || J0 != i10) {
             h();
         }
         this.P = null;
@@ -998,9 +998,9 @@ public class zq extends FrameLayout {
         } else if (i12 == 2) {
             imageView.setTranslationX(AndroidUtilities.dp(13.0f) + AndroidUtilities.dp(30.0f));
         } else if (i12 == 3) {
-            imageView.setTranslationX(org.telegram.messenger.yh.y(13.0f, 2, AndroidUtilities.dp(30.0f) * 2));
+            imageView.setTranslationX(org.telegram.messenger.g0.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2));
         } else {
-            imageView.setTranslationX(org.telegram.messenger.yh.y(13.0f, 3, AndroidUtilities.dp(30.0f) * 3));
+            imageView.setTranslationX(org.telegram.messenger.g0.D(13.0f, 3, AndroidUtilities.dp(30.0f) * 3));
         }
         org.telegram.ui.ActionBar.j0 j0Var = this.F;
         org.telegram.ui.ActionBar.u0 u0Var = this.I;
@@ -1041,9 +1041,9 @@ public class zq extends FrameLayout {
         float f7;
         int i11 = this.K;
         float f10 = 30.0f;
-        int y3 = org.telegram.messenger.yh.y(13.0f, i11 - 1, AndroidUtilities.dp(30.0f) * i11);
+        int D = org.telegram.messenger.g0.D(13.0f, i11 - 1, AndroidUtilities.dp(30.0f) * i11);
         FrameLayout frameLayout = this.w;
-        float f11 = frameLayout.getLeft() + y3 > i10 - AndroidUtilities.dp(this.J == 1 ? 50.0f : 0.0f) ? r7 - r2 : 0.0f;
+        float f11 = frameLayout.getLeft() + D > i10 - AndroidUtilities.dp(this.J == 1 ? 50.0f : 0.0f) ? r7 - r2 : 0.0f;
         Property property = View.TRANSLATION_X;
         if (arrayList != null) {
             arrayList.add(ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) property, -f11));
@@ -1108,7 +1108,7 @@ public class zq extends FrameLayout {
                 }
                 colorPicker$RadioButtonArr[i12].setTag(R.id.index_tag, null);
             }
-            i13 = org.telegram.messenger.yh.c(13.0f, AndroidUtilities.dp(f7), i13);
+            i13 = org.telegram.messenger.g0.C(13.0f, AndroidUtilities.dp(f7), i13);
             i12++;
             f10 = f7;
         }

@@ -10,32 +10,32 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.i71;
 import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.z61;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class d extends k61 {
+public final class d extends l61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        k61.setup(new d());
+        l61.setup(new d());
     }
 
-    @Override // org.telegram.ui.Components.k61
-    public final void bindView(View view, l61 l61Var, boolean z10, z61 z61Var, h71 h71Var) {
+    @Override // org.telegram.ui.Components.l61
+    public final void bindView(View view, m61 m61Var, boolean z10, a71 a71Var, i71 i71Var) {
         e eVar = (e) view;
-        if (l61Var.G == null) {
-            eVar.setAsShowMore((k) l61Var.H);
+        if (m61Var.G == null) {
+            eVar.setAsShowMore((k) m61Var.H);
             return;
         }
-        int i10 = l61Var.z;
-        String charSequence = l61Var.l.toString();
-        View.OnClickListener onClickListener = l61Var.D;
-        k kVar = (k) l61Var.H;
+        int i10 = m61Var.z;
+        String charSequence = m61Var.l.toString();
+        View.OnClickListener onClickListener = m61Var.D;
+        k kVar = (k) m61Var.H;
         ImageView imageView = eVar.a;
         imageView.setVisibility(0);
         int i11 = kVar.F;
@@ -56,7 +56,7 @@ public final class d extends k61 {
         eVar.setWillNotDraw(!z10);
     }
 
-    @Override // org.telegram.ui.Components.k61
+    @Override // org.telegram.ui.Components.l61
     public final View createView(Context context, mm0 mm0Var, int i10, int i11, c6 c6Var) {
         return new e(context);
     }

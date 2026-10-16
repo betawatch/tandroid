@@ -4,12 +4,12 @@ import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.RemoteException;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class o8 {
     public static s7.e a;
 
-    public static qb.c a(Bitmap bitmap) {
+    public static a6.m a(Bitmap bitmap) {
         n6.l.i(bitmap, "image must not be null");
         try {
             s7.e eVar = a;
@@ -20,13 +20,13 @@ public abstract class o8 {
             Parcel M0 = cVar.M0(N0, 6);
             x6.a K0 = x6.b.K0(M0.readStrongBinder());
             M0.recycle();
-            return new qb.c(K0);
+            return new a6.m(K0);
         } catch (RemoteException e) {
             throw new androidx.car.app.j(e);
         }
     }
 
-    public static qb.c b(int i10) {
+    public static a6.m b(int i10) {
         try {
             s7.e eVar = a;
             n6.l.i(eVar, "IBitmapDescriptorFactory is not initialized");
@@ -36,7 +36,7 @@ public abstract class o8 {
             Parcel M0 = cVar.M0(N0, 1);
             x6.a K0 = x6.b.K0(M0.readStrongBinder());
             M0.recycle();
-            return new qb.c(K0);
+            return new a6.m(K0);
         } catch (RemoteException e) {
             throw new androidx.car.app.j(e);
         }

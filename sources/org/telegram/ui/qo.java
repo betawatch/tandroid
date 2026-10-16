@@ -5,9 +5,9 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qo implements org.telegram.ui.ActionBar.z1, MessagesStorage.LongCallback, id0, MessagesStorage.BooleanCallback {
+public final /* synthetic */ class qo implements org.telegram.ui.ActionBar.z1, MessagesStorage.LongCallback, gd0, MessagesStorage.BooleanCallback {
     public final /* synthetic */ int a;
     public final /* synthetic */ zo b;
 
@@ -16,7 +16,7 @@ public final /* synthetic */ class qo implements org.telegram.ui.ActionBar.z1, M
         this.b = zoVar;
     }
 
-    @Override // org.telegram.ui.id0
+    @Override // org.telegram.ui.gd0
     public void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j10) {
         TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
         tL_channelLocation.address = messageMedia.address;

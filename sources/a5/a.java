@@ -25,7 +25,6 @@ import bi.n8;
 import c3.h;
 import c3.i;
 import c3.p;
-import c3.s;
 import c3.u;
 import c5.w;
 import com.google.android.gms.common.api.internal.l;
@@ -60,12 +59,12 @@ import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.zip.Deflater;
 import ji.v2;
-import li.k;
-import m.d3;
-import m.l1;
-import m.q;
-import m.q3;
-import m4.f0;
+import m.f3;
+import m.h3;
+import m.n1;
+import m.s;
+import m.t3;
+import m4.v;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
@@ -76,8 +75,9 @@ import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.gi;
 import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.nz;
+import org.telegram.ui.web.o0;
 import org.xmlpull.v1.XmlPullParserException;
-import qi.e;
+import pi.e;
 import u2.c0;
 import u2.g0;
 import u2.i0;
@@ -94,14 +94,14 @@ import x7.e0;
 import x7.i9;
 import x7.ia;
 import x7.p7;
+import z7.ag;
 import z7.ib;
 import z7.we;
 import z7.x;
 import z7.y;
-import z7.zf;
 import zf.f;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class a implements i, t {
     public final /* synthetic */ int a;
@@ -460,17 +460,17 @@ public class a implements i, t {
                     throw new UnsupportedOperationException("Failed to covert logging to UTF-8 byte array", e7);
                 }
             default:
-                zf zfVar = zf.c;
-                q3 q3Var = (q3) this.c;
+                ag agVar = ag.c;
+                t3 t3Var = (t3) this.c;
                 ((d8) this.d).h = false;
                 d8 d8Var3 = (d8) this.d;
                 d8Var3.f = Boolean.FALSE;
-                q3Var.a = new we(d8Var3);
+                t3Var.a = new we(d8Var3);
                 try {
-                    zf.b();
-                    ib ibVar = new ib(q3Var);
+                    ag.b();
+                    ib ibVar = new ib(t3Var);
                     u2.c cVar3 = new u2.c(15);
-                    zfVar.a(cVar3);
+                    agVar.a(cVar3);
                     HashMap hashMap5 = new HashMap((HashMap) cVar3.b);
                     HashMap hashMap6 = new HashMap((HashMap) cVar3.c);
                     x xVar = (x) cVar3.d;
@@ -549,7 +549,7 @@ public class a implements i, t {
                 int min = (int) Math.min(112800, pVar.getLength() - position2);
                 e2.x xVar = (e2.x) this.d;
                 xVar.K(min);
-                pVar.a(0, min, xVar.a);
+                pVar.b(0, min, xVar.a);
                 int i10 = xVar.c;
                 long j11 = -1;
                 long j12 = -1;
@@ -599,16 +599,16 @@ public class a implements i, t {
     }
 
     public void d() {
-        d3 d3Var;
+        f3 f3Var;
         ImageView imageView = (ImageView) this.c;
         Drawable drawable = imageView.getDrawable();
         if (drawable != null) {
-            l1.a(drawable);
+            n1.a(drawable);
         }
-        if (drawable == null || (d3Var = (d3) this.d) == null) {
+        if (drawable == null || (f3Var = (f3) this.d) == null) {
             return;
         }
-        q.d(drawable, d3Var, imageView.getDrawableState());
+        s.d(drawable, f3Var, imageView.getDrawableState());
     }
 
     public c2 e(boolean z10) {
@@ -666,12 +666,12 @@ public class a implements i, t {
     }
 
     public void m(int i10, b2.x xVar, int i11, Object obj, long j10) {
-        l(new org.telegram.ui.web.c0(10, this, new c0(1, i10, xVar, i11, obj, m0.h0(j10), -9223372036854775807L)));
+        l(new o0(10, this, new c0(1, i10, xVar, i11, obj, m0.h0(j10), -9223372036854775807L)));
     }
 
     public long n(p pVar) {
-        int f7;
-        s sVar = (s) this.d;
+        int g10;
+        c3.s sVar = (c3.s) this.d;
         u uVar = (u) this.c;
         while (pVar.k() < pVar.getLength() - 6) {
             int i10 = this.b;
@@ -679,14 +679,14 @@ public class a implements i, t {
             e2.x xVar = new e2.x(17);
             int i11 = 0;
             boolean a2 = false;
-            pVar.a(0, 2, xVar.a);
+            pVar.b(0, 2, xVar.a);
             if (xVar.g(0, ByteOrder.BIG_ENDIAN) != i10) {
                 pVar.q();
                 pVar.l((int) (k10 - pVar.getPosition()));
             } else {
                 byte[] bArr = xVar.a;
-                while (i11 < 15 && (f7 = pVar.f(2 + i11, 15 - i11, bArr)) != -1) {
-                    i11 += f7;
+                while (i11 < 15 && (g10 = pVar.g(2 + i11, 15 - i11, bArr)) != -1) {
+                    i11 += g10;
                 }
                 xVar.M(i11 + 2);
                 pVar.q();
@@ -726,10 +726,10 @@ public class a implements i, t {
     @Override // j9.t
     public void onSuccess(Object obj) {
         List list = (List) obj;
-        f0 f0Var = ((m4.q0) this.d).g;
-        Handler handler = f0Var.l;
-        m4.w wVar = (m4.w) this.c;
-        m0.W(handler, new v2(f0Var, wVar, new n8(this, this.b, list, wVar, 6)));
+        m4.e0 e0Var = ((m4.p0) this.d).g;
+        Handler handler = e0Var.l;
+        v vVar = (v) this.c;
+        m0.W(handler, new v2(e0Var, vVar, new n8(this, this.b, list, vVar, 6)));
     }
 
     public boolean p() {
@@ -758,22 +758,22 @@ public class a implements i, t {
         ImageView imageView = (ImageView) this.c;
         Context context = imageView.getContext();
         int[] iArr = f.a.f;
-        k P = k.P(context, attributeSet, iArr, i10);
+        h3 P = h3.P(context, attributeSet, iArr, i10);
         TypedArray typedArray = (TypedArray) P.c;
-        r0.j0.i(imageView, imageView.getContext(), iArr, attributeSet, (TypedArray) P.c, i10);
+        r0.i0.i(imageView, imageView.getContext(), iArr, attributeSet, (TypedArray) P.c, i10);
         try {
             Drawable drawable = imageView.getDrawable();
             if (drawable == null && (resourceId = typedArray.getResourceId(1, -1)) != -1 && (drawable = q7.b(imageView.getContext(), resourceId)) != null) {
                 imageView.setImageDrawable(drawable);
             }
             if (drawable != null) {
-                l1.a(drawable);
+                n1.a(drawable);
             }
             if (typedArray.hasValue(2)) {
                 imageView.setImageTintList(P.E(2));
             }
             if (typedArray.hasValue(3)) {
-                imageView.setImageTintMode(l1.b(typedArray.getInt(3, -1), null));
+                imageView.setImageTintMode(n1.b(typedArray.getInt(3, -1), null));
             }
             P.Q();
         } catch (Throwable th2) {
@@ -906,11 +906,11 @@ public class a implements i, t {
     public void i(Throwable th2) {
     }
 
-    public a(q3 q3Var, int i10) {
+    public a(t3 t3Var, int i10) {
         this.a = 26;
         this.d = new d8();
-        this.c = q3Var;
-        zf.b();
+        this.c = t3Var;
+        ag.b();
         this.b = i10;
     }
 
@@ -987,7 +987,7 @@ public class a implements i, t {
         this.a = 8;
         this.c = uVar;
         this.b = i10;
-        this.d = new s();
+        this.d = new c3.s();
     }
 
     public a(int i10, k0 k0Var) {
@@ -1023,10 +1023,10 @@ public class a implements i, t {
         this.b = ConnectionsManager.DEFAULT_DATACENTER_ID;
     }
 
-    public a(m4.q0 q0Var, m4.w wVar, int i10) {
+    public a(m4.p0 p0Var, v vVar, int i10) {
         this.a = 13;
-        this.d = q0Var;
-        this.c = wVar;
+        this.d = p0Var;
+        this.c = vVar;
         this.b = i10;
     }
 }

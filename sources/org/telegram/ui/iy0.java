@@ -14,7 +14,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class iy0 extends org.telegram.ui.Components.lm0 {
     public final Context c;
@@ -625,12 +625,12 @@ public final class iy0 extends org.telegram.ui.Components.lm0 {
                         int indexOf = privacySettingsActivity.d.login_email_pattern.indexOf(42);
                         int lastIndexOf = privacySettingsActivity.d.login_email_pattern.lastIndexOf(42);
                         if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-                            org.telegram.ui.Components.p11 p11Var = new org.telegram.ui.Components.p11();
-                            p11Var.a |= 256;
-                            p11Var.b = indexOf;
+                            org.telegram.ui.Components.q11 q11Var = new org.telegram.ui.Components.q11();
+                            q11Var.a |= 256;
+                            q11Var.b = indexOf;
                             int i44 = lastIndexOf + 1;
-                            p11Var.c = i44;
-                            valueOf.setSpan(new org.telegram.ui.Components.q11(p11Var, 0), indexOf, i44, 0);
+                            q11Var.c = i44;
+                            valueOf.setSpan(new org.telegram.ui.Components.r11(q11Var, 0), indexOf, i44, 0);
                         }
                         z12 = false;
                         str5 = valueOf;
@@ -737,6 +737,6 @@ public final class iy0 extends org.telegram.ui.Components.lm0 {
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
         Context context = this.c;
-        return new org.telegram.ui.Components.wl0(i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 4 ? i10 != 5 ? new org.telegram.ui.Cells.w8(context) : new org.telegram.ui.Cells.r8(context) : new org.telegram.ui.Cells.b7(context, (org.telegram.ui.Cells.d0) null) : new org.telegram.ui.Cells.m4(context) : new org.telegram.ui.Cells.e9(context) : new org.telegram.ui.Cells.ca(context));
+        return new org.telegram.ui.Components.wl0(i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 4 ? i10 != 5 ? new org.telegram.ui.Cells.w8(context) : new org.telegram.ui.Cells.r8(context) : new org.telegram.ui.Cells.a7(context, (org.telegram.ui.Cells.c1) null) : new org.telegram.ui.Cells.m4(context) : new org.telegram.ui.Cells.e9(context) : new org.telegram.ui.Cells.ca(context));
     }
 }

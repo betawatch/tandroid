@@ -7,7 +7,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ap implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -68,7 +68,7 @@ public final /* synthetic */ class ap implements RequestDelegate {
                                         }
                                         nVar.a(chat, z11);
                                         arrayList.add(nVar);
-                                        npVar3.x.addView(nVar, w7.a6.n(-1, 72));
+                                        npVar3.x.addView(nVar, w7.z5.n(-1, 72));
                                     }
                                     npVar3.b0();
                                     break;
@@ -119,7 +119,7 @@ public final /* synthetic */ class ap implements RequestDelegate {
                                         }
                                         nVar.a(chat, z11);
                                         arrayList.add(nVar);
-                                        npVar3.x.addView(nVar, w7.a6.n(-1, 72));
+                                        npVar3.x.addView(nVar, w7.z5.n(-1, 72));
                                     }
                                     npVar3.b0();
                                     break;
@@ -130,7 +130,7 @@ public final /* synthetic */ class ap implements RequestDelegate {
                 });
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new fc(29, this.b, tL_error));
+                AndroidUtilities.runOnUIThread(new jd(24, this.b, tL_error));
                 break;
         }
     }

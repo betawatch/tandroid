@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Typeface;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class xd0 extends yd0 {
     public final di.g2 L;
@@ -24,7 +24,7 @@ public final class xd0 extends yd0 {
         g2Var.setCursorWidth(1.5f);
         g2Var.setPadding(AndroidUtilities.dp(15.0f), 0, AndroidUtilities.dp(15.0f), 0);
         e(g2Var);
-        addView(g2Var, w7.a6.e(-1, -2, 16));
+        addView(g2Var, w7.z5.e(-1, -2, 16));
     }
 
     public EditTextBoldCursor getEditText() {

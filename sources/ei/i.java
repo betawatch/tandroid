@@ -25,30 +25,30 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.b5;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.br;
 import org.telegram.ui.Components.d10;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.s6;
-import org.telegram.ui.Components.z61;
-import org.telegram.ui.Wallet.b6;
+import org.telegram.ui.Wallet.c6;
 import org.telegram.ui.ic1;
 import org.telegram.ui.u20;
 import org.telegram.ui.v20;
 import s4.g0;
 import sg.x1;
 import ug.m1;
-import w7.a6;
+import w7.z5;
 import zh.n5;
 import zh.o7;
 import zh.p;
 import zh.p7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class i extends v20 implements NotificationCenter.NotificationCenterDelegate {
     public FrameLayout P;
-    public b6 Q;
+    public c6 Q;
     public o7 R;
     public ab S;
     public final boolean T = C0();
@@ -74,7 +74,7 @@ public final class i extends v20 implements NotificationCenter.NotificationCente
     }
 
     public static void y0(i iVar, int i10) {
-        l61 G;
+        m61 G;
         e eVar = iVar.f0;
         if (eVar == null || (G = eVar.G(i10)) == null) {
             return;
@@ -99,30 +99,30 @@ public final class i extends v20 implements NotificationCenter.NotificationCente
         }
     }
 
-    public final void D0(ArrayList arrayList, z61 z61Var) {
+    public final void D0(ArrayList arrayList, a71 a71Var) {
         if (getParentActivity() == null) {
             return;
         }
         n5 y3 = n5.y(this.currentAccount, true);
         ab abVar = (ab) super.r0(getParentActivity());
-        l61 l61Var = new l61(-2);
-        l61Var.c = abVar;
-        arrayList.add(l61Var);
-        arrayList.add(l61.k(this.U));
+        m61 m61Var = new m61(-2);
+        m61Var.c = abVar;
+        arrayList.add(m61Var);
+        arrayList.add(m61.k(this.U));
         boolean z10 = this.T;
         if (z10) {
-            i2.d.y(R.string.GramEarningsHint, arrayList);
+            i2.d.B(R.string.GramEarningsHint, arrayList);
         }
         boolean O = y3.O(0);
         this.d0 = O;
         if (!O) {
-            arrayList.add(l61.l(this.S));
+            arrayList.add(m61.l(this.S));
             return;
         }
         if (!z10) {
-            arrayList.add(l61.B(null));
+            arrayList.add(m61.B(null));
         }
-        arrayList.add(l61.p(this.R, AndroidUtilities.dp(24.0f) + k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.navigationBarHeight, false));
+        arrayList.add(m61.p(this.R, AndroidUtilities.dp(24.0f) + k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.navigationBarHeight, false));
     }
 
     public final void E0() {
@@ -216,10 +216,10 @@ public final class i extends v20 implements NotificationCenter.NotificationCente
         FrameLayout frameLayout = new FrameLayout(context);
         this.P = frameLayout;
         frameLayout.setClickable(true);
-        b6 b6Var = new b6(170, context, false);
-        this.Q = b6Var;
-        b6Var.setStarParticlesView(this.e);
-        this.P.addView(this.Q, a6.a(170.0f, 0.0f, 32.0f, 0.0f, 12.0f, 170, 17));
+        c6 c6Var = new c6(170, context, false);
+        this.Q = c6Var;
+        c6Var.setStarParticlesView(this.e);
+        this.P.addView(this.Q, z5.a(170.0f, 0.0f, 32.0f, 0.0f, 12.0f, 170, 17));
         m0(LocaleController.getString(R.string.GramEarningsTitle), AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.GramEarningsText), new a(context, 0)), true), this.P, null);
         this.c.setOverScrollMode(2);
         s4.k kVar = new s4.k();
@@ -229,7 +229,7 @@ public final class i extends v20 implements NotificationCenter.NotificationCente
         kVar.n(350L);
         this.c.setItemAnimator(kVar);
         this.c.setOnItemClickListener(new bi.d(this, 6));
-        this.s.addView(new d10(getParentActivity()), a6.d(-1.0f, -1));
+        this.s.addView(new d10(getParentActivity()), z5.d(-1.0f, -1));
         n5.y(this.currentAccount, true);
         LinearLayout linearLayout = new LinearLayout(getParentActivity());
         this.U = linearLayout;
@@ -247,14 +247,14 @@ public final class i extends v20 implements NotificationCenter.NotificationCente
         brVar.setScale(0.5f, 0.5f);
         brVar.translate(-AndroidUtilities.dp(3.0f), 0.0f);
         this.V.setSpan(brVar, 0, 1, 33);
-        this.U.addView(this.W, a6.a(40.0f, 24.0f, 0.0f, 24.0f, 0.0f, -1, 17));
+        this.U.addView(this.W, z5.a(40.0f, 24.0f, 0.0f, 24.0f, 0.0f, -1, 17));
         s6 s6Var2 = new s6(getParentActivity(), false, false, false);
         this.X = s6Var2;
         s6Var2.setTextSize(AndroidUtilities.dp(14.0f));
         this.X.setGravity(17);
         this.X.setText(LocaleController.getString(R.string.YourTonBalance));
         this.X.setTextColor(g6.w0(g6.z6, this.resourceProvider));
-        this.U.addView(this.X, a6.a(20.0f, 24.0f, 0.0f, 24.0f, 8.0f, -1, 17));
+        this.U.addView(this.X, z5.a(20.0f, 24.0f, 0.0f, 24.0f, 8.0f, -1, 17));
         FrameLayout frameLayout2 = new FrameLayout(getParentActivity());
         x xVar = new x(this, getParentActivity(), 3);
         this.Y = xVar;
@@ -278,10 +278,10 @@ public final class i extends v20 implements NotificationCenter.NotificationCente
                 public final void onClick(View view) {
                     switch (i10) {
                         case 0:
-                            pf.d.u(this.b.getParentActivity(), LocaleController.getString(R.string.TopUpViaFragmentLink));
+                            pf.d.t(this.b.getParentActivity(), LocaleController.getString(R.string.TopUpViaFragmentLink));
                             break;
                         case 1:
-                            pf.d.u(this.b.getParentActivity(), LocaleController.getString(R.string.TopUpViaFragmentLink));
+                            pf.d.t(this.b.getParentActivity(), LocaleController.getString(R.string.TopUpViaFragmentLink));
                             break;
                         default:
                             i iVar = this.b;
@@ -290,7 +290,7 @@ public final class i extends v20 implements NotificationCenter.NotificationCente
                     }
                 }
             });
-            this.Y.addView(this.Z, a6.e(-1, 48, 119));
+            this.Y.addView(this.Z, z5.e(-1, 48, 119));
         }
         ic1 ic1Var = new ic1(this, getParentActivity(), 1);
         this.a0 = ic1Var;
@@ -314,10 +314,10 @@ public final class i extends v20 implements NotificationCenter.NotificationCente
             public final void onClick(View view) {
                 switch (i11) {
                     case 0:
-                        pf.d.u(this.b.getParentActivity(), LocaleController.getString(R.string.TopUpViaFragmentLink));
+                        pf.d.t(this.b.getParentActivity(), LocaleController.getString(R.string.TopUpViaFragmentLink));
                         break;
                     case 1:
-                        pf.d.u(this.b.getParentActivity(), LocaleController.getString(R.string.TopUpViaFragmentLink));
+                        pf.d.t(this.b.getParentActivity(), LocaleController.getString(R.string.TopUpViaFragmentLink));
                         break;
                     default:
                         i iVar = this.b;
@@ -327,7 +327,7 @@ public final class i extends v20 implements NotificationCenter.NotificationCente
             }
         });
         if (z10) {
-            this.a0.addView(this.b0, a6.p(-1, 48, 17.0f, 1, 0, 0, 8, 0));
+            this.a0.addView(this.b0, z5.p(-1, 48, 17.0f, 1, 0, 0, 8, 0));
         }
         di.d dVar3 = new di.d(getParentActivity(), this.resourceProvider, true);
         dVar3.setRoundRadius(24);
@@ -348,10 +348,10 @@ public final class i extends v20 implements NotificationCenter.NotificationCente
             public final void onClick(View view) {
                 switch (i12) {
                     case 0:
-                        pf.d.u(this.b.getParentActivity(), LocaleController.getString(R.string.TopUpViaFragmentLink));
+                        pf.d.t(this.b.getParentActivity(), LocaleController.getString(R.string.TopUpViaFragmentLink));
                         break;
                     case 1:
-                        pf.d.u(this.b.getParentActivity(), LocaleController.getString(R.string.TopUpViaFragmentLink));
+                        pf.d.t(this.b.getParentActivity(), LocaleController.getString(R.string.TopUpViaFragmentLink));
                         break;
                     default:
                         i iVar = this.b;
@@ -360,8 +360,8 @@ public final class i extends v20 implements NotificationCenter.NotificationCente
                 }
             }
         });
-        this.a0.addView(this.c0, a6.p(-1, 48, 17.0f, 1, 0, 0, 0, 0));
-        this.U.addView(frameLayout2, a6.a(48.0f, 20.0f, 6.0f, 20.0f, 4.0f, -1, 17));
+        this.a0.addView(this.c0, z5.p(-1, 48, 17.0f, 1, 0, 0, 0, 0));
+        this.U.addView(frameLayout2, z5.a(48.0f, 20.0f, 6.0f, 20.0f, 4.0f, -1, 17));
         this.Y.animate().cancel();
         this.a0.animate().cancel();
         this.a0.setAlpha(this.e0 ? 1.0f : 0.0f);
@@ -466,18 +466,18 @@ public final class i extends v20 implements NotificationCenter.NotificationCente
     @Override // org.telegram.ui.v20, org.telegram.ui.ActionBar.m2
     public final void onPause() {
         super.onPause();
-        b6 b6Var = this.Q;
-        if (b6Var != null) {
-            b6Var.setPaused(true);
+        c6 c6Var = this.Q;
+        if (c6Var != null) {
+            c6Var.setPaused(true);
         }
     }
 
     @Override // org.telegram.ui.v20, org.telegram.ui.ActionBar.m2
     public final void onResume() {
         super.onResume();
-        b6 b6Var = this.Q;
-        if (b6Var != null) {
-            b6Var.setPaused(false);
+        c6 c6Var = this.Q;
+        if (c6Var != null) {
+            c6Var.setPaused(false);
         }
     }
 
@@ -505,9 +505,9 @@ public final class i extends v20 implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.ui.v20
     public final void s0(float f7) {
-        b6 b6Var = this.Q;
-        if (b6Var != null) {
-            b6Var.setHeaderTilt(f7 * 70.0f);
+        c6 c6Var = this.Q;
+        if (c6Var != null) {
+            c6Var.setHeaderTilt(f7 * 70.0f);
         }
     }
 }

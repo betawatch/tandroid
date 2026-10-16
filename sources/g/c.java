@@ -23,25 +23,26 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.camera.Size;
+import org.telegram.messenger.g0;
 import org.telegram.messenger.video.MP4Builder;
-import org.telegram.ui.Cells.t6;
-import org.telegram.ui.Components.d60;
+import org.telegram.ui.Cells.l7;
 import org.telegram.ui.Components.e60;
+import org.telegram.ui.Components.f60;
 import org.telegram.ui.Components.i60;
 import org.telegram.ui.Components.m50;
 import org.telegram.ui.Components.n50;
 import org.telegram.ui.Components.o50;
 import org.telegram.ui.Components.p50;
 import org.telegram.ui.Components.p60;
-import org.telegram.ui.Components.x50;
+import org.telegram.ui.Components.y50;
+import p4.m0;
 import p4.n0;
 import p4.o0;
 import p4.p0;
-import p4.q0;
-import p4.s0;
+import p4.r0;
 import p4.t0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class c extends Handler {
     public final /* synthetic */ int a;
@@ -58,7 +59,7 @@ public final class c extends Handler {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:324:0x0509  */
     /* JADX WARN: Removed duplicated region for block: B:330:0x0524  */
-    /* JADX WARN: Type inference failed for: r2v101, types: [p4.o0] */
+    /* JADX WARN: Type inference failed for: r2v101, types: [p4.n0] */
     /* JADX WARN: Type inference failed for: r43v1 */
     /* JADX WARN: Type inference failed for: r43v2 */
     /* JADX WARN: Type inference failed for: r43v3 */
@@ -87,8 +88,8 @@ public final class c extends Handler {
         long j13;
         long j14;
         p4.o oVar;
-        o0 o0Var = null;
-        q0 q0Var = null;
+        n0 n0Var = null;
+        p0 p0Var = null;
         int i14 = 0;
         int i15 = 1;
         switch (this.a) {
@@ -123,7 +124,7 @@ public final class c extends Handler {
                         if (BuildVars.LOGS_ENABLED) {
                             FileLog.e("InstantCamera stop encoder");
                         }
-                        i60.b(i60Var, message.arg1, (d60) message.obj);
+                        i60.b(i60Var, message.arg1, (e60) message.obj);
                         break;
                     } else {
                         int i18 = 5;
@@ -171,7 +172,7 @@ public final class c extends Handler {
                                         if (i60Var.c0 == -1) {
                                             i60Var.c0 = j17 / 1000;
                                             if (BuildVars.LOGS_ENABLED) {
-                                                org.telegram.messenger.q.s(new StringBuilder("InstantCamera first video frame was at "), i60Var.c0);
+                                                i2.d.x(new StringBuilder("InstantCamera first video frame was at "), i60Var.c0);
                                             }
                                         }
                                         i60Var.e0 = j17 - i60Var.d0;
@@ -376,7 +377,7 @@ public final class c extends Handler {
                                             EGLExt.eglPresentationTimeANDROID(i60Var.s, i60Var.y, i60Var.R);
                                             EGL14.eglSwapBuffers(i60Var.s, i60Var.y);
                                             if (i60Var.B0 != null && SharedConfig.getDevicePerformanceClass() == 2 && i60Var.C0 % 33 == 0) {
-                                                i60Var.B0.postRunnable(new t6(i60Var, 14));
+                                                i60Var.B0.postRunnable(new l7(i60Var, 13));
                                             }
                                             i60Var.C0++;
                                             p60 p60Var8 = i60Var.H0;
@@ -395,7 +396,7 @@ public final class c extends Handler {
                                                         p60Var10.c0[0] = 0;
                                                         if (!p60Var10.K) {
                                                             i60Var.H0.K = true;
-                                                            AndroidUtilities.runOnUIThread(new e60(i60Var, 4));
+                                                            AndroidUtilities.runOnUIThread(new f60(i60Var, 4));
                                                             break;
                                                         }
                                                     }
@@ -403,7 +404,7 @@ public final class c extends Handler {
                                             }
                                             if (!p60Var8.K) {
                                                 i60Var.H0.K = true;
-                                                AndroidUtilities.runOnUIThread(new e60(i60Var, i18));
+                                                AndroidUtilities.runOnUIThread(new f60(i60Var, i18));
                                                 break;
                                             }
                                         }
@@ -445,9 +446,9 @@ public final class c extends Handler {
                                 FileLog.d("InstantCamera handleVideoFrameAvailable skip frame " + floatBuffer + " " + floatBuffer2);
                             }
                         } else if (i17 == 3) {
-                            x50 x50Var = (x50) message.obj;
+                            y50 y50Var = (y50) message.obj;
                             if (!i60Var.D0 && !i60Var.l0) {
-                                i60Var.L.add(x50Var);
+                                i60Var.L.add(y50Var);
                                 if (i60Var.h0 == -1) {
                                     if (i60Var.c0 == -1) {
                                         if (BuildVars.LOGS_ENABLED) {
@@ -457,42 +458,42 @@ public final class c extends Handler {
                                     } else {
                                         while (true) {
                                             int i37 = 0;
-                                            while (i37 < x50Var.d) {
-                                                if (i37 != 0 || Math.abs(i60Var.c0 - x50Var.b[i37]) <= 10000000) {
-                                                    long j21 = x50Var.b[i37];
+                                            while (i37 < y50Var.d) {
+                                                if (i37 != 0 || Math.abs(i60Var.c0 - y50Var.b[i37]) <= 10000000) {
+                                                    long j21 = y50Var.b[i37];
                                                     j12 = j16;
                                                     if (j21 >= i60Var.c0) {
-                                                        x50Var.e = i37;
+                                                        y50Var.e = i37;
                                                         i60Var.h0 = j21;
                                                         if (BuildVars.LOGS_ENABLED) {
-                                                            org.telegram.messenger.q.s(i2.d.k(i37, "InstantCamera found first audio frame at ", " timestamp = "), x50Var.b[i37]);
+                                                            i2.d.x(i2.d.l(i37, "InstantCamera found first audio frame at ", " timestamp = "), y50Var.b[i37]);
                                                         }
                                                     } else {
                                                         if (BuildVars.LOGS_ENABLED) {
-                                                            org.telegram.messenger.q.s(i2.d.k(i37, "InstantCamera ignore first audio frame at ", " timestamp = "), x50Var.b[i37]);
+                                                            i2.d.x(i2.d.l(i37, "InstantCamera ignore first audio frame at ", " timestamp = "), y50Var.b[i37]);
                                                         }
                                                         i37++;
                                                         j16 = j12;
                                                     }
                                                 } else {
                                                     long j22 = i60Var.c0;
-                                                    long j23 = x50Var.b[i37];
+                                                    long j23 = y50Var.b[i37];
                                                     i60Var.b0 = j22 - j23;
                                                     i60Var.h0 = j23;
                                                     if (BuildVars.LOGS_ENABLED) {
-                                                        org.telegram.messenger.q.s(new StringBuilder("InstantCamera detected desync between audio and video "), i60Var.b0);
+                                                        i2.d.x(new StringBuilder("InstantCamera detected desync between audio and video "), i60Var.b0);
                                                     }
                                                 }
                                             }
                                             long j24 = j16;
                                             if (BuildVars.LOGS_ENABLED) {
-                                                org.telegram.messenger.q.p(x50Var.d, new StringBuilder("InstantCamera first audio frame not found, removing buffers "));
+                                                g0.o(y50Var.d, new StringBuilder("InstantCamera first audio frame not found, removing buffers "));
                                             }
-                                            i60Var.L.remove(x50Var);
+                                            i60Var.L.remove(y50Var);
                                             if (i60Var.L.isEmpty()) {
                                                 break;
                                             } else {
-                                                x50Var = (x50) i60Var.L.get(0);
+                                                y50Var = (y50) i60Var.L.get(0);
                                                 j16 = j24;
                                             }
                                         }
@@ -500,51 +501,51 @@ public final class c extends Handler {
                                 }
                                 j12 = j16;
                                 if (i60Var.P == j12) {
-                                    i60Var.P = x50Var.b[x50Var.e];
+                                    i60Var.P = y50Var.b[y50Var.e];
                                 }
                                 if (i60Var.L.size() > 1) {
-                                    x50Var = (x50) i60Var.L.get(0);
+                                    y50Var = (y50) i60Var.L.get(0);
                                 }
-                                x50 x50Var2 = x50Var;
+                                y50 y50Var2 = y50Var;
                                 try {
                                     i60Var.d(false);
                                 } catch (Exception e10) {
                                     FileLog.e(e10);
                                 }
                                 boolean z15 = false;
-                                while (x50Var2 != null) {
+                                while (y50Var2 != null) {
                                     try {
                                         int dequeueInputBuffer = i60Var.F.dequeueInputBuffer(j15);
                                         if (dequeueInputBuffer >= 0) {
                                             ByteBuffer inputBuffer = i60Var.F.getInputBuffer(dequeueInputBuffer);
-                                            long[] jArr = x50Var2.b;
-                                            int i38 = x50Var2.e;
+                                            long[] jArr = y50Var2.b;
+                                            int i38 = y50Var2.e;
                                             long j25 = jArr[i38];
                                             while (true) {
-                                                int i39 = x50Var2.d;
+                                                int i39 = y50Var2.d;
                                                 if (i38 <= i39) {
                                                     if (i38 < i39) {
                                                         j13 = j15;
-                                                        j14 = x50Var2.b[i38] - i60Var.P;
-                                                        if (i60Var.W || (x50Var2.b[i38] < i60Var.d0 - i60Var.b0 && j14 < 60000000)) {
-                                                            if (inputBuffer.remaining() < x50Var2.c[i38]) {
-                                                                x50Var2.e = i38;
+                                                        j14 = y50Var2.b[i38] - i60Var.P;
+                                                        if (i60Var.W || (y50Var2.b[i38] < i60Var.d0 - i60Var.b0 && j14 < 60000000)) {
+                                                            if (inputBuffer.remaining() < y50Var2.c[i38]) {
+                                                                y50Var2.e = i38;
                                                             } else {
-                                                                inputBuffer.put(x50Var2.a[i38]);
+                                                                inputBuffer.put(y50Var2.a[i38]);
                                                             }
                                                         }
                                                     } else {
                                                         j13 = j15;
                                                     }
-                                                    if (i38 >= x50Var2.d - 1) {
-                                                        i60Var.L.remove(x50Var2);
+                                                    if (i38 >= y50Var2.d - 1) {
+                                                        i60Var.L.remove(y50Var2);
                                                         if (i60Var.W) {
-                                                            i60Var.z0.put(x50Var2);
+                                                            i60Var.z0.put(y50Var2);
                                                         }
                                                         if (i60Var.L.isEmpty()) {
-                                                            z15 = x50Var2.f;
+                                                            z15 = y50Var2.f;
                                                         } else {
-                                                            x50Var2 = (x50) i60Var.L.get(0);
+                                                            y50Var2 = (y50) i60Var.L.get(0);
                                                         }
                                                     }
                                                     i38++;
@@ -557,13 +558,13 @@ public final class c extends Handler {
                                                 if (j14 >= 60000000) {
                                                     FileLog.d("InstantCamera stop audio encoding because recorded time more than 60s");
                                                 } else {
-                                                    FileLog.d("InstantCamera stop audio encoding because of stoped video recording at " + x50Var2.b[i38] + " last video " + i60Var.d0);
+                                                    FileLog.d("InstantCamera stop audio encoding because of stoped video recording at " + y50Var2.b[i38] + " last video " + i60Var.d0);
                                                 }
                                             }
                                             i60Var.l0 = true;
                                             i60Var.L.clear();
                                             z15 = true;
-                                            x50Var2 = null;
+                                            y50Var2 = null;
                                             long j26 = j25 == j13 ? j13 : j25 - i60Var.P;
                                             long j27 = i60Var.k0;
                                             if (j27 >= j13) {
@@ -609,7 +610,7 @@ public final class c extends Handler {
                                     FileLog.e(e12);
                                 }
                             }
-                            AndroidUtilities.runOnUIThread(new e60(i60Var, i15));
+                            AndroidUtilities.runOnUIThread(new f60(i60Var, i15));
                             break;
                         } else if (i17 == 5) {
                             if (BuildVars.LOGS_ENABLED) {
@@ -622,11 +623,11 @@ public final class c extends Handler {
                 }
                 break;
             default:
-                n0 n0Var = (n0) this.b.get();
-                if (n0Var != null) {
-                    SparseArray sparseArray = n0Var.h;
-                    s0 s0Var = n0Var.i;
-                    ArrayList arrayList = s0Var.v;
+                m0 m0Var = (m0) this.b.get();
+                if (m0Var != null) {
+                    SparseArray sparseArray = m0Var.h;
+                    r0 r0Var = m0Var.i;
+                    ArrayList arrayList = r0Var.v;
                     int i40 = message.what;
                     int i41 = message.arg1;
                     int i42 = message.arg2;
@@ -634,41 +635,41 @@ public final class c extends Handler {
                     Bundle peekData = message.peekData();
                     switch (i40) {
                         case 0:
-                            if (i41 == n0Var.g) {
-                                n0Var.g = 0;
-                                if (s0Var.y == n0Var) {
-                                    s0Var.q();
+                            if (i41 == m0Var.g) {
+                                m0Var.g = 0;
+                                if (r0Var.y == m0Var) {
+                                    r0Var.q();
                                 }
                             }
-                            if (((p0) sparseArray.get(i41)) != null) {
+                            if (((o0) sparseArray.get(i41)) != null) {
                                 sparseArray.remove(i41);
-                                p0.a(null, null);
+                                o0.a(null, null);
                                 break;
                             }
                             break;
                         case 2:
                             if (obj == null || (obj instanceof Bundle)) {
                                 Bundle bundle = (Bundle) obj;
-                                if (n0Var.f == 0 && i41 == n0Var.g && i42 >= 1) {
-                                    n0Var.g = 0;
-                                    n0Var.f = i42;
+                                if (m0Var.f == 0 && i41 == m0Var.g && i42 >= 1) {
+                                    m0Var.g = 0;
+                                    m0Var.f = i42;
                                     b2.u g10 = b2.u.g(bundle);
-                                    if (s0Var.y == n0Var) {
-                                        s0Var.g(g10);
+                                    if (r0Var.y == m0Var) {
+                                        r0Var.g(g10);
                                     }
-                                    if (s0Var.y == n0Var) {
-                                        s0Var.E = true;
+                                    if (r0Var.y == m0Var) {
+                                        r0Var.E = true;
                                         int size = arrayList.size();
                                         while (i14 < size) {
-                                            ((o0) arrayList.get(i14)).a(s0Var.y);
+                                            ((n0) arrayList.get(i14)).a(r0Var.y);
                                             i14++;
                                         }
-                                        p4.n nVar = (p4.n) s0Var.h;
+                                        p4.n nVar = (p4.n) r0Var.h;
                                         if (nVar != null) {
-                                            n0 n0Var2 = s0Var.y;
-                                            int i43 = n0Var2.d;
-                                            n0Var2.d = i43 + 1;
-                                            n0Var2.b(10, i43, 0, nVar.a, null);
+                                            m0 m0Var2 = r0Var.y;
+                                            int i43 = m0Var2.d;
+                                            m0Var2.d = i43 + 1;
+                                            m0Var2.b(10, i43, 0, nVar.a, null);
                                             break;
                                         }
                                     }
@@ -678,10 +679,10 @@ public final class c extends Handler {
                         case 3:
                             if (obj == null || (obj instanceof Bundle)) {
                                 Bundle bundle2 = (Bundle) obj;
-                                p0 p0Var = (p0) sparseArray.get(i41);
-                                if (p0Var != null) {
+                                o0 o0Var = (o0) sparseArray.get(i41);
+                                if (o0Var != null) {
                                     sparseArray.remove(i41);
-                                    p0Var.b(bundle2);
+                                    o0Var.b(bundle2);
                                     break;
                                 }
                             }
@@ -690,9 +691,9 @@ public final class c extends Handler {
                             if (obj == null || (obj instanceof Bundle)) {
                                 String string = peekData != null ? peekData.getString("error") : null;
                                 Bundle bundle3 = (Bundle) obj;
-                                if (((p0) sparseArray.get(i41)) != null) {
+                                if (((o0) sparseArray.get(i41)) != null) {
                                     sparseArray.remove(i41);
-                                    p0.a(string, bundle3);
+                                    o0.a(string, bundle3);
                                     break;
                                 }
                             }
@@ -700,10 +701,10 @@ public final class c extends Handler {
                         case 5:
                             if (obj == null || (obj instanceof Bundle)) {
                                 Bundle bundle4 = (Bundle) obj;
-                                if (n0Var.f != 0) {
+                                if (m0Var.f != 0) {
                                     b2.u g11 = b2.u.g(bundle4);
-                                    if (s0Var.y == n0Var) {
-                                        s0Var.g(g11);
+                                    if (r0Var.y == m0Var) {
+                                        r0Var.g(g11);
                                         break;
                                     }
                                 }
@@ -712,14 +713,14 @@ public final class c extends Handler {
                         case 6:
                             if (obj instanceof Bundle) {
                                 Bundle bundle5 = (Bundle) obj;
-                                p0 p0Var2 = (p0) sparseArray.get(i41);
+                                o0 o0Var2 = (o0) sparseArray.get(i41);
                                 if (bundle5.containsKey("routeId")) {
                                     sparseArray.remove(i41);
-                                    p0Var2.b(bundle5);
+                                    o0Var2.b(bundle5);
                                     break;
                                 } else {
-                                    p0Var2.getClass();
-                                    p0.a("DynamicGroupRouteController is created without valid route id.", bundle5);
+                                    o0Var2.getClass();
+                                    o0.a("DynamicGroupRouteController is created without valid route id.", bundle5);
                                     break;
                                 }
                             } else {
@@ -729,7 +730,7 @@ public final class c extends Handler {
                         case 7:
                             if (obj == null || (obj instanceof Bundle)) {
                                 Bundle bundle6 = (Bundle) obj;
-                                if (n0Var.f != 0) {
+                                if (m0Var.f != 0) {
                                     Bundle bundle7 = (Bundle) bundle6.getParcelable("groupRoute");
                                     p4.m mVar = bundle7 != null ? new p4.m(bundle7) : null;
                                     ArrayList parcelableArrayList = bundle6.getParcelableArrayList("dynamicRoutes");
@@ -748,20 +749,20 @@ public final class c extends Handler {
                                         }
                                         arrayList2.add(oVar);
                                     }
-                                    if (s0Var.y == n0Var) {
+                                    if (r0Var.y == m0Var) {
                                         int size3 = arrayList.size();
                                         while (true) {
                                             if (i14 < size3) {
                                                 Object obj3 = arrayList.get(i14);
                                                 i14++;
-                                                ?? r22 = (o0) obj3;
+                                                ?? r22 = (n0) obj3;
                                                 if (r22.b() == i42) {
-                                                    q0Var = r22;
+                                                    p0Var = r22;
                                                 }
                                             }
                                         }
-                                        if (q0Var instanceof q0) {
-                                            q0Var.l(mVar, arrayList2);
+                                        if (p0Var instanceof p0) {
+                                            p0Var.l(mVar, arrayList2);
                                             break;
                                         }
                                     }
@@ -769,42 +770,42 @@ public final class c extends Handler {
                             }
                             break;
                         case 8:
-                            if (s0Var.y == n0Var) {
+                            if (r0Var.y == m0Var) {
                                 int size4 = arrayList.size();
                                 while (true) {
                                     if (i14 < size4) {
                                         Object obj4 = arrayList.get(i14);
                                         i14++;
-                                        o0 o0Var2 = (o0) obj4;
-                                        if (o0Var2.b() == i42) {
-                                            o0Var = o0Var2;
+                                        n0 n0Var2 = (n0) obj4;
+                                        if (n0Var2.b() == i42) {
+                                            n0Var = n0Var2;
                                         }
                                     }
                                 }
-                                m5 m5Var = s0Var.F;
-                                if (m5Var != null && (o0Var instanceof p4.q)) {
-                                    p4.q qVar = (p4.q) o0Var;
+                                m5 m5Var = r0Var.F;
+                                if (m5Var != null && (n0Var instanceof p4.q)) {
+                                    p4.q qVar = (p4.q) n0Var;
                                     p4.e eVar = (p4.e) ((t0) m5Var.b).c;
                                     if (eVar.e == qVar) {
                                         eVar.i(eVar.c(), 2);
                                     }
                                 }
-                                arrayList.remove(o0Var);
-                                o0Var.c();
-                                s0Var.r();
+                                arrayList.remove(n0Var);
+                                n0Var.c();
+                                r0Var.r();
                                 break;
                             }
                             break;
                     }
-                    int i45 = s0.G;
+                    int i45 = r0.G;
                     break;
                 }
                 break;
         }
     }
 
-    public c(n0 n0Var) {
+    public c(m0 m0Var) {
         this.a = 2;
-        this.b = new WeakReference(n0Var);
+        this.b = new WeakReference(m0Var);
     }
 }

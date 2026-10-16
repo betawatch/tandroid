@@ -6,14 +6,14 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class j0 {
     public static final q0 a = new q0();
     public static final q0 b = new q0();
     public static final q0 c = new q0();
 
-    public static final void a(p0 p0Var, m.p registry, o lifecycle) {
+    public static final void a(p0 p0Var, m.r registry, o lifecycle) {
         Object obj;
         kotlin.jvm.internal.i.e(registry, "registry");
         kotlin.jvm.internal.i.e(lifecycle, "lifecycle");
@@ -129,6 +129,6 @@ public abstract class j0 {
         kotlin.jvm.internal.i.e(initializers, "initializers");
         v1.b bVar = new v1.b();
         bVar.a = initializers;
-        return (m0) new androidx.biometric.e(u0Var.f(), bVar, u0Var instanceof i ? ((i) u0Var).d() : v1.a.b).n(m0.class, "androidx.lifecycle.internal.SavedStateHandlesVM");
+        return (m0) new androidx.biometric.e(u0Var.f(), bVar, u0Var instanceof i ? ((i) u0Var).d() : v1.a.b).l(m0.class, "androidx.lifecycle.internal.SavedStateHandlesVM");
     }
 }

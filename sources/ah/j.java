@@ -31,7 +31,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.fo;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements Runnable {
     public final /* synthetic */ int a;
@@ -122,14 +122,14 @@ public final /* synthetic */ class j implements Runnable {
                 if (string.equals(string2)) {
                     if (f6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
                         str2 = string2;
-                        AndroidUtilities.runOnUIThread(new ig.t0(g6.I.q() ? g6.O0(str2) : g6.O0(str), 20), 200L);
+                        AndroidUtilities.runOnUIThread(new ig.t0(g6.I.q() ? g6.O0(str2) : g6.O0(str), 19), 200L);
                         break;
                     }
                 } else {
                     str2 = string2;
                 }
                 str = string;
-                AndroidUtilities.runOnUIThread(new ig.t0(g6.I.q() ? g6.O0(str2) : g6.O0(str), 20), 200L);
+                AndroidUtilities.runOnUIThread(new ig.t0(g6.I.q() ? g6.O0(str2) : g6.O0(str), 19), 200L);
                 break;
             case 17:
                 g6.E(false);

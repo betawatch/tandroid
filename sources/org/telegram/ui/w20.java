@@ -4,9 +4,9 @@ import android.view.KeyEvent;
 import android.view.View;
 import org.telegram.messenger.voip.NativeInstance;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w20 implements org.telegram.ui.ActionBar.q0, org.telegram.ui.Components.cm0, r0.o, NativeInstance.AudioLevelsCallback, org.telegram.ui.ActionBar.k1 {
+public final /* synthetic */ class w20 implements org.telegram.ui.ActionBar.q0, org.telegram.ui.Components.cm0, r0.n, NativeInstance.AudioLevelsCallback, org.telegram.ui.ActionBar.k1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ n60 b;
 
@@ -15,9 +15,9 @@ public final /* synthetic */ class w20 implements org.telegram.ui.ActionBar.q0, 
         this.b = n60Var;
     }
 
-    @Override // r0.o
+    @Override // r0.n
     public r0.l1 Q0(View view, r0.l1 l1Var) {
-        return n60.B(this.b, l1Var);
+        return n60.C(this.b, l1Var);
     }
 
     @Override // org.telegram.ui.Components.cm0
@@ -52,7 +52,7 @@ public final /* synthetic */ class w20 implements org.telegram.ui.ActionBar.q0, 
     }
 
     @Override // org.telegram.ui.ActionBar.q0
-    public void l(int i10) {
+    public void k(int i10) {
         this.b.O.getActionBarMenuOnItemClick().b(i10);
     }
 

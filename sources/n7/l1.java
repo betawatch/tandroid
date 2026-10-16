@@ -1,50 +1,14 @@
 package n7;
 
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.IInterface;
-
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class l1 extends n6.g {
-    @Override // n6.g
-    public final boolean C() {
-        return true;
-    }
+public final class l1 implements k1 {
+    public static final b a;
 
-    @Override // n6.g, com.google.android.gms.common.api.c
-    public final int l() {
-        return 13000000;
-    }
-
-    @Override // n6.g
-    public final IInterface q(IBinder iBinder) {
-        if (iBinder == null) {
-            return null;
-        }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.fido.fido2.internal.regular.IFido2AppService");
-        return queryLocalInterface instanceof m1 ? (m1) queryLocalInterface : new m1(iBinder, "com.google.android.gms.fido.fido2.internal.regular.IFido2AppService");
-    }
-
-    @Override // n6.g
-    public final k6.c[] r() {
-        return new k6.c[]{z6.a.b, z6.a.a};
-    }
-
-    @Override // n6.g
-    public final Bundle t() {
-        Bundle bundle = new Bundle();
-        bundle.putString("FIDO2_ACTION_START_SERVICE", "com.google.android.gms.fido.fido2.regular.START");
-        return bundle;
-    }
-
-    @Override // n6.g
-    public final String v() {
-        return "com.google.android.gms.fido.fido2.internal.regular.IFido2AppService";
-    }
-
-    @Override // n6.g
-    public final String w() {
-        return "com.google.android.gms.fido.fido2.regular.START";
+    static {
+        int i10 = p.c;
+        Object[] objArr = z.r;
+        new c0("FIDO");
+        a = new b(Boolean.FALSE);
     }
 }

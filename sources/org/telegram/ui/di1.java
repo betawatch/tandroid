@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class di1 implements Runnable {
     public final /* synthetic */ int a;
@@ -143,7 +143,7 @@ public final /* synthetic */ class di1 implements Runnable {
                                     if (str8 != null) {
                                         if (!str8.startsWith(str7)) {
                                             i12 = i20;
-                                            if (org.telegram.messenger.yh.v(" ", str7, str8)) {
+                                            if (org.telegram.messenger.g0.w(" ", str7, str8)) {
                                             }
                                         }
                                         i19 = i10;

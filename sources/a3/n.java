@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLObject;
 import u2.d1;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class n extends r2.r {
     public static final int[] S1 = {1920, 1600, 1440, 1280, 960, 854, 640, 540, 480};
@@ -1623,7 +1623,7 @@ public final class n extends r2.r {
     public final void M0(r2.l lVar, int i10, long j10) {
         Surface surface;
         Trace.beginSection("releaseOutputBuffer");
-        lVar.j(i10, j10);
+        lVar.h(i10, j10);
         Trace.endSection();
         this.O0.e++;
         this.z1 = 0;
@@ -1633,7 +1633,7 @@ public final class n extends r2.r {
             n4.s sVar = this.b1;
             if (!equals && !b2Var.equals(this.I1)) {
                 this.I1 = b2Var;
-                sVar.D(b2Var);
+                sVar.H(b2Var);
             }
             a0 a0Var = this.e1;
             boolean z10 = a0Var.e != 3;
@@ -1643,7 +1643,7 @@ public final class n extends r2.r {
             if (!z10 || (surface = this.r1) == null) {
                 return;
             }
-            sVar.y(surface);
+            sVar.w(surface);
             this.u1 = true;
         }
     }
@@ -1656,13 +1656,13 @@ public final class n extends r2.r {
             if (surface != null) {
                 b2 b2Var = this.I1;
                 if (b2Var != null) {
-                    sVar.D(b2Var);
+                    sVar.H(b2Var);
                 }
                 Surface surface3 = this.r1;
                 if (surface3 == null || !this.u1) {
                     return;
                 }
-                sVar.y(surface3);
+                sVar.w(surface3);
                 return;
             }
             return;
@@ -1686,7 +1686,7 @@ public final class n extends r2.r {
                 Surface H0 = H0(oVar);
                 if (H0 != null) {
                     try {
-                        lVar.n(H0);
+                        lVar.m(H0);
                     } catch (Throwable th2) {
                         th2.printStackTrace();
                         throw new x(th2);
@@ -1695,14 +1695,14 @@ public final class n extends r2.r {
                     if (Build.VERSION.SDK_INT < 35) {
                         throw new IllegalStateException();
                     }
-                    lVar.i();
+                    lVar.g();
                 }
             }
         }
         if (surface != null) {
             b2 b2Var2 = this.I1;
             if (b2Var2 != null) {
-                sVar.D(b2Var2);
+                sVar.H(b2Var2);
             }
         } else {
             this.I1 = null;
@@ -1829,13 +1829,13 @@ public final class n extends r2.r {
         List F0 = F0(context, iVar, xVar, z10, z11);
         HashMap hashMap = r2.w.a;
         ArrayList arrayList = new ArrayList(F0);
-        Collections.sort(arrayList, new q7(new org.telegram.ui.web.c0(2, context, xVar), 3));
+        Collections.sort(arrayList, new q7(new org.telegram.ui.web.o0(1, context, xVar), 3));
         return arrayList;
     }
 
     public final void Q0(r2.l lVar, int i10) {
         Trace.beginSection("skipVideoBuffer");
-        lVar.f(i10);
+        lVar.e(i10);
         Trace.endSection();
         this.O0.f++;
     }
@@ -2184,7 +2184,7 @@ public final class n extends r2.r {
             this.v1 = intValue2;
             r2.l lVar = this.d0;
             if (lVar != null) {
-                lVar.m(intValue2);
+                lVar.k(intValue2);
                 return;
             }
             return;
@@ -2334,7 +2334,7 @@ public final class n extends r2.r {
         int i10;
         r2.l lVar = this.d0;
         if (lVar != null) {
-            lVar.m(this.v1);
+            lVar.k(this.v1);
         }
         if (this.K1) {
             i10 = xVar.z;
@@ -2503,7 +2503,7 @@ public final class n extends r2.r {
         }
         if (a2 == 2) {
             Trace.beginSection("dropVideoBuffer");
-            lVar.f(i10);
+            lVar.e(i10);
             Trace.endSection();
             R0(0, 1);
             T0(zVar.a);
@@ -2570,8 +2570,8 @@ public final class n extends r2.r {
         try {
             super.n();
         } finally {
-            sVar.i(this.O0);
-            sVar.D(b2.d);
+            sVar.j(this.O0);
+            sVar.H(b2.d);
         }
     }
 
@@ -2731,7 +2731,7 @@ public final class n extends r2.r {
                 p0();
                 n0();
             } finally {
-                i2.d.A(this.X, null);
+                i2.d.D(this.X, null);
                 this.X = null;
             }
         } finally {
@@ -2853,11 +2853,11 @@ public final class n extends r2.r {
                                     ByteBuffer asReadOnlyBuffer = byteBuffer.asReadOnlyBuffer();
                                     asReadOnlyBuffer.flip();
                                     if (byteBuffer2.hasRemaining()) {
-                                        sVar2.B(f2.p.o(byteBuffer2));
+                                        sVar2.G(f2.p.o(byteBuffer2));
                                         byteBuffer2.position(byteBuffer2.limit());
                                     }
                                     ArrayList o10 = f2.p.o(asReadOnlyBuffer);
-                                    sVar2.B(o10);
+                                    sVar2.G(o10);
                                     int size = o10.size() - 1;
                                     int i10 = 0;
                                     while (size >= 0) {
@@ -2991,6 +2991,7 @@ public final class n extends r2.r {
         if (!w0.m(xVar.s)) {
             return i2.d.c(0, 0, 0, 0);
         }
+        int i11 = 1;
         boolean z11 = xVar.w != null;
         Context context = this.Z0;
         List F0 = F0(context, iVar, xVar, z11, false);
@@ -3000,9 +3001,8 @@ public final class n extends r2.r {
         if (F0.isEmpty()) {
             return i2.d.c(1, 0, 0, 0);
         }
-        int i11 = xVar.T;
-        int i12 = 2;
-        if (i11 != 0 && i11 != 2) {
+        int i12 = xVar.T;
+        if (i12 != 0 && i12 != 2) {
             return i2.d.c(2, 0, 0, 0);
         }
         r2.o oVar = (r2.o) F0.get(0);
@@ -3032,7 +3032,7 @@ public final class n extends r2.r {
             if (!F02.isEmpty()) {
                 HashMap hashMap = r2.w.a;
                 ArrayList arrayList = new ArrayList(F02);
-                Collections.sort(arrayList, new q7(new org.telegram.ui.web.c0(i12, context, xVar), i14));
+                Collections.sort(arrayList, new q7(new org.telegram.ui.web.o0(i11, context, xVar), i14));
                 r2.o oVar3 = (r2.o) arrayList.get(0);
                 if (oVar3.e(context, xVar) && oVar3.f(xVar)) {
                     i10 = 32;

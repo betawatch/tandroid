@@ -9,7 +9,7 @@ import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.BotFullscreenButtons;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class u2 implements View.OnLayoutChangeListener {
     public final /* synthetic */ int a;
@@ -74,7 +74,7 @@ public final class u2 implements View.OnLayoutChangeListener {
                     Resources resources = searchView.getContext().getResources();
                     int paddingLeft = searchView.H.getPaddingLeft();
                     Rect rect = new Rect();
-                    boolean a2 = m.t3.a(searchView);
+                    boolean a2 = m.w3.a(searchView);
                     int dimensionPixelSize = searchView.f0 ? resources.getDimensionPixelSize(R.dimen.abc_dropdownitem_icon_width) + resources.getDimensionPixelSize(R.dimen.abc_dropdownitem_text_padding_left) : 0;
                     searchAutoComplete.getDropDownBackground().getPadding(rect);
                     searchAutoComplete.setDropDownHorizontalOffset(a2 ? -rect.left : paddingLeft - (rect.left + dimensionPixelSize));

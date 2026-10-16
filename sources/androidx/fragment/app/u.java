@@ -11,17 +11,17 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class u extends androidx.activity.m implements e0.b {
     public boolean L;
     public boolean M;
-    public final qb.c J = new qb.c(new t(this), 5);
+    public final a6.m J = new a6.m(new t(this), 4);
     public final androidx.lifecycle.v K = new androidx.lifecycle.v(this);
     public boolean N = true;
 
     public u() {
-        ((m.p) this.e.c).f("android:support:lifecycle", new androidx.activity.e(this, 1));
+        ((m.r) this.e.c).f("android:support:lifecycle", new androidx.activity.e(this, 1));
         final int i10 = 0;
         o(new q0.a(this) { // from class: androidx.fragment.app.s
             public final /* synthetic */ u b;
@@ -34,10 +34,10 @@ public abstract class u extends androidx.activity.m implements e0.b {
             public final void accept(Object obj) {
                 switch (i10) {
                     case 0:
-                        this.b.J.b0();
+                        this.b.J.S();
                         break;
                     default:
-                        this.b.J.b0();
+                        this.b.J.S();
                         break;
                 }
             }
@@ -54,10 +54,10 @@ public abstract class u extends androidx.activity.m implements e0.b {
             public final void accept(Object obj) {
                 switch (i11) {
                     case 0:
-                        this.b.J.b0();
+                        this.b.J.S();
                         break;
                     default:
-                        this.b.J.b0();
+                        this.b.J.S();
                         break;
                 }
             }
@@ -143,14 +143,14 @@ public abstract class u extends androidx.activity.m implements e0.b {
         printWriter.print(" mStopped=");
         printWriter.print(this.N);
         if (getApplication() != null) {
-            new n6.o(this, f()).l(str3, printWriter);
+            new n3.b(this, f()).l(str3, printWriter);
         }
         ((t) this.J.b).d.w(str, fileDescriptor, printWriter, strArr);
     }
 
     @Override // androidx.activity.m, android.app.Activity
     public void onActivityResult(int i10, int i11, Intent intent) {
-        this.J.b0();
+        this.J.S();
         super.onActivityResult(i10, i11, intent);
     }
 
@@ -210,24 +210,24 @@ public abstract class u extends androidx.activity.m implements e0.b {
 
     @Override // androidx.activity.m, android.app.Activity
     public void onRequestPermissionsResult(int i10, String[] strArr, int[] iArr) {
-        this.J.b0();
+        this.J.S();
         super.onRequestPermissionsResult(i10, strArr, iArr);
     }
 
     @Override // android.app.Activity
     public void onResume() {
-        qb.c cVar = this.J;
-        cVar.b0();
+        a6.m mVar = this.J;
+        mVar.S();
         super.onResume();
         this.M = true;
-        ((t) cVar.b).d.A(true);
+        ((t) mVar.b).d.A(true);
     }
 
     @Override // android.app.Activity
     public void onStart() {
-        qb.c cVar = this.J;
-        cVar.b0();
-        t tVar = (t) cVar.b;
+        a6.m mVar = this.J;
+        mVar.S();
+        t tVar = (t) mVar.b;
         super.onStart();
         this.N = false;
         if (!this.L) {
@@ -249,7 +249,7 @@ public abstract class u extends androidx.activity.m implements e0.b {
 
     @Override // android.app.Activity
     public final void onStateNotSaved() {
-        this.J.b0();
+        this.J.S();
     }
 
     @Override // android.app.Activity

@@ -7,10 +7,11 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.concurrent.CountDownLatch;
+import org.telegram.ui.Components.ze0;
 import org.webrtc.EglBase;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public class VideoFileRenderer implements VideoSink {
     private static final String TAG = "VideoFileRenderer";
@@ -112,18 +113,18 @@ public class VideoFileRenderer implements VideoSink {
         videoFrame.release();
         VideoFrame.I420Buffer i420 = cropAndScale.toI420();
         cropAndScale.release();
-        this.fileThreadHandler.post(new i(this, i420, videoFrame, 2));
+        this.fileThreadHandler.post(new ze0(this, i420, videoFrame, 29));
     }
 
     @Override // org.webrtc.VideoSink
     public void onFrame(VideoFrame videoFrame) {
         videoFrame.retain();
-        this.renderThreadHandler.post(new t(4, this, videoFrame));
+        this.renderThreadHandler.post(new s(4, this, videoFrame));
     }
 
     public void release() {
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        this.renderThreadHandler.post(new t(5, this, countDownLatch));
+        this.renderThreadHandler.post(new s(5, this, countDownLatch));
         ThreadUtils.awaitUninterruptibly(countDownLatch);
         this.fileThreadHandler.post(new h(this, 3));
         try {
@@ -136,6 +137,6 @@ public class VideoFileRenderer implements VideoSink {
 
     @Override // org.webrtc.VideoSink
     public final /* synthetic */ void setParentSink(VideoSink videoSink) {
-        f0.a(this, videoSink);
+        e0.a(this, videoSink);
     }
 }

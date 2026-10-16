@@ -1,30 +1,55 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.xs;
+import android.view.View;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class i4 extends xs {
-    public final ji.c2 G;
+public final class i4 implements View.OnAttachStateChangeListener {
+    public final /* synthetic */ o3 a;
+    public final /* synthetic */ TL_wallet.walletTransaction[] b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Utilities.Callback2 e;
+    public final /* synthetic */ j2[] f;
+    public final /* synthetic */ String[] h;
+    public final /* synthetic */ boolean[] n;
 
-    public i4(z4 z4Var, Context context) {
-        super(context);
-        this.G = new ji.c2(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(22.0f), z4Var.getThemedColor(org.telegram.ui.ActionBar.g6.d6)), AndroidUtilities.dpf2(2.67f), AndroidUtilities.dpf2(0.67f));
+    public i4(o3 o3Var, TL_wallet.walletTransaction[] wallettransactionArr, h4 h4Var, int i10, Utilities.Callback2 callback2, j2[] j2VarArr, String[] strArr, boolean[] zArr) {
+        this.a = o3Var;
+        this.b = wallettransactionArr;
+        this.c = h4Var;
+        this.d = i10;
+        this.e = callback2;
+        this.f = j2VarArr;
+        this.h = strArr;
+        this.n = zArr;
     }
 
-    @Override // org.telegram.ui.Components.xs, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int ceil = (int) Math.ceil(getMetadata().g.a);
-        if (ceil > 0) {
-            int width = getWidth();
-            ji.c2 c2Var = this.G;
-            c2Var.setBounds(0, 0, width, ceil);
-            c2Var.setAlpha((int) (getMetadata().c.a * 255.0f));
-            c2Var.draw(canvas);
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        this.a.run(this.b[0]);
+        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.c;
+        if (notificationCenterDelegate != null) {
+            int i10 = this.d;
+            NotificationCenter.getInstance(i10).addObserver(notificationCenterDelegate, NotificationCenter.walletUpdate);
+            NotificationCenter.getInstance(i10).addObserver(notificationCenterDelegate, NotificationCenter.walletTransactionsUpdate);
         }
-        super.dispatchDraw(canvas);
+        Utilities.Callback2 callback2 = this.e;
+        if (callback2 != null) {
+            this.f[0].setOnDismissListener(new l(callback2, this.h, this.n, 11));
+        }
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.c;
+        if (notificationCenterDelegate != null) {
+            int i10 = this.d;
+            NotificationCenter.getInstance(i10).removeObserver(notificationCenterDelegate, NotificationCenter.walletUpdate);
+            NotificationCenter.getInstance(i10).removeObserver(notificationCenterDelegate, NotificationCenter.walletTransactionsUpdate);
+        }
     }
 }

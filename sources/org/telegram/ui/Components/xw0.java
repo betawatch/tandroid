@@ -6,7 +6,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class xw0 extends s4.c0 {
     public final es r;
@@ -27,7 +27,7 @@ public class xw0 extends s4.c0 {
         if (m10 > 0) {
             w0Var.b(-j10, -k10, m10, this.r);
         }
-        AndroidUtilities.runOnUIThread(new lr0(this, 9), Math.max(0, m10));
+        AndroidUtilities.runOnUIThread(new kr0(this, 9), Math.max(0, m10));
     }
 
     @Override // s4.c0

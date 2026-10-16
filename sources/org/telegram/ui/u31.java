@@ -6,7 +6,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u31 implements Runnable {
     public final /* synthetic */ int a;
@@ -37,13 +37,13 @@ public final /* synthetic */ class u31 implements Runnable {
                     public final void run() {
                         switch (i10) {
                             case 0:
-                                pf.d.s(activity, "https://promote.telegram.org/guidelines");
+                                pf.d.r(activity, "https://promote.telegram.org/guidelines");
                                 break;
                             case 1:
-                                pf.d.s(activity, "https://promote.telegram.org/guidelines");
+                                pf.d.r(activity, "https://promote.telegram.org/guidelines");
                                 break;
                             default:
-                                pf.d.s(activity, "https://promote.telegram.org/guidelines");
+                                pf.d.r(activity, "https://promote.telegram.org/guidelines");
                                 break;
                         }
                     }
@@ -63,13 +63,13 @@ public final /* synthetic */ class u31 implements Runnable {
                     public final void run() {
                         switch (i11) {
                             case 0:
-                                pf.d.s(activity2, "https://promote.telegram.org/guidelines");
+                                pf.d.r(activity2, "https://promote.telegram.org/guidelines");
                                 break;
                             case 1:
-                                pf.d.s(activity2, "https://promote.telegram.org/guidelines");
+                                pf.d.r(activity2, "https://promote.telegram.org/guidelines");
                                 break;
                             default:
-                                pf.d.s(activity2, "https://promote.telegram.org/guidelines");
+                                pf.d.r(activity2, "https://promote.telegram.org/guidelines");
                                 break;
                         }
                     }
@@ -89,13 +89,13 @@ public final /* synthetic */ class u31 implements Runnable {
                     public final void run() {
                         switch (i12) {
                             case 0:
-                                pf.d.s(activity3, "https://promote.telegram.org/guidelines");
+                                pf.d.r(activity3, "https://promote.telegram.org/guidelines");
                                 break;
                             case 1:
-                                pf.d.s(activity3, "https://promote.telegram.org/guidelines");
+                                pf.d.r(activity3, "https://promote.telegram.org/guidelines");
                                 break;
                             default:
-                                pf.d.s(activity3, "https://promote.telegram.org/guidelines");
+                                pf.d.r(activity3, "https://promote.telegram.org/guidelines");
                                 break;
                         }
                     }

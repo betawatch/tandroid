@@ -8,7 +8,7 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class x5 extends FrameLayout {
     public final h1 a;
@@ -21,7 +21,7 @@ public final class x5 extends FrameLayout {
         h1Var.setTextSize(1, Math.max(8, SharedConfig.fontSize - 2));
         h1Var.setAllowNewlines(true);
         setCompact(false);
-        addView(h1Var, w7.a6.e(-1, -2, 51));
+        addView(h1Var, w7.z5.e(-1, -2, 51));
     }
 
     public final void a() {

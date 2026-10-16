@@ -10,9 +10,9 @@ import android.view.WindowManager;
 import android.widget.PopupWindow;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
-import r0.j0;
+import r0.i0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class v {
     public final Context a;
@@ -77,7 +77,7 @@ public class v {
         if (z10) {
             int i12 = this.f;
             View view = this.e;
-            WeakHashMap weakHashMap = j0.a;
+            WeakHashMap weakHashMap = i0.a;
             if ((Gravity.getAbsoluteGravity(i12, view.getLayoutDirection()) & 7) == 5) {
                 i10 -= this.e.getWidth();
             }

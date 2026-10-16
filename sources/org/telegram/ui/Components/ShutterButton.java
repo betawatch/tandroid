@@ -16,7 +16,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class ShutterButton extends View {
     public Drawable a;
@@ -30,7 +30,7 @@ public class ShutterButton extends View {
     public long r;
     public long s;
     public boolean v;
-    public org.telegram.ui.Cells.t6 w;
+    public org.telegram.ui.Cells.l7 w;
 
     private void setHighlighted(boolean z10) {
         AnimatorSet animatorSet = new AnimatorSet();
@@ -139,12 +139,12 @@ public class ShutterButton extends View {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.Cells.t6 t6Var = this.w;
+        org.telegram.ui.Cells.l7 l7Var = this.w;
         float x10 = motionEvent.getX();
         float y3 = motionEvent.getY();
         int action = motionEvent.getAction();
         if (action == 0) {
-            AndroidUtilities.runOnUIThread(t6Var, 800L);
+            AndroidUtilities.runOnUIThread(l7Var, 800L);
             this.h = true;
             this.v = true;
             setHighlighted(true);
@@ -152,9 +152,9 @@ public class ShutterButton extends View {
         }
         if (action == 1) {
             setHighlighted(false);
-            AndroidUtilities.cancelRunOnUIThread(t6Var);
+            AndroidUtilities.cancelRunOnUIThread(l7Var);
             if (this.v) {
-                ((fm) this.e).a();
+                ((em) this.e).a();
             }
         } else if (action == 2) {
             if (x10 >= 0.0f && x10 <= getMeasuredWidth()) {
@@ -163,40 +163,40 @@ public class ShutterButton extends View {
             if (y3 >= 0.0f && y3 <= getMeasuredHeight()) {
                 y3 = 0.0f;
             }
-            fm fmVar = (fm) this.e;
-            ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = fmVar.e;
-            ea1 ea1Var = chatAttachAlertPhotoLayout.l0;
-            org.telegram.ui.ActionBar.c3 c3Var = fmVar.d;
+            em emVar = (em) this.e;
+            ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = emVar.e;
+            fa1 fa1Var = chatAttachAlertPhotoLayout.l0;
+            org.telegram.ui.ActionBar.c3 c3Var = emVar.d;
             boolean z10 = c3Var.getWidth() < c3Var.getHeight();
             float f7 = z10 ? x10 : y3;
             float f10 = z10 ? y3 : x10;
-            if (fmVar.b || Math.abs(f7) <= Math.abs(f10)) {
+            if (emVar.b || Math.abs(f7) <= Math.abs(f10)) {
                 if (f10 < 0.0f) {
                     boolean z11 = ChatAttachAlertPhotoLayout.q1;
                     chatAttachAlertPhotoLayout.t0(true);
-                    ea1Var.b((-f10) / AndroidUtilities.dp(200.0f), true);
-                    fmVar.b = true;
+                    fa1Var.b((-f10) / AndroidUtilities.dp(200.0f), true);
+                    emVar.b = true;
                     return true;
                 }
-                if (fmVar.b) {
-                    ea1Var.b(0.0f, true);
+                if (emVar.b) {
+                    fa1Var.b(0.0f, true);
                 }
                 if (x10 == 0.0f && y3 == 0.0f) {
-                    fmVar.b = false;
+                    emVar.b = false;
                 }
-                if (!fmVar.b) {
+                if (!emVar.b) {
                     if (x10 == 0.0f) {
                     }
-                    AndroidUtilities.cancelRunOnUIThread(t6Var);
+                    AndroidUtilities.cancelRunOnUIThread(l7Var);
                     if (this.f == dw0.b) {
                         this.v = false;
                         setHighlighted(false);
-                        fm fmVar2 = (fm) this.e;
-                        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = fmVar2.e;
-                        File file = fmVar2.a;
+                        em emVar2 = (em) this.e;
+                        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = emVar2.e;
+                        File file = emVar2.a;
                         if (file != null) {
                             file.delete();
-                            fmVar2.a = null;
+                            emVar2.a = null;
                         }
                         boolean z12 = ChatAttachAlertPhotoLayout.q1;
                         chatAttachAlertPhotoLayout2.l0();

@@ -10,11 +10,11 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class aa0 {
     public View a;
-    public org.telegram.ui.Cells.c1 b;
+    public org.telegram.ui.Cells.b1 b;
     public final ArrayList c = new ArrayList();
     public int d = 0;
     public final ArrayList e = new ArrayList();
@@ -136,9 +136,9 @@ public final class aa0 {
         } else if (z10 && (view = this.a) != null) {
             view.invalidate();
         }
-        org.telegram.ui.Cells.c1 c1Var = this.b;
-        if (c1Var != null) {
-            c1Var.run();
+        org.telegram.ui.Cells.b1 b1Var = this.b;
+        if (b1Var != null) {
+            b1Var.run();
         }
     }
 
@@ -230,7 +230,7 @@ public final class aa0 {
         if (!ha0Var.d()) {
             ha0Var.a();
         }
-        AndroidUtilities.runOnUIThread(new f60(7, this, ha0Var), ha0Var.c > 0 ? 320 - (SystemClock.elapsedRealtime() - ha0Var.c) : 0L);
+        AndroidUtilities.runOnUIThread(new g90(2, this, ha0Var), ha0Var.c > 0 ? 320 - (SystemClock.elapsedRealtime() - ha0Var.c) : 0L);
     }
 
     public aa0(View view) {

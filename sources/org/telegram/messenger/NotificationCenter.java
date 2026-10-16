@@ -17,7 +17,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class NotificationCenter {
     private static final long EXPIRE_NOTIFICATIONS_TIME = 5017;
@@ -391,7 +391,7 @@ public class NotificationCenter {
     private final SparseArray<AllowedNotifications> allowedNotifications = new SparseArray<>();
     SparseArray<Runnable> alreadyPostedRunnubles = new SparseArray<>();
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class AllowedNotifications {
         int[] allowedIds;
         final long time;
@@ -401,7 +401,7 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static class DelayedPost {
         private Object[] args;
         private int id;
@@ -412,12 +412,12 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public interface NotificationCenterDelegate {
         void didReceivedNotification(int i10, int i11, Object... objArr);
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public interface ObserversGroup {
         ObserversGroup add(int i10);
 
@@ -426,7 +426,7 @@ public class NotificationCenter {
         void removeAllObservers();
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static final class ObserversGroupImpl implements ObserversGroup {
         private NotificationCenterDelegate delegate;
         private ObserversGroupImpl globalGroup;
@@ -486,9 +486,9 @@ public class NotificationCenter {
                 } else if (i11 < kVar.b) {
                     notificationCenter.removeObserver(notificationCenterDelegate, kVar.a[i11]);
                 }
-                StringBuilder k10 = i2.d.k(i11, "Index ", " must be in 0..");
-                k10.append(kVar.b - 1);
-                throw new IndexOutOfBoundsException(k10.toString());
+                StringBuilder l4 = i2.d.l(i11, "Index ", " must be in 0..");
+                l4.append(kVar.b - 1);
+                throw new IndexOutOfBoundsException(l4.toString());
             }
             this.ids.b = 0;
             this.notificationCenter = null;
@@ -504,12 +504,12 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public interface PostponeNotificationCallback {
         boolean needPostpone(int i10, int i11, Object[] objArr);
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public static final class WeakObserversGroupImpl implements ObserversGroup, NotificationCenterDelegate {
         private final ObserversGroupImpl observersGroup;
         private final WeakReference<NotificationCenterDelegate> reference;
@@ -937,7 +937,7 @@ public class NotificationCenter {
             return;
         }
         alreadyLogged = true;
-        FileLog.e((Throwable) new RuntimeException(i2.d.i(i10, "Total observers more than 1000, need check for memory leak. ")), true);
+        FileLog.e((Throwable) new RuntimeException(i2.d.j(i10, "Total observers more than 1000, need check for memory leak. ")), true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -982,18 +982,18 @@ public class NotificationCenter {
             if (intValue2 == -1) {
                 Log.i("ObserverDiff", "key=" + keyAt + " REMOVED (was " + intValue + ")");
             } else if (intValue != intValue2) {
-                StringBuilder l4 = i2.d.l("key=", keyAt, " CHANGED: ", intValue, " -> ");
-                l4.append(intValue2);
-                Log.i("ObserverDiff", l4.toString());
+                StringBuilder m10 = i2.d.m("key=", keyAt, " CHANGED: ", intValue, " -> ");
+                m10.append(intValue2);
+                Log.i("ObserverDiff", m10.toString());
             }
         }
         for (int i11 = 0; i11 < sparseArray2.size(); i11++) {
             int keyAt2 = sparseArray2.keyAt(i11);
             if (sparseArray.get(keyAt2, -1).intValue() == -1) {
-                StringBuilder k10 = i2.d.k(keyAt2, "key=", " ADDED (size=");
-                k10.append(sparseArray2.valueAt(i11));
-                k10.append(")");
-                Log.i("ObserverDiff", k10.toString());
+                StringBuilder l4 = i2.d.l(keyAt2, "key=", " ADDED (size=");
+                l4.append(sparseArray2.valueAt(i11));
+                l4.append(")");
+                Log.i("ObserverDiff", l4.toString());
             }
         }
     }
@@ -1430,7 +1430,7 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public class UniqArrayList<T> extends ArrayList<T> {
         HashSet<T> set;
 

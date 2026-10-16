@@ -35,12 +35,12 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import ji.w4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Wallet.m5;
-import w7.a6;
+import org.telegram.ui.Components.a6;
+import p4.s0;
 import z9.t0;
 import z9.z0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class s {
     public static s f;
@@ -608,10 +608,10 @@ public final class s {
             hVar.i(str.substring(i10));
         }
         hVar.f(hVar.n);
-        ef.a x10 = hVar.j.x(new qf.b(3, hVar.k, hVar.m));
+        ef.a F = hVar.j.F(new qf.b(3, hVar.k, hVar.m));
         Iterator it = hVar.o.iterator();
         while (it.hasNext()) {
-            ((ff.a) it.next()).g(x10);
+            ((ff.a) it.next()).g(F);
         }
         df.f fVar = (df.f) hVar.l.b;
         Iterator it2 = ((ArrayList) this.e).iterator();
@@ -690,7 +690,7 @@ public final class s {
     public Task v(Callable callable) {
         Task continueWith;
         synchronized (this.d) {
-            continueWith = ((Task) this.c).continueWith((Executor) this.b, new u9.d(callable));
+            continueWith = ((Task) this.c).continueWith((Executor) this.b, new v0.k(callable));
             this.c = continueWith.continueWith((Executor) this.b, new rb.b(26));
         }
         return continueWith;
@@ -699,7 +699,7 @@ public final class s {
     public Task w(Callable callable) {
         Task continueWithTask;
         synchronized (this.d) {
-            continueWithTask = ((Task) this.c).continueWithTask((Executor) this.b, new u9.d(callable));
+            continueWithTask = ((Task) this.c).continueWithTask((Executor) this.b, new v0.k(callable));
             this.c = continueWithTask.continueWith((Executor) this.b, new rb.b(26));
         }
         return continueWithTask;
@@ -752,7 +752,7 @@ public final class s {
         this.e = (ArrayList) z5Var.a;
         ArrayList arrayList3 = (ArrayList) z5Var.c;
         this.c = arrayList3;
-        bVar.x(new qf.b(i10, arrayList3, Collections.EMPTY_MAP));
+        bVar.F(new qf.b(i10, arrayList3, Collections.EMPTY_MAP));
     }
 
     public s(kd.h hVar) {
@@ -768,7 +768,7 @@ public final class s {
         this.d = new Object();
         this.e = new ThreadLocal();
         this.b = executorService;
-        executorService.execute(new m5(this, 11));
+        executorService.execute(new s0(this, 11));
     }
 
     public s(w4 w4Var, Object obj, Object obj2, Object[] objArr) {
@@ -812,10 +812,10 @@ public final class s {
         }
         TextView textView2 = new TextView(eVar.getContext());
         this.c = textView2;
-        linearLayout.addView(textView2, a6.k(0.0f, 0.0f, 20.0f, 0.0f, -2, -2));
-        org.telegram.ui.Components.a6 a6Var = new org.telegram.ui.Components.a6(eVar.getContext());
+        linearLayout.addView(textView2, w7.z5.k(0.0f, 0.0f, 20.0f, 0.0f, -2, -2));
+        a6 a6Var = new a6(eVar.getContext());
         this.b = a6Var;
-        linearLayout.addView(a6Var, a6.n(-1, -2));
+        linearLayout.addView(a6Var, w7.z5.n(-1, -2));
         textView2.setGravity(8388611);
         a6Var.setGravity(8388613);
         a6Var.setTypeface(AndroidUtilities.bold());

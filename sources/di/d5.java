@@ -10,7 +10,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d5 implements Runnable {
     public final /* synthetic */ int a;
@@ -166,7 +166,7 @@ public final /* synthetic */ class d5 implements Runnable {
                                             rg.x2 x2Var = new rg.x2(o6Var9.getContext(), (rg.x2) jVar7, P0);
                                             x2Var.setDelegate(o6Var9);
                                             x2Var.setMaxWidth(o6Var9.R1 - AndroidUtilities.dp(32.0f));
-                                            i6Var2.addView(x2Var, w7.a6.d(-2.0f, -2));
+                                            i6Var2.addView(x2Var, w7.z5.d(-2.0f, -2));
                                             o6Var9.f0();
                                             jVar2 = x2Var;
                                         }
@@ -183,7 +183,7 @@ public final /* synthetic */ class d5 implements Runnable {
                             }
                         }
                     });
-                    linearLayout.addView(textView, w7.a6.n(-2, 44));
+                    linearLayout.addView(textView, w7.z5.n(-2, 44));
                 }
                 if (jVar instanceof rg.x2) {
                     TextView textView2 = new TextView(o6Var.getContext());
@@ -314,7 +314,7 @@ public final /* synthetic */ class d5 implements Runnable {
                                                 rg.x2 x2Var = new rg.x2(o6Var9.getContext(), (rg.x2) jVar7, P0);
                                                 x2Var.setDelegate(o6Var9);
                                                 x2Var.setMaxWidth(o6Var9.R1 - AndroidUtilities.dp(32.0f));
-                                                i6Var2.addView(x2Var, w7.a6.d(-2.0f, -2));
+                                                i6Var2.addView(x2Var, w7.z5.d(-2.0f, -2));
                                                 o6Var9.f0();
                                                 jVar2 = x2Var;
                                             }
@@ -450,7 +450,7 @@ public final /* synthetic */ class d5 implements Runnable {
                                                 rg.x2 x2Var = new rg.x2(o6Var9.getContext(), (rg.x2) jVar7, P0);
                                                 x2Var.setDelegate(o6Var9);
                                                 x2Var.setMaxWidth(o6Var9.R1 - AndroidUtilities.dp(32.0f));
-                                                i6Var2.addView(x2Var, w7.a6.d(-2.0f, -2));
+                                                i6Var2.addView(x2Var, w7.z5.d(-2.0f, -2));
                                                 o6Var9.f0();
                                                 jVar2 = x2Var;
                                             }
@@ -468,7 +468,7 @@ public final /* synthetic */ class d5 implements Runnable {
                             }
                         });
                     }
-                    linearLayout.addView(textView2, w7.a6.n(-2, 44));
+                    linearLayout.addView(textView2, w7.z5.n(-2, 44));
                 } else if (jVar instanceof rg.v0) {
                     TextView g02 = o6Var.g0(1, LocaleController.getString(R.string.PaintEdit));
                     final int i13 = 3;
@@ -587,7 +587,7 @@ public final /* synthetic */ class d5 implements Runnable {
                                             rg.x2 x2Var = new rg.x2(o6Var9.getContext(), (rg.x2) jVar7, P0);
                                             x2Var.setDelegate(o6Var9);
                                             x2Var.setMaxWidth(o6Var9.R1 - AndroidUtilities.dp(32.0f));
-                                            i6Var2.addView(x2Var, w7.a6.d(-2.0f, -2));
+                                            i6Var2.addView(x2Var, w7.z5.d(-2.0f, -2));
                                             o6Var9.f0();
                                             jVar2 = x2Var;
                                         }
@@ -604,7 +604,7 @@ public final /* synthetic */ class d5 implements Runnable {
                             }
                         }
                     });
-                    linearLayout.addView(g02, w7.a6.n(-2, 44));
+                    linearLayout.addView(g02, w7.z5.n(-2, 44));
                 } else if (jVar instanceof rg.s0) {
                     TextView g03 = o6Var.g0(1, LocaleController.getString(R.string.PaintEdit));
                     final int i14 = 4;
@@ -723,7 +723,7 @@ public final /* synthetic */ class d5 implements Runnable {
                                             rg.x2 x2Var = new rg.x2(o6Var9.getContext(), (rg.x2) jVar7, P0);
                                             x2Var.setDelegate(o6Var9);
                                             x2Var.setMaxWidth(o6Var9.R1 - AndroidUtilities.dp(32.0f));
-                                            i6Var2.addView(x2Var, w7.a6.d(-2.0f, -2));
+                                            i6Var2.addView(x2Var, w7.z5.d(-2.0f, -2));
                                             o6Var9.f0();
                                             jVar2 = x2Var;
                                         }
@@ -740,7 +740,7 @@ public final /* synthetic */ class d5 implements Runnable {
                             }
                         }
                     });
-                    linearLayout.addView(g03, w7.a6.n(-2, 44));
+                    linearLayout.addView(g03, w7.z5.n(-2, 44));
                 }
                 if ((jVar instanceof rg.q2) || (jVar instanceof rg.d2) || (jVar instanceof rg.z1) || (jVar instanceof rg.c2)) {
                     TextView g04 = o6Var.g0(4, LocaleController.getString(R.string.Flip));
@@ -860,7 +860,7 @@ public final /* synthetic */ class d5 implements Runnable {
                                             rg.x2 x2Var = new rg.x2(o6Var9.getContext(), (rg.x2) jVar7, P0);
                                             x2Var.setDelegate(o6Var9);
                                             x2Var.setMaxWidth(o6Var9.R1 - AndroidUtilities.dp(32.0f));
-                                            i6Var2.addView(x2Var, w7.a6.d(-2.0f, -2));
+                                            i6Var2.addView(x2Var, w7.z5.d(-2.0f, -2));
                                             o6Var9.f0();
                                             jVar2 = x2Var;
                                         }
@@ -877,7 +877,7 @@ public final /* synthetic */ class d5 implements Runnable {
                             }
                         }
                     });
-                    linearLayout.addView(g04, w7.a6.n(-2, 44));
+                    linearLayout.addView(g04, w7.z5.n(-2, 44));
                 }
                 boolean z11 = jVar instanceof rg.z1;
                 if (i6Var.indexOfChild(jVar) != i6Var.getChildCount() - 1 && !(jVar instanceof rg.c2)) {
@@ -1008,7 +1008,7 @@ public final /* synthetic */ class d5 implements Runnable {
                                             rg.x2 x2Var = new rg.x2(o6Var9.getContext(), (rg.x2) jVar7, P0);
                                             x2Var.setDelegate(o6Var9);
                                             x2Var.setMaxWidth(o6Var9.R1 - AndroidUtilities.dp(32.0f));
-                                            i6Var2.addView(x2Var, w7.a6.d(-2.0f, -2));
+                                            i6Var2.addView(x2Var, w7.z5.d(-2.0f, -2));
                                             o6Var9.f0();
                                             jVar2 = x2Var;
                                         }
@@ -1025,7 +1025,7 @@ public final /* synthetic */ class d5 implements Runnable {
                             }
                         }
                     });
-                    linearLayout.addView(textView3, w7.a6.n(-2, 44));
+                    linearLayout.addView(textView3, w7.z5.n(-2, 44));
                 } else if (!z11 && !z10 && !(jVar instanceof rg.d2) && !(jVar instanceof rg.v0) && !(jVar instanceof rg.y2) && !(jVar instanceof rg.s0) && !(jVar instanceof rg.c2)) {
                     TextView textView4 = new TextView(o6Var.getContext());
                     textView4.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.E8, c6Var));
@@ -1154,7 +1154,7 @@ public final /* synthetic */ class d5 implements Runnable {
                                             rg.x2 x2Var = new rg.x2(o6Var9.getContext(), (rg.x2) jVar7, P0);
                                             x2Var.setDelegate(o6Var9);
                                             x2Var.setMaxWidth(o6Var9.R1 - AndroidUtilities.dp(32.0f));
-                                            i6Var2.addView(x2Var, w7.a6.d(-2.0f, -2));
+                                            i6Var2.addView(x2Var, w7.z5.d(-2.0f, -2));
                                             o6Var9.f0();
                                             jVar2 = x2Var;
                                         }
@@ -1171,7 +1171,7 @@ public final /* synthetic */ class d5 implements Runnable {
                             }
                         }
                     });
-                    linearLayout.addView(textView4, w7.a6.n(-2, 44));
+                    linearLayout.addView(textView4, w7.z5.n(-2, 44));
                 }
                 int i18 = 0;
                 while (i18 < linearLayout.getChildCount()) {

@@ -9,7 +9,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements d, c6 {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class a implements d, c6 {
     }
 
     @Override // org.telegram.ui.ActionBar.c6
-    public int F0(int i10) {
+    public int E0(int i10) {
         if (i10 == g6.G8) {
             return -14145495;
         }
@@ -87,11 +87,11 @@ public final /* synthetic */ class a implements d, c6 {
             return -16777216;
         }
         c6 c6Var = this.b;
-        return c6Var != null ? c6Var.F0(i10) : g6.x0(null, i10, false);
+        return c6Var != null ? c6Var.E0(i10) : g6.x0(null, i10, false);
     }
 
     @Override // org.telegram.ui.ActionBar.c6
-    public Paint G(String str) {
+    public Paint F(String str) {
         return g6.T0(str);
     }
 
@@ -102,7 +102,7 @@ public final /* synthetic */ class a implements d, c6 {
 
     @Override // org.telegram.ui.ActionBar.c6
     public int b0(int i10) {
-        return F0(i10);
+        return E0(i10);
     }
 
     @Override // eh.d
@@ -127,8 +127,8 @@ public final /* synthetic */ class a implements d, c6 {
     }
 
     @Override // org.telegram.ui.ActionBar.c6
-    public int g1(int i10) {
-        return F0(i10);
+    public int f1(int i10) {
+        return E0(i10);
     }
 
     @Override // org.telegram.ui.ActionBar.c6
@@ -147,11 +147,11 @@ public final /* synthetic */ class a implements d, c6 {
     }
 
     @Override // org.telegram.ui.ActionBar.c6
-    public ColorFilter x() {
+    public ColorFilter w() {
         return g6.v3;
     }
 
     @Override // org.telegram.ui.ActionBar.c6
-    public /* synthetic */ void N0(int i10, int i11) {
+    public /* synthetic */ void M0(int i10, int i11) {
     }
 }

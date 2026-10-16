@@ -40,7 +40,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c90 implements Runnable {
     public final /* synthetic */ int a;
@@ -48,11 +48,11 @@ public final /* synthetic */ class c90 implements Runnable {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ c90(int i10, Utilities.Callback callback, org.telegram.ui.Wallet.j0 j0Var) {
+    public /* synthetic */ c90(int i10, Utilities.Callback callback, org.telegram.ui.Wallet.k0 k0Var) {
         this.a = 13;
         this.b = i10;
         this.c = callback;
-        this.d = j0Var;
+        this.d = k0Var;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:204:0x0621  */
@@ -105,10 +105,10 @@ public final /* synthetic */ class c90 implements Runnable {
                 f10Var.animate().alpha(0.0f).setDuration(220L).setListener(new vo(f10Var)).start();
                 break;
             case 2:
-                un0.X((un0) obj2, (SecureDocument) obj, i12);
+                sn0.X((sn0) obj2, (SecureDocument) obj, i12);
                 break;
             case 3:
-                cp0 cp0Var = (cp0) obj2;
+                ap0 ap0Var = (ap0) obj2;
                 Intent intent = (Intent) obj;
                 if (i12 != -1) {
                     z10 = true;
@@ -119,9 +119,9 @@ public final /* synthetic */ class c90 implements Runnable {
                         sb2.append(status != null ? status.b : "");
                         FileLog.e(sb2.toString());
                     }
-                    cp0Var.H0(z10, false);
-                    cp0Var.D0(false);
-                    frameLayout = cp0Var.P;
+                    ap0Var.H0(z10, false);
+                    ap0Var.D0(false);
+                    frameLayout = ap0Var.P;
                     if (frameLayout == null) {
                         frameLayout.setClickable(z10);
                         break;
@@ -129,47 +129,47 @@ public final /* synthetic */ class c90 implements Runnable {
                 } else {
                     Parcelable.Creator<v8.i> creator = v8.i.CREATOR;
                     byte[] byteArrayExtra = intent.getByteArrayExtra("com.google.android.gms.wallet.PaymentData");
-                    v8.i iVar = (v8.i) (byteArrayExtra != null ? w7.h0.a(byteArrayExtra, creator) : null);
+                    v8.i iVar = (v8.i) (byteArrayExtra != null ? w7.g0.a(byteArrayExtra, creator) : null);
                     if (iVar != null && (str = iVar.h) != null) {
                         try {
                             JSONObject jSONObject = new JSONObject(str).getJSONObject("paymentMethodData");
                             JSONObject jSONObject2 = jSONObject.getJSONObject("tokenizationData");
                             jSONObject2.getString(TeXSymbolParser.TYPE_ATTR);
                             String string = jSONObject2.getString("token");
-                            if (cp0Var.K0 == null && cp0Var.M0 == null) {
+                            if (ap0Var.K0 == null && ap0Var.M0 == null) {
                                 u2.c a2 = w7.q8.a(string);
-                                cp0Var.w0 = String.format(Locale.US, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}", (String) a2.c, (String) a2.b);
+                                ap0Var.w0 = String.format(Locale.US, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}", (String) a2.c, (String) a2.b);
                                 wc.a aVar = (wc.a) a2.d;
-                                cp0Var.x0 = aVar.a() + " *" + aVar.b();
-                                cp0Var.t0();
+                                ap0Var.x0 = aVar.a() + " *" + aVar.b();
+                                ap0Var.t0();
                             }
                             TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay = new TLRPC.TL_inputPaymentCredentialsGooglePay();
-                            cp0Var.J0 = tL_inputPaymentCredentialsGooglePay;
+                            ap0Var.J0 = tL_inputPaymentCredentialsGooglePay;
                             tL_inputPaymentCredentialsGooglePay.payment_token = new TLRPC.TL_dataJSON();
-                            cp0Var.J0.payment_token.data = jSONObject2.toString();
+                            ap0Var.J0.payment_token.data = jSONObject2.toString();
                             String optString = jSONObject.optString("description");
                             if (TextUtils.isEmpty(optString)) {
-                                cp0Var.x0 = "Android Pay";
+                                ap0Var.x0 = "Android Pay";
                             } else {
-                                cp0Var.x0 = optString;
+                                ap0Var.x0 = optString;
                             }
-                            cp0Var.t0();
+                            ap0Var.t0();
                         } catch (JSONException e) {
                             FileLog.e(e);
                         }
                     }
                 }
                 z10 = true;
-                cp0Var.H0(z10, false);
-                cp0Var.D0(false);
-                frameLayout = cp0Var.P;
+                ap0Var.H0(z10, false);
+                ap0Var.D0(false);
+                frameLayout = ap0Var.P;
                 if (frameLayout == null) {
                 }
                 break;
             case 4:
-                bv0 bv0Var = (bv0) obj2;
+                av0 av0Var = (av0) obj2;
                 Uri uri = (Uri) obj;
-                bv0Var.getClass();
+                av0Var.getClass();
                 try {
                     File file = new File(uri.getPath());
                     int i14 = UserConfig.selectedAccount;
@@ -177,27 +177,27 @@ public final /* synthetic */ class c90 implements Runnable {
                     org.telegram.ui.Components.f6 f6Var = new org.telegram.ui.Components.f6(file, true, 0L, 0, null, null, null, 0L, i14, false, point.x, point.y, null, 0, true);
                     Bitmap q6 = f6Var.q(0L, false);
                     f6Var.u();
-                    AndroidUtilities.runOnUIThread(new c90(bv0Var, i12, q6, 5));
+                    AndroidUtilities.runOnUIThread(new c90(av0Var, i12, q6, 5));
                     break;
                 } catch (Throwable th2) {
                     FileLog.e(th2);
-                    AndroidUtilities.runOnUIThread(new yk0(bv0Var, 23));
+                    AndroidUtilities.runOnUIThread(new xk0(av0Var, 23));
                     return;
                 }
             case 5:
-                bv0 bv0Var2 = (bv0) obj2;
+                av0 av0Var2 = (av0) obj2;
                 Bitmap bitmap = (Bitmap) obj;
-                if (i12 == bv0Var2.a) {
-                    bv0Var2.setImageBitmap(bitmap);
-                    bv0Var2.c = true;
-                    bv0Var2.b = false;
+                if (i12 == av0Var2.a) {
+                    av0Var2.setImageBitmap(bitmap);
+                    av0Var2.c = true;
+                    av0Var2.b = false;
                     break;
                 }
                 break;
             case 6:
-                sw0 sw0Var = (sw0) obj2;
+                rw0 rw0Var = (rw0) obj2;
                 ((jf) obj).run(Integer.valueOf(i12));
-                sw0Var.c(i12 == 1 || i12 == 13);
+                rw0Var.c(i12 == 1 || i12 == 13);
                 break;
             case 7:
                 ProfileActivity profileActivity = (ProfileActivity) obj2;
@@ -209,21 +209,21 @@ public final /* synthetic */ class c90 implements Runnable {
                     a02 = org.telegram.ui.Components.zc.a0(profileActivity);
                     i10 = R.string.TextCopied;
                 }
-                org.telegram.messenger.yh.o(i10, a02);
+                org.telegram.messenger.sk.p(i10, a02);
                 break;
             case 8:
-                f11 f11Var = (f11) obj2;
+                e11 e11Var = (e11) obj2;
                 s4.b1 b1Var = (s4.b1) obj;
-                f11Var.getClass();
-                if (b1Var.b() == i12 && f11Var.e.U2 == i12 && b1Var.f == 2) {
-                    f11Var.v(b1Var, i12);
+                e11Var.getClass();
+                if (b1Var.b() == i12 && e11Var.e.U2 == i12 && b1Var.f == 2) {
+                    e11Var.v(b1Var, i12);
                     break;
                 }
                 break;
             case 9:
                 org.telegram.ui.Components.zc.a0((org.telegram.ui.ActionBar.m2) obj2).c(LocaleController.getString(R.string.AdHidden)).j();
                 MessagesController.getInstance(i12).disableAds(false);
-                AndroidUtilities.runOnUIThread((org.telegram.ui.Components.f60) obj);
+                AndroidUtilities.runOnUIThread((org.telegram.ui.Components.g90) obj);
                 break;
             case 10:
                 ((org.telegram.messenger.video.a) obj2).run();
@@ -231,20 +231,20 @@ public final /* synthetic */ class c90 implements Runnable {
                 MessagesController.getInstance(i12).disableAds(false);
                 break;
             case 11:
-                se1 se1Var = (se1) obj2;
+                re1 re1Var = (re1) obj2;
                 ((jf) obj).run(Integer.valueOf(i12));
-                se1Var.c(i12 == 1 || i12 == 13);
+                re1Var.c(i12 == 1 || i12 == 13);
                 break;
             case 12:
-                org.telegram.ui.Wallet.y0 y0Var = ((org.telegram.ui.Wallet.x0) obj2).c;
-                if (y0Var.c((tc.u) obj, i12)) {
-                    y0Var.f("invalid streaming JSON");
+                org.telegram.ui.Wallet.z0 z0Var = ((org.telegram.ui.Wallet.y0) obj2).c;
+                if (z0Var.c((tc.u) obj, i12)) {
+                    z0Var.f("invalid streaming JSON");
                     break;
                 }
                 break;
             case 13:
                 ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i12);
-                connectionsManager.sendRequestTyped(new TL_toncenter.getOnrampProviders(), new org.telegram.messenger.a(), new org.telegram.ui.Wallet.i((Utilities.Callback) obj2, (org.telegram.ui.Wallet.j0) obj, connectionsManager));
+                connectionsManager.sendRequestTyped(new TL_toncenter.getOnrampProviders(), new org.telegram.messenger.a(), new org.telegram.ui.Wallet.j((Utilities.Callback) obj2, (org.telegram.ui.Wallet.k0) obj, connectionsManager));
                 break;
             case 14:
                 Context context = (Context) obj2;
@@ -258,14 +258,14 @@ public final /* synthetic */ class c90 implements Runnable {
                     }
                     StringBuilder i15 = t8.b.i(str3, "transaction/");
                     i15.append(Uri.encode(str2));
-                    pf.d.u(context, i15.toString());
+                    pf.d.t(context, i15.toString());
                     break;
                 }
                 break;
             case 15:
                 org.telegram.ui.Wallet.h9 h9Var = (org.telegram.ui.Wallet.h9) obj;
                 int i16 = i12 + 1;
-                ArrayList arrayList = ((org.telegram.ui.Wallet.z6) obj2).v;
+                ArrayList arrayList = ((org.telegram.ui.Wallet.a7) obj2).v;
                 if (i16 >= arrayList.size()) {
                     AndroidUtilities.hideKeyboard(h9Var);
                     break;
@@ -285,17 +285,17 @@ public final /* synthetic */ class c90 implements Runnable {
                     break;
                 }
             case 17:
-                sj1 sj1Var = (sj1) obj2;
+                rj1 rj1Var = (rj1) obj2;
                 TLObject tLObject2 = (TLObject) obj;
-                HashMap hashMap = sj1Var.e;
-                WallpapersListActivity wallpapersListActivity = sj1Var.E;
-                ArrayList arrayList3 = sj1Var.d;
-                if (i12 == sj1Var.v) {
-                    sj1Var.s = 0;
+                HashMap hashMap = rj1Var.e;
+                WallpapersListActivity wallpapersListActivity = rj1Var.E;
+                ArrayList arrayList3 = rj1Var.d;
+                if (i12 == rj1Var.v) {
+                    rj1Var.s = 0;
                     int size = arrayList3.size();
                     if (tLObject2 != null) {
                         TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject2;
-                        sj1Var.r = messages_botresults.next_offset;
+                        rj1Var.r = messages_botresults.next_offset;
                         int size2 = messages_botresults.results.size();
                         int i18 = 0;
                         while (i18 < size2) {
@@ -355,14 +355,14 @@ public final /* synthetic */ class c90 implements Runnable {
                             i18++;
                             r8 = z11;
                         }
-                        sj1Var.f = (size == arrayList3.size() || sj1Var.r == null) ? r8 : false;
+                        rj1Var.f = (size == arrayList3.size() || rj1Var.r == null) ? r8 : false;
                     }
                     if (size != arrayList3.size()) {
                         int i20 = size % wallpapersListActivity.R;
                         float f7 = size;
                         int ceil = (int) Math.ceil(f7 / r0);
                         if (i20 != 0) {
-                            sj1Var.m(((int) Math.ceil(f7 / wallpapersListActivity.R)) - 1);
+                            rj1Var.m(((int) Math.ceil(f7 / wallpapersListActivity.R)) - 1);
                         }
                         wallpapersListActivity.J.s(ceil, ((int) Math.ceil(arrayList3.size() / wallpapersListActivity.R)) - ceil);
                     }
@@ -376,7 +376,7 @@ public final /* synthetic */ class c90 implements Runnable {
                 q0Var.h = null;
                 break;
             case 19:
-                ((r4.c) ((p4.t0) obj2).c).G(i12, obj);
+                ((r4.c) ((p4.t0) obj2).c).p(i12, obj);
                 break;
             case 20:
                 rg.o0 o0Var = (rg.o0) obj2;
@@ -408,11 +408,11 @@ public final /* synthetic */ class c90 implements Runnable {
                         ConnectionsManager.getInstance(i23).sendRequest(deletestargiftcollection, null);
                     }
                     ns0Var.f(true);
-                    org.telegram.ui.Components.j91 j91Var = ns0Var.n;
+                    org.telegram.ui.Components.k91 k91Var = ns0Var.n;
                     if (i12 < e5Var.d().size()) {
                         i12++;
                     }
-                    j91Var.d(-1, i12);
+                    k91Var.d(-1, i12);
                     ns0Var.n();
                     break;
                 }
@@ -427,7 +427,7 @@ public final /* synthetic */ class c90 implements Runnable {
                     FrameLayout frameLayout2 = new FrameLayout(s2Var.getContext());
                     org.telegram.ui.Components.bk0 bk0Var = new org.telegram.ui.Components.bk0(s2Var.getContext());
                     bk0Var.f(R.raw.gift_broken, 32, 32, null);
-                    frameLayout2.addView(bk0Var, w7.a6.e(32, 32, 17));
+                    frameLayout2.addView(bk0Var, w7.z5.e(32, 32, 17));
                     bk0Var.setScaleX(0.5f);
                     bk0Var.setScaleY(0.5f);
                     bk0Var.setAlpha(0.0f);
@@ -488,7 +488,7 @@ public final /* synthetic */ class c90 implements Runnable {
                 }
                 break;
             default:
-                pf.d.s((Context) obj2, "https://" + MessagesController.getInstance(i12).linkPrefix + "/nft/" + ((String) obj));
+                pf.d.r((Context) obj2, "https://" + MessagesController.getInstance(i12).linkPrefix + "/nft/" + ((String) obj));
                 break;
         }
     }

@@ -17,7 +17,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.iw0;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ya implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -160,14 +160,14 @@ public final /* synthetic */ class ya implements Utilities.Callback2 {
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.b0 b0Var = (org.telegram.ui.Wallet.b0) this.c;
+                org.telegram.ui.Wallet.c0 c0Var = (org.telegram.ui.Wallet.c0) this.c;
                 TL_wallet.nftItems nftitems = (TL_wallet.nftItems) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                ArrayList arrayList = b0Var.b;
-                ArrayList arrayList2 = b0Var.c;
-                b0Var.l = -1;
-                b0Var.j = false;
-                b0Var.i = false;
+                ArrayList arrayList = c0Var.b;
+                ArrayList arrayList2 = c0Var.c;
+                c0Var.l = -1;
+                c0Var.j = false;
+                c0Var.i = false;
                 boolean z13 = this.b;
                 if (nftitems != null) {
                     if (z13) {
@@ -184,7 +184,7 @@ public final /* synthetic */ class ya implements Utilities.Callback2 {
                         while (true) {
                             if (i13 >= arrayList.size()) {
                                 arrayList.add(nftitem2);
-                            } else if (org.telegram.ui.Wallet.j0.b(((TL_wallet.nftItem) arrayList.get(i13)).address, nftitem2.address)) {
+                            } else if (org.telegram.ui.Wallet.k0.b(((TL_wallet.nftItem) arrayList.get(i13)).address, nftitem2.address)) {
                                 arrayList.set(i13, nftitem2);
                             } else {
                                 i13++;
@@ -192,10 +192,10 @@ public final /* synthetic */ class ya implements Utilities.Callback2 {
                         }
                     }
                     String str = nftitems.next_offset;
-                    b0Var.f = str;
+                    c0Var.f = str;
                     boolean isEmpty = TextUtils.isEmpty(str);
-                    b0Var.g = isEmpty;
-                    b0Var.h = true;
+                    c0Var.g = isEmpty;
+                    c0Var.h = true;
                     if (isEmpty) {
                         for (int size2 = arrayList2.size() - 1; size2 >= 0; size2--) {
                             TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) arrayList2.get(size2);
@@ -207,7 +207,7 @@ public final /* synthetic */ class ya implements Utilities.Callback2 {
                                     if (i14 < size3) {
                                         Object obj3 = arrayList.get(i14);
                                         i14++;
-                                        if (org.telegram.ui.Wallet.j0.b(((TL_wallet.nftItem) obj3).address, str2)) {
+                                        if (org.telegram.ui.Wallet.k0.b(((TL_wallet.nftItem) obj3).address, str2)) {
                                             break;
                                         }
                                     } else {
@@ -217,15 +217,15 @@ public final /* synthetic */ class ya implements Utilities.Callback2 {
                             }
                         }
                     }
-                    b0Var.g();
+                    c0Var.g();
                 } else {
                     if (z13) {
-                        b0Var.g = false;
-                        b0Var.h = false;
+                        c0Var.g = false;
+                        c0Var.h = false;
                     }
-                    b0Var.k = tL_error2 == null ? "Could not load collectibles" : tL_error2.text;
+                    c0Var.k = tL_error2 == null ? "Could not load collectibles" : tL_error2.text;
                 }
-                b0Var.f();
+                c0Var.f();
                 break;
         }
     }

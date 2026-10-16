@@ -25,12 +25,12 @@ import org.telegram.ui.Components.sc;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.Components.zd0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.cp0;
+import org.telegram.ui.ap0;
 import org.telegram.ui.fo;
 import org.telegram.ui.yy;
 import zh.n5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class f3 implements org.telegram.ui.web.h0 {
     public boolean a;
@@ -48,9 +48,9 @@ public final class f3 implements org.telegram.ui.web.h0 {
     public final void a() {
         k3 k3Var = this.d;
         TLRPC.User user = MessagesController.getInstance(k3Var.G).getUser(Long.valueOf(k3Var.H));
-        n6.o oVar = new n6.o(5, false);
-        oVar.b = new c3(this, 0);
-        sc V = new zc(k3Var.p0, k3Var.E).V(Arrays.asList(user), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotEmojiStatusPermissionRequestGranted, UserObject.getUserName(user))), null, oVar);
+        n3.b bVar = new n3.b(6, false);
+        bVar.b = new c3(this, 0);
+        sc V = new zc(k3Var.p0, k3Var.E).V(Arrays.asList(user), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotEmojiStatusPermissionRequestGranted, UserObject.getUserName(user))), null, bVar);
         V.j = 5000;
         V.k(true);
     }
@@ -187,7 +187,7 @@ public final class f3 implements org.telegram.ui.web.h0 {
         a3 a3Var = k3Var.v;
         j3 j3Var = k3Var.e;
         org.telegram.ui.ActionBar.m2 lastFragment = ((LaunchActivity) k3Var.k0).O().getLastFragment();
-        cp0 cp0Var = null;
+        ap0 ap0Var = null;
         if (tLObject instanceof TLRPC.TL_payments_paymentFormStars) {
             AndroidUtilities.hideKeyboard(j3Var);
             org.telegram.ui.ActionBar.a2 a2Var = new org.telegram.ui.ActionBar.a2(k3Var.getContext(), 3, null);
@@ -198,18 +198,18 @@ public final class f3 implements org.telegram.ui.web.h0 {
         if (tLObject instanceof TLRPC.PaymentForm) {
             TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject;
             MessagesController.getInstance(k3Var.G).putUsers(paymentForm.users, false);
-            cp0Var = new cp0(paymentForm, null, str, lastFragment);
+            ap0Var = new ap0(paymentForm, null, str, lastFragment);
         } else if (tLObject instanceof TLRPC.PaymentReceipt) {
-            cp0Var = new cp0((TLRPC.PaymentReceipt) tLObject);
+            ap0Var = new ap0((TLRPC.PaymentReceipt) tLObject);
         }
-        if (cp0Var != null) {
+        if (ap0Var != null) {
             a3Var.e(a3Var.getTopActionBarOffsetY() + (-a3Var.getOffsetY()));
             AndroidUtilities.hideKeyboard(j3Var);
             zd0 zd0Var = new zd0(this.b);
             zd0Var.show();
-            cp0Var.Z0 = new androidx.car.app.utils.a(this, zd0Var, str, 8);
-            cp0Var.Y0 = this.c;
-            zd0Var.c(cp0Var);
+            ap0Var.Z0 = new androidx.car.app.utils.a(this, zd0Var, str, 8);
+            ap0Var.Y0 = this.c;
+            zd0Var.c(ap0Var);
         }
     }
 
@@ -327,10 +327,10 @@ public final class f3 implements org.telegram.ui.web.h0 {
         TLRPC.User user = MessagesController.getInstance(k3Var.G).getUser(Long.valueOf(k3Var.H));
         int i10 = 1;
         if (z10) {
-            n6.o oVar = new n6.o(5, false);
+            n3.b bVar = new n3.b(6, false);
             LocaleController.getString(R.string.UndoNoCaps);
-            oVar.b = new c3(this, i10);
-            sc V = new zc(frameLayout, c6Var).V(Arrays.asList(user), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotLocationPermissionRequestGranted, UserObject.getUserName(user))), null, oVar);
+            bVar.b = new c3(this, i10);
+            sc V = new zc(frameLayout, c6Var).V(Arrays.asList(user), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotLocationPermissionRequestGranted, UserObject.getUserName(user))), null, bVar);
             V.j = 5000;
             V.k(true);
             return;

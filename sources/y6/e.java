@@ -21,7 +21,7 @@ import java.lang.reflect.InvocationTargetException;
 import n6.l;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class e {
     public static final rb.b b;
@@ -90,18 +90,18 @@ public final class e {
         long longValue = l4.longValue();
         try {
             n1Var.set(Long.valueOf(SystemClock.uptimeMillis()));
-            a3.l p5 = dVar.p(context, str, k);
+            a3.l q6 = dVar.q(context, str, k);
             j10 = longValue;
             try {
-                Log.i("DynamiteModule", "Considering local module " + str + ":" + p5.a + " and remote module " + str + ":" + p5.b);
-                int i10 = p5.c;
+                Log.i("DynamiteModule", "Considering local module " + str + ":" + q6.a + " and remote module " + str + ":" + q6.b);
+                int i10 = q6.c;
                 if (i10 != 0) {
                     if (i10 == -1) {
-                        if (p5.a != 0) {
+                        if (q6.a != 0) {
                             i10 = -1;
                         }
                     }
-                    if (i10 != 1 || p5.b != 0) {
+                    if (i10 != 1 || q6.b != 0) {
                         if (i10 == -1) {
                             Log.i("DynamiteModule", "Selected local version of ".concat(String.valueOf(str)));
                             eVar = new e(applicationContext);
@@ -110,7 +110,7 @@ public final class e {
                                 throw new b("VersionPolicy returned invalid code:" + i10);
                             }
                             try {
-                                int i11 = p5.b;
+                                int i11 = q6.b;
                                 try {
                                     synchronized (e.class) {
                                         if (!g(context)) {
@@ -189,8 +189,8 @@ public final class e {
                                 }
                             } catch (b e11) {
                                 Log.w("DynamiteModule", "Failed to load remote module: " + e11.getMessage());
-                                int i12 = p5.a;
-                                if (i12 == 0 || dVar.p(context, str, new com.google.android.gms.internal.cast.a(i12)).c != -1) {
+                                int i12 = q6.a;
+                                if (i12 == 0 || dVar.q(context, str, new com.google.android.gms.internal.cast.a(i12)).c != -1) {
                                     throw new b("Remote load failed. No local fallback found.", e11);
                                 }
                                 Log.i("DynamiteModule", "Selected local version of ".concat(String.valueOf(str)));
@@ -210,7 +210,7 @@ public final class e {
                         return eVar;
                     }
                 }
-                throw new b("No acceptable module " + str + " found. Local version is " + p5.a + " and remote version is " + p5.b + ".");
+                throw new b("No acceptable module " + str + " found. Local version is " + q6.a + " and remote version is " + q6.b + ".");
             } catch (Throwable th3) {
                 th = th3;
                 if (j10 == 0) {

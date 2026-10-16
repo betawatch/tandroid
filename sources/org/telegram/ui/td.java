@@ -7,7 +7,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class td implements Runnable {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class td implements Runnable {
         qe qeVar = this.b;
         switch (i10) {
             case 0:
-                pf.d.s(qeVar.getContext(), LocaleController.getString(i11));
+                pf.d.r(qeVar.getContext(), LocaleController.getString(i11));
                 break;
             case 1:
                 td tdVar = qeVar.i1;
@@ -71,7 +71,7 @@ public final /* synthetic */ class td implements Runnable {
                     if (scVar != null) {
                         org.telegram.ui.Components.wb wbVar = scVar.e;
                         if ((wbVar instanceof org.telegram.ui.Components.ac) && wbVar.isAttachedToWindow()) {
-                            org.telegram.messenger.yh.q(R.string.BotStarsWithdrawalToast, new Object[]{zh.g.j0(qeVar.L0 - currentTime)}, ((org.telegram.ui.Components.ac) qeVar.Z0.e).b);
+                            org.telegram.messenger.sk.r(R.string.BotStarsWithdrawalToast, new Object[]{zh.g.j0(qeVar.L0 - currentTime)}, ((org.telegram.ui.Components.ac) qeVar.Z0.e).b);
                         }
                     }
                     AndroidUtilities.cancelRunOnUIThread(tdVar2);

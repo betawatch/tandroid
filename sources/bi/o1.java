@@ -21,17 +21,17 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.gh0;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.i71;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.so0;
-import org.telegram.ui.Components.x71;
-import org.telegram.ui.Components.z61;
+import org.telegram.ui.Components.y71;
 import org.telegram.ui.fo;
 import org.telegram.ui.iy;
 import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o1 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -46,9 +46,9 @@ public final /* synthetic */ class o1 implements Utilities.Callback {
     public final void run(Object obj) {
         String str;
         int i10;
-        z61 z61Var;
+        a71 a71Var;
         boolean z10;
-        z61 z61Var2;
+        a71 a71Var2;
         int i11;
         int i12 = 3;
         ji.a aVar = null;
@@ -163,7 +163,7 @@ public final /* synthetic */ class o1 implements Utilities.Callback {
                 if (view2 instanceof di.r4) {
                     n4Var.getClass();
                     int R = RecyclerView.R(view2);
-                    l61 G = n4Var.W2.G(R);
+                    m61 G = n4Var.W2.G(R);
                     if (G != null) {
                         di.r4 r4Var = (di.r4) view2;
                         r4Var.setPosition(s4Var.b(R));
@@ -219,9 +219,9 @@ public final /* synthetic */ class o1 implements Utilities.Callback {
                 break;
             case 13:
                 di.j8 j8Var = (di.j8) obj;
-                x71 x71Var = ((di.a7) this.b).n;
-                if (x71Var != null) {
-                    x71Var.setHDRInfo(j8Var);
+                y71 y71Var = ((di.a7) this.b).n;
+                if (y71Var != null) {
+                    y71Var.setHDRInfo(j8Var);
                     break;
                 }
                 break;
@@ -250,9 +250,9 @@ public final /* synthetic */ class o1 implements Utilities.Callback {
                 ArrayList arrayList4 = tVar.b;
                 arrayList4.clear();
                 arrayList4.addAll((ArrayList) obj);
-                h71 h71Var = tVar.a;
-                if (h71Var != null && (z61Var = h71Var.W2) != null) {
-                    z61Var.N(true);
+                i71 i71Var = tVar.a;
+                if (i71Var != null && (a71Var = i71Var.W2) != null) {
+                    a71Var.N(true);
                     break;
                 }
                 break;
@@ -262,9 +262,9 @@ public final /* synthetic */ class o1 implements Utilities.Callback {
                 ArrayList arrayList6 = fVar.h;
                 boolean z12 = arrayList6 == null || arrayList6.isEmpty();
                 fVar.h = arrayList5;
-                h71 h71Var2 = fVar.e;
-                if (h71Var2 != null) {
-                    h71Var2.W2.N(z12);
+                i71 i71Var2 = fVar.e;
+                if (i71Var2 != null) {
+                    i71Var2.W2.N(z12);
                     break;
                 }
                 break;
@@ -278,7 +278,7 @@ public final /* synthetic */ class o1 implements Utilities.Callback {
                 if (user != null) {
                     yy yyVar = iyVar.J0;
                     if (yyVar != null) {
-                        yyVar.H3();
+                        yyVar.I3();
                     }
                     MessagesController.getInstance(iyVar.H0).openApp(user, 0);
                     so0Var.R(user.id, user);
@@ -314,12 +314,12 @@ public final /* synthetic */ class o1 implements Utilities.Callback {
                 if (a0Var != null) {
                     a0Var.i(tL_connectedBot3 != null ? tL_connectedBot3.recipients : null);
                 }
-                h71 h71Var3 = u0Var.c;
-                if (h71Var3 == null || (z61Var2 = h71Var3.W2) == null) {
+                i71 i71Var3 = u0Var.c;
+                if (i71Var3 == null || (a71Var2 = i71Var3.W2) == null) {
                     z10 = true;
                 } else {
                     z10 = true;
-                    z61Var2.N(true);
+                    a71Var2.N(true);
                 }
                 u0Var.Y(z10);
                 u0Var.T = z10;
@@ -390,7 +390,7 @@ public final /* synthetic */ class o1 implements Utilities.Callback {
                                 }
                             }
                             if (spannableStringBuilder2.length() > 0) {
-                                ji.a aVar5 = (ji.a) i2.d.g(1, arrayList9);
+                                ji.a aVar5 = (ji.a) i2.d.h(1, arrayList9);
                                 if (ji.x3.B3(aVar5.b)) {
                                     SpannableStringBuilder spannableStringBuilder5 = new SpannableStringBuilder(ji.i6.A(aVar5.b));
                                     spannableStringBuilder5.append((CharSequence) spannableStringBuilder2);
@@ -434,7 +434,7 @@ public final /* synthetic */ class o1 implements Utilities.Callback {
                             i11 = 1;
                         } else {
                             i11 = 1;
-                            aVar = (ji.a) i2.d.g(1, arrayList9);
+                            aVar = (ji.a) i2.d.h(1, arrayList9);
                         }
                         x3Var.post(new ji.v2(i11, o3Var, aVar));
                         break;

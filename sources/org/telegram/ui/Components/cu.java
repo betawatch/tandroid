@@ -18,10 +18,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class cu extends View {
-    public final h11 a;
+    public final i11 a;
     public final Drawable b;
     public final ImageReceiver c;
     public final Rect d;
@@ -35,7 +35,7 @@ public class cu extends View {
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.c = imageReceiver;
         imageReceiver.setRoundRadius(AndroidUtilities.dp(22.66f));
-        this.a = new h11(charSequence, 14.0f, AndroidUtilities.bold());
+        this.a = new i11(charSequence, 14.0f, AndroidUtilities.bold());
         Drawable mutate = context.getResources().getDrawable(R.drawable.arrow_newchat).mutate();
         this.b = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-1711276033, PorterDuff.Mode.SRC_IN));
@@ -121,7 +121,7 @@ public class cu extends View {
         if (str == null) {
             setImage((Bitmap) null);
         } else {
-            Utilities.globalQueue.postRunnable(new sk(14, this, str));
+            Utilities.globalQueue.postRunnable(new vm(9, this, str));
         }
     }
 }

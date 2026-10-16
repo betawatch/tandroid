@@ -9,7 +9,7 @@ import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class h2 extends View {
     public final /* synthetic */ z70 a;
@@ -53,7 +53,7 @@ public final class h2 extends View {
                 HashSet hashSet = k4.b1;
                 i2Var.h = k4.C(z70Var, i4Var.E, this, richText, richText, pageblockpreformatted, dp);
                 if (!TextUtils.isEmpty(i2Var.f.language)) {
-                    i2Var.h = mi.k.b(i2Var.h, i2Var.f.language);
+                    i2Var.h = li.k.b(i2Var.h, i2Var.f.language);
                 }
             }
             d3 q6 = k4.q(z70Var, this, i2Var.h, null, AndroidUtilities.dp(5000.0f), 0, i2Var.f, i4Var);

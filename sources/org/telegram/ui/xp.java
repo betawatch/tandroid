@@ -13,7 +13,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class xp extends org.telegram.ui.Components.lm0 {
     public final Context c;
@@ -126,18 +126,18 @@ public final class xp extends org.telegram.ui.Components.lm0 {
             } else if (i10 == 2) {
                 b5Var = new org.telegram.ui.Cells.y4(context);
             } else if (i10 != 4) {
-                up upVar = new up(context);
                 tp tpVar = new tp(context);
-                tpVar.c = UserConfig.selectedAccount;
-                tpVar.setPadding(0, AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f));
-                tpVar.setOrientation(1);
+                sp spVar = new sp(context);
+                spVar.c = UserConfig.selectedAccount;
+                spVar.setPadding(0, AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f));
+                spVar.setOrientation(1);
                 org.telegram.ui.Components.z9 z9Var = new org.telegram.ui.Components.z9(context);
-                tpVar.a = z9Var;
+                spVar.a = z9Var;
                 org.telegram.ui.Components.ja0 ja0Var = new org.telegram.ui.Components.ja0(z9Var, "M476.1,397.4c25.8-47.2,0.3-105.9-50.9-120c-2.5-6.9-7.8-12.7-15-16.4l0.4-229.4c0-12.3-10-22.4-22.4-22.4H128.5c-12.3,0-22.4,10-22.4,22.4l-0.4,229.8v0c0,6.7,2.9,12.6,7.6,16.7c-51.6,15.9-79.2,77.2-48.1,116.4c-8.7,11.7-13.4,27.5-14,47.2c-1.7,34.5,21.6,45.8,55.9,45.8c52.3,0,99.1,4.6,105.1-36.2c16.5,0.9,7.1-37.3-6.5-53.3c18.4-22.4,18.3-52.9,4.9-78.2c-0.7-5.3-3.8-9.8-8.1-12.6c-1.5-2-1.6-2-2.1-2.7c0.2-1,1.2-11.8-3.4-20.9h138.5c-4.8,8.8-4.7,17-2.9,22.1c-5.3,4.8-6.8,12.3-5.2,17c-11.4,24.9-10,53.8,4.3,77.5c-6.8,9.7-11.2,21.7-12.6,31.6c-0.2-0.2-0.4-0.3-0.6-0.5c0.8-3.3,0.4-6.4-1.3-7.8c9.3-12.1-4.5-29.2-17-21.7c-3.8-2.8-10.6-3.2-18.1-0.5c-2.4-10.6-21.1-10.6-28.6-1c-1.3,0.3-2.9,0.8-4.5,1.9c-5.2-0.9-10.9,0.1-14.1,4.4c-6.9,3-9.5,10.4-7.8,17c-0.9,1.8-1.1,4-0.8,6.3c-1.6,1.2-2.3,3.1-2,4.9c0.1,0.6,10.4,56.6,11.2,62c0.3,1.8,1.5,3.2,3.1,3.9c8.7,3.4,12,3.8,30.1,9.4c2.7,0.8,2.4,0.8,6.7-0.1c16.4-3.5,30.2-8.9,30.8-9.2c1.6-0.6,2.7-2,3.1-3.7c0.1-0.4,6.8-36.5,10-53.2c0.9,4.2,3.3,7.3,7.4,7.5c1.2,7.8,4.4,14.5,9.5,19.9c16.4,17.3,44.9,15.7,64.9,16.1c38.3,0.8,74.5,1.5,84.4-24.4C488.9,453.5,491.3,421.3,476.1,397.4z", AndroidUtilities.dp(104.0f), AndroidUtilities.dp(104.0f));
-                tpVar.b = ja0Var;
+                spVar.b = ja0Var;
                 z9Var.setImageDrawable(ja0Var);
-                tpVar.addView(z9Var, w7.a6.t(104, 104, 49, 0, 2, 0, 0));
-                upVar.addView(tpVar, w7.a6.a(-2.0f, 0.0f, 10.0f, 0.0f, 0.0f, -2, 49));
+                spVar.addView(z9Var, w7.z5.t(104, 104, 49, 0, 2, 0, 0));
+                tpVar.addView(spVar, w7.z5.a(-2.0f, 0.0f, 10.0f, 0.0f, 0.0f, -2, 49));
                 TextView textView = new TextView(context);
                 textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.g9, false));
                 textView.setTextSize(1, 14.0f);
@@ -158,9 +158,9 @@ public final class xp extends org.telegram.ui.Components.lm0 {
                         textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("DiscussionGroupHelp", R.string.DiscussionGroupHelp, chat2.title)));
                     }
                 }
-                upVar.addView(textView, w7.a6.a(-2.0f, 52.0f, 143.0f, 52.0f, 18.0f, -1, 51));
-                upVar.setTag(-33024);
-                b5Var = upVar;
+                tpVar.addView(textView, w7.z5.a(-2.0f, 52.0f, 143.0f, 52.0f, 18.0f, -1, 51));
+                tpVar.setTag(-33024);
+                b5Var = tpVar;
             } else {
                 TLRPC.Chat chat3 = z10 ? (TLRPC.Chat) aqVar.v.get(0) : aqVar.f;
                 wp wpVar = new wp(this, context, chat3, chat3);

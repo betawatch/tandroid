@@ -8,9 +8,9 @@ import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 import org.telegram.messenger.FileLog;
 import org.telegram.ui.Components.iw0;
-import w7.t6;
+import w7.s6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class r1 {
     public final Bitmap a;
@@ -88,7 +88,7 @@ public final class r1 {
             allocateDirect.putInt(((pixel >> 16) & 255) | (pixel & (-16711936)) | ((pixel & 255) << 16)).position(0);
             GLES20.glTexSubImage2D(3553, 0, 0, 0, 1, 1, 6408, 5121, allocateDirect);
         }
-        t6.a();
+        s6.a();
         return this.b;
     }
 }

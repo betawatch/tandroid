@@ -24,7 +24,7 @@ import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.aq;
 import org.telegram.ui.Components.br;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class da extends FrameLayout {
     public Path E;
@@ -253,7 +253,7 @@ public final class da extends FrameLayout {
         float f11;
         int i10 = (LocaleController.isRTL ? 5 : 3) | 16;
         boolean z10 = this.s;
-        this.c.setLayoutParams(w7.a6.a(40.0f, z10 ? 53.0f : 16.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f, 40, i10));
+        this.c.setLayoutParams(w7.z5.a(40.0f, z10 ? 53.0f : 16.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f, 40, i10));
         boolean z11 = LocaleController.isRTL;
         int i11 = (z11 ? 5 : 3) | 16;
         float f12 = 20.0f;
@@ -267,7 +267,7 @@ public final class da extends FrameLayout {
         } else {
             f10 = 20.0f;
         }
-        this.d.setLayoutParams(w7.a6.a(-2.0f, f7, 0.0f, f10, 0.0f, -1, i11));
+        this.d.setLayoutParams(w7.z5.a(-2.0f, f7, 0.0f, f10, 0.0f, -1, i11));
         boolean z12 = LocaleController.isRTL;
         int i12 = (z12 ? 5 : 3) | 16;
         if (z12) {
@@ -278,9 +278,9 @@ public final class da extends FrameLayout {
         if (z12) {
             f12 = this.s ? 105 : 68;
         }
-        this.e.setLayoutParams(w7.a6.a(-2.0f, f11, 0.0f, f12, 0.0f, -1, i12));
-        this.f.setLayoutParams(w7.a6.a(24.0f, 13.0f, 0.0f, 14.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
-        this.h.setLayoutParams(w7.a6.a(22.0f, 14.0f, 0.0f, 15.0f, 0.0f, 22, (LocaleController.isRTL ? 5 : 3) | 16));
+        this.e.setLayoutParams(w7.z5.a(-2.0f, f11, 0.0f, f12, 0.0f, -1, i12));
+        this.f.setLayoutParams(w7.z5.a(24.0f, 13.0f, 0.0f, 14.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
+        this.h.setLayoutParams(w7.z5.a(22.0f, 14.0f, 0.0f, 15.0f, 0.0f, 22, (LocaleController.isRTL ? 5 : 3) | 16));
     }
 
     public final SpannableStringBuilder g(CharSequence charSequence) {

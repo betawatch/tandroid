@@ -46,19 +46,17 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.WeakHashMap;
-import m.h3;
-import m.j1;
-import m.k1;
-import m.m3;
-import m.t3;
+import m.l1;
+import m.m1;
+import m.p3;
+import m.w3;
 import org.webrtc.MediaStreamTrack;
-import r0.b0;
-import r0.j0;
-import r0.m0;
+import r0.i0;
+import r0.l0;
 import v7.j7;
-import w7.u6;
+import w7.t6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class r extends g implements l.i, LayoutInflater.Factory2 {
     public static final a0.l q0 = new a0.l(0);
@@ -66,7 +64,7 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
     public static final boolean s0 = !"robolectric".equals(Build.FINGERPRINT);
     public PopupWindow E;
     public h F;
-    public m0 G;
+    public l0 G;
     public final boolean H;
     public boolean I;
     public ViewGroup J;
@@ -108,7 +106,7 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
     public OnBackInvokedDispatcher o0;
     public OnBackInvokedCallback p0;
     public CharSequence r;
-    public j1 s;
+    public l1 s;
     public ya.c v;
     public a6.i w;
     public k.a x;
@@ -138,14 +136,14 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
         if (window != null) {
             e(window);
         }
-        m.q.c();
+        m.s.c();
     }
 
     @Override // g.g
     public final void a() {
         this.X = true;
         d(false);
-        l();
+        m();
         this.a0 = new Configuration(this.e.getResources().getConfiguration());
         this.Y = true;
     }
@@ -223,7 +221,7 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
                         i11 = this.g0.e();
                     }
                 } else if (((UiModeManager) context.getApplicationContext().getSystemService("uimode")).getNightMode() != 0) {
-                    i11 = o(context).e();
+                    i11 = p(context).e();
                 }
             }
             i11 = i10;
@@ -332,7 +330,7 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
             z11 = true;
         }
         if (i10 == 0) {
-            o(context).l();
+            p(context).l();
         } else {
             n nVar = this.f0;
             if (nVar != null) {
@@ -373,7 +371,7 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
         if (!obtainStyledAttributes.hasValue(0) || (resourceId = obtainStyledAttributes.getResourceId(0, 0)) == 0) {
             drawable = null;
         } else {
-            m.q a2 = m.q.a();
+            m.s a2 = m.s.a();
             synchronized (a2) {
                 drawable = a2.a.f(resourceId, context, true);
             }
@@ -420,17 +418,17 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
     }
 
     public final void g(l.k kVar) {
-        m.h hVar;
+        m.i iVar;
         if (this.T) {
             return;
         }
         this.T = true;
         ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) this.s;
         actionBarOverlayLayout.f();
-        ActionMenuView actionMenuView = ((m3) actionBarOverlayLayout.e).a.a;
-        if (actionMenuView != null && (hVar = actionMenuView.J) != null) {
-            hVar.f();
-            m.d dVar = hVar.J;
+        ActionMenuView actionMenuView = ((p3) actionBarOverlayLayout.e).a.a;
+        if (actionMenuView != null && (iVar = actionMenuView.J) != null) {
+            iVar.f();
+            m.d dVar = iVar.J;
             if (dVar != null && dVar.b()) {
                 dVar.i.dismiss();
             }
@@ -444,13 +442,13 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
 
     public final void h(q qVar, boolean z10) {
         p pVar;
-        j1 j1Var;
-        m.h hVar;
-        if (z10 && qVar.a == 0 && (j1Var = this.s) != null) {
-            ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) j1Var;
+        l1 l1Var;
+        m.i iVar;
+        if (z10 && qVar.a == 0 && (l1Var = this.s) != null) {
+            ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) l1Var;
             actionBarOverlayLayout.f();
-            ActionMenuView actionMenuView = ((m3) actionBarOverlayLayout.e).a.a;
-            if (actionMenuView != null && (hVar = actionMenuView.J) != null && hVar.g()) {
+            ActionMenuView actionMenuView = ((p3) actionBarOverlayLayout.e).a.a;
+            if (actionMenuView != null && (iVar = actionMenuView.J) != null && iVar.g()) {
                 g(qVar.h);
                 return;
             }
@@ -496,9 +494,9 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
         boolean z10;
         boolean z11;
         ActionMenuView actionMenuView;
-        m.h hVar;
+        m.i iVar;
         t tVar = this.d;
-        if ((!(tVar instanceof r0.k) && !k3.s(tVar)) || (decorView = this.f.getDecorView()) == null || !u6.a(decorView, keyEvent)) {
+        if ((!(tVar instanceof r0.j) && !k3.s(tVar)) || (decorView = this.f.getDecorView()) == null || !t6.a(decorView, keyEvent)) {
             if (keyEvent.getKeyCode() == 82) {
                 m mVar = this.h;
                 Window.Callback callback = this.f.getCallback();
@@ -530,24 +528,24 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
                 if (keyCode == 82) {
                     if (this.x == null) {
                         q q10 = q(0);
-                        j1 j1Var = this.s;
+                        l1 l1Var = this.s;
                         Context context = this.e;
-                        if (j1Var != null) {
-                            ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) j1Var;
+                        if (l1Var != null) {
+                            ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) l1Var;
                             actionBarOverlayLayout.f();
-                            Toolbar toolbar = ((m3) actionBarOverlayLayout.e).a;
+                            Toolbar toolbar = ((p3) actionBarOverlayLayout.e).a;
                             if (toolbar.getVisibility() == 0 && (actionMenuView = toolbar.a) != null && actionMenuView.I && !ViewConfiguration.get(context).hasPermanentMenuKey()) {
                                 ActionBarOverlayLayout actionBarOverlayLayout2 = (ActionBarOverlayLayout) this.s;
                                 actionBarOverlayLayout2.f();
-                                ActionMenuView actionMenuView2 = ((m3) actionBarOverlayLayout2.e).a.a;
-                                if (actionMenuView2 == null || (hVar = actionMenuView2.J) == null || !hVar.g()) {
+                                ActionMenuView actionMenuView2 = ((p3) actionBarOverlayLayout2.e).a.a;
+                                if (actionMenuView2 == null || (iVar = actionMenuView2.J) == null || !iVar.g()) {
                                     if (!this.Z && w(q10, keyEvent)) {
                                         ActionBarOverlayLayout actionBarOverlayLayout3 = (ActionBarOverlayLayout) this.s;
                                         actionBarOverlayLayout3.f();
-                                        ActionMenuView actionMenuView3 = ((m3) actionBarOverlayLayout3.e).a.a;
+                                        ActionMenuView actionMenuView3 = ((p3) actionBarOverlayLayout3.e).a.a;
                                         if (actionMenuView3 != null) {
-                                            m.h hVar2 = actionMenuView3.J;
-                                            if (hVar2 != null) {
+                                            m.i iVar2 = actionMenuView3.J;
+                                            if (iVar2 != null) {
                                             }
                                         }
                                     }
@@ -555,10 +553,10 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
                                 } else {
                                     ActionBarOverlayLayout actionBarOverlayLayout4 = (ActionBarOverlayLayout) this.s;
                                     actionBarOverlayLayout4.f();
-                                    ActionMenuView actionMenuView4 = ((m3) actionBarOverlayLayout4.e).a.a;
+                                    ActionMenuView actionMenuView4 = ((p3) actionBarOverlayLayout4.e).a.a;
                                     if (actionMenuView4 != null) {
-                                        m.h hVar3 = actionMenuView4.J;
-                                        if (hVar3 != null) {
+                                        m.i iVar3 = actionMenuView4.J;
+                                        if (iVar3 != null) {
                                         }
                                     }
                                     z10 = false;
@@ -655,7 +653,7 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
         }
         this.R = obtainStyledAttributes.getBoolean(0, false);
         obtainStyledAttributes.recycle();
-        l();
+        m();
         this.f.getDecorView();
         LayoutInflater from = LayoutInflater.from(context);
         if (this.S) {
@@ -668,9 +666,9 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
             TypedValue typedValue = new TypedValue();
             context.getTheme().resolveAttribute(org.telegram.messenger.beta.R.attr.actionBarTheme, typedValue, true);
             viewGroup = (ViewGroup) LayoutInflater.from(typedValue.resourceId != 0 ? new k.c(context, typedValue.resourceId) : context).inflate(org.telegram.messenger.beta.R.layout.abc_screen_toolbar, (ViewGroup) null);
-            j1 j1Var = (j1) viewGroup.findViewById(org.telegram.messenger.beta.R.id.decor_content_parent);
-            this.s = j1Var;
-            j1Var.setWindowCallback(this.f.getCallback());
+            l1 l1Var = (l1) viewGroup.findViewById(org.telegram.messenger.beta.R.id.decor_content_parent);
+            this.s = l1Var;
+            l1Var.setWindowCallback(this.f.getCallback());
             if (this.P) {
                 ((ActionBarOverlayLayout) this.s).e(109);
             }
@@ -686,13 +684,13 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
         if (viewGroup == null) {
             throw new IllegalArgumentException("AppCompat does not support the current theme features: { windowActionBar: " + this.O + ", windowActionBarOverlay: " + this.P + ", android:windowIsFloating: " + this.R + ", windowActionModeOverlay: " + this.Q + ", windowNoTitle: " + this.S + " }");
         }
-        k6.h hVar = new k6.h(this, 22);
-        WeakHashMap weakHashMap = j0.a;
-        b0.i(viewGroup, hVar);
+        a4.l lVar = new a4.l(this, 21);
+        WeakHashMap weakHashMap = i0.a;
+        r0.a0.i(viewGroup, lVar);
         if (this.s == null) {
             this.K = (TextView) viewGroup.findViewById(org.telegram.messenger.beta.R.id.title);
         }
-        Method method = t3.a;
+        Method method = w3.a;
         try {
             Method method2 = viewGroup.getClass().getMethod("makeOptionalFitsSystemWindows", null);
             if (!method2.isAccessible()) {
@@ -721,24 +719,24 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
             }
         }
         this.f.setContentView(viewGroup);
-        contentFrameLayout.setAttachListener(new qb.c(this, 19));
+        contentFrameLayout.setAttachListener(new a6.m(this, 18));
         this.J = viewGroup;
         CharSequence charSequence = this.r;
         if (!TextUtils.isEmpty(charSequence)) {
-            j1 j1Var2 = this.s;
-            if (j1Var2 != null) {
-                j1Var2.setWindowTitle(charSequence);
+            l1 l1Var2 = this.s;
+            if (l1Var2 != null) {
+                l1Var2.setWindowTitle(charSequence);
             } else {
                 a0 a0Var = this.n;
                 if (a0Var != null) {
-                    m3 m3Var = (m3) a0Var.e;
-                    if (!m3Var.g) {
-                        Toolbar toolbar = m3Var.a;
-                        m3Var.h = charSequence;
-                        if ((m3Var.b & 8) != 0) {
+                    p3 p3Var = (p3) a0Var.e;
+                    if (!p3Var.g) {
+                        Toolbar toolbar = p3Var.a;
+                        p3Var.h = charSequence;
+                        if ((p3Var.b & 8) != 0) {
                             toolbar.setTitle(charSequence);
-                            if (m3Var.g) {
-                                j0.k(toolbar.getRootView(), charSequence);
+                            if (p3Var.g) {
+                                i0.k(toolbar.getRootView(), charSequence);
                             }
                         }
                     }
@@ -753,7 +751,7 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
         ContentFrameLayout contentFrameLayout2 = (ContentFrameLayout) this.J.findViewById(R.id.content);
         View decorView = this.f.getDecorView();
         contentFrameLayout2.h.set(decorView.getPaddingLeft(), decorView.getPaddingTop(), decorView.getPaddingRight(), decorView.getPaddingBottom());
-        WeakHashMap weakHashMap2 = j0.a;
+        WeakHashMap weakHashMap2 = i0.a;
         if (contentFrameLayout2.isLaidOut()) {
             contentFrameLayout2.requestLayout();
         }
@@ -782,13 +780,92 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
         s(108);
     }
 
-    public final void l() {
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0048, code lost:
+    
+        if (r6.g() != false) goto L20;
+     */
+    @Override // l.i
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void l(l.k kVar) {
+        ActionMenuView actionMenuView;
+        m.i iVar;
+        m.i iVar2;
+        m.i iVar3;
+        l1 l1Var = this.s;
+        if (l1Var != null) {
+            ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) l1Var;
+            actionBarOverlayLayout.f();
+            Toolbar toolbar = ((p3) actionBarOverlayLayout.e).a;
+            if (toolbar.getVisibility() == 0 && (actionMenuView = toolbar.a) != null && actionMenuView.I) {
+                if (ViewConfiguration.get(this.e).hasPermanentMenuKey()) {
+                    ActionBarOverlayLayout actionBarOverlayLayout2 = (ActionBarOverlayLayout) this.s;
+                    actionBarOverlayLayout2.f();
+                    ActionMenuView actionMenuView2 = ((p3) actionBarOverlayLayout2.e).a.a;
+                    if (actionMenuView2 != null) {
+                        m.i iVar4 = actionMenuView2.J;
+                        if (iVar4 != null) {
+                            if (iVar4.K == null) {
+                            }
+                        }
+                    }
+                }
+                Window.Callback callback = this.f.getCallback();
+                ActionBarOverlayLayout actionBarOverlayLayout3 = (ActionBarOverlayLayout) this.s;
+                actionBarOverlayLayout3.f();
+                ActionMenuView actionMenuView3 = ((p3) actionBarOverlayLayout3.e).a.a;
+                if (actionMenuView3 != null && (iVar2 = actionMenuView3.J) != null && iVar2.g()) {
+                    ActionBarOverlayLayout actionBarOverlayLayout4 = (ActionBarOverlayLayout) this.s;
+                    actionBarOverlayLayout4.f();
+                    ActionMenuView actionMenuView4 = ((p3) actionBarOverlayLayout4.e).a.a;
+                    if (actionMenuView4 != null && (iVar3 = actionMenuView4.J) != null) {
+                        iVar3.f();
+                    }
+                    if (this.Z) {
+                        return;
+                    }
+                    callback.onPanelClosed(108, q(0).h);
+                    return;
+                }
+                if (callback == null || this.Z) {
+                    return;
+                }
+                if (this.h0 && (1 & this.i0) != 0) {
+                    View decorView = this.f.getDecorView();
+                    h hVar = this.j0;
+                    decorView.removeCallbacks(hVar);
+                    hVar.run();
+                }
+                q q6 = q(0);
+                l.k kVar2 = q6.h;
+                if (kVar2 == null || q6.o || !callback.onPreparePanel(0, q6.g, kVar2)) {
+                    return;
+                }
+                callback.onMenuOpened(108, q6.h);
+                ActionBarOverlayLayout actionBarOverlayLayout5 = (ActionBarOverlayLayout) this.s;
+                actionBarOverlayLayout5.f();
+                ActionMenuView actionMenuView5 = ((p3) actionBarOverlayLayout5.e).a.a;
+                if (actionMenuView5 == null || (iVar = actionMenuView5.J) == null) {
+                    return;
+                }
+                iVar.l();
+                return;
+            }
+        }
+        q q10 = q(0);
+        q10.n = true;
+        h(q10, false);
+        u(q10, null);
+    }
+
+    public final void m() {
         if (this.f == null) {
             throw new IllegalStateException("We have not been given a Window");
         }
     }
 
-    public final Context m() {
+    public final Context n() {
         Context context;
         a0 r10 = r();
         if (r10 != null) {
@@ -809,115 +886,8 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
         return context == null ? this.e : context;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x0048, code lost:
-    
-        if (r6.g() != false) goto L20;
-     */
     @Override // l.i
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void n(l.k kVar) {
-        ActionMenuView actionMenuView;
-        m.h hVar;
-        m.h hVar2;
-        m.h hVar3;
-        j1 j1Var = this.s;
-        if (j1Var != null) {
-            ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) j1Var;
-            actionBarOverlayLayout.f();
-            Toolbar toolbar = ((m3) actionBarOverlayLayout.e).a;
-            if (toolbar.getVisibility() == 0 && (actionMenuView = toolbar.a) != null && actionMenuView.I) {
-                if (ViewConfiguration.get(this.e).hasPermanentMenuKey()) {
-                    ActionBarOverlayLayout actionBarOverlayLayout2 = (ActionBarOverlayLayout) this.s;
-                    actionBarOverlayLayout2.f();
-                    ActionMenuView actionMenuView2 = ((m3) actionBarOverlayLayout2.e).a.a;
-                    if (actionMenuView2 != null) {
-                        m.h hVar4 = actionMenuView2.J;
-                        if (hVar4 != null) {
-                            if (hVar4.K == null) {
-                            }
-                        }
-                    }
-                }
-                Window.Callback callback = this.f.getCallback();
-                ActionBarOverlayLayout actionBarOverlayLayout3 = (ActionBarOverlayLayout) this.s;
-                actionBarOverlayLayout3.f();
-                ActionMenuView actionMenuView3 = ((m3) actionBarOverlayLayout3.e).a.a;
-                if (actionMenuView3 != null && (hVar2 = actionMenuView3.J) != null && hVar2.g()) {
-                    ActionBarOverlayLayout actionBarOverlayLayout4 = (ActionBarOverlayLayout) this.s;
-                    actionBarOverlayLayout4.f();
-                    ActionMenuView actionMenuView4 = ((m3) actionBarOverlayLayout4.e).a.a;
-                    if (actionMenuView4 != null && (hVar3 = actionMenuView4.J) != null) {
-                        hVar3.f();
-                    }
-                    if (this.Z) {
-                        return;
-                    }
-                    callback.onPanelClosed(108, q(0).h);
-                    return;
-                }
-                if (callback == null || this.Z) {
-                    return;
-                }
-                if (this.h0 && (1 & this.i0) != 0) {
-                    View decorView = this.f.getDecorView();
-                    h hVar5 = this.j0;
-                    decorView.removeCallbacks(hVar5);
-                    hVar5.run();
-                }
-                q q6 = q(0);
-                l.k kVar2 = q6.h;
-                if (kVar2 == null || q6.o || !callback.onPreparePanel(0, q6.g, kVar2)) {
-                    return;
-                }
-                callback.onMenuOpened(108, q6.h);
-                ActionBarOverlayLayout actionBarOverlayLayout5 = (ActionBarOverlayLayout) this.s;
-                actionBarOverlayLayout5.f();
-                ActionMenuView actionMenuView5 = ((m3) actionBarOverlayLayout5.e).a.a;
-                if (actionMenuView5 == null || (hVar = actionMenuView5.J) == null) {
-                    return;
-                }
-                hVar.l();
-                return;
-            }
-        }
-        q q10 = q(0);
-        q10.n = true;
-        h(q10, false);
-        u(q10, null);
-    }
-
-    public final o o(Context context) {
-        if (this.f0 == null) {
-            if (androidx.biometric.e.e == null) {
-                Context applicationContext = context.getApplicationContext();
-                androidx.biometric.e.e = new androidx.biometric.e(applicationContext, (LocationManager) applicationContext.getSystemService("location"));
-            }
-            this.f0 = new n(this, androidx.biometric.e.e);
-        }
-        return this.f0;
-    }
-
-    /*  JADX ERROR: JadxRuntimeException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxRuntimeException: Can't find top splitter block for handler:B:68:0x01eb
-        	at jadx.core.utils.BlockUtils.getTopSplitterForHandler(BlockUtils.java:1179)
-        	at jadx.core.dex.visitors.regions.maker.ExcHandlersRegionMaker.collectHandlerRegions(ExcHandlersRegionMaker.java:53)
-        	at jadx.core.dex.visitors.regions.maker.ExcHandlersRegionMaker.process(ExcHandlersRegionMaker.java:38)
-        	at jadx.core.dex.visitors.regions.RegionMakerVisitor.visit(RegionMakerVisitor.java:27)
-        */
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    @Override // android.view.LayoutInflater.Factory2
-    public final android.view.View onCreateView(android.view.View r9, java.lang.String r10, android.content.Context r11, android.util.AttributeSet r12) {
-        /*
-            Method dump skipped, instructions count: 736
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: g.r.onCreateView(android.view.View, java.lang.String, android.content.Context, android.util.AttributeSet):android.view.View");
-    }
-
-    @Override // l.i
-    public final boolean p(l.k kVar, MenuItem menuItem) {
+    public final boolean o(l.k kVar, MenuItem menuItem) {
         q qVar;
         Window.Callback callback = this.f.getCallback();
         if (callback != null && !this.Z) {
@@ -942,6 +912,34 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
             }
         }
         return false;
+    }
+
+    /*  JADX ERROR: JadxRuntimeException in pass: RegionMakerVisitor
+        jadx.core.utils.exceptions.JadxRuntimeException: Can't find top splitter block for handler:B:68:0x01eb
+        	at jadx.core.utils.BlockUtils.getTopSplitterForHandler(BlockUtils.java:1179)
+        	at jadx.core.dex.visitors.regions.maker.ExcHandlersRegionMaker.collectHandlerRegions(ExcHandlersRegionMaker.java:53)
+        	at jadx.core.dex.visitors.regions.maker.ExcHandlersRegionMaker.process(ExcHandlersRegionMaker.java:38)
+        	at jadx.core.dex.visitors.regions.RegionMakerVisitor.visit(RegionMakerVisitor.java:27)
+        */
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    @Override // android.view.LayoutInflater.Factory2
+    public final android.view.View onCreateView(android.view.View r9, java.lang.String r10, android.content.Context r11, android.util.AttributeSet r12) {
+        /*
+            Method dump skipped, instructions count: 736
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: g.r.onCreateView(android.view.View, java.lang.String, android.content.Context, android.util.AttributeSet):android.view.View");
+    }
+
+    public final o p(Context context) {
+        if (this.f0 == null) {
+            if (androidx.biometric.e.e == null) {
+                Context applicationContext = context.getApplicationContext();
+                androidx.biometric.e.e = new androidx.biometric.e(applicationContext, (LocationManager) applicationContext.getSystemService("location"));
+            }
+            this.f0 = new n(this, androidx.biometric.e.e);
+        }
+        return this.f0;
     }
 
     public final q q(int i10) {
@@ -986,14 +984,14 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
             return;
         }
         View decorView = this.f.getDecorView();
-        WeakHashMap weakHashMap = j0.a;
+        WeakHashMap weakHashMap = i0.a;
         decorView.postOnAnimation(this.j0);
         this.h0 = true;
     }
 
     public final boolean t() {
-        k1 k1Var;
-        h3 h3Var;
+        m1 m1Var;
+        m.k3 k3Var;
         boolean z10 = this.W;
         this.W = false;
         q q6 = q(0);
@@ -1004,11 +1002,11 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
                 return true;
             }
             a0 r10 = r();
-            if (r10 == null || (k1Var = r10.e) == null || (h3Var = ((m3) k1Var).a.e0) == null || h3Var.b == null) {
+            if (r10 == null || (m1Var = r10.e) == null || (k3Var = ((p3) m1Var).a.e0) == null || k3Var.b == null) {
                 return false;
             }
-            h3 h3Var2 = ((m3) k1Var).a.e0;
-            l.m mVar = h3Var2 == null ? null : h3Var2.b;
+            m.k3 k3Var2 = ((p3) m1Var).a.e0;
+            l.m mVar = k3Var2 == null ? null : k3Var2.b;
             if (mVar != null) {
                 mVar.collapseActionView();
             }
@@ -1056,10 +1054,10 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
         p pVar = qVar.e;
         if (pVar == null || qVar.n) {
             if (pVar == null) {
-                Context m10 = m();
+                Context n10 = n();
                 TypedValue typedValue = new TypedValue();
-                Resources.Theme newTheme = m10.getResources().newTheme();
-                newTheme.setTo(m10.getTheme());
+                Resources.Theme newTheme = n10.getResources().newTheme();
+                newTheme.setTo(n10.getTheme());
                 newTheme.resolveAttribute(org.telegram.messenger.beta.R.attr.actionBarPopupTheme, typedValue, true);
                 int i12 = typedValue.resourceId;
                 if (i12 != 0) {
@@ -1072,7 +1070,7 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
                 } else {
                     newTheme.applyStyle(org.telegram.messenger.beta.R.style.Theme_AppCompat_CompactMenu, true);
                 }
-                k.c cVar = new k.c(m10, 0);
+                k.c cVar = new k.c(n10, 0);
                 cVar.getTheme().setTo(newTheme);
                 qVar.j = cVar;
                 TypedArray obtainStyledAttributes = cVar.obtainStyledAttributes(f.a.j);
@@ -1184,11 +1182,11 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean w(q qVar, KeyEvent keyEvent) {
-        j1 j1Var;
-        j1 j1Var2;
+        l1 l1Var;
+        l1 l1Var2;
         Resources.Theme theme;
-        j1 j1Var3;
-        j1 j1Var4;
+        l1 l1Var3;
+        l1 l1Var4;
         if (!this.Z) {
             boolean z10 = qVar.k;
             int i10 = qVar.a;
@@ -1204,10 +1202,10 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
                 qVar.g = callback.onCreatePanelView(i10);
             }
             boolean z11 = i10 == 0 || i10 == 108;
-            if (z11 && (j1Var4 = this.s) != null) {
-                ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) j1Var4;
+            if (z11 && (l1Var4 = this.s) != null) {
+                ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) l1Var4;
                 actionBarOverlayLayout.f();
-                ((m3) actionBarOverlayLayout.e).l = true;
+                ((p3) actionBarOverlayLayout.e).l = true;
             }
             if (qVar.g == null) {
                 l.k kVar = qVar.h;
@@ -1254,11 +1252,11 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
                             }
                         }
                     }
-                    if (z11 && (j1Var2 = this.s) != null) {
+                    if (z11 && (l1Var2 = this.s) != null) {
                         if (this.v == null) {
                             this.v = new ya.c(this, 19);
                         }
-                        ((ActionBarOverlayLayout) j1Var2).g(qVar.h, this.v);
+                        ((ActionBarOverlayLayout) l1Var2).g(qVar.h, this.v);
                     }
                     qVar.h.w();
                     if (callback.onCreatePanelMenu(i10, qVar.h)) {
@@ -1271,8 +1269,8 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
                             }
                             qVar.h = null;
                         }
-                        if (z11 && (j1Var = this.s) != null) {
-                            ((ActionBarOverlayLayout) j1Var).g(null, this.v);
+                        if (z11 && (l1Var = this.s) != null) {
+                            ((ActionBarOverlayLayout) l1Var).g(null, this.v);
                         }
                     }
                 }
@@ -1283,8 +1281,8 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
                     qVar.p = null;
                 }
                 if (!callback.onPreparePanel(0, qVar.g, qVar.h)) {
-                    if (z11 && (j1Var3 = this.s) != null) {
-                        ((ActionBarOverlayLayout) j1Var3).g(null, this.v);
+                    if (z11 && (l1Var3 = this.s) != null) {
+                        ((ActionBarOverlayLayout) l1Var3).g(null, this.v);
                     }
                     qVar.h.v();
                     return false;

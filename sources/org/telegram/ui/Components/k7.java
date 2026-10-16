@@ -14,7 +14,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k7 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -40,7 +40,7 @@ public final /* synthetic */ class k7 implements RequestDelegate {
     public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                m8.A((m8) this.e, this.b, (MessageObject) this.f, this.c, (Runnable) this.g, this.d, (TLRPC.Document) this.h, tL_error);
+                m8.B((m8) this.e, this.b, (MessageObject) this.f, this.c, (Runnable) this.g, this.d, (TLRPC.Document) this.h, tL_error);
                 break;
             default:
                 final zh0 zh0Var = (zh0) this.e;
@@ -56,7 +56,7 @@ public final /* synthetic */ class k7 implements RequestDelegate {
                         boolean z12;
                         zh0 zh0Var2 = zh0.this;
                         int i10 = zh0Var2.b;
-                        h71 h71Var = zh0Var2.c;
+                        i71 i71Var = zh0Var2.c;
                         zh0Var2.K = -1;
                         zh0Var2.v = false;
                         zh0Var2.H.setLoading(false);
@@ -68,14 +68,14 @@ public final /* synthetic */ class k7 implements RequestDelegate {
                             if (tL_error2 == null || !tL_error2.text.startsWith("FLOOD_WAIT_") || !tL_error2.text.contains("_OR_STARS_")) {
                                 if (tL_error2 != null && "PREMIUM_ACCOUNT_REQUIRED".equalsIgnoreCase(tL_error2.text)) {
                                     zh0Var2.d();
-                                    h71Var.W2.N(true);
+                                    i71Var.W2.N(true);
                                     return;
                                 } else {
                                     if (tL_error2 == null || !"BALANCE_TOO_LOW".equalsIgnoreCase(tL_error2.text)) {
                                         return;
                                     }
                                     zh0Var2.d();
-                                    h71Var.W2.N(true);
+                                    i71Var.W2.N(true);
                                     zh.n5.y(i10, false).q(true, true, new bi.g(zh0Var2, j11, 24));
                                     return;
                                 }
@@ -93,7 +93,7 @@ public final /* synthetic */ class k7 implements RequestDelegate {
                                 zh0Var2.d.stars_amount = parseInt2;
                             }
                             zh0Var2.d();
-                            h71Var.W2.N(true);
+                            i71Var.W2.N(true);
                             return;
                         }
                         TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject2;
@@ -149,11 +149,11 @@ public final /* synthetic */ class k7 implements RequestDelegate {
                         }
                         zh0Var2.d();
                         if (isEmpty) {
-                            h71Var.u0(0);
+                            i71Var.u0(0);
                         }
-                        h71Var.W2.N(z12);
+                        i71Var.W2.N(z12);
                         if (!arrayList2.isEmpty() && (!z14 ? !zh0Var2.s : !zh0Var2.h)) {
-                            AndroidUtilities.runOnUIThread(new di.x0(zh0Var2, z14, arrayList2, 24));
+                            AndroidUtilities.runOnUIThread(new di.x0(zh0Var2, z14, arrayList2, 22));
                         }
                         if (!z11 || j11 <= 0 || z14) {
                             return;

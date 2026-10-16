@@ -1,40 +1,64 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.text.TextPaint;
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
+import org.telegram.ui.Components.d91;
+import org.telegram.ui.Components.i71;
+import org.telegram.ui.Components.q51;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class x3 extends FrameLayout {
-    public final TextPaint a;
-    public final /* synthetic */ z4 b;
+public final class x3 extends d91 {
+    public final /* synthetic */ a5 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x3(z4 z4Var, Context context) {
-        super(context);
-        this.b = z4Var;
-        this.a = new TextPaint(1);
+    public x3(a5 a5Var) {
+        this.a = a5Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        float dp = AndroidUtilities.dp(14.0f);
-        TextPaint textPaint = this.a;
-        textPaint.setTextSize(dp);
-        textPaint.setTypeface(AndroidUtilities.bold());
-        int dp2 = AndroidUtilities.dp(14.0f);
-        int i12 = 0;
-        while (i12 < 2) {
-            dp2 = yh.c(24.0f, (int) Math.ceil(textPaint.measureText(LocaleController.getString(i12 == 0 ? R.string.WalletTransactions : R.string.WalletCollectibles))), dp2);
-            i12++;
+    @Override // org.telegram.ui.Components.d91
+    public final void b(View view, int i10, int i11) {
+        i71 i71Var = (i71) view;
+        boolean canScrollVertically = i71Var.canScrollVertically(-1);
+        i71Var.W2.N(false);
+        i71Var.a0();
+        if (canScrollVertically) {
+            return;
         }
-        this.b.h0.getLayoutParams().width = Math.min(dp2, Math.max(0, View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(32.0f)));
-        super.onMeasure(i10, i11);
+        i71Var.V2.h1(0, 0);
+    }
+
+    @Override // org.telegram.ui.Components.d91
+    public final View d(int i10) {
+        a5 a5Var = this.a;
+        i71[] i71VarArr = a5Var.p0;
+        i71 i71Var = i71VarArr[i10];
+        if (i71Var != null) {
+            return i71Var;
+        }
+        w3 w3Var = new w3(a5Var, new org.telegram.ui.Components.o(this, i10, 2), new j3(a5Var), new j3(a5Var));
+        w3Var.setFocusableInTouchMode(false);
+        w3Var.setClipChildren(false);
+        w3Var.setClipToPadding(false);
+        w3Var.p1();
+        w3Var.W2.r = false;
+        w3Var.j(new q51(this, i10));
+        i71VarArr[i10] = w3Var;
+        return w3Var;
+    }
+
+    @Override // org.telegram.ui.Components.d91
+    public final int e() {
+        return this.a.g0 ? 2 : 1;
+    }
+
+    @Override // org.telegram.ui.Components.d91
+    public final CharSequence g(int i10) {
+        return LocaleController.getString(i10 == 0 ? R.string.WalletTransactions : R.string.WalletCollectibles);
+    }
+
+    @Override // org.telegram.ui.Components.d91
+    public final int h(int i10) {
+        return i10;
     }
 }

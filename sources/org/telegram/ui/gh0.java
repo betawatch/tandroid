@@ -1,75 +1,67 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.util.SparseArray;
+import android.view.View;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gh0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ kh0 b;
+public final class gh0 implements bh.h {
+    public final /* synthetic */ jh0 a;
 
-    public /* synthetic */ gh0(kh0 kh0Var, int i10) {
-        this.a = i10;
-        this.b = kh0Var;
+    public /* synthetic */ gh0(jh0 jh0Var) {
+        this.a = jh0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ph.b[] bVarArr;
-        switch (this.a) {
-            case 0:
-                kh0.b0(this.b);
-                break;
-            case 1:
-                kh0 kh0Var = this.b;
-                kh0Var.getClass();
-                n9.m0(kh0Var);
-                break;
-            case 2:
-                kh0.c0(this.b);
-                break;
-            case 3:
-                kh0.a0(this.b);
-                break;
-            case 4:
-                AndroidUtilities.removeFromParent(this.b.P);
-                break;
-            case 5:
-                kh0 kh0Var2 = this.b;
-                kh0Var2.getClass();
-                new ik0(kh0Var2.getParentActivity(), kh0Var2).show();
-                break;
-            case 6:
-                kh0 kh0Var3 = this.b;
-                kh0Var3.getClass();
-                Bundle bundle = new Bundle();
-                bundle.putBoolean("needFinishFragment", false);
-                kh0Var3.presentFragment(new n9(bundle));
-                break;
-            default:
-                kh0 kh0Var4 = this.b;
-                if (kh0Var4.getParentActivity() != null && (bVarArr = kh0Var4.K) != null) {
-                    float width = ((r1.getWidth() / 2.0f) + (kh0Var4.b.getWidth() - ((bVarArr[4].getX() + kh0Var4.F.getX()) + r1.getWidth()))) / AndroidUtilities.density;
-                    di.d4 d4Var = new di.d4(kh0Var4.getParentActivity(), 3);
-                    kh0Var4.P = d4Var;
-                    d4Var.setTranslationY(AndroidUtilities.dp(4.0f) + (-kh0Var4.L));
-                    kh0Var4.P.setPadding(AndroidUtilities.dp(7.33f), 0, AndroidUtilities.dp(7.33f), 0);
-                    kh0Var4.P.p(false);
-                    kh0Var4.P.i();
-                    kh0Var4.P.s(LocaleController.getString(R.string.SwitchAccountHint));
-                    kh0Var4.P.l(1.0f, (-width) + 7.33f);
-                    kh0Var4.b.addView(kh0Var4.P, w7.a6.a(100.0f, 0.0f, 0.0f, 0.0f, 72.0f, -1, 87));
-                    di.d4 d4Var2 = kh0Var4.P;
-                    d4Var2.l0 = new gh0(kh0Var4, 4);
-                    d4Var2.d = 8000L;
-                    d4Var2.u();
-                    org.telegram.ui.Components.w40.r.b();
-                    break;
-                }
-                break;
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // bh.h
+    public void k(Canvas canvas) {
+        gh.d z10;
+        Canvas canvas2;
+        jh0 jh0Var = this.a;
+        RectF rectF = jh0Var.T;
+        int measuredWidth = jh0Var.fragmentView.getMeasuredWidth();
+        int measuredHeight = jh0Var.fragmentView.getMeasuredHeight();
+        canvas.drawColor(jh0Var.getThemedColor(org.telegram.ui.ActionBar.g6.d6));
+        SparseArray sparseArray = jh0Var.a;
+        int size = sparseArray.size();
+        int i10 = 0;
+        while (i10 < size) {
+            org.telegram.ui.ActionBar.m2 m2Var = ((hi1) sparseArray.valueAt(i10)).a;
+            View view = m2Var.fragmentView;
+            if (view != null && ih.j.c(view, jh0Var.b, rectF) && rectF.right > 0.0f && rectF.left < jh0Var.fragmentView.getMeasuredWidth() && (m2Var instanceof ih0) && (z10 = ((ih0) m2Var).z()) != null) {
+                canvas.save();
+                canvas.translate(rectF.left, rectF.top);
+                canvas2 = canvas;
+                z10.v(canvas2, 0.0f, 0.0f, measuredWidth, measuredHeight);
+                canvas2.restore();
+            } else {
+                canvas2 = canvas;
+            }
+            i10++;
+            canvas = canvas2;
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // bh.h
+    public void m0(bh.a aVar) {
+        jh0 jh0Var = this.a;
+        RectF rectF = jh0Var.T;
+        aVar.a(jh0Var.getThemedColor(org.telegram.ui.ActionBar.g6.d6));
+        aVar.b(SharedConfig.chatBlurEnabled());
+        SparseArray sparseArray = jh0Var.a;
+        int size = sparseArray.size();
+        for (int i10 = 0; i10 < size; i10++) {
+            org.telegram.ui.ActionBar.m2 m2Var = ((hi1) sparseArray.valueAt(i10)).a;
+            View view = m2Var.fragmentView;
+            if (view != null && ih.j.c(view, jh0Var.b, rectF) && rectF.right > 0.0f && rectF.left < jh0Var.fragmentView.getMeasuredWidth() && (m2Var instanceof ih0) && ((ih0) m2Var).z() != null) {
+                aVar.c(rectF.left);
+                aVar.c(rectF.top);
+                aVar.a(m2Var.getClassGuid());
+            }
         }
     }
 }

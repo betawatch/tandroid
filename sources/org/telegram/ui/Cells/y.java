@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.aq;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class y extends FrameLayout {
     public final org.telegram.ui.ActionBar.h5 a;
@@ -44,30 +44,30 @@ public final class y extends FrameLayout {
         h5Var.setTypeface(AndroidUtilities.bold());
         h5Var.setMaxLines(1);
         h5Var.setMaxLines(1);
-        h5Var.setGravity(16 | w7.a6.y());
-        addView(h5Var, w7.a6.i(-2.0f, -2.0f, 8388627, 81.0f, 0.0f, 61.0f, 0.0f));
+        h5Var.setGravity(16 | w7.z5.y());
+        addView(h5Var, w7.z5.i(-2.0f, -2.0f, 8388627, 81.0f, 0.0f, 61.0f, 0.0f));
         org.telegram.ui.Components.z9 z9Var = new org.telegram.ui.Components.z9(context);
         this.b = z9Var;
         z9Var.setAspectFit(true);
         z9Var.setLayerNum(1);
-        addView(z9Var, w7.a6.i(32.0f, 32.0f, 8388627, 23.0f, 0.0f, 0.0f, 0.0f));
+        addView(z9Var, w7.z5.i(32.0f, 32.0f, 8388627, 23.0f, 0.0f, 0.0f, 0.0f));
         if (z10) {
             aq aqVar = new aq(context, 26, null);
             this.d = aqVar;
             aqVar.setDrawUnchecked(false);
             aqVar.b(-1, -1, org.telegram.ui.ActionBar.g6.h7);
             aqVar.setDrawBackgroundAsArc(-1);
-            addView(aqVar, w7.a6.i(26.0f, 26.0f, 8388629, 0.0f, 0.0f, 22.0f, 0.0f));
+            addView(aqVar, w7.z5.i(26.0f, 26.0f, 8388629, 0.0f, 0.0f, 22.0f, 0.0f));
         } else {
             Switch r14 = new Switch(context, null);
             this.c = r14;
             r14.d(org.telegram.ui.ActionBar.g6.M6, org.telegram.ui.ActionBar.g6.N6, org.telegram.ui.ActionBar.g6.Q6, org.telegram.ui.ActionBar.g6.R6);
-            addView(r14, w7.a6.i(37.0f, 20.0f, 8388629, 0.0f, 0.0f, 22.0f, 0.0f));
+            addView(r14, w7.z5.i(37.0f, 20.0f, 8388629, 0.0f, 0.0f, 22.0f, 0.0f));
         }
         View view = new View(context);
         this.e = view;
         view.setBackground(org.telegram.ui.ActionBar.g6.L0(false));
-        addView(view, w7.a6.d(-1.0f, -1));
+        addView(view, w7.z5.d(-1.0f, -1));
         setWillNotDraw(false);
     }
 

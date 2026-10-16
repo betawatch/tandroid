@@ -25,7 +25,7 @@ import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class vm implements org.telegram.ui.Components.pg {
     public int a;
@@ -37,7 +37,24 @@ public final class vm implements org.telegram.ui.Components.pg {
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final boolean B0() {
+    public final void A(float f7) {
+        fo foVar = this.c;
+        if (f7 != 0.0f) {
+            foVar.D4 = true;
+        }
+        foVar.t9();
+        foVar.w9();
+        foVar.Qc(false, false);
+        foVar.X0.invalidate();
+        org.telegram.ui.Components.sc scVar = org.telegram.ui.Components.sc.w;
+        if (scVar == null || foVar.Zb == null) {
+            return;
+        }
+        scVar.l();
+    }
+
+    @Override // org.telegram.ui.Components.pg
+    public final boolean C0() {
         int i10;
         fo foVar = this.c;
         if ((foVar.getMessagesController().isForum(foVar.a()) && !foVar.h4) || (i10 = foVar.R3) == 9 || foVar.S3 <= 0) {
@@ -50,7 +67,7 @@ public final class vm implements org.telegram.ui.Components.pg {
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final void C(boolean z10) {
+    public final void D(boolean z10) {
         int i10;
         int i11;
         fo foVar = this.c;
@@ -67,7 +84,7 @@ public final class vm implements org.telegram.ui.Components.pg {
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final void D0(int i10, int i11) {
+    public final void E0(int i10, int i11) {
         org.telegram.ui.ActionBar.k kVar;
         fo foVar = this.c;
         if (foVar.i0 == null) {
@@ -75,9 +92,9 @@ public final class vm implements org.telegram.ui.Components.pg {
         }
         kVar = ((org.telegram.ui.ActionBar.m2) foVar).actionBar;
         final org.telegram.ui.ActionBar.y n10 = kVar.n();
-        org.telegram.ui.Components.kz0 kz0Var = foVar.d1;
-        if (kz0Var != null) {
-            kz0Var.e();
+        org.telegram.ui.Components.lz0 lz0Var = foVar.d1;
+        if (lz0Var != null) {
+            lz0Var.e();
         }
         final int i12 = 1;
         final int i13 = 0;
@@ -186,7 +203,7 @@ public final class vm implements org.telegram.ui.Components.pg {
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final void F0() {
+    public final void G0() {
         fo foVar = this.c;
         foVar.o9 = true;
         rm rmVar = foVar.A0;
@@ -196,12 +213,12 @@ public final class vm implements org.telegram.ui.Components.pg {
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final void G() {
+    public final void H() {
         this.c.Zb(true, false);
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final void H0() {
+    public final void I0() {
         this.c.oa(0, false);
     }
 
@@ -277,7 +294,7 @@ public final class vm implements org.telegram.ui.Components.pg {
                 foVar.getMediaDataController().cleanDraft(foVar.T5, j11, false);
             }
         }
-        foVar.Cb(false, null, null, null, null, z10, i10, null, false, j10, null, true);
+        foVar.Db(false, null, null, null, null, z10, i10, null, false, j10, null, true);
         sk skVar = foVar.Y;
         if (skVar != null && skVar.getEmojiView() != null && (f1Var = foVar.Y.getEmojiView().T0) != null) {
             if (f1Var.e) {
@@ -302,19 +319,11 @@ public final class vm implements org.telegram.ui.Components.pg {
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final void Q0() {
+    public final void R0() {
         fo foVar = this.c;
         int sendingMessageId = foVar.getSendMessagesHelper().getSendingMessageId(foVar.T5);
         if (sendingMessageId != 0) {
             this.c.j(sendingMessageId, 0, true, 0, true, 0);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void T1() {
-        org.telegram.ui.Components.kz0 kz0Var = this.c.d1;
-        if (kz0Var != null) {
-            kz0Var.e();
         }
     }
 
@@ -327,7 +336,39 @@ public final class vm implements org.telegram.ui.Components.pg {
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final void V1(int i10) {
+    public final void W1() {
+        org.telegram.ui.Components.lz0 lz0Var = this.c.d1;
+        if (lz0Var != null) {
+            lz0Var.e();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.pg
+    public final void X() {
+        fo foVar = this.c;
+        sk skVar = foVar.Y;
+        boolean z10 = skVar.z3;
+        org.telegram.ui.Components.fg fgVar = skVar.U0;
+        boolean z11 = false;
+        boolean z12 = fgVar != null && fgVar.getCurrentPage() == 0;
+        ne.b bVar = foVar.xc;
+        if (z10 && !z12) {
+            z11 = true;
+        }
+        bVar.a(z11, true);
+    }
+
+    @Override // org.telegram.ui.Components.pg
+    public final void Y0(int i10) {
+        int i11 = i10 == 0 ? 8 : 0;
+        fo foVar = this.c;
+        if (foVar.c3.getVisibility() != i11) {
+            foVar.c3.setVisibility(i11);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.pg
+    public final void Y1(int i10) {
         int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + AndroidUtilities.dp(72.0f);
         fo foVar = this.c;
         if (i10 < currentActionBarHeight) {
@@ -350,36 +391,22 @@ public final class vm implements org.telegram.ui.Components.pg {
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final void X() {
-        fo foVar = this.c;
-        sk skVar = foVar.Y;
-        boolean z10 = skVar.z3;
-        org.telegram.ui.Components.fg fgVar = skVar.U0;
-        boolean z11 = false;
-        boolean z12 = fgVar != null && fgVar.getCurrentPage() == 0;
-        ne.b bVar = foVar.xc;
-        if (z10 && !z12) {
-            z11 = true;
-        }
-        bVar.a(z11, true);
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void X0(int i10) {
-        int i11 = i10 == 0 ? 8 : 0;
-        fo foVar = this.c;
-        if (foVar.c3.getVisibility() != i11) {
-            foVar.c3.setVisibility(i11);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final int Y0() {
+    public final int Z0() {
         return this.c.X0.getHeight();
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final void Y1() {
+    public final void a0(boolean z10) {
+        this.c.Zb(false, z10);
+    }
+
+    @Override // org.telegram.ui.Components.pg
+    public final /* synthetic */ TL_stories.StoryItem b1() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.pg
+    public final void b2() {
         xm xmVar;
         int indexOfChild;
         fo foVar = this.c;
@@ -398,7 +425,7 @@ public final class vm implements org.telegram.ui.Components.pg {
                     org.telegram.ui.Components.v40 v40Var2 = new org.telegram.ui.Components.v40(9, foVar.getParentActivity(), foVar.ea, false);
                     foVar.f2 = v40Var2;
                     v40Var2.setVisibility(8);
-                    xmVar.addView(foVar.f2, indexOfChild + 1, w7.a6.a(-2.0f, 10.0f, 0.0f, 10.0f, 0.0f, -2, 51));
+                    xmVar.addView(foVar.f2, indexOfChild + 1, w7.z5.a(-2.0f, 10.0f, 0.0f, 10.0f, 0.0f, -2, 51));
                 }
                 TLRPC.UserFull userFull = foVar.a8;
                 if (userFull != null && userFull.voice_messages_forbidden) {
@@ -442,7 +469,12 @@ public final class vm implements org.telegram.ui.Components.pg {
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final void Z1(boolean z10) {
+    public final /* synthetic */ boolean c1(long j10) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.pg
+    public final void c2(boolean z10) {
         fo foVar = this.c;
         View view = foVar.w2;
         if (view != null) {
@@ -452,17 +484,7 @@ public final class vm implements org.telegram.ui.Components.pg {
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final void a0(boolean z10) {
-        this.c.Zb(false, z10);
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ TL_stories.StoryItem a1() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void a2(int i10, int i11, int i12, long j10, long j11, boolean z10) {
+    public final void d2(int i10, int i11, int i12, long j10, long j11, boolean z10) {
         boolean z11;
         fo foVar = this.c;
         if (foVar.b3 == null && CameraView.isCameraAllowed() && foVar.getParentActivity() != null) {
@@ -488,7 +510,7 @@ public final class vm implements org.telegram.ui.Components.pg {
             if (indexOfChild < 0) {
                 indexOfChild = foVar.X0.getChildCount();
             }
-            foVar.X0.addView(foVar.b3, Math.min(indexOfChild + 1, foVar.X0.getChildCount()), w7.a6.e(-1, -1, 51));
+            foVar.X0.addView(foVar.b3, Math.min(indexOfChild + 1, foVar.X0.getChildCount()), w7.z5.e(-1, -1, 51));
         }
         org.telegram.ui.Components.u60 u60Var = this.c.b3;
         if (u60Var != null) {
@@ -505,31 +527,18 @@ public final class vm implements org.telegram.ui.Components.pg {
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ boolean b1(long j10) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final boolean e1() {
+    public final boolean f1() {
         org.telegram.ui.Components.u60 u60Var = this.c.b3;
         return u60Var != null && u60Var.d();
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final void e2() {
-        fo foVar = this.c;
-        nj njVar = foVar.g2;
-        if (njVar != null) {
-            njVar.b(true);
-        }
-        org.telegram.ui.Components.v40 v40Var = foVar.i2;
-        if (v40Var != null) {
-            v40Var.b(true);
-        }
+    public final void h() {
+        this.c.zc();
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final void g1(CharSequence charSequence, boolean z10, boolean z11) {
+    public final void h1(CharSequence charSequence, boolean z10, boolean z11) {
         CharSequence charSequence2;
         org.telegram.ui.Components.v40 v40Var;
         TLRPC.ChatFull chatFull;
@@ -607,12 +616,20 @@ public final class vm implements org.telegram.ui.Components.pg {
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final void h() {
-        this.c.zc();
+    public final void h2() {
+        fo foVar = this.c;
+        nj njVar = foVar.g2;
+        if (njVar != null) {
+            njVar.b(true);
+        }
+        org.telegram.ui.Components.v40 v40Var = foVar.i2;
+        if (v40Var != null) {
+            v40Var.b(true);
+        }
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final void i1() {
+    public final void j1() {
         org.telegram.ui.Components.u60 u60Var = this.c.b3;
         if (u60Var != null) {
             u60Var.i();
@@ -620,27 +637,30 @@ public final class vm implements org.telegram.ui.Components.pg {
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final boolean j1() {
+    public final void k() {
+        org.telegram.ui.Components.lz0 lz0Var = this.c.d1;
+        if (lz0Var != null) {
+            lz0Var.f();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.pg
+    public final boolean k1() {
         fo foVar = this.c;
         TLRPC.User user = foVar.f;
         return (user == null || UserObject.isUserSelf(user) || foVar.f.bot || foVar.h != null || foVar.R3 != 0) ? false : true;
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final void k() {
-        org.telegram.ui.Components.kz0 kz0Var = this.c.d1;
-        if (kz0Var != null) {
-            kz0Var.f();
+    public final void m0() {
+        org.telegram.ui.Components.lz0 lz0Var = this.c.d1;
+        if (lz0Var != null) {
+            lz0Var.f();
         }
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final boolean l() {
-        return this.c.N6();
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void l1() {
+    public final void m1() {
         int i10;
         fo foVar = this.c;
         Activity parentActivity = foVar.getParentActivity();
@@ -654,46 +674,12 @@ public final class vm implements org.telegram.ui.Components.pg {
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final void m0() {
-        org.telegram.ui.Components.kz0 kz0Var = this.c.d1;
-        if (kz0Var != null) {
-            kz0Var.f();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void m1() {
+    public final void n1() {
         this.c.K6();
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final void m2() {
-        org.telegram.ui.ActionBar.k kVar;
-        fo foVar = this.c;
-        kVar = ((org.telegram.ui.ActionBar.m2) foVar).actionBar;
-        if (kVar.n0) {
-            return;
-        }
-        org.telegram.ui.ActionBar.u0 u0Var = foVar.h0;
-        if (u0Var != null) {
-            u0Var.setVisibility(0);
-        }
-        org.telegram.ui.ActionBar.x xVar = foVar.i0;
-        if (xVar != null && !this.b) {
-            xVar.f(8);
-        }
-        org.telegram.ui.ActionBar.x xVar2 = foVar.e0;
-        if (xVar2 != null) {
-            xVar2.f(8);
-        }
-        ls lsVar = foVar.d0;
-        if (lsVar != null) {
-            lsVar.b(false);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void n1() {
+    public final void o1() {
         int i10;
         int i11;
         fo foVar = this.c;
@@ -720,19 +706,29 @@ public final class vm implements org.telegram.ui.Components.pg {
         if (kkVar != null) {
             kkVar.animate().alpha((z10 || foVar.isInPreviewMode()) ? 0.0f : 1.0f).setInterpolator(org.telegram.ui.Components.es.f).start();
         }
-        org.telegram.ui.Components.kz0 kz0Var = foVar.d1;
-        if (kz0Var != null) {
-            kz0Var.setVisibility(0);
+        org.telegram.ui.Components.lz0 lz0Var = foVar.d1;
+        if (lz0Var != null) {
+            lz0Var.setVisibility(0);
             ViewPropertyAnimator animate = foVar.d1.animate();
             if (!z10 && !foVar.isInPreviewMode()) {
                 f7 = 1.0f;
             }
-            animate.alpha(f7).setInterpolator(org.telegram.ui.Components.es.f).withEndAction(new ah.t(22, this, z10)).start();
+            animate.alpha(f7).setInterpolator(org.telegram.ui.Components.es.f).withEndAction(new ah.t(21, this, z10)).start();
         }
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final void o1(View view, CharSequence charSequence, boolean z10) {
+    public final boolean p() {
+        return this.c.N6();
+    }
+
+    @Override // org.telegram.ui.Components.pg
+    public final un p0() {
+        return this.c.l5;
+    }
+
+    @Override // org.telegram.ui.Components.pg
+    public final void p1(View view, CharSequence charSequence, boolean z10) {
         fo foVar = this.c;
         foVar.Wb(view, charSequence, z10);
         org.telegram.ui.ActionBar.u0 u0Var = foVar.h0;
@@ -751,32 +747,38 @@ public final class vm implements org.telegram.ui.Components.pg {
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final un p0() {
-        return this.c.l5;
+    public final void q2() {
+        org.telegram.ui.ActionBar.k kVar;
+        fo foVar = this.c;
+        kVar = ((org.telegram.ui.ActionBar.m2) foVar).actionBar;
+        if (kVar.n0) {
+            return;
+        }
+        org.telegram.ui.ActionBar.u0 u0Var = foVar.h0;
+        if (u0Var != null) {
+            u0Var.setVisibility(0);
+        }
+        org.telegram.ui.ActionBar.x xVar = foVar.i0;
+        if (xVar != null && !this.b) {
+            xVar.f(8);
+        }
+        org.telegram.ui.ActionBar.x xVar2 = foVar.e0;
+        if (xVar2 != null) {
+            xVar2.f(8);
+        }
+        ls lsVar = foVar.d0;
+        if (lsVar != null) {
+            lsVar.b(false);
+        }
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final int q() {
-        return this.c.X0.R();
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void q1(CharSequence charSequence) {
+    public final void r1(CharSequence charSequence) {
         this.c.cb(charSequence, true);
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final void q2() {
-        fo foVar = this.c;
-        bi.w3 w3Var = foVar.J1;
-        if (w3Var != null) {
-            w3Var.L1(null, 0);
-        }
-        foVar.ca();
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final boolean r1() {
+    public final boolean s1() {
         MessagePreviewParams.Messages messages;
         MessagePreviewParams messagePreviewParams = this.c.f5;
         return (messagePreviewParams == null || (messages = messagePreviewParams.forwardMessages) == null || messages.messages.isEmpty()) ? false : true;
@@ -811,7 +813,22 @@ public final class vm implements org.telegram.ui.Components.pg {
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final void u1() {
+    public final void u2() {
+        fo foVar = this.c;
+        bi.w3 w3Var = foVar.J1;
+        if (w3Var != null) {
+            w3Var.L1(null, 0);
+        }
+        foVar.ca();
+    }
+
+    @Override // org.telegram.ui.Components.pg
+    public final int v() {
+        return this.c.X0.R();
+    }
+
+    @Override // org.telegram.ui.Components.pg
+    public final void v1() {
         int i10;
         fo foVar = this.c;
         i10 = ((org.telegram.ui.ActionBar.m2) foVar).currentAccount;
@@ -820,12 +837,12 @@ public final class vm implements org.telegram.ui.Components.pg {
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ TLRPC.Peer x() {
+    public final /* synthetic */ TLRPC.Peer y() {
         return null;
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final void y() {
+    public final void z() {
         boolean z10;
         fo foVar = this.c;
         if (foVar.y0 != null) {
@@ -839,12 +856,12 @@ public final class vm implements org.telegram.ui.Components.pg {
             AndroidUtilities.runOnUIThread(new gj(this, 7), 30L);
         }
         if (foVar.Y.r0()) {
-            foVar.Y.c1();
+            foVar.Y.b1();
             z10 = true;
         } else {
             z10 = false;
         }
-        foVar.Y.T0(true, true, z10);
+        foVar.Y.S0(true, true, z10);
         if (foVar.o5 != 0) {
             foVar.getConnectionsManager().cancelRequest(foVar.o5, true);
             foVar.o5 = 0;
@@ -855,7 +872,7 @@ public final class vm implements org.telegram.ui.Components.pg {
     }
 
     @Override // org.telegram.ui.Components.pg
-    public final void y1() {
+    public final void z1() {
         int i10;
         int i11;
         fo foVar = this.c;
@@ -867,22 +884,5 @@ public final class vm implements org.telegram.ui.Components.pg {
         long j11 = foVar.d4;
         i11 = ((org.telegram.ui.ActionBar.m2) foVar).classGuid;
         messagesController.sendTyping(j10, j11, 0, i11);
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void z(float f7) {
-        fo foVar = this.c;
-        if (f7 != 0.0f) {
-            foVar.D4 = true;
-        }
-        foVar.t9();
-        foVar.w9();
-        foVar.Qc(false, false);
-        foVar.X0.invalidate();
-        org.telegram.ui.Components.sc scVar = org.telegram.ui.Components.sc.w;
-        if (scVar == null || foVar.Zb == null) {
-            return;
-        }
-        scVar.l();
     }
 }

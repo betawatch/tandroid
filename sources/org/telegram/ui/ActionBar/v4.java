@@ -35,11 +35,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.ui.Components.du;
 import org.telegram.ui.ic1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class v4 {
     public static final h4 p = new h4();
@@ -123,7 +123,7 @@ public final class v4 {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(g6.m1(0.4f, w02), PorterDuff.Mode.SRC_IN));
         imageView.setVisibility(8);
-        linearLayout.addView(imageView, w7.a6.p(-2, -1, 0.0f, 0, 12, 0, 0, 0));
+        linearLayout.addView(imageView, w7.z5.p(-2, -1, 0.0f, 0, 12, 0, 0, 0));
         if (menuItem != null) {
             e(linearLayout, menuItem, v4Var.j != null);
         }
@@ -216,7 +216,7 @@ public final class v4 {
         s4Var.setAdapter((ListAdapter) arrayAdapter);
         t4Var.f.removeAllViews();
         t4Var.b.getWindowVisibleDisplayFrame(rect);
-        int min = Math.min(AndroidUtilities.dp(400.0f), yh.C(16.0f, 2, rect.width()));
+        int min = Math.min(AndroidUtilities.dp(400.0f), sk.B(16.0f, 2, rect.width()));
         LinkedList linkedList = new LinkedList(d);
         Iterator it = linkedList.iterator();
         int i12 = min;

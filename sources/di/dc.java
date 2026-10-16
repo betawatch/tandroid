@@ -1,8 +1,8 @@
 package di;
 
-import org.telegram.ui.s01;
+import org.telegram.ui.r01;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class dc extends fc {
     public final /* synthetic */ int g;
@@ -17,9 +17,9 @@ public final class dc extends fc {
     public final void e() {
         switch (this.g) {
             case 0:
-                s01 s01Var = (s01) this.h;
-                s01Var.Q = false;
-                s01Var.invalidate();
+                r01 r01Var = (r01) this.h;
+                r01Var.Q = false;
+                r01Var.invalidate();
                 break;
             case 1:
                 bi.q5 t10 = ((bi.sb) this.h).t();
@@ -39,9 +39,9 @@ public final class dc extends fc {
     public final void f(boolean z10) {
         switch (this.g) {
             case 0:
-                s01 s01Var = (s01) this.h;
-                s01Var.Q = true;
-                s01Var.invalidate();
+                r01 r01Var = (r01) this.h;
+                r01Var.Q = true;
+                r01Var.invalidate();
                 break;
             case 1:
                 bi.q5 t10 = ((bi.sb) this.h).t();

@@ -10,12 +10,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.qc0;
 import org.telegram.ui.Components.z40;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class a6 extends FrameLayout {
     public final TextView a;
@@ -33,20 +33,20 @@ public final class a6 extends FrameLayout {
         this.c = imageView;
         imageView.setFocusable(false);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, w7.a6.a(28.0f, 18.0f, 16.0f, 18.0f, 9.0f, 28, (LocaleController.isRTL ? 5 : 3) | 48));
+        addView(imageView, w7.z5.a(28.0f, 18.0f, 16.0f, 18.0f, 9.0f, 28, (LocaleController.isRTL ? 5 : 3) | 48));
         TextView textView = new TextView(context);
         this.a = textView;
-        yh.n(org.telegram.ui.ActionBar.g6.G6, c6Var, textView, 1, 16.0f);
+        sk.o(org.telegram.ui.ActionBar.g6.G6, c6Var, textView, 1, 16.0f);
         textView.setLines(1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         boolean z10 = LocaleController.isRTL;
-        addView(textView, w7.a6.a(-2.0f, z10 ? 66.0f : 64.0f, 8.0f, z10 ? 64.0f : 66.0f, 0.0f, -1, (z10 ? 5 : 3) | 48));
+        addView(textView, w7.z5.a(-2.0f, z10 ? 66.0f : 64.0f, 8.0f, z10 ? 64.0f : 66.0f, 0.0f, -1, (z10 ? 5 : 3) | 48));
         TextView textView2 = new TextView(context);
         this.b = textView2;
-        yh.n(org.telegram.ui.ActionBar.g6.z6, c6Var, textView2, 1, 13.0f);
+        sk.o(org.telegram.ui.ActionBar.g6.z6, c6Var, textView2, 1, 13.0f);
         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
         textView2.setLines(0);
         textView2.setMaxLines(0);
@@ -54,14 +54,14 @@ public final class a6 extends FrameLayout {
         textView2.setEllipsize(null);
         textView2.setLineSpacing(AndroidUtilities.dp(1.66f), 1.0f);
         boolean z11 = LocaleController.isRTL;
-        addView(textView2, w7.a6.a(-2.0f, z11 ? 66.0f : 64.0f, 31.0f, z11 ? 64.0f : 66.0f, 10.0f, -2, (z11 ? 5 : 3) | 48));
+        addView(textView2, w7.z5.a(-2.0f, z11 ? 66.0f : 64.0f, 31.0f, z11 ? 64.0f : 66.0f, 10.0f, -2, (z11 ? 5 : 3) | 48));
         Switch r32 = new Switch(context, c6Var);
         this.d = r32;
         int i10 = org.telegram.ui.ActionBar.g6.M6;
         int i11 = org.telegram.ui.ActionBar.g6.N6;
         int i12 = org.telegram.ui.ActionBar.g6.d6;
         r32.d(i10, i11, i12, i12);
-        addView(r32, w7.a6.a(40.0f, 21.0f, 10.0f, 19.0f, 0.0f, 37, (LocaleController.isRTL ? 3 : 5) | 48));
+        addView(r32, w7.z5.a(40.0f, 21.0f, 10.0f, 19.0f, 0.0f, 37, (LocaleController.isRTL ? 3 : 5) | 48));
         r32.setFocusable(false);
     }
 
@@ -87,11 +87,11 @@ public final class a6 extends FrameLayout {
         super.dispatchDraw(canvas);
         if (this.f) {
             org.telegram.ui.ActionBar.c6 c6Var = this.h;
-            Paint G = c6Var != null ? c6Var.G("paintDivider") : org.telegram.ui.ActionBar.g6.k0;
-            if (G == null) {
-                G = org.telegram.ui.ActionBar.g6.k0;
+            Paint F = c6Var != null ? c6Var.F("paintDivider") : org.telegram.ui.ActionBar.g6.k0;
+            if (F == null) {
+                F = org.telegram.ui.ActionBar.g6.k0;
             }
-            Paint paint = G;
+            Paint paint = F;
             if (paint != null) {
                 canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(19.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(19.0f) : 0), getMeasuredHeight() - 1, paint);
             }

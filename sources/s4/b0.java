@@ -9,7 +9,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public class b0 extends n0 {
     public int A;
@@ -372,7 +372,7 @@ public class b0 extends n0 {
 
     public boolean Y0() {
         RecyclerView recyclerView = this.b;
-        WeakHashMap weakHashMap = r0.j0.a;
+        WeakHashMap weakHashMap = r0.i0.a;
         return recyclerView.getLayoutDirection() == 1;
     }
 
@@ -642,7 +642,7 @@ public class b0 extends n0 {
             if (U != null && !U.r()) {
                 if (!U.h() || U.j() || b0Var.b.w.b) {
                     b0Var.q(r10);
-                    b0Var.a.v(r10);
+                    b0Var.a.w(r10);
                     eVar2.i(q6);
                     b0Var.b.f.a0(U);
                 } else {
@@ -991,7 +991,7 @@ public class b0 extends n0 {
     public final void j1(int i10) {
         e0 e0Var;
         if (i10 != 0 && i10 != 1) {
-            throw new IllegalArgumentException(i2.d.i(i10, "invalid orientation:"));
+            throw new IllegalArgumentException(i2.d.j(i10, "invalid orientation:"));
         }
         b(null);
         if (i10 != this.o || this.q == null) {

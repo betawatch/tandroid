@@ -1,66 +1,42 @@
 package p4;
 
-import android.os.Bundle;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class s {
-    public static final s c = new s(new Bundle(), null);
-    public final Bundle a;
-    public List b;
+public abstract class s {
+    public abstract void e(v vVar);
 
-    public s(Bundle bundle, ArrayList arrayList) {
-        this.a = bundle;
-        this.b = arrayList;
+    public void h(x xVar, v vVar, int i10) {
+        g(vVar);
     }
 
-    public static s b(Bundle bundle) {
-        if (bundle != null) {
-            return new s(bundle, null);
-        }
-        return null;
+    public void j(x xVar, v vVar, int i10) {
+        i();
     }
 
-    public final void a() {
-        if (this.b == null) {
-            ArrayList<String> stringArrayList = this.a.getStringArrayList("controlCategories");
-            this.b = stringArrayList;
-            if (stringArrayList == null || stringArrayList.isEmpty()) {
-                this.b = Collections.EMPTY_LIST;
-            }
-        }
+    public void a() {
     }
 
-    public final ArrayList c() {
-        a();
-        return new ArrayList(this.b);
+    public void b() {
     }
 
-    public final boolean d() {
-        a();
-        return this.b.isEmpty();
+    public void c() {
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof s)) {
-            return false;
-        }
-        s sVar = (s) obj;
-        a();
-        sVar.a();
-        return this.b.equals(sVar.b);
+    public void i() {
     }
 
-    public final int hashCode() {
-        a();
-        return this.b.hashCode();
+    public void d(v vVar) {
     }
 
-    public final String toString() {
-        return "MediaRouteSelector{ controlCategories=" + Arrays.toString(c().toArray()) + " }";
+    public void f(v vVar) {
+    }
+
+    public void g(v vVar) {
+    }
+
+    public void k(v vVar) {
+    }
+
+    public void l(z zVar) {
     }
 }

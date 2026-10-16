@@ -7,7 +7,7 @@ import java.io.InterruptedIOException;
 import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class l implements p {
     public final b2.p b;
@@ -28,17 +28,17 @@ public final class l implements p {
         this.c = j11;
     }
 
-    @Override // c3.p
-    public final void a(int i10, int i11, byte[] bArr) {
-        j(bArr, i10, i11, false);
-    }
-
-    public final void b(int i10) {
+    public final void a(int i10) {
         int i11 = this.f + i10;
         byte[] bArr = this.e;
         if (i11 > bArr.length) {
             this.e = Arrays.copyOf(this.e, m0.i(bArr.length * 2, 65536 + i11, i11 + TLObject.FLAG_19));
         }
+    }
+
+    @Override // c3.p
+    public final void b(int i10, int i11, byte[] bArr) {
+        j(bArr, i10, i11, false);
     }
 
     public final int c(byte[] bArr, int i10, int i11, int i12, boolean z10) {
@@ -87,10 +87,10 @@ public final class l implements p {
     }
 
     @Override // c3.p
-    public final int f(int i10, int i11, byte[] bArr) {
+    public final int g(int i10, int i11, byte[] bArr) {
         l lVar;
         int min;
-        b(i11);
+        a(i11);
         int i12 = this.h;
         int i13 = this.f;
         int i14 = i12 - i13;
@@ -111,7 +111,17 @@ public final class l implements p {
     }
 
     @Override // c3.p
-    public final boolean g(int i10, boolean z10) {
+    public final long getLength() {
+        return this.c;
+    }
+
+    @Override // c3.p
+    public final long getPosition() {
+        return this.d;
+    }
+
+    @Override // c3.p
+    public final boolean i(int i10, boolean z10) {
         int min = Math.min(this.h, i10);
         e(min);
         int i11 = min;
@@ -123,16 +133,6 @@ public final class l implements p {
             this.d += i11;
         }
         return i11 != -1;
-    }
-
-    @Override // c3.p
-    public final long getLength() {
-        return this.c;
-    }
-
-    @Override // c3.p
-    public final long getPosition() {
-        return this.d;
     }
 
     @Override // c3.p
@@ -161,7 +161,7 @@ public final class l implements p {
 
     @Override // c3.p
     public final void r(int i10) {
-        g(i10, false);
+        i(i10, false);
     }
 
     @Override // b2.p
@@ -212,7 +212,7 @@ public final class l implements p {
 
     @Override // c3.p
     public final boolean v(int i10, boolean z10) {
-        b(i10);
+        a(i10);
         int i11 = this.h - this.f;
         while (i11 < i10) {
             int i12 = i10;

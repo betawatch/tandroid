@@ -12,9 +12,9 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.b6;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class m0 extends FrameLayout {
     public final wh.n a;
@@ -37,7 +37,7 @@ public final class m0 extends FrameLayout {
         nVar.setTextSize(1, 14.0f);
         nVar.setTypeface(AndroidUtilities.bold());
         NotificationCenter.listenEmojiLoading(nVar);
-        addView(nVar, a6.e(-2, -2, 17));
+        addView(nVar, z5.e(-2, -2, 17));
         NotificationCenter.listenEmojiLoading(nVar);
         setTag(keyboardButton);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
@@ -56,7 +56,7 @@ public final class m0 extends FrameLayout {
         } else {
             imageView.setVisibility(8);
         }
-        addView(imageView, a6.a(12.0f, 0.0f, 8.0f, 8.0f, 0.0f, 12, 53));
+        addView(imageView, z5.a(12.0f, 0.0f, 8.0f, 8.0f, 0.0f, 12, 53));
         nVar.setText(spannableStringBuilder);
     }
 

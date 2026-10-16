@@ -1,32 +1,127 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.graphics.Outline;
-import android.view.View;
-import android.view.ViewOutlineProvider;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class ot0 extends ViewOutlineProvider {
+public final class ot0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ PhotoViewer b;
 
-    public /* synthetic */ ot0(Object obj, float f7, int i10) {
+    public /* synthetic */ ot0(PhotoViewer photoViewer, int i10) {
         this.a = i10;
-        this.c = obj;
-        this.b = f7;
+        this.b = photoViewer;
     }
 
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        switch (this.a) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        org.telegram.ui.Components.vi viVar;
+        int i10 = this.a;
+        PhotoViewer photoViewer = this.b;
+        switch (i10) {
             case 0:
-                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), (1.0f / this.b) * ((Float) ((ValueAnimator) this.c).getAnimatedValue()).floatValue() * AndroidUtilities.dp(10.0f));
+                photoViewer.p6 = null;
+                org.telegram.ui.Components.uf0 uf0Var = photoViewer.C1;
+                if (uf0Var != null) {
+                    if (uf0Var.b.j()) {
+                        photoViewer.a1.setColorFilter(new PorterDuffColorFilter(photoViewer.z1(org.telegram.ui.ActionBar.g6.zf), PorterDuff.Mode.MULTIPLY));
+                    } else {
+                        photoViewer.a1.setColorFilter((ColorFilter) null);
+                    }
+                    photoViewer.g6 = 0.0f;
+                    photoViewer.e0.invalidate();
+                    break;
+                }
+                break;
+            case 1:
+                photoViewer.t3 = null;
+                break;
+            case 2:
+                Drawable[] drawableArr = PhotoViewer.U8;
+                photoViewer.g3();
+                break;
+            case 3:
+                photoViewer.L1.o0(false);
+                gu0 gu0Var = photoViewer.L1;
+                gu0Var.u1.setTypeface(qg.s0.e(gu0Var.P1).j);
+                gu0Var.Z0.setVisibility(0);
+                gu0Var.W0.setVisibility(0);
+                gu0Var.X0.setVisibility(0);
+                org.telegram.ui.Components.fe0 fe0Var = photoViewer.y4;
+                int childCount = fe0Var.getChildCount();
+                for (int i11 = 0; i11 < childCount; i11++) {
+                    fe0Var.getChildAt(i11).setVisibility(4);
+                }
+                photoViewer.p6 = null;
+                photoViewer.u4 = 3;
+                photoViewer.f1().L.b(photoViewer.u4 != 0);
+                di.h4 h4Var = photoViewer.K1;
+                if (h4Var != null) {
+                    h4Var.b(photoViewer.u4 != 3);
+                }
+                photoViewer.o6 = -1;
+                float r22 = photoViewer.r2(false);
+                photoViewer.a6 = r22;
+                photoViewer.e6 = r22;
+                photoViewer.c6 = 0.0f;
+                photoViewer.d6 = 0.0f;
+                photoViewer.w3(r22);
+                photoViewer.t2 = true;
+                photoViewer.e0.invalidate();
+                hv0 hv0Var = photoViewer.d;
+                if (hv0Var == null || !hv0Var.P()) {
+                    photoViewer.S1();
+                    break;
+                }
+                break;
+            case 4:
+                AnimatorSet animatorSet = photoViewer.B1;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    photoViewer.o1.setVisibility(8);
+                    photoViewer.B1 = null;
+                    break;
+                }
+                break;
+            case 5:
+                AndroidUtilities.runOnUIThread(new xk0(this, 21));
+                break;
+            case 6:
+                photoViewer.m6 = 1.0f;
+                Runnable runnable = photoViewer.p4;
+                if (runnable != null) {
+                    fo foVar = photoViewer.l4;
+                    if (foVar == null && (viVar = photoViewer.a2) != null) {
+                        org.telegram.ui.ActionBar.m2 m2Var = viVar.f0;
+                        if (m2Var instanceof fo) {
+                            foVar = (fo) m2Var;
+                        }
+                    }
+                    if (foVar != null) {
+                        foVar.k8(runnable);
+                        break;
+                    } else {
+                        runnable.run();
+                        photoViewer.p4 = null;
+                        break;
+                    }
+                }
+                break;
+            case 7:
+                photoViewer.p6 = null;
+                photoViewer.e0.invalidate();
+                break;
+            case 8:
+                photoViewer.y3[0].setTag(null);
                 break;
             default:
-                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), (1.0f / this.b) * (1.0f - ((PhotoViewer) this.c).W) * AndroidUtilities.dp(10.0f));
+                photoViewer.y3[0].setTag(null);
                 break;
         }
     }

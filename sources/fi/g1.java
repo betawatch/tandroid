@@ -25,11 +25,11 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasskeysActivity;
 import org.telegram.ui.PrivacySettingsActivity;
 import org.telegram.ui.q6;
-import org.telegram.ui.ss0;
-import org.telegram.ui.tu0;
+import org.telegram.ui.su0;
 import org.telegram.ui.v5;
+import org.telegram.ui.yw0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g1 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -95,7 +95,7 @@ public final /* synthetic */ class g1 implements Utilities.Callback2 {
                     break;
                 } else if (arrayList != null) {
                     if (arrayList.isEmpty()) {
-                        org.telegram.messenger.q.r(R.string.CommunityNoChatsToAdd, zc.a0(m2Var), R.raw.info, 36);
+                        org.telegram.messenger.g0.q(R.string.CommunityNoChatsToAdd, zc.a0(m2Var), R.raw.info, 36);
                         break;
                     } else if (arrayList.isEmpty()) {
                         zc.a0(m2Var).Q(R.raw.info, 36, "").j();
@@ -142,7 +142,7 @@ public final /* synthetic */ class g1 implements Utilities.Callback2 {
                     if (!z11) {
                         MessagesController.getInstance(i11).generateJoinMessage(chat2.id, true);
                     }
-                    AndroidUtilities.runOnUIThread(new tu0(f1Var, 5));
+                    AndroidUtilities.runOnUIThread(new su0(f1Var, 5));
                     AndroidUtilities.runOnUIThread(new ah.g(i11, chat2, 16), 1000L);
                     MessagesStorage messagesStorage = MessagesStorage.getInstance(i11);
                     long j11 = chat2.id;
@@ -239,7 +239,7 @@ public final /* synthetic */ class g1 implements Utilities.Callback2 {
                 if (textView != null && wallettransaction != null) {
                     long j12 = wallettransaction.fee;
                     if (j12 > 0) {
-                        textView.setText(org.telegram.ui.Wallet.z4.l0(this.b, j12, c6Var));
+                        textView.setText(org.telegram.ui.Wallet.a5.l0(this.b, j12, c6Var));
                         break;
                     }
                 }
@@ -253,7 +253,7 @@ public final /* synthetic */ class g1 implements Utilities.Callback2 {
                 if (updates2 != null && tL_error3 == null) {
                     MessagesController.getInstance(this.b).lambda$processUpdates$377(updates2, false);
                 }
-                AndroidUtilities.runOnUIThread(new ss0(m2Var2, tL_error3, cVar, a2Var2, 27));
+                AndroidUtilities.runOnUIThread(new yw0(m2Var2, tL_error3, cVar, a2Var2, 27));
                 break;
         }
     }

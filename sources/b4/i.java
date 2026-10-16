@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLObject;
 import z3.m;
 import z3.n;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class i implements n {
     public static final byte[] n = {0, 7, 8, 15};
@@ -456,24 +456,12 @@ public final class i implements n {
     }
 
     @Override // z3.n
-    public final int h0() {
+    public final int X() {
         return 2;
     }
 
     @Override // z3.n
-    public final void reset() {
-        h hVar = this.f;
-        hVar.c.clear();
-        hVar.d.clear();
-        hVar.e.clear();
-        hVar.f.clear();
-        hVar.g.clear();
-        hVar.h = null;
-        hVar.i = null;
-    }
-
-    @Override // z3.n
-    public final void u0(byte[] bArr, int i10, int i11, m mVar, j jVar) {
+    public final void m0(byte[] bArr, int i10, int i11, m mVar, j jVar) {
         h hVar;
         boolean z10;
         z3.b bVar;
@@ -775,7 +763,19 @@ public final class i implements n {
     }
 
     @Override // z3.n
-    public final /* synthetic */ z3.e w(int i10, int i11, byte[] bArr) {
+    public final void reset() {
+        h hVar = this.f;
+        hVar.c.clear();
+        hVar.d.clear();
+        hVar.e.clear();
+        hVar.f.clear();
+        hVar.g.clear();
+        hVar.h = null;
+        hVar.i = null;
+    }
+
+    @Override // z3.n
+    public final /* synthetic */ z3.e x(int i10, int i11, byte[] bArr) {
         return t8.b.a(this, bArr, i11);
     }
 }

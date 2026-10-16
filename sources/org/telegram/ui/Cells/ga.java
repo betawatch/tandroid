@@ -19,7 +19,7 @@ import org.telegram.ui.Components.cd0;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.io;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class ga extends LinearLayout {
     public org.telegram.ui.Components.x9 a;
@@ -463,14 +463,14 @@ public class ga extends LinearLayout {
                 }
                 int i16 = i13;
                 u1VarArr[i12] = new fa(this, context2, i14, c6Var2, context, i16);
-                this.e[i12].setDelegate(new ji.h5(this, 11));
+                this.e[i12].setDelegate(new ji.w4(this, 11));
                 u1 u1Var = this.e[i12];
                 u1Var.N7 = (i16 == 2 || i16 == 4) ? 1 : i11;
                 u1Var.setFullyDraw(true);
                 MessageObject messageObject8 = i12 == 0 ? messageObject2 : messageObject;
                 if (messageObject8 != null) {
                     this.e[i12].X3(messageObject8, null, false, false, false, false);
-                    addView(this.e[i12], w7.a6.n(-1, -2));
+                    addView(this.e[i12], w7.z5.n(-1, -2));
                 }
                 i12++;
                 context2 = context;

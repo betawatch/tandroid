@@ -3,10 +3,10 @@ package r4;
 import android.graphics.Rect;
 import android.view.Choreographer;
 import java.util.ArrayList;
-import w7.s;
+import w7.r;
 import zf.y;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Choreographer.FrameCallback {
     public final /* synthetic */ int a;
@@ -40,9 +40,9 @@ public final /* synthetic */ class e implements Choreographer.FrameCallback {
                         }
                     }
                     if (aVar2.c != 0) {
-                        bVar.d(s.a(aVar2.b() / 0.95f, 0.0f, 1.0f));
+                        bVar.d(r.a(aVar2.b() / 0.95f, 0.0f, 1.0f));
                     } else if (aVar.c != 0) {
-                        bVar.d(s.a(1.0f - (aVar.b() / 0.95f), 0.0f, 1.0f));
+                        bVar.d(r.a(1.0f - (aVar.b() / 0.95f), 0.0f, 1.0f));
                     }
                     bVar.l.postFrameCallback(bVar.m);
                     break;

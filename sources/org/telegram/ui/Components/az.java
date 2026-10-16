@@ -16,10 +16,10 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class az extends lm0 {
-    public sk E;
+    public vm E;
     public boolean F;
     public int G;
     public int H;
@@ -248,9 +248,9 @@ public final class az extends lm0 {
         if (czVar != null) {
             czVar.a(false);
         }
-        sk skVar = this.E;
-        if (skVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(skVar);
+        vm vmVar = this.E;
+        if (vmVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(vmVar);
         }
         if (!TextUtils.isEmpty(str)) {
             String lowerCase = str.toLowerCase();
@@ -258,9 +258,9 @@ public final class az extends lm0 {
             if (TextUtils.isEmpty(lowerCase)) {
                 return;
             }
-            sk skVar2 = new sk(23, this, str);
-            this.E = skVar2;
-            AndroidUtilities.runOnUIThread(skVar2, z10 ? 300L : 0L);
+            vm vmVar2 = new vm(18, this, str);
+            this.E = vmVar2;
+            AndroidUtilities.runOnUIThread(vmVar2, z10 ? 300L : 0L);
             return;
         }
         this.w = null;

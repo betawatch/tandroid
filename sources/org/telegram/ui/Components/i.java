@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -44,8 +44,8 @@ public final /* synthetic */ class i implements View.OnLongClickListener {
                 if (i10 != 1 && i10 != 3 && i10 != 8) {
                     return false;
                 }
-                org.telegram.ui.hj0 hj0Var = new org.telegram.ui.hj0(chatActivityEnterView.getContext(), c6Var);
-                hj0Var.h0 = true;
+                org.telegram.ui.gj0 gj0Var = new org.telegram.ui.gj0(chatActivityEnterView.getContext(), c6Var);
+                gj0Var.h0 = true;
                 ArrayList arrayList = new ArrayList();
                 if (groupedMessages != null) {
                     int i11 = 0;
@@ -56,16 +56,16 @@ public final /* synthetic */ class i implements View.OnLongClickListener {
                 } else {
                     arrayList.add(chatActivityEnterView.e0(messageObject, true));
                 }
-                hj0Var.q(arrayList);
-                m80 F = m80.F(chatActivityEnterView.m1, c6Var, chatActivityEnterView.F1);
+                gj0Var.q(arrayList);
+                l80 F = l80.F(chatActivityEnterView.m1, c6Var, chatActivityEnterView.F1);
                 uc0 uc0Var = new uc0(chatActivityEnterView.getContext(), R.raw.position_below, LocaleController.getString(R.string.CaptionAbove), R.raw.position_above, LocaleController.getString(R.string.CaptionBelow), chatActivityEnterView.W3);
                 uc0Var.a(!chatActivityEnterView.R4, false);
-                uc0Var.setOnClickListener(new bi.b5(chatActivityEnterView, arrayList, uc0Var, hj0Var, 10));
+                uc0Var.setOnClickListener(new bi.b5(chatActivityEnterView, arrayList, uc0Var, gj0Var, 10));
                 F.q(uc0Var);
                 F.Y();
-                hj0Var.p(F);
-                hj0Var.r(chatActivityEnterView.F1, false, new bi.b5(chatActivityEnterView, groupedMessages, messageObject, hj0Var, 11));
-                hj0Var.show();
+                gj0Var.p(F);
+                gj0Var.r(chatActivityEnterView.F1, false, new bi.b5(chatActivityEnterView, groupedMessages, messageObject, gj0Var, 11));
+                gj0Var.show();
                 return true;
         }
     }

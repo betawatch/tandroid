@@ -14,10 +14,10 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class a extends FrameLayout {
     public final ImageView a;
@@ -36,7 +36,7 @@ public final class a extends FrameLayout {
         Paint paint2 = new Paint(1);
         this.d = paint2;
         this.h = 1.0f;
-        w7.c6.a(this);
+        w7.b6.a(this);
         org.telegram.ui.Components.r6 r6Var = new org.telegram.ui.Components.r6(false, true, true);
         this.b = r6Var;
         r6Var.u(-9866632);
@@ -53,17 +53,17 @@ public final class a extends FrameLayout {
         jVar.invalidateSelf();
         jVar.f = AndroidUtilities.dp(1.0f);
         frameLayout.setBackground(jVar);
-        addView(frameLayout, w7.a6.e(40, 40, 17));
+        addView(frameLayout, w7.z5.e(40, 40, 17));
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.menu_comments);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(-2960428, mode));
-        frameLayout.addView(imageView, w7.a6.e(20, 20, 17));
+        frameLayout.addView(imageView, w7.z5.e(20, 20, 17));
         ImageView imageView2 = new ImageView(context);
         this.a = imageView2;
         imageView2.setImageResource(R.drawable.menu_comments_arrow);
         imageView2.setColorFilter(new PorterDuffColorFilter(-2960428, mode));
-        frameLayout.addView(imageView2, w7.a6.e(20, 20, 17));
+        frameLayout.addView(imageView2, w7.z5.e(20, 20, 17));
         imageView2.setPivotX(AndroidUtilities.dp(10.27f));
         imageView2.setPivotY(AndroidUtilities.dp(9.58f));
     }
@@ -75,7 +75,7 @@ public final class a extends FrameLayout {
         this.e = z10;
         ImageView imageView = this.a;
         if (z11) {
-            yh.s(imageView.animate().rotation(z10 ? 0.0f : 180.0f), es.h, 420L);
+            sk.t(imageView.animate().rotation(z10 ? 0.0f : 180.0f), es.h, 420L);
         } else {
             imageView.setRotation(z10 ? 0.0f : 180.0f);
         }
@@ -115,7 +115,7 @@ public final class a extends FrameLayout {
             this.n = ofFloat;
             ofFloat.addUpdateListener(new ah.c0(this, 1));
             this.n.addListener(new ah.b(this, 3));
-            org.telegram.ui.Cells.d0.l(2.5f, this.n);
+            sk.l(2.5f, this.n);
             this.n.setDuration(200L);
             this.n.start();
             this.f = i10;

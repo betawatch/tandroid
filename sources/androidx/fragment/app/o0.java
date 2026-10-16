@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class o0 {
     public final qf.b a;
@@ -55,7 +55,7 @@ public final class o0 {
         j0Var.I = false;
         j0Var.O.i = false;
         j0Var.u(4);
-        this.a.C(rVar, false);
+        this.a.D(rVar, false);
     }
 
     public final void b() {
@@ -229,7 +229,7 @@ public final class o0 {
             return;
         }
         qf.b bVar = this.a;
-        bVar.L(rVar, false);
+        bVar.M(rVar, false);
         rVar.L.R();
         rVar.a = 1;
         rVar.U = false;
@@ -377,13 +377,13 @@ public final class o0 {
         if (!rVar.U) {
             throw new v0("Fragment " + rVar + " did not call through to super.onDestroyView()");
         }
-        a0.m mVar = ((w1.b) new androidx.biometric.e(rVar.f(), w1.b.f).m(w1.b.class)).d;
+        a0.m mVar = ((w1.b) new androidx.biometric.e(rVar.f(), w1.b.f).k(w1.b.class)).d;
         int i10 = mVar.c;
         for (int i11 = 0; i11 < i10; i11++) {
             ((w1.a) mVar.b[i11]).k();
         }
         rVar.H = false;
-        this.a.R(rVar, false);
+        this.a.U(rVar, false);
         rVar.V = null;
         rVar.e0.j(null);
         rVar.E = false;
@@ -617,7 +617,7 @@ public final class o0 {
         j0Var.I = false;
         j0Var.O.i = false;
         j0Var.u(7);
-        this.a.M(rVar, false);
+        this.a.N(rVar, false);
         this.b.s(rVar.e, null);
         rVar.b = null;
         rVar.c = null;
@@ -662,7 +662,7 @@ public final class o0 {
         rVar.U = false;
         rVar.I();
         if (rVar.U) {
-            this.a.Q(rVar, false);
+            this.a.S(rVar, false);
             return;
         }
         throw new v0("Fragment " + rVar + " did not call through to super.onStop()");

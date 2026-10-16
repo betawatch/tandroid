@@ -2,7 +2,6 @@ package oa;
 
 import a3.n0;
 import ah.t;
-import android.content.Context;
 import android.text.style.CharacterStyle;
 import android.util.Log;
 import b2.b2;
@@ -12,10 +11,11 @@ import c3.i0;
 import c3.q;
 import c5.c0;
 import com.google.android.gms.internal.cast.z5;
+import com.google.android.gms.tasks.OnFailureListener;
 import g2.j;
 import g2.u;
 import g2.x;
-import gb.o;
+import gb.p;
 import j$.util.DesugarCollections;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.io.FileNotFoundException;
@@ -30,7 +30,6 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 import l.w;
-import li.a0;
 import org.json.JSONObject;
 import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.MediaDataController;
@@ -39,21 +38,22 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Cells.d0;
+import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.b6;
 import org.telegram.ui.Components.hh;
 import org.telegram.ui.Components.ti;
-import org.telegram.ui.wv0;
+import org.telegram.ui.Wallet.k5;
+import org.telegram.ui.vv0;
 import y2.k;
 import z3.l;
 import z3.n;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a, dg.a, ea.c, o, ti, w, r9.d, l1, n5.b, r4.c, l {
+public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a, dg.a, ea.c, p, ti, w, r9.d, l1, n5.b, r4.c, OnFailureListener, l {
     public static d b;
     public static d c;
     public final /* synthetic */ int a;
@@ -94,7 +94,7 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
         return Calendar.getInstance();
     }
 
-    public static k4.d x3(a0 a0Var, c0 c0Var) {
+    public static k4.d x3(k5 k5Var, c0 c0Var) {
         IOException iOException = (IOException) c0Var.c;
         if (!(iOException instanceof x)) {
             return null;
@@ -103,10 +103,10 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
         if (i10 != 403 && i10 != 404 && i10 != 410 && i10 != 416 && i10 != 500 && i10 != 503) {
             return null;
         }
-        if (a0Var.b(1)) {
+        if (k5Var.b(1)) {
             return new k4.d(1, 300000L);
         }
-        if (a0Var.b(2)) {
+        if (k5Var.b(2)) {
             return new k4.d(2, 60000L);
         }
         return null;
@@ -124,52 +124,13 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
         return Math.min((c0Var.b - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
     }
 
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void A(u1 u1Var) {
-        int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void A0(u1 u1Var, float f7, float f10) {
-        int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void A1(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
-        int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void B(u1 u1Var) {
-        int i10 = this.a;
-    }
-
-    @Override // ea.c
-    public ea.a B0(t7.u uVar, JSONObject jSONObject) {
-        jSONObject.optInt("settings_version", 0);
-        int optInt = jSONObject.optInt("cache_duration", 3600);
-        double optDouble = jSONObject.optDouble("on_demand_upload_rate_per_minute", 10.0d);
-        double optDouble2 = jSONObject.optDouble("on_demand_backoff_base", 1.2d);
-        int optInt2 = jSONObject.optInt("on_demand_backoff_step_duration_seconds", 60);
-        com.google.android.gms.internal.cast.a aVar = jSONObject.has("session") ? new com.google.android.gms.internal.cast.a(jSONObject.getJSONObject("session").optInt("max_custom_exception_events", 8)) : new com.google.android.gms.internal.cast.a(new JSONObject().optInt("max_custom_exception_events", 8));
-        JSONObject jSONObject2 = jSONObject.getJSONObject("features");
-        return new ea.a(jSONObject.has("expires_at") ? jSONObject.optLong("expires_at") : (optInt * 1000) + System.currentTimeMillis(), aVar, new bc.d(jSONObject2.optBoolean("collect_reports", true), jSONObject2.optBoolean("collect_anrs", false), jSONObject2.optBoolean("collect_build_ids", false)), optDouble, optDouble2, optInt2);
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean B1() {
-        switch (this.a) {
-        }
-        return false;
-    }
-
     @Override // dg.a
-    public void C(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11, int i12) {
+    public void A(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11, int i12) {
         if (i10 < i11) {
             throw new IllegalArgumentException("Illegal use of DownsampleAudioResampler");
         }
         if (i12 != 1 && i12 != 2) {
-            throw new IllegalArgumentException(i2.d.i(i12, "Illegal use of DownsampleAudioResampler. Channels:"));
+            throw new IllegalArgumentException(i2.d.j(i12, "Illegal use of DownsampleAudioResampler. Channels:"));
         }
         int remaining = shortBuffer.remaining() / i12;
         int ceil = (int) Math.ceil((i11 / i10) * remaining);
@@ -195,8 +156,42 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public void C0(u1 u1Var) {
+    public /* synthetic */ void A0(u1 u1Var, TLObject tLObject, boolean z10) {
         int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ boolean A1(u1 u1Var, TLRPC.Chat chat) {
+        switch (this.a) {
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void B(u1 u1Var) {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void B0(u1 u1Var, float f7, float f10) {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void B1(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void C(u1 u1Var) {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ boolean C1() {
+        switch (this.a) {
+        }
+        return false;
     }
 
     @Override // c3.q
@@ -205,7 +200,7 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void D1(u1 u1Var) {
+    public void D0(u1 u1Var) {
         int i10 = this.a;
     }
 
@@ -215,84 +210,33 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void E0(u1 u1Var) {
+    public /* synthetic */ void E1(u1 u1Var) {
         int i10 = this.a;
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void F(u1 u1Var) {
+    public /* synthetic */ void F0(u1 u1Var) {
         int i10 = this.a;
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void F1(MessageObject messageObject) {
+    public /* synthetic */ void G(u1 u1Var) {
         int i10 = this.a;
     }
 
-    @Override // r4.c
-    public void G(int i10, Object obj) {
-        String str;
-        switch (i10) {
-            case 1:
-                str = "RESULT_INSTALL_SUCCESS";
-                break;
-            case 2:
-                str = "RESULT_ALREADY_INSTALLED";
-                break;
-            case 3:
-                str = "RESULT_UNSUPPORTED_ART_VERSION";
-                break;
-            case 4:
-                str = "RESULT_NOT_WRITABLE";
-                break;
-            case 5:
-                str = "RESULT_DESIRED_FORMAT_UNSUPPORTED";
-                break;
-            case 6:
-                str = "RESULT_BASELINE_PROFILE_NOT_FOUND";
-                break;
-            case 7:
-                str = "RESULT_IO_EXCEPTION";
-                break;
-            case 8:
-                str = "RESULT_PARSE_EXCEPTION";
-                break;
-            case 9:
-            default:
-                str = "";
-                break;
-            case 10:
-                str = "RESULT_INSTALL_SKIP_FILE_SUCCESS";
-                break;
-            case 11:
-                str = "RESULT_DELETE_SKIP_FILE_SUCCESS";
-                break;
-        }
-        if (i10 == 6 || i10 == 7 || i10 == 8) {
-            Log.e("ProfileInstaller", str, (Throwable) obj);
-        } else {
-            Log.d("ProfileInstaller", str);
-        }
+    @Override // z3.l
+    public int H(b2.x xVar) {
+        return 1;
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void G0(u1 u1Var) {
+    public /* synthetic */ void H0(u1 u1Var) {
         int i10 = this.a;
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
     @Override // org.telegram.ui.Cells.l1
-    public void G1(u1 u1Var, TLRPC.WebPage webPage, String str, boolean z10) {
-        switch (this.a) {
-        }
-        pf.d.s(u1Var.getContext(), str);
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ CharacterStyle H1(u1 u1Var) {
-        switch (this.a) {
-        }
-        return null;
+    public /* synthetic */ void H1(MessageObject messageObject) {
+        int i10 = this.a;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -300,28 +244,12 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
         int i10 = this.a;
     }
 
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void I1(MessageObject messageObject, String str, String str2, String str3, String str4, int i10, int i11) {
-        int i12 = this.a;
-    }
-
-    @Override // z3.l
-    public int J(b2.x xVar) {
-        return 1;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean J0(long j10) {
+    public void J1(u1 u1Var, TLRPC.WebPage webPage, String str, boolean z10) {
         switch (this.a) {
         }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean J1(u1 u1Var, MessageObject messageObject) {
-        switch (this.a) {
-        }
-        return false;
+        pf.d.r(u1Var.getContext(), str);
     }
 
     @Override // c3.q
@@ -330,13 +258,17 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void K0(u1 u1Var) {
-        int i10 = this.a;
+    public /* synthetic */ boolean K0(long j10) {
+        switch (this.a) {
+        }
+        return false;
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void K1(u1 u1Var, t tVar) {
-        int i10 = this.a;
+    public /* synthetic */ CharacterStyle K1(u1 u1Var) {
+        switch (this.a) {
+        }
+        return null;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -345,8 +277,13 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void L1() {
+    public /* synthetic */ void L0(u1 u1Var) {
         int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void L1(MessageObject messageObject, String str, String str2, String str3, String str4, int i10, int i11) {
+        int i12 = this.a;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -355,13 +292,10 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void M0(int i10, u1 u1Var) {
-        int i11 = this.a;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void M1(u1 u1Var, TLRPC.MessageExtendedMedia messageExtendedMedia) {
-        int i10 = this.a;
+    public /* synthetic */ boolean M1(u1 u1Var, MessageObject messageObject) {
+        switch (this.a) {
+        }
+        return false;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -370,7 +304,12 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void N1(u1 u1Var, TLRPC.User user, TLRPC.Document document, String str) {
+    public /* synthetic */ void N0(int i10, u1 u1Var) {
+        int i11 = this.a;
+    }
+
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void N1(u1 u1Var, t tVar) {
         int i10 = this.a;
     }
 
@@ -382,15 +321,8 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void O0(u1 u1Var, TL_keyboard.KeyboardInlineButton keyboardInlineButton) {
+    public /* synthetic */ void O1() {
         int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean O1(u1 u1Var, TLRPC.PollAnswer pollAnswer) {
-        switch (this.a) {
-        }
-        return false;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -400,16 +332,14 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
         return false;
     }
 
-    @Override // cg.a
-    public void P0(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11) {
-        shortBuffer2.put(shortBuffer);
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void P0(u1 u1Var, TL_keyboard.KeyboardInlineButton keyboardInlineButton) {
+        int i10 = this.a;
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ wv0 P1() {
-        switch (this.a) {
-        }
-        return null;
+    public /* synthetic */ void P1(u1 u1Var, TLRPC.MessageExtendedMedia messageExtendedMedia) {
+        int i10 = this.a;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -419,11 +349,14 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
         return false;
     }
 
+    @Override // cg.a
+    public void Q0(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11) {
+        shortBuffer2.put(shortBuffer);
+    }
+
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean Q1(long j10) {
-        switch (this.a) {
-        }
-        return false;
+    public /* synthetic */ void Q1(u1 u1Var, TLRPC.User user, TLRPC.Document document, String str) {
+        int i10 = this.a;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -434,13 +367,10 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void R0(u1 u1Var, CharacterStyle characterStyle, boolean z10) {
-        int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void R1(u1 u1Var, int i10, float f7, float f10, boolean z10) {
-        int i11 = this.a;
+    public /* synthetic */ boolean R1(u1 u1Var, TLRPC.PollAnswer pollAnswer) {
+        switch (this.a) {
+        }
+        return false;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -449,17 +379,15 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean S0(u1 u1Var, boolean z10) {
-        switch (this.a) {
-        }
-        return false;
+    public /* synthetic */ void S0(u1 u1Var, CharacterStyle characterStyle, boolean z10) {
+        int i10 = this.a;
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean S1(u1 u1Var, TLRPC.TodoItem todoItem) {
+    public /* synthetic */ vv0 S1() {
         switch (this.a) {
         }
-        return false;
+        return null;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -468,13 +396,27 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void T0(u1 u1Var) {
+    public /* synthetic */ boolean T0(u1 u1Var, boolean z10) {
+        switch (this.a) {
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ boolean T1(long j10) {
+        switch (this.a) {
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void U0(u1 u1Var) {
         int i10 = this.a;
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void U1(u1 u1Var) {
-        int i10 = this.a;
+    public /* synthetic */ void U1(u1 u1Var, int i10, float f7, float f10, boolean z10) {
+        int i11 = this.a;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -485,12 +427,24 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void V0(u1 u1Var) {
+    public /* synthetic */ boolean V1(u1 u1Var, TLRPC.TodoItem todoItem) {
+        switch (this.a) {
+        }
+        return false;
+    }
+
+    @Override // c3.q
+    public i0 W(int i10, int i11) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void W0(u1 u1Var) {
         int i10 = this.a;
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void W1(u1 u1Var, long j10) {
+    public /* synthetic */ void X1(u1 u1Var) {
         int i10 = this.a;
     }
 
@@ -509,24 +463,17 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean Z0(int i10, u1 u1Var) {
-        switch (this.a) {
-        }
-        return false;
-    }
-
-    @Override // c3.q
-    public i0 a0(int i10, int i11) {
-        throw new UnsupportedOperationException();
+    public /* synthetic */ void Z1(u1 u1Var, long j10) {
+        int i10 = this.a;
     }
 
     @Override // z3.l
-    public boolean b0(b2.x xVar) {
+    public boolean a0(b2.x xVar) {
         return false;
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean b2(u1 u1Var, TL_iv.PageBlock pageBlock) {
+    public /* synthetic */ boolean a1(int i10, u1 u1Var) {
         switch (this.a) {
         }
         return false;
@@ -547,19 +494,15 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void c2(u1 u1Var) {
-        int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void d0(int i10) {
         int i11 = this.a;
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean d1(MessageObject messageObject) {
-        int i10 = this.a;
-        return d0.a(messageObject);
+    public /* synthetic */ boolean e() {
+        switch (this.a) {
+        }
+        return true;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -570,10 +513,16 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean f() {
+    public /* synthetic */ boolean e1(MessageObject messageObject) {
+        int i10 = this.a;
+        return c1.a(messageObject);
+    }
+
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ boolean e2(u1 u1Var, TL_iv.PageBlock pageBlock) {
         switch (this.a) {
         }
-        return true;
+        return false;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -582,18 +531,8 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void f1() {
+    public /* synthetic */ void f2(u1 u1Var) {
         int i10 = this.a;
-    }
-
-    @Override // gb.o
-    public Object f2() {
-        switch (this.a) {
-            case 9:
-                return new TreeSet();
-            default:
-                return new ConcurrentHashMap();
-        }
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -604,7 +543,7 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void g2() {
+    public /* synthetic */ void g1() {
         int i10 = this.a;
     }
 
@@ -644,11 +583,6 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void h1(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
-        int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void i(u1 u1Var, ArrayList arrayList, int i10, int i11, int i12) {
         int i13 = this.a;
     }
@@ -659,8 +593,18 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void i2(u1 u1Var, TLRPC.ReactionCount reactionCount, boolean z10, float f7, float f10) {
+    public /* synthetic */ void i1(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
         int i10 = this.a;
+    }
+
+    @Override // gb.p
+    public Object i2() {
+        switch (this.a) {
+            case 9:
+                return new TreeSet();
+            default:
+                return new ConcurrentHashMap();
+        }
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -668,20 +612,8 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
         int i10 = this.a;
     }
 
-    @Override // r9.d
-    public Object j2(z5 z5Var) {
-        switch (this.a) {
-            case 15:
-                return new sb.a(0);
-            case 16:
-                return new rb.b(0);
-            default:
-                return new rb.k((Context) z5Var.a(Context.class));
-        }
-    }
-
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void k1(u1 u1Var, TLRPC.Document document) {
+    public /* synthetic */ void j2() {
         int i10 = this.a;
     }
 
@@ -693,10 +625,13 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean l2(int i10) {
-        switch (this.a) {
-        }
-        return false;
+    public /* synthetic */ void l1(u1 u1Var, TLRPC.Document document) {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void l2(u1 u1Var, TLRPC.ReactionCount reactionCount, boolean z10, float f7, float f10) {
+        int i10 = this.a;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -714,9 +649,14 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void n2() {
-        int i10 = this.a;
+    @Override // r9.d
+    public Object n2(z5 z5Var) {
+        switch (this.a) {
+            case 15:
+                return new sb.a(0);
+            default:
+                return new rb.b(0);
+        }
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -731,31 +671,16 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void o2(u1 u1Var, int i10, int i11) {
-        int i12 = this.a;
-    }
-
-    @Override // z3.l
-    public n p(b2.x xVar) {
-        throw new IllegalStateException("This SubtitleParser.Factory doesn't support any formats.");
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public /* synthetic */ boolean p0() {
-        return false;
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public void onFailure(Exception exc) {
+        Log.e("OptionalModuleUtils", "Failed to check feature availability", exc);
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void p1(u1 u1Var, float f7, float f10) {
-        int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ p9 p2() {
+    public /* synthetic */ boolean p2(int i10) {
         switch (this.a) {
         }
-        return null;
+        return false;
     }
 
     @Override // l.w
@@ -769,7 +694,22 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void q1(u1 u1Var, float f7, float f10) {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void r(u1 u1Var) {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public /* synthetic */ boolean r0() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void r2() {
         int i10 = this.a;
     }
 
@@ -779,8 +719,32 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void s2(u1 u1Var, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void t(u1 u1Var) {
         int i10 = this.a;
+    }
+
+    @Override // ea.c
+    public ea.a t0(t7.u uVar, JSONObject jSONObject) {
+        jSONObject.optInt("settings_version", 0);
+        int optInt = jSONObject.optInt("cache_duration", 3600);
+        double optDouble = jSONObject.optDouble("on_demand_upload_rate_per_minute", 10.0d);
+        double optDouble2 = jSONObject.optDouble("on_demand_backoff_base", 1.2d);
+        int optInt2 = jSONObject.optInt("on_demand_backoff_step_duration_seconds", 60);
+        com.google.android.gms.internal.cast.a aVar = jSONObject.has("session") ? new com.google.android.gms.internal.cast.a(jSONObject.getJSONObject("session").optInt("max_custom_exception_events", 8)) : new com.google.android.gms.internal.cast.a(new JSONObject().optInt("max_custom_exception_events", 8));
+        JSONObject jSONObject2 = jSONObject.getJSONObject("features");
+        return new ea.a(jSONObject.has("expires_at") ? jSONObject.optLong("expires_at") : (optInt * 1000) + System.currentTimeMillis(), aVar, new bc.d(jSONObject2.optBoolean("collect_reports", true), jSONObject2.optBoolean("collect_anrs", false), jSONObject2.optBoolean("collect_build_ids", false)), optDouble, optDouble2, optInt2);
+    }
+
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ p9 t2() {
+        switch (this.a) {
+        }
+        return null;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -803,54 +767,49 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
         int i10 = this.a;
     }
 
+    @Override // org.telegram.ui.Components.ti
+    public /* synthetic */ boolean w() {
+        return false;
+    }
+
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean v1() {
+    public /* synthetic */ boolean w1() {
         switch (this.a) {
         }
         return false;
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ String w(long j10) {
+    public /* synthetic */ String x(long j10) {
         switch (this.a) {
         }
         return null;
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean w0(MessageObject messageObject) {
+    public /* synthetic */ boolean x0(MessageObject messageObject) {
         switch (this.a) {
         }
         return true;
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void w1(u1 u1Var) {
+    public /* synthetic */ void x1(u1 u1Var) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.ti
-    public /* synthetic */ boolean x() {
-        return false;
+    @Override // z3.l
+    public n y(b2.x xVar) {
+        throw new IllegalStateException("This SubtitleParser.Factory doesn't support any formats.");
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void x0(u1 u1Var) {
+    public /* synthetic */ void y0(u1 u1Var) {
         int i10 = this.a;
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void x1(u1 u1Var, boolean z10) {
-        int i10 = this.a;
-    }
-
-    @Override // r4.c
-    public void y() {
-        Log.d("ProfileInstaller", "DIAGNOSTIC_PROFILE_IS_COMPRESSED");
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void y0() {
+    public /* synthetic */ void y1(u1 u1Var, boolean z10) {
         int i10 = this.a;
     }
 
@@ -859,15 +818,8 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void z0(u1 u1Var, TLObject tLObject, boolean z10) {
+    public /* synthetic */ void z0() {
         int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean z1(u1 u1Var, TLRPC.Chat chat) {
-        switch (this.a) {
-        }
-        return false;
     }
 
     private final /* synthetic */ void A3() {
@@ -876,13 +828,13 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     private final /* synthetic */ void B3() {
     }
 
-    private final /* synthetic */ void D0() {
+    private final /* synthetic */ void C0() {
+    }
+
+    private final /* synthetic */ void E0() {
     }
 
     private final /* synthetic */ void E3() {
-    }
-
-    private final /* synthetic */ void F0() {
     }
 
     private final /* synthetic */ void F3() {
@@ -906,28 +858,32 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     private final /* synthetic */ void P3() {
     }
 
-    private final /* synthetic */ void X() {
+    private final /* synthetic */ void g0() {
     }
 
     private final /* synthetic */ void j0() {
     }
 
-    private final /* synthetic */ void q2() {
+    private final /* synthetic */ void k2() {
     }
 
-    private final /* synthetic */ void r2() {
+    private final /* synthetic */ void m2() {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public /* synthetic */ void H() {
+    public /* synthetic */ void F() {
     }
 
     @Override // a3.n0
     public /* synthetic */ void b() {
     }
 
+    @Override // r4.c
+    public void h() {
+    }
+
     @Override // a3.n0
-    public /* synthetic */ void e() {
+    public /* synthetic */ void k() {
     }
 
     @Override // a3.n0
@@ -950,13 +906,13 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     private final /* synthetic */ void F2(u1 u1Var) {
     }
 
+    private final /* synthetic */ void G0(u1 u1Var) {
+    }
+
     private final /* synthetic */ void G2(u1 u1Var) {
     }
 
     private final /* synthetic */ void G3(int i10) {
-    }
-
-    private final /* synthetic */ void H0(u1 u1Var) {
     }
 
     private final /* synthetic */ void H2(u1 u1Var) {
@@ -986,10 +942,13 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     private final /* synthetic */ void N2(u1 u1Var) {
     }
 
-    private final /* synthetic */ void Q0(u1 u1Var) {
+    private final /* synthetic */ void O0(u1 u1Var) {
     }
 
-    private final /* synthetic */ void U0(u1 u1Var) {
+    private final /* synthetic */ void R0(u1 u1Var) {
+    }
+
+    private final /* synthetic */ void W1(u1 u1Var) {
     }
 
     private final /* synthetic */ void W2(String str) {
@@ -1001,13 +960,13 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     private final /* synthetic */ void Y1(u1 u1Var) {
     }
 
-    private final /* synthetic */ void Z1(u1 u1Var) {
-    }
-
     private final /* synthetic */ void a2(u1 u1Var) {
     }
 
     private final /* synthetic */ void b1(u1 u1Var) {
+    }
+
+    private final /* synthetic */ void b2(u1 u1Var) {
     }
 
     private final /* synthetic */ void c1(u1 u1Var) {
@@ -1016,25 +975,22 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     private final /* synthetic */ void c3(u1 u1Var) {
     }
 
-    private final /* synthetic */ void d2(u1 u1Var) {
+    private final /* synthetic */ void d1(MessageObject.TextLayoutBlock textLayoutBlock) {
     }
 
     private final /* synthetic */ void d3(u1 u1Var) {
     }
 
-    private final /* synthetic */ void e1(MessageObject.TextLayoutBlock textLayoutBlock) {
-    }
-
-    private final /* synthetic */ void g1(MessageObject.TextLayoutBlock textLayoutBlock) {
+    private final /* synthetic */ void f1(MessageObject.TextLayoutBlock textLayoutBlock) {
     }
 
     private final /* synthetic */ void g3(u1 u1Var) {
     }
 
-    private final /* synthetic */ void h3(u1 u1Var) {
+    private final /* synthetic */ void h1(u1 u1Var) {
     }
 
-    private final /* synthetic */ void i1(u1 u1Var) {
+    private final /* synthetic */ void h3(u1 u1Var) {
     }
 
     private final /* synthetic */ void i3(MessageObject messageObject) {
@@ -1067,22 +1023,19 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     private final /* synthetic */ void o3(u1 u1Var) {
     }
 
+    private final /* synthetic */ void p0(u1 u1Var) {
+    }
+
     private final /* synthetic */ void p3(u1 u1Var) {
     }
 
     private final void q3(u1 u1Var) {
     }
 
-    private final /* synthetic */ void s0(u1 u1Var) {
-    }
-
     private final /* synthetic */ void s1(u1 u1Var) {
     }
 
     private final void s3(u1 u1Var) {
-    }
-
-    private final /* synthetic */ void t0(u1 u1Var) {
     }
 
     private final /* synthetic */ void t1(u1 u1Var) {
@@ -1094,40 +1047,43 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     private final /* synthetic */ void v3(u1 u1Var) {
     }
 
-    @Override // org.telegram.ui.Components.ti
-    public /* synthetic */ void U(Object obj) {
+    private final /* synthetic */ void w0(u1 u1Var) {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public /* synthetic */ void W(TLRPC.User user) {
+    public /* synthetic */ void J(Object obj) {
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public /* synthetic */ void U(TLRPC.User user) {
     }
 
     @Override // a3.n0
     public /* synthetic */ void onVideoSizeChanged(b2 b2Var) {
     }
 
-    private final /* synthetic */ void C1(int i10, u1 u1Var) {
+    private final /* synthetic */ void C2(u1 u1Var, TLRPC.Document document) {
     }
 
-    private final /* synthetic */ void C2(u1 u1Var, TLRPC.Document document) {
+    private final /* synthetic */ void D1(int i10, u1 u1Var) {
     }
 
     private final /* synthetic */ void D2(u1 u1Var, TLRPC.Document document) {
     }
 
-    private final /* synthetic */ void L0(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
+    private final /* synthetic */ void G1(u1 u1Var, TLRPC.MessageExtendedMedia messageExtendedMedia) {
     }
 
-    private final /* synthetic */ void N0(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
+    private final /* synthetic */ void I1(u1 u1Var, TLRPC.MessageExtendedMedia messageExtendedMedia) {
     }
 
-    private final /* synthetic */ void T1(int i10, u1 u1Var) {
+    private final /* synthetic */ void J0(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
     }
 
-    private final /* synthetic */ void V1(u1 u1Var, TLRPC.MessageExtendedMedia messageExtendedMedia) {
+    private final /* synthetic */ void M0(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
     }
 
-    private final /* synthetic */ void X1(u1 u1Var, TLRPC.MessageExtendedMedia messageExtendedMedia) {
+    private final /* synthetic */ void X(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
     }
 
     private final /* synthetic */ void Y2(u1 u1Var, long j10) {
@@ -1136,22 +1092,19 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     private final /* synthetic */ void Z2(u1 u1Var, long j10) {
     }
 
-    private final /* synthetic */ void k(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
+    private final /* synthetic */ void g2(int i10, u1 u1Var) {
     }
 
-    private final /* synthetic */ void k2(int i10, u1 u1Var) {
+    private final /* synthetic */ void h2(int i10, u1 u1Var) {
+    }
+
+    private final /* synthetic */ void k1(u1 u1Var, BotInlineKeyboard.ButtonCustom buttonCustom) {
     }
 
     private final /* synthetic */ void l(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
     }
 
-    private final /* synthetic */ void l1(u1 u1Var, BotInlineKeyboard.ButtonCustom buttonCustom) {
-    }
-
     private final /* synthetic */ void m1(u1 u1Var, BotInlineKeyboard.ButtonCustom buttonCustom) {
-    }
-
-    private final /* synthetic */ void m2(int i10, u1 u1Var) {
     }
 
     private final /* synthetic */ void m3(u1 u1Var, t tVar) {
@@ -1160,7 +1113,7 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     private final /* synthetic */ void n3(u1 u1Var, t tVar) {
     }
 
-    private final /* synthetic */ void q1(u1 u1Var, TL_keyboard.KeyboardInlineButton keyboardInlineButton) {
+    private final /* synthetic */ void p1(u1 u1Var, TL_keyboard.KeyboardInlineButton keyboardInlineButton) {
     }
 
     private final /* synthetic */ void r1(u1 u1Var, TL_keyboard.KeyboardInlineButton keyboardInlineButton) {
@@ -1172,8 +1125,15 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     private final /* synthetic */ void t3(u1 u1Var, boolean z10) {
     }
 
+    private final /* synthetic */ void z1(int i10, u1 u1Var) {
+    }
+
     @Override // l.w
     public void d(l.k kVar, boolean z10) {
+    }
+
+    @Override // r4.c
+    public void p(int i10, Object obj) {
     }
 
     private final /* synthetic */ void K2(u1 u1Var, float f7, float f10) {
@@ -1191,35 +1151,35 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     private final /* synthetic */ void Y0(u1 u1Var, TLObject tLObject, boolean z10) {
     }
 
-    private final /* synthetic */ void a(u1 u1Var, float f7, float f10) {
+    private final /* synthetic */ void Z0(u1 u1Var, TLObject tLObject, boolean z10) {
     }
 
-    private final /* synthetic */ void a1(u1 u1Var, TLObject tLObject, boolean z10) {
+    private final /* synthetic */ void a(u1 u1Var, float f7, float f10) {
     }
 
     private final /* synthetic */ void e3(u1 u1Var, float f7, float f10) {
     }
 
+    private final /* synthetic */ void f(u1 u1Var, float f7, float f10) {
+    }
+
     private final /* synthetic */ void f3(u1 u1Var, float f7, float f10) {
     }
 
-    private final /* synthetic */ void h(u1 u1Var, float f7, float f10) {
+    private final /* synthetic */ void o2(u1 u1Var, float f7, float f10) {
     }
 
-    private final /* synthetic */ void s2(u1 u1Var, float f7, float f10) {
-    }
-
-    private final /* synthetic */ void t2(u1 u1Var, float f7, float f10) {
+    private final /* synthetic */ void q2(u1 u1Var, float f7, float f10) {
     }
 
     private final /* synthetic */ void u1(u1 u1Var, int i10, int i11) {
     }
 
-    private final /* synthetic */ void y1(u1 u1Var, int i10, int i11) {
+    private final /* synthetic */ void v1(u1 u1Var, int i10, int i11) {
     }
 
     @Override // cg.a
-    public int E1(int i10, int i11, int i12) {
+    public int F1(int i10, int i11, int i12) {
         return i10;
     }
 
@@ -1235,10 +1195,10 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     private final /* synthetic */ void V2(u1 u1Var, TLRPC.User user, TLRPC.Document document, String str) {
     }
 
-    private final /* synthetic */ void e2(u1 u1Var, float f7, float f10, boolean z10) {
+    private final /* synthetic */ void c2(u1 u1Var, float f7, float f10, boolean z10) {
     }
 
-    private final /* synthetic */ void h2(u1 u1Var, float f7, float f10, boolean z10) {
+    private final /* synthetic */ void d2(u1 u1Var, float f7, float f10, boolean z10) {
     }
 
     private final /* synthetic */ void u2(u1 u1Var, TLRPC.PollAnswer pollAnswer, TLRPC.MessageMedia messageMedia, int i10) {
@@ -1265,7 +1225,7 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     private final /* synthetic */ void z2(u1 u1Var, int i10, float f7, float f10, boolean z10) {
     }
 
-    private final /* synthetic */ void W0(u1 u1Var, TLRPC.Chat chat, int i10, float f7, float f10, boolean z10) {
+    private final /* synthetic */ void V0(u1 u1Var, TLRPC.Chat chat, int i10, float f7, float f10, boolean z10) {
     }
 
     private final /* synthetic */ void X0(u1 u1Var, TLRPC.Chat chat, int i10, float f7, float f10, boolean z10) {
@@ -1278,10 +1238,10 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // org.telegram.ui.Components.ti
-    public /* synthetic */ void r0(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j10, boolean z11, long j11) {
+    public /* synthetic */ void s0(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j10, boolean z11, long j11) {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public void g0(int i10, boolean z10, boolean z11, int i11, int i12, long j10, boolean z12, boolean z13, long j11) {
+    public void b0(int i10, boolean z10, boolean z11, int i11, int i12, long j10, boolean z12, boolean z13, long j11) {
     }
 }

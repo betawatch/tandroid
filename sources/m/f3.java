@@ -1,32 +1,37 @@
 package m;
 
-import androidx.appcompat.widget.Toolbar;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.os.Handler;
+import bi.n7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f3 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Toolbar b;
+public final class f3 implements j9.t {
+    public boolean a;
+    public boolean b;
+    public Object c = new Path();
+    public Object d = new Rect();
 
-    public /* synthetic */ f3(Toolbar toolbar, int i10) {
-        this.a = i10;
-        this.b = toolbar;
+    public boolean a(Rect rect, boolean z10, boolean z11) {
+        Rect rect2 = (Rect) this.d;
+        boolean z12 = (!rect2.isEmpty() && rect2.top == rect.top && rect2.bottom == rect.bottom && rect2.right == rect.right && rect2.left == rect.left && this.a == z11 && this.b == z10 && z11 && z10) ? false : true;
+        this.a = z11;
+        this.b = z10;
+        rect2.set(rect);
+        return z12;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                h3 h3Var = this.b.e0;
-                l.m mVar = h3Var == null ? null : h3Var.b;
-                if (mVar != null) {
-                    mVar.collapseActionView();
-                    break;
-                }
-                break;
-            default:
-                this.b.m();
-                break;
-        }
+    @Override // j9.t
+    public void onSuccess(Object obj) {
+        m4.w wVar = (m4.w) obj;
+        m4.e0 e0Var = ((m4.p0) this.d).g;
+        Handler handler = e0Var.l;
+        m4.v vVar = (m4.v) this.c;
+        e2.m0.W(handler, new ji.v2(e0Var, vVar, new n7(this, wVar, this.a, this.b, vVar, 2)));
+    }
+
+    @Override // j9.t
+    public void i(Throwable th2) {
     }
 }

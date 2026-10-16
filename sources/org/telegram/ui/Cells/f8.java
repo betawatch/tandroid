@@ -27,7 +27,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class f8 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, pg.c {
     public static final AccelerateInterpolator N = new AccelerateInterpolator(0.5f);
@@ -76,14 +76,14 @@ public class f8 extends FrameLayout implements NotificationCenter.NotificationCe
         c1Var.setImageReceiver(e8Var);
         c1Var.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
         c1Var.setImageReceiver(e8Var);
-        addView(c1Var, w7.a6.a(24.0f, 0.0f, 0.0f, 0.0f, 0.0f, 24, 81));
+        addView(c1Var, w7.z5.a(24.0f, 0.0f, 0.0f, 0.0f, 0.0f, 24, 81));
         ImageView imageView = new ImageView(context);
         this.J = imageView;
         imageView.setImageResource(R.drawable.mini_more_dots);
         imageView.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
         imageView.setBackground(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(12.0f), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.q5, c6Var)));
         imageView.setAlpha(0.0f);
-        addView(imageView, w7.a6.e(-2, -2, 5));
+        addView(imageView, w7.z5.e(-2, -2, 5));
         setFocusable(true);
     }
 

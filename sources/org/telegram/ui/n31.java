@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class n31 extends org.telegram.ui.ActionBar.m2 {
     public m31 a;
@@ -42,7 +42,7 @@ public final class n31 extends org.telegram.ui.ActionBar.m2 {
         mm0Var.p1();
         this.b.setVerticalScrollBarEnabled(false);
         this.b.setLayoutManager(new s4.b0(1, false));
-        frameLayout2.addView(this.b, w7.a6.e(-1, -1, 51));
+        frameLayout2.addView(this.b, w7.z5.e(-1, -1, 51));
         this.b.setAdapter(this.a);
         this.actionBar.setAdaptiveBackground(this.b);
         return this.fragmentView;

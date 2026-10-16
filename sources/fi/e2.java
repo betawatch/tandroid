@@ -17,7 +17,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.fo;
 import org.telegram.ui.i41;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e2 implements Runnable {
     public final /* synthetic */ int a;
@@ -85,7 +85,7 @@ public final /* synthetic */ class e2 implements Runnable {
                 Paint paint = k3Var.O;
                 a3 a3Var = k3Var.v;
                 if (a3Var.getSwipeOffsetY() > 0.0f) {
-                    paint.setAlpha((int) ((1.0f - w7.s.a(a3Var.getSwipeOffsetY() / a3Var.getHeight(), 0.0f, 1.0f)) * 64.0f));
+                    paint.setAlpha((int) ((1.0f - w7.r.a(a3Var.getSwipeOffsetY() / a3Var.getHeight(), 0.0f, 1.0f)) * 64.0f));
                 } else {
                     paint.setAlpha(64);
                 }
@@ -127,7 +127,7 @@ public final /* synthetic */ class e2 implements Runnable {
                 MediaDataController.getInstance(k3Var.G).installShortcut(k3Var.H, MediaDataController.SHORTCUT_TYPE_ATTACHED_BOT);
                 break;
             case 12:
-                pf.d.s(k3Var.getContext(), LocaleController.getString(R.string.BotWebViewToSLink));
+                pf.d.r(k3Var.getContext(), LocaleController.getString(R.string.BotWebViewToSLink));
                 break;
             case 13:
                 int i13 = k3Var.G;

@@ -9,7 +9,7 @@ import org.webrtc.EglBase;
 import org.webrtc.TextureBufferImpl;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public class SurfaceTextureHelper {
     private static final String TAG = "SurfaceTextureHelper";
@@ -31,7 +31,7 @@ public class SurfaceTextureHelper {
     private final TimestampAligner timestampAligner;
     private final YuvConverter yuvConverter;
 
-    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
     public interface FrameRefMonitor {
         void onDestroyBuffer(VideoFrame.TextureBuffer textureBuffer);
 
@@ -131,7 +131,7 @@ public class SurfaceTextureHelper {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void returnTextureFrame() {
-        this.handler.post(new r(this, 2));
+        this.handler.post(new q(this, 2));
     }
 
     private static void setOnFrameAvailableListener(SurfaceTexture surfaceTexture, SurfaceTexture.OnFrameAvailableListener onFrameAvailableListener, Handler handler) {
@@ -181,11 +181,11 @@ public class SurfaceTextureHelper {
 
     public void dispose() {
         Logging.d(TAG, "dispose()");
-        ThreadUtils.invokeAtFrontUninterruptibly(this.handler, new r(this, 1));
+        ThreadUtils.invokeAtFrontUninterruptibly(this.handler, new q(this, 1));
     }
 
     public void forceFrame() {
-        this.handler.post(new r(this, 3));
+        this.handler.post(new q(this, 3));
     }
 
     public Handler getHandler() {
@@ -201,15 +201,15 @@ public class SurfaceTextureHelper {
     }
 
     public void setFrameRotation(int i10) {
-        this.handler.post(new j(this, i10, 1));
+        this.handler.post(new i(this, i10, 1));
     }
 
     public void setTextureSize(int i10, int i11) {
         if (i10 <= 0) {
-            throw new IllegalArgumentException(i2.d.i(i10, "Texture width must be positive, but was "));
+            throw new IllegalArgumentException(i2.d.j(i10, "Texture width must be positive, but was "));
         }
         if (i11 <= 0) {
-            throw new IllegalArgumentException(i2.d.i(i11, "Texture height must be positive, but was "));
+            throw new IllegalArgumentException(i2.d.j(i11, "Texture height must be positive, but was "));
         }
         this.surfaceTexture.setDefaultBufferSize(i10, i11);
         this.handler.post(new hg.n(this, i10, i11, 11));
@@ -226,7 +226,7 @@ public class SurfaceTextureHelper {
     public void stopListening() {
         Logging.d(TAG, "stopListening()");
         this.handler.removeCallbacks(this.setListenerRunnable);
-        ThreadUtils.invokeAtFrontUninterruptibly(this.handler, new r(this, 0));
+        ThreadUtils.invokeAtFrontUninterruptibly(this.handler, new q(this, 0));
     }
 
     @Deprecated
@@ -287,7 +287,7 @@ public class SurfaceTextureHelper {
             this.oesTextureId = generateTexture;
             SurfaceTexture surfaceTexture = new SurfaceTexture(generateTexture);
             this.surfaceTexture = surfaceTexture;
-            setOnFrameAvailableListener(surfaceTexture, new SurfaceTexture.OnFrameAvailableListener() { // from class: org.webrtc.s
+            setOnFrameAvailableListener(surfaceTexture, new SurfaceTexture.OnFrameAvailableListener() { // from class: org.webrtc.r
                 @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
                 public final void onFrameAvailable(SurfaceTexture surfaceTexture2) {
                     SurfaceTextureHelper.this.lambda$new$0(surfaceTexture2);

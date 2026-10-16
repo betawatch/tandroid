@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class pb extends wb {
     private ob button;
@@ -27,7 +27,7 @@ public abstract class pb extends wb {
     public void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
         ob obVar = this.button;
         if (obVar != null && view != obVar) {
-            i11 = org.telegram.ui.Cells.d0.b(12.0f, obVar.getMeasuredWidth(), i11);
+            i11 = org.telegram.messenger.sk.D(12.0f, obVar.getMeasuredWidth(), i11);
         }
         super.measureChildWithMargins(view, i10, i11, i12, i13);
         if (view != this.button) {
@@ -58,7 +58,7 @@ public abstract class pb extends wb {
         this.button = obVar;
         if (obVar != null) {
             addCallback(obVar);
-            addView(obVar, 0, w7.a6.h(-2.0f, -2.0f, 8388629));
+            addView(obVar, 0, w7.z5.h(-2.0f, -2.0f, 8388629));
         }
     }
 
@@ -66,7 +66,7 @@ public abstract class pb extends wb {
         lc lcVar = new lc(getContext(), this.resourcesProvider);
         this.timerView = lcVar;
         lcVar.b = 5000L;
-        addView(lcVar, w7.a6.i(20.0f, 20.0f, 8388627, 21.0f, 0.0f, 21.0f, 0.0f));
+        addView(lcVar, w7.z5.i(20.0f, 20.0f, 8388627, 21.0f, 0.0f, 21.0f, 0.0f));
     }
 
     public void setWrapWidth() {

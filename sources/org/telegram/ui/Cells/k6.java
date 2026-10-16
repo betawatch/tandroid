@@ -13,11 +13,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class k6 extends FrameLayout {
     public final TextView a;
@@ -89,19 +89,19 @@ public class k6 extends FrameLayout {
         super(context);
         TextView textView = new TextView(context);
         this.a = textView;
-        yh.n(org.telegram.ui.ActionBar.g6.G6, c6Var, textView, 1, 16.0f);
+        sk.o(org.telegram.ui.ActionBar.g6.G6, c6Var, textView, 1, 16.0f);
         textView.setLines(1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         float f7 = 21;
-        addView(textView, w7.a6.a(-1.0f, f7, 0.0f, f7, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
+        addView(textView, w7.z5.a(-1.0f, f7, 0.0f, f7, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
         RadioButton radioButton = new RadioButton(context);
         this.b = radioButton;
         radioButton.setSize(AndroidUtilities.dp(20.0f));
         radioButton.b(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.g7, c6Var), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.h7, c6Var));
         boolean z10 = LocaleController.isRTL;
-        addView(radioButton, w7.a6.a(22.0f, z10 ? 22 : 0, 14.0f, z10 ? 0 : 22, 0.0f, 22, (z10 ? 3 : 5) | 48));
+        addView(radioButton, w7.z5.a(22.0f, z10 ? 22 : 0, 14.0f, z10 ? 0 : 22, 0.0f, 22, (z10 ? 3 : 5) | 48));
     }
 }

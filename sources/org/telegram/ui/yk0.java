@@ -1,299 +1,515 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yk0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class yk0 extends org.telegram.ui.Components.lm0 {
+    public final Context c;
+    public final /* synthetic */ NotificationsSettingsActivity d;
 
-    public /* synthetic */ yk0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public yk0(NotificationsSettingsActivity notificationsSettingsActivity, Context context) {
+        this.d = notificationsSettingsActivity;
+        this.c = context;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10;
+    @Override // org.telegram.ui.Components.lm0
+    public final boolean D(s4.b1 b1Var) {
+        int b10 = b1Var.b();
+        NotificationsSettingsActivity notificationsSettingsActivity = this.d;
+        return (b10 == notificationsSettingsActivity.x || b10 == notificationsSettingsActivity.y || b10 == notificationsSettingsActivity.E || b10 == notificationsSettingsActivity.K || b10 == notificationsSettingsActivity.M || b10 == notificationsSettingsActivity.S || b10 == notificationsSettingsActivity.N || b10 == notificationsSettingsActivity.L || b10 == notificationsSettingsActivity.R || b10 == notificationsSettingsActivity.F || b10 == notificationsSettingsActivity.G || b10 == notificationsSettingsActivity.O || b10 == notificationsSettingsActivity.r || b10 == notificationsSettingsActivity.s || b10 == notificationsSettingsActivity.T || b10 == notificationsSettingsActivity.J) ? false : true;
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        return this.d.U;
+    }
+
+    @Override // s4.g0
+    public final int j(int i10) {
         int i11;
-        sk skVar;
-        int i12 = this.a;
-        int i13 = 16;
-        Object obj = this.b;
-        switch (i12) {
-            case 0:
-                NotificationsSettingsActivity.V((NotificationsSettingsActivity) obj);
-                break;
-            case 1:
-                ((PasscodeActivity) ((ie0) obj).n).k0();
-                break;
-            case 2:
-                PasskeysActivity.X((PasskeysActivity) obj);
-                break;
-            case 3:
-                TLObject tLObject = (TLObject) obj;
-                if (!(tLObject instanceof TLRPC.TL_help_passportConfig)) {
-                    SharedConfig.getCountryLangs();
-                    break;
-                } else {
-                    TLRPC.TL_help_passportConfig tL_help_passportConfig = (TLRPC.TL_help_passportConfig) tLObject;
-                    SharedConfig.setPassportConfig(tL_help_passportConfig.countries_langs.data, tL_help_passportConfig.hash);
-                    break;
-                }
-            case 4:
-                ((bn0) obj).a.finishFragment();
-                break;
-            case 5:
-                org.telegram.ui.Components.g5.w0(((fn0) obj).e.getParentActivity(), LocaleController.getString(R.string.UpdateAppAlert), true);
-                break;
-            case 6:
-                double currentTimeMillis = System.currentTimeMillis();
-                qn0 qn0Var = (qn0) ((di.n2) obj).b;
-                double d = currentTimeMillis - qn0Var.G;
-                qn0Var.G = currentTimeMillis;
-                int i14 = (int) (qn0Var.E - d);
-                qn0Var.E = i14;
-                if (i14 <= 1000) {
-                    qn0Var.r.setVisibility(0);
-                    qn0Var.n.setVisibility(8);
-                    qn0Var.r();
-                    break;
-                }
-                break;
-            case 7:
-                pn0 pn0Var = (pn0) obj;
-                qn0 qn0Var2 = pn0Var.a;
-                int i15 = qn0Var2.y;
-                rn0 rn0Var = qn0Var2.s;
-                mn0 mn0Var = qn0Var2.n;
-                if (i15 < 1000) {
-                    if (rn0Var != null) {
-                        rn0Var.c = 1.0f;
-                        rn0Var.invalidate();
-                    }
-                    qn0Var2.s();
-                    int i16 = qn0Var2.L;
-                    if (i16 != 3) {
-                        if (i16 == 2 || i16 == 4) {
-                            int i17 = qn0Var2.M;
-                            if (i17 != 4 && i17 != 2) {
-                                if (i17 == 3) {
-                                    AndroidUtilities.setWaitingForSms(false);
-                                    NotificationCenter.getGlobalInstance().removeObserver(qn0Var2, NotificationCenter.didReceiveSmsCode);
-                                    qn0Var2.I = false;
-                                    qn0Var2.r();
-                                    qn0Var2.t();
-                                    break;
-                                }
-                            } else {
-                                if (i17 == 4) {
-                                    mn0Var.setText(LocaleController.getString(R.string.Calling));
-                                } else {
-                                    mn0Var.setText(LocaleController.getString(R.string.SendingSms));
-                                }
-                                qn0Var2.p();
-                                TLRPC.TL_auth_resendCode tL_auth_resendCode = new TLRPC.TL_auth_resendCode();
-                                tL_auth_resendCode.phone_number = qn0Var2.a;
-                                tL_auth_resendCode.phone_code_hash = qn0Var2.b;
-                                i10 = ((org.telegram.ui.ActionBar.m2) qn0Var2.Q).currentAccount;
-                                ConnectionsManager.getInstance(i10).sendRequest(tL_auth_resendCode, new m(pn0Var, i13), 2);
-                                break;
-                            }
-                        }
-                    } else {
-                        AndroidUtilities.setWaitingForCall(false);
-                        NotificationCenter.getGlobalInstance().removeObserver(qn0Var2, NotificationCenter.didReceiveCall);
-                        qn0Var2.I = false;
-                        qn0Var2.r();
-                        qn0Var2.t();
-                        break;
-                    }
-                } else {
-                    int i18 = i15 / MediaDataController.MAX_STYLE_RUNS_COUNT;
-                    int i19 = i18 / 60;
-                    int i20 = i18 - (i19 * 60);
-                    int i21 = qn0Var2.M;
-                    if (i21 == 4 || i21 == 3) {
-                        mn0Var.setText(LocaleController.formatString("CallText", R.string.CallText, Integer.valueOf(i19), Integer.valueOf(i20)));
-                    } else if (i21 == 2) {
-                        mn0Var.setText(LocaleController.formatString("SmsText", R.string.SmsText, Integer.valueOf(i19), Integer.valueOf(i20)));
-                    }
-                    if (rn0Var != null) {
-                        rn0Var.c = 1.0f - (qn0Var2.y / qn0Var2.P);
-                        rn0Var.invalidate();
-                        break;
-                    }
-                }
-                break;
-            case 8:
-                pf.d.s(((mo0) obj).b.getParentActivity(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
-                break;
-            case 9:
-                cp0 cp0Var = ((ro0) obj).a;
-                cp0Var.t0();
-                cp0Var.H0(true, false);
-                cp0Var.D0(false);
-                break;
-            case 10:
-                pf.d.s(((vo0) obj).b.getParentActivity(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
-                break;
-            case 11:
-                yp0 yp0Var = (yp0) obj;
-                aq0 aq0Var = yp0Var.c;
-                fq0 fq0Var = aq0Var.E;
-                gq0 gq0Var = aq0Var.p0;
-                if (fq0Var != null && aq0Var.L.size() > 1) {
-                    fq0Var.a(1, true);
-                    TL_stars.StarGift starGift = (TL_stars.StarGift) aq0Var.M.get(1);
-                    aq0Var.K = starGift;
-                    if (starGift == null) {
-                        yh.t3 t3Var = aq0Var.J;
-                        if (t3Var != null) {
-                            t3Var.f();
-                            aq0Var.J = null;
-                        }
-                    } else {
-                        yh.t3 t3Var2 = aq0Var.J;
-                        if (t3Var2 == null || t3Var2.b != starGift.id) {
-                            i11 = ((org.telegram.ui.ActionBar.m2) gq0Var).currentAccount;
-                            yh.t3 t3Var3 = new yh.t3(aq0Var.K.id, i11, new v3(yp0Var, i13));
-                            aq0Var.J = t3Var3;
-                            t3Var3.g(false);
-                        }
-                    }
-                    aq0.a(aq0Var);
-                    (gq0Var.I.getCurrentPosition() == 1 ? gq0Var.n : gq0Var.h).e();
-                    break;
-                }
-                break;
-            case 12:
-                hr0 hr0Var = ((yq0) obj).h;
-                hr0Var.b0(hr0Var.P.getSearchField());
-                break;
-            case 13:
-                ((zq0) obj).z0.L.l();
-                break;
-            case 14:
-                ((cv0) obj).invalidate();
-                break;
-            case 15:
-                com.google.android.gms.common.api.internal.v vVar = (com.google.android.gms.common.api.internal.v) obj;
-                PhotoViewer photoViewer = (PhotoViewer) vVar.d;
-                long j10 = vVar.a;
-                Drawable[] drawableArr = PhotoViewer.U8;
-                photoViewer.t2(j10);
-                if (photoViewer.c2 == 1) {
-                    long j11 = vVar.a;
-                    photoViewer.X7 = j11;
-                    if (photoViewer.W7 != j11) {
-                        photoViewer.W7 = -1L;
-                    }
-                }
-                vVar.c = null;
-                break;
-            case 16:
-                PhotoViewer photoViewer2 = ((lt0) obj).a;
-                ImageView imageView = photoViewer2.E3;
-                if (imageView != null && imageView.getParent() != null) {
-                    ((ViewGroup) photoViewer2.E3.getParent()).removeView(photoViewer2.E3);
-                    if (photoViewer2.D3 != null) {
-                        ImageView imageView2 = photoViewer2.E3;
-                        if (imageView2 != null) {
-                            imageView2.setBackground(null);
-                        }
-                        AndroidUtilities.recycleBitmap(photoViewer2.D3);
-                        photoViewer2.D3 = null;
-                    }
-                    photoViewer2.E3 = null;
-                    break;
-                }
-                break;
-            case 17:
-                fo foVar = ((nt0) obj).d1.l4;
-                if (foVar != null && (skVar = foVar.Y) != null) {
-                    skVar.F0();
-                    break;
-                }
-                break;
-            case 18:
-                org.telegram.ui.Components.ql0 ql0Var = (org.telegram.ui.Components.ql0) ((lj0) obj).b;
-                PhotoViewer photoViewer3 = (PhotoViewer) ql0Var.c;
-                photoViewer3.H2 = false;
-                org.telegram.ui.Components.h81 h81Var = photoViewer3.F2;
-                if (h81Var != null) {
-                    h81Var.C();
-                }
-                ((PhotoViewer) ql0Var.c).I2 = null;
-                break;
-            case 19:
-                PhotoViewer photoViewer4 = ((at0) obj).a;
-                photoViewer4.H2 = false;
-                org.telegram.ui.Components.h81 h81Var2 = photoViewer4.F2;
-                if (h81Var2 != null) {
-                    h81Var2.C();
-                }
-                photoViewer4.I2 = null;
-                break;
-            case 20:
-                mu0 mu0Var = (mu0) ((lj0) obj).b;
-                mu0Var.r.l7.unlock();
-                PhotoViewer photoViewer5 = mu0Var.r;
-                Runnable runnable = photoViewer5.p4;
-                if (runnable != null) {
-                    runnable.run();
-                    photoViewer5.p4 = null;
-                }
-                photoViewer5.y2(true);
-                break;
-            case 21:
-                PhotoViewer photoViewer6 = ((pt0) obj).b;
-                Runnable runnable2 = photoViewer6.p4;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    photoViewer6.p4 = null;
-                    break;
-                }
-                break;
-            case 22:
-                ((xu0) obj).x.d(true);
-                break;
-            case 23:
-                ((bv0) obj).d = true;
-                break;
-            case 24:
-                PremiumPreviewFragment premiumPreviewFragment = ((ix0) obj).c;
-                premiumPreviewFragment.showDialog(new n41(premiumPreviewFragment.getParentActivity(), false, premiumPreviewFragment.getResourceProvider(), null));
-                break;
-            case 25:
-                ((org.telegram.messenger.mk) obj).run(0);
-                break;
-            case 26:
-                AndroidUtilities.addToClipboard((String) obj);
-                break;
-            case 27:
-                ((di.d4) obj).e(true);
-                break;
-            case 28:
-                AndroidUtilities.addToClipboard("@" + UserObject.getPublicUsername((TLRPC.User) obj));
-                break;
-            default:
-                mz0 mz0Var = (mz0) obj;
-                mz0Var.G.getNotificationCenter().onAnimationFinish(mz0Var.F);
-                break;
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        int i19;
+        int i20;
+        int i21;
+        int i22;
+        int i23;
+        int i24;
+        int i25;
+        int i26;
+        int i27;
+        NotificationsSettingsActivity notificationsSettingsActivity = this.d;
+        if (i10 == notificationsSettingsActivity.K || i10 == notificationsSettingsActivity.M || i10 == notificationsSettingsActivity.S || i10 == notificationsSettingsActivity.G || i10 == notificationsSettingsActivity.N || i10 == notificationsSettingsActivity.E || i10 == notificationsSettingsActivity.x || i10 == notificationsSettingsActivity.r) {
+            return 0;
         }
+        i11 = notificationsSettingsActivity.inappSoundRow;
+        if (i10 == i11) {
+            return 1;
+        }
+        i12 = notificationsSettingsActivity.inappVibrateRow;
+        if (i10 == i12 || i10 == notificationsSettingsActivity.w) {
+            return 1;
+        }
+        i13 = notificationsSettingsActivity.inappPreviewRow;
+        if (i10 == i13) {
+            return 1;
+        }
+        i14 = notificationsSettingsActivity.contactJoinedRow;
+        if (i10 == i14) {
+            return 1;
+        }
+        i15 = notificationsSettingsActivity.pinnedMessageRow;
+        if (i10 == i15 || i10 == notificationsSettingsActivity.v) {
+            return 1;
+        }
+        i16 = notificationsSettingsActivity.badgeNumberMutedRow;
+        if (i10 == i16) {
+            return 1;
+        }
+        i17 = notificationsSettingsActivity.badgeNumberMessagesRow;
+        if (i10 == i17) {
+            return 1;
+        }
+        i18 = notificationsSettingsActivity.badgeNumberShowRow;
+        if (i10 == i18) {
+            return 1;
+        }
+        i19 = notificationsSettingsActivity.inappPriorityRow;
+        if (i10 == i19) {
+            return 1;
+        }
+        i20 = notificationsSettingsActivity.inchatSoundRow;
+        if (i10 == i20 || i10 == notificationsSettingsActivity.P) {
+            return 1;
+        }
+        i21 = notificationsSettingsActivity.accountsAllRow;
+        if (i10 == i21) {
+            return 1;
+        }
+        i22 = notificationsSettingsActivity.resetNotificationsRow;
+        if (i10 == i22) {
+            return 2;
+        }
+        i23 = notificationsSettingsActivity.privateRow;
+        if (i10 == i23) {
+            return 3;
+        }
+        i24 = notificationsSettingsActivity.groupRow;
+        if (i10 == i24) {
+            return 3;
+        }
+        i25 = notificationsSettingsActivity.channelsRow;
+        if (i10 == i25) {
+            return 3;
+        }
+        i26 = notificationsSettingsActivity.storiesRow;
+        if (i10 == i26) {
+            return 3;
+        }
+        i27 = notificationsSettingsActivity.reactionsRow;
+        if (i10 == i27) {
+            return 3;
+        }
+        if (i10 == notificationsSettingsActivity.J || i10 == notificationsSettingsActivity.y || i10 == notificationsSettingsActivity.L || i10 == notificationsSettingsActivity.R || i10 == notificationsSettingsActivity.F || i10 == notificationsSettingsActivity.O || i10 == notificationsSettingsActivity.T) {
+            return 4;
+        }
+        return i10 == notificationsSettingsActivity.s ? 6 : 5;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:122:0x01ca  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x01c7  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x01f0  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x02e9  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x02eb  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x022a  */
+    @Override // s4.g0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void v(s4.b1 b1Var, int i10) {
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        int i19;
+        int i20;
+        int i21;
+        int i22;
+        int i23;
+        int i24;
+        int i25;
+        int i26;
+        int i27;
+        int i28;
+        int i29;
+        int i30;
+        String string;
+        ArrayList arrayList;
+        int i31;
+        int i32;
+        ArrayList arrayList2;
+        boolean z10;
+        String str;
+        int i33;
+        int i34;
+        boolean z11;
+        int i35;
+        int i36;
+        int i37;
+        int i38 = b1Var.f;
+        View view = b1Var.a;
+        NotificationsSettingsActivity notificationsSettingsActivity = this.d;
+        if (i38 == 0) {
+            org.telegram.ui.Cells.m4 m4Var = (org.telegram.ui.Cells.m4) view;
+            if (i10 == notificationsSettingsActivity.x) {
+                m4Var.setText(LocaleController.getString("NotificationsForChats", R.string.NotificationsForChats));
+                return;
+            }
+            if (i10 == notificationsSettingsActivity.E) {
+                m4Var.setText(LocaleController.getString("InAppNotifications", R.string.InAppNotifications));
+                return;
+            }
+            if (i10 == notificationsSettingsActivity.K) {
+                m4Var.setText(LocaleController.getString("Events", R.string.Events));
+                return;
+            }
+            if (i10 == notificationsSettingsActivity.M) {
+                m4Var.setText(LocaleController.getString("NotificationsOther", R.string.NotificationsOther));
+                return;
+            }
+            if (i10 == notificationsSettingsActivity.S) {
+                m4Var.setText(LocaleController.getString("Reset", R.string.Reset));
+                return;
+            }
+            if (i10 == notificationsSettingsActivity.G) {
+                m4Var.setText(LocaleController.getString("VoipNotificationSettings", R.string.VoipNotificationSettings));
+                return;
+            } else if (i10 == notificationsSettingsActivity.N) {
+                m4Var.setText(LocaleController.getString("BadgeNumber", R.string.BadgeNumber));
+                return;
+            } else {
+                if (i10 == notificationsSettingsActivity.r) {
+                    m4Var.setText(LocaleController.getString("ShowNotificationsFor", R.string.ShowNotificationsFor));
+                    return;
+                }
+                return;
+            }
+        }
+        if (i38 == 1) {
+            org.telegram.ui.Cells.w8 w8Var = (org.telegram.ui.Cells.w8) view;
+            i11 = ((org.telegram.ui.ActionBar.m2) notificationsSettingsActivity).currentAccount;
+            SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i11);
+            i12 = notificationsSettingsActivity.inappSoundRow;
+            if (i10 == i12) {
+                w8Var.f(LocaleController.getString(R.string.InAppSounds), notificationsSettings.getBoolean("EnableInAppSounds", true), true);
+                return;
+            }
+            i13 = notificationsSettingsActivity.inappVibrateRow;
+            if (i10 == i13) {
+                w8Var.f(LocaleController.getString(R.string.InAppVibrate), notificationsSettings.getBoolean("EnableInAppVibrate", true), true);
+                return;
+            }
+            i14 = notificationsSettingsActivity.inappPreviewRow;
+            if (i10 == i14) {
+                w8Var.f(LocaleController.getString(R.string.InAppPreview), notificationsSettings.getBoolean("EnableInAppPreview", true), true);
+                return;
+            }
+            i15 = notificationsSettingsActivity.inappPriorityRow;
+            if (i10 == i15) {
+                w8Var.g(LocaleController.getString(R.string.InAppPopup), LocaleController.getString(R.string.InAppPopupInfo), notificationsSettings.getBoolean("EnableInAppPopup", true), true, false);
+                return;
+            }
+            i16 = notificationsSettingsActivity.contactJoinedRow;
+            if (i10 == i16) {
+                w8Var.f(LocaleController.getString("ContactJoined", R.string.ContactJoined), notificationsSettings.getBoolean("EnableContactJoined", true), true);
+                return;
+            }
+            i17 = notificationsSettingsActivity.pinnedMessageRow;
+            if (i10 == i17) {
+                w8Var.f(LocaleController.getString("PinnedMessages", R.string.PinnedMessages), notificationsSettings.getBoolean("PinnedMessages", true), false);
+                return;
+            }
+            if (i10 == notificationsSettingsActivity.P) {
+                w8Var.f("Android Auto", notificationsSettings.getBoolean("EnableAutoNotifications", false), true);
+                return;
+            }
+            if (i10 == notificationsSettingsActivity.v) {
+                w8Var.g(LocaleController.getString("NotificationsService", R.string.NotificationsService), LocaleController.getString("NotificationsServiceInfo", R.string.NotificationsServiceInfo), notificationsSettings.getBoolean("pushService", notificationsSettingsActivity.getMessagesController().keepAliveService), true, true);
+                return;
+            }
+            if (i10 == notificationsSettingsActivity.w) {
+                w8Var.g(LocaleController.getString("NotificationsServiceConnection", R.string.NotificationsServiceConnection), LocaleController.getString("NotificationsServiceConnectionInfo", R.string.NotificationsServiceConnectionInfo), notificationsSettings.getBoolean("pushConnection", notificationsSettingsActivity.getMessagesController().backgroundConnection), true, true);
+                return;
+            }
+            i18 = notificationsSettingsActivity.badgeNumberShowRow;
+            if (i10 == i18) {
+                w8Var.f(LocaleController.getString("BadgeNumberShow", R.string.BadgeNumberShow), notificationsSettingsActivity.getNotificationsController().showBadgeNumber, true);
+                return;
+            }
+            i19 = notificationsSettingsActivity.badgeNumberMutedRow;
+            if (i10 == i19) {
+                w8Var.f(LocaleController.getString("BadgeNumberMutedChats", R.string.BadgeNumberMutedChats), notificationsSettingsActivity.getNotificationsController().showBadgeMuted, true);
+                return;
+            }
+            i20 = notificationsSettingsActivity.badgeNumberMessagesRow;
+            if (i10 == i20) {
+                w8Var.f(LocaleController.getString("BadgeNumberUnread", R.string.BadgeNumberUnread), notificationsSettingsActivity.getNotificationsController().showBadgeMessages, false);
+                return;
+            }
+            i21 = notificationsSettingsActivity.inchatSoundRow;
+            if (i10 == i21) {
+                w8Var.f(LocaleController.getString("InChatSound", R.string.InChatSound), notificationsSettings.getBoolean("EnableInChatSound", true), true);
+                return;
+            }
+            if (i10 == notificationsSettingsActivity.H) {
+                w8Var.f(LocaleController.getString("Vibrate", R.string.Vibrate), notificationsSettings.getBoolean("EnableCallVibrate", true), true);
+                return;
+            }
+            i22 = notificationsSettingsActivity.accountsAllRow;
+            if (i10 == i22) {
+                w8Var.f(LocaleController.getString("AllAccounts", R.string.AllAccounts), MessagesController.getGlobalNotificationsSettings().getBoolean("AllAccounts", true), false);
+                return;
+            }
+            return;
+        }
+        if (i38 == 2) {
+            org.telegram.ui.Cells.d9 d9Var = (org.telegram.ui.Cells.d9) view;
+            d9Var.setMultilineDetail(true);
+            i23 = notificationsSettingsActivity.resetNotificationsRow;
+            if (i10 == i23) {
+                d9Var.a(LocaleController.getString("ResetAllNotifications", R.string.ResetAllNotifications), LocaleController.getString("UndoAllCustom", R.string.UndoAllCustom), false);
+                return;
+            }
+            return;
+        }
+        if (i38 != 3) {
+            if (i38 != 5) {
+                if (i38 != 6) {
+                    return;
+                }
+                org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) view;
+                if (i10 == notificationsSettingsActivity.s) {
+                    e9Var.setText(LocaleController.getString("ShowNotificationsForInfo", R.string.ShowNotificationsForInfo));
+                    return;
+                }
+                return;
+            }
+            org.telegram.ui.Cells.ca caVar = (org.telegram.ui.Cells.ca) view;
+            i37 = ((org.telegram.ui.ActionBar.m2) notificationsSettingsActivity).currentAccount;
+            SharedPreferences notificationsSettings2 = MessagesController.getNotificationsSettings(i37);
+            if (i10 == notificationsSettingsActivity.I) {
+                String string2 = notificationsSettings2.getString("CallsRingtone", LocaleController.getString("DefaultRingtone", R.string.DefaultRingtone));
+                if (string2.equals("NoSound")) {
+                    string2 = LocaleController.getString("NoSound", R.string.NoSound);
+                }
+                caVar.c(LocaleController.getString("VoipSettingsRingtone", R.string.VoipSettingsRingtone), string2, notificationsSettingsActivity.W, false);
+                notificationsSettingsActivity.W = false;
+                return;
+            }
+            if (i10 != notificationsSettingsActivity.H) {
+                if (i10 == notificationsSettingsActivity.Q) {
+                    int i39 = notificationsSettings2.getInt("repeat_messages", 60);
+                    caVar.c(LocaleController.getString("RepeatNotifications", R.string.RepeatNotifications), i39 == 0 ? LocaleController.getString("RepeatNotificationsNever", R.string.RepeatNotificationsNever) : i39 < 60 ? LocaleController.formatPluralString("Minutes", i39, new Object[0]) : LocaleController.formatPluralString("Hours", i39 / 60, new Object[0]), notificationsSettingsActivity.X, false);
+                    notificationsSettingsActivity.X = false;
+                    return;
+                }
+                return;
+            }
+            int i40 = notificationsSettings2.getInt("vibrate_calls", 0);
+            if (i40 == 0) {
+                caVar.c(LocaleController.getString("Vibrate", R.string.Vibrate), LocaleController.getString("VibrationDefault", R.string.VibrationDefault), notificationsSettingsActivity.V, true);
+            } else if (i40 == 1) {
+                caVar.c(LocaleController.getString("Vibrate", R.string.Vibrate), LocaleController.getString("Short", R.string.Short), notificationsSettingsActivity.V, true);
+            } else if (i40 == 2) {
+                caVar.c(LocaleController.getString("Vibrate", R.string.Vibrate), LocaleController.getString("VibrationDisabled", R.string.VibrationDisabled), notificationsSettingsActivity.V, true);
+            } else if (i40 == 3) {
+                caVar.c(LocaleController.getString("Vibrate", R.string.Vibrate), LocaleController.getString("Long", R.string.Long), notificationsSettingsActivity.V, true);
+            } else if (i40 == 4) {
+                caVar.c(LocaleController.getString("Vibrate", R.string.Vibrate), LocaleController.getString("OnlyIfSilent", R.string.OnlyIfSilent), notificationsSettingsActivity.V, true);
+            }
+            notificationsSettingsActivity.V = false;
+            return;
+        }
+        org.telegram.ui.Cells.j5 j5Var = (org.telegram.ui.Cells.j5) view;
+        i24 = ((org.telegram.ui.ActionBar.m2) notificationsSettingsActivity).currentAccount;
+        SharedPreferences notificationsSettings3 = MessagesController.getNotificationsSettings(i24);
+        i25 = ((org.telegram.ui.ActionBar.m2) notificationsSettingsActivity).currentAccount;
+        int currentTime = ConnectionsManager.getInstance(i25).getCurrentTime();
+        i26 = notificationsSettingsActivity.privateRow;
+        ArrayList arrayList3 = null;
+        if (i10 == i26) {
+            string = LocaleController.getString(R.string.NotificationsPrivateChats);
+            arrayList = notificationsSettingsActivity.d;
+            i31 = notificationsSettings3.getInt("EnableAll2", 0);
+            i32 = R.drawable.msg_openprofile;
+        } else {
+            i27 = notificationsSettingsActivity.groupRow;
+            if (i10 != i27) {
+                i28 = notificationsSettingsActivity.storiesRow;
+                i29 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                if (i10 == i28) {
+                    string = LocaleController.getString(R.string.NotificationStories);
+                    arrayList3 = notificationsSettingsActivity.h;
+                    arrayList2 = notificationsSettingsActivity.n;
+                    if (notificationsSettings3.getBoolean("EnableAllStories", false)) {
+                        i29 = 0;
+                    }
+                    i32 = R.drawable.msg_menu_stories;
+                } else {
+                    i30 = notificationsSettingsActivity.reactionsRow;
+                    if (i10 == i30) {
+                        string = LocaleController.getString(R.string.NotificationReactions);
+                        int i41 = (notificationsSettings3.getBoolean("EnableReactionsMessages", true) || notificationsSettings3.getBoolean("EnableReactionsStories", true)) ? 0 : Integer.MAX_VALUE;
+                        i32 = R.drawable.msg_reactions;
+                        i29 = i41;
+                        arrayList2 = null;
+                    } else {
+                        string = LocaleController.getString(R.string.NotificationsChannels);
+                        arrayList = notificationsSettingsActivity.f;
+                        i31 = notificationsSettings3.getInt("EnableChannel2", 0);
+                        i32 = R.drawable.msg_channel;
+                    }
+                }
+                z10 = i29 >= currentTime;
+                if (!z10 && i29 - 31536000 < currentTime) {
+                    str = string;
+                    i33 = 2;
+                } else {
+                    i33 = 0;
+                    str = string;
+                }
+                StringBuilder sb2 = new StringBuilder();
+                i34 = notificationsSettingsActivity.reactionsRow;
+                if (i10 != i34) {
+                    if (arrayList3 != null && !arrayList3.isEmpty()) {
+                        z10 = i29 < currentTime;
+                        if (z10) {
+                            sb2.append(LocaleController.getString("NotificationsOn", R.string.NotificationsOn));
+                        } else if (i29 - 31536000 >= currentTime) {
+                            sb2.append(LocaleController.getString("NotificationsOff", R.string.NotificationsOff));
+                        } else {
+                            sb2.append(LocaleController.formatString("NotificationsOffUntil", R.string.NotificationsOffUntil, LocaleController.stringForMessageListDate(i29)));
+                        }
+                        if (sb2.length() != 0) {
+                            sb2.append(", ");
+                        }
+                        int size = arrayList3.size();
+                        i35 = notificationsSettingsActivity.storiesRow;
+                        if (i10 == i35 && !notificationsSettings3.contains("EnableAllStories") && arrayList2 != null) {
+                            size += arrayList2.size();
+                        }
+                        sb2.append(LocaleController.formatPluralString("Exception", size, new Object[0]));
+                    } else if (arrayList2 == null || arrayList2.isEmpty()) {
+                        sb2.append(LocaleController.getString("TapToChange", R.string.TapToChange));
+                    } else {
+                        if (i29 > 0) {
+                            sb2.append(LocaleController.getString("NotificationsOff", R.string.NotificationsOff));
+                        } else {
+                            sb2.append(LocaleController.getString("NotificationsOn", R.string.NotificationsOn));
+                        }
+                        if (!arrayList2.isEmpty() && !notificationsSettings3.contains("EnableAllStories")) {
+                            sb2.append(", ");
+                            sb2.append(LocaleController.formatPluralString("AutoException", arrayList2.size(), new Object[0]));
+                        }
+                    }
+                    z11 = z10;
+                } else if (i29 > 0) {
+                    sb2.append(LocaleController.getString("NotificationsOff", R.string.NotificationsOff));
+                    z11 = false;
+                } else {
+                    if (notificationsSettings3.getBoolean("EnableReactionsMessages", true)) {
+                        sb2.append(LocaleController.getString(R.string.NotificationReactionsMessages));
+                    }
+                    if (notificationsSettings3.getBoolean("EnableReactionsStories", true)) {
+                        if (sb2.length() > 0) {
+                            sb2.append(", ");
+                        }
+                        sb2.append(LocaleController.getString(R.string.NotificationReactionsStories));
+                    }
+                    z11 = true;
+                }
+                i36 = notificationsSettingsActivity.reactionsRow;
+                j5Var.b(str, sb2, i32, z11, i33, false, i10 != i36, false);
+            }
+            string = LocaleController.getString(R.string.NotificationsGroups);
+            arrayList = notificationsSettingsActivity.e;
+            i31 = notificationsSettings3.getInt("EnableGroup2", 0);
+            i32 = R.drawable.msg_groups;
+        }
+        int i42 = i31;
+        arrayList2 = null;
+        arrayList3 = arrayList;
+        i29 = i42;
+        if (i29 >= currentTime) {
+        }
+        if (z10) {
+            str = string;
+            i33 = 2;
+            StringBuilder sb22 = new StringBuilder();
+            i34 = notificationsSettingsActivity.reactionsRow;
+            if (i10 != i34) {
+            }
+            i36 = notificationsSettingsActivity.reactionsRow;
+            j5Var.b(str, sb22, i32, z11, i33, false, i10 != i36, false);
+        }
+        i33 = 0;
+        str = string;
+        StringBuilder sb222 = new StringBuilder();
+        i34 = notificationsSettingsActivity.reactionsRow;
+        if (i10 != i34) {
+        }
+        i36 = notificationsSettingsActivity.reactionsRow;
+        j5Var.b(str, sb222, i32, z11, i33, false, i10 != i36, false);
+    }
+
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        View m4Var;
+        org.telegram.ui.ActionBar.c6 c6Var;
+        org.telegram.ui.ActionBar.c6 c6Var2;
+        org.telegram.ui.ActionBar.c6 c6Var3;
+        org.telegram.ui.ActionBar.c6 c6Var4;
+        org.telegram.ui.ActionBar.c6 c6Var5;
+        NotificationsSettingsActivity notificationsSettingsActivity = this.d;
+        Context context = this.c;
+        if (i10 == 0) {
+            c6Var = ((org.telegram.ui.ActionBar.m2) notificationsSettingsActivity).resourceProvider;
+            m4Var = new org.telegram.ui.Cells.m4(context, c6Var);
+        } else if (i10 == 1) {
+            c6Var2 = ((org.telegram.ui.ActionBar.m2) notificationsSettingsActivity).resourceProvider;
+            m4Var = new org.telegram.ui.Cells.w8(context, c6Var2);
+        } else if (i10 == 2) {
+            m4Var = new org.telegram.ui.Cells.d9(context);
+        } else if (i10 == 3) {
+            c6Var3 = ((org.telegram.ui.ActionBar.m2) notificationsSettingsActivity).resourceProvider;
+            m4Var = new org.telegram.ui.Cells.j5(21, 64, this.c, c6Var3, true);
+        } else if (i10 == 4) {
+            m4Var = new org.telegram.ui.Cells.a7(context, (org.telegram.ui.Cells.c1) null);
+        } else if (i10 != 5) {
+            c6Var5 = ((org.telegram.ui.ActionBar.m2) notificationsSettingsActivity).resourceProvider;
+            m4Var = new org.telegram.ui.Cells.e9(context, c6Var5);
+        } else {
+            c6Var4 = ((org.telegram.ui.ActionBar.m2) notificationsSettingsActivity).resourceProvider;
+            m4Var = new org.telegram.ui.Cells.ca(context, 0, c6Var4);
+        }
+        return new org.telegram.ui.Components.wl0(m4Var);
     }
 }

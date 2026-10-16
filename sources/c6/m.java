@@ -10,9 +10,8 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import w7.g0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class m extends o6.a {
     public static final Parcelable.Creator<m> CREATOR = new v(12);
@@ -70,18 +69,18 @@ public final class m extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = g0.q(parcel, 20293);
+        int q6 = w7.f0.q(parcel, 20293);
         int i11 = this.a;
-        g0.s(parcel, 2, 4);
+        w7.f0.s(parcel, 2, 4);
         parcel.writeInt(i11);
-        g0.l(parcel, 3, this.b);
+        w7.f0.l(parcel, 3, this.b);
         List list = this.c;
-        g0.p(parcel, 4, list == null ? null : DesugarCollections.unmodifiableList(list));
+        w7.f0.p(parcel, 4, list == null ? null : DesugarCollections.unmodifiableList(list));
         List list2 = this.d;
-        g0.p(parcel, 5, list2 != null ? DesugarCollections.unmodifiableList(list2) : null);
+        w7.f0.p(parcel, 5, list2 != null ? DesugarCollections.unmodifiableList(list2) : null);
         double d = this.e;
-        g0.s(parcel, 6, 8);
+        w7.f0.s(parcel, 6, 8);
         parcel.writeDouble(d);
-        g0.r(parcel, q6);
+        w7.f0.r(parcel, q6);
     }
 }

@@ -15,12 +15,12 @@ import android.view.MenuInflater;
 import android.view.SubMenu;
 import java.io.IOException;
 import l.n;
-import m.l1;
+import m.n1;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import v7.q7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class h extends MenuInflater {
     public static final Class[] e;
@@ -167,7 +167,7 @@ public final class h extends MenuInflater {
                             gVar.A = obtainStyledAttributes2.getText(17);
                             gVar.B = obtainStyledAttributes2.getText(22);
                             if (obtainStyledAttributes2.hasValue(19)) {
-                                gVar.D = l1.b(obtainStyledAttributes2.getInt(19, -1), gVar.D);
+                                gVar.D = n1.b(obtainStyledAttributes2.getInt(19, -1), gVar.D);
                             } else {
                                 gVar.D = null;
                             }

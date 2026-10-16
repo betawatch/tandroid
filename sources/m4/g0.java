@@ -1,25 +1,26 @@
 package m4;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g0 implements Runnable {
+public final /* synthetic */ class g0 implements o0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q0 b;
+    public final /* synthetic */ p0 b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ g0(q0 q0Var, int i10) {
+    public /* synthetic */ g0(p0 p0Var, long j10, int i10) {
         this.a = i10;
-        this.b = q0Var;
+        this.b = p0Var;
+        this.c = j10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // m4.o0
+    public final void e(v vVar) {
         switch (this.a) {
             case 0:
-                q0 q0Var = this.b;
-                e2.m0.W(q0Var.g.l, new g0(q0Var, 1));
+                this.b.g.t.Y((int) this.c);
                 break;
             default:
-                this.b.N();
+                this.b.g.t.g(this.c);
                 break;
         }
     }

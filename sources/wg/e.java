@@ -8,18 +8,18 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.k9;
 import org.telegram.ui.Components.z9;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class e extends d {
     @Override // wg.d, wg.c
     public final void d() {
-        this.c.setLayoutParams(a6.a(40.0f, 16.0f, 0.0f, 16.0f, 0.0f, 40, (LocaleController.isRTL ? 5 : 3) | 16));
+        this.c.setLayoutParams(z5.a(40.0f, 16.0f, 0.0f, 16.0f, 0.0f, 40, (LocaleController.isRTL ? 5 : 3) | 16));
         boolean z10 = LocaleController.isRTL;
-        this.d.setLayoutParams(a6.a(-2.0f, z10 ? 20.0f : 69.0f, 0.0f, z10 ? 69.0f : 20.0f, 0.0f, -1, (z10 ? 5 : 3) | 16));
+        this.d.setLayoutParams(z5.a(-2.0f, z10 ? 20.0f : 69.0f, 0.0f, z10 ? 69.0f : 20.0f, 0.0f, -1, (z10 ? 5 : 3) | 16));
         boolean z11 = LocaleController.isRTL;
-        this.e.setLayoutParams(a6.a(-2.0f, z11 ? 20.0f : 69.0f, 0.0f, z11 ? 69.0f : 20.0f, 0.0f, -1, (z11 ? 5 : 3) | 16));
+        this.e.setLayoutParams(z5.a(-2.0f, z11 ? 20.0f : 69.0f, 0.0f, z11 ? 69.0f : 20.0f, 0.0f, -1, (z11 ? 5 : 3) | 16));
     }
 
     public void setGiveaway(TL_stories.PrepaidGiveaway prepaidGiveaway) {

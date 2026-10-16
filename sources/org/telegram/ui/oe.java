@@ -15,7 +15,7 @@ import org.telegram.messenger.BillingController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class oe extends LinearLayout {
     public final LinearLayout a;
@@ -34,26 +34,26 @@ public final class oe extends LinearLayout {
         LinearLayout linearLayout = new LinearLayout(context);
         this.a = linearLayout;
         linearLayout.setOrientation(1);
-        addView(linearLayout, w7.a6.k(22.0f, 9.0f, 22.0f, 0.0f, -1, -2));
+        addView(linearLayout, w7.z5.k(22.0f, 9.0f, 22.0f, 0.0f, -1, -2));
         for (int i10 = 0; i10 < 2; i10++) {
             this.b[i10] = new LinearLayout(context);
             this.b[i10].setOrientation(0);
-            this.a.addView(this.b[i10], w7.a6.o(-1, -2, 1.0f, 119));
+            this.a.addView(this.b[i10], w7.z5.o(-1, -2, 1.0f, 119));
             this.c[i10] = new org.telegram.ui.Components.a6(context);
             this.c[i10].setTypeface(AndroidUtilities.bold());
             this.c[i10].setTextSize(1, 16.0f);
             this.c[i10].setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.G6, c6Var));
-            this.b[i10].addView(this.c[i10], w7.a6.t(-2, -2, 80, 0, 0, 5, 0));
+            this.b[i10].addView(this.c[i10], w7.z5.t(-2, -2, 80, 0, 0, 5, 0));
             this.d[i10] = new org.telegram.ui.Components.a6(context);
             this.d[i10].setTextSize(1, 11.5f);
             this.d[i10].setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.y6, c6Var));
-            this.b[i10].addView(this.d[i10], w7.a6.q(-2, -2, 80));
+            this.b[i10].addView(this.d[i10], w7.z5.q(-2, -2, 80));
         }
         TextView textView = new TextView(context);
         this.e = textView;
         textView.setTextSize(1, 13.0f);
         textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.y6, c6Var));
-        addView(textView, w7.a6.t(-1, -2, 55, 22, 5, 22, 9));
+        addView(textView, w7.z5.t(-1, -2, 55, 22, 5, 22, 9));
         DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.US);
         decimalFormatSymbols.setDecimalSeparator('.');
         DecimalFormat decimalFormat = new DecimalFormat("#.##", decimalFormatSymbols);

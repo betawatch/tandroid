@@ -23,7 +23,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class tm0 {
     public int A;
@@ -512,7 +512,7 @@ public final class tm0 {
             paint.setAlpha(alpha);
             i();
             float pow = ((float) Math.pow((this.T / 240.0f) / 4.0f, 0.8500000238418579d)) * 4.0f;
-            rectF2.set(rectF.left, (AndroidUtilities.lerp(0.0f, 1.0f - es.i.getInterpolation(w7.s.a(((Math.max(pow, 0.5f) + 1.5f) % 3.5f) * 0.5f, 0.0f, 1.0f)), e) * rectF.height()) + rectF.top, rectF.left + AndroidUtilities.dp(6.0f), (AndroidUtilities.lerp(1.0f, 1.0f - es.g.getInterpolation(w7.s.a((((pow + 1.5f) % 3.5f) - 1.5f) * 0.5f, 0.0f, 1.0f)), e) * rectF.height()) + rectF.top);
+            rectF2.set(rectF.left, (AndroidUtilities.lerp(0.0f, 1.0f - es.i.getInterpolation(w7.r.a(((Math.max(pow, 0.5f) + 1.5f) % 3.5f) * 0.5f, 0.0f, 1.0f)), e) * rectF.height()) + rectF.top, rectF.left + AndroidUtilities.dp(6.0f), (AndroidUtilities.lerp(1.0f, 1.0f - es.g.getInterpolation(w7.r.a((((pow + 1.5f) % 3.5f) - 1.5f) * 0.5f, 0.0f, 1.0f)), e) * rectF.height()) + rectF.top);
             canvas.drawRoundRect(rectF2, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint);
             canvas.restore();
             View view = this.D;

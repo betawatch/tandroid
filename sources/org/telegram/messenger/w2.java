@@ -11,10 +11,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.c21;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w2 implements Runnable {
     public final /* synthetic */ int a;
@@ -69,7 +69,7 @@ public final /* synthetic */ class w2 implements Runnable {
                 ((TopicsController) obj3).lambda$loadTopic$27(this.b, (ArrayList) obj2, this.c, (Runnable) obj);
                 break;
             case 7:
-                ((m80) obj3).u();
+                ((l80) obj3).u();
                 Bundle bundle = new Bundle();
                 bundle.putLong("dialog_id", this.b);
                 bundle.putLong("topic_id", this.c);

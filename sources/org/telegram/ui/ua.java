@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ua extends FrameLayout {
     public final org.telegram.ui.Components.da0 a;
@@ -47,10 +47,10 @@ public final class ua extends FrameLayout {
         y1Var.setLinkTextColor(org.telegram.ui.ActionBar.g6.x0(null, i11, false));
         y1Var.setHighlightColor(org.telegram.ui.ActionBar.g6.x0(null, i12, false));
         y1Var.setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), 0);
-        addView(da0Var, w7.a6.e(-1, -2, 48));
-        addView(y1Var, w7.a6.e(-1, -2, 48));
+        addView(da0Var, w7.z5.e(-1, -2, 48));
+        addView(y1Var, w7.z5.e(-1, -2, 48));
         if (vaVar.x == 0) {
-            org.telegram.ui.Cells.d0.q(R.string.UsernameHelp, da0Var);
+            org.telegram.ui.Cells.c1.o(R.string.UsernameHelp, da0Var);
             return;
         }
         String string = LocaleController.getString(R.string.BotUsernameHelp);
@@ -60,7 +60,7 @@ public final class ua extends FrameLayout {
         if (indexOf != -1 && lastIndexOf != -1 && indexOf != lastIndexOf) {
             spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 1, (CharSequence) "");
             spannableStringBuilder.replace(indexOf, indexOf + 1, (CharSequence) "");
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.p61("https://fragment.com", (org.telegram.ui.Components.p11) null), indexOf, lastIndexOf - 1, 33);
+            spannableStringBuilder.setSpan(new org.telegram.ui.Components.q61("https://fragment.com", (org.telegram.ui.Components.q11) null), indexOf, lastIndexOf - 1, 33);
         }
         da0Var.setText(spannableStringBuilder);
     }

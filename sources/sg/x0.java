@@ -9,9 +9,9 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.da0;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class x0 extends LinearLayout {
     public int a;
@@ -29,10 +29,10 @@ public final class x0 extends LinearLayout {
         super(context);
         this.n = y0Var;
         setOrientation(1);
-        ViewGroup B = y0Var.B(context, i10);
-        this.f = B;
-        addView(B);
-        this.e = (l0) B;
+        ViewGroup C = y0Var.C(context, i10);
+        this.f = C;
+        addView(C);
+        this.e = (l0) C;
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setGravity(1);
@@ -40,7 +40,7 @@ public final class x0 extends LinearLayout {
         textView.setTextColor(y0Var.getThemedColor(i11));
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(AndroidUtilities.bold());
-        addView(textView, a6.a(-2.0f, 21.0f, 20.0f, 21.0f, 0.0f, -1, 0));
+        addView(textView, z5.a(-2.0f, 21.0f, 20.0f, 21.0f, 0.0f, -1, 0));
         da0 da0Var = new da0(context, null);
         this.c = da0Var;
         da0Var.setGravity(1);
@@ -49,7 +49,7 @@ public final class x0 extends LinearLayout {
         if (!y0Var.E) {
             da0Var.setLines(2);
         }
-        addView(da0Var, a6.t(-1, -2, 1, 21, 10, 21, 16));
+        addView(da0Var, z5.t(-1, -2, 1, 21, 10, 21, 16));
         setImportantForAccessibility(2);
         setClipChildren(false);
     }

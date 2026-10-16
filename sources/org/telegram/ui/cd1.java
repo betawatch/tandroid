@@ -16,7 +16,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class cd1 implements org.telegram.ui.ActionBar.c6 {
     public org.telegram.ui.ActionBar.c6 a;
@@ -52,13 +52,13 @@ public final class cd1 implements org.telegram.ui.ActionBar.c6 {
     }
 
     @Override // org.telegram.ui.ActionBar.c6
-    public final int F0(int i10) {
+    public final int E0(int i10) {
         org.telegram.ui.ActionBar.c6 c6Var = this.a;
-        return c6Var != null ? c6Var.F0(i10) : org.telegram.ui.ActionBar.g6.x0(null, i10, false);
+        return c6Var != null ? c6Var.E0(i10) : org.telegram.ui.ActionBar.g6.x0(null, i10, false);
     }
 
     @Override // org.telegram.ui.ActionBar.c6
-    public final Paint G(String str) {
+    public final Paint F(String str) {
         str.getClass();
         switch (str) {
             case "paintChatActionText2":
@@ -75,7 +75,7 @@ public final class cd1 implements org.telegram.ui.ActionBar.c6 {
                 return this.f;
             default:
                 org.telegram.ui.ActionBar.c6 c6Var = this.a;
-                return c6Var != null ? c6Var.G(str) : org.telegram.ui.ActionBar.g6.T0(str);
+                return c6Var != null ? c6Var.F(str) : org.telegram.ui.ActionBar.g6.T0(str);
         }
     }
 
@@ -95,8 +95,8 @@ public final class cd1 implements org.telegram.ui.ActionBar.c6 {
 
     public final void b(Drawable drawable, Drawable drawable2, Float f7) {
         int i10 = org.telegram.ui.ActionBar.g6.lc;
-        int F0 = F0(i10);
-        int F02 = F0(org.telegram.ui.ActionBar.g6.mc);
+        int E0 = E0(i10);
+        int E02 = E0(org.telegram.ui.ActionBar.g6.mc);
         if (drawable == null) {
             drawable = drawable2;
         }
@@ -122,14 +122,14 @@ public final class cd1 implements org.telegram.ui.ActionBar.c6 {
             this.r = null;
             this.s = null;
             int i11 = org.telegram.ui.ActionBar.g6.ic;
-            textPaint2.setColor(F0(i11));
-            textPaint.setColor(F0(i11));
-            textPaint2.linkColor = F0(org.telegram.ui.ActionBar.g6.jc);
+            textPaint2.setColor(E0(i11));
+            textPaint.setColor(E0(i11));
+            textPaint2.linkColor = E0(org.telegram.ui.ActionBar.g6.jc);
         }
         Paint paint = this.c;
-        paint.setColor(F0);
+        paint.setColor(E0);
         Paint paint2 = this.d;
-        paint2.setColor(F02);
+        paint2.setColor(E02);
         if (this.s == null || !(this.b.indexOfKey(i10) < 0 || z10 || (drawable instanceof BitmapDrawable))) {
             paint.setColorFilter(null);
             paint.setShader(null);
@@ -184,13 +184,13 @@ public final class cd1 implements org.telegram.ui.ActionBar.c6 {
 
     @Override // org.telegram.ui.ActionBar.c6
     public final int b0(int i10) {
-        return F0(i10);
+        return E0(i10);
     }
 
     @Override // org.telegram.ui.ActionBar.c6
-    public final int g1(int i10) {
+    public final int f1(int i10) {
         org.telegram.ui.ActionBar.c6 c6Var = this.a;
-        return c6Var != null ? c6Var.g1(i10) : F0(i10);
+        return c6Var != null ? c6Var.f1(i10) : E0(i10);
     }
 
     @Override // org.telegram.ui.ActionBar.c6
@@ -217,11 +217,11 @@ public final class cd1 implements org.telegram.ui.ActionBar.c6 {
     }
 
     @Override // org.telegram.ui.ActionBar.c6
-    public final ColorFilter x() {
+    public final ColorFilter w() {
         return org.telegram.ui.ActionBar.g6.v3;
     }
 
     @Override // org.telegram.ui.ActionBar.c6
-    public final /* synthetic */ void N0(int i10, int i11) {
+    public final /* synthetic */ void M0(int i10, int i11) {
     }
 }

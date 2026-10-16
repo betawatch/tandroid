@@ -26,15 +26,15 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class fh0 implements tf.a {
-    public static final hw0 n0 = new hw0(new l2(27), new l2(28));
-    public static final hw0 o0 = new hw0(new l2(29), new zg0(0));
+    public static final hw0 n0 = new hw0(new n2(25), new n2(26));
+    public static final hw0 o0 = new hw0(new n2(27), new n2(28));
     public static final fh0 p0 = new fh0();
     public boolean E;
     public ValueAnimator F;
-    public l2.f G;
+    public m.h G;
     public int H;
     public int I;
     public float K;
@@ -68,15 +68,15 @@ public final class fh0 implements tf.a {
     public TextureView l0;
     public boolean m0;
     public boolean n;
-    public qg0 r;
+    public rg0 r;
     public ScaleGestureDetector s;
-    public ji.h5 v;
+    public ji.w4 v;
     public boolean w;
     public boolean x;
     public View y;
     public float a = 1.4f;
     public float J = 1.0f;
-    public final z71 Q = new z71(false);
+    public final a81 Q = new a81(false);
     public final ah0 e0 = new ah0(this, 1);
     public float[] g0 = new float[2];
     public final ah0 h0 = new ah0(this, 2);
@@ -111,7 +111,7 @@ public final class fh0 implements tf.a {
             il0Var.a = (AndroidUtilities.displaySize.x - il0Var.c) - AndroidUtilities.dp(16.0f);
         }
         if (f12 != -1.0f) {
-            il0Var.b = w7.s.a(f12, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - AndroidUtilities.dp(16.0f)) - il0Var.d) + AndroidUtilities.statusBarHeight;
+            il0Var.b = w7.r.a(f12, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - AndroidUtilities.dp(16.0f)) - il0Var.d) + AndroidUtilities.statusBarHeight;
             return il0Var;
         }
         il0Var.b = AndroidUtilities.dp(16.0f) + AndroidUtilities.statusBarHeight;
@@ -143,10 +143,10 @@ public final class fh0 implements tf.a {
 
     public static void v(boolean z10) {
         fh0 fh0Var = p0;
-        z71 z71Var = fh0Var.Q;
-        z71Var.e(false);
-        z71Var.d(!z10);
-        z71Var.f(true);
+        a81 a81Var = fh0Var.Q;
+        a81Var.e(false);
+        a81Var.d(!z10);
+        a81Var.f(true);
         bi.d4 d4Var = fh0Var.b0;
         if (d4Var != null) {
             d4Var.invalidate();
@@ -160,15 +160,15 @@ public final class fh0 implements tf.a {
     public static void w(PhotoViewer photoViewer) {
         fh0 fh0Var = p0;
         fh0Var.V = photoViewer;
-        h81 h81Var = photoViewer.F2;
+        i81 i81Var = photoViewer.F2;
         rf.d dVar = fh0Var.W;
         if (dVar != null) {
             dVar.c();
             fh0Var.W = null;
         }
-        if (h81Var != null && uf.b.a(photoViewer.y) == 1) {
+        if (i81Var != null && uf.b.a(photoViewer.y) == 1) {
             rf.c cVar = new rf.c(photoViewer.y, fh0Var);
-            cVar.c = "photo-viewer-pip-" + h81Var.a;
+            cVar.c = "photo-viewer-pip-" + i81Var.a;
             cVar.e = 1;
             cVar.d = AndroidUtilities.dp(10.0f);
             cVar.j = fh0Var.d;
@@ -177,7 +177,7 @@ public final class fh0 implements tf.a {
             int i11 = fh0Var.T;
             cVar.h = i10;
             cVar.i = i11;
-            cVar.g = h81Var.d;
+            cVar.g = i81Var.d;
             cVar.f = true;
             fh0Var.W = cVar.a();
         }
@@ -189,9 +189,9 @@ public final class fh0 implements tf.a {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static boolean x(boolean z10, Activity activity, qg0 qg0Var, View view, int i10, int i11, boolean z11) {
+    public static boolean x(boolean z10, Activity activity, rg0 rg0Var, View view, int i10, int i11, boolean z11) {
         boolean z12;
-        qg0 qg0Var2;
+        rg0 rg0Var2;
         final fh0 fh0Var = p0;
         final int i12 = 1;
         final int i13 = 0;
@@ -206,10 +206,10 @@ public final class fh0 implements tf.a {
                 fh0Var.S = i10;
                 fh0Var.T = i11;
                 fh0Var.O = null;
-                if (qg0Var == null || !qg0Var.x) {
+                if (rg0Var == null || !rg0Var.x) {
                     fh0Var.r = null;
                 } else {
-                    fh0Var.r = qg0Var;
+                    fh0Var.r = rg0Var;
                 }
                 float f7 = ((SharedPreferences) fh0Var.n().b).getFloat("x", -1.0f);
                 float f10 = ((SharedPreferences) fh0Var.n().b).getFloat("y", -1.0f);
@@ -273,11 +273,11 @@ public final class fh0 implements tf.a {
                 fh0Var.s = scaleGestureDetector;
                 scaleGestureDetector.setQuickScaleEnabled(false);
                 fh0Var.s.setStylusScaleEnabled(false);
-                fh0Var.v = new ji.h5(context, new dh0(fh0Var, scaledTouchSlop));
+                fh0Var.v = new ji.w4(context, new dh0(fh0Var, scaledTouchSlop));
                 fh0Var.e = new eh0(fh0Var, context, i13);
                 org.telegram.ui.f fVar = new org.telegram.ui.f(fh0Var, context, i12);
                 fh0Var.d = fVar;
-                fVar.addView(fh0Var.e, w7.a6.d(-1.0f, -1));
+                fVar.addView(fh0Var.e, w7.z5.d(-1.0f, -1));
                 eh0 eh0Var = fh0Var.e;
                 float dp = AndroidUtilities.dp(10.0f);
                 bi.a2 a2Var = zf.j0.a;
@@ -288,12 +288,11 @@ public final class fh0 implements tf.a {
                 if (view.getParent() != null) {
                     ((ViewGroup) fh0Var.f.getParent()).removeView(fh0Var.f);
                 }
-                fh0Var.e.addView(fh0Var.f, w7.a6.d(-1.0f, -1));
+                fh0Var.e.addView(fh0Var.f, w7.z5.d(-1.0f, -1));
                 View view2 = new View(context);
                 fh0Var.k0 = view2;
-                fh0Var.e.addView(view2, w7.a6.d(-1.0f, -1));
-                int i14 = 13;
-                fh0Var.Q.n = new ji.d4(fh0Var, i14);
+                fh0Var.e.addView(view2, w7.z5.d(-1.0f, -1));
+                fh0Var.Q.n = new ji.h5(fh0Var, 14);
                 fh0Var.h = new eh0(fh0Var, context, i12);
                 eh0 eh0Var2 = fh0Var.h;
                 Objects.requireNonNull(eh0Var2);
@@ -302,62 +301,62 @@ public final class fh0 implements tf.a {
                 fh0Var.h.setAlpha(0.0f);
                 View view3 = new View(context);
                 view3.setBackgroundColor(1275068416);
-                fh0Var.h.addView(view3, w7.a6.d(-1.0f, -1));
+                fh0Var.h.addView(view3, w7.z5.d(-1.0f, -1));
                 int dp2 = AndroidUtilities.dp(8.0f);
                 ImageView imageView = new ImageView(context);
                 imageView.setImageResource(R.drawable.pip_video_close);
-                int i15 = org.telegram.ui.ActionBar.g6.hg;
-                int x02 = org.telegram.ui.ActionBar.g6.x0(null, i15, false);
+                int i14 = org.telegram.ui.ActionBar.g6.hg;
+                int x02 = org.telegram.ui.ActionBar.g6.x0(null, i14, false);
                 PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
                 imageView.setColorFilter(x02, mode);
-                int i16 = org.telegram.ui.ActionBar.g6.i6;
-                imageView.setBackground(org.telegram.ui.ActionBar.g6.g0(org.telegram.ui.ActionBar.g6.x0(null, i16, false), 1, -1));
+                int i15 = org.telegram.ui.ActionBar.g6.i6;
+                imageView.setBackground(org.telegram.ui.ActionBar.g6.g0(org.telegram.ui.ActionBar.g6.x0(null, i15, false), 1, -1));
                 imageView.setPadding(dp2, dp2, dp2, dp2);
-                imageView.setOnClickListener(new ah.f(i14));
+                imageView.setOnClickListener(new ah.f(13));
                 float f11 = 38;
                 float f12 = 4;
-                fh0Var.h.addView(imageView, w7.a6.a(f11, 0.0f, f12, f12, 0.0f, 38, 5));
+                fh0Var.h.addView(imageView, w7.z5.a(f11, 0.0f, f12, f12, 0.0f, 38, 5));
                 ImageView imageView2 = new ImageView(context);
                 imageView2.setImageResource(R.drawable.pip_video_expand);
-                imageView2.setColorFilter(org.telegram.ui.ActionBar.g6.x0(null, i15, false), mode);
-                imageView2.setBackground(org.telegram.ui.ActionBar.g6.g0(org.telegram.ui.ActionBar.g6.x0(null, i16, false), 1, -1));
+                imageView2.setColorFilter(org.telegram.ui.ActionBar.g6.x0(null, i14, false), mode);
+                imageView2.setBackground(org.telegram.ui.ActionBar.g6.g0(org.telegram.ui.ActionBar.g6.x0(null, i15, false), 1, -1));
                 imageView2.setPadding(dp2, dp2, dp2, dp2);
                 imageView2.setOnClickListener(new bi.z2(6, fh0Var, z12));
-                fh0Var.h.addView(imageView2, w7.a6.a(f11, 0.0f, f12, 48, 0.0f, 38, 5));
+                fh0Var.h.addView(imageView2, w7.z5.a(f11, 0.0f, f12, 48, 0.0f, 38, 5));
                 ImageView imageView3 = new ImageView(context);
                 fh0Var.X = imageView3;
-                imageView3.setColorFilter(org.telegram.ui.ActionBar.g6.x0(null, i15, false), mode);
-                fh0Var.X.setBackground(org.telegram.ui.ActionBar.g6.g0(org.telegram.ui.ActionBar.g6.x0(null, i16, false), 1, -1));
-                fh0Var.X.setOnClickListener(new z80(fh0Var, 7));
+                imageView3.setColorFilter(org.telegram.ui.ActionBar.g6.x0(null, i14, false), mode);
+                fh0Var.X.setBackground(org.telegram.ui.ActionBar.g6.g0(org.telegram.ui.ActionBar.g6.x0(null, i15, false), 1, -1));
+                fh0Var.X.setOnClickListener(new y80(fh0Var, 7));
                 View view4 = fh0Var.f;
-                boolean z13 = (view4 instanceof WebView) || (view4 instanceof qg0);
+                boolean z13 = (view4 instanceof WebView) || (view4 instanceof rg0);
                 fh0Var.n = z13;
-                fh0Var.X.setVisibility((!z13 || ((qg0Var2 = fh0Var.r) != null && qg0Var2.x)) ? 0 : 8);
-                fh0Var.h.addView(fh0Var.X, w7.a6.e(38, 38, 17));
+                fh0Var.X.setVisibility((!z13 || ((rg0Var2 = fh0Var.r) != null && rg0Var2.x)) ? 0 : 8);
+                fh0Var.h.addView(fh0Var.X, w7.z5.e(38, 38, 17));
                 bi.d4 d4Var = new bi.d4(fh0Var, context);
                 fh0Var.b0 = d4Var;
-                fh0Var.h.addView(d4Var, w7.a6.d(-1.0f, -1));
-                fh0Var.e.addView(fh0Var.h, w7.a6.d(-1.0f, -1));
+                fh0Var.h.addView(d4Var, w7.z5.d(-1.0f, -1));
+                fh0Var.e.addView(fh0Var.h, w7.z5.d(-1.0f, -1));
                 fh0Var.b = (WindowManager) (z12 ? activity : ApplicationLoader.applicationContext).getSystemService("window");
                 WindowManager.LayoutParams b10 = uf.b.b(context, z12);
                 fh0Var.c = b10;
-                int i17 = fh0Var.H;
-                b10.width = i17;
+                int i16 = fh0Var.H;
+                b10.width = i16;
                 b10.height = fh0Var.I;
                 if (f7 != -1.0f) {
-                    float f13 = (i17 / 2.0f) + f7;
-                    int i18 = AndroidUtilities.displaySize.x;
-                    float dp3 = f13 >= ((float) i18) / 2.0f ? (i18 - i17) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
+                    float f13 = (i16 / 2.0f) + f7;
+                    int i17 = AndroidUtilities.displaySize.x;
+                    float dp3 = f13 >= ((float) i17) / 2.0f ? (i17 - i16) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
                     fh0Var.K = dp3;
                     b10.x = (int) dp3;
                 } else {
-                    float dp4 = (AndroidUtilities.displaySize.x - i17) - AndroidUtilities.dp(16.0f);
+                    float dp4 = (AndroidUtilities.displaySize.x - i16) - AndroidUtilities.dp(16.0f);
                     fh0Var.K = dp4;
                     b10.x = (int) dp4;
                 }
                 if (f10 != -1.0f) {
                     WindowManager.LayoutParams layoutParams = fh0Var.c;
-                    float a2 = w7.s.a(f10, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - AndroidUtilities.dp(16.0f)) - fh0Var.I);
+                    float a2 = w7.r.a(f10, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - AndroidUtilities.dp(16.0f)) - fh0Var.I);
                     fh0Var.L = a2;
                     layoutParams.y = (int) a2;
                 } else {
@@ -456,17 +455,17 @@ public final class fh0 implements tf.a {
         this.l0 = textureView;
         textureView.setVisibility(4);
         this.l0.setOpaque(false);
-        this.l0.setSurfaceTextureListener(new li.e(this, 2));
+        this.l0.setSurfaceTextureListener(new x50(this, 1));
         return this.l0;
     }
 
     public final void i() {
-        org.telegram.ui.rt0 rt0Var;
+        org.telegram.ui.qt0 qt0Var;
         PhotoViewer photoViewer = this.V;
-        if (photoViewer == null || (rt0Var = photoViewer.c4) == null) {
+        if (photoViewer == null || (qt0Var = photoViewer.c4) == null) {
             return;
         }
-        rt0Var.cancelRewind();
+        qt0Var.cancelRewind();
     }
 
     public final void k(boolean z10, boolean z11) {
@@ -509,28 +508,28 @@ public final class fh0 implements tf.a {
         if (this.r != null) {
             return r0.getCurrentPosition();
         }
-        h81 h81Var = this.V.F2;
-        if (h81Var == null) {
+        i81 i81Var = this.V.F2;
+        if (i81Var == null) {
             return 0L;
         }
-        return h81Var.n();
+        return i81Var.n();
     }
 
     public final long m() {
         if (this.r != null) {
             return r0.getVideoDuration();
         }
-        h81 h81Var = this.V.F2;
-        if (h81Var == null) {
+        i81 i81Var = this.V.F2;
+        if (i81Var == null) {
             return 0L;
         }
-        return h81Var.p();
+        return i81Var.p();
     }
 
-    public final l2.f n() {
+    public final m.h n() {
         if (this.G == null) {
             Point point = AndroidUtilities.displaySize;
-            this.G = new l2.f(point.x, point.y);
+            this.G = new m.h(point.x, point.y);
         }
         return this.G;
     }
@@ -541,9 +540,9 @@ public final class fh0 implements tf.a {
             Point point = AndroidUtilities.displaySize;
             this.a = (Math.min(point.x, point.y) - AndroidUtilities.dp(32.0f)) / t();
             float f7 = this.O.floatValue() < 1.0f ? 0.6f : 0.45f;
-            z71 z71Var = this.Q;
-            z71Var.q = f7;
-            z71Var.a();
+            a81 a81Var = this.Q;
+            a81Var.q = f7;
+            a81Var.a();
         }
         return this.O.floatValue();
     }
@@ -587,7 +586,7 @@ public final class fh0 implements tf.a {
         ValueAnimator duration = ValueAnimator.ofFloat(z10 ? 0.0f : 1.0f, z10 ? 1.0f : 0.0f).setDuration(200L);
         this.F = duration;
         duration.setInterpolator(es.f);
-        this.F.addUpdateListener(new g80(this, 4));
+        this.F.addUpdateListener(new f80(this, 4));
         this.F.addListener(new ch0(this, 0));
         this.F.start();
     }
@@ -598,15 +597,15 @@ public final class fh0 implements tf.a {
         if (photoViewer == null || this.X == null) {
             return;
         }
-        qg0 qg0Var = this.r;
-        if (qg0Var != null) {
-            y3 = qg0Var.G;
+        rg0 rg0Var = this.r;
+        if (rg0Var != null) {
+            y3 = rg0Var.G;
         } else {
-            h81 h81Var = photoViewer.F2;
-            if (h81Var == null) {
+            i81 i81Var = photoViewer.F2;
+            if (i81Var == null) {
                 return;
             } else {
-                y3 = h81Var.y();
+                y3 = i81Var.y();
             }
         }
         ah0 ah0Var = this.e0;

@@ -19,7 +19,7 @@ import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class o9 extends ba {
     public boolean E0;
@@ -699,9 +699,9 @@ public class o9 extends ba {
         g gVar = this.m0;
         AndroidUtilities.cancelRunOnUIThread(gVar);
         AndroidUtilities.runOnUIThread(gVar);
-        w7.w5 w5Var = this.D;
-        if (w5Var != null) {
-            w5Var.a(true);
+        w7.j0 j0Var = this.D;
+        if (j0Var != null) {
+            j0Var.a(true);
         }
     }
 
@@ -743,9 +743,9 @@ public class o9 extends ba {
         g gVar = this.m0;
         AndroidUtilities.cancelRunOnUIThread(gVar);
         AndroidUtilities.runOnUIThread(gVar);
-        w7.w5 w5Var = this.D;
-        if (w5Var != null) {
-            w5Var.a(true);
+        w7.j0 j0Var = this.D;
+        if (j0Var != null) {
+            j0Var.a(true);
         }
         n9Var.invalidate();
         return true;

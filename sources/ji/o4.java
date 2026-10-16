@@ -20,13 +20,13 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.c90;
 import org.telegram.ui.s20;
-import org.telegram.ui.wi1;
+import org.telegram.ui.vi1;
 import org.telegram.ui.xg;
 import zh.d7;
 import zh.f7;
 import zh.p7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o4 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
                 r4 r4Var = (r4) this.b;
                 a aVar = r4Var.a;
                 if (aVar != null && (p4Var = r4Var.G) != null) {
-                    ((t3) p4Var).a.f3.N(aVar);
+                    ((t3) p4Var).a.f3.L(aVar);
                     break;
                 }
                 break;
@@ -71,13 +71,13 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
                 }
                 break;
             case 3:
-                wi1 wi1Var = (wi1) this.b;
-                if (!wi1Var.a) {
-                    if (wi1Var.w != 0) {
-                        wi1Var.a(false, true);
+                vi1 vi1Var = (vi1) this.b;
+                if (!vi1Var.a) {
+                    if (vi1Var.w != 0) {
+                        vi1Var.a(false, true);
                         break;
                     } else {
-                        ((Activity) wi1Var.getContext()).startActivityForResult(((MediaProjectionManager) wi1Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
+                        ((Activity) vi1Var.getContext()).startActivityForResult(((MediaProjectionManager) vi1Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
                         break;
                     }
                 }
@@ -101,7 +101,7 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.WebRecentClearTitle);
                 alertDialog$Builder.a.T = LocaleController.getString(R.string.WebRecentClearText);
                 alertDialog$Builder.k(LocaleController.getString(R.string.OK), new org.telegram.ui.web.a(kVar));
-                org.telegram.messenger.q.q(R.string.Cancel, alertDialog$Builder, null);
+                i2.d.r(R.string.Cancel, alertDialog$Builder, null);
                 break;
             case 6:
                 ((qg.x) this.b).dismiss();

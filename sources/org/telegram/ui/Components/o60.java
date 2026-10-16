@@ -37,7 +37,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class o60 extends u60 {
     public int A0;
@@ -55,17 +55,17 @@ public final class o60 extends u60 {
     public final ImageView I;
     public final kq I0;
     public final di.w2 J;
-    public final l2.f J0;
+    public final m.h J0;
     public final int[] K;
     public final Matrix L;
     public final float[] M;
     public final Paint N;
     public final int O;
-    public li.u0 P;
-    public li.s0 Q;
-    public li.t0 R;
-    public li.m0 S;
-    public c11 T;
+    public ri.r0 P;
+    public ri.p0 Q;
+    public ri.q0 R;
+    public ri.j0 S;
+    public d11 T;
     public VideoEditedInfo U;
     public n60 V;
     public AnimatorSet W;
@@ -74,7 +74,7 @@ public final class o60 extends u60 {
     public final yj0 c0;
     public yj0 d0;
     public yj0 e0;
-    public final b60 f;
+    public final c60 f;
     public boolean f0;
     public boolean g0;
     public final int h;
@@ -105,7 +105,7 @@ public final class o60 extends u60 {
     public float y0;
     public int z0;
 
-    public o60(Activity activity, b60 b60Var, org.telegram.ui.ActionBar.c6 c6Var) {
+    public o60(Activity activity, c60 c60Var, org.telegram.ui.ActionBar.c6 c6Var) {
         super(activity);
         this.h = UserConfig.selectedAccount;
         this.K = new int[2];
@@ -116,18 +116,18 @@ public final class o60 extends u60 {
         this.A0 = -1;
         this.D0 = Float.NaN;
         this.I0 = new kq(this, 25);
-        this.J0 = new l2.f(this, 9);
-        this.f = b60Var;
-        this.n = b60Var.getClassGuid();
-        this.r = b60Var.x();
-        this.s = b60Var.getFragmentView();
+        this.J0 = new m.h(this, 8);
+        this.f = c60Var;
+        this.n = c60Var.getClassGuid();
+        this.r = c60Var.x();
+        this.s = c60Var.getFragmentView();
         setWillNotDraw(false);
         di.w2 w2Var = new di.w2(activity, null, this, null);
         this.J = w2Var;
         w2Var.o = 0.5f;
         w2Var.n = di.w2.f(0.5f);
         w2Var.g();
-        addView(w2Var.b, w7.a6.e(-1, -1, 119));
+        addView(w2Var.b, w7.z5.e(-1, -1, 119));
         m60 m60Var = new m60(this, activity);
         this.v = m60Var;
         ym0 ym0Var = new ym0(activity);
@@ -141,30 +141,30 @@ public final class o60 extends u60 {
         l60Var.setOutlineProvider(new bi.a2(13));
         l60Var.setClipToOutline(true);
         this.y = l60Var;
-        frameLayout.addView(l60Var, w7.a6.e(-1, -1, 119));
+        frameLayout.addView(l60Var, w7.z5.e(-1, -1, 119));
         Paint paint = new Paint(1);
         paint.setColor(Color.argb(40, 0, 0, 0));
         org.telegram.ui.rl rlVar = new org.telegram.ui.rl(this, activity, paint);
         this.E = rlVar;
         rlVar.setOutlineProvider(new bi.a2(12));
         rlVar.setClipToOutline(true);
-        frameLayout.addView(rlVar, w7.a6.e(-1, -1, 119));
-        ym0Var.addView(frameLayout, w7.a6.a(-1.0f, 14.0f, 14.0f, 14.0f, 14.0f, -1, 119));
-        m60Var.addView(ym0Var, w7.a6.e(-1, -1, 119));
+        frameLayout.addView(rlVar, w7.z5.e(-1, -1, 119));
+        ym0Var.addView(frameLayout, w7.z5.a(-1.0f, 14.0f, 14.0f, 14.0f, 14.0f, -1, 119));
+        m60Var.addView(ym0Var, w7.z5.e(-1, -1, 119));
         int i10 = AndroidUtilities.roundPlayingMessageSize;
         addView(m60Var, new FrameLayout.LayoutParams(i10, i10, 17));
-        addView(w2Var.c, w7.a6.e(-1, -1, 119));
+        addView(w2Var.c, w7.z5.e(-1, -1, 119));
         LinearLayout linearLayout = new LinearLayout(activity);
         this.F = linearLayout;
         linearLayout.setOrientation(0);
         linearLayout.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f));
-        addView(linearLayout, w7.a6.a(56.0f, 1.0f, 0.0f, 0.0f, 0.0f, -2, 83));
+        addView(linearLayout, w7.z5.a(56.0f, 1.0f, 0.0f, 0.0f, 0.0f, -2, 83));
         di.u2 u2Var = new di.u2(activity);
         this.G = u2Var;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         u2Var.setScaleType(scaleType);
         u2Var.setContentDescription(LocaleController.getString(R.string.AccDescrSwitchCamera));
-        linearLayout.addView(u2Var, w7.a6.n(44, 44));
+        linearLayout.addView(u2Var, w7.z5.n(44, 44));
         final int i11 = 0;
         u2Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.k60
             public final /* synthetic */ o60 b;
@@ -175,44 +175,44 @@ public final class o60 extends u60 {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                li.t0 t0Var;
-                li.m0 m0Var;
+                ri.q0 q0Var;
+                ri.j0 j0Var;
                 boolean z10;
-                li.t0 t0Var2;
+                ri.q0 q0Var2;
                 int i12;
                 switch (i11) {
                     case 0:
                         o60 o60Var = this.b;
-                        li.u0 u0Var = o60Var.P;
-                        if (u0Var != null && (t0Var = o60Var.R) != null && (m0Var = o60Var.S) != null && t0Var.a == 3 && !t0Var.e && !o60Var.n0) {
-                            li.n0 n0Var = m0Var.a;
-                            li.n0 n0Var2 = li.n0.a;
-                            if (n0Var == n0Var2) {
-                                n0Var2 = li.n0.b;
+                        ri.r0 r0Var = o60Var.P;
+                        if (r0Var != null && (q0Var = o60Var.R) != null && (j0Var = o60Var.S) != null && q0Var.a == 3 && !q0Var.e && !o60Var.n0) {
+                            ri.k0 k0Var = j0Var.a;
+                            ri.k0 k0Var2 = ri.k0.a;
+                            if (k0Var == k0Var2) {
+                                k0Var2 = ri.k0.b;
                             }
-                            u0Var.getClass();
-                            li.u0.t();
-                            int i13 = u0Var.W;
+                            r0Var.getClass();
+                            ri.r0.t();
+                            int i13 = r0Var.W;
                             if (i13 != 7 && i13 != 8 && i13 != 9 && i13 != 10) {
-                                if (u0Var.p != n0Var2) {
-                                    u0Var.m.b("camera facing requested: " + u0Var.p + " -> " + n0Var2 + ", state=" + i2.d.C(u0Var.W));
-                                    u0Var.p = n0Var2;
-                                    int i14 = u0Var.W;
+                                if (r0Var.p != k0Var2) {
+                                    r0Var.m.b("camera facing requested: " + r0Var.p + " -> " + k0Var2 + ", state=" + org.telegram.ui.Cells.c1.y(r0Var.W));
+                                    r0Var.p = k0Var2;
+                                    int i14 = r0Var.W;
                                     if (i14 == 3 || i14 == 2) {
-                                        u0Var.e();
-                                        li.l lVar = u0Var.l;
-                                        lVar.F = n0Var2;
-                                        Handler handler = lVar.n;
-                                        if (!lVar.V || handler == null) {
+                                        r0Var.e();
+                                        ri.j jVar = r0Var.l;
+                                        jVar.F = k0Var2;
+                                        Handler handler = jVar.n;
+                                        if (!jVar.V || handler == null) {
                                             z10 = false;
                                         } else {
-                                            handler.post(new ji.v2(9, lVar, n0Var2));
+                                            handler.post(new org.telegram.ui.web.v(24, jVar, k0Var2));
                                             z10 = true;
                                         }
-                                        u0Var.w = z10;
+                                        r0Var.w = z10;
                                     }
-                                    u0Var.n();
-                                    u0Var.o();
+                                    r0Var.n();
+                                    r0Var.o();
                                 }
                                 o60Var.c0.M(0);
                                 o60Var.c0.start();
@@ -222,21 +222,21 @@ public final class o60 extends u60 {
                         break;
                     default:
                         o60 o60Var2 = this.b;
-                        li.u0 u0Var2 = o60Var2.P;
-                        if (u0Var2 != null && (t0Var2 = o60Var2.R) != null && o60Var2.S != null) {
-                            boolean z11 = !t0Var2.f;
-                            li.l lVar2 = u0Var2.l;
-                            li.u0.t();
-                            if (u0Var2.W == 3 && !u0Var2.w && (i12 = u0Var2.X) != 1) {
-                                u0Var2.u = z11;
+                        ri.r0 r0Var2 = o60Var2.P;
+                        if (r0Var2 != null && (q0Var2 = o60Var2.R) != null && o60Var2.S != null) {
+                            boolean z11 = !q0Var2.f;
+                            ri.j jVar2 = r0Var2.l;
+                            ri.r0.t();
+                            if (r0Var2.W == 3 && !r0Var2.w && (i12 = r0Var2.X) != 1) {
+                                r0Var2.u = z11;
                                 if (i12 == 3) {
-                                    u0Var2.u(z11);
-                                    lVar2.T(false);
+                                    r0Var2.u(z11);
+                                    jVar2.T(false);
                                 } else {
-                                    u0Var2.u(false);
-                                    lVar2.T(z11);
+                                    r0Var2.u(false);
+                                    jVar2.T(z11);
                                 }
-                                u0Var2.o();
+                                r0Var2.o();
                                 o60Var2.z();
                                 break;
                             }
@@ -248,7 +248,7 @@ public final class o60 extends u60 {
         di.u2 u2Var2 = new di.u2(activity);
         this.H = u2Var2;
         u2Var2.setScaleType(scaleType);
-        linearLayout.addView(u2Var2, w7.a6.n(44, 44));
+        linearLayout.addView(u2Var2, w7.z5.n(44, 44));
         final int i12 = 1;
         u2Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.k60
             public final /* synthetic */ o60 b;
@@ -259,44 +259,44 @@ public final class o60 extends u60 {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                li.t0 t0Var;
-                li.m0 m0Var;
+                ri.q0 q0Var;
+                ri.j0 j0Var;
                 boolean z10;
-                li.t0 t0Var2;
+                ri.q0 q0Var2;
                 int i122;
                 switch (i12) {
                     case 0:
                         o60 o60Var = this.b;
-                        li.u0 u0Var = o60Var.P;
-                        if (u0Var != null && (t0Var = o60Var.R) != null && (m0Var = o60Var.S) != null && t0Var.a == 3 && !t0Var.e && !o60Var.n0) {
-                            li.n0 n0Var = m0Var.a;
-                            li.n0 n0Var2 = li.n0.a;
-                            if (n0Var == n0Var2) {
-                                n0Var2 = li.n0.b;
+                        ri.r0 r0Var = o60Var.P;
+                        if (r0Var != null && (q0Var = o60Var.R) != null && (j0Var = o60Var.S) != null && q0Var.a == 3 && !q0Var.e && !o60Var.n0) {
+                            ri.k0 k0Var = j0Var.a;
+                            ri.k0 k0Var2 = ri.k0.a;
+                            if (k0Var == k0Var2) {
+                                k0Var2 = ri.k0.b;
                             }
-                            u0Var.getClass();
-                            li.u0.t();
-                            int i13 = u0Var.W;
+                            r0Var.getClass();
+                            ri.r0.t();
+                            int i13 = r0Var.W;
                             if (i13 != 7 && i13 != 8 && i13 != 9 && i13 != 10) {
-                                if (u0Var.p != n0Var2) {
-                                    u0Var.m.b("camera facing requested: " + u0Var.p + " -> " + n0Var2 + ", state=" + i2.d.C(u0Var.W));
-                                    u0Var.p = n0Var2;
-                                    int i14 = u0Var.W;
+                                if (r0Var.p != k0Var2) {
+                                    r0Var.m.b("camera facing requested: " + r0Var.p + " -> " + k0Var2 + ", state=" + org.telegram.ui.Cells.c1.y(r0Var.W));
+                                    r0Var.p = k0Var2;
+                                    int i14 = r0Var.W;
                                     if (i14 == 3 || i14 == 2) {
-                                        u0Var.e();
-                                        li.l lVar = u0Var.l;
-                                        lVar.F = n0Var2;
-                                        Handler handler = lVar.n;
-                                        if (!lVar.V || handler == null) {
+                                        r0Var.e();
+                                        ri.j jVar = r0Var.l;
+                                        jVar.F = k0Var2;
+                                        Handler handler = jVar.n;
+                                        if (!jVar.V || handler == null) {
                                             z10 = false;
                                         } else {
-                                            handler.post(new ji.v2(9, lVar, n0Var2));
+                                            handler.post(new org.telegram.ui.web.v(24, jVar, k0Var2));
                                             z10 = true;
                                         }
-                                        u0Var.w = z10;
+                                        r0Var.w = z10;
                                     }
-                                    u0Var.n();
-                                    u0Var.o();
+                                    r0Var.n();
+                                    r0Var.o();
                                 }
                                 o60Var.c0.M(0);
                                 o60Var.c0.start();
@@ -306,21 +306,21 @@ public final class o60 extends u60 {
                         break;
                     default:
                         o60 o60Var2 = this.b;
-                        li.u0 u0Var2 = o60Var2.P;
-                        if (u0Var2 != null && (t0Var2 = o60Var2.R) != null && o60Var2.S != null) {
-                            boolean z11 = !t0Var2.f;
-                            li.l lVar2 = u0Var2.l;
-                            li.u0.t();
-                            if (u0Var2.W == 3 && !u0Var2.w && (i122 = u0Var2.X) != 1) {
-                                u0Var2.u = z11;
+                        ri.r0 r0Var2 = o60Var2.P;
+                        if (r0Var2 != null && (q0Var2 = o60Var2.R) != null && o60Var2.S != null) {
+                            boolean z11 = !q0Var2.f;
+                            ri.j jVar2 = r0Var2.l;
+                            ri.r0.t();
+                            if (r0Var2.W == 3 && !r0Var2.w && (i122 = r0Var2.X) != 1) {
+                                r0Var2.u = z11;
                                 if (i122 == 3) {
-                                    u0Var2.u(z11);
-                                    lVar2.T(false);
+                                    r0Var2.u(z11);
+                                    jVar2.T(false);
                                 } else {
-                                    u0Var2.u(false);
-                                    lVar2.T(z11);
+                                    r0Var2.u(false);
+                                    jVar2.T(z11);
                                 }
-                                u0Var2.o();
+                                r0Var2.o();
                                 o60Var2.z();
                                 break;
                             }
@@ -346,8 +346,8 @@ public final class o60 extends u60 {
         imageView.setScaleType(scaleType);
         imageView.setImageResource(R.drawable.video_mute);
         imageView.setAlpha(0.0f);
-        addView(imageView, w7.a6.e(48, 48, 17));
-        l60Var.setOnTouchListener(new uk(this, 2));
+        addView(imageView, w7.z5.e(48, 48, 17));
+        l60Var.setOnTouchListener(new tk(this, 2));
         super.setVisibility(4);
     }
 
@@ -360,12 +360,12 @@ public final class o60 extends u60 {
     }
 
     private long getCurrentDurationMs() {
-        li.t0 t0Var;
-        li.u0 u0Var = this.P;
-        if (u0Var == null || (t0Var = this.R) == null) {
+        ri.q0 q0Var;
+        ri.r0 r0Var = this.P;
+        if (r0Var == null || (q0Var = this.R) == null) {
             return 0L;
         }
-        return t0Var.a == 3 ? u0Var.j() : t0Var.b;
+        return q0Var.a == 3 ? r0Var.j() : q0Var.b;
     }
 
     public static void l(o60 o60Var) {
@@ -437,13 +437,13 @@ public final class o60 extends u60 {
 
     public final void A() {
         org.telegram.ui.sk skVar;
-        li.t0 t0Var = this.R;
-        if (t0Var != null) {
-            long j10 = t0Var.d;
-            if (t0Var.a != 3) {
+        ri.q0 q0Var = this.R;
+        if (q0Var != null) {
+            long j10 = q0Var.d;
+            if (q0Var.a != 3) {
                 return;
             }
-            long min = Math.min(j10, (SystemClock.elapsedRealtime() + t0Var.b) - t0Var.c);
+            long min = Math.min(j10, (SystemClock.elapsedRealtime() + q0Var.b) - q0Var.c);
             this.u0 = min;
             this.w.setProgress(min / j10);
             s60 s60Var = this.c;
@@ -487,9 +487,9 @@ public final class o60 extends u60 {
         }
         u(z10 ? 0 : 6);
         this.P.a();
-        c11 c11Var = this.T;
-        if (c11Var != null) {
-            c11Var.d(true);
+        d11 d11Var = this.T;
+        if (d11Var != null) {
+            d11Var.d(true);
         }
         this.T = null;
         MediaController.getInstance().requestRecordAudioFocus(false);
@@ -498,9 +498,9 @@ public final class o60 extends u60 {
 
     @Override // org.telegram.ui.Components.u60
     public final void b(float f7, int i10) {
-        li.t0 t0Var;
+        ri.q0 q0Var;
         i2.h0 h0Var;
-        if (this.P == null || (t0Var = this.R) == null || t0Var.a != 5) {
+        if (this.P == null || (q0Var = this.R) == null || q0Var.a != 5) {
             return;
         }
         o();
@@ -509,30 +509,30 @@ public final class o60 extends u60 {
             return;
         }
         if (i10 == 1) {
-            li.u0 u0Var = this.P;
-            u0Var.getClass();
-            li.u0.t();
-            if (u0Var.W != 5 || (h0Var = u0Var.S) == null) {
+            ri.r0 r0Var = this.P;
+            r0Var.getClass();
+            ri.r0.t();
+            if (r0Var.W != 5 || (h0Var = r0Var.S) == null) {
                 return;
             }
             h0Var.e();
-            u0Var.x(false);
-            l2.f fVar = u0Var.d;
-            u0Var.S.M0();
-            fVar.getClass();
+            r0Var.x(false);
+            m.h hVar = r0Var.d;
+            r0Var.S.M0();
+            hVar.getClass();
             return;
         }
         if (i10 == 2) {
-            li.u0 u0Var2 = this.P;
+            ri.r0 r0Var2 = this.P;
             long j10 = (long) (f7 * this.R.b);
-            u0Var2.getClass();
-            li.u0.t();
-            if (u0Var2.W != 5 || u0Var2.S == null) {
+            r0Var2.getClass();
+            ri.r0.t();
+            if (r0Var2.W != 5 || r0Var2.S == null) {
                 return;
             }
-            long j11 = u0Var2.G;
-            u0Var2.S.Z0(5, Math.max(j11, Math.min(Math.max(j11, u0Var2.H - 1), j10)));
-            u0Var2.d.getClass();
+            long j11 = r0Var2.G;
+            r0Var2.S.Z0(5, Math.max(j11, Math.min(Math.max(j11, r0Var2.H - 1), j10)));
+            r0Var2.d.getClass();
         }
     }
 
@@ -544,32 +544,32 @@ public final class o60 extends u60 {
         if (valueAnimator != null) {
             valueAnimator.cancel();
         }
-        li.u0 u0Var = this.P;
-        if (u0Var != null) {
-            li.u0.t();
-            int i10 = u0Var.W;
+        ri.r0 r0Var = this.P;
+        if (r0Var != null) {
+            ri.r0.t();
+            int i10 = r0Var.W;
             if (i10 == 10) {
-                if (!u0Var.C) {
-                    u0Var.i();
+                if (!r0Var.C) {
+                    r0Var.i();
                 }
             } else if (i10 != 8) {
-                u0Var.a();
+                r0Var.a();
             } else {
-                u0Var.e();
-                u0Var.r();
-                u0Var.l.M();
-                u0Var.C = true;
-                u0Var.v(10);
-                u0Var.m("released");
-                u0Var.i.removeCallbacksAndMessages(null);
-                u0Var.j.shutdown();
-                u0Var.k.shutdown();
+                r0Var.e();
+                r0Var.r();
+                r0Var.l.M();
+                r0Var.C = true;
+                r0Var.v(10);
+                r0Var.m("released");
+                r0Var.i.removeCallbacksAndMessages(null);
+                r0Var.j.shutdown();
+                r0Var.k.shutdown();
             }
             this.P = null;
         }
-        c11 c11Var = this.T;
-        if (c11Var != null) {
-            c11Var.d(true ^ this.j0);
+        d11 d11Var = this.T;
+        if (d11Var != null) {
+            d11Var.d(true ^ this.j0);
             this.T = null;
         }
         setScreenFlashEnabled(false);
@@ -585,11 +585,11 @@ public final class o60 extends u60 {
 
     @Override // org.telegram.ui.Components.u60
     public final boolean d() {
-        li.t0 t0Var = this.R;
-        if (t0Var == null) {
+        ri.q0 q0Var = this.R;
+        if (q0Var == null) {
             return false;
         }
-        int i10 = t0Var.a;
+        int i10 = q0Var.a;
         return i10 == 4 || i10 == 5 || i10 == 6;
     }
 
@@ -602,13 +602,13 @@ public final class o60 extends u60 {
 
     @Override // org.telegram.ui.Components.u60
     public final void f(int i10, int i11, int i12, long j10, long j11, boolean z10) {
-        li.t0 t0Var;
-        li.u0 u0Var = this.P;
-        if (u0Var == null || (t0Var = this.R) == null) {
+        ri.q0 q0Var;
+        ri.r0 r0Var = this.P;
+        if (r0Var == null || (q0Var = this.R) == null) {
             return;
         }
         if (i10 == 3) {
-            if (u0Var == null || t0Var == null || t0Var.a != 3) {
+            if (r0Var == null || q0Var == null || q0Var.a != 3) {
                 return;
             }
             u(2);
@@ -628,32 +628,32 @@ public final class o60 extends u60 {
                 o();
             }
             this.V = new n60(j10, i11, i12, z10, j11);
-            li.u0 u0Var2 = this.P;
+            ri.r0 r0Var2 = this.P;
             boolean z11 = this.i0;
             boolean z12 = !z11;
-            u0Var2.getClass();
-            li.u0.t();
-            int i13 = u0Var2.W;
+            r0Var2.getClass();
+            ri.r0.t();
+            int i13 = r0Var2.W;
             if (i13 == 3 || i13 == 5) {
-                u0Var2.m.b("finish requested: state=" + i2.d.C(u0Var2.W) + ", includeAudio=" + z12 + ", durationMs=" + u0Var2.j() + ", trim=" + u0Var2.G + ".." + u0Var2.H);
-                u0Var2.z = z12;
-                if (u0Var2.W != 3) {
-                    u0Var2.r();
-                    u0Var2.v(7);
-                    u0Var2.j.execute(new li.k0(u0Var2, u0Var2.Q, u0Var2.l() || z11, u0Var2.R, z12, u0Var2.l() ? 1 : 2, u0Var2.P));
+                r0Var2.m.b("finish requested: state=" + org.telegram.ui.Cells.c1.y(r0Var2.W) + ", includeAudio=" + z12 + ", durationMs=" + r0Var2.j() + ", trim=" + r0Var2.G + ".." + r0Var2.H);
+                r0Var2.z = z12;
+                if (r0Var2.W != 3) {
+                    r0Var2.r();
+                    r0Var2.v(7);
+                    r0Var2.j.execute(new org.telegram.messenger.bj(r0Var2, r0Var2.Q, r0Var2.l() || z11, r0Var2.R, z12, r0Var2.l() ? 1 : 2, r0Var2.P));
                     return;
                 }
-                u0Var2.E = u0Var2.j();
-                u0Var2.y = true;
-                u0Var2.e();
-                u0Var2.i.removeCallbacks(u0Var2.T);
-                u0Var2.v(7);
-                boolean Y = u0Var2.l.Y();
-                u0Var2.B = Y;
+                r0Var2.E = r0Var2.j();
+                r0Var2.y = true;
+                r0Var2.e();
+                r0Var2.i.removeCallbacks(r0Var2.T);
+                r0Var2.v(7);
+                boolean Y = r0Var2.l.Y();
+                r0Var2.B = Y;
                 if (Y) {
                     return;
                 }
-                u0Var2.h(new IllegalStateException("Unable to stop the camera segment"));
+                r0Var2.h(new IllegalStateException("Unable to stop the camera segment"));
             }
         }
     }
@@ -732,57 +732,57 @@ public final class o60 extends u60 {
             rlVar.setAlpha(1.0f);
             rlVar.invalidate();
         }
-        this.T = new c11(this.h, this.r);
-        this.Q = (li.s0) si.e.e.a();
-        li.l0 l0Var = new li.l0(getContext(), this.y);
-        l0Var.c = new File(ApplicationLoader.getFilesDirFixed(), "cache");
-        l0Var.d = (li.n0) si.e.j.a();
-        l0Var.e = this.Q;
-        l0Var.h = si.e.h.a();
-        l0Var.f = (li.o0) si.e.f.a();
-        l0Var.g = (li.p0) si.e.g.a();
+        this.T = new d11(this.h, this.r);
+        this.Q = (ri.p0) si.e.e.a();
+        ri.i0 i0Var = new ri.i0(getContext(), this.y);
+        i0Var.c = new File(ApplicationLoader.getFilesDirFixed(), "cache");
+        i0Var.d = (ri.k0) si.e.j.a();
+        i0Var.e = this.Q;
+        i0Var.h = si.e.h.a();
+        i0Var.f = (ri.l0) si.e.f.a();
+        i0Var.g = (ri.m0) si.e.g.a();
         si.a aVar = si.e.i;
         aVar.a();
-        l0Var.i = aVar.d;
-        l2.f fVar = this.J0;
-        l0Var.j = fVar;
-        c11 c11Var = this.T;
-        l0Var.k = c11Var;
-        l0Var.l = new xv(this, 6);
-        if (l0Var.d == null) {
+        i0Var.i = aVar.d;
+        m.h hVar = this.J0;
+        i0Var.j = hVar;
+        d11 d11Var = this.T;
+        i0Var.k = d11Var;
+        i0Var.l = new xv(this, 6);
+        if (i0Var.d == null) {
             throw new IllegalStateException("Initial camera is required");
         }
-        if (l0Var.e == null) {
+        if (i0Var.e == null) {
             throw new IllegalStateException("Output resolution is required");
         }
-        if (l0Var.h <= 0) {
+        if (i0Var.h <= 0) {
             throw new IllegalStateException("Video bitrate is required");
         }
-        if (l0Var.f == null) {
+        if (i0Var.f == null) {
             throw new IllegalStateException("Camera resolution is required");
         }
-        if (l0Var.g == null) {
+        if (i0Var.g == null) {
             throw new IllegalStateException("Frame rate is required");
         }
-        if (fVar == null) {
+        if (hVar == null) {
             throw new IllegalStateException("Session listener is required");
         }
-        if (c11Var == null) {
+        if (d11Var == null) {
             throw new IllegalStateException("Output listener is required");
         }
-        this.P = new li.u0(l0Var);
+        this.P = new ri.r0(i0Var);
         MediaController.getInstance().requestRecordAudioFocus(true);
-        li.u0 u0Var = this.P;
-        u0Var.getClass();
-        li.u0.t();
-        if (u0Var.W == 1) {
+        ri.r0 r0Var = this.P;
+        r0Var.getClass();
+        ri.r0.t();
+        if (r0Var.W == 1) {
             try {
-                u0Var.m.b("start requested");
-                u0Var.c(true);
-                u0Var.v(2);
-                u0Var.l.X(u0Var.Q, 0L, u0Var.p);
+                r0Var.m.b("start requested");
+                r0Var.c(true);
+                r0Var.v(2);
+                r0Var.l.X(r0Var.Q, 0L, r0Var.p);
             } catch (Exception e) {
-                u0Var.h(e);
+                r0Var.h(e);
             }
         }
         w(true, false);
@@ -790,14 +790,14 @@ public final class o60 extends u60 {
 
     @Override // org.telegram.ui.Components.u60
     public final void i() {
-        li.t0 t0Var;
-        li.u0 u0Var = this.P;
-        if (u0Var == null || (t0Var = this.R) == null) {
+        ri.q0 q0Var;
+        ri.r0 r0Var = this.P;
+        if (r0Var == null || (q0Var = this.R) == null) {
             return;
         }
-        int i10 = t0Var.a;
+        int i10 = q0Var.a;
         if (i10 == 3) {
-            if (u0Var == null || t0Var == null || i10 != 3) {
+            if (r0Var == null || q0Var == null || i10 != 3) {
                 return;
             }
             u(2);
@@ -808,49 +808,49 @@ public final class o60 extends u60 {
             this.U = null;
             this.g0 = true;
             this.h0 = false;
-            li.u0.t();
-            if (u0Var.W != 5 || u0Var.H - u0Var.G >= u0Var.o) {
+            ri.r0.t();
+            if (r0Var.W != 5 || r0Var.H - r0Var.G >= r0Var.o) {
                 return;
             }
-            u0Var.M++;
-            u0Var.m.b("resume requested: trim=" + u0Var.G + ".." + u0Var.H + ", sourceDurationMs=" + u0Var.E);
-            u0Var.r();
-            u0Var.v(6);
-            u0Var.j.execute(new di.t1(u0Var, u0Var.l(), u0Var.Q, u0Var.P, u0Var.R));
+            r0Var.M++;
+            r0Var.m.b("resume requested: trim=" + r0Var.G + ".." + r0Var.H + ", sourceDurationMs=" + r0Var.E);
+            r0Var.r();
+            r0Var.v(6);
+            r0Var.j.execute(new di.t1(r0Var, r0Var.l(), r0Var.Q, r0Var.P, r0Var.R));
         }
     }
 
     public final void o() {
-        li.t0 t0Var;
+        ri.q0 q0Var;
         VideoEditedInfo videoEditedInfo;
-        if (this.P == null || (t0Var = this.R) == null || (videoEditedInfo = this.U) == null) {
+        if (this.P == null || (q0Var = this.R) == null || (videoEditedInfo = this.U) == null) {
             return;
         }
-        long j10 = t0Var.b;
+        long j10 = q0Var.b;
         long max = Math.max(0L, videoEditedInfo.startTime);
         long j11 = this.U.endTime;
         if (j11 >= 0) {
             j10 = Math.min(j10, j11);
         }
-        li.u0 u0Var = this.P;
-        u0Var.getClass();
-        li.u0.t();
-        if (u0Var.W != 5) {
+        ri.r0 r0Var = this.P;
+        r0Var.getClass();
+        ri.r0.t();
+        if (r0Var.W != 5) {
             return;
         }
-        long max2 = Math.max(0L, Math.min(u0Var.E, max));
-        long max3 = Math.max(max2, Math.min(u0Var.E, j10));
-        if (max3 - max2 < Math.min(800L, u0Var.E)) {
+        long max2 = Math.max(0L, Math.min(r0Var.E, max));
+        long max3 = Math.max(max2, Math.min(r0Var.E, j10));
+        if (max3 - max2 < Math.min(800L, r0Var.E)) {
             return;
         }
-        u0Var.G = max2;
-        u0Var.H = max3;
-        i2.h0 h0Var = u0Var.S;
+        r0Var.G = max2;
+        r0Var.H = max3;
+        i2.h0 h0Var = r0Var.S;
         if (h0Var != null) {
             h0Var.Z0(5, max2);
         }
-        u0Var.d.getClass();
-        u0Var.o();
+        r0Var.d.getClass();
+        r0Var.o();
     }
 
     @Override // android.view.ViewGroup
@@ -931,28 +931,28 @@ public final class o60 extends u60 {
         }
     }
 
-    public final VideoEditedInfo r(File file, long j10, b11 b11Var) {
-        li.p0 p0Var;
+    public final VideoEditedInfo r(File file, long j10, c11 c11Var) {
+        ri.m0 m0Var;
         VideoEditedInfo videoEditedInfo = new VideoEditedInfo();
         videoEditedInfo.startTime = -1L;
         videoEditedInfo.endTime = -1L;
         videoEditedInfo.estimatedDuration = j10;
-        videoEditedInfo.estimatedSize = Math.max(1L, b11Var == null ? file.length() : b11Var.a);
+        videoEditedInfo.estimatedSize = Math.max(1L, c11Var == null ? file.length() : c11Var.a);
         videoEditedInfo.roundVideo = true;
-        li.u0 u0Var = this.P;
-        videoEditedInfo.framerate = (u0Var == null || (p0Var = u0Var.s) == null) ? 30 : p0Var.a;
-        li.s0 s0Var = this.Q;
-        int i10 = s0Var == null ? 480 : s0Var.a;
+        ri.r0 r0Var = this.P;
+        videoEditedInfo.framerate = (r0Var == null || (m0Var = r0Var.s) == null) ? 30 : m0Var.a;
+        ri.p0 p0Var = this.Q;
+        int i10 = p0Var == null ? 480 : p0Var.a;
         videoEditedInfo.originalWidth = i10;
         videoEditedInfo.resultWidth = i10;
         videoEditedInfo.originalHeight = i10;
         videoEditedInfo.resultHeight = i10;
         videoEditedInfo.originalPath = file.getAbsolutePath();
-        if (b11Var != null) {
-            videoEditedInfo.file = b11Var.b;
-            videoEditedInfo.encryptedFile = b11Var.c;
-            videoEditedInfo.key = b11Var.d;
-            videoEditedInfo.iv = b11Var.e;
+        if (c11Var != null) {
+            videoEditedInfo.file = c11Var.b;
+            videoEditedInfo.encryptedFile = c11Var.c;
+            videoEditedInfo.key = c11Var.d;
+            videoEditedInfo.iv = c11Var.e;
         }
         return videoEditedInfo;
     }
@@ -1125,12 +1125,12 @@ public final class o60 extends u60 {
     }
 
     public final void y() {
-        li.m0 m0Var;
-        li.t0 t0Var = this.R;
+        ri.j0 j0Var;
+        ri.q0 q0Var = this.R;
         boolean z10 = false;
-        boolean z11 = (t0Var == null || t0Var.a != 3 || t0Var.e || this.n0) ? false : true;
+        boolean z11 = (q0Var == null || q0Var.a != 3 || q0Var.e || this.n0) ? false : true;
         this.G.setEnabled(z11);
-        if (z11 && (m0Var = this.S) != null && m0Var.b != 1) {
+        if (z11 && (j0Var = this.S) != null && j0Var.b != 1) {
             z10 = true;
         }
         this.H.setEnabled(z10);
@@ -1138,10 +1138,10 @@ public final class o60 extends u60 {
     }
 
     public final void z() {
-        li.t0 t0Var = this.R;
+        ri.q0 q0Var = this.R;
         int i10 = this.O;
         di.u2 u2Var = this.H;
-        if (t0Var == null || !t0Var.f) {
+        if (q0Var == null || !q0Var.f) {
             if (this.d0 == null) {
                 yj0 yj0Var = new yj0(R.raw.roundcamera_flash_on, i10, i10);
                 this.d0 = yj0Var;

@@ -36,7 +36,7 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.b31;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class a2 extends FrameLayout implements l0, NotificationCenter.NotificationCenterDelegate {
     public static final float[] U = {0.02f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.02f};
@@ -51,7 +51,7 @@ public final class a2 extends FrameLayout implements l0, NotificationCenter.Noti
     public float M;
     public final w1 N;
     public final u1 O;
-    public org.telegram.ui.Cells.v0 P;
+    public org.telegram.ui.Cells.u0 P;
     public final s4.b Q;
     public final TLRPC.Document R;
     public int S;
@@ -64,7 +64,7 @@ public final class a2 extends FrameLayout implements l0, NotificationCenter.Noti
     public float f;
     public final String h;
     public final ImageReceiver n;
-    public rh.j r;
+    public ri.h0 r;
     public final int s;
     public final int v;
     public boolean w;
@@ -192,12 +192,12 @@ public final class a2 extends FrameLayout implements l0, NotificationCenter.Noti
                         u1Var.c.setColor(k10);
                     }
                 } else if (i11 == 13) {
-                    org.telegram.ui.Cells.v0 v0Var = new org.telegram.ui.Cells.v0();
-                    this.P = v0Var;
-                    ArrayList arrayList2 = v0Var.c;
+                    org.telegram.ui.Cells.u0 u0Var = new org.telegram.ui.Cells.u0();
+                    this.P = u0Var;
+                    ArrayList arrayList2 = u0Var.c;
                     if (arrayList2.isEmpty()) {
-                        for (int i18 = 0; i18 < v0Var.d; i18++) {
-                            arrayList2.add(new l(v0Var));
+                        for (int i18 = 0; i18 < u0Var.d; i18++) {
+                            arrayList2.add(new l(u0Var));
                         }
                     }
                 } else {
@@ -254,13 +254,13 @@ public final class a2 extends FrameLayout implements l0, NotificationCenter.Noti
                 this.f = 0.671f;
             } else {
                 if ((NotificationCenter.getGlobalInstance().getCurrentHeavyOperationFlags() & 512) != 0) {
-                    rh.j jVar = this.r;
-                    if (jVar != null) {
-                        AndroidUtilities.cancelRunOnUIThread(jVar);
+                    ri.h0 h0Var = this.r;
+                    if (h0Var != null) {
+                        AndroidUtilities.cancelRunOnUIThread(h0Var);
                     }
-                    rh.j jVar2 = new rh.j(this, 7);
-                    this.r = jVar2;
-                    AndroidUtilities.runOnUIThread(jVar2, 300L);
+                    ri.h0 h0Var2 = new ri.h0(this, 7);
+                    this.r = h0Var2;
+                    AndroidUtilities.runOnUIThread(h0Var2, 300L);
                     return;
                 }
                 try {
@@ -430,7 +430,7 @@ public final class a2 extends FrameLayout implements l0, NotificationCenter.Noti
                         while (i16 <= width) {
                             ((ArrayList[]) bVar2.f)[i16] = new ArrayList();
                             k0 k0Var = new k0();
-                            k0Var.a = org.telegram.ui.Cells.d0.e(Utilities.fastRandom, height);
+                            k0Var.a = org.telegram.ui.Cells.c1.d(Utilities.fastRandom, height);
                             k0Var.c = currentTimeMillis;
                             k0Var.b = Math.abs(Utilities.fastRandom.nextInt() % 6) + 4;
                             ((ArrayList[]) bVar2.f)[i16].add(k0Var);
@@ -460,9 +460,9 @@ public final class a2 extends FrameLayout implements l0, NotificationCenter.Noti
                                 h1VarArr3[i19] = h1Var;
                                 com.google.android.gms.internal.play_billing.h1 h1Var2 = h1VarArr2[i18][i19];
                                 h1Var2.getClass();
-                                h1Var2.a = org.telegram.ui.Cells.d0.e(Utilities.fastRandom, i17);
-                                h1Var2.b = org.telegram.ui.Cells.d0.e(Utilities.fastRandom, i17);
-                                h1Var2.c = org.telegram.ui.Cells.d0.e(Utilities.fastRandom, 300) + currentTimeMillis + 150;
+                                h1Var2.a = org.telegram.ui.Cells.c1.d(Utilities.fastRandom, i17);
+                                h1Var2.b = org.telegram.ui.Cells.c1.d(Utilities.fastRandom, i17);
+                                h1Var2.c = org.telegram.ui.Cells.c1.d(Utilities.fastRandom, 300) + currentTimeMillis + 150;
                                 i19++;
                                 f14 = f14;
                                 i17 = 16;
@@ -527,15 +527,15 @@ public final class a2 extends FrameLayout implements l0, NotificationCenter.Noti
                                             Paint paint = (Paint) bVar3.h;
                                             Bitmap[] bitmapArr = (Bitmap[]) bVar3.d;
                                             i13 = width;
-                                            paint.setAlpha((int) org.telegram.messenger.q.B(1.0f, clamp2, clamp, 255.0f));
+                                            paint.setAlpha((int) org.telegram.messenger.g0.z(1.0f, clamp2, clamp, 255.0f));
                                             canvas.drawBitmap(bitmapArr[h1Var3.a], f16, f17, paint);
                                             paint.setAlpha((int) (clamp * clamp2 * 255.0f));
                                             canvas.drawBitmap(bitmapArr[h1Var3.b], f16, f17, paint);
                                             paint.setAlpha(255);
                                             if (clamp2 >= 1.0f) {
                                                 h1Var3.a = h1Var3.b;
-                                                h1Var3.b = org.telegram.ui.Cells.d0.e(Utilities.fastRandom, 16);
-                                                h1Var3.c = org.telegram.ui.Cells.d0.e(Utilities.fastRandom, 300) + currentTimeMillis + 150;
+                                                h1Var3.b = org.telegram.ui.Cells.c1.d(Utilities.fastRandom, 16);
+                                                h1Var3.c = org.telegram.ui.Cells.c1.d(Utilities.fastRandom, 300) + currentTimeMillis + 150;
                                             }
                                         } else {
                                             i13 = width;
@@ -624,17 +624,17 @@ public final class a2 extends FrameLayout implements l0, NotificationCenter.Noti
                         }
                         canvas.drawLines(u1Var.d, u1Var.c);
                     } else {
-                        org.telegram.ui.Cells.v0 v0Var = this.P;
-                        if (v0Var != null) {
-                            ArrayList arrayList4 = v0Var.c;
+                        org.telegram.ui.Cells.u0 u0Var = this.P;
+                        if (u0Var != null) {
+                            ArrayList arrayList4 = u0Var.c;
                             System.currentTimeMillis();
                             for (int i28 = 0; i28 < arrayList4.size(); i28++) {
                                 l lVar = (l) arrayList4.get(i28);
-                                org.telegram.ui.Cells.v0 v0Var2 = lVar.m;
-                                Paint paint2 = (Paint) v0Var2.i;
+                                org.telegram.ui.Cells.u0 u0Var2 = lVar.m;
+                                Paint paint2 = (Paint) u0Var2.i;
                                 float f26 = lVar.l;
                                 if (f26 != 1.0f) {
-                                    float f27 = (v0Var2.e / lVar.j) + f26;
+                                    float f27 = (u0Var2.e / lVar.j) + f26;
                                     lVar.l = f27;
                                     if (f27 > 1.0f) {
                                         lVar.l = 1.0f;
@@ -643,7 +643,7 @@ public final class a2 extends FrameLayout implements l0, NotificationCenter.Noti
                                 if (lVar.f != null) {
                                     canvas.save();
                                     float pow2 = 1.0f - (((float) Math.pow(lVar.l - 0.5f, 2.0d)) * 4.0f);
-                                    float A = k3.A(pow2, 0.4f, 0.7f, lVar.k / v0Var2.b);
+                                    float A = k3.A(pow2, 0.4f, 0.7f, lVar.k / u0Var2.b);
                                     canvas.translate(lVar.b - (lVar.h / 2.0f), lVar.c - (lVar.i / 2.0f));
                                     canvas.scale(A, A, lVar.h / 2.0f, lVar.i / 2.0f);
                                     paint2.setAlpha((int) (lVar.d * pow2));
@@ -775,9 +775,9 @@ public final class a2 extends FrameLayout implements l0, NotificationCenter.Noti
         this.x = false;
         c();
         NotificationCenter.getInstance(this.s).removeObserver(this, NotificationCenter.fileLoaded);
-        org.telegram.ui.Cells.v0 v0Var = this.P;
-        if (v0Var != null) {
-            HashMap hashMap = (HashMap) v0Var.f;
+        org.telegram.ui.Cells.u0 u0Var = this.P;
+        if (u0Var != null) {
+            HashMap hashMap = (HashMap) u0Var.f;
             Iterator it = hashMap.values().iterator();
             while (it.hasNext()) {
                 ((Bitmap) it.next()).recycle();
@@ -844,9 +844,9 @@ public final class a2 extends FrameLayout implements l0, NotificationCenter.Noti
                     ((t1) arrayList.get(i15)).a(currentTimeMillis, true);
                 }
             }
-            org.telegram.ui.Cells.v0 v0Var = this.P;
-            if (v0Var != null) {
-                ((RectF) v0Var.g).set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+            org.telegram.ui.Cells.u0 u0Var = this.P;
+            if (u0Var != null) {
+                ((RectF) u0Var.g).set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
                 ((RectF) this.P.h).set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
                 ((RectF) this.P.g).inset(AndroidUtilities.dp(0.0f), getMeasuredHeight() * 0.1f);
                 ArrayList arrayList2 = this.P.c;

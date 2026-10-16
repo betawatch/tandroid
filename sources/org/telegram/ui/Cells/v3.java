@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.mm0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class v3 extends FrameLayout implements org.telegram.ui.ActionBar.x5 {
     public final org.telegram.ui.Components.a6 a;
@@ -128,7 +128,7 @@ public final class v3 extends FrameLayout implements org.telegram.ui.ActionBar.x
         a6Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(i11, c6Var));
         a6Var.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         float f7 = i10;
-        addView(a6Var, w7.a6.a(-1.0f, f7, 0.0f, f7, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
+        addView(a6Var, w7.z5.a(-1.0f, f7, 0.0f, f7, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
         u3 u3Var = new u3(getContext(), z10, z10, z10, 0);
         this.b = u3Var;
         u3Var.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
@@ -136,10 +136,10 @@ public final class v3 extends FrameLayout implements org.telegram.ui.ActionBar.x
         u3Var.setTextSize(AndroidUtilities.dp(14.0f));
         u3Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(i11, c6Var));
         u3Var.setGravity(LocaleController.isRTL ? 3 : 5);
-        FrameLayout.LayoutParams a2 = w7.a6.a(-1.0f, f7, 0.0f, f7, 0.0f, -2, (LocaleController.isRTL ? 3 : 5) | 48);
+        FrameLayout.LayoutParams a2 = w7.z5.a(-1.0f, f7, 0.0f, f7, 0.0f, -2, (LocaleController.isRTL ? 3 : 5) | 48);
         this.c = a2;
         addView(u3Var, a2);
-        WeakHashMap weakHashMap = r0.j0.a;
-        new r0.x(R.id.tag_accessibility_heading, Boolean.class, 0, 28, 2).d(this, Boolean.TRUE);
+        WeakHashMap weakHashMap = r0.i0.a;
+        new r0.w(R.id.tag_accessibility_heading, Boolean.class, 0, 28, 2).d(this, Boolean.TRUE);
     }
 }

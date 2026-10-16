@@ -57,16 +57,15 @@ import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.hw0;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.re0;
 import org.telegram.ui.Components.sc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.fo;
-import org.telegram.ui.tu0;
+import org.telegram.ui.su0;
 import org.telegram.ui.yb1;
-import w7.a6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class k3 extends Dialog implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.s3 {
     public static final HashSet W0 = new HashSet();
@@ -89,7 +88,7 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
     public long J;
     public final HashMap J0;
     public int K;
-    public m80 K0;
+    public l80 K0;
     public long L;
     public j0 L0;
     public String M;
@@ -206,14 +205,14 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
         j3 j3Var = new j3(this, context);
         this.e = j3Var;
         j3Var.setDelegate(new g2(this, 0));
-        FrameLayout.LayoutParams e = a6.e(-1, -1, 49);
+        FrameLayout.LayoutParams e = w7.z5.e(-1, -1, 49);
         this.w = e;
         j3Var.addView(a3Var, e);
         g3 g3Var = new g3(this, getContext(), c6Var);
         this.l0 = g3Var;
         g3Var.setOnButtonClickListener(new h2(this, 0));
         g3Var.setOnResizeListener(new e2(this, 3));
-        j3Var.addView(g3Var, a6.e(-1, -2, 81));
+        j3Var.addView(g3Var, w7.z5.e(-1, -2, 81));
         BotFullscreenButtons botFullscreenButtons = new BotFullscreenButtons(getContext());
         this.m0 = botFullscreenButtons;
         botFullscreenButtons.setAlpha(0.0f);
@@ -221,13 +220,13 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
         boolean z10 = !MessagesController.getInstance(this.G).disableBotFullscreenBlur && SharedConfig.getDevicePerformanceClass() >= 2;
         this.e0 = z10;
         botFullscreenButtons.setParentRenderNode(z10 ? a3Var.getRenderNode() : null);
-        j3Var.addView(botFullscreenButtons, a6.e(-1, -1, 119));
+        j3Var.addView(botFullscreenButtons, w7.z5.e(-1, -1, 119));
         botFullscreenButtons.setOnCloseClickListener(new e2(this, 4));
         botFullscreenButtons.setOnCollapseClickListener(new e2(this, 5));
         botFullscreenButtons.setOnMenuClickListener(new e2(this, 6));
         FrameLayout frameLayout = new FrameLayout(context);
         this.p0 = frameLayout;
-        FrameLayout.LayoutParams e7 = a6.e(-1, 200, 55);
+        FrameLayout.LayoutParams e7 = w7.z5.e(-1, 200, 55);
         this.q0 = e7;
         j3Var.addView(frameLayout, e7);
         this.Y = getContext().getDrawable(R.drawable.header_shadow).mutate();
@@ -238,21 +237,21 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
         B();
         h3Var.setActionBarMenuOnItemClick(new ah.s(this, 2));
         h3Var.setAlpha(0.0f);
-        FrameLayout.LayoutParams e10 = a6.e(-1, -2, 49);
+        FrameLayout.LayoutParams e10 = w7.z5.e(-1, -2, 49);
         this.X = e10;
         j3Var.addView(h3Var, e10);
         i3 i3Var = new i3(context, c6Var);
         this.y = i3Var;
-        j3Var.addView(i3Var, a6.a(-2.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 81));
+        j3Var.addView(i3Var, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 81));
         b3Var.setWebViewProgressListener(new di.c5(this, 1));
-        a3Var.addView(b3Var, a6.d(-1.0f, -1));
+        a3Var.addView(b3Var, w7.z5.d(-1.0f, -1));
         a3Var.setScrollListener(new e2(this, 7));
         a3Var.setScrollEndListener(new e2(this, 8));
         a3Var.setDelegate(new f2(this));
         a3Var.setIsKeyboardVisible(new f2(this));
         re0 re0Var = new re0(context);
         this.s0 = re0Var;
-        j3Var.addView(re0Var, a6.d(-1.0f, -1));
+        j3Var.addView(re0Var, w7.z5.d(-1.0f, -1));
         setContentView(j3Var, new ViewGroup.LayoutParams(-1, -1));
         E();
         LaunchActivity launchActivity = LaunchActivity.G1;
@@ -324,7 +323,7 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
         a2Var.R = string;
         a2Var.T = AndroidUtilities.replaceTags(formatString);
         alertDialog$Builder.k(LocaleController.getString(R.string.OK), new t1(i10, j10, tL_attachMenuBot, runnable));
-        org.telegram.messenger.q.q(R.string.Cancel, alertDialog$Builder, null);
+        i2.d.r(R.string.Cancel, alertDialog$Builder, null);
     }
 
     public static JSONObject q(c6 c6Var, final boolean z10) {
@@ -386,7 +385,7 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
             h3 h3Var = this.W;
             h3Var.setTitleColor(w02);
             h3Var.D(g6.w0(i10, c6Var), false);
-            h3Var.B(g6.w0(g6.u8, c6Var), false);
+            h3Var.C(g6.w0(g6.u8, c6Var), false);
             h3Var.E(g6.w0(g6.G8, c6Var), false);
             h3Var.F(g6.w0(g6.E8, c6Var), false, false);
             h3Var.F(g6.w0(g6.F8, c6Var), true, false);
@@ -581,7 +580,7 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
     }
 
     public final void G() {
-        org.telegram.ui.web.y0 webView;
+        org.telegram.ui.web.z0 webView;
         b3 b3Var = this.x;
         if (b3Var == null || (webView = b3Var.getWebView()) == null) {
             return;
@@ -650,7 +649,7 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
             z0Var.b();
         }
         l3Var.K = this.B0;
-        org.telegram.ui.web.y0 webView = b3Var != null ? b3Var.getWebView() : null;
+        org.telegram.ui.web.z0 webView = b3Var != null ? b3Var.getWebView() : null;
         if (webView != null) {
             b3Var.L();
             l3Var.b = webView;
@@ -746,7 +745,7 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
         if (this.U0 == null) {
             org.telegram.ui.f3 f3Var = new org.telegram.ui.f3(getContext());
             this.U0 = f3Var;
-            this.v.addView(f3Var, a6.d(-1.0f, -1));
+            this.v.addView(f3Var, w7.z5.d(-1.0f, -1));
             this.U0.setTranslationY(-1.0f);
             this.U0.h.setOnClickListener(new n2(this, 0));
             this.U0.setBackgroundColor(this.P.getColor());
@@ -1040,11 +1039,11 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
                 break;
             }
         }
-        m80 m80Var = this.K0;
-        if (m80Var != null) {
-            m80Var.u();
+        l80 l80Var = this.K0;
+        if (l80Var != null) {
+            l80Var.u();
         }
-        m80 G = m80.G(this.e, this.E, this.d0 ? this.m0 : this.Z, true);
+        l80 G = l80.G(this.e, this.E, this.d0 ? this.m0 : this.Z, true);
         this.K0 = G;
         ArrayList arrayList3 = k0.c(getContext(), this.G, this.H).e;
         HashMap hashMap = this.J0;
@@ -1052,8 +1051,8 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
         if (arrayList3.isEmpty()) {
             i10 = -1;
         } else {
-            m80 J = G.J();
-            J.c(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new tu0(G, 26), false);
+            l80 J = G.J();
+            J.c(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new su0(G, 26), false);
             J.k();
             int size2 = arrayList3.size();
             int i13 = 0;
@@ -1084,9 +1083,9 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
                     int i14 = J.S;
                     if (i14 > 0) {
                         e1Var.setMinimumWidth(AndroidUtilities.dp(i14));
-                        J.r(e1Var, a6.n(J.S, -2));
+                        J.r(e1Var, w7.z5.n(J.S, -2));
                     } else {
-                        J.r(e1Var, a6.n(-1, -2));
+                        J.r(e1Var, w7.z5.n(-1, -2));
                         hashMap.put(j0Var, J.y());
                         size2 = i11;
                         arrayList3 = arrayList;

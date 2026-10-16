@@ -32,7 +32,7 @@ import org.telegram.ui.Components.cr;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.gq;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class i7 extends View implements v2 {
     public boolean A0;
@@ -184,7 +184,7 @@ public final class i7 extends View implements v2 {
         setWillNotDraw(false);
         h7 h7Var = new h7(this, this);
         this.W = h7Var;
-        r0.j0.j(this, h7Var);
+        r0.i0.j(this, h7Var);
         RadialGradient radialGradient = new RadialGradient(0.0f, 0.0f, AndroidUtilities.dp(48.0f), new int[]{-577231, -577231, -1}, new float[]{0.0f, 0.64f, 1.0f}, Shader.TileMode.CLAMP);
         this.I = radialGradient;
         radialGradient.setLocalMatrix(matrix);
@@ -629,8 +629,8 @@ public final class i7 extends View implements v2 {
         if (d19 < 1.0f) {
             canvas3.save();
             f26 = f16;
-            float B = org.telegram.messenger.q.B(1.0f, d19, adVar4.a(0.2f), f26);
-            canvas3.scale(B, B, this.l0, this.j0);
+            float z12 = org.telegram.messenger.g0.z(1.0f, d19, adVar4.a(0.2f), f26);
+            canvas3.scale(z12, z12, this.l0, this.j0);
             canvas3.rotate(g6Var2.d(this.M, false) - getRotation(), this.l0, this.j0);
             canvas3.drawCircle(this.l0, this.j0, AndroidUtilities.dp(22.0f), this.w);
             this.d.draw(canvas3);
@@ -772,12 +772,12 @@ public final class i7 extends View implements v2 {
                     return;
                 }
                 boolean b10 = b();
-                boolean z12 = this.a0;
-                boolean z13 = this.r0;
-                if (z12 == z13 && this.b0 == b10 && this.c0 == this.O && this.d0 == this.o0 && this.e0 == this.u0 && this.f0 == this.A0) {
+                boolean z13 = this.a0;
+                boolean z14 = this.r0;
+                if (z13 == z14 && this.b0 == b10 && this.c0 == this.O && this.d0 == this.o0 && this.e0 == this.u0 && this.f0 == this.A0) {
                     return;
                 }
-                this.a0 = z13;
+                this.a0 = z14;
                 this.b0 = b10;
                 this.c0 = this.O;
                 this.d0 = this.o0;

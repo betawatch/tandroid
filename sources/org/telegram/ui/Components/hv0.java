@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.messenger.SavedMessagesController;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class hv0 extends lm0 {
     public final Context c;
@@ -18,7 +18,7 @@ public final class hv0 extends lm0 {
     public final /* synthetic */ xv0 x;
     public final ArrayList e = new ArrayList();
     public final ArrayList f = new ArrayList();
-    public final lr0 n = new lr0(this, 6);
+    public final kr0 n = new kr0(this, 6);
     public final s4.t0 r = new s4.t0();
     public final s4.y v = new s4.y(new fv0(this));
     public final HashSet w = new HashSet();
@@ -70,12 +70,12 @@ public final class hv0 extends lm0 {
             if (contains) {
                 hashSet.remove(Long.valueOf(savedDialog.dialogId));
                 if (hashSet.size() <= 0 && xv0Var.C1) {
-                    xv0Var.b1(false);
+                    xv0Var.c1(false);
                 }
             } else {
                 hashSet.add(Long.valueOf(savedDialog.dialogId));
                 if (hashSet.size() > 0 && !xv0Var.C1) {
-                    xv0Var.b1(true);
+                    xv0Var.c1(true);
                     org.telegram.ui.ActionBar.u0 u0Var = xv0Var.u0;
                     if (u0Var != null) {
                         u0Var.setVisibility(8);

@@ -6,12 +6,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 import ji.h5;
+import m.h3;
 import org.telegram.ui.Components.kl0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract class l0 {
-    public l2.f a;
+    public m.l a;
     public ArrayList b;
     public long c;
     public long d;
@@ -45,9 +46,9 @@ public abstract class l0 {
     public abstract boolean c(b1 b1Var, List list);
 
     public final void d(b1 b1Var) {
-        l2.f fVar = this.a;
-        if (fVar != null) {
-            RecyclerView recyclerView = (RecyclerView) fVar.b;
+        m.l lVar = this.a;
+        if (lVar != null) {
+            RecyclerView recyclerView = (RecyclerView) lVar.a;
             boolean z10 = true;
             b1Var.q(true);
             View view = b1Var.a;
@@ -60,16 +61,16 @@ public abstract class l0 {
             }
             qf.e eVar = recyclerView.b;
             recyclerView.y0();
-            li.k kVar = recyclerView.e;
-            ad.d dVar = (ad.d) kVar.c;
-            h5 h5Var = (h5) kVar.b;
+            h3 h3Var = recyclerView.e;
+            ad.d dVar = (ad.d) h3Var.c;
+            h5 h5Var = (h5) h3Var.b;
             int indexOfChild = ((RecyclerView) h5Var.b).indexOfChild(view);
             if (indexOfChild == -1) {
-                kVar.X(view);
+                h3Var.X(view);
             } else if (dVar.E(indexOfChild)) {
                 dVar.G(indexOfChild);
-                kVar.X(view);
-                h5Var.a1(indexOfChild);
+                h3Var.X(view);
+                h5Var.j(indexOfChild);
             } else {
                 z10 = false;
             }
@@ -91,7 +92,7 @@ public abstract class l0 {
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
             kl0 kl0Var = (kl0) arrayList.get(i10);
-            kl0Var.a.c(kl0Var.b, kl0Var.c, kl0Var.d, false);
+            kl0Var.a.d(kl0Var.b, kl0Var.c, kl0Var.d, false);
         }
         arrayList.clear();
     }

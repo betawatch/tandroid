@@ -5,7 +5,7 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class y0 implements OnCompleteListener {
     public final h a;
@@ -27,8 +27,8 @@ public final class y0 implements OnCompleteListener {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static n6.e a(p0 p0Var, n6.g gVar, int i10) {
-        n6.g0 g0Var = gVar.Q;
-        n6.e eVar = g0Var == null ? null : g0Var.d;
+        n6.f0 f0Var = gVar.Q;
+        n6.e eVar = f0Var == null ? null : f0Var.d;
         if (eVar != null && eVar.b) {
             int[] iArr = eVar.d;
             int i11 = 0;
@@ -70,7 +70,7 @@ public final class y0 implements OnCompleteListener {
         long j12 = this.d;
         h hVar = this.a;
         if (hVar.b()) {
-            n6.n nVar = (n6.n) n6.m.a().a;
+            n6.n nVar = (n6.n) n6.m.b().a;
             if (nVar == null || nVar.b) {
                 p0 p0Var = (p0) hVar.s.get(this.c);
                 if (p0Var != null) {

@@ -22,11 +22,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Cells.x0;
+import org.telegram.ui.Cells.w0;
 import org.telegram.ui.ak;
-import w7.s;
+import w7.r;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class e extends View implements ViewTreeObserver.OnPreDrawListener, ViewTreeObserver.OnScrollChangedListener, ViewTreeObserver.OnGlobalLayoutListener {
     public static final RectF H = new RectF();
@@ -134,8 +134,8 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
             if (j.c(childAt, viewGroup, rectF3)) {
                 if (childAt instanceof u1) {
                     messageObject = ((u1) childAt).getMessageObject();
-                } else if (childAt instanceof x0) {
-                    messageObject = ((x0) childAt).getMessageObject();
+                } else if (childAt instanceof w0) {
+                    messageObject = ((w0) childAt).getMessageObject();
                 }
                 if (messageObject != null) {
                     long dialogId = messageObject.getDialogId();
@@ -231,8 +231,8 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
                         j10 = uptimeMillis;
                         float f7 = rectF8.top - rectF6.top;
                         float f10 = height - (rectF6.bottom - rectF8.bottom);
-                        dVar3.l = Math.min(dVar3.l, s.a(f7, 0.0f, height));
-                        dVar3.m = Math.max(dVar3.m, s.a(f10, 0.0f, height));
+                        dVar3.l = Math.min(dVar3.l, r.a(f7, 0.0f, height));
+                        dVar3.m = Math.max(dVar3.m, r.a(f10, 0.0f, height));
                         dVar3.k = Math.max(dVar3.k, rectF8.height());
                         dVar3.j = Math.max(dVar3.j, height);
                         if (dVar3.i || dVar3.g <= 300) {
@@ -365,7 +365,7 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
                 RectF rectF2 = dVar.c;
                 canvas.drawRect(rectF2, g6.Pl);
                 canvas.save();
-                canvas.translate(rectF2.left, s.a(s.a(rectF2.centerY() - AndroidUtilities.dp(20.0f), rectF.top - AndroidUtilities.dp(40.0f), rectF.bottom), rectF2.top, rectF2.bottom - AndroidUtilities.dp(40.0f)));
+                canvas.translate(rectF2.left, r.a(r.a(rectF2.centerY() - AndroidUtilities.dp(20.0f), rectF.top - AndroidUtilities.dp(40.0f), rectF.bottom), rectF2.top, rectF2.bottom - AndroidUtilities.dp(40.0f)));
                 canvas.drawRect(0.0f, 0.0f, rectF2.width(), AndroidUtilities.dp(40.0f), g6.Nl);
                 canvas.translate(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(16.0f));
                 canvas.save();

@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class dq extends FrameLayout {
     public final TextView[] a;
@@ -34,11 +34,11 @@ public final class dq extends FrameLayout {
         frameLayout.setBackground(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(6.0f), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.qf, c6Var)));
         int i10 = 0;
         frameLayout.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-        addView(frameLayout, w7.a6.a(-2.0f, 0.0f, 0.0f, 0.0f, 6.0f, -2, 51));
+        addView(frameLayout, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 6.0f, -2, 51));
         while (i10 < 2) {
             this.b[i10] = new bk0(activity);
             this.b[i10].setScaleType(ImageView.ScaleType.CENTER);
-            frameLayout.addView(this.b[i10], w7.a6.a(24.0f, 0.0f, i10 == 0 ? 0.0f : 24.0f, 0.0f, 0.0f, 24, 51));
+            frameLayout.addView(this.b[i10], w7.z5.a(24.0f, 0.0f, i10 == 0 ? 0.0f : 24.0f, 0.0f, 0.0f, 24, 51));
             this.a[i10] = new TextView(activity);
             this.a[i10].setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.pf, this.h));
             this.a[i10].setTextSize(1, 14.0f);
@@ -47,7 +47,7 @@ public final class dq extends FrameLayout {
             this.a[i10].setMaxWidth(AndroidUtilities.dp(250.0f));
             this.a[i10].setGravity(51);
             this.a[i10].setPivotX(0.0f);
-            frameLayout.addView(this.a[i10], w7.a6.a(-2.0f, 32.0f, i10 == 0 ? 2.0f : 26.0f, 10.0f, 0.0f, -2, 51));
+            frameLayout.addView(this.a[i10], w7.z5.a(-2.0f, 32.0f, i10 == 0 ? 2.0f : 26.0f, 10.0f, 0.0f, -2, 51));
             if (i10 == 0) {
                 this.b[i10].f(R.raw.ticks_single, 24, 24, null);
                 this.a[i10].setText(LocaleController.getString(R.string.HintSent));
@@ -62,7 +62,7 @@ public final class dq extends FrameLayout {
         this.c = imageView;
         imageView.setImageResource(R.drawable.tooltip_arrow);
         imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.qf, this.h), PorterDuff.Mode.MULTIPLY));
-        addView(imageView, w7.a6.a(6.0f, 0.0f, 0.0f, 0.0f, 0.0f, 14, 83));
+        addView(imageView, w7.z5.a(6.0f, 0.0f, 0.0f, 0.0f, 0.0f, 14, 83));
     }
 
     public final void a() {

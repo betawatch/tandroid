@@ -33,7 +33,7 @@ import ji.m5;
 import org.telegram.messenger.MediaDataController;
 import v7.q8;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c0 implements e2.d, r2.u, c3.f0 {
     public final /* synthetic */ int a;
@@ -45,14 +45,19 @@ public final /* synthetic */ class c0 implements e2.d, r2.u, c3.f0 {
     }
 
     @Override // r2.u
-    public MediaCodecInfo a(int i10) {
+    public boolean G1(String str, MediaCodecInfo.CodecCapabilities codecCapabilities) {
+        return codecCapabilities.isFeatureRequired(str);
+    }
+
+    @Override // r2.u
+    public int I1() {
         if (((MediaCodecInfo[]) this.c) == null) {
             this.c = new MediaCodecList(this.b).getCodecInfos();
         }
-        return ((MediaCodecInfo[]) this.c)[i10];
+        return ((MediaCodecInfo[]) this.c).length;
     }
 
-    public Object b() {
+    public Object a() {
         Object[] objArr = (Object[]) this.c;
         int i10 = this.b;
         if (i10 <= 0) {
@@ -66,7 +71,7 @@ public final /* synthetic */ class c0 implements e2.d, r2.u, c3.f0 {
         return obj;
     }
 
-    public void c(long j10) {
+    public void b(long j10) {
         int i10 = this.b;
         long[] jArr = (long[]) this.c;
         if (i10 == jArr.length) {
@@ -78,21 +83,7 @@ public final /* synthetic */ class c0 implements e2.d, r2.u, c3.f0 {
         jArr2[i11] = j10;
     }
 
-    @Override // e2.d
-    public j9.y d(s0 s0Var) {
-        j9.y d = ((e2.d) this.c).d(s0Var);
-        if (d == null) {
-            return null;
-        }
-        return q8.c(d, new m5(this, 9));
-    }
-
-    @Override // r2.u
-    public boolean e(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
-        return codecCapabilities.isFeatureSupported(str);
-    }
-
-    public void f(long[] jArr) {
+    public void c(long[] jArr) {
         int length = this.b + jArr.length;
         long[] jArr2 = (long[]) this.c;
         if (length > jArr2.length) {
@@ -106,7 +97,7 @@ public final /* synthetic */ class c0 implements e2.d, r2.u, c3.f0 {
     /* JADX WARN: Type inference failed for: r8v1, types: [android.widget.ListAdapter] */
     /* JADX WARN: Type inference failed for: r8v3 */
     /* JADX WARN: Type inference failed for: r8v4 */
-    public g.f g() {
+    public g.f d() {
         g.b bVar = (g.b) this.c;
         g.f fVar = new g.f(bVar.a, this.b);
         View view = bVar.e;
@@ -174,12 +165,7 @@ public final /* synthetic */ class c0 implements e2.d, r2.u, c3.f0 {
         return fVar;
     }
 
-    @Override // r2.u
-    public boolean h(String str, MediaCodecInfo.CodecCapabilities codecCapabilities) {
-        return codecCapabilities.isFeatureRequired(str);
-    }
-
-    public tc.u i(String str) {
+    public tc.u e(String str) {
         Matcher matcher;
         String str2;
         Matcher matcher2;
@@ -261,7 +247,7 @@ public final /* synthetic */ class c0 implements e2.d, r2.u, c3.f0 {
         throw new IllegalArgumentException("The scheme part is empty.");
     }
 
-    public void j(int i10) {
+    public void f(int i10) {
         ByteBuffer allocate = ByteBuffer.allocate(i10);
         int position = ((ByteBuffer) this.c).position();
         ((ByteBuffer) this.c).position(0);
@@ -270,70 +256,70 @@ public final /* synthetic */ class c0 implements e2.d, r2.u, c3.f0 {
         this.c = allocate;
     }
 
-    @Override // r2.u
-    public int k() {
-        if (((MediaCodecInfo[]) this.c) == null) {
-            this.c = new MediaCodecList(this.b).getCodecInfos();
-        }
-        return ((MediaCodecInfo[]) this.c).length;
-    }
-
-    public byte l(int i10) {
+    public byte g(int i10) {
         if (i10 < 0 || this.b <= i10) {
             throw new IndexOutOfBoundsException(String.format("Bad index: index=%d, length=%d", Integer.valueOf(i10), Integer.valueOf(this.b)));
         }
         return ((ByteBuffer) this.c).get(i10);
     }
 
-    public long m(int i10) {
+    public long h(int i10) {
         if (i10 >= 0 && i10 < this.b) {
             return ((long[]) this.c)[i10];
         }
-        StringBuilder k10 = i2.d.k(i10, "Invalid index ", ", size is ");
-        k10.append(this.b);
-        throw new IndexOutOfBoundsException(k10.toString());
+        StringBuilder l4 = i2.d.l(i10, "Invalid index ", ", size is ");
+        l4.append(this.b);
+        throw new IndexOutOfBoundsException(l4.toString());
     }
 
-    public boolean n(int i10) {
-        return ((1 << (i10 % 8)) & l(i10 / 8)) != 0;
+    public boolean i(int i10) {
+        return ((1 << (i10 % 8)) & g(i10 / 8)) != 0;
     }
 
-    public synchronized List o() {
+    public synchronized List j() {
         return DesugarCollections.unmodifiableList(new ArrayList((ArrayList) this.c));
     }
 
-    public void p(int i10) {
+    public void k(int i10) {
         int capacity = ((ByteBuffer) this.c).capacity();
         int i11 = this.b;
         if (capacity < i11 + 1) {
-            j(i11 + 1024);
+            f(i11 + 1024);
         }
         ((ByteBuffer) this.c).put((byte) i10);
         this.b++;
     }
 
-    @Override // e2.d
-    public j9.y q(byte[] bArr) {
-        return q8.c(((e2.d) this.c).q(bArr), new m5(this, 9));
+    @Override // r2.u
+    public MediaCodecInfo l(int i10) {
+        if (((MediaCodecInfo[]) this.c) == null) {
+            this.c = new MediaCodecList(this.b).getCodecInfos();
+        }
+        return ((MediaCodecInfo[]) this.c)[i10];
     }
 
-    public void r(byte[] bArr) {
+    public void m(byte[] bArr) {
         int capacity = ((ByteBuffer) this.c).capacity();
         int i10 = this.b;
         if (capacity < bArr.length + i10) {
-            j(i10 + bArr.length + 1024);
+            f(i10 + bArr.length + 1024);
         }
         ((ByteBuffer) this.c).put(bArr);
         this.b += bArr.length;
     }
 
-    public int s(int i10, int[] iArr) {
+    @Override // r2.u
+    public boolean m2() {
+        return true;
+    }
+
+    public int n(int i10, int[] iArr) {
         int i11 = iArr[0];
         int i12 = 1;
         int i13 = 0;
         int i14 = 0;
         while (i13 < i10) {
-            if (n(i11 + i13)) {
+            if (i(i11 + i13)) {
                 i14 += i12;
             }
             i13++;
@@ -343,7 +329,16 @@ public final /* synthetic */ class c0 implements e2.d, r2.u, c3.f0 {
         return i14;
     }
 
-    public long t(c3.l lVar) {
+    @Override // e2.d
+    public j9.y o(s0 s0Var) {
+        j9.y o10 = ((e2.d) this.c).o(s0Var);
+        if (o10 == null) {
+            return null;
+        }
+        return q8.c(o10, new m5(this, 9));
+    }
+
+    public long p(c3.l lVar) {
         e2.x xVar = (e2.x) this.c;
         int i10 = 0;
         lVar.j(xVar.a, 0, 1, false);
@@ -367,23 +362,7 @@ public final /* synthetic */ class c0 implements e2.d, r2.u, c3.f0 {
         return i14;
     }
 
-    public String toString() {
-        switch (this.a) {
-            case 7:
-                return new String((char[]) this.c, 0, this.b);
-            case 14:
-                i9.a aVar = (i9.a) this.c;
-                ArrayList arrayList = new ArrayList(aVar.b);
-                for (int i10 = 0; i10 < aVar.b; i10++) {
-                    arrayList.add(m0.e0(aVar.b(i10)));
-                }
-                return "UnsupportedBrands{major=" + m0.e0(this.b) + ", compatible=" + arrayList + "}";
-            default:
-                return super.toString();
-        }
-    }
-
-    public void u(Object instance) {
+    public void q(Object instance) {
         Object[] objArr = (Object[]) this.c;
         kotlin.jvm.internal.i.e(instance, "instance");
         int i10 = this.b;
@@ -399,12 +378,7 @@ public final /* synthetic */ class c0 implements e2.d, r2.u, c3.f0 {
         }
     }
 
-    @Override // r2.u
-    public boolean v() {
-        return true;
-    }
-
-    public byte[] w(int i10, int i11) {
+    public byte[] r(int i10, int i11) {
         int i12 = i11 - i10;
         if (i12 < 0 || i10 < 0 || this.b < i11) {
             throw new IllegalArgumentException(String.format("Bad range: beginIndex=%d, endIndex=%d, length=%d", Integer.valueOf(i10), Integer.valueOf(i11), Integer.valueOf(this.b)));
@@ -416,7 +390,7 @@ public final /* synthetic */ class c0 implements e2.d, r2.u, c3.f0 {
         return bArr;
     }
 
-    public String x(i4 i4Var) {
+    public String s(i4 i4Var) {
         e0 e0Var = (e0) this.c;
         int i10 = this.b;
         try {
@@ -447,6 +421,32 @@ public final /* synthetic */ class c0 implements e2.d, r2.u, c3.f0 {
             i4Var.a(0);
             return "billingOverrideService.getBillingOverride";
         }
+    }
+
+    public String toString() {
+        switch (this.a) {
+            case 7:
+                return new String((char[]) this.c, 0, this.b);
+            case 14:
+                i9.a aVar = (i9.a) this.c;
+                ArrayList arrayList = new ArrayList(aVar.b);
+                for (int i10 = 0; i10 < aVar.b; i10++) {
+                    arrayList.add(m0.e0(aVar.b(i10)));
+                }
+                return "UnsupportedBrands{major=" + m0.e0(this.b) + ", compatible=" + arrayList + "}";
+            default:
+                return super.toString();
+        }
+    }
+
+    @Override // e2.d
+    public j9.y u(byte[] bArr) {
+        return q8.c(((e2.d) this.c).u(bArr), new m5(this, 9));
+    }
+
+    @Override // r2.u
+    public boolean w0(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
+        return codecCapabilities.isFeatureSupported(str);
     }
 
     public /* synthetic */ c0(Object obj, int i10, int i11) {

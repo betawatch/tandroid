@@ -14,10 +14,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.l60;
+import org.telegram.ui.Components.x50;
 import org.telegram.ui.d61;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
 public final class f {
     public static HashMap n;
     public final double a;
@@ -44,7 +45,7 @@ public final class f {
         this.d = d61Var;
         l60 l60Var = new l60(this, d61Var.getContext(), 1);
         this.e = l60Var;
-        l60Var.setSurfaceTextureListener(new li.e(this, 5));
+        l60Var.setSurfaceTextureListener(new x50(this, 5));
         l60Var.setOpaque(false);
         d61Var.addView(l60Var);
     }

@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.LocationController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class zv0 extends lm0 {
     public final Context c;
@@ -61,7 +61,7 @@ public final class zv0 extends lm0 {
             bw0Var.e.setTextSize(1, 14.0f);
             bw0Var.e.setGravity(17);
             bw0Var.e.setPadding(0, 0, 0, AndroidUtilities.dp(8.0f));
-            w7Var.addView(bw0Var.e, w7.a6.d(40.0f, -1));
+            w7Var.addView(bw0Var.e, w7.z5.d(40.0f, -1));
         } else {
             c6Var = ((org.telegram.ui.ActionBar.e3) bw0Var).resourcesProvider;
             w7Var = new org.telegram.ui.Cells.w7(54, context, c6Var, false);

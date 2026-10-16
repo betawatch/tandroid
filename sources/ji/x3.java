@@ -51,7 +51,6 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.messenger.yh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
@@ -61,17 +60,17 @@ import org.telegram.ui.Cells.aa;
 import org.telegram.ui.Cells.n9;
 import org.telegram.ui.Cells.o9;
 import org.telegram.ui.Cells.z9;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.i71;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.tm0;
-import org.telegram.ui.Components.z61;
 import org.webrtc.MediaStreamTrack;
 import v7.u8;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final class x3 extends h71 {
+public final class x3 extends i71 {
     public static final ArrayList q4 = new ArrayList();
     public boolean A3;
     public TL_iv.pageTableCell B3;
@@ -111,7 +110,7 @@ public final class x3 extends h71 {
     public MessageObject g3;
     public u5 g4;
     public boolean h3;
-    public m80 h4;
+    public l80 h4;
     public TL_iv.RichMessage i3;
     public int i4;
     public final ArrayList j3;
@@ -232,7 +231,7 @@ public final class x3 extends h71 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void J1(x3[] x3VarArr, ArrayList arrayList, z61 z61Var) {
+    public static void J1(x3[] x3VarArr, ArrayList arrayList, a71 a71Var) {
         int i10;
         boolean z10;
         ArrayList arrayList2;
@@ -285,11 +284,11 @@ public final class x3 extends h71 {
                     if (i19 == i16 || arrayList6.size() >= i19) {
                         if (i20 == 0) {
                             if (i18 != 0) {
-                                z61Var.L();
+                                a71Var.L();
                                 i18 = 0;
                             }
                             int i21 = u0.a;
-                            l61 J = l61.J(u0.class);
+                            m61 J = m61.J(u0.class);
                             J.G = aVar3;
                             arrayList.add(J);
                             arrayList4.add(aVar3);
@@ -310,16 +309,16 @@ public final class x3 extends h71 {
                             boolean z15 = ((TL_iv.pageBlockDetails) aVar3.b).open;
                             if (!arrayList6.isEmpty() || z15) {
                                 if (i18 != 0) {
-                                    z61Var.L();
+                                    a71Var.L();
                                     i18 = 0;
                                 }
                             } else if (i18 == 0) {
-                                z61Var.M();
+                                a71Var.M();
                                 i18 = i10;
                             }
                             e3 e3Var = x3Var.f4;
                             int i23 = s0.a;
-                            l61 J2 = l61.J(s0.class);
+                            m61 J2 = m61.J(s0.class);
                             J2.G = aVar3;
                             J2.H = e3Var;
                             arrayList.add(J2);
@@ -371,25 +370,25 @@ public final class x3 extends h71 {
                         }
                         if (arrayList2.isEmpty()) {
                             if (i18 == 0) {
-                                z61Var.M();
+                                a71Var.M();
                                 i18 = 1;
                             }
                         } else if (i18 != 0) {
-                            z61Var.L();
+                            a71Var.L();
                             i18 = 0;
                         }
                         TL_iv.PageBlock pageBlock = aVar3.b;
                         if (pageBlock instanceof TL_iv.pageBlockDivider) {
                             s2 s2Var = x3Var.T3;
                             int i26 = w0.a;
-                            l61 J3 = l61.J(w0.class);
+                            m61 J3 = m61.J(w0.class);
                             J3.G = aVar3;
                             J3.H = s2Var;
                             arrayList.add(J3);
                         } else if (E3(pageBlock)) {
                             q3 q3Var = x3Var.U3;
                             int i27 = x4.a;
-                            l61 J4 = l61.J(x4.class);
+                            m61 J4 = m61.J(x4.class);
                             J4.d = (int) aVar3.a;
                             J4.G = aVar3;
                             J4.H = q3Var;
@@ -399,42 +398,42 @@ public final class x3 extends h71 {
                             if (pageBlock2 instanceof TL_iv.pageBlockAudio) {
                                 r3 r3Var = x3Var.V3;
                                 int i28 = y.a;
-                                l61 J5 = l61.J(y.class);
+                                m61 J5 = m61.J(y.class);
                                 J5.G = aVar3;
                                 J5.H = r3Var;
                                 arrayList.add(J5);
                             } else if (pageBlock2 instanceof TL_iv.pageBlockDocument) {
                                 s3 s3Var = x3Var.W3;
                                 int i29 = y0.a;
-                                l61 J6 = l61.J(y0.class);
+                                m61 J6 = m61.J(y0.class);
                                 J6.G = aVar3;
                                 J6.H = s3Var;
                                 arrayList.add(J6);
                             } else if (pageBlock2 instanceof TL_iv.pageBlockMap) {
                                 t3 t3Var = x3Var.b4;
                                 int i30 = q4.a;
-                                l61 J7 = l61.J(q4.class);
+                                m61 J7 = m61.J(q4.class);
                                 J7.G = aVar3;
                                 J7.H = t3Var;
                                 arrayList.add(J7);
                             } else if (pageBlock2 instanceof TL_iv.pageBlockMath) {
                                 b3 b3Var = x3Var.c4;
                                 int i31 = s4.a;
-                                l61 J8 = l61.J(s4.class);
+                                m61 J8 = m61.J(s4.class);
                                 J8.G = aVar3;
                                 J8.H = b3Var;
                                 arrayList.add(J8);
                             } else if (pageBlock2 instanceof TL_iv.pageBlockTable) {
                                 d3 d3Var = x3Var.e4;
                                 int i32 = s5.a;
-                                l61 J9 = l61.J(s5.class);
+                                m61 J9 = m61.J(s5.class);
                                 J9.G = aVar3;
                                 J9.H = d3Var;
                                 arrayList.add(J9);
                             } else if (pageBlock2 instanceof TL_iv.pageBlockButtonRow) {
                                 p3 p3Var = x3Var.S3;
                                 int i33 = f0.a;
-                                l61 J10 = l61.J(f0.class);
+                                m61 J10 = m61.J(f0.class);
                                 J10.G = aVar3;
                                 J10.H = p3Var;
                                 arrayList.add(J10);
@@ -447,7 +446,7 @@ public final class x3 extends h71 {
                                         z11 = true;
                                         f3 f3Var = x3Var.l4;
                                         int i34 = g6.a;
-                                        l61 J11 = l61.J(g6.class);
+                                        m61 J11 = m61.J(g6.class);
                                         J11.G = aVar3;
                                         J11.H = f3Var;
                                         J11.r = z11;
@@ -461,7 +460,7 @@ public final class x3 extends h71 {
                                 z11 = false;
                                 f3 f3Var2 = x3Var.l4;
                                 int i342 = g6.a;
-                                l61 J112 = l61.J(g6.class);
+                                m61 J112 = m61.J(g6.class);
                                 J112.G = aVar3;
                                 J112.H = f3Var2;
                                 J112.r = z11;
@@ -486,7 +485,7 @@ public final class x3 extends h71 {
             }
             int i35 = i10;
             if (i18 != 0) {
-                z61Var.L();
+                a71Var.L();
             }
             if (aVar2 != null) {
                 x3Var.t3(aVar2, q4, hashMap, arrayList);
@@ -1034,7 +1033,7 @@ public final class x3 extends h71 {
         h2 h2Var2;
         int i11;
         ArrayList arrayList = x3Var.n4;
-        z61 z61Var = x3Var.W2;
+        a71 a71Var = x3Var.W2;
         ArrayList arrayList2 = x3Var.j3;
         int indexOf = arrayList2.indexOf(aVar);
         if (indexOf >= 0) {
@@ -1057,7 +1056,7 @@ public final class x3 extends h71 {
                         x3Var.u2(indexOf);
                         x3Var.t4();
                         if (x3Var.findFocus() instanceof h1) {
-                            z61Var.N(false);
+                            a71Var.N(false);
                             h2 h2Var4 = x3Var.H3;
                             if (h2Var4 != null) {
                                 h2Var4.h();
@@ -1099,7 +1098,7 @@ public final class x3 extends h71 {
                         arrayList3.remove(arrayList3.size() - 1);
                         x3Var.y2();
                         x3Var.t4();
-                        z61Var.N(false);
+                        a71Var.N(false);
                         h2Var2 = x3Var.H3;
                         if (h2Var2 != null) {
                             h2Var2.h();
@@ -1124,7 +1123,7 @@ public final class x3 extends h71 {
                     arrayList3.remove(arrayList3.size() - 1);
                     x3Var.y2();
                     x3Var.t4();
-                    z61Var.N(false);
+                    a71Var.N(false);
                     h2Var2 = x3Var.H3;
                     if (h2Var2 != null) {
                     }
@@ -1142,7 +1141,7 @@ public final class x3 extends h71 {
                             }
                             arrayList2.remove(indexOf);
                             x3Var.t4();
-                            z61Var.N(false);
+                            a71Var.N(false);
                             h2 h2Var7 = x3Var.H3;
                             if (h2Var7 != null) {
                                 h2Var7.h();
@@ -1157,7 +1156,7 @@ public final class x3 extends h71 {
                             }
                             arrayList2.remove(i13);
                             x3Var.t4();
-                            z61Var.N(false);
+                            a71Var.N(false);
                             h2 h2Var9 = x3Var.H3;
                             if (h2Var9 != null) {
                                 h2Var9.h();
@@ -1180,7 +1179,7 @@ public final class x3 extends h71 {
                             arrayList2.remove(indexOf);
                             x3Var.y2();
                             x3Var.t4();
-                            z61Var.N(false);
+                            a71Var.N(false);
                             h2 h2Var11 = x3Var.H3;
                             if (h2Var11 != null) {
                                 h2Var11.h();
@@ -1211,7 +1210,7 @@ public final class x3 extends h71 {
                         boolean y22 = x3Var.y2();
                         x3Var.t4();
                         if (y22) {
-                            z61Var.N(false);
+                            a71Var.N(false);
                             h2 h2Var12 = x3Var.H3;
                             if (h2Var12 != null) {
                                 h2Var12.h();
@@ -1219,13 +1218,13 @@ public final class x3 extends h71 {
                             x3Var.post(new q2(x3Var, aVar4, Math.max(0, length2), 4));
                             return true;
                         }
-                        z61Var.S();
+                        a71Var.S();
                         x3Var.q4(indexOf);
                         s4.l0 itemAnimator = x3Var.getItemAnimator();
                         x3Var.setItemAnimator(null);
-                        z61Var.u(indexOf2);
+                        a71Var.u(indexOf2);
                         if ((aVar4.d > 0 || aVar.d > 0) && indexOf2 < arrayList.size()) {
-                            z61Var.q(indexOf2, arrayList.size() - indexOf2);
+                            a71Var.q(indexOf2, arrayList.size() - indexOf2);
                         }
                         x3Var.post(new z2(x3Var, itemAnimator, 1));
                         h2 h2Var13 = x3Var.H3;
@@ -1435,7 +1434,7 @@ public final class x3 extends h71 {
         if (aVar == null) {
             return AndroidUtilities.dp(2.0f);
         }
-        return yh.y(16.0f, Math.max(0, i10 - (aVar.k.size() - (z10 ? aVar.l : aVar.m))), AndroidUtilities.dp(2.0f));
+        return org.telegram.messenger.g0.D(16.0f, Math.max(0, i10 - (aVar.k.size() - (z10 ? aVar.l : aVar.m))), AndroidUtilities.dp(2.0f));
     }
 
     public static boolean m3(TL_iv.PageBlock pageBlock) {
@@ -1523,7 +1522,7 @@ public final class x3 extends h71 {
         this.W2.N(false);
     }
 
-    @Override // org.telegram.ui.Components.h71
+    @Override // org.telegram.ui.Components.i71
     public final boolean B1() {
         return this.R3;
     }
@@ -1592,11 +1591,11 @@ public final class x3 extends h71 {
         return new int[]{Math.min(indexOf2, indexOf3), Math.max(indexOf2, indexOf3)};
     }
 
-    @Override // org.telegram.ui.Components.h71
+    @Override // org.telegram.ui.Components.i71
     public final void D1() {
         v3 v3Var = this.f3;
         if (v3Var != null) {
-            v3Var.D();
+            v3Var.C();
         }
     }
 
@@ -1621,7 +1620,7 @@ public final class x3 extends h71 {
         v3 v3Var = this.f3;
         if (v3Var != null) {
             v3Var.onContentChanged();
-            v3Var.b0();
+            v3Var.T();
         }
     }
 
@@ -1705,11 +1704,11 @@ public final class x3 extends h71 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.h71
+    @Override // org.telegram.ui.Components.i71
     public final void E1() {
         v3 v3Var = this.f3;
         if (v3Var != null) {
-            v3Var.X();
+            v3Var.Q();
         }
         y4();
     }
@@ -1756,7 +1755,7 @@ public final class x3 extends h71 {
         return new int[]{indexOf, indexOf2};
     }
 
-    @Override // org.telegram.ui.Components.h71
+    @Override // org.telegram.ui.Components.i71
     public final void F1(s4.b1 b1Var) {
         v3 v3Var = this.f3;
         if (v3Var == null || b1Var == null) {
@@ -1835,7 +1834,7 @@ public final class x3 extends h71 {
         h1Var.makeSelectedUrl(new b(this, 4));
     }
 
-    @Override // org.telegram.ui.Components.h71
+    @Override // org.telegram.ui.Components.i71
     public final void G1(s4.b1 b1Var) {
         a aVar = this.Q3;
         this.Q3 = null;
@@ -1953,7 +1952,7 @@ public final class x3 extends h71 {
         int i14;
         int i15;
         int i16;
-        m80 m80Var;
+        l80 l80Var;
         LinkedHashSet linkedHashSet;
         int dp;
         int i17;
@@ -2105,11 +2104,11 @@ public final class x3 extends h71 {
                                                         i14 = i12;
                                                         i15 = (z13 || !z11 || model.c >= MessagesController.getInstance(this.d3).config.richMessageMaxTableCols.get()) ? 0 : i12;
                                                         i16 = (z13 || !z10) ? 0 : i12;
-                                                        m80Var = this.h4;
-                                                        if (m80Var != null) {
+                                                        l80Var = this.h4;
+                                                        if (l80Var != null) {
                                                             linkedHashSet = linkedHashSet2;
                                                             this.h4 = null;
-                                                            m80Var.u();
+                                                            l80Var.u();
                                                         } else {
                                                             linkedHashSet = linkedHashSet2;
                                                         }
@@ -2126,10 +2125,10 @@ public final class x3 extends h71 {
                                                             Q4 = Q4(u5Var2, z18);
                                                             z14 = z18;
                                                         }
-                                                        final m80 Y = this.f3.Y(Q4);
-                                                        Y.s = 0;
-                                                        Y.t = false;
-                                                        Y.Z = z14;
+                                                        final l80 R = this.f3.R(Q4);
+                                                        R.s = 0;
+                                                        R.t = false;
+                                                        R.Z = z14;
                                                         LinearLayout linearLayout = new LinearLayout(getContext());
                                                         linearLayout.setMinimumWidth(AndroidUtilities.dp(208.0f));
                                                         linearLayout.setOrientation(1);
@@ -2139,13 +2138,13 @@ public final class x3 extends h71 {
                                                         textView.setTextSize(1, 12.0f);
                                                         textView.setGravity(17);
                                                         textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.y6, this.n2));
-                                                        linearLayout.addView(textView, w7.a6.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
+                                                        linearLayout.addView(textView, w7.z5.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
                                                         LinearLayout linearLayout2 = new LinearLayout(getContext());
                                                         i19 = i11;
                                                         i20 = i13;
                                                         linearLayout2.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
                                                         linearLayout2.setOrientation(0);
-                                                        linearLayout.addView(linearLayout2, w7.a6.q(-2, -2, 17));
+                                                        linearLayout.addView(linearLayout2, w7.z5.q(-2, -2, 17));
                                                         Context context = getContext();
                                                         int i41 = R.drawable.iv_align_horiz_left;
                                                         org.telegram.ui.ActionBar.c6 c6Var = this.e3;
@@ -2156,13 +2155,13 @@ public final class x3 extends h71 {
                                                         int i42 = org.telegram.ui.ActionBar.g6.G8;
                                                         z1Var.c(i42);
                                                         boolean z19 = z10;
-                                                        linearLayout2.addView(z1Var, w7.a6.n(32, 32));
+                                                        linearLayout2.addView(z1Var, w7.z5.n(32, 32));
                                                         z1 z1Var2 = new z1(getContext(), R.drawable.iv_align_horiz_middle, c6Var);
                                                         z1Var2.e = 4;
                                                         z1Var2.d();
                                                         z1Var2.b();
                                                         z1Var2.c(i42);
-                                                        linearLayout2.addView(z1Var2, w7.a6.n(32, 32));
+                                                        linearLayout2.addView(z1Var2, w7.z5.n(32, 32));
                                                         z1 z1Var3 = new z1(getContext(), R.drawable.iv_align_horiz_right, c6Var);
                                                         z1Var3.e = 4;
                                                         z1Var3.d();
@@ -2170,29 +2169,29 @@ public final class x3 extends h71 {
                                                         z1Var3.c(i42);
                                                         final z1[] z1VarArr = {z1Var, z1Var2, z1Var3};
                                                         boolean z20 = z11;
-                                                        linearLayout2.addView(z1Var3, w7.a6.n(32, 32));
+                                                        linearLayout2.addView(z1Var3, w7.z5.n(32, 32));
                                                         z15 = z12;
-                                                        linearLayout2.addView(new Space(getContext()), w7.a6.n(8, 0));
+                                                        linearLayout2.addView(new Space(getContext()), w7.z5.n(8, 0));
                                                         z1 z1Var4 = new z1(getContext(), R.drawable.iv_align_vert_top, c6Var);
                                                         z1Var4.e = 4;
                                                         z1Var4.d();
                                                         z1Var4.b();
                                                         z1Var4.c(i42);
-                                                        linearLayout2.addView(z1Var4, w7.a6.n(32, 32));
+                                                        linearLayout2.addView(z1Var4, w7.z5.n(32, 32));
                                                         z1 z1Var5 = new z1(getContext(), R.drawable.iv_align_vert_middle, c6Var);
                                                         z1Var5.e = 4;
                                                         z1Var5.d();
                                                         z1Var5.b();
                                                         z1Var5.c(i42);
-                                                        linearLayout2.addView(z1Var5, w7.a6.n(32, 32));
+                                                        linearLayout2.addView(z1Var5, w7.z5.n(32, 32));
                                                         z1 z1Var6 = new z1(getContext(), R.drawable.iv_align_vert_bottom, c6Var);
                                                         z1Var6.e = 4;
                                                         z1Var6.d();
                                                         z1Var6.b();
                                                         z1Var6.c(i42);
                                                         final z1[] z1VarArr2 = {z1Var4, z1Var5, z1Var6};
-                                                        linearLayout2.addView(z1Var6, w7.a6.n(32, 32));
-                                                        Y.q(linearLayout);
+                                                        linearLayout2.addView(z1Var6, w7.z5.n(32, 32));
+                                                        R.q(linearLayout);
                                                         it3 = linkedHashSet.iterator();
                                                         int i43 = -1;
                                                         while (true) {
@@ -2398,8 +2397,8 @@ public final class x3 extends h71 {
                                                             });
                                                             i26++;
                                                         }
-                                                        Y.o();
-                                                        Y.S = 208;
+                                                        R.o();
+                                                        R.S = 208;
                                                         if (!linkedHashSet.isEmpty()) {
                                                             Iterator it9 = linkedHashSet.iterator();
                                                             while (it9.hasNext()) {
@@ -2415,10 +2414,10 @@ public final class x3 extends h71 {
                                                                 string = LocaleController.getString(z20 ? R.string.ArticleHighlightColumn : z19 ? R.string.ArticleHighlightRow : R.string.ArticleHighlightCell);
                                                             }
                                                             final int i47 = 5;
-                                                            Y.c(!z16 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, string, new di.x0(this, u5Var2, z16, i47), false);
+                                                            R.c(!z16 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, string, new di.x0(this, u5Var2, z16, i47), false);
                                                             if (i18 != 0) {
                                                                 final int i48 = 2;
-                                                                Y.c(R.drawable.iv_table_merge, LocaleController.getString(R.string.ArticleMergeCells), new Runnable(this) { // from class: ji.m2
+                                                                R.c(R.drawable.iv_table_merge, LocaleController.getString(R.string.ArticleMergeCells), new Runnable(this) { // from class: ji.m2
                                                                     public final /* synthetic */ x3 b;
 
                                                                     {
@@ -2808,7 +2807,7 @@ public final class x3 extends h71 {
                                                             }
                                                             if (i19 != 0) {
                                                                 final int i49 = 3;
-                                                                Y.c(R.drawable.iv_table_unmerge, LocaleController.getString(R.string.ArticleSplitCells), new Runnable(this) { // from class: ji.m2
+                                                                R.c(R.drawable.iv_table_unmerge, LocaleController.getString(R.string.ArticleSplitCells), new Runnable(this) { // from class: ji.m2
                                                                     public final /* synthetic */ x3 b;
 
                                                                     {
@@ -3198,7 +3197,7 @@ public final class x3 extends h71 {
                                                             }
                                                             if (i15 != 0) {
                                                                 final int i50 = 4;
-                                                                Y.c(R.drawable.iv_table_insert_left, LocaleController.getString(R.string.ArticleInsertLeft), new Runnable(this) { // from class: ji.m2
+                                                                R.c(R.drawable.iv_table_insert_left, LocaleController.getString(R.string.ArticleInsertLeft), new Runnable(this) { // from class: ji.m2
                                                                     public final /* synthetic */ x3 b;
 
                                                                     {
@@ -3585,7 +3584,7 @@ public final class x3 extends h71 {
                                                                         }
                                                                     }
                                                                 }, false);
-                                                                Y.c(R.drawable.iv_table_insert_right, LocaleController.getString(R.string.ArticleInsertRight), new Runnable(this) { // from class: ji.m2
+                                                                R.c(R.drawable.iv_table_insert_right, LocaleController.getString(R.string.ArticleInsertRight), new Runnable(this) { // from class: ji.m2
                                                                     public final /* synthetic */ x3 b;
 
                                                                     {
@@ -3975,7 +3974,7 @@ public final class x3 extends h71 {
                                                             }
                                                             if (i16 != 0) {
                                                                 final int i51 = 6;
-                                                                Y.c(R.drawable.iv_table_insert_top, LocaleController.getString(R.string.ArticleInsertAbove), new Runnable(this) { // from class: ji.m2
+                                                                R.c(R.drawable.iv_table_insert_top, LocaleController.getString(R.string.ArticleInsertAbove), new Runnable(this) { // from class: ji.m2
                                                                     public final /* synthetic */ x3 b;
 
                                                                     {
@@ -4363,7 +4362,7 @@ public final class x3 extends h71 {
                                                                     }
                                                                 }, false);
                                                                 final int i52 = 7;
-                                                                Y.c(R.drawable.iv_table_insert_bottom, LocaleController.getString(R.string.ArticleInsertBelow), new Runnable(this) { // from class: ji.m2
+                                                                R.c(R.drawable.iv_table_insert_bottom, LocaleController.getString(R.string.ArticleInsertBelow), new Runnable(this) { // from class: ji.m2
                                                                     public final /* synthetic */ x3 b;
 
                                                                     {
@@ -5143,13 +5142,13 @@ public final class x3 extends h71 {
                                                                     }
                                                                 };
                                                                 r62 = 1;
-                                                                Y.c(i53, string2, runnable, true);
+                                                                R.c(i53, string2, runnable, true);
                                                             } else {
                                                                 r62 = 1;
                                                             }
                                                             if (i20 != 0) {
                                                                 final int i55 = 0;
-                                                                Y.c(R.drawable.iv_table_remove, LocaleController.getString(R.string.ArticleDeleteRow), new Runnable(this) { // from class: ji.m2
+                                                                R.c(R.drawable.iv_table_remove, LocaleController.getString(R.string.ArticleDeleteRow), new Runnable(this) { // from class: ji.m2
                                                                     public final /* synthetic */ x3 b;
 
                                                                     {
@@ -5538,7 +5537,7 @@ public final class x3 extends h71 {
                                                                 }, r62);
                                                             }
                                                             if (z15) {
-                                                                Y.c(R.drawable.iv_table_remove, LocaleController.getString(R.string.ArticleDeleteTable), new Runnable(this) { // from class: ji.m2
+                                                                R.c(R.drawable.iv_table_remove, LocaleController.getString(R.string.ArticleDeleteTable), new Runnable(this) { // from class: ji.m2
                                                                     public final /* synthetic */ x3 b;
 
                                                                     {
@@ -5925,14 +5924,14 @@ public final class x3 extends h71 {
                                                                         }
                                                                     }
                                                                 }, r62);
-                                                                Y.o();
+                                                                R.o();
                                                                 final int i56 = 0;
-                                                                Y.i(new Runnable() { // from class: ji.n2
+                                                                R.i(new Runnable() { // from class: ji.n2
                                                                     @Override // java.lang.Runnable
                                                                     public final void run() {
                                                                         switch (i56) {
                                                                             case 0:
-                                                                                Y.n0 = true;
+                                                                                R.n0 = true;
                                                                                 boolean z21 = !model.a.bordered;
                                                                                 u5 u5Var3 = u5Var2;
                                                                                 m6 m6Var = u5Var3.F;
@@ -5950,7 +5949,7 @@ public final class x3 extends h71 {
                                                                                 r4[0].setChecked(z21);
                                                                                 break;
                                                                             default:
-                                                                                Y.n0 = true;
+                                                                                R.n0 = true;
                                                                                 boolean z22 = !model.a.compact;
                                                                                 u5 u5Var4 = u5Var2;
                                                                                 m6 m6Var2 = u5Var4.F;
@@ -5984,12 +5983,12 @@ public final class x3 extends h71 {
                                                                 }, LocaleController.getString(R.string.ArticleTableBordered), pageblocktable.bordered);
                                                                 final int i57 = 1;
                                                                 u5Var2 = u5Var;
-                                                                Y.i(new Runnable() { // from class: ji.n2
+                                                                R.i(new Runnable() { // from class: ji.n2
                                                                     @Override // java.lang.Runnable
                                                                     public final void run() {
                                                                         switch (i57) {
                                                                             case 0:
-                                                                                Y.n0 = true;
+                                                                                R.n0 = true;
                                                                                 boolean z21 = !model.a.bordered;
                                                                                 u5 u5Var3 = u5Var2;
                                                                                 m6 m6Var = u5Var3.F;
@@ -6007,7 +6006,7 @@ public final class x3 extends h71 {
                                                                                 r4[0].setChecked(z21);
                                                                                 break;
                                                                             default:
-                                                                                Y.n0 = true;
+                                                                                R.n0 = true;
                                                                                 boolean z22 = !model.a.compact;
                                                                                 u5 u5Var4 = u5Var2;
                                                                                 m6 m6Var2 = u5Var4.F;
@@ -6039,17 +6038,17 @@ public final class x3 extends h71 {
                                                                         }
                                                                     }
                                                                 }, LocaleController.getString(R.string.ArticleTableCompact), pageblocktable.compact);
-                                                                final org.telegram.ui.ActionBar.e1[] e1VarArr = {Y.y(), Y.y()};
+                                                                final org.telegram.ui.ActionBar.e1[] e1VarArr = {R.y(), R.y()};
                                                             }
-                                                            Y.p = new hg.t(this, Y, u5Var2, 16);
-                                                            this.h4 = Y;
-                                                            Y.Z();
+                                                            R.p = new hg.t(this, R, u5Var2, 16);
+                                                            this.h4 = R;
+                                                            R.Z();
                                                         }
                                                         z16 = false;
                                                         if (!z16) {
                                                         }
                                                         final int i472 = 5;
-                                                        Y.c(!z16 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, string, new di.x0(this, u5Var2, z16, i472), false);
+                                                        R.c(!z16 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, string, new di.x0(this, u5Var2, z16, i472), false);
                                                         if (i18 != 0) {
                                                         }
                                                         if (i19 != 0) {
@@ -6064,9 +6063,9 @@ public final class x3 extends h71 {
                                                         }
                                                         if (z15) {
                                                         }
-                                                        Y.p = new hg.t(this, Y, u5Var2, 16);
-                                                        this.h4 = Y;
-                                                        Y.Z();
+                                                        R.p = new hg.t(this, R, u5Var2, 16);
+                                                        this.h4 = R;
+                                                        R.Z();
                                                     }
                                                 }
                                                 i14 = 0;
@@ -6074,8 +6073,8 @@ public final class x3 extends h71 {
                                                 }
                                                 if (z13) {
                                                 }
-                                                m80Var = this.h4;
-                                                if (m80Var != null) {
+                                                l80Var = this.h4;
+                                                if (l80Var != null) {
                                                 }
                                                 dp = AndroidUtilities.dp(((i10 + 1 + i11 + (i15 != 0 ? 2 : 0) + (i16 != 0 ? 2 : 0) + i14 + i13 + (z12 ? 3 : 0)) * 48) + 68 + (z12 ? 8 : 0));
                                                 FrameLayout Q422 = Q4(u5Var2, false);
@@ -6084,10 +6083,10 @@ public final class x3 extends h71 {
                                                 Q422.getLocationOnScreen(iArr);
                                                 if (((iArr[i12] - dp) - AndroidUtilities.dp(8.0f) >= AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight ? i12 : 0) != 0) {
                                                 }
-                                                final m80 Y2 = this.f3.Y(Q4);
-                                                Y2.s = 0;
-                                                Y2.t = false;
-                                                Y2.Z = z14;
+                                                final l80 R2 = this.f3.R(Q4);
+                                                R2.s = 0;
+                                                R2.t = false;
+                                                R2.Z = z14;
                                                 LinearLayout linearLayout3 = new LinearLayout(getContext());
                                                 linearLayout3.setMinimumWidth(AndroidUtilities.dp(208.0f));
                                                 linearLayout3.setOrientation(1);
@@ -6097,13 +6096,13 @@ public final class x3 extends h71 {
                                                 textView2.setTextSize(1, 12.0f);
                                                 textView2.setGravity(17);
                                                 textView2.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.y6, this.n2));
-                                                linearLayout3.addView(textView2, w7.a6.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
+                                                linearLayout3.addView(textView2, w7.z5.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
                                                 LinearLayout linearLayout22 = new LinearLayout(getContext());
                                                 i19 = i11;
                                                 i20 = i13;
                                                 linearLayout22.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
                                                 linearLayout22.setOrientation(0);
-                                                linearLayout3.addView(linearLayout22, w7.a6.q(-2, -2, 17));
+                                                linearLayout3.addView(linearLayout22, w7.z5.q(-2, -2, 17));
                                                 Context context2 = getContext();
                                                 int i412 = R.drawable.iv_align_horiz_left;
                                                 org.telegram.ui.ActionBar.c6 c6Var2 = this.e3;
@@ -6114,13 +6113,13 @@ public final class x3 extends h71 {
                                                 int i422 = org.telegram.ui.ActionBar.g6.G8;
                                                 z1Var7.c(i422);
                                                 boolean z192 = z10;
-                                                linearLayout22.addView(z1Var7, w7.a6.n(32, 32));
+                                                linearLayout22.addView(z1Var7, w7.z5.n(32, 32));
                                                 z1 z1Var22 = new z1(getContext(), R.drawable.iv_align_horiz_middle, c6Var2);
                                                 z1Var22.e = 4;
                                                 z1Var22.d();
                                                 z1Var22.b();
                                                 z1Var22.c(i422);
-                                                linearLayout22.addView(z1Var22, w7.a6.n(32, 32));
+                                                linearLayout22.addView(z1Var22, w7.z5.n(32, 32));
                                                 z1 z1Var32 = new z1(getContext(), R.drawable.iv_align_horiz_right, c6Var2);
                                                 z1Var32.e = 4;
                                                 z1Var32.d();
@@ -6128,29 +6127,29 @@ public final class x3 extends h71 {
                                                 z1Var32.c(i422);
                                                 final z1[] z1VarArr3 = {z1Var7, z1Var22, z1Var32};
                                                 boolean z202 = z11;
-                                                linearLayout22.addView(z1Var32, w7.a6.n(32, 32));
+                                                linearLayout22.addView(z1Var32, w7.z5.n(32, 32));
                                                 z15 = z12;
-                                                linearLayout22.addView(new Space(getContext()), w7.a6.n(8, 0));
+                                                linearLayout22.addView(new Space(getContext()), w7.z5.n(8, 0));
                                                 z1 z1Var42 = new z1(getContext(), R.drawable.iv_align_vert_top, c6Var2);
                                                 z1Var42.e = 4;
                                                 z1Var42.d();
                                                 z1Var42.b();
                                                 z1Var42.c(i422);
-                                                linearLayout22.addView(z1Var42, w7.a6.n(32, 32));
+                                                linearLayout22.addView(z1Var42, w7.z5.n(32, 32));
                                                 z1 z1Var52 = new z1(getContext(), R.drawable.iv_align_vert_middle, c6Var2);
                                                 z1Var52.e = 4;
                                                 z1Var52.d();
                                                 z1Var52.b();
                                                 z1Var52.c(i422);
-                                                linearLayout22.addView(z1Var52, w7.a6.n(32, 32));
+                                                linearLayout22.addView(z1Var52, w7.z5.n(32, 32));
                                                 z1 z1Var62 = new z1(getContext(), R.drawable.iv_align_vert_bottom, c6Var2);
                                                 z1Var62.e = 4;
                                                 z1Var62.d();
                                                 z1Var62.b();
                                                 z1Var62.c(i422);
                                                 final z1[] z1VarArr22 = {z1Var42, z1Var52, z1Var62};
-                                                linearLayout22.addView(z1Var62, w7.a6.n(32, 32));
-                                                Y2.q(linearLayout3);
+                                                linearLayout22.addView(z1Var62, w7.z5.n(32, 32));
+                                                R2.q(linearLayout3);
                                                 it3 = linkedHashSet.iterator();
                                                 int i432 = -1;
                                                 while (true) {
@@ -6174,15 +6173,15 @@ public final class x3 extends h71 {
                                                 i26 = 0;
                                                 while (i26 < i23) {
                                                 }
-                                                Y2.o();
-                                                Y2.S = 208;
+                                                R2.o();
+                                                R2.S = 208;
                                                 if (!linkedHashSet.isEmpty()) {
                                                 }
                                                 z16 = false;
                                                 if (!z16) {
                                                 }
                                                 final int i4722 = 5;
-                                                Y2.c(!z16 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, string, new di.x0(this, u5Var2, z16, i4722), false);
+                                                R2.c(!z16 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, string, new di.x0(this, u5Var2, z16, i4722), false);
                                                 if (i18 != 0) {
                                                 }
                                                 if (i19 != 0) {
@@ -6197,9 +6196,9 @@ public final class x3 extends h71 {
                                                 }
                                                 if (z15) {
                                                 }
-                                                Y2.p = new hg.t(this, Y2, u5Var2, 16);
-                                                this.h4 = Y2;
-                                                Y2.Z();
+                                                R2.p = new hg.t(this, R2, u5Var2, 16);
+                                                this.h4 = R2;
+                                                R2.Z();
                                             }
                                         }
                                         i13 = 0;
@@ -6216,8 +6215,8 @@ public final class x3 extends h71 {
                                         }
                                         if (z13) {
                                         }
-                                        m80Var = this.h4;
-                                        if (m80Var != null) {
+                                        l80Var = this.h4;
+                                        if (l80Var != null) {
                                         }
                                         dp = AndroidUtilities.dp(((i10 + 1 + i11 + (i15 != 0 ? 2 : 0) + (i16 != 0 ? 2 : 0) + i14 + i13 + (z12 ? 3 : 0)) * 48) + 68 + (z12 ? 8 : 0));
                                         FrameLayout Q4222 = Q4(u5Var2, false);
@@ -6226,10 +6225,10 @@ public final class x3 extends h71 {
                                         Q4222.getLocationOnScreen(iArr);
                                         if (((iArr[i12] - dp) - AndroidUtilities.dp(8.0f) >= AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight ? i12 : 0) != 0) {
                                         }
-                                        final m80 Y22 = this.f3.Y(Q4);
-                                        Y22.s = 0;
-                                        Y22.t = false;
-                                        Y22.Z = z14;
+                                        final l80 R22 = this.f3.R(Q4);
+                                        R22.s = 0;
+                                        R22.t = false;
+                                        R22.Z = z14;
                                         LinearLayout linearLayout32 = new LinearLayout(getContext());
                                         linearLayout32.setMinimumWidth(AndroidUtilities.dp(208.0f));
                                         linearLayout32.setOrientation(1);
@@ -6239,13 +6238,13 @@ public final class x3 extends h71 {
                                         textView22.setTextSize(1, 12.0f);
                                         textView22.setGravity(17);
                                         textView22.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.y6, this.n2));
-                                        linearLayout32.addView(textView22, w7.a6.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
+                                        linearLayout32.addView(textView22, w7.z5.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
                                         LinearLayout linearLayout222 = new LinearLayout(getContext());
                                         i19 = i11;
                                         i20 = i13;
                                         linearLayout222.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
                                         linearLayout222.setOrientation(0);
-                                        linearLayout32.addView(linearLayout222, w7.a6.q(-2, -2, 17));
+                                        linearLayout32.addView(linearLayout222, w7.z5.q(-2, -2, 17));
                                         Context context22 = getContext();
                                         int i4122 = R.drawable.iv_align_horiz_left;
                                         org.telegram.ui.ActionBar.c6 c6Var22 = this.e3;
@@ -6256,13 +6255,13 @@ public final class x3 extends h71 {
                                         int i4222 = org.telegram.ui.ActionBar.g6.G8;
                                         z1Var72.c(i4222);
                                         boolean z1922 = z10;
-                                        linearLayout222.addView(z1Var72, w7.a6.n(32, 32));
+                                        linearLayout222.addView(z1Var72, w7.z5.n(32, 32));
                                         z1 z1Var222 = new z1(getContext(), R.drawable.iv_align_horiz_middle, c6Var22);
                                         z1Var222.e = 4;
                                         z1Var222.d();
                                         z1Var222.b();
                                         z1Var222.c(i4222);
-                                        linearLayout222.addView(z1Var222, w7.a6.n(32, 32));
+                                        linearLayout222.addView(z1Var222, w7.z5.n(32, 32));
                                         z1 z1Var322 = new z1(getContext(), R.drawable.iv_align_horiz_right, c6Var22);
                                         z1Var322.e = 4;
                                         z1Var322.d();
@@ -6270,29 +6269,29 @@ public final class x3 extends h71 {
                                         z1Var322.c(i4222);
                                         final z1[] z1VarArr32 = {z1Var72, z1Var222, z1Var322};
                                         boolean z2022 = z11;
-                                        linearLayout222.addView(z1Var322, w7.a6.n(32, 32));
+                                        linearLayout222.addView(z1Var322, w7.z5.n(32, 32));
                                         z15 = z12;
-                                        linearLayout222.addView(new Space(getContext()), w7.a6.n(8, 0));
+                                        linearLayout222.addView(new Space(getContext()), w7.z5.n(8, 0));
                                         z1 z1Var422 = new z1(getContext(), R.drawable.iv_align_vert_top, c6Var22);
                                         z1Var422.e = 4;
                                         z1Var422.d();
                                         z1Var422.b();
                                         z1Var422.c(i4222);
-                                        linearLayout222.addView(z1Var422, w7.a6.n(32, 32));
+                                        linearLayout222.addView(z1Var422, w7.z5.n(32, 32));
                                         z1 z1Var522 = new z1(getContext(), R.drawable.iv_align_vert_middle, c6Var22);
                                         z1Var522.e = 4;
                                         z1Var522.d();
                                         z1Var522.b();
                                         z1Var522.c(i4222);
-                                        linearLayout222.addView(z1Var522, w7.a6.n(32, 32));
+                                        linearLayout222.addView(z1Var522, w7.z5.n(32, 32));
                                         z1 z1Var622 = new z1(getContext(), R.drawable.iv_align_vert_bottom, c6Var22);
                                         z1Var622.e = 4;
                                         z1Var622.d();
                                         z1Var622.b();
                                         z1Var622.c(i4222);
                                         final z1[] z1VarArr222 = {z1Var422, z1Var522, z1Var622};
-                                        linearLayout222.addView(z1Var622, w7.a6.n(32, 32));
-                                        Y22.q(linearLayout32);
+                                        linearLayout222.addView(z1Var622, w7.z5.n(32, 32));
+                                        R22.q(linearLayout32);
                                         it3 = linkedHashSet.iterator();
                                         int i4322 = -1;
                                         while (true) {
@@ -6316,15 +6315,15 @@ public final class x3 extends h71 {
                                         i26 = 0;
                                         while (i26 < i23) {
                                         }
-                                        Y22.o();
-                                        Y22.S = 208;
+                                        R22.o();
+                                        R22.S = 208;
                                         if (!linkedHashSet.isEmpty()) {
                                         }
                                         z16 = false;
                                         if (!z16) {
                                         }
                                         final int i47222 = 5;
-                                        Y22.c(!z16 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, string, new di.x0(this, u5Var2, z16, i47222), false);
+                                        R22.c(!z16 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, string, new di.x0(this, u5Var2, z16, i47222), false);
                                         if (i18 != 0) {
                                         }
                                         if (i19 != 0) {
@@ -6339,9 +6338,9 @@ public final class x3 extends h71 {
                                         }
                                         if (z15) {
                                         }
-                                        Y22.p = new hg.t(this, Y22, u5Var2, 16);
-                                        this.h4 = Y22;
-                                        Y22.Z();
+                                        R22.p = new hg.t(this, R22, u5Var2, 16);
+                                        this.h4 = R22;
+                                        R22.Z();
                                     }
                                     z11 = false;
                                     if (selectedCells.isEmpty()) {
@@ -6360,8 +6359,8 @@ public final class x3 extends h71 {
                                     }
                                     if (z13) {
                                     }
-                                    m80Var = this.h4;
-                                    if (m80Var != null) {
+                                    l80Var = this.h4;
+                                    if (l80Var != null) {
                                     }
                                     dp = AndroidUtilities.dp(((i10 + 1 + i11 + (i15 != 0 ? 2 : 0) + (i16 != 0 ? 2 : 0) + i14 + i13 + (z12 ? 3 : 0)) * 48) + 68 + (z12 ? 8 : 0));
                                     FrameLayout Q42222 = Q4(u5Var2, false);
@@ -6370,10 +6369,10 @@ public final class x3 extends h71 {
                                     Q42222.getLocationOnScreen(iArr);
                                     if (((iArr[i12] - dp) - AndroidUtilities.dp(8.0f) >= AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight ? i12 : 0) != 0) {
                                     }
-                                    final m80 Y222 = this.f3.Y(Q4);
-                                    Y222.s = 0;
-                                    Y222.t = false;
-                                    Y222.Z = z14;
+                                    final l80 R222 = this.f3.R(Q4);
+                                    R222.s = 0;
+                                    R222.t = false;
+                                    R222.Z = z14;
                                     LinearLayout linearLayout322 = new LinearLayout(getContext());
                                     linearLayout322.setMinimumWidth(AndroidUtilities.dp(208.0f));
                                     linearLayout322.setOrientation(1);
@@ -6383,13 +6382,13 @@ public final class x3 extends h71 {
                                     textView222.setTextSize(1, 12.0f);
                                     textView222.setGravity(17);
                                     textView222.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.y6, this.n2));
-                                    linearLayout322.addView(textView222, w7.a6.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
+                                    linearLayout322.addView(textView222, w7.z5.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
                                     LinearLayout linearLayout2222 = new LinearLayout(getContext());
                                     i19 = i11;
                                     i20 = i13;
                                     linearLayout2222.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
                                     linearLayout2222.setOrientation(0);
-                                    linearLayout322.addView(linearLayout2222, w7.a6.q(-2, -2, 17));
+                                    linearLayout322.addView(linearLayout2222, w7.z5.q(-2, -2, 17));
                                     Context context222 = getContext();
                                     int i41222 = R.drawable.iv_align_horiz_left;
                                     org.telegram.ui.ActionBar.c6 c6Var222 = this.e3;
@@ -6400,13 +6399,13 @@ public final class x3 extends h71 {
                                     int i42222 = org.telegram.ui.ActionBar.g6.G8;
                                     z1Var722.c(i42222);
                                     boolean z19222 = z10;
-                                    linearLayout2222.addView(z1Var722, w7.a6.n(32, 32));
+                                    linearLayout2222.addView(z1Var722, w7.z5.n(32, 32));
                                     z1 z1Var2222 = new z1(getContext(), R.drawable.iv_align_horiz_middle, c6Var222);
                                     z1Var2222.e = 4;
                                     z1Var2222.d();
                                     z1Var2222.b();
                                     z1Var2222.c(i42222);
-                                    linearLayout2222.addView(z1Var2222, w7.a6.n(32, 32));
+                                    linearLayout2222.addView(z1Var2222, w7.z5.n(32, 32));
                                     z1 z1Var3222 = new z1(getContext(), R.drawable.iv_align_horiz_right, c6Var222);
                                     z1Var3222.e = 4;
                                     z1Var3222.d();
@@ -6414,29 +6413,29 @@ public final class x3 extends h71 {
                                     z1Var3222.c(i42222);
                                     final z1[] z1VarArr322 = {z1Var722, z1Var2222, z1Var3222};
                                     boolean z20222 = z11;
-                                    linearLayout2222.addView(z1Var3222, w7.a6.n(32, 32));
+                                    linearLayout2222.addView(z1Var3222, w7.z5.n(32, 32));
                                     z15 = z12;
-                                    linearLayout2222.addView(new Space(getContext()), w7.a6.n(8, 0));
+                                    linearLayout2222.addView(new Space(getContext()), w7.z5.n(8, 0));
                                     z1 z1Var4222 = new z1(getContext(), R.drawable.iv_align_vert_top, c6Var222);
                                     z1Var4222.e = 4;
                                     z1Var4222.d();
                                     z1Var4222.b();
                                     z1Var4222.c(i42222);
-                                    linearLayout2222.addView(z1Var4222, w7.a6.n(32, 32));
+                                    linearLayout2222.addView(z1Var4222, w7.z5.n(32, 32));
                                     z1 z1Var5222 = new z1(getContext(), R.drawable.iv_align_vert_middle, c6Var222);
                                     z1Var5222.e = 4;
                                     z1Var5222.d();
                                     z1Var5222.b();
                                     z1Var5222.c(i42222);
-                                    linearLayout2222.addView(z1Var5222, w7.a6.n(32, 32));
+                                    linearLayout2222.addView(z1Var5222, w7.z5.n(32, 32));
                                     z1 z1Var6222 = new z1(getContext(), R.drawable.iv_align_vert_bottom, c6Var222);
                                     z1Var6222.e = 4;
                                     z1Var6222.d();
                                     z1Var6222.b();
                                     z1Var6222.c(i42222);
                                     final z1[] z1VarArr2222 = {z1Var4222, z1Var5222, z1Var6222};
-                                    linearLayout2222.addView(z1Var6222, w7.a6.n(32, 32));
-                                    Y222.q(linearLayout322);
+                                    linearLayout2222.addView(z1Var6222, w7.z5.n(32, 32));
+                                    R222.q(linearLayout322);
                                     it3 = linkedHashSet.iterator();
                                     int i43222 = -1;
                                     while (true) {
@@ -6460,15 +6459,15 @@ public final class x3 extends h71 {
                                     i26 = 0;
                                     while (i26 < i23) {
                                     }
-                                    Y222.o();
-                                    Y222.S = 208;
+                                    R222.o();
+                                    R222.S = 208;
                                     if (!linkedHashSet.isEmpty()) {
                                     }
                                     z16 = false;
                                     if (!z16) {
                                     }
                                     final int i472222 = 5;
-                                    Y222.c(!z16 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, string, new di.x0(this, u5Var2, z16, i472222), false);
+                                    R222.c(!z16 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, string, new di.x0(this, u5Var2, z16, i472222), false);
                                     if (i18 != 0) {
                                     }
                                     if (i19 != 0) {
@@ -6483,9 +6482,9 @@ public final class x3 extends h71 {
                                     }
                                     if (z15) {
                                     }
-                                    Y222.p = new hg.t(this, Y222, u5Var2, 16);
-                                    this.h4 = Y222;
-                                    Y222.Z();
+                                    R222.p = new hg.t(this, R222, u5Var2, 16);
+                                    this.h4 = R222;
+                                    R222.Z();
                                 }
                                 z10 = false;
                                 hashSet2 = new HashSet();
@@ -6511,8 +6510,8 @@ public final class x3 extends h71 {
                                 }
                                 if (z13) {
                                 }
-                                m80Var = this.h4;
-                                if (m80Var != null) {
+                                l80Var = this.h4;
+                                if (l80Var != null) {
                                 }
                                 dp = AndroidUtilities.dp(((i10 + 1 + i11 + (i15 != 0 ? 2 : 0) + (i16 != 0 ? 2 : 0) + i14 + i13 + (z12 ? 3 : 0)) * 48) + 68 + (z12 ? 8 : 0));
                                 FrameLayout Q422222 = Q4(u5Var2, false);
@@ -6521,10 +6520,10 @@ public final class x3 extends h71 {
                                 Q422222.getLocationOnScreen(iArr);
                                 if (((iArr[i12] - dp) - AndroidUtilities.dp(8.0f) >= AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight ? i12 : 0) != 0) {
                                 }
-                                final m80 Y2222 = this.f3.Y(Q4);
-                                Y2222.s = 0;
-                                Y2222.t = false;
-                                Y2222.Z = z14;
+                                final l80 R2222 = this.f3.R(Q4);
+                                R2222.s = 0;
+                                R2222.t = false;
+                                R2222.Z = z14;
                                 LinearLayout linearLayout3222 = new LinearLayout(getContext());
                                 linearLayout3222.setMinimumWidth(AndroidUtilities.dp(208.0f));
                                 linearLayout3222.setOrientation(1);
@@ -6534,13 +6533,13 @@ public final class x3 extends h71 {
                                 textView2222.setTextSize(1, 12.0f);
                                 textView2222.setGravity(17);
                                 textView2222.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.y6, this.n2));
-                                linearLayout3222.addView(textView2222, w7.a6.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
+                                linearLayout3222.addView(textView2222, w7.z5.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
                                 LinearLayout linearLayout22222 = new LinearLayout(getContext());
                                 i19 = i11;
                                 i20 = i13;
                                 linearLayout22222.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
                                 linearLayout22222.setOrientation(0);
-                                linearLayout3222.addView(linearLayout22222, w7.a6.q(-2, -2, 17));
+                                linearLayout3222.addView(linearLayout22222, w7.z5.q(-2, -2, 17));
                                 Context context2222 = getContext();
                                 int i412222 = R.drawable.iv_align_horiz_left;
                                 org.telegram.ui.ActionBar.c6 c6Var2222 = this.e3;
@@ -6551,13 +6550,13 @@ public final class x3 extends h71 {
                                 int i422222 = org.telegram.ui.ActionBar.g6.G8;
                                 z1Var7222.c(i422222);
                                 boolean z192222 = z10;
-                                linearLayout22222.addView(z1Var7222, w7.a6.n(32, 32));
+                                linearLayout22222.addView(z1Var7222, w7.z5.n(32, 32));
                                 z1 z1Var22222 = new z1(getContext(), R.drawable.iv_align_horiz_middle, c6Var2222);
                                 z1Var22222.e = 4;
                                 z1Var22222.d();
                                 z1Var22222.b();
                                 z1Var22222.c(i422222);
-                                linearLayout22222.addView(z1Var22222, w7.a6.n(32, 32));
+                                linearLayout22222.addView(z1Var22222, w7.z5.n(32, 32));
                                 z1 z1Var32222 = new z1(getContext(), R.drawable.iv_align_horiz_right, c6Var2222);
                                 z1Var32222.e = 4;
                                 z1Var32222.d();
@@ -6565,29 +6564,29 @@ public final class x3 extends h71 {
                                 z1Var32222.c(i422222);
                                 final z1[] z1VarArr3222 = {z1Var7222, z1Var22222, z1Var32222};
                                 boolean z202222 = z11;
-                                linearLayout22222.addView(z1Var32222, w7.a6.n(32, 32));
+                                linearLayout22222.addView(z1Var32222, w7.z5.n(32, 32));
                                 z15 = z12;
-                                linearLayout22222.addView(new Space(getContext()), w7.a6.n(8, 0));
+                                linearLayout22222.addView(new Space(getContext()), w7.z5.n(8, 0));
                                 z1 z1Var42222 = new z1(getContext(), R.drawable.iv_align_vert_top, c6Var2222);
                                 z1Var42222.e = 4;
                                 z1Var42222.d();
                                 z1Var42222.b();
                                 z1Var42222.c(i422222);
-                                linearLayout22222.addView(z1Var42222, w7.a6.n(32, 32));
+                                linearLayout22222.addView(z1Var42222, w7.z5.n(32, 32));
                                 z1 z1Var52222 = new z1(getContext(), R.drawable.iv_align_vert_middle, c6Var2222);
                                 z1Var52222.e = 4;
                                 z1Var52222.d();
                                 z1Var52222.b();
                                 z1Var52222.c(i422222);
-                                linearLayout22222.addView(z1Var52222, w7.a6.n(32, 32));
+                                linearLayout22222.addView(z1Var52222, w7.z5.n(32, 32));
                                 z1 z1Var62222 = new z1(getContext(), R.drawable.iv_align_vert_bottom, c6Var2222);
                                 z1Var62222.e = 4;
                                 z1Var62222.d();
                                 z1Var62222.b();
                                 z1Var62222.c(i422222);
                                 final z1[] z1VarArr22222 = {z1Var42222, z1Var52222, z1Var62222};
-                                linearLayout22222.addView(z1Var62222, w7.a6.n(32, 32));
-                                Y2222.q(linearLayout3222);
+                                linearLayout22222.addView(z1Var62222, w7.z5.n(32, 32));
+                                R2222.q(linearLayout3222);
                                 it3 = linkedHashSet.iterator();
                                 int i432222 = -1;
                                 while (true) {
@@ -6611,15 +6610,15 @@ public final class x3 extends h71 {
                                 i26 = 0;
                                 while (i26 < i23) {
                                 }
-                                Y2222.o();
-                                Y2222.S = 208;
+                                R2222.o();
+                                R2222.S = 208;
                                 if (!linkedHashSet.isEmpty()) {
                                 }
                                 z16 = false;
                                 if (!z16) {
                                 }
                                 final int i4722222 = 5;
-                                Y2222.c(!z16 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, string, new di.x0(this, u5Var2, z16, i4722222), false);
+                                R2222.c(!z16 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, string, new di.x0(this, u5Var2, z16, i4722222), false);
                                 if (i18 != 0) {
                                 }
                                 if (i19 != 0) {
@@ -6634,9 +6633,9 @@ public final class x3 extends h71 {
                                 }
                                 if (z15) {
                                 }
-                                Y2222.p = new hg.t(this, Y2222, u5Var2, 16);
-                                this.h4 = Y2222;
-                                Y2222.Z();
+                                R2222.p = new hg.t(this, R2222, u5Var2, 16);
+                                this.h4 = R2222;
+                                R2222.Z();
                             }
                         }
                     }
@@ -6675,8 +6674,8 @@ public final class x3 extends h71 {
                 }
                 if (z13) {
                 }
-                m80Var = this.h4;
-                if (m80Var != null) {
+                l80Var = this.h4;
+                if (l80Var != null) {
                 }
                 dp = AndroidUtilities.dp(((i10 + 1 + i11 + (i15 != 0 ? 2 : 0) + (i16 != 0 ? 2 : 0) + i14 + i13 + (z12 ? 3 : 0)) * 48) + 68 + (z12 ? 8 : 0));
                 FrameLayout Q4222222 = Q4(u5Var2, false);
@@ -6685,10 +6684,10 @@ public final class x3 extends h71 {
                 Q4222222.getLocationOnScreen(iArr);
                 if (((iArr[i12] - dp) - AndroidUtilities.dp(8.0f) >= AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight ? i12 : 0) != 0) {
                 }
-                final m80 Y22222 = this.f3.Y(Q4);
-                Y22222.s = 0;
-                Y22222.t = false;
-                Y22222.Z = z14;
+                final l80 R22222 = this.f3.R(Q4);
+                R22222.s = 0;
+                R22222.t = false;
+                R22222.Z = z14;
                 LinearLayout linearLayout32222 = new LinearLayout(getContext());
                 linearLayout32222.setMinimumWidth(AndroidUtilities.dp(208.0f));
                 linearLayout32222.setOrientation(1);
@@ -6698,13 +6697,13 @@ public final class x3 extends h71 {
                 textView22222.setTextSize(1, 12.0f);
                 textView22222.setGravity(17);
                 textView22222.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.y6, this.n2));
-                linearLayout32222.addView(textView22222, w7.a6.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
+                linearLayout32222.addView(textView22222, w7.z5.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
                 LinearLayout linearLayout222222 = new LinearLayout(getContext());
                 i19 = i11;
                 i20 = i13;
                 linearLayout222222.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
                 linearLayout222222.setOrientation(0);
-                linearLayout32222.addView(linearLayout222222, w7.a6.q(-2, -2, 17));
+                linearLayout32222.addView(linearLayout222222, w7.z5.q(-2, -2, 17));
                 Context context22222 = getContext();
                 int i4122222 = R.drawable.iv_align_horiz_left;
                 org.telegram.ui.ActionBar.c6 c6Var22222 = this.e3;
@@ -6715,13 +6714,13 @@ public final class x3 extends h71 {
                 int i4222222 = org.telegram.ui.ActionBar.g6.G8;
                 z1Var72222.c(i4222222);
                 boolean z1922222 = z10;
-                linearLayout222222.addView(z1Var72222, w7.a6.n(32, 32));
+                linearLayout222222.addView(z1Var72222, w7.z5.n(32, 32));
                 z1 z1Var222222 = new z1(getContext(), R.drawable.iv_align_horiz_middle, c6Var22222);
                 z1Var222222.e = 4;
                 z1Var222222.d();
                 z1Var222222.b();
                 z1Var222222.c(i4222222);
-                linearLayout222222.addView(z1Var222222, w7.a6.n(32, 32));
+                linearLayout222222.addView(z1Var222222, w7.z5.n(32, 32));
                 z1 z1Var322222 = new z1(getContext(), R.drawable.iv_align_horiz_right, c6Var22222);
                 z1Var322222.e = 4;
                 z1Var322222.d();
@@ -6729,29 +6728,29 @@ public final class x3 extends h71 {
                 z1Var322222.c(i4222222);
                 final z1[] z1VarArr32222 = {z1Var72222, z1Var222222, z1Var322222};
                 boolean z2022222 = z11;
-                linearLayout222222.addView(z1Var322222, w7.a6.n(32, 32));
+                linearLayout222222.addView(z1Var322222, w7.z5.n(32, 32));
                 z15 = z12;
-                linearLayout222222.addView(new Space(getContext()), w7.a6.n(8, 0));
+                linearLayout222222.addView(new Space(getContext()), w7.z5.n(8, 0));
                 z1 z1Var422222 = new z1(getContext(), R.drawable.iv_align_vert_top, c6Var22222);
                 z1Var422222.e = 4;
                 z1Var422222.d();
                 z1Var422222.b();
                 z1Var422222.c(i4222222);
-                linearLayout222222.addView(z1Var422222, w7.a6.n(32, 32));
+                linearLayout222222.addView(z1Var422222, w7.z5.n(32, 32));
                 z1 z1Var522222 = new z1(getContext(), R.drawable.iv_align_vert_middle, c6Var22222);
                 z1Var522222.e = 4;
                 z1Var522222.d();
                 z1Var522222.b();
                 z1Var522222.c(i4222222);
-                linearLayout222222.addView(z1Var522222, w7.a6.n(32, 32));
+                linearLayout222222.addView(z1Var522222, w7.z5.n(32, 32));
                 z1 z1Var622222 = new z1(getContext(), R.drawable.iv_align_vert_bottom, c6Var22222);
                 z1Var622222.e = 4;
                 z1Var622222.d();
                 z1Var622222.b();
                 z1Var622222.c(i4222222);
                 final z1[] z1VarArr222222 = {z1Var422222, z1Var522222, z1Var622222};
-                linearLayout222222.addView(z1Var622222, w7.a6.n(32, 32));
-                Y22222.q(linearLayout32222);
+                linearLayout222222.addView(z1Var622222, w7.z5.n(32, 32));
+                R22222.q(linearLayout32222);
                 it3 = linkedHashSet.iterator();
                 int i4322222 = -1;
                 while (true) {
@@ -6775,15 +6774,15 @@ public final class x3 extends h71 {
                 i26 = 0;
                 while (i26 < i23) {
                 }
-                Y22222.o();
-                Y22222.S = 208;
+                R22222.o();
+                R22222.S = 208;
                 if (!linkedHashSet.isEmpty()) {
                 }
                 z16 = false;
                 if (!z16) {
                 }
                 final int i47222222 = 5;
-                Y22222.c(!z16 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, string, new di.x0(this, u5Var2, z16, i47222222), false);
+                R22222.c(!z16 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, string, new di.x0(this, u5Var2, z16, i47222222), false);
                 if (i18 != 0) {
                 }
                 if (i19 != 0) {
@@ -6798,9 +6797,9 @@ public final class x3 extends h71 {
                 }
                 if (z15) {
                 }
-                Y22222.p = new hg.t(this, Y22222, u5Var2, 16);
-                this.h4 = Y22222;
-                Y22222.Z();
+                R22222.p = new hg.t(this, R22222, u5Var2, 16);
+                this.h4 = R22222;
+                R22222.Z();
             }
         }
         i10 = 0;
@@ -6837,8 +6836,8 @@ public final class x3 extends h71 {
         }
         if (z13) {
         }
-        m80Var = this.h4;
-        if (m80Var != null) {
+        l80Var = this.h4;
+        if (l80Var != null) {
         }
         dp = AndroidUtilities.dp(((i10 + 1 + i11 + (i15 != 0 ? 2 : 0) + (i16 != 0 ? 2 : 0) + i14 + i13 + (z12 ? 3 : 0)) * 48) + 68 + (z12 ? 8 : 0));
         FrameLayout Q42222222 = Q4(u5Var2, false);
@@ -6847,10 +6846,10 @@ public final class x3 extends h71 {
         Q42222222.getLocationOnScreen(iArr);
         if (((iArr[i12] - dp) - AndroidUtilities.dp(8.0f) >= AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight ? i12 : 0) != 0) {
         }
-        final m80 Y222222 = this.f3.Y(Q4);
-        Y222222.s = 0;
-        Y222222.t = false;
-        Y222222.Z = z14;
+        final l80 R222222 = this.f3.R(Q4);
+        R222222.s = 0;
+        R222222.t = false;
+        R222222.Z = z14;
         LinearLayout linearLayout322222 = new LinearLayout(getContext());
         linearLayout322222.setMinimumWidth(AndroidUtilities.dp(208.0f));
         linearLayout322222.setOrientation(1);
@@ -6860,13 +6859,13 @@ public final class x3 extends h71 {
         textView222222.setTextSize(1, 12.0f);
         textView222222.setGravity(17);
         textView222222.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.y6, this.n2));
-        linearLayout322222.addView(textView222222, w7.a6.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
+        linearLayout322222.addView(textView222222, w7.z5.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
         LinearLayout linearLayout2222222 = new LinearLayout(getContext());
         i19 = i11;
         i20 = i13;
         linearLayout2222222.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
         linearLayout2222222.setOrientation(0);
-        linearLayout322222.addView(linearLayout2222222, w7.a6.q(-2, -2, 17));
+        linearLayout322222.addView(linearLayout2222222, w7.z5.q(-2, -2, 17));
         Context context222222 = getContext();
         int i41222222 = R.drawable.iv_align_horiz_left;
         org.telegram.ui.ActionBar.c6 c6Var222222 = this.e3;
@@ -6877,13 +6876,13 @@ public final class x3 extends h71 {
         int i42222222 = org.telegram.ui.ActionBar.g6.G8;
         z1Var722222.c(i42222222);
         boolean z19222222 = z10;
-        linearLayout2222222.addView(z1Var722222, w7.a6.n(32, 32));
+        linearLayout2222222.addView(z1Var722222, w7.z5.n(32, 32));
         z1 z1Var2222222 = new z1(getContext(), R.drawable.iv_align_horiz_middle, c6Var222222);
         z1Var2222222.e = 4;
         z1Var2222222.d();
         z1Var2222222.b();
         z1Var2222222.c(i42222222);
-        linearLayout2222222.addView(z1Var2222222, w7.a6.n(32, 32));
+        linearLayout2222222.addView(z1Var2222222, w7.z5.n(32, 32));
         z1 z1Var3222222 = new z1(getContext(), R.drawable.iv_align_horiz_right, c6Var222222);
         z1Var3222222.e = 4;
         z1Var3222222.d();
@@ -6891,29 +6890,29 @@ public final class x3 extends h71 {
         z1Var3222222.c(i42222222);
         final z1[] z1VarArr322222 = {z1Var722222, z1Var2222222, z1Var3222222};
         boolean z20222222 = z11;
-        linearLayout2222222.addView(z1Var3222222, w7.a6.n(32, 32));
+        linearLayout2222222.addView(z1Var3222222, w7.z5.n(32, 32));
         z15 = z12;
-        linearLayout2222222.addView(new Space(getContext()), w7.a6.n(8, 0));
+        linearLayout2222222.addView(new Space(getContext()), w7.z5.n(8, 0));
         z1 z1Var4222222 = new z1(getContext(), R.drawable.iv_align_vert_top, c6Var222222);
         z1Var4222222.e = 4;
         z1Var4222222.d();
         z1Var4222222.b();
         z1Var4222222.c(i42222222);
-        linearLayout2222222.addView(z1Var4222222, w7.a6.n(32, 32));
+        linearLayout2222222.addView(z1Var4222222, w7.z5.n(32, 32));
         z1 z1Var5222222 = new z1(getContext(), R.drawable.iv_align_vert_middle, c6Var222222);
         z1Var5222222.e = 4;
         z1Var5222222.d();
         z1Var5222222.b();
         z1Var5222222.c(i42222222);
-        linearLayout2222222.addView(z1Var5222222, w7.a6.n(32, 32));
+        linearLayout2222222.addView(z1Var5222222, w7.z5.n(32, 32));
         z1 z1Var6222222 = new z1(getContext(), R.drawable.iv_align_vert_bottom, c6Var222222);
         z1Var6222222.e = 4;
         z1Var6222222.d();
         z1Var6222222.b();
         z1Var6222222.c(i42222222);
         final z1[] z1VarArr2222222 = {z1Var4222222, z1Var5222222, z1Var6222222};
-        linearLayout2222222.addView(z1Var6222222, w7.a6.n(32, 32));
-        Y222222.q(linearLayout322222);
+        linearLayout2222222.addView(z1Var6222222, w7.z5.n(32, 32));
+        R222222.q(linearLayout322222);
         it3 = linkedHashSet.iterator();
         int i43222222 = -1;
         while (true) {
@@ -6937,15 +6936,15 @@ public final class x3 extends h71 {
         i26 = 0;
         while (i26 < i23) {
         }
-        Y222222.o();
-        Y222222.S = 208;
+        R222222.o();
+        R222222.S = 208;
         if (!linkedHashSet.isEmpty()) {
         }
         z16 = false;
         if (!z16) {
         }
         final int i472222222 = 5;
-        Y222222.c(!z16 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, string, new di.x0(this, u5Var2, z16, i472222222), false);
+        R222222.c(!z16 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, string, new di.x0(this, u5Var2, z16, i472222222), false);
         if (i18 != 0) {
         }
         if (i19 != 0) {
@@ -6960,15 +6959,15 @@ public final class x3 extends h71 {
         }
         if (z15) {
         }
-        Y222222.p = new hg.t(this, Y222222, u5Var2, 16);
-        this.h4 = Y222222;
-        Y222222.Z();
+        R222222.p = new hg.t(this, R222222, u5Var2, 16);
+        this.h4 = R222222;
+        R222222.Z();
     }
 
-    @Override // org.telegram.ui.Components.h71
+    @Override // org.telegram.ui.Components.i71
     public final void H1(s4.b1 b1Var) {
         int b10;
-        l61 G;
+        m61 G;
         a aVar = null;
         if (b1Var != null && (b10 = b1Var.b()) >= 0 && (G = this.W2.G(b10)) != null) {
             Object obj = G.G;
@@ -7085,7 +7084,7 @@ public final class x3 extends h71 {
             return null;
         }
         int j22 = j2(i10);
-        if (i2.d.w(i11, i13, j22, 0) >= i2.d.f(i11, i13, j22, 0)) {
+        if (i2.d.z(i11, i13, j22, 0) >= i2.d.g(i11, i13, j22, 0)) {
             return null;
         }
         i6 v22 = v2(i10);
@@ -7193,7 +7192,7 @@ public final class x3 extends h71 {
                             i6.e(T3, subSequence);
                             arrayList2.add(0, new a(T3, aVar.c, aVar.d));
                         }
-                        aVar = (a) i2.d.g(1, arrayList);
+                        aVar = (a) i2.d.h(1, arrayList);
                         if (aVar != null) {
                             if (y3(aVar)) {
                                 length = k6.r(((TL_iv.pageBlockDetails) aVar.b).title, null, true).length();
@@ -7273,7 +7272,7 @@ public final class x3 extends h71 {
                 arrayList2 = new ArrayList(arrayList);
                 if (subSequence.length() > 0) {
                 }
-                aVar = (a) i2.d.g(1, arrayList);
+                aVar = (a) i2.d.h(1, arrayList);
                 if (aVar != null) {
                 }
                 length = 0;
@@ -7302,8 +7301,8 @@ public final class x3 extends h71 {
     */
     public final boolean K3(int i10, int i11, int i12, int i13, int i14) {
         int length;
-        int w9;
-        int f7;
+        int z10;
+        int g10;
         int max;
         int max2;
         if (z3()) {
@@ -7312,7 +7311,7 @@ public final class x3 extends h71 {
         }
         if (!H3()) {
             int i15 = i11;
-            boolean z10 = false;
+            boolean z11 = false;
             while (i15 <= i13) {
                 a z42 = z4(i15);
                 if (z42 != null) {
@@ -7326,7 +7325,7 @@ public final class x3 extends h71 {
                         if (max3 < max4) {
                             i6 v22 = v2(i15);
                             if (v22 != null ? (v22.getStyleDelegate().getCurrentStyle(max3, max4) & i10) != 0 : k6.i(max3, max4, i10, i6.A(z4(i15).b))) {
-                                z10 = true;
+                                z11 = true;
                             }
                         } else {
                             continue;
@@ -7335,10 +7334,10 @@ public final class x3 extends h71 {
                 }
                 i15++;
             }
-            return z10;
+            return z11;
         }
         h1 k42 = k4(i11);
-        if (k42 != null && (w9 = i2.d.w(i12, i14, (length = k42.length()), 0)) < (f7 = i2.d.f(i12, i14, length, 0)) && (i10 & k42.getCurrentStyle(w9, f7)) != 0) {
+        if (k42 != null && (z10 = i2.d.z(i12, i14, (length = k42.length()), 0)) < (g10 = i2.d.g(i12, i14, length, 0)) && (i10 & k42.getCurrentStyle(z10, g10)) != 0) {
         }
     }
 
@@ -7553,10 +7552,10 @@ public final class x3 extends h71 {
         this.A3 = false;
         this.B3 = null;
         this.C3 = null;
-        m80 m80Var = this.h4;
-        if (m80Var != null) {
+        l80 l80Var = this.h4;
+        if (l80Var != null) {
             this.h4 = null;
-            m80Var.u();
+            l80Var.u();
         }
         u5 u5Var = this.g4;
         if (u5Var != null) {
@@ -8170,9 +8169,9 @@ public final class x3 extends h71 {
                         k3Var.u();
                         AndroidUtilities.cancelRunOnUIThread(gVar);
                         AndroidUtilities.runOnUIThread(gVar);
-                        w7.w5 w5Var = k3Var.D;
-                        if (w5Var != null) {
-                            w5Var.a(true);
+                        w7.j0 j0Var = k3Var.D;
+                        if (j0Var != null) {
+                            j0Var.a(true);
                         }
                         u5Var.invalidate();
                         z10 = true;
@@ -8877,12 +8876,12 @@ public final class x3 extends h71 {
             String sb3 = sb2.toString();
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(editText.getText());
             int length3 = spannableStringBuilder.length();
-            int w9 = i2.d.w(i14, i15, length3, 0);
-            spannableStringBuilder.replace(w9, i2.d.f(i14, i15, length3, 0), (CharSequence) sb3);
+            int z10 = i2.d.z(i14, i15, length3, 0);
+            spannableStringBuilder.replace(z10, i2.d.g(i14, i15, length3, 0), (CharSequence) sb3);
             editText.setTextSilently(spannableStringBuilder);
             editText.invalidateEffects();
             ((TL_iv.pageBlockDetails) aVar.b).title = k6.f(spannableStringBuilder);
-            int length4 = sb3.length() + w9;
+            int length4 = sb3.length() + z10;
             k3Var.f(false);
             h2 h2Var2 = this.H3;
             if (h2Var2 != null) {
@@ -8893,7 +8892,7 @@ public final class x3 extends h71 {
         }
         int i18 = indexOf;
         while (true) {
-            z61 z61Var = this.W2;
+            a71 a71Var = this.W2;
             str = "";
             if (i18 > indexOf2) {
                 int i19 = i16;
@@ -8902,11 +8901,11 @@ public final class x3 extends h71 {
                     h2Var3.d();
                 }
                 TL_iv.PageBlock pageBlock = aVar.b;
-                boolean z10 = pageBlock instanceof TL_iv.pageBlockTable;
-                boolean z11 = aVar2.b instanceof TL_iv.pageBlockTable;
+                boolean z11 = pageBlock instanceof TL_iv.pageBlockTable;
+                boolean z12 = aVar2.b instanceof TL_iv.pageBlockTable;
                 v3 v3Var = this.f3;
-                if (z10 || z11) {
-                    if (z10 && z11 && indexOf == indexOf2) {
+                if (z11 || z12) {
+                    if (z11 && z12 && indexOf == indexOf2) {
                         int i20 = k3Var.q0;
                         int i21 = k3Var.t0;
                         View A12 = A1(aVar);
@@ -9046,12 +9045,12 @@ public final class x3 extends h71 {
                             String sb9 = sb8.toString();
                             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(captionEditText.getText());
                             int length6 = spannableStringBuilder2.length();
-                            int w10 = i2.d.w(i14, i15, length6, 0);
-                            spannableStringBuilder2.replace(w10, i2.d.f(i14, i15, length6, 0), (CharSequence) sb9);
+                            int z13 = i2.d.z(i14, i15, length6, 0);
+                            spannableStringBuilder2.replace(z13, i2.d.g(i14, i15, length6, 0), (CharSequence) sb9);
                             captionEditText.setTextSilently(spannableStringBuilder2);
                             captionEditText.invalidateEffects();
                             l0Var.b();
-                            int length7 = sb9.length() + w10;
+                            int length7 = sb9.length() + z13;
                             k3Var.f(false);
                             h2 h2Var9 = this.H3;
                             if (h2Var9 != null) {
@@ -9064,12 +9063,12 @@ public final class x3 extends h71 {
                     return false;
                 }
                 if (indexOf != indexOf2 || !i6.p(aVar.b) || k3Var.q0 != i19 || k3Var.t0 != i19) {
-                    String z12 = i6.z(aVar.b);
-                    String z13 = indexOf == indexOf2 ? z12 : i6.z(aVar2.b);
-                    int max4 = Math.max(0, Math.min(i14, z12.length()));
-                    int max5 = Math.max(0, Math.min(i15, z13.length()));
-                    String substring2 = z12.substring(0, max4);
-                    String substring3 = z13.substring(max5);
+                    String z14 = i6.z(aVar.b);
+                    String z15 = indexOf == indexOf2 ? z14 : i6.z(aVar2.b);
+                    int max4 = Math.max(0, Math.min(i14, z14.length()));
+                    int max5 = Math.max(0, Math.min(i15, z15.length()));
+                    String substring2 = z14.substring(0, max4);
+                    String substring3 = z15.substring(max5);
                     if (strArr.length <= 1) {
                         str = strArr.length != 0 ? strArr[0] : "";
                         i6.f(aVar.b, substring2 + str + substring3);
@@ -9118,7 +9117,7 @@ public final class x3 extends h71 {
                     t4();
                     a aVar3 = (indexOf < 0 || indexOf >= arrayList.size()) ? null : (a) arrayList.get(indexOf);
                     k3Var.f(false);
-                    z61Var.N(false);
+                    a71Var.N(false);
                     h2 h2Var10 = this.H3;
                     if (h2Var10 != null) {
                         h2Var10.h();
@@ -9144,12 +9143,12 @@ public final class x3 extends h71 {
                     String sb11 = sb10.toString();
                     SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(authorEditText.getText());
                     int length9 = spannableStringBuilder3.length();
-                    int w11 = i2.d.w(i14, i15, length9, 0);
-                    spannableStringBuilder3.replace(w11, i2.d.f(i14, i15, length9, 0), (CharSequence) sb11);
+                    int z16 = i2.d.z(i14, i15, length9, 0);
+                    spannableStringBuilder3.replace(z16, i2.d.g(i14, i15, length9, 0), (CharSequence) sb11);
                     authorEditText.setTextSilently(spannableStringBuilder3);
                     authorEditText.invalidateEffects();
                     i6Var.w();
-                    int length10 = sb11.length() + w11;
+                    int length10 = sb11.length() + z16;
                     k3Var.f(false);
                     h2 h2Var12 = this.H3;
                     if (h2Var12 != null) {
@@ -9161,12 +9160,12 @@ public final class x3 extends h71 {
                 }
                 return true;
             }
-            boolean z14 = i16;
+            boolean z17 = i16;
             if (((a) arrayList.get(i18)).i || y3((a) arrayList.get(i18))) {
                 break;
             }
             i18++;
-            i16 = z14 ? 1 : 0;
+            i16 = z17 ? 1 : 0;
         }
     }
 
@@ -9267,33 +9266,33 @@ public final class x3 extends h71 {
 
     public final void Y3() {
         int length;
-        int w9;
-        int f7;
+        int z10;
+        int g10;
         int length2;
-        int w10;
-        int f10;
+        int z11;
+        int g11;
         int length3;
-        int w11;
-        int f11;
+        int z12;
+        int g12;
         int length4;
-        int w12;
-        int f12;
+        int z13;
+        int g13;
         h1 O4;
         int length5;
-        int w13;
-        int f13;
+        int z14;
+        int g14;
         boolean M3 = M3();
         k3 k3Var = this.l3;
         if (M3) {
             int i10 = k3Var.p0;
             int i11 = k3Var.q0;
-            if (i11 == k3Var.t0 && (O4 = O4(i10, i11)) != null && (w13 = i2.d.w(k3Var.r0, k3Var.u0, (length5 = O4.length()), 0)) < (f13 = i2.d.f(k3Var.r0, k3Var.u0, length5, 0))) {
+            if (i11 == k3Var.t0 && (O4 = O4(i10, i11)) != null && (z14 = i2.d.z(k3Var.r0, k3Var.u0, (length5 = O4.length()), 0)) < (g14 = i2.d.g(k3Var.r0, k3Var.u0, length5, 0))) {
                 h2 h2Var = this.H3;
                 if (h2Var != null) {
                     h2Var.d();
                 }
-                if (k6.h(O4.getText(), w13, f13)) {
-                    k6.n(O4.getText(), w13, f13);
+                if (k6.h(O4.getText(), z14, g14)) {
+                    k6.n(O4.getText(), z14, g14);
                     O4.invalidateEffects();
                     h4(i10, i11);
                     h2 h2Var2 = this.H3;
@@ -9302,7 +9301,7 @@ public final class x3 extends h71 {
                     }
                     p4();
                 }
-                O4.setSelectionOverride(w13, f13);
+                O4.setSelectionOverride(z14, g14);
                 O4.makeSelectedDate();
                 return;
             }
@@ -9311,13 +9310,13 @@ public final class x3 extends h71 {
         if (z3()) {
             int i12 = k3Var.p0;
             h1 J2 = J2(i12);
-            if (J2 != null && (w12 = i2.d.w(k3Var.r0, k3Var.u0, (length4 = J2.length()), 0)) < (f12 = i2.d.f(k3Var.r0, k3Var.u0, length4, 0))) {
+            if (J2 != null && (z13 = i2.d.z(k3Var.r0, k3Var.u0, (length4 = J2.length()), 0)) < (g13 = i2.d.g(k3Var.r0, k3Var.u0, length4, 0))) {
                 h2 h2Var3 = this.H3;
                 if (h2Var3 != null) {
                     h2Var3.d();
                 }
-                if (k6.h(J2.getText(), w12, f12)) {
-                    k6.n(J2.getText(), w12, f12);
+                if (k6.h(J2.getText(), z13, g13)) {
+                    k6.n(J2.getText(), z13, g13);
                     J2.invalidateEffects();
                     f4(i12);
                     h2 h2Var4 = this.H3;
@@ -9326,7 +9325,7 @@ public final class x3 extends h71 {
                     }
                     p4();
                 }
-                J2.setSelectionOverride(w12, f12);
+                J2.setSelectionOverride(z13, g13);
                 J2.makeSelectedDate();
                 return;
             }
@@ -9335,13 +9334,13 @@ public final class x3 extends h71 {
         if (x3()) {
             int i13 = k3Var.p0;
             h1 t22 = t2(i13);
-            if (t22 != null && (w11 = i2.d.w(k3Var.r0, k3Var.u0, (length3 = t22.length()), 0)) < (f11 = i2.d.f(k3Var.r0, k3Var.u0, length3, 0))) {
+            if (t22 != null && (z12 = i2.d.z(k3Var.r0, k3Var.u0, (length3 = t22.length()), 0)) < (g12 = i2.d.g(k3Var.r0, k3Var.u0, length3, 0))) {
                 h2 h2Var5 = this.H3;
                 if (h2Var5 != null) {
                     h2Var5.d();
                 }
-                if (k6.h(t22.getText(), w11, f11)) {
-                    k6.n(t22.getText(), w11, f11);
+                if (k6.h(t22.getText(), z12, g12)) {
+                    k6.n(t22.getText(), z12, g12);
                     t22.invalidateEffects();
                     e4(i13);
                     h2 h2Var6 = this.H3;
@@ -9350,7 +9349,7 @@ public final class x3 extends h71 {
                     }
                     p4();
                 }
-                t22.setSelectionOverride(w11, f11);
+                t22.setSelectionOverride(z12, g12);
                 t22.makeSelectedDate();
                 return;
             }
@@ -9358,13 +9357,13 @@ public final class x3 extends h71 {
         }
         if (!H3()) {
             i6 H4 = H4();
-            if (H4 != null && (w9 = i2.d.w(k3Var.r0, k3Var.u0, (length = H4.getEditText().length()), 0)) < (f7 = i2.d.f(k3Var.r0, k3Var.u0, length, 0))) {
+            if (H4 != null && (z10 = i2.d.z(k3Var.r0, k3Var.u0, (length = H4.getEditText().length()), 0)) < (g10 = i2.d.g(k3Var.r0, k3Var.u0, length, 0))) {
                 h2 h2Var7 = this.H3;
                 if (h2Var7 != null) {
                     h2Var7.d();
                 }
-                if (k6.h(H4.getEditText().getText(), w9, f7)) {
-                    k6.n(H4.getEditText().getText(), w9, f7);
+                if (k6.h(H4.getEditText().getText(), z10, g10)) {
+                    k6.n(H4.getEditText().getText(), z10, g10);
                     H4.getEditText().invalidateEffects();
                     H4.x();
                     h2 h2Var8 = this.H3;
@@ -9373,7 +9372,7 @@ public final class x3 extends h71 {
                     }
                     p4();
                 }
-                H4.getEditText().setSelectionOverride(w9, f7);
+                H4.getEditText().setSelectionOverride(z10, g10);
                 H4.getEditText().makeSelectedDate();
                 return;
             }
@@ -9381,13 +9380,13 @@ public final class x3 extends h71 {
         }
         int i14 = k3Var.p0;
         h1 k42 = k4(i14);
-        if (k42 != null && (w10 = i2.d.w(k3Var.r0, k3Var.u0, (length2 = k42.length()), 0)) < (f10 = i2.d.f(k3Var.r0, k3Var.u0, length2, 0))) {
+        if (k42 != null && (z11 = i2.d.z(k3Var.r0, k3Var.u0, (length2 = k42.length()), 0)) < (g11 = i2.d.g(k3Var.r0, k3Var.u0, length2, 0))) {
             h2 h2Var9 = this.H3;
             if (h2Var9 != null) {
                 h2Var9.d();
             }
-            if (k6.h(k42.getText(), w10, f10)) {
-                k6.n(k42.getText(), w10, f10);
+            if (k6.h(k42.getText(), z11, g11)) {
+                k6.n(k42.getText(), z11, g11);
                 k42.invalidateEffects();
                 g4(i14);
                 h2 h2Var10 = this.H3;
@@ -9396,7 +9395,7 @@ public final class x3 extends h71 {
                 }
                 p4();
             }
-            k42.setSelectionOverride(w10, f10);
+            k42.setSelectionOverride(z11, g11);
             k42.makeSelectedDate();
         }
     }
@@ -9553,7 +9552,7 @@ public final class x3 extends h71 {
             while (!arrayList.isEmpty() && A3((TL_iv.PageBlock) arrayList.get(0))) {
                 arrayList.remove(0);
             }
-            while (!arrayList.isEmpty() && A3((TL_iv.PageBlock) i2.d.g(1, arrayList))) {
+            while (!arrayList.isEmpty() && A3((TL_iv.PageBlock) i2.d.h(1, arrayList))) {
                 a1.g.y(1, arrayList);
             }
         }
@@ -9568,14 +9567,14 @@ public final class x3 extends h71 {
         SpannableStringBuilder spannableStringBuilder;
         int i12;
         int length;
-        int w9;
-        int f7;
+        int z11;
+        int g10;
         int length2;
-        int w10;
-        int f10;
+        int z12;
+        int g11;
         int length3;
-        int w11;
-        int f11;
+        int z13;
+        int g12;
         h2 h2Var2;
         int i13;
         k3 k3Var = this.l3;
@@ -9597,7 +9596,7 @@ public final class x3 extends h71 {
                 }
                 this.G3 = true;
                 int i20 = i16;
-                boolean z11 = false;
+                boolean z14 = false;
                 while (i20 <= i17) {
                     h1 O4 = O4(i15, i20);
                     if (O4 == null) {
@@ -9626,38 +9625,38 @@ public final class x3 extends h71 {
                             O4.invalidateEffects();
                             O4.requestLayout();
                             h4(i15, i20);
-                            z11 = true;
+                            z14 = true;
                         }
                     }
                     i20++;
                     i16 = i13;
                 }
                 this.G3 = false;
-                if (z11 && (h2Var2 = this.H3) != null) {
+                if (z14 && (h2Var2 = this.H3) != null) {
                     h2Var2.h();
                 }
                 v3Var.o();
-                if (z11) {
+                if (z14) {
                     p4();
                 }
             } else if (z3()) {
                 int i24 = k3Var.p0;
                 h1 J2 = J2(i24);
-                if (J2 != null && (w11 = i2.d.w(k3Var.r0, k3Var.u0, (length3 = J2.length()), 0)) < (f11 = i2.d.f(k3Var.r0, k3Var.u0, length3, 0))) {
-                    boolean z12 = (J2.getCurrentStyle(w11, f11) & i10) == 0;
+                if (J2 != null && (z13 = i2.d.z(k3Var.r0, k3Var.u0, (length3 = J2.length()), 0)) < (g12 = i2.d.g(k3Var.r0, k3Var.u0, length3, 0))) {
+                    boolean z15 = (J2.getCurrentStyle(z13, g12) & i10) == 0;
                     h2 h2Var4 = this.H3;
                     if (h2Var4 != null) {
                         h2Var4.d();
                     }
                     this.G3 = true;
-                    if (z12) {
+                    if (z15) {
                         int x23 = x2(i10);
                         if (x23 != 0) {
-                            J2.removeStyle(x23, w11, f11);
+                            J2.removeStyle(x23, z13, g12);
                         }
-                        J2.addStyle(i10, w11, f11);
+                        J2.addStyle(i10, z13, g12);
                     } else {
-                        J2.removeStyle(i10, w11, f11);
+                        J2.removeStyle(i10, z13, g12);
                     }
                     this.G3 = false;
                     f4(i24);
@@ -9673,21 +9672,21 @@ public final class x3 extends h71 {
             } else if (x3()) {
                 int i25 = k3Var.p0;
                 h1 t22 = t2(i25);
-                if (t22 != null && (w10 = i2.d.w(k3Var.r0, k3Var.u0, (length2 = t22.length()), 0)) < (f10 = i2.d.f(k3Var.r0, k3Var.u0, length2, 0))) {
-                    boolean z13 = (t22.getCurrentStyle(w10, f10) & i10) == 0;
-                    int x24 = z13 ? x2(i10) : 0;
+                if (t22 != null && (z12 = i2.d.z(k3Var.r0, k3Var.u0, (length2 = t22.length()), 0)) < (g11 = i2.d.g(k3Var.r0, k3Var.u0, length2, 0))) {
+                    boolean z16 = (t22.getCurrentStyle(z12, g11) & i10) == 0;
+                    int x24 = z16 ? x2(i10) : 0;
                     h2 h2Var6 = this.H3;
                     if (h2Var6 != null) {
                         h2Var6.d();
                     }
                     this.G3 = true;
-                    if (z13) {
+                    if (z16) {
                         if (x24 != 0) {
-                            t22.removeStyle(x24, w10, f10);
+                            t22.removeStyle(x24, z12, g11);
                         }
-                        t22.addStyle(i10, w10, f10);
+                        t22.addStyle(i10, z12, g11);
                     } else {
-                        t22.removeStyle(i10, w10, f10);
+                        t22.removeStyle(i10, z12, g11);
                     }
                     t22.invalidateEffects();
                     t22.requestLayout();
@@ -9703,21 +9702,21 @@ public final class x3 extends h71 {
             } else if (H3()) {
                 int i26 = k3Var.p0;
                 h1 k42 = k4(i26);
-                if (k42 != null && (w9 = i2.d.w(k3Var.r0, k3Var.u0, (length = k42.length()), 0)) < (f7 = i2.d.f(k3Var.r0, k3Var.u0, length, 0))) {
-                    boolean z14 = (k42.getCurrentStyle(w9, f7) & i10) == 0;
-                    int x25 = z14 ? x2(i10) : 0;
+                if (k42 != null && (z11 = i2.d.z(k3Var.r0, k3Var.u0, (length = k42.length()), 0)) < (g10 = i2.d.g(k3Var.r0, k3Var.u0, length, 0))) {
+                    boolean z17 = (k42.getCurrentStyle(z11, g10) & i10) == 0;
+                    int x25 = z17 ? x2(i10) : 0;
                     h2 h2Var8 = this.H3;
                     if (h2Var8 != null) {
                         h2Var8.d();
                     }
                     this.G3 = true;
-                    if (z14) {
+                    if (z17) {
                         if (x25 != 0) {
-                            k42.removeStyle(x25, w9, f7);
+                            k42.removeStyle(x25, z11, g10);
                         }
-                        k42.addStyle(i10, w9, f7);
+                        k42.addStyle(i10, z11, g10);
                     } else {
-                        k42.removeStyle(i10, w9, f7);
+                        k42.removeStyle(i10, z11, g10);
                     }
                     k42.invalidateEffects();
                     k42.requestLayout();
@@ -9738,7 +9737,7 @@ public final class x3 extends h71 {
                 if (i27 >= 0 && i28 >= 0 && i28 >= i27 && i28 < this.n4.size()) {
                     int i31 = i10;
                     boolean K3 = K3(i31, i27, i29, i28, i30);
-                    boolean z15 = !K3;
+                    boolean z18 = !K3;
                     int x26 = !K3 ? x2(i31) : 0;
                     h2 h2Var10 = this.H3;
                     if (h2Var10 != null) {
@@ -9746,7 +9745,7 @@ public final class x3 extends h71 {
                     }
                     this.G3 = true;
                     int i32 = i27;
-                    boolean z16 = false;
+                    boolean z19 = false;
                     while (i32 <= i28) {
                         a z42 = z4(i32);
                         if (z42 != null) {
@@ -9754,13 +9753,13 @@ public final class x3 extends h71 {
                             if (B3(pageBlock) && !(pageBlock instanceof TL_iv.pageBlockPreformatted)) {
                                 int j22 = j2(i32);
                                 int i33 = i32 == i27 ? i29 : i14;
-                                z10 = z16;
+                                z10 = z19;
                                 int i34 = i32 == i28 ? i30 : j22;
                                 int max3 = Math.max(i14, Math.min(i33, j22));
                                 int max4 = Math.max(i14, Math.min(i34, j22));
                                 if (max3 >= max4) {
                                     i11 = x26;
-                                    z16 = z10;
+                                    z19 = z10;
                                     i32++;
                                     i31 = i10;
                                     x26 = i11;
@@ -9793,10 +9792,10 @@ public final class x3 extends h71 {
                                             k6.o(spannableStringBuilder2, i12, max4, i11, false, null);
                                             spannableStringBuilder = spannableStringBuilder2;
                                         }
-                                        k6.o(spannableStringBuilder, i12, max4, i31, z15, null);
+                                        k6.o(spannableStringBuilder, i12, max4, i31, z18, null);
                                         i6.e(z42.b, spannableStringBuilder);
                                     }
-                                    z16 = true;
+                                    z19 = true;
                                     i32++;
                                     i31 = i10;
                                     x26 = i11;
@@ -9805,20 +9804,20 @@ public final class x3 extends h71 {
                             }
                         }
                         i11 = x26;
-                        z10 = z16;
-                        z16 = z10;
+                        z10 = z19;
+                        z19 = z10;
                         i32++;
                         i31 = i10;
                         x26 = i11;
                         i14 = 0;
                     }
-                    boolean z17 = z16;
+                    boolean z20 = z19;
                     this.G3 = i14;
-                    if (z17 && (h2Var = this.H3) != null) {
+                    if (z20 && (h2Var = this.H3) != null) {
                         h2Var.h();
                     }
                     v3Var.o();
-                    if (z17) {
+                    if (z20) {
                         p4();
                     }
                 }
@@ -9863,7 +9862,7 @@ public final class x3 extends h71 {
                     if (h1Var != null) {
                         int length = h1Var.length();
                         x3Var = this;
-                        w3Var = new w3(x3Var, h1Var, i2.d.w(k3Var.r0, k3Var.u0, length, 0), i2.d.f(k3Var.r0, k3Var.u0, length, 0), null);
+                        w3Var = new w3(x3Var, h1Var, i2.d.z(k3Var.r0, k3Var.u0, length, 0), i2.d.g(k3Var.r0, k3Var.u0, length, 0), null);
                     }
                 }
             } else {
@@ -10049,7 +10048,7 @@ public final class x3 extends h71 {
 
     public final boolean b3() {
         ArrayList arrayList = this.j3;
-        a aVar = arrayList.isEmpty() ? null : (a) i2.d.g(1, arrayList);
+        a aVar = arrayList.isEmpty() ? null : (a) i2.d.h(1, arrayList);
         if (aVar != null && !F3(aVar.b) && !aVar.i && !y3(aVar) && !L2(aVar.b)) {
             if (!(A1(aVar) instanceof i6)) {
                 return false;
@@ -10074,34 +10073,34 @@ public final class x3 extends h71 {
 
     public final void b4() {
         int length;
-        int w9;
-        int f7;
+        int z10;
+        int g10;
         int length2;
-        int w10;
-        int f10;
+        int z11;
+        int g11;
         int length3;
-        int w11;
-        int f11;
+        int z12;
+        int g12;
         int length4;
-        int w12;
-        int f12;
+        int z13;
+        int g13;
         h1 O4;
         int length5;
-        int w13;
-        int f13;
+        int z14;
+        int g14;
         boolean M3 = M3();
         v3 v3Var = this.f3;
         k3 k3Var = this.l3;
         if (M3) {
             int i10 = k3Var.p0;
             int i11 = k3Var.q0;
-            if (i11 == k3Var.t0 && (O4 = O4(i10, i11)) != null && (w13 = i2.d.w(k3Var.r0, k3Var.u0, (length5 = O4.length()), 0)) < (f13 = i2.d.f(k3Var.r0, k3Var.u0, length5, 0))) {
-                if (k6.h(O4.getText(), w13, f13)) {
+            if (i11 == k3Var.t0 && (O4 = O4(i10, i11)) != null && (z14 = i2.d.z(k3Var.r0, k3Var.u0, (length5 = O4.length()), 0)) < (g14 = i2.d.g(k3Var.r0, k3Var.u0, length5, 0))) {
+                if (k6.h(O4.getText(), z14, g14)) {
                     h2 h2Var = this.H3;
                     if (h2Var != null) {
                         h2Var.d();
                     }
-                    k6.n(O4.getText(), w13, f13);
+                    k6.n(O4.getText(), z14, g14);
                     O4.invalidateEffects();
                     h4(i10, i11);
                     h2 h2Var2 = this.H3;
@@ -10116,8 +10115,8 @@ public final class x3 extends h71 {
                 if (h2Var3 != null) {
                     h2Var3.d();
                 }
-                if (k6.g(O4.getText(), w13, f13)) {
-                    k6.m(O4.getText(), w13, f13);
+                if (k6.g(O4.getText(), z14, g14)) {
+                    k6.m(O4.getText(), z14, g14);
                     O4.invalidateEffects();
                     h4(i10, i11);
                     h2 h2Var4 = this.H3;
@@ -10126,7 +10125,7 @@ public final class x3 extends h71 {
                     }
                     p4();
                 }
-                O4.setSelectionOverride(w13, f13);
+                O4.setSelectionOverride(z14, g14);
                 p3(false);
                 F4(O4);
                 return;
@@ -10136,13 +10135,13 @@ public final class x3 extends h71 {
         if (z3()) {
             int i12 = k3Var.p0;
             h1 J2 = J2(i12);
-            if (J2 != null && (w12 = i2.d.w(k3Var.r0, k3Var.u0, (length4 = J2.length()), 0)) < (f12 = i2.d.f(k3Var.r0, k3Var.u0, length4, 0))) {
-                if (k6.h(J2.getText(), w12, f12)) {
+            if (J2 != null && (z13 = i2.d.z(k3Var.r0, k3Var.u0, (length4 = J2.length()), 0)) < (g13 = i2.d.g(k3Var.r0, k3Var.u0, length4, 0))) {
+                if (k6.h(J2.getText(), z13, g13)) {
                     h2 h2Var5 = this.H3;
                     if (h2Var5 != null) {
                         h2Var5.d();
                     }
-                    k6.n(J2.getText(), w12, f12);
+                    k6.n(J2.getText(), z13, g13);
                     J2.invalidateEffects();
                     f4(i12);
                     h2 h2Var6 = this.H3;
@@ -10157,8 +10156,8 @@ public final class x3 extends h71 {
                 if (h2Var7 != null) {
                     h2Var7.d();
                 }
-                if (k6.g(J2.getText(), w12, f12)) {
-                    k6.m(J2.getText(), w12, f12);
+                if (k6.g(J2.getText(), z13, g13)) {
+                    k6.m(J2.getText(), z13, g13);
                     J2.invalidateEffects();
                     f4(i12);
                     h2 h2Var8 = this.H3;
@@ -10167,7 +10166,7 @@ public final class x3 extends h71 {
                     }
                     p4();
                 }
-                J2.setSelectionOverride(w12, f12);
+                J2.setSelectionOverride(z13, g13);
                 p3(false);
                 F4(J2);
                 return;
@@ -10177,13 +10176,13 @@ public final class x3 extends h71 {
         if (x3()) {
             int i13 = k3Var.p0;
             h1 t22 = t2(i13);
-            if (t22 != null && (w11 = i2.d.w(k3Var.r0, k3Var.u0, (length3 = t22.length()), 0)) < (f11 = i2.d.f(k3Var.r0, k3Var.u0, length3, 0))) {
-                if (k6.h(t22.getText(), w11, f11)) {
+            if (t22 != null && (z12 = i2.d.z(k3Var.r0, k3Var.u0, (length3 = t22.length()), 0)) < (g12 = i2.d.g(k3Var.r0, k3Var.u0, length3, 0))) {
+                if (k6.h(t22.getText(), z12, g12)) {
                     h2 h2Var9 = this.H3;
                     if (h2Var9 != null) {
                         h2Var9.d();
                     }
-                    k6.n(t22.getText(), w11, f11);
+                    k6.n(t22.getText(), z12, g12);
                     t22.invalidateEffects();
                     e4(i13);
                     h2 h2Var10 = this.H3;
@@ -10198,8 +10197,8 @@ public final class x3 extends h71 {
                 if (h2Var11 != null) {
                     h2Var11.d();
                 }
-                if (k6.g(t22.getText(), w11, f11)) {
-                    k6.m(t22.getText(), w11, f11);
+                if (k6.g(t22.getText(), z12, g12)) {
+                    k6.m(t22.getText(), z12, g12);
                     t22.invalidateEffects();
                     e4(i13);
                     h2 h2Var12 = this.H3;
@@ -10208,7 +10207,7 @@ public final class x3 extends h71 {
                     }
                     p4();
                 }
-                t22.setSelectionOverride(w11, f11);
+                t22.setSelectionOverride(z12, g12);
                 p3(false);
                 F4(t22);
                 return;
@@ -10217,13 +10216,13 @@ public final class x3 extends h71 {
         }
         if (!H3()) {
             i6 H4 = H4();
-            if (H4 != null && (w9 = i2.d.w(k3Var.r0, k3Var.u0, (length = H4.getEditText().length()), 0)) < (f7 = i2.d.f(k3Var.r0, k3Var.u0, length, 0))) {
-                if (k6.h(H4.getEditText().getText(), w9, f7)) {
+            if (H4 != null && (z10 = i2.d.z(k3Var.r0, k3Var.u0, (length = H4.getEditText().length()), 0)) < (g10 = i2.d.g(k3Var.r0, k3Var.u0, length, 0))) {
+                if (k6.h(H4.getEditText().getText(), z10, g10)) {
                     h2 h2Var13 = this.H3;
                     if (h2Var13 != null) {
                         h2Var13.d();
                     }
-                    k6.n(H4.getEditText().getText(), w9, f7);
+                    k6.n(H4.getEditText().getText(), z10, g10);
                     H4.getEditText().invalidateEffects();
                     H4.x();
                     h2 h2Var14 = this.H3;
@@ -10238,8 +10237,8 @@ public final class x3 extends h71 {
                 if (h2Var15 != null) {
                     h2Var15.d();
                 }
-                if (k6.g(H4.getEditText().getText(), w9, f7)) {
-                    k6.m(H4.getEditText().getText(), w9, f7);
+                if (k6.g(H4.getEditText().getText(), z10, g10)) {
+                    k6.m(H4.getEditText().getText(), z10, g10);
                     H4.getEditText().invalidateEffects();
                     H4.x();
                     h2 h2Var16 = this.H3;
@@ -10248,7 +10247,7 @@ public final class x3 extends h71 {
                     }
                     p4();
                 }
-                H4.getEditText().setSelectionOverride(w9, f7);
+                H4.getEditText().setSelectionOverride(z10, g10);
                 p3(false);
                 F4(H4.getEditText());
                 return;
@@ -10257,13 +10256,13 @@ public final class x3 extends h71 {
         }
         int i14 = k3Var.p0;
         h1 k42 = k4(i14);
-        if (k42 != null && (w10 = i2.d.w(k3Var.r0, k3Var.u0, (length2 = k42.length()), 0)) < (f10 = i2.d.f(k3Var.r0, k3Var.u0, length2, 0))) {
-            if (k6.h(k42.getText(), w10, f10)) {
+        if (k42 != null && (z11 = i2.d.z(k3Var.r0, k3Var.u0, (length2 = k42.length()), 0)) < (g11 = i2.d.g(k3Var.r0, k3Var.u0, length2, 0))) {
+            if (k6.h(k42.getText(), z11, g11)) {
                 h2 h2Var17 = this.H3;
                 if (h2Var17 != null) {
                     h2Var17.d();
                 }
-                k6.n(k42.getText(), w10, f10);
+                k6.n(k42.getText(), z11, g11);
                 k42.invalidateEffects();
                 g4(i14);
                 h2 h2Var18 = this.H3;
@@ -10278,8 +10277,8 @@ public final class x3 extends h71 {
             if (h2Var19 != null) {
                 h2Var19.d();
             }
-            if (k6.g(k42.getText(), w10, f10)) {
-                k6.m(k42.getText(), w10, f10);
+            if (k6.g(k42.getText(), z11, g11)) {
+                k6.m(k42.getText(), z11, g11);
                 k42.invalidateEffects();
                 g4(i14);
                 h2 h2Var20 = this.H3;
@@ -10288,7 +10287,7 @@ public final class x3 extends h71 {
                 }
                 p4();
             }
-            k42.setSelectionOverride(w10, f10);
+            k42.setSelectionOverride(z11, g11);
             p3(false);
             F4(k42);
         }
@@ -10362,8 +10361,8 @@ public final class x3 extends h71 {
         h1 editText;
         Runnable k2Var;
         int length;
-        final int w9;
-        final int f7;
+        final int z10;
+        final int g10;
         k3 k3Var = this.l3;
         if (k3Var == null || !k3Var.x()) {
             return;
@@ -10400,18 +10399,18 @@ public final class x3 extends h71 {
         }
         final h1 h1Var = editText;
         final Runnable runnable = k2Var;
-        if (h1Var != null && (w9 = i2.d.w(k3Var.r0, k3Var.u0, (length = h1Var.length()), 0)) <= (f7 = i2.d.f(k3Var.r0, k3Var.u0, length, 0))) {
+        if (h1Var != null && (z10 = i2.d.z(k3Var.r0, k3Var.u0, (length = h1Var.length()), 0)) <= (g10 = i2.d.g(k3Var.r0, k3Var.u0, length, 0))) {
             Editable text = h1Var.getText();
             int i17 = t.h;
             String str = null;
             if (text != null) {
-                t[] tVarArr = (t[]) text.getSpans(w9, f7, t.class);
+                t[] tVarArr = (t[]) text.getSpans(z10, g10, t.class);
                 if (tVarArr.length > 0) {
                     str = tVarArr[0].a;
                 }
             }
             if (str == null) {
-                str = h1Var.getText().subSequence(w9, f7).toString();
+                str = h1Var.getText().subSequence(z10, g10).toString();
             }
             final float dp = AndroidUtilities.dp(SharedConfig.fontSize + 4);
             int i18 = org.telegram.ui.ActionBar.g6.G6;
@@ -10440,8 +10439,8 @@ public final class x3 extends h71 {
                     SpannableString spannableString = new SpannableString(" ");
                     spannableString.setSpan(a2, 0, 1, 33);
                     Editable text2 = h1Var2.getText();
-                    int max = Math.max(0, Math.min(w9, text2.length()));
-                    text2.replace(max, Math.max(max, Math.min(f7, text2.length())), spannableString);
+                    int max = Math.max(0, Math.min(z10, text2.length()));
+                    text2.replace(max, Math.max(max, Math.min(g10, text2.length())), spannableString);
                     runnable.run();
                     h2 h2Var2 = x3Var.H3;
                     if (h2Var2 != null) {
@@ -10457,16 +10456,16 @@ public final class x3 extends h71 {
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(5:(1:9)(1:(4:37|11|12|(4:14|16|17|(1:27)(4:19|(1:21)(1:26)|22|24)))(1:36))|10|11|12|(0)) */
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x0079, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x0078, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x007a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0079, code lost:
     
         org.telegram.messenger.FileLog.e(r0);
      */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x006d A[Catch: Exception -> 0x0079, TRY_LEAVE, TryCatch #0 {Exception -> 0x0079, blocks: (B:12:0x0046, B:14:0x006d), top: B:11:0x0046 }] */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x006c A[Catch: Exception -> 0x0078, TRY_LEAVE, TryCatch #0 {Exception -> 0x0078, blocks: (B:12:0x0046, B:14:0x006c), top: B:11:0x0046 }] */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x008c  */
     /* JADX WARN: Removed duplicated region for block: B:27:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -10498,9 +10497,9 @@ public final class x3 extends h71 {
                     i13 = i14;
                     HashMap hashMap = this.k3;
                     StringBuilder sb2 = new StringBuilder();
-                    d4 d4Var = new d4(0);
+                    d4 d4Var = new d4();
                     f4.F(sb2, arrayList, new int[]{i11}, i12, i11, i12, i13, i10, d4Var, false, 0, hashMap);
-                    d4Var.f(sb2);
+                    d4Var.c(sb2);
                     str = sb2.toString();
                     if (!TextUtils.isEmpty(str)) {
                         z4.a(B2(i11, i12), A2(i11, i12));
@@ -10519,9 +10518,9 @@ public final class x3 extends h71 {
                 i10 = i14;
                 HashMap hashMap2 = this.k3;
                 StringBuilder sb22 = new StringBuilder();
-                d4 d4Var2 = new d4(0);
+                d4 d4Var2 = new d4();
                 f4.F(sb22, arrayList, new int[]{i11}, i12, i11, i12, i13, i10, d4Var2, false, 0, hashMap2);
-                d4Var2.f(sb22);
+                d4Var2.c(sb22);
                 str = sb22.toString();
                 if (!TextUtils.isEmpty(str)) {
                 }
@@ -10596,7 +10595,7 @@ public final class x3 extends h71 {
             if (m6Var.g.isEmpty()) {
                 return;
             }
-            x5 m10 = u5Var.v.m((TL_iv.pageTableCell) i2.d.g(1, u5Var.F.g));
+            x5 m10 = u5Var.v.m((TL_iv.pageTableCell) i2.d.h(1, u5Var.F.g));
             if (m10 == null) {
                 return;
             }
@@ -10683,7 +10682,7 @@ public final class x3 extends h71 {
         x3Var.X1(k3Var2.p0, k3Var2.r0, k3Var2.s0, k3Var2.u0, coerceToText.toString().split("\n", -1));
     }
 
-    @Override // org.telegram.ui.Components.h71, org.telegram.ui.Components.mm0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.i71, org.telegram.ui.Components.mm0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         ArrayList arrayList;
         int i10;
@@ -10778,11 +10777,11 @@ public final class x3 extends h71 {
                                 int dp2 = AndroidUtilities.dp(16.0f) + dp;
                                 i12 = i14;
                                 arrayList2 = arrayList;
-                                int D = org.telegram.messenger.q.D(16.0f, getWidth(), dp);
-                                if (D - dp2 > AndroidUtilities.dp(8.0f)) {
+                                int B = org.telegram.messenger.g0.B(16.0f, getWidth(), dp);
+                                if (B - dp2 > AndroidUtilities.dp(8.0f)) {
                                     float floor = (float) Math.floor(SharedConfig.bubbleRadius / 3.0f);
                                     RectF rectF = AndroidUtilities.rectTmp;
-                                    rectF.set(dp2, l42 + f10, D, f12 - l43);
+                                    rectF.set(dp2, l42 + f10, B, f12 - l43);
                                     aVar2 = aVar5;
                                     aVar3 = aVar6;
                                     this.o4.b(canvas, rectF, floor, floor, floor, f11);
@@ -11745,7 +11744,7 @@ public final class x3 extends h71 {
                                                     u5Var = null;
                                                 }
                                             }
-                                            z61 z61Var = this.W2;
+                                            a71 a71Var = this.W2;
                                             if (u5Var == null) {
                                                 int indexOf3 = arrayList.indexOf(u5Var.getRow());
                                                 if (indexOf3 >= 0) {
@@ -11759,7 +11758,7 @@ public final class x3 extends h71 {
                                                         if (U22 < 0) {
                                                             a aVar3 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
                                                             arrayList.add(aVar3);
-                                                            z61Var.N(false);
+                                                            a71Var.N(false);
                                                             post(new o2(this, aVar3, 2));
                                                         } else {
                                                             post(new o2(this, (a) arrayList.get(U22), 4));
@@ -11802,7 +11801,7 @@ public final class x3 extends h71 {
                                                             if (V32 == null) {
                                                                 a aVar4 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
                                                                 arrayList.add(aVar4);
-                                                                z61Var.N(false);
+                                                                a71Var.N(false);
                                                                 post(new o2(this, aVar4, 6));
                                                             } else {
                                                                 post(new o2(this, V32, 7));
@@ -11920,7 +11919,7 @@ public final class x3 extends h71 {
                                                                                 if (U24 < 0) {
                                                                                     a aVar5 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
                                                                                     arrayList.add(aVar5);
-                                                                                    z61Var.N(false);
+                                                                                    a71Var.N(false);
                                                                                     post(new o2(this, aVar5, 11));
                                                                                 } else {
                                                                                     post(new o2(this, (a) arrayList.get(U24), 12));
@@ -12056,7 +12055,7 @@ public final class x3 extends h71 {
                                             }
                                             i11++;
                                         }
-                                        z61 z61Var2 = this.W2;
+                                        a71 a71Var2 = this.W2;
                                         if (u5Var == null) {
                                         }
                                     }
@@ -12257,7 +12256,7 @@ public final class x3 extends h71 {
                     }
                 }
                 boolean z11 = this.x3;
-                z61 z61Var = this.W2;
+                a71 a71Var = this.W2;
                 ArrayList arrayList = this.j3;
                 if (!z11 && !this.y3 && this.v3 == null && !k3Var.x() && this.g4 == null) {
                     float x10 = motionEvent.getX();
@@ -12268,9 +12267,9 @@ public final class x3 extends h71 {
                         for (int i13 = 0; i13 < getChildCount(); i13++) {
                             paddingTop = Math.max(paddingTop, getChildAt(i13).getBottom() + getTop());
                         }
-                        int D = org.telegram.messenger.q.D(60.0f, view4.getHeight(), Math.max(Math.max(this.O3, this.M3), this.N3));
-                        if (y10 >= paddingTop && y10 <= D) {
-                            a aVar = arrayList.isEmpty() ? null : (a) i2.d.g(1, arrayList);
+                        int B = org.telegram.messenger.g0.B(60.0f, view4.getHeight(), Math.max(Math.max(this.O3, this.M3), this.N3));
+                        if (y10 >= paddingTop && y10 <= B) {
+                            a aVar = arrayList.isEmpty() ? null : (a) i2.d.h(1, arrayList);
                             if (aVar == null || !aVar.k.isEmpty() || F3(aVar.b) || aVar.i || y3(aVar) || L2(aVar.b)) {
                                 h2 h2Var = this.H3;
                                 if (h2Var != null) {
@@ -12278,7 +12277,7 @@ public final class x3 extends h71 {
                                 }
                                 a aVar2 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
                                 arrayList.add(aVar2);
-                                z61Var.N(false);
+                                a71Var.N(false);
                                 h2 h2Var2 = this.H3;
                                 if (h2Var2 != null) {
                                     h2Var2.h();
@@ -12317,7 +12316,7 @@ public final class x3 extends h71 {
                                     }
                                     a aVar4 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
                                     arrayList.add(0, aVar4);
-                                    z61Var.N(false);
+                                    a71Var.N(false);
                                     h2 h2Var4 = this.H3;
                                     if (h2Var4 != null) {
                                         h2Var4.h();
@@ -12734,8 +12733,8 @@ public final class x3 extends h71 {
     public final boolean m2() {
         h1 editText;
         int length;
-        int w9;
-        int f7;
+        int z10;
+        int g10;
         k3 k3Var = this.l3;
         if (k3Var == null || !k3Var.x() || k3Var.p0 != k3Var.s0) {
             return false;
@@ -12760,13 +12759,13 @@ public final class x3 extends h71 {
             }
             editText = H4.getEditText();
         }
-        if (editText == null || (w9 = i2.d.w(k3Var.r0, k3Var.u0, (length = editText.length()), 0)) >= (f7 = i2.d.f(k3Var.r0, k3Var.u0, length, 0))) {
+        if (editText == null || (z10 = i2.d.z(k3Var.r0, k3Var.u0, (length = editText.length()), 0)) >= (g10 = i2.d.g(k3Var.r0, k3Var.u0, length, 0))) {
             return false;
         }
         Editable text = editText.getText();
-        if (text != null && w9 < f7) {
-            for (m4 m4Var : (m4[]) text.getSpans(w9, f7, m4.class)) {
-                if (text.getSpanStart(m4Var) < f7 && text.getSpanEnd(m4Var) > w9) {
+        if (text != null && z10 < g10) {
+            for (m4 m4Var : (m4[]) text.getSpans(z10, g10, m4.class)) {
+                if (text.getSpanStart(m4Var) < g10 && text.getSpanEnd(m4Var) > z10) {
                     return false;
                 }
             }
@@ -13072,9 +13071,9 @@ public final class x3 extends h71 {
             return;
         }
         int size = aVar.h.size();
-        z61 z61Var = this.W2;
+        a71 a71Var = this.W2;
         if (size != 1) {
-            z61Var.N(true);
+            a71Var.N(true);
             o4(aVar);
             return;
         }
@@ -13084,7 +13083,7 @@ public final class x3 extends h71 {
         pageBlock.caption = pageCaption;
         aVar.g = (u) aVar.h.get(0);
         aVar.h = null;
-        z61Var.N(true);
+        a71Var.N(true);
         o4(aVar);
     }
 
@@ -13170,7 +13169,7 @@ public final class x3 extends h71 {
                     aVar2.k.add((Long) arrayList3.get(i12));
                 }
                 int i13 = k5.a;
-                l61 J = l61.J(k5.class);
+                m61 J = m61.J(k5.class);
                 J.G = aVar2;
                 J.H = this.d4;
                 arrayList2.add(J);
@@ -13482,7 +13481,7 @@ public final class x3 extends h71 {
         this.H3.j();
         v3 v3Var = this.f3;
         if (v3Var != null) {
-            v3Var.b0();
+            v3Var.T();
         }
     }
 

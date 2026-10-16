@@ -7,10 +7,10 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.fp0;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.v61;
 import org.telegram.ui.lu;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class c5 implements fp0 {
     public final /* synthetic */ lu a;
@@ -57,7 +57,7 @@ public final class c5 implements fp0 {
                 AnimatorSet animatorSet2 = new AnimatorSet();
                 animatorSetArr[0] = animatorSet2;
                 animatorSet2.playTogether(arrayList);
-                animatorSetArr[0].addListener(new u61(luVar, 18));
+                animatorSetArr[0].addListener(new v61(luVar, 18));
                 animatorSetArr[0].setDuration(150L);
                 animatorSetArr[0].start();
             }

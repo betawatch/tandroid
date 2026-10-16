@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.graphics.Rect;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ss0 extends org.telegram.ui.h21 {
     public final /* synthetic */ xv0 H;
@@ -32,7 +32,7 @@ public final class ss0 extends org.telegram.ui.h21 {
                     int Z = xv0Var.Z(qu0Var.F);
                     int paddingRight = qu0Var.h.getPaddingRight();
                     ws0 ws0Var2 = qu0Var.h;
-                    int Y = xv0Var.Y(xv0Var.v0());
+                    int Y = xv0Var.Y(xv0Var.w0());
                     ws0Var2.c3 = Y;
                     ws0Var.setPadding(paddingLeft, Z, paddingRight, Y);
                 }

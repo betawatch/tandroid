@@ -1,50 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wk implements Utilities.Callback2 {
+public final /* synthetic */ class wk implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ dl b;
+    public final /* synthetic */ cl b;
 
-    public /* synthetic */ wk(dl dlVar, int i10) {
+    public /* synthetic */ wk(cl clVar, int i10) {
         this.a = i10;
-        this.b = dlVar;
+        this.b = clVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                TL_wallet.walletUserAddress walletuseraddress = (TL_wallet.walletUserAddress) obj;
-                String str = (String) obj2;
-                dl dlVar = this.b;
-                TLRPC.User user = dlVar.r;
-                if (!dlVar.H) {
-                    dlVar.F = false;
-                    if (TextUtils.equals(str, "WALLET_USER_UNAVAILABLE")) {
-                        dlVar.G = true;
-                    }
-                    if (walletuseraddress != null && walletuseraddress.user_id == user.id) {
-                        dlVar.y = walletuseraddress.address;
-                        dlVar.E = walletuseraddress.public_key;
-                    }
-                    dlVar.v.a(dlVar.y, user);
-                    dlVar.g0();
-                    dlVar.Y();
+                this.b.Z();
+                break;
+            case 1:
+                cl clVar = this.b;
+                EditTextBoldCursor editTextBoldCursor = clVar.P;
+                if (!clVar.H && !clVar.K0 && !clVar.b.isDismissed() && clVar.I0 && clVar.Q0 == null && editTextBoldCursor.hasFocus() && clVar.isShown()) {
+                    AndroidUtilities.showKeyboard(editTextBoldCursor);
                     break;
                 }
                 break;
+            case 2:
+                cl clVar2 = this.b;
+                if (!clVar2.H && clVar2.I0 && clVar2.isShown()) {
+                    clVar2.c0();
+                    break;
+                }
+                break;
+            case 3:
+                cl clVar3 = this.b;
+                if (!clVar3.H) {
+                    float f7 = clVar3.j0;
+                    if (f7 < 1.0f && clVar3.i0 == null) {
+                        o1.k kVar = new o1.k(new o1.j(f7));
+                        clVar3.i0 = kVar;
+                        o1.l lVar = new o1.l(1.0f);
+                        lVar.a(0.55f);
+                        lVar.b(65.0f);
+                        kVar.u = lVar;
+                        clVar3.i0.e(0.001f);
+                        clVar3.i0.b(new n7(clVar3, 4));
+                        clVar3.i0.a(new jb(clVar3, 2));
+                        clVar3.i0.h();
+                        break;
+                    }
+                }
+                break;
+            case 4:
+                cl clVar4 = this.b;
+                if (clVar4.I0 && !clVar4.H) {
+                    clVar4.b0();
+                    if (clVar4.J0) {
+                        clVar4.c0();
+                        break;
+                    }
+                }
+                break;
             default:
-                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
-                dl dlVar2 = this.b;
-                if (!dlVar2.H && wallettransaction != null) {
-                    dlVar2.d0 = wallettransaction.fee;
-                    dlVar2.h0();
+                cl clVar5 = this.b;
+                if (!clVar5.m0) {
+                    clVar5.l0.setVisibility(4);
                     break;
                 }
                 break;

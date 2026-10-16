@@ -22,7 +22,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.q;
+import org.telegram.messenger.g0;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g6;
@@ -31,9 +31,10 @@ import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.p9;
 import org.telegram.ui.Components.r6;
+import zf.q;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes4.dex */
 public final class b extends Drawable implements DownloadController.FileDownloadProgressListener {
     public final RadialProgress2 E;
     public MessageObject F;
@@ -124,7 +125,7 @@ public final class b extends Drawable implements DownloadController.FileDownload
         if (this.h) {
             int dp3 = AndroidUtilities.dp(36.0f);
             Rect rect = AndroidUtilities.rectTmp2;
-            rect.set(q.D(9.0f, bounds.right, dp3), q.D(4.0f, bounds.bottom, dp3), bounds.right - AndroidUtilities.dp(9.0f), bounds.bottom - AndroidUtilities.dp(4.0f));
+            rect.set(g0.B(9.0f, bounds.right, dp3), g0.B(4.0f, bounds.bottom, dp3), bounds.right - AndroidUtilities.dp(9.0f), bounds.bottom - AndroidUtilities.dp(4.0f));
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(rect);
             this.E.a.set(rectF.left, rectF.top, rectF.right, rectF.bottom);
@@ -159,7 +160,7 @@ public final class b extends Drawable implements DownloadController.FileDownload
                     aVar.d = mode;
                 }
                 drawable.setColorFilter((PorterDuffColorFilter) aVar.c);
-                zf.q.e(this.s, rectF.centerX(), rectF.centerY(), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), 17);
+                q.e(this.s, rectF.centerX(), rectF.centerY(), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), 17);
                 this.s.draw(canvas);
             }
             b(true);

@@ -37,7 +37,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class hb1 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
     public int A0;
@@ -88,10 +88,10 @@ public final class hb1 extends org.telegram.ui.ActionBar.m2 implements Notificat
     public ta1 h;
     public final org.telegram.ui.ActionBar.a2[] h0;
     public di.h1 i0;
-    public ic j0;
+    public hc j0;
     public qe k0;
     public final boolean l0;
-    public mh0 m0;
+    public lh0 m0;
     public ta1 n;
     public ph.b[] n0;
     public int o0;
@@ -669,9 +669,9 @@ public final class hb1 extends org.telegram.ui.ActionBar.m2 implements Notificat
 
     public static void Y(hb1 hb1Var) {
         View currentView = hb1Var.i0.getCurrentView();
-        ic icVar = hb1Var.j0;
-        if (currentView == icVar) {
-            hb1Var.actionBar.setAdaptiveBackground(icVar.F);
+        hc hcVar = hb1Var.j0;
+        if (currentView == hcVar) {
+            hb1Var.actionBar.setAdaptiveBackground(hcVar.F);
             return;
         }
         qe qeVar = hb1Var.k0;
@@ -837,7 +837,7 @@ public final class hb1 extends org.telegram.ui.ActionBar.m2 implements Notificat
             ((sa1) view).d();
             return;
         }
-        if (view instanceof org.telegram.ui.Cells.b7) {
+        if (view instanceof org.telegram.ui.Cells.a7) {
             org.telegram.ui.Components.cr crVar = new org.telegram.ui.Components.cr(new ColorDrawable(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.a7, false)), org.telegram.ui.ActionBar.g6.W0(ApplicationLoader.applicationContext, R.drawable.greydivider, org.telegram.ui.ActionBar.g6.b7), 0, 0);
             crVar.w = true;
             view.setBackground(crVar);
@@ -854,9 +854,9 @@ public final class hb1 extends org.telegram.ui.ActionBar.m2 implements Notificat
     public final void c0() {
         int i10 = AndroidUtilities.navigationBarHeight;
         int i11 = AndroidUtilities.statusBarHeight;
-        mh0 mh0Var = this.m0;
-        if (mh0Var != null) {
-            mh0Var.setTranslationY(-i10);
+        lh0 lh0Var = this.m0;
+        if (lh0Var != null) {
+            lh0Var.setTranslationY(-i10);
         }
         int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + i11;
         int dp = (this.c ? AndroidUtilities.dp(72.0f) : 0) + i10;
@@ -864,9 +864,9 @@ public final class hb1 extends org.telegram.ui.ActionBar.m2 implements Notificat
         if (ia1Var != null) {
             ia1Var.setPadding(0, currentActionBarHeight, 0, dp);
         }
-        ic icVar = this.j0;
-        if (icVar != null) {
-            icVar.F.setPadding(0, currentActionBarHeight, 0, dp);
+        hc hcVar = this.j0;
+        if (hcVar != null) {
+            hcVar.F.setPadding(0, currentActionBarHeight, 0, dp);
         }
         qe qeVar = this.k0;
         if (qeVar != null) {
@@ -902,9 +902,9 @@ public final class hb1 extends org.telegram.ui.ActionBar.m2 implements Notificat
             arrayList.add(ph.b.b(context, hb1Var.resourceProvider, ph.a.P, R.string.Monetization));
         }
         hb1Var.n0 = (ph.b[]) arrayList.toArray(new ph.b[0]);
-        mh0 mh0Var = new mh0(context, hb1Var.resourceProvider);
-        hb1Var.m0 = mh0Var;
-        mh0Var.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
+        lh0 lh0Var = new lh0(context, hb1Var.resourceProvider);
+        hb1Var.m0 = lh0Var;
+        lh0Var.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
         int i10 = 0;
         while (true) {
             ph.b[] bVarArr = hb1Var.n0;
@@ -920,7 +920,7 @@ public final class hb1 extends org.telegram.ui.ActionBar.m2 implements Notificat
         hb1Var.i0 = new di.h1(hb1Var, hb1Var.getParentActivity(), 7);
         FrameLayout frameLayout2 = new FrameLayout(context);
         if (isBoostSupported) {
-            hb1Var.j0 = new ic(hb1Var, -j10, hb1Var.getResourceProvider());
+            hb1Var.j0 = new hc(hb1Var, -j10, hb1Var.getResourceProvider());
         }
         if (z11) {
             frameLayout = frameLayout2;
@@ -950,10 +950,10 @@ public final class hb1 extends org.telegram.ui.ActionBar.m2 implements Notificat
         bh.b bVar2 = hb1Var.F0;
         bVar2.f = jVar;
         bVar2.g = z8Var;
-        z8Var.addView(hb1Var.i0, w7.a6.g());
+        z8Var.addView(hb1Var.i0, w7.z5.g());
         z8Var.addView(hb1Var.actionBar);
         if (hb1Var.c) {
-            z8Var.addView(hb1Var.m0, w7.a6.e(344, 72, 81));
+            z8Var.addView(hb1Var.m0, w7.z5.e(344, 72, 81));
             hb1Var.setBulletinDelegate(new di.z8(12));
         }
         hb1Var.fragmentView = z8Var;
@@ -964,18 +964,18 @@ public final class hb1 extends org.telegram.ui.ActionBar.m2 implements Notificat
         ia1 ia1Var2 = hb1Var.S;
         Objects.requireNonNull(ia1Var2);
         hb1Var.T = new bh.l(ia1Var2, z8Var, new bt(ia1Var2, 1));
-        ic icVar = hb1Var.j0;
-        if (icVar != null) {
-            org.telegram.ui.Components.mm0 mm0Var = icVar.F;
+        hc hcVar = hb1Var.j0;
+        if (hcVar != null) {
+            org.telegram.ui.Components.mm0 mm0Var = hcVar.F;
             Objects.requireNonNull(mm0Var);
-            icVar.G = new bh.l(mm0Var, z8Var, new bt(mm0Var, 0));
+            hcVar.G = new bh.l(mm0Var, z8Var, new bt(mm0Var, 0));
             hb1Var.j0.F.j(new ga1(hb1Var, 1));
         }
         qe qeVar2 = hb1Var.k0;
         if (qeVar2 != null) {
-            org.telegram.ui.Components.h71 h71Var = qeVar2.a1;
-            Objects.requireNonNull(h71Var);
-            qeVar2.b1 = new bh.l(h71Var, z8Var, new y8(h71Var, 0));
+            org.telegram.ui.Components.i71 i71Var = qeVar2.a1;
+            Objects.requireNonNull(i71Var);
+            qeVar2.b1 = new bh.l(i71Var, z8Var, new y8(i71Var, 0));
             hb1Var.k0.a1.j(new ga1(hb1Var, 2));
         }
         hb1Var.G0 = new ea1(hb1Var, z8Var);
@@ -1001,11 +1001,11 @@ public final class hb1 extends org.telegram.ui.ActionBar.m2 implements Notificat
         int i12 = org.telegram.ui.ActionBar.g6.Pi;
         textView2.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i12, false));
         textView2.setTag(Integer.valueOf(i12));
-        org.telegram.messenger.yh.l(R.string.LoadingStatsDescription, textView2, 1);
-        hb1Var.b0.addView(hb1Var.W, w7.a6.t(120, 120, 1, 0, 0, 0, 20));
-        hb1Var.b0.addView(textView, w7.a6.t(-2, -2, 1, 0, 0, 0, 10));
-        hb1Var.b0.addView(textView2, w7.a6.q(-2, -2, 1));
-        frameLayout3.addView(hb1Var.b0, w7.a6.a(-2.0f, 0.0f, 0.0f, 0.0f, 30.0f, 240, 17));
+        org.telegram.messenger.sk.m(R.string.LoadingStatsDescription, textView2, 1);
+        hb1Var.b0.addView(hb1Var.W, w7.z5.t(120, 120, 1, 0, 0, 0, 20));
+        hb1Var.b0.addView(textView, w7.z5.t(-2, -2, 1, 0, 0, 0, 10));
+        hb1Var.b0.addView(textView2, w7.z5.q(-2, -2, 1));
+        frameLayout3.addView(hb1Var.b0, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 30.0f, 240, 17));
         if (hb1Var.X == null) {
             hb1Var.X = new ma1(hb1Var);
         }
@@ -1017,7 +1017,7 @@ public final class hb1 extends org.telegram.ui.ActionBar.m2 implements Notificat
         hb1Var.S.setItemAnimator(null);
         hb1Var.S.j(new ga1(hb1Var, 0));
         hb1Var.S.setOnItemClickListener(new i21(hb1Var, 8));
-        hb1Var.S.setOnItemLongClickListener(new nq0(hb1Var, 17));
+        hb1Var.S.setOnItemLongClickListener(new lq0(hb1Var, 17));
         frameLayout3.addView(hb1Var.S);
         org.telegram.ui.Components.ro roVar = new org.telegram.ui.Components.ro(context, null, false, null);
         hb1Var.R = roVar;
@@ -1025,7 +1025,7 @@ public final class hb1 extends org.telegram.ui.ActionBar.m2 implements Notificat
         hb1Var.R.getAvatarImageView().setScaleX(0.9f);
         hb1Var.R.getAvatarImageView().setScaleY(0.9f);
         hb1Var.R.setRightAvatarPadding(-AndroidUtilities.dp(3.0f));
-        hb1Var.actionBar.addView(hb1Var.R, 0, w7.a6.a(-1.0f, !hb1Var.inPreviewMode ? 50.0f : 0.0f, 0.0f, 40.0f, 0.0f, -2, 51));
+        hb1Var.actionBar.addView(hb1Var.R, 0, w7.z5.a(-1.0f, !hb1Var.inPreviewMode ? 50.0f : 0.0f, 0.0f, 40.0f, 0.0f, -2, 51));
         TLRPC.Chat chat2 = hb1Var.getMessagesController().getChat(Long.valueOf(j10));
         hb1Var.R.setChatAvatar(chat2);
         hb1Var.R.setTitle(chat2 == null ? "" : chat2.title);
@@ -1033,12 +1033,12 @@ public final class hb1 extends org.telegram.ui.ActionBar.m2 implements Notificat
         if (roVar2.getSubtitleTextView() != null) {
             roVar2.getSubtitleTextView().setVisibility(8);
         }
-        i2.d.v(false, hb1Var.actionBar);
+        i2.d.y(false, hb1Var.actionBar);
         hb1Var.actionBar.setActionBarMenuOnItemClick(new w41(hb1Var, 4));
         hb1Var.R.i(org.telegram.ui.ActionBar.g6.x0(null, i11, false), org.telegram.ui.ActionBar.g6.x0(null, i12, false));
         hb1Var.actionBar.D(org.telegram.ui.ActionBar.g6.x0(null, i11, false), false);
         hb1Var.actionBar.D(org.telegram.ui.ActionBar.g6.x0(null, i11, false), true);
-        hb1Var.actionBar.B(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.z8, false), false);
+        hb1Var.actionBar.C(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.z8, false), false);
         hb1Var.actionBar.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
         boolean z15 = hb1Var.x0;
         a6 a6Var = hb1Var.B0;
@@ -1184,7 +1184,7 @@ public final class hb1 extends org.telegram.ui.ActionBar.m2 implements Notificat
             return;
         }
         AndroidUtilities.cancelRunOnUIThread(this.B0);
-        this.b0.animate().alpha(0.0f).setDuration(230L).setListener(new lj0(this, 25));
+        this.b0.animate().alpha(0.0f).setDuration(230L).setListener(new kj0(this, 25));
         this.S.setVisibility(0);
         this.S.setAlpha(0.0f);
         this.S.animate().alpha(1.0f).setDuration(230L).start();

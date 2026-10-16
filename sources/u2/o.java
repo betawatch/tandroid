@@ -4,7 +4,7 @@ import e9.x1;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class o implements f1 {
     public final x1 a;
@@ -18,27 +18,6 @@ public final class o implements f1 {
         }
         this.a = t10.f();
         this.b = -9223372036854775807L;
-    }
-
-    @Override // u2.f1
-    public final long b() {
-        int i10 = 0;
-        long j10 = Long.MAX_VALUE;
-        while (true) {
-            x1 x1Var = this.a;
-            if (i10 >= x1Var.d) {
-                break;
-            }
-            long b10 = ((n) x1Var.get(i10)).a.b();
-            if (b10 != Long.MIN_VALUE) {
-                j10 = Math.min(j10, b10);
-            }
-            i10++;
-        }
-        if (j10 == Long.MAX_VALUE) {
-            return Long.MIN_VALUE;
-        }
-        return j10;
     }
 
     @Override // u2.f1
@@ -57,12 +36,33 @@ public final class o implements f1 {
     }
 
     @Override // u2.f1
-    public final boolean p(i2.v0 v0Var) {
+    public final long d() {
+        int i10 = 0;
+        long j10 = Long.MAX_VALUE;
+        while (true) {
+            x1 x1Var = this.a;
+            if (i10 >= x1Var.d) {
+                break;
+            }
+            long d = ((n) x1Var.get(i10)).a.d();
+            if (d != Long.MIN_VALUE) {
+                j10 = Math.min(j10, d);
+            }
+            i10++;
+        }
+        if (j10 == Long.MAX_VALUE) {
+            return Long.MIN_VALUE;
+        }
+        return j10;
+    }
+
+    @Override // u2.f1
+    public final boolean m(i2.v0 v0Var) {
         boolean z10;
         boolean z11 = false;
         do {
-            long b10 = b();
-            if (b10 == Long.MIN_VALUE) {
+            long d = d();
+            if (d == Long.MIN_VALUE) {
                 return z11;
             }
             int i10 = 0;
@@ -72,10 +72,10 @@ public final class o implements f1 {
                 if (i10 >= x1Var.d) {
                     break;
                 }
-                long b11 = ((n) x1Var.get(i10)).a.b();
-                boolean z12 = b11 != Long.MIN_VALUE && b11 <= v0Var.a;
-                if (b11 == b10 || z12) {
-                    z10 |= ((n) x1Var.get(i10)).a.p(v0Var);
+                long d10 = ((n) x1Var.get(i10)).a.d();
+                boolean z12 = d10 != Long.MIN_VALUE && d10 <= v0Var.a;
+                if (d10 == d || z12) {
+                    z10 |= ((n) x1Var.get(i10)).a.m(v0Var);
                 }
                 i10++;
             }
@@ -85,7 +85,7 @@ public final class o implements f1 {
     }
 
     @Override // u2.f1
-    public final long s() {
+    public final long p() {
         int i10 = 0;
         long j10 = Long.MAX_VALUE;
         long j11 = Long.MAX_VALUE;
@@ -95,13 +95,13 @@ public final class o implements f1 {
                 break;
             }
             n nVar = (n) x1Var.get(i10);
-            long s10 = nVar.a.s();
+            long p5 = nVar.a.p();
             e9.n0 n0Var = nVar.b;
-            if ((n0Var.contains(1) || n0Var.contains(2) || n0Var.contains(4)) && s10 != Long.MIN_VALUE) {
-                j10 = Math.min(j10, s10);
+            if ((n0Var.contains(1) || n0Var.contains(2) || n0Var.contains(4)) && p5 != Long.MIN_VALUE) {
+                j10 = Math.min(j10, p5);
             }
-            if (s10 != Long.MIN_VALUE) {
-                j11 = Math.min(j11, s10);
+            if (p5 != Long.MIN_VALUE) {
+                j11 = Math.min(j11, p5);
             }
             i10++;
         }
@@ -117,14 +117,14 @@ public final class o implements f1 {
     }
 
     @Override // u2.f1
-    public final void u(long j10) {
+    public final void s(long j10) {
         int i10 = 0;
         while (true) {
             x1 x1Var = this.a;
             if (i10 >= x1Var.d) {
                 return;
             }
-            ((n) x1Var.get(i10)).u(j10);
+            ((n) x1Var.get(i10)).s(j10);
             i10++;
         }
     }

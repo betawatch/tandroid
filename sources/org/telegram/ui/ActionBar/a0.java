@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -63,7 +63,7 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                 } else {
                     q0 q0Var = u0Var2.P;
                     if (q0Var != null) {
-                        q0Var.l(((Integer) view.getTag()).intValue());
+                        q0Var.k(((Integer) view.getTag()).intValue());
                         break;
                     }
                 }
@@ -77,7 +77,7 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                 } else {
                     q0 q0Var2 = u0Var3.P;
                     if (q0Var2 != null) {
-                        q0Var2.l(((Integer) view.getTag()).intValue());
+                        q0Var2.k(((Integer) view.getTag()).intValue());
                         break;
                     }
                 }
@@ -101,7 +101,7 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                 } else {
                     q0 q0Var3 = u0Var4.P;
                     if (q0Var3 != null) {
-                        q0Var3.l(((Integer) view.getTag()).intValue());
+                        q0Var3.k(((Integer) view.getTag()).intValue());
                         break;
                     }
                 }

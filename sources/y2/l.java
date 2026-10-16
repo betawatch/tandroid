@@ -5,10 +5,10 @@ import android.os.SystemClock;
 import e2.m0;
 import java.io.IOException;
 import java.util.concurrent.Executors;
-import org.telegram.ui.Wallet.m5;
+import p4.s0;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class l implements m {
     public static final k4.d d = new k4.d(0, -9223372036854775807L, false);
@@ -34,16 +34,8 @@ public final class l implements m {
         hVar.a(false);
     }
 
-    public final boolean b() {
-        return this.c != null;
-    }
-
-    public final boolean c() {
-        return this.b != null;
-    }
-
     @Override // y2.m
-    public final void d() {
+    public final void b() {
         IOException iOException = this.c;
         if (iOException != null) {
             throw iOException;
@@ -58,6 +50,14 @@ public final class l implements m {
         }
     }
 
+    public final boolean c() {
+        return this.c != null;
+    }
+
+    public final boolean d() {
+        return this.b != null;
+    }
+
     public final void e(j jVar) {
         h hVar = this.b;
         if (hVar != null) {
@@ -65,7 +65,7 @@ public final class l implements m {
         }
         z2.a aVar = this.a;
         if (jVar != null) {
-            aVar.execute(new m5(jVar, 12));
+            aVar.execute(new s0(jVar, 12));
         }
         aVar.b.accept(aVar.a);
     }

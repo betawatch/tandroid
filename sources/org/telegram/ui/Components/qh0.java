@@ -38,7 +38,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class qh0 extends org.telegram.ui.ActionBar.e3 {
     public static final org.telegram.ui.Cells.t8 O = new org.telegram.ui.Cells.t8("placeholderAlpha", 9);
@@ -160,7 +160,7 @@ public final class qh0 extends org.telegram.ui.ActionBar.e3 {
         kh0Var.setHorizontalScrollBarEnabled(false);
         kh0Var.setVerticalScrollBarEnabled(false);
         kh0Var.setSectionsType(2);
-        this.containerView.addView(kh0Var, w7.a6.e(-1, -1, 51));
+        this.containerView.addView(kh0Var, w7.z5.e(-1, -1, 51));
         mh0 mh0Var = new mh0(this, context);
         this.c = mh0Var;
         kh0Var.setAdapter(mh0Var);
@@ -194,7 +194,7 @@ public final class qh0 extends org.telegram.ui.ActionBar.e3 {
         b8Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.h5, false));
         b8Var.setBackButtonImage(R.drawable.ic_ab_back);
         b8Var.D(org.telegram.ui.ActionBar.g6.x0(null, i18, false), false);
-        b8Var.B(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.I5, false), false);
+        b8Var.C(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.I5, false), false);
         b8Var.setTitleColor(org.telegram.ui.ActionBar.g6.x0(null, i18, false));
         b8Var.setSubtitleColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Pi, false));
         b8Var.setOccupyStatusBar(false);
@@ -205,13 +205,13 @@ public final class qh0 extends org.telegram.ui.ActionBar.e3 {
         } else {
             b8Var.setSubtitle(LocaleController.formatPluralString("Vote", tL_messageMediaPoll.results.total_voters, new Object[0]));
         }
-        this.containerView.addView(b8Var, w7.a6.d(-2.0f, -1));
+        this.containerView.addView(b8Var, w7.z5.d(-2.0f, -1));
         b8Var.setActionBarMenuOnItemClick(new org.telegram.ui.nb(this, 13));
         View view = new View(context);
         this.e = view;
         view.setAlpha(0.0f);
         view.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.V5, false));
-        this.containerView.addView(view, w7.a6.d(1.0f, -1));
+        this.containerView.addView(view, w7.z5.d(1.0f, -1));
     }
 
     public static void n(qh0 qh0Var, Integer[] numArr, int i10, TLObject tLObject, ArrayList arrayList, TLRPC.PollAnswerVoters pollAnswerVoters) {
@@ -415,10 +415,10 @@ public final class qh0 extends org.telegram.ui.ActionBar.e3 {
             qh0Var.h.start();
         }
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) kh0Var.getLayoutParams();
-        int b10 = org.telegram.ui.Cells.d0.b(11.0f, layoutParams.topMargin, top);
-        if (qh0Var.E != b10) {
-            qh0Var.E = b10;
-            kh0Var.setTopGlowOffset(b10 - layoutParams.topMargin);
+        int D = org.telegram.messenger.sk.D(11.0f, layoutParams.topMargin, top);
+        if (qh0Var.E != D) {
+            qh0Var.E = D;
+            kh0Var.setTopGlowOffset(D - layoutParams.topMargin);
             qh0Var.containerView.invalidate();
         }
     }

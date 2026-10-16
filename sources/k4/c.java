@@ -19,7 +19,7 @@ import java.util.Arrays;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class c implements o {
     public q a;
@@ -38,7 +38,7 @@ public final class c implements o {
     @Override // c3.o
     public final void c(q qVar) {
         this.a = qVar;
-        this.b = qVar.a0(0, 1);
+        this.b = qVar.W(0, 1);
         qVar.D();
     }
 
@@ -102,7 +102,7 @@ public final class c implements o {
             } else {
                 pVar.l(8);
                 xVar.N(0);
-                pVar.a(0, 8, xVar.a);
+                pVar.b(0, 8, xVar.a);
                 j10 = xVar.p();
                 pVar.r(((int) b10.b) + 8);
             }
@@ -146,7 +146,7 @@ public final class c implements o {
         x xVar2 = new x(16);
         long j12 = e.b(1718449184, pVar, xVar2).b;
         u6.p(j12 >= 16);
-        pVar.a(0, 16, xVar2.a);
+        pVar.b(0, 16, xVar2.a);
         xVar2.N(0);
         int t10 = xVar2.t();
         int t11 = xVar2.t();
@@ -157,7 +157,7 @@ public final class c implements o {
         int i14 = ((int) j12) - 16;
         if (i14 > 0) {
             bArr = new byte[i14];
-            pVar.a(0, i14, bArr);
+            pVar.b(0, i14, bArr);
             if (t10 == 65534 && i14 == 24) {
                 x xVar3 = new x(bArr);
                 xVar3.t();

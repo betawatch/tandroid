@@ -5,7 +5,7 @@ import c3.i0;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class c0 {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final class c0 {
                     } else {
                         f0Var.b();
                         f0Var.c();
-                        i0 a02 = qVar.a0(f0Var.c, 3);
+                        i0 W = qVar.W(f0Var.c, 3);
                         b2.x xVar = (b2.x) this.b.get(i10);
                         String str = xVar.s;
                         u6.h("application/cea-608".equals(str) || "application/cea-708".equals(str), "Invalid closed caption MIME type provided: %s", str);
@@ -71,8 +71,8 @@ public final class c0 {
                         wVar.d = xVar.d;
                         wVar.O = xVar.P;
                         wVar.u = xVar.v;
-                        i2.d.s(wVar, a02);
-                        i0VarArr[i10] = a02;
+                        i2.d.u(wVar, W);
+                        i0VarArr[i10] = W;
                         i10++;
                     }
                 }
@@ -86,7 +86,7 @@ public final class c0 {
                     } else {
                         f0Var.b();
                         f0Var.c();
-                        i0 a03 = qVar.a0(f0Var.c, 3);
+                        i0 W2 = qVar.W(f0Var.c, 3);
                         b2.x xVar2 = (b2.x) this.b.get(i11);
                         String str3 = xVar2.s;
                         u6.h("application/cea-608".equals(str3) || "application/cea-708".equals(str3), "Invalid closed caption MIME type provided: %s", str3);
@@ -99,8 +99,8 @@ public final class c0 {
                         wVar2.d = xVar2.d;
                         wVar2.O = xVar2.P;
                         wVar2.u = xVar2.v;
-                        i2.d.s(wVar2, a03);
-                        i0VarArr2[i11] = a03;
+                        i2.d.u(wVar2, W2);
+                        i0VarArr2[i11] = W2;
                         i11++;
                     }
                 }

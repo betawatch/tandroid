@@ -49,9 +49,9 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.bn;
 import org.telegram.ui.Components.dg;
 import org.telegram.ui.Components.dn;
+import org.telegram.ui.Components.e90;
 import org.telegram.ui.Components.eh;
 import org.telegram.ui.Components.en;
-import org.telegram.ui.Components.f90;
 import org.telegram.ui.Components.g5;
 import org.telegram.ui.Components.ux0;
 import org.telegram.ui.Components.vi;
@@ -64,16 +64,16 @@ import org.telegram.ui.br;
 import org.telegram.ui.ea0;
 import org.telegram.ui.fo;
 import org.telegram.ui.ja0;
+import org.telegram.ui.ld0;
 import org.telegram.ui.mu;
 import org.telegram.ui.n60;
-import org.telegram.ui.nd0;
 import org.telegram.ui.qn;
-import org.telegram.ui.sw0;
-import org.telegram.ui.xc0;
+import org.telegram.ui.rw0;
+import org.telegram.ui.vc0;
 import org.telegram.ui.yr;
 import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a;
@@ -430,7 +430,7 @@ public final /* synthetic */ class i0 implements Runnable {
                 }
                 return;
             case 20:
-                f90.bd((f90) this.c, this.b, (TLRPC.Chat) this.d);
+                e90.bd((e90) this.c, this.b, (TLRPC.Chat) this.d);
                 return;
             case 21:
                 ((xv0) this.c).v1.presentFragment(fo.V9(((MessageObject) this.d).getId(), this.b));
@@ -512,10 +512,10 @@ public final /* synthetic */ class i0 implements Runnable {
                 AndroidUtilities.runOnUIThread(new br(launchActivity2, MessagesStorage.getInstance(launchActivity2.O).getUser(j31), ja0Var, 13));
                 return;
             case 27:
-                nd0 nd0Var = (nd0) this.c;
+                ld0 ld0Var = (ld0) this.c;
                 TLObject tLObject2 = (TLObject) this.d;
                 long j32 = this.b;
-                if (nd0Var.I == null) {
+                if (ld0Var.I == null) {
                     return;
                 }
                 TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject2;
@@ -527,25 +527,25 @@ public final /* synthetic */ class i0 implements Runnable {
                     }
                     i24++;
                 }
-                nd0Var.getMessagesStorage().putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
-                nd0Var.getMessagesController().putUsers(messages_messages.users, false);
-                nd0Var.getMessagesController().putChats(messages_messages.chats, false);
-                nd0Var.getLocationController().locationsCache.k(messages_messages.messages, j32);
-                nd0Var.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveLocationsCacheChanged, Long.valueOf(j32));
-                nd0Var.h0(messages_messages.messages);
-                nd0Var.getLocationController().markLiveLoactionsAsRead(nd0Var.e0);
-                if (nd0Var.J0 == null) {
-                    xc0 xc0Var = new xc0(nd0Var, 4);
-                    nd0Var.J0 = xc0Var;
-                    AndroidUtilities.runOnUIThread(xc0Var, 5000L);
+                ld0Var.getMessagesStorage().putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
+                ld0Var.getMessagesController().putUsers(messages_messages.users, false);
+                ld0Var.getMessagesController().putChats(messages_messages.chats, false);
+                ld0Var.getLocationController().locationsCache.k(messages_messages.messages, j32);
+                ld0Var.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveLocationsCacheChanged, Long.valueOf(j32));
+                ld0Var.h0(messages_messages.messages);
+                ld0Var.getLocationController().markLiveLoactionsAsRead(ld0Var.e0);
+                if (ld0Var.J0 == null) {
+                    vc0 vc0Var = new vc0(ld0Var, 4);
+                    ld0Var.J0 = vc0Var;
+                    AndroidUtilities.runOnUIThread(vc0Var, 5000L);
                     return;
                 }
                 return;
             case 28:
-                sw0 sw0Var = (sw0) this.c;
+                rw0 rw0Var = (rw0) this.c;
                 long j33 = this.b;
                 m2 m2Var2 = (m2) this.d;
-                sw0Var.getClass();
+                rw0Var.getClass();
                 Bundle bundle = new Bundle();
                 if (j33 > 0) {
                     bundle.putLong("user_id", j33);
@@ -553,26 +553,26 @@ public final /* synthetic */ class i0 implements Runnable {
                     bundle.putLong("chat_id", -j33);
                 }
                 m2Var2.presentFragment(new ProfileActivity(bundle, null));
-                sw0Var.c(false);
+                rw0Var.c(false);
                 return;
             default:
-                qi.e eVar = (qi.e) this.c;
-                qi.d dVar = (qi.d) this.d;
+                pi.e eVar = (pi.e) this.c;
+                pi.d dVar = (pi.d) this.d;
                 long j34 = this.b;
-                if (((qi.d) eVar.b) != dVar) {
+                if (((pi.d) eVar.b) != dVar) {
                     return;
                 }
-                qi.b bVar = (qi.b) eVar.d;
+                pi.b bVar = (pi.b) eVar.d;
                 if (bVar != null) {
                     AndroidUtilities.cancelRunOnUIThread(bVar);
                     eVar.d = null;
                 }
-                synchronized (qi.i.y) {
+                synchronized (pi.j.y) {
                     try {
-                        qi.i iVar = qi.i.A;
-                        if (iVar != null) {
-                            iVar.o();
-                            qi.i.A = null;
+                        pi.j jVar = pi.j.A;
+                        if (jVar != null) {
+                            jVar.o();
+                            pi.j.A = null;
                         }
                     } catch (Throwable th3) {
                         throw th3;

@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class ChatsWidgetConfigActivity extends ExternalActionActivity {
     public static final /* synthetic */ int F = 0;
@@ -21,7 +21,7 @@ public class ChatsWidgetConfigActivity extends ExternalActionActivity {
                 finish();
                 return;
             }
-            org.telegram.messenger.yh.d(10, "onlySelect", "dialogsType", true).putBoolean("allowSwitchAccount", true);
+            org.telegram.messenger.sk.d(10, "onlySelect", "dialogsType", true).putBoolean("allowSwitchAccount", true);
             hz hzVar = new hz(0, this.E);
             hzVar.y = new b1(this, 25);
             if (AndroidUtilities.isTablet()) {

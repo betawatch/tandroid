@@ -27,9 +27,10 @@ import org.telegram.ui.Components.da0;
 import org.telegram.ui.Components.z9;
 import org.telegram.ui.fo;
 import org.telegram.ui.wf;
-import w7.a6;
+import w7.b6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class n extends FrameLayout {
     public static final /* synthetic */ int n = 0;
@@ -44,65 +45,65 @@ public final class n extends FrameLayout {
     public n(Activity activity, c6 c6Var) {
         super(activity);
         this.a = c6Var;
-        LinearLayout f7 = org.telegram.messenger.q.f(activity, 0);
-        f7.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(5.0f));
-        w7.c6.b(f7, 0.025f, 1.4f);
-        addView(f7, a6.e(-1, -1, 119));
+        LinearLayout e = org.telegram.messenger.g0.e(activity, 0);
+        e.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(5.0f));
+        b6.b(e, 0.025f, 1.4f);
+        addView(e, z5.e(-1, -1, 119));
         int i10 = g6.Oh;
         setBackground(g6.Z(g6.m1(0.1f, g6.w0(i10, c6Var)), 0, 0));
         LinearLayout linearLayout = new LinearLayout(activity);
         linearLayout.setOrientation(1);
-        f7.addView(linearLayout, a6.o(-1, -2, 1.0f, 3));
+        e.addView(linearLayout, z5.o(-1, -2, 1.0f, 3));
         LinearLayout linearLayout2 = new LinearLayout(activity);
         linearLayout2.setOrientation(0);
-        linearLayout.addView(linearLayout2, a6.p(-1, -2, 0.0f, 51, 0, 0, 0, 0));
+        linearLayout.addView(linearLayout2, z5.p(-1, -2, 0.0f, 51, 0, 0, 0, 0));
         TextView textView = new TextView(activity);
         this.d = textView;
         textView.setTextSize(1, 14.0f);
         int i11 = g6.G6;
         textView.setTextColor(g6.w0(i11, c6Var));
         textView.setTypeface(AndroidUtilities.bold());
-        linearLayout2.addView(textView, a6.o(-2, -2, 0.0f, 16));
+        linearLayout2.addView(textView, z5.o(-2, -2, 0.0f, 16));
         NotificationCenter.listenEmojiLoading(textView);
         TextView textView2 = new TextView(activity);
         this.f = textView2;
         textView2.setTextSize(1, 11.0f);
         textView2.setTextColor(g6.w0(i10, c6Var));
-        w7.c6.b(textView2, 0.1f, 1.5f);
+        b6.b(textView2, 0.1f, 1.5f);
         textView2.setPadding(AndroidUtilities.dp(6.33f), 0, AndroidUtilities.dp(6.33f), 0);
         textView2.setBackground(g6.c0(AndroidUtilities.dp(9.0f), g6.m1(0.1f, g6.w0(i10, c6Var))));
         textView2.setText(LocaleController.getString(R.string.BotAdWhat));
-        linearLayout2.addView(textView2, a6.p(-2, 17, 0.0f, 19, 5, 1, 0, 0));
+        linearLayout2.addView(textView2, z5.p(-2, 17, 0.0f, 19, 5, 1, 0, 0));
         TextView textView3 = new TextView(activity);
         this.e = textView3;
         textView3.setVisibility(8);
         textView3.setTextSize(1, 14.0f);
         textView3.setTextColor(g6.w0(i11, c6Var));
         textView3.setTypeface(AndroidUtilities.bold());
-        linearLayout.addView(textView3, a6.k(0.0f, 0.0f, 0.0f, 2.0f, -1, -2));
+        linearLayout.addView(textView3, z5.k(0.0f, 0.0f, 0.0f, 2.0f, -1, -2));
         NotificationCenter.listenEmojiLoading(textView3);
         da0 da0Var = new da0(activity, null);
         this.h = da0Var;
         da0Var.setTextSize(1, 13.0f);
         da0Var.setLinkTextColor(g6.w0(g6.gc, c6Var));
         da0Var.setTextColor(g6.w0(i11, c6Var));
-        linearLayout.addView(da0Var, a6.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
+        linearLayout.addView(da0Var, z5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
         NotificationCenter.listenEmojiLoading(da0Var);
         z9 z9Var = new z9(activity);
         this.b = z9Var;
         z9Var.setRoundRadius(AndroidUtilities.dp(4.0f));
         z9Var.setVisibility(8);
-        f7.addView(z9Var, a6.t(48, 48, 53, 10, 0, 2, 2));
+        e.addView(z9Var, z5.t(48, 48, 53, 10, 0, 2, 2));
         ImageView imageView = new ImageView(activity);
         this.c = imageView;
         imageView.setBackground(g6.g0(5, g6.m1(0.2f, g6.w0(g6.W5, c6Var)), -1));
-        w7.c6.a(imageView);
+        b6.a(imageView);
         imageView.setImageResource(R.drawable.msg_close);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(g6.w0(g6.de, c6Var), PorterDuff.Mode.SRC_IN));
         imageView.setOnClickListener(new ah.f(4));
         imageView.setVisibility(8);
-        f7.addView(imageView, a6.t(32, 32, 53, 10, 3, 0, 2));
+        e.addView(imageView, z5.t(32, 32, 53, 10, 3, 0, 2));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x0146  */

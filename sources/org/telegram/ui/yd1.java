@@ -15,7 +15,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class yd1 extends org.telegram.ui.Components.lm0 {
     public final Context c;
@@ -37,7 +37,7 @@ public final class yd1 extends org.telegram.ui.Components.lm0 {
         if (i10 == 2) {
             if (ce1Var.J1 >= 0) {
                 TLRPC.TL_message tL_message = new TLRPC.TL_message();
-                if (ce1Var.B1 instanceof pj1) {
+                if (ce1Var.B1 instanceof oj1) {
                     tL_message.message = LocaleController.getString(R.string.BackgroundColorSinglePreviewLine2);
                 } else {
                     tL_message.message = LocaleController.getString(R.string.BackgroundPreviewLine2);
@@ -76,7 +76,7 @@ public final class yd1 extends org.telegram.ui.Components.lm0 {
             } else {
                 if (ce1Var.J1 != 0) {
                     tL_message2.message = LocaleController.getString(R.string.BackgroundColorSinglePreviewLine3);
-                } else if (ce1Var.B1 instanceof pj1) {
+                } else if (ce1Var.B1 instanceof oj1) {
                     tL_message2.message = LocaleController.getString(R.string.BackgroundColorSinglePreviewLine1);
                 } else {
                     tL_message2.message = LocaleController.getString(R.string.BackgroundPreviewLine1);
@@ -526,10 +526,10 @@ public final class yd1 extends org.telegram.ui.Components.lm0 {
         boolean z12 = view instanceof org.telegram.ui.Cells.u1;
         ce1 ce1Var = this.f;
         if (!z12) {
-            if (view instanceof org.telegram.ui.Cells.x0) {
-                org.telegram.ui.Cells.x0 x0Var = (org.telegram.ui.Cells.x0) view;
-                x0Var.setMessageObject(messageObject);
-                x0Var.setAlpha(1.0f);
+            if (view instanceof org.telegram.ui.Cells.w0) {
+                org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) view;
+                w0Var.setMessageObject(messageObject);
+                w0Var.setAlpha(1.0f);
                 ce1Var.V0();
                 return;
             }
@@ -570,21 +570,21 @@ public final class yd1 extends org.telegram.ui.Components.lm0 {
         View view;
         ce1 ce1Var = this.f;
         if (i10 == 0) {
-            org.telegram.ui.Cells.u1 u1Var = new org.telegram.ui.Cells.u1(this.c, ((org.telegram.ui.ActionBar.m2) ce1Var).currentAccount, false, null, new pw0(this, 5));
+            org.telegram.ui.Cells.u1 u1Var = new org.telegram.ui.Cells.u1(this.c, ((org.telegram.ui.ActionBar.m2) ce1Var).currentAccount, false, null, new ow0(this, 5));
             u1Var.setDelegate(new rb.b(18));
             view = u1Var;
         } else {
             Context context = this.c;
             if (i10 == 1) {
-                org.telegram.ui.Cells.x0 x0Var = new org.telegram.ui.Cells.x0(context, ce1Var.a, false);
-                x0Var.setDelegate(new sb.a(18));
-                view = x0Var;
+                org.telegram.ui.Cells.w0 w0Var = new org.telegram.ui.Cells.w0(context, ce1Var.a, false);
+                w0Var.setDelegate(new sb.a(18));
+                view = w0Var;
             } else if (i10 == 2) {
                 if (ce1Var.y0.getParent() != null) {
                     ((ViewGroup) ce1Var.y0.getParent()).removeView(ce1Var.y0);
                 }
                 d61 d61Var = new d61(context, 3);
-                d61Var.addView(ce1Var.y0, w7.a6.e(-1, 76, 17));
+                d61Var.addView(ce1Var.y0, w7.z5.e(-1, 76, 17));
                 view = d61Var;
             } else if (i10 == 5) {
                 view = new org.telegram.ui.Components.xn(ce1Var.getParentActivity(), 26);
@@ -593,7 +593,7 @@ public final class yd1 extends org.telegram.ui.Components.lm0 {
                     ((ViewGroup) ce1Var.z0.getParent()).removeView(ce1Var.z0);
                 }
                 d61 d61Var2 = new d61(context, 4);
-                d61Var2.addView(ce1Var.z0, w7.a6.e(-1, 76, 17));
+                d61Var2.addView(ce1Var.z0, w7.z5.e(-1, 76, 17));
                 view = d61Var2;
             }
         }

@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ju implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -23,13 +23,13 @@ public final /* synthetic */ class ju implements View.OnClickListener {
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ ju(di.d dVar, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, boolean[] zArr, org.telegram.ui.ActionBar.e3 e3Var, di.d dVar2, org.telegram.ui.web.b1 b1Var, int i10) {
+    public /* synthetic */ ju(di.d dVar, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, boolean[] zArr, org.telegram.ui.ActionBar.e3 e3Var, di.d dVar2, org.telegram.ui.web.c1 c1Var, int i10) {
         this.c = dVar;
         this.d = tL_messages_requestUrlAuth;
         this.e = zArr;
         this.f = e3Var;
         this.h = dVar2;
-        this.n = b1Var;
+        this.n = c1Var;
         this.b = i10;
     }
 
@@ -53,18 +53,18 @@ public final /* synthetic */ class ju implements View.OnClickListener {
                 boolean[] zArr = (boolean[]) obj4;
                 org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) obj3;
                 di.d dVar = (di.d) obj2;
-                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) obj;
+                org.telegram.ui.web.c1 c1Var = (org.telegram.ui.web.c1) obj;
                 if (!((di.d) obj6).N) {
                     if (tL_messages_requestUrlAuth != null && !TextUtils.isEmpty(tL_messages_requestUrlAuth.url)) {
                         if (!dVar.N) {
                             dVar.setLoading(true);
-                            if (b1Var != null) {
-                                boolean z10 = org.telegram.ui.web.b1.P0;
+                            if (c1Var != null) {
+                                boolean z10 = org.telegram.ui.web.c1.P0;
                                 try {
                                     jSONObject = new JSONObject();
                                 } catch (Exception unused) {
                                 }
-                                b1Var.y("oauth_result_failed", jSONObject);
+                                c1Var.y("oauth_result_failed", jSONObject);
                             }
                             TLRPC.TL_messages_declineUrlAuth tL_messages_declineUrlAuth = new TLRPC.TL_messages_declineUrlAuth();
                             tL_messages_declineUrlAuth.url = tL_messages_requestUrlAuth.url;
@@ -80,22 +80,22 @@ public final /* synthetic */ class ju implements View.OnClickListener {
                 break;
             case 2:
                 boolean[] zArr2 = (boolean[]) obj6;
-                org.telegram.ui.Wallet.i2[] i2VarArr = (org.telegram.ui.Wallet.i2[]) obj5;
+                org.telegram.ui.Wallet.j2[] j2VarArr = (org.telegram.ui.Wallet.j2[]) obj5;
                 org.telegram.ui.ActionBar.c6 c6Var = (org.telegram.ui.ActionBar.c6) obj4;
                 wh.n nVar = (wh.n) obj3;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj2;
                 String str = (String) obj;
                 if (!zArr2[0]) {
                     zArr2[0] = true;
-                    org.telegram.ui.Wallet.n nVar2 = new org.telegram.ui.Wallet.n(zArr2, i2VarArr, c6Var, nVar, 9);
+                    org.telegram.ui.Wallet.o oVar = new org.telegram.ui.Wallet.o(zArr2, j2VarArr, c6Var, nVar, 9);
                     if (!wallettransaction.comment_encrypted_preparing) {
-                        org.telegram.ui.Wallet.j0 v = org.telegram.ui.Wallet.j0.v(i11);
+                        org.telegram.ui.Wallet.k0 v = org.telegram.ui.Wallet.k0.v(i11);
                         String str2 = wallettransaction.comment;
-                        org.telegram.ui.Wallet.j0.E("decrypting transaction comment");
-                        v.x(new org.telegram.ui.Wallet.i(v, nVar2, str, str2), true, false);
+                        org.telegram.ui.Wallet.k0.E("decrypting transaction comment");
+                        v.x(new org.telegram.ui.Wallet.j(v, oVar, str, str2), true, false);
                         break;
                     } else {
-                        nVar2.run(wallettransaction.comment, null);
+                        oVar.run(wallettransaction.comment, null);
                         break;
                     }
                 }
@@ -112,7 +112,7 @@ public final /* synthetic */ class ju implements View.OnClickListener {
                     if (starsSubscription.chat_invite_hash == null) {
                         if (starsSubscription.invoice_slug != null) {
                             zArr3[0] = true;
-                            pf.d.r(activity, Uri.parse("https://t.me/$" + starsSubscription.invoice_slug), true, false, false, new zh.o6(dVar2), null, false, true, false);
+                            pf.d.q(activity, Uri.parse("https://t.me/$" + starsSubscription.invoice_slug), true, false, false, new zh.o6(dVar2), null, false, true, false);
                             break;
                         }
                     } else {
@@ -147,9 +147,9 @@ public final /* synthetic */ class ju implements View.OnClickListener {
         this.n = animatorSetArr;
     }
 
-    public /* synthetic */ ju(boolean[] zArr, org.telegram.ui.Wallet.i2[] i2VarArr, org.telegram.ui.ActionBar.c6 c6Var, wh.n nVar, TL_wallet.walletTransaction wallettransaction, int i10, String str) {
+    public /* synthetic */ ju(boolean[] zArr, org.telegram.ui.Wallet.j2[] j2VarArr, org.telegram.ui.ActionBar.c6 c6Var, wh.n nVar, TL_wallet.walletTransaction wallettransaction, int i10, String str) {
         this.c = zArr;
-        this.d = i2VarArr;
+        this.d = j2VarArr;
         this.e = c6Var;
         this.f = nVar;
         this.h = wallettransaction;

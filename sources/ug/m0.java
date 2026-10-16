@@ -18,13 +18,12 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Cells.b7;
+import org.telegram.ui.Cells.a7;
 import org.telegram.ui.Cells.m4;
 import org.telegram.ui.Components.da0;
 import org.telegram.ui.Components.lm0;
-import org.telegram.ui.li1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class m0 extends lm0 {
     public final /* synthetic */ s0 c;
@@ -84,11 +83,11 @@ public final class m0 extends lm0 {
             da0 da0Var = r0Var.e;
             try {
                 SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingReassignBoostTextPluralWithLink", (int) MessagesController.getInstance(UserConfig.selectedAccount).boostsPerSentGift, chat == null ? "" : chat.title, "%3$s"));
-                SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(LocaleController.getString("BoostingReassignBoostTextLink", R.string.BoostingReassignBoostTextLink), g6.gc, 2, new rh.j(s0Var, 18));
+                SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(LocaleController.getString("BoostingReassignBoostTextLink", R.string.BoostingReassignBoostTextLink), g6.gc, 2, new ri.h0(s0Var, 18));
                 int indexOf = TextUtils.indexOf(replaceTags, "%3$s");
                 replaceTags.replace(indexOf, indexOf + 4, (CharSequence) replaceSingleTag);
                 da0Var.setText(replaceTags, TextView.BufferType.EDITABLE);
-                da0Var.post(new li1(r0Var, indexOf, 10));
+                da0Var.post(new org.telegram.ui.Wallet.i(r0Var, indexOf, 9));
             } catch (Exception e) {
                 FileLog.e(e);
             }
@@ -106,7 +105,7 @@ public final class m0 extends lm0 {
             r0Var.a(s0Var.X, s0Var.Z);
             view = r0Var;
         } else if (i10 == 1) {
-            view = new b7(context, g6.x0(null, g6.a7, false), 0);
+            view = new a7(context, g6.x0(null, g6.a7, false), 0);
         } else if (i10 == 2) {
             view = new m4(context, 22);
         } else if (i10 != 3) {

@@ -2,19 +2,19 @@ package org.telegram.ui.web;
 
 import android.app.Activity;
 import bi.n9;
-import ji.d4;
+import ji.h5;
 import org.json.JSONObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.z9;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class d0 implements NotificationCenter.NotificationCenterDelegate {
     public final /* synthetic */ n9 a;
-    public final /* synthetic */ b1 b;
+    public final /* synthetic */ c1 b;
 
-    public d0(b1 b1Var, n9 n9Var) {
-        this.b = b1Var;
+    public d0(c1 c1Var, n9 n9Var) {
+        this.b = c1Var;
         this.a = n9Var;
     }
 
@@ -27,15 +27,15 @@ public final class d0 implements NotificationCenter.NotificationCenterDelegate {
             if (intValue == 5000) {
                 NotificationCenter.getGlobalInstance().removeObserver(this, i12);
                 int i13 = iArr[0];
-                b1 b1Var = this.b;
+                c1 c1Var = this.b;
                 if (i13 != 0) {
-                    b1Var.x(this.a, "scan_qr_popup_closed", new JSONObject());
+                    c1Var.x(this.a, "scan_qr_popup_closed", new JSONObject());
                 } else {
-                    Activity activity = b1Var.W;
+                    Activity activity = c1Var.W;
                     if (activity == null) {
                         return;
                     }
-                    b1Var.g0 = z9.e0(activity, false, 3, new d4(b1Var, 16));
+                    c1Var.g0 = z9.e0(activity, false, 3, new h5(c1Var, 17));
                 }
             }
         }

@@ -21,7 +21,7 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class io extends Drawable {
     public final boolean a;
@@ -56,10 +56,10 @@ public final class io extends Drawable {
             cd0Var.n(wallPaperSettings3.background_color, wallPaperSettings3.second_background_color, wallPaperSettings3.third_background_color, wallPaperSettings3.fourth_background_color);
             int i10 = UserConfig.selectedAccount;
             long j10 = wallPaper.id;
-            vc vcVar = new vc(14, this, wallPaper);
+            uc ucVar = new uc(14, this, wallPaper);
             int[] iArr = org.telegram.ui.ActionBar.b4.h;
             boolean z13 = wallPaper.pattern;
-            ChatThemeController.getInstance(i10).loadWallpaperBitmap(j10, z13 ? 1 : 0, new org.telegram.ui.ActionBar.z3(vcVar, wallPaper, z13 ? 1 : 0, i10, j10));
+            ChatThemeController.getInstance(i10).loadWallpaperBitmap(j10, z13 ? 1 : 0, new org.telegram.ui.ActionBar.z3(ucVar, wallPaper, z13 ? 1 : 0, i10, j10));
             return;
         }
         Point point = AndroidUtilities.displaySize;

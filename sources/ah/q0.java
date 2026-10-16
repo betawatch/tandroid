@@ -15,20 +15,20 @@ import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.cn0;
 import org.telegram.ui.Components.jp0;
 import org.telegram.ui.Components.tw0;
-import org.telegram.ui.bh0;
+import org.telegram.ui.ah0;
 import org.telegram.ui.ee;
 import org.telegram.ui.fo;
 import org.telegram.ui.h40;
 import org.telegram.ui.n60;
 import org.telegram.ui.p51;
 import org.telegram.ui.r51;
-import org.telegram.ui.se1;
-import org.telegram.ui.sw0;
+import org.telegram.ui.re1;
+import org.telegram.ui.rw0;
 import org.telegram.ui.x3;
 import org.telegram.ui.zo;
 import rg.v2;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class q0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -185,20 +185,20 @@ public final class q0 extends AnimatorListenerAdapter {
                 return;
             case 9:
                 tw0 tw0Var = (tw0) this.c;
-                bh0 bh0Var = (bh0) this.d;
-                if (bh0Var.J == 0 && this.b) {
-                    bh0Var.v1(true, true);
+                ah0 ah0Var = (ah0) this.d;
+                if (ah0Var.J == 0 && this.b) {
+                    ah0Var.v1(true, true);
                 }
                 tw0Var.setVisibility(8);
                 tw0Var.g();
                 tw0Var.setX(0.0f);
                 return;
             case 10:
-                sw0 sw0Var = (sw0) this.d;
-                sw0Var.y = this.b ? 1.0f : 0.0f;
-                sw0Var.c.invalidate();
-                sw0Var.d.invalidate();
-                sw0Var.e();
+                rw0 rw0Var = (rw0) this.d;
+                rw0Var.y = this.b ? 1.0f : 0.0f;
+                rw0Var.c.invalidate();
+                rw0Var.d.invalidate();
+                rw0Var.e();
                 Runnable runnable3 = (Runnable) this.c;
                 if (runnable3 != null) {
                     runnable3.run();
@@ -233,11 +233,11 @@ public final class q0 extends AnimatorListenerAdapter {
                 }
                 return;
             case 12:
-                se1 se1Var = (se1) this.d;
-                se1Var.x = this.b ? 1.0f : 0.0f;
-                se1Var.b.invalidate();
-                se1Var.c.invalidate();
-                se1Var.e();
+                re1 re1Var = (re1) this.d;
+                re1Var.x = this.b ? 1.0f : 0.0f;
+                re1Var.b.invalidate();
+                re1Var.c.invalidate();
+                re1Var.e();
                 Runnable runnable5 = (Runnable) this.c;
                 if (runnable5 != null) {
                     runnable5.run();

@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xe implements org.telegram.ui.Components.q60, org.telegram.ui.Components.t60, org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.vo, MessagesStorage.BooleanCallback, org.telegram.ui.Components.nk0, ResultCallback, xh.c, kh.a, kh.b, e70, vs, org.telegram.ui.Components.cm0, kh.d, org.telegram.ui.Components.ol0 {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class xe implements org.telegram.ui.Components.q60,
                 Object J = foVar.I1.getAdapter().J(i10 - 1);
                 if (J instanceof hg.g1) {
                     hg.g1 g1Var = (hg.g1) J;
-                    if (foVar.I1.getAdapter().J != null && org.telegram.ui.Components.m61.h) {
+                    if (foVar.I1.getAdapter().J != null && org.telegram.ui.Components.n61.h) {
                         foVar.Y.setFieldText("");
                         sk skVar = foVar.Y;
                         String str = g1Var.a;
@@ -46,7 +46,7 @@ public final /* synthetic */ class xe implements org.telegram.ui.Components.q60,
                         if (chat != null && chat.megagroup) {
                             z10 = true;
                         }
-                        skVar.Y0(null, str, true, z10);
+                        skVar.X0(null, str, true, z10);
                         return true;
                     }
                 } else if (J instanceof String) {
@@ -59,7 +59,7 @@ public final /* synthetic */ class xe implements org.telegram.ui.Components.q60,
                         foVar.showDialog(alertDialog$Builder.a);
                         return true;
                     }
-                    if (org.telegram.ui.Components.m61.h) {
+                    if (org.telegram.ui.Components.n61.h) {
                         foVar.Y.setFieldText("");
                         sk skVar2 = foVar.Y;
                         String str2 = (String) J;
@@ -67,7 +67,7 @@ public final /* synthetic */ class xe implements org.telegram.ui.Components.q60,
                         if (chat2 != null && chat2.megagroup) {
                             z10 = true;
                         }
-                        skVar2.Y0(null, str2, true, z10);
+                        skVar2.X0(null, str2, true, z10);
                         return true;
                     }
                 }

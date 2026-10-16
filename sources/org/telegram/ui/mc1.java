@@ -18,7 +18,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class mc1 extends org.telegram.ui.Components.lm0 {
     public final Context c;
@@ -216,7 +216,7 @@ public final class mc1 extends org.telegram.ui.Components.lm0 {
                 themeActivity.O0 = false;
                 return;
             } else if (i10 == themeActivity.L) {
-                caVar.c(LocaleController.getString(R.string.SearchEngine), org.telegram.ui.web.n1.a().a, themeActivity.P0, false);
+                caVar.c(LocaleController.getString(R.string.SearchEngine), org.telegram.ui.web.o1.a().a, themeActivity.P0, false);
                 return;
             } else {
                 if (i10 == themeActivity.M) {
@@ -332,7 +332,7 @@ public final class mc1 extends org.telegram.ui.Components.lm0 {
             }
         }
         if (i23 == 6) {
-            ((org.telegram.ui.Cells.l0) view).setProgress(org.telegram.ui.ActionBar.g6.q);
+            ((org.telegram.ui.Cells.k0) view).setProgress(org.telegram.ui.ActionBar.g6.q);
             return;
         }
         if (i23 == 7) {
@@ -454,7 +454,7 @@ public final class mc1 extends org.telegram.ui.Components.lm0 {
             }
         }
         if (i23 == 21) {
-            ((lp0) view).set(themeActivity.getUserConfig().getCurrentUser());
+            ((jp0) view).set(themeActivity.getUserConfig().getCurrentUser());
             return;
         }
         switch (i23) {
@@ -505,7 +505,7 @@ public final class mc1 extends org.telegram.ui.Components.lm0 {
     /* JADX WARN: Type inference failed for: r2v0, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout, org.telegram.ui.Cells.ha] */
     /* JADX WARN: Type inference failed for: r2v1, types: [android.view.View, android.view.ViewGroup, android.widget.LinearLayout, java.lang.Object, org.telegram.ui.ic1] */
     /* JADX WARN: Type inference failed for: r2v28 */
-    /* JADX WARN: Type inference failed for: r2v29, types: [org.telegram.ui.lp0] */
+    /* JADX WARN: Type inference failed for: r2v29, types: [org.telegram.ui.jp0] */
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
         ?? haVar;
@@ -525,25 +525,25 @@ public final class mc1 extends org.telegram.ui.Components.lm0 {
                 j5Var = new org.telegram.ui.Cells.e9(context);
                 break;
             case 3:
-                j5Var = new org.telegram.ui.Cells.b7(context, (org.telegram.ui.Cells.d0) null);
+                j5Var = new org.telegram.ui.Cells.a7(context, (org.telegram.ui.Cells.c1) null);
                 break;
             case 4:
                 haVar = new org.telegram.ui.Cells.ha(context);
                 haVar.setWillNotDraw(false);
                 TextView textView = new TextView(context);
                 haVar.a = textView;
-                org.telegram.messenger.yh.t(textView, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.G6, false), 1, 16.0f, 1);
+                org.telegram.messenger.sk.u(textView, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.G6, false), 1, 16.0f, 1);
                 textView.setMaxLines(1);
                 textView.setSingleLine(true);
                 textView.setEllipsize(TextUtils.TruncateAt.END);
                 textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
                 boolean z10 = LocaleController.isRTL;
-                haVar.addView(textView, w7.a6.a(-1.0f, z10 ? 71.0f : 21.0f, 0.0f, z10 ? 21.0f : 23.0f, 0.0f, -1, (z10 ? 5 : 3) | 48));
+                haVar.addView(textView, w7.z5.a(-1.0f, z10 ? 71.0f : 21.0f, 0.0f, z10 ? 21.0f : 23.0f, 0.0f, -1, (z10 ? 5 : 3) | 48));
                 ImageView imageView = new ImageView(context);
                 haVar.b = imageView;
                 imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Mh, false), PorterDuff.Mode.MULTIPLY));
                 imageView.setImageResource(R.drawable.sticker_added);
-                haVar.addView(imageView, w7.a6.a(14.0f, 23.0f, 0.0f, 23.0f, 0.0f, 19, (LocaleController.isRTL ? 3 : 5) | 16));
+                haVar.addView(imageView, w7.z5.a(14.0f, 23.0f, 0.0f, 23.0f, 0.0f, 19, (LocaleController.isRTL ? 3 : 5) | 16));
                 j5Var = haVar;
                 break;
             case 5:
@@ -560,33 +560,33 @@ public final class mc1 extends org.telegram.ui.Components.lm0 {
                 break;
             case 9:
                 haVar = new ic1(context);
-                haVar.b = new org.telegram.ui.Cells.z0[2];
+                haVar.b = new org.telegram.ui.Cells.y0[2];
                 haVar.setOrientation(0);
                 haVar.setPadding(AndroidUtilities.dp(21.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(21.0f), 0);
                 int i14 = 0;
                 while (true) {
-                    org.telegram.ui.Cells.z0[] z0VarArr = (org.telegram.ui.Cells.z0[]) haVar.b;
-                    if (i14 >= z0VarArr.length) {
+                    org.telegram.ui.Cells.y0[] y0VarArr = (org.telegram.ui.Cells.y0[]) haVar.b;
+                    if (i14 >= y0VarArr.length) {
                         j5Var = haVar;
                         break;
                     } else {
                         boolean z11 = i14 == 1;
-                        org.telegram.ui.Cells.z0 z0Var = new org.telegram.ui.Cells.z0(context);
-                        z0Var.c = new RectF();
+                        org.telegram.ui.Cells.y0 y0Var = new org.telegram.ui.Cells.y0(context);
+                        y0Var.c = new RectF();
                         TextPaint textPaint = new TextPaint(1);
-                        z0Var.d = textPaint;
-                        z0Var.setWillNotDraw(false);
-                        z0Var.b = z11;
-                        z0Var.setContentDescription(LocaleController.getString(z11 ? R.string.ChatListExpanded : R.string.ChatListDefault));
+                        y0Var.d = textPaint;
+                        y0Var.setWillNotDraw(false);
+                        y0Var.b = z11;
+                        y0Var.setContentDescription(LocaleController.getString(z11 ? R.string.ChatListExpanded : R.string.ChatListDefault));
                         textPaint.setTextSize(AndroidUtilities.dp(13.0f));
-                        org.telegram.ui.Cells.y0 y0Var = new org.telegram.ui.Cells.y0(z0Var, context);
-                        z0Var.a = y0Var;
-                        y0Var.setSize(AndroidUtilities.dp(20.0f));
-                        z0Var.addView(y0Var, w7.a6.a(22.0f, 0.0f, 26.0f, 10.0f, 0.0f, 22, 53));
-                        y0Var.a((z11 && SharedConfig.useThreeLinesLayout) || !(z11 || SharedConfig.useThreeLinesLayout), false);
-                        z0VarArr[i14] = z0Var;
-                        haVar.addView(((org.telegram.ui.Cells.z0[]) haVar.b)[i14], w7.a6.m(0.5f, -1, -1, i14 == 1 ? 10 : 0, 0, 0));
-                        ((org.telegram.ui.Cells.z0[]) haVar.b)[i14].setOnClickListener(new bi.z2(3, haVar, z11));
+                        org.telegram.ui.Cells.x0 x0Var = new org.telegram.ui.Cells.x0(y0Var, context);
+                        y0Var.a = x0Var;
+                        x0Var.setSize(AndroidUtilities.dp(20.0f));
+                        y0Var.addView(x0Var, w7.z5.a(22.0f, 0.0f, 26.0f, 10.0f, 0.0f, 22, 53));
+                        x0Var.a((z11 && SharedConfig.useThreeLinesLayout) || !(z11 || SharedConfig.useThreeLinesLayout), false);
+                        y0VarArr[i14] = y0Var;
+                        haVar.addView(((org.telegram.ui.Cells.y0[]) haVar.b)[i14], w7.z5.m(0.5f, -1, -1, i14 == 1 ? 10 : 0, 0, 0));
+                        ((org.telegram.ui.Cells.y0[]) haVar.b)[i14].setOnClickListener(new bi.z2(3, haVar, z11));
                         i14++;
                     }
                 }
@@ -617,7 +617,7 @@ public final class mc1 extends org.telegram.ui.Components.lm0 {
                 oc1 oc1Var = new oc1(themeActivity, context);
                 kc1Var.setAdapter(oc1Var);
                 kc1Var.setOnItemClickListener(new fc1(this, oc1Var, kc1Var, 0));
-                kc1Var.setOnItemLongClickListener(new cs0(17, this, oc1Var));
+                kc1Var.setOnItemLongClickListener(new bs0(16, this, oc1Var));
                 kc1Var.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(62.0f)));
                 j5Var = kc1Var;
                 break;
@@ -631,20 +631,20 @@ public final class mc1 extends org.telegram.ui.Components.lm0 {
                 break;
             case 15:
                 i11 = ((org.telegram.ui.ActionBar.m2) themeActivity).currentAccount;
-                org.telegram.ui.Components.qz0 qz0Var = new org.telegram.ui.Components.qz0(context);
+                org.telegram.ui.Components.rz0 rz0Var = new org.telegram.ui.Components.rz0(context);
                 Paint paint = new Paint(1);
-                qz0Var.a = paint;
-                qz0Var.b = new Paint(1);
+                rz0Var.a = paint;
+                rz0Var.b = new Paint(1);
                 Paint paint2 = new Paint(1);
-                qz0Var.c = paint2;
+                rz0Var.c = paint2;
                 Paint paint3 = new Paint(1);
-                qz0Var.d = paint3;
-                qz0Var.e = new RectF();
-                qz0Var.h = new String[]{LocaleController.getString(R.string.SwipeSettingsPin), LocaleController.getString(R.string.SwipeSettingsRead), LocaleController.getString(R.string.SwipeSettingsArchive), LocaleController.getString(R.string.SwipeSettingsMute), LocaleController.getString(R.string.SwipeSettingsDelete), LocaleController.getString(R.string.SwipeSettingsFolders)};
-                qz0Var.n = new int[]{r14, r14, r14, r14, org.telegram.ui.ActionBar.g6.Y5, org.telegram.ui.ActionBar.g6.d9};
-                qz0Var.r = new org.telegram.ui.Components.yj0[6];
-                qz0Var.v = new org.telegram.ui.Components.bk0[2];
-                qz0Var.x = 1.0f;
+                rz0Var.d = paint3;
+                rz0Var.e = new RectF();
+                rz0Var.h = new String[]{LocaleController.getString(R.string.SwipeSettingsPin), LocaleController.getString(R.string.SwipeSettingsRead), LocaleController.getString(R.string.SwipeSettingsArchive), LocaleController.getString(R.string.SwipeSettingsMute), LocaleController.getString(R.string.SwipeSettingsDelete), LocaleController.getString(R.string.SwipeSettingsFolders)};
+                rz0Var.n = new int[]{r14, r14, r14, r14, org.telegram.ui.ActionBar.g6.Y5, org.telegram.ui.ActionBar.g6.d9};
+                rz0Var.r = new org.telegram.ui.Components.yj0[6];
+                rz0Var.v = new org.telegram.ui.Components.bk0[2];
+                rz0Var.x = 1.0f;
                 int i15 = org.telegram.ui.ActionBar.g6.c9;
                 Paint.Style style = Paint.Style.STROKE;
                 paint.setStyle(style);
@@ -656,35 +656,35 @@ public final class mc1 extends org.telegram.ui.Components.lm0 {
                 paint3.setStyle(style);
                 paint3.setStrokeCap(cap);
                 paint3.setStrokeWidth(AndroidUtilities.dp(2.0f));
-                org.telegram.ui.Components.pz0 pz0Var = new org.telegram.ui.Components.pz0(qz0Var, context);
-                qz0Var.f = pz0Var;
-                pz0Var.setMinValue(0);
-                pz0Var.setDrawDividers(false);
+                org.telegram.ui.Components.qz0 qz0Var = new org.telegram.ui.Components.qz0(rz0Var, context);
+                rz0Var.f = qz0Var;
+                qz0Var.setMinValue(0);
+                qz0Var.setDrawDividers(false);
                 boolean isEmpty = MessagesController.getInstance(i11).dialogFilters.isEmpty();
-                pz0Var.setMaxValue(isEmpty ? 4 : 5);
-                pz0Var.setAllItemsCount(isEmpty ? 5 : 6);
-                pz0Var.setWrapSelectorWheel(true);
-                pz0Var.setFormatter(new org.telegram.ui.Components.oz0(qz0Var));
-                pz0Var.setOnValueChangedListener(new org.telegram.ui.Components.oz0(qz0Var));
-                pz0Var.setImportantForAccessibility(2);
-                pz0Var.setValue(SharedConfig.getChatSwipeAction(i11));
-                qz0Var.addView(pz0Var, w7.a6.a(-1.0f, 21.0f, 0.0f, 21.0f, 0.0f, 132, 5));
-                qz0Var.setWillNotDraw(false);
-                qz0Var.s = 0;
+                qz0Var.setMaxValue(isEmpty ? 4 : 5);
+                qz0Var.setAllItemsCount(isEmpty ? 5 : 6);
+                qz0Var.setWrapSelectorWheel(true);
+                qz0Var.setFormatter(new org.telegram.ui.Components.pz0(rz0Var));
+                qz0Var.setOnValueChangedListener(new org.telegram.ui.Components.pz0(rz0Var));
+                qz0Var.setImportantForAccessibility(2);
+                qz0Var.setValue(SharedConfig.getChatSwipeAction(i11));
+                rz0Var.addView(qz0Var, w7.z5.a(-1.0f, 21.0f, 0.0f, 21.0f, 0.0f, 132, 5));
+                rz0Var.setWillNotDraw(false);
+                rz0Var.s = 0;
                 for (int i16 = 0; i16 < 2; i16++) {
-                    qz0Var.v[i16] = new org.telegram.ui.Components.bk0(context);
-                    qz0Var.addView(qz0Var.v[i16], w7.a6.a(28.0f, 0.0f, 0.0f, 184.0f, 0.0f, 28, 21));
+                    rz0Var.v[i16] = new org.telegram.ui.Components.bk0(context);
+                    rz0Var.addView(rz0Var.v[i16], w7.z5.a(28.0f, 0.0f, 0.0f, 184.0f, 0.0f, 28, 21));
                 }
-                org.telegram.ui.Components.yj0 a2 = qz0Var.a(qz0Var.f.getValue());
+                org.telegram.ui.Components.yj0 a2 = rz0Var.a(rz0Var.f.getValue());
                 if (a2 != null) {
-                    qz0Var.v[0].setImageDrawable(a2);
+                    rz0Var.v[0].setImageDrawable(a2);
                     a2.M(a2.e[0] - 1);
                 }
-                AndroidUtilities.updateViewVisibilityAnimated(qz0Var.v[0], true, 0.5f, false);
-                AndroidUtilities.updateViewVisibilityAnimated(qz0Var.v[1], false, 0.5f, false);
-                qz0Var.w = qz0Var.f.getValue() != 5 ? 0.0f : 1.0f;
-                qz0Var.F = qz0Var.f.getValue();
-                j5Var = qz0Var;
+                AndroidUtilities.updateViewVisibilityAnimated(rz0Var.v[0], true, 0.5f, false);
+                AndroidUtilities.updateViewVisibilityAnimated(rz0Var.v[1], false, 0.5f, false);
+                rz0Var.w = rz0Var.f.getValue() != 5 ? 0.0f : 1.0f;
+                rz0Var.F = rz0Var.f.getValue();
+                j5Var = rz0Var;
                 break;
             case 16:
                 b5Var = ((org.telegram.ui.ActionBar.m2) themeActivity).parentLayout;
@@ -722,7 +722,7 @@ public final class mc1 extends org.telegram.ui.Components.lm0 {
                 break;
             case 21:
                 i13 = ((org.telegram.ui.ActionBar.m2) themeActivity).currentAccount;
-                haVar = new lp0(i13, 0L, this.c, themeActivity.getResourceProvider());
+                haVar = new jp0(i13, 0L, this.c, themeActivity.getResourceProvider());
                 j5Var = haVar;
                 break;
         }

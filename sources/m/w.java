@@ -1,76 +1,48 @@
 package m;
 
-import android.R;
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.content.res.TypedArray;
+import android.graphics.Bitmap;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.text.method.KeyListener;
-import android.text.method.NumberKeyListener;
+import android.graphics.drawable.RippleDrawable;
+import android.net.Uri;
 import android.util.AttributeSet;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputConnection;
-import android.widget.MultiAutoCompleteTextView;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import v7.q7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class w extends MultiAutoCompleteTextView implements u0.k {
-    public static final int[] d = {R.attr.popupBackground};
+public class w extends ImageButton {
     public final e2.c a;
-    public final w0 b;
-    public final y c;
+    public final a5.a b;
+    public boolean c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet, org.telegram.messenger.beta.R.attr.autoCompleteTextViewStyle);
-        c3.a(context);
-        b3.a(this, getContext());
-        li.k P = li.k.P(getContext(), attributeSet, d, org.telegram.messenger.beta.R.attr.autoCompleteTextViewStyle);
-        if (((TypedArray) P.c).hasValue(0)) {
-            setDropDownBackgroundDrawable(P.F(0));
-        }
-        P.Q();
+    public w(Context context, AttributeSet attributeSet, int i10) {
+        super(context, attributeSet, i10);
+        e3.a(context);
+        this.c = false;
+        d3.a(this, getContext());
         e2.c cVar = new e2.c(this);
         this.a = cVar;
-        cVar.f(attributeSet, org.telegram.messenger.beta.R.attr.autoCompleteTextViewStyle);
-        w0 w0Var = new w0(this);
-        this.b = w0Var;
-        w0Var.f(attributeSet, org.telegram.messenger.beta.R.attr.autoCompleteTextViewStyle);
-        w0Var.b();
-        y yVar = new y(this);
-        this.c = yVar;
-        yVar.b(attributeSet, org.telegram.messenger.beta.R.attr.autoCompleteTextViewStyle);
-        KeyListener keyListener = getKeyListener();
-        if (keyListener instanceof NumberKeyListener) {
-            return;
-        }
-        boolean isFocusable = isFocusable();
-        boolean isClickable = isClickable();
-        boolean isLongClickable = isLongClickable();
-        int inputType = getInputType();
-        KeyListener a2 = yVar.a(keyListener);
-        if (a2 == keyListener) {
-            return;
-        }
-        super.setKeyListener(a2);
-        setRawInputType(inputType);
-        setFocusable(isFocusable);
-        setClickable(isClickable);
-        setLongClickable(isLongClickable);
+        cVar.f(attributeSet, i10);
+        a5.a aVar = new a5.a(this);
+        this.b = aVar;
+        aVar.u(attributeSet, i10);
     }
 
-    @Override // android.widget.TextView, android.view.View
+    @Override // android.widget.ImageView, android.view.View
     public final void drawableStateChanged() {
         super.drawableStateChanged();
         e2.c cVar = this.a;
         if (cVar != null) {
             cVar.b();
         }
-        w0 w0Var = this.b;
-        if (w0Var != null) {
-            w0Var.b();
+        a5.a aVar = this.b;
+        if (aVar != null) {
+            aVar.d();
         }
     }
 
@@ -90,19 +62,27 @@ public final class w extends MultiAutoCompleteTextView implements u0.k {
         return null;
     }
 
-    public ColorStateList getSupportCompoundDrawablesTintList() {
-        return this.b.d();
+    public ColorStateList getSupportImageTintList() {
+        f3 f3Var;
+        a5.a aVar = this.b;
+        if (aVar == null || (f3Var = (f3) aVar.d) == null) {
+            return null;
+        }
+        return (ColorStateList) f3Var.c;
     }
 
-    public PorterDuff.Mode getSupportCompoundDrawablesTintMode() {
-        return this.b.e();
+    public PorterDuff.Mode getSupportImageTintMode() {
+        f3 f3Var;
+        a5.a aVar = this.b;
+        if (aVar == null || (f3Var = (f3) aVar.d) == null) {
+            return null;
+        }
+        return (PorterDuff.Mode) f3Var.d;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final InputConnection onCreateInputConnection(EditorInfo editorInfo) {
-        InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
-        w7.q.a(editorInfo, onCreateInputConnection, this);
-        return this.c.c(onCreateInputConnection, editorInfo);
+    @Override // android.widget.ImageView, android.view.View
+    public final boolean hasOverlappingRendering() {
+        return !(((ImageView) this.b.c).getBackground() instanceof RippleDrawable) && super.hasOverlappingRendering();
     }
 
     @Override // android.view.View
@@ -123,36 +103,63 @@ public final class w extends MultiAutoCompleteTextView implements u0.k {
         }
     }
 
-    @Override // android.widget.TextView
-    public final void setCompoundDrawables(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
-        super.setCompoundDrawables(drawable, drawable2, drawable3, drawable4);
-        w0 w0Var = this.b;
-        if (w0Var != null) {
-            w0Var.b();
+    @Override // android.widget.ImageView
+    public void setImageBitmap(Bitmap bitmap) {
+        super.setImageBitmap(bitmap);
+        a5.a aVar = this.b;
+        if (aVar != null) {
+            aVar.d();
         }
     }
 
-    @Override // android.widget.TextView
-    public final void setCompoundDrawablesRelative(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
-        super.setCompoundDrawablesRelative(drawable, drawable2, drawable3, drawable4);
-        w0 w0Var = this.b;
-        if (w0Var != null) {
-            w0Var.b();
+    @Override // android.widget.ImageView
+    public void setImageDrawable(Drawable drawable) {
+        a5.a aVar = this.b;
+        if (aVar != null && drawable != null && !this.c) {
+            aVar.b = drawable.getLevel();
+        }
+        super.setImageDrawable(drawable);
+        if (aVar != null) {
+            aVar.d();
+            if (this.c) {
+                return;
+            }
+            ImageView imageView = (ImageView) aVar.c;
+            if (imageView.getDrawable() != null) {
+                imageView.getDrawable().setLevel(aVar.b);
+            }
         }
     }
 
-    @Override // android.widget.AutoCompleteTextView
-    public void setDropDownBackgroundResource(int i10) {
-        setDropDownBackgroundDrawable(q7.b(getContext(), i10));
+    @Override // android.widget.ImageView
+    public void setImageLevel(int i10) {
+        super.setImageLevel(i10);
+        this.c = true;
     }
 
-    public void setEmojiCompatEnabled(boolean z10) {
-        this.c.d(z10);
+    @Override // android.widget.ImageView
+    public void setImageResource(int i10) {
+        a5.a aVar = this.b;
+        ImageView imageView = (ImageView) aVar.c;
+        if (i10 != 0) {
+            Drawable b10 = q7.b(imageView.getContext(), i10);
+            if (b10 != null) {
+                n1.a(b10);
+            }
+            imageView.setImageDrawable(b10);
+        } else {
+            imageView.setImageDrawable(null);
+        }
+        aVar.d();
     }
 
-    @Override // android.widget.TextView
-    public void setKeyListener(KeyListener keyListener) {
-        super.setKeyListener(this.c.a(keyListener));
+    @Override // android.widget.ImageView
+    public void setImageURI(Uri uri) {
+        super.setImageURI(uri);
+        a5.a aVar = this.b;
+        if (aVar != null) {
+            aVar.d();
+        }
     }
 
     public void setSupportBackgroundTintList(ColorStateList colorStateList) {
@@ -169,26 +176,29 @@ public final class w extends MultiAutoCompleteTextView implements u0.k {
         }
     }
 
-    @Override // u0.k
-    public void setSupportCompoundDrawablesTintList(ColorStateList colorStateList) {
-        w0 w0Var = this.b;
-        w0Var.l(colorStateList);
-        w0Var.b();
+    public void setSupportImageTintList(ColorStateList colorStateList) {
+        a5.a aVar = this.b;
+        if (aVar != null) {
+            if (((f3) aVar.d) == null) {
+                aVar.d = new f3();
+            }
+            f3 f3Var = (f3) aVar.d;
+            f3Var.c = colorStateList;
+            f3Var.b = true;
+            aVar.d();
+        }
     }
 
-    @Override // u0.k
-    public void setSupportCompoundDrawablesTintMode(PorterDuff.Mode mode) {
-        w0 w0Var = this.b;
-        w0Var.m(mode);
-        w0Var.b();
-    }
-
-    @Override // android.widget.TextView
-    public final void setTextAppearance(Context context, int i10) {
-        super.setTextAppearance(context, i10);
-        w0 w0Var = this.b;
-        if (w0Var != null) {
-            w0Var.g(context, i10);
+    public void setSupportImageTintMode(PorterDuff.Mode mode) {
+        a5.a aVar = this.b;
+        if (aVar != null) {
+            if (((f3) aVar.d) == null) {
+                aVar.d = new f3();
+            }
+            f3 f3Var = (f3) aVar.d;
+            f3Var.d = mode;
+            f3Var.a = true;
+            aVar.d();
         }
     }
 }

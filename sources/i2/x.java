@@ -4,9 +4,9 @@ import android.os.Bundle;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.ui.Components.sc;
 import org.telegram.ui.Components.zc;
-import org.telegram.ui.kh0;
+import org.telegram.ui.jh0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x implements e2.o, e2.j, p.a, GenericProvider {
     public final /* synthetic */ int a;
@@ -21,13 +21,13 @@ public final /* synthetic */ class x implements e2.o, e2.j, p.a, GenericProvider
     public void accept(Object obj) {
         switch (this.a) {
             case 2:
-                ((m4.n1) obj).X(this.b);
+                ((m4.m1) obj).X(this.b);
                 break;
             case 3:
-                ((m4.n1) obj).q0(this.b);
+                ((m4.m1) obj).q0(this.b);
                 break;
             default:
-                ((m4.n1) obj).w(this.b);
+                ((m4.m1) obj).w(this.b);
                 break;
         }
     }
@@ -52,8 +52,8 @@ public final /* synthetic */ class x implements e2.o, e2.j, p.a, GenericProvider
     @Override // org.telegram.messenger.GenericProvider
     public Object provide(Object obj) {
         Bundle h = a1.g.h("afterSignup", this.b);
-        kh0 kh0Var = new kh0();
-        kh0Var.l0(h);
-        return kh0Var;
+        jh0 jh0Var = new jh0();
+        jh0Var.l0(h);
+        return jh0Var;
     }
 }

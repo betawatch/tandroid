@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class v extends FrameLayout {
     public final /* synthetic */ ActionBarLayout E;
@@ -76,8 +76,8 @@ public final class v extends FrameLayout {
     @Override // android.view.ViewGroup
     public final void addView(View view, int i10, ViewGroup.LayoutParams layoutParams) {
         super.addView(view, i10, layoutParams);
-        WeakHashMap weakHashMap = r0.j0.a;
-        r0.z.c(this);
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.y.c(this);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:24:0x0037 A[Catch: Exception -> 0x0018, TRY_LEAVE, TryCatch #0 {Exception -> 0x0018, blocks: (B:2:0x0000, B:5:0x0009, B:7:0x0011, B:13:0x0022, B:22:0x0031, B:24:0x0037, B:33:0x001a), top: B:1:0x0000 }] */
@@ -411,8 +411,8 @@ public final class v extends FrameLayout {
             this.w = y3Var;
             this.x = y3Var != y3.a;
             View view = (View) getParent();
-            WeakHashMap weakHashMap = r0.j0.a;
-            r0.z.c(view);
+            WeakHashMap weakHashMap = r0.i0.a;
+            r0.y.c(view);
         }
     }
 }

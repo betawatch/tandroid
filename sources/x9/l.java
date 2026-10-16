@@ -9,12 +9,12 @@ import com.google.android.gms.tasks.Tasks;
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.Executor;
-import r0.j0;
+import r0.i0;
 import r0.l1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class l implements SuccessContinuation, r0.o {
+public final class l implements SuccessContinuation, r0.n {
     public Object a;
     public Object b;
 
@@ -23,10 +23,10 @@ public final class l implements SuccessContinuation, r0.o {
         this.b = obj2;
     }
 
-    @Override // r0.o
+    @Override // r0.n
     public l1 Q0(View view, l1 l1Var) {
         z4.g gVar = (z4.g) this.b;
-        l1 g10 = j0.g(view, l1Var);
+        l1 g10 = i0.g(view, l1Var);
         if (g10.a.n()) {
             return g10;
         }
@@ -37,7 +37,7 @@ public final class l implements SuccessContinuation, r0.o {
         rect.bottom = g10.a();
         int childCount = gVar.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
-            l1 b10 = j0.b(gVar.getChildAt(i10), g10);
+            l1 b10 = i0.b(gVar.getChildAt(i10), g10);
             rect.left = Math.min(b10.b(), rect.left);
             rect.top = Math.min(b10.d(), rect.top);
             rect.right = Math.min(b10.c(), rect.right);
@@ -65,11 +65,11 @@ public final class l implements SuccessContinuation, r0.o {
             Log.w("FirebaseCrashlytics", "Received null app settings at app startup. Cannot send cached reports", null);
             return Tasks.forResult(null);
         }
-        n6.o oVar = (n6.o) fVar.c;
-        n6.o oVar2 = (n6.o) fVar.c;
-        n.b((n) oVar.c);
-        ((n) oVar2.c).m.y((Executor) this.a, null);
-        ((n) oVar2.c).q.trySetResult(null);
+        n3.b bVar = (n3.b) fVar.c;
+        n3.b bVar2 = (n3.b) fVar.c;
+        n.b((n) bVar.c);
+        ((n) bVar2.c).m.y((Executor) this.a, null);
+        ((n) bVar2.c).q.trySetResult(null);
         return Tasks.forResult(null);
     }
 }

@@ -1,12 +1,12 @@
 package fi;
 
-import di.x6;
+import di.y6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class p2 implements RequestDelegate {
     public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new x6(27, this.b, tL_error));
+                AndroidUtilities.runOnUIThread(new y6(27, this.b, tL_error));
                 break;
             case 1:
                 final int i10 = 1;

@@ -9,15 +9,15 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ao0;
 import org.telegram.ui.Components.qx0;
+import org.telegram.ui.Components.zn0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class k2 extends FrameLayout {
     public final org.telegram.ui.ActionBar.c6 a;
     public final FrameLayout b;
-    public final ao0 c;
+    public final zn0 c;
     public final g2 d;
     public final int e;
     public j2 f;
@@ -36,19 +36,19 @@ public final class k2 extends FrameLayout {
         frameLayout.setBackground(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(18.0f), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Ie, c6Var)));
         frameLayout.setClipToOutline(true);
         frameLayout.setOutlineProvider(new bi.a2(2));
-        addView(frameLayout, w7.a6.a(36.0f, 10.0f, 6.0f, 10.0f, 8.0f, -1, 119));
+        addView(frameLayout, w7.z5.a(36.0f, 10.0f, 6.0f, 10.0f, 8.0f, -1, 119));
         FrameLayout frameLayout2 = new FrameLayout(context);
-        frameLayout.addView(frameLayout2, w7.a6.a(40.0f, 38.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+        frameLayout.addView(frameLayout2, w7.z5.a(40.0f, 38.0f, 0.0f, 0.0f, 0.0f, -1, 51));
         ImageView imageView = new ImageView(context);
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
-        ao0 ao0Var = new ao0();
-        this.c = ao0Var;
-        ao0Var.c(0, false, false);
+        zn0 zn0Var = new zn0();
+        this.c = zn0Var;
+        zn0Var.c(0, false, false);
         int i10 = org.telegram.ui.ActionBar.g6.Je;
-        ao0Var.a(org.telegram.ui.ActionBar.g6.w0(i10, c6Var));
-        imageView.setImageDrawable(ao0Var);
-        frameLayout.addView(imageView, w7.a6.e(36, 36, 51));
+        zn0Var.a(org.telegram.ui.ActionBar.g6.w0(i10, c6Var));
+        imageView.setImageDrawable(zn0Var);
+        frameLayout.addView(imageView, w7.z5.e(36, 36, 51));
         g2 g2Var = new g2(this, context, 0);
         this.d = g2Var;
         g2Var.setTextSize(1, 16.0f);
@@ -67,7 +67,7 @@ public final class k2 extends FrameLayout {
         g2Var.setCursorSize(AndroidUtilities.dp(20.0f));
         g2Var.setCursorWidth(1.5f);
         g2Var.setTranslationY(AndroidUtilities.dp(-2.0f));
-        frameLayout2.addView(g2Var, w7.a6.a(40.0f, 0.0f, 0.0f, 28.0f, 0.0f, -1, 51));
+        frameLayout2.addView(g2Var, w7.z5.a(40.0f, 0.0f, 0.0f, 28.0f, 0.0f, -1, 51));
         g2Var.addTextChangedListener(new h2(this, 0));
         ImageView imageView2 = new ImageView(context);
         this.n = imageView2;
@@ -112,7 +112,7 @@ public final class k2 extends FrameLayout {
                 }
             }
         });
-        frameLayout.addView(imageView2, w7.a6.e(36, 36, 53));
+        frameLayout.addView(imageView2, w7.z5.e(36, 36, 53));
         final int i13 = 1;
         imageView.setOnClickListener(new View.OnClickListener(this) { // from class: di.e2
             public final /* synthetic */ k2 b;
@@ -250,7 +250,7 @@ public final class k2 extends FrameLayout {
                     }
                 }
             });
-            frameLayout.addView(this.f, Math.max(0, frameLayout.getChildCount() - 1), w7.a6.a(36.0f, 36.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+            frameLayout.addView(this.f, Math.max(0, frameLayout.getChildCount() - 1), w7.z5.a(36.0f, 36.0f, 0.0f, 0.0f, 0.0f, -1, 51));
         }
     }
 

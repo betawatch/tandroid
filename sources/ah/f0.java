@@ -17,7 +17,7 @@ import org.telegram.ui.ak;
 import org.telegram.ui.fo;
 import org.telegram.ui.mk;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class f0 extends FrameLayout {
     public final fo a;
@@ -192,19 +192,19 @@ public final class f0 extends FrameLayout {
                             }
                         }
                     }
-                    this.b.setTranslationY(w7.s.a(interpolation, dp4, dp5));
+                    this.b.setTranslationY(w7.r.a(interpolation, dp4, dp5));
                     this.b.setTranslationX(u1Var.E2(true));
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.b.getLayoutParams();
-                    int c10 = org.telegram.messenger.q.c(32.0f, u1Var.getBackgroundDrawableLeft(), 0);
-                    int c11 = org.telegram.messenger.q.c(32.0f, u1Var.getWidth() - u1Var.getBackgroundDrawableRight(), (int) u1Var.E2(true));
+                    int b10 = org.telegram.messenger.g0.b(32.0f, u1Var.getBackgroundDrawableLeft(), 0);
+                    int b11 = org.telegram.messenger.g0.b(32.0f, u1Var.getWidth() - u1Var.getBackgroundDrawableRight(), (int) u1Var.E2(true));
                     int dp6 = AndroidUtilities.dp(40.0f) * 8;
-                    if ((getWidth() - c11) - c10 < dp6) {
+                    if ((getWidth() - b11) - b10 < dp6) {
                         if (isOutOwner) {
-                            c10 = Math.min(c10, getWidth() - dp6);
-                            c11 = 0;
+                            b10 = Math.min(b10, getWidth() - dp6);
+                            b11 = 0;
                         } else {
-                            c11 = Math.min(c11, getWidth() - dp6);
-                            c10 = 0;
+                            b11 = Math.min(b11, getWidth() - dp6);
+                            b10 = 0;
                         }
                     }
                     int i13 = isOutOwner ? 5 : 3;
@@ -212,12 +212,12 @@ public final class f0 extends FrameLayout {
                         layoutParams.gravity = i13;
                         z14 = true;
                     }
-                    if (c10 != layoutParams.leftMargin) {
-                        layoutParams.leftMargin = c10;
+                    if (b10 != layoutParams.leftMargin) {
+                        layoutParams.leftMargin = b10;
                         z14 = true;
                     }
-                    if (c11 != layoutParams.rightMargin) {
-                        layoutParams.rightMargin = c11;
+                    if (b11 != layoutParams.rightMargin) {
+                        layoutParams.rightMargin = b11;
                     } else {
                         z13 = z14;
                     }

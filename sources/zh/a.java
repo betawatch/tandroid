@@ -15,7 +15,7 @@ import org.telegram.ui.Components.at;
 import org.telegram.ui.Components.br;
 import org.telegram.ui.Components.da0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class a extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
     public final int a;
@@ -107,13 +107,13 @@ public final class a extends LinearLayout implements NotificationCenter.Notifica
         textView.setTextSize(1, 13.0f);
         textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Hi, c6Var));
         textView.setGravity(17);
-        addView(textView, w7.a6.p(-2, -2, 0.0f, 17, 0, 0, 0, 0));
+        addView(textView, w7.z5.p(-2, -2, 0.0f, 17, 0, 0, 0, 0));
         da0 da0Var = new da0(context, c6Var);
         this.d = da0Var;
         da0Var.setTextSize(1, 12.0f);
         da0Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.Gift2MessageStarsInfoLink), new at(context, 2, c6Var)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
         da0Var.setGravity(17);
-        addView(da0Var, w7.a6.p(-2, -2, 0.0f, 17, 0, 1, 0, 0));
+        addView(da0Var, w7.z5.p(-2, -2, 0.0f, 17, 0, 1, 0, 0));
         a();
     }
 }

@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import s4.b1;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class b0 extends s4.g0 {
     public final ArrayList c = new ArrayList();
@@ -47,7 +47,7 @@ public final class b0 extends s4.g0 {
         while (i10 < size) {
             Object obj = arrayList2.get(i10);
             i10++;
-            arrayList.add(new y((p4.w) obj));
+            arrayList.add(new y((p4.v) obj));
         }
         l();
     }
@@ -83,15 +83,15 @@ public final class b0 extends s4.g0 {
             return;
         }
         a0 a0Var = (a0) b1Var;
-        p4.w wVar = (p4.w) yVar.a;
+        p4.v vVar = (p4.v) yVar.a;
         View view = a0Var.v;
         view.setVisibility(0);
         a0Var.x.setVisibility(4);
-        view.setOnClickListener(new z(a0Var, wVar));
-        a0Var.y.setText(wVar.d);
+        view.setOnClickListener(new z(a0Var, vVar));
+        a0Var.y.setText(vVar.d);
         ImageView imageView = a0Var.w;
         b0 b0Var = a0Var.z;
-        Uri uri = wVar.f;
+        Uri uri = vVar.f;
         if (uri != null) {
             try {
                 createFromStream = Drawable.createFromStream(b0Var.r.n.getContentResolver().openInputStream(uri), null);
@@ -99,8 +99,8 @@ public final class b0 extends s4.g0 {
                 Log.w("RecyclerAdapter", "Failed to load " + uri, e);
             }
         }
-        int i11 = wVar.n;
-        createFromStream = i11 != 1 ? i11 != 2 ? wVar.e() ? b0Var.n : b0Var.e : b0Var.h : b0Var.f;
+        int i11 = vVar.n;
+        createFromStream = i11 != 1 ? i11 != 2 ? vVar.e() ? b0Var.n : b0Var.e : b0Var.h : b0Var.f;
         imageView.setImageDrawable(createFromStream);
     }
 

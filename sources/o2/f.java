@@ -2,7 +2,7 @@ package o2;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class f extends v2.b {
     public final List d;
@@ -15,13 +15,13 @@ public final class f extends v2.b {
     }
 
     @Override // v2.m
-    public final long b() {
+    public final long d() {
         a();
         return this.e + ((p2.k) this.d.get((int) this.c)).e;
     }
 
     @Override // v2.m
-    public final long p() {
+    public final long v() {
         a();
         p2.k kVar = (p2.k) this.d.get((int) this.c);
         return this.e + kVar.e + kVar.c;

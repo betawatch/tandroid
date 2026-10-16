@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class m implements r {
     public static final int[] h = {5, 4, 12, 8, 3, 10, 9, 11, 6, 2, 0, 1, 7, 16, 15, 14, 17, 18, 19, 20, 21};
@@ -37,12 +37,12 @@ public final class m implements r {
                 arrayList.add(new d3.a(1));
                 break;
             case 4:
-                o n10 = n.n(0);
-                if (n10 == null) {
+                o p5 = n.p(0);
+                if (p5 == null) {
                     arrayList.add(new h3.b());
                     break;
                 } else {
-                    arrayList.add(n10);
+                    arrayList.add(p5);
                     break;
                 }
             case 5:
@@ -56,16 +56,16 @@ public final class m implements r {
                 break;
             case 8:
                 t7.u uVar = this.c;
-                int g10 = w3.i.g(this.d) | (this.b ? 0 : 32);
+                int g10 = w3.h.g(this.d) | (this.b ? 0 : 32);
                 l0 l0Var = n0.b;
-                arrayList.add(new w3.i(uVar, g10, null, x1.e, null));
+                arrayList.add(new w3.h(uVar, g10, null, x1.e, null));
                 t7.u uVar2 = this.c;
                 int i11 = this.d;
                 int i12 = (i11 & 1) == 0 ? 0 : 32;
                 if ((2 & i11) != 0) {
                     i12 |= 128;
                 }
-                arrayList.add(new w3.m(uVar2, i12 | (this.b ? 0 : 16)));
+                arrayList.add(new w3.l(uVar2, i12 | (this.b ? 0 : 16)));
                 break;
             case 9:
                 arrayList.add(new x3.d());
@@ -92,9 +92,9 @@ public final class m implements r {
                 arrayList.add(new k3.a(this.e));
                 break;
             case 15:
-                o n11 = r.n(new Object[0]);
-                if (n11 != null) {
-                    arrayList.add(n11);
+                o p9 = r.p(new Object[0]);
+                if (p9 != null) {
+                    arrayList.add(p9);
                     break;
                 }
                 break;

@@ -47,12 +47,12 @@ import org.telegram.ui.Components.br;
 import org.telegram.ui.Components.cr;
 import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.f10;
-import org.telegram.ui.Components.h11;
 import org.telegram.ui.Components.hd;
+import org.telegram.ui.Components.i11;
 import org.telegram.ui.Components.zp0;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class t7 extends FrameLayout {
     public static long E0;
@@ -71,7 +71,7 @@ public class t7 extends FrameLayout {
     public boolean L;
     public final org.telegram.ui.Components.g6 M;
     public final org.telegram.ui.Components.r6 N;
-    public h11 O;
+    public i11 O;
     public CheckBoxBase P;
     public final s7 Q;
     public boolean R;
@@ -102,9 +102,9 @@ public class t7 extends FrameLayout {
     public wh.f m0;
     public MessageObject n;
     public final Path n0;
-    public h11 o0;
-    public h11 p0;
-    public h11 q0;
+    public i11 o0;
+    public i11 p0;
+    public i11 q0;
     public int r;
     public int r0;
     public f10 s;
@@ -242,11 +242,11 @@ public class t7 extends FrameLayout {
             ImageReceiver imageReceiver = this.c;
             if ((imageReceiver == null || imageReceiver.getVisible()) && this.h && this.O != null) {
                 float dp = AndroidUtilities.dp(5.33f);
-                h11 h11Var = this.O;
-                h11Var.p = (int) (rectF.width() - (2.0f * dp));
-                h11Var.t = AndroidUtilities.dp(14.0f);
-                h11Var.a.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(0.66f), org.telegram.ui.ActionBar.g6.m1(0.4f * f7, -16777216));
-                h11Var.c(rectF.left + dp, rectF.top + AndroidUtilities.dp(this.r <= 2 ? 15.0f : 11.33f), 1.0f, org.telegram.ui.ActionBar.g6.m1(f7, -1), canvas);
+                i11 i11Var = this.O;
+                i11Var.p = (int) (rectF.width() - (2.0f * dp));
+                i11Var.t = AndroidUtilities.dp(14.0f);
+                i11Var.a.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(0.66f), org.telegram.ui.ActionBar.g6.m1(0.4f * f7, -16777216));
+                i11Var.c(rectF.left + dp, rectF.top + AndroidUtilities.dp(this.r <= 2 ? 15.0f : 11.33f), 1.0f, org.telegram.ui.ActionBar.g6.m1(f7, -1), canvas);
             }
         }
     }
@@ -502,27 +502,27 @@ public class t7 extends FrameLayout {
                 if (t7Var.n.isSensitive()) {
                     if (t7Var.o0 == null) {
                         f17 = 0.075f;
-                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.q.h(R.string.MessageSensitiveContent, new StringBuilder("x ")));
+                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.g0.g(R.string.MessageSensitiveContent, new StringBuilder("x ")));
                         spannableStringBuilder.setSpan(new br(R.drawable.filled_sensitive, 0), 0, 1, 33);
-                        t7Var.o0 = new h11(spannableStringBuilder, 14.0f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
+                        t7Var.o0 = new i11(spannableStringBuilder, 14.0f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                     } else {
                         f17 = 0.075f;
                     }
-                    h11 h11Var = t7Var.o0;
+                    i11 i11Var = t7Var.o0;
                     int i11 = 13;
-                    if (f19 < (AndroidUtilities.dp(13) * 2) + h11Var.c) {
+                    if (f19 < (AndroidUtilities.dp(13) * 2) + i11Var.c) {
                         if (t7Var.p0 == null) {
-                            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(org.telegram.messenger.q.h(R.string.MessageSensitiveContentShort, new StringBuilder("x ")));
+                            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(org.telegram.messenger.g0.g(R.string.MessageSensitiveContentShort, new StringBuilder("x ")));
                             spannableStringBuilder2.setSpan(new br(R.drawable.filled_sensitive, 0), 0, 1, 33);
-                            t7Var.p0 = new h11(spannableStringBuilder2, 14.0f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
+                            t7Var.p0 = new i11(spannableStringBuilder2, 14.0f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                         }
-                        h11Var = t7Var.p0;
+                        i11Var = t7Var.p0;
                     }
-                    if (f19 < (AndroidUtilities.dp(26) * 2) + h11Var.c) {
+                    if (f19 < (AndroidUtilities.dp(26) * 2) + i11Var.c) {
                         if (t7Var.q0 == null) {
-                            t7Var.q0 = new h11(new SpannableStringBuilder(LocaleController.getString(R.string.MessageSensitiveContentShort)), 13.0f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
+                            t7Var.q0 = new i11(new SpannableStringBuilder(LocaleController.getString(R.string.MessageSensitiveContentShort)), 13.0f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                         }
-                        h11Var = t7Var.q0;
+                        i11Var = t7Var.q0;
                         i11 = 10;
                         i10 = 28;
                     } else {
@@ -530,9 +530,9 @@ public class t7 extends FrameLayout {
                     }
                     float imageWidth = (imageReceiver2.getImageWidth() / 2.0f) + imageReceiver2.getImageX();
                     float imageHeight = (imageReceiver2.getImageHeight() / 2.0f) + imageReceiver2.getImageY();
-                    float dp3 = h11Var.c + AndroidUtilities.dp(i11 + i11);
+                    float dp3 = i11Var.c + AndroidUtilities.dp(i11 + i11);
                     float dp4 = AndroidUtilities.dp(i10) / 2.0f;
-                    h11 h11Var2 = h11Var;
+                    i11 i11Var2 = i11Var;
                     float lerp = AndroidUtilities.lerp(0.8f, f12, f12 - t7Var.i0);
                     RectF rectF = AndroidUtilities.rectTmp;
                     float f37 = dp3 / 2.0f;
@@ -554,13 +554,13 @@ public class t7 extends FrameLayout {
                     Paint T0 = org.telegram.ui.ActionBar.g6.T0("paintChatTimeBackground");
                     int alpha2 = T0.getAlpha();
                     f15 = f20;
-                    T0.setAlpha((int) org.telegram.messenger.q.B(1.0f, t7Var.i0, alpha2, 0.35f));
+                    T0.setAlpha((int) org.telegram.messenger.g0.z(1.0f, t7Var.i0, alpha2, 0.35f));
                     canvas3.drawRoundRect(rectF, dp4, dp4, T0);
                     T0.setAlpha(alpha2);
                     canvas3.save();
                     canvas3.scale(lerp, lerp, imageWidth, imageHeight);
                     Canvas canvas5 = canvas3;
-                    h11Var2.c(AndroidUtilities.dp(i11) + (imageWidth - f37), imageHeight, 1.0f - t7Var.i0, -1, canvas5);
+                    i11Var2.c(AndroidUtilities.dp(i11) + (imageWidth - f37), imageHeight, 1.0f - t7Var.i0, -1, canvas5);
                     canvas2 = canvas5;
                     canvas2.restore();
                 } else {
@@ -1041,7 +1041,7 @@ public class t7 extends FrameLayout {
                 org.telegram.ui.k5 k5Var = new org.telegram.ui.k5(this, i11 == 2 ? 16.0f : 13.66f, i14);
                 k5Var.c(dialogId);
                 spannableStringBuilder.setSpan(k5Var, 0, 1, 33);
-                this.O = new h11(spannableStringBuilder, i11 == 2 ? 14.0f : 10.1666f, AndroidUtilities.bold());
+                this.O = new i11(spannableStringBuilder, i11 == 2 ? 14.0f : 10.1666f, AndroidUtilities.bold());
             }
             o();
             invalidate();
@@ -1089,7 +1089,7 @@ public class t7 extends FrameLayout {
         this.j0 = f7;
         this.k0 = f10;
         this.l0 = (float) Math.sqrt(Math.pow(getHeight(), 2.0d) + Math.pow(getWidth(), 2.0d));
-        ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration((long) w7.s.a(this.l0 * 0.3f, 250.0f, 550.0f));
+        ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration((long) w7.r.a(this.l0 * 0.3f, 250.0f, 550.0f));
         duration.setInterpolator(es.j);
         duration.addUpdateListener(new r(this, 5));
         duration.addListener(new org.telegram.ui.u0(this, 15));

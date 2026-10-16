@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class f0 extends View implements NotificationCenter.NotificationCenterDelegate {
     public float E;
@@ -378,7 +378,7 @@ public final class f0 extends View implements NotificationCenter.NotificationCen
                 float lerp = AndroidUtilities.lerp(0.5f, f13, d);
                 float f23 = f14;
                 int i11 = i10;
-                float B = org.telegram.messenger.q.B(f13, f0Var.n, (f13 - f0Var.e) * d, clamp012);
+                float z12 = org.telegram.messenger.g0.z(f13, f0Var.n, (f13 - f0Var.e) * d, clamp012);
                 int i12 = e0Var2.g;
                 float f24 = 1.6f;
                 float f25 = f13;
@@ -410,7 +410,7 @@ public final class f0 extends View implements NotificationCenter.NotificationCen
                             f10 = AndroidUtilities.lerp(f19, f10, f0Var.L.getInterpolation(clamp01));
                             lerp = AndroidUtilities.lerp(lerp / f22, lerp, clamp01);
                         }
-                        if (B <= f23) {
+                        if (z12 <= f23) {
                             f11 = f19;
                             arrayList = arrayList2;
                             f12 = f23;
@@ -429,10 +429,10 @@ public final class f0 extends View implements NotificationCenter.NotificationCen
                             float a2 = e0Var2.m.a(0.1f) * f27;
                             canvas.scale(a2, a2);
                             e0Var2.f.d();
-                            e0Var2.f.b(canvas, e0Var2.d, B);
+                            e0Var2.f.b(canvas, e0Var2.d, z12);
                             Paint paint = e0Var2.i;
                             if (paint != null) {
-                                paint.setAlpha((int) (B * 255.0f * f25));
+                                paint.setAlpha((int) (z12 * 255.0f * f25));
                                 float f29 = (-dp3) / f22;
                                 e0Var = e0Var2;
                                 z10 = false;
@@ -446,7 +446,7 @@ public final class f0 extends View implements NotificationCenter.NotificationCen
                                 int i13 = (-dp4) / 2;
                                 int i14 = dp4 / 2;
                                 e0Var.j.setBounds(i13, i13, i14, i14);
-                                e0Var.j.setAlpha((int) (B * 255.0f));
+                                e0Var.j.setAlpha((int) (z12 * 255.0f));
                                 e0Var.j.draw(canvas);
                             }
                             canvas.restore();
@@ -473,7 +473,7 @@ public final class f0 extends View implements NotificationCenter.NotificationCen
                     }
                     if (clamp01 < f25) {
                     }
-                    if (B <= f23) {
+                    if (z12 <= f23) {
                     }
                     i10 = i11 + 1;
                     f14 = f12;
@@ -497,7 +497,7 @@ public final class f0 extends View implements NotificationCenter.NotificationCen
                 }
                 if (clamp01 < f25) {
                 }
-                if (B <= f23) {
+                if (z12 <= f23) {
                 }
                 i10 = i11 + 1;
                 f14 = f12;
@@ -578,7 +578,7 @@ public final class f0 extends View implements NotificationCenter.NotificationCen
         } else if (motionEvent.getAction() == 1) {
             e0 e0Var4 = this.M;
             if (e0Var4 != null) {
-                pf.d.s(getContext(), "https://t.me/nft/" + e0Var4.e);
+                pf.d.r(getContext(), "https://t.me/nft/" + e0Var4.e);
                 this.M.m.c(false);
                 this.M = null;
             }

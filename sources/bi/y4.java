@@ -18,14 +18,14 @@ import org.telegram.ui.Components.sc;
 import org.telegram.ui.DataSettingsActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.ui.ap0;
 import org.telegram.ui.ce1;
-import org.telegram.ui.cp0;
 import org.telegram.ui.fo;
 import org.telegram.ui.ou;
 import org.telegram.ui.qx0;
-import org.telegram.ui.un0;
+import org.telegram.ui.sn0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y4 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -93,26 +93,26 @@ public final /* synthetic */ class y4 implements View.OnClickListener {
                         alertDialog$Builder2.a.R = LocaleController.getString(R.string.DecreaseSpeed);
                         alertDialog$Builder2.a.T = LocaleController.getString(R.string.SdCardAlert);
                         alertDialog$Builder2.k(LocaleController.getString(R.string.Proceed), new org.telegram.ui.f7(dataSettingsActivity, str, alertDialog$Builder, 12));
-                        org.telegram.messenger.q.q(R.string.Back, alertDialog$Builder2, null);
+                        i2.d.r(R.string.Back, alertDialog$Builder2, null);
                         break;
                     }
                 }
                 break;
             case 2:
-                final un0 un0Var = (un0) this.c;
+                final sn0 sn0Var = (sn0) this.c;
                 final ArrayList arrayList2 = (ArrayList) this.d;
                 final TLRPC.TL_secureRequiredType tL_secureRequiredType2 = (TLRPC.TL_secureRequiredType) this.e;
                 if (arrayList2 != null) {
                     int size2 = arrayList2.size();
                     for (0; i11 < size2; i11 + 1) {
                         tL_secureRequiredType = (TLRPC.TL_secureRequiredType) arrayList2.get(i11);
-                        i11 = (un0Var.q1(tL_secureRequiredType, false) == null && size2 != 1) ? i11 + 1 : 0;
+                        i11 = (sn0Var.q1(tL_secureRequiredType, false) == null && size2 != 1) ? i11 + 1 : 0;
                         TLRPC.SecureValueType secureValueType2 = tL_secureRequiredType2.type;
                         z10 = secureValueType2 instanceof TLRPC.TL_secureValueTypePersonalDetails;
                         z11 = this.b;
                         if (!z10 || (secureValueType2 instanceof TLRPC.TL_secureValueTypeAddress)) {
                             if (tL_secureRequiredType == null && arrayList2 != null && !arrayList2.isEmpty()) {
-                                AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(un0Var.getParentActivity());
+                                AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(sn0Var.getParentActivity());
                                 alertDialog$Builder3.k(LocaleController.getString(R.string.Cancel), null);
                                 secureValueType = tL_secureRequiredType2.type;
                                 if (!(secureValueType instanceof TLRPC.TL_secureValueTypePersonalDetails)) {
@@ -144,33 +144,33 @@ public final /* synthetic */ class y4 implements View.OnClickListener {
                                         arrayList3.add(LocaleController.getString(R.string.PassportAddPassportRegistration));
                                     }
                                 }
-                                alertDialog$Builder3.f((CharSequence[]) arrayList3.toArray(new CharSequence[0]), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.lm0
+                                alertDialog$Builder3.f((CharSequence[]) arrayList3.toArray(new CharSequence[0]), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.km0
                                     @Override // android.content.DialogInterface.OnClickListener
                                     public final void onClick(DialogInterface dialogInterface, int i12) {
-                                        un0 un0Var2 = un0Var;
-                                        un0Var2.getClass();
+                                        sn0 sn0Var2 = sn0Var;
+                                        sn0Var2.getClass();
                                         ArrayList arrayList4 = arrayList2;
-                                        un0Var2.D1(tL_secureRequiredType2, (TLRPC.TL_secureRequiredType) arrayList4.get(i12), arrayList4, z11);
+                                        sn0Var2.D1(tL_secureRequiredType2, (TLRPC.TL_secureRequiredType) arrayList4.get(i12), arrayList4, z11);
                                     }
                                 });
-                                un0Var.showDialog(alertDialog$Builder3.a);
+                                sn0Var.showDialog(alertDialog$Builder3.a);
                                 break;
                             }
                         } else {
                             boolean z13 = secureValueType2 instanceof TLRPC.TL_secureValueTypePhone;
-                            if ((z13 || (secureValueType2 instanceof TLRPC.TL_secureValueTypeEmail)) && un0Var.q1(tL_secureRequiredType2, false) != null) {
-                                AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(un0Var.getParentActivity());
-                                alertDialog$Builder4.k(LocaleController.getString(R.string.OK), new com.google.firebase.messaging.i(un0Var, tL_secureRequiredType2, z11, 10));
+                            if ((z13 || (secureValueType2 instanceof TLRPC.TL_secureValueTypeEmail)) && sn0Var.q1(tL_secureRequiredType2, false) != null) {
+                                AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(sn0Var.getParentActivity());
+                                alertDialog$Builder4.k(LocaleController.getString(R.string.OK), new com.google.firebase.messaging.i(sn0Var, tL_secureRequiredType2, z11, 10));
                                 alertDialog$Builder4.h(LocaleController.getString(R.string.Cancel), null);
                                 alertDialog$Builder4.a.R = LocaleController.getString(R.string.AppName);
                                 String string = LocaleController.getString(z13 ? R.string.PassportDeletePhoneAlert : R.string.PassportDeleteEmailAlert);
                                 org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder4.a;
                                 a2Var.T = string;
-                                un0Var.showDialog(a2Var);
+                                sn0Var.showDialog(a2Var);
                                 break;
                             }
                         }
-                        un0Var.D1(tL_secureRequiredType2, tL_secureRequiredType, arrayList2, z11);
+                        sn0Var.D1(tL_secureRequiredType2, tL_secureRequiredType, arrayList2, z11);
                         break;
                     }
                 }
@@ -181,7 +181,7 @@ public final /* synthetic */ class y4 implements View.OnClickListener {
                 if (!z10) {
                 }
                 if (tL_secureRequiredType == null) {
-                    AlertDialog$Builder alertDialog$Builder32 = new AlertDialog$Builder(un0Var.getParentActivity());
+                    AlertDialog$Builder alertDialog$Builder32 = new AlertDialog$Builder(sn0Var.getParentActivity());
                     alertDialog$Builder32.k(LocaleController.getString(R.string.Cancel), null);
                     secureValueType = tL_secureRequiredType2.type;
                     if (!(secureValueType instanceof TLRPC.TL_secureValueTypePersonalDetails)) {
@@ -190,24 +190,24 @@ public final /* synthetic */ class y4 implements View.OnClickListener {
                     size = arrayList2.size();
                     while (i10 < size) {
                     }
-                    alertDialog$Builder32.f((CharSequence[]) arrayList32.toArray(new CharSequence[0]), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.lm0
+                    alertDialog$Builder32.f((CharSequence[]) arrayList32.toArray(new CharSequence[0]), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.km0
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i12) {
-                            un0 un0Var2 = un0Var;
-                            un0Var2.getClass();
+                            sn0 sn0Var2 = sn0Var;
+                            sn0Var2.getClass();
                             ArrayList arrayList4 = arrayList2;
-                            un0Var2.D1(tL_secureRequiredType2, (TLRPC.TL_secureRequiredType) arrayList4.get(i12), arrayList4, z11);
+                            sn0Var2.D1(tL_secureRequiredType2, (TLRPC.TL_secureRequiredType) arrayList4.get(i12), arrayList4, z11);
                         }
                     });
-                    un0Var.showDialog(alertDialog$Builder32.a);
+                    sn0Var.showDialog(alertDialog$Builder32.a);
                 }
-                un0Var.D1(tL_secureRequiredType2, tL_secureRequiredType, arrayList2, z11);
+                sn0Var.D1(tL_secureRequiredType2, tL_secureRequiredType, arrayList2, z11);
                 break;
             case 3:
-                cp0.g0((cp0) this.c, (sc) this.d, this.b, (TLRPC.Message[]) this.e);
+                ap0.g0((ap0) this.c, (sc) this.d, this.b, (TLRPC.Message[]) this.e);
                 break;
             case 4:
-                cp0.Y((cp0) this.c, (sc) this.d, this.b, (TLRPC.Message) this.e);
+                ap0.Y((ap0) this.c, (sc) this.d, this.b, (TLRPC.Message) this.e);
                 break;
             default:
                 sg.y0 y0Var = (sg.y0) this.c;
@@ -275,9 +275,9 @@ public final /* synthetic */ class y4 implements View.OnClickListener {
         }
     }
 
-    public /* synthetic */ y4(ArrayList arrayList, TLRPC.TL_secureRequiredType tL_secureRequiredType, un0 un0Var, boolean z10) {
+    public /* synthetic */ y4(ArrayList arrayList, TLRPC.TL_secureRequiredType tL_secureRequiredType, sn0 sn0Var, boolean z10) {
         this.a = 2;
-        this.c = un0Var;
+        this.c = sn0Var;
         this.d = arrayList;
         this.e = tL_secureRequiredType;
         this.b = z10;

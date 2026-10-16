@@ -19,16 +19,16 @@ import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.aq;
 import org.telegram.ui.Components.bq;
 import org.telegram.ui.rx0;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public class r1 extends ViewGroup {
     public r1 E;
@@ -75,14 +75,14 @@ public class r1 extends ViewGroup {
         textView.setTextColor(g6.x0(null, g6.G6, false));
         textView.setTypeface(AndroidUtilities.bold());
         textView.setSingleLine();
-        addView(textView, a6.a(-2.0f, 0.0f, 8.0f, 0.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 48));
+        addView(textView, z5.a(-2.0f, 0.0f, 8.0f, 0.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 48));
         TextView textView2 = new TextView(context);
         this.r = textView2;
         textView2.setTextSize(1, 14.0f);
         textView2.setTextColor(-1);
         textView2.setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), 0);
         textView2.setTypeface(AndroidUtilities.bold());
-        addView(textView2, a6.a(-2.0f, 0.0f, 0.0f, 0.0f, 8.0f, -2, (LocaleController.isRTL ? 5 : 3) | 80));
+        addView(textView2, z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 8.0f, -2, (LocaleController.isRTL ? 5 : 3) | 80));
         TextView textView3 = new TextView(context);
         this.d = textView3;
         textView3.setTextSize(1, 14.0f);
@@ -90,19 +90,19 @@ public class r1 extends ViewGroup {
         textView3.setTextColor(g6.x0(null, i11, false));
         textView3.getPaint().setStrikeThruText(true);
         textView3.setSingleLine();
-        addView(textView3, a6.a(-2.0f, 0.0f, 0.0f, 0.0f, 8.0f, -2, (LocaleController.isRTL ? 5 : 3) | 80));
+        addView(textView3, z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 8.0f, -2, (LocaleController.isRTL ? 5 : 3) | 80));
         TextView textView4 = new TextView(context);
         this.e = textView4;
         textView4.setTextSize(1, 14.0f);
         textView4.setTextColor(g6.x0(null, i11, false));
         textView4.setSingleLine();
-        addView(textView4, a6.a(-2.0f, 0.0f, 0.0f, 0.0f, 8.0f, -2, (LocaleController.isRTL ? 5 : 3) | 80));
+        addView(textView4, z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 8.0f, -2, (LocaleController.isRTL ? 5 : 3) | 80));
         TextView textView5 = new TextView(context);
         this.c = textView5;
         textView5.setTextSize(1, 15.0f);
         textView5.setTextColor(g6.x0(null, i11, false));
         textView5.setSingleLine();
-        addView(textView5, a6.e(-2, -2, 8388613));
+        addView(textView5, z5.e(-2, -2, 8388613));
         setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f));
         setClipToPadding(false);
         setWillNotDraw(false);
@@ -355,10 +355,10 @@ public class r1 extends ViewGroup {
         int makeMeasureSpec5 = View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31);
         TextView textView3 = this.d;
         textView3.measure(makeMeasureSpec4, makeMeasureSpec5);
-        int z10 = yh.z(6.0f, (size - aqVar.getMeasuredWidth()) - (textView3.getVisibility() == 0 ? textView3.getMeasuredWidth() : 0), TLObject.FLAG_31);
+        int c10 = sk.c(6.0f, (size - aqVar.getMeasuredWidth()) - (textView3.getVisibility() == 0 ? textView3.getMeasuredWidth() : 0), TLObject.FLAG_31);
         int makeMeasureSpec6 = View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31);
         TextView textView4 = this.e;
-        textView4.measure(z10, makeMeasureSpec6);
+        textView4.measure(c10, makeMeasureSpec6);
         if (textView4.getVisibility() != 0) {
             dp -= AndroidUtilities.dp(8.0f);
         }

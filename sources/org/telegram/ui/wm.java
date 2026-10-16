@@ -4,7 +4,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class wm extends org.telegram.ui.ActionBar.o1 {
     public final /* synthetic */ xm x;
@@ -106,7 +106,7 @@ public final class wm extends org.telegram.ui.ActionBar.o1 {
                 if (lastFragment instanceof yy) {
                     yy yyVar = (yy) lastFragment;
                     yyVar.v1 = f7;
-                    yyVar.U4();
+                    yyVar.V4();
                 }
             }
             org.telegram.ui.Components.v40 v40Var = foVar.s2;
@@ -148,9 +148,9 @@ public final class wm extends org.telegram.ui.ActionBar.o1 {
                 AndroidUtilities.cancelRunOnUIThread(tdVar);
                 skVar.V.run();
             }
-            rp rpVar = skVar.W;
-            if (rpVar != null) {
-                AndroidUtilities.cancelRunOnUIThread(rpVar);
+            vp vpVar = skVar.W;
+            if (vpVar != null) {
+                AndroidUtilities.cancelRunOnUIThread(vpVar);
                 skVar.W.run();
             }
         }

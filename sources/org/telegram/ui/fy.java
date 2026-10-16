@@ -14,9 +14,9 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class fy extends av0 {
+public final class fy extends zu0 {
     public final /* synthetic */ boolean[] a;
     public final /* synthetic */ yy b;
 
@@ -25,7 +25,7 @@ public final class fy extends av0 {
         this.a = zArr;
     }
 
-    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
+    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
     public final CharSequence C(int i10) {
         yy yyVar = this.b;
         if (i10 < 0 || i10 >= yyVar.D2.size() || !((MediaController.PhotoEntry) yyVar.D2.get(i10)).isVideo) {
@@ -34,40 +34,54 @@ public final class fy extends av0 {
         return null;
     }
 
-    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
+    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
     public final void D() {
         int i10;
         yy yyVar = this.b;
-        org.telegram.ui.Components.or0 or0Var = yyVar.G2;
-        if (or0Var != null) {
+        org.telegram.ui.Components.nr0 nr0Var = yyVar.G2;
+        if (nr0Var != null) {
             i10 = ((org.telegram.ui.ActionBar.m2) yyVar).currentAccount;
-            or0Var.i(i10, yyVar.D2);
+            nr0Var.i(i10, yyVar.D2);
         }
     }
 
-    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
-    public final kv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
+    public final jv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
         yy yyVar = this.b;
-        org.telegram.ui.Components.or0 or0Var = yyVar.G2;
-        org.telegram.ui.Components.z9 f7 = or0Var != null ? or0Var.f(i10) : null;
+        org.telegram.ui.Components.nr0 nr0Var = yyVar.G2;
+        org.telegram.ui.Components.z9 f7 = nr0Var != null ? nr0Var.f(i10) : null;
         if (f7 == null) {
             return null;
         }
         int[] iArr = new int[2];
         f7.getLocationInWindow(iArr);
-        kv0 kv0Var = new kv0();
-        kv0Var.b = iArr[0];
-        kv0Var.c = iArr[1];
-        kv0Var.d = yyVar.G2;
+        jv0 jv0Var = new jv0();
+        jv0Var.b = iArr[0];
+        jv0Var.c = iArr[1];
+        jv0Var.d = yyVar.G2;
         ImageReceiver imageReceiver = f7.getImageReceiver();
-        kv0Var.a = imageReceiver;
-        kv0Var.e = imageReceiver.getBitmapSafe();
-        kv0Var.k = f7.getScaleX();
-        kv0Var.h = new int[]{AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f)};
-        return kv0Var;
+        jv0Var.a = imageReceiver;
+        jv0Var.e = imageReceiver.getBitmapSafe();
+        jv0Var.k = f7.getScaleX();
+        jv0Var.h = new int[]{AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f)};
+        return jv0Var;
     }
 
-    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
+    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
+    public final int H() {
+        ArrayList arrayList = this.b.D2;
+        if (arrayList != null) {
+            return arrayList.size();
+        }
+        return 0;
+    }
+
+    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
+    public final boolean I() {
+        return this.b.l3();
+    }
+
+    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
     public final long a() {
         yy yyVar = this.b;
         if (yyVar.I2.isEmpty()) {
@@ -76,7 +90,7 @@ public final class fy extends av0 {
         return ((Long) yyVar.I2.get(0)).longValue();
     }
 
-    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
+    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
     public final boolean b() {
         yy yyVar = this.b;
         if (yyVar.I2.isEmpty()) {
@@ -96,8 +110,8 @@ public final class fy extends av0 {
         return true;
     }
 
-    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
-    public final CharSequence b0(int i10) {
+    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
+    public final CharSequence c0(int i10) {
         yy yyVar = this.b;
         ArrayList arrayList = yyVar.D2;
         if (arrayList == null || arrayList.isEmpty()) {
@@ -124,7 +138,7 @@ public final class fy extends av0 {
         return i11 == 0 ? LocaleController.formatPluralString("ShareSendPhotos", size, new Object[0]) : i12 == 0 ? LocaleController.formatPluralString("ShareSendVideos", size, new Object[0]) : LocaleController.formatPluralString("ShareSendItems", size, new Object[0]);
     }
 
-    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
+    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
     public final void e(CharSequence charSequence) {
         yy yyVar = this.b;
         ix ixVar = yyVar.B1;
@@ -143,7 +157,7 @@ public final class fy extends av0 {
         }
     }
 
-    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
+    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
     public final boolean h() {
         TLRPC.User user;
         yy yyVar = this.b;
@@ -165,17 +179,17 @@ public final class fy extends av0 {
         return true;
     }
 
-    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
+    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
     public final ImageReceiver.BitmapHolder j(int i10) {
-        org.telegram.ui.Components.or0 or0Var = this.b.G2;
-        org.telegram.ui.Components.z9 f7 = or0Var != null ? or0Var.f(i10) : null;
+        org.telegram.ui.Components.nr0 nr0Var = this.b.G2;
+        org.telegram.ui.Components.z9 f7 = nr0Var != null ? nr0Var.f(i10) : null;
         if (f7 != null) {
             return f7.getImageReceiver().getBitmapSafe();
         }
         return null;
     }
 
-    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
+    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
     public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
         int i13;
         ArrayList arrayList;
@@ -190,17 +204,18 @@ public final class fy extends av0 {
             }
             ixVar.setFieldText(charSequence);
         }
-        org.telegram.ui.Components.or0 or0Var = yyVar.G2;
-        if (or0Var != null) {
+        org.telegram.ui.Components.nr0 nr0Var = yyVar.G2;
+        if (nr0Var != null) {
             i13 = ((org.telegram.ui.ActionBar.m2) yyVar).currentAccount;
-            or0Var.i(i13, yyVar.D2);
+            nr0Var.i(i13, yyVar.D2);
         }
-        if ((z10 && i11 == 0) || yyVar.C2 == null || arrayList2.isEmpty()) {
+        if ((z10 && i11 == 0 && !z11) || yyVar.C2 == null || arrayList2.isEmpty()) {
             PhotoViewer.t1().G0(true, false);
             return;
         }
         yyVar.J2 = z10;
         yyVar.K2 = i11;
+        yyVar.M2 = z11;
         ArrayList arrayList3 = new ArrayList();
         for (int i14 = 0; i14 < arrayList2.size(); i14++) {
             arrayList3.add(MessagesStorage.TopicKey.of(((Long) arrayList2.get(i14)).longValue(), 0L));
@@ -209,7 +224,7 @@ public final class fy extends av0 {
         yyVar.C2.w(yyVar, arrayList3, yyVar.B1.getFieldText(), false, z10, i11, i12, null);
     }
 
-    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
+    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
     public final void s() {
         ix ixVar;
         org.telegram.ui.Components.md f12;
@@ -234,12 +249,12 @@ public final class fy extends av0 {
         }
     }
 
-    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
+    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
     public final boolean x(int i10) {
         return this.a[i10];
     }
 
-    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
+    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
     public final int k(int i10, VideoEditedInfo videoEditedInfo) {
         return i10;
     }

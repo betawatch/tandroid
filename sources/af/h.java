@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 import v7.f5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class h {
     public static final LinkedHashSet p = new LinkedHashSet(Arrays.asList(df.b.class, df.i.class, df.h.class, df.j.class, t.class, df.n.class, df.l.class));
@@ -176,7 +176,7 @@ public final class h {
     }
 
     public final ff.a h() {
-        return (ff.a) i2.d.g(1, this.n);
+        return (ff.a) i2.d.h(1, this.n);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:173:0x01a0, code lost:
@@ -214,7 +214,7 @@ public final class h {
         d dVar2;
         j jVar;
         int i13;
-        StringBuilder h;
+        StringBuilder e;
         d dVar3;
         d dVar4;
         d dVar5;
@@ -258,19 +258,19 @@ public final class h {
         int i22 = 1;
         for (ff.a aVar2 : arrayList.subList(1, arrayList.size())) {
             g();
-            a h10 = aVar2.h(this);
-            if (h10 == null) {
+            a h = aVar2.h(this);
+            if (h == null) {
                 break;
             }
-            if (h10.b) {
+            if (h.b) {
                 e(aVar2);
                 return;
             }
-            int i23 = h10.a;
+            int i23 = h.a;
             if (i23 != -1) {
                 k(i23);
             } else {
-                int i24 = h10.c;
+                int i24 = h.c;
                 if (i24 != -1) {
                     j(i24);
                 }
@@ -446,8 +446,8 @@ public final class h {
                                                         if (charAt10 == '=') {
                                                             if (f5.c(f5.b('=', charSequence3, i36 + 1, charSequence3.length()), charSequence3.length(), charSequence3) >= charSequence3.length()) {
                                                                 i13 = 1;
-                                                                if (i13 > 0 && (h = iVar2.h()) != null) {
-                                                                    j jVar2 = new j(i13, h.toString());
+                                                                if (i13 > 0 && (e = iVar2.e()) != null) {
+                                                                    j jVar2 = new j(i13, e.toString());
                                                                     ff.a[] aVarArr4 = new ff.a[1];
                                                                     aVarArr4[i10] = jVar2;
                                                                     dVar3 = new d(aVarArr4);
@@ -458,7 +458,7 @@ public final class h {
                                                         }
                                                         i13 = i10;
                                                         if (i13 > 0) {
-                                                            j jVar22 = new j(i13, h.toString());
+                                                            j jVar22 = new j(i13, e.toString());
                                                             ff.a[] aVarArr42 = new ff.a[1];
                                                             aVarArr42[i10] = jVar22;
                                                             dVar3 = new d(aVarArr42);
@@ -543,7 +543,7 @@ public final class h {
                                         if (i43 < 4) {
                                             int i44 = this.e;
                                             int i45 = this.c + i43;
-                                            int i46 = iVar2.h() != null ? 1 : i10;
+                                            int i46 = iVar2.e() != null ? 1 : i10;
                                             CharSequence charSequence5 = this.a;
                                             char charAt11 = charSequence5.charAt(i44);
                                             if (charAt11 == '*' || charAt11 == '+' || charAt11 == '-') {
@@ -755,8 +755,8 @@ public final class h {
                                         break;
                                     default:
                                         CharSequence charSequence9 = this.a;
-                                        StringBuilder h11 = iVar2.h();
-                                        if (h11 != null && h11.toString().contains("|") && !h11.toString().contains("\n")) {
+                                        StringBuilder e7 = iVar2.e();
+                                        if (e7 != null && e7.toString().contains("|") && !e7.toString().contains("\n")) {
                                             CharSequence subSequence = charSequence9.subSequence(this.b, charSequence9.length());
                                             ArrayList arrayList3 = new ArrayList();
                                             int i60 = i10;
@@ -807,7 +807,7 @@ public final class h {
                                             }
                                             arrayList3 = null;
                                             if (arrayList3 != null && !arrayList3.isEmpty()) {
-                                                ArrayList i65 = ze.a.i(h11);
+                                                ArrayList i65 = ze.a.i(e7);
                                                 if (arrayList3.size() >= i65.size()) {
                                                     ze.a aVar5 = new ze.a(arrayList3, i65);
                                                     ff.a[] aVarArr11 = new ff.a[1];
@@ -856,14 +856,14 @@ public final class h {
                                 }
                             }
                             if (dVar.b) {
-                                ff.a h12 = h();
+                                ff.a h10 = h();
                                 z10 = true;
                                 a1.g.y(1, arrayList);
-                                this.o.remove(h12);
-                                if (h12 instanceof r) {
-                                    b((r) h12);
+                                this.o.remove(h10);
+                                if (h10 instanceof r) {
+                                    b((r) h10);
                                 }
-                                h12.e().g();
+                                h10.e().g();
                             } else {
                                 z10 = true;
                             }

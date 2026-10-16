@@ -31,17 +31,17 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.aa0;
 import org.telegram.ui.Components.ea0;
 import org.telegram.ui.Components.ha0;
 import org.telegram.ui.Components.ix0;
-import org.telegram.ui.Components.p61;
+import org.telegram.ui.Components.q61;
 import org.telegram.ui.Components.x90;
-import org.telegram.ui.a11;
+import org.telegram.ui.z01;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public abstract class j extends FrameLayout {
     public static final int a0 = AndroidUtilities.dp(76.0f);
@@ -103,22 +103,22 @@ public abstract class j extends FrameLayout {
         TextView textView = new TextView(context);
         this.h = textView;
         textView.setVisibility(8);
-        yh.n(org.telegram.ui.ActionBar.g6.z6, c6Var, textView, 1, 13.0f);
+        sk.o(org.telegram.ui.ActionBar.g6.z6, c6Var, textView, 1, 13.0f);
         textView.setLines(1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         textView.setGravity(LocaleController.isRTL ? 5 : 3);
         textView.setImportantForAccessibility(2);
         textView.setFocusable(false);
-        frameLayout.addView(textView, w7.a6.a(-2.0f, 18.0f, 0.0f, 18.0f, 10.0f, -2, (LocaleController.isRTL ? 5 : 3) | 80));
+        frameLayout.addView(textView, w7.z5.a(-2.0f, 18.0f, 0.0f, 18.0f, 10.0f, -2, (LocaleController.isRTL ? 5 : 3) | 80));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.s = frameLayout2;
         Drawable mutate = context.getResources().getDrawable(R.drawable.gradient_bottom).mutate();
         int i10 = org.telegram.ui.ActionBar.g6.d6;
         mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(i10, c6Var), PorterDuff.Mode.SRC_ATOP));
         frameLayout2.setBackground(mutate);
-        addView(frameLayout2, w7.a6.a(12.0f, 16.0f, 0.0f, 16.0f, 0.0f, -1, 87));
-        addView(frameLayout, w7.a6.e(-1, -1, 55));
+        addView(frameLayout2, w7.z5.a(12.0f, 16.0f, 0.0f, 16.0f, 0.0f, -1, 87));
+        addView(frameLayout, w7.z5.e(-1, -1, 55));
         c cVar = new c(context);
         cVar.a = false;
         this.n = cVar;
@@ -137,8 +137,8 @@ public abstract class j extends FrameLayout {
         mutate2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(i10, c6Var), PorterDuff.Mode.MULTIPLY));
         frameLayout3.setBackground(mutate2);
         frameLayout3.setPadding(AndroidUtilities.dp(4.0f) + frameLayout3.getPaddingLeft(), AndroidUtilities.dp(1.0f), 0, AndroidUtilities.dp(3.0f));
-        frameLayout3.addView(cVar, w7.a6.d(-2.0f, -2));
-        addView(frameLayout3, w7.a6.a(-2.0f, 18.0f - (frameLayout3.getPaddingLeft() / AndroidUtilities.density), 0.0f, 18.0f - (frameLayout3.getPaddingRight() / AndroidUtilities.density), 6.0f, -2, 85));
+        frameLayout3.addView(cVar, w7.z5.d(-2.0f, -2));
+        addView(frameLayout3, w7.z5.a(-2.0f, 18.0f - (frameLayout3.getPaddingLeft() / AndroidUtilities.density), 0.0f, 18.0f - (frameLayout3.getPaddingRight() / AndroidUtilities.density), 6.0f, -2, 85));
         paint.setColor(org.telegram.ui.ActionBar.g6.w0(i10, c6Var));
         setWillNotDraw(false);
     }
@@ -300,10 +300,10 @@ public abstract class j extends FrameLayout {
             hVar2 = new h(this, layout, clickableSpan, f7);
         }
         this.F = hVar2;
-        if (clickableSpan instanceof p61) {
-            String url = ((p61) clickableSpan).getURL();
+        if (clickableSpan instanceof q61) {
+            String url = ((q61) clickableSpan).getURL();
             if (url.startsWith("@") || url.startsWith("#") || url.startsWith("$") || url.startsWith("/")) {
-                ((a11) this).c0.e.B4(url, this.F);
+                ((z01) this).c0.e.B4(url, this.F);
                 return;
             }
             return;
@@ -314,7 +314,7 @@ public abstract class j extends FrameLayout {
         }
         String url2 = ((URLSpan) clickableSpan).getURL();
         if (!AndroidUtilities.shouldShowUrlInAlert(url2)) {
-            pf.d.q(getContext(), Uri.parse(url2), true, true, this.F);
+            pf.d.p(getContext(), Uri.parse(url2), true, true, this.F);
         } else {
             org.telegram.ui.Components.g5.q0(this.H, url2, true, true, true, false, this.F, null, null);
         }

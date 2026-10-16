@@ -13,11 +13,11 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.Components.p80;
+import org.telegram.ui.Components.o80;
 import org.telegram.ui.ga;
 import org.telegram.ui.qe;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public final class p {
     public static volatile p[] m = new p[4];
@@ -126,7 +126,7 @@ public final class p {
         int i11 = this.a;
         getconnectedstarrefbot.peer = MessagesController.getInstance(i11).getInputPeer(j10);
         getconnectedstarrefbot.bot = MessagesController.getInstance(i11).getInputUser(j11);
-        int sendRequest = ConnectionsManager.getInstance(i11).sendRequest(getconnectedstarrefbot, new p80(this, a2Var, j11, callback));
+        int sendRequest = ConnectionsManager.getInstance(i11).sendRequest(getconnectedstarrefbot, new o80(this, a2Var, j11, callback));
         a2Var.g0 = true;
         a2Var.setOnCancelListener(new ga(this, sendRequest, 9));
         a2Var.q(200L);

@@ -18,7 +18,7 @@ import java.util.WeakHashMap;
 import ji.w4;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class a extends View.AccessibilityDelegate {
     public final b a;
@@ -54,9 +54,9 @@ public final class a extends View.AccessibilityDelegate {
         Object obj;
         int i10;
         s0.c cVar = new s0.c(accessibilityNodeInfo);
-        WeakHashMap weakHashMap = j0.a;
+        WeakHashMap weakHashMap = i0.a;
         if (Build.VERSION.SDK_INT >= 28) {
-            tag = Boolean.valueOf(e0.c(view));
+            tag = Boolean.valueOf(d0.c(view));
         } else {
             tag = view.getTag(R.id.tag_screen_reader_focusable);
             if (!Boolean.class.isInstance(tag)) {
@@ -67,7 +67,7 @@ public final class a extends View.AccessibilityDelegate {
         int i11 = 0;
         cVar.n(bool != null && bool.booleanValue());
         if (Build.VERSION.SDK_INT >= 28) {
-            tag2 = Boolean.valueOf(e0.b(view));
+            tag2 = Boolean.valueOf(d0.b(view));
         } else {
             tag2 = view.getTag(R.id.tag_accessibility_heading);
             if (!Boolean.class.isInstance(tag2)) {
@@ -78,7 +78,7 @@ public final class a extends View.AccessibilityDelegate {
         cVar.k(bool2 != null && bool2.booleanValue());
         int i12 = Build.VERSION.SDK_INT;
         if (i12 >= 28) {
-            tag3 = e0.a(view);
+            tag3 = d0.a(view);
         } else {
             tag3 = view.getTag(R.id.tag_accessibility_pane_title);
             if (!CharSequence.class.isInstance(tag3)) {
@@ -87,7 +87,7 @@ public final class a extends View.AccessibilityDelegate {
         }
         cVar.m((CharSequence) tag3);
         if (i12 >= 30) {
-            obj = g0.b(view);
+            obj = f0.b(view);
         } else {
             Object tag4 = view.getTag(R.id.tag_state_description);
             obj = CharSequence.class.isInstance(tag4) ? tag4 : null;

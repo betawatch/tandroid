@@ -6,18 +6,18 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.i71;
+import org.telegram.ui.Components.m61;
 import s4.b1;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public abstract class h0 extends FrameLayout {
     public org.telegram.ui.ActionBar.k a;
     public final kh.f b;
     public final FrameLayout c;
-    public h71 d;
+    public i71 d;
     public boolean e;
     public final /* synthetic */ k0 f;
 
@@ -29,7 +29,7 @@ public abstract class h0 extends FrameLayout {
         this.c = frameLayout;
         frameLayout.setPadding(0, 0, 0, 0);
         frameLayout.setClipToPadding(true);
-        addView(frameLayout, a6.e(-1, -1, 119));
+        addView(frameLayout, z5.e(-1, -1, 119));
         kh.f fVar = new kh.f(getContext());
         this.b = fVar;
         fVar.setupColorKey(g6.a7);
@@ -37,7 +37,7 @@ public abstract class h0 extends FrameLayout {
         fVar.setFadeHeightBottom(AndroidUtilities.dp(24.0f));
         fVar.setFadeZoneTop(AndroidUtilities.dp(64.0f) + AndroidUtilities.statusBarHeight);
         fVar.a.b(-AndroidUtilities.dp(20.0f), false);
-        frameLayout.addView(fVar, a6.g());
+        frameLayout.addView(fVar, z5.g());
     }
 
     public final void a() {
@@ -56,7 +56,7 @@ public abstract class h0 extends FrameLayout {
             View childAt = this.d.getChildAt(i10);
             b1 T = this.d.T(childAt);
             if (T != null) {
-                l61 G = this.d.W2.G(T.b());
+                m61 G = this.d.W2.G(T.b());
                 if (G != null && G.d != 99) {
                     f7 = Math.min(childAt.getY() + this.c.getPaddingTop(), f7);
                 }

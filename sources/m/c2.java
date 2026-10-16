@@ -1,79 +1,42 @@
 package m;
 
-import android.os.Handler;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.ui.Components.iz;
-import org.telegram.ui.Components.rz;
-import org.telegram.ui.Components.vy;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class c2 implements View.OnTouchListener {
+public final class c2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ f2 b;
 
-    public /* synthetic */ c2(Object obj, int i10) {
+    public /* synthetic */ c2(f2 f2Var, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = f2Var;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        f2 f2Var = this.b;
+        switch (i10) {
             case 0:
-                d2 d2Var = (d2) this.b;
-                a2 a2Var = d2Var.G;
-                Handler handler = d2Var.K;
-                x xVar = d2Var.O;
-                int action = motionEvent.getAction();
-                int x10 = (int) motionEvent.getX();
-                int y3 = (int) motionEvent.getY();
-                if (action == 0 && xVar != null && xVar.isShowing() && x10 >= 0 && x10 < xVar.getWidth() && y3 >= 0 && y3 < xVar.getHeight()) {
-                    handler.postDelayed(a2Var, 250L);
-                    break;
-                } else if (action == 1) {
-                    handler.removeCallbacks(a2Var);
-                    break;
-                }
-                break;
-            case 1:
-                vy vyVar = (vy) this.b;
-                if (motionEvent.getAction() != 0) {
-                    if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                        vyVar.F.f = false;
-                        break;
-                    }
-                } else {
-                    vyVar.F.f = true;
-                    break;
-                }
-                break;
-            case 2:
-                iz izVar = (iz) this.b;
-                if (motionEvent.getAction() != 0) {
-                    if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                        izVar.G.f = false;
-                        break;
-                    }
-                } else {
-                    izVar.G.f = true;
+                t1 t1Var = f2Var.c;
+                if (t1Var != null) {
+                    t1Var.setListSelectionHidden(true);
+                    t1Var.requestLayout();
                     break;
                 }
                 break;
             default:
-                rz rzVar = (rz) this.b;
-                if (motionEvent.getAction() != 0) {
-                    if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                        rzVar.Q.f = false;
+                t1 t1Var2 = f2Var.c;
+                if (t1Var2 != null) {
+                    WeakHashMap weakHashMap = r0.i0.a;
+                    if (t1Var2.isAttachedToWindow() && f2Var.c.getCount() > f2Var.c.getChildCount() && f2Var.c.getChildCount() <= f2Var.x) {
+                        f2Var.O.setInputMethodMode(2);
+                        f2Var.g();
                         break;
                     }
-                } else {
-                    rzVar.Q.f = true;
-                    break;
                 }
                 break;
         }
-        return false;
     }
 }

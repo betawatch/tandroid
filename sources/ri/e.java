@@ -1,112 +1,229 @@
 package ri;
 
-import android.os.Bundle;
-import java.io.File;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.e3;
-import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.db;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.fo;
-import yh.p1;
-import zh.r3;
+import android.hardware.camera2.CameraDevice;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e implements Runnable {
+public final class e extends CameraDevice.StateCallback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ j b;
 
-    public /* synthetic */ e(Object obj, long j10, Object obj2, int i10) {
+    public /* synthetic */ e(j jVar, int i10) {
         this.a = i10;
-        this.c = obj;
-        this.b = j10;
-        this.d = obj2;
+        this.b = jVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.hardware.camera2.CameraDevice.StateCallback
+    public final void onClosed(CameraDevice cameraDevice) {
         switch (this.a) {
             case 0:
-                q qVar = (q) this.c;
-                File file = (File) this.d;
-                if (qVar.m == o.f) {
-                    long j10 = this.b;
-                    qVar.p = j10;
-                    qVar.r = 0L;
-                    qVar.s = q.q(j10);
-                    qVar.d();
-                    qVar.t(file);
-                    break;
-                }
-                break;
-            case 1:
-                cc.e eVar = (cc.e) this.c;
-                Exception exc = (Exception) this.d;
-                q qVar2 = (q) eVar.c;
-                if (this.b == qVar2.o) {
-                    qVar2.n = null;
-                    qVar2.g(exc);
-                    break;
-                }
-                break;
-            case 2:
-                p1 p1Var = (p1) this.c;
-                Utilities.Callback callback = (Utilities.Callback) this.d;
-                p1Var.getClass();
-                m2 U = LaunchActivity.U();
-                if (U != null) {
-                    p1Var.dismiss();
-                    if (callback != null) {
-                        callback.run(Boolean.FALSE);
+                if (!j.d(this.b, cameraDevice) && !j.e(this.b, cameraDevice)) {
+                    j jVar = this.b;
+                    if (cameraDevice != jVar.s0) {
+                        if (!jVar.X) {
+                            if (jVar.Y) {
+                                jVar.Y = false;
+                                if (jVar.V) {
+                                    this.b.I();
+                                    break;
+                                }
+                            }
+                        } else {
+                            jVar.j.b("camera closed for sequential switch: elapsedMs=" + j.z(this.b.B0) + ", switchElapsedMs=" + j.z(this.b.H0));
+                            j jVar2 = this.b;
+                            jVar2.X = false;
+                            if (jVar2.V) {
+                                this.b.I();
+                                break;
+                            }
+                        }
+                    } else {
+                        jVar.s0 = null;
+                        jVar.j.b("standby camera closed: id=" + cameraDevice.getId());
+                        break;
                     }
-                    Bundle bundle = new Bundle();
-                    bundle.putLong("user_id", this.b);
-                    bundle.putBoolean("open_gifts", true);
-                    U.presentFragment(new ProfileActivity(bundle, null));
-                    break;
                 }
-                break;
-            case 3:
-                r3 r3Var = (r3) this.c;
-                Runnable runnable = (Runnable) this.d;
-                r3Var.r2((int) this.b, r3Var.getContext(), true);
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 4:
-                r3 r3Var2 = (r3) this.c;
-                pf.c cVar = (pf.c) this.d;
-                r3Var2.getClass();
-                cVar.b();
-                r3Var2.r2((int) this.b, r3Var2.getContext(), true);
                 break;
             default:
-                e3[] e3VarArr = (e3[]) this.c;
-                TL_stories.Boost boost = (TL_stories.Boost) this.d;
-                e3 e3Var = e3VarArr[0];
-                if (e3Var != null) {
-                    e3Var.dismiss();
-                }
-                m2 U2 = LaunchActivity.U();
-                if (U2 != null) {
-                    U2.presentFragment(fo.V9(boost.giveaway_msg_id, this.b));
+                j jVar3 = this.b;
+                if (!j.d(jVar3, cameraDevice) && !j.e(jVar3, cameraDevice) && cameraDevice == jVar3.s0) {
+                    jVar3.s0 = null;
+                    jVar3.j.b("standby camera closed: id=" + cameraDevice.getId());
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ e(db dbVar, Object obj, long j10, int i10) {
-        this.a = i10;
-        this.c = dbVar;
-        this.d = obj;
-        this.b = j10;
+    @Override // android.hardware.camera2.CameraDevice.StateCallback
+    public final void onDisconnected(CameraDevice cameraDevice) {
+        switch (this.a) {
+            case 0:
+                j jVar = this.b;
+                boolean z10 = false;
+                jVar.W = false;
+                jVar.j.b("camera disconnected: id=" + cameraDevice.getId());
+                if (!this.b.G(cameraDevice)) {
+                    j jVar2 = this.b;
+                    if (cameraDevice != jVar2.s0) {
+                        if (jVar2.V && !this.b.b0) {
+                            j jVar3 = this.b;
+                            if (!jVar3.X && !jVar3.Y) {
+                                z10 = true;
+                            }
+                        }
+                        j jVar4 = this.b;
+                        if (jVar4.z == cameraDevice) {
+                            jVar4.q();
+                            this.b.z = null;
+                        }
+                        cameraDevice.close();
+                        if (z10) {
+                            this.b.N(new IllegalStateException("Camera device disconnected"));
+                            break;
+                        }
+                    } else if (!jVar2.m0) {
+                        jVar2.s0 = null;
+                        jVar2.t0 = cameraDevice;
+                        cameraDevice.close();
+                        this.b.y("standby device disconnected", null);
+                        break;
+                    } else {
+                        j.b(jVar2, cameraDevice, "disconnected", null);
+                        break;
+                    }
+                } else {
+                    this.b.j.b("camera disconnected while warm-switch recovery is closing it: id=" + cameraDevice.getId());
+                    cameraDevice.close();
+                    break;
+                }
+                break;
+            default:
+                j jVar5 = this.b;
+                if (!jVar5.G(cameraDevice)) {
+                    j.b(jVar5, cameraDevice, "disconnected", null);
+                    break;
+                } else {
+                    jVar5.j.b("warm camera disconnected while recovery is closing it: id=" + cameraDevice.getId());
+                    cameraDevice.close();
+                    break;
+                }
+        }
+    }
+
+    @Override // android.hardware.camera2.CameraDevice.StateCallback
+    public final void onError(CameraDevice cameraDevice, int i10) {
+        switch (this.a) {
+            case 0:
+                j jVar = this.b;
+                jVar.W = false;
+                if (!jVar.G(cameraDevice)) {
+                    if (cameraDevice != jVar.s0) {
+                        if (jVar.z == cameraDevice) {
+                            jVar.q();
+                            jVar.z = null;
+                        }
+                        cameraDevice.close();
+                        jVar.N(new IllegalStateException("Camera device error: " + j.c(i10) + " (" + i10 + ")"));
+                        break;
+                    } else if (!jVar.m0) {
+                        jVar.s0 = null;
+                        jVar.t0 = cameraDevice;
+                        cameraDevice.close();
+                        jVar.y("standby device error=" + j.c(i10) + " (" + i10 + ")", null);
+                        break;
+                    } else {
+                        j.b(jVar, cameraDevice, "error=" + j.c(i10) + " (" + i10 + ")", null);
+                        break;
+                    }
+                } else {
+                    jVar.j.b("camera error while warm-switch recovery is closing it: id=" + cameraDevice.getId() + ", error=" + j.c(i10) + " (" + i10 + ")");
+                    cameraDevice.close();
+                    break;
+                }
+            default:
+                j jVar2 = this.b;
+                if (!jVar2.G(cameraDevice)) {
+                    j.b(jVar2, cameraDevice, "error=" + j.c(i10) + " (" + i10 + ")", new IllegalStateException("Warm camera device error: " + j.c(i10) + " (" + i10 + ")"));
+                    break;
+                } else {
+                    jVar2.j.b("warm camera error while recovery is closing it: id=" + cameraDevice.getId() + ", error=" + j.c(i10) + " (" + i10 + ")");
+                    cameraDevice.close();
+                    break;
+                }
+        }
+    }
+
+    @Override // android.hardware.camera2.CameraDevice.StateCallback
+    public final void onOpened(CameraDevice cameraDevice) {
+        String str;
+        switch (this.a) {
+            case 0:
+                j jVar = this.b;
+                jVar.W = false;
+                n nVar = jVar.j;
+                StringBuilder sb2 = new StringBuilder("camera opened: id=");
+                sb2.append(cameraDevice.getId());
+                sb2.append(", elapsedMs=");
+                sb2.append(j.z(this.b.F0));
+                if (this.b.Z) {
+                    str = ", switchElapsedMs=" + j.z(this.b.H0);
+                } else {
+                    str = "";
+                }
+                sb2.append(str);
+                nVar.b(sb2.toString());
+                if (this.b.V) {
+                    j jVar2 = this.b;
+                    if (!jVar2.X) {
+                        jVar2.z = cameraDevice;
+                        if (!jVar2.m0) {
+                            jVar2.u();
+                            break;
+                        } else if (!jVar2.r0 && jVar2.s0 != null) {
+                            j.a(jVar2);
+                            break;
+                        } else {
+                            jVar2.j.b("active camera opened; waiting for dual peer before sessions");
+                            break;
+                        }
+                    }
+                }
+                cameraDevice.close();
+                break;
+            default:
+                j jVar3 = this.b;
+                jVar3.r0 = false;
+                if (jVar3.V && !this.b.b0) {
+                    j jVar4 = this.b;
+                    if (!jVar4.l0 && jVar4.w0 != null && cameraDevice.getId().equals(this.b.w0.a)) {
+                        j jVar5 = this.b;
+                        jVar5.s0 = cameraDevice;
+                        jVar5.j.b("warm camera opened: id=" + cameraDevice.getId() + ", facing=" + this.b.w0.b + ", elapsedMs=" + j.z(this.b.A0));
+                        j jVar6 = this.b;
+                        if (jVar6.z != null && jVar6.A == null && !jVar6.X) {
+                            if (jVar6.m0) {
+                                jVar6.j.b("both camera devices opened; configuring dual sessions");
+                                j.a(this.b);
+                            } else {
+                                jVar6.j.b("both camera devices opened; configuring active session");
+                                this.b.u();
+                            }
+                        }
+                        j jVar7 = this.b;
+                        k0 k0Var = jVar7.x0;
+                        if (k0Var != null && k0Var == jVar7.w0.b) {
+                            jVar7.x0 = null;
+                            if (!jVar7.c0(k0Var)) {
+                                this.b.t();
+                                break;
+                            }
+                        }
+                    }
+                }
+                this.b.j.b("stale warm camera open ignored: id=" + cameraDevice.getId());
+                cameraDevice.close();
+                break;
+        }
     }
 }

@@ -1,6 +1,6 @@
 package z7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class te {
     public final Integer a;
@@ -8,7 +8,7 @@ public final class te {
     public final Integer c;
     public final Integer d;
 
-    public /* synthetic */ te(qi.e eVar) {
+    public /* synthetic */ te(pi.e eVar) {
         this.a = (Integer) eVar.a;
         this.b = (Integer) eVar.b;
         this.c = (Integer) eVar.c;

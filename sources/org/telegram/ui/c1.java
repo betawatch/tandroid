@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class c1 extends View implements DownloadController.FileDownloadProgressListener, org.telegram.ui.Cells.n9 {
     public int E;
@@ -330,7 +330,7 @@ public final class c1 extends View implements DownloadController.FileDownloadPro
             if (q6 != null) {
                 int height = this.c.d.getHeight() + AndroidUtilities.dp(8.0f);
                 this.s = height;
-                dp = org.telegram.messenger.yh.c(8.0f, height, dp);
+                dp = org.telegram.messenger.g0.C(8.0f, height, dp);
             }
             i12 = dp;
             TL_iv.pageBlockAudio pageblockaudio3 = this.K;
@@ -344,16 +344,16 @@ public final class c1 extends View implements DownloadController.FileDownloadPro
             }
             String musicAuthor = this.M.getMusicAuthor(false);
             String musicTitle = this.M.getMusicTitle(false);
-            int c10 = org.telegram.messenger.yh.c(50.0f, this.F, dp3);
-            this.y = c10;
-            int dp5 = (size - c10) - AndroidUtilities.dp(18.0f);
+            int C = org.telegram.messenger.g0.C(50.0f, this.F, dp3);
+            this.y = C;
+            int dp5 = (size - C) - AndroidUtilities.dp(18.0f);
             if (TextUtils.isEmpty(musicTitle) && TextUtils.isEmpty(musicAuthor)) {
                 this.w = null;
                 this.E = ((dp3 - AndroidUtilities.dp(30.0f)) / 2) + this.G;
             } else {
                 SpannableStringBuilder spannableStringBuilder = (TextUtils.isEmpty(musicTitle) || TextUtils.isEmpty(musicAuthor)) ? !TextUtils.isEmpty(musicTitle) ? new SpannableStringBuilder(musicTitle) : new SpannableStringBuilder(musicAuthor) : new SpannableStringBuilder(a1.g.D(musicAuthor, " - ", musicTitle));
                 if (!TextUtils.isEmpty(musicAuthor)) {
-                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.i61(AndroidUtilities.bold()), 0, musicAuthor.length(), 18);
+                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.j61(AndroidUtilities.bold()), 0, musicAuthor.length(), 18);
                 }
                 CharSequence ellipsize = TextUtils.ellipsize(spannableStringBuilder, org.telegram.ui.ActionBar.g6.O2, dp5, TextUtils.TruncateAt.END);
                 d3 d3Var = new d3(this.a);

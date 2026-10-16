@@ -8,9 +8,10 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import m.h3;
 import v7.u6;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public final class q implements f0 {
     public final jg.f a;
@@ -199,16 +200,16 @@ public final class q implements f0 {
                         wVar.b = ((b2.o0) n0Var3.get(i10)).f;
                         wVar.a = ((b2.o0) n0Var3.get(i10)).g;
                         b2.x xVar = new b2.x(wVar);
-                        org.telegram.ui.web.c0 c0Var3 = new org.telegram.ui.web.c0(9, this, xVar);
+                        org.telegram.ui.web.o0 o0Var = new org.telegram.ui.web.o0(9, this, xVar);
                         qf.b bVar = this.b;
-                        rg.b0 b0Var = new rg.b0(c0Var3, 8);
-                        li.k kVar = new li.k(6);
+                        rg.b0 b0Var = new rg.b0(o0Var, 8);
+                        h3 h3Var = new h3(5);
                         oa.d dVar = new oa.d(27);
-                        if (this.c.b0(xVar)) {
+                        if (this.c.a0(xVar)) {
                             b2.w a12 = xVar.a();
                             a12.r = b2.w0.n("application/x-media3-cues");
                             a12.j = xVar.s;
-                            a12.P = this.c.J(xVar);
+                            a12.P = this.c.H(xVar);
                             xVar = new b2.x(a12);
                         }
                         b2.x xVar2 = xVar;
@@ -225,7 +226,7 @@ public final class q implements f0 {
                         b2.k0 k0Var4 = parse != null ? new b2.k0(parse, null, g0Var4.a != null ? new b2.h0(g0Var4) : uri, null, list3, null, x1Var, -9223372036854775807L) : uri;
                         b2.p0 p0Var3 = new b2.p0("", new b2.f0(d0Var2), k0Var4, new b2.j0(i0Var), b2.s0.L, l0Var3);
                         k0Var4.getClass();
-                        aVarArr[i11] = new y0(p0Var3, bVar, b0Var, kVar.A(p0Var3), dVar, 1048576, xVar2);
+                        aVarArr[i11] = new y0(p0Var3, bVar, b0Var, h3Var.B(p0Var3), dVar, 1048576, xVar2);
                     } else {
                         qf.b bVar2 = this.b;
                         bVar2.getClass();

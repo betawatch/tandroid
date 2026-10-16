@@ -1,49 +1,59 @@
 package n7;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final class l extends m {
-    public final transient int c;
-    public final transient int d;
-    public final /* synthetic */ m e;
+public final class l extends n {
+    public final transient n c;
 
-    public l(m mVar, int i10, int i11) {
-        this.e = mVar;
-        this.c = i10;
-        this.d = i11;
+    public l(n nVar) {
+        this.c = nVar;
+    }
+
+    @Override // n7.n, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean contains(Object obj) {
+        return this.c.contains(obj);
     }
 
     @Override // java.util.List
     public final Object get(int i10) {
-        a.e(i10, this.d);
-        return this.e.get(i10 + this.c);
+        n nVar = this.c;
+        a.e(i10, nVar.size());
+        return nVar.get((nVar.size() - 1) - i10);
     }
 
-    @Override // n7.h
-    public final int m() {
-        return this.e.n() + this.c + this.d;
+    @Override // n7.n, java.util.List
+    public final int indexOf(Object obj) {
+        int lastIndexOf = this.c.lastIndexOf(obj);
+        if (lastIndexOf >= 0) {
+            return (r0.size() - 1) - lastIndexOf;
+        }
+        return -1;
     }
 
-    @Override // n7.h
-    public final int n() {
-        return this.e.n() + this.c;
+    @Override // n7.n, java.util.List
+    public final int lastIndexOf(Object obj) {
+        int indexOf = this.c.indexOf(obj);
+        if (indexOf >= 0) {
+            return (r0.size() - 1) - indexOf;
+        }
+        return -1;
     }
 
-    @Override // n7.h
-    public final Object[] p() {
-        return this.e.p();
+    @Override // n7.n
+    public final n q() {
+        return this.c;
     }
 
-    @Override // n7.m, java.util.List
+    @Override // n7.n, java.util.List
     /* renamed from: r */
-    public final m subList(int i10, int i11) {
-        a.m(i10, i11, this.d);
-        int i12 = this.c;
-        return this.e.subList(i10 + i12, i11 + i12);
+    public final n subList(int i10, int i11) {
+        n nVar = this.c;
+        a.m(i10, i11, nVar.size());
+        return nVar.subList(nVar.size() - i11, nVar.size() - i10).q();
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final int size() {
-        return this.d;
+        return this.c.size();
     }
 }

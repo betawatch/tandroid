@@ -21,7 +21,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.c6;
@@ -29,16 +29,17 @@ import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.h11;
+import org.telegram.ui.Components.i11;
 import org.telegram.ui.Components.k9;
 import org.telegram.ui.Components.n9;
 import org.telegram.ui.Components.z9;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.fo;
 import org.telegram.ui.x60;
-import w7.a6;
+import w7.b6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class i0 extends LinearLayout {
     public TextView a;
@@ -307,21 +308,21 @@ public final class i0 extends LinearLayout {
                                     n9Var.b(i21, user, i33);
                                 }
                                 n9Var.a(false);
-                                addView(n9Var, a6.t(((min - 1) * 30) + 72, 72, 1, 0, 16, 0, 13));
+                                addView(n9Var, z5.t(((min - 1) * 30) + 72, 72, 1, 0, 16, 0, 13));
                                 TextView textView = new TextView(context);
                                 textView.setGravity(17);
-                                yh.k(20.0f, i17, textView);
+                                sk.k(20.0f, i17, textView);
                                 int i55 = g6.j5;
                                 c6Var = ((e3) j0Var).resourcesProvider;
                                 textView.setTextColor(g6.w0(i55, c6Var));
                                 textView.setText(LocaleController.getString(R.string.InvitePremiumBlockedTitle));
-                                addView(textView, a6.t(-1, -2, 1, 32, 0, 32, 9));
+                                addView(textView, z5.t(-1, -2, 1, 32, 0, 32, 9));
                                 TextView textView2 = new TextView(context);
                                 textView2.setGravity(17);
                                 textView2.setTextSize(1, 14.0f);
                                 c6Var2 = ((e3) j0Var).resourcesProvider;
                                 textView2.setTextColor(g6.w0(i55, c6Var2));
-                                addView(textView2, a6.t(-1, -2, 1, 32, 0, 32, 19));
+                                addView(textView2, z5.t(-1, -2, 1, 32, 0, 32, 19));
                                 boolean z13 = i42 != 34;
                                 arrayList4 = j0Var.C0;
                                 if (arrayList4 != null) {
@@ -358,7 +359,7 @@ public final class i0 extends LinearLayout {
                                             int size6 = arrayList3.size() - 2;
                                             int themedColor = j0Var.getThemedColor(g6.h5);
                                             n9Var.b = new a1(g6.Lj, g6.Mj, -1, -1, null);
-                                            n9Var.c = new h11(i2.d.i(size6, "+"), 12.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+                                            n9Var.c = new i11(i2.d.j(size6, "+"), 12.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
                                             Paint paint = new Paint(1);
                                             n9Var.d = paint;
                                             paint.setColor(themedColor);
@@ -386,7 +387,7 @@ public final class i0 extends LinearLayout {
                                             c6Var3 = ((e3) j0Var).resourcesProvider;
                                             final int i59 = 0;
                                             q0 q0Var = new q0(context, c6Var3, false);
-                                            w7.c6.b(q0Var, 0.02f, 1.2f);
+                                            b6.b(q0Var, 0.02f, 1.2f);
                                             q0Var.a(LocaleController.getString(R.string.InvitePremiumBlockedSubscribe), new View.OnClickListener(this) { // from class: sg.g0
                                                 public final /* synthetic */ i0 b;
 
@@ -417,7 +418,7 @@ public final class i0 extends LinearLayout {
                                             i29 = ((e3) j0Var).backgroundPaddingLeft;
                                             float f14 = (i29 / AndroidUtilities.density) + 4.0f;
                                             i30 = ((e3) j0Var).backgroundPaddingLeft;
-                                            addView(q0Var, a6.k(f14, 0.0f, (i30 / AndroidUtilities.density) + 4.0f, 18.0f, -1, 48));
+                                            addView(q0Var, z5.k(f14, 0.0f, (i30 / AndroidUtilities.density) + 4.0f, 18.0f, -1, 48));
                                             ci.n nVar = new ci.n(this, context);
                                             nVar.setGravity(17);
                                             int i60 = g6.z6;
@@ -425,7 +426,7 @@ public final class i0 extends LinearLayout {
                                             nVar.setTextColor(g6.w0(i60, c6Var4));
                                             nVar.setText(" " + LocaleController.getString(R.string.InvitePremiumBlockedOr) + " ");
                                             nVar.setTextSize(14.0f);
-                                            addView(nVar, a6.t(190, -2, 1, 12, 0, 12, 20));
+                                            addView(nVar, z5.t(190, -2, 1, 12, 0, 12, 20));
                                             TextView textView3 = new TextView(context);
                                             textView3.setGravity(17);
                                             textView3.setTypeface(AndroidUtilities.bold());
@@ -433,7 +434,7 @@ public final class i0 extends LinearLayout {
                                             c6Var5 = ((e3) j0Var).resourcesProvider;
                                             textView3.setTextColor(g6.w0(i55, c6Var5));
                                             textView3.setText(LocaleController.getString(R.string.InviteBlockedTitle));
-                                            addView(textView3, a6.t(-1, -2, 1, 32, 0, 32, 9));
+                                            addView(textView3, z5.t(-1, -2, 1, 32, 0, 32, 9));
                                             TextView textView4 = new TextView(context);
                                             textView4.setGravity(17);
                                             textView4.setTextSize(1, 14.0f);
@@ -445,7 +446,7 @@ public final class i0 extends LinearLayout {
                                             } else {
                                                 textView4.setText(LocaleController.getString(R.string.InviteBlockedManyMessage));
                                             }
-                                            addView(textView4, a6.t(-1, -2, 1, 32, 0, 32, 19));
+                                            addView(textView4, z5.t(-1, -2, 1, 32, 0, 32, 19));
                                         }
                                         j0Var.M1();
                                         return;
@@ -507,7 +508,7 @@ public final class i0 extends LinearLayout {
                                         if (i42 != 2 || i42 == 5) {
                                             j0Var.x0.H = z12;
                                         }
-                                        addView(j0Var.x0, a6.p(-1, -2, 0.0f, 0, -4, 0, -4, 0));
+                                        addView(j0Var.x0, z5.p(-1, -2, 0.0f, 0, -4, 0, -4, 0));
                                     }
                                 }
                             }
@@ -515,16 +516,16 @@ public final class i0 extends LinearLayout {
                             if (i42 != 2) {
                             }
                             j0Var.x0.H = z12;
-                            addView(j0Var.x0, a6.p(-1, -2, 0.0f, 0, -4, 0, -4, 0));
+                            addView(j0Var.x0, z5.p(-1, -2, 0.0f, 0, -4, 0, -4, 0));
                         }
                         if (i42 != 31) {
                             FrameLayout frameLayout = new FrameLayout(context);
                             ImageView imageView = new ImageView(context);
                             imageView.setImageDrawable(f0.c.c(getContext(), R.drawable.large_boosts));
                             i34 = 17;
-                            frameLayout.addView(imageView, a6.e(-2, -2, 17));
+                            frameLayout.addView(imageView, z5.e(-2, -2, 17));
                             frameLayout.setBackground(g6.K(AndroidUtilities.dp(79.0f), g6.v0(g6.Oh)));
-                            addView(frameLayout, a6.t(79, 79, 1, 0, 23, 0, 0));
+                            addView(frameLayout, z5.t(79, 79, 1, 0, 23, 0, 0));
                         } else {
                             i34 = 17;
                         }
@@ -602,7 +603,7 @@ public final class i0 extends LinearLayout {
                                             bVar.setVisibility(8);
                                         }
                                         if (j0Var.e0) {
-                                            addView(this.a, a6.t(-2, -2, 1, 0, z10 ? 8 : i36, 0, 0));
+                                            addView(this.a, z5.t(-2, -2, 1, 0, z10 ? 8 : i36, 0, 0));
                                             LinearLayout linearLayout = new LinearLayout(getContext());
                                             linearLayout.setOrientation(0);
                                             linearLayout.setClipChildren(false);
@@ -619,7 +620,7 @@ public final class i0 extends LinearLayout {
                                             i38 = ((e3) j0Var).currentAccount;
                                             k9Var.k(i38, chat);
                                             z9Var.e(chat, k9Var);
-                                            frameLayout2.addView(z9Var, a6.d(28.0f, 28));
+                                            frameLayout2.addView(z9Var, z5.d(28.0f, 28));
                                             TextView textView7 = new TextView(getContext());
                                             if (chat != null) {
                                                 textView7.setText(chat.title);
@@ -630,15 +631,15 @@ public final class i0 extends LinearLayout {
                                             textView7.setTextSize(1, 13.0f);
                                             c6Var9 = ((e3) j0Var).resourcesProvider;
                                             textView7.setTextColor(g6.w0(i61, c6Var9));
-                                            frameLayout2.addView(textView7, a6.a(-2.0f, 36.0f, 0.0f, 12.0f, 0.0f, -2, 16));
-                                            linearLayout.addView(frameLayout2, a6.t(-2, 28, 80, 18, 0, 18, 0));
+                                            frameLayout2.addView(textView7, z5.a(-2.0f, 36.0f, 0.0f, 12.0f, 0.0f, -2, 16));
+                                            linearLayout.addView(frameLayout2, z5.t(-2, 28, 80, 18, 0, 18, 0));
                                             LayoutTransition layoutTransition = new LayoutTransition();
                                             layoutTransition.setDuration(100L);
                                             layoutTransition.enableTransitionType(4);
                                             linearLayout.setLayoutTransition(layoutTransition);
-                                            linearLayout.addView(bVar, a6.t(-2, -2, 48, -30, 2, 18, 0));
-                                            addView(linearLayout, a6.t(-2, 38, 17, 0, -4, 0, 12));
-                                            w7.c6.a(linearLayout);
+                                            linearLayout.addView(bVar, z5.t(-2, -2, 48, -30, 2, 18, 0));
+                                            addView(linearLayout, z5.t(-2, 38, 17, 0, -4, 0, 12));
+                                            b6.a(linearLayout);
                                             i39 = 1;
                                             linearLayout.setOnClickListener(new View.OnClickListener(this) { // from class: sg.g0
                                                 public final /* synthetic */ i0 b;
@@ -692,9 +693,9 @@ public final class i0 extends LinearLayout {
                                                 textView12.setTextColor(g6.w0(i61, c6Var10));
                                             }
                                             if (i42 != i35) {
-                                                addView(this.b, a6.t(-2, -2, 1, 24, -2, 24, 17));
+                                                addView(this.b, z5.t(-2, -2, 1, 24, -2, 24, 17));
                                             } else {
-                                                addView(this.b, a6.t(-2, -2, 1, 24, 0, 24, 24));
+                                                addView(this.b, z5.t(-2, -2, 1, 24, 0, 24, 24));
                                             }
                                             if (i42 == 31) {
                                                 ((ViewGroup.MarginLayoutParams) this.b.getLayoutParams()).bottomMargin = AndroidUtilities.dp(15.0f);
@@ -708,11 +709,11 @@ public final class i0 extends LinearLayout {
                                         this.d = linearLayout2;
                                         linearLayout2.setOrientation(0);
                                         this.d.setWeightSum(1.0f);
-                                        this.d.addView(this.a, a6.o(-2, -2, 1.0f, 0));
-                                        this.d.addView(bVar, a6.t(-2, -2, 48, 0, 2, 0, 0));
-                                        addView(this.d, a6.t(-2, -2, 1, 12, z10 ? 8 : i36, 12, 9));
+                                        this.d.addView(this.a, z5.o(-2, -2, 1.0f, 0));
+                                        this.d.addView(bVar, z5.t(-2, -2, 48, 0, 2, 0, 0));
+                                        addView(this.d, z5.t(-2, -2, 1, 12, z10 ? 8 : i36, 12, 9));
                                     } else {
-                                        addView(this.a, a6.t(-2, -2, 1, 0, z10 ? 8 : i36, 0, 10));
+                                        addView(this.a, z5.t(-2, -2, 1, 0, z10 ? 8 : i36, 0, 10));
                                     }
                                     i39 = 1;
                                     TextView textView82 = new TextView(context);
@@ -787,21 +788,21 @@ public final class i0 extends LinearLayout {
                     while (i21 < min) {
                     }
                     n9Var2.a(false);
-                    addView(n9Var2, a6.t(((min - 1) * 30) + 72, 72, 1, 0, 16, 0, 13));
+                    addView(n9Var2, z5.t(((min - 1) * 30) + 72, 72, 1, 0, 16, 0, 13));
                     TextView textView13 = new TextView(context);
                     textView13.setGravity(17);
-                    yh.k(20.0f, i17, textView13);
+                    sk.k(20.0f, i17, textView13);
                     int i552 = g6.j5;
                     c6Var = ((e3) j0Var).resourcesProvider;
                     textView13.setTextColor(g6.w0(i552, c6Var));
                     textView13.setText(LocaleController.getString(R.string.InvitePremiumBlockedTitle));
-                    addView(textView13, a6.t(-1, -2, 1, 32, 0, 32, 9));
+                    addView(textView13, z5.t(-1, -2, 1, 32, 0, 32, 9));
                     TextView textView22 = new TextView(context);
                     textView22.setGravity(17);
                     textView22.setTextSize(1, 14.0f);
                     c6Var2 = ((e3) j0Var).resourcesProvider;
                     textView22.setTextColor(g6.w0(i552, c6Var2));
-                    addView(textView22, a6.t(-1, -2, 1, 32, 0, 32, 19));
+                    addView(textView22, z5.t(-1, -2, 1, 32, 0, 32, 19));
                     if (i42 != 34) {
                     }
                     arrayList4 = j0Var.C0;
@@ -834,7 +835,7 @@ public final class i0 extends LinearLayout {
                     if (i42 != 2) {
                     }
                     j0Var.x0.H = z12;
-                    addView(j0Var.x0, a6.p(-1, -2, 0.0f, 0, -4, 0, -4, 0));
+                    addView(j0Var.x0, z5.p(-1, -2, 0.0f, 0, -4, 0, -4, 0));
                 }
                 if (i42 != 31) {
                 }

@@ -1,34 +1,34 @@
 package ji;
 
 import android.view.View;
-import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.l80;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes4.dex */
 public interface v3 {
-    void D();
+    void C();
 
     void G(int i10);
 
-    void N(a aVar);
+    void L(a aVar);
 
-    void X();
+    void Q();
 
-    m80 Y(View view);
+    l80 R(View view);
 
-    void b0();
+    void T();
+
+    void V(h1 h1Var, boolean z10);
 
     boolean c(float f7);
 
-    void c0(h1 h1Var, boolean z10);
+    void i(u3 u3Var, View view);
 
-    void h(u3 u3Var, View view);
+    void i0(i6 i6Var, String str);
 
     void l(w3 w3Var, View view);
 
     void m(int i10);
-
-    void m0(i6 i6Var, String str);
 
     void o();
 

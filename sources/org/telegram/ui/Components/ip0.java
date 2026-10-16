@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class ip0 {
     public final int a;
@@ -184,7 +184,7 @@ public final class ip0 {
             while (z0Var2 != null) {
                 y2.a aVar = (y2.a) z0Var2.c;
                 aVar.getClass();
-                eVar.u(aVar);
+                eVar.t(aVar);
                 z0Var2 = (u2.z0) z0Var2.d;
                 if (z0Var2 == null || ((y2.a) z0Var2.c) == null) {
                     z0Var2 = null;
@@ -209,7 +209,7 @@ public final class ip0 {
             y2.a aVar = (y2.a) z0Var.c;
             synchronized (eVar) {
                 ((i2.i) eVar.d).c.c(aVar);
-                eVar.u(aVar);
+                eVar.t(aVar);
             }
             u2.z0 z0Var2 = (u2.z0) this.e;
             z0Var2.c = null;

@@ -18,12 +18,12 @@ import z3.m;
 import z3.n;
 import z7.w;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class b {
     public static z3.c a(n nVar, byte[] bArr, int i10) {
         k0 t10 = n0.t();
-        nVar.u0(bArr, 0, i10, m.c, new b0(t10, 23));
+        nVar.m0(bArr, 0, i10, m.c, new b0(t10, 23));
         return new z3.c(t10.f());
     }
 

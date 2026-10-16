@@ -12,14 +12,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.sk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.s6;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class m0 extends FrameLayout {
     public final /* synthetic */ int a = 3;
@@ -88,7 +88,7 @@ public final class m0 extends FrameLayout {
     public void onMeasure(int i10, int i11) {
         switch (this.a) {
             case 1:
-                super.onMeasure(i10, yh.D(2.0f, ((sg.y0) this.c).s, TLObject.FLAG_30));
+                super.onMeasure(i10, sk.C(2.0f, ((sg.y0) this.c).s, TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i10, i11);
@@ -105,14 +105,14 @@ public final class m0 extends FrameLayout {
 
     public m0(Context context, c6 c6Var) {
         super(context);
-        LinearLayout e = yh.e(context, 1);
+        LinearLayout e = sk.e(context, 1);
         s6 s6Var = new s6(context, false, false, false);
         this.b = s6Var;
         int i10 = g6.G6;
         s6Var.setTextColor(g6.w0(i10, c6Var));
         s6Var.setTextSize(AndroidUtilities.dp(17.0f));
         s6Var.setTypeface(AndroidUtilities.bold());
-        e.addView(s6Var, a6.q(-2, 23, 1));
+        e.addView(s6Var, z5.q(-2, 23, 1));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTextSize(1, 11.0f);
@@ -120,8 +120,8 @@ public final class m0 extends FrameLayout {
         textView.setSingleLine();
         textView.setMaxLines(1);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        e.addView(textView, a6.q(-2, -2, 1));
-        addView(e, a6.e(-2, -2, 17));
+        e.addView(textView, z5.q(-2, -2, 1));
+        addView(e, z5.e(-2, -2, 17));
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

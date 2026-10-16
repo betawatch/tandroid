@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class dh0 extends y20 {
     public float a;
@@ -40,7 +40,7 @@ public final class dh0 extends y20 {
         boolean z10;
         fh0 fh0Var = this.d;
         PhotoViewer photoViewer = fh0Var.V;
-        z71 z71Var = fh0Var.Q;
+        a81 a81Var = fh0Var.Q;
         if (photoViewer != null && ((photoViewer.F2 != null || fh0Var.r != null) && !fh0Var.c0 && !fh0Var.Y && !fh0Var.w && !fh0Var.s.isInProgress() && fh0Var.f0)) {
             fh0Var.V.getClass();
             boolean z11 = motionEvent.getX() >= (((float) fh0Var.t()) * fh0Var.J) * 0.5f;
@@ -59,21 +59,21 @@ public final class dh0 extends y20 {
                         z10 = true;
                     }
                     if (z10) {
-                        z71Var.e(true);
-                        z71Var.d(!z11);
-                        long j11 = z71Var.o + 10000;
-                        z71Var.o = j11;
-                        z71Var.p = LocaleController.formatPluralString("Seconds", (int) (j11 / 1000), new Object[0]);
-                        qg0 qg0Var = fh0Var.r;
-                        if (qg0Var != null) {
-                            qg0Var.i(j10);
+                        a81Var.e(true);
+                        a81Var.d(!z11);
+                        long j11 = a81Var.o + 10000;
+                        a81Var.o = j11;
+                        a81Var.p = LocaleController.formatPluralString("Seconds", (int) (j11 / 1000), new Object[0]);
+                        rg0 rg0Var = fh0Var.r;
+                        if (rg0Var != null) {
+                            rg0Var.i(j10);
                         } else {
-                            h81 h81Var = fh0Var.V.F2;
-                            if (h81Var != null) {
-                                h81Var.K(j10);
+                            i81 i81Var = fh0Var.V.F2;
+                            if (i81Var != null) {
+                                i81Var.K(j10);
                             }
                         }
-                        z71Var.g(0L);
+                        a81Var.g(0L);
                         fh0Var.Z = j10 / m10;
                         bi.d4 d4Var = fh0Var.b0;
                         if (d4Var != null) {
@@ -133,7 +133,7 @@ public final class dh0 extends y20 {
         kVar2.a = f7;
         kVar2.b = fh0Var.L;
         kVar2.c = true;
-        kVar2.u.i = w7.s.a((f10 / 10.0f) + r9, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - fh0Var.I) - AndroidUtilities.dp(16.0f));
+        kVar2.u.i = w7.r.a((f10 / 10.0f) + r9, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - fh0Var.I) - AndroidUtilities.dp(16.0f));
         fh0Var.N.h();
         return true;
     }

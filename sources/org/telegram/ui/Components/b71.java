@@ -1,19 +1,26 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
-/* loaded from: classes3.dex */
-public final class b71 extends h71 {
-    public final /* synthetic */ c71 d3;
+import android.view.View;
+import org.telegram.messenger.Utilities;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b71(c71 c71Var, c71 c71Var2, d dVar, a71 a71Var, a71 a71Var2) {
-        super(c71Var2, dVar, a71Var, a71Var2);
-        this.d3 = c71Var;
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class b71 implements Utilities.Callback5, Utilities.Callback5Return {
+    public final /* synthetic */ d71 a;
+
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        return Boolean.valueOf(this.a.X((m61) obj, (View) obj2));
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.d3.b = -1;
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        this.a.W((m61) obj, (View) obj2);
     }
 }

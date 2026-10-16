@@ -27,14 +27,12 @@ import com.google.firebase.messaging.FirebaseMessaging;
 import di.c2;
 import di.ca;
 import di.ea;
-import di.o1;
 import e2.m0;
 import fi.f3;
 import fi.q4;
 import hg.j1;
 import hg.t;
 import ig.b1;
-import j9.e0;
 import j9.q;
 import j9.y;
 import java.nio.charset.StandardCharsets;
@@ -51,14 +49,15 @@ import ji.r;
 import ji.u3;
 import ji.v2;
 import ji.x3;
-import m4.f0;
-import m4.g1;
+import m4.e0;
+import m4.f1;
+import m4.o0;
+import m4.o1;
 import m4.p0;
-import m4.p1;
-import m4.t1;
+import m4.s1;
+import m4.v;
+import m4.v0;
 import m4.w;
-import m4.w0;
-import m4.x;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.DialogObject;
@@ -71,7 +70,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.yh;
+import org.telegram.messenger.g0;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
@@ -82,38 +81,38 @@ import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.q0;
 import org.telegram.ui.ActionBar.z1;
 import org.telegram.ui.ActionBar.z2;
-import org.telegram.ui.Cells.d0;
+import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Cells.d6;
 import org.telegram.ui.Cells.t7;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.b4;
-import org.telegram.ui.Components.dl;
+import org.telegram.ui.Components.cl;
 import org.telegram.ui.Components.f5;
 import org.telegram.ui.Components.g5;
 import org.telegram.ui.Components.i4;
 import org.telegram.ui.Components.io;
 import org.telegram.ui.Components.j4;
-import org.telegram.ui.Components.pl;
+import org.telegram.ui.Components.ol;
 import org.telegram.ui.Components.sd0;
+import org.telegram.ui.Components.tl;
 import org.telegram.ui.Components.tl0;
 import org.telegram.ui.Components.ud0;
-import org.telegram.ui.Components.ul;
 import org.telegram.ui.Components.uy;
 import org.telegram.ui.Components.vi;
 import org.telegram.ui.Components.vy;
 import org.telegram.ui.Components.z3;
 import org.telegram.ui.Components.zd0;
-import org.telegram.ui.bp0;
 import org.telegram.ui.fo;
-import org.telegram.ui.lg1;
+import org.telegram.ui.kg1;
 import org.telegram.ui.sy;
 import org.telegram.ui.to;
 import org.telegram.ui.yy;
+import org.telegram.ui.zo0;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements d, MessagesStorage.StringCallback, nb, SuccessContinuation, MediaDataController.KeywordResultCallback, z1, bp0, pl, p0, q, sd0, q0, sy, f5 {
+public final /* synthetic */ class a implements d, MessagesStorage.StringCallback, nb, SuccessContinuation, MediaDataController.KeywordResultCallback, z1, zo0, ol, o0, q, sd0, q0, sy, f5 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -135,9 +134,9 @@ public final /* synthetic */ class a implements d, MessagesStorage.StringCallbac
     public void J(int i10, int i11, boolean z10) {
         switch (this.a) {
             case 26:
-                ul ulVar = (ul) this.b;
-                ulVar.x0.b((TLRPC.TL_messageMediaGeo) this.d, ulVar.y0, z10, i10, ((Long) this.c).longValue());
-                ulVar.b.dismiss(true);
+                tl tlVar = (tl) this.b;
+                tlVar.x0.b((TLRPC.TL_messageMediaGeo) this.d, tlVar.y0, z10, i10, ((Long) this.c).longValue());
+                tlVar.b.dismiss(true);
                 break;
             default:
                 io ioVar = (io) this.b;
@@ -152,7 +151,7 @@ public final /* synthetic */ class a implements d, MessagesStorage.StringCallbac
         return false;
     }
 
-    @Override // org.telegram.ui.bp0
+    @Override // org.telegram.ui.zo0
     public void a(int i10) {
         switch (this.a) {
             case 8:
@@ -162,7 +161,7 @@ public final /* synthetic */ class a implements d, MessagesStorage.StringCallbac
                 if (i10 != 3) {
                     zd0Var.dismiss();
                 }
-                f3Var.d.x.F(str, d0.z(i10).toLowerCase(Locale.ROOT), false);
+                f3Var.d.x.F(str, c1.w(i10).toLowerCase(Locale.ROOT), false);
                 break;
             default:
                 zd0 zd0Var2 = (zd0) this.b;
@@ -171,7 +170,7 @@ public final /* synthetic */ class a implements d, MessagesStorage.StringCallbac
                 if (i10 != 3) {
                     zd0Var2.dismiss();
                 }
-                q4Var.getWebViewContainer().F(str2, d0.z(i10).toLowerCase(Locale.ROOT), false);
+                q4Var.getWebViewContainer().F(str2, c1.w(i10).toLowerCase(Locale.ROOT), false);
                 break;
         }
     }
@@ -185,29 +184,29 @@ public final /* synthetic */ class a implements d, MessagesStorage.StringCallbac
         Object obj4 = this.b;
         switch (i10) {
             case 14:
-                f0 f0Var = (f0) obj4;
-                Handler handler = f0Var.l;
-                v2 v2Var = new v2(f0Var, (w) obj3, new t(f0Var, (w0) obj2, (x) obj, 28));
-                t1 t1Var = new t1(0);
+                e0 e0Var = (e0) obj4;
+                Handler handler = e0Var.l;
+                v2 v2Var = new v2(e0Var, (v) obj3, new t(e0Var, (v0) obj2, (w) obj, 26));
+                s1 s1Var = new s1(0);
                 String str = m0.a;
-                e0 e0Var = new e0();
-                m0.W(handler, new l0(e0Var, v2Var, t1Var, i11));
-                return e0Var;
-            default:
-                f0 f0Var2 = (f0) obj4;
-                w wVar = (w) obj3;
-                List list = (List) obj;
-                Handler handler2 = f0Var2.l;
-                v2 v2Var2 = new v2(f0Var2, wVar, new b(f0Var2, (g1) obj2, wVar, list, 24));
-                t1 t1Var2 = new t1(0);
-                String str2 = m0.a;
-                e0 e0Var2 = new e0();
-                m0.W(handler2, new l0(e0Var2, v2Var2, t1Var2, i11));
+                j9.e0 e0Var2 = new j9.e0();
+                m0.W(handler, new l0(e0Var2, v2Var, s1Var, i11));
                 return e0Var2;
+            default:
+                e0 e0Var3 = (e0) obj4;
+                v vVar = (v) obj3;
+                List list = (List) obj;
+                Handler handler2 = e0Var3.l;
+                v2 v2Var2 = new v2(e0Var3, vVar, new b(e0Var3, (f1) obj2, vVar, list, 23));
+                s1 s1Var2 = new s1(0);
+                String str2 = m0.a;
+                j9.e0 e0Var4 = new j9.e0();
+                m0.W(handler2, new l0(e0Var4, v2Var2, s1Var2, i11));
+                return e0Var4;
         }
     }
 
-    @Override // org.telegram.ui.Components.pl
+    @Override // org.telegram.ui.Components.ol
     public void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j10) {
         switch (this.a) {
             case 10:
@@ -298,18 +297,38 @@ public final /* synthetic */ class a implements d, MessagesStorage.StringCallbac
         }
     }
 
-    @Override // m4.p0
-    public void f(w wVar) {
-        m4.q0 q0Var = (m4.q0) this.b;
+    @Override // m4.o0
+    public void e(v vVar) {
+        p0 p0Var = (p0) this.b;
         Bundle bundle = (Bundle) this.d;
         ResultReceiver resultReceiver = (ResultReceiver) this.c;
-        f0 f0Var = q0Var.g;
+        e0 e0Var = p0Var.g;
         if (bundle == null) {
             Bundle bundle2 = Bundle.EMPTY;
         }
-        j9.w n10 = f0Var.n(wVar);
+        j9.w n10 = e0Var.n(vVar);
         if (resultReceiver != null) {
-            n10.a(new v2(17, n10, resultReceiver), j9.r.a);
+            n10.a(new v2(14, n10, resultReceiver), j9.r.a);
+        }
+    }
+
+    @Override // bi.nb
+    public void f(Canvas canvas, RectF rectF, float f7) {
+        t7 t7Var = (t7) this.b;
+        tl0 tl0Var = (tl0) this.d;
+        int[] iArr = (int[]) this.c;
+        t7Var.c(canvas, rectF, f7);
+        t7Var.f(canvas, rectF, f7);
+        if (t7Var.h) {
+            t7Var.b(canvas, rectF, f7);
+        } else {
+            t7Var.e(canvas, rectF, f7);
+        }
+        if (tl0Var != null && tl0Var.a0 && tl0Var.getVisibility() == 0) {
+            canvas.saveLayerAlpha(0.0f, 0.0f, canvas.getWidth(), canvas.getHeight(), (int) (f7 * 255.0f), 31);
+            canvas.translate(iArr[0], iArr[1]);
+            tl0Var.draw(canvas);
+            canvas.restore();
         }
     }
 
@@ -407,30 +426,30 @@ public final /* synthetic */ class a implements d, MessagesStorage.StringCallbac
                     break;
                 }
             case 25:
-                dl dlVar = (dl) this.b;
+                cl clVar = (cl) this.b;
                 b1 b1Var = (b1) this.d;
                 org.telegram.ui.Cells.a2 a2Var2 = (org.telegram.ui.Cells.a2) this.c;
-                TextView textView = dlVar.R;
+                TextView textView = clVar.R;
                 if (b1Var.getText().toString().getBytes(StandardCharsets.UTF_8).length <= 960) {
                     String trim3 = b1Var.getText().toString().trim();
                     if (TextUtils.isEmpty(trim3)) {
                         trim3 = null;
                     }
-                    dlVar.p0 = trim3;
-                    dlVar.q0 = !a2Var2.b();
-                    if (TextUtils.isEmpty(dlVar.p0)) {
+                    clVar.p0 = trim3;
+                    clVar.q0 = !a2Var2.b();
+                    if (TextUtils.isEmpty(clVar.p0)) {
                         textView.setVisibility(8);
                     } else {
-                        textView.setText(dlVar.p0);
+                        textView.setText(clVar.p0);
                         textView.setVisibility(0);
                     }
-                    dlVar.i0();
+                    clVar.i0();
                     a2Var.dismiss();
-                    dlVar.Y();
+                    clVar.Y();
                     break;
                 } else {
-                    int i13 = -dlVar.s0;
-                    dlVar.s0 = i13;
+                    int i13 = -clVar.s0;
+                    clVar.s0 = i13;
                     AndroidUtilities.shakeViewSpring(b1Var, i13);
                     break;
                 }
@@ -445,28 +464,8 @@ public final /* synthetic */ class a implements d, MessagesStorage.StringCallbac
         }
     }
 
-    @Override // bi.nb
-    public void h(Canvas canvas, RectF rectF, float f7) {
-        t7 t7Var = (t7) this.b;
-        tl0 tl0Var = (tl0) this.d;
-        int[] iArr = (int[]) this.c;
-        t7Var.c(canvas, rectF, f7);
-        t7Var.f(canvas, rectF, f7);
-        if (t7Var.h) {
-            t7Var.b(canvas, rectF, f7);
-        } else {
-            t7Var.e(canvas, rectF, f7);
-        }
-        if (tl0Var != null && tl0Var.a0 && tl0Var.getVisibility() == 0) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, canvas.getWidth(), canvas.getHeight(), (int) (f7 * 255.0f), 31);
-            canvas.translate(iArr[0], iArr[1]);
-            tl0Var.draw(canvas);
-            canvas.restore();
-        }
-    }
-
     @Override // org.telegram.ui.ActionBar.q0
-    public void l(int i10) {
+    public void k(int i10) {
         Runnable runnable;
         f5 f5Var = (f5) this.b;
         boolean[] zArr = (boolean[]) this.d;
@@ -537,7 +536,7 @@ public final /* synthetic */ class a implements d, MessagesStorage.StringCallbac
     }
 
     @Override // org.telegram.ui.sy
-    public boolean w(yy yyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, lg1 lg1Var) {
+    public boolean w(yy yyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, kg1 kg1Var) {
         ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.b;
         MessageObject messageObject = (MessageObject) this.d;
         TL_keyboard.TL_inlineButtonTypeSwitchInline tL_inlineButtonTypeSwitchInline = (TL_keyboard.TL_inlineButtonTypeSwitchInline) this.c;
@@ -588,9 +587,9 @@ public final /* synthetic */ class a implements d, MessagesStorage.StringCallbac
         this.c = obj3;
     }
 
-    public /* synthetic */ a(m4.q0 q0Var, p1 p1Var, Bundle bundle, ResultReceiver resultReceiver) {
+    public /* synthetic */ a(p0 p0Var, o1 o1Var, Bundle bundle, ResultReceiver resultReceiver) {
         this.a = 13;
-        this.b = q0Var;
+        this.b = p0Var;
         this.d = bundle;
         this.c = resultReceiver;
     }
@@ -704,7 +703,7 @@ public final /* synthetic */ class a implements d, MessagesStorage.StringCallbac
                         TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) arrayList6.get(i21);
                         if (tL_messages_stickerSet != null && tL_messages_stickerSet.set != null) {
                             String translitSafe2 = AndroidUtilities.translitSafe((tL_messages_stickerSet.set.title + "").toLowerCase());
-                            if (translitSafe2.startsWith(translitSafe) || yh.v(" ", translitSafe, translitSafe2)) {
+                            if (translitSafe2.startsWith(translitSafe) || g0.w(" ", translitSafe, translitSafe2)) {
                                 int size = arrayList7.size();
                                 arrayList7.add(tL_messages_stickerSet);
                                 sparseIntArray.put(c2Var.x, size);
@@ -726,7 +725,7 @@ public final /* synthetic */ class a implements d, MessagesStorage.StringCallbac
                     }
                     c2Var.I = c2Var.H;
                     c2Var.l();
-                    o1.x1(d2Var.b, 0, 0);
+                    di.o1.x1(d2Var.b, 0, 0);
                     d2Var.f.c(false);
                     d2Var.e.n(false);
                     break;

@@ -2,7 +2,6 @@ package ug;
 
 import android.view.View;
 import android.view.ViewGroup;
-import bi.z5;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DialogObject;
@@ -21,9 +20,9 @@ import org.telegram.ui.Components.sc;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.bz0;
 import org.telegram.ui.s20;
-import w7.a6;
+import w7.z5;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
 public final class s0 extends db {
     public final ArrayList X;
@@ -61,14 +60,14 @@ public final class s0 extends db {
         d0Var.k();
         d0Var.setCounterColor(-6785796);
         d0Var.setOnClickListener(new bz0(23, this, chat));
-        s20Var.addView(d0Var, a6.q(-1, 48, 87));
+        s20Var.addView(d0Var, z5.q(-1, 48, 87));
         ViewGroup viewGroup = this.containerView;
         int i11 = this.backgroundPaddingLeft;
-        viewGroup.addView(s20Var, a6.f(-2.0f, 87, i11, 0, i11, 0));
+        viewGroup.addView(s20Var, z5.f(-2.0f, 87, i11, 0, i11, 0));
         mm0 mm0Var = this.d;
         int i12 = this.backgroundPaddingLeft;
         mm0Var.setPadding(i12, 0, i12, AndroidUtilities.dp(64.0f));
-        this.d.setOnItemClickListener(new z5(24, this, chat));
+        this.d.setOnItemClickListener(new bi.z5(24, this, chat));
         fixNavigationBar();
         O();
         T(false);
@@ -95,7 +94,7 @@ public final class s0 extends db {
     }
 
     @Override // org.telegram.ui.Components.db
-    public final CharSequence A() {
+    public final CharSequence B() {
         return LocaleController.getString(R.string.BoostingReassignBoost);
     }
 

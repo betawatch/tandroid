@@ -1,51 +1,36 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
 /* loaded from: classes3.dex */
-public final class bd0 extends hg.s0 {
-    public boolean m0;
-    public final /* synthetic */ nd0 n0;
+public final class bd0 extends org.telegram.ui.Components.xv0 {
+    public final /* synthetic */ ld0 f2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bd0(nd0 nd0Var, Context context, int i10, long j10, org.telegram.ui.ActionBar.c6 c6Var, boolean z10, boolean z11) {
-        super(context, i10, j10, false, c6Var, false, z10, z11);
-        this.n0 = nd0Var;
-        this.m0 = true;
+    public bd0(ld0 ld0Var, Context context, org.telegram.ui.Components.pv0 pv0Var, ld0 ld0Var2, ad0 ad0Var, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context, 0L, pv0Var, 0, null, null, null, 8, 0, ld0Var2, ad0Var, 0, c6Var, null);
+        this.f2 = ld0Var;
     }
 
-    @Override // hg.s0
-    public final void K() {
-        this.n0.q0(null);
+    @Override // org.telegram.ui.Components.xv0
+    public final int C0() {
+        return 32;
     }
 
-    @Override // hg.s0
-    public final void N(ArrayList arrayList) {
-        int i10;
-        nd0 nd0Var = this.n0;
-        MessageObject messageObject = nd0Var.B0;
-        if (messageObject != null && messageObject.isLiveLocation()) {
-            if (arrayList != null) {
-                i10 = 0;
-                for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                    hd0 hd0Var = (hd0) arrayList.get(i11);
-                    if (hd0Var != null && !UserObject.isUserSelf(hd0Var.c)) {
-                        i10++;
-                    }
-                }
-            } else {
-                i10 = 0;
-            }
-            if (this.m0 && i10 == 1) {
-                nd0Var.i0 = ((hd0) arrayList.get(0)).a;
-            }
-            this.m0 = false;
-            nd0Var.Z.setVisibility(i10 != 1 ? 8 : 0);
-        }
-        super.N(arrayList);
+    @Override // org.telegram.ui.Components.xv0
+    public final boolean N() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.xv0
+    public final int T0() {
+        return 3;
+    }
+
+    @Override // org.telegram.ui.Components.xv0
+    public final TL_stories.MediaArea getStoriesArea() {
+        return this.f2.M0;
     }
 }
